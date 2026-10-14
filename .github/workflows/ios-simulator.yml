@@ -1,0 +1,141 @@
+name: Build iOS Simulator app
+
+# Manual only. Artifact upload is an explicit opt-in.
+on:
+  workflow_dispatch:
+    inputs:
+      upload_artifacts:
+        description: Upload app, screenshots, and Xcode results (may incur storage charges)
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-simulator-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  simulator:
+    runs-on: macos-15
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: bash
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+      HOMEBREW_NO_AUTO_UPDATE: '1'
+      HOMEBREW_NO_ANALYTICS: '1'
+      CI_OUTPUT: ${{ runner.temp }}/ios-results
+      CI_DERIVED_DATA: ${{ runner.temp }}/ios-derived-data
+    steps:
+      - name: Check out requested revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Check Apple toolchain
+        run: |
+          mkdir -p "$CI_OUTPUT"
+          test -d "$DEVELOPER_DIR"
+          {
+            git rev-parse HEAD
+            sw_vers
+            xcodebuild -version
+            xcrun --sdk iphonesimulator --show-sdk-version
+            swift --version
+          } | tee "$CI_OUTPUT/toolchain.txt"
+          python3 - <<'PY'
+          import subprocess
+          version = subprocess.check_output(['xcrun', '--sdk', 'iphonesimulator', '--show-sdk-version'], text=True).strip()
+          assert int(version.split('.')[0]) >= 26, f'iOS 26+ SDK required, got {version}'
+          PY
+
+      - name: Install project generator and generate project
+        timeout-minutes: 6
+        run: |
+          if ! command -v xcodegen >/dev/null; then
+            brew install xcodegen
+          fi
+          xcodegen --version | tee -a "$CI_OUTPUT/toolchain.txt"
+          # The tracked config intentionally keeps the API at unconfigured.invalid.
+          test ! -e apps/ios/Config/Local.private.xcconfig
+          bash apps/ios/Scripts/generate-project.sh
+
+      - name: Build unsigned app and Share Extension
+        id: build
+        timeout-minutes: 12
+        run: |
+          xcodebuild -project apps/ios/BibleCompanion.xcodeproj \
+            -scheme BibleCompanion -configuration Debug -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath "$CI_DERIVED_DATA" \
+            -resultBundlePath "$CI_OUTPUT/Build.xcresult" \
+            CODE_SIGNING_ALLOWED=NO build 2>&1 | tee "$CI_OUTPUT/build.log"
+          test -d "$CI_DERIVED_DATA/Build/Products/Debug-iphonesimulator/BibleCompanion.app/PlugIns/BibleShare.appex"
+          # tar preserves executable permissions and app bundle symlinks.
+          tar -czf "$CI_OUTPUT/BibleCompanion-simulator.tar.gz" \
+            -C "$CI_DERIVED_DATA/Build/Products/Debug-iphonesimulator" BibleCompanion.app
+
+      - name: Select an installed iOS 26 or later simulator
+        run: |
+          xcrun simctl list devices available --json > "$CI_OUTPUT/simulators.json"
+          SIMULATOR_ID=$(python3 scripts/ci/select-ios-simulator.py "$CI_OUTPUT/simulators.json")
+          echo "SIMULATOR_ID=$SIMULATOR_ID" >> "$GITHUB_ENV"
+
+      - name: Run core tests on iOS Simulator
+        timeout-minutes: 10
+        run: |
+          xcodebuild -project apps/ios/BibleCompanion.xcodeproj \
+            -scheme BibleCompanion -configuration Debug -sdk iphonesimulator \
+            -destination "platform=iOS Simulator,id=$SIMULATOR_ID" \
+            -destination-timeout 90 -parallel-testing-enabled NO \
+            -maximum-concurrent-test-simulator-destinations 1 \
+            -derivedDataPath "$CI_DERIVED_DATA" \
+            -resultBundlePath "$CI_OUTPUT/Tests.xcresult" \
+            CODE_SIGNING_ALLOWED=NO test 2>&1 | tee "$CI_OUTPUT/test.log"
+
+      - name: Capture actual first launch when Simulator is available
+        continue-on-error: true
+        timeout-minutes: 3
+        run: |
+          # Tests normally leave this device booted. Check first; do not erase it.
+          xcrun simctl list devices booted --json > "$CI_OUTPUT/booted-simulators.json"
+          if ! python3 - <<'PYTHON'
+          import json, os, sys
+          with open(os.environ["CI_OUTPUT"] + "/booted-simulators.json") as source:
+              devices = json.load(source)["devices"]
+          sys.exit(0 if any(d["udid"] == os.environ["SIMULATOR_ID"] and d["state"] == "Booted" for group in devices.values() for d in group) else 1)
+          PYTHON
+          then
+            xcrun simctl boot "$SIMULATOR_ID"
+          fi
+          xcrun simctl bootstatus "$SIMULATOR_ID" -b
+          xcrun simctl install "$SIMULATOR_ID" "$CI_DERIVED_DATA/Build/Products/Debug-iphonesimulator/BibleCompanion.app"
+          xcrun simctl launch "$SIMULATOR_ID" org.example.BibleCompanion | tee "$CI_OUTPUT/launch.log"
+          sleep 3
+          xcrun simctl io "$SIMULATOR_ID" screenshot "$CI_OUTPUT/first-launch.png"
+
+      - name: Upload build evidence and simulator app
+        if: ${{ always() && inputs.upload_artifacts }}
+        timeout-minutes: 3
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: ios-simulator-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/ios-results/
+          if-no-files-found: warn
+          retention-days: 1
+          compression-level: 6
+
+      - name: Record scope of this run
+        if: ${{ always() }}
+        run: |
+          {
+            echo '## iOS Simulator validation'
+            echo 'The job conclusion and build/test logs are the result of this run.'
+            echo 'Artifacts are uploaded only when upload_artifacts is enabled. Otherwise only run logs are retained; app and screenshot files are not downloadable.'
+            echo 'The app uses an unconfigured API URL. No backend or AI provider is enabled.'
+            echo 'A green run does not establish physical-device signing, SideStore installation, or visual/accessibility acceptance.'
+          } >> "$GITHUB_STEP_SUMMARY"
