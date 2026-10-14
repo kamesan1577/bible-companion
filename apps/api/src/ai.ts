@@ -1,4 +1,6 @@
 import { budgetDispatchGuard } from './budget-dispatch';
+import type { Context } from 'hono';
+import { assertShareAccess } from './share-auth';
 import {
   answerModeSchema,
   answerModes,
@@ -37,6 +39,7 @@ import {
 } from './data';
 import {
   reserveBudget,
+  reportedBudgetConsumption,
   settleBudget,
   rateLimit,
   estimateReservation,
@@ -184,6 +187,8 @@ aiRoutes.get('/me/ai-policy', async (c) => {
     groundedPolicyVersion: GROUNDED_POLICY_VERSION,
     groundedNoticeJa: GROUNDED_NOTICE_JA,
     workersAiConsent: settings.workersAiConsent === true,
+    shareAiEnabled: c.env.SHARE_AI_ENABLED === 'true',
+    shareAiConsent: c.env.SHARE_AI_ENABLED === 'true' && settings.shareAiConsent === true,
     groundedConsent: {
       accepted: hasGroundedConsent(settings),
       policyVersion: settings.groundedGenerationPolicyVersion ?? null,
@@ -273,7 +278,7 @@ aiRoutes.delete('/developer/model-preference', async (c) => {
     .run();
   return c.body(null, 204);
 });
-aiRoutes.post('/conversations/:id/questions', async (c) => {
+export async function answerQuestion(c: Context<AppEnv>) {
   const v = await body(
     c,
     z
@@ -286,7 +291,9 @@ aiRoutes.post('/conversations/:id/questions', async (c) => {
       .strict(),
   );
   const user = c.get('user');
-  const conversation = await getConversation(c.env, user.id, c.req.param('id'));
+  const conversationID = c.req.param('id');
+  if (!conversationID) fail(400, 'conversation_required', 'Conversation ID required');
+  const conversation = await getConversation(c.env, user.id, conversationID);
   if (
     await c.env.DB.prepare(
       "SELECT id FROM request_cancellations WHERE user_id=? AND id=? AND kind='question'",
@@ -305,6 +312,7 @@ aiRoutes.post('/conversations/:id/questions', async (c) => {
       passage: conversation.passage_json,
       readingBoundary: readingBoundaryOf(conversation),
       spoilers: conversation.spoiler_allowed,
+      ...(c.env.GENERAL_KNOWLEDGE_ENABLED === 'true' ? {generalKnowledge:true} : {}),
     }),
   );
   const existing = await c.env.DB.prepare(
@@ -347,7 +355,7 @@ aiRoutes.post('/conversations/:id/questions', async (c) => {
   }
   await rateLimit(c.env, 'question:' + user.id, 10);
   const preference =
-    canDebug(c.env, user)
+    canDebug(c.env, user) && !c.get('shareCapability')
       ? await c.env.DB.prepare(
           'SELECT model_id,settings_json FROM model_preferences WHERE user_id=?',
         )
@@ -390,12 +398,13 @@ aiRoutes.post('/conversations/:id/questions', async (c) => {
     modelId: preference?.model_id ?? c.env.DEFAULT_MODEL_ID,
     settings: preference
       ? JSON.parse(preference.settings_json)
-      : { maxOutputTokens: 512, temperature: 0.2, timeoutMs: 15000, stream: false },
+      : { maxOutputTokens: 2048, temperature: 0.2, timeoutMs: 30000, stream: false },
   };
   try {
     prepareCompanionRequest(input, {
       authorization: authorization(c.env, user.id),
       answerMode: v.answerMode,
+      allowGeneralKnowledge: c.env.GENERAL_KNOWLEDGE_ENABLED === 'true',
     });
     if (!v.sourceOnly) {
       assertModelAuthorized(input.modelId!, authorization(c.env, user.id));
@@ -426,6 +435,7 @@ aiRoutes.post('/conversations/:id/questions', async (c) => {
   if (!claimed) fail(409, 'request_already_processed', 'Request ID is already in use');
   let budgetReserved = false;
   let dispatched = false;
+  let settledUsage: number | null = null;
   try {
     if (!v.sourceOnly) {
       await reserveBudget(c.env, user.id, v.requestId, reservationAmount);
@@ -441,6 +451,7 @@ aiRoutes.post('/conversations/:id/questions', async (c) => {
       ? createSourceOnlyAnswer(input, user.id)
       : await createCompanionAnswer(input, {
           answerMode: v.answerMode,
+      allowGeneralKnowledge: c.env.GENERAL_KNOWLEDGE_ENABLED === 'true',
           ai: {
             run: async (model, inputs) => {
               assertModelAuthorized(model, authorization(c.env, user.id));
@@ -467,12 +478,14 @@ aiRoutes.post('/conversations/:id/questions', async (c) => {
               if (c.req.raw.signal.aborted)
                 fail(409, 'request_aborted', 'Request disconnected before provider invocation');
               dispatched = true;
+              await assertShareAccess(c);
               return c.env.AI!.run(model, inputs);
             },
           },
           authorization: authorization(c.env, user.id),
           signal: c.req.raw.signal,
         });
+    if (verifiedReservation?.budgetMode === 'free-provider-hard-stop') settledUsage = reportedBudgetConsumption(input.modelId!, result.usage.actual);
     const current = await getConversation(c.env, user.id, conversation.id);
     const request = await c.env.DB.prepare(
       'SELECT status FROM generation_requests WHERE id=? AND user_id=?',
@@ -500,7 +513,8 @@ aiRoutes.post('/conversations/:id/questions', async (c) => {
             reservationBasis: verifiedReservation.reservationBasis,
             budgetBoundVerified: verifiedReservation.budgetBoundVerified,
             reservedBudgetUnits: verifiedReservation.amount,
-            actualNeurons: null,
+            actualNeurons: settledUsage !== null ? result.usage.neurons : null,
+            usageAccounting: settledUsage !== null ? 'provider-reported-usage-rounded-up' : 'conservative-reservation',
             warnings: verifiedReservation.warnings,
           }
         : null,
@@ -572,6 +586,7 @@ aiRoutes.post('/conversations/:id/questions', async (c) => {
       .first<{ status: string }>();
     if (saved?.status !== 'complete')
       fail(409, 'request_cancelled', 'The request was cancelled before completion');
+    await assertShareAccess(c);
     return c.json({ requestId: v.requestId, status: 'complete', result: annotated });
   } catch (error) {
     await c.env.DB.prepare(
@@ -581,10 +596,11 @@ aiRoutes.post('/conversations/:id/questions', async (c) => {
       .run();
     aiError(error);
   } finally {
-    if (budgetReserved) await settleBudget(c.env, v.requestId, dispatched ? null : 0);
+    if (budgetReserved) await settleBudget(c.env, v.requestId, dispatched ? settledUsage : 0);
   }
-});
-aiRoutes.get('/requests/:id', async (c) => {
+}
+aiRoutes.post('/conversations/:id/questions', answerQuestion);
+export async function questionStatus(c: Context<AppEnv>) {
   const row = await c.env.DB.prepare(
     'SELECT g.id,g.status,g.result_json,c.spoiler_allowed,c.passage_json,c.reading_boundary_json FROM generation_requests g JOIN conversations c ON c.id=g.conversation_id AND c.user_id=g.user_id WHERE g.id=? AND g.user_id=?',
   )
@@ -623,7 +639,8 @@ aiRoutes.get('/requests/:id', async (c) => {
     status: row.status,
     result: canDisplayAnswer(result, currentSources, !!row.spoiler_allowed) ? result : null,
   });
-});
+}
+aiRoutes.get('/requests/:id', questionStatus);
 aiRoutes.delete('/requests/:id', async (c) => {
   const id = c.req.param('id');
   if (!z.string().uuid().safeParse(id).success)

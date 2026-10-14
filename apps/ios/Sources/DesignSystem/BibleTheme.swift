@@ -73,3 +73,9 @@ extension View {
     }
     func bibleCanvas() -> some View { modifier(BibleCanvas()) }
 }
+
+private struct BibleDeveloperTint: ViewModifier {
+    @Environment(\.colorScheme) private var scheme
+    func body(content: Content) -> some View { content.tint(BibleTheme.color(.danger, scheme: scheme)) }
+}
+extension View { func bibleDeveloperTint() -> some View { modifier(BibleDeveloperTint()) } }

@@ -25,6 +25,7 @@ export function parseUsage(value: unknown): UsageReport['actual'] {
   return {
     inputTokens: input,
     outputTokens: output,
+    ...(typeof value.neurons === 'number' && Number.isFinite(value.neurons) && value.neurons > 0 && value.neurons <= 1000000 ? { providerNeurons: value.neurons } : {}),
     ...(total === undefined ? {} : { totalTokens: total as number }),
   };
 }

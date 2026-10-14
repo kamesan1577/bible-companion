@@ -226,7 +226,7 @@ describe('route inventory cannot drift from OpenAPI', () => {
         .filter(
           (r) =>
             r.method !== 'ALL' &&
-            (r.path.startsWith('/v1/') || r.path.startsWith('/auth/')) &&
+            (r.path.startsWith('/v1/') || r.path.startsWith('/auth/') || r.path.startsWith('/share/') || r.path.startsWith('/public/')) &&
             !['/auth/client.js', '/auth/style.css', '/auth/authorize'].includes(r.path),
         )
         .map((r) => r.method.toLowerCase() + ' ' + r.path.replace(/:([A-Za-z0-9_]+)/g, '{$1}')),

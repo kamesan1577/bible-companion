@@ -19,6 +19,7 @@ import { PROMPT_VERSION, buildMessages } from './prompts.ts';
 import {
   validateSelection,
   validateGeneratedAnswer,
+  validateGeneralAnswer,
   insufficientAnswer,
   citationForSource,
 } from './output.ts';
@@ -78,7 +79,7 @@ export function estimateUsage(messages: unknown, maxOutputTokens: number): Usage
 }
 export function prepareCompanionRequest(
   input: AnswerInput,
-  dependencies: Pick<AnswerDependencies, 'authorization' | 'answerMode'>,
+  dependencies: Pick<AnswerDependencies, 'authorization' | 'answerMode' | 'allowGeneralKnowledge'>,
 ) {
   validateAnswerInput(input);
   const mode = dependencies.answerMode ?? 'reviewed-claim-selection';
@@ -88,7 +89,7 @@ export function prepareCompanionRequest(
   const settings = validateSettings(model.id, input.settings);
   const retrieval = retrieveGrounding(input, dependencies.authorization?.ownerId);
   const history = scopedHistory(input, retrieval.sources, dependencies.authorization.ownerId);
-  const messages = buildMessages(input, retrieval.sources, mode, history);
+  const messages = buildMessages(input, retrieval.sources, mode, history, dependencies.allowGeneralKnowledge === true);
   const usage = estimateUsage(messages, settings.maxOutputTokens);
   validatePreparedInputCapacity(model.id, usage.estimated.inputTokens, settings.maxOutputTokens);
   return { model, settings, retrieval, messages, usage, mode, history };
@@ -112,7 +113,7 @@ export async function createCompanionAnswer(
   const { model, settings, retrieval, messages, mode, usage } = prepared;
   const usable =
     mode === 'grounded-generation'
-      ? retrieval.sources.length > 0
+      ? dependencies.allowGeneralKnowledge === true || retrieval.sources.length > 0
       : eligibleClaims(retrieval.sources).length > 0;
   const common = {
     referenceSystem: referenceSystemNotice(snapshot.translation),
@@ -176,7 +177,7 @@ export async function createCompanionAnswer(
   if (dependencies.signal?.aborted) throw new HarnessError('ABORTED', true);
   const validated =
     mode === 'grounded-generation'
-      ? validateGeneratedAnswer(
+      ? (dependencies.allowGeneralKnowledge === true ? validateGeneralAnswer : validateGeneratedAnswer)(
           provider.text,
           retrieval.sources,
           snapshot.readingBoundary ?? snapshot.passage,
@@ -189,7 +190,7 @@ export async function createCompanionAnswer(
     ...validated,
     modelInvoked: true,
     providerPromptCache: providerCacheReport(true),
-    usage: { ...usage, actual: provider.usage },
+    usage: { ...usage, actual: provider.usage, neurons: provider.usage?.providerNeurons ?? null },
     timing: {
       durationMs,
       providerFirstTextMs: provider.firstTextMs,
@@ -298,7 +299,7 @@ function canonical(value: unknown): string {
 /** No public-chat cache API exists. Owner, question, exact sources, policy and versions are part of the key. */
 export async function createPrivateCacheKey(
   input: AnswerInput,
-  dependencies: Pick<AnswerDependencies, 'authorization' | 'answerMode'>,
+  dependencies: Pick<AnswerDependencies, 'authorization' | 'answerMode' | 'allowGeneralKnowledge'>,
 ): Promise<string> {
   const prepared = prepareCompanionRequest(input, dependencies);
   const identity = {

@@ -460,7 +460,7 @@ export async function estimateReservation(
   authorization: ModelAuthorization,
   answerMode: 'reviewed-claim-selection' | 'grounded-generation' = 'reviewed-claim-selection',
 ) {
-  const prepared = prepareCompanionRequest(input, { authorization, answerMode });
+  const prepared = prepareCompanionRequest(input, { authorization, answerMode, allowGeneralKnowledge: env.GENERAL_KNOWLEDGE_ENABLED === 'true' });
   const authority = await loadBudgetAuthority(env, [prepared.model.id]);
   return estimateModelReservation(
     env,
@@ -538,4 +538,14 @@ export async function modelBudgetReadiness(
       budgetBoundVerified: false,
     };
   }
+}
+
+/** Only plausible direct-provider metering can release an estimate. Missing/invalid usage consumes it all. */
+export function reportedBudgetConsumption(modelId: string, usage: {inputTokens:number;outputTokens:number;providerNeurons?:number}|null): number|null {
+  if (!usage || !Number.isSafeInteger(usage.inputTokens) || !Number.isSafeInteger(usage.outputTokens) || usage.inputTokens+usage.outputTokens<1) return null;
+  const value=usage.providerNeurons;
+  if (typeof value!=='number' || !Number.isFinite(value) || value<=0 || value>1000000) return null;
+  const estimate=estimateModelBudget(modelId,usage.inputTokens,usage.outputTokens,'provider-reported-token-counts').estimatedNeurons;
+  if (Math.abs(value-estimate)>Math.max(0.001,estimate*0.02)) return null;
+  return Math.ceil(value);
 }

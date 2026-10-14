@@ -3,9 +3,9 @@ import type { Env } from './types';
 import { fail } from './http';
 export const answerModeSchema = z.enum(['reviewed-claim-selection', 'grounded-generation']);
 export type AnswerMode = z.infer<typeof answerModeSchema>;
-export const GROUNDED_POLICY_VERSION = 'grounded-generation-2026-10-13.v1';
+export const GROUNDED_POLICY_VERSION = 'grounded-generation-2026-10-15.v2';
 export const GROUNDED_NOTICE_JA =
-  '実験的なAI解説です。引用資料と読書範囲を検証しますが、説明の正確さや未読の出来事を暗示しないことは保証できません。本文と出典を確認してください。';
+  'AIは間違えることがあります。引用のある説明と、出典未確認の一般的な説明を分けて表示します。未読の出来事を暗示する可能性もあるため、本文と出典を確かめてください。';
 export function answerModes(env: Env): AnswerMode[] {
   if (env.ALLOWED_ANSWER_MODES === undefined) return ['reviewed-claim-selection'];
   try {

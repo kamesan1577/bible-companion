@@ -128,7 +128,16 @@ export function validateSettings(modelId: string, settings: ModelSettings = {}):
   if (stream && !model.streamSupported) throw new HarnessError('UNSUPPORTED_SETTING');
   return {
     requested: { ...settings },
-    effective: { [model.tokenParameter]: maxOutputTokens, temperature, stream },
+    effective: {
+      [model.tokenParameter]: maxOutputTokens, temperature, stream,
+      // Cloudflare documents chat_template_kwargs/response_format; Google's Gemma 4
+      // template documents enable_thinking. Real route validation on 2026-10-15
+      // completed with citations in 6 seconds; thinking-on exhausted the deadline.
+      ...(modelId === '@cf/google/gemma-4-26b-a4b-it' ? {
+        chat_template_kwargs: { enable_thinking: false },
+        response_format: { type: 'json_object' },
+      } : {}),
+    },
     timeoutMs,
     maxOutputTokens,
     stream,

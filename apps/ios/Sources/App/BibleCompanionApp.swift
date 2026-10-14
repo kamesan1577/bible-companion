@@ -5,14 +5,21 @@ import SwiftUI
     @Environment(\.scenePhase) private var scenePhase
     var body: some Scene {
         WindowGroup {
-            RootView().environmentObject(store)
-                .task { await store.restore() }
+            Group {
+#if DEBUG
+                if ProcessInfo.processInfo.arguments.contains("--simulator-qa") { SimulatorQA() }
+                else { RootView() }
+#else
+                RootView()
+#endif
+            }.environmentObject(store)
+                .task { await store.restore(); await store.refreshShareAI() }
                 .onChange(of: scenePhase) { _, phase in if phase == .active { store.enteredForeground() } }
         }
     }
 }
 struct RootView: View {
-    @AppStorage("hasSeenFirstRunGuide") private var hasSeenGuide = false
+    @AppStorage("hasSeenVisualShareGuideV2") private var hasSeenGuide = false
     @State private var showGuide = false
     @EnvironmentObject private var store: AppStore
     var body: some View {
@@ -28,10 +35,13 @@ struct RootView: View {
         .id(store.sessionEpoch)
         .bibleCanvas()
         .alert("削除結果", isPresented: Binding(get: { store.privacyNotice != nil }, set: { if !$0 { store.privacyNotice = nil } })) { Button("確認") { store.privacyNotice = nil } } message: { Text(store.privacyNotice ?? "") }
-        .sheet(isPresented: $store.showImport) { ImportView().environmentObject(store) }
+        .sheet(isPresented: $store.showImport) {
+            if store.pendingShares.count == 1, let share = store.pendingShares.first { QuickShareView(share: share).environmentObject(store) }
+            else { ImportView().environmentObject(store) }
+        }
         .sheet(isPresented: $store.showQuestion) {
             if let item = store.selected, let target = store.questionTarget, let ownerID = store.account?.id {
-                QuestionView(ownerID: ownerID, client: store.client, item: item, rangeIndex: store.rangeIndex, target: target)
+                QuestionView(ownerID: ownerID, client: store.client, item: item, rangeIndex: store.rangeIndex, target: target, conversation: store.questionConversation)
             }
         }
     }

@@ -583,6 +583,12 @@
                     "workersAiConsent": {
                       "type": "boolean"
                     },
+                    "shareAiEnabled": {
+                      "type": "boolean"
+                    },
+                    "shareAiConsent": {
+                      "type": "boolean"
+                    },
                     "groundedConsent": {
                       "type": "object",
                       "properties": {
@@ -613,9 +619,345 @@
                     "groundedPolicyVersion",
                     "groundedNoticeJa",
                     "workersAiConsent",
+                    "shareAiEnabled",
+                    "shareAiConsent",
                     "groundedConsent"
                   ],
                   "additionalProperties": false
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/share-access": {
+      "post": {
+        "summary": "Enable or disable limited Share Extension AI access",
+        "description": "Requires current AI consent. Issues a share-only capability for at most24hours, bounded by the parent session expiry. It cannot authorize general API calls, developer operations, or existing unrelated conversations. Disabling, logout, consent withdrawal and data-epoch change stop access.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "enabled": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "enabled"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "enabled": {
+                          "const": false
+                        }
+                      },
+                      "required": [
+                        "enabled"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "token": {
+                          "type": "string"
+                        },
+                        "ownerId": {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        "expiresAt": {
+                          "type": "integer",
+                          "description": "Unix timestamp in seconds"
+                        }
+                      },
+                      "required": [
+                        "token",
+                        "ownerId",
+                        "expiresAt"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/share/start": {
+      "post": {
+        "summary": "Create canonical reading references for this share capability",
+        "description": "Only canonical references and translation metadata are persisted; shared scripture text is not stored. At most20ranges. Replay is bounded by capability and exact payload identity.",
+        "security": [
+          {
+            "shareBearer": []
+          }
+        ],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "requestId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "sharedText": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 20000
+                  }
+                },
+                "required": [
+                  "requestId",
+                  "sharedText"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ownerId": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "importId": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "conversationId": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "passage": {
+                            "$ref": "#/components/schemas/Passage"
+                          }
+                        },
+                        "required": [
+                          "conversationId",
+                          "passage"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "required": [
+                    "ownerId",
+                    "importId",
+                    "items"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/share/conversations/{id}/questions": {
+      "post": {
+        "summary": "Ask within a conversation created by this share capability",
+        "description": "",
+        "security": [
+          {
+            "shareBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuestionInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestResult"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/share/requests/{id}": {
+      "get": {
+        "summary": "Check only a question owned by this share capability",
+        "description": "",
+        "security": [
+          {
+            "shareBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestResult"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/public/reading-preview": {
+      "post": {
+        "summary": "Read public reference excerpts without AI or account history",
+        "description": "",
+        "security": [],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "sharedText": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 20000
+                  }
+                },
+                "required": [
+                  "sharedText"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
                 }
               }
             }
@@ -2284,6 +2626,11 @@
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer"
+      },
+      "shareBearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Expiring Share Extension-only capability; never a general API session"
       }
     },
     "schemas": {

@@ -75,6 +75,8 @@ describe('model registry: offline metadata is not a connection check', () => {
       max_completion_tokens: 512,
       temperature: 0.2,
       stream: false,
+      chat_template_kwargs: { enable_thinking: false },
+      response_format: { type: 'json_object' },
     });
     expect(validateSettings('@cf/qwen/qwen3-30b-a3b-fp8').effective).toEqual({
       max_tokens: 512,

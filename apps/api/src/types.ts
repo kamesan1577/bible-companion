@@ -8,6 +8,8 @@ export interface Env {
   AUTH_ORIGIN: string;
   NATIVE_CALLBACK: string;
   AI_ENABLED: string;
+  GENERAL_KNOWLEDGE_ENABLED?: string;
+  SHARE_AI_ENABLED?: string;
   ALLOWED_ANSWER_MODES?: string;
   DEFAULT_ANSWER_MODE?: string;
   CONNECTED_MODELS: string;
@@ -33,5 +35,5 @@ export interface Env {
 export type User = { id: string; display_name: string; role: 'owner' | 'member' };
 export type AppEnv = {
   Bindings: Env;
-  Variables: { user: User; tokenHash: string; requestId: string; dataEpoch: number };
+  Variables: { user: User; tokenHash: string; requestId: string; dataEpoch: number; shareCapability?: string };
 };

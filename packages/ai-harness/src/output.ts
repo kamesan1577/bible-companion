@@ -196,3 +196,17 @@ export function validateGeneratedAnswer(
 export function insufficientAnswer(boundaryExcluded = false): ValidatedAnswer {
   return render(boundaryExcluded ? 'spoiler-boundary' : 'insufficient-evidence', [], []);
 }
+
+/** General knowledge has no invented provenance; cited claims still use strict validation. */
+export function validateGeneralAnswer(raw: string, sources: readonly GroundingSource[], passage: Passage, spoilerAllowed: boolean): ValidatedAnswer {
+  const object = parseObject(raw);
+  if (Object.keys(object).some(key => !['status','claims','generalText'].includes(key)) || !Array.isArray(object.claims)) return fail();
+  const general = object.generalText;
+  if (general !== undefined && (typeof general !== 'string' || general.length > 600 || /https?:\/\/|<[^>]*>/.test(general))) return fail();
+  const text = typeof general === 'string' ? general.trim() : '';
+  if (text && object.status !== 'answer') return fail();
+  if (text) assertReferencesWithinBoundary(text, passage, spoilerAllowed);
+  const validated = validateGeneratedAnswer(JSON.stringify({status: object.claims.length ? object.status : (text ? 'insufficient' : object.status), claims: object.claims}), sources, passage, spoilerAllowed);
+  if (!text) return validated;
+  return {...validated, status:'answered', answer:[validated.claims.length ? validated.answer : '', '一般的な説明（出典未確認）\n'+text].filter(Boolean).join('\n\n')};
+}

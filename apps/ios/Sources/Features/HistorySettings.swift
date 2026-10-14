@@ -110,11 +110,14 @@ struct SettingsView: View {
             }
             Section { DisclosureGroup("今日の利用量") {
                 if let usage = store.usage {
-                    LabeledContent("概算消費", value: usage.budgetUnits.consumed.formatted())
-                    LabeledContent("処理中の予約枠", value: usage.budgetUnits.reserved.formatted())
-                    LabeledContent("上限", value: usage.limit.formatted())
-                    LabeledContent("次のリセット") { Text(Date(timeIntervalSince1970: usage.resetAt), format: .dateTime.month().day().hour().minute()) }
-                    Text("サーバーの予算方式に基づく予約・消費の概算単位です。無料枠では推定値を使う場合があります。実測請求額ではありません。").bibleTextStyle(.caption)
+                    let used = usage.budgetUnits.consumed + usage.budgetUnits.reserved
+                    ProgressView(value: min(used / max(usage.limit, 1), 1))
+                    LabeledContent("今日の無料利用枠", value: "残り約\(Int(max(0, 1 - used / max(usage.limit, 1)) * 100))％")
+                    LabeledContent("回復する日時") { Text(Date(timeIntervalSince1970: usage.resetAt), format: .dateTime.month().day().hour().minute()) }
+                    Text("利用量が確認できた回答は、その量で精算します。確認できない場合は安全のため多めに計上します。").bibleTextStyle(.caption)
+                    if store.account?.canDebug == true {
+                        DisclosureGroup { Text("消費 \(usage.budgetUnits.consumed.formatted()) / 予約 \(usage.budgetUnits.reserved.formatted()) / 上限 \(usage.limit.formatted())").bibleTextStyle(.caption) } label: { Label("開発者用の計算値", systemImage: "ladybug.fill").bibleForeground(.danger) }
+                    }
                 }
                 else { Text(store.account == nil ? "ログイン後に利用量を確認できます。" : "利用量はまだ確認していません。表示がないことは消費ゼロを意味しません。").bibleTextStyle(.caption) }
                 Button("利用量を確認") { Task { await store.loadUsage() } }.disabled(store.account == nil)
@@ -123,7 +126,7 @@ struct SettingsView: View {
             if let notice = store.shareNotice { Section("共有機能") { Text(notice).bibleTextStyle(.body); Button("共有内容を再確認") { store.refreshInbox() } } }
             Section { DisclosureGroup("表示とデータの保存") {
                 Text("文字サイズ、明るさ、透明度、動きはiPhoneの設定に従います。").bibleTextStyle(.body)
-                Text("章節の履歴はアカウント別に保存します。公開が確認されたパブリックドメイン資料の概要だけを保存し、表示できる期限を最長24時間に制限します。接続時に出典の権利・版を再確認します。共有本文・資料原文・AI回答は、この端末には永続保存しません。未確認の質問は重複送信を防ぐため、処理確認まで端末に保護して保持します。会話の質問と回答はサーバーの履歴に保存されます。保存を選んだ比較結果もサーバーに残ります。個人データの削除から消去できますが、事業者バックアップの消去時期は未確定です。").bibleTextStyle(.caption)
+                Text("人物・地名・登場箇所の索引はアプリに同梱しています。公開が確認された絵画の画像は初回取得後に端末へ保存します。章節の履歴はアカウント別に保存します。公開が確認されたパブリックドメイン資料の概要だけを保存し、表示できる期限を最長24時間に制限します。接続時に出典の権利・版を再確認します。共有本文・資料原文・AI回答は、この端末には永続保存しません。未確認の質問は重複送信を防ぐため、処理確認まで端末に保護して保持します。会話の質問と回答はサーバーの履歴に保存されます。保存を選んだ比較結果もサーバーに残ります。個人データの削除から消去できますが、事業者バックアップの消去時期は未確定です。").bibleTextStyle(.caption)
             }
             }
             if let owner = store.account {
@@ -132,7 +135,7 @@ struct SettingsView: View {
                     NavigationLink("アカウントを削除") { PrivacyDeleteView(intent: DeletionIntent(ownerID: owner.id, sessionEpoch: store.sessionEpoch, kind: .account)) }
                 }
             }
-            if let owner = store.account, owner.canDebug == true { Section("開発者") { NavigationLink("モデルと比較") { DeveloperView(ownerID: owner.id, client: store.client) } } }
+            if let owner = store.account, owner.canDebug == true { Section("開発者") { NavigationLink("開発者用：モデルと比較") { DeveloperView(ownerID: owner.id, client: store.client) } } }
             if let message = notice ?? store.errorMessage { Section { Text(message).bibleTextStyle(.body) } }
         }
         .bibleCanvas().navigationTitle("設定")

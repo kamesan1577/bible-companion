@@ -415,6 +415,7 @@ function op(
     additionalSuccess = [],
     contentType = 'application/json',
     auth = true,
+    authScheme = 'bearerAuth',
     parameters = [],
     description = '',
   } = {},
@@ -428,7 +429,7 @@ function op(
   (paths[path] ??= {})[method] = {
     summary,
     description,
-    security: auth ? [{ bearerAuth: [] }] : [],
+    security: auth ? [{ [authScheme]: [] }] : [],
     parameters: [...parametersInPath, ...parameters],
     ...(input
       ? { requestBody: { required: true, content: { 'application/json': { schema: input } } } }
@@ -528,9 +529,23 @@ op('get', '/v1/me/ai-policy', 'Read allowed answer modes and current experimenta
     groundedPolicyVersion: text,
     groundedNoticeJa: text,
     workersAiConsent: bool,
+    shareAiEnabled: bool,
+    shareAiConsent: bool,
     groundedConsent: object({ accepted: bool, policyVersion: nullable(text) }),
   }),
 });
+op('post', '/v1/me/share-access', 'Enable or disable limited Share Extension AI access', {
+  input: object({enabled:bool}), output:{oneOf:[object({enabled:{const:false}}),object({token:text,ownerId:uuid,expiresAt:time})]},
+  description:'Requires current AI consent. Issues a share-only capability for at most24hours, bounded by the parent session expiry. It cannot authorize general API calls, developer operations, or existing unrelated conversations. Disabling, logout, consent withdrawal and data-epoch change stop access.',
+});
+op('post', '/share/start', 'Create canonical reading references for this share capability', {
+  authScheme:'shareBearer', input:object({requestId:uuid,sharedText:{type:'string',minLength:1,maxLength:20000}}),
+  output:object({ownerId:uuid,importId:uuid,items:array(object({conversationId:uuid,passage:ref('Passage')}))}),
+  description:'Only canonical references and translation metadata are persisted; shared scripture text is not stored. At most20ranges. Replay is bounded by capability and exact payload identity.',
+});
+op('post', '/share/conversations/{id}/questions', 'Ask within a conversation created by this share capability', {authScheme:'shareBearer',input:ref('QuestionInput'),output:ref('RequestResult')});
+op('get', '/share/requests/{id}', 'Check only a question owned by this share capability', {authScheme:'shareBearer',output:ref('RequestResult')});
+op('post', '/public/reading-preview', 'Read public reference excerpts without AI or account history', {auth:false,input:object({sharedText:{type:'string',minLength:1,maxLength:20000}}),output:{type:'object',additionalProperties:true}});
 op('post', '/v1/me/consents', 'Confirm or revoke Cloudflare AI data transmission', {
   input: object(
     { workersAi: bool, groundedGeneration: object({ accepted: bool, policyVersion: text }) },
@@ -722,7 +737,7 @@ const spec = {
   },
   servers: [{ url: 'http://localhost:8787', description: 'Local development only' }],
   paths,
-  components: { securitySchemes: { bearerAuth: { type: 'http', scheme: 'bearer' } }, schemas },
+  components: { securitySchemes: { bearerAuth: { type: 'http', scheme: 'bearer' }, shareBearer: {type:'http',scheme:'bearer',description:'Expiring Share Extension-only capability; never a general API session'} }, schemas },
 };
 writeFileSync(
   new URL('../docs/openapi.json', import.meta.url),

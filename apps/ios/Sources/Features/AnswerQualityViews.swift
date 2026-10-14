@@ -20,18 +20,18 @@ struct GroundedConsentView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("根拠に基づく生成について") {
-                    Text(intent.policy.groundedNoticeJa).bibleTextStyle(.body)
+                Section("AIで解説を読む") {
+                    Text("AIは間違えることがあります。解説は本文と出典を確かめながら読んでください。").bibleTextStyle(.body)
                     Text("質問と関連する読書の文脈をCloudflare Workers AIへ送信し、AIが新しい文章を生成します。引用があることは、説明の正確さや先の内容を含まないことの保証ではありません。").bibleTextStyle(.body)
-                    Text("この同意ではAIへの送信も有効にします。利用には、サーバーでの回答方法の許可、モデル接続、利用条件の確認と予算枠が別途必要です。いつでも同意を取り消せます。").bibleTextStyle(.caption)
-                    Text("説明の版: \(intent.policy.groundedPolicyVersion)").bibleTextStyle(.caption)
+                    if intent.policy.shareAiEnabled == true { Text("共有画面でも使えるように、解説・質問専用の24時間の認証をこのアプリと共有拡張だけで利用します。通常のログイン認証は共有しません。いつでも設定から停止できます。").bibleTextStyle(.caption) }
+                    DisclosureGroup("詳しい注意事項") { Text(intent.policy.groundedNoticeJa).bibleTextStyle(.caption) }
                 }
                 Section {
-                    Button("注意事項を理解し、AI送信と生成に同意する") {
+                    Button(intent.policy.shareAiEnabled == true ? "同意して、共有画面でもAIを使う" : "同意して解説を読む") {
                         busy = true
                         Task {
                             defer { busy = false }
-                            do { try await store.consentGrounded(true, intent: intent); dismiss() }
+                            do { try await store.consentGrounded(true, intent: intent); if intent.policy.shareAiEnabled == true { try await store.enableShareAI(expectedEpoch: intent.sessionEpoch) }; dismiss() }
                             catch { message = "同意の更新を確認できませんでした。アカウントと説明の版を再確認してください。自動で再送はしていません。" }
                         }
                     }.disabled(busy || !intent.permits(ownerID: store.account?.id, epoch: store.sessionEpoch, currentPolicy: store.aiPolicy))

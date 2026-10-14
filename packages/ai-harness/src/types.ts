@@ -123,6 +123,8 @@ export interface AnswerDependencies {
   now?: () => number;
   /** Server policy only. Generated prose is experimental and not spoiler-proof. */
   answerMode?: 'reviewed-claim-selection' | 'grounded-generation';
+  /** Server opt-in; unverified knowledge stays distinct from cited claims. */
+  allowGeneralKnowledge?: boolean;
 }
 export interface Citation {
   sourceKind: GroundingSource['kind'];
@@ -152,10 +154,10 @@ export interface ProviderPromptCacheReport {
 export interface UsageReport {
   /** No verified separate reasoning-token counter is available in the current binding schemas. */
   reasoningTokens: null;
-  actual: { inputTokens: number; outputTokens: number; totalTokens?: number } | null;
+  actual: { inputTokens: number; outputTokens: number; totalTokens?: number; providerNeurons?: number } | null;
   estimated: { inputTokens: number; maxOutputTokens: number; method: 'utf8-byte-upper-bound' };
   /** No conversion from tokens to neurons without model-specific verified rates. */
-  neurons: null;
+  neurons: number | null;
   costUsd: null;
 }
 export interface ReferenceSystemNotice {

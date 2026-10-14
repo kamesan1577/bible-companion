@@ -13,6 +13,7 @@ import { exportsApi } from './export';
 import { fail, now, canDebug } from './http';
 import { rateLimit } from './budget';
 import { sharedPreview } from './shared-preview';
+import {shareAccess,shareAi} from './share-ai';
 const app = new Hono<AppEnv>();
 app.use('*', async (c, next) => {
   c.set('requestId', crypto.randomUUID());
@@ -52,6 +53,7 @@ app.use('/auth/*', async (c, next) => {
 });
 app.route('/auth', auth);
 app.route('/public', sharedPreview);
+app.route('/share', shareAi);
 app.use('/v1/*', async (c, next) => {
   const header = c.req.header('Authorization');
   if (!header?.startsWith('Bearer ') || header.length > 200)
@@ -75,6 +77,7 @@ app.post('/v1/logout', async (c) => {
   await c.env.DB.prepare('DELETE FROM sessions WHERE token_hash=?').bind(c.get('tokenHash')).run();
   return c.body(null, 204);
 });
+app.route('/v1', shareAccess);
 app.route('/v1', data);
 app.route('/v1', reading);
 app.route('/v1', scripture);

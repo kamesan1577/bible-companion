@@ -34,29 +34,43 @@ struct DeveloperView: View {
     private var duplicateConfiguration: Bool { first == second && firstMode == secondMode }
     private var validSettings: Bool { bounds?.accepts(tokens: maxTokens, temperature: temperature, timeout: timeoutMs) == true }
     private var tokenChoices: [Int] { guard let bounds else { return [] }; return Array(Set([bounds.outputTokens.lowerBound, bounds.outputTokens.upperBound, 128, 256, 512, 1024, 2048].filter(bounds.outputTokens.contains))).sorted() }
-    var body: some View {
+    private var formContent: some View {
         Form {
             if store.account?.canDebug != true {
                 BibleStateView(title: "開発用アカウント専用です", message: "このアカウントではモデルの設定を変更できません。")
             } else {
-                Section("モデル") {
+                modelSection
+                comparisonSection
+                if let message { Section { Text(message).bibleTextStyle(.body) } }
+            }
+        }
+    }
+    private var lifecycleContent: some View {
+        formContent
+        .id(store.sessionEpoch)
+        .bibleCanvas().navigationTitle("開発者用デバッグ").bibleDeveloperTint()
+        .task { guard store.account?.canDebug == true else { return }; viewActive = true; comparison.restore(); await store.loadAIPolicy(); await perform { epoch, operation in let value: JSONValue = try await client.get("/v1/developer/models"); guard isCurrent(epoch), operationGeneration == operation else { return }; catalog = value } }
+        .confirmationDialog("この内容で比較しますか？", isPresented: $confirmRun, titleVisibility: .visible) { Button("比較を開始") { runComparison() } } message: {
+            Text("対象：\(frozenPassageLabel)。2つの設定へ\(pendingPlan?["questions"].array.count ?? 0)問を送信します。回答方法: \(pendingPlan.map(modeLabels) ?? "未確認")。予約枠は\(estimate?["reservedBudgetUnits"].display ?? "未確認")です。\(pendingPlan?["saveResults"].bool == true ? "結果は自分のアカウントに保存します。" : "結果本文は保存せず、この画面でのみ確認します。")")
+        }
+        .onDisappear { viewActive = false; operationGeneration = UUID(); busy = false; comparison.pause(); invalidatePlan() }
+    }
+    var body: some View {
+        lifecycleContent
+        .onChange(of: store.selectedPassage) { _, _ in invalidatePlan(); comparison.clearPresentationForScopeChange() }
+        .onChange(of: first) { _, _ in clampSettings(); invalidatePlan() }.onChange(of: second) { _, _ in clampSettings(); invalidatePlan() }
+        .onChange(of: firstMode) { _, _ in invalidatePlan() }.onChange(of: secondMode) { _, _ in invalidatePlan() }
+        .onChange(of: store.aiPolicy?.groundedPolicyVersion) { _, _ in invalidatePlan() }.onChange(of: store.aiPolicy?.workersAiConsent) { _, _ in invalidatePlan() }.onChange(of: store.aiPolicy?.groundedConsent.accepted) { _, _ in invalidatePlan() }
+        .onChange(of: store.aiPolicy?.allowedAnswerModes) { _, _ in invalidatePlan() }
+        .onChange(of: store.aiPolicy?.groundedConsent.policyVersion) { _, _ in invalidatePlan() }
+        .onChange(of: questions) { _, _ in invalidatePlan() }.onChange(of: saveResults) { _, _ in invalidatePlan() }
+        .onChange(of: maxTokens) { _, _ in invalidatePlan() }.onChange(of: temperature) { _, _ in invalidatePlan() }.onChange(of: timeoutMs) { _, _ in invalidatePlan() }
+    }
+    private var modelSection: some View {
+Section("モデル") {
                     ForEach(models, id: \.self) { model in
                         DisclosureGroup {
-                            LabeledContent("接続", value: model["connectionStatus"].display)
-                            LabeledContent("実行検証", value: model["runtimeValidation"].display)
-                            LabeledContent("利用区分", value: model["billingTier"].display)
-                            LabeledContent("モデル規約の確認", value: model["termsReview"]["status"].string == "reviewed" ? "サーバーで確認済み" : "未確認・利用不可")
-                            Text("この画面では規約への同意や有料利用の承認は行いません。").bibleTextStyle(.caption)
-                            LabeledContent("予算方式", value: model["budgetReadiness"]["budgetMode"].string == "free-provider-hard-stop" ? "無料枠・事業者側停止" : (model["budgetReadiness"]["budgetMode"].string == "strict-proof" ? "上限の検証資料を必須とする方式" : "未確認"))
-                            LabeledContent("予算の準備", value: model["budgetReadiness"]["ready"].bool == true ? "方式の準備を確認済み" : AIAvailabilityExplanation.catalogReason(model["budgetReadiness"]["reason"].string))
-                            Text(model["budgetReadiness"]["budgetBoundVerified"].bool == true ? "予約上限の検証資料があります。" : (model["budgetReadiness"]["ready"].bool == true ? "予約量は推定です。厳密な上限が証明されたことを意味しません。" : "予約上限の検証状況は未確認です。")).bibleTextStyle(.caption)
-                            if model["budgetReadiness"]["preparedRequestBudgetRequired"].bool == true { Text("この表示はモデルを選択するための準備状況です。実際の質問文・出典・出力上限から、送信ごとに利用枠を確認します。").bibleTextStyle(.caption) }
-                            ForEach(model["budgetReadiness"]["warnings"].array, id: \.self) { Text($0.string == "EXACT_REQUEST_BUDGET_CHECK_REQUIRED" ? "実際のリクエストごとに利用枠の確認が必要です。" : ($0.string ?? "予算上の注意事項を確認してください。")).bibleTextStyle(.caption) }
-                            LabeledContent("文脈上限", value: model["contextWindowTokens"].display)
-                            LabeledContent("推論制御", value: model["reasoningControl"].display)
-                            LabeledContent("出力上限", value: "\(model["settingsSchema"]["maxOutputTokens"]["minimum"].display)–\(model["settingsSchema"]["maxOutputTokens"]["maximum"].display)")
-                            Text("カタログにある機能と、このアプリで検証済みの実行方法は別です。未検証パラメーターは送信しません。").bibleTextStyle(.caption)
-                            if let raw = model["officialUrl"].string, let url = URL(string: raw), url.scheme == "https", url.user == nil, url.password == nil { Link("公式モデル情報", destination: url) }
+                            DeveloperModelDetails(model: model)
                         } label: {
                             VStack(alignment: .leading, spacing: BibleTheme.Space.xs) {
                                 Text(model["displayName"].string ?? "モデル")
@@ -73,7 +87,9 @@ struct DeveloperView: View {
                     Button("既定のモデルへ戻す") { Task { await perform { epoch, operation in try await client.empty("/v1/developer/model-preference", method: "DELETE"); guard isCurrent(epoch), operationGeneration == operation else { return }; message = "既定値へ戻しました。過去の回答は変わりません。" } } }.disabled(operationBusy)
                     Text("回答は完了したJSONで受け取ります。未検証の推論パラメーターは送信しません。").bibleTextStyle(.caption)
                 }
-                Section("2つの設定を比較") {
+    }
+    private var comparisonSection: some View {
+Section("2つの設定を比較") {
                     if let frozen = comparison.pending { Text("実行中の対象: \(passageLabel(frozen.plan))") } else if jobID != nil { Text("実行中の比較の対象は保存した計画に従います。") } else if let passage = store.selectedPassage { Text("次の比較の対象: \(passage.label)") } else { Text("先に読書画面で箇所を選んでください。") }
                     Picker("比較Aの回答方法", selection: $firstMode) { ForEach(AnswerMode.allCases) { mode in Text(mode.label).tag(mode).disabled(store.aiPolicy?.allowedAnswerModes.contains(mode) != true) } }.disabled(operationBusy || jobID != nil)
                     modelPicker("比較B", selection: $second)
@@ -126,24 +142,6 @@ struct DeveloperView: View {
                         DisclosureGroup("保存された比較の詳細") { Text(saved.display).bibleTextStyle(.caption).textSelection(.enabled) }
                     }
                 }
-                if let message { Section { Text(message).bibleTextStyle(.body) } }
-            }
-        }
-        .id(store.sessionEpoch)
-        .bibleCanvas().navigationTitle("モデルと比較")
-        .task { guard store.account?.canDebug == true else { return }; viewActive = true; comparison.restore(); await store.loadAIPolicy(); await perform { epoch, operation in let value: JSONValue = try await client.get("/v1/developer/models"); guard isCurrent(epoch), operationGeneration == operation else { return }; catalog = value } }
-        .confirmationDialog("この内容で比較しますか？", isPresented: $confirmRun, titleVisibility: .visible) { Button("比較を開始") { runComparison() } } message: {
-            Text("対象：\(frozenPassageLabel)。2つの設定へ\(pendingPlan?["questions"].array.count ?? 0)問を送信します。回答方法: \(pendingPlan.map(modeLabels) ?? "未確認")。予約枠は\(estimate?["reservedBudgetUnits"].display ?? "未確認")です。\(pendingPlan?["saveResults"].bool == true ? "結果は自分のアカウントに保存します。" : "結果本文は保存せず、この画面でのみ確認します。")")
-        }
-        .onDisappear { viewActive = false; operationGeneration = UUID(); busy = false; comparison.pause(); invalidatePlan() }
-        .onChange(of: store.selectedPassage) { _, _ in invalidatePlan(); comparison.clearPresentationForScopeChange() }
-        .onChange(of: first) { _, _ in clampSettings(); invalidatePlan() }.onChange(of: second) { _, _ in clampSettings(); invalidatePlan() }
-        .onChange(of: firstMode) { _, _ in invalidatePlan() }.onChange(of: secondMode) { _, _ in invalidatePlan() }
-        .onChange(of: store.aiPolicy?.groundedPolicyVersion) { _, _ in invalidatePlan() }.onChange(of: store.aiPolicy?.workersAiConsent) { _, _ in invalidatePlan() }.onChange(of: store.aiPolicy?.groundedConsent.accepted) { _, _ in invalidatePlan() }
-        .onChange(of: store.aiPolicy?.allowedAnswerModes) { _, _ in invalidatePlan() }
-        .onChange(of: store.aiPolicy?.groundedConsent.policyVersion) { _, _ in invalidatePlan() }
-        .onChange(of: questions) { _, _ in invalidatePlan() }.onChange(of: saveResults) { _, _ in invalidatePlan() }
-        .onChange(of: maxTokens) { _, _ in invalidatePlan() }.onChange(of: temperature) { _, _ in invalidatePlan() }.onChange(of: timeoutMs) { _, _ in invalidatePlan() }
     }
     private var frozenPassageLabel: String { pendingPlan.map(passageLabel) ?? "未確認" }
     private func passageLabel(_ plan: JSONValue) -> String {
@@ -193,5 +191,30 @@ struct DeveloperView: View {
         defer { if operationGeneration == operation { busy = false } }
         do { try Task.checkCancellation(); try await action(epoch, operation) }
         catch { if isCurrent(epoch), operationGeneration == operation { message = (error as? NetworkFailure)?.userMessage ?? "確認できませんでした。再実行前に状態を確認してください。" } }
+    }
+}
+
+private struct DeveloperModelDetails: View {
+    let model: JSONValue
+    var body: some View {
+        VStack(alignment: .leading) {
+
+                            LabeledContent("接続", value: model["connectionStatus"].display)
+                            LabeledContent("実行検証", value: model["runtimeValidation"].display)
+                            LabeledContent("利用区分", value: model["billingTier"].display)
+                            LabeledContent("モデル規約の確認", value: model["termsReview"]["status"].string == "reviewed" ? "サーバーで確認済み" : "未確認・利用不可")
+                            Text("この画面では規約への同意や有料利用の承認は行いません。").bibleTextStyle(.caption)
+                            LabeledContent("予算方式", value: model["budgetReadiness"]["budgetMode"].string == "free-provider-hard-stop" ? "無料枠・事業者側停止" : (model["budgetReadiness"]["budgetMode"].string == "strict-proof" ? "上限の検証資料を必須とする方式" : "未確認"))
+                            LabeledContent("予算の準備", value: model["budgetReadiness"]["ready"].bool == true ? "方式の準備を確認済み" : AIAvailabilityExplanation.catalogReason(model["budgetReadiness"]["reason"].string))
+                            Text(model["budgetReadiness"]["budgetBoundVerified"].bool == true ? "予約上限の検証資料があります。" : (model["budgetReadiness"]["ready"].bool == true ? "予約量は推定です。厳密な上限が証明されたことを意味しません。" : "予約上限の検証状況は未確認です。")).bibleTextStyle(.caption)
+                            if model["budgetReadiness"]["preparedRequestBudgetRequired"].bool == true { Text("この表示はモデルを選択するための準備状況です。実際の質問文・出典・出力上限から、送信ごとに利用枠を確認します。").bibleTextStyle(.caption) }
+                            ForEach(model["budgetReadiness"]["warnings"].array, id: \.self) { Text($0.string == "EXACT_REQUEST_BUDGET_CHECK_REQUIRED" ? "実際のリクエストごとに利用枠の確認が必要です。" : ($0.string ?? "予算上の注意事項を確認してください。")).bibleTextStyle(.caption) }
+                            LabeledContent("文脈上限", value: model["contextWindowTokens"].display)
+                            LabeledContent("推論制御", value: model["reasoningControl"].display)
+                            LabeledContent("出力上限", value: "\(model["settingsSchema"]["maxOutputTokens"]["minimum"].display)–\(model["settingsSchema"]["maxOutputTokens"]["maximum"].display)")
+                            Text("カタログにある機能と、このアプリで検証済みの実行方法は別です。未検証パラメーターは送信しません。").bibleTextStyle(.caption)
+                            if let raw = model["officialUrl"].string, let url = URL(string: raw), url.scheme == "https", url.user == nil, url.password == nil { Link("公式モデル情報", destination: url) }
+
+        }
     }
 }

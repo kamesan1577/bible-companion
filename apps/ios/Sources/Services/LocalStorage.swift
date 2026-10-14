@@ -2,7 +2,8 @@ import Foundation
 import CryptoKit
 import CompanionCore
 
-/// App Group stores pending shares only, never credentials, answers or account history.
+/// App Group stores pending shares and a limited, expiring share-only capability.
+/// The general session token, private answers and account history are never shared.
 /// Per-file atomic replacement avoids a read-modify-write race between app and extension.
 enum ShareInbox {
     enum InboxError: Error { case unavailable, oversized, full, coordinationFailed }
@@ -43,7 +44,32 @@ enum ShareInbox {
     }
     static func setOwner(_ owner: String?) throws {
         guard owner == nil || UUID(uuidString: owner ?? "") != nil else { throw NetworkFailure.invalidResponse }
-        try withLock { root in try Data((owner ?? "").utf8).write(to: root.appendingPathComponent("owner.marker"), options: [.atomic, .completeFileProtection]) }
+        try withLock { root in
+            if try readOwner(at: root) != owner {
+                let file = root.appendingPathComponent("ai-access.capability")
+                if FileManager.default.fileExists(atPath: file.path) { try FileManager.default.removeItem(at: file) }
+            }
+            try Data((owner ?? "").utf8).write(to: root.appendingPathComponent("owner.marker"), options: [.atomic, .completeFileProtection])
+        }
+    }
+    static func saveAIAccess(_ value: ShareAIAccess) throws {
+        try withLock { root in
+            guard value.isValid(owner: try readOwner(at: root)) else { throw InboxError.unavailable }
+            try JSONEncoder().encode(value).write(to: root.appendingPathComponent("ai-access.capability"), options: [.atomic, .completeFileProtection])
+        }
+    }
+    static func aiAccess() throws -> ShareAIAccess? {
+        try withLock { root in
+            let file = root.appendingPathComponent("ai-access.capability")
+            guard FileManager.default.fileExists(atPath: file.path) else { return nil }
+            let handle = try FileHandle(forReadingFrom: file); defer { try? handle.close() }
+            let data = try handle.read(upToCount: 4097) ?? Data()
+            guard data.count <= 4096, let value = try? JSONDecoder().decode(ShareAIAccess.self, from: data), value.isValid(owner: try readOwner(at: root)) else { return nil }
+            return value
+        }
+    }
+    static func clearAIAccess() throws {
+        try withLock { root in let file = root.appendingPathComponent("ai-access.capability"); if FileManager.default.fileExists(atPath: file.path) { try FileManager.default.removeItem(at: file) } }
     }
     static func enqueue(_ text: String) throws {
         guard !text.isEmpty, text.utf16.count <= 20_000, text.utf8.count <= 60_000 else { throw InboxError.oversized }
@@ -79,6 +105,8 @@ enum ShareInbox {
     static func remove(_ id: UUID) throws { try withLock { root in try FileManager.default.removeItem(at: root.appendingPathComponent(id.uuidString).appendingPathExtension("json")) } }
     static func clear() throws {
         try withLock { root in
+            let access = root.appendingPathComponent("ai-access.capability")
+            if FileManager.default.fileExists(atPath: access.path) { try FileManager.default.removeItem(at: access) }
             try Data().write(to: root.appendingPathComponent("owner.marker"), options: [.atomic, .completeFileProtection])
             for url in try FileManager.default.contentsOfDirectory(at: root, includingPropertiesForKeys: nil) where url.pathExtension == "json" { try FileManager.default.removeItem(at: url) }
         }

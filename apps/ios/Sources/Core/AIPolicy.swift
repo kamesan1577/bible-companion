@@ -13,6 +13,8 @@ public struct AIPolicy: Codable, Sendable {
     public let defaultAnswerMode: AnswerMode?
     public let groundedPolicyVersion: String
     public let groundedNoticeJa: String
+    public let shareAiEnabled: Bool?
+    public let shareAiConsent: Bool?
     public let workersAiConsent: Bool
     public let groundedConsent: GroundedConsent
     public func permits(_ mode: AnswerMode) -> Bool {

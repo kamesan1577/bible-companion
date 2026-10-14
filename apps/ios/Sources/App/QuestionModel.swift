@@ -3,7 +3,7 @@ import CompanionCore
 
 @MainActor final class QuestionModel: ObservableObject {
     @Published var draft = ""
-    @Published var sourceOnly = true
+    @Published var sourceOnly = false
     @Published var answerMode: AnswerMode = .reviewedClaimSelection
     @Published private(set) var aiPolicy: AIPolicy?
     @Published private(set) var policyError: String?
@@ -16,6 +16,7 @@ import CompanionCore
     var isCheckingStatus: Bool { statusAttempt != nil }
     @Published private(set) var needsStatusCheck = false
     @Published private(set) var requestID: String?
+    @Published private(set) var conversation: Conversation?
     private var conversationID: String?
     private var task: Task<Void, Never>?
     private var gate = RequestGate()
@@ -31,12 +32,13 @@ import CompanionCore
         if let conversation {
             guard conversation.resumeRangeIndex(in: item) == rangeIndex else { resumeInvalid = true; return }
             conversationID = conversation.id; spoilerAllowed = conversation.spoilerAllowed
+            self.conversation = conversation
             currentScope = try? QuestionScope(reading: item.ranges[rangeIndex], target: conversation.passage, spoilerAllowed: conversation.spoilerAllowed)
         }
     }
     func loadPolicy() async {
         let generation = policyGate.invalidate(); aiPolicy = nil; policyError = nil
-        do { let value: AIPolicy = try await client.get("/v1/me/ai-policy"); guard !Task.isCancelled, policyGate.accepts(generation) else { return }; aiPolicy = value; policyError = nil }
+        do { let value: AIPolicy = try await client.get("/v1/me/ai-policy"); guard !Task.isCancelled, policyGate.accepts(generation) else { return }; aiPolicy = value; if let selected = value.defaultAnswerMode { answerMode = selected }; policyError = nil }
         catch { if !Task.isCancelled, policyGate.accepts(generation) { aiPolicy = nil; policyError = "AIの利用条件を確認できません。再確認するか、範囲の資料だけを確認してください。" } }
     }
     var canUseSelectedMode: Bool { sourceOnly || aiPolicy?.permits(answerMode) == true }
@@ -61,6 +63,7 @@ import CompanionCore
                     let conversation: Conversation = try await client.post("/v1/conversations", body: Create(importId: item.id, rangeIndex: rangeIndex, passage: target, spoilerAllowed: scope.spoilerAllowed))
                     guard gate.accepts(generation) else { return }
                     conversationID = conversation.id; currentScope = scope
+                    self.conversation = conversation
                 }
                 guard let conversationID else { throw NetworkFailure.invalidResponse }
                 try Task.checkCancellation()

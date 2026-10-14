@@ -20,6 +20,8 @@ import CompanionCore
     @Published private(set) var cachedSnapshot: PublicReadingSnapshot?
     @Published private(set) var isRevalidatingSource = false
     @Published private(set) var pendingShares: [PendingShare] = []
+    private var importingOwnedShare = false
+    private var refreshingShareAI = false
     @Published private(set) var shareNotice: String?
     @Published private(set) var usage: UsageResponse?
     @Published private(set) var consentMutationID: UUID?
@@ -35,6 +37,7 @@ import CompanionCore
     @Published var showImport = false
     @Published var showQuestion = false
     @Published var questionTarget: Passage?
+    @Published var questionConversation: Conversation?
     @Published private(set) var client: APIClient
     private let loginFlow = WebLogin()
     private let publicCache: PublicReadingCache
@@ -224,7 +227,7 @@ import CompanionCore
     func select(_ item: ImportRecord, range: Int = 0) {
         guard !isDeleting, item.ranges.indices.contains(range) else { return }
         if selected?.id != item.id { sourceExcerpt = nil }
-        cancelReading(); selected = item; rangeIndex = range; reading = nil; selectedTab = 0; questionTarget = nil
+        cancelReading(); selected = item; rangeIndex = range; reading = nil; selectedTab = 0; questionTarget = nil; questionConversation = nil
         loadReading()
     }
     func changeRange(_ index: Int) { guard let selected else { return }; select(selected, range: index) }
@@ -309,14 +312,29 @@ import CompanionCore
     }
     func cancelReading() { if cachedSnapshot != nil { cachedSnapshot = nil; reading = nil }; readingTask?.cancel(); readingTask = nil; cacheExpiryTask?.cancel(); cacheExpiryTask = nil; gate.invalidate(); isLoading = false; isRevalidatingSource = false }
     func enteredForeground() {
+        Task { await refreshShareAI() }
         refreshInbox()
         if account != nil, selected != nil, !isTransitioning, !isAuthenticating { loadReading() }
     }
-    func ask(target: Passage? = nil) { questionTarget = target ?? selectedPassage; showQuestion = true }
+    func ask(target: Passage? = nil, conversation: Conversation? = nil) { questionTarget = target ?? selectedPassage; questionConversation = target == nil ? (conversation ?? questionConversation) : conversation; showQuestion = true }
     func refreshInbox() {
         do { pendingShares = try ShareInbox.pending().filter { $0.ownerID == nil || $0.ownerID == account?.id }; shareNotice = nil }
         catch ShareInbox.InboxError.unavailable { shareNotice = "共有機能の保存領域を利用できません。章節・テキストの手動入力は使えます。署名時のApp Group設定を確認してください。" }
         catch { shareNotice = "共有内容を読み出せません。端末のロックを解除して再確認してください。読み出せなかった内容は消去していません。" }
+        // Only a single share already bound to this same account is automatic.
+        // Anonymous shares and shares across accounts still require explicit confirmation.
+        guard !importingOwnedShare, !isTransitioning, !isDeleting, !showImport,
+              let owner = account?.id, pendingShares.count == 1, let share = pendingShares.first,
+              !share.requiresAccountConfirmation(currentOwner: owner),
+              let parsed = try? SharedImportParser.parse(share.text), !parsed.ranges.isEmpty,
+              parsed.warnings.isEmpty,
+              let key = try? ShareInbox.submissionKey(share: share, owner: owner, ranges: parsed.ranges, translation: parsed.translation) else { return }
+        importingOwnedShare = true
+        Task {
+            defer { importingOwnedShare = false }
+            do { try await saveImport(ImportInput(idempotencyKey: key, ranges: parsed.ranges, translation: parsed.translation), share: share, transientExcerpt: share.text) }
+            catch { shareNotice = "共有した箇所を開けませんでした。共有内容は残っています。もう一度確認してください。" }
+        }
     }
     func removeShare(_ share: PendingShare) throws { try ShareInbox.remove(share.id); refreshInbox() }
     func saveImport(_ input: ImportInput, share: PendingShare?, transientExcerpt: String) async throws {
@@ -369,6 +387,24 @@ import CompanionCore
         guard sessionEpoch == intent.sessionEpoch, account?.id == intent.ownerID, consentMutationID == mutation, response["workersAi"].bool != nil, (!enabled || response["workersAi"].bool == true) else { throw NetworkFailure.cancelled }
         consentMutationID = nil
         await loadAIPolicy()
+    }
+    func enableShareAI(expectedEpoch: UUID) async throws {
+        guard aiPolicy?.shareAiEnabled == true, sessionEpoch == expectedEpoch, let owner = account?.id else { throw NetworkFailure.cancelled }
+        let value: ShareAIAccess = try await client.post("/v1/me/share-access", body: ["enabled": true])
+        guard sessionEpoch == expectedEpoch, account?.id == owner, value.isValid(owner: owner) else { throw NetworkFailure.cancelled }
+        try ShareInbox.saveAIAccess(value)
+        await loadAIPolicy()
+    }
+    func refreshShareAI() async {
+        guard account != nil, !isTransitioning, !refreshingShareAI else { return }
+        refreshingShareAI = true; defer { refreshingShareAI = false }
+        let epoch = sessionEpoch
+        await loadAIPolicy()
+        guard sessionEpoch == epoch else { return }
+        guard let policy = aiPolicy else { return }
+        if policy.shareAiEnabled != true || policy.shareAiConsent != true { try? ShareInbox.clearAIAccess(); return }
+        if let existing = try? ShareInbox.aiAccess(), existing.expiresAt > Date().addingTimeInterval(3600).timeIntervalSince1970 { return }
+        do { try await enableShareAI(expectedEpoch: epoch) } catch { try? ShareInbox.clearAIAccess() }
     }
     func handle(_ error: Error) {
         // The confirmed destructive transition owns its outcome and full cleanup.
