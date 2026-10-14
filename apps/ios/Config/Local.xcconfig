@@ -1,0 +1,7 @@
+// Safe checked-in defaults. Copy Local.example.xcconfig to Local.private.xcconfig.
+// Xcode never sees real credentials here. Server endpoint is not a secret.
+DEVELOPMENT_TEAM =
+BIBLE_BUNDLE_ID = org.example.BibleCompanion
+BIBLE_APP_GROUP = group.org.example.BibleCompanion
+BIBLE_API_URL = https:/$()/unconfigured.invalid
+#include? "Local.private.xcconfig"

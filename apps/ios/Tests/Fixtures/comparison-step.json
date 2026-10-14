@@ -1,0 +1,260 @@
+{
+  "state": {
+    "requestId": "00000000-0000-4000-8000-000000000001",
+    "status": "running",
+    "phase": "ready",
+    "saved": true,
+    "trialCount": 2,
+    "completedCount": 1,
+    "nextTrialIndex": 1,
+    "activeTrialIndex": null,
+    "expiresAt": 1791908100,
+    "trials": [
+      {
+        "index": 0,
+        "questionIndex": 0,
+        "modelIndex": 0,
+        "modelId": "@cf/google/gemma-4-26b-a4b-it",
+        "status": "complete",
+        "reservedBudgetUnits": 965,
+        "modelInvoked": true,
+        "usageUnknown": false,
+        "leaseExpiresAt": 1791907290
+      },
+      {
+        "index": 1,
+        "questionIndex": 1,
+        "modelIndex": 0,
+        "modelId": "@cf/google/gemma-4-26b-a4b-it",
+        "status": "queued",
+        "reservedBudgetUnits": 965,
+        "modelInvoked": null,
+        "usageUnknown": false,
+        "leaseExpiresAt": null
+      }
+    ],
+    "results": {
+      "questions": [
+        {
+          "passage": {
+            "book": "ACT",
+            "start": {
+              "chapter": 18,
+              "verse": 18
+            },
+            "end": {
+              "chapter": 18,
+              "verse": 18
+            }
+          },
+          "question": "この節の内容は？",
+          "spoilerAllowed": false
+        },
+        {
+          "passage": {
+            "book": "ACT",
+            "start": {
+              "chapter": 18,
+              "verse": 18
+            },
+            "end": {
+              "chapter": 18,
+              "verse": 18
+            }
+          },
+          "question": "どのような行動ですか？",
+          "spoilerAllowed": false
+        }
+      ],
+      "results": [
+        {
+          "questionIndex": 0,
+          "modelIndex": 0,
+          "result": {
+            "referenceSystem": {
+              "canon": "protestant-66",
+              "versification": "standard-kjv",
+              "requestedTranslation": null,
+              "translationAlignment": "unverified",
+              "noticeJa": "章・節の検証はプロテスタント66巻の標準KJV区分に基づきます。JCBなど各訳との節番号・本文の対応は未検証です。引用資料は表示された出典の訳に従います。"
+            },
+            "provider": "cloudflare-workers-ai",
+            "modelId": "@cf/google/gemma-4-26b-a4b-it",
+            "modelVersion": "provider-managed-unpinned",
+            "providerReportedModelVersion": null,
+            "promptVersion": "bible-ja-grounded.v2",
+            "registryVersion": "workers-ai-2026-10-13.v2",
+            "mode": "reviewed-claim-selection",
+            "cacheScope": "private",
+            "requestedSettings": {
+              "stream": false,
+              "timeoutMs": 30000
+            },
+            "effectiveSettings": {
+              "max_completion_tokens": 512,
+              "temperature": 0.2,
+              "stream": false
+            },
+            "validation": {
+              "citations": "validated",
+              "semanticGrounding": "reviewed-source",
+              "spoilerProtection": "reviewed-source-boundary"
+            },
+            "warnings": [],
+            "status": "answered",
+            "claims": [
+              {
+                "id": "hair-vow",
+                "kind": "fact",
+                "text": "本文は、誓願があったためケンクレアで髪をそったと述べます。その誓願の具体的な内容までは、この節には書かれていません。",
+                "evidenceQuote": "He shaved his head in Cenchreae, for he had a vow.",
+                "sourceId": "act-18-18"
+              }
+            ],
+            "citations": [
+              {
+                "sourceId": "act-18-18",
+                "title": "使徒 18:18（英語原文: WEB）",
+                "url": "https://ebible.org/engwebp/ACT18.htm#V18",
+                "passage": {
+                  "book": "ACT",
+                  "start": {
+                    "chapter": 18,
+                    "verse": 18
+                  },
+                  "end": {
+                    "chapter": 18,
+                    "verse": 18
+                  }
+                },
+                "version": "WEB-engwebp-checked-2026-10-13",
+                "license": "public-domain"
+              }
+            ],
+            "answer": "本文は、誓願があったためケンクレアで髪をそったと述べます。その誓願の具体的な内容までは、この節には書かれていません。",
+            "modelInvoked": true,
+            "providerPromptCache": {
+              "status": "unknown",
+              "basis": "not-reported-by-verified-provider-schema",
+              "cachedInputTokens": null
+            },
+            "usage": {
+              "actual": null,
+              "reasoningTokens": null,
+              "estimated": {
+                "inputTokens": 9485,
+                "maxOutputTokens": 512,
+                "method": "utf8-byte-upper-bound"
+              },
+              "neurons": null,
+              "costUsd": null
+            },
+            "timing": {
+              "durationMs": 3.217019999999934,
+              "providerFirstTextMs": null,
+              "visibleAnswerMs": 3.217019999999934,
+              "validatedReadyMs": 3.217019999999934,
+              "clientVisibleMs": null,
+              "measurementScope": "server-harness",
+              "streamed": false
+            }
+          }
+        }
+      ],
+      "sourcePolicyVersion": 17
+    },
+    "errorCode": null
+  },
+  "trialIndex": 0,
+  "result": {
+    "referenceSystem": {
+      "canon": "protestant-66",
+      "versification": "standard-kjv",
+      "requestedTranslation": null,
+      "translationAlignment": "unverified",
+      "noticeJa": "章・節の検証はプロテスタント66巻の標準KJV区分に基づきます。JCBなど各訳との節番号・本文の対応は未検証です。引用資料は表示された出典の訳に従います。"
+    },
+    "provider": "cloudflare-workers-ai",
+    "modelId": "@cf/google/gemma-4-26b-a4b-it",
+    "modelVersion": "provider-managed-unpinned",
+    "providerReportedModelVersion": null,
+    "promptVersion": "bible-ja-grounded.v2",
+    "registryVersion": "workers-ai-2026-10-13.v2",
+    "mode": "reviewed-claim-selection",
+    "cacheScope": "private",
+    "requestedSettings": {
+      "stream": false,
+      "timeoutMs": 30000
+    },
+    "effectiveSettings": {
+      "max_completion_tokens": 512,
+      "temperature": 0.2,
+      "stream": false
+    },
+    "validation": {
+      "citations": "validated",
+      "semanticGrounding": "reviewed-source",
+      "spoilerProtection": "reviewed-source-boundary"
+    },
+    "warnings": [],
+    "status": "answered",
+    "claims": [
+      {
+        "id": "hair-vow",
+        "kind": "fact",
+        "text": "本文は、誓願があったためケンクレアで髪をそったと述べます。その誓願の具体的な内容までは、この節には書かれていません。",
+        "evidenceQuote": "He shaved his head in Cenchreae, for he had a vow.",
+        "sourceId": "act-18-18"
+      }
+    ],
+    "citations": [
+      {
+        "sourceId": "act-18-18",
+        "title": "使徒 18:18（英語原文: WEB）",
+        "url": "https://ebible.org/engwebp/ACT18.htm#V18",
+        "passage": {
+          "book": "ACT",
+          "start": {
+            "chapter": 18,
+            "verse": 18
+          },
+          "end": {
+            "chapter": 18,
+            "verse": 18
+          }
+        },
+        "version": "WEB-engwebp-checked-2026-10-13",
+        "license": "public-domain"
+      }
+    ],
+    "answer": "本文は、誓願があったためケンクレアで髪をそったと述べます。その誓願の具体的な内容までは、この節には書かれていません。",
+    "modelInvoked": true,
+    "providerPromptCache": {
+      "status": "unknown",
+      "basis": "not-reported-by-verified-provider-schema",
+      "cachedInputTokens": null
+    },
+    "usage": {
+      "actual": null,
+      "reasoningTokens": null,
+      "estimated": {
+        "inputTokens": 9485,
+        "maxOutputTokens": 512,
+        "method": "utf8-byte-upper-bound"
+      },
+      "neurons": null,
+      "costUsd": null
+    },
+    "timing": {
+      "durationMs": 3.217019999999934,
+      "providerFirstTextMs": null,
+      "visibleAnswerMs": 3.217019999999934,
+      "validatedReadyMs": 3.217019999999934,
+      "clientVisibleMs": null,
+      "measurementScope": "server-harness",
+      "streamed": false
+    }
+  },
+  "replayed": false,
+  "resultAvailability": "returned"
+}

@@ -1,0 +1,4804 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "聖書読書コンパニオン API",
+    "version": "0.1.0",
+    "description": "Local-first initial API. No live deployment or AI quality claims. All private operations derive ownership from bearer session."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8787",
+      "description": "Local development only"
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Service status",
+        "description": "",
+        "security": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "aiEnabled": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "ok",
+                    "version",
+                    "aiEnabled"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/authorize": {
+      "get": {
+        "summary": "Begin browser passkey flow",
+        "description": "Returns HTML with a short-lived HttpOnly SameSite=Strict flow cookie. Native callback is server-configured; no arbitrary redirect URI is accepted.",
+        "security": [],
+        "parameters": [
+          {
+            "name": "state",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{22,128}$"
+            }
+          },
+          {
+            "name": "code_challenge",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{43}$"
+            }
+          },
+          {
+            "name": "code_challenge_method",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "const": "S256"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/options": {
+      "post": {
+        "summary": "Get browser WebAuthn options",
+        "description": "Requires exact Origin and flow cookie. userVerification=required, discoverable registration credentials.",
+        "security": [],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "mode": {
+                    "enum": [
+                      "login",
+                      "register"
+                    ]
+                  }
+                },
+                "required": [
+                  "mode"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "options": {
+                      "type": "object",
+                      "additionalProperties": true
+                    }
+                  },
+                  "required": [
+                    "options"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/verify": {
+      "post": {
+        "summary": "Verify one-use WebAuthn ceremony",
+        "description": "Requires exact Origin and flow cookie. Invitation required for registration. Callback contains only one-time code and state; never bearer credentials.",
+        "security": [],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "response": {
+                    "type": "object",
+                    "additionalProperties": true
+                  },
+                  "invitation": {
+                    "type": "string",
+                    "maxLength": 200
+                  },
+                  "displayName": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 60
+                  }
+                },
+                "required": [
+                  "response"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "callback": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  },
+                  "required": [
+                    "callback"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/token": {
+      "post": {
+        "summary": "Exchange one-time code with PKCE",
+        "description": "",
+        "security": [],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9_-]{43}$"
+                  },
+                  "codeVerifier": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9._~-]{43,128}$"
+                  }
+                },
+                "required": [
+                  "code",
+                  "codeVerifier"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "accessToken": {
+                      "type": "string"
+                    },
+                    "tokenType": {
+                      "const": "Bearer"
+                    },
+                    "expiresAt": {
+                      "type": "integer",
+                      "description": "Unix timestamp in seconds"
+                    },
+                    "user": {
+                      "$ref": "#/components/schemas/User"
+                    }
+                  },
+                  "required": [
+                    "accessToken",
+                    "tokenType",
+                    "expiresAt",
+                    "user"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me": {
+      "get": {
+        "summary": "Current account",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "user": {
+                      "$ref": "#/components/schemas/User"
+                    }
+                  },
+                  "required": [
+                    "user"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete account with fresh authentication",
+        "description": "Requires a session issued within5minutes. Account/passkeys/sessions and all private reading data are deleted; backup erasure policy remains a deployment decision.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "confirmation": {
+                    "const": "DELETE_MY_ACCOUNT"
+                  }
+                },
+                "required": [
+                  "confirmation"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/logout": {
+      "post": {
+        "summary": "Revoke current native session",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/reading-data": {
+      "delete": {
+        "summary": "Delete all private reading data",
+        "description": "Requires a session issued within5minutes. Account is retained.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "confirmation": {
+                    "const": "DELETE_MY_READING_DATA"
+                  }
+                },
+                "required": [
+                  "confirmation"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/developer/comparisons/{id}/history": {
+      "delete": {
+        "summary": "Delete own comparison record",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/ai-policy": {
+      "get": {
+        "summary": "Read allowed answer modes and current experimental consent",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "allowedAnswerModes": {
+                      "type": "array",
+                      "items": {
+                        "enum": [
+                          "reviewed-claim-selection",
+                          "grounded-generation"
+                        ]
+                      }
+                    },
+                    "defaultAnswerMode": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "groundedPolicyVersion": {
+                      "type": "string"
+                    },
+                    "groundedNoticeJa": {
+                      "type": "string"
+                    },
+                    "workersAiConsent": {
+                      "type": "boolean"
+                    },
+                    "groundedConsent": {
+                      "type": "object",
+                      "properties": {
+                        "accepted": {
+                          "type": "boolean"
+                        },
+                        "policyVersion": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "accepted",
+                        "policyVersion"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "allowedAnswerModes",
+                    "defaultAnswerMode",
+                    "groundedPolicyVersion",
+                    "groundedNoticeJa",
+                    "workersAiConsent",
+                    "groundedConsent"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/consents": {
+      "post": {
+        "summary": "Confirm or revoke Cloudflare AI data transmission",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "workersAi": {
+                    "type": "boolean"
+                  },
+                  "groundedGeneration": {
+                    "type": "object",
+                    "properties": {
+                      "accepted": {
+                        "type": "boolean"
+                      },
+                      "policyVersion": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "accepted",
+                      "policyVersion"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "workersAi": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "workersAi"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/export/snapshots": {
+      "post": {
+        "summary": "Start a bounded private export snapshot",
+        "description": "Expires after 15 minutes; creating a new snapshot invalidates the previous one. Any private write or source-policy change requires discarding the incomplete file and restarting. Metadata contains user/settings/model preference, never authentication material.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/export/pages": {
+      "get": {
+        "summary": "Read one bounded private export page",
+        "description": "At most 25 items and 1 MiB encoded JSON per page. A single entity over 1,000,000 bytes fails explicitly. Preserve source-redaction markers and user-authored text. Each cursor is scoped to snapshot and section; a changed/expired snapshot returns409.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "snapshotId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "section",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": [
+                "imports",
+                "conversations",
+                "messages",
+                "comparisons"
+              ]
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "version": {
+                      "const": 1
+                    },
+                    "snapshotId": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "section": {
+                      "type": "string"
+                    },
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    },
+                    "nextCursor": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "version",
+                    "snapshotId",
+                    "section",
+                    "items",
+                    "nextCursor"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/export": {
+      "get": {
+        "summary": "Export only this account’s reading data",
+        "description": "JSON attachment; credentials and sessions are excluded.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/imports/parse": {
+      "post": {
+        "summary": "Parse shared text transiently",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "sharedText": {
+                    "type": "string",
+                    "maxLength": 20000
+                  }
+                },
+                "required": [
+                  "sharedText"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParseImport"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/imports": {
+      "post": {
+        "summary": "Idempotently save confirmed passage metadata",
+        "description": "Retry returns200 with the same result; different payload with same key returns409. At least sharedText or ranges required. Raw shared text is never persisted.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Idempotent replay success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Import"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Import"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "List private reading history",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ImportPage"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/imports/{id}": {
+      "get": {
+        "summary": "Read a private import",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Import"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete import and its conversations",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/imports/{id}/reading": {
+      "get": {
+        "summary": "Read reviewed sources and public-only cached overview",
+        "description": "No provider is called. Source version keys prevent reuse after source edits/rights revocation. Empty artwork/maps are explicit.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "rangeIndex",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          {
+            "name": "spoilers",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Reading"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/imports/{id}/scripture": {
+      "get": {
+        "summary": "Read a bounded page of verified public-domain English source text",
+        "description": "Owner-scoped to the selected imported range. At most100 verses and120KB item bytes, with an opaque range/version/policy-bound cursor. Missing corpus returns available:false. Source numbering is retained; empty/missing references are explicit and never remapped. No JCB alignment, editorial interpretation review or offline grant is implied.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "rangeIndex",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 19
+            }
+          },
+          {
+            "name": "after",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScripturePage"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/content-manifest": {
+      "get": {
+        "summary": "Current public source versions and rights state",
+        "description": "Any manifest version change invalidates offline materials, including same-version policy/content corrections.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentManifest"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/sources": {
+      "get": {
+        "summary": "Read approved boundary-filtered sources",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "passage",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "URL-encoded JSON Passage"
+            }
+          },
+          {
+            "name": "spoilers",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/conversations": {
+      "get": {
+        "summary": "List own private conversations",
+        "description": "At most50 metadata summaries, newest creation first. Cursor binds the optional import filter. Other owners’ import filters return404. Bodies remain in the private detail endpoint.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "importId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversationPage"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Start a private passage conversation",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConversationInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Conversation"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/conversations/{id}": {
+      "get": {
+        "summary": "Resume private conversation",
+        "description": "Latest at most50 messages, chronological within a page, under1MiB after raw-length preflight. beforeMessageId loads older messages. sourcePolicyVersion lets clients reject mixed policy pages. Oversized single messages fail413 without truncation.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "beforeMessageId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Conversation"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Change spoiler setting",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "spoilerAllowed": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "spoilerAllowed"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "spoilerAllowed": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "spoilerAllowed"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete private conversation",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/conversations/{id}/questions": {
+      "post": {
+        "summary": "Ask or explicitly request source-only reading",
+        "description": "No automatic retries. Owner model preferences apply only to future answers. Ordinary clients cannot select arbitrary models, URLs, sources or owners. True AI requires recorded consent, connected allowlisted model and verified budget.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuestionInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestResult"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/requests/{id}": {
+      "get": {
+        "summary": "Check an existing private question request",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestResult"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Cancel an active question",
+        "description": "Persists an owner-scoped cancellation marker even before claim. GET 404 alone is unknown, not proof of no dispatch. Retry only the same frozen request UUID and payload.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "const": "cancelled"
+                    },
+                    "usageMayHaveOccurred": {
+                      "const": true
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "usageMayHaveOccurred"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/usage": {
+      "get": {
+        "summary": "Get private daily budget and reset",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/developer/comparisons": {
+      "get": {
+        "summary": "List own saved or unsaved comparison metadata",
+        "description": "Owner-only, at most50 metadata items. No question or answer bodies in this list. Cursor binds saved filter; detail reads apply current rights policy.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "saved",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "true",
+                "false"
+              ],
+              "default": "true"
+            }
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComparisonPage"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Reserve a confirmed owner-only comparison without inference",
+        "description": "Maximum2 models ×10 questions; one active job per owner. Start reserves only. Explicit steps claim one trial each. Idle expiry is15minutes or the next UTC budget boundary. Unsaved answers are returned once and cannot be reconstructed after a lost acknowledgment.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "plan": {
+                    "$ref": "#/components/schemas/ComparisonPlan"
+                  },
+                  "confirmationHash": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9_-]{43}$"
+                  }
+                },
+                "required": [
+                  "plan",
+                  "confirmationHash"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Idempotent replay success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComparisonState"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComparisonState"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/developer/models": {
+      "get": {
+        "summary": "Owner-only model registry",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/developer/model-preference": {
+      "put": {
+        "summary": "Owner-only verified model selection",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "modelId": {
+                    "type": "string"
+                  },
+                  "settings": {
+                    "$ref": "#/components/schemas/ModelSettings"
+                  }
+                },
+                "required": [
+                  "modelId"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Reset owner’s model preference",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/developer/comparisons/plan": {
+      "post": {
+        "summary": "Validate and estimate owner-only comparison",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ComparisonPlan"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/developer/comparisons/{id}": {
+      "get": {
+        "summary": "Read own comparison status and optional saved results",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComparisonState"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Cancel own active comparison",
+        "description": "Persists an owner-scoped cancellation marker even before claim. GET 404 alone is unknown, not proof of no dispatch. Retry only the same frozen request UUID and payload.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "const": "cancelled"
+                    },
+                    "usageMayHaveOccurred": {
+                      "const": true
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "usageMayHaveOccurred"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/developer/comparisons/active": {
+      "get": {
+        "summary": "Find own active comparison for explicit recovery",
+        "description": "",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "comparison": {
+                      "anyOf": [
+                        {
+                          "$ref": "#/components/schemas/ComparisonState"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "comparison"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/developer/comparisons/{id}/steps": {
+      "post": {
+        "summary": "Claim and execute at most one durable trial",
+        "description": "Replay the exact frozen plan and same trialIndex. Atomic claims prevent repeat invocation. GET ready or404 does not prove that an earlier delayed request cannot still claim. Saved results are projected through current source rights; unsaved acknowledged results cannot be recovered.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "plan": {
+                    "$ref": "#/components/schemas/ComparisonPlan"
+                  },
+                  "confirmationHash": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9_-]{43}$"
+                  },
+                  "trialIndex": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 19
+                  }
+                },
+                "required": [
+                  "plan",
+                  "confirmationHash",
+                  "trialIndex"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComparisonStep"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "ReferenceSystem": {
+        "type": "object",
+        "properties": {
+          "canon": {
+            "const": "protestant-66"
+          },
+          "versification": {
+            "const": "standard-kjv"
+          },
+          "requestedTranslation": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "translationAlignment": {
+            "const": "unverified"
+          },
+          "noticeJa": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "canon",
+          "versification",
+          "requestedTranslation",
+          "translationAlignment",
+          "noticeJa"
+        ],
+        "additionalProperties": false
+      },
+      "ManifestItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "rights_status": {
+            "enum": [
+              "approved",
+              "pending",
+              "revoked"
+            ]
+          },
+          "active": {
+            "enum": [
+              0,
+              1
+            ]
+          },
+          "license": {
+            "type": "string"
+          },
+          "visibility": {
+            "type": "string"
+          },
+          "reviewed": {
+            "type": "boolean"
+          },
+          "generationAllowed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "version",
+          "rights_status",
+          "active",
+          "license",
+          "visibility",
+          "reviewed",
+          "generationAllowed"
+        ],
+        "additionalProperties": false
+      },
+      "ContentManifest": {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "checkedAt": {
+            "type": "integer",
+            "description": "Unix timestamp in seconds"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ManifestItem"
+            }
+          },
+          "materials": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                },
+                "rights_status": {
+                  "type": "string"
+                },
+                "active": {
+                  "enum": [
+                    0,
+                    1
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "version",
+                "rights_status",
+                "active"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "corpora": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                },
+                "edition": {
+                  "type": "string"
+                },
+                "language": {
+                  "type": "string"
+                },
+                "license": {
+                  "type": "string"
+                },
+                "manifestSha256": {
+                  "type": "string"
+                },
+                "state": {
+                  "type": "string"
+                },
+                "rights_status": {
+                  "type": "string"
+                },
+                "active": {
+                  "enum": [
+                    0,
+                    1
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "version",
+                "edition",
+                "language",
+                "license",
+                "manifestSha256",
+                "state",
+                "rights_status",
+                "active"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "version",
+          "checkedAt",
+          "items",
+          "materials",
+          "corpora"
+        ],
+        "additionalProperties": false
+      },
+      "MaterialCard": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9-]{1,100}$"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "summary": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+              },
+              "passages": {
+                "minItems": 1,
+                "maxItems": 12,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "book": {
+                      "type": "string"
+                    },
+                    "start": {
+                      "type": "object",
+                      "properties": {
+                        "chapter": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "exclusiveMinimum": true,
+                          "maximum": 150
+                        },
+                        "verse": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "exclusiveMinimum": true,
+                          "maximum": 176
+                        }
+                      },
+                      "required": [
+                        "chapter",
+                        "verse"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "end": {
+                      "type": "object",
+                      "properties": {
+                        "chapter": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "exclusiveMinimum": true,
+                          "maximum": 150
+                        },
+                        "verse": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "exclusiveMinimum": true,
+                          "maximum": 176
+                        }
+                      },
+                      "required": [
+                        "chapter",
+                        "verse"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "book",
+                    "start",
+                    "end"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "spoilerEnd": {
+                "type": "object",
+                "properties": {
+                  "book": {
+                    "type": "string"
+                  },
+                  "chapter": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "exclusiveMinimum": true,
+                    "maximum": 9007199254740991
+                  },
+                  "verse": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "exclusiveMinimum": true,
+                    "maximum": 9007199254740991
+                  }
+                },
+                "required": [
+                  "book",
+                  "chapter",
+                  "verse"
+                ],
+                "additionalProperties": false
+              },
+              "version": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100
+              },
+              "reviewed": {
+                "type": "boolean"
+              },
+              "rightsStatus": {
+                "type": "string",
+                "enum": [
+                  "approved",
+                  "pending",
+                  "revoked"
+                ]
+              },
+              "relationship": {
+                "type": "string",
+                "enum": [
+                  "direct",
+                  "thematic"
+                ]
+              },
+              "provenance": {
+                "minItems": 1,
+                "maxItems": 10,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "title": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1000
+                    },
+                    "url": {
+                      "type": "string",
+                      "maxLength": 2000,
+                      "format": "uri"
+                    },
+                    "publisher": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1000
+                    },
+                    "checkedAt": {
+                      "type": "string",
+                      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                    },
+                    "license": {
+                      "type": "string",
+                      "enum": [
+                        "public-domain",
+                        "original-commentary",
+                        "citation-only",
+                        "cc-by-3.0",
+                        "odbl-1.0"
+                      ]
+                    },
+                    "licenseUrl": {
+                      "type": "string",
+                      "maxLength": 2000,
+                      "format": "uri"
+                    },
+                    "attribution": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1000
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "url",
+                    "publisher",
+                    "checkedAt",
+                    "license"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "person"
+                ]
+              },
+              "details": {
+                "type": "object",
+                "properties": {
+                  "identityNote": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1000
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "id",
+              "title",
+              "summary",
+              "passages",
+              "spoilerEnd",
+              "version",
+              "reviewed",
+              "rightsStatus",
+              "relationship",
+              "provenance",
+              "kind",
+              "details"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9-]{1,100}$"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "summary": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+              },
+              "passages": {
+                "minItems": 1,
+                "maxItems": 12,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "book": {
+                      "type": "string"
+                    },
+                    "start": {
+                      "type": "object",
+                      "properties": {
+                        "chapter": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "exclusiveMinimum": true,
+                          "maximum": 150
+                        },
+                        "verse": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "exclusiveMinimum": true,
+                          "maximum": 176
+                        }
+                      },
+                      "required": [
+                        "chapter",
+                        "verse"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "end": {
+                      "type": "object",
+                      "properties": {
+                        "chapter": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "exclusiveMinimum": true,
+                          "maximum": 150
+                        },
+                        "verse": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "exclusiveMinimum": true,
+                          "maximum": 176
+                        }
+                      },
+                      "required": [
+                        "chapter",
+                        "verse"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "book",
+                    "start",
+                    "end"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "spoilerEnd": {
+                "type": "object",
+                "properties": {
+                  "book": {
+                    "type": "string"
+                  },
+                  "chapter": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "exclusiveMinimum": true,
+                    "maximum": 9007199254740991
+                  },
+                  "verse": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "exclusiveMinimum": true,
+                    "maximum": 9007199254740991
+                  }
+                },
+                "required": [
+                  "book",
+                  "chapter",
+                  "verse"
+                ],
+                "additionalProperties": false
+              },
+              "version": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100
+              },
+              "reviewed": {
+                "type": "boolean"
+              },
+              "rightsStatus": {
+                "type": "string",
+                "enum": [
+                  "approved",
+                  "pending",
+                  "revoked"
+                ]
+              },
+              "relationship": {
+                "type": "string",
+                "enum": [
+                  "direct",
+                  "thematic"
+                ]
+              },
+              "provenance": {
+                "minItems": 1,
+                "maxItems": 10,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "title": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1000
+                    },
+                    "url": {
+                      "type": "string",
+                      "maxLength": 2000,
+                      "format": "uri"
+                    },
+                    "publisher": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1000
+                    },
+                    "checkedAt": {
+                      "type": "string",
+                      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                    },
+                    "license": {
+                      "type": "string",
+                      "enum": [
+                        "public-domain",
+                        "original-commentary",
+                        "citation-only",
+                        "cc-by-3.0",
+                        "odbl-1.0"
+                      ]
+                    },
+                    "licenseUrl": {
+                      "type": "string",
+                      "maxLength": 2000,
+                      "format": "uri"
+                    },
+                    "attribution": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1000
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "url",
+                    "publisher",
+                    "checkedAt",
+                    "license"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "place"
+                ]
+              },
+              "details": {
+                "type": "object",
+                "properties": {
+                  "coordinates": {
+                    "nullable": true,
+                    "type": "object",
+                    "properties": {
+                      "latitude": {
+                        "type": "number",
+                        "minimum": -90,
+                        "maximum": 90
+                      },
+                      "longitude": {
+                        "type": "number",
+                        "minimum": -180,
+                        "maximum": 180
+                      },
+                      "certainty": {
+                        "type": "string",
+                        "enum": [
+                          "verified",
+                          "approximate",
+                          "disputed"
+                        ]
+                      },
+                      "sourceId": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "explanation": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000
+                      }
+                    },
+                    "required": [
+                      "latitude",
+                      "longitude",
+                      "certainty",
+                      "sourceId",
+                      "explanation"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "identificationCertainty": {
+                    "type": "string",
+                    "enum": [
+                      "confirmed",
+                      "uncertain"
+                    ]
+                  },
+                  "modernName": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1000
+                  }
+                },
+                "required": [
+                  "coordinates",
+                  "identificationCertainty"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "id",
+              "title",
+              "summary",
+              "passages",
+              "spoilerEnd",
+              "version",
+              "reviewed",
+              "rightsStatus",
+              "relationship",
+              "provenance",
+              "kind",
+              "details"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9-]{1,100}$"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "summary": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+              },
+              "passages": {
+                "minItems": 1,
+                "maxItems": 12,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "book": {
+                      "type": "string"
+                    },
+                    "start": {
+                      "type": "object",
+                      "properties": {
+                        "chapter": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "exclusiveMinimum": true,
+                          "maximum": 150
+                        },
+                        "verse": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "exclusiveMinimum": true,
+                          "maximum": 176
+                        }
+                      },
+                      "required": [
+                        "chapter",
+                        "verse"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "end": {
+                      "type": "object",
+                      "properties": {
+                        "chapter": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "exclusiveMinimum": true,
+                          "maximum": 150
+                        },
+                        "verse": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "exclusiveMinimum": true,
+                          "maximum": 176
+                        }
+                      },
+                      "required": [
+                        "chapter",
+                        "verse"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "book",
+                    "start",
+                    "end"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "spoilerEnd": {
+                "type": "object",
+                "properties": {
+                  "book": {
+                    "type": "string"
+                  },
+                  "chapter": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "exclusiveMinimum": true,
+                    "maximum": 9007199254740991
+                  },
+                  "verse": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "exclusiveMinimum": true,
+                    "maximum": 9007199254740991
+                  }
+                },
+                "required": [
+                  "book",
+                  "chapter",
+                  "verse"
+                ],
+                "additionalProperties": false
+              },
+              "version": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100
+              },
+              "reviewed": {
+                "type": "boolean"
+              },
+              "rightsStatus": {
+                "type": "string",
+                "enum": [
+                  "approved",
+                  "pending",
+                  "revoked"
+                ]
+              },
+              "relationship": {
+                "type": "string",
+                "enum": [
+                  "direct",
+                  "thematic"
+                ]
+              },
+              "provenance": {
+                "minItems": 1,
+                "maxItems": 10,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "title": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1000
+                    },
+                    "url": {
+                      "type": "string",
+                      "maxLength": 2000,
+                      "format": "uri"
+                    },
+                    "publisher": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1000
+                    },
+                    "checkedAt": {
+                      "type": "string",
+                      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                    },
+                    "license": {
+                      "type": "string",
+                      "enum": [
+                        "public-domain",
+                        "original-commentary",
+                        "citation-only",
+                        "cc-by-3.0",
+                        "odbl-1.0"
+                      ]
+                    },
+                    "licenseUrl": {
+                      "type": "string",
+                      "maxLength": 2000,
+                      "format": "uri"
+                    },
+                    "attribution": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1000
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "url",
+                    "publisher",
+                    "checkedAt",
+                    "license"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "artwork"
+                ]
+              },
+              "details": {
+                "type": "object",
+                "properties": {
+                  "artist": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1000
+                  },
+                  "yearLabel": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1000
+                  },
+                  "collection": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1000
+                  },
+                  "objectUrl": {
+                    "type": "string",
+                    "maxLength": 2000,
+                    "format": "uri"
+                  },
+                  "rightsStatement": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1000
+                  },
+                  "media": {
+                    "type": "object",
+                    "properties": {
+                      "url": {
+                        "type": "string",
+                        "maxLength": 2000,
+                        "format": "uri"
+                      },
+                      "rights": {
+                        "type": "string",
+                        "enum": [
+                          "public-domain"
+                        ]
+                      },
+                      "rightsUrl": {
+                        "type": "string",
+                        "maxLength": 2000,
+                        "format": "uri"
+                      },
+                      "attribution": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000
+                      },
+                      "checkedAt": {
+                        "type": "string",
+                        "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                      }
+                    },
+                    "required": [
+                      "url",
+                      "rights",
+                      "rightsUrl",
+                      "attribution",
+                      "checkedAt"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "artist",
+                  "yearLabel",
+                  "collection",
+                  "objectUrl",
+                  "rightsStatement"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "id",
+              "title",
+              "summary",
+              "passages",
+              "spoilerEnd",
+              "version",
+              "reviewed",
+              "rightsStatus",
+              "relationship",
+              "provenance",
+              "kind",
+              "details"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "Reading": {
+        "type": "object",
+        "properties": {
+          "checkedAt": {
+            "type": "integer",
+            "description": "Unix timestamp in seconds"
+          },
+          "offlineCache": {
+            "type": "object",
+            "properties": {
+              "eligible": {
+                "type": "boolean"
+              },
+              "maxAgeSeconds": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 86400
+              },
+              "reason": {
+                "type": "string"
+              },
+              "allowedFields": {
+                "type": "array",
+                "items": {
+                  "const": "overview"
+                }
+              },
+              "dependencies": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "version"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "policyVersion": {
+                "const": 1
+              }
+            },
+            "required": [
+              "eligible",
+              "maxAgeSeconds",
+              "reason",
+              "allowedFields",
+              "dependencies",
+              "policyVersion"
+            ],
+            "additionalProperties": false
+          },
+          "passage": {
+            "$ref": "#/components/schemas/Passage"
+          },
+          "translation": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "spoilerAllowed": {
+            "type": "boolean"
+          },
+          "sourceVersion": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "object",
+            "properties": {
+              "contentKind": {
+                "enum": [
+                  "literal-primary-text",
+                  "curated-reference"
+                ]
+              },
+              "noticeJa": {
+                "type": "string"
+              },
+              "referenceSystem": {
+                "$ref": "#/components/schemas/ReferenceSystem"
+              },
+              "text": {
+                "type": "string"
+              },
+              "claims": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              },
+              "citations": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Citation"
+                }
+              },
+              "mode": {
+                "const": "source-only"
+              },
+              "modelInvoked": {
+                "const": false
+              }
+            },
+            "required": [
+              "contentKind",
+              "noticeJa",
+              "referenceSystem",
+              "text",
+              "claims",
+              "citations",
+              "mode",
+              "modelInvoked"
+            ],
+            "additionalProperties": false
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "people": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MaterialCard"
+            }
+          },
+          "places": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MaterialCard"
+            }
+          },
+          "artworks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MaterialCard"
+            }
+          },
+          "materialNotice": {
+            "type": "string"
+          },
+          "cache": {
+            "enum": [
+              "public-hit",
+              "public-miss"
+            ]
+          }
+        },
+        "required": [
+          "checkedAt",
+          "offlineCache",
+          "passage",
+          "translation",
+          "spoilerAllowed",
+          "sourceVersion",
+          "overview",
+          "sources",
+          "people",
+          "places",
+          "artworks",
+          "materialNotice",
+          "cache"
+        ],
+        "additionalProperties": false
+      },
+      "ScripturePage": {
+        "type": "object",
+        "properties": {
+          "available": {
+            "type": "boolean"
+          },
+          "passage": {
+            "$ref": "#/components/schemas/Passage"
+          },
+          "corpus": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "version": {
+                    "type": "string"
+                  },
+                  "edition": {
+                    "const": "engwebp"
+                  },
+                  "language": {
+                    "const": "en"
+                  },
+                  "license": {
+                    "const": "public-domain"
+                  },
+                  "manifestSha256": {
+                    "type": "string"
+                  },
+                  "referenceAlignment": {
+                    "const": "canonical-compatible"
+                  },
+                  "editorialReview": {
+                    "const": "unreviewed"
+                  }
+                },
+                "required": [
+                  "id",
+                  "version",
+                  "edition",
+                  "language",
+                  "license",
+                  "manifestSha256",
+                  "referenceAlignment",
+                  "editorialReview"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "items": {
+            "type": "array",
+            "maxItems": 100,
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "chapter": {
+                  "type": "integer"
+                },
+                "verse": {
+                  "type": "integer"
+                },
+                "text": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "chapter",
+                "verse",
+                "text"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "nextCursor": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "sourcePolicyVersion": {
+            "type": "integer"
+          },
+          "noticeJa": {
+            "type": "string"
+          },
+          "coverage": {
+            "enum": [
+              "unavailable",
+              "source-coordinate-subset"
+            ]
+          },
+          "omissions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "chapter": {
+                  "type": "integer"
+                },
+                "verse": {
+                  "type": "integer"
+                },
+                "reason": {
+                  "enum": [
+                    "source_text_empty",
+                    "source_reference_missing"
+                  ]
+                }
+              },
+              "required": [
+                "chapter",
+                "verse",
+                "reason"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "unversifiedTextIncluded": {
+            "const": false
+          }
+        },
+        "required": [
+          "available",
+          "passage",
+          "corpus",
+          "items",
+          "nextCursor",
+          "sourcePolicyVersion",
+          "noticeJa",
+          "coverage",
+          "omissions",
+          "unversifiedTextIncluded"
+        ],
+        "additionalProperties": false
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              },
+              "requestId": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "message"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "error"
+        ],
+        "additionalProperties": false
+      },
+      "Verse": {
+        "type": "object",
+        "properties": {
+          "chapter": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 150
+          },
+          "verse": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 176
+          }
+        },
+        "required": [
+          "chapter",
+          "verse"
+        ],
+        "additionalProperties": false
+      },
+      "Passage": {
+        "type": "object",
+        "properties": {
+          "book": {
+            "type": "string",
+            "description": "Canonical 66-book YouVersion ID, e.g. ACT, GEN, 1CO. Actual chapter/verse maxima validated using bundled metadata."
+          },
+          "start": {
+            "$ref": "#/components/schemas/Verse"
+          },
+          "end": {
+            "$ref": "#/components/schemas/Verse"
+          }
+        },
+        "required": [
+          "book",
+          "start",
+          "end"
+        ],
+        "additionalProperties": false
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "owner",
+              "member"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "display_name",
+          "role"
+        ],
+        "additionalProperties": false
+      },
+      "ParseImport": {
+        "type": "object",
+        "properties": {
+          "ranges": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Passage"
+            }
+          },
+          "translation": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "sourceUrl": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "needsConfirmation": {
+            "type": "boolean"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "ranges",
+          "translation",
+          "sourceUrl",
+          "needsConfirmation",
+          "warnings"
+        ],
+        "additionalProperties": false
+      },
+      "ImportInput": {
+        "type": "object",
+        "properties": {
+          "idempotencyKey": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "sharedText": {
+            "type": "string",
+            "maxLength": 20000
+          },
+          "ranges": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Passage"
+            },
+            "minItems": 1,
+            "maxItems": 20
+          },
+          "translation": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[A-Z0-9-]{1,30}$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "idempotencyKey"
+        ],
+        "additionalProperties": false
+      },
+      "Import": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "idempotencyKey": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "ranges": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Passage"
+            }
+          },
+          "translation": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "sourceUrl": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "createdAt": {
+            "type": "integer",
+            "description": "Unix timestamp in seconds"
+          }
+        },
+        "required": [
+          "id",
+          "idempotencyKey",
+          "ranges",
+          "translation",
+          "sourceUrl",
+          "createdAt"
+        ],
+        "additionalProperties": false
+      },
+      "ImportPage": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Import"
+            }
+          },
+          "nextCursor": {
+            "anyOf": [
+              {
+                "type": "string",
+                "description": "Opaque composite cursor. URL-encode and send as before."
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "items",
+          "nextCursor"
+        ],
+        "additionalProperties": false
+      },
+      "ConversationInput": {
+        "type": "object",
+        "properties": {
+          "importId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "rangeIndex": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 19,
+            "default": 0
+          },
+          "passage": {
+            "$ref": "#/components/schemas/Passage"
+          },
+          "spoilerAllowed": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": [
+          "importId"
+        ],
+        "additionalProperties": false
+      },
+      "Conversation": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "importId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "passage": {
+            "$ref": "#/components/schemas/Passage"
+          },
+          "readingBoundary": {
+            "$ref": "#/components/schemas/Passage"
+          },
+          "spoilerAllowed": {
+            "type": "boolean"
+          },
+          "createdAt": {
+            "type": "integer",
+            "description": "Unix timestamp in seconds"
+          },
+          "nextMessageCursor": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "sourcePolicyVersion": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "importId",
+          "passage",
+          "readingBoundary",
+          "spoilerAllowed",
+          "createdAt"
+        ],
+        "additionalProperties": false
+      },
+      "ConversationSummary": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "importId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "passage": {
+            "$ref": "#/components/schemas/Passage"
+          },
+          "readingBoundary": {
+            "$ref": "#/components/schemas/Passage"
+          },
+          "spoilerAllowed": {
+            "type": "boolean"
+          },
+          "createdAt": {
+            "type": "integer",
+            "description": "Unix timestamp in seconds"
+          },
+          "messageCount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "lastMessageAt": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "description": "Unix timestamp in seconds"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "importId",
+          "passage",
+          "readingBoundary",
+          "spoilerAllowed",
+          "createdAt",
+          "messageCount",
+          "lastMessageAt"
+        ],
+        "additionalProperties": false
+      },
+      "ConversationPage": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ConversationSummary"
+            }
+          },
+          "nextCursor": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "items",
+          "nextCursor"
+        ],
+        "additionalProperties": false
+      },
+      "ComparisonSummary": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
+            "enum": [
+              "reserved",
+              "running",
+              "complete",
+              "failed",
+              "cancelled",
+              "expired"
+            ]
+          },
+          "saved": {
+            "type": "boolean"
+          },
+          "createdAt": {
+            "type": "integer",
+            "description": "Unix timestamp in seconds"
+          },
+          "updatedAt": {
+            "type": "integer",
+            "description": "Unix timestamp in seconds"
+          },
+          "trialCount": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 20
+          },
+          "errorCode": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "status",
+          "saved",
+          "createdAt",
+          "updatedAt",
+          "trialCount",
+          "errorCode"
+        ],
+        "additionalProperties": false
+      },
+      "ComparisonPage": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComparisonSummary"
+            }
+          },
+          "nextCursor": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "items",
+          "nextCursor"
+        ],
+        "additionalProperties": false
+      },
+      "Message": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "role": {
+            "enum": [
+              "user",
+              "assistant"
+            ]
+          },
+          "content": {
+            "type": "object",
+            "description": "User text and server scope, answer result, or {hidden:true,reason} when the current spoiler policy hides a prior answer.",
+            "additionalProperties": true
+          },
+          "createdAt": {
+            "type": "integer",
+            "description": "Unix timestamp in seconds"
+          }
+        },
+        "required": [
+          "id",
+          "role",
+          "content",
+          "createdAt"
+        ],
+        "additionalProperties": false
+      },
+      "QuestionInput": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "question": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "sourceOnly": {
+            "type": "boolean",
+            "default": false
+          },
+          "answerMode": {
+            "enum": [
+              "reviewed-claim-selection",
+              "grounded-generation"
+            ],
+            "default": "reviewed-claim-selection"
+          }
+        },
+        "required": [
+          "requestId",
+          "question"
+        ],
+        "additionalProperties": false
+      },
+      "AnswerResult": {
+        "type": "object",
+        "properties": {
+          "referenceSystem": {
+            "$ref": "#/components/schemas/ReferenceSystem"
+          },
+          "answer": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "answered",
+              "insufficient-evidence",
+              "spoiler-boundary"
+            ]
+          },
+          "claims": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Citation"
+            }
+          },
+          "provider": {
+            "type": "string"
+          },
+          "modelId": {
+            "type": "string"
+          },
+          "modelInvoked": {
+            "type": "boolean"
+          },
+          "mode": {
+            "enum": [
+              "reviewed-claim-selection",
+              "grounded-generation",
+              "source-only"
+            ]
+          },
+          "cacheScope": {
+            "const": "private"
+          },
+          "usage": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "timing": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "spoilerAllowed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "answer",
+          "status",
+          "claims",
+          "citations",
+          "modelId",
+          "modelInvoked",
+          "mode",
+          "cacheScope",
+          "usage",
+          "timing",
+          "warnings"
+        ],
+        "additionalProperties": true
+      },
+      "PrimaryTextVerification": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "const": "trusted-primary-text"
+          },
+          "corpusId": {
+            "type": "string"
+          },
+          "edition": {
+            "type": "string"
+          },
+          "language": {
+            "const": "en"
+          },
+          "manifestSha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "referenceSystem": {
+            "const": "web-protestant"
+          },
+          "referenceAlignment": {
+            "const": "canonical-compatible"
+          }
+        },
+        "required": [
+          "kind",
+          "corpusId",
+          "edition",
+          "language",
+          "manifestSha256",
+          "referenceSystem",
+          "referenceAlignment"
+        ],
+        "additionalProperties": false
+      },
+      "MaterialSourceReference": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "publisher": {
+            "type": "string"
+          },
+          "license": {
+            "enum": [
+              "public-domain",
+              "original-commentary",
+              "citation-only",
+              "cc-by-3.0",
+              "odbl-1.0"
+            ]
+          },
+          "licenseUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "attribution": {
+            "type": "string"
+          },
+          "checkedAt": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "url",
+          "publisher",
+          "license"
+        ],
+        "additionalProperties": false
+      },
+      "MaterialSummaryProvenance": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "const": "reviewed-material-summary"
+          },
+          "materialId": {
+            "type": "string"
+          },
+          "materialVersion": {
+            "type": "string"
+          },
+          "materialKind": {
+            "enum": [
+              "person",
+              "place",
+              "artwork"
+            ]
+          },
+          "references": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 10,
+            "items": {
+              "$ref": "#/components/schemas/MaterialSourceReference"
+            }
+          }
+        },
+        "required": [
+          "kind",
+          "materialId",
+          "materialVersion",
+          "materialKind",
+          "references"
+        ],
+        "additionalProperties": false
+      },
+      "Citation": {
+        "type": "object",
+        "properties": {
+          "sourceId": {
+            "type": "string"
+          },
+          "sourceKind": {
+            "enum": [
+              "scripture",
+              "commentary"
+            ]
+          },
+          "materialProvenance": {
+            "$ref": "#/components/schemas/MaterialSummaryProvenance"
+          },
+          "verification": {
+            "$ref": "#/components/schemas/PrimaryTextVerification"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "passage": {
+            "$ref": "#/components/schemas/Passage"
+          },
+          "version": {
+            "type": "string"
+          },
+          "license": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "sourceId",
+          "title",
+          "passage",
+          "version",
+          "license"
+        ],
+        "additionalProperties": false
+      },
+      "RequestResult": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
+            "enum": [
+              "reserved",
+              "running",
+              "complete",
+              "failed",
+              "cancelled"
+            ]
+          },
+          "result": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AnswerResult"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "status"
+        ],
+        "additionalProperties": false
+      },
+      "ModelSettings": {
+        "type": "object",
+        "properties": {
+          "maxOutputTokens": {
+            "type": "integer",
+            "minimum": 64,
+            "maximum": 2048
+          },
+          "temperature": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 2
+          },
+          "timeoutMs": {
+            "type": "integer",
+            "minimum": 1000,
+            "maximum": 30000
+          },
+          "stream": {
+            "const": false
+          },
+          "reasoning": {
+            "enum": [
+              "off",
+              "low",
+              "medium",
+              "high"
+            ],
+            "description": "Currently rejected unless a verified model adapter supports it."
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "ComparisonTrial": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 19
+          },
+          "questionIndex": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9
+          },
+          "modelIndex": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "modelId": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "queued",
+              "running",
+              "complete",
+              "failed",
+              "cancelled"
+            ]
+          },
+          "reservedBudgetUnits": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "modelInvoked": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "usageUnknown": {
+            "type": "boolean"
+          },
+          "leaseExpiresAt": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "description": "Unix timestamp in seconds"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "index",
+          "questionIndex",
+          "modelIndex",
+          "modelId",
+          "status",
+          "reservedBudgetUnits",
+          "modelInvoked",
+          "usageUnknown",
+          "leaseExpiresAt"
+        ],
+        "additionalProperties": false
+      },
+      "ComparisonState": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
+            "enum": [
+              "reserved",
+              "running",
+              "complete",
+              "failed",
+              "cancelled",
+              "expired"
+            ]
+          },
+          "phase": {
+            "enum": [
+              "preparing",
+              "ready",
+              "executing",
+              "terminal"
+            ]
+          },
+          "saved": {
+            "type": "boolean"
+          },
+          "trialCount": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 20
+          },
+          "completedCount": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 20
+          },
+          "nextTrialIndex": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 19
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "activeTrialIndex": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 19
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "expiresAt": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "description": "Unix timestamp in seconds"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "trials": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComparisonTrial"
+            }
+          },
+          "results": {
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": true
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "errorCode": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "status",
+          "phase",
+          "saved",
+          "trialCount",
+          "completedCount",
+          "nextTrialIndex",
+          "activeTrialIndex",
+          "expiresAt",
+          "trials",
+          "results",
+          "errorCode"
+        ],
+        "additionalProperties": false
+      },
+      "ComparisonStep": {
+        "type": "object",
+        "properties": {
+          "state": {
+            "$ref": "#/components/schemas/ComparisonState"
+          },
+          "trialIndex": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 19
+          },
+          "result": {
+            "anyOf": [
+              {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/AnswerResult"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "hidden": {
+                        "const": true
+                      },
+                      "reason": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "hidden",
+                      "reason"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "replayed": {
+            "type": "boolean"
+          },
+          "resultAvailability": {
+            "enum": [
+              "returned",
+              "saved",
+              "not_saved"
+            ]
+          }
+        },
+        "required": [
+          "state",
+          "trialIndex",
+          "result",
+          "replayed",
+          "resultAvailability"
+        ],
+        "additionalProperties": false
+      },
+      "ComparisonPlan": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "models": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 2,
+            "items": {
+              "type": "object",
+              "properties": {
+                "modelId": {
+                  "type": "string"
+                },
+                "settings": {
+                  "$ref": "#/components/schemas/ModelSettings"
+                },
+                "answerMode": {
+                  "enum": [
+                    "reviewed-claim-selection",
+                    "grounded-generation"
+                  ]
+                }
+              },
+              "required": [
+                "modelId"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "questions": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 10,
+            "items": {
+              "type": "object",
+              "properties": {
+                "passage": {
+                  "$ref": "#/components/schemas/Passage"
+                },
+                "question": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2000
+                },
+                "spoilerAllowed": {
+                  "type": "boolean"
+                },
+                "translation": {
+                  "type": "string",
+                  "pattern": "^[A-Z0-9_-]{1,30}$"
+                }
+              },
+              "required": [
+                "passage",
+                "question"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "saveResults": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": [
+          "requestId",
+          "models",
+          "questions"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

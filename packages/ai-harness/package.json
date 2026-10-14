@@ -1,0 +1,12 @@
+{
+  "name": "@bible/ai-harness",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {".": "./src/index.ts"},
+  "scripts": {
+    "test": "vitest run test",
+    "eval:offline": "node --experimental-strip-types eval/cli.ts --offline",
+    "models:check": "node --experimental-strip-types scripts/check-catalog.ts"
+  }
+}

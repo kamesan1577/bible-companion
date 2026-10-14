@@ -1,0 +1,35 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "bible-companion",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-13",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "workers_dev": false,
+  "observability": {
+    "enabled": false
+  },
+  "vars": {
+    "ENVIRONMENT": "development",
+    "RP_ID": "localhost",
+    "AUTH_ORIGIN": "http://localhost:8787",
+    "NATIVE_CALLBACK": "biblecompanion://auth/callback",
+    "AI_ENABLED": "false",
+    "CONNECTED_MODELS": "[]",
+    "DEFAULT_MODEL_ID": "@cf/google/gemma-4-26b-a4b-it",
+    "DAILY_APP_BUDGET": "9000",
+    "DAILY_USER_BUDGET": "2000",
+    "AI_RESERVATION_UNITS": "500",
+    "TERMS_REVIEWED_MODELS": "[]",
+    "TERMS_REVIEW_VERSION": ""
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "bible-companion",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

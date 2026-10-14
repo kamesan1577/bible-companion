@@ -1,0 +1,175 @@
+import type { AnswerInput } from '../src/types.ts';
+import { ACTS_SOURCES } from './acts-sources.ts';
+export interface EvaluationCase {
+  id: string;
+  question: string;
+  chapter: number;
+  start: number;
+  end: number;
+  expectedClaimIds: string[];
+  expectedStatus: 'answer' | 'insufficient' | 'spoiler';
+  requiredPoints: string[];
+  prohibitedClaims: string[];
+  references: string[];
+}
+/** Human-authored evaluation cases. Expected outputs are NOT model-generated benchmark results. */
+export const BIBLE_QUESTIONS: EvaluationCase[] = [
+  {
+    id: 'sosthenes-identity',
+    question: 'ソステネは誰？',
+    chapter: 18,
+    start: 17,
+    end: 17,
+    expectedClaimIds: ['sosthenes'],
+    expectedStatus: 'answer',
+    requiredPoints: ['会堂の指導者', '同名人物の同一視を避ける'],
+    prohibitedClaims: ['パウロと共に手紙を書いた人と同一だと断定する'],
+    references: ['ACT 18:17'],
+  },
+  {
+    id: 'jason-bond',
+    question: 'ヤソンが保証金を取られたのはなぜ？',
+    chapter: 17,
+    start: 6,
+    end: 9,
+    expectedClaimIds: ['jason-security', 'jason-inference'],
+    expectedStatus: 'answer',
+    requiredPoints: ['訴えと保証を区別', '金額や条件は不明'],
+    prohibitedClaims: ['金額の創作', '近代の保釈制度と同一と断定'],
+    references: ['ACT 17:6-9'],
+  },
+  {
+    id: 'cenchreae-place',
+    question: 'ケンクレアはどこ？',
+    chapter: 18,
+    start: 18,
+    end: 18,
+    expectedClaimIds: ['cenchreae-mentioned'],
+    expectedStatus: 'answer',
+    requiredPoints: ['本文での役割', '地理情報の不足を明示'],
+    prohibitedClaims: ['未検証の座標', '架空の地図'],
+    references: ['ACT 18:18'],
+  },
+  {
+    id: 'hair-vow',
+    question: '髪を切ったのはなぜ？',
+    chapter: 18,
+    start: 18,
+    end: 18,
+    expectedClaimIds: ['hair-vow'],
+    expectedStatus: 'answer',
+    requiredPoints: ['誓願があった', '具体的内容は明記されない'],
+    prohibitedClaims: ['ナジル人の誓願と確定', '期間を創作'],
+    references: ['ACT 18:18'],
+  },
+  {
+    id: 'gallio-motive',
+    question: 'ガリオが取り合わなかったのはなぜ？',
+    chapter: 18,
+    start: 12,
+    end: 16,
+    expectedClaimIds: ['gallio-refuses'],
+    expectedStatus: 'answer',
+    requiredPoints: ['発言に基づく理由', '内心は断定しない'],
+    prohibitedClaims: ['キリスト教の支持者と断定'],
+    references: ['ACT 18:12-16'],
+  },
+  {
+    id: 'aquila-priscilla',
+    question: 'アキラとプリスキラはどんな人？',
+    chapter: 18,
+    start: 2,
+    end: 3,
+    expectedClaimIds: ['aquila-priscilla'],
+    expectedStatus: 'answer',
+    requiredPoints: ['夫婦', '職業と共同生活'],
+    prohibitedClaims: ['アポロへの教えを先回りする'],
+    references: ['ACT 18:2-3'],
+  },
+  {
+    id: 'tent-making',
+    question: '天幕作りとはどんな仕事？',
+    chapter: 18,
+    start: 3,
+    end: 3,
+    expectedClaimIds: ['tent-makers'],
+    expectedStatus: 'answer',
+    requiredPoints: ['天幕の職人', '材料工程の不確実性'],
+    prohibitedClaims: ['羊毛だけを用いたと断定'],
+    references: ['ACT 18:3'],
+  },
+  {
+    id: 'baptism',
+    question: 'ここでのバプテスマは何を意味する？',
+    chapter: 18,
+    start: 8,
+    end: 8,
+    expectedClaimIds: ['baptism-context'],
+    expectedStatus: 'answer',
+    requiredPoints: ['聞く・信じる・受けるの順', '宗派差に配慮'],
+    prohibitedClaims: ['一つの宗派の教理を普遍的事実とする'],
+    references: ['ACT 18:8'],
+  },
+  {
+    id: 'spirit-prevents',
+    question: '聖霊に止められたとはどういうこと？',
+    chapter: 16,
+    start: 6,
+    end: 7,
+    expectedClaimIds: ['spirit-stops', 'spirit-reading'],
+    expectedStatus: 'answer',
+    requiredPoints: ['記述と信仰解釈を分離', '方法は本文にない'],
+    prohibitedClaims: ['病気や天候が原因と断定', 'マケドニアの後続場面を漏らす'],
+    references: ['ACT 16:6-7'],
+  },
+  {
+    id: 'painting-unavailable',
+    question: 'この場面を描いた絵はある？',
+    chapter: 18,
+    start: 18,
+    end: 18,
+    expectedClaimIds: [],
+    expectedStatus: 'insufficient',
+    requiredPoints: ['作品資料がないと明示'],
+    prohibitedClaims: ['架空の画題や作者', '無関係な作品を一致とする'],
+    references: ['ACT 18:18', 'No licensed art catalog in this fixture'],
+  },
+  {
+    id: 'future-activity',
+    question: 'アキラとプリスキラはこのあと誰に教えるの？',
+    chapter: 18,
+    start: 2,
+    end: 3,
+    expectedClaimIds: [],
+    expectedStatus: 'spoiler',
+    requiredPoints: ['境界を勝手に広げない'],
+    prohibitedClaims: ['アポロの名を答える'],
+    references: ['ACT 18:2-3; later material intentionally withheld'],
+  },
+  {
+    id: 'current-location',
+    question: 'パウロはいまどの町に着いたの？',
+    chapter: 18,
+    start: 1,
+    end: 1,
+    expectedClaimIds: ['arrives-corinth'],
+    expectedStatus: 'answer',
+    requiredPoints: ['コリント'],
+    prohibitedClaims: ['後のエフェソ到着を混ぜる'],
+    references: ['ACT 18:1'],
+  },
+];
+export function inputForCase(test: EvaluationCase): AnswerInput {
+  return {
+    passage: {
+      book: 'ACT',
+      start: { chapter: test.chapter, verse: test.start },
+      end: { chapter: test.chapter, verse: test.end },
+    },
+    question: test.question,
+    spoilerAllowed: false,
+    sources: structuredClone(ACTS_SOURCES),
+    translation: 'WEB',
+    language: 'ja',
+  };
+}

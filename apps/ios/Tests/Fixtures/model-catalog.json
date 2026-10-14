@@ -1,0 +1,1589 @@
+{
+  "models": [
+    {
+      "id": "@cf/google/gemma-4-26b-a4b-it",
+      "displayName": "gemma-4-26b-a4b-it",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "free-allocation-candidate",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/gemma-4-26b-a4b-it/",
+      "contextWindowTokens": 256000,
+      "tokenParameter": "max_completion_tokens",
+      "temperatureMax": 2,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": "https://ai.google.dev/gemma/docs/gemma_4_license",
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/gemma-4-26b-a4b-it/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/google/gemma-4-26b-a4b-it",
+        "inputNeuronsPerMillionTokens": 9091,
+        "outputNeuronsPerMillionTokens": 27273,
+        "hasReasoning": true,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "CONNECTION_NOT_VERIFIED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/qwen/qwen3-30b-a3b-fp8",
+      "displayName": "qwen3-30b-a3b-fp8",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "free-allocation-candidate",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/qwen3-30b-a3b-fp8/",
+      "contextWindowTokens": 32768,
+      "tokenParameter": "max_tokens",
+      "temperatureMax": 5,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": null,
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/qwen3-30b-a3b-fp8/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/qwen/qwen3-30b-a3b-fp8",
+        "inputNeuronsPerMillionTokens": 4625,
+        "outputNeuronsPerMillionTokens": 30475,
+        "hasReasoning": true,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "CONNECTION_NOT_VERIFIED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/zai-org/glm-4.7-flash",
+      "displayName": "glm-4.7-flash",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "free-allocation-candidate",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/glm-4.7-flash/",
+      "contextWindowTokens": 131072,
+      "tokenParameter": "max_completion_tokens",
+      "temperatureMax": 2,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": null,
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/glm-4.7-flash/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/zai-org/glm-4.7-flash",
+        "inputNeuronsPerMillionTokens": 5500,
+        "outputNeuronsPerMillionTokens": 36400,
+        "hasReasoning": true,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "CONNECTION_NOT_VERIFIED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/meta/llama-3.2-1b-instruct",
+      "displayName": "llama-3.2-1b-instruct",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "free-allocation-candidate",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/llama-3.2-1b-instruct/",
+      "contextWindowTokens": 60000,
+      "tokenParameter": "max_tokens",
+      "temperatureMax": 5,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/LICENSE",
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/llama-3.2-1b-instruct/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/meta/llama-3.2-1b-instruct",
+        "inputNeuronsPerMillionTokens": 2457,
+        "outputNeuronsPerMillionTokens": 18252,
+        "hasReasoning": false,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "CONNECTION_NOT_VERIFIED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/meta/llama-3.2-3b-instruct",
+      "displayName": "llama-3.2-3b-instruct",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "free-allocation-candidate",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/llama-3.2-3b-instruct/",
+      "contextWindowTokens": 80000,
+      "tokenParameter": "max_tokens",
+      "temperatureMax": 5,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/LICENSE",
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/llama-3.2-3b-instruct/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/meta/llama-3.2-3b-instruct",
+        "inputNeuronsPerMillionTokens": 4625,
+        "outputNeuronsPerMillionTokens": 30475,
+        "hasReasoning": false,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "CONNECTION_NOT_VERIFIED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/ibm-granite/granite-4.0-h-micro",
+      "displayName": "granite-4.0-h-micro",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "free-allocation-candidate",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/granite-4.0-h-micro/",
+      "contextWindowTokens": 131000,
+      "tokenParameter": "max_tokens",
+      "temperatureMax": 5,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": null,
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/granite-4.0-h-micro/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/ibm-granite/granite-4.0-h-micro",
+        "inputNeuronsPerMillionTokens": 1542,
+        "outputNeuronsPerMillionTokens": 10158,
+        "hasReasoning": false,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "CONNECTION_NOT_VERIFIED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/openai/gpt-oss-20b",
+      "displayName": "gpt-oss-20b",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "free-allocation-candidate",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/gpt-oss-20b/",
+      "contextWindowTokens": 128000,
+      "tokenParameter": "max_tokens",
+      "temperatureMax": 5,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": null,
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/gpt-oss-20b/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/openai/gpt-oss-20b",
+        "inputNeuronsPerMillionTokens": 18182,
+        "outputNeuronsPerMillionTokens": 27273,
+        "hasReasoning": true,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "CONNECTION_NOT_VERIFIED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/meta/llama-3.1-8b-instruct-fp8",
+      "displayName": "llama-3.1-8b-instruct-fp8",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "free-allocation-candidate",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/llama-3.1-8b-instruct-fp8/",
+      "contextWindowTokens": 32000,
+      "tokenParameter": "max_tokens",
+      "temperatureMax": 5,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE",
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/llama-3.1-8b-instruct-fp8/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/meta/llama-3.1-8b-instruct-fp8",
+        "inputNeuronsPerMillionTokens": 13778,
+        "outputNeuronsPerMillionTokens": 26128,
+        "hasReasoning": false,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "CONNECTION_NOT_VERIFIED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/mistralai/mistral-small-3.1-24b-instruct",
+      "displayName": "mistral-small-3.1-24b-instruct",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "free-allocation-candidate",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/mistral-small-3.1-24b-instruct/",
+      "contextWindowTokens": 128000,
+      "tokenParameter": "max_tokens",
+      "temperatureMax": 5,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": null,
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/mistral-small-3.1-24b-instruct/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/mistralai/mistral-small-3.1-24b-instruct",
+        "inputNeuronsPerMillionTokens": 31876,
+        "outputNeuronsPerMillionTokens": 50488,
+        "hasReasoning": false,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "CONNECTION_NOT_VERIFIED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/qwen/qwen3.8-27b",
+      "displayName": "qwen3.8-27b",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "free-allocation-candidate",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/qwen3.8-27b/",
+      "contextWindowTokens": 262144,
+      "tokenParameter": "max_completion_tokens",
+      "temperatureMax": 2,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": null,
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/qwen3.8-27b/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/qwen/qwen3.8-27b",
+        "inputNeuronsPerMillionTokens": 40909,
+        "outputNeuronsPerMillionTokens": 290909,
+        "hasReasoning": true,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "CONNECTION_NOT_VERIFIED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+      "displayName": "llama-3.3-70b-instruct-fp8-fast",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "free-allocation-candidate",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/llama-3.3-70b-instruct-fp8-fast/",
+      "contextWindowTokens": 24000,
+      "tokenParameter": "max_tokens",
+      "temperatureMax": 5,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/LICENSE",
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/llama-3.3-70b-instruct-fp8-fast/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+        "inputNeuronsPerMillionTokens": 26668,
+        "outputNeuronsPerMillionTokens": 204805,
+        "hasReasoning": false,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "CONNECTION_NOT_VERIFIED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/meta/llama-4-scout-17b-16e-instruct",
+      "displayName": "llama-4-scout-17b-16e-instruct",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "free-allocation-candidate",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/llama-4-scout-17b-16e-instruct/",
+      "contextWindowTokens": 131000,
+      "tokenParameter": "max_tokens",
+      "temperatureMax": 5,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": "https://github.com/meta-llama/llama-models/blob/main/models/llama4/LICENSE",
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/llama-4-scout-17b-16e-instruct/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/meta/llama-4-scout-17b-16e-instruct",
+        "inputNeuronsPerMillionTokens": 24545,
+        "outputNeuronsPerMillionTokens": 77273,
+        "hasReasoning": false,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "CONNECTION_NOT_VERIFIED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/openai/gpt-oss-120b",
+      "displayName": "gpt-oss-120b",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "free-allocation-candidate",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/gpt-oss-120b/",
+      "contextWindowTokens": 128000,
+      "tokenParameter": "max_tokens",
+      "temperatureMax": 5,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": null,
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/gpt-oss-120b/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/openai/gpt-oss-120b",
+        "inputNeuronsPerMillionTokens": 31818,
+        "outputNeuronsPerMillionTokens": 68182,
+        "hasReasoning": true,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "CONNECTION_NOT_VERIFIED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/deepseek-ai/deepseek-r1-distill-qwen-32b",
+      "displayName": "deepseek-r1-distill-qwen-32b",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "free-allocation-candidate",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/deepseek-r1-distill-qwen-32b/",
+      "contextWindowTokens": 80000,
+      "tokenParameter": "max_tokens",
+      "temperatureMax": 5,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": "https://github.com/deepseek-ai/DeepSeek-R1/blob/main/LICENSE",
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/deepseek-r1-distill-qwen-32b/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/deepseek-ai/deepseek-r1-distill-qwen-32b",
+        "inputNeuronsPerMillionTokens": 45170,
+        "outputNeuronsPerMillionTokens": 443756,
+        "hasReasoning": true,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "CONNECTION_NOT_VERIFIED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/qwen/qwq-32b",
+      "displayName": "qwq-32b",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "free-allocation-candidate",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/qwq-32b/",
+      "contextWindowTokens": 24000,
+      "tokenParameter": "max_tokens",
+      "temperatureMax": 5,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": null,
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/qwq-32b/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/qwen/qwq-32b",
+        "inputNeuronsPerMillionTokens": 60000,
+        "outputNeuronsPerMillionTokens": 90909,
+        "hasReasoning": true,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "CONNECTION_NOT_VERIFIED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/moonshotai/kimi-k2.6",
+      "displayName": "kimi-k2.6",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "paid-required",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/kimi-k2.6/",
+      "contextWindowTokens": 262144,
+      "tokenParameter": "max_completion_tokens",
+      "temperatureMax": 2,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": "https://huggingface.co/moonshotai/Kimi-K2.6/blob/main/LICENSE",
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/kimi-k2.6/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/moonshotai/kimi-k2.6",
+        "inputNeuronsPerMillionTokens": 86364,
+        "outputNeuronsPerMillionTokens": 363636,
+        "hasReasoning": true,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "PAID_APPROVAL_REQUIRED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/moonshotai/kimi-k2.7-code",
+      "displayName": "kimi-k2.7-code",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "paid-required",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/kimi-k2.7-code/",
+      "contextWindowTokens": 262144,
+      "tokenParameter": "max_completion_tokens",
+      "temperatureMax": 2,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": "https://huggingface.co/moonshotai/Kimi-K2.7-Code/blob/main/LICENSE",
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/kimi-k2.7-code/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/moonshotai/kimi-k2.7-code",
+        "inputNeuronsPerMillionTokens": 86364,
+        "outputNeuronsPerMillionTokens": 363636,
+        "hasReasoning": true,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "PAID_APPROVAL_REQUIRED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/zai-org/glm-5.2",
+      "displayName": "glm-5.2",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "paid-required",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/glm-5.2/",
+      "contextWindowTokens": 262144,
+      "tokenParameter": "max_completion_tokens",
+      "temperatureMax": 2,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": null,
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/glm-5.2/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/zai-org/glm-5.2",
+        "inputNeuronsPerMillionTokens": 127273,
+        "outputNeuronsPerMillionTokens": 400000,
+        "hasReasoning": true,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "PAID_APPROVAL_REQUIRED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/zai-org/glm-5.3",
+      "displayName": "glm-5.3",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "paid-required",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/glm-5.3/",
+      "contextWindowTokens": 1048576,
+      "tokenParameter": "max_completion_tokens",
+      "temperatureMax": 2,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": null,
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/glm-5.3/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/zai-org/glm-5.3",
+        "inputNeuronsPerMillionTokens": 127273,
+        "outputNeuronsPerMillionTokens": 400000,
+        "hasReasoning": true,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "PAID_APPROVAL_REQUIRED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/zai-org/glm-5.3-flash",
+      "displayName": "glm-5.3-flash",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "paid-required",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/glm-5.3-flash/",
+      "contextWindowTokens": 1048576,
+      "tokenParameter": "max_completion_tokens",
+      "temperatureMax": 2,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": "https://huggingface.co/zai-org/GLM-5.3-Flash/blob/main/LICENSE",
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/glm-5.3-flash/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/zai-org/glm-5.3-flash",
+        "inputNeuronsPerMillionTokens": 13636,
+        "outputNeuronsPerMillionTokens": 45455,
+        "hasReasoning": true,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "PAID_APPROVAL_REQUIRED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/deepseek-ai/deepseek-v4-flash-0731",
+      "displayName": "deepseek-v4-flash-0731",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "paid-required",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/deepseek-v4-flash-0731/",
+      "contextWindowTokens": 1048576,
+      "tokenParameter": "max_completion_tokens",
+      "temperatureMax": 2,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": null,
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/deepseek-v4-flash-0731/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/deepseek-ai/deepseek-v4-flash-0731",
+        "inputNeuronsPerMillionTokens": 40000,
+        "outputNeuronsPerMillionTokens": 120000,
+        "hasReasoning": true,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "PAID_APPROVAL_REQUIRED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    },
+    {
+      "id": "@cf/deepseek-ai/deepseek-v4-pro-0813",
+      "displayName": "deepseek-v4-pro-0813",
+      "provider": "cloudflare-workers-ai",
+      "billingTier": "paid-required",
+      "documentationVerifiedAt": "2026-10-13",
+      "officialUrl": "https://developers.cloudflare.com/workers-ai/models/deepseek-v4-pro-0813/",
+      "contextWindowTokens": 1048576,
+      "tokenParameter": "max_completion_tokens",
+      "temperatureMax": 2,
+      "streamSupported": true,
+      "reasoningControl": "unverified",
+      "schemaStatus": "documented-unconnected",
+      "modelVersion": "provider-managed-unpinned",
+      "termsReview": {
+        "status": "unreviewed",
+        "policyVersion": "workers-ai-terms-2026-10-13.v1",
+        "modelTermsUrl": null,
+        "evidenceUrl": "https://developers.cloudflare.com/workers-ai/models/deepseek-v4-pro-0813/",
+        "evidenceCheckedAt": "2026-10-13",
+        "acceptancePerformed": false
+      },
+      "pricing": {
+        "modelId": "@cf/deepseek-ai/deepseek-v4-pro-0813",
+        "inputNeuronsPerMillionTokens": 120000,
+        "outputNeuronsPerMillionTokens": 360000,
+        "hasReasoning": true,
+        "checkedAt": "2026-10-13",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "outputLimitIncludesReasoning": "unverified"
+      },
+      "connectionStatus": "unconnected",
+      "enabled": false,
+      "disabledReason": "PAID_APPROVAL_REQUIRED",
+      "settingsSchema": {
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 2048,
+          "default": 512
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2,
+          "default": 0.2
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 30000,
+          "default": 15000
+        },
+        "stream": {
+          "type": "boolean",
+          "supported": true,
+          "default": false
+        },
+        "reasoning": {
+          "supported": false,
+          "reason": "No verified binding parameter mapping; omitted."
+        }
+      },
+      "runtimeValidation": "not-run",
+      "budgetReadiness": {
+        "ready": false,
+        "reason": "BUDGET_UNVERIFIED",
+        "pricingVersion": "cf-pricing-2026-10-09-checked-2026-10-13",
+        "expiresAt": null,
+        "budgetBoundVerified": false
+      }
+    }
+  ],
+  "defaultModelId": "@cf/google/gemma-4-26b-a4b-it"
+}

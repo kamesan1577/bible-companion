@@ -1,0 +1,182 @@
+{
+  "requestId": "00000000-0000-4000-8000-000000000001",
+  "status": "complete",
+  "result": {
+    "referenceSystem": {
+      "canon": "protestant-66",
+      "versification": "standard-kjv",
+      "requestedTranslation": null,
+      "translationAlignment": "unverified",
+      "noticeJa": "章・節の検証はプロテスタント66巻の標準KJV区分に基づきます。JCBなど各訳との節番号・本文の対応は未検証です。引用資料は表示された出典の訳に従います。"
+    },
+    "provider": "cloudflare-workers-ai",
+    "modelId": "@cf/google/gemma-4-26b-a4b-it",
+    "modelVersion": "provider-managed-unpinned",
+    "providerReportedModelVersion": null,
+    "promptVersion": "bible-ja-grounded.v4",
+    "registryVersion": "workers-ai-2026-10-13.v2",
+    "mode": "grounded-generation",
+    "cacheScope": "private",
+    "requestedSettings": {
+      "maxOutputTokens": 512,
+      "temperature": 0.2,
+      "timeoutMs": 15000,
+      "stream": false
+    },
+    "effectiveSettings": {
+      "max_completion_tokens": 512,
+      "temperature": 0.2,
+      "stream": false
+    },
+    "validation": {
+      "citations": "validated",
+      "semanticGrounding": "unverified",
+      "spoilerProtection": "retrieval-and-reference-checks"
+    },
+    "warnings": [
+      "GENERATED_PROSE_ENTAILMENT_NOT_PROVEN",
+      "PRETRAINED_SPOILERS_NOT_FULLY_DETECTABLE"
+    ],
+    "status": "answered",
+    "claims": [
+      {
+        "id": "generated-0",
+        "text": "ケンクレアはコリントの東側の港です。",
+        "kind": "fact",
+        "sourceId": "material:place-cenchreae",
+        "evidenceQuote": "コリントの東側の港として発掘研究が行われている場所です。"
+      }
+    ],
+    "citations": [
+      {
+        "sourceId": "material:place-cenchreae",
+        "sourceKind": "commentary",
+        "materialProvenance": {
+          "kind": "reviewed-material-summary",
+          "materialId": "place-cenchreae",
+          "materialVersion": "primary-reviewed-2026-10-13.2",
+          "materialKind": "place",
+          "references": [
+            {
+              "id": "web-act-18-18",
+              "title": "World English Bible · Acts 18:18",
+              "url": "https://ebible.org/engwebp/ACT18.htm#V18",
+              "publisher": "eBible.org",
+              "checkedAt": "2026-10-13",
+              "license": "public-domain"
+            },
+            {
+              "id": "ascsa-kenchreai-2007",
+              "title": "Life and Death at a Port in Roman Greece: The Kenchreai Cemetery Project, 2002–2006",
+              "url": "https://www.ascsa.edu.gr/publications/hesperia/article/76/1/143-181",
+              "publisher": "American School of Classical Studies at Athens",
+              "checkedAt": "2026-10-13",
+              "license": "citation-only"
+            },
+            {
+              "id": "ascsa-kenchreai-2012",
+              "title": "Kenchreai, Eastern Port of Corinth: Discoveries from the Excavations on Koutsongila",
+              "url": "https://www.ascsa.edu.gr/index.php/news/newsDetails/report-on-kenchreai-2012",
+              "publisher": "American School of Classical Studies at Athens",
+              "checkedAt": "2026-10-13",
+              "license": "citation-only"
+            },
+            {
+              "id": "pleiades-570347",
+              "title": "Pleiades · Kenchreai",
+              "url": "https://pleiades.stoa.org/places/570347",
+              "publisher": "Pleiades / Institute for the Study of the Ancient World, New York University",
+              "checkedAt": "2026-10-13",
+              "license": "cc-by-3.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+              "attribution": "© G. Reger, J. McK. Camp II, DARMC, Brady Kiesling, Sean Gillies, Johan Åhlfeldt, Jeffrey Becker, Tom Elliott, Catherine Bouras, Gabriel Mckee, Joshua Sosin, R. Talbert. Pleiades, CC BY 3.0. 座標は原資料の代表点を転記。日本語説明は独自作成。"
+            }
+          ]
+        },
+        "title": "確認済み資料解説：ケンクレア",
+        "url": "https://ebible.org/engwebp/ACT18.htm#V18",
+        "passage": {
+          "book": "ACT",
+          "start": {
+            "chapter": 18,
+            "verse": 18
+          },
+          "end": {
+            "chapter": 18,
+            "verse": 18
+          }
+        },
+        "version": "primary-reviewed-2026-10-13.2",
+        "license": "original-commentary"
+      }
+    ],
+    "answer": "ケンクレアはコリントの東側の港です。",
+    "modelInvoked": true,
+    "providerPromptCache": {
+      "status": "unknown",
+      "basis": "not-reported-by-verified-provider-schema",
+      "cachedInputTokens": null
+    },
+    "usage": {
+      "actual": null,
+      "reasoningTokens": null,
+      "estimated": {
+        "inputTokens": 7027,
+        "maxOutputTokens": 512,
+        "method": "utf8-byte-upper-bound"
+      },
+      "neurons": null,
+      "costUsd": null
+    },
+    "timing": {
+      "durationMs": 1,
+      "providerFirstTextMs": null,
+      "visibleAnswerMs": 1,
+      "validatedReadyMs": 1,
+      "clientVisibleMs": null,
+      "measurementScope": "server-harness",
+      "streamed": false
+    },
+    "budgetPolicy": {
+      "mode": "strict-proof",
+      "reservationBasis": "verified-proof-bounds",
+      "budgetBoundVerified": true,
+      "reservedBudgetUnits": 329,
+      "actualNeurons": null,
+      "warnings": []
+    },
+    "sourcePolicyVersion": 33,
+    "spoilerAllowed": false,
+    "scope": {
+      "passage": {
+        "book": "ACT",
+        "start": {
+          "chapter": 18,
+          "verse": 18
+        },
+        "end": {
+          "chapter": 18,
+          "verse": 18
+        }
+      },
+      "readingBoundary": {
+        "book": "ACT",
+        "start": {
+          "chapter": 18,
+          "verse": 18
+        },
+        "end": {
+          "chapter": 18,
+          "verse": 18
+        }
+      },
+      "spoilerAllowed": false,
+      "sourceIds": [
+        "material:place-cenchreae"
+      ],
+      "sourceVersions": {
+        "material:place-cenchreae": "primary-reviewed-2026-10-13.2"
+      }
+    }
+  }
+}

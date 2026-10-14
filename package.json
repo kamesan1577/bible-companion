@@ -1,0 +1,58 @@
+{
+  "name": "bible-companion",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": [
+    "apps/api",
+    "packages/core",
+    "packages/ai-harness"
+  ],
+  "scripts": {
+    "bootstrap": "npm ci",
+    "dev": "node scripts/wrangler.mjs dev --config apps/api/wrangler.jsonc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "validate": "npm run typecheck && npm test && npm run design:check && npm run design:test && npm run infra:test && npm run seed:check && npm run db:local:test && npm run corpus:import:test && npm run corpus:assets:test && npm run operator:test && npm run worker:runtime:test && npm run source:export:test",
+    "migrate": "node scripts/wrangler.mjs d1 migrations apply bible-companion --local --config apps/api/wrangler.jsonc",
+    "deploy:dry-run": "node scripts/wrangler.mjs deploy --dry-run --config apps/api/wrangler.jsonc",
+    "infra": "node scripts/infra.mjs",
+    "design:check": "node scripts/design/check-design.mjs",
+    "design:test": "node --test scripts/design/design.test.mjs",
+    "openapi": "node scripts/build-openapi.mjs",
+    "infra:test": "node --test scripts/config.test.mjs scripts/generator.test.mjs scripts/forwarded-child.test.mjs",
+    "seed:check": "node scripts/generate-source-seed.mjs --check && node scripts/generate-material-seed.mjs --check",
+    "db:local": "node scripts/local-db.mjs",
+    "db:local:test": "node --test scripts/local-db.test.mjs",
+    "corpus": "node scripts/scripture-corpus.mjs",
+    "corpus:import": "node scripts/import-scripture.mjs",
+    "corpus:import:test": "node --test scripts/import-scripture.test.mjs",
+    "corpus:assets": "node scripts/build-scripture-assets.mjs",
+    "corpus:assets:config": "node scripts/scripture-assets-config.mjs",
+    "corpus:assets:test": "node --test scripts/build-scripture-assets.test.mjs scripts/scripture-assets-config.test.mjs",
+    "operator": "node scripts/operator.mjs",
+    "operator:test": "node --test scripts/operator.test.mjs scripts/operator-security-review.test.mjs scripts/receipt-rotation-security-review.test.mjs",
+    "worker:runtime:test": "node --test scripts/worker-runtime.test.mjs scripts/receipt-slot-runtime.test.mjs",
+    "source:export": "node scripts/export-source.mjs",
+    "source:export:test": "node --test scripts/export-source.test.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "@simplewebauthn/server": "^14.0.0",
+    "hono": "^4.9.0",
+    "saxes": "^6.0.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261013.1",
+    "@types/node": "^24.0.0",
+    "esbuild": "0.28.2",
+    "prettier": "^3.9.10",
+    "typescript": "^5.9.0",
+    "vitest": "^5.0.4",
+    "wrangler": "^4.40.0",
+    "miniflare": "5.20261006.2-beta"
+  }
+}

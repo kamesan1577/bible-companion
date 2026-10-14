@@ -1,0 +1,10 @@
+import {describe,it,expect} from 'vitest';
+import {materialSchema,materialVisible} from '../src/materials';
+const passage={book:'ACT',start:{chapter:18,verse:18},end:{chapter:18,verse:18}};
+const base={id:'place-kenchreai',kind:'place',title:'ケンクレア',summary:'コリントの東側の港です。',passages:[passage],spoilerEnd:{book:'ACT',chapter:18,verse:18},version:'test-1',reviewed:true,rightsStatus:'approved',relationship:'direct',provenance:[{id:'primary',title:'Primary archaeology record',url:'https://www.ascsa.edu.gr/',publisher:'ASCSA',checkedAt:'2026-10-13',license:'citation-only'}],details:{coordinates:null,identificationCertainty:'confirmed'}};
+describe('source-verified material cards',()=>{
+ it('keeps unknown coordinates explicit and distinguishes no map position from zero coordinates',()=>{const card=materialSchema.parse(base);expect(card.kind==='place'&&card.details.coordinates).toBeNull();expect(materialVisible(card,passage,false)).toBe(true);});
+ it('rejects coordinates without provenance and unsafe source URLs',()=>{expect(materialSchema.safeParse({...base,details:{...base.details,coordinates:{latitude:37.9,longitude:22.9,certainty:'approximate',sourceId:'invented',explanation:'Approximate'}}}).success).toBe(false);expect(materialSchema.safeParse({...base,provenance:[{...base.provenance[0],url:'javascript:alert(1)'}]}).success).toBe(false);});
+ it('does not display future, unrelated, revoked or unreviewed cards',()=>{const card=materialSchema.parse(base);expect(materialVisible(card,{...passage,end:{chapter:18,verse:17},start:{chapter:18,verse:17}},false)).toBe(false);expect(materialVisible({...card,rightsStatus:'revoked'},passage,true)).toBe(false);expect(materialVisible({...card,reviewed:false},passage,true)).toBe(false);expect(materialVisible(card,{book:'ACT',start:{chapter:9,verse:3},end:{chapter:9,verse:7}},true)).toBe(false);});
+ it('rejects whole-card bounds earlier than any associated passage',()=>expect(materialSchema.safeParse({...base,spoilerEnd:{book:'ACT',chapter:18,verse:17}}).success).toBe(false));
+});
