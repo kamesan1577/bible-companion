@@ -28,8 +28,6 @@ jobs:
       DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
       HOMEBREW_NO_AUTO_UPDATE: '1'
       HOMEBREW_NO_ANALYTICS: '1'
-      CI_OUTPUT: ${{ runner.temp }}/ios-results
-      CI_DERIVED_DATA: ${{ runner.temp }}/ios-derived-data
     steps:
       - name: Check out requested revision
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -38,6 +36,9 @@ jobs:
 
       - name: Check Apple toolchain
         run: |
+          CI_OUTPUT="$RUNNER_TEMP/ios-results"
+          CI_DERIVED_DATA="$RUNNER_TEMP/ios-derived-data"
+          printf 'CI_OUTPUT=%s\nCI_DERIVED_DATA=%s\n' "$CI_OUTPUT" "$CI_DERIVED_DATA" >> "$GITHUB_ENV"
           mkdir -p "$CI_OUTPUT"
           test -d "$DEVELOPER_DIR"
           {
