@@ -13,7 +13,12 @@ import SwiftUI
                 RootView()
 #endif
             }.environmentObject(store)
-                .task { await store.restore(); await store.refreshShareAI() }
+                 .task {
+#if DEBUG
+                    if ProcessInfo.processInfo.arguments.contains("--simulator-qa") { return }
+#endif
+                    await store.restore(); await store.refreshShareAI()
+                }
                 .onChange(of: scenePhase) { _, phase in if phase == .active { store.enteredForeground() } }
         }
     }

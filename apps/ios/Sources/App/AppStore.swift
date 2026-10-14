@@ -423,3 +423,13 @@ import CompanionCore
         } else { errorMessage = "処理を完了できませんでした。端末のロックと接続を確認して再試行してください。" }
     }
 }
+
+#if DEBUG
+extension AppStore {
+    func configureSimulatorQA(client: APIClient) {
+        guard ProcessInfo.processInfo.arguments.contains("--simulator-qa") else { return }
+        self.client = client
+        account = try! JSONDecoder().decode(Account.self, from: Data(#"{"id":"00000000-0000-4000-8000-000000000123","display_name":"Fixture reader","role":"reader","canDebug":false}"#.utf8))
+    }
+}
+#endif

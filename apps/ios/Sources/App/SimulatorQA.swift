@@ -4,12 +4,13 @@ import CompanionCore
 
 /// Fixture rendering only. This entire entry point is absent from Release builds.
 struct SimulatorQA: View {
+    @EnvironmentObject private var store: AppStore
     @State private var ready = false
-    private let client: APIClient
+    @State private var client: APIClient
     private let item: ImportRecord
     init() {
         let config = URLSessionConfiguration.ephemeral; config.protocolClasses = [SimulatorQAProtocol.self]
-        client = try! APIClient(baseURL: URL(string: "https://fixture.example.org")!, configuration: config)
+        _client = State(initialValue: try! APIClient(baseURL: URL(string: "https://fixture.example.org")!, configuration: config))
         item = try! JSONDecoder().decode(ImportRecord.self, from: Data(#"{"id":"00000000-0000-4000-8000-000000000123","idempotencyKey":"00000000-0000-4000-8000-000000000123","ranges":[{"book":"ACT","start":{"chapter":23,"verse":1},"end":{"chapter":23,"verse":1}}],"translation":"JCB","createdAt":0}"#.utf8))
     }
     var body: some View {
@@ -24,7 +25,7 @@ struct SimulatorQA: View {
                 NavigationLink("使い方") { FirstRunGuide() }
                 ShareLink("実際の共有拡張を開く", item: URL(string: "https://www.bible.com/bible/83/ACT.23.1.JCB")!)
             }.navigationTitle("描画確認").bibleCanvas()
-        }.task { await client.setToken("simulator-fixture-only"); ready = true }
+        }.task { await client.setToken("simulator-fixture-only"); store.configureSimulatorQA(client: client); ready = true }
     }
 }
 private final class SimulatorQAProtocol: URLProtocol, @unchecked Sendable {
@@ -33,9 +34,23 @@ private final class SimulatorQAProtocol: URLProtocol, @unchecked Sendable {
     override func startLoading() {
         guard let url = request.url, url.host == "fixture.example.org" else { client?.urlProtocol(self, didFailWithError: URLError(.unsupportedURL)); return }
         let policy = #"{"allowedAnswerModes":["grounded-generation"],"defaultAnswerMode":"grounded-generation","groundedPolicyVersion":"fixture-v1","groundedNoticeJa":"固定データ","workersAiConsent":true,"shareAiEnabled":false,"shareAiConsent":false,"groundedConsent":{"accepted":true,"policyVersion":"fixture-v1"}}"#
-        let ok = url.path == "/v1/me/ai-policy"
-        let data = Data((ok ? policy : #"{"error":{"code":"fixture_no_mutation","message":"描画確認では送信しません"}}"#).utf8)
-        client?.urlProtocol(self, didReceive: HTTPURLResponse(url: url, statusCode: ok ? 200 : 409, httpVersion: nil, headerFields: ["Content-Type":"application/json"])!, cacheStoragePolicy: .notAllowed)
+        var bodyData = request.httpBody ?? Data()
+        if bodyData.isEmpty, let stream = request.httpBodyStream {
+            stream.open(); defer { stream.close() }; var bytes = [UInt8](repeating: 0, count: 1024)
+            while bodyData.count < 20000 { let n = stream.read(&bytes, maxLength: bytes.count); if n <= 0 { break }; bodyData.append(contentsOf: bytes.prefix(n)) }
+        }
+        let fields = (try? JSONSerialization.jsonObject(with: bodyData)) as? [String: Any] ?? [:]
+        let passage: [String: Any] = ["book":"ACT","start":["chapter":23,"verse":1],"end":["chapter":23,"verse":1]]
+        var ok = url.path == "/v1/me/ai-policy"
+        var data = Data((ok ? policy : #"{"error":{"code":"fixture_no_mutation","message":"描画確認では外部に送信しません"}}"#).utf8)
+        if request.httpMethod == "POST", url.path == "/v1/conversations" {
+            ok = true
+            data = try! JSONSerialization.data(withJSONObject: ["id":"00000000-0000-4000-8000-000000000123","importId":"00000000-0000-4000-8000-000000000123","passage":passage,"readingBoundary":passage,"spoilerAllowed":false,"createdAt":0])
+        } else if request.httpMethod == "POST", url.path.hasSuffix("/questions") {
+            ok = true
+            data = try! JSONSerialization.data(withJSONObject: ["requestId":fields["requestId"] ?? "00000000-0000-4000-8000-000000000123","status":"complete","result":["answer":"固定データ: " + (fields["question"] as? String ?? "送信"),"status":"answered","citations":[],"modelId":"fixture-no-provider","modelInvoked":false,"mode":"grounded-generation","warnings":[],"usage":[:],"timing":[:]]])
+        }
+        client?.urlProtocol(self, didReceive: HTTPURLResponse(url: url, statusCode: ok ? 200 : 409, httpVersion: "HTTP/1.1", headerFields: ["Content-Type":"application/json"])!, cacheStoragePolicy: .notAllowed)
         client?.urlProtocol(self, didLoad: data); client?.urlProtocolDidFinishLoading(self)
     }
     override func stopLoading() {}

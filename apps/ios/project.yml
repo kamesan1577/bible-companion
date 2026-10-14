@@ -82,7 +82,26 @@ targets:
         GENERATE_INFOPLIST_FILE: YES
     dependencies:
       - package: CompanionCore
+  ReadingInteractionUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: UITests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(BIBLE_BUNDLE_ID).UITests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_TARGET_NAME: BibleCompanion
+    dependencies:
+      - target: BibleCompanion
 schemes:
+  ReadingInteractionUI:
+    build:
+      targets:
+        BibleCompanion: all
+        ReadingInteractionUITests: [test]
+    test:
+      targets: [ReadingInteractionUITests]
   BibleCompanion:
     build:
       targets:

@@ -125,18 +125,16 @@ test('portable archive supports long nested paths and executable modes', (t) => 
 
 test('refuses invalid UTF-8 Git names instead of silently renaming or colliding', (t) => {
   const { root, repo, git } = fixture(t);
-  for (const byte of [0xfe, 0xff]) {
-    const filename = Buffer.concat([
-      Buffer.from(repo + '/'),
-      Buffer.from([byte]),
-      Buffer.from('.txt'),
-    ]);
-    writeFileSync(filename, 'Exact filename matters');
-  }
-  git('add', '.');
-  git('commit', '-qm', 'raw byte names');
+  // Git trees can contain raw-byte names even when the host filesystem rejects them.
+  // Build those exact objects directly so the security case also runs on macOS.
+  const blob = execFileSync('git', ['-C', repo, 'hash-object', '-w', '--stdin'], { input: 'Exact filename matters', encoding: 'utf8' }).trim();
+  const entries = Buffer.concat([0xfe, 0xff].map(byte => Buffer.concat([
+    Buffer.from(`100644 blob ${blob}\t`), Buffer.from([byte]), Buffer.from('.txt\0'),
+  ])));
+  const tree = execFileSync('git', ['-C', repo, 'mktree', '-z'], { input: entries, encoding: 'utf8' }).trim();
+  const rawCommit = execFileSync('git', ['-C', repo, 'commit-tree', tree, '-m', 'raw byte names'], { encoding: 'utf8' }).trim();
   assert.throws(
-    () => exportSource({ repo, output: join(root, 'a') }),
+    () => exportSource({ repo, commit: rawCommit, output: join(root, 'a') }),
     /encoded data was not valid/,
   );
 });

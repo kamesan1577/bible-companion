@@ -67,7 +67,6 @@ struct QuestionView: View {
                 .safeAreaInset(edge: .bottom) { composer }
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) { Button("閉じる") { model.close(); dismiss() } }
-                    ToolbarItemGroup(placement: .keyboard) { Spacer(); Button("送信") { model.send(target: target) }.disabled(!canSend) }
                 }
                 .sheet(isPresented: $showSubset) { PassageSubsetPicker(reading: reading, selected: target) { target = $0 } }
                 .sheet(item: $consentIntent, onDismiss: { Task { await model.loadPolicy() } }) { GroundedConsentView(intent: $0).environmentObject(store) }
@@ -80,7 +79,7 @@ struct QuestionView: View {
     }
     private var composer: some View {
         HStack(alignment: .bottom, spacing: BibleTheme.Space.sm) {
-            TextField("質問を入力", text: $model.draft, axis: .vertical).lineLimit(1...4).bibleTextStyle(.body).disabled(model.isRunning).submitLabel(.send).onSubmit { if canSend { model.send(target: target) } }
+            TextField("質問を入力", text: $model.draft, axis: .vertical).accessibilityIdentifier("question-draft").lineLimit(1...4).bibleTextStyle(.body).disabled(model.isRunning).submitLabel(.send).onSubmit { if canSend { model.send(target: target) } }
             Button { model.send(target: target) } label: { Image(systemName: "arrow.up.circle.fill").bibleTextStyle(.title).frame(minWidth: 44, minHeight: 44) }.accessibilityLabel("質問を送る").disabled(!canSend)
         }.padding(BibleTheme.Space.md).bibleCanvas()
     }
