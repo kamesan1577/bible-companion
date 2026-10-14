@@ -82,6 +82,7 @@ jobs:
 
       - name: Select an installed iOS 26 or later simulator
         run: |
+          python3 -m unittest discover -s scripts/ci -p 'test_*.py'
           xcrun simctl list devices available --json > "$CI_OUTPUT/simulators.json"
           SIMULATOR_ID=$(python3 scripts/ci/select-ios-simulator.py "$CI_OUTPUT/simulators.json")
           echo "SIMULATOR_ID=$SIMULATOR_ID" >> "$GITHUB_ENV"
