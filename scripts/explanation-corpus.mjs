@@ -5,11 +5,12 @@ export const counts=JSON.parse(readFileSync(new URL('../packages/core/src/verse-
 export const VERSION='chapter-and-verse-ja-v1';
 export const SAMPLES=['GEN:1','GEN:5','EXO:20','LEV:16','JOB:3','PSA:23','PSA:119','PRO:26','ECC:3','SNG:2','ISA:53','DAN:7','MAT:5','LUK:3','JHN:1','ACT:18','ROM:9','PHM:1','REV:13'];
 export function inventory(){return Object.entries(counts).flatMap(([book,chapters])=>chapters.map((n,i)=>({key:`${book}:${i+1}`,book,chapter:i+1,verses:n})));}
-export function estimate({inputTokens=3000,verseOutputTokens=180,chapterOutputTokens=600,dailyBatchNeurons=500,rework=0.25}={}){
+export function estimate({inputTokens=3000,verseOutputTokens=180,chapterOutputTokens=600,versesPerCall=8,dailyBatchNeurons=500,rework=0.25}={}){
  const chapters=inventory(),verses=chapters.reduce((n,c)=>n+c.verses,0);
- const input=chapters.length*inputTokens,output=verses*verseOutputTokens+chapters.length*chapterOutputTokens;
+ const calls=chapters.reduce((n,c)=>n+Math.ceil(c.verses/versesPerCall)+1,0);
+ const input=calls*inputTokens,output=verses*verseOutputTokens+chapters.length*chapterOutputTokens;
  const neurons=(input*9091+output*27273)/1e6*(1+rework);
- return {books:Object.keys(counts).length,chapters:chapters.length,verses,inputTokens:input,outputTokens:output,rework,estimatedNeurons:Math.ceil(neurons),dailyBatchNeurons,minimumDays:Math.ceil(neurons/dailyBatchNeurons),paidEquivalentUSD:neurons/1000*0.011,assumption:'Planning only; excludes independent editorial labor. Actual tokens, reasoning, retries and source size can increase consumption.'};
+ return {books:Object.keys(counts).length,chapters:chapters.length,verses,estimatedCalls:calls,versesPerCall,inputTokens:input,outputTokens:output,rework,estimatedNeurons:Math.ceil(neurons),dailyBatchNeurons,minimumDays:Math.ceil(neurons/dailyBatchNeurons),paidEquivalentUSD:neurons/1000*0.011,assumption:'Planning only; excludes independent editorial labor. Actual tokens, reasoning, retries and source size can increase consumption.'};
 }
 export function init(db,variant){
  if(!variant.translation||!variant.sourceVersion||!variant.model||!variant.boundaryPolicy)throw Error('Explicit translation/source/model/boundary required');
