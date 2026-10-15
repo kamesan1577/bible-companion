@@ -553,6 +553,7 @@ export async function getSources(
   target: Passage = passage,
   snapshotPolicy?: number,
   includeMaterials = false,
+  earlierBackground = false,
 ): Promise<GroundingSource[]> {
   const rows = await env.DB.prepare(
     `WITH candidates AS (
@@ -640,7 +641,7 @@ export async function getSources(
   }
   const primary = await getScriptureSources(
     env,
-    questionContextWindow(passage, target),
+    questionContextWindow(passage, target, earlierBackground),
     snapshotPolicy,
   );
   return primary.length
@@ -703,9 +704,18 @@ export async function sourceSnapshot(
   passage: Passage,
   spoilers = false,
   target: Passage = passage,
+  earlierBackground = false,
 ) {
   const version = await sourcePolicyVersion(env);
-  const sources = await getSources(env, passage, spoilers, target, version, true);
+  const sources = await getSources(
+    env,
+    passage,
+    spoilers,
+    target,
+    version,
+    true,
+    earlierBackground,
+  );
   if (version !== (await sourcePolicyVersion(env)))
     fail(409, 'source_policy_changed', 'Source policy changed while preparing the request. Retry.');
   return { version, sources };

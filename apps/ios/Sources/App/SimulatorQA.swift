@@ -11,7 +11,15 @@ struct SimulatorQA: View {
     init() {
         let config = URLSessionConfiguration.ephemeral; config.protocolClasses = [SimulatorQAProtocol.self]
         _client = State(initialValue: try! APIClient(baseURL: URL(string: "https://fixture.example.org")!, configuration: config))
-        item = try! JSONDecoder().decode(ImportRecord.self, from: Data(#"{"id":"00000000-0000-4000-8000-000000000123","idempotencyKey":"00000000-0000-4000-8000-000000000123","ranges":[{"book":"ACT","start":{"chapter":23,"verse":1},"end":{"chapter":23,"verse":1}}],"translation":"JCB","createdAt":0}"#.utf8))
+        let normal = try! JSONDecoder().decode(ImportRecord.self, from: Data(#"{"id":"00000000-0000-4000-8000-000000000123","idempotencyKey":"00000000-0000-4000-8000-000000000123","ranges":[{"book":"ACT","start":{"chapter":23,"verse":1},"end":{"chapter":23,"verse":1}}],"translation":"JCB","createdAt":0}"#.utf8))
+        if ProcessInfo.processInfo.arguments.contains("--qa-screen=conversation") {
+            let raw = String(data: try! JSONEncoder().encode(normal), encoding: .utf8)!
+            let object = try! JSONSerialization.jsonObject(with: Data(raw.utf8)) as! [String: Any]
+            var changed = object
+            changed["ranges"] = [["book":"ACT", "start":["chapter":24,"verse":23],"end":["chapter":24,"verse":24]]]
+            item = try! JSONDecoder().decode(ImportRecord.self, from: JSONSerialization.data(withJSONObject: changed))
+        } else { item = normal }
+
     }
     private var snapshotScreen: String? {
         ProcessInfo.processInfo.arguments.first(where: { $0.hasPrefix("--qa-screen=") }).map { String($0.dropFirst("--qa-screen=".count)) }
@@ -35,6 +43,10 @@ struct SimulatorQA: View {
         case "settings": SettingsView()
         case "setup": AISetupView()
         case "guide": FirstRunGuide()
+        case "share-conversation": SharedConversationQA(client: client)
+        case "conversation":
+            let conversation = try! JSONDecoder().decode(Conversation.self, from: SimulatorQAProtocol.conversationData(passage: item.ranges[0]))
+            QuestionView(ownerID: item.id, client: client, item: item, rangeIndex: 0, target: item.ranges[0], conversation: conversation)
         case "question": QuestionView(ownerID: item.id, client: client, item: item, rangeIndex: 0, target: item.ranges[0])
         case "consent":
             if let owner = store.account, let policy = store.aiPolicy {
@@ -67,10 +79,19 @@ struct SimulatorQA: View {
             }
         }
         .sheet(isPresented: $store.showAISetup) { AISetupView().environmentObject(store) }
-        .task { await client.setToken("simulator-fixture-only"); store.configureSimulatorQA(client: client); await store.loadAIPolicy(); ready = true }
+        .task { try? PendingQuestionStore.clear(); await client.setToken("simulator-fixture-only"); store.configureSimulatorQA(client: client); await store.loadAIPolicy(); ready = true }
     }
 }
-private final class SimulatorQAProtocol: URLProtocol, @unchecked Sendable {
+final class SimulatorQAProtocol: URLProtocol, @unchecked Sendable {
+    private let stopLock = NSLock()
+    private var stopped = false
+    private var active: Bool { stopLock.lock(); defer { stopLock.unlock() }; return !stopped }
+    static func conversationData(passage: Passage) -> Data {
+        let initial: [String: Any] = ["answer":"フェリクスはパウロの拘留を少し緩め、のちに妻ドルシラとパウロの話を聞きました。", "status":"answered", "citations":[],"modelId":"fixture-no-provider","modelInvoked":false,"mode":"grounded-generation","warnings":[],"usage":[:],"timing":[:],"standardExplanation":true]
+        let range = try! JSONSerialization.jsonObject(with: JSONEncoder().encode(passage))
+        return try! JSONSerialization.data(withJSONObject: ["id":"00000000-0000-4000-8000-000000000123","importId":"00000000-0000-4000-8000-000000000123","passage":range,"readingBoundary":range,"spoilerAllowed":false,"createdAt":0,"messages":[["id":"00000000-0000-4000-8000-000000000124","role":"assistant","content":initial,"createdAt":0]]])
+    }
+
     private final class Counter: @unchecked Sendable {
         private let lock = NSLock(); private var value = 0
         func next() -> Int { lock.lock(); defer { lock.unlock() }; value += 1; return value }
@@ -99,9 +120,43 @@ private final class SimulatorQAProtocol: URLProtocol, @unchecked Sendable {
             let answer = url.path.hasSuffix("/explanation") ? "固定標準解説\(Self.standardCounter.next())" : "固定データ: " + (fields["question"] as? String ?? "送信")
             data = try! JSONSerialization.data(withJSONObject: ["requestId":fields["requestId"] ?? "00000000-0000-4000-8000-000000000123","status":"complete","result":["answer":answer,"status":"answered","citations":[],"modelId":"fixture-no-provider","modelInvoked":false,"mode":"grounded-generation","warnings":[],"usage":[:],"timing":[:]]])
         }
+        if request.httpMethod == "GET", url.path.hasPrefix("/v1/conversations/") {
+            ok = true
+            data = Self.conversationData(passage: Passage(book: "ACT", start: Verse(chapter: 24, verse: 23), end: Verse(chapter: 24, verse: 24)))
+        }
+        if request.httpMethod == "DELETE", (url.path.hasPrefix("/v1/requests/") || url.path.hasPrefix("/share/requests/")) { ok = true; data = Data("{\"status\":\"cancelled\"}".utf8) }
+        if ok, request.value(forHTTPHeaderField: "Accept") == "text/event-stream", url.path.hasSuffix("/questions"), ProcessInfo.processInfo.arguments.contains(where: { $0 == "--qa-screen=conversation" || $0 == "--qa-screen=share-conversation" }) {
+            let question = fields["question"] as? String ?? ""
+            let answer = question.contains("wife") ? "ドルシラはフェリクスの妻です。" : "フェリクスはローマの総督で、パウロの訴えを審理した人物です。"
+            var object = try! JSONSerialization.jsonObject(with: data) as! [String: Any]
+            var result = object["result"] as! [String: Any]; result["answer"] = answer; object["result"] = result
+            let complete = String(data: try! JSONSerialization.data(withJSONObject: object), encoding: .utf8)!
+            client?.urlProtocol(self, didReceive: HTTPURLResponse(url:url,statusCode:200,httpVersion:"HTTP/1.1",headerFields:["Content-Type":"text/event-stream"])!,cacheStoragePolicy:.notAllowed)
+            @Sendable func event(_ type: String, _ json: String) -> Data { Data(("event: " + type + "\ndata: " + json + "\n\n").utf8) }
+            client?.urlProtocol(self, didLoad:event("progress", "{\"stage\":\"generating\"}"))
+            let preview = String(data: try! JSONSerialization.data(withJSONObject:["stage":"receiving","text":answer]),encoding:.utf8)!
+            DispatchQueue.global().asyncAfter(deadline:.now()+0.5) { [self] in if active { client?.urlProtocol(self,didLoad:event("preview",preview)) } }
+            DispatchQueue.global().asyncAfter(deadline:.now()+6) { [self] in
+                guard active else { return }
+                if !question.contains("fail") { client?.urlProtocol(self,didLoad:event("complete",complete)) }
+                client?.urlProtocolDidFinishLoading(self)
+            }
+            return
+        }
         client?.urlProtocol(self, didReceive: HTTPURLResponse(url: url, statusCode: ok ? 200 : 409, httpVersion: "HTTP/1.1", headerFields: ["Content-Type":"application/json"])!, cacheStoragePolicy: .notAllowed)
         client?.urlProtocol(self, didLoad: data); client?.urlProtocolDidFinishLoading(self)
     }
-    override func stopLoading() {}
+    override func stopLoading() { stopLock.lock(); stopped = true; stopLock.unlock() }
+}
+private struct SharedConversationQA: View {
+    let client: APIClient
+    @StateObject private var model = SharedPreviewModel()
+    var body: some View {
+        SharedPreviewView(model: model, close: {})
+            .task {
+                let conversation = try! JSONDecoder().decode(Conversation.self, from: SimulatorQAProtocol.conversationData(passage: Passage(book: "ACT", start: Verse(chapter: 24, verse: 23), end: Verse(chapter: 24, verse: 24))))
+                model.configureQA(client: client, initial: conversation.messages![0].visibleAnswer!)
+            }
+    }
 }
 #endif

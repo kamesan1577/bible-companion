@@ -439,6 +439,7 @@ export function scopedHistory(
   input: AnswerInput,
   sources: readonly GroundingSource[],
   ownerId: string,
+  allowUncited = false,
 ): HistoryTurn[] {
   const sourceIds = new Set(sources.map((s) => s.id));
   const versions = new Map(sources.map((s) => [s.id, s.version]));
@@ -452,7 +453,7 @@ export function scopedHistory(
         !Array.isArray(turn.scope.sourceIds) ||
         turn.scope.sourceIds.length > 16 ||
         turn.scope.sourceIds.some((id) => typeof id !== 'string' || !sourceIds.has(id)) ||
-        (turn.role === 'assistant' && turn.scope.sourceIds.length === 0) ||
+        (turn.role === 'assistant' && turn.scope.sourceIds.length === 0 && !allowUncited) ||
         (turn.scope.sourceIds.length > 0 &&
           (!isRecord(turn.scope.sourceVersions) ||
             turn.scope.sourceIds.some(

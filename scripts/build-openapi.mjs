@@ -546,6 +546,7 @@ op('post', '/share/start', 'Create canonical reading references for this share c
 op('post', '/share/conversations/{id}/questions', 'Ask within a conversation created by this share capability', {authScheme:'shareBearer',input:ref('QuestionInput'),output:ref('RequestResult')});
 op('post', '/share/conversations/{id}/explanation', 'Read a globally cached fixed public explanation within this share capability', {authScheme:'shareBearer',input:object({requestId:uuid}),output:ref('RequestResult'),description:'Fixed Japanese prompt and model settings. No private question or chat history enters the global cache. Completed cache hits dispatch no model and consume no AI budget.'});
 op('get', '/share/requests/{id}', 'Check only a question owned by this share capability', {authScheme:'shareBearer',output:ref('RequestResult')});
+op('delete', '/share/requests/{id}', 'Cancel only a question owned by this share capability', {authScheme:'shareBearer',output:object({status:{const:'cancelled'},usageMayHaveOccurred:{const:true}})});
 op('post', '/public/reading-preview', 'Read public reference excerpts without AI or account history', {auth:false,input:object({sharedText:{type:'string',minLength:1,maxLength:20000}}),output:{type:'object',additionalProperties:true}});
 op('post', '/v1/me/consents', 'Confirm or revoke Cloudflare AI data transmission', {
   input: object(
@@ -729,6 +730,11 @@ op('delete', '/v1/developer/comparisons/{id}', 'Cancel own active comparison', {
   description:
     'Persists an owner-scoped cancellation marker even before claim. GET 404 alone is unknown, not proof of no dispatch. Retry only the same frozen request UUID and payload.',
 });
+// Existing JSON clients remain supported; native clients negotiate bounded SSE explicitly.
+for (const path of ['/v1/conversations/{id}/questions','/v1/conversations/{id}/explanation','/share/conversations/{id}/questions','/share/conversations/{id}/explanation']) {
+  paths[path].post.responses['200'].content['text/event-stream'] = {schema:{type:'string'},example:'event: progress\ndata: {"stage":"generating"}\n\n'};
+  paths[path].post.description = (paths[path].post.description ?? '') + ' Accept: text/event-stream negotiates progress, provisional citation-checked preview, complete or failure events. No automatic retries; incomplete streams require request status recovery. A preview is not a saved final answer.';
+}
 const spec = {
   openapi: '3.1.0',
   info: {

@@ -110,7 +110,11 @@ final class ReadingInteractionUITests: XCTestCase {
             XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "パウロ")).firstMatch.waitForExistence(timeout: 5))
             attach(app, "share-extension-local-people")
             XCTAssertTrue(app.buttons["閉じる"].exists); app.buttons["閉じる"].tap()
-            XCTAssertTrue(share.waitForExistence(timeout: 5))
+            // The app's button can exist underneath the returning system share sheet.
+            // Wait for a usable host, rather than tapping through that presentation.
+            let dismissShare = app.otherElements["PopoverDismissRegion"]
+            if dismissShare.waitForExistence(timeout: 2), !share.isHittable { dismissShare.tap() }
+            expectation(for: NSPredicate(format: "hittable == true"), evaluatedWith: share); waitForExpectations(timeout: 5)
         }
     }
     @MainActor func testKeyboardSendAndFollowupReachOnlyLocalFixture() {

@@ -8,13 +8,14 @@ import FoundationNetworking
 final class BoundedTransfer: NSObject, URLSessionDataDelegate, @unchecked Sendable {
     private let lock = NSLock()
     private let maximumBytes: Int
+    private let onData: (@Sendable (Data) throws -> Void)?
     private var continuation: CheckedContinuation<(Data, URLResponse), Error>?
     private var task: URLSessionDataTask?
     private var session: URLSession?
     private var response: URLResponse?
     private var buffer = Data()
     private var cancelled = false
-    init(maximumBytes: Int) { self.maximumBytes = maximumBytes }
+    init(maximumBytes: Int, onData: (@Sendable (Data) throws -> Void)? = nil) { self.maximumBytes = maximumBytes; self.onData = onData }
     func run(_ request: URLRequest, configuration: URLSessionConfiguration) async throws -> (Data, URLResponse) {
         try await withTaskCancellationHandler(operation: {
             try await withCheckedThrowingContinuation { continuation in start(request, configuration: configuration, continuation: continuation) }
@@ -56,6 +57,7 @@ final class BoundedTransfer: NSObject, URLSessionDataDelegate, @unchecked Sendab
             lock.unlock(); finish(.failure(NetworkFailure.invalidResponse)); return
         }
         buffer.append(data); lock.unlock()
+        do { try onData?(data) } catch { finish(.failure(error)) }
     }
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         lock.lock(); let response = self.response; let data = buffer; lock.unlock()

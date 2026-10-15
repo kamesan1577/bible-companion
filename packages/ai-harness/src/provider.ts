@@ -25,7 +25,12 @@ export function parseUsage(value: unknown): UsageReport['actual'] {
   return {
     inputTokens: input,
     outputTokens: output,
-    ...(typeof value.neurons === 'number' && Number.isFinite(value.neurons) && value.neurons > 0 && value.neurons <= 1000000 ? { providerNeurons: value.neurons } : {}),
+    ...(typeof value.neurons === 'number' &&
+    Number.isFinite(value.neurons) &&
+    value.neurons > 0 &&
+    value.neurons <= 1000000
+      ? { providerNeurons: value.neurons }
+      : {}),
     ...(total === undefined ? {} : { totalTokens: total as number }),
   };
 }
@@ -110,6 +115,8 @@ export async function readProviderStream(
   now: () => number,
   startedAt: number,
   deadlineAt = performance.now() + 15000,
+  onFirstText?: () => Promise<void>,
+  onText?: (text: string) => Promise<void>,
 ): Promise<ProviderResponse> {
   const reader = stream.getReader();
   const decoder = new TextDecoder('utf-8', { fatal: true });
@@ -127,7 +134,7 @@ export async function readProviderStream(
     void reader.cancel().catch(() => {});
   };
   signal.addEventListener('abort', cancel, { once: true });
-  function consume(event: string) {
+  async function consume(event: string) {
     if (doneMarker) {
       if (event.trim()) throw new HarnessError('INVALID_RESPONSE', true);
       return;
@@ -155,9 +162,13 @@ export async function readProviderStream(
     if (part.usage) usage = part.usage;
     if (part.finished) finished = true;
     if (part.text) {
-      if (firstTextMs === null) firstTextMs = Math.max(0, now() - startedAt);
+      if (firstTextMs === null) {
+        firstTextMs = Math.max(0, now() - startedAt);
+        await onFirstText?.();
+      }
       text += part.text;
       if (text.length > MAX_TEXT_CHARS) throw new HarnessError('INVALID_RESPONSE', true);
+      await onText?.(text);
     }
   }
   try {
@@ -180,12 +191,12 @@ export async function readProviderStream(
       buffer = buffer.replace(/\r\n/g, '\n');
       let boundary: number;
       while ((boundary = buffer.indexOf('\n\n')) !== -1) {
-        consume(buffer.slice(0, boundary));
+        await consume(buffer.slice(0, boundary));
         buffer = buffer.slice(boundary + 2);
       }
     }
     buffer += decoder.decode();
-    if (buffer.trim()) consume(buffer.replace(/\r\n/g, '\n'));
+    if (buffer.trim()) await consume(buffer.replace(/\r\n/g, '\n'));
     if (!doneMarker && !finished) throw new HarnessError('TRUNCATED_RESPONSE', true);
     if (!text.trim()) throw new HarnessError('INVALID_RESPONSE', true);
     successful = true;
@@ -202,6 +213,8 @@ export async function readProviderStream(
   }
 }
 export async function invokeWorkersAi(options: {
+  onFirstText?: () => Promise<void>;
+  onText?: (text: string) => Promise<void>;
   ai: WorkersAiBinding;
   modelId: string;
   inputs: Record<string, unknown>;
@@ -244,7 +257,15 @@ export async function invokeWorkersAi(options: {
     }
     if (controller.signal.aborted) throw abortError(controller.signal);
     if (isStream(raw))
-      return await readProviderStream(raw, controller.signal, now, startedAt, deadlineAt);
+      return await readProviderStream(
+        raw,
+        controller.signal,
+        now,
+        startedAt,
+        deadlineAt,
+        options.onFirstText,
+        options.onText,
+      );
     if (options.inputs.stream === true) throw new HarnessError('INVALID_RESPONSE', true);
     const serialized = JSON.stringify(raw);
     if (

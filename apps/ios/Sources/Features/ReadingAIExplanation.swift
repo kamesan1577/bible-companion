@@ -19,7 +19,7 @@ struct ReadingAIExplanation: View {
                 DisclosureGroup("出典を確かめる") { CitationList(citations: answer.citations) }
                 Button("続けて質問する") { store.ask(conversation: model.conversation) }.buttonStyle(.borderedProminent)
             } else if model.isRunning {
-                ProgressView("解説を準備しています")
+                ChatWaitingView(status: model.status, preview: model.preview)
                 Button("解説の準備をやめる") { model.cancel() }
             } else if let error = model.errorMessage {
                 Text(error).bibleTextStyle(.body)
