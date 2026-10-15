@@ -5,7 +5,10 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 def audit(output):
  edits=json.loads((ROOT/'data/commentary/japanese-edits.json').read_text())
- units={u['id']:u for p in output.glob('commentary-*.json') if p.name.startswith(('commentary-MHC-','commentary-JFB-')) for u in json.loads(p.read_text())}
+ if any(any(i.startswith('jfb-ccel1871-context:') for i in e['sourceUnitIds']) for e in edits['entries']):
+  import runpy
+  runpy.run_path(str(ROOT/'scripts/commentary/review-ledger.py'))['verify'](edits,json.loads((ROOT/'data/commentary/wisdom-isaiah-independent-reviews.json').read_text()))
+ units={u['id']:u for p in output.glob('commentary-*.json') if (p.name.startswith(('commentary-MHC-','commentary-JFB-')) or p.name=='commentary-chapter-context.json') for u in json.loads(p.read_text())}
  # Commentary-only verse mapping verifies pinned corpus hashes; raw corpus stays unchanged.
  import runpy
  primary=runpy.run_path(str(ROOT/'scripts/commentary/primary-text.py'))['load_primary'](ROOT)

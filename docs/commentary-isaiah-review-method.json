@@ -1,0 +1,106 @@
+{
+  "book": "ISA",
+  "reviewer": "gpt-6-luna-independent-final",
+  "expert": false,
+  "candidateModified": false,
+  "scope": "All 66 chapter packets, all 439 entries; reports are hash-bound to each packet canonicalEntrySha256.",
+  "semanticReviewMethod": {
+    "fieldsRead": [
+      "titleJa",
+      "summaryJa",
+      "authorInterpretationJa",
+      "editorialNoteJa"
+    ],
+    "primaryTexts": [
+      "webPrimary",
+      "kjvPrimary"
+    ],
+    "commentary": [
+      "sourceContexts[].originalText for relevant verse notes in the chapter context"
+    ],
+    "checks": [
+      "primaryMeaning",
+      "sourceAttribution",
+      "identity",
+      "spoiler",
+      "density"
+    ],
+    "principle": "Compare the complete range-specific claims and attributions against both supplied primary versions and relevant JFB original commentary. A hash match or schema validation is metadata integrity only and is not evidence of semantic review."
+  },
+  "reviewCompletion": {
+    "chapters1to43": {
+      "entries": 299,
+      "pass": 298,
+      "needsRevision": 1,
+      "comparisonCompleted": true,
+      "basis": "Chapter-by-chapter reports were reviewed with range-specific reasonJa claims; source and primary comparisons were completed before reports were retained."
+    },
+    "chapters44to66": {
+      "entries": 140,
+      "pass": 137,
+      "needsRevision": 3,
+      "comparisonCompleted": true,
+      "basis": "An initial set of summary-opening/boilerplate-generated reports was invalidated and removed. The packets were then reread entry by entry across all four Japanese fields, WEB/KJV range verses, and relevant JFB chapter-context notes; the reports were recreated only after comparison."
+    }
+  },
+  "meaningFindings": [
+    {
+      "id": "ja-v1:ISA:2:1-1",
+      "chapter": 2,
+      "verdict": "needs-revision",
+      "finding": "Summary includes vv.2–4 although the entry range and spoilerEnd are v.1."
+    },
+    {
+      "id": "ja-v1:ISA:57:1-2",
+      "chapter": 57,
+      "verdict": "needs-revision",
+      "finding": "Summary omits that the righteous person is taken away from coming evil; full-entry revision proposed."
+    },
+    {
+      "id": "ja-v1:ISA:63:7-14",
+      "chapter": 63,
+      "verdict": "needs-revision",
+      "finding": "Summary omits the question recalling that God put his Holy Spirit among them; full-entry revision proposed."
+    },
+    {
+      "id": "ja-v1:ISA:66:21-23",
+      "chapter": 66,
+      "verdict": "needs-revision",
+      "finding": "Summary omits the selection of priests and Levites in v.21; full-entry revision proposed."
+    }
+  ],
+  "specificRangeEvidence": [
+    {
+      "chapter": 44,
+      "ranges": "1–5; 6–8; 9–11; 12–14; 15–17; 18–20; 21–23; 24–28",
+      "checks": "Primary assertions were compared to both supplied versions; JFB-specific claims including thirst/spirit, Cyrus and Euphrates/Babylon interpretation, and typological readings were checked against original chapter notes and kept attributed."
+    },
+    {
+      "chapter": 53,
+      "ranges": "1–3; 4–6; 7–9; 10–12",
+      "checks": "Compared servant imagery, confession that the servant bears others’ iniquity, the WEB/KJV wording differences in v.8 and v.10–11, and JFB’s messianic/sacrificial reading."
+    },
+    {
+      "chapter": 58,
+      "ranges": "1–2; 3–5; 6–7; 8–12; 13–14",
+      "checks": "Compared fasting complaint and oppression, concrete release/food/shelter/clothing duties, response and rebuilding promises, and Sabbath condition; JFB interpretations and normative positions were attributed."
+    },
+    {
+      "chapter": 66,
+      "ranges": "1–2; 3–4; 5–6; 7–9; 10–14; 15–17; 18–20; 21–23; 24",
+      "checks": "Compared temple and humility, offerings/judgment, Zion’s birth, nations and return, renewal, and final carcass/worm/fire image. v.21 omission of priests and Levites was flagged."
+    }
+  ],
+  "reviewCounts": {
+    "chapters": 66,
+    "entries": 439,
+    "pass": 435,
+    "needsRevision": 4,
+    "hashAndStructureValidationErrors": 0
+  },
+  "rechecks": [
+    "final-review/rechecks/PRO-13.json",
+    "final-review/rechecks/PRO-14.json",
+    "final-review/rechecks/PRO-27.json"
+  ]
+}

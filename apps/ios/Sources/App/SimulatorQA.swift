@@ -22,6 +22,15 @@ struct SimulatorQA: View {
         case "romans-opening", "romans-doxology":
             let passage = screen == "romans-opening" ? Passage(book: "ROM", start: Verse(chapter: 1, verse: 1), end: Verse(chapter: 1, verse: 1)) : Passage(book: "ROM", start: Verse(chapter: 16, verse: 25), end: Verse(chapter: 16, verse: 27))
             ScrollView { BibleReadingColumn { StaticCommentaryView(passage: passage) } }.navigationTitle(passage.label).bibleCanvas()
+        case "proverbs-final", "ecclesiastes-final", "song-final", "isaiah-final":
+            let choices: [String: Passage] = [
+                "proverbs-final": Passage(book: "PRO", start: Verse(chapter: 18, verse: 22), end: Verse(chapter: 18, verse: 24)),
+                "ecclesiastes-final": Passage(book: "ECC", start: Verse(chapter: 3, verse: 11), end: Verse(chapter: 3, verse: 11)),
+                "song-final": Passage(book: "SNG", start: Verse(chapter: 5, verse: 6), end: Verse(chapter: 5, verse: 8)),
+                "isaiah-final": Passage(book: "ISA", start: Verse(chapter: 65, verse: 17), end: Verse(chapter: 65, verse: 20))]
+            if let passage = choices[screen] {
+                ScrollView { BibleReadingColumn { StaticCommentaryView(passage: passage) } }.navigationTitle(passage.label).bibleCanvas()
+            }
         case "settings": SettingsView()
         case "setup": AISetupView()
         case "guide": FirstRunGuide()

@@ -1,0 +1,26 @@
+{
+  "reviewer": "gpt-6-luna-independent-final",
+  "method": "For each in-scope entry, read summaryJa, authorInterpretationJa, and editorialNoteJa, then compare the covered verses with the packet's WEB and KJV primary text and read the complete chapter-level JFB sourceContext.originalText. Judge the five required checks per entry; do not infer a pass from schema validity, quotation matching, or an earlier review. Record a unique, range-specific Japanese reason and bind it to the packet canonicalEntrySha256. Candidate originals were not changed; proposed corrections, if any, belong only in report records.",
+  "completedScope": {
+    "PRO": {"chapters": 31, "entries": 305, "reports": "final-review/reports/PRO-01.json through PRO-31.json", "verdicts": {"pass": 302, "needs-revision": 3}},
+    "ECC": {"chapters": 12, "entries": 85, "reports": "final-review/reports/ECC-01.json through ECC-12.json", "verdicts": {"pass": 85, "needs-revision": 0}},
+    "SNG": {"chapters": 8, "entries": 61, "reports": "final-review/reports/SNG-01.json through SNG-08.json", "verdicts": {"pass": 61, "needs-revision": 0}},
+    "separatePostEditRechecks": [
+      {"packet": "final-review/recheck-packets/ISA-02.json", "report": "final-review/rechecks/ISA-02.json"},
+      {"packet": "final-review/recheck-packets/ISA-57.json", "report": "final-review/rechecks/ISA-57.json"},
+      {"packet": "final-review/recheck-packets/ISA-63.json", "report": "final-review/rechecks/ISA-63.json"},
+      {"packet": "final-review/recheck-packets/ISA-66.json", "report": "final-review/rechecks/ISA-66.json"}
+    ]
+  },
+  "quarantinedPriorReports": {
+    "directory": "final-review/quarantined-reports",
+    "count": 20,
+    "reason": "Earlier ECC/SNG reports lacked sufficiently entry-specific evidence of reading all three Japanese fields against the primary WEB/KJV text and full JFB context; they were not eligible for pass. ECC-01–12 and SNG-01–08 were rebuilt only after direct rereading. Quarantined drafts remain excluded from the accepted reports."
+  },
+  "needsRevisionFindings": [
+    {"report": "final-review/reports/PRO-13.json", "entry": "ja-v1:PRO:13:1-4", "issue": "The summary shifts the proverb's desire/craving for violence to those who do evil being subjected to violence."},
+    {"report": "final-review/reports/PRO-14.json", "entry": "ja-v1:PRO:14:6-10", "issue": "The summary adds an unsupported conclusion that outsiders cannot fully know feelings and should be invited to listen."},
+    {"report": "final-review/reports/PRO-27.json", "entry": "ja-v1:PRO:27:17-19", "issue": "The summary omits verse 18's tending the fig tree and honoring its keeper/master."}
+  ],
+  "validation": "Report entry totals and canonicalEntrySha256 values were checked against every packet for PRO/ECC/SNG; no missing reports or hash mismatches were found."
+}

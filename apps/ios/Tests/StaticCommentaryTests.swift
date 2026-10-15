@@ -27,6 +27,33 @@ final class StaticCommentaryTests: XCTestCase, @unchecked Sendable {
         XCTAssertTrue(entries[0].editorialNoteJa.contains("14:24–26"))
         XCTAssertTrue(entries[0].editorialNoteJa.contains("KJV"))
     }
+    func testFourNewBooksKeepCanonicalCoverageSourcesAndSpoilerBounds() async throws {
+        let progress = try await StaticCommentary.shared.progress()
+        var total = 0
+        var coordinates = 0
+        for book in ["PRO", "ECC", "SNG", "ISA"] {
+            for (offset, count) in Canon.verseCounts[book]!.enumerated() {
+                let chapter = offset + 1
+                let range = Passage(book: book, start: Verse(chapter: chapter, verse: 1), end: Verse(chapter: chapter, verse: count))
+                let entries = try await StaticCommentary.shared.edits(for: range)
+                var seen = Set<Int>()
+                for entry in entries {
+                    XCTAssertLessThanOrEqual(entry.passage.verseCount, 8)
+                    XCTAssertTrue(progress.sourceComparedEntryIds.contains(entry.id))
+                    for verse in entry.passage.start.verse...entry.passage.end.verse { XCTAssertTrue(seen.insert(verse).inserted) }
+                }
+                XCTAssertEqual(seen, Set(1...count), "\(book) \(chapter)")
+                let originals = try await StaticCommentary.shared.originals(for: range)
+                XCTAssertTrue(originals.contains { $0.editionId == "JFB-CCEL-1871" && $0.kind == "chapter-context" })
+                total += entries.count; coordinates += seen.count
+            }
+        }
+        XCTAssertEqual(total, 890)
+        XCTAssertEqual(coordinates, 2546)
+        let partial = Passage(book: "SNG", start: Verse(chapter: 5, verse: 6), end: Verse(chapter: 5, verse: 6))
+        let hidden = try await StaticCommentary.shared.edits(for: partial)
+        XCTAssertTrue(hidden.isEmpty)
+    }
     func testDictionarySearchIsExplicitAndSeparate() async throws {
         let empty = try await StaticCommentary.shared.dictionary(matching: " ")
         XCTAssertTrue(empty.isEmpty)
@@ -72,7 +99,7 @@ final class StaticCommentaryTests: XCTestCase, @unchecked Sendable {
     func testProgressSeparatesShortRangesFromOriginalCoverage() async throws {
         let progress = try await StaticCommentary.shared.progress()
         XCTAssertEqual(progress.chapterOverviews, 0)
-        XCTAssertEqual(progress.detailedCoordinates, 1439) // Acts WEB1004, Romans433, GEN/PSA retained samples
+        XCTAssertEqual(progress.detailedCoordinates, 3985) // Acts WEB1004, Romans433, GEN/PSA retained samples
         XCTAssertEqual(progress.coveredCoordinates, progress.detailedCoordinates)
         XCTAssertEqual(progress.completeActsChapters, Array(1...28).filter { ![8, 15, 24].contains($0) })
         XCTAssertGreaterThan(progress.sourceComparedEntryIds.count, 200)

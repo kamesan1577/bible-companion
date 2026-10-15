@@ -62,6 +62,15 @@ def main():
  dictionary=[{'id':'easton:'+digest(k.encode()),'headword':k,'originalText':plain(t),'sourceLocator':k,'editionId':'Easton-2.0.1','reviewStatus':'original-not-editorially-reviewed','spoilerSafe':False}for k,t in entries(a.cache/'Easton.imp')if t];assert len(dictionary)==3963
  p=output/'commentary-Easton.json';data=(json.dumps(dictionary,ensure_ascii=False,separators=(',',':'))+'\n').encode();p.write_bytes(data);catalog['files']['Easton']={'file':p.name,'bytes':len(data),'sha256':digest(data),'entries':len(dictionary)}
  catalog['editions'].append({'id':'Easton-2.0.1','title':"Easton's Bible Dictionary",'authors':'M. G. Easton','historicalDate':'1897 third edition','tradition':'historical Scottish Presbyterian','language':'en','license':'public-domain','licenseURL':'https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=Easton','sourceURL':'https://www.crosswire.org/ftpmirror/pub/sword/packages/rawzip/Easton.zip','archiveSha256':sha,'moduleVersion':version})
+ supplemental=ROOT/'data/commentary/supplemental-contexts.json'
+ if supplemental.exists():
+  additions=json.loads(supplemental.read_text())
+  if additions['schemaVersion']!=1:raise ValueError('Unsupported supplemental source schema')
+  source_ids={u['id']for u in chapter_contexts}
+  for unit in additions['contexts']:
+   if unit['id']in source_ids or unit.get('kind')!='chapter-context':raise ValueError('Duplicate or unscoped supplemental source')
+   source_ids.add(unit['id']);chapter_contexts.append(unit)
+  catalog['editions'].extend(additions['editions'])
  context_path=output/'commentary-chapter-context.json';context_data=(json.dumps(chapter_contexts,ensure_ascii=False,separators=(',',':'))+'\n').encode();context_path.write_bytes(context_data)
  catalog['files']['ChapterContexts']={'file':context_path.name,'bytes':len(context_data),'sha256':digest(context_data),'units':len(chapter_contexts)}
  context_coordinates=context_tools['scope_coordinates'](chapter_contexts)
