@@ -8,7 +8,7 @@ Start with [AGENTS.md](AGENTS.md) and the [harness guide](docs/harness/README.md
 
 ## Local development
 
-Node.js 24+ is required. No external credentials are required for tests or local data work.
+Node.js 24 LTS is required. No external credentials are required for tests or local data work.
 
 ```sh
 npm ci
@@ -39,9 +39,9 @@ The browser passkey flow uses a stable configured RP ID/origin, invitation-based
 
 SQLite-based tests verify real migrations and account isolation. Local Workers dry-run is separate from deployment. Physical iPhone signing, SideStore, share-extension delivery, browser passkeys on device, live AI quality/latency and operational cost are not established by unit tests. See the [specification acceptance map](docs/acceptance-status.md), [architecture](docs/ARCHITECTURE.md), [export protocol](docs/export-protocol.md), and [operations guide](docs/OPERATIONS.md) for evidence and go-live gates.
 
-No public service has been deployed. The ordinary GitHub source tree is sufficient for development; see the harness source audit and commit-bound source export. Backend deployment and signed-device distribution are separate steps.
+The checked-in scaffold does not publish a public service. Existing deployments must be inspected through their established operator configuration; this document does not attest live deployment state. The ordinary GitHub source tree is sufficient for development; see the harness source audit and commit-bound source export. Backend deployment and signed-device distribution are separate steps.
 
-The initial data set has nine reviewed WEB grounding excerpts and sixteen primary-source material cards. This is deliberately partial coverage, not a complete biblical encyclopedia. No live AI call has been made. The grounded-generation mode remains experimental and is not claimed to prove semantic spoiler safety.
+The initial data set has nine reviewed WEB grounding excerpts and sixteen primary-source material cards. This is deliberately partial coverage, not a complete biblical encyclopedia. The default local harness does not make live AI calls. The grounded-generation mode remains experimental and is not claimed to prove semantic spoiler safety.
 
 Invitation-only registration is an implementation default proposed for the initial launch, not a user-requested permanent restriction. Supporting open self-registration requires an explicit registration mode and abuse/cost controls; see the future-mode design in `docs/OPERATIONS.md`. It is not enabled by this repository.
 

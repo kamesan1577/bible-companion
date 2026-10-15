@@ -2,7 +2,7 @@
 
 ## Local recovery
 
-Stop the failed step and retain its log/result/job root. Use `make doctor`; inspect `git status`, tool versions and the failing assertion. Re-run the smallest failing test before the complete relevant gate. `make setup` re-creates Node dependencies from the lockfile. Build caches under `.cache/harness` may be removed when no build is using them; generation checkpoints are not disposable caches. Keep them under a separate named root.
+Stop the failed step and retain its log/result/job root. Use `make doctor`; inspect `git status`, tool versions and the failing assertion. Re-run the smallest failing test before the complete relevant gate. `make setup` re-creates Node dependencies from the lockfile. Build caches under `.cache/harness` may be removed when no build is using them; generation checkpoints are not disposable caches. Keep them under a separate named root. After a host interruption, inspect the UI result directory’s `device.json`: remove only a device whose `ownedByHarness` is true and whose UDID belongs to this task. Never shut down, erase or delete another task’s device.
 
 Use [local backup/restore](../local-backup-restore.md) for database backup rehearsals and [OPERATIONS](../OPERATIONS.md) for remote recovery. Existing tests restore into a separate target; never overwrite the only copy of user data. The harness does not back up production or grant account recovery. Secrets, recovery exports and private job outputs stay outside Git and public CI artifacts.
 

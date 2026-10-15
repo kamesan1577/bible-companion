@@ -101,7 +101,7 @@ final class ReadingInteractionUITests: XCTestCase {
             let share = app.buttons["実際の共有拡張を開く"]
             XCTAssertTrue(share.waitForExistence(timeout: 10)); share.tap()
             let candidates = app.cells.matching(identifier: "聖書コンパニオン")
-            guard candidates.firstMatch.waitForExistence(timeout: 5), candidates.count > 0 else { XCTFail("Share destination did not appear"); return }
+            guard candidates.firstMatch.waitForExistence(timeout: 5), candidates.count > 0 else { XCTFail("Share destination did not appear: \(app.debugDescription)"); return }
             let companion = candidates.element(boundBy: candidates.count - 1)
             XCTAssertTrue(companion.waitForExistence(timeout: 5)); companion.tap()
             XCTAssertTrue(app.staticTexts["使徒の働き 23:1"].waitForExistence(timeout: 5))
@@ -218,9 +218,9 @@ final class ReadingInteractionUITests: XCTestCase {
         let share = app.buttons["実際の共有拡張を開く"]
         XCTAssertTrue(share.waitForExistence(timeout: 10)); share.tap()
         let candidates = app.cells.matching(identifier: "聖書コンパニオン")
-        guard candidates.firstMatch.waitForExistence(timeout: 5), candidates.count > 0 else { XCTFail("Share destination did not appear"); return }
+        guard candidates.firstMatch.waitForExistence(timeout: 5), candidates.count > 0 else { XCTFail("Share destination did not appear: \(app.debugDescription)"); return }
         candidates.element(boundBy: candidates.count - 1).tap()
-        XCTAssertTrue(app.staticTexts["この画面で解説を開けません"].waitForExistence(timeout: 8))
+        XCTAssertTrue(app.staticTexts["この画面で解説を開けません"].waitForExistence(timeout: 8), app.debugDescription)
         XCTAssertTrue(app.staticTexts["使徒の働き 23:1"].exists)
         XCTAssertFalse(app.staticTexts["初回の設定が必要です。"].exists)
         let steps = app.buttons["準備の手順を見る"]
@@ -252,9 +252,9 @@ final class ReadingInteractionUITests: XCTestCase {
         let share = app.buttons["使徒18章を共有する"]
         XCTAssertTrue(share.waitForExistence(timeout: 10)); share.tap()
         let destinations = app.cells.matching(identifier: "聖書コンパニオン")
-        XCTAssertTrue(destinations.firstMatch.waitForExistence(timeout: 5))
+        guard destinations.firstMatch.waitForExistence(timeout: 5), destinations.count > 0 else { XCTFail("Share destination did not appear: \(app.debugDescription)"); return }
         destinations.element(boundBy: destinations.count - 1).tap()
-        XCTAssertTrue(app.staticTexts["使徒の働き 18:24–28"].waitForExistence(timeout: 8))
+        XCTAssertTrue(app.staticTexts["使徒の働き 18:24–28"].waitForExistence(timeout: 8), app.debugDescription)
         app.buttons["人物"].tap()
         let detail = app.descendants(matching: .any).matching(identifier: "entity-inline-detail-person:apollos_276").firstMatch
         scrollTo(detail, app: app); XCTAssertTrue(detail.exists)

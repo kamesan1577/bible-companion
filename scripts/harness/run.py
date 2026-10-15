@@ -104,14 +104,29 @@ def ios(command, device):
             raise ValueError('Share Extension missing from built app')
         run(sys.executable, 'scripts/harness/verify-ios-artifact.py', app)
     else:
-        if not device:
-            document = run('xcrun', 'simctl', 'list', 'devices', 'available', '--json', capture=True)
-            (result / 'simulators.json').write_text(document)
-            device = run(sys.executable, 'scripts/ci/select-ios-simulator.py', result / 'simulators.json', capture=True).strip()
-        for scheme in ['BibleCompanion', 'ReadingInteractionUI']:
-            run(*base, '-scheme', scheme, '-destination', f'platform=iOS Simulator,id={device}',
-                '-destination-timeout', '90', '-parallel-testing-enabled', 'NO',
-                '-resultBundlePath', result / f'{scheme}.xcresult', 'test')
+        document = run('xcrun', 'simctl', 'list', 'devices', 'available', '--json', capture=True)
+        (result / 'simulators.json').write_text(document)
+        owned = device is None
+        if owned:
+            device = run(sys.executable, 'scripts/ci/create-ios-simulator.py', result / 'simulators.json', capture=True).strip()
+        (result / 'device.json').write_text(json.dumps({'udid': device, 'ownedByHarness': owned}))
+        try:
+            run('xcrun', 'simctl', 'bootstatus', device, '-b')
+            # Install the containing app before XCTest installs its runner, so the
+            # Share Extension is registered independently of the first share action.
+            run(*base, '-scheme', 'BibleCompanion', '-destination', f'platform=iOS Simulator,id={device}',
+                '-resultBundlePath', result / 'Build.xcresult', 'build')
+            app = OUT / 'ios-derived/Build/Products/Debug-iphonesimulator/BibleCompanion.app'
+            run('xcrun', 'simctl', 'install', device, app)
+            for scheme in ['BibleCompanion', 'ReadingInteractionUI']:
+                run(*base, '-scheme', scheme, '-destination', f'platform=iOS Simulator,id={device}',
+                    '-destination-timeout', '90', '-parallel-testing-enabled', 'NO',
+                    '-resultBundlePath', result / f'{scheme}.xcresult', 'test')
+        finally:
+            if owned:
+                subprocess.run(['xcrun', 'simctl', 'shutdown', device], capture_output=True)
+                cleanup = subprocess.run(['xcrun', 'simctl', 'delete', device], capture_output=True)
+                if cleanup.returncode: print(f'Owned Simulator cleanup failed; remove only {device} after inspecting device.json', file=sys.stderr)
     print(f'Results: {result}; screenshots are evidence, not visual acceptance.')
 
 

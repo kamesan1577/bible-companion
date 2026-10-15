@@ -1,5 +1,7 @@
 # Mac acceptance checklist
 
+For current verification evidence, read [the harness handoff](../../docs/harness/HANDOFF.md). The following status describes the original implementation baseline.
+
 This source has passed Linux Foundation tests and source review. It has **not** passed an Apple SDK build, Simulator/device interaction, signing or SideStore installation. Complete the checks below before calling the iOS app ready.
 
 ## 1. Confirm the tools, without changing accounts

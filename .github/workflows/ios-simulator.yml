@@ -81,12 +81,18 @@ jobs:
           tar -czf "$CI_OUTPUT/BibleCompanion-simulator.tar.gz" \
             -C "$CI_DERIVED_DATA/Build/Products/Debug-iphonesimulator" BibleCompanion.app
 
-      - name: Select an installed iOS 26 or later simulator
+      - name: Create a dedicated iOS 26 or later simulator
         run: |
           python3 -m unittest discover -s scripts/ci -p 'test_*.py'
           xcrun simctl list devices available --json > "$CI_OUTPUT/simulators.json"
-          SIMULATOR_ID=$(python3 scripts/ci/select-ios-simulator.py "$CI_OUTPUT/simulators.json")
+          SIMULATOR_ID=$(python3 scripts/ci/create-ios-simulator.py "$CI_OUTPUT/simulators.json")
           echo "SIMULATOR_ID=$SIMULATOR_ID" >> "$GITHUB_ENV"
+
+      - name: Boot and install containing app before XCTest
+        timeout-minutes: 5
+        run: |
+          xcrun simctl bootstatus "$SIMULATOR_ID" -b
+          xcrun simctl install "$SIMULATOR_ID" "$CI_DERIVED_DATA/Build/Products/Debug-iphonesimulator/BibleCompanion.app"
 
       - name: Run core tests on iOS Simulator
         timeout-minutes: 10
@@ -144,6 +150,12 @@ jobs:
           if-no-files-found: warn
           retention-days: 1
           compression-level: 6
+
+      - name: Remove only this job's dedicated simulator
+        if: ${{ always() && env.SIMULATOR_ID != '' }}
+        run: |
+          xcrun simctl shutdown "$SIMULATOR_ID" || true
+          xcrun simctl delete "$SIMULATOR_ID"
 
       - name: Record scope of this run
         if: ${{ always() }}
