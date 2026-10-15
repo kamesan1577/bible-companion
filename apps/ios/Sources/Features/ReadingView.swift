@@ -26,12 +26,13 @@ struct ReadingView: View {
                                     }.pickerStyle(.menu)
                                 }
                                 if page == .maps || page == .people {
-                                    if page == .people { standardExplanation(passage) }
+                                    if page == .people { Text("人物索引と日本語説明の整備状況は別です。").bibleTextStyle(.caption) }
                                     OfflineEntityPane(passage: passage, kind: page == .maps ? "place" : "person")
                                 }
-                                if store.isLoading && page == .explanation { BibleLoadingView() }
+                                if page == .explanation { StaticCommentaryView(passage: passage) }
+                                if store.isLoading && page == .explanation { ProgressView("追加の参考資料を確認中") }
                                 else if let reading = store.reading { sectionContent(reading, passage: passage, section: page) }
-                                else if page == .explanation || page == .art {
+                                else if page == .art {
                                     BibleStateView(title: "資料を読み込めません", message: store.errorMessage ?? "再読み込みしてください。", systemImage: BibleTheme.Symbol.error)
                                     Button("再読み込み") { store.loadReading() }
                                 }
@@ -56,6 +57,7 @@ struct ReadingView: View {
             } else {
                 ScrollView { BibleReadingColumn {
                     BibleStateView(title: "最初の箇所を開く", message: "YouVersionの共有メニューから「聖書コンパニオン」を選んでください。", systemImage: BibleTheme.Symbol.reading)
+                    NavigationLink("保存した注解を読む") { StaticCommentaryBrowser() }
                     NavigationLink("サンプルの解説を読む") { SampleReadingPreview() }
                     Button("共有の手順を図で見る") { showGuide = true }
                     if store.account == nil { signInPrompt }
@@ -130,13 +132,13 @@ struct ReadingView: View {
     }
     @ViewBuilder private func sectionContent(_ reading: ReadingResponse, passage: Passage, section: ReadingSection) -> some View {
         if section == .explanation {
-            standardExplanation(passage)
+            NavigationLink("AIで補足する") { standardExplanation(passage) }
             DisclosureGroup("参考資料を読む") {
             BibleSectionHeader(title: reading.overview.contentKind == "literal-primary-text" ? "出典の原文を確認する" : "選んだ箇所をつなげて読む", subtitle: reading.overview.contentKind == "literal-primary-text" ? "英語 · World English Bible" : "資料からの案内")
             Text(reading.overview.noticeJa ?? "出典に基づく資料からの案内です。AI生成ではありません。")
                 .bibleTextStyle(.caption).bibleForeground(.textSecondary)
             if reading.overview.contentKind == "literal-primary-text" {
-                Text("この箇所の日本語解説はまだありません。出典の英語原文を参考として確認できます。").bibleTextStyle(.body)
+                Text("この参考資料は英語の聖書本文です。上の静的な日本語説明とは別に、原文を確認できます。").bibleTextStyle(.body)
                 DisclosureGroup("英語原文の抜粋と出典") {
                     Text(reading.overview.text).bibleTextStyle(.body).textSelection(.enabled)
                     CitationList(citations: reading.overview.citations)

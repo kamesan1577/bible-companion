@@ -72,7 +72,8 @@ final class ReadingInteractionUITests: XCTestCase {
         XCTAssertTrue(header.waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "JCB")).firstMatch.exists)
         XCTAssertFalse(app.staticTexts["読んだ箇所を、もう少し深く。"].exists)
-        XCTAssertTrue(app.staticTexts["固定標準解説1"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["「良心に従ってきた」という発言"].waitForExistence(timeout: 5))
+        XCTAssertFalse(app.staticTexts["固定標準解説1"].exists)
         let initialY = header.frame.minY
         let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.82, dy: 0.55))
         let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.18, dy: 0.55))
@@ -85,9 +86,30 @@ final class ReadingInteractionUITests: XCTestCase {
         attach(app, "reading-pinned-original-and-people")
         app.buttons["解説"].tap(); app.buttons["地図"].tap(); app.buttons["解説"].tap()
         XCTAssertTrue(header.exists)
-        XCTAssertTrue(app.staticTexts["固定標準解説1"].exists)
+        XCTAssertTrue(app.staticTexts["「良心に従ってきた」という発言"].exists)
         XCTAssertFalse(app.staticTexts["固定標準解説2"].exists)
         attach(app, "reading-repeat-tabs")
+    }
+    @MainActor func testStaticChapterJapaneseAndSourceDisclosure() {
+        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
+        XCTAssertTrue(app.buttons["使徒18–23章の静的解説"].waitForExistence(timeout: 10))
+        app.buttons["使徒18–23章の静的解説"].tap()
+        XCTAssertTrue(app.staticTexts["出典に基づく日本語編集"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["コリントで働きながら伝える"].exists)
+        attach(app, "static-commentary-japanese")
+    }
+    @MainActor func testOriginalRequiresExplicitSpoilerConsent() {
+        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
+        XCTAssertTrue(app.buttons["使徒23:1の静的解説"].waitForExistence(timeout: 10)); app.buttons["使徒23:1の静的解説"].tap()
+        let original = app.buttons["英語の注解原文・出典を読む"]
+        if !original.isHittable { app.swipeUp() }
+        XCTAssertTrue(original.waitForExistence(timeout: 5)); original.tap()
+        let consent = app.buttons["先の内容を含む英語原文を開く"]
+        XCTAssertTrue(consent.waitForExistence(timeout: 5))
+        attach(app, "original-spoiler-consent")
+        consent.tap()
+        XCTAssertTrue(app.staticTexts["Matthew Henry’s Complete Commentary"].waitForExistence(timeout: 5))
+        attach(app, "commentary-original-source")
     }
     @MainActor private func attach(_ app: XCUIApplication, _ name: String) {
         let attachment = XCTAttachment(screenshot: app.screenshot()); attachment.name = name; attachment.lifetime = .keepAlways; add(attachment)
