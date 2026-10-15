@@ -257,7 +257,7 @@ final class ReadingInteractionUITests: XCTestCase {
         XCTAssertTrue(destination.waitForExistence(timeout: 10))
         attach(app, "actual-share-extension-destination")
         destination.tap()
-        XCTAssertTrue(app.staticTexts["使徒の働き 18:24–28"].waitForExistence(timeout: 8), app.debugDescription)
+        XCTAssertTrue(app.staticTexts["使徒の働き 18:24–28"].waitForExistence(timeout: 8))
         app.buttons["人物"].tap()
         let detail = app.descendants(matching: .any).matching(identifier: "entity-inline-detail-person:apollos_276").firstMatch
         scrollTo(detail, app: app); XCTAssertTrue(detail.exists)
