@@ -57,6 +57,9 @@ def inspect(path):
         apps = [n for n in names if re.fullmatch(r'Payload/[^/]+\.app/Info.plist', n)]
         if len(apps) != 1: raise ValueError('Expected exactly one top-level IPA app')
         prefix = apps[0].removesuffix('Info.plist')
+        info = plistlib.loads(archive.read(apps[0]))
+        if info.get('CFBundleSupportedPlatforms') != ['iPhoneOS']:
+            raise ValueError('IPA must contain an iPhoneOS product, not a simulator app')
         result = verify(lambda name: archive.read(prefix + name), [n[len(prefix):] for n in names if n.startswith(prefix)])
         result['artifactSHA256'] = hashlib.sha256(path.read_bytes()).hexdigest()
         return result

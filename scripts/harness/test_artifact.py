@@ -3,6 +3,8 @@ import plistlib
 from pathlib import Path
 import re
 import unittest
+import tempfile
+import zipfile
 
 spec = importlib.util.spec_from_file_location('artifact_gate', Path(__file__).with_name('verify-ios-artifact.py'))
 gate = importlib.util.module_from_spec(spec); spec.loader.exec_module(gate)
@@ -42,3 +44,10 @@ class ArtifactGateTests(unittest.TestCase):
         info['CFBundleIdentifier'] = 'other.Share'
         self.files['PlugIns/BibleShare.appex/Info.plist'] = plistlib.dumps(info)
         with self.assertRaises(ValueError): gate.verify(self.read, self.names)
+
+    def test_simulator_zip_cannot_be_presented_as_device_ipa(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'candidate.ipa'
+            with zipfile.ZipFile(path, 'w') as archive:
+                archive.writestr('Payload/Bible.app/Info.plist', plistlib.dumps({'CFBundleSupportedPlatforms': ['iPhoneSimulator']}))
+            with self.assertRaisesRegex(ValueError, 'not a simulator'): gate.inspect(path)

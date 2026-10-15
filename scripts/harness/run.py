@@ -54,6 +54,9 @@ def data():
 
 def check():
     doctor()
+    temporary = (OUT / 'tmp').resolve()
+    temporary.mkdir(parents=True, exist_ok=True)
+    os.environ['TMPDIR'] = str(temporary)
     guard = str(ROOT / 'scripts/diagnostics/no-external-network.cjs')
     if guard not in os.environ.get('NODE_OPTIONS', ''):
         os.environ['NODE_OPTIONS'] = (os.environ.get('NODE_OPTIONS', '') + ' --require="' + guard + '"').strip()
@@ -75,8 +78,24 @@ def ios(command, device):
     stamp = datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
     result = OUT / f'{command}-{stamp}'
     result.mkdir(parents=True)
-    base = ['xcodebuild', '-jobs', '2', '-project', 'apps/ios/BibleCompanion.xcodeproj', '-configuration', 'Debug',
-            '-sdk', 'iphonesimulator', '-derivedDataPath', str(OUT / 'ios-derived'), 'CODE_SIGNING_ALLOWED=NO']
+    device_build = command == 'ios-device'
+    base = ['xcodebuild', '-jobs', '2', '-project', 'apps/ios/BibleCompanion.xcodeproj',
+            '-configuration', 'Release' if device_build else 'Debug',
+            '-sdk', 'iphoneos' if device_build else 'iphonesimulator',
+            '-derivedDataPath', str(OUT / ('device-derived' if device_build else 'ios-derived')),
+            'CODE_SIGNING_ALLOWED=NO']
+    if device_build:
+        run(*base, '-scheme', 'BibleCompanion', '-destination', 'generic/platform=iOS',
+            '-resultBundlePath', result / 'Build.xcresult', 'build')
+        app = OUT / 'device-derived/Build/Products/Release-iphoneos/BibleCompanion.app'
+        payload = result / 'Payload'
+        payload.mkdir()
+        shutil.copytree(app, payload / app.name, symlinks=True)
+        archive = result / 'BibleCompanion-unsigned.ipa'
+        run('ditto', '-c', '-k', '--keepParent', payload, archive)
+        run(sys.executable, 'scripts/harness/verify-ios-artifact.py', archive)
+        print(f'Unsigned offline IPA candidate: {archive}; existing signer/SideStore required before installation.')
+        return
     if command == 'ios-build':
         run(*base, '-scheme', 'BibleCompanion', '-destination', 'generic/platform=iOS Simulator',
             '-resultBundlePath', result / 'Build.xcresult', 'build')
@@ -117,7 +136,7 @@ def audit_source(ref):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('command', choices=['doctor', 'setup', 'check', 'data', 'swift', 'ios-build', 'ios-ui', 'audit-source'])
+    p.add_argument('command', choices=['doctor', 'setup', 'check', 'data', 'swift', 'ios-build', 'ios-device', 'ios-ui', 'audit-source'])
     p.add_argument('--ios', action='store_true'); p.add_argument('--device')
     p.add_argument('--ref', default='HEAD')
     a = p.parse_args()

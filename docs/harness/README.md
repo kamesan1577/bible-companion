@@ -15,7 +15,7 @@ make source-audit
 
 Use Node **24 LTS** (`.node-version` / `.nvmrc`), its bundled npm, Python 3.9+, Git, and Make. `make setup` runs `npm ci` against the committed lockfile; it needs registry access once. It does not install global tools, configure credentials, migrate remote databases, or contact an AI. On a managed machine put these tools on PATH first. `make doctor` fails with an actionable message when prerequisites are absent. Normal tests require no environment variables; `.env.example` lists optional configuration names without values.
 
-`make check` runs the existing full API/core validation, deterministic data and checkpoint tests, generated OpenAPI drift check, two local migration applications (idempotence), configuration validation and Worker dry-run build. The existing SQLite/Workers runtime tests execute actual migrations and worker behavior. No Cloudflare testing framework migration is needed to keep these working. `npm audit --audit-level=high` is a separate network-dependent dependency check, also retained in CI.
+`make check` runs the existing full API/core validation, deterministic data and checkpoint tests, generated OpenAPI drift check, two local migration applications (idempotence), configuration validation and Worker dry-run build. The existing SQLite/Workers runtime tests execute actual migrations and worker behavior. Test scratch space uses a resolved checkout-local TMPDIR because macOS system temp paths can contain symlink ancestors; operator safety checks continue rejecting symlinked paths. No Cloudflare testing framework migration is needed to keep these working. `npm audit --audit-level=high` is a separate network-dependent dependency check, also retained in CI.
 
 On macOS use full Xcode 26+ with the iOS 26+ SDK and an already-installed runtime, Swift 6+, and XcodeGen 2.42+. Select the existing installation with `DEVELOPER_DIR` if necessary. Xcode first-launch/license/toolchain installation is a machine setup prerequisite, not part of the harness. On Linux, `make swift` needs a compatible Swift 6 toolchain; the native app/UI commands need macOS.
 
@@ -23,6 +23,7 @@ On macOS use full Xcode 26+ with the iOS 26+ SDK and an already-installed runtim
 make swift       # all Foundation core tests, including identity/spoiler/coordinate tests
 make build       # unsigned simulator app including BibleShare.appex
 make ios-ui      # core simulator tests AND all actual UI regression tests
+make ios-device  # unsigned Release IPA candidate for an existing signer/SideStore
 # Optional: choose an existing simulator; does not erase/create a device
 python3 scripts/harness/run.py ios-ui --device SIMULATOR_UUID
 ```
