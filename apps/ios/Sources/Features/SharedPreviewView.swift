@@ -24,6 +24,7 @@ import CompanionCore
     private var pendingStandard = false
     private var pendingQuestion = ""
     private var pendingItemID: String?
+    private var lastSubmissionID: String?
     private var accessOwner: String?
     private var accessToken: String?
     var entries: [ChatEntry] { current.flatMap { transcripts[$0.id]?.entries } ?? [] }
@@ -96,7 +97,7 @@ import CompanionCore
         loading = true; error = nil; canRetryExplanation = false; preview = ""; status = AnswerProgress.preparing.label
         let active = UUID(); generation = active
         defer { if generation == active { loading = false; preview = "" } }
-        let request = UUID().uuidString; pendingRequest = request
+        let request = UUID().uuidString; pendingRequest = request; lastSubmissionID = request
         pendingItemID = item.id; pendingStandard = standard; pendingQuestion = question
         transcripts[item.id, default: ChatTranscript()].submit(id: request, question: question, standard: standard)
         if !standard { draft = "" }
@@ -141,7 +142,7 @@ import CompanionCore
             catch { self.error = "待つのをやめました。再送前に送信した回答の状態を確認してください。" }
         }
     }
-    func retry() { guard pendingRequest == nil, !loading, !pendingQuestion.isEmpty else { return }; let question = pendingQuestion; let standard = pendingStandard; task = Task { await send(question, standard: standard) } }
+    func retry() { guard pendingRequest == nil, !loading, !pendingQuestion.isEmpty else { return }; if let item = current, let lastSubmissionID { transcripts[item.id]?.discardUnanswered(id: lastSubmissionID) }; let question = pendingQuestion; let standard = pendingStandard; task = Task { await send(question, standard: standard) } }
 #if DEBUG
     private var isQA = false
     func configureQA(client: APIClient, initial: AnswerResult) {

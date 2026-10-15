@@ -61,7 +61,7 @@ import CompanionCore
             if gate.accepts(generation) { errorMessage = "保存した会話を読み込めませんでした。再読み込みで確認できます。" }
         }
     }
-    func retry(target: Passage) { guard let lastQuestion else { return }; draft = lastQuestion; send(target: target, standard: submittedStandard) }
+    func retry(target: Passage) { guard let lastQuestion else { return }; if let requestID { transcript.discardUnanswered(id: requestID) }; draft = lastQuestion; send(target: target, standard: submittedStandard) }
     func clearPrivateState() { close(); transcript.clear(); preview = ""; answer = nil; draft = ""; errorMessage = nil; lastQuestion = nil; conversation = nil; conversationID = nil; loadingHistory = false }
     var canUseSelectedMode: Bool { sourceOnly || aiPolicy?.permits(answerMode) == true }
     func send(target: Passage, standard: Bool = false) {

@@ -23,6 +23,14 @@ final class AnswerStreamTests: XCTestCase, @unchecked Sendable {
         try receiver.receive(Data("event: failure\ndata: {\"status\":401,\"code\":\"session_expired\"}\n\n".utf8))
         try receiver.parser.finish(); XCTAssertEqual(receiver.failure, .unauthenticated); XCTAssertNil(receiver.result)
     }
+    func testRetryDoesNotDuplicateUnansweredUserTurn() {
+        var transcript = ChatTranscript()
+        transcript.submit(id: "cancelled", question: "誰？", standard: false)
+        transcript.discardUnanswered(id: "cancelled")
+        transcript.submit(id: "retry", question: "誰？", standard: false)
+        XCTAssertEqual(transcript.entries.map(\.text), ["誰？"])
+        XCTAssertEqual(transcript.entries.first?.id, "retry:user")
+    }
     func testTranscriptPreservesInitialAndDeduplicatesRecoveredRequest() throws {
         let answer = try JSONDecoder().decode(AnswerResult.self, from: Data(#"{"answer":"フェリクスは総督です。","status":"answered","citations":[],"modelId":"fixture","modelInvoked":false,"mode":"grounded-generation","warnings":[],"usage":{},"timing":{}}"#.utf8))
         var transcript = ChatTranscript()

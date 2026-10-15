@@ -32,5 +32,10 @@ public struct ChatTranscript: Sendable {
         guard !entries.contains(where: { $0.id == id + ":assistant" }) else { return }
         entries.append(ChatEntry(id: id + ":assistant", role: "assistant", text: answer.answer, answer: answer, standard: standard))
     }
+    /// Explicit retry replaces only an unanswered local attempt; completed turns stay immutable.
+    public mutating func discardUnanswered(id: String) {
+        guard !entries.contains(where: { $0.id == id + ":assistant" }) else { return }
+        entries.removeAll { $0.id == id + ":user" }
+    }
     public mutating func clear() { entries = [] }
 }

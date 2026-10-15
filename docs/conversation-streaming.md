@@ -41,9 +41,10 @@ Client sessions are ephemeral with no URL cache or cookie storage. Transfers and
 No live AI request, production deployment, distribution update, new credentials, or billing change was made. Deterministic provider fixtures verify the request contract and streaming behavior; they do **not** establish live Gemma answer quality or speed. A budget-authorized live acceptance check of the two screenshot questions remains for rollout coordination.
 
 - TypeScript typecheck and Vitest: 636 tests passed.
-- Swift package: 187 tests passed, including byte-fragmented SSE, EOF-before-completion rejection, real URLSession preview-before-EOF, request-ID mismatch, cancellation, late results after account switch, transcript ordering and deduplication.
+- Swift package: 188 tests passed, including byte-fragmented SSE, EOF-before-completion rejection, real URLSession preview-before-EOF, request-ID mismatch, cancellation, late results after account switch, transcript ordering and deduplication. Explicit retries replace only the unanswered local attempt, keeping completed turns unchanged.
 - App-state harness: 21 existing control-flow checks passed.
 - Design contract and five design tests passed.
+- Existing keyboard-send/follow-up UI regression passed. The actual Share Extension was opened, switched to local people metadata, and returned to its host three times successfully. The return test waits for a hittable host after the system share sheet, rather than merely an underlying element’s existence.
 - Native simulator UI evidence: initial explanation retained, two conversational turns, keyboard-visible send, explicit keyboard dismissal, latest-message navigation, actual SSE preview, interrupted response recovery, shared-screen cancel/retry. Screenshots use deterministic fixtures, not generated live answers.
 
 The screenshots under `verification/conversation/` are actual simulator captures of these fixture-driven views. They contain no real account, credential, or private user conversation.
