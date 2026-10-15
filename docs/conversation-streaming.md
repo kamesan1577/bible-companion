@@ -44,6 +44,6 @@ No live AI request, production deployment, distribution update, new credentials,
 - Swift package: 187 tests passed, including byte-fragmented SSE, EOF-before-completion rejection, real URLSession preview-before-EOF, request-ID mismatch, cancellation, late results after account switch, transcript ordering and deduplication.
 - App-state harness: 21 existing control-flow checks passed.
 - Design contract and five design tests passed.
-- Native simulator UI evidence: initial explanation retained, two conversational turns, keyboard-visible send, actual SSE preview, interrupted response recovery, shared-screen cancel/retry. Screenshots use deterministic fixtures, not generated live answers.
+- Native simulator UI evidence: initial explanation retained, two conversational turns, keyboard-visible send, explicit keyboard dismissal, latest-message navigation, actual SSE preview, interrupted response recovery, shared-screen cancel/retry. Screenshots use deterministic fixtures, not generated live answers.
 
 The screenshots under `verification/conversation/` are actual simulator captures of these fixture-driven views. They contain no real account, credential, or private user conversation.
