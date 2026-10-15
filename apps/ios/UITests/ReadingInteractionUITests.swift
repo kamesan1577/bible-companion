@@ -1,6 +1,24 @@
 import XCTest
 
 final class ReadingInteractionUITests: XCTestCase {
+    @MainActor func testRomansCommentaryAndExplicitDoxologyPlacement() {
+        let app = XCUIApplication()
+        app.launchArguments = ["--simulator-qa", "--qa-screen=romans-opening"]; app.launch()
+        XCTAssertTrue(app.staticTexts["パウロの召命と福音"].waitForExistence(timeout: 10))
+        XCTAssertTrue(app.staticTexts["AIで編集。専門家の校閲なし。"].exists)
+        attach(app, "romans-opening-017")
+        app.terminate()
+        app.launchArguments = ["--simulator-qa", "--qa-screen=romans-doxology"]; app.launch()
+        XCTAssertTrue(app.buttons["解釈と出典を確かめる"].waitForExistence(timeout: 10))
+        app.buttons["解釈と出典を確かめる"].tap()
+        let note = app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "14:24–26")).firstMatch
+        for _ in 0..<3 { if note.isHittable { break }; app.swipeUp() }
+        XCTAssertTrue(note.waitForExistence(timeout: 3))
+        expectation(for: NSPredicate(format: "hittable == true"), evaluatedWith: note); waitForExpectations(timeout: 3)
+        Thread.sleep(forTimeInterval: 1) // Capture after disclosure expansion completes.
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "別のAIによる本文・出典との照合")).firstMatch.exists)
+        attach(app, "romans-doxology-placement-017")
+    }
     @MainActor func testQuestionKeyboardSpoilersAndOrdinaryDebugVisibility() {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
         XCTAssertTrue(app.buttons["質問画面"].waitForExistence(timeout: 10)); app.buttons["質問画面"].tap()

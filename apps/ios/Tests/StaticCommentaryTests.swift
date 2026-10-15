@@ -1,6 +1,32 @@
 import XCTest
 @testable import CompanionCore
 final class StaticCommentaryTests: XCTestCase, @unchecked Sendable {
+    func testRomansCompleteWithoutOverlapsAndReviewedAtCurrentVersion() async throws {
+        let progress = try await StaticCommentary.shared.progress()
+        var total = 0
+        for (offset, count) in Canon.verseCounts["ROM"]!.enumerated() {
+            let chapter = offset + 1
+            let range = Passage(book: "ROM", start: Verse(chapter: chapter, verse: 1), end: Verse(chapter: chapter, verse: count))
+            let entries = try await StaticCommentary.shared.edits(for: range)
+            var seen = Set<Int>()
+            for entry in entries {
+                XCTAssertTrue(progress.sourceComparedEntryIds.contains(entry.id))
+                XCTAssertLessThanOrEqual(entry.passage.verseCount, 8)
+                for verse in entry.passage.start.verse...entry.passage.end.verse { XCTAssertTrue(seen.insert(verse).inserted) }
+            }
+            XCTAssertEqual(seen, Set(1...count))
+            total += entries.count
+        }
+        XCTAssertEqual(total, 181)
+        let single = Passage(book: "ROM", start: Verse(chapter: 16, verse: 25), end: Verse(chapter: 16, verse: 25))
+        let hidden = try await StaticCommentary.shared.edits(for: single)
+        XCTAssertTrue(hidden.isEmpty, "Do not reveal a three-verse explanation before the selected boundary")
+        let doxology = Passage(book: "ROM", start: Verse(chapter: 16, verse: 25), end: Verse(chapter: 16, verse: 27))
+        let entries = try await StaticCommentary.shared.edits(for: doxology)
+        XCTAssertEqual(entries.count, 1)
+        XCTAssertTrue(entries[0].editorialNoteJa.contains("14:24–26"))
+        XCTAssertTrue(entries[0].editorialNoteJa.contains("KJV"))
+    }
     func testDictionarySearchIsExplicitAndSeparate() async throws {
         let empty = try await StaticCommentary.shared.dictionary(matching: " ")
         XCTAssertTrue(empty.isEmpty)
@@ -46,7 +72,7 @@ final class StaticCommentaryTests: XCTestCase, @unchecked Sendable {
     func testProgressSeparatesShortRangesFromOriginalCoverage() async throws {
         let progress = try await StaticCommentary.shared.progress()
         XCTAssertEqual(progress.chapterOverviews, 0)
-        XCTAssertEqual(progress.detailedCoordinates, 1007) // Acts WEB1004 + three retained samples
+        XCTAssertEqual(progress.detailedCoordinates, 1439) // Acts WEB1004, Romans433, GEN/PSA retained samples
         XCTAssertEqual(progress.coveredCoordinates, progress.detailedCoordinates)
         XCTAssertEqual(progress.completeActsChapters, Array(1...28).filter { ![8, 15, 24].contains($0) })
         XCTAssertGreaterThan(progress.sourceComparedEntryIds.count, 200)

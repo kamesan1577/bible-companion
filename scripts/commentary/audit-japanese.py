@@ -6,11 +6,9 @@ ROOT=Path(__file__).resolve().parents[2]
 def audit(output):
  edits=json.loads((ROOT/'data/commentary/japanese-edits.json').read_text())
  units={u['id']:u for p in output.glob('commentary-*.json') if p.name.startswith(('commentary-MHC-','commentary-JFB-')) for u in json.loads(p.read_text())}
- primary={}
- with gzip.open(ROOT/'data/scripture/webp-2026-10-13/verses.ndjson.gz','rt') as f:
-  for line in f:
-   row=json.loads(line); c=row.get('canonical')
-   if c and row.get('text'):primary[f"{c['book']}:{c['chapter']}:{c['verse']}"]=row['text']
+ # Commentary-only verse mapping verifies pinned corpus hashes; raw corpus stays unchanged.
+ import runpy
+ primary=runpy.run_path(str(ROOT/'scripts/commentary/primary-text.py'))['load_primary'](ROOT)
  entities=json.loads((output/'entity-index.json').read_text()); byid={e['id']:e for e in entities['entities']}
  covered=set(); checks=0; ids=set(); samples=[]
  for e in edits['entries']:
