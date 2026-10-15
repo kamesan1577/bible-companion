@@ -95,7 +95,8 @@ final class ReadingInteractionUITests: XCTestCase {
         XCTAssertTrue(app.buttons["使徒18–23章の静的解説"].waitForExistence(timeout: 10))
         app.buttons["使徒18–23章の静的解説"].tap()
         XCTAssertTrue(app.staticTexts["出典に基づく日本語編集"].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.staticTexts["コリントで働きながら伝える"].exists)
+        XCTAssertTrue(app.staticTexts["コリントでの出会いと働き"].exists)
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "別のAIが原典とWEBに照合")).firstMatch.exists)
         attach(app, "static-commentary-japanese")
     }
     @MainActor func testOriginalRequiresExplicitSpoilerConsent() {

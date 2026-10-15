@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "entryRequiredKeys": [
+    "id",
+    "passage",
+    "titleJa",
+    "summaryJa",
+    "authorInterpretationJa",
+    "editorialNoteJa",
+    "sourceUnitIds",
+    "evidence",
+    "people",
+    "editingMethod",
+    "reviewStatus",
+    "spoilerEnd"
+  ],
+  "primaryRefsFormat": "array of canonical strings, e.g. [ACT:18:7]; not coordinate objects",
+  "passageFormat": {
+    "book": "ACT",
+    "start": {
+      "chapter": 18,
+      "verse": 7
+    },
+    "end": {
+      "chapter": 18,
+      "verse": 11
+    }
+  },
+  "entryExample": {
+    "id": "ja-v1:ACT:18:7-11",
+    "passage": {
+      "book": "ACT",
+      "start": {
+        "chapter": 18,
+        "verse": 7
+      },
+      "end": {
+        "chapter": 18,
+        "verse": 11
+      }
+    },
+    "titleJa": "コリントで続く宣教",
+    "summaryJa": "パウロは会堂を離れて隣のユストの家へ行き、会堂長クリスポは家族とともに主を信じた。多くのコリント人も話を聞いて信じ、洗礼を受けた。夜の幻で主はパウロに、恐れず語り続けるよう告げ、自分が共にいること、誰もパウロを襲って害を加えないこと、この町に多くの民がいることを伝えた。パウロはその地に一年六か月とどまり、人々に神の言葉を教えた。",
+    "authorInterpretationJa": "MHCは、ユストの家を会堂に近い場所にしたことを、ユダヤ人にできるだけ近づき、なお受け入れを待つ姿勢として読む。また、幻の言葉を宣教の継続への励ましと保護の約束と解し、「この町に多くの民がいる」を、これから宣教によって呼び集められる人々への見通しとして説明する。JFBも、会堂に隣接する家が会堂の聴衆に近づく場となり、幻がパウロを励ましたと解釈する。ただし、パウロの恐れやユストの改宗者としての身分は本文が明記する事実ではなく、注解者の推測である。",
+    "editorialNoteJa": "本文はユストの家が会堂の隣にあったことを述べるが、パウロの宿所を移したとは述べない。MHCとJFBはいずれも、ここを宿所変更ではなく活動場所の移動とみる。幻の前後関係やパウロの内心、ユストの背景については注解間の説明を本文の事実として扱わない。",
+    "sourceUnitIds": [
+      "mhc:f50c49ed97e0a29d68e83b44fdf70912019659a9911098287954f05b78fb20fe",
+      "jfb:402f613978febdf72d3e8cea5e369907744006ca6d23dca363b2609178b3bb40",
+      "jfb:3f02eab46432b74bba5df4369aa9db082dc2df39c0d3cc08485907c72fdc0dac"
+    ],
+    "evidence": [
+      {
+        "sourceUnitId": "mhc:f50c49ed97e0a29d68e83b44fdf70912019659a9911098287954f05b78fb20fe",
+        "quote": "And Crispus, the chief ruler of the synagogue, believed on the Lord with all his house; and many of the Corinthians hearing believed, and were baptized.",
+        "primaryRefs": [
+          "ACT:18:8"
+        ]
+      },
+      {
+        "sourceUnitId": "mhc:f50c49ed97e0a29d68e83b44fdf70912019659a9911098287954f05b78fb20fe",
+        "quote": "The Lord Jesus spoke to Paul in the night by a vision;",
+        "primaryRefs": [
+          "ACT:18:9"
+        ]
+      },
+      {
+        "sourceUnitId": "jfb:3f02eab46432b74bba5df4369aa9db082dc2df39c0d3cc08485907c72fdc0dac",
+        "quote": "From this it would seem that these signal successes were stirring up the wrath of the unbelieving Jews, and probably the apostle feared being driven by violence, as before, from this scene of such promising labor. He is reassured, however, from above.",
+        "primaryRefs": [
+          "ACT:18:9",
+          "ACT:18:10"
+        ]
+      },
+      {
+        "sourceUnitId": "mhc:f50c49ed97e0a29d68e83b44fdf70912019659a9911098287954f05b78fb20fe",
+        "quote": "He continued at Corinth a year and six months, not to take his ease, but to follow his work, teaching the word of God among them;",
+        "primaryRefs": [
+          "ACT:18:11"
+        ]
+      }
+    ],
+    "people": [
+      {
+        "id": "person:justus_1766",
+        "nameJa": "ユスト",
+        "roleJa": "会堂の隣にある家の持ち主",
+        "identityStatus": "source-sense-compared"
+      },
+      {
+        "id": "person:crispus_961",
+        "nameJa": "クリスポ",
+        "roleJa": "会堂長。家族とともに主を信じた",
+        "identityStatus": "source-sense-compared"
+      },
+      {
+        "id": "person:paul_2479",
+        "nameJa": "パウロ",
+        "roleJa": "コリントで教えを続けた使徒",
+        "identityStatus": "prior-context-identified"
+      }
+    ],
+    "editingMethod": "Codex gpt-6-luna source-based Japanese editorial summary; not a literal translation",
+    "reviewStatus": "draft-awaiting-independent-source-review; no expert review",
+    "spoilerEnd": {
+      "chapter": 18,
+      "verse": 11
+    }
+  },
+  "draftReviewStatus": "draft-awaiting-independent-source-review; no expert review",
+  "sourceUnitIdsFormat": "IDs from bundled commentary-JFB-ACT.json or commentary-MHC-ACT.json; no invented IDs",
+  "evidenceFormat": [
+    {
+      "sourceUnitId": "existing source ID",
+      "quote": "exact substring of originalText",
+      "primaryRefs": [
+        "ACT:18:7"
+      ]
+    }
+  ],
+  "densityPolicy": {
+    "usualVersesPerEntry": [
+      1,
+      5
+    ],
+    "maximumWithoutExplicitReason": 8,
+    "summarySentences": [
+      2,
+      4
+    ],
+    "chapterOverviewsCountAsDetailedVerseExplanations": false
+  },
+  "incomingLegacyDrafts": "retain original files; convert to candidates; check primary-text version/alignment gaps before acceptance; do not merge unreviewed drafts",
+  "appAutoMerge": false
+}

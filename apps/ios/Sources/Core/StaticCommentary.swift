@@ -10,6 +10,28 @@ public struct CommentaryEdit: Decodable, Identifiable, Sendable {
     public let editorialNoteJa: String
     public let sourceUnitIds: [String]
     public let spoilerEnd: Verse
+    public var editorialNoteForDisplay: String? {
+        let workflowNotes: Set<String> = [
+            "Acts 10–12のWEB本文の全対象節と割当JFB原文を照合した修正候補。独立二次点検待ち。",
+            "Acts 13–17のWEB本文と割当JFB原文を照合した修正候補。独立二次点検待ち。",
+            "Acts 9 WEB本文とJFB該当原文を照合した修正候補。人物同定は本文・注解の根拠範囲に限定。独立二次点検待ち。",
+            "Acts 9 WEB本文とJFB該当原文を照合した修正候補。後年の回想は具体的内容を先取りせず、背景としてのみ記す。独立二次点検待ち。",
+            "Acts 9:32–43のWEB本文全対象節とJFB該当原文を照合した修正候補。独立二次点検待ち。",
+            "WEB本文全対象節と割当原典を再照合した修正候補。引用・解釈の範囲を限定。独立二次点検待ち。",
+            "independent13-17.jsonのrevise指摘をWEB本文と割当JFB原文で再照合して修正。独立二次点検待ち。",
+            "受領したLuna下書きです。原典との別段階の点検・人物ID照合・先読み検査は未完です。"
+        ]
+        return workflowNotes.contains(editorialNoteJa) ? nil : editorialNoteJa
+    }
+}
+public struct CommentaryProgress: Sendable {
+    public let editedRanges: Int
+    public let coveredCoordinates: Int
+    public let detailedRanges: Int
+    public let detailedCoordinates: Int
+    public let chapterOverviews: Int
+    public let completeActsChapters: [Int]
+    public let sourceComparedEntryIds: Set<String>
 }
 public struct CommentaryOriginal: Decodable, Identifiable, Sendable {
     public let id: String
@@ -27,11 +49,34 @@ public actor StaticCommentary {
     public static let shared = StaticCommentary()
     private struct FileRecord: Decodable { let file: String; let sha256: String }
     private struct Catalog: Decodable { let files: [String: FileRecord] }
-    private struct Edits: Decodable { let entries: [CommentaryEdit] }
+    private struct Edits: Decodable { let entries: [CommentaryEdit]; let independentReviewedEntryIds: [String]? }
     private var catalog: Catalog?
     public func edits(for passage: Passage) throws -> [CommentaryEdit] {
         let values = try JSONDecoder().decode(Edits.self, from: data("JapaneseEdits")).entries
         return values.filter { passage.contains($0.passage) && $0.spoilerEnd <= passage.end }
+    }
+    public func progress() throws -> CommentaryProgress {
+        let document = try JSONDecoder().decode(Edits.self, from: data("JapaneseEdits"))
+        let entries = document.entries
+        func coordinates(_ values: [CommentaryEdit]) -> Set<String> {
+            Set(values.flatMap { entry -> [String] in
+                guard entry.passage.start.chapter == entry.passage.end.chapter else { return [] }
+                return (entry.passage.start.verse...entry.passage.end.verse).map {
+                    "\(entry.passage.book):\(entry.passage.start.chapter):\($0)"
+                }
+            })
+        }
+        let detailed = entries.filter {
+            !$0.id.hasSuffix("chapter-overview") && $0.passage.start.chapter == $0.passage.end.chapter && $0.passage.end.verse - $0.passage.start.verse < 8
+        }
+        let detailedCoordinates = coordinates(detailed)
+        let actsChapters = (Canon.verseCounts["ACT"] ?? []).enumerated().compactMap { offset, count -> Int? in
+            let chapter = offset + 1
+            return (1...count).allSatisfy { detailedCoordinates.contains("ACT:\(chapter):\($0)") } ? chapter : nil
+        }
+        return CommentaryProgress(editedRanges: entries.count, coveredCoordinates: coordinates(entries).count,
+            detailedRanges: detailed.count, detailedCoordinates: detailedCoordinates.count,
+            chapterOverviews: entries.filter { $0.id.hasSuffix("chapter-overview") }.count, completeActsChapters: actsChapters, sourceComparedEntryIds: Set(document.independentReviewedEntryIds ?? []))
     }
     public func dictionary(matching query: String) throws -> [CommentaryDictionaryEntry] {
         let term = query.trimmingCharacters(in: .whitespacesAndNewlines)

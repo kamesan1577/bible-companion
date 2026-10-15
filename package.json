@@ -13,7 +13,7 @@
     "dev": "node scripts/wrangler.mjs dev --config apps/api/wrangler.jsonc",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "validate": "npm run typecheck && npm test && npm run design:check && npm run design:test && npm run infra:test && npm run seed:check && npm run db:local:test && npm run corpus:import:test && npm run corpus:assets:test && npm run operator:test && npm run worker:runtime:test && npm run source:export:test",
+    "validate": "npm run typecheck && npm test && npm run design:check && npm run design:test && npm run infra:test && npm run seed:check && npm run db:local:test && npm run corpus:import:test && npm run corpus:assets:test && npm run operator:test && npm run worker:runtime:test && npm run source:export:test && npm run commentary:jobs:test",
     "migrate": "node scripts/wrangler.mjs d1 migrations apply bible-companion --local --config apps/api/wrangler.jsonc",
     "deploy:dry-run": "node scripts/wrangler.mjs deploy --dry-run --config apps/api/wrangler.jsonc",
     "infra": "node scripts/infra.mjs",
@@ -34,7 +34,8 @@
     "operator:test": "node --test scripts/operator.test.mjs scripts/operator-security-review.test.mjs scripts/receipt-rotation-security-review.test.mjs scripts/explanation-corpus.test.mjs",
     "worker:runtime:test": "node --test scripts/worker-runtime.test.mjs scripts/receipt-slot-runtime.test.mjs",
     "source:export": "node scripts/export-source.mjs",
-    "source:export:test": "node --test scripts/export-source.test.mjs"
+    "source:export:test": "node --test scripts/export-source.test.mjs",
+    "commentary:jobs:test": "python3 scripts/commentary/codex-jobs.test.py"
   },
   "engines": {
     "node": ">=24"

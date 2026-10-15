@@ -5,20 +5,22 @@ struct StaticCommentaryView: View {
     let passage: Passage
     @State private var edits: [CommentaryEdit] = []
     @State private var failure: String?
+    @State private var progress: CommentaryProgress?
     var body: some View {
         VStack(alignment: .leading, spacing: BibleTheme.Space.md) {
             BibleSectionHeader(title: "出典に基づく日本語編集", subtitle: "端末に保存された資料")
-            Text("歴史的なプロテスタントの注解を根拠にしたAI補助の編集要約です。原文そのもの・専門家監修済みの解説とは区別します。").bibleTextStyle(.caption)
             if let failure { Text(failure).bibleTextStyle(.caption) }
             else if edits.isEmpty { Text("この選択範囲で先読みせずに表示できる日本語説明は、まだ整備されていません。").bibleTextStyle(.body) }
             ForEach(edits) { edit in
                 VStack(alignment: .leading, spacing: BibleTheme.Space.sm) {
                     Text(edit.titleJa).bibleTextStyle(.heading)
                     Text(edit.passage.label).bibleTextStyle(.caption)
+                    Text(progress?.sourceComparedEntryIds.contains(edit.id) == true ? "AIによる日本語編集・別のAIが原典とWEBに照合（専門家校閲なし）" : "AI補助の日本語編集・専門家校閲なし").bibleTextStyle(.caption)
+                    Text("本文の要約").bibleTextStyle(.caption)
                     Text(edit.summaryJa).bibleTextStyle(.body).textSelection(.enabled)
-                    DisclosureGroup("注解者の解釈と編集上の注意") {
+                    DisclosureGroup("原典の注解と、この範囲の注意") {
                         Text(edit.authorInterpretationJa).bibleTextStyle(.body)
-                        Text(edit.editorialNoteJa).bibleTextStyle(.caption)
+                        if let note = edit.editorialNoteForDisplay { Text(note).bibleTextStyle(.caption) }
                     }
                     Text(edit.sourceUnitIds.map { $0.hasPrefix("mhc:") ? "Matthew Henry’s Complete Commentary · 2.2" : "Jamieson–Fausset–Brown · 3.0" }.reduce(into: [String]()) { if !$0.contains($1) { $0.append($1) } }.joined(separator: " / ")).bibleTextStyle(.caption)
                 }
@@ -26,10 +28,19 @@ struct StaticCommentaryView: View {
             NavigationLink("英語の注解原文・出典を読む") { CommentaryOriginalView(passage: passage) }
             NavigationLink("英語の聖書辞典を調べる") { CommentaryDictionaryView() }
             DisclosureGroup("資料の整備状況") {
-                Text("英語原文の対応：31,102節座標中31,101。複数節で同じ原文を共有する場合があります。\n日本語編集：18範囲・215節座標。使徒18–23章は各章の概説を収録（212節座標）。節ごとの詳細注解と全書の日本語整備は未完です。\n英語原文の対応を日本語説明の完成数には数えません。").bibleTextStyle(.caption)
+                Text("歴史的なプロテスタントの注解を根拠にしたAI補助の編集要約です。原文そのもの・専門家監修済みの解説とは区別します。").bibleTextStyle(.caption)
+
+                Text("英語原文の対応：31,102節座標中31,101。複数節で同じ原文を共有する場合があります。英語原文の対応は、日本語説明の完成数には数えません。").bibleTextStyle(.caption)
+                Text("使徒8:37・15:34・24:7は手元のWEB本文にないため、日本語の通常説明を補作していません。KJV系の節番号との違いがあります。").bibleTextStyle(.caption)
+                if let progress {
+                    Text("日本語編集：\(progress.editedRanges)範囲・\(progress.coveredCoordinates)節座標。うち8節以下の具体的説明は\(progress.detailedRanges)範囲・\(progress.detailedCoordinates)節座標、章概説は\(progress.chapterOverviews)件です。全聖書の同粒度の整備と専門家校閲は未完です。").bibleTextStyle(.caption)
+                    if !progress.completeActsChapters.isEmpty {
+                        Text("使徒の全節座標を短い範囲で収録した章：" + progress.completeActsChapters.map(String.init).joined(separator: "、") + "。節座標の網羅は、解釈の正しさや全節の同じ詳しさを保証しません。").bibleTextStyle(.caption)
+                    }
+                }
             }
         }.task(id: passage) {
-            do { edits = try await StaticCommentary.shared.edits(for: passage); failure = nil }
+            do { edits = try await StaticCommentary.shared.edits(for: passage); progress = try await StaticCommentary.shared.progress(); failure = nil }
             catch { edits = []; failure = "保存資料を読み込めませんでした。" }
         }
     }
@@ -90,7 +101,7 @@ private struct CommentaryDictionaryView: View {
 
 struct StaticCommentaryBrowser: View {
     @State private var book = "ACT"
-    @State private var chapter = 18
+    @State private var chapter = 1
     private var range: Passage {
         let counts = Canon.verseCounts[book] ?? [1]
         let selected = min(max(chapter, 1), counts.count)
@@ -105,7 +116,7 @@ struct StaticCommentaryBrowser: View {
                     ScrollView { BibleReadingColumn { StaticCommentaryView(passage: range) } }.navigationTitle(range.label).bibleCanvas()
                 }
             }
-            Text("使徒18–23章は日本語の章概説を収録しています。未整備の章ではその旨を表示し、英語原文は別に開けます。章の途中まで読んでいる場合は、共有した箇所の読書画面をご利用ください。").bibleTextStyle(.caption)
+            Text("保存した日本語説明を章ごとに読めます。整備状況は各章の画面で確認でき、未整備の箇所には英語原文も用意しています。章の途中まで読んでいる場合は、共有した箇所の読書画面をご利用ください。").bibleTextStyle(.caption)
         }.navigationTitle("保存した注解").bibleCanvas()
     }
 }

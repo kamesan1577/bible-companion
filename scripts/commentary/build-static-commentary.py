@@ -65,7 +65,7 @@ def main():
  catalog['coverage']={'MHC':report['MHC'],'JFB':report['JFB'],'unionLinkedVerses':len(allmapped),'dictionaryHeadwords':3963,'japaneseEditedRanges':0,'japaneseIndependentVerseExplanations':0}
  ja=runpy.run_path(str(ROOT/'scripts/commentary/audit-japanese.py'))['audit'](output)
  catalog['files']['JapaneseEdits']={k:ja[k] for k in ['file','bytes','sha256']}
- catalog['coverage'].update(japaneseEditedRanges=ja['editedRanges'],japaneseCoveredCoordinates=ja['coveredCoordinates'],japaneseIndependentVerseExplanations=ja['singleVerseEntries'])
+ catalog['coverage'].update(japaneseEditedRanges=ja['editedRanges'],japaneseCoveredCoordinates=ja['coveredCoordinates'],japaneseIndependentVerseExplanations=ja['singleVerseEntries'],japaneseDetailedRanges=ja['detailedRanges'],independentAiReviewedRanges=ja['independentAiReviewedRanges'])
  identity={'editions':catalog['editions'],'files':catalog['files']};catalog['version']=digest(json.dumps(identity,sort_keys=True,separators=(',',':')).encode())
  (output/'commentary-catalog.json').write_text(json.dumps(catalog,ensure_ascii=False,separators=(',',':'))+'\n')
  (ROOT/'docs/commentary-coverage.json').write_text(json.dumps({'schemaVersion':1,'catalogVersion':catalog['version'],'conversion':'Official mod2imp plus official SWORD1.9.0 API for all canonical coordinates. Markup stripped to plain English. GPL engine used only at build time.','sourceBodyUnits':report,'unionLinkedVerses':len(allmapped),'dictionaryHeadwords':3963,'japaneseEditedRanges':ja['editedRanges'],'japaneseCoveredCoordinates':ja['coveredCoordinates'],'japaneseAudit':ja,'semanticQuality':'not asserted by nonempty/index coverage'},ensure_ascii=False,indent=2)+'\n')
