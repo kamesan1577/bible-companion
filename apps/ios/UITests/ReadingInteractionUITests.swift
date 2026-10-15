@@ -251,16 +251,19 @@ final class ReadingInteractionUITests: XCTestCase {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
         let share = app.buttons["使徒18章を共有する"]
         XCTAssertTrue(share.waitForExistence(timeout: 10)); share.tap()
-        let destinations = app.cells.matching(identifier: "聖書コンパニオン")
-        guard destinations.firstMatch.waitForExistence(timeout: 5), destinations.count > 0 else { XCTFail("Share destination did not appear: \(app.debugDescription)"); return }
-        destinations.element(boundBy: destinations.count - 1).tap()
+        // iOS 26 exposes share cells as "shareCell"; select the visible
+        // extension label rather than treating its display name as an ID.
+        let destination = app.staticTexts.matching(NSPredicate(format: "label == %@", "聖書コンパニオン")).firstMatch
+        XCTAssertTrue(destination.waitForExistence(timeout: 10))
+        attach(app, "actual-share-extension-destination")
+        destination.tap()
         XCTAssertTrue(app.staticTexts["使徒の働き 18:24–28"].waitForExistence(timeout: 8), app.debugDescription)
         app.buttons["人物"].tap()
         let detail = app.descendants(matching: .any).matching(identifier: "entity-inline-detail-person:apollos_276").firstMatch
         scrollTo(detail, app: app); XCTAssertTrue(detail.exists)
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "正確")).firstMatch.exists)
         attach(app, "actual-share-apollos-stored-detail")
-        let places = app.buttons["地名"]; scrollToTop(places, app: app); places.tap()
+        let places = app.buttons["地名"]; scrollToTop(places, app: app); places.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
         let map = app.descendants(matching: .any).matching(identifier: "entity-inline-map-place:alexandria_46").firstMatch
         scrollTo(map, app: app); XCTAssertTrue(map.exists)
         XCTAssertTrue(app.staticTexts["現在の場所"].firstMatch.exists)
@@ -374,13 +377,13 @@ final class ReadingInteractionUITests: XCTestCase {
     }
     @MainActor private func scrollToTop(_ element: XCUIElement, app: XCUIApplication) {
         for _ in 0..<12 {
-            if element.exists && element.isHittable && element.frame.minY > 140 && element.frame.maxY < app.frame.height { return }
+            if element.exists && element.frame.minY > 140 && element.frame.maxY < app.frame.height { return }
             app.swipeDown()
         }
     }
     @MainActor private func scrollTo(_ element: XCUIElement, app: XCUIApplication) {
         for _ in 0..<14 {
-            if element.exists && element.isHittable && element.frame.minY < app.frame.height * 0.78 { return }
+            if element.exists && element.frame.minY >= 0 && element.frame.minY < app.frame.height * 0.78 && element.isHittable { return }
             app.swipeUp()
         }
     }
