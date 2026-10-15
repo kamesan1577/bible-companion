@@ -51,7 +51,7 @@ public actor BundledEntityIndex {
             index = decoded
         }
         guard let index, let bookIndex = index.books.firstIndex(of: passage.book) else { throw Failure.invalid }
-        let profileResource = passage.book == "ACT" ? "entity-profiles" : ["ROM", "LEV"].contains(passage.book) ? "entity-profiles-" + passage.book : nil
+        let profileResource = passage.book == "ACT" ? "entity-profiles" : ["ROM", "LEV", "NUM", "JOS"].contains(passage.book) ? "entity-profiles-" + passage.book : nil
         if catalogs[passage.book] == nil, let profileResource,
            let url = Bundle.module.url(forResource: profileResource, withExtension: "json") {
             catalogs[passage.book] = try JSONDecoder().decode(EntityProfileCatalog.self, from: Data(contentsOf: url))
@@ -59,24 +59,28 @@ public actor BundledEntityIndex {
         let profiles = catalogs[passage.book]
         let policyResource = passage.book == "ACT" ? "acts-map-policy" : passage.book.lowercased() + "-map-policy"
         if mapPolicies[passage.book] == nil {
-            if ["ACT", "ROM", "LEV"].contains(passage.book), let url = Bundle.module.url(forResource: policyResource, withExtension: "json") {
+            if ["ACT", "ROM", "LEV", "NUM", "JOS"].contains(passage.book), let url = Bundle.module.url(forResource: policyResource, withExtension: "json") {
                 mapPolicies[passage.book] = try JSONDecoder().decode([CandidateMapPolicy].self, from: Data(contentsOf: url))
             } else { mapPolicies[passage.book] = [] }
         }
         let candidateMapPolicy = mapPolicies[passage.book] ?? []
         // Each reviewed book has an independent catalog and occurrence table.
         // Switching books must never replace or leak the fixed Acts catalog.
-        if ["ACT", "ROM", "LEV"].contains(passage.book), let reviewed = profiles?.occurrences {
+        if ["ACT", "ROM", "LEV", "NUM", "JOS"].contains(passage.book), let reviewed = profiles?.occurrences {
             let selected = reviewed.filter {
                 let v = Verse(chapter: $0.chapter, verse: $0.verse)
                 return passage.start <= v && v <= passage.end
             }
             var result: [IndexedOccurrence] = []
+            let canonicalID: (String) -> String = { profiles?.canonicalID($0, at: passage.end, includeFuture: includeFuture) ?? $0 }
             for p in profiles?.profiles ?? [] where p.kind == kind {
-                let links = selected.filter { $0.entityID == p.id }
+                guard canonicalID(p.id) == p.id else { continue }
+                let links = selected.filter { canonicalID($0.entityID) == p.id }
                 guard !links.isEmpty || p.supplemental,
                       let resolved = profiles?.resolve(id: p.id, passage: passage, includeFuture: includeFuture) else { continue }
-                let references = reviewed.filter { $0.entityID == p.id }.compactMap { link -> Passage? in
+                var referencePositions = Set<Int>()
+                let references = reviewed.filter { canonicalID($0.entityID) == p.id }.compactMap { link -> Passage? in
+                    guard referencePositions.insert(link.chapter * 1000 + link.verse).inserted else { return nil }
                     let v = Verse(chapter: link.chapter, verse: link.verse)
                     // A shared canonical ID may denote a collective or a
                     // named ancestor. References follow the resolved context.

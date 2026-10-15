@@ -1,0 +1,202 @@
+{
+  "reportType": "independent-integrated-runtime-closure-NJC-2301",
+  "reviewedAtUTC": "2026-10-15T23:03:34.955744+00:00",
+  "reviewerRole": "Independent static/runtime-source audit against current candidate; no candidate, draft, map, or application files edited.",
+  "snapshot": {
+    "integratedAtUTC": "2026-10-15T23:01:02.829083+00:00",
+    "published": false,
+    "semanticApproval": false,
+    "appResourcesWritten": false,
+    "candidateHashes": {
+      "NUM": "c144119261fca5b0e7269a2df96f718229edbc0261b534c321800af8e491525a",
+      "JOS": "296126645ae68133315d3877c71b052b09604121f7677767f070f1a5ef36a6ac"
+    },
+    "fixedWEB": {
+      "NUM": "f50a3147ff698b614ece92c48f6630890c542218bb80d5568d2759144d4e7bb9",
+      "JOS": "26ae82b805dee523bb852977ccf62ad38cc40ebe442b650cbd7862db833ea854"
+    },
+    "allInputHashes": {
+      "candidate/apps/ios/Sources/Core/Resources/entity-profiles-NUM.json": "c144119261fca5b0e7269a2df96f718229edbc0261b534c321800af8e491525a",
+      "candidate/apps/ios/Sources/Core/Resources/entity-profiles-JOS.json": "296126645ae68133315d3877c71b052b09604121f7677767f070f1a5ef36a6ac",
+      "integrated-staging/report.json": "ac84a9598a152b9609349e8f4b9785639dc5a1c37ec744c9a94a31f2ceb62fd6",
+      "build-integrated-staging.py": "52f9d4d208967589b05569cc3537aeb080ad2aa7d30d94a1824b7838c012a4a6",
+      "candidate-activation-report.json": "7dc52d8d521d550b9ef0769e44a4cba15fa1e2b9653f34df5e8f40ba70d6a4f3",
+      "candidate/apps/ios/Sources/Core/EntityProfiles.swift": "df92a2b1dc8e7e822909071feaa2a8f8a4cbdbff34700a757760100d263bd73d",
+      "candidate/apps/ios/Sources/Core/BundledEntityIndex.swift": "761adaaf57e91f1c6e1a7ec778860166c799f3fc02aef2bb5d05ebdc061fdeed",
+      "candidate/apps/ios/Sources/DesignSystem/OfflineEntityPane.swift": "e6c94e0d0936dd30187ccfe360fd9370aa9b2501b5f8e72d25dcbab16f9b5780",
+      "candidate/apps/ios/Tests/NumbersJoshuaEntityTests.swift": "cb1cbe149e6f3963fe2e5674dc427baf3d2f79528f119bb975205b7bc7487fb4",
+      "inventory/targets/numbers-web-verses.json": "f50a3147ff698b614ece92c48f6630890c542218bb80d5568d2759144d4e7bb9",
+      "inventory/targets/joshua-web-verses.json": "26ae82b805dee523bb852977ccf62ad38cc40ebe442b650cbd7862db833ea854",
+      "reviews/root-explicit-place-aliases.json": "89e3ef57987913143ced9b00e10231a556a085b1c2642260c50b5174b69fbb20",
+      "reviews/closure-integrated-staging-runtime-NJC.json": "a5e80ed844bdcc161009b45d09a72490b7731f971b5753577f2cc3e9d3e084b5",
+      "final-core-20261015T223831Z-proof.json": "ea283bec3c05550b5aff7439ad621c0589a84dcf0b9121fa0222c9a60c8cfa82",
+      "final-ui-20261015T225401Z-proof.json": "f15694a37c045919aa7a8983244c77bf7b51fe7d14b87290d2fdd43ec0b9ac81"
+    }
+  },
+  "reviewMethod": "Re-read current 23:01 candidate and resolver/UI code; checked exact fixed WEB verses, current occurrence/source gates, aliases, selected context profile/facts, recursive profile/source references, URL/license/attribution metadata, and excluded IDs. The 22:45 closure was used only to identify requested areas; none of its statuses were inherited.",
+  "findings": [
+    {
+      "id": "nine-joshua-alias-gates",
+      "status": "pass",
+      "evidence": [
+        "All nine current sourceBoundAliases exactly match the root explicit-alias ledger (same aliasID, canonicalID, and knownBy): Leshem→Dan 19:47; Kiriath-Sepher→Debir 15:15; Kiriath-Sannah→Debir 15:49; Kiriath-Baal→Kiriath-Jearim 15:60; Baalah→Kiriath-Jearim 15:9; Kiriath-Arba→Hebron 14:15; Jebusite→Jerusalem 15:8; Hazor→Kerioth-Hezron 15:25; Luz→Bethel 18:13.",
+        "Re-read all nine fixed WEB revealing verses. Each explicitly equates the named alias with the canonical place (e.g. JOS15:15 “the name of Debir before was Kiriath Sepher”; JOS15:49 “Kiriath Sannah (which is Debir)”; JOS15:60 “Kiriath Baal (also called Kiriath Jearim)”; JOS14:15 “the name of Hebron before was Kiriath Arba”).",
+        "Runtime canonicalID gates aliases until their own knownBy verse. At the revealing verse the selected occurrence canonicalizes to one canonical profile. No alias has a pre-gate occurrence except Luz16:2; the other eight are preserved as source IDs/ledger entries but have no earlier runtime use to hide.",
+        "Every alias ledger row says sourceDraftPreserved=true and coordinatePromoted=false. Runtime catalog retains only Luz as a separate base profile for its earlier 16:2 use; other aliases are removed from runtime profiles and their source-revelation occurrence resolves through canonical profile."
+      ],
+      "sourceRefs": [
+        "reviews/root-explicit-place-aliases.json",
+        "candidate/apps/ios/Sources/Core/EntityProfiles.swift:91-125",
+        "candidate/apps/ios/Sources/Core/BundledEntityIndex.swift:42-83",
+        "inventory/targets/joshua-web-verses.json JOS14:15,15:8,15:9,15:15,15:25,15:49,15:60,18:13,19:47"
+      ]
+    },
+    {
+      "id": "luz-16-2-retained-18-13-merged",
+      "status": "qualified",
+      "evidence": [
+        "Fixed WEB JOS16:2 explicitly names both Bethel and Luz along a border (“from Bethel to Luz”). Current reviewed occurrences retain both place:bethel_202 and place:luz_737 at 16:2; current Luz profile passage is 16:2 only.",
+        "Fixed WEB JOS18:13 explicitly says “Luz (also called Bethel)”. SourceBoundAliases gates Luz→Bethel until 18:13, where runtime canonicalizes the row and returns one Bethel card. Alias table declares earlierSeparateCoordinates=[[16,2]] and coordinatePromoted=false.",
+        "At 16:2 the Luz profile’s Wikipedia and alias-revelation source are knownBy18:13 and resolver filters them out; only passage-available primary source remains. Wikipedia note/source gate is therefore not exposed prematurely.",
+        "Qualified because both legacy Theographic candidates have the exact same coordinate [31.93053921,35.22103275]; runtime deliberately keeps separate IDs at 16:2, but the two map pins may visually overlap and this review does not establish distinct ancient coordinates. Both are unverified candidate coordinates, not app-verified points."
+      ],
+      "sourceRefs": [
+        "inventory/targets/joshua-web-verses.json JOS16:2,18:13",
+        "JOS place profiles and sources for luz_737/bethel_202",
+        "candidate/apps/ios/Sources/Core/EntityProfiles.swift:91-125",
+        "candidate/apps/ios/Sources/Core/BundledEntityIndex.swift:42-83"
+      ]
+    },
+    {
+      "id": "numbers-israel-jacob-32-11",
+      "status": "pass",
+      "evidence": [
+        "Fixed WEB NUM32:11 explicitly names Abraham, Isaac, and Jacob in the ancestral oath; it does not refer to the Israelite collective in that clause.",
+        "Current person:israel_682 collective base no longer has NUM32:11 in its passages. Its Jacob individual context variant is knownBy32:11 with only that verse, and the reviewed occurrence at 32:11 remains attached to the stable legacy ID. Resolver selects the exact Jacob variant because collective base does not overlap.",
+        "The resulting displayed name is Jacob; the Jacob Wikipedia link and source are gated at 32:11. No new ID or collective-to-person relabeling is introduced."
+      ],
+      "sourceRefs": [
+        "inventory/targets/numbers-web-verses.json NUM32:11",
+        "NUM person:israel_682 current base and contextProfiles",
+        "candidate/apps/ios/Sources/Core/EntityProfiles.swift:102-125"
+      ]
+    },
+    {
+      "id": "joshua-israel-jacob-dual-24-32",
+      "status": "pass",
+      "evidence": [
+        "Fixed WEB JOS24:32 has two distinct subjects: “the children of Israel” bring Joseph’s bones; “Jacob” bought the parcel; land becomes inheritance of Joseph’s children.",
+        "Current map occurrence keeps person:israel_682 as collective direct and person:joseph_1710 as collective direct. Israel’s base contains 24:32, and its Jacob individual-context variant has passage/fact at 24:32. Runtime retains Israel collective and adds a gated “Jacob” context note, matching both explicit clauses.",
+        "Joseph’s descendant collective remains separate from Joseph’s individual context; the contextual name and fact are gated to 24:32. No ancestor/ethnic-group identity conflation."
+      ],
+      "sourceRefs": [
+        "inventory/targets/joshua-web-verses.json JOS24:32",
+        "JOS person:israel_682 base/contextProfiles; person:joseph_1710 base/contextProfiles",
+        "candidate/apps/ios/Sources/Core/EntityProfiles.swift:102-125"
+      ]
+    },
+    {
+      "id": "joseph-machir-duplicate-fact-removal",
+      "status": "fail",
+      "evidence": [
+        "NUM32:39 fixed WEB says Machir’s children went to Gilead, took it, and dispossessed the Amorites. Current Machir individual base fact and “Machirites” collective-context fact both paraphrase that same action at knownBy32:39. When the base and context both overlap, resolver keeps base and appends every overlapping context summary/fact, so the duplicate surfaces within one resolved profile.",
+        "JOS24:32 fixed WEB has distinct Israel/Jacob/Joseph-descendants clauses, but current person:israel_682 fact says Israel’s people brought Joseph’s bones and they were buried at Shechem, while person:joseph_1710’s individual context note says Joseph’s bones were brought from Egypt and buried at Shechem. At JOS24:32 both direct cards resolve, so the same burial event is shown twice across cards.",
+        "These are factual repetitions, not identity duplicates: do not delete the collective/personal profiles or occurrences. Suggested repair is to divide focus across clauses or remove one repeated event paraphrase while retaining the distinct agent/subject information."
+      ],
+      "sourceRefs": [
+        "inventory/targets/numbers-web-verses.json NUM32:39",
+        "inventory/targets/joshua-web-verses.json JOS24:32",
+        "NUM person:machir_1877 base facts and collective context fact",
+        "JOS person:israel_682 fact and person:joseph_1710 individual-context fact",
+        "candidate/apps/ios/Sources/Core/EntityProfiles.swift:102-125",
+        "candidate/apps/ios/Sources/DesignSystem/OfflineEntityPane.swift:220-225"
+      ]
+    },
+    {
+      "id": "ten-unmapped-runtime-exclusions",
+      "status": "pass",
+      "evidence": [
+        "Current build report lists 3 NUM and 7 JOS unmapped authoring profiles excluded from the runtime. The exact ten IDs are in each catalog runtimeExcludedUnmappedIDs.",
+        "All ten are present in the upstream entity-index but absent from their book catalog profiles and reviewed occurrence IDs. Current runtime takes the book catalog occurrence path for NUM/JOS, canonicalizes those reviewed occurrences, and resolves only profiles from the book-specific catalog; it does not fall through to generic upstream occurrences when a reviewed occurrence table exists.",
+        "This preserves candidate/source indices while excluding those IDs from NUM/JOS runtime output; authoring drafts are not deleted."
+      ],
+      "excludedIDs": {
+        "NUM": [
+          "person:puah_2355",
+          "person:isui_648",
+          "place:asshur_109"
+        ],
+        "JOS": [
+          "person:moab_2103",
+          "person:allon_190",
+          "place:gibeah_466",
+          "place:haeleph_505",
+          "place:negeb_885",
+          "place:sea_of_the_plain_1035",
+          "place:jebus_629"
+        ]
+      },
+      "sourceRefs": [
+        "integrated-staging/report.json",
+        "candidate/apps/ios/Sources/Core/Resources/entity-profiles-NUM.json",
+        "candidate/apps/ios/Sources/Core/Resources/entity-profiles-JOS.json",
+        "candidate/apps/ios/Sources/Core/BundledEntityIndex.swift:43-83"
+      ]
+    },
+    {
+      "id": "wikipedia-source-rights-and-schema-gates",
+      "status": "pass-structural-qualified-content",
+      "evidence": [
+        "Recursively audited 359 NUM profiles/context variants and 505 JOS profiles/context variants. All 864 Wikipedia link objects have required Codable fields; all 816 non-null objects pass the current app’s structural rule: identityVerified=true, or related-section with relationVerified=true plus nonempty note; language ja/en; matching HTTPS language subdomain; article path; no query or colon/interwiki path. 0 invalid links.",
+        "All 5,308 source objects have HTTPS URL and license URL, a nonempty license and attribution; all profile/fact/context source IDs resolve (0 missing). Source categories and licensing metadata are present, including WEB public-domain attribution and CC BY-SA metadata for secondary/reference/map data. EntityProfileSource.safeURL requires HTTPS before links appear, and the UI displays source license+attribution and HTTPS license link.",
+        "WikipediaReadingLink.safeURL enforces identity/related-section gate and resolver filters knownBy; source objects are also filtered by knownBy. This is a structural/source-link review, not a fresh live HTTP/article identity or jurisdiction-specific legal audit. Existing identityVerified claims and note truth remain a separate content-review responsibility."
+      ],
+      "counts": {
+        "NUM": {
+          "recursiveProfiles": 359,
+          "wikipediaLinks": 338,
+          "sources": 2576
+        },
+        "JOS": {
+          "recursiveProfiles": 505,
+          "wikipediaLinks": 478,
+          "sources": 2732
+        },
+        "requiredWikiFieldsMissing": 0,
+        "invalidWikiGateOrURL": 0,
+        "unresolvedSourceIDs": 0,
+        "sourceRecordsMissingHTTPSLicenseAttribution": 0
+      },
+      "sourceRefs": [
+        "candidate/apps/ios/Sources/Core/EntityProfiles.swift:3-9,19-35,102-125",
+        "candidate/apps/ios/Sources/DesignSystem/OfflineEntityPane.swift:137-140,223-238"
+      ]
+    },
+    {
+      "id": "current-snapshot-and-test-binding",
+      "status": "qualified",
+      "evidence": [
+        "The 23:01 integrated-stage report and activation report both state published=false, semanticApproval/independentApproval=false, and appResourcesWritten=false.",
+        "Resolver/UI source SHA values are current and match the recorded prior core proof (EntityProfiles.swift, BundledEntityIndex.swift, OfflineEntityPane.swift, NumbersJoshuaEntityTests.swift). But the core test proof’s NUM/JOS resource hashes predate this candidate; the 22:54 UI proof uses the 22:41 catalog snapshot and exits 65 with one UI test failure. Neither is an execution proof for these 23:01 candidate catalog hashes.",
+        "Therefore this review verifies the exact candidate and runtime path statically, but does not claim an executed test pass for the 23:01 candidate. No app runtime test rerun was performed."
+      ],
+      "sourceRefs": [
+        "integrated-staging/report.json",
+        "candidate-activation-report.json",
+        "final-core-20261015T223831Z-proof.json",
+        "final-ui-20261015T225401Z-proof.json"
+      ]
+    }
+  ],
+  "overall": "qualified-with-one-fail",
+  "unresolvedActions": [
+    "Remove or rephrase duplicate Machir action paraphrase between NUM32:39 individual base and collective context.",
+    "Remove or split duplicate Joseph-bone burial detail between JOS24:32 Israel fact and Joseph individual context; preserve both entity identities.",
+    "Bind any future test result to the exact 23:01 candidate catalog SHA values."
+  ],
+  "scopeLimitations": [
+    "No catalog, map, occurrence, authoring draft, integration code, or app files edited.",
+    "Wikipedia URL/schema/rights gates were checked structurally, not by a live reread of every linked article.",
+    "Candidate remains unpublished and without semantic approval."
+  ]
+}

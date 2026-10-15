@@ -1,0 +1,140 @@
+{
+  "reportType": "independent-integrated-runtime-delta-closure-NJC-2312",
+  "reviewedAtUTC": "2026-10-15T23:13:27Z",
+  "reviewerRole": "独立統合runtime再照合。候補/アプリ/原稿を編集せず、現行runtime JSON・resolver/UIコード・固定WEB本文を直接照合。",
+  "snapshot": {
+    "integratedAtUTC": "2026-10-15T23:12:26.850056+00:00",
+    "published": false,
+    "semanticApproval": false,
+    "appResourcesWritten": false,
+    "candidateHashes": {
+      "NUM": "c70a1cc0f6e3df9429ac6d491a0d8a2a471e4efef2a2880dd2f1a52fe527d9bb",
+      "JOS": "bc7aaf9c92d8e0ce59bc8e049d7644886e0960aab9bedbabebc6ecd1c02d2477"
+    },
+    "expectedHashesFromTask": {
+      "NUM": "c70a1cc0f6e3df9429ac6d491a0d8a2a471e4efef2a2880dd2f1a52fe527d9bb",
+      "JOS": "bc7aaf9c92d8e0ce59bc8e049d7644886e0960aab9bedbabebc6ecd1c02d2477"
+    },
+    "fixedWEBHashes": {
+      "NUM": "f50a3147ff698b614ece92c48f6630890c542218bb80d5568d2759144d4e7bb9",
+      "JOS": "26ae82b805dee523bb852977ccf62ad38cc40ebe442b650cbd7862db833ea854"
+    },
+    "integrationReportSHA256": "0fd403cda07eeea32d2a473d41f6a194ff04645995342d84d1620ccc3d21f7a7",
+    "resolverAndPaneHashes": {
+      "candidate/apps/ios/Sources/Core/EntityProfiles.swift": "df92a2b1dc8e7e822909071feaa2a8f8a4cbdbff34700a757760100d263bd73d",
+      "candidate/apps/ios/Sources/Core/BundledEntityIndex.swift": "761adaaf57e91f1c6e1a7ec778860166c799f3fc02aef2bb5d05ebdc061fdeed",
+      "candidate/apps/ios/Sources/DesignSystem/OfflineEntityPane.swift": "e6c94e0d0936dd30187ccfe360fd9370aa9b2501b5f8e72d25dcbab16f9b5780"
+    }
+  },
+  "method": "前回のfail対象2節のみについて、対象固定WEB本文、現行catalog内のbase/context summary/facts/passages/occurrences、resolverのcontext選択・fact結合、UIのcontextNotes/facts表示を読んだ。旧判定は継承せず23:12 snapshotの実値から判定。",
+  "findings": [
+    {
+      "id": "NUM32:39-Machir-base-vs-collective-context-fact",
+      "status": "closed-pass",
+      "priorStatus": "fail",
+      "source": {
+        "ref": "NUM32:39",
+        "text": "The children of Machir the son of Manasseh went to Gilead, took it, and dispossessed the Amorites who were therein.",
+        "url": "https://ebible.org/engwebp/NUM32.htm#V39"
+      },
+      "currentRuntime": {
+        "occurrence": {
+          "entityID": "person:machir_1877",
+          "chapter": 32,
+          "verse": 39,
+          "directlyNamed": true
+        },
+        "baseSummary": "民数記26:29は、マナセの子マキルがギレアドの父となったと記します。",
+        "baseFactsKnownAtVerse": [],
+        "collectiveContext": {
+          "identityType": "collective",
+          "summaryJa": "民数記26:29はマナセの子孫として「マキル人の家族」を挙げます。この用法は氏族集団を指します。",
+          "factsKnownAtVerse": [
+            {
+              "textJa": "マキルの子らはギレアドへ進み、そこにいたアモリ人を追い払ったと記される。",
+              "knownBy": {
+                "chapter": 32,
+                "verse": 39
+              },
+              "sourceIds": [
+                "NUM-person-machir_1877-NUM_machir-1877-collective0-webp-num-machir-1877-collective-32-39"
+              ]
+            }
+          ]
+        }
+      },
+      "runtimeBehavior": "base overlaps JOS/NUM passage so resolver selects the individual base; its base fact at 32:39 is now empty. Matching collective context remains shown as a context note and carries the action exactly once. Resolver does not emit the removed personal-action proposal.",
+      "basisJa": "固定本文は行為主体を「マナセの子マキルの子ら」とする。個人マキルのbaseに行為factはなく、マキル人collective contextだけが同じ行為を記述するため、前回の重複は解消。",
+      "sourceRefs": [
+        "inventory/targets/numbers-web-verses.json NUM32:39",
+        "entity-profiles-NUM.json person:machir_1877 base/context",
+        "EntityProfiles.swift resolve()",
+        "OfflineEntityPane.swift contextNotes/facts"
+      ]
+    },
+    {
+      "id": "JOS24:32-Israel-transport-vs-Joseph-burial-context",
+      "status": "qualified-root-accepted-residual-presentation-overlap",
+      "priorStatus": "fail",
+      "source": {
+        "ref": "JOS24:32",
+        "text": "They buried the bones of Joseph, which the children of Israel brought up out of Egypt, in Shechem, in the parcel of ground which Jacob bought from the sons of Hamor the father of Shechem for a hundred pieces of silver. They became the inheritance of the children of Joseph.",
+        "url": "https://ebible.org/engwebp/JOS24.htm#V32"
+      },
+      "currentRuntime": {
+        "israelBaseFact": [
+          "イスラエルの人々はエジプトからヨセフの骨を携え上った。"
+        ],
+        "israelJacobContextFacts": [
+          "ヨシュア記24:32は、ヤコブがハモルの子らから銀百枚で土地を買ったと述べます。"
+        ],
+        "josephCollectiveFacts": [
+          "ヨシュア記24:32は、埋葬されたヨセフ本人の骨とは別に、その土地がヨセフの子らの相続となったと記します。"
+        ],
+        "josephIndividualContextFacts": [
+          "ヨシュア記24:32は、ヨセフの骨がエジプトから運ばれ、シェケムに葬られたと記します。"
+        ],
+        "occurrences": [
+          {
+            "entityID": "person:israel_682",
+            "chapter": 24,
+            "verse": 32,
+            "directlyNamed": true
+          },
+          {
+            "entityID": "person:joseph_1710",
+            "chapter": 24,
+            "verse": 32,
+            "directlyNamed": true
+          }
+        ]
+      },
+      "runtimeBehavior": "Israel card now assigns only the carrying action to Israel. Joseph-person context card retains burial at Shechem, but its fact still says the bones were brought from Egypt; thus the event is split by agent/outcome, while the carriage clause is repeated in both visible cards.",
+      "basisJa": "固定本文は同一文でイスラエルの子らが骨をエジプトから運び、埋葬したと続ける。現在の分担で埋葬の重複は除かれたが、運搬の記述はIsrael base factとJoseph individual-context factの双方に残るため、重複懸念は完全には閉じない。",
+      "suggestedRepairJa": null,
+      "sourceRefs": [
+        "inventory/targets/joshua-web-verses.json JOS24:32",
+        "entity-profiles-JOS.json person:israel_682 base/context",
+        "entity-profiles-JOS.json person:joseph_1710 base/context",
+        "EntityProfiles.swift resolve()",
+        "OfflineEntityPane.swift contextNotes/facts"
+      ],
+      "reviewerFindingStatusBeforeRootDisposition": "qualified-open-partial-overlap",
+      "reviewerFinding": "qualified-open-partial-overlap",
+      "rootDisposition": {
+        "status": "accepted-qualified-residual-presentation-overlap",
+        "authority": "root decision received 2026-10-15",
+        "reasonJa": "異なるIsrael/Josephカードの自立説明に運搬事実が部分的に重なるが、同一IDカードの重複でも人物/集団の混同でもない。Israelカードは運搬主体、Josephカードは遺骨の人物と埋葬先を焦点とし、この程度は許容する。出来事の記述を機械的に削らない。",
+        "contentErrorOrFail": false,
+        "preserveIndependentReviewerObservation": true
+      }
+    }
+  ],
+  "overall": "NUM-Machir-closed-pass; JOS-Israel-Joseph-qualified-overlap-accepted-by-root",
+  "limitations": [
+    "このdeltaはMachir/JOS24:32重複箇所に限定し、9 alias、unmapped exclusion、全カタログWiki/権利gateの再監査はしていない。",
+    "正確な23:12候補SHAを静的照合した。テスト実行結果は確認しておらず、当該候補の実行テスト合格を主張しない。",
+    "候補は未公開、app resources未変更。",
+    "Root accepted the JOS24:32 cross-card partial carriage overlap as qualified presentation overlap; the independent reviewer observation remains recorded and was not relabeled as pass."
+  ]
+}

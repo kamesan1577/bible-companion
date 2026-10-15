@@ -1,0 +1,579 @@
+{
+  "schemaVersion": "1.0",
+  "reviewType": "independent-closure-root-explicit-place-alias-additions",
+  "reviewedAtUTC": "2026-10-15T22:36:04.595772+00:00",
+  "assignmentPath": "reviews/root-explicit-place-aliases.json",
+  "assignmentSHA256": "89e3ef57987913143ced9b00e10231a556a085b1c2642260c50b5174b69fbb20",
+  "fixedJoshuaWEBPath": "inventory/targets/joshua-web-verses.json",
+  "fixedJoshuaWEBSHA256": "26ae82b805dee523bb852977ccf62ad38cc40ebe442b650cbd7862db833ea854",
+  "reviewedCount": 4,
+  "summaryJa": "4組はいずれも固定WEBに明示的な同一地物/別名表現がある。表示上の併合は本文がその関係を明かすknownBy以降に限る。Luzの16:2はBethelからLuzへ進む別の境界記述なので18:13より前には統合しない。Hazorの同節別項目Hazor Hadattahおよび北方のHazorとも区別する。",
+  "records": [
+    {
+      "aliasID": "place:kiriath-arba_697",
+      "canonicalID": "place:hebron_551",
+      "knownBy": {
+        "chapter": 14,
+        "verse": 15
+      },
+      "refs": [
+        [
+          "JOS",
+          14,
+          15
+        ]
+      ],
+      "decision": "closed-explicit-same-feature",
+      "reasonJa": "固定WEBは「Hebronの以前の名がKiriath Arba」と明示し、同一の町を別名で呼ぶ関係を同節で述べる。既存Kiriath-Arbaプロファイルにも後続のJOS 15:54、20:7があり、同じ名前の地物として扱うのが適切。統合表示の開始は14:15。ヨシュア14:15の「アナク人の中で最も偉大な者にちなむ」という文言を、Arba本人の別プロフィールや後代情報へ拡張しない。",
+      "cautionJa": "既存canonical Hebronの物語上の初出はJOS 10:3だが、別名関係が本文で分かるのは14:15。",
+      "primaryTextChecks": [
+        {
+          "ref": "JOS 14:15",
+          "fixedWEBText": "Now the name of Hebron before was Kiriath Arba, after the greatest man among the Anakim. Then the land had rest from war.",
+          "citationURL": "https://ebible.org/engwebp/JOS14.htm#V15",
+          "coordinatesResolved": true,
+          "correspondsToAliasManifest": true
+        }
+      ],
+      "existingProfiles": [
+        {
+          "role": "alias",
+          "id": "place:kiriath-arba_697",
+          "path": "drafts/places_2/JOS_kiriath-arba_697.json",
+          "fileSHA256": "a2ef2095caa76296e622ccc473d57227af3e415c1b8a418b2248610febc18842",
+          "knownBy": {
+            "chapter": 14,
+            "verse": 15
+          },
+          "passages": [
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 14,
+                "verse": 15
+              },
+              "end": {
+                "chapter": 14,
+                "verse": 15
+              }
+            },
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 15,
+                "verse": 54
+              },
+              "end": {
+                "chapter": 15,
+                "verse": 54
+              }
+            },
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 20,
+                "verse": 7
+              },
+              "end": {
+                "chapter": 20,
+                "verse": 7
+              }
+            }
+          ],
+          "nameJa": "キルヤテ・アルバ",
+          "subtitleJa": "本文の地理説明に現れる場所。",
+          "coordinate": null,
+          "found": true
+        },
+        {
+          "role": "canonical",
+          "id": "place:hebron_551",
+          "path": "drafts/places_1/NUM_place_hebron_551.json",
+          "fileSHA256": "b547e26e6fc20430be87f84b73fc349041a32d0daa5ecc48e77ffb40635dec47",
+          "knownBy": {
+            "chapter": 13,
+            "verse": 22
+          },
+          "passages": [
+            {
+              "book": "NUM",
+              "start": {
+                "chapter": 13,
+                "verse": 22
+              },
+              "end": {
+                "chapter": 13,
+                "verse": 22
+              }
+            }
+          ],
+          "nameJa": "ヘブロン",
+          "subtitleJa": "ユダ山地南部の古い町",
+          "coordinate": null,
+          "found": true
+        }
+      ],
+      "newIDCreated": false,
+      "mapOrCoordinatePromotion": false,
+      "status": "pass"
+    },
+    {
+      "aliasID": "place:jebusite_630",
+      "canonicalID": "place:jerusalem_636",
+      "knownBy": {
+        "chapter": 15,
+        "verse": 8
+      },
+      "refs": [
+        [
+          "JOS",
+          15,
+          8
+        ]
+      ],
+      "decision": "closed-explicit-same-feature",
+      "reasonJa": "固定WEBは境界が「the Jebusite (also called Jerusalem)」の側を通ると括弧で対応づける。文脈は境界上の場所を記述しており、ここでのJebusiteは住民集団一般でなくエルサレムの地名用法。既存profileのknownByはalias 15:8、canonical Jerusalemはそれ以前なので、alias表示・統合は15:8からに制限する。",
+      "cautionJa": "Jebusiteの民族/住民としての別用例をエルサレムの地名へ一括統合しない。",
+      "primaryTextChecks": [
+        {
+          "ref": "JOS 15:8",
+          "fixedWEBText": "The border went up by the valley of the son of Hinnom to the side of the Jebusite (also called Jerusalem) southward; and the border went up to the top of the mountain that lies before the valley of Hinnom westward, which is at the farthest part of the valley of Rephaim northward.",
+          "citationURL": "https://ebible.org/engwebp/JOS15.htm#V8",
+          "coordinatesResolved": true,
+          "correspondsToAliasManifest": true
+        }
+      ],
+      "existingProfiles": [
+        {
+          "role": "alias",
+          "id": "place:jebusite_630",
+          "path": "drafts/places_1/JOS_place_jebusite_630.json",
+          "fileSHA256": "4c13149280f3a519844e665e80e869c4e8de740ab717ec254bb919ab351d1f36",
+          "knownBy": {
+            "chapter": 15,
+            "verse": 8
+          },
+          "passages": [
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 15,
+                "verse": 8
+              },
+              "end": {
+                "chapter": 15,
+                "verse": 8
+              }
+            }
+          ],
+          "nameJa": "エブス人（エルサレム）",
+          "subtitleJa": "ユダとベニヤミンの境界記述に現れるエルサレムの別称",
+          "coordinate": null,
+          "found": true
+        },
+        {
+          "role": "canonical",
+          "id": "place:jerusalem_636",
+          "path": "drafts/places_2/JOS_jerusalem_636.json",
+          "fileSHA256": "136276af6ee8461e6d872da3e83193176769d286d4ede998d83f8fb0d9c4b139",
+          "knownBy": {
+            "chapter": 10,
+            "verse": 1
+          },
+          "passages": [
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 10,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 10,
+                "verse": 1
+              }
+            },
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 10,
+                "verse": 3
+              },
+              "end": {
+                "chapter": 10,
+                "verse": 3
+              }
+            },
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 10,
+                "verse": 5
+              },
+              "end": {
+                "chapter": 10,
+                "verse": 5
+              }
+            },
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 10,
+                "verse": 23
+              },
+              "end": {
+                "chapter": 10,
+                "verse": 23
+              }
+            },
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 12,
+                "verse": 10
+              },
+              "end": {
+                "chapter": 12,
+                "verse": 10
+              }
+            },
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 15,
+                "verse": 8
+              },
+              "end": {
+                "chapter": 15,
+                "verse": 8
+              }
+            },
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 15,
+                "verse": 63
+              },
+              "end": {
+                "chapter": 15,
+                "verse": 63
+              }
+            },
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 18,
+                "verse": 28
+              },
+              "end": {
+                "chapter": 18,
+                "verse": 28
+              }
+            }
+          ],
+          "nameJa": "エルサレム",
+          "subtitleJa": "物語に登場する町。",
+          "coordinate": null,
+          "found": true
+        }
+      ],
+      "newIDCreated": false,
+      "mapOrCoordinatePromotion": false,
+      "status": "pass"
+    },
+    {
+      "aliasID": "place:hazor_547",
+      "canonicalID": "place:kerioth-hezron_684",
+      "knownBy": {
+        "chapter": 15,
+        "verse": 25
+      },
+      "refs": [
+        [
+          "JOS",
+          15,
+          25
+        ]
+      ],
+      "decision": "closed-explicit-same-feature",
+      "reasonJa": "固定WEBの語順と括弧は「Hazor Hadattah, Kerioth Hezron (also called Hazor)」と二つの列挙項目を区別したうえで、後者Kerioth HezronをHazorとも呼ぶ。したがって既存Hazor_547はKerioth-Hezronに対応する別名IDとして15:25で対応づけられる。記事の疑問符付き候補比定はこの原文上の別名判定に不要。",
+      "cautionJa": "Hazor Hadattah（別ID place:hazor-hadattah_550）と混同しない。北方の大都市HazorやJOS 15:23の別地名にも拡張しない。両対象が同節にあるため、重複表示・ピンの統合時もHazor Hadattahは残す。",
+      "primaryTextChecks": [
+        {
+          "ref": "JOS 15:25",
+          "fixedWEBText": "Hazor Hadattah, Kerioth Hezron (also called Hazor),",
+          "citationURL": "https://ebible.org/engwebp/JOS15.htm#V25",
+          "coordinatesResolved": true,
+          "correspondsToAliasManifest": true
+        }
+      ],
+      "existingProfiles": [
+        {
+          "role": "alias",
+          "id": "place:hazor_547",
+          "path": "drafts/places_1/JOS_place_hazor_547.json",
+          "fileSHA256": "c446cd69818e26c7ed365ea9b9e55edf16a75150da8a8d72b89dba8e88b159a2",
+          "knownBy": {
+            "chapter": 15,
+            "verse": 25
+          },
+          "passages": [
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 15,
+                "verse": 25
+              },
+              "end": {
+                "chapter": 15,
+                "verse": 25
+              }
+            }
+          ],
+          "nameJa": "ハツォル（キリヨテ・ヘツロン）",
+          "subtitleJa": "ユダ南部の町名（キリヨテ・ヘツロンの別名）",
+          "coordinate": null,
+          "found": true
+        },
+        {
+          "role": "canonical",
+          "id": "place:kerioth-hezron_684",
+          "path": "drafts/places_2/JOS_kerioth-hezron_684.json",
+          "fileSHA256": "3914fd5e2c0aa4a7ab042c1a0844a2c6eabbd101efc9195a187927e10dc8ddf7",
+          "knownBy": {
+            "chapter": 15,
+            "verse": 25
+          },
+          "passages": [
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 15,
+                "verse": 25
+              },
+              "end": {
+                "chapter": 15,
+                "verse": 25
+              }
+            }
+          ],
+          "nameJa": "ケリヨテ・ヘツロン",
+          "subtitleJa": "本文の地理説明に現れる場所。",
+          "coordinate": null,
+          "found": true
+        }
+      ],
+      "newIDCreated": false,
+      "mapOrCoordinatePromotion": false,
+      "status": "pass"
+    },
+    {
+      "aliasID": "place:luz_737",
+      "canonicalID": "place:bethel_202",
+      "knownBy": {
+        "chapter": 18,
+        "verse": 13
+      },
+      "refs": [
+        [
+          "JOS",
+          18,
+          13
+        ]
+      ],
+      "decision": "closed-explicit-same-feature-after-revelation-only",
+      "reasonJa": "固定WEB JOS 18:13は「Luz, to the side of Luz (also called Bethel)」と明示し、この節の地名用法ではLuzとBethelを同じ場所名として扱う。",
+      "cautionJa": "LuzはJOS 16:2に先行して現れ、WEBは「BethelからLuzへ」と境界の行程上で別々に名を挙げるため、16:2時点でBethelとLuzを統合してはならない。knownByはLuzの初出16:2のまま保持し、別名の開示と併合表示は18:13以降に限る。16:2用例はLuz単独の参照のまま残す。",
+      "primaryTextChecks": [
+        {
+          "ref": "JOS 18:13",
+          "fixedWEBText": "The border passed along from there to Luz, to the side of Luz (also called Bethel), southward. The border went down to Ataroth Addar, by the mountain that lies on the south of Beth Horon the lower.",
+          "citationURL": "https://ebible.org/engwebp/JOS18.htm#V13",
+          "coordinatesResolved": true,
+          "correspondsToAliasManifest": true
+        }
+      ],
+      "existingProfiles": [
+        {
+          "role": "alias",
+          "id": "place:luz_737",
+          "path": "drafts/places_2/JOS_luz_737.json",
+          "fileSHA256": "aedecba10159116d340d9215e234aaad567abed28a47fdc8f8cd8452b05bdde0",
+          "knownBy": {
+            "chapter": 16,
+            "verse": 2
+          },
+          "passages": [
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 16,
+                "verse": 2
+              },
+              "end": {
+                "chapter": 16,
+                "verse": 2
+              }
+            },
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 18,
+                "verse": 13
+              },
+              "end": {
+                "chapter": 18,
+                "verse": 13
+              }
+            }
+          ],
+          "nameJa": "ルズ",
+          "subtitleJa": "相続地の境界・町一覧に現れる地名。",
+          "coordinate": null,
+          "found": true
+        },
+        {
+          "role": "canonical",
+          "id": "place:bethel_202",
+          "path": "drafts/places_1/JOS_place_bethel_202.json",
+          "fileSHA256": "4a03034e3890876300f5b20956adc46ff723fec3bff1d348f5a07a1c45a080f5",
+          "knownBy": {
+            "chapter": 7,
+            "verse": 2
+          },
+          "passages": [
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 7,
+                "verse": 2
+              },
+              "end": {
+                "chapter": 7,
+                "verse": 2
+              }
+            },
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 8,
+                "verse": 9
+              },
+              "end": {
+                "chapter": 8,
+                "verse": 9
+              }
+            },
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 8,
+                "verse": 12
+              },
+              "end": {
+                "chapter": 8,
+                "verse": 12
+              }
+            },
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 8,
+                "verse": 17
+              },
+              "end": {
+                "chapter": 8,
+                "verse": 17
+              }
+            },
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 12,
+                "verse": 9
+              },
+              "end": {
+                "chapter": 12,
+                "verse": 9
+              }
+            },
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 16,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 16,
+                "verse": 1
+              }
+            },
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 16,
+                "verse": 2
+              },
+              "end": {
+                "chapter": 16,
+                "verse": 2
+              }
+            },
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 18,
+                "verse": 13
+              },
+              "end": {
+                "chapter": 18,
+                "verse": 13
+              }
+            },
+            {
+              "book": "JOS",
+              "start": {
+                "chapter": 18,
+                "verse": 22
+              },
+              "end": {
+                "chapter": 18,
+                "verse": 22
+              }
+            }
+          ],
+          "nameJa": "ベテル（アイ近郊の町）",
+          "subtitleJa": "アイの西側にあると記される古代都市",
+          "coordinate": null,
+          "found": true
+        }
+      ],
+      "newIDCreated": false,
+      "mapOrCoordinatePromotion": false,
+      "status": "pass"
+    }
+  ],
+  "specialContextChecks": [
+    {
+      "ref": "JOS 16:2",
+      "fixedWEBText": "It went out from Bethel to Luz, and passed along to the border of the Archites to Ataroth;",
+      "sourceURL": "https://ebible.org/engwebp/JOS16.htm#V2",
+      "judgmentJa": "BethelからLuzへ進む境界表現。18:13の別名明示前に同一表示へ統合しない。"
+    },
+    {
+      "ref": "JOS 18:13",
+      "fixedWEBText": "The border passed along from there to Luz, to the side of Luz (also called Bethel), southward. The border went down to Ataroth Addar, by the mountain that lies on the south of Beth Horon the lower.",
+      "sourceURL": "https://ebible.org/engwebp/JOS18.htm#V13",
+      "judgmentJa": "Luz（also called Bethel）と明示。ここから先の表示統合を許可。"
+    }
+  ],
+  "notMergedJa": [
+    "Mount JearimとChesalonは山と町の地物範囲が異なるため、今回の明示的な同一地物別名リストに含めない。",
+    "Wikipedia上の候補・地名一覧は原文の明示的な同一性判定に使っていない。"
+  ],
+  "summary": {
+    "reviewed": 4,
+    "pass": 4,
+    "fail": 0,
+    "summaryJa": "4組はいずれも固定WEBに明示的な同一地物/別名表現がある。表示上の併合は本文がその関係を明かすknownBy以降に限る。Luzの16:2はBethelからLuzへ進む別の境界記述なので18:13より前には統合しない。Hazorの同節別項目Hazor Hadattahおよび北方のHazorとも区別する。"
+  }
+}

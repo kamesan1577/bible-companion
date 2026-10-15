@@ -1,0 +1,1773 @@
+{
+  "reportType": "independent-closure-unmapped-runtime-profile-JOS-map-rows-round2",
+  "reviewerRole": "independent source reviewer; no map/draft edits",
+  "workspace": "authoring-workspace",
+  "reviewedAtUTC": "2026-10-15T22:41:17.987708+00:00",
+  "previousReviewPath": "reviews/closure-unmapped-runtime-profile-map-rows-JOS.json",
+  "previousReviewSHA256": "81e7d4ef3549a4fe03e789857ec800745ad080c75481a4f456a35726ea781dcd",
+  "authorCorrectionReportPath": "reviews/unmapped-runtime-profile-decisions-JOS.json",
+  "authorCorrectionReportSHA256": "2591bd8ef1f5985aae660a399f27a15e8b94a0161959b24931b07f2b0878d923",
+  "scope": "作成者のJOS修正行21件（既レビュー17と追加地理用例12:2/13:9/13:16/19:27）を固定WEB本文、現行JOSプロファイル/knownBy、能動的除外一覧で再照合。",
+  "fixedWitnessPath": "inventory/targets/joshua-web-verses.json",
+  "fixedWitnessSHA256": "26ae82b805dee523bb852977ccf62ad38cc40ebe442b650cbd7862db833ea854",
+  "currentMapSHA256": {
+    "reviews/verse-map-JOS-01-08.json": "b3858f58df95db4709ff3219239844bf6b0b468ba4384fa9230421a7d17cf114",
+    "reviews/verse-map-JOS-09-16.json": "e8851d7b15312f0fb5088b743a9c84706b4b71ff10b93ac3278521960d51fb8d",
+    "reviews/verse-map-JOS-17-24.json": "51261403e10269ad0f61b648ba6a585936629058a85826d4ba1fd34a5a607bde"
+  },
+  "summary": {
+    "rows": 21,
+    "pass": 9,
+    "qualified": 12,
+    "fail": 0,
+    "sourceMismatches": 0,
+    "activeEntityExclusionOverlap": 0,
+    "profileGateProblems": 0
+  },
+  "articleReadEvidence": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Cities_in_the_Book_of_Joshua",
+      "observations": [
+        "Lebo-Hamath entry at current line 152 names JOS13:5 and says it may be a geographical place rather than a city.",
+        "Chephar Ammoni current line 309 names JOS18:24/Benjamin.",
+        "Mizpeh of Judah row at line 338 names JOS15:38 and leaves equivalence to Benjamin Mizpeh uncertain.",
+        "Maralah at line343 names JOS19:11; source note at line645 cites “Maralah/Mareal”.",
+        "Iron at line292 names JOS19:38 and lists Yaroun as a tentative location.",
+        "No Naphoth-Dor-specific table entry found; current map relation is based on WEB translation form “heights of Dor”."
+      ],
+      "caveat": "The Wikipedia article does not independently verify candidate coordinates."
+    }
+  ],
+  "entries": [
+    {
+      "chapter": 5,
+      "verse": 3,
+      "mapPath": "reviews/verse-map-JOS-01-08.json",
+      "mapSHA256": "b3858f58df95db4709ff3219239844bf6b0b468ba4384fa9230421a7d17cf114",
+      "fixedWEB": {
+        "text": "Joshua made himself flint knives, and circumcised the sons of Israel at the hill of the foreskins.",
+        "url": "https://ebible.org/engwebp/JOS05.htm#V3",
+        "textSHA256": "dc9844ef6d439f9bb289fdfb71a016f0ecc8df193d53b3324060b1c7cf4f5e5e",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joshua_1727",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:gibeath-haaraloth_469",
+          "relationship": "direct"
+        }
+      ],
+      "activeExcludedCandidates": [],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "person:israel_682",
+          "draftPath": "drafts/persons_2/JOS_person_israel_682.json",
+          "draftSHA256": "73718785d4d8c335866f286c9a94d146db44b7bdbee4ceb4f03579fc67a66b31",
+          "knownBy": {
+            "chapter": 1,
+            "verse": 2
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "person:joshua_1727",
+          "draftPath": "drafts/persons_2/JOS_person_joshua_1727.json",
+          "draftSHA256": "5e561c65a8251a76e0566c8a4a0ba8fc66dc8cab057ea19f7620e1a30ef4b42c",
+          "knownBy": {
+            "chapter": 1,
+            "verse": 1
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:gibeath-haaraloth_469",
+          "draftPath": "drafts/places_3/JOS_gibeath-haaraloth_469.json",
+          "draftSHA256": "073fb581c0d87ff31ac8cccb0537285e775d4126f950986efc68b366f0e7d466",
+          "knownBy": {
+            "chapter": 5,
+            "verse": 3
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "pass",
+      "status": "pass",
+      "findingJa": "「hill of the foreskins」は既存「ギブアト・ハアラロト」プロフィールと対応。地形名として直接リンク。",
+      "issues": []
+    },
+    {
+      "chapter": 11,
+      "verse": 2,
+      "mapPath": "reviews/verse-map-JOS-09-16.json",
+      "mapSHA256": "e8851d7b15312f0fb5088b743a9c84706b4b71ff10b93ac3278521960d51fb8d",
+      "fixedWEB": {
+        "text": "and to the kings who were on the north, in the hill country, in the Arabah south of Chinneroth, in the lowland, and in the heights of Dor on the west,",
+        "url": "https://ebible.org/engwebp/JOS11.htm#V2",
+        "textSHA256": "a2f729c6e1ed918780efbcf184a30e744e3675a86c265ebbc4034170cf0e8903",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "place:chinneroth_295",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:naphoth-dor_877",
+          "relationship": "related"
+        }
+      ],
+      "activeExcludedCandidates": [],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "place:chinneroth_295",
+          "draftPath": "drafts/places_2/JOS_chinneroth_295.json",
+          "draftSHA256": "d6d8a062f99fc2ede3c4e1e88532cb3952f4061f0ee873f5b24a493976ef30f0",
+          "knownBy": {
+            "chapter": 11,
+            "verse": 2
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:naphoth-dor_877",
+          "draftPath": "drafts/places_2/JOS_naphoth-dor_877.json",
+          "draftSHA256": "50a60b63a0a21d5b51c87a338192740b037a9be7b4f8f8775b328227db4c1d1d",
+          "knownBy": {
+            "chapter": 11,
+            "verse": 2
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "qualified",
+      "status": "qualified",
+      "findingJa": "WEBの「heights of Dor」はナフォテ・ドルの訳語表現。relatedで控えめに結び、本文にない現代地点は付加していない。記事個別項は現行Wikipediaで確認できなかった。",
+      "issues": []
+    },
+    {
+      "chapter": 11,
+      "verse": 8,
+      "mapPath": "reviews/verse-map-JOS-09-16.json",
+      "mapSHA256": "e8851d7b15312f0fb5088b743a9c84706b4b71ff10b93ac3278521960d51fb8d",
+      "fixedWEB": {
+        "text": "The LORD delivered them into the hand of Israel, and they struck them, and chased them to great Sidon, and to Misrephoth Maim, and to the valley of Mizpah eastward. They struck them until they left them no one remaining.",
+        "url": "https://ebible.org/engwebp/JOS11.htm#V8",
+        "textSHA256": "fe4ed81d3d78d4b26218d7a942dabaf22d441aac81507a63795e3b0a25fa1bab",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:misrephoth-maim_806",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:sidon_494",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:valley_of_mizpeh_1213",
+          "relationship": "direct"
+        }
+      ],
+      "activeExcludedCandidates": [],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "person:god_1324",
+          "draftPath": "drafts/persons_3/JOS_god_1324.json",
+          "draftSHA256": "ee751a9363ff7d3504d09859bab8970ff6596c48867e47267911921c2494bed9",
+          "knownBy": {
+            "chapter": 1,
+            "verse": 1
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "person:israel_682",
+          "draftPath": "drafts/persons_2/JOS_person_israel_682.json",
+          "draftSHA256": "73718785d4d8c335866f286c9a94d146db44b7bdbee4ceb4f03579fc67a66b31",
+          "knownBy": {
+            "chapter": 1,
+            "verse": 2
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:misrephoth-maim_806",
+          "draftPath": "drafts/places_1/JOS_place_misrephoth-maim_806.json",
+          "draftSHA256": "7967f2d42d6e65cafb4f2f264f6d5a75750db8bc990e578297c186f8ec71642b",
+          "knownBy": {
+            "chapter": 11,
+            "verse": 8
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:sidon_494",
+          "draftPath": "drafts/places_1/JOS_place_sidon_494.json",
+          "draftSHA256": "d99d40762ec2b00cad26e38b99d4c2688cf359f40d3023d22618523f806ac2d9",
+          "knownBy": {
+            "chapter": 11,
+            "verse": 8
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:valley_of_mizpeh_1213",
+          "draftPath": "drafts/places_3/JOS_valley_of_mizpeh_1213.json",
+          "draftSHA256": "0cb03d8dd3fb9694c4a97663fdf93879032edff8d6fab6565116fada7b5e8067",
+          "knownBy": {
+            "chapter": 11,
+            "verse": 8
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "pass",
+      "status": "pass",
+      "findingJa": "明示された「Israel」を既存集合プロフィールへ追加。Great Sidon、Misrephoth Maim、valley of Mizpahも文中の追跡先として一致。",
+      "issues": []
+    },
+    {
+      "chapter": 12,
+      "verse": 1,
+      "mapPath": "reviews/verse-map-JOS-09-16.json",
+      "mapSHA256": "e8851d7b15312f0fb5088b743a9c84706b4b71ff10b93ac3278521960d51fb8d",
+      "fixedWEB": {
+        "text": "Now these are the kings of the land, whom the children of Israel struck, and possessed their land beyond the Jordan toward the sunrise, from the valley of the Arnon to Mount Hermon, and all the Arabah eastward:",
+        "url": "https://ebible.org/engwebp/JOS12.htm#V1",
+        "textSHA256": "3e46579238925ad2cc8ee5e8d0cc1d610ccdd70444f73beea28eacc58c5d477a",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:arabah_79",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jordan_653",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:mount_hermon_841",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:river_of_arnon_1225",
+          "relationship": "direct"
+        }
+      ],
+      "activeExcludedCandidates": [],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "person:israel_682",
+          "draftPath": "drafts/persons_2/JOS_person_israel_682.json",
+          "draftSHA256": "73718785d4d8c335866f286c9a94d146db44b7bdbee4ceb4f03579fc67a66b31",
+          "knownBy": {
+            "chapter": 1,
+            "verse": 2
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:arabah_79",
+          "draftPath": "drafts/places_3/JOS_arabah_79.json",
+          "draftSHA256": "1ba6698d92e2326add1a8a58127bec27cffc91cb32cd3e9b8294c3649502fe5e",
+          "knownBy": {
+            "chapter": 8,
+            "verse": 14
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:jordan_653",
+          "draftPath": "drafts/places_1/JOS_place_jordan_653.json",
+          "draftSHA256": "661a9780ed23dc4d3337349075637851746c9624136b18988ea0cdd1a7f88b17",
+          "knownBy": {
+            "chapter": 1,
+            "verse": 2
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:mount_hermon_841",
+          "draftPath": "drafts/places_3/JOS_mount_hermon_841.json",
+          "draftSHA256": "44623bdc139d996a12f2eb7a03f9ef2d28ce107ce3ead596e258c2a771a983bd",
+          "knownBy": {
+            "chapter": 11,
+            "verse": 17
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:river_of_arnon_1225",
+          "draftPath": "drafts/places_1/JOS_place_river_of_arnon_1225.json",
+          "draftSHA256": "961cd220a61a156cdef0b150028bfd15b28c99d6436ab0005150563c84a24be8",
+          "knownBy": {
+            "chapter": 12,
+            "verse": 1
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "qualified",
+      "status": "qualified",
+      "findingJa": "本文はアルノンの谷と記す。採用プロフィールは川/谷を同一点にしないと明示するため、広域Featureの参照として妥当だが一点同一視は避ける。",
+      "issues": []
+    },
+    {
+      "chapter": 12,
+      "verse": 2,
+      "mapPath": "reviews/verse-map-JOS-09-16.json",
+      "mapSHA256": "e8851d7b15312f0fb5088b743a9c84706b4b71ff10b93ac3278521960d51fb8d",
+      "fixedWEB": {
+        "text": "Sihon king of the Amorites, who lived in Heshbon, and ruled from Aroer, which is on the edge of the valley of the Arnon, and the middle of the valley, and half Gilead, even to the river Jabbok, the border of the children of Ammon;",
+        "url": "https://ebible.org/engwebp/JOS12.htm#V2",
+        "textSHA256": "e159474215d7b9e2a81add44783376191014f72bfa88eaaeffd481ec84a96612",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "person:amorite_237",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:sihon_2739",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:aroer_93",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:gilead_475",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:heshbon_565",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jabbok_609",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:river_of_arnon_1225",
+          "relationship": "direct"
+        }
+      ],
+      "activeExcludedCandidates": [],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "person:amorite_237",
+          "draftPath": "drafts/persons_2/JOS_person_amorite_237.json",
+          "draftSHA256": "fe0f768115b13ffe51b48092348a81c114d748d41010cf740316beddf66684a0",
+          "knownBy": {
+            "chapter": 2,
+            "verse": 10
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "person:sihon_2739",
+          "draftPath": "drafts/persons_3/JOS_sihon_2739.json",
+          "draftSHA256": "f00b940a9bac3918295ffc245f746bb05f6aab818f7b63b4397157a90979b162",
+          "knownBy": {
+            "chapter": 2,
+            "verse": 10
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:aroer_93",
+          "draftPath": "drafts/places_2/JOS_aroer_93.json",
+          "draftSHA256": "9ac6de81e3d0ce8e0473916b976df328b04fd98320404bd4737b78dab27f1cc0",
+          "knownBy": {
+            "chapter": 12,
+            "verse": 2
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:gilead_475",
+          "draftPath": "drafts/places_3/JOS_gilead_475.json",
+          "draftSHA256": "c1c066d3e47a4e43bc796eed53fc99ec976446f94e22c7dfa87b3d9da024336d",
+          "knownBy": {
+            "chapter": 12,
+            "verse": 2
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:heshbon_565",
+          "draftPath": "drafts/places_1/JOS_place_heshbon_565.json",
+          "draftSHA256": "6efce82cc916a5946cc599ae416306b9f6e54837c62c534e08fd3bd3e9a4b461",
+          "knownBy": {
+            "chapter": 9,
+            "verse": 10
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:jabbok_609",
+          "draftPath": "drafts/places_1/JOS_place_jabbok_609.json",
+          "draftSHA256": "ba0e7548652322bf667badc6eaf901674223a4df6436581551fba97575162f59",
+          "knownBy": {
+            "chapter": 12,
+            "verse": 2
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:river_of_arnon_1225",
+          "draftPath": "drafts/places_1/JOS_place_river_of_arnon_1225.json",
+          "draftSHA256": "961cd220a61a156cdef0b150028bfd15b28c99d6436ab0005150563c84a24be8",
+          "knownBy": {
+            "chapter": 12,
+            "verse": 1
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "qualified",
+      "status": "qualified",
+      "findingJa": "本文はAroerがアルノン谷の縁にあること、谷中央を記す。river/valley複合プロフィールは同一点扱いを避けており、広域参照としてqualified。",
+      "issues": []
+    },
+    {
+      "chapter": 12,
+      "verse": 18,
+      "mapPath": "reviews/verse-map-JOS-09-16.json",
+      "mapSHA256": "e8851d7b15312f0fb5088b743a9c84706b4b71ff10b93ac3278521960d51fb8d",
+      "fixedWEB": {
+        "text": "the king of Aphek, one; the king of Lassharon, one;",
+        "url": "https://ebible.org/engwebp/JOS12.htm#V18",
+        "textSHA256": "a53a3c2896dbc9709c476774cf927e87269c17698041198c60fe0623c1847b7d",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "place:aphek_72",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:lasharon_719",
+          "relationship": "direct"
+        }
+      ],
+      "activeExcludedCandidates": [],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "place:aphek_72",
+          "draftPath": "drafts/places_2/JOS_aphek_72.json",
+          "draftSHA256": "41795ab1c9bd032fdcb75d6c109c6dcaf8bff4604dbd9103ee25beb9c053afa1",
+          "knownBy": {
+            "chapter": 12,
+            "verse": 18
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:lasharon_719",
+          "draftPath": "drafts/places_3/JOS_lasharon_719.json",
+          "draftSHA256": "70334f4f7ae65796163d9c1f1093b1ee6a3240813a637a5bd4e83fd8732facc5",
+          "knownBy": {
+            "chapter": 12,
+            "verse": 18
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "pass",
+      "status": "pass",
+      "findingJa": "本文のLassharonは既存Lasharon地名の綴り異形。",
+      "issues": []
+    },
+    {
+      "chapter": 13,
+      "verse": 5,
+      "mapPath": "reviews/verse-map-JOS-09-16.json",
+      "mapSHA256": "e8851d7b15312f0fb5088b743a9c84706b4b71ff10b93ac3278521960d51fb8d",
+      "fixedWEB": {
+        "text": "and the land of the Gebalites, and all Lebanon, toward the sunrise, from Baal Gad under Mount Hermon to the entrance of Hamath;",
+        "url": "https://ebible.org/engwebp/JOS13.htm#V5",
+        "textSHA256": "c36c4a79561f33a5de61072810cbc66a2974441b4f2f110b5ff8a84a60fdc14a",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "place:baal-gad_140",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:lebanon_720",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:lebo-hamath_723",
+          "relationship": "related"
+        },
+        {
+          "entityID": "place:mount_hermon_841",
+          "relationship": "direct"
+        }
+      ],
+      "activeExcludedCandidates": [],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "place:baal-gad_140",
+          "draftPath": "drafts/places_1/JOS_place_baal-gad_140.json",
+          "draftSHA256": "556de30d954ec5d56407bbca865706c4e247fc2824811f02a42d0f11e2ad0949",
+          "knownBy": {
+            "chapter": 11,
+            "verse": 17
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:lebanon_720",
+          "draftPath": "drafts/places_3/JOS_lebanon_720.json",
+          "draftSHA256": "b713753262b730960cdf5f9ae13e65d366127da553459d9ddb27ddc2fc8a50a4",
+          "knownBy": {
+            "chapter": 1,
+            "verse": 4
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:lebo-hamath_723",
+          "draftPath": "drafts/places_2/JOS_lebo-hamath_723.json",
+          "draftSHA256": "2f4c73aca6a6ef2f00406df6c64453fa19a66c6942bd70a5b0cf416b840257c7",
+          "knownBy": {
+            "chapter": 13,
+            "verse": 5
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:mount_hermon_841",
+          "draftPath": "drafts/places_3/JOS_mount_hermon_841.json",
+          "draftSHA256": "44623bdc139d996a12f2eb7a03f9ef2d28ce107ce3ead596e258c2a771a983bd",
+          "knownBy": {
+            "chapter": 11,
+            "verse": 17
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "qualified",
+      "status": "qualified",
+      "findingJa": "「entrance of Hamath」はLebo-Hamathの訳語として関連づける。現行Wikipedia Joshua city tableのLebo-Hamath行はJOS13:5を挙げつつ「地理地点かもしれず町とは限らない」と記す。relatedは適切。",
+      "issues": []
+    },
+    {
+      "chapter": 13,
+      "verse": 9,
+      "mapPath": "reviews/verse-map-JOS-09-16.json",
+      "mapSHA256": "e8851d7b15312f0fb5088b743a9c84706b4b71ff10b93ac3278521960d51fb8d",
+      "fixedWEB": {
+        "text": "from Aroer, that is on the edge of the valley of the Arnon, and the city that is in the middle of the valley, and all the plain of Medeba to Dibon;",
+        "url": "https://ebible.org/engwebp/JOS13.htm#V9",
+        "textSHA256": "e4a61fae6c8695e2901d001b586c380f5ffeb174800ff087cec182d8e161fb1e",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "place:aroer_93",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:dibon_331",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:medeba_775",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:river_of_arnon_1225",
+          "relationship": "direct"
+        }
+      ],
+      "activeExcludedCandidates": [],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "place:aroer_93",
+          "draftPath": "drafts/places_2/JOS_aroer_93.json",
+          "draftSHA256": "9ac6de81e3d0ce8e0473916b976df328b04fd98320404bd4737b78dab27f1cc0",
+          "knownBy": {
+            "chapter": 12,
+            "verse": 2
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:dibon_331",
+          "draftPath": "drafts/places_1/JOS_place_dibon_331.json",
+          "draftSHA256": "00d3dbe030b39851fcdbe4343f71966de276253333b85ab8da30456104f7e031",
+          "knownBy": {
+            "chapter": 13,
+            "verse": 9
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:medeba_775",
+          "draftPath": "drafts/places_1/JOS_place_medeba_775.json",
+          "draftSHA256": "6c2b27f9350c9d2895ccfa05b4c6161d5b779957bf7dfb5488b6472b67edfa8a",
+          "knownBy": {
+            "chapter": 13,
+            "verse": 9
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:river_of_arnon_1225",
+          "draftPath": "drafts/places_1/JOS_place_river_of_arnon_1225.json",
+          "draftSHA256": "961cd220a61a156cdef0b150028bfd15b28c99d6436ab0005150563c84a24be8",
+          "knownBy": {
+            "chapter": 12,
+            "verse": 1
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "qualified",
+      "status": "qualified",
+      "findingJa": "アルノン谷の縁・谷中の町という記述に river_of_arnon profileを広域参照として採用。川と谷を一点に併合しない。",
+      "issues": []
+    },
+    {
+      "chapter": 13,
+      "verse": 16,
+      "mapPath": "reviews/verse-map-JOS-09-16.json",
+      "mapSHA256": "e8851d7b15312f0fb5088b743a9c84706b4b71ff10b93ac3278521960d51fb8d",
+      "fixedWEB": {
+        "text": "Their border was from Aroer, that is on the edge of the valley of the Arnon, and the city that is in the middle of the valley, and all the plain by Medeba;",
+        "url": "https://ebible.org/engwebp/JOS13.htm#V16",
+        "textSHA256": "002bcb5e73176f0ee6860a64ba07ad5c83673adb330ac7bb77df1a4bff2d3a18",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "place:aroer_93",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:medeba_775",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:river_of_arnon_1225",
+          "relationship": "direct"
+        }
+      ],
+      "activeExcludedCandidates": [
+        {
+          "entityID": "place:reuben_1282",
+          "candidateName": "Reuben",
+          "reasonJa": "候補名がこの節本文にない。"
+        }
+      ],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "place:aroer_93",
+          "draftPath": "drafts/places_2/JOS_aroer_93.json",
+          "draftSHA256": "9ac6de81e3d0ce8e0473916b976df328b04fd98320404bd4737b78dab27f1cc0",
+          "knownBy": {
+            "chapter": 12,
+            "verse": 2
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:medeba_775",
+          "draftPath": "drafts/places_1/JOS_place_medeba_775.json",
+          "draftSHA256": "6c2b27f9350c9d2895ccfa05b4c6161d5b779957bf7dfb5488b6472b67edfa8a",
+          "knownBy": {
+            "chapter": 13,
+            "verse": 9
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:river_of_arnon_1225",
+          "draftPath": "drafts/places_1/JOS_place_river_of_arnon_1225.json",
+          "draftSHA256": "961cd220a61a156cdef0b150028bfd15b28c99d6436ab0005150563c84a24be8",
+          "knownBy": {
+            "chapter": 12,
+            "verse": 1
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "qualified",
+      "status": "qualified",
+      "findingJa": "アルノン谷とAroer境界文脈に合う。候補地名ではなく谷/川の広域IDであり profileが一点同一視を避ける。",
+      "issues": []
+    },
+    {
+      "chapter": 13,
+      "verse": 29,
+      "mapPath": "reviews/verse-map-JOS-09-16.json",
+      "mapSHA256": "e8851d7b15312f0fb5088b743a9c84706b4b71ff10b93ac3278521960d51fb8d",
+      "fixedWEB": {
+        "text": "Moses gave an inheritance to the half-tribe of Manasseh. It was for the half-tribe of the children of Manasseh according to their families.",
+        "url": "https://ebible.org/engwebp/JOS13.htm#V29",
+        "textSHA256": "08a3e7ccc03c2efa7dcecf24719fd222a72f6bee58b1c5691810c67032ce62b9",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "person:manasseh_1928",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:east-manasseh-half-tribe_1290",
+          "relationship": "related"
+        }
+      ],
+      "activeExcludedCandidates": [],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "person:manasseh_1928",
+          "draftPath": "drafts/persons_2/JOS_person_manasseh_1928.json",
+          "draftSHA256": "57d9c32ad053672d6a77fa9b0b15084a3b720557c636e50eea5dbab42207d4e2",
+          "knownBy": {
+            "chapter": 1,
+            "verse": 12
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "person:moses_2108",
+          "draftPath": "drafts/persons_1/JOS_moses_2108.json",
+          "draftSHA256": "94f8c064ef56d868e3e021c61a317786d5b8c6515ac3303ffcc0d3433c4534a2",
+          "knownBy": {
+            "chapter": 1,
+            "verse": 1
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:east-manasseh-half-tribe_1290",
+          "draftPath": "drafts/places_2/JOS_east-manasseh-half-tribe_1290.json",
+          "draftSHA256": "0503a9ca1761f01e2ec5863f5395a18e00eed24ea4f55c78fede1fd6c55d3f6d",
+          "knownBy": {
+            "chapter": 13,
+            "verse": 29
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "qualified",
+      "status": "qualified",
+      "findingJa": "本文はマナセ半部族への相続を記すが「東マナセ領」は編集上の地理単位。relatedとし、その限定が保たれる。",
+      "issues": []
+    },
+    {
+      "chapter": 13,
+      "verse": 30,
+      "mapPath": "reviews/verse-map-JOS-09-16.json",
+      "mapSHA256": "e8851d7b15312f0fb5088b743a9c84706b4b71ff10b93ac3278521960d51fb8d",
+      "fixedWEB": {
+        "text": "Their border was from Mahanaim, all Bashan, all the kingdom of Og king of Bashan, and all the villages of Jair, which are in Bashan, sixty cities.",
+        "url": "https://ebible.org/engwebp/JOS13.htm#V30",
+        "textSHA256": "6ed5e8f7c0e6ce8f4e7082cbaec3deb3a979738761026dbad5e4dba86c0ae14e",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "person:og_2238",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:bashan_159",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:east-manasseh-half-tribe_1290",
+          "relationship": "related"
+        },
+        {
+          "entityID": "place:jair_619",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:mahanaim_756",
+          "relationship": "direct"
+        }
+      ],
+      "activeExcludedCandidates": [],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "person:og_2238",
+          "draftPath": "drafts/persons_1/JOS_og_2238.json",
+          "draftSHA256": "37429be998aeac0db64e357af72c43596b682c76e34ef7a7a54b61f6d396d1da",
+          "knownBy": {
+            "chapter": 2,
+            "verse": 10
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:bashan_159",
+          "draftPath": "drafts/places_1/JOS_place_bashan_159.json",
+          "draftSHA256": "4cbe2e9aaa5b8c0cfcacaa108479de7cd577c16137a9a1e69834510227d4ca11",
+          "knownBy": {
+            "chapter": 9,
+            "verse": 10
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:east-manasseh-half-tribe_1290",
+          "draftPath": "drafts/places_2/JOS_east-manasseh-half-tribe_1290.json",
+          "draftSHA256": "0503a9ca1761f01e2ec5863f5395a18e00eed24ea4f55c78fede1fd6c55d3f6d",
+          "knownBy": {
+            "chapter": 13,
+            "verse": 29
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:jair_619",
+          "draftPath": "drafts/places_2/JOS_jair_619.json",
+          "draftSHA256": "2749f386671cfeeaeff73caad9295cbc70429e5082f7ff88ac185e79fa7d18a1",
+          "knownBy": {
+            "chapter": 13,
+            "verse": 30
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:mahanaim_756",
+          "draftPath": "drafts/places_3/JOS_mahanaim_756.json",
+          "draftSHA256": "1758ba75b7358fbff67c398f9148b9d736a7ab8492ed0e047e746aa09a3ac366",
+          "knownBy": {
+            "chapter": 13,
+            "verse": 26
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "qualified",
+      "status": "qualified",
+      "findingJa": "バシャンとヤイルの村を境界として列挙し、東マナセ領の広域説明と関係する。全境界の断定はしていない。",
+      "issues": []
+    },
+    {
+      "chapter": 13,
+      "verse": 31,
+      "mapPath": "reviews/verse-map-JOS-09-16.json",
+      "mapSHA256": "e8851d7b15312f0fb5088b743a9c84706b4b71ff10b93ac3278521960d51fb8d",
+      "fixedWEB": {
+        "text": "Half Gilead, Ashtaroth, and Edrei, the cities of the kingdom of Og in Bashan, were for the children of Machir the son of Manasseh, even for the half of the children of Machir according to their families.",
+        "url": "https://ebible.org/engwebp/JOS13.htm#V31",
+        "textSHA256": "566164b930237b89833813ea53f7e7a215ac51ddc1683b8b6a0d1f4c59aa2d76",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "person:machir_1877",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:og_2238",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:ashtaroth_106",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:bashan_159",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:east-manasseh-half-tribe_1290",
+          "relationship": "related"
+        },
+        {
+          "entityID": "place:edrei_358",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:gilead_475",
+          "relationship": "direct"
+        }
+      ],
+      "activeExcludedCandidates": [
+        {
+          "entityID": "person:manasseh_1928",
+          "candidateName": "Manasseh",
+          "reasonJa": "ManassehはMachirの父である祖先個人。既存JOS Manasseh IDは部族集団なので誤って割り当てない。"
+        }
+      ],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "person:machir_1877",
+          "draftPath": "drafts/persons_3/JOS_machir_1877.json",
+          "draftSHA256": "5c19fa11278c4cf77b975664c0d2fd1e07a24d49e7ad02d415857e8e2e56288a",
+          "knownBy": {
+            "chapter": 13,
+            "verse": 31
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "person:og_2238",
+          "draftPath": "drafts/persons_1/JOS_og_2238.json",
+          "draftSHA256": "37429be998aeac0db64e357af72c43596b682c76e34ef7a7a54b61f6d396d1da",
+          "knownBy": {
+            "chapter": 2,
+            "verse": 10
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:ashtaroth_106",
+          "draftPath": "drafts/places_1/JOS_place_ashtaroth_106.json",
+          "draftSHA256": "c9ea75f3153d047e9d3e9576b2a8fb9200dbdeab7e084926a2f850a3f924ce90",
+          "knownBy": {
+            "chapter": 9,
+            "verse": 10
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:bashan_159",
+          "draftPath": "drafts/places_1/JOS_place_bashan_159.json",
+          "draftSHA256": "4cbe2e9aaa5b8c0cfcacaa108479de7cd577c16137a9a1e69834510227d4ca11",
+          "knownBy": {
+            "chapter": 9,
+            "verse": 10
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:east-manasseh-half-tribe_1290",
+          "draftPath": "drafts/places_2/JOS_east-manasseh-half-tribe_1290.json",
+          "draftSHA256": "0503a9ca1761f01e2ec5863f5395a18e00eed24ea4f55c78fede1fd6c55d3f6d",
+          "knownBy": {
+            "chapter": 13,
+            "verse": 29
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:edrei_358",
+          "draftPath": "drafts/places_3/JOS_edrei_358.json",
+          "draftSHA256": "972b9448f341f3583cbe6a0f35dddf377717eea88e1dd554c36df3d0658997f9",
+          "knownBy": {
+            "chapter": 12,
+            "verse": 4
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:gilead_475",
+          "draftPath": "drafts/places_3/JOS_gilead_475.json",
+          "draftSHA256": "c1c066d3e47a4e43bc796eed53fc99ec976446f94e22c7dfa87b3d9da024336d",
+          "knownBy": {
+            "chapter": 12,
+            "verse": 2
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "qualified",
+      "status": "qualified",
+      "findingJa": "ギレアデ半分等の割当記述を同地域カードへrelated。父祖の個人Manassehを集合プロフィールに誤リンクせず除外理由を明記。",
+      "issues": []
+    },
+    {
+      "chapter": 15,
+      "verse": 3,
+      "mapPath": "reviews/verse-map-JOS-09-16.json",
+      "mapSHA256": "e8851d7b15312f0fb5088b743a9c84706b4b71ff10b93ac3278521960d51fb8d",
+      "fixedWEB": {
+        "text": "and it went out southward of the ascent of Akrabbim, and passed along to Zin, and went up by the south of Kadesh Barnea, and passed along by Hezron, went up to Addar, and turned toward Karka;",
+        "url": "https://ebible.org/engwebp/JOS15.htm#V3",
+        "textSHA256": "1929ed3e3a9e3ab6be0a3de5cf65faa72b3cd027fd0ecb6185e85def3a8cfc5f",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "place:addar_24",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:akrabbim_44",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:hezron_568",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:kadesh-barnea_663",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:karka_668",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:zin_1262",
+          "relationship": "direct"
+        }
+      ],
+      "activeExcludedCandidates": [
+        {
+          "entityID": "place:judah_1280",
+          "candidateName": "Judah",
+          "reasonJa": "候補名がこの節本文にない。"
+        }
+      ],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "place:addar_24",
+          "draftPath": "drafts/places_1/JOS_place_addar_24.json",
+          "draftSHA256": "81ce210dfb7f232bbf3458c79a9bbb7372922389b42367398a9771ae6484543e",
+          "knownBy": {
+            "chapter": 15,
+            "verse": 3
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:akrabbim_44",
+          "draftPath": "drafts/places_3/JOS_akrabbim_44.json",
+          "draftSHA256": "e501e4ba25bcf895b8a649e8336255559c79901430e88f36e3976c32a774555e",
+          "knownBy": {
+            "chapter": 15,
+            "verse": 3
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:hezron_568",
+          "draftPath": "drafts/places_3/JOS_hezron_568.json",
+          "draftSHA256": "aaab6e32356e668fe6c9cc76e7be5b3da5dfd7a4a0feee62015b9bd73cf797ac",
+          "knownBy": {
+            "chapter": 15,
+            "verse": 3
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:kadesh-barnea_663",
+          "draftPath": "drafts/places_1/JOS_place_kadesh-barnea_663.json",
+          "draftSHA256": "bdfb31c07da38c0eefc90fdaf1ee2cc7661651aca485dc087cb1fdea3b1dc4ba",
+          "knownBy": {
+            "chapter": 10,
+            "verse": 41
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:karka_668",
+          "draftPath": "drafts/places_2/JOS_karka_668.json",
+          "draftSHA256": "f3fd344f7a0adb570846870c7f4fa5eef2cee4294b3897a432cf5244d183cb7d",
+          "knownBy": {
+            "chapter": 15,
+            "verse": 3
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:zin_1262",
+          "draftPath": "drafts/places_2/JOS_zin_1262.json",
+          "draftSHA256": "d56495af0fc2b5234a5d30d73e17f2e62c1c60fe066739ac6fe73ff04a62d5a6",
+          "knownBy": {
+            "chapter": 15,
+            "verse": 3
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "pass",
+      "status": "pass",
+      "findingJa": "Addarは南境界の線上に明記され、既存プロフィールは町・遺跡を断定しない。",
+      "issues": []
+    },
+    {
+      "chapter": 15,
+      "verse": 38,
+      "mapPath": "reviews/verse-map-JOS-09-16.json",
+      "mapSHA256": "e8851d7b15312f0fb5088b743a9c84706b4b71ff10b93ac3278521960d51fb8d",
+      "fixedWEB": {
+        "text": "Dilean, Mizpah, Joktheel,",
+        "url": "https://ebible.org/engwebp/JOS15.htm#V38",
+        "textSHA256": "d80be6c0b1bf3131b9a8f40818f7eb8fcbac424970e97ce5bbe8ed537769d4bd",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "place:dilean_334",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:joktheel_650",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:mizpeh_813",
+          "relationship": "direct"
+        }
+      ],
+      "activeExcludedCandidates": [],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "place:dilean_334",
+          "draftPath": "drafts/places_1/JOS_place_dilean_334.json",
+          "draftSHA256": "decdc348f73ffcd10e339bc99831e0e6942033d87ed78756fa166f81260f0674",
+          "knownBy": {
+            "chapter": 15,
+            "verse": 38
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:joktheel_650",
+          "draftPath": "drafts/places_3/JOS_joktheel_650.json",
+          "draftSHA256": "49537cbf4133496187057feb6ab2f9c972557025250578d28a7d676dc14acf03",
+          "knownBy": {
+            "chapter": 15,
+            "verse": 38
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:mizpeh_813",
+          "draftPath": "drafts/places_1/JOS_place_mizpeh_813.json",
+          "draftSHA256": "334bdda830f8122cd89de2fe878f0dd10faddac88d54fc81560322b861ccd0c3",
+          "knownBy": {
+            "chapter": 15,
+            "verse": 38
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "qualified",
+      "status": "qualified",
+      "findingJa": "ユダの町リストにMizpahを明記し、既存profileもJOS15:38のMizpeh of Judahに限定。記事が現代地点を不確定とするため座標主張なし。",
+      "issues": []
+    },
+    {
+      "chapter": 16,
+      "verse": 5,
+      "mapPath": "reviews/verse-map-JOS-09-16.json",
+      "mapSHA256": "e8851d7b15312f0fb5088b743a9c84706b4b71ff10b93ac3278521960d51fb8d",
+      "fixedWEB": {
+        "text": "This was the border of the children of Ephraim according to their families. The border of their inheritance eastward was Ataroth Addar, to Beth Horon the upper.",
+        "url": "https://ebible.org/engwebp/JOS16.htm#V5",
+        "textSHA256": "618252a3f1393e0e7ec03f20d00b845d944db964fee772fbcffe2c043ca8607f",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "person:ephraim_1206",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:ataroth-addar_115",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:upper_beth-horon_1188",
+          "relationship": "direct"
+        }
+      ],
+      "activeExcludedCandidates": [
+        {
+          "entityID": "place:ephraim-territory_1292",
+          "candidateName": "Ephraim (Territory)",
+          "reasonJa": "エフライム族の集団用法で、エフライム領の地名IDへ割り当てない。"
+        }
+      ],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "person:ephraim_1206",
+          "draftPath": "drafts/persons_2/JOS_person_ephraim_1206.json",
+          "draftSHA256": "4877de9b028b003ad04c7fe0cc1c34dc390a1855493a65f0ce5bcfc0e0b74cfd",
+          "knownBy": {
+            "chapter": 14,
+            "verse": 4
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:ataroth-addar_115",
+          "draftPath": "drafts/places_1/JOS_place_ataroth-addar_115.json",
+          "draftSHA256": "26a3c7d266d5d44bc90ac00cf46479a25ce6b238e773aadd23f4a62badaeb866",
+          "knownBy": {
+            "chapter": 16,
+            "verse": 5
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:upper_beth-horon_1188",
+          "draftPath": "drafts/places_3/JOS_upper_beth-horon_1188.json",
+          "draftSHA256": "df4af9472713c591824f71ffde94836b570658fefd86303b8b4509a62e09a693",
+          "knownBy": {
+            "chapter": 16,
+            "verse": 5
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "pass",
+      "status": "pass",
+      "findingJa": "「Beth Horon the upper」と明記され、既存Upper Beth-Horon profileと一致。Ephraimは集団として扱い、領域IDへの誤リンクを避ける。",
+      "issues": []
+    },
+    {
+      "chapter": 18,
+      "verse": 24,
+      "mapPath": "reviews/verse-map-JOS-17-24.json",
+      "mapSHA256": "51261403e10269ad0f61b648ba6a585936629058a85826d4ba1fd34a5a607bde",
+      "fixedWEB": {
+        "text": "Chephar Ammoni, Ophni, and Geba; twelve cities with their villages.",
+        "url": "https://ebible.org/engwebp/JOS18.htm#V24",
+        "textSHA256": "977023cb08768e53781d42f8553843f258d451fd0698525693d225fa21bd1eae",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "place:benjamin-territory_1293",
+          "relationship": "context"
+        },
+        {
+          "entityID": "place:chephar-hammoni_284",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:geba_447",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:ophni_912",
+          "relationship": "direct"
+        }
+      ],
+      "activeExcludedCandidates": [],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "place:benjamin-territory_1293",
+          "draftPath": "drafts/places_2/JOS_benjamin-territory_1293.json",
+          "draftSHA256": "caf4c2cd305ef89fe47b7c280c4c84946a249671771e0d37d55e63e08bd8ac2b",
+          "knownBy": {
+            "chapter": 18,
+            "verse": 11
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:chephar-hammoni_284",
+          "draftPath": "drafts/places_3/JOS_chephar-hammoni_284.json",
+          "draftSHA256": "57b4a47ae18e79bd629cb039a83f6f6be4ffd68c6817528453de1970074fa076",
+          "knownBy": {
+            "chapter": 18,
+            "verse": 24
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:geba_447",
+          "draftPath": "drafts/places_2/JOS_geba_447.json",
+          "draftSHA256": "30dfa706d3789e3c12e068c10efd238cba2bb8d9e6e6c1e2d77fdceb2ec8720f",
+          "knownBy": {
+            "chapter": 18,
+            "verse": 24
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:ophni_912",
+          "draftPath": "drafts/places_1/JOS_place_ophni_912.json",
+          "draftSHA256": "b8f799bd483ed5a86f0a8af2413d3737dc76eb0ed7bcd96a244ea5d257ab7d77",
+          "knownBy": {
+            "chapter": 18,
+            "verse": 24
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "pass",
+      "status": "pass",
+      "findingJa": "Chephar Ammoniは既存Chephar Hammoni profileと一致。現行Wikipedia table line 309も同節・ベニヤミンに対応。候補除外重複は解消。",
+      "issues": []
+    },
+    {
+      "chapter": 18,
+      "verse": 28,
+      "mapPath": "reviews/verse-map-JOS-17-24.json",
+      "mapSHA256": "51261403e10269ad0f61b648ba6a585936629058a85826d4ba1fd34a5a607bde",
+      "fixedWEB": {
+        "text": "Zelah, Eleph, the Jebusite (also called Jerusalem), Gibeath, and Kiriath; fourteen cities with their villages. This is the inheritance of the children of Benjamin according to their families.",
+        "url": "https://ebible.org/engwebp/JOS18.htm#V28",
+        "textSHA256": "a437e788aabd8fc3705d7123571977b5f54d3b5fda9ea5484ab9ddd542756ac1",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "person:benjamin_463",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:benjamin-territory_1293",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:zela_1247",
+          "relationship": "direct"
+        }
+      ],
+      "activeExcludedCandidates": [
+        {
+          "entityID": "place:gibeah_466",
+          "candidateName": "Gibeah",
+          "reasonJa": "候補名がこの節本文にない。"
+        },
+        {
+          "entityID": "place:haeleph_505",
+          "candidateName": "Haeleph",
+          "reasonJa": "候補名がこの節本文にない。"
+        },
+        {
+          "entityID": "place:jebus_629",
+          "candidateName": "Jebus",
+          "reasonJa": "候補名がこの節本文にない。"
+        },
+        {
+          "entityID": "place:kiriath-jearim_701",
+          "candidateName": "Kiriath-jearim",
+          "reasonJa": "候補名がこの節本文にない。"
+        }
+      ],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "person:benjamin_463",
+          "draftPath": "drafts/persons_3/JOS_benjamin_463.json",
+          "draftSHA256": "6e17a8ed4a71d578a6bf0489525c73a3648b125f2598ac11ec48e9d417f6158d",
+          "knownBy": {
+            "chapter": 18,
+            "verse": 11
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:benjamin-territory_1293",
+          "draftPath": "drafts/places_2/JOS_benjamin-territory_1293.json",
+          "draftSHA256": "caf4c2cd305ef89fe47b7c280c4c84946a249671771e0d37d55e63e08bd8ac2b",
+          "knownBy": {
+            "chapter": 18,
+            "verse": 11
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "draftPath": "drafts/places_2/JOS_jerusalem_636.json",
+          "draftSHA256": "136276af6ee8461e6d872da3e83193176769d286d4ede998d83f8fb0d9c4b139",
+          "knownBy": {
+            "chapter": 10,
+            "verse": 1
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:zela_1247",
+          "draftPath": "drafts/places_1/JOS_place_zela_1247.json",
+          "draftSHA256": "d9102b4e6e0430ca41999fef84a4034d9c0fb7d16146e7559dacf251df2ffafe",
+          "knownBy": {
+            "chapter": 18,
+            "verse": 28
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "qualified",
+      "status": "qualified",
+      "findingJa": "WEBは「the Jebusite (also called Jerusalem)」と明記。jerusalem_636を同じ都市のprimaryとして残し、別Jebus alias pinは抑制。未解決のGibeath/Eleph/Kiriath候補は不採用のまま。Zelaの重複excludeは解消。",
+      "issues": []
+    },
+    {
+      "chapter": 19,
+      "verse": 11,
+      "mapPath": "reviews/verse-map-JOS-17-24.json",
+      "mapSHA256": "51261403e10269ad0f61b648ba6a585936629058a85826d4ba1fd34a5a607bde",
+      "fixedWEB": {
+        "text": "Their border went up westward, even to Maralah, and reached to Dabbesheth. It reached to the brook that is before Jokneam.",
+        "url": "https://ebible.org/engwebp/JOS19.htm#V11",
+        "textSHA256": "2555d029360f6c75c19defa542a54b1922136146a3d35434c4e0a75eaab6591d",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "place:dabbesheth_318",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jokneam_649",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:mareal_766",
+          "relationship": "direct"
+        }
+      ],
+      "activeExcludedCandidates": [
+        {
+          "entityID": "place:zebulun_1289",
+          "candidateName": "Zebulun",
+          "reasonJa": "候補名がこの節本文にない。"
+        }
+      ],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "place:dabbesheth_318",
+          "draftPath": "drafts/places_2/JOS_dabbesheth_318.json",
+          "draftSHA256": "acd744002793c0ed2ddc61f370ea9ff5e0fa62d3cea4e6a1c2118b9c8cec7a75",
+          "knownBy": {
+            "chapter": 19,
+            "verse": 11
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:jokneam_649",
+          "draftPath": "drafts/places_1/JOS_place_jokneam_649.json",
+          "draftSHA256": "6d67c70679cf341830d27e9e53aa521b70cde9bb7ae921999c3e4d659b8b5e52",
+          "knownBy": {
+            "chapter": 12,
+            "verse": 22
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:mareal_766",
+          "draftPath": "drafts/places_3/JOS_mareal_766.json",
+          "draftSHA256": "fa16a55799177817a7be6a487d3658519f5fc68c3580d3ae2c0ee21b38e50b8c",
+          "knownBy": {
+            "chapter": 19,
+            "verse": 11
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "pass",
+      "status": "pass",
+      "findingJa": "本文Maralahと既存Marealは異綴り対応。Wikipedia table line343はJOS19:11 Maralah、同ページ参考文献はMaralah/Mareal。",
+      "issues": []
+    },
+    {
+      "chapter": 19,
+      "verse": 14,
+      "mapPath": "reviews/verse-map-JOS-17-24.json",
+      "mapSHA256": "51261403e10269ad0f61b648ba6a585936629058a85826d4ba1fd34a5a607bde",
+      "fixedWEB": {
+        "text": "The border turned around it on the north to Hannathon; and it ended at the valley of Iphtah El;",
+        "url": "https://ebible.org/engwebp/JOS19.htm#V14",
+        "textSHA256": "8435fd230e63c9f2f64ecfc1bb4d226cb65bc9cf907a60b1c2d5511b355fbff9",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "place:hannathon_523",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:valley_of_jiphthahel_1208",
+          "relationship": "direct"
+        }
+      ],
+      "activeExcludedCandidates": [
+        {
+          "entityID": "place:zebulun_1289",
+          "candidateName": "Zebulun",
+          "reasonJa": "候補名がこの節本文にない。"
+        }
+      ],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "place:hannathon_523",
+          "draftPath": "drafts/places_1/JOS_place_hannathon_523.json",
+          "draftSHA256": "4ef6fad39641d269abc227a2350ac7bcd29f72c9f6bb4a035ab3e48b6880a80c",
+          "knownBy": {
+            "chapter": 19,
+            "verse": 14
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:valley_of_jiphthahel_1208",
+          "draftPath": "drafts/places_1/JOS_place_valley_of_jiphthahel_1208.json",
+          "draftSHA256": "e887425e06afe6b80420f34afc03432d4a84f6ffea5f01e910f5ae40f26b96bf",
+          "knownBy": {
+            "chapter": 19,
+            "verse": 14
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "pass",
+      "status": "pass",
+      "findingJa": "Hannathonとvalley of Iphtah Elを明記。既存地名・谷IDへの対応は正確。",
+      "issues": []
+    },
+    {
+      "chapter": 19,
+      "verse": 27,
+      "mapPath": "reviews/verse-map-JOS-17-24.json",
+      "mapSHA256": "51261403e10269ad0f61b648ba6a585936629058a85826d4ba1fd34a5a607bde",
+      "fixedWEB": {
+        "text": "It turned toward the sunrise to Beth Dagon, and reached to Zebulun, and to the valley of Iphtah El northward to Beth Emek and Neiel. It went out to Cabul on the left hand,",
+        "url": "https://ebible.org/engwebp/JOS19.htm#V27",
+        "textSHA256": "bba3b87fce06c3140a7f991423302aa622f2a87c69048f2dea35410c0e4c6af8",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "person:zebulun_3002",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:beth-dagon_198",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:beth-emek_204",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:cabul_264",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:neiel_887",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:valley_of_jiphthahel_1208",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:zebulun_1289",
+          "relationship": "direct"
+        }
+      ],
+      "activeExcludedCandidates": [
+        {
+          "entityID": "place:asher_1287",
+          "candidateName": "Asher",
+          "reasonJa": "候補名がこの節本文にない。"
+        }
+      ],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "person:zebulun_3002",
+          "draftPath": "drafts/persons_2/JOS_person_zebulun_3002.json",
+          "draftSHA256": "3766224f58b69b722c98abcec287e730b6bc6324e760245a63c402098571f2dd",
+          "knownBy": {
+            "chapter": 19,
+            "verse": 10
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:beth-dagon_198",
+          "draftPath": "drafts/places_3/JOS_beth-dagon_198.json",
+          "draftSHA256": "7a5f7e4c48c771e4e0d10bd26ad7747e1d1121b78c6ec06c6903b8b4529c4f1b",
+          "knownBy": {
+            "chapter": 19,
+            "verse": 27
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:beth-emek_204",
+          "draftPath": "drafts/places_1/JOS_place_beth-emek_204.json",
+          "draftSHA256": "62dcb7764821a3ea19ed744d5393ae0002147106e31442c0b21eb67fca4ebafd",
+          "knownBy": {
+            "chapter": 19,
+            "verse": 27
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:cabul_264",
+          "draftPath": "drafts/places_2/JOS_cabul_264.json",
+          "draftSHA256": "9b6abca4bf538cc380782b08f7e2201941672e374e687acaeff303e0339c4716",
+          "knownBy": {
+            "chapter": 19,
+            "verse": 27
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:neiel_887",
+          "draftPath": "drafts/places_1/JOS_place_neiel_887.json",
+          "draftSHA256": "56446cf9d6fa182d65322b5e8072196f1c48ff59fa41e031c694088701c42769",
+          "knownBy": {
+            "chapter": 19,
+            "verse": 27
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:valley_of_jiphthahel_1208",
+          "draftPath": "drafts/places_1/JOS_place_valley_of_jiphthahel_1208.json",
+          "draftSHA256": "e887425e06afe6b80420f34afc03432d4a84f6ffea5f01e910f5ae40f26b96bf",
+          "knownBy": {
+            "chapter": 19,
+            "verse": 14
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:zebulun_1289",
+          "draftPath": "drafts/places_1/JOS_place_zebulun_1289.json",
+          "draftSHA256": "a971bf280db9cc74583646e8f65196b883b6ffef8fb87a53a302dd6f5581fee6",
+          "knownBy": {
+            "chapter": 19,
+            "verse": 10
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "pass",
+      "status": "pass",
+      "findingJa": "「valley of Iphtah El」を明記。19:14と同じ谷IDに追加するのは同名地域の継続用例。",
+      "issues": []
+    },
+    {
+      "chapter": 19,
+      "verse": 38,
+      "mapPath": "reviews/verse-map-JOS-17-24.json",
+      "mapSHA256": "51261403e10269ad0f61b648ba6a585936629058a85826d4ba1fd34a5a607bde",
+      "fixedWEB": {
+        "text": "Iron, Migdal El, Horem, Beth Anath, and Beth Shemesh; nineteen cities with their villages.",
+        "url": "https://ebible.org/engwebp/JOS19.htm#V38",
+        "textSHA256": "93539bc774b43804205e11428605c98d5af25ea4a4648f505cfae2e67770ec70",
+        "mapSourceExact": true
+      },
+      "entities": [
+        {
+          "entityID": "place:beth-anath_184",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:beth-shemesh_236",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:horem_577",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:migdal-el_797",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:yiron_1233",
+          "relationship": "direct"
+        }
+      ],
+      "activeExcludedCandidates": [
+        {
+          "entityID": "place:naphtali_1284",
+          "candidateName": "Naphtali",
+          "reasonJa": "候補名がこの節本文にない。"
+        }
+      ],
+      "currentProfileSnapshots": [
+        {
+          "entityID": "place:beth-anath_184",
+          "draftPath": "drafts/places_2/JOS_beth-anath_184.json",
+          "draftSHA256": "9befdc8875980f54405169442114a83051cbcd2bb652654f0ae4f94556f601cb",
+          "knownBy": {
+            "chapter": 19,
+            "verse": 38
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:beth-shemesh_236",
+          "draftPath": "drafts/places_1/JOS_place_beth-shemesh_236.json",
+          "draftSHA256": "c1c81dbe473fd0a723a1e1ecb5bb4dbb5d2faeaf2a9600cf3199fdacc2cb266d",
+          "knownBy": {
+            "chapter": 19,
+            "verse": 38
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:horem_577",
+          "draftPath": "drafts/places_1/JOS_place_horem_577.json",
+          "draftSHA256": "a4b17d7caf0e591a98079c216211a907d6f814b42e901bda84e2ebfbde278bc2",
+          "knownBy": {
+            "chapter": 19,
+            "verse": 38
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:migdal-el_797",
+          "draftPath": "drafts/places_3/JOS_migdal-el_797.json",
+          "draftSHA256": "6a7f8753b2e9c4e29bbe9131afdcea6a16bb856618f6826f52778e18f87b105e",
+          "knownBy": {
+            "chapter": 19,
+            "verse": 38
+          },
+          "knownByNotLaterThanVerse": true
+        },
+        {
+          "entityID": "place:yiron_1233",
+          "draftPath": "drafts/places_1/JOS_place_yiron_1233.json",
+          "draftSHA256": "00d0d0c5319438e73ab9a0bb0ca238a506d2c493fec602d2d725ab81f0ddada2",
+          "knownBy": {
+            "chapter": 19,
+            "verse": 38
+          },
+          "knownByNotLaterThanVerse": true
+        }
+      ],
+      "contentStatus": "qualified",
+      "status": "qualified",
+      "findingJa": "本文のIronは既存Yiron IDの聖書時代名表記。現代キブツYir’onとの混同をせず、候補座標はprofileへ昇格させていない。Wikipedia Joshua city table line292 lists Iron, JOS19:38, and a tentative Yaroun location.",
+      "issues": []
+    }
+  ],
+  "changeClosureJa": "旧報告での16行のentities/excludedCandidates重複は作者が能動的除外から取り除き、過去理由をhistoryへ移したため解消。JOS11:8に明示Israelも追加。固定本文一致とJOS current profile knownBy gateを再検証した。",
+  "limitationsJa": "内容判定qualifiedは本文上正しいが翻訳形・広域単位・歴史地理比定に留保が残る項目。failは構造/本文に新たな問題が見つかった場合に限る。"
+}

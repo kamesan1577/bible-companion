@@ -1,0 +1,5166 @@
+{
+  "book": "NUM",
+  "scope": "Numbers 25:1–30:16; 193 verses",
+  "reviewType": "independent closure of root-authored primary-text verse maps; fixed WEB only; no draft edits",
+  "reviewer": "independent primary-source reviewer",
+  "reviewedAtUTC": "2026-10-15T21:34:45.969537+00:00",
+  "sourceFiles": {
+    "reviews/root-verse-map-NUM-25-27.json": {
+      "sha256": "d6444f9442495aa52bd785751b311a83f371eceec7215e7af19a6721730ef51c",
+      "verseCount": 106
+    },
+    "reviews/root-verse-map-NUM-28-30.json": {
+      "sha256": "398cff19863ad95851679e57e63d2d2c765a8ca75652a0cb53dc0596efc4fa9d",
+      "verseCount": 87
+    }
+  },
+  "fixedWitness": {
+    "path": "inventory/targets/numbers-web-verses.json",
+    "sha256": "f50a3147ff698b614ece92c48f6630890c542218bb80d5568d2759144d4e7bb9",
+    "verifiedRows": 193,
+    "allVerseTextURLAndSourceTextSHAComparisonsPassed": true,
+    "comparisonErrors": []
+  },
+  "summary": {
+    "closed": 171,
+    "qualified": 16,
+    "fail": 6,
+    "verseAssessmentCount": 193
+  },
+  "focusFindings": [
+    {
+      "refs": [
+        "NUM25:1",
+        "NUM25:2",
+        "NUM25:6",
+        "NUM25:14",
+        "NUM25:17",
+        "NUM26:3",
+        "NUM26:63"
+      ],
+      "findingJa": "Moab/Midian people-vs-place distinction: ethnic/daughter references use collective IDs; plains/land/location references use place IDs. NUM25:2 Moab attribution derives from antecedent and is correctly context. NUM25:15 correctly maps the Midianite woman to the collective ID but omits place:midian_796 for “in Midian”."
+    },
+    {
+      "refs": [
+        "NUM25:18"
+      ],
+      "findingJa": "“matter of Peor” is an event/cult allusion, not an explicit mention of Mount Peor. No mountain-place link is present; Baal Peor link should be context, not direct."
+    },
+    {
+      "refs": [
+        "NUM26:5",
+        "NUM26:28-30",
+        "NUM26:32-33",
+        "NUM26:39",
+        "NUM26:42-46",
+        "NUM26:57-59",
+        "NUM27:1"
+      ],
+      "findingJa": "Root metadata lists individual/collective and spelling-variant holds. They must remain integration gates. Current maps still directly link several unresolved name variants (26:23, 26:30, 26:42–44) and the 26:28–29/27:1 base IDs need context-role separation."
+    },
+    {
+      "refs": [
+        "NUM26:58"
+      ],
+      "findingJa": "Libnites is a named clan with no safely matched existing ID; withholding rather than reusing Libni is correct and remains an unresolved map gap."
+    },
+    {
+      "refs": [
+        "NUM28:1–30:16"
+      ],
+      "findingJa": "Ongoing speech frame is mapped as direct in each row. LORD/God/Moses/Israel absent from an individual clause are discourse speaker/addressee/audience context; direct vs context should be reclassified per verse. New explicit names remain direct."
+    },
+    {
+      "refs": [
+        "NUM26:12"
+      ],
+      "findingJa": "固定WEBはシメオン族のNemuelを記すが、person:nemuel_2177は別系譜のエリアブの子（26:9）で、ルベン族側の人物。既存IDを流用せず、適合ID未解決で保留する判断が適切。"
+    }
+  ],
+  "verseAssessments": [
+    {
+      "book": "NUM",
+      "chapter": 25,
+      "verse": 1,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM25.htm#V1",
+      "sourceTextSHA256": "9b6ad12e51b4ce8c0f733c4348f998d9863e2f3d2869b70ef1badb6f17c810dc",
+      "sourceText": "Israel stayed in Shittim; and the people began to play the prostitute with the daughters of Moab;",
+      "mappedEntities": [
+        {
+          "entityID": "person:moab_2103",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:shittim_1086",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 25,
+      "verse": 2,
+      "status": "qualified",
+      "sourceURL": "https://ebible.org/engwebp/NUM25.htm#V2",
+      "sourceTextSHA256": "37ad390873c0c9a4c72c8c5ee38e309fa42cc9315b50fc55a7dc1d3061cee040",
+      "sourceText": "for they called the people to the sacrifices of their gods. The people ate and bowed down to their gods.",
+      "mappedEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moab_2103",
+          "relationship": "context"
+        }
+      ],
+      "issues": [
+        {
+          "code": "moab_context_not_direct",
+          "entityID": "person:moab_2103",
+          "detailJa": "この節本文にMoabの語はなく「they」は直前節のモアブ人女性を受ける。集団への文脈参照としては妥当だがrelationship directではなくcontext。"
+        }
+      ],
+      "basisJa": "この節本文にMoabの語はなく「they」は直前節のモアブ人女性を受ける。集団への文脈参照としては妥当だがrelationship directではなくcontext。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 25,
+      "verse": 3,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM25.htm#V3",
+      "sourceTextSHA256": "fde4e3c74a60473501dbd04ddb962703537908b1d00d755bfc32723f659f986f",
+      "sourceText": "Israel joined himself to Baal Peor, and the LORD’s anger burned against Israel.",
+      "mappedEntities": [
+        {
+          "entityID": "person:baal_573",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 25,
+      "verse": 4,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM25.htm#V4",
+      "sourceTextSHA256": "cdcd79d8c7ef5b78255b6b6ce5312c7e24f375480fbd16b89b843d33b7a67df2",
+      "sourceText": "The LORD said to Moses, “Take all the chiefs of the people, and hang them up to the LORD before the sun, that the fierce anger of the LORD may turn away from Israel.”",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 25,
+      "verse": 5,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM25.htm#V5",
+      "sourceTextSHA256": "8ef8305dff35bc4d15a6ee69b1dcb004d62a14112c0d795d4bac354d9198ee33",
+      "sourceText": "Moses said to the judges of Israel, “Everyone kill his men who have joined themselves to Baal Peor.”",
+      "mappedEntities": [
+        {
+          "entityID": "person:baal_573",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 25,
+      "verse": 6,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM25.htm#V6",
+      "sourceTextSHA256": "ddd1d8f25836ab54bc33ed208ef71a3be3b29fa17945cdca5423bcb28c31fa15",
+      "sourceText": "Behold, one of the children of Israel came and brought to his brothers a Midianite woman in the sight of Moses, and in the sight of all the congregation of the children of Israel, while they were weeping at the door of the Tent of Meeting.",
+      "mappedEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:midian_2075",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 25,
+      "verse": 7,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM25.htm#V7",
+      "sourceTextSHA256": "8ff0523552388ad1ebd248ec76be953f55f0c1dc8e410d7fee9ea5c0d7aa3cb3",
+      "sourceText": "When Phinehas, the son of Eleazar, the son of Aaron the priest, saw it, he rose up from the middle of the congregation, and took a spear in his hand.",
+      "mappedEntities": [
+        {
+          "entityID": "person:aaron_1",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:eleazar_1062",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:phinehas_2349",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 25,
+      "verse": 8,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM25.htm#V8",
+      "sourceTextSHA256": "ac2ad1f734bc274728126395bfa4b5917bf2232c9f6ed22fb4b6d66c0ed2f074",
+      "sourceText": "He went after the man of Israel into the pavilion, and thrust both of them through, the man of Israel, and the woman through her body. So the plague was stopped among the children of Israel.",
+      "mappedEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:phinehas_2349",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 25,
+      "verse": 9,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM25.htm#V9",
+      "sourceTextSHA256": "b735bf727c5786c55af956ece5c498d60bce1130417391fff4eb6327a2fd5488",
+      "sourceText": "Those who died by the plague were twenty-four thousand.",
+      "mappedEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 25,
+      "verse": 10,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM25.htm#V10",
+      "sourceTextSHA256": "28219e5da0d26514843495c6edb280f326aa0ccffb0d2bb642d0e1b0f4478ca1",
+      "sourceText": "The LORD spoke to Moses, saying,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 25,
+      "verse": 11,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM25.htm#V11",
+      "sourceTextSHA256": "24fbb3d0f9a5a3608117343fa355204130eb2f4e133af3564032d7e7bae0b42f",
+      "sourceText": "“Phinehas, the son of Eleazar, the son of Aaron the priest, has turned my wrath away from the children of Israel, in that he was jealous with my jealousy among them, so that I didn’t consume the children of Israel in my jealousy.",
+      "mappedEntities": [
+        {
+          "entityID": "person:aaron_1",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:eleazar_1062",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:phinehas_2349",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 25,
+      "verse": 12,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM25.htm#V12",
+      "sourceTextSHA256": "679e51fd78f7108f5c69d9cd647893aff2c4669b2eb0193b7fdb931f1d8833f3",
+      "sourceText": "Therefore say, ‘Behold, I give to him my covenant of peace.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:phinehas_2349",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 25,
+      "verse": 13,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM25.htm#V13",
+      "sourceTextSHA256": "43257cbcfd38c7de9836772d24960bdc0723d2c986e92263b5a33940475368b5",
+      "sourceText": "It shall be to him, and to his offspring after him, the covenant of an everlasting priesthood, because he was jealous for his God, and made atonement for the children of Israel.’”",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:phinehas_2349",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 25,
+      "verse": 14,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM25.htm#V14",
+      "sourceTextSHA256": "f02ace67c9a666eeb116e5ae3e06add5ec1e3aa822eab92760179c69aed5c78e",
+      "sourceText": "Now the name of the man of Israel that was slain, who was slain with the Midianite woman, was Zimri, the son of Salu, a prince of a fathers’ house among the Simeonites.",
+      "mappedEntities": [
+        {
+          "entityID": "person:salu_2465",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:zimri_3087",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:simeon_2741",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:midian_2075",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 25,
+      "verse": 15,
+      "status": "fail",
+      "sourceURL": "https://ebible.org/engwebp/NUM25.htm#V15",
+      "sourceTextSHA256": "a2481b6e410abe4996519853a2e2fc371e5276362bcfd9626d32779da858f4f5",
+      "sourceText": "The name of the Midianite woman who was slain was Cozbi, the daughter of Zur. He was head of the people of a fathers’ house in Midian.",
+      "mappedEntities": [
+        {
+          "entityID": "person:cozbi_959",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:midian_2075",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:zur_3109",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "code": "missing_midian_geography_id",
+          "entityID": "place:midian_796",
+          "detailJa": "同節の「Midianite woman」についてperson:midian_2075を使うのは適切。しかし「He was head of the people of a fathers’ house in Midian」のin Midianは所在地で、既存place:midian_796への同節リンクが欠落している。族集団と地域を両方保持する。"
+        }
+      ],
+      "basisJa": "「Midianite woman」はミディアン人集団、後半の「in Midian」は地域名。前者のcollective linkは正しいが、後者にplace:midian_796が欠けている。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 25,
+      "verse": 16,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM25.htm#V16",
+      "sourceTextSHA256": "28219e5da0d26514843495c6edb280f326aa0ccffb0d2bb642d0e1b0f4478ca1",
+      "sourceText": "The LORD spoke to Moses, saying,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 25,
+      "verse": 17,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM25.htm#V17",
+      "sourceTextSHA256": "5bd8828957149ec915b4dd7fc2da5f268dd91d6ddce29e2507dde0ba8ed99966",
+      "sourceText": "“Harass the Midianites, and strike them;",
+      "mappedEntities": [
+        {
+          "entityID": "person:midian_2075",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 25,
+      "verse": 18,
+      "status": "qualified",
+      "sourceURL": "https://ebible.org/engwebp/NUM25.htm#V18",
+      "sourceTextSHA256": "bcee35221aa8502a22b477646f4673260c087f8605f8c8d0e5cf048efa2c1597",
+      "sourceText": "for they harassed you with their wiles, wherein they have deceived you in the matter of Peor, and in the incident regarding Cozbi, the daughter of the prince of Midian, their sister, who was slain on the day of the plague in the matter of Peor.”",
+      "mappedEntities": [
+        {
+          "entityID": "person:cozbi_959",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:midian_2075",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:baal_573",
+          "relationship": "context"
+        }
+      ],
+      "issues": [
+        {
+          "code": "peor_incident_context",
+          "entityID": "person:baal_573",
+          "detailJa": "本文は「matter of Peor」と過去の事件を指し、Baalを直接再記載しない。Mountain Peorのplace IDを使っていない点は適切だが、Baal Peorへの関連はcontextとして扱う。"
+        }
+      ],
+      "basisJa": "本文は「matter of Peor」と過去の事件を指し、Baalを直接再記載しない。Mountain Peorのplace IDを使っていない点は適切だが、Baal Peorへの関連はcontextとして扱う。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 1,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V1",
+      "sourceTextSHA256": "e48ee9fcbe3eb6a5a709e1ee5823f8366d3b0c4a1cfa04845bedc4d5f6808274",
+      "sourceText": "After the plague, the LORD spoke to Moses and to Eleazar the son of Aaron the priest, saying,",
+      "mappedEntities": [
+        {
+          "entityID": "person:aaron_1",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:eleazar_1062",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 2,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V2",
+      "sourceTextSHA256": "6e56cfbdc52ce90e27a5362bee4bbd14898731fbf16dc0c7b9bd2858cb0de529",
+      "sourceText": "“Take a census of all the congregation of the children of Israel, from twenty years old and upward, by their fathers’ houses, all who are able to go out to war in Israel.”",
+      "mappedEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:eleazar_1062",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 3,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V3",
+      "sourceTextSHA256": "f7a8267a69c8eca54f7c83dd065da7b382d69f4c82f4f8657088c81195018171",
+      "sourceText": "Moses and Eleazar the priest spoke with them in the plains of Moab by the Jordan at Jericho, saying,",
+      "mappedEntities": [
+        {
+          "entityID": "person:eleazar_1062",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jericho_634",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jordan_653",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:moab_815",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 4,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V4",
+      "sourceTextSHA256": "eed29d0a488cb39d1a3298d08124e4047530cd0fdb737bad724824dd3e1fc40c",
+      "sourceText": "“Take a census, from twenty years old and upward, as the LORD commanded Moses and the children of Israel.” These are those who came out of the land of Egypt.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:egypt_362",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 5,
+      "status": "qualified",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V5",
+      "sourceTextSHA256": "1381335de7287d2887e4ef9e10487b6d7e28511c4aaa9962246b8ac109b2c4ef",
+      "sourceText": "Reuben, the firstborn of Israel; the sons of Reuben: of Hanoch, the family of the Hanochites; of Pallu, the family of the Palluites;",
+      "mappedEntities": [
+        {
+          "entityID": "person:hanoch_1403",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:pallu_2325",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:reuben_2429",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "code": "ancestor_collective_variant",
+          "detailJa": "26:5は「Reuben, the firstborn of Israel」と「sons of Reuben」の両方がある。Israel/Reubenの族祖個人と人口集団用法を同一profileへ混同しないよう、pendingContextCasesを残し統合時に分離。"
+        }
+      ],
+      "basisJa": "26:5は「Reuben, the firstborn of Israel」と「sons of Reuben」の両方がある。Israel/Reubenの族祖個人と人口集団用法を同一profileへ混同しないよう、pendingContextCasesを残し統合時に分離。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 6,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V6",
+      "sourceTextSHA256": "65e630bcbf78ba856c810adeb6c6aa3187d444fdecdf7b1102a24ac13f276751",
+      "sourceText": "of Hezron, the family of the Hezronites; of Carmi, the family of the Carmites.",
+      "mappedEntities": [
+        {
+          "entityID": "person:carmi_920",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:hezron_1519",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 7,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V7",
+      "sourceTextSHA256": "8128555e19bb83e344069bb95dcb7c3a8efe35d965e4c5752e18c9c0c9af00eb",
+      "sourceText": "These are the families of the Reubenites; and those who were counted of them were forty-three thousand seven hundred thirty.",
+      "mappedEntities": [
+        {
+          "entityID": "person:reuben_2429",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 8,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V8",
+      "sourceTextSHA256": "1a70b064d4a399709d34e0ffca507db86c23726a55fbcd1c7a393137b5e6e0e6",
+      "sourceText": "The son of Pallu: Eliab.",
+      "mappedEntities": [
+        {
+          "entityID": "person:eliab_1074",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:pallu_2325",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 9,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V9",
+      "sourceTextSHA256": "068b6b9b452b07be1ac539757812e17adddc37c00bdd63df95a0b120b1f17830",
+      "sourceText": "The sons of Eliab: Nemuel, Dathan, and Abiram. These are that Dathan and Abiram who were called by the congregation, who rebelled against Moses and against Aaron in the company of Korah when they rebelled against the LORD;",
+      "mappedEntities": [
+        {
+          "entityID": "person:aaron_1",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:abiram_47",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:dathan_982",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:eliab_1074",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:korah_1795",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:nemuel_2177",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 10,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V10",
+      "sourceTextSHA256": "5becd2436f3c6deab1f3ee086e0772a638c2b2d71385722747f850534f453d08",
+      "sourceText": "and the earth opened its mouth, and swallowed them up together with Korah when that company died; at the time the fire devoured two hundred fifty men, and they became a sign.",
+      "mappedEntities": [
+        {
+          "entityID": "person:korah_1795",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:dathan_982",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:abiram_47",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 11,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V11",
+      "sourceTextSHA256": "82b1537d6f92a10289f1d4a5072fe19dc4dee683e1ecca90c1ae09134eb62bdc",
+      "sourceText": "Notwithstanding, the sons of Korah didn’t die.",
+      "mappedEntities": [
+        {
+          "entityID": "person:korah_1795",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 12,
+      "status": "qualified",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V12",
+      "sourceTextSHA256": "87518ca72c192367f5f6329286502939bc82bf079e325ca51fd863add05c6fc5",
+      "sourceText": "The sons of Simeon after their families: of Nemuel, the family of the Nemuelites; of Jamin, the family of the Jaminites; of Jachin, the family of the Jachinites;",
+      "mappedEntities": [
+        {
+          "entityID": "person:jachin_679",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:jamin_720",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:simeon_2741",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_similar_name_not_same_person",
+          "entityID": "person:nemuel_2177",
+          "detailJa": "本文はシメオン族系譜の「Nemuel, the family of the Nemuelites」。既存person:nemuel_2177はエリアブの子で、NUM26:9・ルベン族系譜に限られ、同名別人。流用を避けた現マップ判断が正しい。シメオン系Nemuelに適合するIDは未解決として保留。"
+        }
+      ],
+      "basisJa": "Nemuelという明示名はあるが、既存person:nemuel_2177は別系譜のエリアブの子で、26:12シメオン族のNemuelには同定できない。新規/別人IDを流用せず適合ID未解決で保留。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 13,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V13",
+      "sourceTextSHA256": "061dc0becd67adbd675a2475130ba5760de6b63fde9ab04da04d53115e415c75",
+      "sourceText": "of Zerah, the family of the Zerahites; of Shaul, the family of the Shaulites.",
+      "mappedEntities": [
+        {
+          "entityID": "person:shaul_2562",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:zerah_3102",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 14,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V14",
+      "sourceTextSHA256": "e535560d3574b619b10c5c700467e57ad45e2aea44a35c87d1a4c429b8620670",
+      "sourceText": "These are the families of the Simeonites, twenty-two thousand two hundred.",
+      "mappedEntities": [
+        {
+          "entityID": "person:simeon_2741",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 15,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V15",
+      "sourceTextSHA256": "7b0197003d9bd5e23af6ebe4b4aa3a41be946070bc42f0c00b5f5638e0c8084c",
+      "sourceText": "The sons of Gad after their families: of Zephon, the family of the Zephonites; of Haggi, the family of the Haggites; of Shuni, the family of the Shunites;",
+      "mappedEntities": [
+        {
+          "entityID": "person:gad_1262",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:haggi_1351",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shuni_2731",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:zephon_3093",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 16,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V16",
+      "sourceTextSHA256": "919f23409b5a2cbf7511bbf2529d52d9f235ca8e522400319683fc70ad064393",
+      "sourceText": "of Ozni, the family of the Oznites; of Eri, the family of the Erites;",
+      "mappedEntities": [
+        {
+          "entityID": "person:eri_1214",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ozni_1235",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 17,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V17",
+      "sourceTextSHA256": "52dae73374ecf6133a44a71fb6bf556077a76ec8e6364a41bbcc2c10d146d68d",
+      "sourceText": "of Arod, the family of the Arodites; of Areli, the family of the Arelites.",
+      "mappedEntities": [
+        {
+          "entityID": "person:areli_296",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:arod_311",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 18,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V18",
+      "sourceTextSHA256": "6db84157acf397c3d75d8c522f2d1d7d26ba9c3d51036c4cc837e4e3384c90b6",
+      "sourceText": "These are the families of the sons of Gad according to those who were counted of them, forty thousand and five hundred.",
+      "mappedEntities": [
+        {
+          "entityID": "person:gad_1262",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 19,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V19",
+      "sourceTextSHA256": "ae5d7e1ceff3f8bc1b88c465922bc7804733bf5036cf54169f9433918d16bc64",
+      "sourceText": "The sons of Judah: Er and Onan. Er and Onan died in the land of Canaan.",
+      "mappedEntities": [
+        {
+          "entityID": "person:er_1209",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:judah_1751",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:onan_2250",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:canaan_272",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 20,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V20",
+      "sourceTextSHA256": "8f9fdc22577687ad9ef61cb5a06675c819e2de919e73ec694bcd0d3ecc3e1b16",
+      "sourceText": "The sons of Judah after their families were: of Shelah, the family of the Shelanites; of Perez, the family of the Perezites; of Zerah, the family of the Zerahites.",
+      "mappedEntities": [
+        {
+          "entityID": "person:judah_1751",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:pharez_2338",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shelah_2593",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:zerah_2984",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 21,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V21",
+      "sourceTextSHA256": "48855596c7e8da85aaf12dc68de49701e63257a1e4618310ec419449879a77cc",
+      "sourceText": "The sons of Perez were: of Hezron, the family of the Hezronites; of Hamul, the family of the Hamulites.",
+      "mappedEntities": [
+        {
+          "entityID": "person:hamul_1367",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:hezron_1520",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:pharez_2338",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 22,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V22",
+      "sourceTextSHA256": "dc70e2cadb870e16ee6169b16a848aca62be4e12edf6209e2afcc5e7331e2c63",
+      "sourceText": "These are the families of Judah according to those who were counted of them, seventy-six thousand five hundred.",
+      "mappedEntities": [
+        {
+          "entityID": "person:judah_1751",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 23,
+      "status": "fail",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V23",
+      "sourceTextSHA256": "cc8aa88be605278b4438a7f567a4dde0dba5f584b231a987c76f180c328225d1",
+      "sourceText": "The sons of Issachar after their families: of Tola, the family of the Tolaites; of Puvah, the family of the Punites;",
+      "mappedEntities": [
+        {
+          "entityID": "person:issachar_645",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:puah_2355",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:tola_2878",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unverified_name_variant",
+          "detailJa": "固定WEBは「Puvah, the family of the Punites」。マップは person:puah_2355（Puah）を採用しているが、root metadata自身が26:23 PuahをpendingIdentityCaseとしている。異綴り同定を検証するまでこのリンクはhold。"
+        }
+      ],
+      "basisJa": "固定WEBは「Puvah, the family of the Punites」。マップは person:puah_2355（Puah）を採用しているが、root metadata自身が26:23 PuahをpendingIdentityCaseとしている。異綴り同定を検証するまでこのリンクはhold。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 24,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V24",
+      "sourceTextSHA256": "3941583275b56e290027a814b602c04790122f32b3e3c0d1bd115933fc5ab321",
+      "sourceText": "of Jashub, the family of the Jashubites; of Shimron, the family of the Shimronites.",
+      "mappedEntities": [
+        {
+          "entityID": "person:jashub_1638",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shimron_2706",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 25,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V25",
+      "sourceTextSHA256": "8cf182fea7d17b1f8df52dc5cbe550cabffaf1ffdf9ae2c03551680a150444eb",
+      "sourceText": "These are the families of Issachar according to those who were counted of them, sixty-four thousand three hundred.",
+      "mappedEntities": [
+        {
+          "entityID": "person:issachar_645",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 26,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V26",
+      "sourceTextSHA256": "4068c241e0e8e11dacaf556b28cfba19eaeff604708bae1cfc24da999290bdd9",
+      "sourceText": "The sons of Zebulun after their families: of Sered, the family of the Seredites; of Elon, the family of the Elonites; of Jahleel, the family of the Jahleelites.",
+      "mappedEntities": [
+        {
+          "entityID": "person:elon_1183",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:jahleel_704",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:sered_2501",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:zebulun_3002",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 27,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V27",
+      "sourceTextSHA256": "5c08a87328c82d3929b7ee85bbb4c2701b16fe148ee61b2a7e1f35129b26e9e8",
+      "sourceText": "These are the families of the Zebulunites according to those who were counted of them, sixty thousand five hundred.",
+      "mappedEntities": [
+        {
+          "entityID": "person:zebulun_3002",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 28,
+      "status": "qualified",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V28",
+      "sourceTextSHA256": "894cfea643e906bdebe7c6eb0804bbee08c5bb96f243dfdad7859ba027f2ae9d",
+      "sourceText": "The sons of Joseph after their families: Manasseh and Ephraim.",
+      "mappedEntities": [
+        {
+          "entityID": "person:ephraim_1206",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joseph_1710",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:manasseh_1928",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "code": "ancestor_collective_variant",
+          "detailJa": "固定WEBは「sons of Joseph ... Manasseh and Ephraim」。個人の子らとしての族祖名と後続の部族集団名が同じIDに当たる。既存pendingContextCasesを統合時に具体的context variantへ反映。"
+        }
+      ],
+      "basisJa": "固定WEBは「sons of Joseph ... Manasseh and Ephraim」。個人の子らとしての族祖名と後続の部族集団名が同じIDに当たる。既存pendingContextCasesを統合時に具体的context variantへ反映。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 29,
+      "status": "qualified",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V29",
+      "sourceTextSHA256": "05094a44ccdd167e1ca45908e8c8a556d085a4e07ba78dfd6b01245be97a182b",
+      "sourceText": "The sons of Manasseh: of Machir, the family of the Machirites; and Machir became the father of Gilead; of Gilead, the family of the Gileadites.",
+      "mappedEntities": [
+        {
+          "entityID": "person:gilead_1317",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:machir_1877",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:manasseh_1928",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "code": "ancestor_collective_variant",
+          "detailJa": "「sons of Manasseh」「Machir became the father of Gilead」は族祖個人と、その名を持つ氏族集団を同節で扱う。マップのpendingContextCasesを保持し、個人baseへの直結を承認扱いしない。"
+        }
+      ],
+      "basisJa": "「sons of Manasseh」「Machir became the father of Gilead」は族祖個人と、その名を持つ氏族集団を同節で扱う。マップのpendingContextCasesを保持し、個人baseへの直結を承認扱いしない。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 30,
+      "status": "fail",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V30",
+      "sourceTextSHA256": "df71b08e377cc1f809c6c6a2615f603873825656e695aaed7b7f5f98678b5900",
+      "sourceText": "These are the sons of Gilead: of Iezer, the family of the Iezerites; of Helek, the family of the Helekites;",
+      "mappedEntities": [
+        {
+          "entityID": "person:abiezer_763",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:gilead_1317",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:helek_1481",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unverified_name_variant",
+          "detailJa": "固定WEBの本文は「Iezer」「Iezerites」。マップは person:abiezer_763（Abiezer氏族）を採用し、同IDはpendingIdentityCasesにもある。Iezer=Abiezerの同定を独立確認するまでリンクをhold。"
+        }
+      ],
+      "basisJa": "固定WEBの本文は「Iezer」「Iezerites」。マップは person:abiezer_763（Abiezer氏族）を採用し、同IDはpendingIdentityCasesにもある。Iezer=Abiezerの同定を独立確認するまでリンクをhold。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 31,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V31",
+      "sourceTextSHA256": "484a95b348fed061d597ff4ae7ac4d62d0aadf7ef5841115d12b2efd07aa5c73",
+      "sourceText": "and Asriel, the family of the Asrielites; and Shechem, the family of the Shechemites;",
+      "mappedEntities": [
+        {
+          "entityID": "person:asriel_348",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shechem_2589",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 32,
+      "status": "qualified",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V32",
+      "sourceTextSHA256": "cbcab62a52be473c15d98df5c86584a6e1d53c4d91b2952bc33f7a896517fa62",
+      "sourceText": "and Shemida, the family of the Shemidaites; and Hepher, the family of the Hepherites.",
+      "mappedEntities": [
+        {
+          "entityID": "person:hepher_1496",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shemida_2650",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "code": "ancestor_collective_variant",
+          "detailJa": "「Shemida」と「Hepherites」は氏族名を含む。26:33ではHepherがZelophehadの父として個人用法にもなるため、pendingContextCasesの個人／氏族区分を維持。"
+        }
+      ],
+      "basisJa": "「Shemida」と「Hepherites」は氏族名を含む。26:33ではHepherがZelophehadの父として個人用法にもなるため、pendingContextCasesの個人／氏族区分を維持。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 33,
+      "status": "qualified",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V33",
+      "sourceTextSHA256": "3715af878b468cbbde1ee47147550cf5f5768b95dd106d2a1bc2d81c62afc2c3",
+      "sourceText": "Zelophehad the son of Hepher had no sons, but daughters: and the names of the daughters of Zelophehad were Mahlah, Noah, Hoglah, Milcah, and Tirzah.",
+      "mappedEntities": [
+        {
+          "entityID": "person:hepher_1496",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:hoglah_1548",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:mahlah_1895",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:milcah_2083",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:noah_2211",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:tirzah_2868",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:zelophehad_3035",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "code": "ancestor_collective_variant",
+          "detailJa": "固定WEBは「Zelophehad the son of Hepher」。Hepher IDは部族内の氏族profileでも使われるため、ここでの父・族祖個人用法をpendingContextCasesで分ける。"
+        }
+      ],
+      "basisJa": "固定WEBは「Zelophehad the son of Hepher」。Hepher IDは部族内の氏族profileでも使われるため、ここでの父・族祖個人用法をpendingContextCasesで分ける。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 34,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V34",
+      "sourceTextSHA256": "ba0845d778b46592566e596f5bd7fdc13b319d3430998b5f3e5b7692c38884d0",
+      "sourceText": "These are the families of Manasseh. Those who were counted of them were fifty-two thousand seven hundred.",
+      "mappedEntities": [
+        {
+          "entityID": "person:manasseh_1928",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 35,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V35",
+      "sourceTextSHA256": "7cc1762a78bdc54c631365fc3197fefe610734dc4f423e7ee8e099357e9b7559",
+      "sourceText": "These are the sons of Ephraim after their families: of Shuthelah, the family of the Shuthelahites; of Becher, the family of the Becherites; of Tahan, the family of the Tahanites.",
+      "mappedEntities": [
+        {
+          "entityID": "person:becher_424",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ephraim_1206",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shuthelah_2734",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:tahan_2812",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 36,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V36",
+      "sourceTextSHA256": "cb4ec469e36b1210c0842109e10efd1394b2d6c54e98ad7201447179d551efbc",
+      "sourceText": "These are the sons of Shuthelah: of Eran, the family of the Eranites.",
+      "mappedEntities": [
+        {
+          "entityID": "person:eran_1212",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shuthelah_2734",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 37,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V37",
+      "sourceTextSHA256": "1aa21cfad8ad6ff21aa08c620479b193097edd693524a3c195c2afeba63206f3",
+      "sourceText": "These are the families of the sons of Ephraim according to those who were counted of them, thirty-two thousand five hundred. These are the sons of Joseph after their families.",
+      "mappedEntities": [
+        {
+          "entityID": "person:ephraim_1206",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joseph_1710",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 38,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V38",
+      "sourceTextSHA256": "fbeed6fe7d405d0f1935cad05a869fdb04dec4f23181b0d2b3baaf6c3cd0fe07",
+      "sourceText": "The sons of Benjamin after their families: of Bela, the family of the Belaites; of Ashbel, the family of the Ashbelites; of Ahiram, the family of the Ahiramites;",
+      "mappedEntities": [
+        {
+          "entityID": "person:ahiram_158",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ashbel_336",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:bela_436",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:benjamin_463",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 39,
+      "status": "qualified",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V39",
+      "sourceTextSHA256": "7da98449b6f4202509807fef8a6b97339a5c7c5938979306b1617b8f5c6343ac",
+      "sourceText": "of Shephupham, the family of the Shuphamites; of Hupham, the family of the Huphamites.",
+      "mappedEntities": [],
+      "issues": [
+        {
+          "code": "unresolved_variant_names",
+          "detailJa": "固定WEBは「Shephupham ... Shuphamites」「Hupham ... Huphamites」。entitiesを空にして未確定IDを採らない保留は適切。ただしrootのpendingIdentityCasesはHuram/Shuphamで、WEB本文のHupham表記との関係も未確定として明記する。"
+        }
+      ],
+      "basisJa": "固定WEBは「Shephupham ... Shuphamites」「Hupham ... Huphamites」。entitiesを空にして未確定IDを採らない保留は適切。ただしrootのpendingIdentityCasesはHuram/Shuphamで、WEB本文のHupham表記との関係も未確定として明記する。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 40,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V40",
+      "sourceTextSHA256": "92392e27a630411b32755bf289d443b7af6bf8dadec01984e04855a14a9295e5",
+      "sourceText": "The sons of Bela were Ard and Naaman: the family of the Ardites; and of Naaman, the family of the Naamites.",
+      "mappedEntities": [
+        {
+          "entityID": "person:ard_294",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:bela_436",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:naaman_2121",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 41,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V41",
+      "sourceTextSHA256": "9eee5bacbe59a1e292d2ca95be9c4de4bdfee1eda00088e75abb3cc53b1524ca",
+      "sourceText": "These are the sons of Benjamin after their families; and those who were counted of them were forty-five thousand six hundred.",
+      "mappedEntities": [
+        {
+          "entityID": "person:benjamin_463",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 42,
+      "status": "fail",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V42",
+      "sourceTextSHA256": "158288a926261002bd4467c60f0063e4b40fa0efa9a2824ec9aa02f0bf3338a1",
+      "sourceText": "These are the sons of Dan after their families: of Shuham, the family of the Shuhamites. These are the families of Dan after their families.",
+      "mappedEntities": [
+        {
+          "entityID": "person:dan_973",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:hushim_1579",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unverified_name_variant",
+          "detailJa": "固定WEBは「Shuham, the family of the Shuhamites」。マップは person:hushim_1579 を直接採用している一方、metadataではHushimを未確定variantとしている。holdをentitiesにも徹底する。"
+        }
+      ],
+      "basisJa": "固定WEBは「Shuham, the family of the Shuhamites」。マップは person:hushim_1579 を直接採用している一方、metadataではHushimを未確定variantとしている。holdをentitiesにも徹底する。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 43,
+      "status": "fail",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V43",
+      "sourceTextSHA256": "4940be135a9b45b7adb5afb47e8261c10550df54fa350ecbd2b6f73a59d2ea22",
+      "sourceText": "All the families of the Shuhamites, according to those who were counted of them, were sixty-four thousand four hundred.",
+      "mappedEntities": [
+        {
+          "entityID": "person:hushim_1579",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unverified_name_variant",
+          "detailJa": "固定WEBは「families of the Shuhamites」。person:hushim_1579 の直接リンクはShuham/Hushim同定保留と矛盾する。"
+        }
+      ],
+      "basisJa": "固定WEBは「families of the Shuhamites」。person:hushim_1579 の直接リンクはShuham/Hushim同定保留と矛盾する。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 44,
+      "status": "fail",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V44",
+      "sourceTextSHA256": "46383519563e983dfd591939cb5197b5e8c24cb749bffa62cceee5f6e9464178",
+      "sourceText": "The sons of Asher after their families: of Imnah, the family of the Imnites; of Ishvi, the family of the Ishvites; of Beriah, the family of the Berites.",
+      "mappedEntities": [
+        {
+          "entityID": "person:asher_337",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:beriah_478",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:imnah_1616",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:isui_648",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unverified_name_variant",
+          "detailJa": "固定WEBは「Ishvi, the family of the Ishvites」。マップはperson:isui_648を直接採用し、metadataでもIsui/Ishviをpendingとしている。別名同定を確かめるまでhold。"
+        }
+      ],
+      "basisJa": "固定WEBは「Ishvi, the family of the Ishvites」。マップはperson:isui_648を直接採用し、metadataでもIsui/Ishviをpendingとしている。別名同定を確かめるまでhold。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 45,
+      "status": "qualified",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V45",
+      "sourceTextSHA256": "03fd9aa0bc83ecc50824644d9dbcd5fd7f8b89bf32abea173086bc982b7b24f1",
+      "sourceText": "Of the sons of Beriah: of Heber, the family of the Heberites; of Malchiel, the family of the Malchielites.",
+      "mappedEntities": [
+        {
+          "entityID": "person:beriah_478",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:heber_1469",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:malchiel_1908",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "code": "ancestor_collective_variant",
+          "detailJa": "「sons of Beriah」の節はBeriah個人祖先とBeriah氏族の両方を示す。既存pendingContextCasesを同IDの個人／集団役割として維持。"
+        }
+      ],
+      "basisJa": "「sons of Beriah」の節はBeriah個人祖先とBeriah氏族の両方を示す。既存pendingContextCasesを同IDの個人／集団役割として維持。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 46,
+      "status": "qualified",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V46",
+      "sourceTextSHA256": "9c4cbba36df81ee6e536178f2c68ed652c29ea142c5f9258e71cc0da874e86da",
+      "sourceText": "The name of the daughter of Asher was Serah.",
+      "mappedEntities": [
+        {
+          "entityID": "person:asher_337",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:serah_2492",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "code": "ancestor_collective_variant",
+          "detailJa": "「daughter of Asher」は族祖Asher個人。マップのperson:asher_337は集団baseで、pendingContextCasesが必要。"
+        }
+      ],
+      "basisJa": "「daughter of Asher」は族祖Asher個人。マップのperson:asher_337は集団baseで、pendingContextCasesが必要。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 47,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V47",
+      "sourceTextSHA256": "3389fb00fe0fc4c60807c17e0b9acf8d49bc1c22d23c5b9de68a8e0eaabec16d",
+      "sourceText": "These are the families of the sons of Asher according to those who were counted of them, fifty-three thousand four hundred.",
+      "mappedEntities": [
+        {
+          "entityID": "person:asher_337",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 48,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V48",
+      "sourceTextSHA256": "b5e40984e5eb78f21a9fa6148060d51467b8d21570a327da122a14e5b7d0779e",
+      "sourceText": "The sons of Naphtali after their families: of Jahzeel, the family of the Jahzeelites; of Guni, the family of the Gunites;",
+      "mappedEntities": [
+        {
+          "entityID": "person:guni_1330",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:jahzeel_706",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:naphtali_2149",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 49,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V49",
+      "sourceTextSHA256": "38b9e0f405dfdfedaa9f72d8a719ca3173c6abb99cada39e51d7f43a663a06db",
+      "sourceText": "of Jezer, the family of the Jezerites; of Shillem, the family of the Shillemites.",
+      "mappedEntities": [
+        {
+          "entityID": "person:jezer_1606",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shillem_2677",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 50,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V50",
+      "sourceTextSHA256": "0a176d396f27a39cd5b220eaccec931605a920c2b7e86650f93b9a554085c34d",
+      "sourceText": "These are the families of Naphtali according to their families; and those who were counted of them were forty-five thousand four hundred.",
+      "mappedEntities": [
+        {
+          "entityID": "person:naphtali_2149",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 51,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V51",
+      "sourceTextSHA256": "6ed9d26e9aaba5bc0f0a29d3ade5a7e54b1a6a11d45b72b47fa6e4babe55c4f0",
+      "sourceText": "These are those who were counted of the children of Israel, six hundred one thousand seven hundred thirty.",
+      "mappedEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 52,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V52",
+      "sourceTextSHA256": "28219e5da0d26514843495c6edb280f326aa0ccffb0d2bb642d0e1b0f4478ca1",
+      "sourceText": "The LORD spoke to Moses, saying,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 53,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V53",
+      "sourceTextSHA256": "916df5a54d5fa869044704140dd7258a4e644a8f71ec7daf0f00f1ff25e484f0",
+      "sourceText": "“To these the land shall be divided for an inheritance according to the number of names.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 54,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V54",
+      "sourceTextSHA256": "da72ddb26622dd6ce3524dbe4e68491e37abc5eb5d5c8ff783796836080dcc11",
+      "sourceText": "To the more you shall give the more inheritance, and to the fewer you shall give the less inheritance. To everyone according to those who were counted of him shall his inheritance be given.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 55,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V55",
+      "sourceTextSHA256": "80070ee76744639a0cb2e7534c4d132c51b4957271e623190d5d426efe566369",
+      "sourceText": "Notwithstanding, the land shall be divided by lot. According to the names of the tribes of their fathers they shall inherit.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 56,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V56",
+      "sourceTextSHA256": "2427a8c61fdde1ef8e2f1c848f0831acb1e2fc0e017e90b2295c634ddc446d0d",
+      "sourceText": "According to the lot shall their inheritance be divided between the more and the fewer.”",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 57,
+      "status": "qualified",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V57",
+      "sourceTextSHA256": "ef39057e0c537c23be824dfff8f99106598f2d4fa2f960b6b4f2dcddf09e6a2b",
+      "sourceText": "These are those who were counted of the Levites after their families: of Gershon, the family of the Gershonites; of Kohath, the family of the Kohathites; of Merari, the family of the Merarites.",
+      "mappedEntities": [
+        {
+          "entityID": "person:gershon_1305",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:kohath_1790",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:merari_2004",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:levi_1820",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "code": "ancestor_collective_variant",
+          "detailJa": "Levites/Gershonites/Kohathites/Meraritesの集団と、その名の祖先・氏族eponymが連続する。pendingContextCasesで集団と個人を分け、直接の一括承認にしない。"
+        }
+      ],
+      "basisJa": "Levites/Gershonites/Kohathites/Meraritesの集団と、その名の祖先・氏族eponymが連続する。pendingContextCasesで集団と個人を分け、直接の一括承認にしない。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 58,
+      "status": "qualified",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V58",
+      "sourceTextSHA256": "994df4cfe36a8964179b22068b80136bcd3182ab34f701a51b4bab8763198ea0",
+      "sourceText": "These are the families of Levi: the family of the Libnites, the family of the Hebronites, the family of the Mahlites, the family of the Mushites, and the family of the Korahites. Kohath became the father of Amram.",
+      "mappedEntities": [
+        {
+          "entityID": "person:amram_242",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:kohath_1790",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:levi_1820",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:hebron_1475",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:mahli_1889",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:mushi_2116",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:korah_1795",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_existing_id_gap",
+          "detailJa": "Libnitesは明示された氏族名だが適合既存IDなし。Libni IDへ流用しない判断は適切で、gapは継続。Hebronites/Mahlites/Mushites/Korahitesの氏族用法とKohath→Amram個人系譜もpendingContextCasesで分ける。"
+        }
+      ],
+      "basisJa": "Libnitesは明示された氏族名だが適合既存IDなし。Libni IDへ流用しない判断は適切で、gapは継続。Hebronites/Mahlites/Mushites/Korahitesの氏族用法とKohath→Amram個人系譜もpendingContextCasesで分ける。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 59,
+      "status": "qualified",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V59",
+      "sourceTextSHA256": "dcbb7f8f830c4148856981fbd4b59632863cd18242f39bea30f6494a8f9339e1",
+      "sourceText": "The name of Amram’s wife was Jochebed, the daughter of Levi, who was born to Levi in Egypt. She bore to Amram Aaron and Moses, and Miriam their sister.",
+      "mappedEntities": [
+        {
+          "entityID": "person:aaron_1",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:amram_242",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:jochebed_1645",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:levi_1820",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:miriam_2087",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:egypt_362",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "code": "ancestor_collective_variant",
+          "detailJa": "「daughter of Levi」はレビ個人の系譜上の父を指すが、person:levi_1820はレビ族集団base。Jochebedの出生地Egyptは正しく地名。レビ個人variantを保留。"
+        }
+      ],
+      "basisJa": "「daughter of Levi」はレビ個人の系譜上の父を指すが、person:levi_1820はレビ族集団base。Jochebedの出生地Egyptは正しく地名。レビ個人variantを保留。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 60,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V60",
+      "sourceTextSHA256": "23ae92d0710532360d10a72e399dc1b4556da365d2ef922fd62677167f5ba4b5",
+      "sourceText": "To Aaron were born Nadab and Abihu, Eleazar and Ithamar.",
+      "mappedEntities": [
+        {
+          "entityID": "person:aaron_1",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:abihu_33",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:eleazar_1062",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ithamar_649",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:nadab_2128",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 61,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V61",
+      "sourceTextSHA256": "c9934a16cc6fea5d72c04685897b393a59003c54561cc61701d1d6cf14a2b615",
+      "sourceText": "Nadab and Abihu died when they offered strange fire before the LORD.",
+      "mappedEntities": [
+        {
+          "entityID": "person:abihu_33",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:nadab_2128",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 62,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V62",
+      "sourceTextSHA256": "bdeb623db9efb3f823e0f28a3d80b619eaae036d8b10250ec975f1c73176e042",
+      "sourceText": "Those who were counted of them were twenty-three thousand, every male from a month old and upward; for they were not counted among the children of Israel, because there was no inheritance given them among the children of Israel.",
+      "mappedEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:levi_1820",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 63,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V63",
+      "sourceTextSHA256": "30a700f61a7ab8b335f093aa5fd7d3daca6ca0bb43081a32ff4cd397762af231",
+      "sourceText": "These are those who were counted by Moses and Eleazar the priest, who counted the children of Israel in the plains of Moab by the Jordan at Jericho.",
+      "mappedEntities": [
+        {
+          "entityID": "person:eleazar_1062",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jericho_634",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jordan_653",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:moab_815",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 64,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V64",
+      "sourceTextSHA256": "9c5805c033a82de37a4f8f6790182e0f0c88f420e52c62e718481dee9c825c1e",
+      "sourceText": "But among these there was not a man of them who were counted by Moses and Aaron the priest, who counted the children of Israel in the wilderness of Sinai.",
+      "mappedEntities": [
+        {
+          "entityID": "person:aaron_1",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:sinai_1098",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 26,
+      "verse": 65,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM26.htm#V65",
+      "sourceTextSHA256": "066d56ec6f391174d66736b3a9daafbe7d40734b998c2a687d7eebeea7e949c3",
+      "sourceText": "For the LORD had said of them, “They shall surely die in the wilderness.” There was not a man left of them, except Caleb the son of Jephunneh, and Joshua the son of Nun.",
+      "mappedEntities": [
+        {
+          "entityID": "person:caleb_537",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:jephunneh_840",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joshua_1727",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:nun_2214",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 1,
+      "status": "qualified",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V1",
+      "sourceTextSHA256": "3eaebf3cf3295aa41f7b939d1697254018259e516f9a793c896d266f5b99202e",
+      "sourceText": "Then the daughters of Zelophehad, the son of Hepher, the son of Gilead, the son of Machir, the son of Manasseh, of the families of Manasseh the son of Joseph came near. These are the names of his daughters: Mahlah, Noah, Hoglah, Milcah, and Tirzah.",
+      "mappedEntities": [
+        {
+          "entityID": "person:gilead_1317",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:hepher_1496",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:hoglah_1548",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joseph_1710",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:machir_1877",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:mahlah_1895",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:manasseh_1928",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:milcah_2083",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:noah_2211",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:tirzah_2868",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:zelophehad_3035",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "code": "ancestor_collective_variant",
+          "detailJa": "Zelophehad系譜はManasseh/Machir/Gilead/Josephの族祖個人とManasseh families集団を一文で結ぶ。マップmetadataの27:1 pendingContextCasesを全該当IDへ適用。"
+        }
+      ],
+      "basisJa": "Zelophehad系譜はManasseh/Machir/Gilead/Josephの族祖個人とManasseh families集団を一文で結ぶ。マップmetadataの27:1 pendingContextCasesを全該当IDへ適用。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 2,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V2",
+      "sourceTextSHA256": "f53977f3c72a4fcda80843b4a3f23ca1135282e2e63d86fb8d86ac231177ec9a",
+      "sourceText": "They stood before Moses, before Eleazar the priest, and before the princes and all the congregation, at the door of the Tent of Meeting, saying,",
+      "mappedEntities": [
+        {
+          "entityID": "person:eleazar_1062",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:mahlah_1895",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:noah_2211",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:hoglah_1548",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:milcah_2083",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:tirzah_2868",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 3,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V3",
+      "sourceTextSHA256": "2abc9a2b9e8dc9e04a45633f15eff4b498f84ae6e8790193771ea3e0d2acbefc",
+      "sourceText": "“Our father died in the wilderness. He was not among the company of those who gathered themselves together against the LORD in the company of Korah, but he died in his own sin. He had no sons.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:korah_1795",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:mahlah_1895",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:noah_2211",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:hoglah_1548",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:milcah_2083",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:tirzah_2868",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:zelophehad_3035",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 4,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V4",
+      "sourceTextSHA256": "e0357d8e9fc91c3d82768d31bc1f5a2cf5ef2b0e234a77973117418129a4b16c",
+      "sourceText": "Why should the name of our father be taken away from among his family, because he had no son? Give to us a possession among the brothers of our father.”",
+      "mappedEntities": [
+        {
+          "entityID": "person:mahlah_1895",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:noah_2211",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:hoglah_1548",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:milcah_2083",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:tirzah_2868",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:zelophehad_3035",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 5,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V5",
+      "sourceTextSHA256": "8fb02ef8144ccd933411c4f30dd6def252710f98e78a5df4fedbfe6519320b6a",
+      "sourceText": "Moses brought their cause before the LORD.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:mahlah_1895",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:noah_2211",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:hoglah_1548",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:milcah_2083",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:tirzah_2868",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 6,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V6",
+      "sourceTextSHA256": "28219e5da0d26514843495c6edb280f326aa0ccffb0d2bb642d0e1b0f4478ca1",
+      "sourceText": "The LORD spoke to Moses, saying,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 7,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V7",
+      "sourceTextSHA256": "1c0c883d24196f2e6f40b529be01d864ffd0d0b3cca7f03cc4f0189be22afa97",
+      "sourceText": "“The daughters of Zelophehad speak right. You shall surely give them a possession of an inheritance among their father’s brothers. You shall cause the inheritance of their father to pass to them.",
+      "mappedEntities": [
+        {
+          "entityID": "person:zelophehad_3035",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:mahlah_1895",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:noah_2211",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:hoglah_1548",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:milcah_2083",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:tirzah_2868",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 8,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V8",
+      "sourceTextSHA256": "ea5b853eb8dd6c82e5c08c3c16e15595cb1b80c9c345ff2e49709d59067097c0",
+      "sourceText": "You shall speak to the children of Israel, saying, ‘If a man dies, and has no son, then you shall cause his inheritance to pass to his daughter.",
+      "mappedEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 9,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V9",
+      "sourceTextSHA256": "f542397e08d46aabdf9b983d9a605e29bd0ec7884a524e58e6649a2ae8c69ad2",
+      "sourceText": "If he has no daughter, then you shall give his inheritance to his brothers.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 10,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V10",
+      "sourceTextSHA256": "49c3ae4531e505aa703ec8df944d54c8a54df9b37c38c541fe0a159ea16b9be1",
+      "sourceText": "If he has no brothers, then you shall give his inheritance to his father’s brothers.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 11,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V11",
+      "sourceTextSHA256": "8fc949b012c61eaa5c678583d03f35f7db6e73908820159017ea673e238a3f1d",
+      "sourceText": "If his father has no brothers, then you shall give his inheritance to his kinsman who is next to him of his family, and he shall possess it. This shall be a statute and ordinance for the children of Israel, as the LORD commanded Moses.’”",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 12,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V12",
+      "sourceTextSHA256": "75591a55e19439177edf7f0d807fa917cd6e886e25925009a2d3c09842c074f0",
+      "sourceText": "The LORD said to Moses, “Go up into this mountain of Abarim, and see the land which I have given to the children of Israel.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:abarim_2",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 13,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V13",
+      "sourceTextSHA256": "0445026c39091f9ee0bf975395ca466c0a5fbf58ef969573a136762acddafbfd",
+      "sourceText": "When you have seen it, you also shall be gathered to your people, as Aaron your brother was gathered;",
+      "mappedEntities": [
+        {
+          "entityID": "person:aaron_1",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 14,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V14",
+      "sourceTextSHA256": "3df1ed81f901cdbe384665f54a018ede5566113511350555c44fb7b877f91e45",
+      "sourceText": "because in the strife of the congregation, you rebelled against my word in the wilderness of Zin, to honor me as holy at the waters before their eyes.” (These are the waters of Meribah of Kadesh in the wilderness of Zin.)",
+      "mappedEntities": [
+        {
+          "entityID": "place:kadesh_661",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:meribah_782",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:zin_1261",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:aaron_1",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 15,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V15",
+      "sourceTextSHA256": "15d6ecc7682eb87430598daa203e31d18872265228c38f12e4f0e9638ebf3f6d",
+      "sourceText": "Moses spoke to the LORD, saying,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 16,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V16",
+      "sourceTextSHA256": "e75fa38521a5936aabd41577f5cf7421cbed3415fd5acecd6ed19ad55ed57e1c",
+      "sourceText": "“Let the LORD, the God of the spirits of all flesh, appoint a man over the congregation,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 17,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V17",
+      "sourceTextSHA256": "31bb106555c697f83044bef9c4b063733a780055d1e9a2fc5b0aa38ff8d67d23",
+      "sourceText": "who may go out before them, and who may come in before them, and who may lead them out, and who may bring them in, that the congregation of the LORD may not be as sheep which have no shepherd.”",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 18,
+      "status": "qualified",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V18",
+      "sourceTextSHA256": "d6c3cc9ceceff984c46cbaf99ba27e22f6fa86dcfa64bb00538173036955d1cf",
+      "sourceText": "The LORD said to Moses, “Take Joshua the son of Nun, a man in whom is the Spirit, and lay your hand on him.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joshua_1727",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:nun_2214",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_existing_id_gap",
+          "detailJa": "「a man in whom is the Spirit」と明記するが既存適合IDは確認できず、人物・表現IDを創作しない保留が必要。Joshua/Nun/Moses/LORDは本文に明記。"
+        }
+      ],
+      "basisJa": "「a man in whom is the Spirit」と明記するが既存適合IDは確認できず、人物・表現IDを創作しない保留が必要。Joshua/Nun/Moses/LORDは本文に明記。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 19,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V19",
+      "sourceTextSHA256": "e52678e5581d4a61a7f600a1aed79b6b13980cd6e1e6ede429e2eb8aca752df1",
+      "sourceText": "Set him before Eleazar the priest, and before all the congregation; and commission him in their sight.",
+      "mappedEntities": [
+        {
+          "entityID": "person:eleazar_1062",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:joshua_1727",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 20,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V20",
+      "sourceTextSHA256": "aeb9a8faaf954c635cd4c2a76737081a55852c5ee93ba683628204450f67f423",
+      "sourceText": "You shall give authority to him, that all the congregation of the children of Israel may obey.",
+      "mappedEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:joshua_1727",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 21,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V21",
+      "sourceTextSHA256": "009662f66a03ba3b2bf106bf3e4bcf13ca6d993c35ff643a55df32c8d65fa67f",
+      "sourceText": "He shall stand before Eleazar the priest, who shall inquire for him by the judgment of the Urim before the LORD. At his word they shall go out, and at his word they shall come in, both he and all the children of Israel with him, even all the congregation.”",
+      "mappedEntities": [
+        {
+          "entityID": "person:eleazar_1062",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joshua_1727",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 22,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V22",
+      "sourceTextSHA256": "a804e3551ac6eb840d8225bbdd35960991a236d7ed5bc6f8e3bd38ba2e5f5c62",
+      "sourceText": "Moses did as the LORD commanded him. He took Joshua, and set him before Eleazar the priest and before all the congregation.",
+      "mappedEntities": [
+        {
+          "entityID": "person:eleazar_1062",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joshua_1727",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 27,
+      "verse": 23,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM27.htm#V23",
+      "sourceTextSHA256": "bf63d00dae26ad5d7b6ecb7aa90b1296d77a657e2708503a79cedbb6a3a25cc7",
+      "sourceText": "He laid his hands on him and commissioned him, as the LORD spoke by Moses.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joshua_1727",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:eleazar_1062",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 1,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V1",
+      "sourceTextSHA256": "28219e5da0d26514843495c6edb280f326aa0ccffb0d2bb642d0e1b0f4478ca1",
+      "sourceText": "The LORD spoke to Moses, saying,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 2,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V2",
+      "sourceTextSHA256": "c92d2ff3a3e5a64f61dc3cb1b8f0f10dff6da44c5b40deee2215e9eee8783dd3",
+      "sourceText": "“Command the children of Israel, and tell them, ‘See that you present my offering, my food for my offerings made by fire, as a pleasant aroma to me, in their due season.’",
+      "mappedEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 3,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V3",
+      "sourceTextSHA256": "0c58b7efd4bf7400f8926f11406651f876f7ef09ec202d156ab15a4ecd0a448b",
+      "sourceText": "You shall tell them, ‘This is the offering made by fire which you shall offer to the LORD: male lambs a year old without defect, two day by day, for a continual burnt offering.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 4,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V4",
+      "sourceTextSHA256": "e956260e677e5cc663cede649d9fc06492e3d09211326769a797f8e5a3248db3",
+      "sourceText": "You shall offer the one lamb in the morning, and you shall offer the other lamb at evening,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 5,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V5",
+      "sourceTextSHA256": "e6bc6bf3a08083a097b0bece409724106664aae2c823a555d9f62e12c678719c",
+      "sourceText": "with one tenth of an ephah of fine flour for a meal offering, mixed with the fourth part of a hin of beaten oil.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 6,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V6",
+      "sourceTextSHA256": "b8b10bee5f13cc88b30b87fc799d02e4fdd7ede42ef903f5766ab79036c37459",
+      "sourceText": "It is a continual burnt offering which was ordained in Mount Sinai for a pleasant aroma, an offering made by fire to the LORD.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:mount_sinai_855",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 7,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V7",
+      "sourceTextSHA256": "bbeb12916a1ab32d6137323f7b80e2f5acd53bdc0c49eeda100e373f1b5c41a5",
+      "sourceText": "Its drink offering shall be the fourth part of a hin for each lamb. You shall pour out a drink offering of strong drink to the LORD in the holy place.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:holy_place_574",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 8,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V8",
+      "sourceTextSHA256": "92f73fb20af9004d82752ac3b44222cb5923f54a264c2cb7eacde662d4f31f45",
+      "sourceText": "The other lamb you shall offer at evening. As the meal offering of the morning, and as its drink offering, you shall offer it, an offering made by fire, for a pleasant aroma to the LORD.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 9,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V9",
+      "sourceTextSHA256": "0e1bb4ad8d7e5e6a5e4720372b4b116a4d18a283566774f0806c4b2f3bbbb12b",
+      "sourceText": "“‘On the Sabbath day, you shall offer two male lambs a year old without defect, and two tenths of an ephah of fine flour for a meal offering mixed with oil, and its drink offering:",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 10,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V10",
+      "sourceTextSHA256": "73fb8790dd5dd92c6184fc012ad5c82dff0828e0baf435da11a810f3ded7f471",
+      "sourceText": "this is the burnt offering of every Sabbath, in addition to the continual burnt offering and its drink offering.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 11,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V11",
+      "sourceTextSHA256": "88212e03202362dbf12f8a25a697fbd3556293fb76c164dfb389f9033572a0bb",
+      "sourceText": "“‘In the beginnings of your months, you shall offer a burnt offering to the LORD: two young bulls, one ram, seven male lambs a year old without defect,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 12,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V12",
+      "sourceTextSHA256": "7385024a93d2413f3c855806b86bcce3121a85ede5a66e2e9d2846768edae37f",
+      "sourceText": "and three tenths of an ephah of fine flour for a meal offering mixed with oil, for each bull; and two tenth parts of fine flour for a meal offering mixed with oil, for the one ram;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 13,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V13",
+      "sourceTextSHA256": "c4af3a21b4f51d916c7c3b6f9fab95ef95ecce2ba94c107809e96831633bf33f",
+      "sourceText": "and one tenth part of fine flour mixed with oil for a meal offering to every lamb, as a burnt offering of a pleasant aroma, an offering made by fire to the LORD.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 14,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V14",
+      "sourceTextSHA256": "ab1af5e134945d0e94ae7cda49968b1e69df1881e8cc0ffb833edeb4d4dbb9d5",
+      "sourceText": "Their drink offerings shall be half a hin of wine for a bull, the third part of a hin for the ram, and the fourth part of a hin for a lamb. This is the burnt offering of every month throughout the months of the year.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 15,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V15",
+      "sourceTextSHA256": "2c7da92d328d90b068fab7b8c11448c067910084c36631c0ae314fb8f89a617d",
+      "sourceText": "Also, one male goat for a sin offering to the LORD shall be offered in addition to the continual burnt offering and its drink offering.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 16,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V16",
+      "sourceTextSHA256": "f350c803cbc5fd693ce2e89fd93258adf7582b42746887f54f6af5bc5c4aa4a5",
+      "sourceText": "“‘In the first month, on the fourteenth day of the month, is the LORD’s Passover.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 17,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V17",
+      "sourceTextSHA256": "199220115b644dd06cf07364376d15df25001987890ac2c43bb8b41cdeadafe1",
+      "sourceText": "On the fifteenth day of this month shall be a feast. Unleavened bread shall be eaten for seven days.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 18,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V18",
+      "sourceTextSHA256": "63ba3494cba5d7c063923ce55f2f058704664a97c8ab53d9e226be2d4f25a1c1",
+      "sourceText": "In the first day shall be a holy convocation. You shall do no regular work,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 19,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V19",
+      "sourceTextSHA256": "f8f61c96c2ae2b8c8802f29e40ca88cb10d583cfc75b13695a72ef56f2f4b16b",
+      "sourceText": "but you shall offer an offering made by fire, a burnt offering to the LORD: two young bulls, one ram, and seven male lambs a year old. They shall be without defect,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 20,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V20",
+      "sourceTextSHA256": "f20b7f1759aa2a9202e13528b479a42904427ea636282af197570a9d87d0945b",
+      "sourceText": "with their meal offering, fine flour mixed with oil. You shall offer three tenths for a bull, and two tenths for the ram.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 21,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V21",
+      "sourceTextSHA256": "764b32db98b60c2bef45921aeb303e938ee9f8ea162b8b38014f69904078e9a3",
+      "sourceText": "You shall offer one tenth for every lamb of the seven lambs;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 22,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V22",
+      "sourceTextSHA256": "0edba45d62f2a6263981127a60a04d7895bf2b0f8b1ac5bd9f70aacb5a5cf177",
+      "sourceText": "and one male goat for a sin offering, to make atonement for you.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 23,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V23",
+      "sourceTextSHA256": "7caaef3e64f57160367bdc7ece1cb43b90a183961c7a18e8991022740a072228",
+      "sourceText": "You shall offer these in addition to the burnt offering of the morning, which is for a continual burnt offering.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 24,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V24",
+      "sourceTextSHA256": "5868667ab4d41a9023916ea5bfcdc2232238d2fcfa983be6d19a5b4590a771cf",
+      "sourceText": "In this way you shall offer daily, for seven days, the food of the offering made by fire, of a pleasant aroma to the LORD. It shall be offered in addition to the continual burnt offering and its drink offering.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 25,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V25",
+      "sourceTextSHA256": "4e29b78703529579a3fb3ddd789659fe051d39a9bffcac0e1061d4dbda2a224b",
+      "sourceText": "On the seventh day you shall have a holy convocation. You shall do no regular work.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 26,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V26",
+      "sourceTextSHA256": "bdc9fbd8728572bdf6940c98a567cee36e63b8a22f4c64a124b8561cb9b0c79a",
+      "sourceText": "“‘Also in the day of the first fruits, when you offer a new meal offering to the LORD in your feast of weeks, you shall have a holy convocation. You shall do no regular work;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 27,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V27",
+      "sourceTextSHA256": "e6cf58717bcb4e6604b74314db01d5e61b0e3805c36e72a36e54dac662dbfb30",
+      "sourceText": "but you shall offer a burnt offering for a pleasant aroma to the LORD: two young bulls, one ram, seven male lambs a year old;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 28,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V28",
+      "sourceTextSHA256": "c4caf1400b8102025e5deac77ab4240c828bd36c0e8f132341f64dc4e356cc5c",
+      "sourceText": "and their meal offering, fine flour mixed with oil, three tenths for each bull, two tenths for the one ram,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 29,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V29",
+      "sourceTextSHA256": "2b738c3fe6f07e54abaa15dd0bc513fa1f4b5eb24be8fe3518567e08271bc387",
+      "sourceText": "one tenth for every lamb of the seven lambs;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 30,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V30",
+      "sourceTextSHA256": "959bb1af14701cd5e9c539079b4f711af3e475f768eb1c3c1b82ab6a457b0acb",
+      "sourceText": "and one male goat, to make atonement for you.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 28,
+      "verse": 31,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM28.htm#V31",
+      "sourceTextSHA256": "46fdf6d59ba1c7bc51956f7a0f9cba3537363a4554da1d4d88cd30c6b3f97f61",
+      "sourceText": "Besides the continual burnt offering and its meal offering, you shall offer them and their drink offerings. See that they are without defect.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 1,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V1",
+      "sourceTextSHA256": "29f3ab9a7d2b7ae86527e99f77eb185df69790b44cd1ff71d350816d7800fb53",
+      "sourceText": "“‘In the seventh month, on the first day of the month, you shall have a holy convocation; you shall do no regular work. It is a day of blowing of trumpets to you.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 2,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V2",
+      "sourceTextSHA256": "5f5026437020d5e241c5eaa04290181c296401e84f40550f02d6248e0bd5e58f",
+      "sourceText": "You shall offer a burnt offering for a pleasant aroma to the LORD: one young bull, one ram, seven male lambs a year old without defect;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 3,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V3",
+      "sourceTextSHA256": "f1c229fe59c7946e3bbd4cc48c5317ec378347208864055e23a11ddd6e389013",
+      "sourceText": "and their meal offering, fine flour mixed with oil: three tenths for the bull, two tenths for the ram,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 4,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V4",
+      "sourceTextSHA256": "18c71276cdfc421c230d38f8920395e8e190e322c257f0ec7bdbfeec14fd4cd8",
+      "sourceText": "and one tenth for every lamb of the seven lambs;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 5,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V5",
+      "sourceTextSHA256": "9c32e6f8cefb5b6a3b0415e5381ad3b04f12b0a681c2fa5b3e278cc542aef7b1",
+      "sourceText": "and one male goat for a sin offering, to make atonement for you;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 6,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V6",
+      "sourceTextSHA256": "57870f33e39d761c3308daea4f43f404c990e562588f7b2df7d3dce05eba3431",
+      "sourceText": "in addition to the burnt offering of the new moon with its meal offering, and the continual burnt offering with its meal offering, and their drink offerings, according to their ordinance, for a pleasant aroma, an offering made by fire to the LORD.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 7,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V7",
+      "sourceTextSHA256": "1c2603b6cefd8d58012a377cc1c674023afdbc3ef375d70765fe421e36ec90f7",
+      "sourceText": "“‘On the tenth day of this seventh month you shall have a holy convocation. You shall afflict your souls. You shall do no kind of work;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 8,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V8",
+      "sourceTextSHA256": "801b37da940598e7e832568dc50c7f13f2e37c616fc8ee5a3ec03223d0e4de13",
+      "sourceText": "but you shall offer a burnt offering to the LORD for a pleasant aroma: one young bull, one ram, seven male lambs a year old, all without defect;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 9,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V9",
+      "sourceTextSHA256": "6e68e0cc6da3060b504b40d27f7ceb3c21592c6bda979e9ec3665edc96a778b9",
+      "sourceText": "and their meal offering, fine flour mixed with oil: three tenths for the bull, two tenths for the one ram,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 10,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V10",
+      "sourceTextSHA256": "2b738c3fe6f07e54abaa15dd0bc513fa1f4b5eb24be8fe3518567e08271bc387",
+      "sourceText": "one tenth for every lamb of the seven lambs;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 11,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V11",
+      "sourceTextSHA256": "13522c5110847ff1c41e395570e11090075458ff858ee10d7fcab217c7586e00",
+      "sourceText": "one male goat for a sin offering, in addition to the sin offering of atonement, and the continual burnt offering, and its meal offering, and their drink offerings.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 12,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V12",
+      "sourceTextSHA256": "bfb7d150d7a757b1273ee5bc23c73a3aac6c94383499df901e37ed5b4a9c31cd",
+      "sourceText": "“‘On the fifteenth day of the seventh month you shall have a holy convocation. You shall do no regular work. You shall keep a feast to the LORD seven days.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 13,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V13",
+      "sourceTextSHA256": "225321db5b855ddfe70b79c80802d08a13fdca80bf73746dd04c5da5c3299bd1",
+      "sourceText": "You shall offer a burnt offering, an offering made by fire, of a pleasant aroma to the LORD: thirteen young bulls, two rams, fourteen male lambs a year old, all without defect;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 14,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V14",
+      "sourceTextSHA256": "3f50fa53ecf3626e30c7fef256df012ffc5070c2f3e66df0944b77ef42e7f82a",
+      "sourceText": "and their meal offering, fine flour mixed with oil: three tenths for every bull of the thirteen bulls, two tenths for each ram of the two rams,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 15,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V15",
+      "sourceTextSHA256": "b22ce9deebba9c445af33a9eea02d6af234028eda5e15755bdf1fb6f26aed1a3",
+      "sourceText": "and one tenth for every lamb of the fourteen lambs;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 16,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V16",
+      "sourceTextSHA256": "660ae73968fb0c4f0aa08cca7bea153e0e8e61eac1140802b8783428fe3cc45d",
+      "sourceText": "and one male goat for a sin offering, in addition to the continual burnt offering, its meal offering, and its drink offering.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 17,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V17",
+      "sourceTextSHA256": "b383f63748fec5f779bb9bb63ab176495b1a26f87fc1dc86c5b9fd161cc302a8",
+      "sourceText": "“‘On the second day you shall offer twelve young bulls, two rams, and fourteen male lambs a year old without defect;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 18,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V18",
+      "sourceTextSHA256": "7033ad58d9fb7f61a9c73c7e4fd32a1a07aceac06fcacda4fff562046e41413d",
+      "sourceText": "and their meal offering and their drink offerings for the bulls, for the rams, and for the lambs, according to their number, after the ordinance;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 19,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V19",
+      "sourceTextSHA256": "bcb2e4e965755ccaefff1155f47a256ea4850ee182ba82725c4ed8125d30b5b0",
+      "sourceText": "and one male goat for a sin offering, in addition to the continual burnt offering, with its meal offering and their drink offerings.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 20,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V20",
+      "sourceTextSHA256": "aef0d5d2085ea2227af8738c97dab1bd0f5cfc2ee64ed25c8284fd4bec156cb5",
+      "sourceText": "“‘On the third day: eleven bulls, two rams, fourteen male lambs a year old without defect;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 21,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V21",
+      "sourceTextSHA256": "7033ad58d9fb7f61a9c73c7e4fd32a1a07aceac06fcacda4fff562046e41413d",
+      "sourceText": "and their meal offering and their drink offerings for the bulls, for the rams, and for the lambs, according to their number, after the ordinance;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 22,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V22",
+      "sourceTextSHA256": "644624abe9d0eda93a841f852bbee7f87641669d14af2895ba8dc4c49e2686f5",
+      "sourceText": "and one male goat for a sin offering, in addition to the continual burnt offering, and its meal offering, and its drink offering.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 23,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V23",
+      "sourceTextSHA256": "54f98ba9ac51bd42ccbbf3f366bd0a51989e209a663a1052a62b17a2cfed06ae",
+      "sourceText": "“‘On the fourth day ten bulls, two rams, fourteen male lambs a year old without defect;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 24,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V24",
+      "sourceTextSHA256": "5c86746a15e31d9f658fbe570b860fb78a2d128b7fba7054ef008702b714620b",
+      "sourceText": "their meal offering and their drink offerings for the bulls, for the rams, and for the lambs, according to their number, after the ordinance;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 25,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V25",
+      "sourceTextSHA256": "b9d3483caf329c93624912608215ffbe4d8baeedf49754f60aa64649fd83bb26",
+      "sourceText": "and one male goat for a sin offering; in addition to the continual burnt offering, its meal offering, and its drink offering.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 26,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V26",
+      "sourceTextSHA256": "a010a265e5af186bd65f770b06c9d825944099b02f7dca69aaf4bdc6ad01f4af",
+      "sourceText": "“‘On the fifth day: nine bulls, two rams, fourteen male lambs a year old without defect;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 27,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V27",
+      "sourceTextSHA256": "ec85e55d84ee4af7eea32cbf544ed3b4ec0fc5b629a7a359abc3143f97e99411",
+      "sourceText": "and their meal offering and their drink offerings for the bulls, for the rams, and for the lambs, according to their number, after the ordinance,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 28,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V28",
+      "sourceTextSHA256": "644624abe9d0eda93a841f852bbee7f87641669d14af2895ba8dc4c49e2686f5",
+      "sourceText": "and one male goat for a sin offering, in addition to the continual burnt offering, and its meal offering, and its drink offering.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 29,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V29",
+      "sourceTextSHA256": "ae3325d994e4290bee84007ea4523e8ef5e76e45ad08c13f3db3bc8584827781",
+      "sourceText": "“‘On the sixth day: eight bulls, two rams, fourteen male lambs a year old without defect;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 30,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V30",
+      "sourceTextSHA256": "ec85e55d84ee4af7eea32cbf544ed3b4ec0fc5b629a7a359abc3143f97e99411",
+      "sourceText": "and their meal offering and their drink offerings for the bulls, for the rams, and for the lambs, according to their number, after the ordinance,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 31,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V31",
+      "sourceTextSHA256": "3bf4cd9a8b43dbdaa9b43ada65566a2a64b78cb7fd4748d5621201a64e0f0ebf",
+      "sourceText": "and one male goat for a sin offering; in addition to the continual burnt offering, its meal offering, and the drink offerings of it.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 32,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V32",
+      "sourceTextSHA256": "0befc53090dcb28bf20bbac96d3f79d186ce1f9397238a06eabcba672602ed4d",
+      "sourceText": "“‘On the seventh day: seven bulls, two rams, fourteen male lambs a year old without defect;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 33,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V33",
+      "sourceTextSHA256": "ec85e55d84ee4af7eea32cbf544ed3b4ec0fc5b629a7a359abc3143f97e99411",
+      "sourceText": "and their meal offering and their drink offerings for the bulls, for the rams, and for the lambs, according to their number, after the ordinance,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 34,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V34",
+      "sourceTextSHA256": "b9d3483caf329c93624912608215ffbe4d8baeedf49754f60aa64649fd83bb26",
+      "sourceText": "and one male goat for a sin offering; in addition to the continual burnt offering, its meal offering, and its drink offering.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 35,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V35",
+      "sourceTextSHA256": "169fd61c871c1e7064ae8d6608080e95e3a06cfde2fb6d1162af23856a56b75a",
+      "sourceText": "“‘On the eighth day you shall have a solemn assembly. You shall do no regular work;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 36,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V36",
+      "sourceTextSHA256": "9f8f6cf99dafee3ea5c4f900efa6f5279e54fed7b525d935f206d0a4d77e09a5",
+      "sourceText": "but you shall offer a burnt offering, an offering made by fire, a pleasant aroma to the LORD: one bull, one ram, seven male lambs a year old without defect;",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 37,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V37",
+      "sourceTextSHA256": "dd8a66d297757c9fc3466a7be9694354fcf9e59c795a77db035e4646907edc69",
+      "sourceText": "their meal offering and their drink offerings for the bull, for the ram, and for the lambs, shall be according to their number, after the ordinance,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 38,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V38",
+      "sourceTextSHA256": "47a54ff1cc7750405ba0bd69e683474e8ca418bd8623f3a2ea65524e6052ad17",
+      "sourceText": "and one male goat for a sin offering, in addition to the continual burnt offering, with its meal offering, and its drink offering.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 39,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V39",
+      "sourceTextSHA256": "cf50edb390d046c078b52cf4ef73d19302a047f62e86cce021985ad89380cd0f",
+      "sourceText": "“‘You shall offer these to the LORD in your set feasts—in addition to your vows and your free will offerings—for your burnt offerings, your meal offerings, your drink offerings, and your peace offerings.’”",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 29,
+      "verse": 40,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM29.htm#V40",
+      "sourceTextSHA256": "c062cc7f45d9265684a595eb1448e4b7b4529d01005f2a48afcb39a2f5b1bb2f",
+      "sourceText": "Moses told the children of Israel according to all that the LORD commanded Moses.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 30,
+      "verse": 1,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM30.htm#V1",
+      "sourceTextSHA256": "d5e70d388c47864f7cd7dfb0946bbf8c312f31d309d382bffc22ab04f579386e",
+      "sourceText": "Moses spoke to the heads of the tribes of the children of Israel, saying, “This is the thing which the LORD has commanded.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 30,
+      "verse": 2,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM30.htm#V2",
+      "sourceTextSHA256": "6b6941a0d1a2ee4051df63afd2ca543c3965d0ae1643a6905a518d0a27ddcad4",
+      "sourceText": "When a man vows a vow to the LORD, or swears an oath to bind his soul with a bond, he shall not break his word. He shall do according to all that proceeds out of his mouth.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 30,
+      "verse": 3,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM30.htm#V3",
+      "sourceTextSHA256": "ff5310895ec9852c1fa623f18c40690478278a1c21a822b0e182033d71288203",
+      "sourceText": "“Also, when a woman vows a vow to the LORD and binds herself by a pledge, being in her father’s house, in her youth,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 30,
+      "verse": 4,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM30.htm#V4",
+      "sourceTextSHA256": "7b2c80486165a6701036ce6d95d7ccaeb5d6bf587aad1b6cd8addf6ab24e29b1",
+      "sourceText": "and her father hears her vow and her pledge with which she has bound her soul, and her father says nothing to her, then all her vows shall stand, and every pledge with which she has bound her soul shall stand.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 30,
+      "verse": 5,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM30.htm#V5",
+      "sourceTextSHA256": "b8dcfbba85f116aa1fad7f56b4be2e5d24e47c67d5bfa938f0c4a48176733e10",
+      "sourceText": "But if her father forbids her in the day that he hears, none of her vows or of her pledges with which she has bound her soul, shall stand. The LORD will forgive her, because her father has forbidden her.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 30,
+      "verse": 6,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM30.htm#V6",
+      "sourceTextSHA256": "89f7545474d2f8d343662dc625eb2bc72782e57992d5b507f468f04b9ee97edc",
+      "sourceText": "“If she has a husband, while her vows are on her, or the rash utterance of her lips with which she has bound her soul,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 30,
+      "verse": 7,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM30.htm#V7",
+      "sourceTextSHA256": "e3114d68429eb127549bd68e4ff3e0a3d402e2596328b28457463d430073db52",
+      "sourceText": "and her husband hears it, and says nothing to her in the day that he hears it; then her vows shall stand, and her pledges with which she has bound her soul shall stand.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 30,
+      "verse": 8,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM30.htm#V8",
+      "sourceTextSHA256": "439b33d0d1eb576a31ac7997c1c4c3a76b125aa67d1d8bee68698358b78df3ba",
+      "sourceText": "But if her husband forbids her in the day that he hears it, then he makes void her vow which is on her and the rash utterance of her lips, with which she has bound her soul. The LORD will forgive her.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 30,
+      "verse": 9,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM30.htm#V9",
+      "sourceTextSHA256": "8a6ecc9bf73b22ed844580aa121cb22e7477a208a1dd6db300fa177015277d6f",
+      "sourceText": "“But the vow of a widow, or of her who is divorced, everything with which she has bound her soul shall stand against her.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 30,
+      "verse": 10,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM30.htm#V10",
+      "sourceTextSHA256": "6f758c7b7ec82da6317c8f51ff2e3dfcd312b8ea375c75c6419eb37d217b011b",
+      "sourceText": "“If she vowed in her husband’s house or bound her soul by a bond with an oath,",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 30,
+      "verse": 11,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM30.htm#V11",
+      "sourceTextSHA256": "995f5f7a46cbb2b7c33972b864d3ca1173682d329013759caddf4d90a555377e",
+      "sourceText": "and her husband heard it, and held his peace at her and didn’t disallow her, then all her vows shall stand, and every pledge with which she bound her soul shall stand.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 30,
+      "verse": 12,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM30.htm#V12",
+      "sourceTextSHA256": "4e6fa40a63581d673e5c23c29cd5d6818ec94fb24b93df9d9c2fbc762147d3e1",
+      "sourceText": "But if her husband made them null and void in the day that he heard them, then whatever proceeded out of her lips concerning her vows, or concerning the bond of her soul, shall not stand. Her husband has made them void. The LORD will forgive her.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 30,
+      "verse": 13,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM30.htm#V13",
+      "sourceTextSHA256": "0db73acc1b615af2812c510ff1837b0c0da95b7816575257bf33028b0cf09456",
+      "sourceText": "Every vow, and every binding oath to afflict the soul, her husband may establish it, or her husband may make it void.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 30,
+      "verse": 14,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM30.htm#V14",
+      "sourceTextSHA256": "09ca6e86a11928210fb06e720bd90978c67c6be31b7682b8b6c9120a07caa415",
+      "sourceText": "But if her husband says nothing to her from day to day, then he establishes all her vows or all her pledges which are on her. He has established them, because he said nothing to her in the day that he heard them.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 30,
+      "verse": 15,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM30.htm#V15",
+      "sourceTextSHA256": "4b4e062d551b013661bf4c08a6891f86f52927569335322dd0dccfcd11be5d7d",
+      "sourceText": "But if he makes them null and void after he has heard them, then he shall bear her iniquity.”",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    },
+    {
+      "book": "NUM",
+      "chapter": 30,
+      "verse": 16,
+      "status": "closed",
+      "sourceURL": "https://ebible.org/engwebp/NUM30.htm#V16",
+      "sourceTextSHA256": "95f24e4157e89e894f83220bda5b5c31e040f73d44573e360c2ecd475ab92018",
+      "sourceText": "These are the statutes which the LORD commanded Moses, between a man and his wife, between a father and his daughter, being in her youth, in her father’s house.",
+      "mappedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "issues": [],
+      "basisJa": "固定WEB本文、節アンカー、entitiesの本文指示対象を照合。明示された人物/場所/集団と対応し、初出gateまたは保留variantの問題は確認しなかった。"
+    }
+  ],
+  "limitations": [
+    "Primary-only review; no Wikipedia or external historical/linguistic identity claims approved.",
+    "Map sources were compared to fixed local WEB snapshot; no new stable IDs or map edits were made.",
+    "Rows marked qualified remain explicit pending integration/context gaps; rows marked fail identify concrete current-coordinate corrections required."
+  ],
+  "correctionHistory": [
+    {
+      "atUTC": "2026-10-15T21:34:45.969465+00:00",
+      "field": "NUM26:12 assessment",
+      "previous": "fail: asserted person:nemuel_2177 omission",
+      "correctedTo": "qualified: similar name belongs to Eliab’s son in Reuben genealogy, not Simeonite Nemuel",
+      "evidence": "NUM26:9 fixed WEB calls Eliab father of Nemuel, Dathan, Abiram; NUM26:12 is explicitly Simeon genealogy; source profile person:nemuel_2177 has knownBy/passages only NUM26:9."
+    }
+  ]
+}

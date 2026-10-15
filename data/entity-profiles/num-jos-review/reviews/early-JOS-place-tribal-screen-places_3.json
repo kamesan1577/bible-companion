@@ -1,0 +1,211 @@
+{
+  "review": "Independent closeout of places_3 entries in early-JOS tribal-information screen",
+  "reviewedAtUTC": "2026-10-15",
+  "input": {
+    "path": "reviews/root-early-JOS-place-tribal-information-screen.json",
+    "sha256": "1c85d93322a1fd70bd5cf50431733f27dba05bfefa04b18c6290bd4e3cd30540",
+    "fixedWitness": {
+      "path": "inventory/targets/joshua-web-verses.json",
+      "sha256": "26ae82b805dee523bb852977ccf62ad38cc40ebe442b650cbd7862db833ea854",
+      "version": "webp-usfx-2026-10-13-35a6adf626e5"
+    }
+  },
+  "repairLogPath": "evidence/places_3/reader-japanese-editorial-repairs.json",
+  "repairLogSHA256": "5216082b67781f47ec9d544aff6bb519a55d3fe9f29cd74bffcc5ca3346f5506",
+  "rows": [
+    {
+      "id": "place:shimron_1082",
+      "inputScreenField": {
+        "field": "subtitleJa",
+        "oldText": "ゼブルン領の町"
+      },
+      "classification": "repaired-future-tribal-information",
+      "status": "closed",
+      "currentProfileSHA256": "0f0f60f7c438a4939ed5ef2ae7e871ec4369167f80bb121fa022ee6b2255a369",
+      "currentEvidenceSHA256": "c67b1bc07e8be64dc5fb89e99987cb5ca9a4d99ec9efb8cdfd872cc7cc17895a",
+      "currentFields": {
+        "subtitleJa": "ハツォル王ヤビンが招いた北部同盟の王の町",
+        "summaryJa": "シムロンはヨシュア記11:1で、ハツォル王ヤビンが協力を求めた王の町として現れます。",
+        "historicalRoleJa": "ヨシュア記11:1で北部の王の連合に参加する町として挙げられます。",
+        "facts": [
+          {
+            "textJa": "ヨシュア記19:15では、ゼブルンの相続地に含まれる町の一つとしてシムロンが挙げられます。",
+            "knownBy": {
+              "chapter": 19,
+              "verse": 15
+            },
+            "sourceIds": [
+              "webp-jos-19-15"
+            ]
+          }
+        ]
+      },
+      "primaryEvidence": [
+        {
+          "ref": "JOS 11:1",
+          "url": "https://ebible.org/engwebp/JOS11.htm#V1",
+          "text": "When Jabin king of Hazor heard of it, he sent to Jobab king of Madon, to the king of Shimron, to the king of Achshaph,",
+          "findingJa": "王の町シムロンだけが挙がり、ゼブルンへの割当は現れない。"
+        },
+        {
+          "ref": "JOS 19:15–16",
+          "url": "https://ebible.org/engwebp/JOS19.htm#V15",
+          "text": "Kattath, Nahalal, Shimron, Idalah, and Bethlehem: twelve cities with their villages. This is the inheritance of the children of Zebulun according to their families, these cities with their villages.",
+          "findingJa": "ゼブルンの相続地と町一覧はここで現れる。新factはknownBy19:15にゲートした。"
+        }
+      ],
+      "repairLog": {
+        "entry": {
+          "book": "JOS",
+          "entityID": "place:shimron_1082",
+          "profilePath": "drafts/places_3/JOS_shimron_1082.json",
+          "evidencePath": "evidence/places_3/JOS_shimron_1082.json",
+          "beforeDraftSHA256": "66528f197ad53111dbbe1b3dc3f6bf46e88d5be948c826229d8849d8fe6e1df8",
+          "afterDraftSHA256": "0f0f60f7c438a4939ed5ef2ae7e871ec4369167f80bb121fa022ee6b2255a369",
+          "beforeEvidenceSHA256": "bae28802b98061ad687d013f213ca808609ba87682566658a62e934f131753e5",
+          "afterEvidenceSHA256": "c67b1bc07e8be64dc5fb89e99987cb5ca9a4d99ec9efb8cdfd872cc7cc17895a",
+          "beforeFields": {
+            "subtitleJa": "ゼブルン領の町",
+            "summaryJa": "シムロンはヨシュア記11:1で、ハツォル王ヤビンが協力を求めた王の町として現れます。",
+            "historicalRoleJa": "ヨシュア記11:1で北部の王の連合に参加する王の町として挙げられます。",
+            "facts": [
+              {
+                "textJa": "ヨシュア記19:15では、ゼブルンの相続地に含まれる町の一つとしてシムロンが挙げられます。",
+                "knownBy": {
+                  "chapter": 19,
+                  "verse": 15
+                },
+                "sourceIds": [
+                  "webp-jos-19-15"
+                ]
+              }
+            ]
+          },
+          "afterFields": {
+            "subtitleJa": "ハツォル王ヤビンが招いた北部同盟の王の町",
+            "summaryJa": "シムロンはヨシュア記11:1で、ハツォル王ヤビンが協力を求めた王の町として現れます。",
+            "historicalRoleJa": "ヨシュア記11:1で北部の王の連合に参加する町として挙げられます。",
+            "facts": [
+              {
+                "textJa": "ヨシュア記19:15では、ゼブルンの相続地に含まれる町の一つとしてシムロンが挙げられます。",
+                "knownBy": {
+                  "chapter": 19,
+                  "verse": 15
+                },
+                "sourceIds": [
+                  "webp-jos-19-15"
+                ]
+              }
+            ]
+          },
+          "reasonJa": "ヨシュア記11:1は北部連合の王の町としてのみシムロンを示し、ゼブルン相続への言及は19:15まで出ないため、常時表示から除いて19:15のfactへゲート。"
+        },
+        "sha256": "5216082b67781f47ec9d544aff6bb519a55d3fe9f29cd74bffcc5ca3346f5506"
+      }
+    },
+    {
+      "id": "place:gezer_463",
+      "inputScreenField": {
+        "field": "subtitleJa",
+        "oldText": "ユダ丘陵とシェフェラの境界にある古代都市"
+      },
+      "classification": "geographic-context-not-tribal-allotment",
+      "status": "false-positive-with-geography-source-caveat",
+      "currentProfileSHA256": "15616c1be77cff40b49277d071e436e53e07aebd4957252fcb33ef8d10d7bbc6",
+      "currentEvidenceSHA256": "dfa097be68959914c9bb4c231e5107eb402f98d64ff511e2319a733d145c9f21",
+      "currentFields": {
+        "subtitleJa": "海岸平野とユダ丘陵地帯の境界にある古代都市",
+        "modernLocationJa": "テル・ゲゼルは、エルサレムの北西にある古代都市ゲゼルに比定される遺跡です。位置の説明は目安として示されています。",
+        "wikipedia.noteJa": "日本語記事はゲゼルを旧約聖書の地名とし、海岸平野とユダ丘陵地帯を分ける境界にある古代カナン都市として紹介しています。"
+      },
+      "primaryEvidence": [
+        {
+          "ref": "JOS 10:33",
+          "url": "https://ebible.org/engwebp/JOS10.htm#V33",
+          "text": "Then Horam king of Gezer came up to help Lachish; and Joshua struck him and his people, until he had left him no one remaining.",
+          "findingJa": "初出WEBはゲゼルの王ホラムと町名を示すだけで、ユダ領への配分は述べない。"
+        }
+      ],
+      "geographyEvidence": [
+        {
+          "url": "https://ja.wikipedia.org/wiki/%E3%82%B2%E3%82%BC%E3%83%AB_(%E8%81%96%E6%9B%B8)",
+          "locator": "139–142行",
+          "text": "ゲゼルを聖書の地名とし、海岸平野とユダ丘陵地帯を分ける境界にある古代カナンの町と説明。",
+          "findingJa": "ユダ丘陵への言及は記事が示す地理的背景であり、ヨシュア記の後段で初めて与えられる部族相続情報を先取りするものではない。シェフェラという語は記事の当該箇所にないため字幕から除き、記事の表現に合わせた。"
+        }
+      ],
+      "repairLog": {
+        "entry": {
+          "book": "JOS",
+          "entityID": "place:gezer_463",
+          "profilePath": "drafts/places_3/JOS_gezer_463.json",
+          "evidencePath": "evidence/places_3/JOS_gezer_463.json",
+          "beforeDraftSHA256": "1fed13f1ca94503fd785249c172ee59cbc3d3d9a5eeac9a69e33af09d033c404",
+          "afterDraftSHA256": "15616c1be77cff40b49277d071e436e53e07aebd4957252fcb33ef8d10d7bbc6",
+          "beforeEvidenceSHA256": "c5af0dd110c39f1b6fc2937a52c7893c39225353f3a1f8de64c45f28c0dd0222",
+          "afterEvidenceSHA256": "dfa097be68959914c9bb4c231e5107eb402f98d64ff511e2319a733d145c9f21",
+          "beforeFields": {
+            "subtitleJa": "ユダ丘陵とシェフェラの境界にある古代都市",
+            "wikipedia.noteJa": null
+          },
+          "afterFields": {
+            "subtitleJa": "海岸平野とユダ丘陵地帯の境界にある古代都市",
+            "wikipedia.noteJa": "日本語記事はゲゼルを旧約聖書の地名とし、海岸平野とユダ丘陵地帯を分ける境界にある古代カナン都市として紹介しています。"
+          },
+          "reasonJa": "読者向け文から内部的なプロフィール/ID/座標検証作業の表現を除き、地名・同定上の限界を自然な説明に整理。"
+        },
+        "sha256": "5216082b67781f47ec9d544aff6bb519a55d3fe9f29cd74bffcc5ca3346f5506"
+      }
+    },
+    {
+      "id": "place:anab_60",
+      "inputScreenFields": [
+        {
+          "field": "subtitleJa",
+          "text": "ユダの山地にある町"
+        },
+        {
+          "field": "identityNoteJa",
+          "text": "本文のアナブはユダの山地の町です。現代のキルベト・アナブとの同定が記事で紹介されていますが、プロフィールでは独立確定地点と扱いません。"
+        }
+      ],
+      "classification": "same-verse-explicit-geography",
+      "status": "false-positive",
+      "currentProfileSHA256": "68bfb5d6e87a81e89932d59e99c777f82725e29f59ea065c48ee32510ce6995f",
+      "currentEvidenceSHA256": "545d461a6bc94aacfab640b2740fd91b303325a8117108e11cdcf4b19a5bddef",
+      "currentFields": {
+        "subtitleJa": "ユダの山地にある町",
+        "identityNoteJa": "ヨシュア記11:21ではアナブはユダの山地の町として挙げられます。キルベト・アナブとの同定は一つの候補として紹介されています。",
+        "modernLocationJa": "ユダの山地に置かれる古代の町。Wikipediaはキルベト・アナブとの同定を挙げていますが、ここでは提案されている比定として留保します。"
+      },
+      "primaryEvidence": [
+        {
+          "ref": "JOS 11:21",
+          "url": "https://ebible.org/engwebp/JOS11.htm#V21",
+          "text": "Joshua came at that time, and cut off the Anakim from the hill country, from Hebron, from Debir, from Anab, and from all the hill country of Judah, and from all the hill country of Israel.",
+          "findingJa": "ユダの山地という語句が同じ初出節に明記される。後出の部族割当を先取りしていない。"
+        }
+      ],
+      "repairLog": {
+        "entry": {
+          "book": "JOS",
+          "entityID": "place:anab_60",
+          "profilePath": "drafts/places_3/JOS_anab_60.json",
+          "evidencePath": "evidence/places_3/JOS_anab_60.json",
+          "beforeDraftSHA256": "9670c26b5cc512e0ca2f6e003138247c74630d95ece1737cea597ceeb3cf9b59",
+          "afterDraftSHA256": "68bfb5d6e87a81e89932d59e99c777f82725e29f59ea065c48ee32510ce6995f",
+          "beforeEvidenceSHA256": "425238beeb4c691490c8a76c2e589a7b374fc18ee32ad9ce9017b027cc5c1ca3",
+          "afterEvidenceSHA256": "545d461a6bc94aacfab640b2740fd91b303325a8117108e11cdcf4b19a5bddef",
+          "beforeFields": {
+            "identityNoteJa": "本文のアナブはユダの山地の町です。現代のキルベト・アナブとの同定が記事で紹介されていますが、プロフィールでは独立確定地点と扱いません。"
+          },
+          "afterFields": {
+            "identityNoteJa": "ヨシュア記11:21ではアナブはユダの山地の町として挙げられます。キルベト・アナブとの同定は一つの候補として紹介されています。"
+          },
+          "reasonJa": "読者向け文から内部的なプロフィール/ID/座標検証作業の表現を除き、地名・同定上の限界を自然な説明に整理。"
+        },
+        "sha256": "5216082b67781f47ec9d544aff6bb519a55d3fe9f29cd74bffcc5ca3346f5506"
+      }
+    }
+  ]
+}

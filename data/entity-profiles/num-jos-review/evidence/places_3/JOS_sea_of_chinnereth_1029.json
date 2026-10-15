@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "book": "JOS",
+  "entityID": "place:sea_of_chinnereth_1029",
+  "profilePath": "drafts/places_3/JOS_sea_of_chinnereth_1029.json",
+  "profileSHA256": "a6964f6479863e4ea889f23d7929a8f9f4fb0fa9d857cbb089a26e6954abd391",
+  "assignment": {
+    "path": "assignments/places_3.json",
+    "sha256": "ec36241ee733ce0e8c7942b652b68c6540ed225fa01393cc9b7561602da2e08f"
+  },
+  "fixedWitness": {
+    "path": "inventory/targets/joshua-web-verses.json",
+    "sha256": "26ae82b805dee523bb852977ccf62ad38cc40ebe442b650cbd7862db833ea854",
+    "version": "webp-usfx-2026-10-13-35a6adf626e5"
+  },
+  "sourceIndex": {
+    "path": "candidate/apps/ios/Sources/Core/Resources/entity-index.json",
+    "workspace": "../romans-leviticus-entities-work",
+    "sha256": "dfe6fba1109f192548e28645cf085ddafe3baf7820d200e2e28da486dd98f11a",
+    "candidateCoordinate": [
+      32.80677586,
+      35.58936053
+    ],
+    "coordinateStatus": "unverified-candidate"
+  },
+  "primaryChecks": [
+    {
+      "ref": "JOS 13:27",
+      "sourceURL": "https://ebible.org/engwebp/JOS13.htm#V27",
+      "text": "and in the valley, Beth Haram, Beth Nimrah, Succoth, and Zaphon, the rest of the kingdom of Sihon king of Heshbon, the Jordan’s bank, to the uttermost part of the sea of Chinnereth beyond the Jordan eastward.",
+      "contextRefs": [
+        "JOS 13:26 — and from Heshbon to Ramath Mizpeh, and Betonim; and from Mahanaim to the border of Debir;",
+        "JOS 13:28 — This is the inheritance of the children of Gad according to their families, the cities and its villages.",
+        "JOS 12:1 — Now these are the kings of the land, whom the children of Israel struck, and possessed their land beyond the Jordan toward the sunrise, from the valley of the Arnon to Mount Hermon, and all the Arabah eastward:",
+        "JOS 14:1 — These are the inheritances which the children of Israel took in the land of Canaan, which Eleazar the priest, Joshua the son of Nun, and the heads of the fathers’ houses of the tribes of the children of Israel, distributed to them,"
+      ],
+      "disposition": "accepted-occurrence"
+    }
+  ],
+  "excludedChecks": [],
+  "wikipediaCheck": {
+    "title": "Sea of Galilee",
+    "language": "en",
+    "url": "https://en.wikipedia.org/wiki/Sea_of_Galilee#Names",
+    "status": "Sea of Galilee記事のNames節を読み、ヨシュア記13:27のsea of Kineretと現代のSea of Galilee/Kinneretの関係を確認しました。同記事はヨシュア記19:35に出るKinneretという町も別に説明しているため、水域と町を区別します。",
+    "identityBasisJa": "Sea of Galilee記事のNames節を読み、ヨシュア記13:27のsea of Kineretと現代のSea of Galilee/Kinneretの関係を確認しました。同記事はヨシュア記19:35に出るKinneretという町も別に説明しているため、水域と町を区別します。",
+    "fragmentVerified": true
+  },
+  "geographyAssessment": {
+    "classification": "sea",
+    "candidateMapDisposition": "keep-legacy-candidate",
+    "reasonJa": "本文はヨルダン川東岸部から水域「キネレトの海」までを境界として記す。Wikipediaは現在のSea of Galilee/Kinneretとの名称関係を確認する。既存座標は湖の未確認代表候補として保持し、湖域内のピンや独立確認点とは表示しない。",
+    "profileCoordinate": null,
+    "independentCoordinateSourcesRead": []
+  },
+  "limitationsJa": "固定WEBP本文と前後を確認。独立した固定地理座標資料は確認していない。",
+  "sourceReuse": {
+    "priorDraftReuse": false,
+    "existingCandidateIndexReused": true
+  },
+  "elapsedSeconds": 100,
+  "authorRepairAudit": [
+    {
+      "review": "reviews/independent-profiles-places_3.json",
+      "reviewedDraftSHA256": "15d70ce50865c8a0075a0322eb0cdad2621c27c91df54465af9668f30bf76fb7",
+      "previousEvidenceSHA256": "15d70ce50865c8a0075a0322eb0cdad2621c27c91df54465af9668f30bf76fb7",
+      "newProfileSHA256": "3d397f183dea8993debca6e8fa4a1b7efc8ed580edc65252e4f58d11c256302d",
+      "changes": [
+        {
+          "field": "profile.summaryJa",
+          "before": "キネレトの海はヨシュア記13:27で、ヨルダン川東側に記された相続地域の境界の終点として現れます。ここで指すのは水域であり、ナフタリ領の城壁都市キネレテ（19:35）とは別の対象です。",
+          "after": "キネレトの海はヨシュア記13:27で、ヨルダン川東側に記された相続地域の境界の終点として現れる水域名です。"
+        },
+        {
+          "field": "profile.identityNoteJa",
+          "before": "水域名と町名を区別します。ヨシュア記19:35のキネレテはナフタリ領の城壁都市で、このIDの湖・海域とは別の地理対象です。",
+          "after": "水域の名称として記されています。"
+        }
+      ]
+    }
+  ]
+}

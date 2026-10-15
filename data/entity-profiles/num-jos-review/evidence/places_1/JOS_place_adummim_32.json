@@ -1,0 +1,87 @@
+{
+  "entityID": "place:adummim_32",
+  "book": "JOS",
+  "draftPath": "drafts/places_1/JOS_place_adummim_32.json",
+  "draftSHA256": "2d42b12f1924687a1c2dcd866f124c322ba81e1767860df055abb2b3e34f4f74",
+  "profileSHA256": "a119076d131d4916887a7a39ee58e5ebd1c5b4a138e7ff17213baad1a573b2f5",
+  "pinnedWitness": {
+    "sourceId": "webp",
+    "version": "webp-usfx-2026-10-13-35a6adf626e5",
+    "file": "inventory/targets/joshua-web-verses.json"
+  },
+  "checkedOccurrences": [
+    {
+      "ref": "JOS 15:7",
+      "fixedText": "The border went up to Debir from the valley of Achor, and so northward, looking toward Gilgal, that faces the ascent of Adummim, which is on the south side of the river. The border passed along to the waters of En Shemesh, and ended at En Rogel.",
+      "url": "https://ebible.org/engwebp/JOS15.htm#V7"
+    },
+    {
+      "ref": "JOS 18:17",
+      "fixedText": "It extended northward, went out at En Shemesh, and went out to Geliloth, which is opposite the ascent of Adummim. It went down to the stone of Bohan the son of Reuben.",
+      "url": "https://ebible.org/engwebp/JOS18.htm#V17"
+    }
+  ],
+  "wikipediaActualRead": {
+    "url": "https://en.wikipedia.org/wiki/Adummim",
+    "status": "read-identity-verified",
+    "identityBasisJa": "記事はJoshua 15:7と18:17のascentとして同定しつつ、地理的位置は不明確とも記す。現代のTal’at ed-Dummとの同定を確定事項として採らない。",
+    "fragmentVerified": true
+  },
+  "candidateCoordinateLegacy": [
+    31.817585,
+    35.361646
+  ],
+  "coordinateStatusLegacy": "unverified-candidate",
+  "coordinateIndependentCheck": "not performed; profile.coordinate null",
+  "geographyAssessment": "坂道・経路の候補として既存点を表示可能。ただし単一点は道路の代表位置にすぎず、境界線や現代道路の確定線と誤解させないラベルが必要。",
+  "editorialNotes": "Source verification and geography uncertainty only; no independent approval claimed.",
+  "sourceCitations": [
+    {
+      "sourceId": "jos-place-adummim_32-web-18-17",
+      "url": "https://ebible.org/engwebp/JOS18.htm#V17",
+      "knownBy": {
+        "chapter": 18,
+        "verse": 17
+      },
+      "text": "It extended northward, went out at En Shemesh, and went out to Geliloth, which is opposite the ascent of Adummim. It went down to the stone of Bohan the son of Reuben.",
+      "retrievedAtUTC": "2026-10-15T22:07:11.957749Z",
+      "sourceText": "pinned local WEBP witness webp-usfx-2026-10-13-35a6adf626e5"
+    }
+  ],
+  "repairNoteJa": "JOS18:17のpassageとprimaryWitnessが草稿にあったが、sources/profile.sourceIdsに出典レコードが欠けていたため追加。",
+  "wikipediaCurrentBodyRead": {
+    "url": "https://en.wikipedia.org/wiki/Adummim",
+    "title": "Adummim",
+    "section": "Location",
+    "lines": "120–126",
+    "retrievedAtUTC": "2026-10-15T22:07:11.957749Z",
+    "paraphraseJa": "記事は聖書のアドミムを坂と関連づける。Wadi Qelt・Gilgal/Geliloth・Tal’at ed-Dumm等の説を紹介する一方、現代位置は不明確との見解も記す。",
+    "bodySHA256": null,
+    "bodySHA256Note": "Web閲覧結果に生HTML/本文ハッシュがないため未設定。"
+  },
+  "repairHistory": [
+    {
+      "reviewSource": "reviews/closure-reader-revisions-places_1.json",
+      "beforeDraftSHA256": "4344b7c2544ad38471cd8f28865e175a425a3a519a5725d68c7eefddaa5256a9",
+      "afterDraftSHA256": "75631fe94d6795d0672f2db3555b5420d1be0e6262ead888a14909684ce1a3b7",
+      "beforeProfileSHA256": "cb7ce8230f3fa8191cbc92d6f3fd5cc7623404924d416a558d90b3e853f02b94",
+      "afterProfileSHA256": "ec0d042d918609630fafeb0eec167806f4d3390cc84dcdb164007ea525ac1dad",
+      "repairedAtUTC": "2026-10-15T22:07:11.957749Z",
+      "reasonJa": "独立reader-revision closureのfail指摘を固定WEB本文と現行Wikipedia本文へ再照合して修正。",
+      "changedFields": [
+        "profile.sourceIds",
+        "sources",
+        "profile.wikipedia.noteJa"
+      ]
+    },
+    {
+      "reviewSource": "evidence/places_1/author-repairs-reader-closure-round2.json",
+      "repairedAtUTC": "2026-10-15T22:07:30.460331Z",
+      "reasonJa": "構造確認でprofile.wikipedia.noteJaを入れ子に設定し直し、同名の不正なトップレベルキーを削除。",
+      "changedFields": [
+        "profile.wikipedia.noteJa",
+        "profile.wikipedia.noteJa (literal dotted key removal)"
+      ]
+    }
+  ]
+}

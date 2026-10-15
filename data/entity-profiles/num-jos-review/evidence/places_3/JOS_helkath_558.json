@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "book": "JOS",
+  "entityID": "place:helkath_558",
+  "profilePath": "drafts/places_3/JOS_helkath_558.json",
+  "profileSHA256": "92664b636dc535bfd47f26fdaca8e9c7c542d73bb8bbefc7b26a0cbcbf3c741e",
+  "assignment": {
+    "path": "assignments/places_3.json",
+    "sha256": "ec36241ee733ce0e8c7942b652b68c6540ed225fa01393cc9b7561602da2e08f"
+  },
+  "fixedWitness": {
+    "path": "inventory/targets/joshua-web-verses.json",
+    "sha256": "26ae82b805dee523bb852977ccf62ad38cc40ebe442b650cbd7862db833ea854",
+    "version": "webp-usfx-2026-10-13-35a6adf626e5"
+  },
+  "sourceIndex": {
+    "path": "candidate/apps/ios/Sources/Core/Resources/entity-index.json",
+    "workspace": "../romans-leviticus-entities-work",
+    "sha256": "dfe6fba1109f192548e28645cf085ddafe3baf7820d200e2e28da486dd98f11a",
+    "candidateCoordinate": [
+      32.955448,
+      35.211971
+    ],
+    "coordinateStatus": "unverified-candidate"
+  },
+  "primaryChecks": [
+    {
+      "ref": "JOS 19:25",
+      "sourceURL": "https://ebible.org/engwebp/JOS19.htm#V25",
+      "text": "Their border was Helkath, Hali, Beten, Achshaph,",
+      "contextRefs": [
+        "JOS 19:24 — The fifth lot came out for the tribe of the children of Asher according to their families.",
+        "JOS 19:26 — Allammelech, Amad, Mishal. It reached to Carmel westward, and to Shihorlibnath."
+      ],
+      "disposition": "accepted-occurrence"
+    },
+    {
+      "ref": "JOS 21:31",
+      "sourceURL": "https://ebible.org/engwebp/JOS21.htm#V31",
+      "text": "Helkath with its pasture lands, and Rehob with its pasture lands: four cities.",
+      "contextRefs": [
+        "JOS 21:30 — Out of the tribe of Asher, Mishal with its pasture lands, Abdon with its pasture lands,",
+        "JOS 21:32 — Out of the tribe of Naphtali, Kedesh in Galilee with its pasture lands, the city of refuge for the man slayer, Hammothdor with its pasture lands, and Kartan with its pasture lands: three cities."
+      ],
+      "disposition": "accepted-occurrence"
+    }
+  ],
+  "wikipediaCheck": {
+    "title": "Cities in the Book of Joshua",
+    "language": "en",
+    "url": "https://en.wikipedia.org/wiki/Cities_in_the_Book_of_Joshua#The_list_of_cities_and_suggested_locations",
+    "status": "read-shared-table-row; historical city identity verified; exact modern location unconfirmed",
+    "identityBasisJa": "町一覧表のHelkath行にJOS19:25/21:31、Asher・Levitical city、Tell el-QassisとTell el-Harbaj/Tel Regev候補を確認。固定WEB両節と隣接節を照合。",
+    "fragmentVerified": true
+  },
+  "geographyAssessment": {
+    "classification": "city",
+    "candidateMapDisposition": "keep-legacy-candidate",
+    "reasonJa": "両節の地名と町一覧表の対応を確認。複数比定のためプロフィール座標はnullだが、候補点がいずれかに該当する可能性を排除する具体的根拠はなく、従来候補として維持。",
+    "profileCoordinate": null,
+    "independentCoordinateSourcesRead": []
+  },
+  "limitationsJa": "固定WEB本文・前後とWikipediaの町一覧表の当該行を実読。旧候補点は独立測地照合していない。",
+  "sourceReuse": {
+    "priorDraftReuse": false,
+    "existingCandidateIndexReused": true
+  },
+  "elapsedSeconds": 210,
+  "authorRepairAudit": [
+    {
+      "review": "reviews/independent-profiles-places_3.json",
+      "reviewedDraftSHA256": "1e83bd437edd670fad5f5540407685c6d9cd98324e667ada1b19086016f5c519",
+      "previousEvidenceSHA256": "1e83bd437edd670fad5f5540407685c6d9cd98324e667ada1b19086016f5c519",
+      "newProfileSHA256": "b3e8b284df30f65453b02b754219d24471e5b3b08483eaad76a1f5bad4e9a591",
+      "changes": [
+        {
+          "field": "profile.identityNoteJa",
+          "before": "JOS21:31ではレビ人に与えられた町として再登場します。現在地にはテル・エル＝カシス説とテル・エル＝ハルバジ（テル・レゲブ）説があり、一地点に確定しません。",
+          "after": ""
+        },
+        {
+          "field": "profile.historicalRoleJa",
+          "before": "JOS19:25のアシェル領の境界町として初出します。",
+          "after": "ヨシュア記19:25のアシェル領境界記述に現れる町名です。"
+        }
+      ]
+    }
+  ],
+  "readerFieldTimeGateRepair": {
+    "beforeSHA256": "de1407566f2d6b2f7b7c21527f98823f8e9feb5f0c5147521591bb09468626ea",
+    "afterSHA256": "92664b636dc535bfd47f26fdaca8e9c7c542d73bb8bbefc7b26a0cbcbf3c741e",
+    "reviewedAtUTC": "2026-10-15T22:20:00Z",
+    "fields": [
+      {
+        "field": "profile.subtitleJa",
+        "before": "アシェル領に属し、レビ人にも割り当てられた古代都市",
+        "after": "アシェル領の境界に現れる町名"
+      }
+    ],
+    "basisJa": "固定WEBP初出節と当該後出節を照合。knownByより後のヨシュア記情報を常時表示欄から除き、内容は根拠節をknownByとするfactsへ保持。"
+  }
+}

@@ -76,7 +76,7 @@ public struct EntityProfile: Codable, Sendable, Identifiable {
     public let materialCardIDs: [String]?
     public let supplemental: Bool
     public let contextProfiles: [EntityProfile]?
-    public var detailLinkLabelJa: String { identityType == "ritual-area" ? "この祭儀上の場所について" : identityType == "collective" ? "この集団名について" : identityType == "expression" ? "この表現について" : identityType == "office-title" ? "この称号について" : identityType == "unidentified-eponym" ? "この名前について" : kind == "person" ? "この人物について" : "この場所について" }
+    public var detailLinkLabelJa: String { identityType == "ritual-area" ? "この祭儀上の場所について" : identityType == "territory" ? "この地域について" : identityType == "collective" ? "この集団名について" : identityType == "expression" ? "この表現について" : identityType == "office-title" ? "この称号について" : identityType == "unidentified-eponym" ? "この名前について" : kind == "person" ? "この人物について" : "この場所について" }
 }
 public struct ResolvedEntityProfile: Sendable {
     public let profile: EntityProfile
@@ -86,11 +86,20 @@ public struct ResolvedEntityProfile: Sendable {
     public let contextNotes: [String]
     public let wikipedia: WikipediaReadingLink?
 }
+struct EntityProfileAlias: Decodable {
+    let aliasID: String
+    let canonicalID: String
+    let knownBy: Verse
+}
 struct EntityProfileCatalog: Decodable {
     let schemaVersion: Int
     let sources: [EntityProfileSource]
     let profiles: [EntityProfile]
     let occurrences: [EntityProfileOccurrence]?
+    let sourceBoundAliases: [EntityProfileAlias]?
+    func canonicalID(_ id: String, at end: Verse, includeFuture: Bool) -> String {
+        sourceBoundAliases?.first { $0.aliasID == id && (includeFuture || $0.knownBy <= end) }?.canonicalID ?? id
+    }
     func resolve(id: String, passage: Passage, includeFuture: Bool) -> ResolvedEntityProfile? {
         guard schemaVersion == 1, let base = profiles.first(where: { $0.id == id }) else { return nil }
         let overlaps: (EntityProfile) -> Bool = { p in
@@ -98,12 +107,15 @@ struct EntityProfileCatalog: Decodable {
         }
         let contexts = (base.contextProfiles ?? []).filter(overlaps)
         let exactContext = contexts.first { p in p.passages.contains { $0.book == passage.book && $0.start <= passage.start && passage.end <= $0.end } }
-        let selectedContext = exactContext ?? (overlaps(base) ? nil : contexts.first)
+        // A single verse may name both an ancestor and the clan bearing that name.
+        // Keep the base with a context note when both meanings genuinely occur.
+        let selectedContext = overlaps(base) ? nil : (exactContext ?? contexts.first)
         guard let p = selectedContext ?? (overlaps(base) ? base : nil) else { return nil }
         let facts = p.facts.filter { includeFuture || $0.knownBy <= passage.end }
         let shownContexts = selectedContext == nil ? contexts : []
-        let ids = Set(p.sourceIds + facts.flatMap(\.sourceIds) + shownContexts.flatMap(\.sourceIds))
-        return ResolvedEntityProfile(profile: p, facts: facts, sources: sources.filter { ids.contains($0.id) && (includeFuture || $0.knownBy == nil || $0.knownBy! <= passage.end) }, nameJa: p.names?.filter { includeFuture || $0.knownBy <= passage.end }.sorted { $0.knownBy < $1.knownBy }.last?.nameJa ?? p.nameJa, contextNotes: shownContexts.map { $0.nameJa + "：" + $0.summaryJa }, wikipedia: p.wikipedia.flatMap { includeFuture || $0.knownBy == nil || $0.knownBy! <= passage.end ? $0 : nil })
+        let contextFacts = shownContexts.flatMap { $0.facts.filter { includeFuture || $0.knownBy <= passage.end } }
+        let ids = Set(p.sourceIds + facts.flatMap(\.sourceIds) + shownContexts.flatMap(\.sourceIds) + contextFacts.flatMap(\.sourceIds))
+        return ResolvedEntityProfile(profile: p, facts: facts, sources: sources.filter { ids.contains($0.id) && (includeFuture || $0.knownBy == nil || $0.knownBy! <= passage.end) }, nameJa: p.names?.filter { includeFuture || $0.knownBy <= passage.end }.sorted { $0.knownBy < $1.knownBy }.last?.nameJa ?? p.nameJa, contextNotes: shownContexts.map { context in context.nameJa + "：" + ([context.summaryJa] + context.facts.filter { includeFuture || $0.knownBy <= passage.end }.map(\.textJa)).joined(separator: "\n") }, wikipedia: p.wikipedia.flatMap { includeFuture || $0.knownBy == nil || $0.knownBy! <= passage.end ? $0 : nil })
 
     }
 }
