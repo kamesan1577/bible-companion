@@ -2,6 +2,10 @@
 
 Private, native-iOS companion. The app receives a YouVersion passage, preserves the reader’s context, isolates accounts, and filters reviewed source material to the confirmed reading boundary. Experimental generated prose is not claimed to have a proven semantic spoiler guarantee.
 
+## Independent development harness
+
+Start with [AGENTS.md](AGENTS.md) and the [harness guide](docs/harness/README.md). `make doctor && make setup && make check` validates a clean checkout without production credentials or live AI. On a Mac, `make swift`, `make build`, and `make ios-ui` cover core tests, unsigned app/Share Extension builds and actual native UI regressions. See the [handoff](docs/harness/HANDOFF.md) for verified results and remaining gates.
+
 ## Local development
 
 Node.js 24+ is required. No external credentials are required for tests or local data work.
@@ -35,7 +39,7 @@ The browser passkey flow uses a stable configured RP ID/origin, invitation-based
 
 SQLite-based tests verify real migrations and account isolation. Local Workers dry-run is separate from deployment. Physical iPhone signing, SideStore, share-extension delivery, browser passkeys on device, live AI quality/latency and operational cost are not established by unit tests. See the [specification acceptance map](docs/acceptance-status.md), [architecture](docs/ARCHITECTURE.md), [export protocol](docs/export-protocol.md), and [operations guide](docs/OPERATIONS.md) for evidence and go-live gates.
 
-No public service has been deployed. GitHub upload requires an already-authorized private repository and remains a separate explicit step.
+No public service has been deployed. The ordinary GitHub source tree is sufficient for development; see the harness source audit and commit-bound source export. Backend deployment and signed-device distribution are separate steps.
 
 The initial data set has nine reviewed WEB grounding excerpts and sixteen primary-source material cards. This is deliberately partial coverage, not a complete biblical encyclopedia. No live AI call has been made. The grounded-generation mode remains experimental and is not claimed to prove semantic spoiler safety.
 

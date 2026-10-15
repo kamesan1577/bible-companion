@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Offline job ledger for explicitly selected native Codex workers. No network/client/API keys."""
-import argparse,datetime,gzip,hashlib,json,sqlite3,time,uuid,threading,functools
+import argparse,datetime,gzip,hashlib,json,sqlite3,time,uuid,threading,functools,os,tempfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 _local=threading.local()
@@ -17,7 +17,14 @@ PROMPT='sourced-japanese-native-codex-v2'
 SCHEMA='japanese-edits-v1'
 def sha(value):return hashlib.sha256(value if isinstance(value,bytes)else json.dumps(value,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 def read(path):return json.loads(Path(path).read_text())
-def write(path,value):Path(path).write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n')
+def write(path,value):
+ path=Path(path);temporary=None
+ try:
+  with tempfile.NamedTemporaryFile(mode='w',encoding='utf-8',dir=path.parent,prefix='.'+path.name+'.',delete=False)as target:
+   temporary=Path(target.name);target.write(json.dumps(value,ensure_ascii=False,indent=2)+'\n');target.flush();os.fsync(target.fileno())
+  os.replace(temporary,path)
+ finally:
+  if temporary is not None:temporary.unlink(missing_ok=True)
 def db_open(root):
  db=sqlite3.connect(root/'jobs.sqlite',timeout=10);db.row_factory=sqlite3.Row
  if getattr(_local,'connections',None)is not None:_local.connections.append(db)
