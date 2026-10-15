@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """Offline job ledger for explicitly selected native Codex workers. No network/client/API keys."""
 import argparse,datetime,gzip,hashlib,json,sqlite3,time,uuid,threading,functools,os,tempfile
 from pathlib import Path
