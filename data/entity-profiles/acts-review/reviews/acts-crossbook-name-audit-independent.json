@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-crossbook-index-name-audit",
+  "reviewedAtUTC": "2026-10-15T13:21:28Z",
+  "scope": "Acts 1–28 fixed WEB verse text versus the full-book entity index and the current verse maps; special re-identification of Jacob/Israel",
+  "inputs": {
+    "acts-web-verses.json": "90e72f0410119f8fc9afd529cdd730fd261bd1d25adfb413581c1462d6e936cb",
+    "targets.json": "27670ec5df6858a539f8106511277b69049e243b5167fd7ca366105e496ecca2",
+    "swift-build/arm64-apple-macosx/debug/CompanionCore_CompanionCore.bundle/entity-index.json": "dfe6fba1109f192548e28645cf085ddafe3baf7820d200e2e28da486dd98f11a",
+    "reviews/verse-map-01-10.json": "c2e80f2dcca01c27ef312e641296f96361403038415e9375a38f7d12b59e4302",
+    "reviews/verse-map-11-20.json": "32e904c5d4b14821d439895b9e7f86a46e7fa5dad365c41fc10c954cf9a10dad",
+    "reviews/verse-map-21-28.json": "98ade4cf303ceab890debc96c9a5da70c9c287e5d8966c183a4c775541dc54d5"
+  },
+  "methodJa": "固定WEBのActs全章本文と章節マップを照合し、全書インデックスのActs出現節を走査。インデックス名の本文一致を候補抽出し、各候補を文脈・対象種別・同名IDで個別確認した。索引の出現節は同定の証明とは扱わない。",
+  "findings": [
+    {
+      "id": "ACT-JACOB-ISRAEL-IDENTITY-RESTORED",
+      "status": "pass-after-correction",
+      "issueJa": "以前の『person:israel_682はActs本文の個人同定に使わない』という全件除外は誤り。固定WEBで族長Jacobを個人名で明記する7節を現行マップが同IDへ結んでいる。",
+      "evidence": [
+        {
+          "ref": "ACT 3:13",
+          "text": "The God of Abraham, Isaac, and Jacob",
+          "currentMapping": "person:israel_682 direct",
+          "basisJa": "Jacobを族長として明示。全書インデックスのperson:israel_682は創世記25:26に始まる族長Jacobの出現を持つ。創世記32:28とEastonのISRAEL/JACOB項がJacob＝Israelの改名・別名を裏付ける。"
+        },
+        {
+          "ref": "ACT 7:8",
+          "text": "Isaac became the father of Jacob, and Jacob became the father of the twelve patriarchs.",
+          "currentMapping": "person:israel_682 direct",
+          "basisJa": "系譜内の族長Jacobを直接明記。"
+        },
+        {
+          "ref": "ACT 7:12",
+          "text": "But when Jacob heard that there was grain in Egypt",
+          "currentMapping": "person:israel_682 direct",
+          "basisJa": "エジプトへ息子たちを送った族長Jacobを直接明記。"
+        },
+        {
+          "ref": "ACT 7:14",
+          "text": "Joseph sent and summoned Jacob his father",
+          "currentMapping": "person:israel_682 direct",
+          "basisJa": "Josephの父Jacobを直接明記。"
+        },
+        {
+          "ref": "ACT 7:15",
+          "text": "Jacob went down into Egypt and he died",
+          "currentMapping": "person:israel_682 direct",
+          "basisJa": "エジプトへ下り死んだ族長Jacobを直接明記。"
+        },
+        {
+          "ref": "ACT 7:32",
+          "text": "the God of Abraham, the God of Isaac, and the God of Jacob",
+          "currentMapping": "person:israel_682 direct",
+          "basisJa": "族長Jacobを直接明記。"
+        },
+        {
+          "ref": "ACT 7:46",
+          "text": "the God of Jacob",
+          "currentMapping": "person:israel_682 direct",
+          "basisJa": "族長Jacobを直接明記。"
+        }
+      ],
+      "identityDistinctionJa": "person:jacob_683は別の人物で、全書索引の出現はマタイ1:15–16のみ（40001015, 40001016）、Acts出現なし。person:israel_682は族長Jacob/Israelで、索引にはActs 3:13およびActs 7のJacob節を含む。したがってActsのJacob個人参照にはperson:israel_682を使い、別IDを混同しない。",
+      "collectiveExclusionsJa": "ACT 5:21、7:23、7:37、9:15、10:36のchildren of Israel、および他のmen/house/people of Israel等は民・共同体を指し、個人の族長Jacob/Israelではないためperson:israel_682を割り当てない。index appearancesは個人と集合的な語義を区別しないので候補扱いに限定する。",
+      "correctionToPriorReviewJa": "reviews/verse-maps-independent.jsonのperson:israel_682に関する『全741節で誤リンクなし』『Israelは民族・共同体またはJacobの別称なので個人同定に不適格』という総括は、Jacobを名指す7節を見落としている。現行マップは7節を復元済みだが、同レビューの全件除外結論は撤回・訂正が必要。"
+    },
+    {
+      "id": "ACT-CROSSBOOK-INDEX-EXACT-NAME-CANDIDATES",
+      "status": "pass-with-one-policy-review",
+      "scanResultJa": "固定WEBと現行1–28章マップを全書インデックス4365 IDのActs appearanceについて照合。インデックス名が本文に字面一致しながらIDが未割当となるものは5 ID・計10節だった。Jacobへの有効な言及は上記7節で現在全てperson:israel_682に割当済み。残りは次の意味上の区別で説明できる。",
+      "candidateDispositions": [
+        {
+          "entityID": "person:benjamin_463",
+          "ref": "ACT 13:21",
+          "disposition": "exclude",
+          "evidenceJa": "本文はSaulを『tribe of Benjamin』と記し、ここでBenjaminは部族名。族長Benjamin個人への言及ではない。"
+        },
+        {
+          "entityID": "person:israel_682",
+          "refs": ["ACT 5:21", "ACT 7:23", "ACT 7:37", "ACT 9:15", "ACT 10:36"],
+          "disposition": "exclude",
+          "evidenceJa": "各節のchildren of Israelは民・共同体。Jacob/Israel個人参照とは別。現行マップでIDなしは適切。"
+        },
+        {
+          "entityID": "person:pharaoh_2331",
+          "ref": "ACT 7:21",
+          "disposition": "review-policy",
+          "evidenceJa": "固定WEBは『Pharaoh’s daughter』と書くため、Pharaoh本人は個人名でなく所有格の親族表現として登場する。daughter IDは明記されているが、Pharaoh IDは現行マップで除外される。親族所有格の当人も節内の人物参照に数える基準なら候補を追加すべき。現在の『娘はPharaoh本人ではない』だけの除外理由は、Pharaoh本人への間接言及の有無に答えていない。"
+        },
+        {
+          "entityID": "person:shechem_2588",
+          "ref": "ACT 7:16",
+          "disposition": "exclude",
+          "evidenceJa": "両方のShechem表記は墓地所在地／Hamorの出身地を指す地名。人名候補person:shechem_2588ではなく場所参照として扱う。"
+        },
+        {
+          "entityID": "person:solomon_2762",
+          "refs": ["ACT 3:11", "ACT 5:12"],
+          "disposition": "exclude",
+          "evidenceJa": "Solomon’s porch/porticoという建造物名であり、本文はSolomon個人を話題にしていない。現行マップはplace:solomons_portico_1109をdirectで割り当て、人IDを除外する。"
+        }
+      ],
+      "titleAndNamesJa": "ACT 25:21のCaesarは皇帝の称号として現れ、25:25のemperorも同様に職名。全書候補person:augustus_366の同一性をこの称号だけから確定できないため現行マップが割当を避けるのは妥当。別IDの固有名Caesarはこの全書インデックスに見つからず、個人名として補ってはいけない。ACT 13:6のBar Jesus内のJesusは別人Bar Jesusの名要素で、person:jesus_905には統合しない。",
+      "limitationsJa": "この走査は全書索引のActs出現候補とその表示名の本文一致を網羅したが、表示名一致しない別名・形態変化の網羅的な自然言語固有表現抽出ではない。確認した一致候補は全て個別に本文文脈へ戻って確認した。"
+    }
+  ],
+  "structuralChecks": {
+    "allActsMapVersesPresent": 1007,
+    "allActsChaptersCovered": "1–28",
+    "currentMapHashesRecorded": true,
+    "JacobPersonalMentionsMapped": ["3:13", "7:8", "7:12", "7:14", "7:15", "7:32", "7:46"],
+    "JacobPersonalMentionCount": 7,
+    "unresolvedPolicyReviewCount": 1
+  }
+}

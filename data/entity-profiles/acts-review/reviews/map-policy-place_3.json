@@ -1,0 +1,490 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "place-candidate-map-policy",
+  "reviewedAtUTC": "2026-10-15T14:00:17+00:00",
+  "scope": "place_3の割当34 ID。原稿・座標は変更せず、従来の候補座標を地図入口として表示する可否を分類。",
+  "policyJa": "allowCandidateMap=trueは既存候補座標の表示入口を許可する意味で、確定座標としての採用・独立測量確認を意味しない。点表示は「従来の出典座標候補」と明示する。地域・海域は「範囲代表点」と明示し、境界・都市・航路・出来事の位置と誤認させない。falseは候補点なし、明確な誤位置、または一地点表示が別の同定・範囲を誤認させる場合。",
+  "inputs": {
+    "assignments/place_3.json": {
+      "sha256": "6ff750336b4a80f9b9a021b61e14544b3f7a20b909429f801b7ec0f0bf4a719d"
+    },
+    "targets.json": {
+      "sha256": "df6a4225e2b21b21c34bfaf726f25861fed243c3ef6962e3db90e57fb76cf801"
+    },
+    "evidence/place_3/first5-source-checks.json": {
+      "sha256": "a8c28c1a072cbcc12220972d41ea0660abf08b9a13fc54465996a596671df5c9"
+    },
+    "evidence/place_3/wikipedia-checks.json": {
+      "sha256": "a2e134771b852b1e051464a06b26b1e5b88263b7e89372a0a77e4d6218c030b4"
+    },
+    "evidence/place_3/independent-review-corrections.json": {
+      "sha256": "f01d4b19eb7e4bee0f47bd4d56de3b52af714fed79503da716c96b43f9bb6681"
+    }
+  },
+  "items": [
+    {
+      "id": "place:patara_924",
+      "category": "site",
+      "allowCandidateMap": true,
+      "reasonJa": "古代リュキアの港市・遺跡で、候補点はゲレミシュ近郊の同定地点と整合する。地図ではプロフィールの確定座標ではなく、従来の出典座標候補として表示する。",
+      "candidateCoordinate": [
+        36.26018,
+        29.314279
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "f9f51e2e1b6dcde73fa0fbde418d86aff804fd04c61600fb93fdc0eff48eb596"
+    },
+    {
+      "id": "place:perga_936",
+      "category": "site",
+      "allowCandidateMap": true,
+      "reasonJa": "パンフィリアの古代都市遺跡。候補点はアンタルヤ東方のPerga/Perge遺跡と整合する。従来の出典座標候補として表示する。",
+      "candidateCoordinate": [
+        36.961406,
+        30.854274
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "ff85547ceccb20fc7feab40792d6a1cb6df238323172f31d68bdf1d19847bfd0"
+    },
+    {
+      "id": "place:phenice_945",
+      "category": "uncertain",
+      "allowCandidateMap": false,
+      "reasonJa": "クレタ島南岸の港名としては本文と合うが、古代Phoenixの候補地が複数あり現代地点を確定できない。単一点は特定の港への同定と誤認されるため抑制する。",
+      "candidateCoordinate": [
+        35.19888577,
+        24.08098202
+      ],
+      "candidateStatus": "unverified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "14a8b06aed56a50e95283e96c12ef0af2e79836eb46d1b39223c774c5f85177e"
+    },
+    {
+      "id": "place:phenicia_944",
+      "category": "region",
+      "allowCandidateMap": true,
+      "reasonJa": "都市でなく東地中海沿岸の歴史的地域。候補点は境界・中心・個別都市を示すものではなく、地図には「既存候補・範囲代表点」と明示して表示する。現代国境と同一視しない。",
+      "candidateCoordinate": [
+        33.25,
+        35.25
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "87a8228649cdf02e69cf4bc4163385a9db0677173051ee2fa011726a56d1f915"
+    },
+    {
+      "id": "place:philippi_942",
+      "category": "site",
+      "allowCandidateMap": true,
+      "reasonJa": "マケドニアの古代都市・遺跡として同定され、候補点はカヴァラ近郊の遺跡位置と合う。従来の出典座標候補として表示する。",
+      "candidateCoordinate": [
+        41.01316,
+        24.28409
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "cb090a0fc589ec269bac5bfa590e42b0d2898c4accc107d395cd7d23357eb3bc"
+    },
+    {
+      "id": "place:phrygia_946",
+      "category": "region",
+      "allowCandidateMap": false,
+      "reasonJa": "古代アナトリアの歴史的地域で、割当・targetsに座標候補がない。表示候補点が存在しないため地図ピンは出さない。",
+      "candidateCoordinate": null,
+      "candidateStatus": null,
+      "profileCoordinate": null,
+      "draftSha256": "3da563b187dd798cf12111a05466efba9fcd4e2c41245850df4041ee8569326f"
+    },
+    {
+      "id": "place:pisidia_952",
+      "category": "region",
+      "allowCandidateMap": true,
+      "reasonJa": "古代アナトリア南西部の広域地域で境界は時代により変動する。単一点は範囲代表の候補に限り、境界や都市と誤認させないラベル付きで表示する。",
+      "candidateCoordinate": [
+        37.25,
+        30.75
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "5fd4a0e8aecf445fed7fd103f6dffbbfa241803c4ba11ce4c1b69f98708dfe8c"
+    },
+    {
+      "id": "place:pontus_956",
+      "category": "region",
+      "allowCandidateMap": true,
+      "reasonJa": "黒海南岸の歴史的地域で境界は一定しない。候補点は地域全体の位置表示用の範囲代表点に限り、都市・現代行政境界と誤認させない。",
+      "candidateCoordinate": [
+        40.5,
+        36.5
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "6cafcdce4ad2eab58b0070beb97cd9d63946fc27e43c7ed3a74248dcd45ed78b"
+    },
+    {
+      "id": "place:ptolemais_959",
+      "category": "site",
+      "allowCandidateMap": true,
+      "reasonJa": "古代港市Ptolemaisは現在のアッコ周辺に位置し、候補点は同地域にある。古代遺跡と現代市街の一点を同一視せず、既存候補として表示する。",
+      "candidateCoordinate": [
+        32.920744,
+        35.068626
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "7bd33439ff735dd10c05adfea2dceed03d8dd964498b79aeec30ff2849cf9739"
+    },
+    {
+      "id": "place:puteoli_963",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "古代港市Puteoliは現在のPozzuoli市域と連続する。候補点は同市域の旧座標候補として表示し、確定遺跡座標とは扱わない。",
+      "candidateCoordinate": [
+        40.827957,
+        14.121869
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "9b34fe1e20d1156f7c4aa5115dd154b9e74d67f69768f5dda62fedc2a8086c13"
+    },
+    {
+      "id": "place:red_sea_986",
+      "category": "sea",
+      "allowCandidateMap": true,
+      "reasonJa": "紅海という広域海域。候補点は範囲代表点としてのみ表示し、出エジプトの横断地点・航路を示す点ではないと明記する。",
+      "candidateCoordinate": [
+        19.0,
+        39.5
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "833d1f3be953340c7bcdf3b11b9eef74319135b0712ac0bb96fed9384134a6c4"
+    },
+    {
+      "id": "place:rhegium_999",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "古代Rhegiumは現在のレッジョ・ディ・カラブリアの位置に続く港市。候補点は現代市域付近の従来候補として表示する。",
+      "candidateCoordinate": [
+        38.111146,
+        15.649244
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "d22213cc2b47d52b230a7d078975886982ae8ab9d3c945604bdabb6e326377e6"
+    },
+    {
+      "id": "place:rhodes_1000",
+      "category": "island",
+      "allowCandidateMap": true,
+      "reasonJa": "候補点はロドス市内だが、同市はロドス島の主要都市であり、Acts 21:1の名が島か港市か未確定でも同じ島内の参考位置として残せる。地図では従来の出典座標候補と明示し、停泊港・航路の確定点とはしない。記事本文も島と主要都市を区別する。",
+      "candidateCoordinate": [
+        36.41451,
+        28.15629
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "217c73d4303a0175d75989b46f5239f1fd8677061f169b1a1a5dad74c62114f1"
+    },
+    {
+      "id": "place:rome_1013",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "イタリア中部の古代都市Romeで、現代ローマ市域と位置が連続する。候補点を従来の出典座標候補として表示する。",
+      "candidateCoordinate": [
+        41.89262,
+        12.4843457
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "433ad44bf0c05390bef40e7f20bd0dfbad18b8ae90d9840211cc9155f7d0ad73"
+    },
+    {
+      "id": "place:salamis_1016",
+      "category": "site",
+      "allowCandidateMap": true,
+      "reasonJa": "候補はギリシャのサラミスではなくキプロス東岸の古代港市遺跡Salamisで、ファマグスタ近郊の遺跡同定と合う。従来候補として表示する。",
+      "candidateCoordinate": [
+        35.17926,
+        33.90294
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "e084313fce62e74450c461bd1c7182098ea040a97ce154e6d5f663e48f21ca9a"
+    },
+    {
+      "id": "place:salmone_1020",
+      "category": "uncertain",
+      "allowCandidateMap": false,
+      "reasonJa": "候補座標(37.69636,21.56999)はクレタ島でなくギリシャのElisにある同名Salmoneに一致する。Acts 27のクレタ東端地名候補とは別地点なので誤位置として抑制する。",
+      "candidateCoordinate": [
+        37.69636,
+        21.56999
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "99d0008ad9b32b6bd95f011649993aa966d5049b60ba8bee3b668064e1e17821"
+    },
+    {
+      "id": "place:samaria_1022",
+      "category": "region",
+      "allowCandidateMap": true,
+      "reasonJa": "候補点は古代都市サマリア（セバステ）の地点で、歴史的サマリア地域の内部にある。Acts 1:8・9:31等の広域用法では地域内の範囲代表候補、8:5・9の都市用法では当該都市の候補として同じ点を保持できる。地域の中心・境界と誤認させず「既存候補／地域内代表点」と明示する。",
+      "candidateCoordinate": [
+        32.331417,
+        35.228586
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "0106d13417643a405cde1f6bb91286fbc6d01890048cd4167875be3a02e12a84"
+    },
+    {
+      "id": "place:samos_1024",
+      "category": "island",
+      "allowCandidateMap": true,
+      "reasonJa": "エーゲ海東部の島Samos。候補点は島上の代表位置にあり、島全体の範囲代表候補として表示する。港・航路の正確な停泊点ではないと明記する。",
+      "candidateCoordinate": [
+        37.73,
+        26.97616
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "9dc3f5770a621e7290ddb63f33f687dd6b069bce428406619e160202d2f34a0e"
+    },
+    {
+      "id": "place:samothrace_1025",
+      "category": "island",
+      "allowCandidateMap": true,
+      "reasonJa": "エーゲ海北部の島Samothrace。候補点は島上にあり、島の範囲代表候補として表示する。寄港地点の確定座標とは扱わない。",
+      "candidateCoordinate": [
+        40.5009431,
+        25.5302283
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "428b44deebcdb95671e450782498247d3b1c230d6f08092b083cd24d736d5a55"
+    },
+    {
+      "id": "place:saron_1063",
+      "category": "region",
+      "allowCandidateMap": true,
+      "reasonJa": "地中海沿岸のシャロン平野という地域名。既存点は地域内候補として範囲代表点表示に限る。未照合候補であることを表示し、地域境界を表すと誤認させない。",
+      "candidateCoordinate": [
+        32.639068,
+        34.945929
+      ],
+      "candidateStatus": "unverified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "60582a1e7adf3c5bd97d34d07d84121e606a8d4a52ed0891c9aaf29efe0918a3"
+    },
+    {
+      "id": "place:seleucia_1045",
+      "category": "site",
+      "allowCandidateMap": true,
+      "reasonJa": "対象はアンティオキアの海港Seleucia Pieriaで、他の同名都市とは区別される。候補点はSamandağ周辺の遺跡位置と整合するため従来候補として表示する。",
+      "candidateCoordinate": [
+        36.11705,
+        35.93815
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "1f1aa5fda6209c9320c386a20b77f3c51ddfdd3824e98b9d4e9c3d02a2b400db"
+    },
+    {
+      "id": "place:sidon_1093",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "古代港市Sidonは現在のレバノン沿岸Saidaに続く。候補点は同市域にあるため従来の出典座標候補として表示する。",
+      "candidateCoordinate": [
+        33.560243,
+        35.371208
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "8c74ec5534c21c020db07b85328391df1eb64eb9a3bda638fcd884f16c0f8bab"
+    },
+    {
+      "id": "place:solomons_portico_1109",
+      "category": "uncertain",
+      "allowCandidateMap": false,
+      "reasonJa": "神殿域の列柱廊という建造物で、現存する確定遺構として正確な一点を置けない。候補点を建物の場所と誤認させるためピン表示を抑制する。",
+      "candidateCoordinate": [
+        31.777444,
+        35.234935
+      ],
+      "candidateStatus": "unverified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "69d5dee53ddd95989d92f76efe4d0c0e2dc370d6cf001bd0b5ad3a4815dbc472"
+    },
+    {
+      "id": "place:straight_1112",
+      "category": "site",
+      "allowCandidateMap": true,
+      "reasonJa": "対象は門でなくダマスカスの「直線」と呼ばれる通り。候補点は旧市街の通り周辺を示す既存候補として表示し、古代街路の全区間や家屋の正確な位置とは扱わない。",
+      "candidateCoordinate": [
+        33.519299,
+        36.31344999999999
+      ],
+      "candidateStatus": "unverified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "b8e0fa43500b1714a8d762bdcde35479c691e416a4852dcee9e98f49bafaf5e0"
+    },
+    {
+      "id": "place:syracuse_1121",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "シチリア島南東部の古代港市Syracuseは現在のシラクーザ市と位置が連続する。候補点を従来の出典座標候補として表示する。",
+      "candidateCoordinate": [
+        37.05963,
+        15.29382
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "77bb65d380902ee45cb4128f860a6319279bab5a3a35356fa077b9ebdd00f9e3"
+    },
+    {
+      "id": "place:syria_1122",
+      "category": "region",
+      "allowCandidateMap": true,
+      "reasonJa": "歴史的シリアは時代・文脈により範囲が変わり、現在の国家境界と同じではない。候補点は範囲代表点に限り、境界や都市と誤認させない表示を条件に許可する。",
+      "candidateCoordinate": [
+        37.5,
+        37.5
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "2cf2f305a86ba09c1ab02790cf632d78be0d423d108351f2b28780f47aa3380b"
+    },
+    {
+      "id": "place:syrtis_1123",
+      "category": "sea",
+      "allowCandidateMap": true,
+      "reasonJa": "Syrtisは北アフリカ沖の浅瀬・海域名で、Actsの危険海域内の通航点は特定できない。候補点は海域範囲の代表点としてのみ表示し、航路・漂流地点ではないと明示する。",
+      "candidateCoordinate": [
+        31.5,
+        18.0
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "eed6612b1e55f3dfe4bde311e8c16c569a52a3a7c3f4b88c81df58ec6e716d7c"
+    },
+    {
+      "id": "place:tarsus_1140",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "古代キリキアの都市Tarsusは現在のトルコ南部タルスス市と同所。候補点を従来の出典座標候補として表示する。",
+      "candidateCoordinate": [
+        36.91242,
+        34.89592
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "6cc44f0db436013d397cbc451e02e18df04d727c7d7cff004c5ac614cabed861"
+    },
+    {
+      "id": "place:thessalonica_1158",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "古代港市Thessalonicaは現在のテッサロニキ市の位置に続く。候補点を従来の出典座標候補として表示する。",
+      "candidateCoordinate": [
+        40.630282,
+        22.949569
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "4247fd0b199edee1f72f2104d66819f4ab1618eee6b88bc7780da0d62ddadc16"
+    },
+    {
+      "id": "place:three_taverns_1159",
+      "category": "uncertain",
+      "allowCandidateMap": true,
+      "reasonJa": "ローマ南方アッピア街道上の宿駅とされ、正確な古代遺跡位置は未確定。既存候補点は地域的な候補として保持し、未確認候補ラベルと概略地点の注記を付け、確定遺跡ピンとしない。",
+      "candidateCoordinate": [
+        41.59132,
+        12.828636
+      ],
+      "candidateStatus": "unverified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "e1df6a668e348fc0ca06bddc3eaae1dcb799e9b690fcf0d50bb9d245f56884db"
+    },
+    {
+      "id": "place:thyatira_1160",
+      "category": "site",
+      "allowCandidateMap": true,
+      "reasonJa": "古代都市Thyatiraの遺跡は現在のトルコ西部Akhisarに位置する。候補点は遺跡位置と整合するため従来候補として表示する。",
+      "candidateCoordinate": [
+        38.922933,
+        27.840523
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "a805b056778b56d9a111f187e2a9fa7f30c6f5bea9b993157db279f79e260a4b"
+    },
+    {
+      "id": "place:troas_1182",
+      "category": "site",
+      "allowCandidateMap": true,
+      "reasonJa": "文脈上のTroasは北西小アジアの古代港市Alexandria Troasを指し、候補点は同遺跡位置と整合する。従来候補として表示する。",
+      "candidateCoordinate": [
+        39.75135,
+        26.15765
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "28aa627d3c72ba1368fad0615ab8f30c723528cec5e3a89a6bcc2c3f05e4ff71"
+    },
+    {
+      "id": "place:trogyllium_1278",
+      "category": "site",
+      "allowCandidateMap": true,
+      "reasonJa": "Acts 20:15の固定WEB本文にある地名。既存の地理記述・記事はサモス対岸のトルコ本土沿岸、ミュカレ山の岬（古代著者の距離記述もサモスから約40スタディオン）とするため、候補は広い岬・沿岸地形の参考点として保持できる。個別の停泊位置は未確定で、地図ラベルは従来候補・概略地形とし航路点にしない。",
+      "candidateCoordinate": [
+        37.657,
+        27.006
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "ad63be186d6cc59acc94c58413cfba2b5ed884d3e7b0187c4269337c99ae3870"
+    },
+    {
+      "id": "place:tyre_1184",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "古代港市Tyreは現在のレバノン南部Sur/Tyreに位置する。候補点は同市域と整合する従来候補として表示する。",
+      "candidateCoordinate": [
+        33.268071,
+        35.209358
+      ],
+      "candidateStatus": "source-verified-candidate",
+      "profileCoordinate": null,
+      "draftSha256": "3c2060f93bcc9d4fe30970a887b706fa79ef4027160864b1328bee6471fd578a"
+    }
+  ],
+  "summary": {
+    "total": 34,
+    "allowCandidateMap": 30,
+    "suppressed": 4
+  },
+  "reassessment": {
+    "reasonJa": "Rhodesは島/市の未確定が島内候補点の入口を無効化しないため保持。Samaria候補は古代都市点だが歴史地域の内側にあり、用途を地域内代表点と明示する条件で保持。Trogylliumは単なる未点検ではなく、記事本文が地名をMycale岬として根拠付け、候補はその広域位置と整合。正確な停泊地点のみ未確定なので候補ラベル付きで保持。",
+    "supportingReads": [
+      {
+        "id": "place:rhodes_1000",
+        "url": "https://en.wikipedia.org/wiki/Rhodes",
+        "basis": "記事はRhodesを島と自治体/主要都市の双方の用法で記載し、主要都市が同じ島内と明記（本文の島・principal town説明）。WEB Acts 21:1はCosからRhodesへ航行したとする。"
+      },
+      {
+        "id": "place:samaria_1022",
+        "url": "https://ja.wikipedia.org/wiki/サマリア",
+        "basis": "日本語記事はサマリアが地域名と都市名の双方に使われる経緯を記載。Acts WEB 1:8/9:31は地域、8:5はcityと明示する。候補座標はセバステ古代都市地点で、地域の内部にある。"
+      },
+      {
+        "id": "place:trogyllium_1278",
+        "url": "https://en.wikipedia.org/wiki/Trogyllium",
+        "basis": "本文はトルコ本土のサモス近傍の沿岸地点とし、Ptolemy/Straboの記述をもとにMycale岬、サモスから約40 furlongsとする。正確な停泊地点は記事から確定できない。"
+      }
+    ]
+  }
+}

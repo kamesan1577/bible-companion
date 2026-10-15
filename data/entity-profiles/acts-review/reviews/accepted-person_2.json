@@ -1,0 +1,2304 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-final-person-2-repair-closure",
+  "reviewedAtUTC": "2026-10-15T13:44:08Z",
+  "inputs": {
+    "round2Manifest": "final-input-manifest.json",
+    "round2ManifestSHA256": "49b948a120b1a0397b5e1e37ee6d3ed7e7b3d72f708e747374051415c648efda",
+    "round1Manifest": "final-input-manifest.round-1.json",
+    "round1ManifestSHA256": "472328d6d48fbcb816bbbfb35f698cfd26e962578ca18fb253e4d796b27bc2e6",
+    "priorFinalReview": "reviews/final-person_2.json",
+    "priorFinalReviewSHA256": "842da1599508dffcf14b97a8d43208f6bfe04e9cd3eff27f9defb03432c38470",
+    "repairLog": "reviews/person_2-final-repair-log.json",
+    "repairLogSHA256": "b03618372fa456313beb64f7b747ca7872e6b8f733d7458dc044881952f88511",
+    "actsWitness": "acts-web-verses.json",
+    "actsWitnessSHA256": "90e72f0410119f8fc9afd529cdd730fd261bd1d25adfb413581c1462d6e936cb",
+    "webWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+    "personAssignmentSHA256": "db1032de779a9f244dd9894b10d8e2ebb8b8a6d87d821ae78043de5d351e6380",
+    "titleAssignmentSHA256": "89ff794c7d20a9a19d142fb88abbee27f4cae8e82c747c4f1fc98d7587e0eccf"
+  },
+  "scope": {
+    "personProfiles": 41,
+    "officeTitleRecords": 1,
+    "records": 42,
+    "manifestCurrentSHAAllMatch": true,
+    "unchangedCarryForwardRule": "未変更draftは現SHAがround1/旧final review SHAおよびround2固定SHAの三者一致時のみ、従前判定を維持。"
+  },
+  "methodJa": "各draftのcurrent SHAをround2 frozen manifestと照合し、old SHAを保存済round1 manifest・旧final reviewと照合。未変更は旧SHA一致により判定を維持。変更12件は現行draft/evidenceを固定WEB本文で再照合。全プロフィール・factsのsourceIdsがsources内に解決することも確認。Israel682と皇帝office-titleを個別に再点検。",
+  "counts": {
+    "closed": 36,
+    "qualified": 6,
+    "fail": 0
+  },
+  "changeClosure": {
+    "repairedIDs": [
+      "person:god_1324",
+      "person:heber_1469",
+      "person:herod_1505",
+      "person:herod_1506",
+      "person:james_719",
+      "person:jesus_905",
+      "person:john_1677",
+      "person:joseph_1710",
+      "person:judas_1758",
+      "person:julius_1763",
+      "person:lebbaeus_1815",
+      "person:mary_1941"
+    ],
+    "allRepairedItemsClosedOrQualified": true,
+    "currentOpenFailIDs": []
+  },
+  "records": [
+    {
+      "entityID": "person:gaius_1269",
+      "path": "drafts/person_2/person_gaius_1269.json",
+      "currentSHA256": "56a8f3497c0c6f42cc66fc4a09fbc4900247e33ee28cce78c99c6a9a348c855c",
+      "oldSHA256": "56a8f3497c0c6f42cc66fc4a09fbc4900247e33ee28cce78c99c6a9a348c855c",
+      "round2ManifestSHA256": "56a8f3497c0c6f42cc66fc4a09fbc4900247e33ee28cce78c99c6a9a348c855c",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "56a8f3497c0c6f42cc66fc4a09fbc4900247e33ee28cce78c99c6a9a348c855c",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 19,
+        "verse": 29
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 19:29",
+          "textStatus": "present",
+          "text": "The whole city was filled with confusion, and they rushed with one accord into the theater, having seized Gaius and Aristarchus, men of Macedonia, Paul’s companions in travel."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-19-29",
+          "web-act-20-4"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [
+          {
+            "knownBy": "ACT 20:4",
+            "status": "pass",
+            "textJa": "20:4にはデルベ出身の別のガイオが記される。使徒言行録本文は19:29のガイオと同一人物かどうかを明示しない。",
+            "webText": "These accompanied him as far as Asia: Sopater of Beroea, Aristarchus and Secundus of the Thessalonians, Gaius of Derbe, Timothy, and Tychicus and Trophimus of Asia."
+          }
+        ],
+        "round1SHA256": "56a8f3497c0c6f42cc66fc4a09fbc4900247e33ee28cce78c99c6a9a348c855c",
+        "previousFinalReviewSHA256": "56a8f3497c0c6f42cc66fc4a09fbc4900247e33ee28cce78c99c6a9a348c855c"
+      },
+      "rationaleJa": "ACT 19:29 はGaiusを名指し、Macedonia出身でPaulの旅の仲間と記す。ACT 20:4にはDerbe出身の同名Gaiusがいるが、本文は19:29の人物と同一か明示しないというfactは適切。",
+      "evidencePath": "evidence/person_2/person_gaius_1269.json",
+      "evidenceSHA256": "389943f0390e4cbde4a334deab3e1c35a42a90ddc8871f71cccfa981be9c3a78"
+    },
+    {
+      "entityID": "person:gaius_1270",
+      "path": "drafts/person_2/person_gaius_1270.json",
+      "currentSHA256": "5fe71b53d46b57e1f06b84a65a8244d49d16353a0515e83117c95c06d5384951",
+      "oldSHA256": "5fe71b53d46b57e1f06b84a65a8244d49d16353a0515e83117c95c06d5384951",
+      "round2ManifestSHA256": "5fe71b53d46b57e1f06b84a65a8244d49d16353a0515e83117c95c06d5384951",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "5fe71b53d46b57e1f06b84a65a8244d49d16353a0515e83117c95c06d5384951",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 20,
+        "verse": 4
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 20:4",
+          "textStatus": "present",
+          "text": "These accompanied him as far as Asia: Sopater of Beroea, Aristarchus and Secundus of the Thessalonians, Gaius of Derbe, Timothy, and Tychicus and Trophimus of Asia."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-20-4"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [],
+        "round1SHA256": "5fe71b53d46b57e1f06b84a65a8244d49d16353a0515e83117c95c06d5384951",
+        "previousFinalReviewSHA256": "5fe71b53d46b57e1f06b84a65a8244d49d16353a0515e83117c95c06d5384951"
+      },
+      "rationaleJa": "ACT 20:4 はGaius of Derbeを名指し、Paul一行に伴われてAsiaまで進んだ人々の一人に列挙する。最初の記述と地名由来は本文どおり。",
+      "evidencePath": "evidence/person_2/person_gaius_1270.json",
+      "evidenceSHA256": "dd035a29c7fa27bedaa6d979f19b0fcfabd39899f5d76c4a6d21d584a532ed66"
+    },
+    {
+      "entityID": "person:gallio_1275",
+      "path": "drafts/person_2/person_gallio_1275.json",
+      "currentSHA256": "c0994c3de6cbcc7ccb4c76c0795588bae89c2e9d608f5e1b94d93aeabe704417",
+      "oldSHA256": "c0994c3de6cbcc7ccb4c76c0795588bae89c2e9d608f5e1b94d93aeabe704417",
+      "round2ManifestSHA256": "c0994c3de6cbcc7ccb4c76c0795588bae89c2e9d608f5e1b94d93aeabe704417",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "c0994c3de6cbcc7ccb4c76c0795588bae89c2e9d608f5e1b94d93aeabe704417",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 18,
+        "verse": 12
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 18:12",
+          "textStatus": "present",
+          "text": "But when Gallio was proconsul of Achaia, the Jews with one accord rose up against Paul and brought him before the judgment seat,"
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-18-12",
+          "web-act-18-14",
+          "web-act-18-17"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [
+          {
+            "knownBy": "ACT 18:14",
+            "status": "pass",
+            "textJa": "ガリオは訴えを不正や犯罪ではなく、ユダヤ人の律法・言葉をめぐる争いとして扱った。",
+            "webText": "But when Paul was about to open his mouth, Gallio said to the Jews, “If indeed it were a matter of wrong or of wicked crime, you Jews, it would be reasonable that I should bear with you;"
+          },
+          {
+            "knownBy": "ACT 18:17",
+            "status": "pass",
+            "textJa": "ソステネが法廷の前で打たれた際、ガリオは介入しなかった。",
+            "webText": "Then all the Greeks seized Sosthenes, the ruler of the synagogue, and beat him before the judgment seat. Gallio didn’t care about any of these things."
+          }
+        ],
+        "round1SHA256": "c0994c3de6cbcc7ccb4c76c0795588bae89c2e9d608f5e1b94d93aeabe704417",
+        "previousFinalReviewSHA256": "c0994c3de6cbcc7ccb4c76c0795588bae89c2e9d608f5e1b94d93aeabe704417"
+      },
+      "rationaleJa": "ACT 18:12 はGallioをAchaiaのproconsulとし、Paulを法廷へ連れて来たことを記す。18:14の訴えの性質、18:17のSosthenesへの不介入は各factの引用範囲に一致。",
+      "evidencePath": "evidence/person_2/person_gallio_1275.json",
+      "evidenceSHA256": "4af7fbd53ee1d270d6aaaf9bf653063f18f4160504c6708ddab82d78d0884f3b"
+    },
+    {
+      "entityID": "person:gamaliel_1277",
+      "path": "drafts/person_2/person_gamaliel_1277.json",
+      "currentSHA256": "fbb224284afbbc177658fc33bafdfab4498a3e0ed3036604ae27eece658a48dd",
+      "oldSHA256": "fbb224284afbbc177658fc33bafdfab4498a3e0ed3036604ae27eece658a48dd",
+      "round2ManifestSHA256": "fbb224284afbbc177658fc33bafdfab4498a3e0ed3036604ae27eece658a48dd",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "fbb224284afbbc177658fc33bafdfab4498a3e0ed3036604ae27eece658a48dd",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 5,
+        "verse": 34
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 5:34",
+          "textStatus": "present",
+          "text": "But one stood up in the council, a Pharisee named Gamaliel, a teacher of the law, honored by all the people, and commanded to put the apostles out for a little while."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-22-3",
+          "web-act-5-34"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [
+          {
+            "knownBy": "ACT 22:3",
+            "status": "pass",
+            "textJa": "パウロは自分がエルサレムでガマリエルのもとに律法を学んだと述べる。",
+            "webText": "“I am indeed a Jew, born in Tarsus of Cilicia, but brought up in this city at the feet of Gamaliel, instructed according to the strict tradition of the law of our fathers, being zealous for God, even as you all are today."
+          }
+        ],
+        "round1SHA256": "fbb224284afbbc177658fc33bafdfab4498a3e0ed3036604ae27eece658a48dd",
+        "previousFinalReviewSHA256": "fbb224284afbbc177658fc33bafdfab4498a3e0ed3036604ae27eece658a48dd"
+      },
+      "rationaleJa": "ACT 5:34 はGamalielを議会内のPharisee、律法教師として直接記す。ACT 22:3 のPaulによる師事告白を別factとして後段に置いている。",
+      "evidencePath": "evidence/person_2/person_gamaliel_1277.json",
+      "evidenceSHA256": "cee2f33fa936dc0b84947a5084a0aa8b8be8f431d88790d021a41ee5a0bac171"
+    },
+    {
+      "entityID": "person:god_1324",
+      "path": "drafts/person_2/person_god_1324.json",
+      "currentSHA256": "93c93e14d4788336a9bd1cbd2d02e52ef2891ea6a73035db3ca2d2bc2b984a50",
+      "oldSHA256": "e35d15fc5410990137ea8103fd5d00ff3b4cc92a472aabb91d3f11b0aeacdaff",
+      "round2ManifestSHA256": "93c93e14d4788336a9bd1cbd2d02e52ef2891ea6a73035db3ca2d2bc2b984a50",
+      "changedSinceRound1": true,
+      "priorFinalReviewSHA256": "e35d15fc5410990137ea8103fd5d00ff3b4cc92a472aabb91d3f11b0aeacdaff",
+      "priorVerdict": "fail",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 3
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 1:3",
+          "textStatus": "present",
+          "text": "To these he also showed himself alive after he suffered, by many proofs, appearing to them over a period of forty days and speaking about God’s Kingdom."
+        },
+        {
+          "ref": "ACT 2:24",
+          "textStatus": "present",
+          "text": "whom God raised up, having freed him from the agony of death, because it was not possible that he should be held by it."
+        },
+        {
+          "ref": "ACT 10:34",
+          "textStatus": "present",
+          "text": "Peter opened his mouth and said, “Truly I perceive that God doesn’t show favoritism;"
+        },
+        {
+          "ref": "ACT 8:37",
+          "textStatus": "empty",
+          "text": ""
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-1-3",
+          "web-act-10-34",
+          "web-act-2-24"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "currentFieldAudit": {
+          "nameJa": "神",
+          "subtitleJa": "初出の使徒言行録1:3では「神の国」という表現に現れる神。",
+          "summaryJa": "使徒言行録1:3では、復活後に弟子たちへ語られた「神の国」という主題の中で言及される。",
+          "identityNoteJa": "",
+          "knownBy": {
+            "chapter": 1,
+            "verse": 3
+          },
+          "sourceIds": [
+            "web-act-1-3"
+          ],
+          "facts": [
+            {
+              "textJa": "神がイエスを死者の中からよみがえらせたと使徒たちが証言する。",
+              "knownBy": {
+                "chapter": 2,
+                "verse": 24
+              },
+              "sourceIds": [
+                "web-act-2-24"
+              ]
+            },
+            {
+              "textJa": "ペトロは、神が人を分け隔てしないと語る。",
+              "knownBy": {
+                "chapter": 10,
+                "verse": 34
+              },
+              "sourceIds": [
+                "web-act-10-34"
+              ]
+            }
+          ]
+        },
+        "emptyVerse837Excluded": true
+      },
+      "rationaleJa": "旧レビューのfailはACT 8:37（固定WEBで空）のpassages収録。現行profileは8:37をpassages/sourceIds/fact sourceIdsのいずれにも含めず、1:3の導入と後続2:24/10:34 factsを分離。空異本の誤登録は解消。",
+      "evidencePath": "evidence/person_2/person_god_1324.json",
+      "evidenceSHA256": "369618641f4e4fa9b3be70e8d0abbf186ebf10d08983fe3e8a674813e5eb68e5"
+    },
+    {
+      "entityID": "person:hamor_1365",
+      "path": "drafts/person_2/person_hamor_1365.json",
+      "currentSHA256": "a6253d2f0b02e389810569aacb093848a9663efcc0505e7d85ea22a50b23c45b",
+      "oldSHA256": "a6253d2f0b02e389810569aacb093848a9663efcc0505e7d85ea22a50b23c45b",
+      "round2ManifestSHA256": "a6253d2f0b02e389810569aacb093848a9663efcc0505e7d85ea22a50b23c45b",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "a6253d2f0b02e389810569aacb093848a9663efcc0505e7d85ea22a50b23c45b",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 7,
+        "verse": 16
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 7:16",
+          "textStatus": "present",
+          "text": "and they were brought back to Shechem and laid in the tomb that Abraham bought for a price in silver from the children of Hamor of Shechem."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-7-16"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [],
+        "round1SHA256": "a6253d2f0b02e389810569aacb093848a9663efcc0505e7d85ea22a50b23c45b",
+        "previousFinalReviewSHA256": "a6253d2f0b02e389810569aacb093848a9663efcc0505e7d85ea22a50b23c45b"
+      },
+      "rationaleJa": "ACT 7:16 はAbrahamが墓をHamor of Shechemの子らから買ったと記す。「一族の祖」は「children of Hamor」からの控えめな系譜解釈であり、本文記述の範囲を超える具体的な伝記は足していない。",
+      "evidencePath": "evidence/person_2/person_hamor_1365.json",
+      "evidenceSHA256": "1e67db438d6238e635d6d089e17538fca89a5eb357422d5b08bbd939fa28570a"
+    },
+    {
+      "entityID": "person:heber_1469",
+      "path": "drafts/person_2/person_heber_1469.json",
+      "currentSHA256": "e9ea10d7ab12da3a6ecbb13a7bb31292e70424404c9f5ccd0a2c7decf4e6967c",
+      "oldSHA256": "d69de02d9be704b08b35496173da5944c078f93db9f3b41245cab31a5d0786e5",
+      "round2ManifestSHA256": "e9ea10d7ab12da3a6ecbb13a7bb31292e70424404c9f5ccd0a2c7decf4e6967c",
+      "changedSinceRound1": true,
+      "priorFinalReviewSHA256": "d69de02d9be704b08b35496173da5944c078f93db9f3b41245cab31a5d0786e5",
+      "priorVerdict": "qualified",
+      "status": "qualified",
+      "knownBy": {
+        "chapter": 23,
+        "verse": 35
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 23:35",
+          "textStatus": "present",
+          "text": "“I will hear you fully when your accusers also arrive.” He commanded that he be kept in Herod’s palace."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "currentFieldAudit": {
+          "nameJa": "ヘベル（索引候補）",
+          "subtitleJa": "使徒言行録23:35にはこの人物の出現を確認できない。",
+          "summaryJa": "候補リンク先の使徒言行録23:35は「ヘロデの宮殿」を指し、人名ヘベルを記していない。人物プロフィールとしては裏付けられない。",
+          "identityNoteJa": "割り当てられた出現は誤った索引リンクとして除外。",
+          "knownBy": {
+            "chapter": 23,
+            "verse": 35
+          },
+          "sourceIds": [],
+          "facts": []
+        },
+        "candidateRejection": "候補リンク先の使徒言行録23:35は「ヘロデの宮殿」を指し、人名ヘベルを記していない。人物プロフィールとしては裏付けられない。"
+      },
+      "rationaleJa": "使徒23:35はHerodの宮殿で被告を保管する命令で、Heberという人名ではない。現行profileはpassages/sourceIdsを空にし、索引候補の誤リンクと明示する。knownBy 23:35は人物の初出ではなく誤リンク検証箇所として読む必要が残るためqualified。",
+      "evidencePath": "evidence/person_2/person_heber_1469.json",
+      "evidenceSHA256": "102aff69969ef2999bec56f14e40edf08df3b99eafa83872263a0a8ed47232cb"
+    },
+    {
+      "entityID": "person:herod_1505",
+      "path": "drafts/person_2/person_herod_1505.json",
+      "currentSHA256": "430e0e0c112570c4f809fd85c7f08f9c9ba9e307e5e13edb2af04f265415d75d",
+      "oldSHA256": "2888ddf8dd334564a0de884da4fb470419e7dfd8d071be87b92a04f9b1e28f37",
+      "round2ManifestSHA256": "430e0e0c112570c4f809fd85c7f08f9c9ba9e307e5e13edb2af04f265415d75d",
+      "changedSinceRound1": true,
+      "priorFinalReviewSHA256": "2888ddf8dd334564a0de884da4fb470419e7dfd8d071be87b92a04f9b1e28f37",
+      "priorVerdict": "qualified",
+      "status": "qualified",
+      "knownBy": {
+        "chapter": 4,
+        "verse": 27
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 4:27",
+          "textStatus": "present",
+          "text": "“For truly, both Herod and Pontius Pilate, with the Gentiles and the people of Israel, were gathered together against your holy servant Jesus, whom you anointed,"
+        },
+        {
+          "ref": "ACT 13:1",
+          "textStatus": "present",
+          "text": "Now in the assembly that was at Antioch there were some prophets and teachers: Barnabas, Simeon who was called Niger, Lucius of Cyrene, Manaen the foster brother of Herod the tetrarch, and Saul."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-13-1",
+          "web-act-4-27"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "currentFieldAudit": {
+          "nameJa": "ヘロデ",
+          "subtitleJa": "イエスに敵対した者たちと並べて祈りの中で名が挙がるヘロデ。",
+          "summaryJa": "使徒言行録4:27は、イエスに敵対した者たちとともに「ヘロデ」の名を挙げる。この節は王の称号や「アンティパス」という別名を記さず、本文だけでは人物をそれ以上特定できない。",
+          "identityNoteJa": "ACT 4:27は「ヘロデ」とのみ記し、称号や別名を示さない。",
+          "knownBy": {
+            "chapter": 4,
+            "verse": 27
+          },
+          "sourceIds": [
+            "web-act-4-27"
+          ],
+          "facts": [
+            {
+              "textJa": "アンティオキア教会の教師マナエンは、「ヘロデの乳兄弟」と紹介される。",
+              "knownBy": {
+                "chapter": 13,
+                "verse": 1
+              },
+              "sourceIds": [
+                "web-act-13-1"
+              ]
+            }
+          ]
+        }
+      },
+      "rationaleJa": "初出4:27は「Herod」とだけ記し、現行identityNoteが称号・Antipasを直接記さないと限定。13:1の「Herod the tetrarch」は後続factとしてsource-gated。ただし4:27のHerodと13:1の人物の同一性をWEB本文は明示しないためqualified。",
+      "evidencePath": "evidence/person_2/person_herod_1505.json",
+      "evidenceSHA256": "1abc81232bad6f7b1cab432f6637a2fdabc04dd69b7b80bb7d717b91a5577737"
+    },
+    {
+      "entityID": "person:herod_1506",
+      "path": "drafts/person_2/person_herod_1506.json",
+      "currentSHA256": "3a650c024e571d8b1b60af86b8ef40402c760bfaa14ac033b83f1cf26a3b6194",
+      "oldSHA256": "61c5239cceec61e42fd3ff4fab7f9afd297ba9a8a377d7b4783842883db08869",
+      "round2ManifestSHA256": "3a650c024e571d8b1b60af86b8ef40402c760bfaa14ac033b83f1cf26a3b6194",
+      "changedSinceRound1": true,
+      "priorFinalReviewSHA256": "61c5239cceec61e42fd3ff4fab7f9afd297ba9a8a377d7b4783842883db08869",
+      "priorVerdict": "qualified",
+      "status": "qualified",
+      "knownBy": {
+        "chapter": 12,
+        "verse": 1
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 12:1",
+          "textStatus": "present",
+          "text": "Now about that time, King Herod stretched out his hands to oppress some of the assembly."
+        },
+        {
+          "ref": "ACT 12:2",
+          "textStatus": "present",
+          "text": "He killed James, the brother of John, with the sword."
+        },
+        {
+          "ref": "ACT 12:3",
+          "textStatus": "present",
+          "text": "When he saw that it pleased the Jews, he proceeded to seize Peter also. This was during the days of unleavened bread."
+        },
+        {
+          "ref": "ACT 12:19",
+          "textStatus": "present",
+          "text": "When Herod had sought for him and didn’t find him, he examined the guards, then commanded that they should be put to death. He went down from Judea to Caesarea, and stayed there."
+        },
+        {
+          "ref": "ACT 12:21",
+          "textStatus": "present",
+          "text": "On an appointed day, Herod dressed himself in royal clothing, sat on the throne, and gave a speech to them."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-12-1",
+          "web-act-12-19",
+          "web-act-12-2",
+          "web-act-12-21",
+          "web-act-12-3"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "currentFieldAudit": {
+          "nameJa": "ヘロデ・アグリッパ",
+          "subtitleJa": "教会の一部を苦しめ始めたヘロデ王。",
+          "summaryJa": "使徒言行録12:1は、教会の一部を苦しめ始めた「ヘロデ王」を記す。本文の初出箇所は王の名をそれ以上詳しく示さない。",
+          "identityNoteJa": "この人物は歴史資料・記事で通常ヘロデ・アグリッパ1世と同定されるが、使徒言行録12:1のWEB本文自体は「ヘロデ王」とだけ記す。ヘロデ一族には複数の支配者がいるため、本文の直接呼称と資料上の同定を区別する。",
+          "knownBy": {
+            "chapter": 12,
+            "verse": 1
+          },
+          "sourceIds": [
+            "web-act-12-1"
+          ],
+          "facts": [
+            {
+              "textJa": "ヘロデ王はヨハネの兄弟ヤコブを剣で殺した。",
+              "knownBy": {
+                "chapter": 12,
+                "verse": 2
+              },
+              "sourceIds": [
+                "web-act-12-2"
+              ]
+            },
+            {
+              "textJa": "王はユダヤ人たちに喜ばれたのを見て、ペトロも捕らえた。",
+              "knownBy": {
+                "chapter": 12,
+                "verse": 3
+              },
+              "sourceIds": [
+                "web-act-12-3"
+              ]
+            },
+            {
+              "textJa": "ペトロが見つからないと、王は番兵を取り調べ、カイサリアへ下った。",
+              "knownBy": {
+                "chapter": 12,
+                "verse": 19
+              },
+              "sourceIds": [
+                "web-act-12-19"
+              ]
+            },
+            {
+              "textJa": "王は公の場で演説し、民衆の歓声を受けた。",
+              "knownBy": {
+                "chapter": 12,
+                "verse": 21
+              },
+              "sourceIds": [
+                "web-act-12-21"
+              ]
+            }
+          ]
+        }
+      },
+      "rationaleJa": "現行summary/subtitleは初出12:1の「King Herod」と、教会の一部を苦しめた記述に限定。12:2以降はfactとして個別にゲート。Agrippa Iという通常の歴史同定はprofileで本文表記と区別しているが、固定WEB本文だけでは個人名を確定しないためqualified。",
+      "evidencePath": "evidence/person_2/person_herod_1506.json",
+      "evidenceSHA256": "06af1f080889f02b40c15741c266c979c8cfefd82690c94a4f7c991982d6e029"
+    },
+    {
+      "entityID": "person:holy_spirit_7400",
+      "path": "drafts/person_2/person_holy_spirit_7400.json",
+      "currentSHA256": "a5f2c8eba769b44926d4c70667a3e36434a0d2d2c815926c1eb8e587353b24eb",
+      "oldSHA256": "a5f2c8eba769b44926d4c70667a3e36434a0d2d2c815926c1eb8e587353b24eb",
+      "round2ManifestSHA256": "a5f2c8eba769b44926d4c70667a3e36434a0d2d2c815926c1eb8e587353b24eb",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "a5f2c8eba769b44926d4c70667a3e36434a0d2d2c815926c1eb8e587353b24eb",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 2
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 1:2",
+          "textStatus": "present",
+          "text": "until the day in which he was received up, after he had given commandment through the Holy Spirit to the apostles whom he had chosen."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-1-2",
+          "web-act-13-2",
+          "web-act-2-4"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [
+          {
+            "knownBy": "ACT 2:4",
+            "status": "pass",
+            "textJa": "弟子たちは聖霊に満たされ、他の言語で語り始めた。",
+            "webText": "They were all filled with the Holy Spirit and began to speak with other languages, as the Spirit gave them the ability to speak."
+          },
+          {
+            "knownBy": "ACT 13:2",
+            "status": "pass",
+            "textJa": "アンティオキアの教会で、聖霊がバルナバとサウロを務めのために取り分けるよう告げた。",
+            "webText": "As they served the Lord and fasted, the Holy Spirit said, “Separate Barnabas and Saul for me, for the work to which I have called them.”"
+          }
+        ],
+        "round1SHA256": "a5f2c8eba769b44926d4c70667a3e36434a0d2d2c815926c1eb8e587353b24eb",
+        "previousFinalReviewSHA256": "a5f2c8eba769b44926d4c70667a3e36434a0d2d2c815926c1eb8e587353b24eb"
+      },
+      "rationaleJa": "ACT 1:2 はHoly Spiritが使徒たちに命令した経路として初出し、各factのACT 2:4と13:2も本文に明記される。passage参照は全てpresentの固定WEBに対応。",
+      "evidencePath": "evidence/person_2/person_holy_spirit_7400.json",
+      "evidenceSHA256": "48090b97224c58ee4e91d6a957a8d1452f677299f919a407806669e86aba6fa7"
+    },
+    {
+      "entityID": "person:isaac_616",
+      "path": "drafts/person_2/person_isaac_616.json",
+      "currentSHA256": "6773c1390aaae286838d7d6d350b285fb39ca4c8247ad3d012228cb1300362db",
+      "oldSHA256": "6773c1390aaae286838d7d6d350b285fb39ca4c8247ad3d012228cb1300362db",
+      "round2ManifestSHA256": "6773c1390aaae286838d7d6d350b285fb39ca4c8247ad3d012228cb1300362db",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "6773c1390aaae286838d7d6d350b285fb39ca4c8247ad3d012228cb1300362db",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 3,
+        "verse": 13
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 3:13",
+          "textStatus": "present",
+          "text": "The God of Abraham, Isaac, and Jacob, the God of our fathers, has glorified his Servant Jesus, whom you delivered up and denied in the presence of Pilate, when he had determined to release him."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-3-13",
+          "web-act-7-8"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [
+          {
+            "knownBy": "ACT 7:8",
+            "status": "pass",
+            "textJa": "ステファノの回顧では、アブラハムがイサクの父、イサクがヤコブの父として系譜が述べられる。",
+            "webText": "He gave him the covenant of circumcision. So Abraham became the father of Isaac, and circumcised him the eighth day. Isaac became the father of Jacob, and Jacob became the father of the twelve patriarchs."
+          }
+        ],
+        "round1SHA256": "6773c1390aaae286838d7d6d350b285fb39ca4c8247ad3d012228cb1300362db",
+        "previousFinalReviewSHA256": "6773c1390aaae286838d7d6d350b285fb39ca4c8247ad3d012228cb1300362db"
+      },
+      "rationaleJa": "ACT 3:13 はAbraham・Isaac・Jacobを族長として並記し、7:8はAbraham→Isaac→Jacobの系譜を述べる。summary/factはこの本文だけに沿う。",
+      "evidencePath": "evidence/person_2/person_isaac_616.json",
+      "evidenceSHA256": "580c4d5308af8d884152769b3fd124bac232760adb5ac4126dd593f937b30a6f"
+    },
+    {
+      "entityID": "person:isaiah_617",
+      "path": "drafts/person_2/person_isaiah_617.json",
+      "currentSHA256": "49f32e9cb9bb1bac8ffa4a56081ca44c50a68d82126abcc524349046c00e5fd7",
+      "oldSHA256": "49f32e9cb9bb1bac8ffa4a56081ca44c50a68d82126abcc524349046c00e5fd7",
+      "round2ManifestSHA256": "49f32e9cb9bb1bac8ffa4a56081ca44c50a68d82126abcc524349046c00e5fd7",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "49f32e9cb9bb1bac8ffa4a56081ca44c50a68d82126abcc524349046c00e5fd7",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 8,
+        "verse": 28
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 8:28",
+          "textStatus": "present",
+          "text": "He was returning and sitting in his chariot, and was reading the prophet Isaiah."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-8-28"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [],
+        "round1SHA256": "49f32e9cb9bb1bac8ffa4a56081ca44c50a68d82126abcc524349046c00e5fd7",
+        "previousFinalReviewSHA256": "49f32e9cb9bb1bac8ffa4a56081ca44c50a68d82126abcc524349046c00e5fd7"
+      },
+      "rationaleJa": "ACT 8:28 は「prophet Isaiah」を直接記し、8:30と28:25の別出現・預言者引用もsource linkで示される。初出を8:28に置いている。",
+      "evidencePath": "evidence/person_2/person_isaiah_617.json",
+      "evidenceSHA256": "152a1e3a5e3c7a17a651ff1e27f529f989e0ddd0dc4b6f887f82ee8b85358641"
+    },
+    {
+      "entityID": "person:israel_682",
+      "path": "drafts/person_2/person_israel_682.json",
+      "currentSHA256": "cd7399e6f4a02c52b9a6ba0eb62e21ab2a88a0a2808605342a739ea45b5163ff",
+      "oldSHA256": "cd7399e6f4a02c52b9a6ba0eb62e21ab2a88a0a2808605342a739ea45b5163ff",
+      "round2ManifestSHA256": "cd7399e6f4a02c52b9a6ba0eb62e21ab2a88a0a2808605342a739ea45b5163ff",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "cd7399e6f4a02c52b9a6ba0eb62e21ab2a88a0a2808605342a739ea45b5163ff",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 3,
+        "verse": 13
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 3:13",
+          "textStatus": "present",
+          "text": "The God of Abraham, Isaac, and Jacob, the God of our fathers, has glorified his Servant Jesus, whom you delivered up and denied in the presence of Pilate, when he had determined to release him."
+        },
+        {
+          "ref": "ACT 7:8",
+          "textStatus": "present",
+          "text": "He gave him the covenant of circumcision. So Abraham became the father of Isaac, and circumcised him the eighth day. Isaac became the father of Jacob, and Jacob became the father of the twelve patriarchs."
+        },
+        {
+          "ref": "ACT 7:12",
+          "textStatus": "present",
+          "text": "But when Jacob heard that there was grain in Egypt, he sent out our fathers the first time."
+        },
+        {
+          "ref": "ACT 7:14",
+          "textStatus": "present",
+          "text": "Joseph sent and summoned Jacob his father and all his relatives, seventy-five souls."
+        },
+        {
+          "ref": "ACT 7:15",
+          "textStatus": "present",
+          "text": "Jacob went down into Egypt and he died, himself and our fathers;"
+        },
+        {
+          "ref": "ACT 7:32",
+          "textStatus": "present",
+          "text": "‘I am the God of your fathers: the God of Abraham, the God of Isaac, and the God of Jacob.’ Moses trembled and dared not look."
+        },
+        {
+          "ref": "ACT 7:46",
+          "textStatus": "present",
+          "text": "who found favor in the sight of God, and asked to find a habitation for the God of Jacob."
+        },
+        {
+          "ref": "ACT 5:21",
+          "textStatus": "present",
+          "text": "When they heard this, they entered into the temple about daybreak and taught. But the high priest and those who were with him came and called the council together, with all the senate of the children of Israel, and sent to the prison to have them brought."
+        },
+        {
+          "ref": "ACT 7:23",
+          "textStatus": "present",
+          "text": "But when he was forty years old, it came into his heart to visit his brothers, the children of Israel."
+        },
+        {
+          "ref": "ACT 7:37",
+          "textStatus": "present",
+          "text": "This is that Moses who said to the children of Israel, ‘The Lord our God will raise up a prophet for you from among your brothers, like me.’"
+        },
+        {
+          "ref": "ACT 9:15",
+          "textStatus": "present",
+          "text": "But the Lord said to him, “Go your way, for he is my chosen vessel to bear my name before the nations and kings, and the children of Israel."
+        },
+        {
+          "ref": "ACT 10:36",
+          "textStatus": "present",
+          "text": "The word which he sent to the children of Israel, preaching good news of peace by Jesus Christ—he is Lord of all—"
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "easton-israel",
+          "easton-jacob",
+          "web-act-3-13",
+          "web-act-7-12",
+          "web-act-7-14",
+          "web-act-7-15",
+          "web-act-7-32",
+          "web-act-7-46",
+          "web-act-7-8",
+          "web-gen-32-28"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "identityResolution": {
+          "previousDecision": "全12箇所を棄却",
+          "correctedDecision": "族長ヤコブを表す安定IDとして復元。Jacob個人の7節をdirect、イスラエル民族・集団の5節を除外。",
+          "basis": [
+            "Bible index person:israel_682 appearance begins at Genesis 25:26 (Jacob)",
+            "World English Bible Genesis 32:28 (exact anchor)",
+            "Genesis 32:28",
+            "Easton ISRAEL and JACOB entries in Easton-2.0.1",
+            "Japanese Wikipedia article read: ヤコブ (旧約聖書)"
+          ]
+        },
+        "includedPersonalRefs": [
+          "ACT 3:13",
+          "ACT 7:8",
+          "ACT 7:12",
+          "ACT 7:14",
+          "ACT 7:15",
+          "ACT 7:32",
+          "ACT 7:46"
+        ],
+        "excludedCollectiveRefs": [
+          "ACT 5:21",
+          "ACT 7:23",
+          "ACT 7:37",
+          "ACT 9:15",
+          "ACT 10:36"
+        ],
+        "aliasSupportSourceIDs": [
+          "easton-israel",
+          "easton-jacob",
+          "web-gen-32-28"
+        ],
+        "identityNoteJa": "このプロフィールの安定ID person:israel_682 は、聖書索引で創世記25:26のヤコブに対応し、創世記32:28で与えられた名「イスラエル」をID名に用いる。EastonのISRAEL項もその改名を明記する。マタイ1:15–16の別人物 person:jacob_683 とは区別し、表示名は使徒言行録の表記「ヤコブ」とする。"
+      },
+      "rationaleJa": "現行profileを個別再読。person:israel_682は族長ヤコブ。Actsで個人を直接指す7節（3:13; 7:8,12,14,15,32,46）を含め、集団「children of Israel」の5節（5:21; 7:23,37; 9:15; 10:36）を除外。Easton ISRAEL/JACOBとGenesis 32:28の同名・改名根拠をsources/evidenceに結び、person:jacob_683とは区別。",
+      "evidencePath": "evidence/person_2/person_israel_682.json",
+      "evidenceSHA256": "57014bb8df8cf6d8a1d12c19fc7ca9b99c5ad123973840ebeb13434002b417d6"
+    },
+    {
+      "entityID": "person:james_717",
+      "path": "drafts/person_2/person_james_717.json",
+      "currentSHA256": "c4a8acfe0c2db92f1b247564bbcd1987b1f803fe61ce30d0e1ac0196e4b9dabf",
+      "oldSHA256": "c4a8acfe0c2db92f1b247564bbcd1987b1f803fe61ce30d0e1ac0196e4b9dabf",
+      "round2ManifestSHA256": "c4a8acfe0c2db92f1b247564bbcd1987b1f803fe61ce30d0e1ac0196e4b9dabf",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "c4a8acfe0c2db92f1b247564bbcd1987b1f803fe61ce30d0e1ac0196e4b9dabf",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 13
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 1:13",
+          "textStatus": "present",
+          "text": "When they had come in, they went up into the upper room where they were staying, that is Peter, John, James, Andrew, Philip, Thomas, Bartholomew, Matthew, James the son of Alphaeus, Simon the Zealot, and Judas the son of James."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-1-13",
+          "web-act-12-2"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [
+          {
+            "knownBy": "ACT 12:2",
+            "status": "pass",
+            "textJa": "使徒言行録12:2はこのヤコブをヨハネの兄弟と明記し、ヘロデが剣で殺したと記す。",
+            "webText": "He killed James, the brother of John, with the sword."
+          }
+        ],
+        "round1SHA256": "c4a8acfe0c2db92f1b247564bbcd1987b1f803fe61ce30d0e1ac0196e4b9dabf",
+        "previousFinalReviewSHA256": "c4a8acfe0c2db92f1b247564bbcd1987b1f803fe61ce30d0e1ac0196e4b9dabf"
+      },
+      "rationaleJa": "ACT 1:13 は単独で名を挙げるJamesとAlphaeusの子Jamesを別々に列挙し、12:2はJohnの兄弟Jamesの処刑を記す。後続事実を1:13初出のsummaryに漏らさず12:2 factにゲートした。",
+      "evidencePath": "evidence/person_2/person_james_717.json",
+      "evidenceSHA256": "9860a3107968a61f237329197c40b2e42bb273d80972b59470b8cb5bc10fb58e"
+    },
+    {
+      "entityID": "person:james_718",
+      "path": "drafts/person_2/person_james_718.json",
+      "currentSHA256": "e7bdec5edede36b52022652144498531c88381201405a33bfaf02f11cb327bb5",
+      "oldSHA256": "e7bdec5edede36b52022652144498531c88381201405a33bfaf02f11cb327bb5",
+      "round2ManifestSHA256": "e7bdec5edede36b52022652144498531c88381201405a33bfaf02f11cb327bb5",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "e7bdec5edede36b52022652144498531c88381201405a33bfaf02f11cb327bb5",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 13
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 1:13",
+          "textStatus": "present",
+          "text": "When they had come in, they went up into the upper room where they were staying, that is Peter, John, James, Andrew, Philip, Thomas, Bartholomew, Matthew, James the son of Alphaeus, Simon the Zealot, and Judas the son of James."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-1-13"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [],
+        "round1SHA256": "e7bdec5edede36b52022652144498531c88381201405a33bfaf02f11cb327bb5",
+        "previousFinalReviewSHA256": "e7bdec5edede36b52022652144498531c88381201405a33bfaf02f11cb327bb5"
+      },
+      "rationaleJa": "ACT 1:13 は「James the son of Alphaeus」と明記し、同節内の別のJamesと識別できる。profileは一節だけを根拠にし、過剰な伝記を加えていない。",
+      "evidencePath": "evidence/person_2/person_james_718.json",
+      "evidenceSHA256": "f387a9055b0db88eb162f1628dcb869993660c1c3e2407bf75d99a0ac1fae656"
+    },
+    {
+      "entityID": "person:james_719",
+      "path": "drafts/person_2/person_james_719.json",
+      "currentSHA256": "c6af1fe73a1a48e2aec2af15ce9937cb38b5613b67acb88c2981a977643157a8",
+      "oldSHA256": "b910561249b7ae317bdac583940339bdc005d373ed9910dca435ec1a7ddc2855",
+      "round2ManifestSHA256": "c6af1fe73a1a48e2aec2af15ce9937cb38b5613b67acb88c2981a977643157a8",
+      "changedSinceRound1": true,
+      "priorFinalReviewSHA256": "b910561249b7ae317bdac583940339bdc005d373ed9910dca435ec1a7ddc2855",
+      "priorVerdict": "qualified",
+      "status": "qualified",
+      "knownBy": {
+        "chapter": 12,
+        "verse": 17
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 12:17",
+          "textStatus": "present",
+          "text": "But he, beckoning to them with his hand to be silent, declared to them how the Lord had brought him out of the prison. He said, “Tell these things to James and to the brothers.” Then he departed and went to another place."
+        },
+        {
+          "ref": "ACT 15:13",
+          "textStatus": "present",
+          "text": "After they were silent, James answered, “Brothers, listen to me."
+        },
+        {
+          "ref": "ACT 21:18",
+          "textStatus": "present",
+          "text": "The day following, Paul went in with us to James; and all the elders were present."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-12-17",
+          "web-act-15-13",
+          "web-act-21-18"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "currentFieldAudit": {
+          "nameJa": "ヤコブ",
+          "subtitleJa": "使徒言行録12:17でペトロが報告を託した人物。",
+          "summaryJa": "ペトロは脱獄後、出来事を伝える相手としてこのヤコブの名を挙げた。使徒言行録本文は親族関係を記さない。",
+          "identityNoteJa": "12:17以降に登場するヤコブ。使徒言行録本文は父母や兄弟を明記せず、12:2のヤコブや1:13のアルファイの子と同一視しない。",
+          "knownBy": {
+            "chapter": 12,
+            "verse": 17
+          },
+          "sourceIds": [
+            "web-act-12-17"
+          ],
+          "facts": [
+            {
+              "textJa": "エルサレム会議でヤコブが発言し、異邦人信徒をめぐる議論をまとめる。",
+              "knownBy": {
+                "chapter": 15,
+                "verse": 13
+              },
+              "sourceIds": [
+                "web-act-15-13"
+              ]
+            },
+            {
+              "textJa": "パウロはエルサレムでヤコブと長老たちを訪ねた。",
+              "knownBy": {
+                "chapter": 21,
+                "verse": 18
+              },
+              "sourceIds": [
+                "web-act-21-18"
+              ]
+            }
+          ]
+        }
+      },
+      "rationaleJa": "現行初出要約は12:17でペトロが報告を託した人物に限定。親族関係を本文が示さず12:2/1:13との同一視を避けるidentityNoteがある。後続15:13・21:18はfactsへ分離。後続箇所のJamesが12:17のJamesと同一人物かをWEB本文は明記しないためqualified。",
+      "evidencePath": "evidence/person_2/person_james_719.json",
+      "evidenceSHA256": "d562cedaf7ad8d98fc92c2cf51235defca0e7ff6be5d78344b99827882456016"
+    },
+    {
+      "entityID": "person:jason_742",
+      "path": "drafts/person_2/person_jason_742.json",
+      "currentSHA256": "0e5a7a64c3735e2bc1fea41060eb38d35e4db74b2c72ec700fe4cab38a8ad5b7",
+      "oldSHA256": "0e5a7a64c3735e2bc1fea41060eb38d35e4db74b2c72ec700fe4cab38a8ad5b7",
+      "round2ManifestSHA256": "0e5a7a64c3735e2bc1fea41060eb38d35e4db74b2c72ec700fe4cab38a8ad5b7",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "0e5a7a64c3735e2bc1fea41060eb38d35e4db74b2c72ec700fe4cab38a8ad5b7",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 17,
+        "verse": 5
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 17:5",
+          "textStatus": "present",
+          "text": "But the unpersuaded Jews took along some wicked men from the marketplace and gathering a crowd, set the city in an uproar. Assaulting the house of Jason, they sought to bring them out to the people."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-17-5",
+          "web-act-17-7",
+          "web-act-17-9"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [
+          {
+            "knownBy": "ACT 17:7",
+            "status": "pass",
+            "textJa": "告発者たちは、ヤソンがパウロたちを迎え入れたと主張した。",
+            "webText": "whom Jason has received. These all act contrary to the decrees of Caesar, saying that there is another king, Jesus!”"
+          },
+          {
+            "knownBy": "ACT 17:9",
+            "status": "pass",
+            "textJa": "町の当局はヤソンたちから保証金を受け取って釈放した。",
+            "webText": "When they had taken security from Jason and the rest, they let them go."
+          }
+        ],
+        "round1SHA256": "0e5a7a64c3735e2bc1fea41060eb38d35e4db74b2c72ec700fe4cab38a8ad5b7",
+        "previousFinalReviewSHA256": "0e5a7a64c3735e2bc1fea41060eb38d35e4db74b2c72ec700fe4cab38a8ad5b7"
+      },
+      "rationaleJa": "ACT 17:5 はJasonの家を襲ったと記し、17:7はPaul一行を迎え入れたという告発、17:9は保証金後の釈放を記す。later factsを17:5の導入に持ち込んでいない。",
+      "evidencePath": "evidence/person_2/person_jason_742.json",
+      "evidenceSHA256": "0487f82325e395e2a555cf51427eb775c04676b6e0e9ca3990440110ecd57988"
+    },
+    {
+      "entityID": "person:jesse_903",
+      "path": "drafts/person_2/person_jesse_903.json",
+      "currentSHA256": "4fc446439935506b3b00326bc2bf827bb5b18eeff152a187234e8c26de200ae5",
+      "oldSHA256": "4fc446439935506b3b00326bc2bf827bb5b18eeff152a187234e8c26de200ae5",
+      "round2ManifestSHA256": "4fc446439935506b3b00326bc2bf827bb5b18eeff152a187234e8c26de200ae5",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "4fc446439935506b3b00326bc2bf827bb5b18eeff152a187234e8c26de200ae5",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 13,
+        "verse": 22
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 13:22",
+          "textStatus": "present",
+          "text": "When he had removed him, he raised up David to be their king, to whom he also testified, ‘I have found David the son of Jesse, a man after my heart, who will do all my will.’"
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-13-22"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [],
+        "round1SHA256": "4fc446439935506b3b00326bc2bf827bb5b18eeff152a187234e8c26de200ae5",
+        "previousFinalReviewSHA256": "4fc446439935506b3b00326bc2bf827bb5b18eeff152a187234e8c26de200ae5"
+      },
+      "rationaleJa": "ACT 13:22 はDavidを「son of Jesse」と直接記し、summaryの父子関係はこの初出節そのものに根拠を持つ。",
+      "evidencePath": "evidence/person_2/person_jesse_903.json",
+      "evidenceSHA256": "7f944a1321761e80efcb2e8a2ab2d3e69f933375430ab72279de416412e97bfc"
+    },
+    {
+      "entityID": "person:jesus_905",
+      "path": "drafts/person_2/person_jesus_905.json",
+      "currentSHA256": "2a144f23593c516f634bc1bc4bf41d02e21f2bc7b92887da7ace21bfaa341daf",
+      "oldSHA256": "0917414d69a2338d83697aa3d38979215ffb3736c40df7724cbaf5bb4419a9ca",
+      "round2ManifestSHA256": "2a144f23593c516f634bc1bc4bf41d02e21f2bc7b92887da7ace21bfaa341daf",
+      "changedSinceRound1": true,
+      "priorFinalReviewSHA256": "0917414d69a2338d83697aa3d38979215ffb3736c40df7724cbaf5bb4419a9ca",
+      "priorVerdict": "fail",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 1
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 1:1",
+          "textStatus": "present",
+          "text": "The first book I wrote, Theophilus, concerned all that Jesus began both to do and to teach,"
+        },
+        {
+          "ref": "ACT 1:3",
+          "textStatus": "present",
+          "text": "To these he also showed himself alive after he suffered, by many proofs, appearing to them over a period of forty days and speaking about God’s Kingdom."
+        },
+        {
+          "ref": "ACT 2:36",
+          "textStatus": "present",
+          "text": "“Let all the house of Israel therefore know certainly that God has made him both Lord and Christ, this Jesus whom you crucified.”"
+        },
+        {
+          "ref": "ACT 9:5",
+          "textStatus": "present",
+          "text": "He said, “Who are you, Lord?” The Lord said, “I am Jesus, whom you are persecuting."
+        },
+        {
+          "ref": "ACT 8:37",
+          "textStatus": "empty",
+          "text": ""
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-1-1",
+          "web-act-1-3",
+          "web-act-2-36",
+          "web-act-9-5"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "currentFieldAudit": {
+          "nameJa": "イエス",
+          "subtitleJa": "ルカが前の書で記した、行いと教えの中心人物。",
+          "summaryJa": "使徒言行録の冒頭は、イエスが行い、教え始めたことを振り返る。",
+          "identityNoteJa": "",
+          "knownBy": {
+            "chapter": 1,
+            "verse": 1
+          },
+          "sourceIds": [
+            "web-act-1-1"
+          ],
+          "facts": [
+            {
+              "textJa": "イエスは苦難の後、弟子たちに現れ、神の国について語った。",
+              "knownBy": {
+                "chapter": 1,
+                "verse": 3
+              },
+              "sourceIds": [
+                "web-act-1-3"
+              ]
+            },
+            {
+              "textJa": "ペトロは、神がイエスを主またキリストとしたと宣言した。",
+              "knownBy": {
+                "chapter": 2,
+                "verse": 36
+              },
+              "sourceIds": [
+                "web-act-2-36"
+              ]
+            },
+            {
+              "textJa": "サウロに語りかけた声は、自らをイエスと名乗る。",
+              "knownBy": {
+                "chapter": 9,
+                "verse": 5
+              },
+              "sourceIds": [
+                "web-act-9-5"
+              ]
+            }
+          ]
+        },
+        "emptyVerse837Excluded": true
+      },
+      "rationaleJa": "旧レビューのfailは空のACT 8:37収録。現行profileから同節をpassages/source link双方で除外。1:1の冒頭要約は同節の「Jesus began both to do and to teach」に限定し、1:3・2:36・9:5の後続内容はそれぞれfactsへゲート。",
+      "evidencePath": "evidence/person_2/person_jesus_905.json",
+      "evidenceSHA256": "98d43fb3a4a81ad3dfc9070ff876f4cbb909bca2cc7dfbd07fd87efec969b983"
+    },
+    {
+      "entityID": "person:joel_1660",
+      "path": "drafts/person_2/person_joel_1660.json",
+      "currentSHA256": "8b03129f60922692229230ead783c58a8ac8537e6fd97f7fa70a7d62a7d2c4af",
+      "oldSHA256": "8b03129f60922692229230ead783c58a8ac8537e6fd97f7fa70a7d62a7d2c4af",
+      "round2ManifestSHA256": "8b03129f60922692229230ead783c58a8ac8537e6fd97f7fa70a7d62a7d2c4af",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "8b03129f60922692229230ead783c58a8ac8537e6fd97f7fa70a7d62a7d2c4af",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 2,
+        "verse": 16
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 2:16",
+          "textStatus": "present",
+          "text": "But this is what has been spoken through the prophet Joel:"
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-2-16"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [],
+        "round1SHA256": "8b03129f60922692229230ead783c58a8ac8537e6fd97f7fa70a7d62a7d2c4af",
+        "previousFinalReviewSHA256": "8b03129f60922692229230ead783c58a8ac8537e6fd97f7fa70a7d62a7d2c4af"
+      },
+      "rationaleJa": "ACT 2:16 はPeterの説明中で「prophet Joel」を明示する。knownByと唯一のpassage/sourceは一致。",
+      "evidencePath": "evidence/person_2/person_joel_1660.json",
+      "evidenceSHA256": "4fa7ff371c13bb7905a35040d6a95cfae270c1f34a2ac21427f06723e11e518b"
+    },
+    {
+      "entityID": "person:john_1676",
+      "path": "drafts/person_2/person_john_1676.json",
+      "currentSHA256": "71e2bf777f23739ec0da91ac7078098f4400bffd37d92982c9d7211638b0b9c4",
+      "oldSHA256": "71e2bf777f23739ec0da91ac7078098f4400bffd37d92982c9d7211638b0b9c4",
+      "round2ManifestSHA256": "71e2bf777f23739ec0da91ac7078098f4400bffd37d92982c9d7211638b0b9c4",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "71e2bf777f23739ec0da91ac7078098f4400bffd37d92982c9d7211638b0b9c4",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 5
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 1:5",
+          "textStatus": "present",
+          "text": "For John indeed baptized in water, but you will be baptized in the Holy Spirit not many days from now.”"
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-1-5"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [],
+        "round1SHA256": "71e2bf777f23739ec0da91ac7078098f4400bffd37d92982c9d7211638b0b9c4",
+        "previousFinalReviewSHA256": "71e2bf777f23739ec0da91ac7078098f4400bffd37d92982c9d7211638b0b9c4"
+      },
+      "rationaleJa": "ACT 1:5 はJohnの水による洗礼を対照として言及し、後続のActs出現も同じ洗礼伝承を参照する。初出・identity noteはこの根拠内にとどまる。",
+      "evidencePath": "evidence/person_2/person_john_1676.json",
+      "evidenceSHA256": "6ca37400fa103f5c59969cc2c7bcd3f6f5910727dfc628aaf3a840c5fc7838ed"
+    },
+    {
+      "entityID": "person:john_1677",
+      "path": "drafts/person_2/person_john_1677.json",
+      "currentSHA256": "2d16611de2c73cdcd8d92fd5fb14ef911e07fec82e0c15a5a7e748fee9afbba8",
+      "oldSHA256": "91918fffa3008ec2ad0f59f63e77d4b5fe2a1a2a40d4f7aa4e0624b70b3d3334",
+      "round2ManifestSHA256": "2d16611de2c73cdcd8d92fd5fb14ef911e07fec82e0c15a5a7e748fee9afbba8",
+      "changedSinceRound1": true,
+      "priorFinalReviewSHA256": "91918fffa3008ec2ad0f59f63e77d4b5fe2a1a2a40d4f7aa4e0624b70b3d3334",
+      "priorVerdict": "fail",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 13
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 1:13",
+          "textStatus": "present",
+          "text": "When they had come in, they went up into the upper room where they were staying, that is Peter, John, James, Andrew, Philip, Thomas, Bartholomew, Matthew, James the son of Alphaeus, Simon the Zealot, and Judas the son of James."
+        },
+        {
+          "ref": "ACT 3:1",
+          "textStatus": "present",
+          "text": "Peter and John were going up into the temple at the hour of prayer, the ninth hour."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-1-13"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "currentFieldAudit": {
+          "nameJa": "ヨハネ",
+          "subtitleJa": "使徒名簿に載るヨハネ。",
+          "summaryJa": "使徒言行録1:13の使徒名簿に記載される人物。",
+          "identityNoteJa": "",
+          "knownBy": {
+            "chapter": 1,
+            "verse": 13
+          },
+          "sourceIds": [
+            "web-act-1-13"
+          ],
+          "facts": []
+        }
+      },
+      "rationaleJa": "旧レビューで指摘されたidentityNoteの3:1以後情報は現行identityNoteから削除（空欄）。初出1:13のsummaryは使徒名簿に載る人物とだけ述べ、後続同行情報を初出に先取りしていない。",
+      "evidencePath": "evidence/person_2/person_john_1677.json",
+      "evidenceSHA256": "0e8df7d5f02b5c42ec0ef498d491a3c9b72b3638256f89b022c6b416d23c0327"
+    },
+    {
+      "entityID": "person:john_1678",
+      "path": "drafts/person_2/person_john_1678.json",
+      "currentSHA256": "fa358b0efe6886b4c4afca2c1ce329232da697b2e1e77747baca1979efdb7b3c",
+      "oldSHA256": "fa358b0efe6886b4c4afca2c1ce329232da697b2e1e77747baca1979efdb7b3c",
+      "round2ManifestSHA256": "fa358b0efe6886b4c4afca2c1ce329232da697b2e1e77747baca1979efdb7b3c",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "fa358b0efe6886b4c4afca2c1ce329232da697b2e1e77747baca1979efdb7b3c",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 4,
+        "verse": 6
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 4:6",
+          "textStatus": "present",
+          "text": "Annas the high priest was there, with Caiaphas, John, Alexander, and as many as were relatives of the high priest."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-4-6"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [],
+        "round1SHA256": "fa358b0efe6886b4c4afca2c1ce329232da697b2e1e77747baca1979efdb7b3c",
+        "previousFinalReviewSHA256": "fa358b0efe6886b4c4afca2c1ce329232da697b2e1e77747baca1979efdb7b3c"
+      },
+      "rationaleJa": "ACT 4:6 はAnnasの親族らと並ぶJohnを列挙し、summaryは本文に詳しい身元がないことを限定。使徒Johnとの混同を避けるidentity noteも適合。",
+      "evidencePath": "evidence/person_2/person_john_1678.json",
+      "evidenceSHA256": "16a5d64879480362ae981da7c9e402bfd592c06e676e642408c2a895ac5027e5"
+    },
+    {
+      "entityID": "person:joseph_1710",
+      "path": "drafts/person_2/person_joseph_1710.json",
+      "currentSHA256": "0acc5a89a6fce76d92e831e97f910ce42d3c1ff218252cdc30ea265d3895c5ec",
+      "oldSHA256": "425b5ac5c859c2a5130b9afd63fca2c34c1cf7168b68bf1f8a86a2cb8bd5d7bb",
+      "round2ManifestSHA256": "0acc5a89a6fce76d92e831e97f910ce42d3c1ff218252cdc30ea265d3895c5ec",
+      "changedSinceRound1": true,
+      "priorFinalReviewSHA256": "425b5ac5c859c2a5130b9afd63fca2c34c1cf7168b68bf1f8a86a2cb8bd5d7bb",
+      "priorVerdict": "qualified",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 7,
+        "verse": 9
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 7:9",
+          "textStatus": "present",
+          "text": "“The patriarchs, moved with jealousy against Joseph, sold him into Egypt. God was with him"
+        },
+        {
+          "ref": "ACT 7:14",
+          "textStatus": "present",
+          "text": "Joseph sent and summoned Jacob his father and all his relatives, seventy-five souls."
+        },
+        {
+          "ref": "ACT 7:18",
+          "textStatus": "present",
+          "text": "until there arose a different king who didn’t know Joseph."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-7-14",
+          "web-act-7-18",
+          "web-act-7-9"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "currentFieldAudit": {
+          "nameJa": "ヨセフ",
+          "subtitleJa": "兄たちに売られたヨセフ。",
+          "summaryJa": "使徒言行録7:9では、兄たちにエジプトへ売られた人物として語られる。",
+          "identityNoteJa": "",
+          "knownBy": {
+            "chapter": 7,
+            "verse": 9
+          },
+          "sourceIds": [
+            "web-act-7-9"
+          ],
+          "facts": [
+            {
+              "textJa": "ヨセフは父ヤコブと親族をエジプトへ呼び寄せた。",
+              "knownBy": {
+                "chapter": 7,
+                "verse": 14
+              },
+              "sourceIds": [
+                "web-act-7-14"
+              ]
+            },
+            {
+              "textJa": "その後、ヨセフを知らない別の王がエジプトで立ったと記される。",
+              "knownBy": {
+                "chapter": 7,
+                "verse": 18
+              },
+              "sourceIds": [
+                "web-act-7-18"
+              ]
+            }
+          ]
+        }
+      },
+      "rationaleJa": "現行7:18 factは「その後、ヨセフを知らない別の王がエジプトで立った」とし、旧稿の本文に明示のない「ヨセフの死後」を除去。7:9初出と7:14/7:18後続factsは各節に対応。",
+      "evidencePath": "evidence/person_2/person_joseph_1710.json",
+      "evidenceSHA256": "409a8178d1761ab79498b2c0aca7757f63e8976250b9458b618a4a754b4fcd4e"
+    },
+    {
+      "entityID": "person:joshua_1727",
+      "path": "drafts/person_2/person_joshua_1727.json",
+      "currentSHA256": "2782fe81be93453f8af5efdeb189dab45224b94727305643f0934cafe3bfc4c9",
+      "oldSHA256": "2782fe81be93453f8af5efdeb189dab45224b94727305643f0934cafe3bfc4c9",
+      "round2ManifestSHA256": "2782fe81be93453f8af5efdeb189dab45224b94727305643f0934cafe3bfc4c9",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "2782fe81be93453f8af5efdeb189dab45224b94727305643f0934cafe3bfc4c9",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 7,
+        "verse": 45
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 7:45",
+          "textStatus": "present",
+          "text": "which also our fathers, in their turn, brought in with Joshua when they entered into the possession of the nations whom God drove out before the face of our fathers to the days of David,"
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-7-45"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [],
+        "round1SHA256": "2782fe81be93453f8af5efdeb189dab45224b94727305643f0934cafe3bfc4c9",
+        "previousFinalReviewSHA256": "2782fe81be93453f8af5efdeb189dab45224b94727305643f0934cafe3bfc4c9"
+      },
+      "rationaleJa": "ACT 7:45 は先祖たちがJoshuaとともに入り、神が諸国民を追い出したと記す。summaryはこの節以上の伝記を追加していない。",
+      "evidencePath": "evidence/person_2/person_joshua_1727.json",
+      "evidenceSHA256": "1d26ee6002d8da8139da8d903176c2b0f31f3efb9db015508ba1a94f35802829"
+    },
+    {
+      "entityID": "person:judas_1757",
+      "path": "drafts/person_2/person_judas_1757.json",
+      "currentSHA256": "549faecc2dbc1dc2c24221eb1beffda6777fd717466e4f88a266d10d9e610d64",
+      "oldSHA256": "549faecc2dbc1dc2c24221eb1beffda6777fd717466e4f88a266d10d9e610d64",
+      "round2ManifestSHA256": "549faecc2dbc1dc2c24221eb1beffda6777fd717466e4f88a266d10d9e610d64",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "549faecc2dbc1dc2c24221eb1beffda6777fd717466e4f88a266d10d9e610d64",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 5,
+        "verse": 37
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 5:37",
+          "textStatus": "present",
+          "text": "After this man, Judas of Galilee rose up in the days of the enrollment, and drew away some people after him. He also perished, and all, as many as obeyed him, were scattered abroad."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-5-37"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [],
+        "round1SHA256": "549faecc2dbc1dc2c24221eb1beffda6777fd717466e4f88a266d10d9e610d64",
+        "previousFinalReviewSHA256": "549faecc2dbc1dc2c24221eb1beffda6777fd717466e4f88a266d10d9e610d64"
+      },
+      "rationaleJa": "ACT 5:37 は「Judas of Galilee」、人口調査の時期の蜂起・追随者離散・死を同じ節で記す。profileの各要素は初出節で分かる。",
+      "evidencePath": "evidence/person_2/person_judas_1757.json",
+      "evidenceSHA256": "104ec0a66c862cdcc19cc303ac0601bdcd19e61cccf11319a7fbfee68f477d3d"
+    },
+    {
+      "entityID": "person:judas_1758",
+      "path": "drafts/person_2/person_judas_1758.json",
+      "currentSHA256": "a940865947bb0ab481aad17e673ced244daeb1d2efa5996e8bea324ab96c0436",
+      "oldSHA256": "a63f7375a24e43e19012ef0b01b127a5f866c897bb64915c49c101461ec9f6c9",
+      "round2ManifestSHA256": "a940865947bb0ab481aad17e673ced244daeb1d2efa5996e8bea324ab96c0436",
+      "changedSinceRound1": true,
+      "priorFinalReviewSHA256": "a63f7375a24e43e19012ef0b01b127a5f866c897bb64915c49c101461ec9f6c9",
+      "priorVerdict": "qualified",
+      "status": "qualified",
+      "knownBy": {
+        "chapter": 9,
+        "verse": 11
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 9:11",
+          "textStatus": "present",
+          "text": "The Lord said to him, “Arise and go to the street which is called Straight, and inquire in the house of Judah for one named Saul, a man of Tarsus. For behold, he is praying,"
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "kjv-act-9-11",
+          "web-act-9-11"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "currentFieldAudit": {
+          "nameJa": "ユダ",
+          "subtitleJa": "サウロが滞在したダマスコの家の持ち主として名が記される。",
+          "summaryJa": "使徒言行録9:11で、主はアナニアにサウロを訪ねるよう告げ、その場所として「ユダの家」を示す。WEBは名をJudah、KJVはJudasと綴り、本文が伝えるのは家主であることまで。",
+          "identityNoteJa": "WEBのJudahとKJVのJudasは同じギリシア語名の翻訳・表記差。使徒言行録はこの家主について他の人物情報を示さない。",
+          "knownBy": {
+            "chapter": 9,
+            "verse": 11
+          },
+          "sourceIds": [
+            "web-act-9-11",
+            "kjv-act-9-11"
+          ],
+          "facts": []
+        },
+        "variantComparison": {
+          "witnesses": [
+            {
+              "version": "World English Bible",
+              "ref": "Acts 9:11",
+              "rendering": "house of Judah",
+              "url": "https://ebible.org/engwebp/ACT09.htm#V11"
+            },
+            {
+              "version": "King James Version",
+              "ref": "Acts 9:11",
+              "rendering": "house of Judas",
+              "url": "https://www.biblegateway.com/passage/?search=Acts+9%3A11&version=KJV"
+            }
+          ],
+          "conclusionJa": "両訳は同じ家主の固有名を示す表記差。家主ユダとして既存IDを維持し、他の身元情報は推測しない。"
+        }
+      },
+      "rationaleJa": "現行identityNote/profileが固定WEBのJudahとKJVのJudasという表記差を開示し、WEB本文は家主以上の伝記を与えないと限定。KJV source objectと比較evidenceあり。同一安定IDへの訳語対応は編集的照合としてqualified。",
+      "evidencePath": "evidence/person_2/person_judas_1758.json",
+      "evidenceSHA256": "ffb3c79892a92df3a0427b01fd0d202bfed0a9c1095a4e7eeb8b99a4696245e0"
+    },
+    {
+      "entityID": "person:judas_1759",
+      "path": "drafts/person_2/person_judas_1759.json",
+      "currentSHA256": "be79dbd51acca11ec8bd9d1d638cb9ed6fef20340c5921dab487ed06c7bf8926",
+      "oldSHA256": "be79dbd51acca11ec8bd9d1d638cb9ed6fef20340c5921dab487ed06c7bf8926",
+      "round2ManifestSHA256": "be79dbd51acca11ec8bd9d1d638cb9ed6fef20340c5921dab487ed06c7bf8926",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "be79dbd51acca11ec8bd9d1d638cb9ed6fef20340c5921dab487ed06c7bf8926",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 15,
+        "verse": 22
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 15:22",
+          "textStatus": "present",
+          "text": "Then it seemed good to the apostles and the elders, with the whole assembly, to choose men out of their company, and send them to Antioch with Paul and Barnabas: Judas called Barsabbas, and Silas, chief men among the brothers."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-15-22"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [],
+        "round1SHA256": "be79dbd51acca11ec8bd9d1d638cb9ed6fef20340c5921dab487ed06c7bf8926",
+        "previousFinalReviewSHA256": "be79dbd51acca11ec8bd9d1d638cb9ed6fef20340c5921dab487ed06c7bf8926"
+      },
+      "rationaleJa": "ACT 15:22 は「Judas called Barsabbas」と名指し、15:27・32でもそのJudasとSilasが同じ任務・報告を続ける。別のJudasとの区別が明記される。",
+      "evidencePath": "evidence/person_2/person_judas_1759.json",
+      "evidenceSHA256": "15f9255921a9b9bf3986de718e80f91bbaae68bcc0a6ea3d89cbdabaaf488418"
+    },
+    {
+      "entityID": "person:judas_1760",
+      "path": "drafts/person_2/person_judas_1760.json",
+      "currentSHA256": "90af3d15741d746980533a67c4fe76a9b890f9d5b38e92ca980299e3f9dec10b",
+      "oldSHA256": "90af3d15741d746980533a67c4fe76a9b890f9d5b38e92ca980299e3f9dec10b",
+      "round2ManifestSHA256": "90af3d15741d746980533a67c4fe76a9b890f9d5b38e92ca980299e3f9dec10b",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "90af3d15741d746980533a67c4fe76a9b890f9d5b38e92ca980299e3f9dec10b",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 16
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 1:16",
+          "textStatus": "present",
+          "text": "“Brothers, it was necessary that this Scripture should be fulfilled, which the Holy Spirit spoke before by the mouth of David concerning Judas, who was guide to those who took Jesus."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-1-16",
+          "web-act-1-25"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [
+          {
+            "knownBy": "ACT 1:25",
+            "status": "pass",
+            "textJa": "ユダが離れた使徒の務めを引き継ぐ者を選ぶ必要があると、ペトロは語った。",
+            "webText": "to take part in this ministry and apostleship from which Judas fell away, that he might go to his own place.”"
+          }
+        ],
+        "round1SHA256": "90af3d15741d746980533a67c4fe76a9b890f9d5b38e92ca980299e3f9dec10b",
+        "previousFinalReviewSHA256": "90af3d15741d746980533a67c4fe76a9b890f9d5b38e92ca980299e3f9dec10b"
+      },
+      "rationaleJa": "ACT 1:16 はJudasをJesusを捕らえた者たちのguideと明記し、1:25は彼が離れた使徒職務を記す。引渡しの説明と後続事実のsource gateが合う。",
+      "evidencePath": "evidence/person_2/person_judas_1760.json",
+      "evidenceSHA256": "8cf669649dd039a2fa3db7348058717a80e7936add194f9cd02cf4eb9dbf83a9"
+    },
+    {
+      "entityID": "person:julius_1763",
+      "path": "drafts/person_2/person_julius_1763.json",
+      "currentSHA256": "f1f91181bff2e29414cdf8f95525eedb018ea96387e5e83899eae227b6a248d2",
+      "oldSHA256": "70b4d4007c63c58ad07c60424506f33da31bf5a61d215616f7e0643b28a494f0",
+      "round2ManifestSHA256": "f1f91181bff2e29414cdf8f95525eedb018ea96387e5e83899eae227b6a248d2",
+      "changedSinceRound1": true,
+      "priorFinalReviewSHA256": "70b4d4007c63c58ad07c60424506f33da31bf5a61d215616f7e0643b28a494f0",
+      "priorVerdict": "fail",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 27,
+        "verse": 1
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 27:1",
+          "textStatus": "present",
+          "text": "When it was determined that we should sail for Italy, they delivered Paul and certain other prisoners to a centurion named Julius, of the Augustan band."
+        },
+        {
+          "ref": "ACT 27:3",
+          "textStatus": "present",
+          "text": "The next day, we touched at Sidon. Julius treated Paul kindly and gave him permission to go to his friends and refresh himself."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-27-1"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "currentFieldAudit": {
+          "nameJa": "ユリウス",
+          "subtitleJa": "イタリアへ向かう船旅で囚人を預かった百人隊長。",
+          "summaryJa": "使徒言行録27:1で、囚人たちを預かる百人隊長として初めて登場する。",
+          "identityNoteJa": "",
+          "knownBy": {
+            "chapter": 27,
+            "verse": 1
+          },
+          "sourceIds": [
+            "web-act-27-1"
+          ],
+          "facts": []
+        }
+      },
+      "rationaleJa": "現行subtitleは「イタリアへ向かう船旅で囚人を預かった百人隊長」。27:1はItalyへ出航する決定後にcenturion Juliusへ囚人らを引き渡すと記すため、旧稿の未確定なRome護送先を先取りしない。summaryも初出節に限定。",
+      "evidencePath": "evidence/person_2/person_julius_1763.json",
+      "evidenceSHA256": "f8189e3be1eea1001209499d0f602cf844a690f28627301d56cd68b6d0ba7e3d"
+    },
+    {
+      "entityID": "person:justus_1766",
+      "path": "drafts/person_2/person_justus_1766.json",
+      "currentSHA256": "0b0fa131ca2f1fad87656a2f1a6573e83fa7976dcfcb11b09adeb44b1d925608",
+      "oldSHA256": "0b0fa131ca2f1fad87656a2f1a6573e83fa7976dcfcb11b09adeb44b1d925608",
+      "round2ManifestSHA256": "0b0fa131ca2f1fad87656a2f1a6573e83fa7976dcfcb11b09adeb44b1d925608",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "0b0fa131ca2f1fad87656a2f1a6573e83fa7976dcfcb11b09adeb44b1d925608",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 18,
+        "verse": 7
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 18:7",
+          "textStatus": "present",
+          "text": "He departed there and went into the house of a certain man named Justus, one who worshiped God, whose house was next door to the synagogue."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-18-7"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [],
+        "round1SHA256": "0b0fa131ca2f1fad87656a2f1a6573e83fa7976dcfcb11b09adeb44b1d925608",
+        "previousFinalReviewSHA256": "0b0fa131ca2f1fad87656a2f1a6573e83fa7976dcfcb11b09adeb44b1d925608"
+      },
+      "rationaleJa": "ACT 18:7 はJustusを名指し、神を礼拝し会堂の隣に家があると直接記す。summaryもPaulが会堂からJustusの家に移ったことだけに限定。",
+      "evidencePath": "evidence/person_2/person_justus_1766.json",
+      "evidenceSHA256": "0ac12493a61767ddef0b277843c1ad37e2e38c3370740ccfdde807ebeb075d02"
+    },
+    {
+      "entityID": "person:kish_1784",
+      "path": "drafts/person_2/person_kish_1784.json",
+      "currentSHA256": "421958e7db1168dc249c8b58580b68ade3a6236f63d5b746b00a554bf2434784",
+      "oldSHA256": "421958e7db1168dc249c8b58580b68ade3a6236f63d5b746b00a554bf2434784",
+      "round2ManifestSHA256": "421958e7db1168dc249c8b58580b68ade3a6236f63d5b746b00a554bf2434784",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "421958e7db1168dc249c8b58580b68ade3a6236f63d5b746b00a554bf2434784",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 13,
+        "verse": 21
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 13:21",
+          "textStatus": "present",
+          "text": "Afterward they asked for a king, and God gave to them Saul the son of Kish, a man of the tribe of Benjamin, for forty years."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-13-21"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [],
+        "round1SHA256": "421958e7db1168dc249c8b58580b68ade3a6236f63d5b746b00a554bf2434784",
+        "previousFinalReviewSHA256": "421958e7db1168dc249c8b58580b68ade3a6236f63d5b746b00a554bf2434784"
+      },
+      "rationaleJa": "ACT 13:21 はSaulを「son of Kish」と直接記す。subtitleでSaulをイスラエル最初の王と呼ぶのは「王を求め、神がSaulを与えた」という同節の順序からの要約で、父子同定自体は直接。",
+      "evidencePath": "evidence/person_2/person_kish_1784.json",
+      "evidenceSHA256": "b923e8c2269959a7ece22a520cd591d4275ad509778c6ff7184802a1dd294cae"
+    },
+    {
+      "entityID": "person:lebbaeus_1815",
+      "path": "drafts/person_2/person_lebbaeus_1815.json",
+      "currentSHA256": "bd0fcb5fdf19d95cd07163fbc8ec310537302b9e47a61aa9def01212ff601c9a",
+      "oldSHA256": "0fb141cb0a93fa4d36e3fb602946560548862c96795817fc2e15f89898a0fef4",
+      "round2ManifestSHA256": "bd0fcb5fdf19d95cd07163fbc8ec310537302b9e47a61aa9def01212ff601c9a",
+      "changedSinceRound1": true,
+      "priorFinalReviewSHA256": "0fb141cb0a93fa4d36e3fb602946560548862c96795817fc2e15f89898a0fef4",
+      "priorVerdict": "qualified",
+      "status": "qualified",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 13
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 1:13",
+          "textStatus": "present",
+          "text": "When they had come in, they went up into the upper room where they were staying, that is Peter, John, James, Andrew, Philip, Thomas, Bartholomew, Matthew, James the son of Alphaeus, Simon the Zealot, and Judas the son of James."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "easton-lebbaeus",
+          "jfb-matt-10-3",
+          "web-act-1-13"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "currentFieldAudit": {
+          "nameJa": "レバイオス（ヤコブの子ユダ）",
+          "subtitleJa": "資料照合でレバイオスとも呼ばれる、使徒名簿のヤコブの子ユダ。",
+          "summaryJa": "使徒言行録1:13は「ヤコブの子ユダ」を使徒名簿に挙げる。マタイ10:3のレバイオスとこのユダを同一の使徒とみなす対応は、WEB本文だけでなくJFB・Eastonの照合資料に基づく。",
+          "identityNoteJa": "使徒言行録1:13のWEBはJudas son of Jamesと記し、Lebbaeusとは呼ばない。JFB（Matt 10:3）はLebbaeusをLuke/ActsのJudas of Jamesに対応させ、Eastonも「Judas ... called also Lebbaeus」と整理する。したがって表示名の括弧内は資料照合による異名であり、WEBの直接表記ではない。",
+          "knownBy": {
+            "chapter": 1,
+            "verse": 13
+          },
+          "sourceIds": [
+            "web-act-1-13",
+            "jfb-matt-10-3",
+            "easton-lebbaeus"
+          ],
+          "facts": []
+        },
+        "editorialIdentityEvidence": [
+          {
+            "source": "candidate/apps/ios/Sources/Core/Resources/commentary-JFB-MAT.json",
+            "editionId": "JFB-3.0",
+            "sourceId": "jfb:709976846a6387262621c015e321b2288bd21d0c68110cab2b83005c6686efe3",
+            "sourceLocator": "Matthew 10:3",
+            "textualBasisJa": "原文は「Lebbaeus, whose surname was Thaddaeus」とした後、これをLuke 6:16／Acts 1:13に載る「Judas the brother of James」と「the same, without doubt」と対応づける。"
+          },
+          {
+            "source": "candidate/apps/ios/Sources/Core/Resources/commentary-Easton.json",
+            "editionId": "Easton-2.0.1",
+            "sourceId": "easton:daef309c9650890fa73ff265c0f02b949c7b9a21fa06c50b0daea909c3cd4fb2",
+            "sourceLocator": "LEBBAEUS",
+            "textualBasisJa": "原文はLebbaeusを十二使徒のJudas (Jude)の姓とし、Matthew 10:3に置き、Thaddaeusとも呼ばれるとする。"
+          },
+          {
+            "source": "https://biblehub.com/commentaries/acts/1-13.htm",
+            "editionId": "JFB-3.0; Acts 1:13 commentary page",
+            "sourceLocator": "Acts 1:13",
+            "textualBasisJa": "JFB commentary collection cross-references Matthew 10:2–4; Expositor’s Greek Testament comparison explicitly says Acts’ “Judas of James” corresponds to “Thaddaeus (or Lebbaeus)” in Matthew/Mark list."
+          },
+          {
+            "source": "https://www.biblegateway.com/passage/?search=Matthew+10%3A3&version=KJV",
+            "editionId": "King James Version",
+            "sourceLocator": "Matthew 10:3",
+            "textualBasisJa": "KJV has “Lebbaeus, whose surname was Thaddaeus,” supplying a canonical text witness for the name; JFB supplies the cross-Gospel identification."
+          }
+        ]
+      },
+      "rationaleJa": "現行profileはWEB ACT 1:13の「Judas son of James」とLebbaeusを同一表記として直接扱わず、JFB Matthew 10:3とEaston LEBBAEUS項に基づく編集上の異名照合と明記。該当source IDs、ローカル二次資料箇所と引用根拠をevidenceに記録。ACT本文のみでの同定ではないためqualified。",
+      "evidencePath": "evidence/person_2/person_lebbaeus_1815.json",
+      "evidenceSHA256": "f88f67e943f5f6ae16745bbfbdfbebe1c662454d6ee30775bd1d018552604887"
+    },
+    {
+      "entityID": "person:lucius_1833",
+      "path": "drafts/person_2/person_lucius_1833.json",
+      "currentSHA256": "3fb8af5cc75eb62f7308fb5f189c3d8431187580120966a0573b5fe180299b3d",
+      "oldSHA256": "3fb8af5cc75eb62f7308fb5f189c3d8431187580120966a0573b5fe180299b3d",
+      "round2ManifestSHA256": "3fb8af5cc75eb62f7308fb5f189c3d8431187580120966a0573b5fe180299b3d",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "3fb8af5cc75eb62f7308fb5f189c3d8431187580120966a0573b5fe180299b3d",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 13,
+        "verse": 1
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 13:1",
+          "textStatus": "present",
+          "text": "Now in the assembly that was at Antioch there were some prophets and teachers: Barnabas, Simeon who was called Niger, Lucius of Cyrene, Manaen the foster brother of Herod the tetrarch, and Saul."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-13-1"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [],
+        "round1SHA256": "3fb8af5cc75eb62f7308fb5f189c3d8431187580120966a0573b5fe180299b3d",
+        "previousFinalReviewSHA256": "3fb8af5cc75eb62f7308fb5f189c3d8431187580120966a0573b5fe180299b3d"
+      },
+      "rationaleJa": "ACT 13:1 はLucius of CyreneをAntiochのprophets/teachersの一人として名指す。初出まとめの地名・職務は同節にある。",
+      "evidencePath": "evidence/person_2/person_lucius_1833.json",
+      "evidenceSHA256": "44d9a908d287d6c2ef9b110753ceed0897736ff93937c8034bac8d3f1e949ebd"
+    },
+    {
+      "entityID": "person:lydia_1837",
+      "path": "drafts/person_2/person_lydia_1837.json",
+      "currentSHA256": "e95771bfbbea86693695988aa5e20130d1766456e59a48bea1df787d802c8b49",
+      "oldSHA256": "e95771bfbbea86693695988aa5e20130d1766456e59a48bea1df787d802c8b49",
+      "round2ManifestSHA256": "e95771bfbbea86693695988aa5e20130d1766456e59a48bea1df787d802c8b49",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "e95771bfbbea86693695988aa5e20130d1766456e59a48bea1df787d802c8b49",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 14
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 16:14",
+          "textStatus": "present",
+          "text": "A certain woman named Lydia, a seller of purple, of the city of Thyatira, one who worshiped God, heard us. The Lord opened her heart to listen to the things which were spoken by Paul."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-16-14",
+          "web-act-16-15"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [
+          {
+            "knownBy": "ACT 16:15",
+            "status": "pass",
+            "textJa": "リディアは家族とともに洗礼を受け、パウロ一行を自宅に迎えた。",
+            "webText": "When she and her household were baptized, she begged us, saying, “If you have judged me to be faithful to the Lord, come into my house and stay.” So she persuaded us."
+          }
+        ],
+        "round1SHA256": "e95771bfbbea86693695988aa5e20130d1766456e59a48bea1df787d802c8b49",
+        "previousFinalReviewSHA256": "e95771bfbbea86693695988aa5e20130d1766456e59a48bea1df787d802c8b49"
+      },
+      "rationaleJa": "ACT 16:14 はLydiaをThyatira出身の紫布商人、神を礼拝する者として明記。16:15の家族洗礼・歓待は別factに後置し、初出に先取りしていない。",
+      "evidencePath": "evidence/person_2/person_lydia_1837.json",
+      "evidenceSHA256": "f23ba545c081226331e07b063c515ab1a1430b48b58e37d30792a319f2644f9b"
+    },
+    {
+      "entityID": "person:manaen_1926",
+      "path": "drafts/person_2/person_manaen_1926.json",
+      "currentSHA256": "a50209f564bfc8649d81cf04398a4eeb4485cad0c1b940ba17bacafd1ab387c8",
+      "oldSHA256": "a50209f564bfc8649d81cf04398a4eeb4485cad0c1b940ba17bacafd1ab387c8",
+      "round2ManifestSHA256": "a50209f564bfc8649d81cf04398a4eeb4485cad0c1b940ba17bacafd1ab387c8",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "a50209f564bfc8649d81cf04398a4eeb4485cad0c1b940ba17bacafd1ab387c8",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 13,
+        "verse": 1
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 13:1",
+          "textStatus": "present",
+          "text": "Now in the assembly that was at Antioch there were some prophets and teachers: Barnabas, Simeon who was called Niger, Lucius of Cyrene, Manaen the foster brother of Herod the tetrarch, and Saul."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-13-1"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [],
+        "round1SHA256": "a50209f564bfc8649d81cf04398a4eeb4485cad0c1b940ba17bacafd1ab387c8",
+        "previousFinalReviewSHA256": "a50209f564bfc8649d81cf04398a4eeb4485cad0c1b940ba17bacafd1ab387c8"
+      },
+      "rationaleJa": "ACT 13:1 はManaenをAntiochのprophets/teachersの一人、Herod the tetrarchのfoster brotherとして同時に紹介する。",
+      "evidencePath": "evidence/person_2/person_manaen_1926.json",
+      "evidenceSHA256": "ff0b44c8fe2fd0d46360e3be0d5b99a44809826a48032bd9ed56d46c2b7236b5"
+    },
+    {
+      "entityID": "person:mark_1679",
+      "path": "drafts/person_2/person_mark_1679.json",
+      "currentSHA256": "187ba8b264e39f95b884bff1b833ac1ad715d1fedf63e85f7b51507e643967cb",
+      "oldSHA256": "187ba8b264e39f95b884bff1b833ac1ad715d1fedf63e85f7b51507e643967cb",
+      "round2ManifestSHA256": "187ba8b264e39f95b884bff1b833ac1ad715d1fedf63e85f7b51507e643967cb",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "187ba8b264e39f95b884bff1b833ac1ad715d1fedf63e85f7b51507e643967cb",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 12,
+        "verse": 12
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 12:12",
+          "textStatus": "present",
+          "text": "Thinking about that, he came to the house of Mary, the mother of John who was called Mark, where many were gathered together and were praying."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-12-12",
+          "web-act-12-25",
+          "web-act-13-13"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [
+          {
+            "knownBy": "ACT 12:25",
+            "status": "pass",
+            "textJa": "ヨハネ・マルコはバルナバとサウロに同行して旅立った。",
+            "webText": "Barnabas and Saul returned to Jerusalem when they had fulfilled their service, also taking with them John who was called Mark."
+          },
+          {
+            "knownBy": "ACT 13:13",
+            "status": "pass",
+            "textJa": "宣教旅行で同行したヨハネは、パンフィリアで一行を離れてエルサレムへ戻った。",
+            "webText": "Now Paul and his company set sail from Paphos and came to Perga in Pamphylia. John departed from them and returned to Jerusalem."
+          }
+        ],
+        "round1SHA256": "187ba8b264e39f95b884bff1b833ac1ad715d1fedf63e85f7b51507e643967cb",
+        "previousFinalReviewSHA256": "187ba8b264e39f95b884bff1b833ac1ad715d1fedf63e85f7b51507e643967cb"
+      },
+      "rationaleJa": "ACT 12:12 は「John who was called Mark」と母Maryを直接結び付ける。ACT 12:25、13:13の同行・離脱を後続factsでゲートし、同名のJohnと混同しない。",
+      "evidencePath": "evidence/person_2/person_mark_1679.json",
+      "evidenceSHA256": "3d00617aec115d46b11af234e771c912bcb648ed4ef854628b846f03279405db"
+    },
+    {
+      "entityID": "person:mary_1938",
+      "path": "drafts/person_2/person_mary_1938.json",
+      "currentSHA256": "eef7665f8bf727a7a26042c9c10cff45cd9ab0d30731ed4ceb987ba0c7b4e877",
+      "oldSHA256": "eef7665f8bf727a7a26042c9c10cff45cd9ab0d30731ed4ceb987ba0c7b4e877",
+      "round2ManifestSHA256": "eef7665f8bf727a7a26042c9c10cff45cd9ab0d30731ed4ceb987ba0c7b4e877",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "eef7665f8bf727a7a26042c9c10cff45cd9ab0d30731ed4ceb987ba0c7b4e877",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 14
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 1:14",
+          "textStatus": "present",
+          "text": "All these with one accord continued steadfastly in prayer and supplication, along with the women and Mary the mother of Jesus, and with his brothers."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-1-14"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [],
+        "round1SHA256": "eef7665f8bf727a7a26042c9c10cff45cd9ab0d30731ed4ceb987ba0c7b4e877",
+        "previousFinalReviewSHA256": "eef7665f8bf727a7a26042c9c10cff45cd9ab0d30731ed4ceb987ba0c7b4e877"
+      },
+      "rationaleJa": "ACT 1:14 はMaryを「mother of Jesus」と明記し、summaryの祈り続ける群への位置づけを同節で示す。",
+      "evidencePath": "evidence/person_2/person_mary_1938.json",
+      "evidenceSHA256": "2e57b779c169bb4e79df85c36f2bdb4c8fab0e6b410f14a30a82e5f6b71d3e8f"
+    },
+    {
+      "entityID": "person:mary_1941",
+      "path": "drafts/person_2/person_mary_1941.json",
+      "currentSHA256": "1981957fdf4154107ae4b195d2a876491b272d0296668acd68dc82c23362e540",
+      "oldSHA256": "24c80e76e8dd28a3e8a6604df01363bfae5f90b26be0705d3951a89f089b02cc",
+      "round2ManifestSHA256": "1981957fdf4154107ae4b195d2a876491b272d0296668acd68dc82c23362e540",
+      "changedSinceRound1": true,
+      "priorFinalReviewSHA256": "24c80e76e8dd28a3e8a6604df01363bfae5f90b26be0705d3951a89f089b02cc",
+      "priorVerdict": "qualified",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 12,
+        "verse": 12
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 12:12",
+          "textStatus": "present",
+          "text": "Thinking about that, he came to the house of Mary, the mother of John who was called Mark, where many were gathered together and were praying."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-12-12"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "currentFieldAudit": {
+          "nameJa": "マリア",
+          "subtitleJa": "マルコと呼ばれるヨハネの母。",
+          "summaryJa": "使徒言行録12:12は、ペトロが訪れたマリアの家に、多くの人々が集まって祈っていたと記す。",
+          "identityNoteJa": "マルコと呼ばれるヨハネの母として記されるマリア。イエスの母マリアとは別人だが、使徒言行録12:12はこの節で居住都市を明示しない。",
+          "knownBy": {
+            "chapter": 12,
+            "verse": 12
+          },
+          "sourceIds": [
+            "web-act-12-12"
+          ],
+          "facts": []
+        }
+      },
+      "rationaleJa": "現行summaryは12:12のMaryの家と祈る人々を記し、identityNoteは同節で居住都市を明示しないと補足。旧レビューが気にしたJerusalemという場所断定は現行subtitle/summaryにないため解消。",
+      "evidencePath": "evidence/person_2/person_mary_1941.json",
+      "evidenceSHA256": "3d034c03d0405b03d8829aaf15a1c89ae4605cb08690102b0c3fd60c985a2dce"
+    },
+    {
+      "entityID": "person:matthew_1971",
+      "path": "drafts/person_2/person_matthew_1971.json",
+      "currentSHA256": "5727d1999ae2b9712d2e20df33c7b81eb1fb78290b350e0562edafd28aef4363",
+      "oldSHA256": "5727d1999ae2b9712d2e20df33c7b81eb1fb78290b350e0562edafd28aef4363",
+      "round2ManifestSHA256": "5727d1999ae2b9712d2e20df33c7b81eb1fb78290b350e0562edafd28aef4363",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "5727d1999ae2b9712d2e20df33c7b81eb1fb78290b350e0562edafd28aef4363",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 13
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 1:13",
+          "textStatus": "present",
+          "text": "When they had come in, they went up into the upper room where they were staying, that is Peter, John, James, Andrew, Philip, Thomas, Bartholomew, Matthew, James the son of Alphaeus, Simon the Zealot, and Judas the son of James."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-1-13"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [],
+        "round1SHA256": "5727d1999ae2b9712d2e20df33c7b81eb1fb78290b350e0562edafd28aef4363",
+        "previousFinalReviewSHA256": "5727d1999ae2b9712d2e20df33c7b81eb1fb78290b350e0562edafd28aef4363"
+      },
+      "rationaleJa": "ACT 1:13 はMatthewを使徒名簿内に列挙する。profileは名簿以上の伝記・同一性を主張しない。",
+      "evidencePath": "evidence/person_2/person_matthew_1971.json",
+      "evidenceSHA256": "2ed3c2783339a81a1f00bc8a5606465d900b2f2517cd1ef8124ab5c53a71d55d"
+    },
+    {
+      "entityID": "person:matthias_1972",
+      "path": "drafts/person_2/person_matthias_1972.json",
+      "currentSHA256": "a9f13fe05bf5240023f2819a3d0a89bd6d9362c9d98744f2cf334785eed0d6d7",
+      "oldSHA256": "a9f13fe05bf5240023f2819a3d0a89bd6d9362c9d98744f2cf334785eed0d6d7",
+      "round2ManifestSHA256": "a9f13fe05bf5240023f2819a3d0a89bd6d9362c9d98744f2cf334785eed0d6d7",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "a9f13fe05bf5240023f2819a3d0a89bd6d9362c9d98744f2cf334785eed0d6d7",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 23
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 1:23",
+          "textStatus": "present",
+          "text": "They put forward two: Joseph called Barsabbas, who was also called Justus, and Matthias."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-1-23",
+          "web-act-1-26"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "priorReviewFactChecks": [
+          {
+            "knownBy": "ACT 1:26",
+            "status": "pass",
+            "textJa": "くじでマッティアが選ばれ、十一人の使徒に加えられた。",
+            "webText": "They drew lots for them, and the lot fell on Matthias; and he was counted with the eleven apostles."
+          }
+        ],
+        "round1SHA256": "a9f13fe05bf5240023f2819a3d0a89bd6d9362c9d98744f2cf334785eed0d6d7",
+        "previousFinalReviewSHA256": "a9f13fe05bf5240023f2819a3d0a89bd6d9362c9d98744f2cf334785eed0d6d7"
+      },
+      "rationaleJa": "ACT 1:23 は候補としてMatthiasを挙げ、1:26はくじによる選出と使徒への加わりを述べる。後の選出をfactsで明示的に1:26へゲートしている。",
+      "evidencePath": "evidence/person_2/person_matthias_1972.json",
+      "evidenceSHA256": "95adeb41bbe7de9cfde2b6115bfca865c0c35131391d79060a951f44d24f02a6"
+    },
+    {
+      "entityID": "title:roman-emperor-acts",
+      "path": "drafts/title_extra/roman-emperor-acts.json",
+      "currentSHA256": "657fa5d2584bbf45455682205ba111a4b2728104088fe0d3436cec63718e112e",
+      "oldSHA256": "657fa5d2584bbf45455682205ba111a4b2728104088fe0d3436cec63718e112e",
+      "round2ManifestSHA256": "657fa5d2584bbf45455682205ba111a4b2728104088fe0d3436cec63718e112e",
+      "changedSinceRound1": false,
+      "priorFinalReviewSHA256": "657fa5d2584bbf45455682205ba111a4b2728104088fe0d3436cec63718e112e",
+      "priorVerdict": "pass",
+      "status": "closed",
+      "knownBy": {
+        "chapter": 17,
+        "verse": 7
+      },
+      "primaryWEBEvidence": [
+        {
+          "ref": "ACT 17:7",
+          "textStatus": "present",
+          "text": "whom Jason has received. These all act contrary to the decrees of Caesar, saying that there is another king, Jesus!”"
+        },
+        {
+          "ref": "ACT 25:8",
+          "textStatus": "present",
+          "text": "while he said in his defense, “Neither against the law of the Jews, nor against the temple, nor against Caesar, have I sinned at all.”"
+        },
+        {
+          "ref": "ACT 25:10",
+          "textStatus": "present",
+          "text": "But Paul said, “I am standing before Caesar’s judgment seat, where I ought to be tried. I have done no wrong to the Jews, as you also know very well."
+        },
+        {
+          "ref": "ACT 25:11",
+          "textStatus": "present",
+          "text": "For if I have done wrong and have committed anything worthy of death, I don’t refuse to die; but if none of those things is true that they accuse me of, no one can give me up to them. I appeal to Caesar!”"
+        },
+        {
+          "ref": "ACT 25:12",
+          "textStatus": "present",
+          "text": "Then Festus, when he had conferred with the council, answered, “You have appealed to Caesar. To Caesar you shall go.”"
+        },
+        {
+          "ref": "ACT 25:21",
+          "textStatus": "present",
+          "text": "But when Paul had appealed to be kept for the decision of the emperor, I commanded him to be kept until I could send him to Caesar.”"
+        },
+        {
+          "ref": "ACT 25:25",
+          "textStatus": "present",
+          "text": "But when I found that he had committed nothing worthy of death, and as he himself appealed to the emperor, I determined to send him,"
+        },
+        {
+          "ref": "ACT 26:32",
+          "textStatus": "present",
+          "text": "Agrippa said to Festus, “This man might have been set free if he had not appealed to Caesar.”"
+        },
+        {
+          "ref": "ACT 27:24",
+          "textStatus": "present",
+          "text": "saying, ‘Don’t be afraid, Paul. You must stand before Caesar. Behold, God has granted you all those who sail with you.’"
+        },
+        {
+          "ref": "ACT 28:19",
+          "textStatus": "present",
+          "text": "But when the Jews spoke against it, I was constrained to appeal to Caesar, not that I had anything about which to accuse my nation."
+        }
+      ],
+      "sourceReferenceCheck": {
+        "usedIDs": [
+          "web-act-17-7",
+          "web-act-25-10",
+          "web-act-25-11",
+          "web-act-25-12",
+          "web-act-25-21",
+          "web-act-25-25",
+          "web-act-25-8",
+          "web-act-26-32",
+          "web-act-27-24",
+          "web-act-28-19"
+        ],
+        "allResolveToSourceObjects": true,
+        "missingIDs": []
+      },
+      "closureEvidence": {
+        "identityType": "office-title",
+        "summaryJa": "ローマの皇帝職を指す称号です。使徒言行録17:7では、テサロニケの告発者が「カエサルの命令」に背くと主張し、イエスを別の王として訴えます。ここで示されるのは特定の皇帝個人ではなく、皇帝という職への言及です。",
+        "identityNoteJa": "この記録は人物ではなく称号を表し、使徒言行録中の言及を特定の在位者に結び付けません。",
+        "factCount": 9
+      },
+      "rationaleJa": "現行profileを個別再読。identityType=office-titleであり人物ではない。記述は職位・称号に限られ、Augustus/Nero等に同定しない。各後続の上訴・裁判参照は個別factとしてsource-gated。",
+      "evidencePath": "evidence/title_extra/roman-emperor-acts.json",
+      "evidenceSHA256": "92ccfe40da4981c8cc040e4f4b67c7e25b9b961372fa18f82d74b00112d92066"
+    }
+  ]
+}

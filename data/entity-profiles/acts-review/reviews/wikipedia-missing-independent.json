@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-wikipedia-missing-profile-review",
+  "reviewedAtUTC": "2026-10-15",
+  "inputAudit": "reviews/wikipedia-missing-audit.json",
+  "catalog": {
+    "path": "candidate/apps/ios/Sources/Core/Resources/entity-profiles.json",
+    "observedSHA256": "9a0f92b3a1dc77b7bd8c9305bee0fc0605031c7fcc2b7bc06234f019600dfb94",
+    "note": "Catalog changed after the earlier missing-audit snapshot (whose SHA was dfbacdc0...). This review inspected the current profiles by ID; drafts and catalog were not edited."
+  },
+  "methodJa": "17件すべての現在プロフィールの初出・要約とローカル固定WEB本文を照合し、監査提示URLのWikipedia記事を実読。検索のみの不適合候補は別記した。記事中の同名別人、人物同定の揺れ、後代伝承をプロフィールへ持ち込まない条件で、リンク適合性を判定した。プロフィール草稿・evidence・catalogは編集していない。",
+  "linkKinds": ["article", "shared-section", "related-section"],
+  "recommendedCount": 9,
+  "entries": [
+    {
+      "entityID": "person:alexander_188",
+      "action": "hold",
+      "candidateURL": null,
+      "relationship": null,
+      "noteJa": "Acts 19:33のエフェソのアレクサンドロスを特定できる記事は確認できない。Alexander the Coppersmith記事は2 Timothy 4:14の人物で、Actsの人物との同一視を記事自身も不確実とする。New Testament people listも候補名を列挙するだけ。別IDのアレクサンドロス187や後代の同名人物に結びつけない。",
+      "pagesRead": ["https://en.wikipedia.org/wiki/Alexander_the_Coppersmith", "https://en.wikipedia.org/wiki/Alexander_(New_Testament_person)"],
+      "basis": "固定WEB ACT 19:33は群衆に押し出された人物をAlexanderとだけ呼ぶ。記事は別人物との同定を確定しない。"
+    },
+    {
+      "entityID": "person:crispus_961",
+      "action": "recommend",
+      "candidateURL": "https://en.wikipedia.org/wiki/Crispus_of_Chalcedon",
+      "relationship": "related-section",
+      "noteJa": "記事本文がActs 18:8のコリント会堂司クリスポを明示し、プロフィールの人物に合う。ただしページは後代の司教・聖人伝も扱い、記事自身が単一出典依存を表示する。リンクは参考ページとしてのみ提示し、司教職・殉教・祭日などをプロフィールの事実に採用しない。",
+      "pagesRead": ["https://en.wikipedia.org/wiki/Crispus_of_Chalcedon"],
+      "basis": "本文冒頭はActs 18:8と会堂司を明記。固定WEB ACT 18:8もCrispusを会堂司とする。"
+    },
+    {
+      "entityID": "person:demetrius_1007",
+      "action": "recommend",
+      "candidateURL": "https://en.wikipedia.org/wiki/Riot_in_Ephesus",
+      "relationship": "related-section",
+      "noteJa": "個人伝ではなくエフェソ騒動の記事。冒頭および「Verses 23–27」がActs 19:24の銀細工師デメトリオを扱う。共有リンクは騒動の該当節を読むためと明示し、記事の出来事全体を人物略歴として扱わない。",
+      "pagesRead": ["https://en.wikipedia.org/wiki/Riot_in_Ephesus"],
+      "basis": "記事はActs 19:23–41の騒動と19:24–27のDemetriusを明記。固定WEB ACT 19:24–27と一致。"
+    },
+    {
+      "entityID": "person:gaius_1269",
+      "action": "recommend",
+      "candidateURL": "https://en.wikipedia.org/wiki/Gaius_(biblical_figure)",
+      "relationship": "shared-section",
+      "noteJa": "同名人物の索引記事の項目1がActs 19:29のマケドニア人ガイオを明記し、項目2のDerbe出身者と別項目にする。項目番号を示す関連記事リンクとして採用し、1270と同一人物だとは読ませない。記事自身が同名索引と明示している。",
+      "pagesRead": ["https://en.wikipedia.org/wiki/Gaius_(biblical_figure)"],
+      "basis": "固定WEB ACT 19:29のMacedoniansと記事項目1が一致。記事項目2はACT 20:4の別出身地を明記。"
+    },
+    {
+      "entityID": "person:gaius_1270",
+      "action": "recommend",
+      "candidateURL": "https://en.wikipedia.org/wiki/Gaius_(biblical_figure)",
+      "relationship": "shared-section",
+      "noteJa": "同名人物の索引記事の項目2はDerbeに住むガイオをActs 20:4と結び、項目1のActs 19:29のマケドニア人とは分ける。項目2を指す索引記事として提示し、同一視はしない。記事はほかの聖書内Gaiusも同列に挙げるので、人物伝として読ませない。",
+      "pagesRead": ["https://en.wikipedia.org/wiki/Gaius_(biblical_figure)"],
+      "basis": "固定WEB ACT 20:4のGaius of Derbeと記事項目2が一致。記事項目1は別のActs 19:29人物。"
+    },
+    {
+      "entityID": "person:herod_1505",
+      "action": "hold",
+      "candidateURL": null,
+      "relationship": null,
+      "noteJa": "Herod Antipas記事は同時代の人物説明として関連するが、ACT 4:27の本文とプロフィールは称号や別名を挙げず個人同定を保留している。ページを直接つなぐとAntipasと断定する読みを誘うため、現プロフィールには付けない。",
+      "pagesRead": ["https://en.wikipedia.org/wiki/Herod_Antipas"],
+      "basis": "固定WEB ACT 4:27はHerodとのみ記す。Wikipedia記事はActs 4:27を参考文献に含むが、該当同定を表題・本文で直接確定していない。"
+    },
+    {
+      "entityID": "person:james_719",
+      "action": "recommend",
+      "candidateURL": "https://en.wikipedia.org/wiki/James,_brother_of_Jesus#Acts_of_the_Apostles",
+      "relationship": "related-section",
+      "noteJa": "「Acts of the Apostles」節はActs 12:17のJamesを取り上げ、Catholic Encyclopediaによる兄弟ヤコブとの同定を紹介するほか、15章・21章の登場も扱う。リンクはその人物候補を読む関連節として妥当。ただしプロフィールは使徒言行録本文のみでは親族関係を示さないとしているため、リンク注記でも兄弟関係を確定事項にしない。",
+      "pagesRead": ["https://en.wikipedia.org/wiki/James,_brother_of_Jesus#Acts_of_the_Apostles"],
+      "basis": "固定WEB ACT 12:17はJamesを名指しし、ACT 15:13および21:18も同じエルサレムの指導者として扱われる。記事の当該節は12:17, 15, 21を明示するが、家族同定の根拠は本文外の二次資料である。"
+    },
+    {
+      "entityID": "person:john_1678",
+      "action": "recommend",
+      "candidateURL": "https://en.wikipedia.org/wiki/New_Testament_people_named_John#John_of_the_high-priestly_family",
+      "relationship": "shared-section",
+      "noteJa": "「John of the high-priestly family」節はActs 4:6のヨハネを一度だけ登場する人物として扱い、使徒ヨハネとの区別および同定をめぐる少数説も併記する。プロフィールの短い身元説明に合う。記事の不確実性を維持する。",
+      "pagesRead": ["https://en.wikipedia.org/wiki/New_Testament_people_named_John#John_of_the_high-priestly_family"],
+      "basis": "固定WEB ACT 4:6はヨハネを大祭司の親族として列挙。記事の専用節は該当節を直接引用し、同定を確定しない。"
+    },
+    {
+      "entityID": "person:judas_1758",
+      "action": "hold",
+      "candidateURL": null,
+      "relationship": null,
+      "noteJa": "Acts 9:11のダマスコの家主について専用記事を確認できない。検索結果のJudas Iscariot、使徒ユダ等は別人であり、一般的なJudas/Judah記事を結びつけない。WEBのJudahとKJVのJudasという表記差はプロフィールの注記に残す。",
+      "pagesRead": ["https://en.wikipedia.org/w/index.php?search=Judah+Judas+house+Damascus+Acts+9%3A11"],
+      "basis": "固定WEB ACT 9:11はJudahの家主とSaulの住所を示すだけ。検索でも家主固有の記事は確認できず、同名記事は別人物。"
+    },
+    {
+      "entityID": "person:justus_1766",
+      "action": "hold-language",
+      "candidateURL": "https://de.wikipedia.org/wiki/Titius_Justus",
+      "relationship": "article",
+      "noteJa": "ドイツ語記事はActs 18:7のTitius Justusを直接扱い、コリント在住と会堂との関係を記すため意味上は適合する。ただし現アプリのWikipediaReadingLink.safeURLはlanguageをja/enに限定し、de.wikipedia.orgは拒否する。現在のデータ形式では候補として採用できない。英語または日本語の適合記事が確認されるまで保留。",
+      "pagesRead": ["https://de.wikipedia.org/wiki/Titius_Justus"],
+      "basis": "ドイツ語記事の冒頭はApostelgeschichte 18,7を明記。固定WEB ACT 18:7と一致。"
+    },
+    {
+      "entityID": "person:lebbaeus_1815",
+      "action": "recommend",
+      "candidateURL": "https://en.wikipedia.org/wiki/Jude_the_Apostle",
+      "relationship": "related-section",
+      "noteJa": "記事冒頭はJudas son/of JamesとLebbaeusを異名として列挙する一方、記事の後段はThaddaeus・Judeとの調和が教会側の同定であることも説明する。ACT 1:13とマタイ10:3をつなぐ補助記事として適合するが、表示上は資料比較による関連でありWEBがLebbaeusと呼ぶわけではないと明示する。",
+      "pagesRead": ["https://en.wikipedia.org/wiki/Jude_the_Apostle"],
+      "basis": "記事はJudas son of James / Judas of James / Lebbaeusを同じ項目に挙げ、福音書の使徒名簿を調和させる解釈の歴史を説明。現プロフィールもEaston/JFB比較を明示し、同一性を聖書の直接表記とはしていない。"
+    },
+    {
+      "entityID": "person:lucius_1833",
+      "action": "hold",
+      "candidateURL": null,
+      "relationship": null,
+      "noteJa": "Lucius of CyreneページはActs 13:1を直接引用する点は関連するが、見出し・冒頭でLucius of LaodiceaおよびLukeと同一視し、後代の司教・七十弟子伝承も載せる。プロフィールが安全に述べるのはキレネ出身の教師という点なので、現ページへの単純リンクは個人同定を過度に強める。",
+      "pagesRead": ["https://en.wikipedia.org/wiki/Lucius_of_Cyrene"],
+      "basis": "記事冒頭はACT 13:1を引用して対象を示す一方、タイトルと冒頭が別名・後代の身分を同一人物へ結びつける。固定WEB ACT 13:1にはLukeや司教職はない。"
+    },
+    {
+      "entityID": "person:pharaoh_2329",
+      "action": "hold",
+      "candidateURL": null,
+      "relationship": null,
+      "noteJa": "Pharaohの一般記事は称号の説明であって、ACT 7:10,13のヨセフ物語に登場する特定王を識別しない。プロフィールも王名・王朝を特定しないため、一般称号ページをこの人物の伝記リンクとして付けない。",
+      "pagesRead": ["https://en.wikipedia.org/wiki/Pharaoh"],
+      "basis": "記事は古代エジプト王号の通時的説明。固定WEB ACT 7:10,13はPharaohとだけ記し、個人名なし。"
+    },
+    {
+      "entityID": "person:pharaoh_2331",
+      "action": "recommend",
+      "candidateURL": "https://en.wikipedia.org/wiki/Pharaoh",
+      "relationship": "related-section",
+      "noteJa": "プロフィールのidentityTypeはoffice-titleで、人物伝ではなく「ファラオ」という王号の説明が目的。Wikipedia記事は古代エジプトの君主を指す称号とその使用時期を説明するため、称号解説として関連付けられる。個人名・王朝・王女の父の特定には使わない。",
+      "pagesRead": ["https://en.wikipedia.org/wiki/Pharaoh"],
+      "basis": "固定WEB ACT 7:21はPharaoh’s daughterと記すだけで父王の個人名を示さない。記事はPharaohを王号として説明し、固有人物との同定をしない。"
+    },
+    {
+      "entityID": "person:publius_2374",
+      "action": "recommend",
+      "candidateURL": "https://en.wikipedia.org/wiki/Saint_Publius",
+      "relationship": "related-section",
+      "noteJa": "記事はActs 28:7–10の島の有力者Publiusと病気の父を明記するため対象記事として適合する。ただし後代の聖人・司教としての同定と生涯は伝承として区別される。関連記事リンクとしてのみ提示し、プロフィールへ伝承由来情報を取り込まない。",
+      "pagesRead": ["https://en.wikipedia.org/wiki/Saint_Publius"],
+      "basis": "記事の「History and tradition」はActs本文と、Publiusを聖人と同一視するキリスト教伝承を明確に分ける。固定WEB ACT 28:7–8は歓迎と父の回復を記す。"
+    },
+    {
+      "entityID": "person:secundus_2482",
+      "action": "hold",
+      "candidateURL": null,
+      "relationship": null,
+      "noteJa": "Acts 20章の記事は該当節の人物列挙を含む章解説で、人物個別の関連記事として不適切。Secundus the Silent等の検索結果は別時代・別人物である。",
+      "pagesRead": ["https://en.wikipedia.org/wiki/Acts_20"],
+      "basis": "固定WEB ACT 20:4はSecundusをテサロニケ人と記す。検索・監査で個別記事は見つからず、章記事・哲学者は対象でない。"
+    },
+    {
+      "entityID": "person:tyrannus_2886",
+      "action": "hold",
+      "candidateURL": null,
+      "relationship": null,
+      "noteJa": "Acts 19:9の講堂名「ティラノ」について専用Wikipedia記事は見つからない。プロフィールも個人として同定できないeponymと明記する。一般的な学校記事や無関係なTyrannus転送先は付けない。",
+      "pagesRead": ["https://en.wikipedia.org/w/index.php?search=School+of+Tyrannus"],
+      "basis": "固定WEB ACT 19:9はschool of Tyrannusとだけ記す。対象名でのWikipedia検索では適切な記事なし。"
+    }
+  ],
+  "summaryJa": "9件（Crispus, Demetrius, 2名のGaius, James, John, Lebbaeus/Judas son of James, Pharaoh称号, Publius）はURL候補として推奨。記事の論点と限界を各noteJaに併記した。Justusは対象記事があるが現行アプリのja/en言語制限により保留。残る7件は誤同名または人物同定の危険があり採用しない。",
+  "limitations": "意味的な候補適合性の独立照合であり、Wikipedia記事の学術的信頼性を保証せず、リンクをプロフィールへ挿入していない。"
+}

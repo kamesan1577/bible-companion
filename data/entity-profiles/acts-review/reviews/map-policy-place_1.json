@@ -1,0 +1,610 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "place-1-legacy-coordinate-map-allowance",
+  "createdAtUTC": "2026-10-15T13:57:37Z",
+  "inputs": {
+    "assignmentPath": "assignments/place_1.json",
+    "assignmentSHA256": "3eaec94ea027e660f086000d337d8c8703c76a1af9d1229aa82a69a7d140929f",
+    "targetsPath": "targets.json",
+    "targetsSHA256": "df6a4225e2b21b21c34bfaf726f25861fed243c3ef6962e3db90e57fb76cf801",
+    "draftDirectory": "drafts/place_1",
+    "evidenceDirectory": "evidence/place_1"
+  },
+  "policyJa": "allowCandidateMap=trueは旧出典座標を明示的な候補点として表示できる判定。city/site/islandは対象候補が識別できるもの、region/seaは範囲代表参考点と表示できるもの。プロファイル初出が曖昧でも後続節が候補を支持する場合はallowFromを限定して入口を残す。未照合だけではfalseにせず、false理由を誤同定・複数候補・旧座標なし等に分ける。falseは現在存在する候補点が複数候補のどれにも結び付かない、同定未確定かつ再利用可能な候補点がない、または旧候補座標なしの場合に限定する。",
+  "items": [
+    {
+      "id": "place:achaia_16",
+      "category": "region",
+      "allowCandidateMap": true,
+      "reasonJa": "属州・広域地域。Pleiades固定レコード981502は地域同定を支える。旧候補点は都市ピンでなく地域の代表点としてのみ表示し、古代境界・現代行政区との一致を示さない。",
+      "legacyCandidateCoordinate": [
+        37.5,
+        22.5
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "4b56b71574cf27d36064cfce5f43fd7da630a904f7c6812963d46cc3939d14a8",
+      "evidenceSHA256": "6b7e2f7ada58d134a164efa76f06ef41a6cade866c18e967bf6c71ae6e48cc31",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:adramyttium_29",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "使徒27:2の船の出所として古代都市名は明確。旧候補点は古代港の確定位置ではなく、現代沿岸の出典候補として表示する旨を明記する。",
+      "legacyCandidateCoordinate": [
+        39.504028,
+        26.934551
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "cefb3e83797e58958721653ac685735cf01eff8232dc4a0891b7739969dec790",
+      "evidenceSHA256": "f51daf79983933e3ca238113f26a1ea5c7179e81b3be1b74d5fed84410379875",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:adria_30",
+      "category": "sea",
+      "allowCandidateMap": true,
+      "reasonJa": "使徒27:27の海域名。古代の範囲と航路位置は未確定なので、旧候補点は海域の参考点としてのみ表示し、現代アドリア海境界・事件地点としない。",
+      "legacyCandidateCoordinate": [
+        42.415,
+        16.3735
+      ],
+      "legacyCoordinateStatus": "unverified-candidate",
+      "draftSHA256": "1da3c2e7be4af9a2c3c35ebb5f3ca4525e082b615e5e1cbdffa6694914ba5079",
+      "evidenceSHA256": "75503654512dfca2194019b1cddc09a626ef21eeea58348723105120352368e9",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:akeldama_43",
+      "category": "site",
+      "allowCandidateMap": true,
+      "reasonJa": "使徒1:19の「血の畑」に対応すると伝承されるエルサレム南方の候補地点。固定地理資料による考古学的確証はないが、それだけを理由に旧候補を隠さない。候補地点として表示し、遺跡・墓地との同一性は未確定と明記する。",
+      "legacyCandidateCoordinate": [
+        31.777444,
+        35.234935
+      ],
+      "legacyCoordinateStatus": "unverified-candidate",
+      "draftSHA256": "77b934d22f36730e0278665944a9910802dbae4d17bdce5e0786944bfc3e0043",
+      "evidenceSHA256": "6b709f58ccb91725dfe3043e196279528e124685c8c78e5883a75a8d401b2785",
+      "allowFrom": [
+        {
+          "chapter": 1,
+          "verse": 19
+        }
+      ],
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:alexandria_46",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "エジプトの古代都市。Pleiades固定record 727070の代表点を現プロフィールとevidenceで確認済み。旧候補点も同じ都市の参考点として表示可。",
+      "legacyCandidateCoordinate": [
+        31.195371,
+        29.904133
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "fbe0820c7d43b2aee7d8e3a0af8f2eed2005ae3d0d763ace1e1bd9dc4e27767b",
+      "evidenceSHA256": "ef133973e044a82a9845a9bfbdf10a21d11bd0244d19c77c989a2b52d277f2fe",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:amphipolis_59",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "使徒17:1の経由都市で、現代ギリシア北部の遺跡周辺という同定は安定。旧候補は正確な遺跡座標の確定ではなく参考点として表示する。",
+      "legacyCandidateCoordinate": [
+        40.818876,
+        23.840418
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "6c00efed51fe10a7e222a9a78f0307379622860478e731954ff47226be9292db",
+      "evidenceSHA256": "daaed740963a81aafc30ab20ee45f1e3ae63c79cec4a8570c9c3d4c7e3b9170b",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:antioch_68",
+      "category": "uncertain",
+      "allowCandidateMap": true,
+      "reasonJa": "Acts 6:5の初出は地方を特定しないため、その節からは候補地点を表示しない。一方、11:19以降の同じプロファイルに属する文脈はシリアのアンティオキア候補を支持する。入口を後続参照に限り、候補地表示として復元する。",
+      "legacyCandidateCoordinate": [
+        36.200663,
+        36.165318
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "0277af334c664dfcdfe390940b84048897078f3e63ead3e55ef273db5d485a00",
+      "evidenceSHA256": "f22da809fd434158285ac0a65c1de9126c472ff4b68d898fe8d22380d01519d4",
+      "allowFrom": [
+        {
+          "chapter": 11,
+          "verse": 19
+        },
+        {
+          "chapter": 11,
+          "verse": 20
+        },
+        {
+          "chapter": 11,
+          "verse": 22
+        },
+        {
+          "chapter": 11,
+          "verse": 26
+        },
+        {
+          "chapter": 11,
+          "verse": 27
+        },
+        {
+          "chapter": 13,
+          "verse": 1
+        },
+        {
+          "chapter": 14,
+          "verse": 26
+        },
+        {
+          "chapter": 15,
+          "verse": 22
+        },
+        {
+          "chapter": 15,
+          "verse": 23
+        },
+        {
+          "chapter": 15,
+          "verse": 30
+        },
+        {
+          "chapter": 15,
+          "verse": 35
+        },
+        {
+          "chapter": 18,
+          "verse": 22
+        }
+      ],
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:antioch_69",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "使徒13:14がピシディアのアンティオキアと明記。旧座標は遺跡の確定点ではなく、トルコ南西部の都市候補点として表示する。",
+      "legacyCandidateCoordinate": [
+        38.30466,
+        31.19049
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "0cc0d28a4e83036c4e1e838e88eb5e9f2cb165bcf0ee3d7952384389d4283360",
+      "evidenceSHA256": "115f551105c307660b4d37eabee5c5544228396cba5cbcdc4bb70a28723c77f0",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:antipatris_70",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "使徒23:31の経由都市。現代アフェク遺跡周辺という候補はプロフィールに留保済みで、候補点表示なら地理の確定と誤認させない。",
+      "legacyCandidateCoordinate": [
+        32.10478,
+        34.93078
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "48204b638688b3e2fef829c6e4cab632d6251021f742156dfa9314b7053eb11d",
+      "evidenceSHA256": "64ad6683c64424c01e251190cfc97df5a671ab5e5795347e088a7be174557af6",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:apollonia_76",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "使徒17:1の経由都市。ギリシア北部の古代都市として識別でき、旧点を位置未照合の候補として表示可能。",
+      "legacyCandidateCoordinate": [
+        40.623703,
+        23.469685
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "45f8f5fb3fb0ebe89fe89cfca97f0c7ad35733425853800f65ac34d037cb7540",
+      "evidenceSHA256": "80c7e5d2bbe19a536e8c82afff1190799e286dbd687063744a8fe8079b3f60d7",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:appii_forum_427",
+      "category": "site",
+      "allowCandidateMap": true,
+      "reasonJa": "使徒28:15の街道上の宿駅・地点。遺跡位置の未照合を注記した上で、旧座標は出典候補点としてのみ表示する。",
+      "legacyCandidateCoordinate": [
+        41.46801,
+        12.99372
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "644c66db6ff471eeab5b273cb0cdd15a90f998c16f64b15fe052ef33ff3f1f78",
+      "evidenceSHA256": "20d68c1549f5e21d76dad977fdab112916f874f105f6ca41a34c8da0679f6a7b",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:areopagus_87",
+      "category": "site",
+      "allowCandidateMap": true,
+      "reasonJa": "アテネのアレオパゴス丘という場所候補は識別可能。本文の用法が丘そのものか評議会・場かは分けて示し、丘の候補点を場面の確定地点にしない。",
+      "legacyCandidateCoordinate": [
+        37.958593,
+        23.711133
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "532edc557ad1a6ae09a0e7516c9198a60bf5e4f8c1122dee2ee355ec80ca1e45",
+      "evidenceSHA256": "2a1d62d6926fb73bff004ada34cbad5b697a2e95c75d63e90ab75b65eee463db",
+      "allowFrom": [
+        {
+          "chapter": 17,
+          "verse": 19
+        },
+        {
+          "chapter": 17,
+          "verse": 22
+        }
+      ],
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:asia_108",
+      "category": "region",
+      "allowCandidateMap": true,
+      "reasonJa": "使徒のAsiaはローマ時代の小アジア西部地域。旧点は範囲の代表参考点としてのみ扱い、近代アジア大陸・現代境界・都市ピンにしない。",
+      "legacyCandidateCoordinate": [
+        39.64014749138555,
+        31.03325453
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "045e8f1134ca0e3f87286a777b71303b880a1eaca6b360a4688436f09702fdcc",
+      "evidenceSHA256": "d66bdb8d58af723e66a40daf3600301b85354f5aa533741c57a443adfa999dc8",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:assos_110",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "使徒20:13–14の寄港都市。ベフラムカレ近郊の古代遺跡という同定はプロフィールに限定付きで記載。旧点は候補として表示する。",
+      "legacyCandidateCoordinate": [
+        39.490601,
+        26.337061
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "3b7a2672b139415c7bceffe7bb4c1a9b1f9ce0c1a04d37472290d89fe7f523fb",
+      "evidenceSHA256": "cd30c6c0235503da387c47c643a56090dad7c4a471990ed6a2c33c024c32d303",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:athens_118",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "使徒17:15以降のアテネは現代都市と連続する都市域。原稿で候補点は不採用、固定Pleiades根拠も未接続と明示しており、旧座標は未検証の都市参考候補と明記する場合に限り表示可。",
+      "legacyCandidateCoordinate": [
+        37.971687,
+        23.726464
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "0c4871f0feb4f9d283632080936d27f01f63dc1af421d8e52bd3b5139514f8ec",
+      "evidenceSHA256": "97eb138006c453197fe12cf12c8fa1b57f15f498e62458a94ca0edb14e5ff15b",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:attalia_120",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "使徒14:25の港町で、アンタルヤ旧市街周辺への継続はプロフィールに限定付きで記載。旧点は港の正確な位置を示さない候補点として表示する。",
+      "legacyCandidateCoordinate": [
+        36.8839,
+        30.70541
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "4c35b5bb5b65bf46520860b10cdbe5e74e3f90a486840e5beaf9ad9026831225",
+      "evidenceSHA256": "a7284199ce5e1ad6ad7ead7bd9fdb96361413a47c8e0a2c1daa09d887d3fe3d1",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:azotus_132",
+      "category": "city",
+      "allowCandidateMap": false,
+      "reasonJa": "Azotus／アシュドド周辺の都市同定はプロフィールにあるが、assignmentの旧出典座標はnull。独自座標を追加せず、表示候補なしとして抑制する。",
+      "legacyCandidateCoordinate": null,
+      "legacyCoordinateStatus": null,
+      "draftSHA256": "94212c82e3ad1a4d0bfbe04c02c12e1294aafdf9169ea47806a3a0da7f730359",
+      "evidenceSHA256": "018f32d53233007a3bc4989d3027b94b5781324305f59cb093a01f150f283d4f",
+      "allowFrom": [],
+      "suppressionReasonClass": [
+        "no-legacy-coordinate"
+      ]
+    },
+    {
+      "id": "place:babylon_151",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "使徒7:43に現れる古代都市バビロンで現代遺跡対応も明確。旧点は固定地理資料未照合の候補としてのみ表示する。",
+      "legacyCandidateCoordinate": [
+        32.53617,
+        44.42082
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "2123cb7ac6002d1e4ae0e5b15f6c1d05a395987d6fc2f3392a7e05cc603bda71",
+      "evidenceSHA256": "21e6f258f69f0191b9a85c684305b8e7c98dbf650d99b58ef117133dc6e53006",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:beautiful_gate_163",
+      "category": "uncertain",
+      "allowCandidateMap": false,
+      "reasonJa": "神殿域の門までは分かるが、ニカノル門・シュシャン門など複数候補があり本文から選べない。旧候補点(31.777444,35.234935)はAkeldama候補の座標と一致し、特定の門への出典接続も確認できないため誤同定を避けて抑制する。",
+      "legacyCandidateCoordinate": [
+        31.777444,
+        35.234935
+      ],
+      "legacyCoordinateStatus": "unverified-candidate",
+      "draftSHA256": "0a7c4cacdee4b51bb77c54e20d9181941d195144e406afa84d65631304deee5f",
+      "evidenceSHA256": "5b4929bb28eb65ef7c9283976c16b954032cf8874b3cd993b2d42452cd8cdc5a",
+      "allowFrom": [],
+      "suppressionReasonClass": [
+        "multiple-candidate-identifications",
+        "legacy-point-unlinked"
+      ]
+    },
+    {
+      "id": "place:berea_177",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "使徒17:10,13の都市で、現代ヴェリア周辺という連続同定はプロフィールに記載。旧点は未照合の候補位置として表示する。",
+      "legacyCandidateCoordinate": [
+        40.524528,
+        22.204993
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "8610b391bd524c37fe56af99b4ada6f5e8aeff4df4d9951bab4dd8a361846bea",
+      "evidenceSHA256": "3b1e4475f75916e87507865e8b1698a1857f61733742a7bc66537b72b28c0e6f",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:bithynia_250",
+      "category": "region",
+      "allowCandidateMap": true,
+      "reasonJa": "古代地域。旧点は境界・都市を表さず、地域範囲の代表候補と明記する場合に限って地図表示可。",
+      "legacyCandidateCoordinate": [
+        42.5,
+        32.5
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "acda470ecdd085d06a450fe332cf43978df9df6d6c4e9ff63412cadbe06aeb10",
+      "evidenceSHA256": "55014eac267bb03e43c340a5acea7d807c18f6f8a7cfef2116ba210b2edc8244",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:caesarea_266",
+      "category": "uncertain",
+      "allowCandidateMap": true,
+      "reasonJa": "Acts 8:40の初出は単にカイサリアとし、マリティマ同定は確定しないため同節では候補点を表示しない。23:23・23:33以降の総督所在地としての文脈では海辺のカイサリア候補を提示できる。後続節からの候補地表示として入口を保持する。",
+      "legacyCandidateCoordinate": [
+        32.4987775,
+        34.8912663
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "195c6c5c9d5cbbbe0b1982be73e6fcafa1d1bfa5c9538a4d46ea1f44d44e18ff",
+      "evidenceSHA256": "60fc9170dd9b440e064347b89bfe4760b0eb05d77da0117d07ab9b0b17b30726",
+      "allowFrom": [
+        {
+          "chapter": 23,
+          "verse": 23
+        },
+        {
+          "chapter": 23,
+          "verse": 33
+        },
+        {
+          "chapter": 25,
+          "verse": 1
+        },
+        {
+          "chapter": 25,
+          "verse": 4
+        },
+        {
+          "chapter": 25,
+          "verse": 6
+        },
+        {
+          "chapter": 25,
+          "verse": 13
+        },
+        {
+          "chapter": 25,
+          "verse": 21
+        }
+      ],
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:canaan_272",
+      "category": "region",
+      "allowCandidateMap": true,
+      "reasonJa": "時期により範囲が変わる歴史地域。旧点は範囲の代表候補としてのみ表示し、境界・現代国境・事件地点にしない。",
+      "legacyCandidateCoordinate": [
+        31.69352950368834,
+        34.84388288576839
+      ],
+      "legacyCoordinateStatus": "unverified-candidate",
+      "draftSHA256": "be69ec34eec082ea7fb1db7d0062711f3bf51949865e6c61ba2a69ed1ff2ef70",
+      "evidenceSHA256": "16c90dde6b8fd1a2e9cf26a80760b1b2812a691e8d4d9a9f4e2f5a54c880f025",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:cappadocia_276",
+      "category": "region",
+      "allowCandidateMap": true,
+      "reasonJa": "使徒2:9の古代地域。旧点は現代観光地域や行政境界を示さない範囲代表候補として表示可。",
+      "legacyCandidateCoordinate": [
+        37.5,
+        35.75
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "fcf3baad7903108a09c1b7aa8f3e07b24fe286e2d9e92923a5c95655a4807c74",
+      "evidenceSHA256": "7b953c47aa02819b516968fbf95194fad5e2fb201d5f2a6c70b60c484e551d38",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:cenchreae_281",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "古代港町。Pleiades固定record 570347の代表点を現在のdraft/evidenceで確認済み。旧候補も同じ場所の参考点として表示できる。",
+      "legacyCandidateCoordinate": [
+        37.88239,
+        22.992532
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "8fb01185c74c1706e4986086e72c86d82155ffd8ef892682640c368cf2a42ad1",
+      "evidenceSHA256": "6fb886503d198ceec1f9edbb41431ef48e04c9b17f44e8bbb67c4cf2db23deb1",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:chios_296",
+      "category": "island",
+      "allowCandidateMap": false,
+      "reasonJa": "キオス島という同定は明確だが、assignmentの旧出典座標はnull。新しい島代表点は作らず、表示候補なしとして抑制する。",
+      "legacyCandidateCoordinate": null,
+      "legacyCoordinateStatus": null,
+      "draftSHA256": "e099f7baf30a9f50c6c9f9c1e68c2a054a25ef1ca3c55fe7ea80f8e2e3ce281a",
+      "evidenceSHA256": "beb737b4090d8ab112ba00a4c5fd45862755afd1caf81dcc771afe729196cd92",
+      "allowFrom": [],
+      "suppressionReasonClass": [
+        "no-legacy-coordinate"
+      ]
+    },
+    {
+      "id": "place:cilicia_300",
+      "category": "region",
+      "allowCandidateMap": true,
+      "reasonJa": "トルコ南部を中心とする古代地域。旧点は境界・特定都市を表さない地域の参考点としてのみ表示する。",
+      "legacyCandidateCoordinate": [
+        36.91802695356275,
+        34.89153398422567
+      ],
+      "legacyCoordinateStatus": "unverified-candidate",
+      "draftSHA256": "00a3af39ce6376858873bec35c19373e47b5cbb5af0296abdd1a52aaee1e464c",
+      "evidenceSHA256": "e25b57da3c047d57ad56db3e7dbf3139e2a73bb933b569f79008f5da12ba532b",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:clauda_280",
+      "category": "uncertain",
+      "allowCandidateMap": false,
+      "reasonJa": "Acts 27:16のClaudaを現ガヴドス島とするのは候補比定で、プロフィールevidenceでも固定地理資料による同定は未確定。assignmentに表示できる旧候補座標もないため、候補地点を新たに補わず抑制する。",
+      "legacyCandidateCoordinate": null,
+      "legacyCoordinateStatus": null,
+      "draftSHA256": "9103686c3bdecb67a42ffa2038147da8978dc825166c63b2e0a4c578403dfa15",
+      "evidenceSHA256": "7fb4fd9c81cd7b7b0ed1f4b7a587027f48f86e20336d36f36f580d983b57c25e",
+      "allowFrom": [],
+      "suppressionReasonClass": [
+        "no-legacy-coordinate",
+        "unresolved-island-identification"
+      ]
+    },
+    {
+      "id": "place:cnidus_304",
+      "category": "city",
+      "allowCandidateMap": true,
+      "reasonJa": "使徒27:7の寄港航路上の古代都市。ダッチャ半島先端の遺跡との対応はprofileに限定付きで記載し、旧点を未照合候補として表示する。",
+      "legacyCandidateCoordinate": [
+        36.686188,
+        27.37404
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "4c6b3426c7f7c330a5cac2217b8c774f3140018aed313eed01f80f06a13c74c8",
+      "evidenceSHA256": "6ea3ef00765b0789be90caf3bd8c6486bd4ea04b0be6d1855b1365e8dbae0330",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:coos_308",
+      "category": "island",
+      "allowCandidateMap": true,
+      "reasonJa": "使徒21:1の島。古代名と現代コス島の連続性は明確。旧座標は島の参考位置として表示し、寄港地点・出来事地点としない。",
+      "legacyCandidateCoordinate": [
+        36.844,
+        27.17
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "042f423f3aabda2b1b39415efdc7ce33392f53d6626dac5ba5998d70238bb513",
+      "evidenceSHA256": "5ca9c82d6eef32beb469e15533f8843dc25aaf740c4c0af4148cf59dd5abcfb0",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:corinth_306",
+      "category": "site",
+      "allowCandidateMap": true,
+      "reasonJa": "古代コリントスの遺跡と現代市街を区別済み。Pleiades固定record 570182と上流OSM形状をevidence確認済み。旧候補点は古代遺跡の代表候補として表示可。",
+      "legacyCandidateCoordinate": [
+        37.906045,
+        22.878721
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "969b5a9e37caf145c15b98664639ad3107eed0f72a442c39da14922b2b900e9e",
+      "evidenceSHA256": "62bd35902b4fdf93cb4c12e74f87dce943eeeceb8279b7a3b3cb11b40d405502",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:crete_310",
+      "category": "island",
+      "allowCandidateMap": true,
+      "reasonJa": "島全体の同定は明確。旧点は島の代表参考点として表示し、航海・港の位置と混同しない。",
+      "legacyCandidateCoordinate": [
+        35.23102579604995,
+        24.85162918
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "877dede48338395892a7afb834492e290bcb1640db798ebbd627efed1f2c34c3",
+      "evidenceSHA256": "909bb46cb78775971faeca1712c10f64fddaa793782ab9e38c901af6109232aa",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    },
+    {
+      "id": "place:cyprus_316",
+      "category": "island",
+      "allowCandidateMap": true,
+      "reasonJa": "使徒の古代キプロス島名は現代島と連続。旧点は島の参考代表点として表示し、古代の範囲を現代国家境界と同一視しない。",
+      "legacyCandidateCoordinate": [
+        35.040883529816504,
+        33.27533716
+      ],
+      "legacyCoordinateStatus": "source-verified-candidate",
+      "draftSHA256": "2b2ce0d194ddbe46dd430a4eb62bfc328202a529b95c594c834d740cff692989",
+      "evidenceSHA256": "668e72861e2a2cef8d7cb478d9a843d67c1dde2c86089f043acfc8cec46617c0",
+      "allowFrom": "all profile passages",
+      "suppressionReasonClass": []
+    }
+  ],
+  "counts": {
+    "total": 33,
+    "allowCandidateMap": 29,
+    "suppressCandidateMap": 4
+  },
+  "recheckNoteJa": "親指示再確認に伴いfalse項目を再点検。未点検・固定地理資料未接続だけを抑制理由にしない。暫定地点として表示できるAkeldama候補、および後続の地理文脈が候補を支持するAntioch/Caesarea、地形候補を示せるAreopagusはallowCandidateMapを復元し、章節入口を明示した。"
+}

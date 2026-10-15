@@ -1,0 +1,395 @@
+{
+  "schemaVersion": 1,
+  "checkedAtUTC": "2026-10-15T14:01:54.369809+00:00",
+  "purpose": "Audit every profile without a Wikipedia object in the final iOS candidate catalog. Search status is separated from article suitability; absence from the catalog is not treated as proof that no article exists.",
+  "catalog": {
+    "path": "candidate/apps/ios/Sources/Core/Resources/entity-profiles.json",
+    "sha256": "dfbacdc0921871e533112026fcf6509cfa8db861b3243d48c28c3b683a822acb",
+    "profileCount": 224,
+    "missingWikipediaCount": 17
+  },
+  "classificationDefinitions": {
+    "candidate_article_found_identity_verified": "A read Wikipedia article/section explicitly identifies the assigned figure or a generic title identity; candidate link is reported, not inserted.",
+    "candidate_page_found_identity_unconfirmed": "A relevant page exists and mentions the figure, but the article itself signals ambiguity, tradition, or a secondary identification that should not be made a direct identity claim.",
+    "same_name_identity_unconfirmed": "Relevant same-name page(s) were read, but they explicitly leave the assigned figure’s identity unresolved.",
+    "no_appropriate_page_found": "Targeted Wikipedia search was performed; no target-specific article was found or available pages were generic, unrelated, or chapter-level only.",
+    "not_searched": "No targeted Wikipedia search/read has yet been performed."
+  },
+  "counts": {
+    "audited": 17,
+    "candidate_article_found_identity_verified": 7,
+    "candidate_page_found_identity_unconfirmed": 5,
+    "same_name_identity_unconfirmed": 1,
+    "no_appropriate_page_found": 4,
+    "not_searched": 0,
+    "candidateRecommendations": 10
+  },
+  "candidateRecommendations": [
+    "person:crispus_961",
+    "person:demetrius_1007",
+    "person:gaius_1269",
+    "person:gaius_1270",
+    "person:james_719",
+    "person:john_1678",
+    "person:justus_1766",
+    "person:lebbaeus_1815",
+    "person:pharaoh_2331",
+    "person:publius_2374"
+  ],
+  "entries": [
+    {
+      "entityID": "person:alexander_188",
+      "catalogNameJa": "アレクサンドロス",
+      "catalogProfileHasWikipedia": false,
+      "draftPath": "drafts/person_1/alexander_188.json",
+      "draftSHA256": "a5fa3c43c45452d19fd2bb39acefcfd842909b8cdc63b2d04cf93e1ad21fba34",
+      "evidencePath": "evidence/person_1/alexander_188.json",
+      "evidenceSHA256": "cbe9fb79f170bcf5d637a34193eb867eba9ba3a881cec45a68b37acdd8254e2f",
+      "classification": "same_name_identity_unconfirmed",
+      "wikipediaPagesChecked": [
+        {
+          "title": "Alexander the Coppersmith",
+          "url": "https://en.wikipedia.org/wiki/Alexander_the_Coppersmith",
+          "checked": "Article identifies the figure as the person named at 2 Timothy 4:14; says some scholars identify him with Acts 19:33 Alexander, while others distinguish them.",
+          "decision": "Acts 19:33 person cannot be identified with him conclusively."
+        },
+        {
+          "title": "Alexander (New Testament person)",
+          "url": "https://en.wikipedia.org/wiki/Alexander_(New_Testament_person)",
+          "checked": "New Testament-name disambiguation/list page; entries include high-priestly-family Alexander (Acts 4:6), an Ephesian Alexander and Alexander the Coppersmith; states the Ephesian figure could be the one at Acts 19:33.",
+          "decision": "Name-list page and expressly uncertain identification do not verify the assigned individual."
+        }
+      ],
+      "addCandidateToReport": false,
+      "recommendationJa": "Search completed. No verified person-specific page for the Acts 19:33 Alexander. Do not merge with person:alexander_187 or Alexander the Coppersmith."
+    },
+    {
+      "entityID": "person:crispus_961",
+      "catalogNameJa": "クリスポ",
+      "catalogProfileHasWikipedia": false,
+      "draftPath": "drafts/person_1/crispus_961.json",
+      "draftSHA256": "52268dedfed9fbab277ef6f491a2fa11ae41859b6cf908a33c8793a4a2465bbc",
+      "evidencePath": "evidence/person_1/crispus_961.json",
+      "evidenceSHA256": "b3f238fa52c4189c04114afef980cd597dd67bcbf7ed5ae7cefacfc9368c383a",
+      "classification": "candidate_article_found_identity_verified",
+      "wikipediaPagesChecked": [
+        {
+          "title": "Crispus of Chalcedon",
+          "url": "https://en.wikipedia.org/wiki/Crispus_of_Chalcedon",
+          "checked": "The article says Crispus was the Corinth synagogue ruler converted by Paul and cites Acts 18:8; also presents later bishop/saint tradition, with some cited claims marked citation needed.",
+          "decision": "Direct article candidate for Acts 18:8; preserve its later traditional biography as separate, unverified claims."
+        }
+      ],
+      "addCandidateToReport": true,
+      "recommendationJa": "Potential article candidate; article directly names Acts 18:8 and matches the assigned Crispus."
+    },
+    {
+      "entityID": "person:demetrius_1007",
+      "catalogNameJa": "デメトリオ",
+      "catalogProfileHasWikipedia": false,
+      "draftPath": "drafts/person_1/demetrius_1007.json",
+      "draftSHA256": "3d213cecd1079c70869bf906b9e1057e62e7049bb1443433637613fe4e24ab4a",
+      "evidencePath": "evidence/person_1/demetrius_1007.json",
+      "evidenceSHA256": "6a37b64a765edfdbadfd8602500b0d8e22aeed96518243f732c2a0e5aed9a039",
+      "classification": "candidate_article_found_identity_verified",
+      "wikipediaPagesChecked": [
+        {
+          "title": "Riot in Ephesus",
+          "url": "https://en.wikipedia.org/wiki/Riot_in_Ephesus",
+          "checked": "Article describes the riot as set in motion by Demetrius the silversmith; its narrative quotes Acts 19:24–27 and says he made small silver shrines of Artemis.",
+          "decision": "Relevant shared/event article, not a standalone Demetrius biography."
+        }
+      ],
+      "addCandidateToReport": true,
+      "recommendationJa": "Potential related/shared-section candidate; article’s Demetrius is the Acts 19:24 silversmith."
+    },
+    {
+      "entityID": "person:gaius_1269",
+      "catalogNameJa": "ガイオ",
+      "catalogProfileHasWikipedia": false,
+      "draftPath": "drafts/person_2/person_gaius_1269.json",
+      "draftSHA256": "56a8f3497c0c6f42cc66fc4a09fbc4900247e33ee28cce78c99c6a9a348c855c",
+      "evidencePath": "evidence/person_2/person_gaius_1269.json",
+      "evidenceSHA256": "389943f0390e4cbde4a334deab3e1c35a42a90ddc8871f71cccfa981be9c3a78",
+      "classification": "candidate_article_found_identity_verified",
+      "wikipediaPagesChecked": [
+        {
+          "title": "Gaius (biblical figure)",
+          "url": "https://en.wikipedia.org/wiki/Gaius_(biblical_figure)",
+          "checked": "Separate numbered entries explicitly describe a Macedonian Gaius traveling with Paul and Aristarchus (Acts 19:29), and a Gaius from Derbe one chapter later (Acts 20:4).",
+          "decision": "Shared article discusses multiple same-name figures; use only a section/related link and keep the two catalog IDs distinct."
+        }
+      ],
+      "addCandidateToReport": true,
+      "recommendationJa": "Potential related/shared-section candidate for the Macedonian Gaius. The page distinguishes Acts 19:29 from Acts 20:4."
+    },
+    {
+      "entityID": "person:gaius_1270",
+      "catalogNameJa": "ガイオ",
+      "catalogProfileHasWikipedia": false,
+      "draftPath": "drafts/person_2/person_gaius_1270.json",
+      "draftSHA256": "5fe71b53d46b57e1f06b84a65a8244d49d16353a0515e83117c95c06d5384951",
+      "evidencePath": "evidence/person_2/person_gaius_1270.json",
+      "evidenceSHA256": "dd035a29c7fa27bedaa6d979f19b0fcfabd39899f5d76c4a6d21d584a532ed66",
+      "classification": "candidate_article_found_identity_verified",
+      "wikipediaPagesChecked": [
+        {
+          "title": "Gaius (biblical figure)",
+          "url": "https://en.wikipedia.org/wiki/Gaius_(biblical_figure)",
+          "checked": "A numbered entry identifies the Gaius with a residence in Derbe as a traveling companion in Acts 20:4; the preceding entry separately discusses Acts 19:29’s Macedonian Gaius.",
+          "decision": "Shared article discusses multiple same-name figures; do not conflate the two IDs."
+        }
+      ],
+      "addCandidateToReport": true,
+      "recommendationJa": "Potential related/shared-section candidate for the Derbe Gaius, provided the link points to the Acts 20:4 entry."
+    },
+    {
+      "entityID": "person:herod_1505",
+      "catalogNameJa": "ヘロデ",
+      "catalogProfileHasWikipedia": false,
+      "draftPath": "drafts/person_2/person_herod_1505.json",
+      "draftSHA256": "430e0e0c112570c4f809fd85c7f08f9c9ba9e307e5e13edb2af04f265415d75d",
+      "evidencePath": "evidence/person_2/person_herod_1505.json",
+      "evidenceSHA256": "1abc81232bad6f7b1cab432f6637a2fdabc04dd69b7b80bb7d717b91a5577737",
+      "classification": "candidate_page_found_identity_unconfirmed",
+      "wikipediaPagesChecked": [
+        {
+          "title": "Herod Antipas",
+          "url": "https://en.wikipedia.org/wiki/Herod_Antipas",
+          "checked": "Article identifies Antipas as a first-century tetrarch and covers his part in Jesus’s trial before Pilate. A separate Wikipedia “List of major biblical figures” page explicitly says Herod Antipas is called “Herod” in Acts 4:27.",
+          "decision": "Potential target mapping exists in a list page, but the assigned passage itself says only Herod and the current profile intentionally does not identify Antipas. Candidate requires editorial decision before linking."
+        }
+      ],
+      "addCandidateToReport": false,
+      "recommendationJa": "A possible page exists, but the first-appearance profile leaves the individual unresolved. Do not attach without an explicit identity policy."
+    },
+    {
+      "entityID": "person:james_719",
+      "catalogNameJa": "ヤコブ",
+      "catalogProfileHasWikipedia": false,
+      "draftPath": "drafts/person_2/person_james_719.json",
+      "draftSHA256": "c6af1fe73a1a48e2aec2af15ce9937cb38b5613b67acb88c2981a977643157a8",
+      "evidencePath": "evidence/person_2/person_james_719.json",
+      "evidenceSHA256": "d562cedaf7ad8d98fc92c2cf51235defca0e7ff6be5d78344b99827882456016",
+      "classification": "candidate_page_found_identity_unconfirmed",
+      "wikipediaPagesChecked": [
+        {
+          "title": "James, brother of Jesus",
+          "url": "https://en.wikipedia.org/wiki/James,_brother_of_Jesus",
+          "checked": "The “Acts of the Apostles” section quotes Acts 12:17 and says the Catholic Encyclopedia identifies this James as James, brother of Jesus; it also connects him with the Jerusalem council and Acts 21:17–18.",
+          "decision": "Article makes a specific sourced identification, while Acts 12:17 alone does not provide the family link. Candidate for review; do not add a family relationship to the early profile on this basis alone."
+        }
+      ],
+      "addCandidateToReport": true,
+      "recommendationJa": "Potential article candidate because it explicitly treats Acts 12:17’s James; identity is supported by a cited secondary identification, not the verse alone."
+    },
+    {
+      "entityID": "person:john_1678",
+      "catalogNameJa": "ヨハネ",
+      "catalogProfileHasWikipedia": false,
+      "draftPath": "drafts/person_2/person_john_1678.json",
+      "draftSHA256": "fa358b0efe6886b4c4afca2c1ce329232da697b2e1e77747baca1979efdb7b3c",
+      "evidencePath": "evidence/person_2/person_john_1678.json",
+      "evidenceSHA256": "16a5d64879480362ae981da7c9e402bfd592c06e676e642408c2a895ac5027e5",
+      "classification": "candidate_article_found_identity_verified",
+      "wikipediaPagesChecked": [
+        {
+          "title": "New Testament people named John",
+          "url": "https://en.wikipedia.org/wiki/New_Testament_people_named_John#John_of_the_high-priestly_family",
+          "checked": "Dedicated subsection “John of the high-priestly family” quotes Acts 4:6, describes this John as mentioned once among the high-priest family, and discusses disputed identification with John the Apostle.",
+          "decision": "Exact shared-section fit; the article itself preserves the uncertainty and distinguishes him from other Johns."
+        }
+      ],
+      "addCandidateToReport": true,
+      "recommendationJa": "Strong shared-section candidate; use this subsection and preserve its identity uncertainty."
+    },
+    {
+      "entityID": "person:judas_1758",
+      "catalogNameJa": "ユダ",
+      "catalogProfileHasWikipedia": false,
+      "draftPath": "drafts/person_2/person_judas_1758.json",
+      "draftSHA256": "a940865947bb0ab481aad17e673ced244daeb1d2efa5996e8bea324ab96c0436",
+      "evidencePath": "evidence/person_2/person_judas_1758.json",
+      "evidenceSHA256": "ffb3c79892a92df3a0427b01fd0d202bfed0a9c1095a4e7eeb8b99a4696245e0",
+      "classification": "no_appropriate_page_found",
+      "wikipediaPagesChecked": [
+        {
+          "title": "Searches for Judah/Judas of Damascus and Acts 9:11",
+          "url": "https://en.wikipedia.org/w/index.php?search=Judah+Judas+house+Damascus+Acts+9%3A11",
+          "checked": "Targeted searches did not surface a Wikipedia article for the householder in Acts 9:11. The evidence file identifies the WEB spelling Judah and notes KJV Judas; the passage identifies only the householder.",
+          "decision": "No target-specific page found; common-name apostle articles would be different people."
+        }
+      ],
+      "addCandidateToReport": false,
+      "recommendationJa": "Targeted search performed; no suitable page found. This is not a claim that no page can ever exist."
+    },
+    {
+      "entityID": "person:justus_1766",
+      "catalogNameJa": "ユスト",
+      "catalogProfileHasWikipedia": false,
+      "draftPath": "drafts/person_2/person_justus_1766.json",
+      "draftSHA256": "0b0fa131ca2f1fad87656a2f1a6573e83fa7976dcfcb11b09adeb44b1d925608",
+      "evidencePath": "evidence/person_2/person_justus_1766.json",
+      "evidenceSHA256": "0ac12493a61767ddef0b277843c1ad37e2e38c3370740ccfdde807ebeb075d02",
+      "classification": "candidate_article_found_identity_verified",
+      "wikipediaPagesChecked": [
+        {
+          "title": "Titius Justus",
+          "url": "https://de.wikipedia.org/wiki/Titius_Justus",
+          "checked": "German-language article identifies Titius Justus from Acts 18:7 as a God-fearer in Corinth and says Paul went to his house next to the synagogue.",
+          "decision": "Directly fits Acts 18:7. Targeted Japanese and English Wikipedia searches did not surface a suitable page; the German article is a candidate if non-Japanese language is acceptable."
+        }
+      ],
+      "addCandidateToReport": true,
+      "recommendationJa": "Potential article candidate. Prefer Japanese if a suitable page is later found; otherwise this German article is specifically about the Acts 18:7 person."
+    },
+    {
+      "entityID": "person:lebbaeus_1815",
+      "catalogNameJa": "レバイオス（ヤコブの子ユダ）",
+      "catalogProfileHasWikipedia": false,
+      "draftPath": "drafts/person_2/person_lebbaeus_1815.json",
+      "draftSHA256": "bd0fcb5fdf19d95cd07163fbc8ec310537302b9e47a61aa9def01212ff601c9a",
+      "evidencePath": "evidence/person_2/person_lebbaeus_1815.json",
+      "evidenceSHA256": "f88f67e943f5f6ae16745bbfbdfbebe1c662454d6ee30775bd1d018552604887",
+      "classification": "candidate_page_found_identity_unconfirmed",
+      "wikipediaPagesChecked": [
+        {
+          "title": "Jude the Apostle",
+          "url": "https://en.wikipedia.org/wiki/Jude_the_Apostle",
+          "checked": "Article’s opening calls him Judas son of James/Judas of James and lists Lebbaeus among names; its identity section cites Acts 1:13 and discusses disagreement about whether “of James” means son or brother and whether this Judas is Thaddeus.",
+          "decision": "Useful related candidate for the alternate-name question, but the article expressly reports contested harmonization; do not present the identification as certain."
+        }
+      ],
+      "addCandidateToReport": true,
+      "recommendationJa": "Potential related-section candidate with explicit uncertainty. Stronger than “no suitable article”; preserve the draft’s caveat."
+    },
+    {
+      "entityID": "person:lucius_1833",
+      "catalogNameJa": "ルキオ",
+      "catalogProfileHasWikipedia": false,
+      "draftPath": "drafts/person_2/person_lucius_1833.json",
+      "draftSHA256": "3fb8af5cc75eb62f7308fb5f189c3d8431187580120966a0573b5fe180299b3d",
+      "evidencePath": "evidence/person_2/person_lucius_1833.json",
+      "evidenceSHA256": "44d9a908d287d6c2ef9b110753ceed0897736ff93937c8034bac8d3f1e949ebd",
+      "classification": "candidate_page_found_identity_unconfirmed",
+      "wikipediaPagesChecked": [
+        {
+          "title": "Lucius of Cyrene",
+          "url": "https://en.wikipedia.org/wiki/Lucius_of_Cyrene",
+          "checked": "Article quotes Acts 13:1 and identifies a Lucius of Cyrene in Antioch; however it headlines him as Lucius of Laodicea, also calls him Luke, and adds later episcopal/traditional identifications.",
+          "decision": "A page exists and names the Acts figure, but conflation with Luke/Lucius of Laodicea and tradition makes a direct biography link unsafe without explicit related-link wording."
+        }
+      ],
+      "addCandidateToReport": false,
+      "recommendationJa": "Candidate found, but not recommended as a direct identity link; the article conflates names and traditions."
+    },
+    {
+      "entityID": "person:pharaoh_2329",
+      "catalogNameJa": "ファラオ",
+      "catalogProfileHasWikipedia": false,
+      "draftPath": "drafts/person_3/pharaoh_2329.json",
+      "draftSHA256": "d39d50c80b63837dbc58b27fbe3ac189722d8e79108b970ea496bed8f3f79a71",
+      "evidencePath": "evidence/person_3/pharaoh_2329.json",
+      "evidenceSHA256": "6b91e98f01f7573a3cb307c14b38e19cfc98c47097d1c40aa5a7c5cd5163b9f4",
+      "classification": "no_appropriate_page_found",
+      "wikipediaPagesChecked": [
+        {
+          "title": "Pharaoh",
+          "url": "https://en.wikipedia.org/wiki/Pharaoh",
+          "checked": "Article defines Pharaoh as the title/rule of ancient Egyptian monarchs; it does not identify the unspecified king in Acts 7:10 as a unique historical ruler.",
+          "decision": "Generic title article is not an individual match for this profile."
+        }
+      ],
+      "addCandidateToReport": false,
+      "recommendationJa": "日本語Wikipediaでも同定可能な一人の王の記事は確認できなかった。対象検索後も、一般的な称号記事はActs 7:10の王個人を特定しないため候補にしない。"
+    },
+    {
+      "entityID": "person:pharaoh_2331",
+      "catalogNameJa": "ファラオ（エジプト王の称号）",
+      "catalogProfileHasWikipedia": false,
+      "draftPath": "drafts/person_3/pharaoh_2331.json",
+      "draftSHA256": "9d7c005c195cc315cbe6f542d51a92fdd6066d15e51dfdc6084e57e2f0bf65a5",
+      "evidencePath": "evidence/person_3/pharaoh_2331.json",
+      "evidenceSHA256": "bb225ef05e2855375887d6468a31f7347b07423b0e7ea0f3bfc6e7b44bbbbd11",
+      "classification": "candidate_article_found_identity_verified",
+      "wikipediaPagesChecked": [
+        {
+          "title": "Pharaoh",
+          "url": "https://en.wikipedia.org/wiki/Pharaoh",
+          "checked": "Article explicitly defines Pharaoh as the monarch/title of ancient Egypt and explains the title’s use; it does not identify a specific ruler.",
+          "decision": "Appropriate related-title explanation for the profile’s office-title identityType; not a biography or personal identification."
+        },
+        {
+          "title": "Pharaoh’s daughter (Exodus)",
+          "url": "https://en.wikipedia.org/wiki/Pharaoh%27s_daughter_(Exodus)",
+          "checked": "This is a different person—the daughter who adopts Moses. The article notes her father is unnamed.",
+          "decision": "Not a link for the Pharaoh title profile; avoid attaching daughter’s article to father/title."
+        }
+      ],
+      "addCandidateToReport": true,
+      "recommendationJa": "Potential related article for the office-title profile only; it must not imply an individual king identity."
+    },
+    {
+      "entityID": "person:publius_2374",
+      "catalogNameJa": "ポプリウス",
+      "catalogProfileHasWikipedia": false,
+      "draftPath": "drafts/person_3/publius_2374.json",
+      "draftSHA256": "acb2ee11be61b42c964c46b76e007b3f122d7e394873d0e13226bff6082c3e04",
+      "evidencePath": "evidence/person_3/publius_2374.json",
+      "evidenceSHA256": "ff9498fae344106c773864aec07b398a5fc525defd057d9c8c0b4fd359c807c7",
+      "classification": "candidate_page_found_identity_unconfirmed",
+      "wikipediaPagesChecked": [
+        {
+          "title": "Saint Publius",
+          "url": "https://en.wikipedia.org/wiki/Saint_Publius",
+          "checked": "Article calls him Publius of Malta and says Acts describes Publius as “chief” of the island; it says Christian tradition identifies him as the Publius who received Paul after the shipwreck, and quotes Acts 28:7–10.",
+          "decision": "Specific match candidate, but the biographical identification and later episcopal life are expressly tradition-based; use only as a related page and do not import those facts into the profile."
+        }
+      ],
+      "addCandidateToReport": true,
+      "recommendationJa": "Potential related article. Newly found and read; older person_3 research only assessed a generic Publius page, so its “inadequate page” result does not evaluate this title."
+    },
+    {
+      "entityID": "person:secundus_2482",
+      "catalogNameJa": "セクンド",
+      "catalogProfileHasWikipedia": false,
+      "draftPath": "drafts/person_3/secundus_2482.json",
+      "draftSHA256": "6fde767b3e99f07dec81200a4db8d99152b0f8b121f2fd2f48d8aa66f7321e4a",
+      "evidencePath": "evidence/person_3/secundus_2482.json",
+      "evidenceSHA256": "8d384499357dda59c2193c04037acca99b91645dd02c24dfd59c719a875a05ae",
+      "classification": "no_appropriate_page_found",
+      "wikipediaPagesChecked": [
+        {
+          "title": "Acts 20",
+          "url": "https://en.wikipedia.org/wiki/Acts_20",
+          "checked": "Existing person_3 research states the Acts 20 page’s verse 4 lists Secundus from Thessalonica but is a chapter page, not an individual profile; it separately distinguishes Secundus the Silent, a second-century Athenian philosopher.",
+          "decision": "No target-specific person page found; the philosopher is a different person."
+        }
+      ],
+      "addCandidateToReport": false,
+      "recommendationJa": "Targeted search performed; the chapter list and unrelated philosopher are not suitable biography links."
+    },
+    {
+      "entityID": "person:tyrannus_2886",
+      "catalogNameJa": "ティラノ（講堂の名）",
+      "catalogProfileHasWikipedia": false,
+      "draftPath": "drafts/person_3/tyrannus_2886.json",
+      "draftSHA256": "0af8474eff868b74d22cb834547e4890c3cb0b0af832109a85550baaf0b25125",
+      "evidencePath": "evidence/person_3/tyrannus_2886.json",
+      "evidenceSHA256": "d042185278c2c81185d435e8cd4435daa955c83f6d3739f6517c42bed55cd78c",
+      "classification": "no_appropriate_page_found",
+      "wikipediaPagesChecked": [
+        {
+          "title": "Search for School of Tyrannus/Tyrannus",
+          "url": "https://en.wikipedia.org/w/index.php?search=School+of+Tyrannus",
+          "checked": "Targeted Wikipedia-domain search for “School of Tyrannus” and Acts 19:9 did not surface an article about the hall or named eponym. The returned non-Wikipedia sites were modern organizations or commentary and are not Wikipedia pages. Existing person_3 research found the bare Tyrannus target redirected to an unrelated bird article.",
+          "decision": "No target-specific Wikipedia page found; this profile treats Tyrannus as an unidentified eponym and not a known person."
+        }
+      ],
+      "addCandidateToReport": false,
+      "recommendationJa": "Targeted search performed; no appropriate article. Do not link the unrelated bare-title page or non-Wikipedia sites."
+    }
+  ],
+  "noteJa": "この監査はプロフィール草稿・evidence・catalogを編集していない。推薦は候補として親に報告するだけであり、Wikipediaリンクを追加したことを意味しない。",
+  "languageSearchNoteJa": "対象名と初出箇所の日本語クエリでも検索し、日本語記事が見つかった場合は本文を確認する方針で調べた。今回、適合する日本語専用記事は確認できなかった。候補記事は英語またはドイツ語で、言語の違いも各レコードに反映した。"
+}

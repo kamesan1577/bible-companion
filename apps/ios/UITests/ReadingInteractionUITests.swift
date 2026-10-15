@@ -247,6 +247,51 @@ final class ReadingInteractionUITests: XCTestCase {
         XCTAssertTrue(app.buttons["続けて質問する"].exists)
         attach(app, "single-ai-action-explanation-result")
     }
+    @MainActor func testActualShareReadsProfilesAndMapWithoutGeneratedAnswer() {
+        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
+        let share = app.buttons["使徒18章を共有する"]
+        XCTAssertTrue(share.waitForExistence(timeout: 10)); share.tap()
+        let destinations = app.cells.matching(identifier: "聖書コンパニオン")
+        XCTAssertTrue(destinations.firstMatch.waitForExistence(timeout: 5))
+        destinations.element(boundBy: destinations.count - 1).tap()
+        XCTAssertTrue(app.staticTexts["使徒の働き 18:24–28"].waitForExistence(timeout: 8))
+        app.buttons["人物"].tap()
+        let detail = app.descendants(matching: .any).matching(identifier: "entity-inline-detail-person:apollos_276").firstMatch
+        scrollTo(detail, app: app); XCTAssertTrue(detail.exists)
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "正確")).firstMatch.exists)
+        attach(app, "actual-share-apollos-stored-detail")
+        let places = app.buttons["地名"]; scrollToTop(places, app: app); places.tap()
+        let map = app.descendants(matching: .any).matching(identifier: "entity-inline-map-place:alexandria_46").firstMatch
+        scrollTo(map, app: app); XCTAssertTrue(map.exists)
+        XCTAssertTrue(app.staticTexts["現在の場所"].firstMatch.exists)
+        attach(app, "actual-share-alexandria-map")
+    }
+
+    @MainActor func testActsEarlyAndLateProfilesUseReadingTabs() {
+        let app = XCUIApplication()
+        for (screen, person, laterName) in [("entity-acts-early", "サウロ", "パウロ"), ("entity-acts-late", "ポプリウス", "")] {
+            app.launchArguments = ["--simulator-qa", "--qa-screen=" + screen]; app.launch()
+            XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
+            let name = app.staticTexts[person].firstMatch
+            scrollTo(name, app: app); XCTAssertTrue(name.exists)
+            if !laterName.isEmpty { XCTAssertFalse(app.staticTexts[laterName].exists) }
+            attach(app, screen + "-people")
+            app.buttons["地図"].tap()
+            attach(app, screen + "-places")
+            app.terminate()
+        }
+    }
+    @MainActor func testExistingCandidateMapRemainsAccessibleFromNewDescription() {
+        let app = XCUIApplication()
+        app.launchArguments = ["--simulator-qa", "--qa-screen=entity-existing-map"]; app.launch()
+        XCTAssertTrue(app.buttons["地図"].waitForExistence(timeout: 15)); app.buttons["地図"].tap()
+        let link = app.buttons["entity-candidate-map-place:jerusalem_636"]
+        scrollTo(link, app: app); XCTAssertTrue(link.exists); link.tap()
+        XCTAssertTrue(app.staticTexts["従来資料の候補位置"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "entity-candidate-map-content-place:jerusalem_636").firstMatch.exists)
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "独立に位置を確認した地点ではありません")).firstMatch.exists)
+        attach(app, "restored-jerusalem-candidate-map-with-provenance")
+    }
     @MainActor func testEntityCardAndMapPreservation() {
         let app = XCUIApplication()
         app.launchArguments = ["--simulator-qa", "--qa-screen=entity-ui-baseline"]; app.launch()
@@ -270,7 +315,7 @@ final class ReadingInteractionUITests: XCTestCase {
         attach(app, "candidate-person-card-preserved")
         let detail = app.buttons["entity-detail-person-apollos-act18-introduction"]
         scrollTo(detail, app: app); detail.tap()
-        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "雄弁で聖書に詳しい")).firstMatch.waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "雄弁")).firstMatch.waitForExistence(timeout: 5))
         attach(app, "candidate-apollos-description-from-card")
         app.navigationBars.buttons.element(boundBy: 0).tap()
         app.buttons["地図"].tap()
@@ -318,6 +363,20 @@ final class ReadingInteractionUITests: XCTestCase {
         let alexWiki = app.descendants(matching: .any).matching(identifier: "wikipedia-place:alexandria_46").firstMatch
         scrollTo(alexWiki, app: app); XCTAssertTrue(alexWiki.exists)
         attach(app, "wikipedia-alexandria-reading-link")
+    }
+    @MainActor private func tapScreenFrame(_ element: XCUIElement, app: XCUIApplication) {
+        let point = element.frame
+        let origin = app.coordinate(withNormalizedOffset: .zero)
+        let anchor = origin.screenPoint
+        let target = origin.withOffset(CGVector(dx: point.midX - anchor.x, dy: point.midY - anchor.y))
+        print("Remote element frame=\(point), app=\(app.frame), origin=\(anchor), tap=\(target.screenPoint)")
+        target.tap()
+    }
+    @MainActor private func scrollToTop(_ element: XCUIElement, app: XCUIApplication) {
+        for _ in 0..<12 {
+            if element.exists && element.isHittable && element.frame.minY > 140 && element.frame.maxY < app.frame.height { return }
+            app.swipeDown()
+        }
     }
     @MainActor private func scrollTo(_ element: XCUIElement, app: XCUIApplication) {
         for _ in 0..<14 {

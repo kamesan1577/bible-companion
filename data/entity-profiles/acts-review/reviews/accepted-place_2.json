@@ -1,0 +1,2425 @@
+{
+  "recordType": "Independent acceptance closure review for place_2 round-2 repair",
+  "reviewedAtUTC": "2026-10-15T23:58:00Z",
+  "readOnly": true,
+  "inputs": {
+    "round1Manifest": {
+      "path": "final-input-manifest.round-1.json",
+      "sha256": "472328d6d48fbcb816bbbfb35f698cfd26e962578ca18fb253e4d796b27bc2e6"
+    },
+    "round2Manifest": {
+      "path": "final-input-manifest.json",
+      "sha256": "49b948a120b1a0397b5e1e37ee6d3ed7e7b3d72f708e747374051415c648efda",
+      "previousManifestSHA256": "472328d6d48fbcb816bbbfb35f698cfd26e962578ca18fb253e4d796b27bc2e6",
+      "phase": "round 2 frozen; repair review only"
+    },
+    "previousIndependentReview": {
+      "path": "reviews/final-place_2.json",
+      "sha256": "1774019d3d57c414b72aa6567592ea1141a3958121154de6ced558d147edda7d"
+    },
+    "authorResolutionLog": {
+      "path": "reviews/place_2-author-resolution.json",
+      "sha256": "915a4c9385f271227764e0461dacedfe711f09c059662cd86892b8af4b7109ff"
+    },
+    "pinnedActsWitness": {
+      "path": "acts-web-verses.json",
+      "sha256": "90e72f0410119f8fc9afd529cdd730fd261bd1d25adfb413581c1462d6e936cb",
+      "version": "webp-usfx-2026-10-13-35a6adf626e5"
+    },
+    "wikipediaHTTPRecord": {
+      "path": "wikipedia-http-checks.json",
+      "sha256": "3695e4ae8abb4f13227173013a6459a976893c4a664d19f6cbb6b1fabf9cacba",
+      "scope": "HTTP/title/redirect/fragment only"
+    }
+  },
+  "methodJa": "前回の独立レビューJSONを読み、place_2 34件の旧SHAと現SHAをround1/round2 manifest双方と照合した。SHA不変の25件だけ前回判定を維持し、変化した9件は現行draftとresolution after値を読み、本文を固定WEBP Acts witnessと直接照合した。全34 evidence JSONのoccurrenceWitnesses逐語テキストと章節URL、primaryCitationLinksとdraft sourcesの対応も再検証した。WikipediaはHTTP/title取得と本文の同一性評価を別に保持した。",
+  "summary": {
+    "assigned": 34,
+    "reviewed": 34,
+    "round2ManifestMatches": 34,
+    "modifiedSinceRound1": 9,
+    "unchangedSinceRound1": 25,
+    "statusCounts": {
+      "closed": 23,
+      "qualified": 11
+    },
+    "allFourPriorFailuresClosed": true,
+    "currentEvidenceOccurrenceChecksPass": true,
+    "currentActsLinkCount": 187,
+    "currentCitationURLChecksPass": true,
+    "httpAndIdentitySeparated": true
+  },
+  "decisionsJa": {
+    "closed": "改訂後の本文を固定witnessに照らして元の指摘が解消、または未変更のSHA固定passを保持。",
+    "qualified": "現稿は根拠どおりだが、古代地点の比定・Wikipediaの関連記事性など、明示して保持すべき不確実性が残る。coordinate=null自体は不適合としない。",
+    "fail": "今回再確認した範囲に未解決の本文矛盾はなし。"
+  },
+  "items": [
+    {
+      "entityID": "place:cyrene_317",
+      "draftPath": "drafts/place_2/cyrene_317.json",
+      "oldDraftSHA256": "14400291fc5bd363fdba78ec76e27677020454fa8d4b3662e86c7217b945311f",
+      "currentDraftSHA256": "f103119a66e23e30d9737ad1b966926431bf89bfbc1834496a06975a75439158",
+      "round1ManifestSHA256": "14400291fc5bd363fdba78ec76e27677020454fa8d4b3662e86c7217b945311f",
+      "round2ManifestSHA256": "f103119a66e23e30d9737ad1b966926431bf89bfbc1834496a06975a75439158",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": true,
+      "evidencePath": "evidence/place_2/cyrene_317.json",
+      "currentEvidenceSHA256": "1a4afa9fa1b5e3af663b417d81b02df5107ef767f3db49d08571469088dd7de2",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 3,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 3,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "qualified",
+      "status": "closed",
+      "priorFindingClosure": "prior qualified finding resolved",
+      "recheckBasisJa": "11:20 fact now says people from Cyprus and Cyrene came to Antioch and preached to Hellenists; every clause matches the verse. No claim of Jerusalem origin remains.",
+      "citationRefs": [
+        "Acts 11:20"
+      ],
+      "currentChangedFieldsVerified": [
+        {
+          "field": "facts[0].textJa",
+          "before": "キュレネ出身の人々の中に、エルサレムからアンティオキアへ行きギリシア語を話す人々にも知らせた者たちがいた。",
+          "current": "キプロスとキュレネ出身の人々の中には、アンティオキアでギリシア語を話す人々に主イエスを宣べ伝えた者たちがいた。",
+          "verifiedCurrentValue": true
+        }
+      ],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 2:10",
+          "text": "Phrygia, Pamphylia, Egypt, the parts of Libya around Cyrene, visitors from Rome, both Jews and proselytes,",
+          "inPinnedWitness": true
+        },
+        {
+          "reference": "Acts 11:20",
+          "text": "But there were some of them, men of Cyprus and Cyrene, who, when they had come to Antioch, spoke to the Hellenists, preaching the Lord Jesus.",
+          "inPinnedWitness": true
+        },
+        {
+          "reference": "Acts 13:1",
+          "text": "Now in the assembly that was at Antioch there were some prophets and teachers: Barnabas, Simeon who was called Niger, Lucius of Cyrene, Manaen the foster brother of Herod the tetrarch, and Saul.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 3,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 3,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "ancient/current city or city-site",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "割当候補座標だけでは根拠にできない。今回の作業では該当地名のPleiades固定データまたは考古学機関資料を個別確認できていないため座標はnull。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/キュレネ",
+        "title": "キュレネ — Wikipedia",
+        "kind": "article",
+        "bodyIdentityStatus": "article-read-identity-verified",
+        "identityBasisJa": "キュレネはリビア領内の古代ギリシア都市として記事冒頭と「聖書におけるキュレネ」節で確認。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%A5%E3%83%AC%E3%83%8D",
+        "pageTitle": "キュレネ - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "記事見出し・導入はリビア領内の古代ギリシア都市キュレネを扱い、聖書のキュレネ節もある。古代都市同定と合う。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:damascus_322",
+      "draftPath": "drafts/place_2/damascus_322.json",
+      "oldDraftSHA256": "a3bae223f09dc25b3ae74b72de77b7c6730fbaefd908619eca44d2e1560c6ba8",
+      "currentDraftSHA256": "10cf86305ad385c7c87fee6d94f5a858af4e460ca8f5779496e320435e7257c2",
+      "round1ManifestSHA256": "a3bae223f09dc25b3ae74b72de77b7c6730fbaefd908619eca44d2e1560c6ba8",
+      "round2ManifestSHA256": "10cf86305ad385c7c87fee6d94f5a858af4e460ca8f5779496e320435e7257c2",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": true,
+      "evidencePath": "evidence/place_2/damascus_322.json",
+      "currentEvidenceSHA256": "b92ef2f28631c74e9297281ab6e37a95211200fe3bb3e83d346403ee5690f52c",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 13,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 13,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "fail",
+      "status": "closed",
+      "priorFindingClosure": "all prior fail findings independently resolved",
+      "recheckBasisJa": "The subtitle is now only a city description. The historical role says Saul intended to go there with letters, matching 9:2; the road event and arrival are absent from the base intro.",
+      "citationRefs": [
+        "Acts 9:2"
+      ],
+      "currentChangedFieldsVerified": [
+        {
+          "field": "subtitleJa",
+          "before": "シリア内陸の都市。使徒言行録9章で、サウロはダマスコへ向かう途上で出来事に遭い、その後同市に入る。",
+          "current": "シリア南西部の古代都市。",
+          "verifiedCurrentValue": true
+        },
+        {
+          "field": "historicalRoleJa",
+          "before": "シリア内陸の都市。使徒言行録9章で、サウロはダマスコへ向かう途上で出来事に遭い、その後同市に入る。",
+          "current": "使徒言行録9章2節で、サウロがエルサレムの諸会堂に宛てた手紙を携えて向かおうとした町。",
+          "verifiedCurrentValue": true
+        }
+      ],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 9:2",
+          "text": "and asked for letters from him to the synagogues of Damascus, that if he found any who were of the Way, whether men or women, he might bring them bound to Jerusalem.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 13,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 13,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "ancient/current city or city-site",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "割当候補座標だけでは根拠にできない。今回の作業では該当地名のPleiades固定データまたは考古学機関資料を個別確認できていないため座標はnull。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/ダマスカス",
+        "title": "ダマスコ — Wikipedia",
+        "kind": "article",
+        "bodyIdentityStatus": "article-read-identity-verified",
+        "identityBasisJa": "記事の導入でシリアの首都ダマスカスを扱うことを確認。古代の境界とは区別。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%9E%E3%82%B9%E3%82%AB%E3%82%B9",
+        "pageTitle": "ダマスカス - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "記事は現代シリアのダマスカス市を扱い、古代都市の歴史を含む。都市名の同定は妥当だが現代市域を古代境界とする根拠ではない。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:derbe_330",
+      "draftPath": "drafts/place_2/derbe_330.json",
+      "oldDraftSHA256": "89ed214538d205c36136d44659d36698aab98e559e5f7a6c1992061494da6245",
+      "currentDraftSHA256": "7bf71069952e13acdef142a1a211aed62a434956538b3001169c717bfa21f931",
+      "round1ManifestSHA256": "89ed214538d205c36136d44659d36698aab98e559e5f7a6c1992061494da6245",
+      "round2ManifestSHA256": "7bf71069952e13acdef142a1a211aed62a434956538b3001169c717bfa21f931",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": true,
+      "evidencePath": "evidence/place_2/derbe_330.json",
+      "currentEvidenceSHA256": "171eaf13b568a5352b10116d310fd21a3d97af5766f2d9ab5872ea1fc928c23c",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 4,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 4,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "qualified",
+      "status": "qualified",
+      "priorFindingClosure": "prior primary-text issue resolved; residual uncertainty qualified",
+      "recheckBasisJa": "16:1 fact now says Paul came to Derbe and Lystra, exactly the cited sequence. Keep qualified for the draft’s own caveat that the archaeological identification near Kerti Hüyük is only considered likely/contested.",
+      "citationRefs": [
+        "Acts 16:1"
+      ],
+      "currentChangedFieldsVerified": [
+        {
+          "field": "facts[0].textJa",
+          "before": "パウロはデルベにも赴いた後、リステラへ戻った。",
+          "current": "パウロはデルベとリステラに来た。",
+          "verifiedCurrentValue": true
+        }
+      ],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 14:6",
+          "text": "they became aware of it and fled to the cities of Lycaonia, Lystra, Derbe, and the surrounding region.",
+          "inPinnedWitness": true
+        },
+        {
+          "reference": "Acts 16:1",
+          "text": "He came to Derbe and Lystra; and behold, a certain disciple was there, named Timothy, the son of a Jewess who believed, but his father was a Greek.",
+          "inPinnedWitness": true
+        },
+        {
+          "reference": "Acts 20:4",
+          "text": "These accompanied him as far as Asia: Sopater of Beroea, Aristarchus and Secundus of the Thessalonians, Gaius of Derbe, Timothy, and Tychicus and Trophimus of Asia.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 4,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 4,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "ancient/current city or city-site",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "割当候補座標だけでは根拠にできない。今回の作業では該当地名のPleiades固定データまたは考古学機関資料を個別確認できていないため座標はnull。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://en.wikipedia.org/wiki/Derbe",
+        "title": "デルベ — Wikipedia",
+        "kind": "article",
+        "bodyIdentityStatus": "article-read-identity-verified",
+        "identityBasisJa": "日本語で適切な記事を今回確認できなかった。英語記事の導入を開いてデルベを古代都市として扱うことを確認。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://en.wikipedia.org/wiki/Derbe",
+        "pageTitle": "Derbe - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "英語記事は古代リカオニアの都市デルベを扱う。同定候補ケルティ・ホユック周辺は有力説として示され確定扱いでない。"
+      },
+      "remainingFindings": [
+        {
+          "severity": "qualified",
+          "field": "facts[0]",
+          "observationJa": "Acts 16:1 says Paul came to Derbe and Lystra; it does not say “returned to Lystra.”",
+          "evidence": "16:1",
+          "suggestedCorrectionJa": "「デルベとリステラを訪れた」と本文に沿って改める。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:egypt_362",
+      "draftPath": "drafts/place_2/egypt_362.json",
+      "oldDraftSHA256": "1ab5323529bf2997e13a8a4a460434a7e00d0678019511641b7cb6b5650d68d7",
+      "currentDraftSHA256": "693a3eb89e98b824c95afd001557d18cbea9faa949648545de1598800203158f",
+      "round1ManifestSHA256": "1ab5323529bf2997e13a8a4a460434a7e00d0678019511641b7cb6b5650d68d7",
+      "round2ManifestSHA256": "693a3eb89e98b824c95afd001557d18cbea9faa949648545de1598800203158f",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": true,
+      "evidencePath": "evidence/place_2/egypt_362.json",
+      "currentEvidenceSHA256": "ca74b9362914da7695984f797347b4023cf96b0f051a174d11936b7db5b668d6",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 12,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 14,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "qualified",
+      "status": "closed",
+      "priorFindingClosure": "prior qualified finding resolved",
+      "recheckBasisJa": "The 7:20 fact no longer adds Egypt to the verse: it says Moses was born and nourished three months in his father’s house. This exactly matches 7:20; the episode’s Egyptian setting is established in preceding verses, but is no longer asserted as a clause in the fact.",
+      "citationRefs": [
+        "Acts 7:20"
+      ],
+      "currentChangedFieldsVerified": [
+        {
+          "field": "facts[1].textJa",
+          "before": "モーセはエジプトで生まれ、父の家で養育されたと語られる。",
+          "current": "モーセが生まれ、父の家で三か月養育されたと語られる。",
+          "verifiedCurrentValue": true
+        }
+      ],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 2:10",
+          "text": "Phrygia, Pamphylia, Egypt, the parts of Libya around Cyrene, visitors from Rome, both Jews and proselytes,",
+          "inPinnedWitness": true
+        },
+        {
+          "reference": "Acts 7:9",
+          "text": "“The patriarchs, moved with jealousy against Joseph, sold him into Egypt. God was with him",
+          "inPinnedWitness": true
+        },
+        {
+          "reference": "Acts 7:20",
+          "text": "At that time Moses was born, and was exceedingly handsome to God. He was nourished three months in his father’s house.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 12,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 14,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "historical region",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "割当候補座標だけでは根拠にできない。今回の作業では該当地名のPleiades固定データまたは考古学機関資料を個別確認できていないため座標はnull。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/エジプト",
+        "title": "エジプト — Wikipedia",
+        "kind": "article",
+        "bodyIdentityStatus": "article-read-identity-verified",
+        "identityBasisJa": "記事導入でエジプトを北東アフリカの国家・地域として扱うことを確認。現代国家記事の記述を古代境界へ転用しない。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%A8%E3%82%B8%E3%83%97%E3%83%88",
+        "pageTitle": "エジプト - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "日本語記事は現代エジプト国家が主題で古代史節を含む。古代エジプトの地域範囲を現代国境と同一視しない用途に限定。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:ephesus_400",
+      "draftPath": "drafts/place_2/ephesus_400.json",
+      "oldDraftSHA256": "a16207f8b4841612361901d2002168d2c69deb09939934c07f9cc4dd140ec8d0",
+      "currentDraftSHA256": "a16207f8b4841612361901d2002168d2c69deb09939934c07f9cc4dd140ec8d0",
+      "round1ManifestSHA256": "a16207f8b4841612361901d2002168d2c69deb09939934c07f9cc4dd140ec8d0",
+      "round2ManifestSHA256": "a16207f8b4841612361901d2002168d2c69deb09939934c07f9cc4dd140ec8d0",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/ephesus_400.json",
+      "currentEvidenceSHA256": "2fa85b7524669c98c441feaf4cd3833102aa4431d3b894aba7195f56628a4bd0",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 9,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 9,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "pass",
+      "status": "closed",
+      "priorFindingClosure": "prior pass retained by exact SHA match",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot and prior independent result was pass; current evidence occurrences and citations were rechecked against pinned witness.",
+      "citationRefs": [],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 18:19",
+          "text": "He came to Ephesus, and he left them there; but he himself entered into the synagogue and reasoned with the Jews.",
+          "inPinnedWitness": true
+        },
+        {
+          "reference": "Acts 19:1",
+          "text": "While Apollos was at Corinth, Paul, having passed through the upper country, came to Ephesus and found certain disciples.",
+          "inPinnedWitness": true
+        },
+        {
+          "reference": "Acts 20:17",
+          "text": "From Miletus he sent to Ephesus and called to himself the elders of the assembly.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 9,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 9,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "ancient/current city or city-site",
+        "coordinate": [
+          37.940164271971945,
+          27.34240298195866
+        ],
+        "evidenceStatus": "verified-reused-pilot",
+        "reasonJa": null,
+        "decisionJa": "座標はprofileに限り、Wikipediaの支持とは分けて扱う。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/エフェソス",
+        "title": "エペソ — Wikipedia",
+        "kind": "article",
+        "bodyIdentityStatus": "article-read-identity-verified",
+        "identityBasisJa": "日本語記事冒頭でトルコ西部セルチュク近郊の古代都市遺跡を扱うことを確認。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%95%E3%82%A7%E3%82%BD%E3%82%B9",
+        "pageTitle": "エフェソス - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "日本語記事はトルコ西部セルチュク近郊の古代都市遺跡を扱う。代表点は遺跡の概略位置で、現代市街や出来事の位置ではない。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:fair_havens_424",
+      "draftPath": "drafts/place_2/fair_havens_424.json",
+      "oldDraftSHA256": "a2b830957138f4862128572f0fe90774698dfbf5a31f16d012e3c7aa4ebb4d7b",
+      "currentDraftSHA256": "a2b830957138f4862128572f0fe90774698dfbf5a31f16d012e3c7aa4ebb4d7b",
+      "round1ManifestSHA256": "a2b830957138f4862128572f0fe90774698dfbf5a31f16d012e3c7aa4ebb4d7b",
+      "round2ManifestSHA256": "a2b830957138f4862128572f0fe90774698dfbf5a31f16d012e3c7aa4ebb4d7b",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/fair_havens_424.json",
+      "currentEvidenceSHA256": "766f971f8ec4c109b8b6da4cfc1bca4b5888ba89e7590d5e48b183d6acee66cb",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 1,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 1,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "qualified",
+      "status": "qualified",
+      "priorFindingClosure": "qualification remains; no draft change",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot; retain prior qualified caveat and current evidence was rechecked against pinned witness.",
+      "citationRefs": [
+        "27:8"
+      ],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 27:8",
+          "text": "With difficulty sailing along it we came to a certain place called Fair Havens, near the city of Lasea.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 1,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 1,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "coastal anchorage / ancient site with uncertain identification",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://en.wikipedia.org/wiki/Kaloi_Limenes",
+        "title": "Kaloi Limenes",
+        "kind": "related-section",
+        "bodyIdentityStatus": "related-article-read-identity-qualified",
+        "identityBasisJa": "英語記事はクレタ島南岸の現代港Kaloi Limenesを扱い、使徒27:8のFair Havens上陸地点と関連づける。ただし古代Fair Havensの正確な同定が確定したとする根拠ではないため関連記事として記録。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://en.wikipedia.org/wiki/Kaloi_Limenes",
+        "pageTitle": "Kaloi Limenes - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "英語記事は現代港Kaloi Limenesを主題としFair Havensとの関連を述べるが、古代停泊地の厳密な同定までは示さない。"
+      },
+      "remainingFindings": [
+        {
+          "severity": "qualified",
+          "field": "wikipedia/modernLocationJa",
+          "observationJa": "The linked article is about modern Kaloi Limenes and reports a Fair Havens association, not an exact ancient anchorage identification. Null coordinate is appropriate.",
+          "evidence": "27:8",
+          "suggestedCorrectionJa": "関連記事・比定未確定と明示した現行の慎重な表現を維持する。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:galatia_431",
+      "draftPath": "drafts/place_2/galatia_431.json",
+      "oldDraftSHA256": "9e09e169c6279fcecc8aafd70579a014783360f797fa38b9337e54e14590715d",
+      "currentDraftSHA256": "9e09e169c6279fcecc8aafd70579a014783360f797fa38b9337e54e14590715d",
+      "round1ManifestSHA256": "9e09e169c6279fcecc8aafd70579a014783360f797fa38b9337e54e14590715d",
+      "round2ManifestSHA256": "9e09e169c6279fcecc8aafd70579a014783360f797fa38b9337e54e14590715d",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/galatia_431.json",
+      "currentEvidenceSHA256": "2282b3fd8ccb847e701ce5ce31f1d4a68a33d707da6e1a69c1df16a2cb4cbddc",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 2,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 2,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "pass",
+      "status": "closed",
+      "priorFindingClosure": "prior pass retained by exact SHA match",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot and prior independent result was pass; current evidence occurrences and citations were rechecked against pinned witness.",
+      "citationRefs": [],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 16:6",
+          "text": "When they had gone through the region of Phrygia and Galatia, they were forbidden by the Holy Spirit to speak the word in Asia.",
+          "inPinnedWitness": true
+        },
+        {
+          "reference": "Acts 18:23",
+          "text": "Having spent some time there, he departed and went through the region of Galatia and Phrygia, in order, establishing all the disciples.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 2,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 2,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "historical region",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/ガラティア",
+        "title": "ガラティア",
+        "kind": "related-section",
+        "bodyIdentityStatus": "related-article-read-identity-qualified",
+        "identityBasisJa": "記事はアナトリアの古代地域・王国およびローマ属州のガラティアを扱う。北部／南部ガラティアなど地理範囲の議論があるため、使徒16:6等の地域名の関連記事として限定採用。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%AC%E3%83%A9%E3%83%86%E3%82%A3%E3%82%A2",
+        "pageTitle": "ガラティア - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "記事は古代地域・王国・ローマ属州のガラティアを扱い、境界変動と北部／南部解釈の差がある。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:galilee_433",
+      "draftPath": "drafts/place_2/galilee_433.json",
+      "oldDraftSHA256": "eec83554b24d5216cfc703cc750f64e4843b335989ee837c270676cad64d0aff",
+      "currentDraftSHA256": "9b9d6154dd427783dba2c862e88cde1bf8b024fe1be95a60efe9eb5ee09c41db",
+      "round1ManifestSHA256": "eec83554b24d5216cfc703cc750f64e4843b335989ee837c270676cad64d0aff",
+      "round2ManifestSHA256": "9b9d6154dd427783dba2c862e88cde1bf8b024fe1be95a60efe9eb5ee09c41db",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": true,
+      "evidencePath": "evidence/place_2/galilee_433.json",
+      "currentEvidenceSHA256": "5bd032cf118257eaf6b33473267a79bb6d3bc0f20d004b6fefc2223243094d86",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 4,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 4,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "qualified",
+      "status": "closed",
+      "priorFindingClosure": "prior qualified finding resolved",
+      "recheckBasisJa": "The modern extent now says northern Israel is central and notes some sources include part of Jordan; it also expressly separates ancient range from current borders. This addresses the prior incomplete geography note.",
+      "citationRefs": [
+        "Wikipedia geography evidence, separate from Acts 1:11 and 9:31"
+      ],
+      "currentChangedFieldsVerified": [
+        {
+          "field": "modernLocationJa",
+          "before": "現在のイスラエル北部におおむね重なる歴史的地域。古代の境界を現在の国境と同一視しない。",
+          "current": "現在のイスラエル北部を中心とし、時代・資料によってはヨルダン側の一部も含めて説明される歴史的地域。古代の範囲を現在の国境と同一視しない。",
+          "verifiedCurrentValue": true
+        }
+      ],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 1:11",
+          "text": "who also said, “You men of Galilee, why do you stand looking into the sky? This Jesus, who was received up from you into the sky, will come back in the same way as you saw him going into the sky.”",
+          "inPinnedWitness": true
+        },
+        {
+          "reference": "Acts 9:31",
+          "text": "So the assemblies throughout all Judea, Galilee, and Samaria had peace and were built up. They were multiplied, walking in the fear of the Lord and in the comfort of the Holy Spirit.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 4,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 4,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "historical region",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/ガリラヤ",
+        "title": "ガリラヤ",
+        "kind": "article",
+        "bodyIdentityStatus": "article-read-identity-verified",
+        "identityBasisJa": "記事冒頭はガリラヤをパレスチナの歴史的地域名とし、ガリラヤ湖を含む現在のイスラエル北部等の範囲を説明する。使徒9:31の地理的地域名と一致し、現代境界とは同一視しない。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%AC%E3%83%AA%E3%83%A9%E3%83%A4",
+        "pageTitle": "ガリラヤ - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "記事は歴史的ガリラヤを扱い、現在のイスラエル北部だけでなくヨルダン側の一部にも触れる。プロフィールの現代範囲は部分的説明。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:gaza_446",
+      "draftPath": "drafts/place_2/gaza_446.json",
+      "oldDraftSHA256": "f3b505a65635d482e6e89e293d3d9d33531e78fab2467212c2249465e3b5b811",
+      "currentDraftSHA256": "f3b505a65635d482e6e89e293d3d9d33531e78fab2467212c2249465e3b5b811",
+      "round1ManifestSHA256": "f3b505a65635d482e6e89e293d3d9d33531e78fab2467212c2249465e3b5b811",
+      "round2ManifestSHA256": "f3b505a65635d482e6e89e293d3d9d33531e78fab2467212c2249465e3b5b811",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/gaza_446.json",
+      "currentEvidenceSHA256": "ecd287f06c667662ae1312992ce09a5a6ff3e53c260fd45a3064a0db12d7363b",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 1,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 1,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "qualified",
+      "status": "qualified",
+      "priorFindingClosure": "qualification remains; no draft change",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot; retain prior qualified caveat and current evidence was rechecked against pinned witness.",
+      "citationRefs": [
+        "8:26"
+      ],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 8:26",
+          "text": "Then an angel of the Lord spoke to Philip, saying, “Arise, and go toward the south to the way that goes down from Jerusalem to Gaza. This is a desert.”",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 1,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 1,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "ancient/current city or city-site",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/ガザ",
+        "title": "ガザ",
+        "kind": "related-section",
+        "bodyIdentityStatus": "related-article-read-identity-qualified",
+        "identityBasisJa": "記事はパレスチナの現代ガザ市を主題とし、歴史節で古代都市国家としてのガザとエジプト・シリア間の交通上の位置を説明する。使徒8:26の古代都市名の関連記事だが現在の行政単位とは区別。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%AC%E3%82%B6",
+        "pageTitle": "ガザ - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "日本語記事の主題は現代ガザ市で、歴史節が古代ガザを説明する。Actsの古代都市に関連するが現代記事。"
+      },
+      "remainingFindings": [
+        {
+          "severity": "qualified",
+          "field": "wikipedia",
+          "observationJa": "Linked article is the modern Gaza city page; only the historical section is relevant to the ancient city.",
+          "evidence": "8:26",
+          "suggestedCorrectionJa": "関連記事として扱い、古代市域と現代市街の区別を維持する。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:greece_495",
+      "draftPath": "drafts/place_2/greece_495.json",
+      "oldDraftSHA256": "e2d894a897732f99a3bf0e2f6a01e1c7ec96398d196dcdfcdf1d2f6e98d9adde",
+      "currentDraftSHA256": "e2d894a897732f99a3bf0e2f6a01e1c7ec96398d196dcdfcdf1d2f6e98d9adde",
+      "round1ManifestSHA256": "e2d894a897732f99a3bf0e2f6a01e1c7ec96398d196dcdfcdf1d2f6e98d9adde",
+      "round2ManifestSHA256": "e2d894a897732f99a3bf0e2f6a01e1c7ec96398d196dcdfcdf1d2f6e98d9adde",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/greece_495.json",
+      "currentEvidenceSHA256": "4f5e5e45162e5afc1ad51d9fc9cd15587ce2295465fcc82345d3ba1f48172b91",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 1,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 1,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "qualified",
+      "status": "qualified",
+      "priorFindingClosure": "qualification remains; no draft change",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot; retain prior qualified caveat and current evidence was rechecked against pinned witness.",
+      "citationRefs": [
+        "20:2"
+      ],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 20:2",
+          "text": "When he had gone through those parts and had encouraged them with many words, he came into Greece.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 1,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 1,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "historical region",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/ギリシャ",
+        "title": "ギリシャ",
+        "kind": "related-section",
+        "bodyIdentityStatus": "related-article-read-identity-qualified",
+        "identityBasisJa": "記事は現代ギリシャ国家を扱う一方、歴史節に古代ギリシア・ローマ時代を含む。使徒20章の広域名に関連するが、現代国家の境界を古代ギリシアと同一視しない。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%AE%E3%83%AA%E3%82%B7%E3%83%A3",
+        "pageTitle": "ギリシャ - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "日本語記事は現代ギリシャ国家が主題で古代ギリシア史節を含む。古代広域名に関連するが同一範囲とは限らない。"
+      },
+      "remainingFindings": [
+        {
+          "severity": "qualified",
+          "field": "wikipedia/modernLocationJa",
+          "observationJa": "The linked page is modern Greece with ancient-history material; Acts 20:2’s broad “Greece” is not a modern-border definition.",
+          "evidence": "20:2",
+          "suggestedCorrectionJa": "関連する歴史記事として扱い、現代国家と同一視しない。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:iconium_590",
+      "draftPath": "drafts/place_2/iconium_590.json",
+      "oldDraftSHA256": "51185f8f8b20b2ca7138c0f0ae09fdad86697738d77e80e456f9de8e7912eb49",
+      "currentDraftSHA256": "51185f8f8b20b2ca7138c0f0ae09fdad86697738d77e80e456f9de8e7912eb49",
+      "round1ManifestSHA256": "51185f8f8b20b2ca7138c0f0ae09fdad86697738d77e80e456f9de8e7912eb49",
+      "round2ManifestSHA256": "51185f8f8b20b2ca7138c0f0ae09fdad86697738d77e80e456f9de8e7912eb49",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/iconium_590.json",
+      "currentEvidenceSHA256": "3883997991d98791c0bbec1344011f0bd6f50ee27eab66f7e5c3fe6d8c153821",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 5,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 5,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "qualified",
+      "status": "qualified",
+      "priorFindingClosure": "qualification remains; no draft change",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot; retain prior qualified caveat and current evidence was rechecked against pinned witness.",
+      "citationRefs": [
+        "13:51"
+      ],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 13:51",
+          "text": "But they shook off the dust of their feet against them, and came to Iconium.",
+          "inPinnedWitness": true
+        },
+        {
+          "reference": "Acts 14:1",
+          "text": "In Iconium, they entered together into the synagogue of the Jews, and so spoke that a great multitude both of Jews and of Greeks believed.",
+          "inPinnedWitness": true
+        },
+        {
+          "reference": "Acts 14:21",
+          "text": "When they had preached the Good News to that city and had made many disciples, they returned to Lystra, Iconium, and Antioch,",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 5,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 5,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "ancient/current city or city-site",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/コンヤ",
+        "title": "コンヤ",
+        "kind": "related-section",
+        "bodyIdentityStatus": "related-article-read-identity-qualified",
+        "identityBasisJa": "記事は現在のコンヤ市を主題とし、古代イコニオンとの連続・前身関係およびパウロの訪問を説明する。古代名の直接記事ではなく関連する現代都市記事。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%B3%E3%83%A4",
+        "pageTitle": "コンヤ - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "日本語記事は現代コンヤ市が主題で古代イコニオンとの歴史的関係に触れる。古代都市の直接記事ではない。"
+      },
+      "remainingFindings": [
+        {
+          "severity": "qualified",
+          "field": "wikipedia",
+          "observationJa": "Linked Konya page is a modern city article with ancient Iconium linkage, not a direct ancient-site article.",
+          "evidence": "13:51",
+          "suggestedCorrectionJa": "現在コンヤ周辺という概略に限って関連ページとして扱う。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:italy_601",
+      "draftPath": "drafts/place_2/italy_601.json",
+      "oldDraftSHA256": "8416408ab1ea95b5db1dbada8c7ffecdd4466839d9748038b878e63f29df74a6",
+      "currentDraftSHA256": "747827213bd71a699947ab73a44bc4af24cb4a1cbfeae93e9ee902c8c3928c83",
+      "round1ManifestSHA256": "8416408ab1ea95b5db1dbada8c7ffecdd4466839d9748038b878e63f29df74a6",
+      "round2ManifestSHA256": "747827213bd71a699947ab73a44bc4af24cb4a1cbfeae93e9ee902c8c3928c83",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": true,
+      "evidencePath": "evidence/place_2/italy_601.json",
+      "currentEvidenceSHA256": "bc92a89b534d6ea131d5a8a50fbe4677dee0698c1be125434bd7241288fc8640",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 3,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 3,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "fail",
+      "status": "closed",
+      "priorFindingClosure": "all prior fail findings independently resolved",
+      "recheckBasisJa": "27:1 fact now says the group was to sail for Italy with other prisoners; it no longer names Rome or an unsupported Rome destination.",
+      "citationRefs": [
+        "Acts 27:1"
+      ],
+      "currentChangedFieldsVerified": [
+        {
+          "field": "facts[0].textJa",
+          "before": "パウロは囚人としてローマへ送られる航海に出る。",
+          "current": "パウロは他の囚人たちとともに、イタリア行きの航海に出ることになった。",
+          "verifiedCurrentValue": true
+        }
+      ],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 18:2",
+          "text": "He found a certain Jew named Aquila, a man of Pontus by race, who had recently come from Italy with his wife Priscilla, because Claudius had commanded all the Jews to depart from Rome. He came to them,",
+          "inPinnedWitness": true
+        },
+        {
+          "reference": "Acts 27:1",
+          "text": "When it was determined that we should sail for Italy, they delivered Paul and certain other prisoners to a centurion named Julius, of the Augustan band.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 3,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 3,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "historical region",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/イタリア",
+        "title": "イタリア",
+        "kind": "related-section",
+        "bodyIdentityStatus": "related-article-read-identity-qualified",
+        "identityBasisJa": "記事は現代国家イタリアを主題とし、古代史節でローマ時代の半島・地域を説明する。使徒27章の古代地理名を理解する関連記事として採用し、現代国家境界との同一視を避ける。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2",
+        "pageTitle": "イタリア - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "日本語記事は現代イタリア国家が主題。古代地理については関連資料に留まり、古代と現代の境界は一致しない。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:jerusalem_636",
+      "draftPath": "drafts/place_2/jerusalem_636.json",
+      "oldDraftSHA256": "7a8e2d4d8fbbb066340b92886b9f6f27b3feabfd53cc59da24c62d9a35207a9b",
+      "currentDraftSHA256": "7a8e2d4d8fbbb066340b92886b9f6f27b3feabfd53cc59da24c62d9a35207a9b",
+      "round1ManifestSHA256": "7a8e2d4d8fbbb066340b92886b9f6f27b3feabfd53cc59da24c62d9a35207a9b",
+      "round2ManifestSHA256": "7a8e2d4d8fbbb066340b92886b9f6f27b3feabfd53cc59da24c62d9a35207a9b",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/jerusalem_636.json",
+      "currentEvidenceSHA256": "11d8237d44fb238564b732a03926c1c163efacefc9ac661137a12e58c88700c9",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 57,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 57,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "pass",
+      "status": "closed",
+      "priorFindingClosure": "prior pass retained by exact SHA match",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot and prior independent result was pass; current evidence occurrences and citations were rechecked against pinned witness.",
+      "citationRefs": [],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 1:4",
+          "text": "Being assembled together with them, he commanded them, “Don’t depart from Jerusalem, but wait for the promise of the Father, which you heard from me.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 57,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 57,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "historical region",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/エルサレム",
+        "title": "エルサレム",
+        "kind": "article",
+        "bodyIdentityStatus": "article-read-identity-verified",
+        "identityBasisJa": "記事はレバントの歴史的都市エルサレムを扱い、現代の都市とも連続する。使徒本文のエルサレムという都市名と一致。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%AB%E3%82%B5%E3%83%AC%E3%83%A0",
+        "pageTitle": "エルサレム - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "記事はエルサレム市と旧市街を扱う。プロフィールは古代市域・時代別境界を留保している。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:joppa_652",
+      "draftPath": "drafts/place_2/joppa_652.json",
+      "oldDraftSHA256": "b5c61d3987cfcb87910af50c4e68d85ab36408b68399a13f048c44f6741e2829",
+      "currentDraftSHA256": "b5c61d3987cfcb87910af50c4e68d85ab36408b68399a13f048c44f6741e2829",
+      "round1ManifestSHA256": "b5c61d3987cfcb87910af50c4e68d85ab36408b68399a13f048c44f6741e2829",
+      "round2ManifestSHA256": "b5c61d3987cfcb87910af50c4e68d85ab36408b68399a13f048c44f6741e2829",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/joppa_652.json",
+      "currentEvidenceSHA256": "00b2f3e39023707f6fb09b10ee0318f7521bc4360b93ea7ea98d16bda186d25a",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 10,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 10,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "pass",
+      "status": "closed",
+      "priorFindingClosure": "prior pass retained by exact SHA match",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot and prior independent result was pass; current evidence occurrences and citations were rechecked against pinned witness.",
+      "citationRefs": [],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 9:36",
+          "text": "Now there was at Joppa a certain disciple named Tabitha, which when translated means Dorcas. This woman was full of good works and acts of mercy which she did.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 10,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 10,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "ancient/current city or city-site",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/ヤッファ",
+        "title": "ヤッファ",
+        "kind": "related-section",
+        "bodyIdentityStatus": "related-article-read-identity-qualified",
+        "identityBasisJa": "記事はテルアビブに含まれる現在のヤッファと古代以来の港を扱い、Joppa/Joppe等の名と使徒9章のペトロ伝承に触れる。本文のヨッパとの名称・都市の同一性を確認。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%A4%E3%83%83%E3%83%95%E3%82%A1",
+        "pageTitle": "ヤッファ - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "記事は古代港ヤッファと現在のテルアビブ・ヤッフォ内のヤッファ地区の関係を扱う。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:judea_657",
+      "draftPath": "drafts/place_2/judea_657.json",
+      "oldDraftSHA256": "9b6ebc061e3a16157e55e3be8ef1e631c008939d662a8bfc452b774f58178575",
+      "currentDraftSHA256": "9b6ebc061e3a16157e55e3be8ef1e631c008939d662a8bfc452b774f58178575",
+      "round1ManifestSHA256": "9b6ebc061e3a16157e55e3be8ef1e631c008939d662a8bfc452b774f58178575",
+      "round2ManifestSHA256": "9b6ebc061e3a16157e55e3be8ef1e631c008939d662a8bfc452b774f58178575",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/judea_657.json",
+      "currentEvidenceSHA256": "739e3363bd239f7bf981d48c3ef9087d864a17d0c54477d641f37345c142e485",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 13,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 13,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "pass",
+      "status": "closed",
+      "priorFindingClosure": "prior pass retained by exact SHA match",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot and prior independent result was pass; current evidence occurrences and citations were rechecked against pinned witness.",
+      "citationRefs": [],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 1:8",
+          "text": "But you will receive power when the Holy Spirit has come upon you. You will be witnesses to me in Jerusalem, in all Judea and Samaria, and to the uttermost parts of the earth.”",
+          "inPinnedWitness": true
+        },
+        {
+          "reference": "Acts 9:31",
+          "text": "So the assemblies throughout all Judea, Galilee, and Samaria had peace and were built up. They were multiplied, walking in the fear of the Lord and in the comfort of the Holy Spirit.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 13,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 13,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "historical region",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/ユダヤ",
+        "title": "ユダヤ",
+        "kind": "related-section",
+        "bodyIdentityStatus": "related-article-read-identity-qualified",
+        "identityBasisJa": "記事は古代のユダヤ地域とローマ支配下のユダヤ属州を説明し、イエス時代のユダヤ・サマリア・ガリラヤを区別する。一方、記事は民族・宗教語義とも交差するため、使徒9:31の地域用法に関連する記事として扱う。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%A6%E3%83%80%E3%83%A4",
+        "pageTitle": "ユダヤ - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "記事はユダヤを歴史的地域として扱い、現在の国家や都市に還元しないプロフィールと一致。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:lasea_717",
+      "draftPath": "drafts/place_2/lasea_717.json",
+      "oldDraftSHA256": "4bb632094ea689ac904560b593063d1fa58af7184a5d3d011b1c54c5b3fbbdfe",
+      "currentDraftSHA256": "4bb632094ea689ac904560b593063d1fa58af7184a5d3d011b1c54c5b3fbbdfe",
+      "round1ManifestSHA256": "4bb632094ea689ac904560b593063d1fa58af7184a5d3d011b1c54c5b3fbbdfe",
+      "round2ManifestSHA256": "4bb632094ea689ac904560b593063d1fa58af7184a5d3d011b1c54c5b3fbbdfe",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/lasea_717.json",
+      "currentEvidenceSHA256": "a5258a7dc439158d9fd1473e1aca86b56e2659d7ce1ed6532e09d7e8cc7b1eb0",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 1,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 1,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "qualified",
+      "status": "qualified",
+      "priorFindingClosure": "qualification remains; no draft change",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot; retain prior qualified caveat and current evidence was rechecked against pinned witness.",
+      "citationRefs": [
+        "27:8"
+      ],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 27:8",
+          "text": "With difficulty sailing along it we came to a certain place called Fair Havens, near the city of Lasea.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 1,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 1,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "coastal anchorage / ancient site with uncertain identification",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://en.wikipedia.org/wiki/Lasaea",
+        "title": "Lasaea",
+        "kind": "article",
+        "bodyIdentityStatus": "article-read-identity-verified",
+        "identityBasisJa": "英語記事はクレタ島の古代集落Lasaeaを扱い、使徒27:8の地名として記載し、カロイ・リメネス近辺の遺跡候補に触れる。日本語で同等の記事を確認できなかったため英語記事を採用。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://en.wikipedia.org/wiki/Lasaea",
+        "pageTitle": "Lasaea - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "英語記事はクレタ南岸の古代都市LasaeaをFair Havens/Kaloi Limenes近傍に置く。正確な遺跡同定は確定しない。"
+      },
+      "remainingFindings": [
+        {
+          "severity": "qualified",
+          "field": "modernLocationJa/wikipedia",
+          "observationJa": "Acts 27:8 locates Lasea near Fair Havens, but exact archaeological identification is uncertain; the linked page describes a proposed nearby site.",
+          "evidence": "27:8",
+          "suggestedCorrectionJa": "現行の不確実性・座標nullを維持し、確定遺跡とは言わない。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:libya_730",
+      "draftPath": "drafts/place_2/libya_730.json",
+      "oldDraftSHA256": "9f0d50d227fab022c3528ff3fb1d84df1c5ed7e227e156b090c1b2467d855c44",
+      "currentDraftSHA256": "9f0d50d227fab022c3528ff3fb1d84df1c5ed7e227e156b090c1b2467d855c44",
+      "round1ManifestSHA256": "9f0d50d227fab022c3528ff3fb1d84df1c5ed7e227e156b090c1b2467d855c44",
+      "round2ManifestSHA256": "9f0d50d227fab022c3528ff3fb1d84df1c5ed7e227e156b090c1b2467d855c44",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/libya_730.json",
+      "currentEvidenceSHA256": "1e75a47f4c878a75540ca636b393a6d03cd8d2a82bf99bc78cc345cd9f9b7bf9",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 1,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 1,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "pass",
+      "status": "closed",
+      "priorFindingClosure": "prior pass retained by exact SHA match",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot and prior independent result was pass; current evidence occurrences and citations were rechecked against pinned witness.",
+      "citationRefs": [],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 2:10",
+          "text": "Phrygia, Pamphylia, Egypt, the parts of Libya around Cyrene, visitors from Rome, both Jews and proselytes,",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 1,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 1,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "historical broad region",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/古代リビュア",
+        "title": "古代リビュア",
+        "kind": "related-section",
+        "bodyIdentityStatus": "related-article-read-identity-qualified",
+        "identityBasisJa": "記事は古代リビュアを北アフリカの歴史的広域名として扱い、用法の広狭を説明する。使徒2:10の「キレネ周辺のリビア地方」と関係する範囲を示す記事で、現代リビア国との同一視はできない。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E5%8F%A4%E4%BB%A3%E3%83%AA%E3%83%93%E3%83%A5%E3%82%A2",
+        "pageTitle": "古代リビュア - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "日本語「古代リビュア」記事は古代北アフリカの広域名を扱い、現代リビア国家と区別する。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:lycaonia_739",
+      "draftPath": "drafts/place_2/lycaonia_739.json",
+      "oldDraftSHA256": "687997104b406d3c0350be1196c934cdbbf8eef1515fdb43f5c125df0b652c4f",
+      "currentDraftSHA256": "687997104b406d3c0350be1196c934cdbbf8eef1515fdb43f5c125df0b652c4f",
+      "round1ManifestSHA256": "687997104b406d3c0350be1196c934cdbbf8eef1515fdb43f5c125df0b652c4f",
+      "round2ManifestSHA256": "687997104b406d3c0350be1196c934cdbbf8eef1515fdb43f5c125df0b652c4f",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/lycaonia_739.json",
+      "currentEvidenceSHA256": "851913b68701fc4801df4d7a0e3d410536a376da79ba9bbe5f25785b14d31d55",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 1,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 1,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "pass",
+      "status": "closed",
+      "priorFindingClosure": "prior pass retained by exact SHA match",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot and prior independent result was pass; current evidence occurrences and citations were rechecked against pinned witness.",
+      "citationRefs": [],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 14:6",
+          "text": "they became aware of it and fled to the cities of Lycaonia, Lystra, Derbe, and the surrounding region.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 1,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 1,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "historical region",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/リカオニア",
+        "title": "リカオニア",
+        "kind": "article",
+        "bodyIdentityStatus": "article-read-identity-verified",
+        "identityBasisJa": "記事は小アジア南東部の古代地域リカオニアを扱い、現在のトルコ領に位置する歴史地域として境界の周辺関係を記す。使徒14章の広域名と一致。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%AA%E3%82%AB%E3%82%AA%E3%83%8B%E3%82%A2",
+        "pageTitle": "リカオニア - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "記事は小アジア内陸の古代地域リカオニアを扱い、使徒14:6の地域名に一致。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:lycia_740",
+      "draftPath": "drafts/place_2/lycia_740.json",
+      "oldDraftSHA256": "eaeefb8b7d9652e412bc9223dbd3b473c80377dfc1b56c1eabc8e85c902652a6",
+      "currentDraftSHA256": "542fe2421dc8a065a3de35a4f81086bf00bc370dfe644423673e94f550c909ba",
+      "round1ManifestSHA256": "eaeefb8b7d9652e412bc9223dbd3b473c80377dfc1b56c1eabc8e85c902652a6",
+      "round2ManifestSHA256": "542fe2421dc8a065a3de35a4f81086bf00bc370dfe644423673e94f550c909ba",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": true,
+      "evidencePath": "evidence/place_2/lycia_740.json",
+      "currentEvidenceSHA256": "beb0cf00c47248e8f269b3a520c0bcd68d05433f54ab09a37caea393368a7f26",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 1,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 1,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "fail",
+      "status": "closed",
+      "priorFindingClosure": "all prior fail findings independently resolved",
+      "recheckBasisJa": "The subtitle, summary, and role now state that Myra is described as a city of Lycia, and explicitly say Acts does not say the ship sailed along Lycia’s coast.",
+      "citationRefs": [
+        "Acts 27:5"
+      ],
+      "currentChangedFieldsVerified": [
+        {
+          "field": "subtitleJa",
+          "before": "船の航路記述に現れる沿岸地域。",
+          "current": "ミラの属する地域として記される古代地方。",
+          "verifiedCurrentValue": true
+        },
+        {
+          "field": "summaryJa",
+          "before": "小アジア南西岸の歴史的地域名です。使徒言行録27章では船が沿岸を航行した地域として現れます。都市のピンで地域を代用しません。",
+          "current": "小アジア南西部の歴史的地域名です。使徒言行録27章5節は、船がキリキアとパンフィリア沖を航行してミラへ至り、そのミラをリュキアの町と呼びます。本文はリュキア沿岸を航行したとは述べません。",
+          "verifiedCurrentValue": true
+        },
+        {
+          "field": "historicalRoleJa",
+          "before": "船の航路記述に現れる沿岸地域。",
+          "current": "使徒言行録27章5節でミラを「リュキアの町」と説明する地域名。",
+          "verifiedCurrentValue": true
+        }
+      ],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 27:5",
+          "text": "When we had sailed across the sea which is off Cilicia and Pamphylia, we came to Myra, a city of Lycia.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 1,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 1,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "historical region",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/リュキア",
+        "title": "リュキア",
+        "kind": "article",
+        "bodyIdentityStatus": "article-read-identity-verified",
+        "identityBasisJa": "記事は小アジア南西部の古代地域・政治体リュキアを扱い、後のローマ行政区分やパンフィリアとの関係を記す。使徒27章の歴史的地域名と一致するが範囲は時代で変わる。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%AA%E3%83%A5%E3%82%AD%E3%82%A2",
+        "pageTitle": "リュキア - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "記事は小アジア南西部の古代リュキアを扱う。Acts 27:5はリュキアのミラを記すが、リュキア沿岸航行とは記さない。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:lydda_741",
+      "draftPath": "drafts/place_2/lydda_741.json",
+      "oldDraftSHA256": "18a4ea051b71c5a753433bae5488efbcebac25ef00bc2fd4516013806d602a1b",
+      "currentDraftSHA256": "18a4ea051b71c5a753433bae5488efbcebac25ef00bc2fd4516013806d602a1b",
+      "round1ManifestSHA256": "18a4ea051b71c5a753433bae5488efbcebac25ef00bc2fd4516013806d602a1b",
+      "round2ManifestSHA256": "18a4ea051b71c5a753433bae5488efbcebac25ef00bc2fd4516013806d602a1b",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/lydda_741.json",
+      "currentEvidenceSHA256": "fea1ab6bc46ecec72310b44d7001be62520f60b27457e7e7b47fe591c19974b2",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 3,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 3,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "qualified",
+      "status": "qualified",
+      "priorFindingClosure": "qualification remains; no draft change",
+      "recheckBasisJa": "旧draft SHAは不変だが、記事本文も独立して開いて再確認した。日本語記事はロードを聖書時代から存在する都市と述べ、使徒行伝9:32に登場すると明記するため、ActsのLyddaとの意味的対応は支持される。qualifiedは現代ロード市の記事であることと古代市域・遺跡境界の精密同定/固定座標が得られていない点に限る。前回final-place_2の「記事に明確な同定なし」という表現は現本文に照らし過剰だったため、今回の理由に引き継がない。",
+      "citationRefs": [
+        "9:32"
+      ],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 9:32",
+          "text": "As Peter went throughout all those parts, he came down also to the saints who lived at Lydda.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 3,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 3,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "ancient/current city or city-site",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/ロード_(イスラエル)",
+        "title": "ロード (イスラエル)",
+        "kind": "related-section",
+        "bodyIdentityStatus": "related-article-read-identity-supported-but-site-boundary-qualified",
+        "identityBasisJa": "現行記事本文L198はロードをイスラエルの都市Lodと説明し、L205は聖書時代から存在し新約使徒行伝9:32に登場と記す。古代市域の正確な境界・遺跡地点までは示さない。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%AD%E3%83%BC%E3%83%89_(%E3%82%A4%E3%82%B9%E3%83%A9%E3%82%A8%E3%83%AB)",
+        "pageTitle": "ロード (イスラエル) - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "日本語ロード市記事は現代イスラエルの都市を扱うが、本文はActsの古代Lyddaとの明確な同定を確認できない。現代位置の関連情報に限る。",
+        "currentPageReadEvidence": {
+          "url": "https://ja.wikipedia.org/wiki/ロード_(イスラエル)",
+          "webPageReadRef": "turn278view0",
+          "lines": "198–205",
+          "findingJa": "ロードはイスラエル中央地区の都市で、聖書時代から存在し新約Acts 9:32に登場するとの記事本文を確認。意味同定を支持するが、古代市域の位置精度は支持しない。"
+        }
+      },
+      "remainingFindings": [
+        {
+          "severity": "qualified",
+          "field": "wikipedia/modernLocationJa",
+          "observationJa": "記事本文は現代ロード市とActs 9:32の関連を明示するが、古代市域の境界や遺跡代表点は提示しない。profileのmodernLocationは現代ロード周辺との説明で点を置かず、その不確実性は適切に保持。",
+          "evidence": "Wikipediaロード記事 lines 198–205; Acts 9:32",
+          "suggestedCorrectionJa": "現行の市街/遺跡境界を断定せず、座標nullを維持。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:lystra_742",
+      "draftPath": "drafts/place_2/lystra_742.json",
+      "oldDraftSHA256": "7dcac5db8134c11c48faa3affe3776b90539be928abf8d4bafd499734ff894de",
+      "currentDraftSHA256": "7dcac5db8134c11c48faa3affe3776b90539be928abf8d4bafd499734ff894de",
+      "round1ManifestSHA256": "7dcac5db8134c11c48faa3affe3776b90539be928abf8d4bafd499734ff894de",
+      "round2ManifestSHA256": "7dcac5db8134c11c48faa3affe3776b90539be928abf8d4bafd499734ff894de",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/lystra_742.json",
+      "currentEvidenceSHA256": "236106dc61079d99aa5bf4d7a7a6aaca921efac5e98c7e36c5d794f5d6f9f9ae",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 5,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 5,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "pass",
+      "status": "closed",
+      "priorFindingClosure": "prior pass retained by exact SHA match",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot and prior independent result was pass; current evidence occurrences and citations were rechecked against pinned witness.",
+      "citationRefs": [],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 14:6",
+          "text": "they became aware of it and fled to the cities of Lycaonia, Lystra, Derbe, and the surrounding region.",
+          "inPinnedWitness": true
+        },
+        {
+          "reference": "Acts 16:1",
+          "text": "He came to Derbe and Lystra; and behold, a certain disciple was there, named Timothy, the son of a Jewess who believed, but his father was a Greek.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 5,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 5,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "ancient/current city or city-site",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://en.wikipedia.org/wiki/Lystra",
+        "title": "Lystra",
+        "kind": "article",
+        "bodyIdentityStatus": "article-read-identity-verified",
+        "identityBasisJa": "英語記事は古代都市リステラを扱い、現在のトルコ・ハトゥンサライ近郊、古代リュカオニア地方として記す。使徒14章での都市名と一致。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://en.wikipedia.org/wiki/Lystra",
+        "pageTitle": "Lystra - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "英語記事は古代リステラを扱い、現在のハトゥンサライ近郊に置く一方、古代地域区分の差を含む。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:macedonia_747",
+      "draftPath": "drafts/place_2/macedonia_747.json",
+      "oldDraftSHA256": "de8a5c4b452004070dbfd89873dba6d592c2f2be86b6ae3d8d23e6097993471e",
+      "currentDraftSHA256": "de8a5c4b452004070dbfd89873dba6d592c2f2be86b6ae3d8d23e6097993471e",
+      "round1ManifestSHA256": "de8a5c4b452004070dbfd89873dba6d592c2f2be86b6ae3d8d23e6097993471e",
+      "round2ManifestSHA256": "de8a5c4b452004070dbfd89873dba6d592c2f2be86b6ae3d8d23e6097993471e",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/macedonia_747.json",
+      "currentEvidenceSHA256": "c7af1384ef5c32b8d20aecb1418691228cde45ffaa62aade82b1cf3139b80788",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 8,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 8,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "pass",
+      "status": "closed",
+      "priorFindingClosure": "prior pass retained by exact SHA match",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot and prior independent result was pass; current evidence occurrences and citations were rechecked against pinned witness.",
+      "citationRefs": [],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 16:9",
+          "text": "A vision appeared to Paul in the night. There was a man of Macedonia standing, begging him and saying, “Come over into Macedonia and help us.”",
+          "inPinnedWitness": true
+        },
+        {
+          "reference": "Acts 16:10",
+          "text": "When he had seen the vision, immediately we sought to go out to Macedonia, concluding that the Lord had called us to preach the Good News to them.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 8,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 8,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "historical region",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/マケドニア",
+        "title": "マケドニア",
+        "kind": "related-section",
+        "bodyIdentityStatus": "related-article-read-identity-qualified",
+        "identityBasisJa": "記事は古代王国・ローマ属州・後代の地域概念を区別して扱う。使徒16章以降の歴史的マケドニアに関連するが、時代ごとの範囲と現代の地域・国家を区別。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%82%B1%E3%83%89%E3%83%8B%E3%82%A2",
+        "pageTitle": "マケドニア - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "日本語記事は古代王国・ローマ属州・後代地域概念を区別する複合的記事。Actsの歴史的広域名に関連する。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:melita_761",
+      "draftPath": "drafts/place_2/melita_761.json",
+      "oldDraftSHA256": "2aad3a0e3338d3c06e711b4f46f6935b83847b4d7697ed0296dde93692d6882c",
+      "currentDraftSHA256": "2aad3a0e3338d3c06e711b4f46f6935b83847b4d7697ed0296dde93692d6882c",
+      "round1ManifestSHA256": "2aad3a0e3338d3c06e711b4f46f6935b83847b4d7697ed0296dde93692d6882c",
+      "round2ManifestSHA256": "2aad3a0e3338d3c06e711b4f46f6935b83847b4d7697ed0296dde93692d6882c",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/melita_761.json",
+      "currentEvidenceSHA256": "484110887dc2e702bde2612cbc2d912b69eab207aa76b43852ff1c43ecaac311",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 1,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 1,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "qualified",
+      "status": "qualified",
+      "priorFindingClosure": "qualification remains; no draft change",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot; retain prior qualified caveat and current evidence was rechecked against pinned witness.",
+      "citationRefs": [
+        "28:1"
+      ],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 28:1",
+          "text": "When we had escaped, then they learned that the island was called Malta.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 1,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 1,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "island; Malta/Melita naming distinction",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/マルタ",
+        "title": "マルタ",
+        "kind": "related-section",
+        "bodyIdentityStatus": "related-article-read-identity-qualified",
+        "identityBasisJa": "日本語記事は現代の島国・諸島とそのローマ期史を扱うため関連記事として確認。使徒28章のMeliteをマルタとする同定は論争を含むため、記事の現代名だけで古代地名の同定を確定しない。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%AB%E3%82%BF",
+        "pageTitle": "マルタ - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "日本語記事は現代マルタ島・国家を扱う。WEB Acts 28:1は Malta と表記し、記事は索引名 Melita の同定を確定しない。"
+      },
+      "remainingFindings": [
+        {
+          "severity": "qualified",
+          "field": "identityNoteJa/wikipedia",
+          "observationJa": "Acts 28:1 in the pinned WEB witness says Malta; the index calls the candidate Melita. The linked page concerns the modern island and cannot alone establish the Melite identity.",
+          "evidence": "28:1",
+          "suggestedCorrectionJa": "本文の Malta と索引 Melita の区別、および伝統的同定の留保を維持する。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:mesopotamia_790",
+      "draftPath": "drafts/place_2/mesopotamia_790.json",
+      "oldDraftSHA256": "9154b0585d99dc5f060387e5eea44459f97afbb0327e61020842b3efe3c71a1b",
+      "currentDraftSHA256": "9154b0585d99dc5f060387e5eea44459f97afbb0327e61020842b3efe3c71a1b",
+      "round1ManifestSHA256": "9154b0585d99dc5f060387e5eea44459f97afbb0327e61020842b3efe3c71a1b",
+      "round2ManifestSHA256": "9154b0585d99dc5f060387e5eea44459f97afbb0327e61020842b3efe3c71a1b",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/mesopotamia_790.json",
+      "currentEvidenceSHA256": "e3509da156be38d566050eed3e73c29355887b288cb5240c9d7e120b59c8325a",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 2,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 2,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "pass",
+      "status": "closed",
+      "priorFindingClosure": "prior pass retained by exact SHA match",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot and prior independent result was pass; current evidence occurrences and citations were rechecked against pinned witness.",
+      "citationRefs": [],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 2:9",
+          "text": "Parthians, Medes, Elamites, and people from Mesopotamia, Judea, Cappadocia, Pontus, Asia,",
+          "inPinnedWitness": true
+        },
+        {
+          "reference": "Acts 7:2",
+          "text": "He said, “Brothers and fathers, listen. The God of glory appeared to our father Abraham when he was in Mesopotamia, before he lived in Haran,",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 2,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 2,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "historical region",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/メソポタミア",
+        "title": "メソポタミア",
+        "kind": "article",
+        "bodyIdentityStatus": "article-read-identity-verified",
+        "identityBasisJa": "記事はチグリス・ユーフラテス両河流域を中心とする古代の歴史的地域を扱う。本文のメソポタミアという広域名と一致し、現代国境・単一都市とは同一視しない。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%BD%E3%83%9D%E3%82%BF%E3%83%9F%E3%82%A2",
+        "pageTitle": "メソポタミア - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "記事はチグリス・ユーフラテス流域を中心とする古代地域を扱い、Acts 2:9・7:2の語と合う。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:miletus_801",
+      "draftPath": "drafts/place_2/miletus_801.json",
+      "oldDraftSHA256": "5d61ab667e93bcba17cfa3ee7c3ac76d24bdfa68ea0e34624bfffc14f9290a14",
+      "currentDraftSHA256": "5d61ab667e93bcba17cfa3ee7c3ac76d24bdfa68ea0e34624bfffc14f9290a14",
+      "round1ManifestSHA256": "5d61ab667e93bcba17cfa3ee7c3ac76d24bdfa68ea0e34624bfffc14f9290a14",
+      "round2ManifestSHA256": "5d61ab667e93bcba17cfa3ee7c3ac76d24bdfa68ea0e34624bfffc14f9290a14",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/miletus_801.json",
+      "currentEvidenceSHA256": "0af795150988c4a67a201d7b271e690c0be573352ced49f1a433f5b02e221567",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 2,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 2,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "pass",
+      "status": "closed",
+      "priorFindingClosure": "prior pass retained by exact SHA match",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot and prior independent result was pass; current evidence occurrences and citations were rechecked against pinned witness.",
+      "citationRefs": [],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 20:15",
+          "text": "Sailing from there, we came the following day opposite Chios. The next day we touched at Samos and stayed at Trogyllium, and the day after we came to Miletus.",
+          "inPinnedWitness": true
+        },
+        {
+          "reference": "Acts 20:17",
+          "text": "From Miletus he sent to Ephesus and called to himself the elders of the assembly.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 2,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 2,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "ancient/current city or city-site",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/ミレトス",
+        "title": "ミレトス",
+        "kind": "article",
+        "bodyIdentityStatus": "article-read-identity-verified",
+        "identityBasisJa": "記事はアナトリア西岸の古代ギリシア都市ミレトスを扱い、現在のトルコのバラト近郊に遺跡があると説明する。使徒20章の古代都市名との同定が合う。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%AC%E3%83%88%E3%82%B9",
+        "pageTitle": "ミレトス - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "記事はアナトリア西岸の古代都市と現アイドゥン県バラト近郊の遺跡を扱う。古代海岸線との違いもプロフィールが留保。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:mitylene_808",
+      "draftPath": "drafts/place_2/mitylene_808.json",
+      "oldDraftSHA256": "861ad8e39e877d14f74d2e62b6cc74516b4995ddc6abcdb72db0f57b75c6f0ea",
+      "currentDraftSHA256": "861ad8e39e877d14f74d2e62b6cc74516b4995ddc6abcdb72db0f57b75c6f0ea",
+      "round1ManifestSHA256": "861ad8e39e877d14f74d2e62b6cc74516b4995ddc6abcdb72db0f57b75c6f0ea",
+      "round2ManifestSHA256": "861ad8e39e877d14f74d2e62b6cc74516b4995ddc6abcdb72db0f57b75c6f0ea",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/mitylene_808.json",
+      "currentEvidenceSHA256": "503a90587149be8ac82c6b906833be7c7b70c3912ed99f082d2703b9a38fa124",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 1,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 1,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "qualified",
+      "status": "qualified",
+      "priorFindingClosure": "qualification remains; no draft change",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot; retain prior qualified caveat and current evidence was rechecked against pinned witness.",
+      "citationRefs": [
+        "20:14"
+      ],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 20:14",
+          "text": "When he met us at Assos, we took him aboard and came to Mitylene.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 1,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 1,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "ancient/current city or city-site",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/ミティリーニ",
+        "title": "ミティリーニ",
+        "kind": "related-section",
+        "bodyIdentityStatus": "related-article-read-identity-qualified",
+        "identityBasisJa": "記事はレスボス島の現代中心都市ミティリーニを扱い、同島南東部の古代ミティレネおよび使徒20:14の寄港記録に触れる。古代の町と現代市街を単純に同一地点とはしない。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%86%E3%82%A3%E3%83%AA%E3%83%BC%E3%83%8B",
+        "pageTitle": "ミティリーニ - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "日本語記事は現代ミティリーニ市が主題で、古代ミティレネおよびActs 20:14に触れる。古代と現代市域は区別。"
+      },
+      "remainingFindings": [
+        {
+          "severity": "qualified",
+          "field": "wikipedia",
+          "observationJa": "The linked page is the present Mytilene city article with references to ancient Mitylene; useful related evidence, not a direct ancient-site page.",
+          "evidence": "20:14",
+          "suggestedCorrectionJa": "古代市域と現在市街を分けた現行説明を維持する。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:mount_sinai_855",
+      "draftPath": "drafts/place_2/mount_sinai_855.json",
+      "oldDraftSHA256": "3cbb4117b3af133a6b9fea34380a354b0c87461ffddecb7df44fe55f348b5d50",
+      "currentDraftSHA256": "be76680ffa8964399a7ed7de5e1c9afa33c18cf204ba6b8f99f3cc58355983d0",
+      "round1ManifestSHA256": "3cbb4117b3af133a6b9fea34380a354b0c87461ffddecb7df44fe55f348b5d50",
+      "round2ManifestSHA256": "be76680ffa8964399a7ed7de5e1c9afa33c18cf204ba6b8f99f3cc58355983d0",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": true,
+      "evidencePath": "evidence/place_2/mount_sinai_855.json",
+      "currentEvidenceSHA256": "392f25e8bdbaaa05c109fec1f3e56121e59ce06d2d0319adfe3223bd4b21f3f7",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 2,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 2,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "qualified",
+      "status": "qualified",
+      "priorFindingClosure": "prior primary-text issue resolved; residual uncertainty qualified",
+      "recheckBasisJa": "The profile no longer constrains the mountain to the Sinai Peninsula; its modern location is left unidentified and traditional identifications remain disputed. This is an appropriately qualified unknown identification.",
+      "citationRefs": [
+        "Acts 7:30; Acts 7:38; Wikipedia identity note, separate"
+      ],
+      "currentChangedFieldsVerified": [
+        {
+          "field": "modernLocationJa",
+          "before": "シナイ半島のどの山が本文のシナイ山に当たるかは確定できないため位置は未指定。",
+          "current": "聖書のシナイ山の地理的同定地は確定しない。伝統的比定にも異説があるため、位置を特定しない。",
+          "verifiedCurrentValue": true
+        }
+      ],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 7:30",
+          "text": "“When forty years were fulfilled, an angel of the Lord appeared to him in the wilderness of Mount Sinai, in a flame of fire in a bush.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 2,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 2,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "mountain or landform",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/シナイ山",
+        "title": "シナイ山",
+        "kind": "related-section",
+        "bodyIdentityStatus": "related-article-read-identity-qualified",
+        "identityBasisJa": "記事は聖書のシナイ山を、伝統的にはシナイ半島南部ジェベル・ムーサーに比定する一方、正確な場所は定かでなく他説もあると明記。使徒7:30等の同定不確実性を示すため関連記事として採用。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%8A%E3%82%A4%E5%B1%B1",
+        "pageTitle": "シナイ山 - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "記事はシナイ山を伝統的にジェベル・ムーサー等へ比定しつつ他説も記す。Actsの山がシナイ半島内と確定する根拠ではない。"
+      },
+      "remainingFindings": [
+        {
+          "severity": "qualified",
+          "field": "modernLocationJa/wikipedia",
+          "observationJa": "The linked article reports competing traditional identifications and does not prove the Acts mountain lies within the Sinai Peninsula.",
+          "evidence": "7:30",
+          "suggestedCorrectionJa": "半島内という地理範囲も断定せず、歴史的な山名として位置を未確定に保つ。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:myra_864",
+      "draftPath": "drafts/place_2/myra_864.json",
+      "oldDraftSHA256": "34225f18efe6e408aba21c5e14ee3fc141540acb89f3ab48896258086ce7f0be",
+      "currentDraftSHA256": "34225f18efe6e408aba21c5e14ee3fc141540acb89f3ab48896258086ce7f0be",
+      "round1ManifestSHA256": "34225f18efe6e408aba21c5e14ee3fc141540acb89f3ab48896258086ce7f0be",
+      "round2ManifestSHA256": "34225f18efe6e408aba21c5e14ee3fc141540acb89f3ab48896258086ce7f0be",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/myra_864.json",
+      "currentEvidenceSHA256": "eaa91a28a7c5116d5cceca33c9834bb312ef2a4a632742b912ac293716682dcb",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 1,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 1,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "pass",
+      "status": "closed",
+      "priorFindingClosure": "prior pass retained by exact SHA match",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot and prior independent result was pass; current evidence occurrences and citations were rechecked against pinned witness.",
+      "citationRefs": [],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 27:5",
+          "text": "When we had sailed across the sea which is off Cilicia and Pamphylia, we came to Myra, a city of Lycia.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 1,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 1,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "ancient/current city or city-site",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/ミラ_(リュキア)",
+        "title": "ミュラ",
+        "kind": "article",
+        "bodyIdentityStatus": "article-read-identity-verified",
+        "identityBasisJa": "記事はリュキアの古代都市ミュラを扱い、遺跡が現在のトルコ・デムレ近郊にあることと使徒27章での寄港地名を確認。URLの「ミラ」から記事見出し「ミュラ」に到達する。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%A9_(%E3%83%AA%E3%83%A5%E3%82%AD%E3%82%A2)",
+        "pageTitle": "ミュラ - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "日本語記事はリュキアの古代都市ミュラ、デムレ近郊遺跡、Acts 27章の寄港地名を扱う。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:mysia_865",
+      "draftPath": "drafts/place_2/mysia_865.json",
+      "oldDraftSHA256": "d0d1c56b22ee0e1f7383ee1471c935e4a7304a9d6caa3a29db0deb56812993c7",
+      "currentDraftSHA256": "328efccd75a3188b2d08a010b91931a39d2f685d119c30591d1b97b60b4bd42d",
+      "round1ManifestSHA256": "d0d1c56b22ee0e1f7383ee1471c935e4a7304a9d6caa3a29db0deb56812993c7",
+      "round2ManifestSHA256": "328efccd75a3188b2d08a010b91931a39d2f685d119c30591d1b97b60b4bd42d",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": true,
+      "evidencePath": "evidence/place_2/mysia_865.json",
+      "currentEvidenceSHA256": "745eddda98dd25a9cba04c00a0d991965c5934f563bb54626ee16b2e8a69ea05",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 2,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 2,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "fail",
+      "status": "closed",
+      "priorFindingClosure": "all prior fail findings independently resolved",
+      "recheckBasisJa": "The subtitle and role now restrict the first introduction to 16:7: the party came opposite Mysia and attempted to enter Bithynia. Passing Mysia remains only as the later 16:8 fact.",
+      "citationRefs": [
+        "Acts 16:7; Acts 16:8"
+      ],
+      "currentChangedFieldsVerified": [
+        {
+          "field": "subtitleJa",
+          "before": "パウロ一行が通過した地域として言及される。",
+          "current": "使徒言行録16章7節で、進入を試みた地域として示される。",
+          "verifiedCurrentValue": true
+        },
+        {
+          "field": "summaryJa",
+          "before": "小アジア北西部の歴史的地域名です。使徒言行録16章7節で、パウロ一行がミシアに至った後、ビテュニアへ向かおうとした地域として記されます。都市ではないため座標を置きません。",
+          "current": "小アジア北西部の歴史的地域名です。使徒言行録16章7節は、パウロ一行がミシアの向かいに来てからビテュニアに入ろうとしたことを記します。都市ではないため座標を置きません。",
+          "verifiedCurrentValue": true
+        },
+        {
+          "field": "historicalRoleJa",
+          "before": "パウロ一行が通過した地域として言及される。",
+          "current": "使徒言行録16章7節で、パウロ一行が向かいに来た後にビテュニアへの進入を試みた地域。",
+          "verifiedCurrentValue": true
+        }
+      ],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 16:7",
+          "text": "When they had come opposite Mysia, they tried to go into Bithynia, but the Spirit didn’t allow them.",
+          "inPinnedWitness": true
+        },
+        {
+          "reference": "Acts 16:8",
+          "text": "Passing by Mysia, they came down to Troas.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 2,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 2,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "historical region",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/ミュシア",
+        "title": "ミュシア",
+        "kind": "article",
+        "bodyIdentityStatus": "article-read-identity-verified",
+        "identityBasisJa": "記事は小アジア北西部の古代地域ミュシアを扱う。翻訳上の誤りが多い旨の記事内注意も確認したため、記事が明示する地域名・大まかな地理範囲に限って関連づける。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%A5%E3%82%B7%E3%82%A2",
+        "pageTitle": "ミュシア - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "記事は小アジア北西部の古代地域ミュシアを扱い、範囲変動と翻訳上の注意を含む。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:nazareth_878",
+      "draftPath": "drafts/place_2/nazareth_878.json",
+      "oldDraftSHA256": "f9f933df889114fe16c128fb4a31479c0f7fd5a7278dbbf283620f1d8e0c1ec2",
+      "currentDraftSHA256": "f9f933df889114fe16c128fb4a31479c0f7fd5a7278dbbf283620f1d8e0c1ec2",
+      "round1ManifestSHA256": "f9f933df889114fe16c128fb4a31479c0f7fd5a7278dbbf283620f1d8e0c1ec2",
+      "round2ManifestSHA256": "f9f933df889114fe16c128fb4a31479c0f7fd5a7278dbbf283620f1d8e0c1ec2",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/nazareth_878.json",
+      "currentEvidenceSHA256": "49816e69a8aad921500852440e383fe73fc73db592ee3174652bb0373e8b9af0",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 7,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 7,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "pass",
+      "status": "closed",
+      "priorFindingClosure": "prior pass retained by exact SHA match",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot and prior independent result was pass; current evidence occurrences and citations were rechecked against pinned witness.",
+      "citationRefs": [],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 2:22",
+          "text": "“Men of Israel, hear these words! Jesus of Nazareth, a man approved by God to you by mighty works and wonders and signs which God did by him among you, even as you yourselves know,",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 7,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 7,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "ancient/current city or city-site",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/ナザレ",
+        "title": "ナザレ",
+        "kind": "article",
+        "bodyIdentityStatus": "article-read-identity-verified",
+        "identityBasisJa": "記事は現在のイスラエル北部のナザレ市を扱い、イエスとの歴史・伝承上の結びつきを説明する。使徒10:38の「ナザレのイエス」の地名と合致する。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%8A%E3%82%B6%E3%83%AC",
+        "pageTitle": "ナザレ - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "日本語記事は現代ナザレ市とイエスとの歴史・伝承上の関係を扱う。Acts 2:22の地名との関係は確認できる。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:neapolis_880",
+      "draftPath": "drafts/place_2/neapolis_880.json",
+      "oldDraftSHA256": "daaa23331d0af5050d3f70ba1982744d7aa7ab2b71a4683dc1585616fe2be179",
+      "currentDraftSHA256": "daaa23331d0af5050d3f70ba1982744d7aa7ab2b71a4683dc1585616fe2be179",
+      "round1ManifestSHA256": "daaa23331d0af5050d3f70ba1982744d7aa7ab2b71a4683dc1585616fe2be179",
+      "round2ManifestSHA256": "daaa23331d0af5050d3f70ba1982744d7aa7ab2b71a4683dc1585616fe2be179",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/neapolis_880.json",
+      "currentEvidenceSHA256": "08e3a393ed65de09479806caa9cc82dd40d149c4bf9a3297b74814ad5d2ab885",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 1,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 1,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "pass",
+      "status": "closed",
+      "priorFindingClosure": "prior pass retained by exact SHA match",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot and prior independent result was pass; current evidence occurrences and citations were rechecked against pinned witness.",
+      "citationRefs": [],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 16:11",
+          "text": "Setting sail therefore from Troas, we made a straight course to Samothrace, and the day following to Neapolis;",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 1,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 1,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "ancient/current city or city-site",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://en.wikipedia.org/wiki/Neapolis_(Thrace)",
+        "title": "Neapolis (Thrace)",
+        "kind": "article",
+        "bodyIdentityStatus": "article-read-identity-verified",
+        "identityBasisJa": "英語記事は古代マケドニア近郊のネアポリス（後のカヴァラ）を扱い、使徒16:11でパウロが到着した地名として明示。旧称を含む古代都市の同定に合う。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://en.wikipedia.org/wiki/Neapolis_(Thrace)",
+        "pageTitle": "Neapolis (Thrace) - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "英語記事は古代ネアポリス（後のカヴァラ）を扱い、Acts 16:11でパウロが到着した都市と説明する。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:olivet_907",
+      "draftPath": "drafts/place_2/olivet_907.json",
+      "oldDraftSHA256": "eaaef14380b4f6b0aec607e3bb56ba865e5fc2ae30c28a895cc791f258a057b4",
+      "currentDraftSHA256": "eaaef14380b4f6b0aec607e3bb56ba865e5fc2ae30c28a895cc791f258a057b4",
+      "round1ManifestSHA256": "eaaef14380b4f6b0aec607e3bb56ba865e5fc2ae30c28a895cc791f258a057b4",
+      "round2ManifestSHA256": "eaaef14380b4f6b0aec607e3bb56ba865e5fc2ae30c28a895cc791f258a057b4",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/olivet_907.json",
+      "currentEvidenceSHA256": "691d1c66aa337b97dc269c0c273a413d9c34cf0f4441fb6d9ed8e45f4a9fa2ab",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 1,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 1,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "pass",
+      "status": "closed",
+      "priorFindingClosure": "prior pass retained by exact SHA match",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot and prior independent result was pass; current evidence occurrences and citations were rechecked against pinned witness.",
+      "citationRefs": [],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 1:12",
+          "text": "Then they returned to Jerusalem from the mountain called Olivet, which is near Jerusalem, a Sabbath day’s journey away.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 1,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 1,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "mountain or landform",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/オリーブ山",
+        "title": "オリーブ山",
+        "kind": "article",
+        "bodyIdentityStatus": "article-read-identity-verified",
+        "identityBasisJa": "記事はエルサレム東郊、キドロンの谷の東にある丘陵をオリーブ山として記載し、新約聖書で言及されることも説明する。使徒1:12の地名と一致。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%AA%E3%83%BC%E3%83%96%E5%B1%B1",
+        "pageTitle": "オリーブ山 - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "日本語記事はエルサレム東郊の丘陵地形と新約の言及を扱い、単一の峰や建物とはしていない。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:pamphylia_918",
+      "draftPath": "drafts/place_2/pamphylia_918.json",
+      "oldDraftSHA256": "2f3bb5cf9271de2a2968c4f667db45655c196a71eb7eed19171da7fd9aa3df59",
+      "currentDraftSHA256": "2f3bb5cf9271de2a2968c4f667db45655c196a71eb7eed19171da7fd9aa3df59",
+      "round1ManifestSHA256": "2f3bb5cf9271de2a2968c4f667db45655c196a71eb7eed19171da7fd9aa3df59",
+      "round2ManifestSHA256": "2f3bb5cf9271de2a2968c4f667db45655c196a71eb7eed19171da7fd9aa3df59",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/pamphylia_918.json",
+      "currentEvidenceSHA256": "f8acba52f6878b89ba794c997147be116d274ea8ef2cd94278e93b8211f72281",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 5,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 5,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "pass",
+      "status": "closed",
+      "priorFindingClosure": "prior pass retained by exact SHA match",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot and prior independent result was pass; current evidence occurrences and citations were rechecked against pinned witness.",
+      "citationRefs": [],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 2:10",
+          "text": "Phrygia, Pamphylia, Egypt, the parts of Libya around Cyrene, visitors from Rome, both Jews and proselytes,",
+          "inPinnedWitness": true
+        },
+        {
+          "reference": "Acts 13:13",
+          "text": "Now Paul and his company set sail from Paphos and came to Perga in Pamphylia. John departed from them and returned to Jerusalem.",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 5,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 5,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "historical region",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/パンフィリア",
+        "title": "パンフィリア",
+        "kind": "article",
+        "bodyIdentityStatus": "article-read-identity-verified",
+        "identityBasisJa": "記事は小アジア南岸の古代地方パンフィリアを扱い、リュキア・キリキア等との位置関係に言及する。ローマ期の範囲には変動があるため、使徒13/14章の広域名との照合に限定。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%B3%E3%83%95%E3%82%A3%E3%83%AA%E3%82%A2",
+        "pageTitle": "パンフィリア - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "記事は小アジア南岸の古代地方パンフィリアと時代による境界変動を扱う。"
+      },
+      "remainingFindings": []
+    },
+    {
+      "entityID": "place:paphos_919",
+      "draftPath": "drafts/place_2/paphos_919.json",
+      "oldDraftSHA256": "4d8198e0a33d25a2fc4b0186ff9168c53c65cbb4b1e264c7b0d81770fb238caa",
+      "currentDraftSHA256": "4d8198e0a33d25a2fc4b0186ff9168c53c65cbb4b1e264c7b0d81770fb238caa",
+      "round1ManifestSHA256": "4d8198e0a33d25a2fc4b0186ff9168c53c65cbb4b1e264c7b0d81770fb238caa",
+      "round2ManifestSHA256": "4d8198e0a33d25a2fc4b0186ff9168c53c65cbb4b1e264c7b0d81770fb238caa",
+      "currentMatchesRound2Manifest": true,
+      "changedInRound2": false,
+      "evidencePath": "evidence/place_2/paphos_919.json",
+      "currentEvidenceSHA256": "42ce127b3d9feec67c953fd792019d6be1bf204884b97f1ef10f7938fac4a0ff",
+      "evidenceWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "currentEvidenceOccurrenceCount": 2,
+      "allOccurrenceTextAndCanonicalURLChecksPass": true,
+      "currentActsCitationLinkCount": 2,
+      "allCurrentCitationLinksCanonicalAndConsistent": true,
+      "priorFinalReviewResult": "qualified",
+      "status": "qualified",
+      "priorFindingClosure": "qualification remains; no draft change",
+      "recheckBasisJa": "Unchanged since round-1 final snapshot; retain prior qualified caveat and current evidence was rechecked against pinned witness.",
+      "citationRefs": [
+        "13:6"
+      ],
+      "currentChangedFieldsVerified": [],
+      "independentlyCheckedPrimaryText": [
+        {
+          "reference": "Acts 13:6",
+          "text": "When they had gone through the island to Paphos, they found a certain sorcerer, a false prophet, a Jew whose name was Bar Jesus,",
+          "inPinnedWitness": true
+        }
+      ],
+      "occurrenceEvidenceCheckSummary": {
+        "count": 2,
+        "allExactText": true,
+        "allExactWEBPAnchors": true
+      },
+      "citationLinkCheckSummary": {
+        "count": 2,
+        "allProfileAndCanonicalMatches": true
+      },
+      "geographyAndCoordinate": {
+        "type": "ancient/current city or city-site",
+        "coordinate": null,
+        "evidenceStatus": "unverified",
+        "reasonJa": "候補座標はプロフィールに昇格していない。Pleiades固定データまたは考古学機関の該当資料を個別に照合できていないためcoordinate=null。",
+        "decisionJa": "座標nullは根拠不足の位置ピンを置かない適切な処置。地域・都市・海岸地形等の不確実性をqualifiedとして維持する。"
+      },
+      "wikipedia": {
+        "url": "https://ja.wikipedia.org/wiki/パフォス",
+        "title": "パフォス",
+        "kind": "related-section",
+        "bodyIdentityStatus": "related-article-read-identity-qualified",
+        "identityBasisJa": "記事はキプロス南西岸の現在のパフォス市と古代の旧パフォス・新パフォスを区別し、パウロの訪問に触れる。使徒の地名との関連は確認できるが、旧新両都市や現代市を同一地点とは扱わない。",
+        "HTTPStatus": 200,
+        "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%95%E3%82%A9%E3%82%B9",
+        "pageTitle": "パフォス - Wikipedia",
+        "httpCheckScope": "HTTP/title/redirect/fragment only",
+        "meaningAssessmentSeparateFromHTTP": true,
+        "currentBodyFindingFromFinalReview": "日本語記事は現代パフォスと古代の旧パフォス・新パフォス遺跡を区別し、パウロ訪問にも言及する。"
+      },
+      "remainingFindings": [
+        {
+          "severity": "qualified",
+          "field": "wikipedia/modernLocationJa",
+          "observationJa": "The linked page covers modern Paphos and multiple ancient urban/archaeological areas; it cannot support a single modern-city pin for Acts 13:6.",
+          "evidence": "13:6",
+          "suggestedCorrectionJa": "関連記事として扱い、古代の複数市域を現代一点にまとめない。"
+        }
+      ]
+    }
+  ]
+}

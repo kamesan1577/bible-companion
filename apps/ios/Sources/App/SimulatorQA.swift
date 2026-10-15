@@ -18,7 +18,7 @@ struct SimulatorQA: View {
     }
     @ViewBuilder private func snapshot(_ screen: String) -> some View {
         switch screen {
-        case "initial", "reading", "entity-pilot-reading": ReadingView()
+        case "initial", "reading", "entity-pilot-reading", "entity-acts-early", "entity-acts-late", "entity-existing-map": ReadingView()
         case "entity-ui-baseline": Baseline018ReadingView()
         case "romans-opening", "romans-doxology":
             let passage = screen == "romans-opening" ? Passage(book: "ROM", start: Verse(chapter: 1, verse: 1), end: Verse(chapter: 1, verse: 1)) : Passage(book: "ROM", start: Verse(chapter: 16, verse: 25), end: Verse(chapter: 16, verse: 27))
@@ -61,6 +61,7 @@ struct SimulatorQA: View {
                 NavigationLink("使徒23:1の人物") { ScrollView { OfflineEntityPane(passage: item.ranges[0], kind: "person").padding() }.navigationTitle("人物") }
                 NavigationLink("使徒23:1の地名") { ScrollView { OfflineEntityPane(passage: item.ranges[0], kind: "place").padding() }.navigationTitle("地名") }
                 NavigationLink("使い方") { FirstRunGuide() }
+                ShareLink("使徒18章を共有する", item: URL(string: "https://www.bible.com/bible/83/ACT.18.24-28.JCB")!)
                 ShareLink("実際の共有拡張を開く", item: URL(string: "https://www.bible.com/bible/83/ACT.23.1.JCB")!)
             }.navigationTitle("描画確認").bibleCanvas()
             }

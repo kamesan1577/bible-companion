@@ -1,0 +1,110 @@
+{
+  "review": "final-integration-independent",
+  "verdict": "pass",
+  "readOnly": true,
+  "catalog": {
+    "path": "candidate/apps/ios/Sources/Core/Resources/entity-profiles.json",
+    "sha256": "21a194912cf417b326d1686d80490eaed63f855c6f900c363c71b0f993a75ed6",
+    "profiles": 225,
+    "people": 123,
+    "places": 102,
+    "wikipediaLinks": 217
+  },
+  "sourceSHAs": {
+    "actsMapPolicy": "79164feac8ab339d8247c23fac634f2976e8dfd581245e2d60e7a03eb13014c6",
+    "entityIndex": "dfe6fba1109f192548e28645cf085ddafe3baf7820d200e2e28da486dd98f11a",
+    "integrationReport": "1e8f11483b575cbb1051f11e032887679a4fc6d67a87c7a2a2e8e70ec83f7966",
+    "rootContextAdoption": "cb49c0a828d2a4d6a916440304927f1232298bd663323f501387b065fedd8549",
+    "verseMap01_10": "bf0cc7e63325d2ee2712352ed02349f01030f689ea8d97f32af9fac6b0f25ca6",
+    "verseMap11_20": "d5b3b709f27c6a4493935cf156eee5df0d60c6eb20f1fcb63195308ba3b98a01",
+    "verseMap21_28": "364e8e9a2d0fca64eb29ffd27424d962cd70892c648f9a54f63af826c3549b0a",
+    "geographicPointChecks": "a87199a7357cd390db6040d105f7b3ee1f64574a09b13228dcd4ae0d75aff569",
+    "rootLocationNoteCleanup": "3c872ce8fd6616a6192f7a4e9e499c322ce923e2a7e52a62acd557e04565b039"
+  },
+  "checks": {
+    "integrationReport": {
+      "drafts": 228,
+      "candidateProfiles": 225,
+      "targetCandidateIDs": 228,
+      "auditedVerseCount": 1007,
+      "mappedVerseCount": 911,
+      "wikipediaLinks": 217,
+      "reportErrors": [],
+      "profilesReadyForPublication": false,
+      "result": "counts agree with catalog and maps; publication readiness remains false"
+    },
+    "verseCoverage": {
+      "rows": 1007,
+      "uniqueCanonicalCoordinates": 1007,
+      "mapped": 911,
+      "empty": 96,
+      "unknownEntityLinks": 0,
+      "knownByViolations": 0,
+      "duplicateLinksWithinVerse": 0
+    },
+    "adoptedContextLinks": {
+      "adoptedAdditions": 335,
+      "relationshipCounts": {
+        "related": 329,
+        "direct": 6
+      },
+      "missingFromCurrentMaps": 0,
+      "relationshipMismatches": 0,
+      "allIndependentReceiptHashesMatch": true,
+      "receipts": [
+        {
+          "path": "reviews/empty-verse-independent-01-14.json",
+          "matches": true
+        },
+        {
+          "path": "reviews/empty-verse-independent-15-28.json",
+          "matches": true
+        },
+        {
+          "path": "reviews/context-link-independent-01-10.json",
+          "matches": true
+        },
+        {
+          "path": "reviews/context-link-independent-11-20.json",
+          "matches": true
+        },
+        {
+          "path": "reviews/context-link-independent-21-28.json",
+          "matches": true
+        }
+      ]
+    },
+    "mapCoordinates": {
+      "places": 102,
+      "policyEntries": 102,
+      "allowCandidateMap": 92,
+      "independentlyVerifiedCoordinates": 4,
+      "profileCoordinates": 4,
+      "verifiedProfileCoordinatesMatchExactly": true,
+      "candidateFallbackProfiles": 88,
+      "candidateFallbackCoordinatesAvailableInSourceIndex": 88,
+      "profileCoordinatePromotionsFromCandidateIndex": 0,
+      "policyResourcePresent": true,
+      "resourceDirectoryPackaged": false
+    },
+    "resourceBehavior": {
+      "source": "BundledEntityIndex resolves an ACT profile coordinate first and consults the legacy index candidate only when policy allows it",
+      "presentation": "OfflineEntityPane exposes a labeled legacy-candidate map only when the profile has no checked coordinate; map note identifies it as a prior-source candidate and clarifies regional/island/sea extents",
+      "otherBooks": "ACT-specific branch; other books keep the existing index path"
+    },
+    "limitations": [
+      "Direct-versus-related theological/contextual correctness is not re-adjudicated in this mechanical integration pass; current adopted additions match reviewed deltas and all knownBy gates.",
+      "The checked-in integration report explicitly leaves profilesReadyForPublication false."
+    ],
+    "locationNoteCleanup": {
+      "changesReviewed": 60,
+      "draftOriginalNotesPreserved": true,
+      "catalogMatchesRecordedDisplayText": true,
+      "claimsNoMapCandidateButPolicyAllowsMap": [],
+      "literalUnknownPlaceOrPositionClaims": [],
+      "assessment": "未照合・未確認の座標は「候補位置の独立確認が未完了」と表示し、場所そのものが不明とは言い換えていない。比定に議論がある美しの門・シナイ山・フェニクスの表示は、プロフィールのsummary/modernLocationにもある同定上の不確実性と整合。地図点を収録しない旨の表示は候補地図を許可しない政策とも一致。",
+      "result": "pass"
+    }
+  },
+  "issues": []
+}

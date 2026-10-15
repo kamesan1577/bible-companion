@@ -1,0 +1,83 @@
+{
+  "reviewer": "independent person_3 delta reviewer",
+  "reviewedAtUTC": "2026-10-15T13:47:06.030142+00:00",
+  "scope": "Re-read the final root Paul boundary correction against the pinned WEB witness. Reassessed the changed Theudas Wikipedia fragment metadata without treating the prior uppercase-fragment HTTP result as applicable. No draft, evidence, or earlier review file edited.",
+  "sourceWitness": {
+    "path": "acts-web-verses.json",
+    "version": "webp-usfx-2026-10-13-35a6adf626e5",
+    "sha256": "90e72f0410119f8fc9afd529cdd730fd261bd1d25adfb413581c1462d6e936cb"
+  },
+  "rootRepairRecord": {
+    "path": "reviews/root-last-boundary-repair.json",
+    "sha256": "2ed7da1ef9eae0dcfb4a2b100964fa028b25aa6d5e0d0f525ce5986685dd8618",
+    "paul": {
+      "beforeSHA256": "dd0d628f6fc2e9ccca1a7997f995e6f88699a780ea50d1ef2987175967634569",
+      "afterSHA256": "12477360bf0197a3bd51b6b6010badb099dc18a962d44139e227690bc954c4a7",
+      "change": "Split Acts13:2 calling from 13:3–4 sending and travel; explicitly no later event at 13:2"
+    }
+  },
+  "results": [
+    {
+      "entityID": "person:paul_2479",
+      "draftPath": "drafts/person_3/paul_2479.json",
+      "currentDraftSHA256": "12477360bf0197a3bd51b6b6010badb099dc18a962d44139e227690bc954c4a7",
+      "currentEvidencePath": "evidence/person_3/paul_2479.json",
+      "currentEvidenceSHA256": "33c863b4bf5ac6bd6f16bc5d7fb8ac45d5f15ebd0a5774aac244c617e3c4dce9",
+      "previousFailSHA256": "dd0d628f6fc2e9ccca1a7997f995e6f88699a780ea50d1ef2987175967634569",
+      "decision": "closed",
+      "basis": "Current fact knownBy Acts 13:2 says only that the Holy Spirit directed that Barnabas and Saul be set apart for the called work, with sources web-act-13-1 and web-act-13-2. It no longer says that they were sent or traveled. A separate fact knownBy Acts 13:4 says that after fasting/prayer and laying on hands they were sent, then went to Seleucia and sailed to Cyprus; its sources web-act-13-3 and web-act-13-4. The pinned WEB witness says 13:2 “Separate Barnabas and Saul for me, for the work to which I have called them”; 13:3 reports fasting, prayer, laying hands and sending; 13:4 reports the Holy Spirit sending them to Seleucia and sailing to Cyprus. Thus each fact is gated no earlier than its latest asserted event, and the former 13:2 future spill is resolved.",
+      "auditedFacts": [
+        {
+          "knownBy": "Acts 13:2",
+          "sourceIds": [
+            "web-act-13-1",
+            "web-act-13-2"
+          ],
+          "sources": [
+            "https://ebible.org/engwebp/ACT13.htm#V1",
+            "https://ebible.org/engwebp/ACT13.htm#V2"
+          ],
+          "textJa": "アンティオキアの教会で、聖霊はバルナバとサウロを働きのために取り分けるよう告げます。",
+          "witnessTexts": {
+            "Acts 13:1": "Now in the assembly that was at Antioch there were some prophets and teachers: Barnabas, Simeon who was called Niger, Lucius of Cyrene, Manaen the foster brother of Herod the tetrarch, and Saul.",
+            "Acts 13:2": "As they served the Lord and fasted, the Holy Spirit said, “Separate Barnabas and Saul for me, for the work to which I have called them.”"
+          }
+        },
+        {
+          "knownBy": "Acts 13:4",
+          "sourceIds": [
+            "web-act-13-3",
+            "web-act-13-4"
+          ],
+          "sources": [
+            "https://ebible.org/engwebp/ACT13.htm#V3",
+            "https://ebible.org/engwebp/ACT13.htm#V4"
+          ],
+          "textJa": "共同体は断食と祈りの後、二人に手を置いて送り出します。聖霊に送り出された二人はセレウキアへ下り、そこからキプロスへ船出します。",
+          "witnessTexts": {
+            "Acts 13:3": "Then, when they had fasted and prayed and laid their hands on them, they sent them away.",
+            "Acts 13:4": "So, being sent out by the Holy Spirit, they went down to Seleucia. From there they sailed to Cyprus."
+          }
+        }
+      ]
+    },
+    {
+      "entityID": "person:theudas_2850",
+      "draftPath": "drafts/person_3/theudas_2850.json",
+      "currentDraftSHA256": "6ea2d69cb1203c1c45ae67bce383571c21b4b625b19e104a21d03294c07d1e82",
+      "currentEvidencePath": "evidence/person_3/theudas_2850.json",
+      "currentEvidenceSHA256": "f811c2d72806d1abc2cbac4b890db1ed9e4f4901a175d968e89a5950a0114c15",
+      "decision": "qualified-url-check-pending",
+      "contentDecision": "closed",
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Theudas#The_Theudas_problem",
+      "priorHTTPResultDisposition": "stale; the prior recorded request tested #The_Theudas_Problem with uppercase P, not the current #The_Theudas_problem URL.",
+      "basis": "Acts 5:36 content remains confined to the named figure, about four hundred followers, death, and dispersal; it does not identify him with Josephus’s differently dated figure. This reviewer did not confirm the current section fragment by HTTP, so no link-validity claim is made; parent’s fresh exact-fragment check remains pending.",
+      "sourceURL": "https://ebible.org/engwebp/ACT05.htm#V36",
+      "sourceText": "For before these days Theudas rose up, making himself out to be somebody; to whom a number of men, about four hundred, joined themselves. He was slain; and all, as many as obeyed him, were dispersed and came to nothing."
+    }
+  ],
+  "summary": {
+    "Paul": "closed",
+    "Theudas": "WEB content closed; current Wikipedia fragment status pending separate exact URL check"
+  }
+}

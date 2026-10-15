@@ -245,7 +245,7 @@ private struct SharedPreviewView: View {
                     Text(model.current?.passage.label ?? model.labels.first ?? "共有した箇所").bibleTextStyle(.heading)
                     if let passage = model.current?.passage {
                         Picker("表示", selection: $pane) { Text("解説").tag("explanation"); Text("人物").tag("person"); Text("地名").tag("place") }.pickerStyle(.segmented)
-                        if pane != "explanation" { OfflineEntityPane(passage: passage, kind: pane) }
+                        if pane != "explanation" { OfflineEntityPane(passage: passage, kind: pane, inlineDetails: true) }
                     }
                     if model.needsSetup {
                         Text("この画面で解説を開けません").bibleTextStyle(.heading)

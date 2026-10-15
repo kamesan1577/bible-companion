@@ -1,0 +1,197 @@
+{
+  "reviewType": "Independent closure review of Acts 21–28 verse-map corrections",
+  "reviewedAtUTC": "2026-10-15T13:25:00Z",
+  "inputs": {
+    "currentMapPath": "reviews/verse-map-21-28.json",
+    "currentMapSHA256": "98ade4cf303ceab890debc96c9a5da70c9c287e5d8966c183a4c775541dc54d5",
+    "priorIndependentReviewPath": "reviews/verse-map-21-28-independent.json",
+    "priorIndependentReviewSHA256": "17033dd7a359552e1f6b71397d323a1ba8935bf1ea5e352e178870cabf96c60a",
+    "revisionLogPath": "reviews/verse-map-21-28-revision-log.json",
+    "revisionLogSHA256": "545f6843a79f7774930d1e5f16348069c40a5008e620d846098b43e5cc1f6582",
+    "pinnedWitnessPath": "acts-web-verses.json",
+    "pinnedWitnessSHA256": "90e72f0410119f8fc9afd529cdd730fd261bd1d25adfb413581c1462d6e936cb",
+    "pinnedWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5"
+  },
+  "methodJa": "前回の独立レビューでfail/warningとした10箇所の現行map行を読み、固定Acts WEB witness本文および引用内の人物・場所照応を再照合。revision logの自己申告は状態判定の根拠にせず、現行mapと原典本文を直接比較した。",
+  "summary": {
+    "priorFindings": 10,
+    "closed": 10,
+    "unresolved": 0,
+    "newIssuesFound": 0
+  },
+  "findings": [
+    {
+      "chapter": 21,
+      "verse": 28,
+      "priorIssue": "collective_mapped_to_person",
+      "closureStatus": "closed",
+      "witnessText": "crying out, “Men of Israel, help! This is the man who teaches all men everywhere against the people, and the law, and this place. Moreover, he also brought Greeks into the temple and has defiled this holy place!”",
+      "currentEntities": [],
+      "verificationJa": "割当現行行を固定WEB原文と再照合。過去レビュー指摘の対象を追加/削除する修正が反映され、対象種別と文脈照応が一致する。"
+    },
+    {
+      "chapter": 22,
+      "verse": 14,
+      "priorIssue": "likely_missing_known_title_alias",
+      "closureStatus": "closed",
+      "witnessText": "He said, ‘The God of our fathers has appointed you to know his will, and to see the Righteous One, and to hear a voice from his mouth.",
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「God of our fathers」と明記。"
+        },
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "related",
+          "reasonJa": "「the Righteous One」は直後の22:15で「him」と受け、22:16–21の同じ証言・幻の文脈で「Lord」「me」と結ばれるイエスを指すと判断。"
+        }
+      ],
+      "verificationJa": "割当現行行を固定WEB原文と再照合。過去レビュー指摘の対象を追加/削除する修正が反映され、対象種別と文脈照応が一致する。"
+    },
+    {
+      "chapter": 22,
+      "verse": 15,
+      "priorIssue": "continued_speech_referent_omitted",
+      "closureStatus": "closed",
+      "witnessText": "For you will be a witness for him to all men of what you have seen and heard.",
+      "currentEntities": [
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "related",
+          "reasonJa": "22:14の「the Righteous One」を受ける「him」であり、直後の同一証言文脈の対象はイエス。"
+        }
+      ],
+      "verificationJa": "割当現行行を固定WEB原文と再照合。過去レビュー指摘の対象を追加/削除する修正が反映され、対象種別と文脈照応が一致する。"
+    },
+    {
+      "chapter": 22,
+      "verse": 18,
+      "priorIssue": "continued_speech_referent_omitted",
+      "closureStatus": "closed",
+      "witnessText": "and saw him saying to me, ‘Hurry and get out of Jerusalem quickly, because they will not receive testimony concerning me from you.’",
+      "currentEntities": [
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "related",
+          "reasonJa": "幻の発話中の「him」「me」は、同一の発話を続ける22:19–21のLord/Heと結び付くイエスを指す。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「Jerusalem」と明記。"
+        }
+      ],
+      "verificationJa": "割当現行行を固定WEB原文と再照合。過去レビュー指摘の対象を追加/削除する修正が反映され、対象種別と文脈照応が一致する。"
+    },
+    {
+      "chapter": 22,
+      "verse": 21,
+      "priorIssue": "continued_speech_speaker_omitted",
+      "closureStatus": "closed",
+      "witnessText": "“He said to me, ‘Depart, for I will send you out far from here to the Gentiles.’ ”",
+      "currentEntities": [
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "related",
+          "reasonJa": "「He said to me」のHeは22:18–20から続く幻の発話主イエスを指す。"
+        }
+      ],
+      "verificationJa": "割当現行行を固定WEB原文と再照合。過去レビュー指摘の対象を追加/削除する修正が反映され、対象種別と文脈照応が一致する。"
+    },
+    {
+      "chapter": 25,
+      "verse": 21,
+      "priorIssue": "location_inferred_from_scene",
+      "closureStatus": "closed",
+      "witnessText": "But when Paul had appealed to be kept for the decision of the emperor, I commanded him to be kept until I could send him to Caesar.”",
+      "currentEntities": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「Paul」と明記。"
+        }
+      ],
+      "verificationJa": "割当現行行を固定WEB原文と再照合。過去レビュー指摘の対象を追加/削除する修正が反映され、対象種別と文脈照応が一致する。"
+    },
+    {
+      "chapter": 25,
+      "verse": 23,
+      "priorIssue": "explicit_named_entity_omitted",
+      "closureStatus": "closed",
+      "witnessText": "So on the next day, when Agrippa and Bernice had come with great pomp, and they had entered into the place of hearing with the commanding officers and the principal men of the city, at the command of Festus, Paul was brought in.",
+      "currentEntities": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「Agrippa」と明記。"
+        },
+        {
+          "entityID": "person:bernice_482",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「Bernice」と明記。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「Paul」と明記。"
+        },
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「Festus」と明記。"
+        }
+      ],
+      "verificationJa": "割当現行行を固定WEB原文と再照合。過去レビュー指摘の対象を追加/削除する修正が反映され、対象種別と文脈照応が一致する。"
+    },
+    {
+      "chapter": 26,
+      "verse": 26,
+      "priorIssue": "clear_title_referent_omitted",
+      "closureStatus": "closed",
+      "witnessText": "For the king knows of these things, to whom also I speak freely. For I am persuaded that none of these things is hidden from him, for this has not been done in a corner.",
+      "currentEntities": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "related",
+          "reasonJa": "Paulが直接Agrippaに語りかける直前の応答であり、「the king」はAgrippaを指す。"
+        }
+      ],
+      "verificationJa": "割当現行行を固定WEB原文と再照合。過去レビュー指摘の対象を追加/削除する修正が反映され、対象種別と文脈照応が一致する。"
+    },
+    {
+      "chapter": 26,
+      "verse": 30,
+      "priorIssue": "clear_title_referents_omitted",
+      "closureStatus": "closed",
+      "witnessText": "The king rose up with the governor and Bernice, and those who sat with them.",
+      "currentEntities": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "related",
+          "reasonJa": "「The king」は審理場面の王Agrippaを指す。"
+        },
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "related",
+          "reasonJa": "「the governor」は直前までの審理を主宰するFestusを指す。"
+        },
+        {
+          "entityID": "person:bernice_482",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「Bernice」と明記。"
+        }
+      ],
+      "verificationJa": "割当現行行を固定WEB原文と再照合。過去レビュー指摘の対象を追加/削除する修正が反映され、対象種別と文脈照応が一致する。"
+    },
+    {
+      "chapter": 28,
+      "verse": 20,
+      "priorIssue": "collective_mapped_to_person",
+      "closureStatus": "closed",
+      "witnessText": "For this cause therefore I asked to see you and to speak with you. For because of the hope of Israel I am bound with this chain.”",
+      "currentEntities": [],
+      "verificationJa": "割当現行行を固定WEB原文と再照合。過去レビュー指摘の対象を追加/削除する修正が反映され、対象種別と文脈照応が一致する。"
+    }
+  ]
+}

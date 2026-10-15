@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-static-map-runtime-review",
+  "verdict": "qualified",
+  "reviewedAtUTC": "2026-10-15",
+  "scope": "Static review only; no source or profile edits made.",
+  "files": [
+    {
+      "path": "candidate/apps/ios/Sources/Core/BundledEntityIndex.swift",
+      "sha256": "d23856070b2b1b4fd4054895d2e5164e8cc69f58b83bf307f9162765be6bdd9b"
+    },
+    {
+      "path": "candidate/apps/ios/Sources/DesignSystem/OfflineEntityPane.swift",
+      "sha256": "ac9b54f6b1605c3d3f5f0d163e1c4ad7cef8876aa06da5c46e3e7c5ee54f731c"
+    },
+    {
+      "path": "candidate/apps/ios/Sources/Core/Resources/entity-profiles.json",
+      "sha256": "dfbacdc0921871e533112026fcf6509cfa8db861b3243d48c28c3b683a822acb"
+    }
+  ],
+  "checks": [
+    {
+      "topic": "Acts-only fallback and profile-coordinate precedence",
+      "result": "pass",
+      "evidence": "BundledEntityIndex.swift:60-83 enters the audited occurrence path only when passage.book == ACT and an occurrences table exists. It obtains a legacy index point only for an ID in candidateMapIDs, then sets point = p.coordinate ?? candidate, so candidate coordinates are not written into the profile coordinate. The non-ACT lookup path starts at line 88 and remains a separate index-based path."
+    },
+    {
+      "topic": "Existing material cards",
+      "result": "pass",
+      "evidence": "OfflineEntityPane.swift:12-16 filters out profiles whose materialCardIDs are already covered; the view also describes itself at line 5 as a supplement to reviewed material cards. The fallback map is reached only for an uncovered displayed occurrence whose profile coordinate is nil (lines 54-61)."
+    },
+    {
+      "topic": "Candidate map disclosure and share surface",
+      "result": "pass",
+      "evidence": "OfflineEntityPane.swift:54-61 displays the candidate map only when the reviewed profile has no coordinate and the indexed entity has a point. The link title explicitly says '従来資料の候補位置'. UnreviewedIndexedPlaceMap (lines 168-188) labels the point as a source candidate, says this app did not independently verify it, distinguishes regional/island/sea extents, names Theographic, and notes map network/current-location behavior. ShareViewController.swift:246-249 uses the same pane with inlineDetails=true; line 57 renders the same candidate map directly in that reading surface."
+    },
+    {
+      "topic": "Candidate-map policy resource availability",
+      "result": "fail",
+      "evidence": "BundledEntityIndex.swift:56-58 loads acts-map-policy.json from Bundle.module only if present and silently leaves candidateMapIDs empty if absent. No acts-map-policy.json exists in candidate/apps/ios/Sources/Core/Resources (or elsewhere in the workspace). Package.swift processes the Resources directory, so the currently inspected source bundle cannot supply the policy. reviews/map-policy-place_1.json is review evidence, not the runtime resource, and covers only that reviewed subset. Consequently the runtime currently does not enable candidate coordinates, even when policy approval is otherwise recorded; if the resource is added later, the ID allow-list logic is correctly restrictive."
+    }
+  ],
+  "concerns": [
+    {
+      "severity": "blocking-for-feature-availability",
+      "description": "Add the finalized acts-map-policy.json to the processed Core Resources bundle before expecting approved candidate maps to appear. Validate resource inclusion and policy/profile/index ID alignment in the built app. This review did not edit or generate the policy."
+    }
+  ],
+  "limitations": "This is a static source inspection, not an on-device or share-extension runtime test."
+}

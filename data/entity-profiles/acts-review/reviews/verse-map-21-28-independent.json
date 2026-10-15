@@ -1,0 +1,3765 @@
+{
+  "reviewType": "independent verse-map/source audit",
+  "reviewedAtUTC": "2026-10-15T13:04:49Z",
+  "scope": {
+    "first": {
+      "chapter": 21,
+      "verse": 1
+    },
+    "last": {
+      "chapter": 28,
+      "verse": 31
+    },
+    "verseCount": 266
+  },
+  "inputs": {
+    "mapPath": "reviews/verse-map-21-28.json",
+    "mapSHA256": "ca3b400461354b6ad544497c9bba805b7b6af7f4bb0999140cee669ca0d5b3c0",
+    "witnessPath": "acts-web-verses.json",
+    "witnessSHA256": "90e72f0410119f8fc9afd529cdd730fd261bd1d25adfb413581c1462d6e936cb",
+    "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5"
+  },
+  "methodJa": "割当266節すべてについて、acts-web-verses.jsonのWEB本文と節単位の割当を照合。明示名・同一人物の文脈照応、話者と代名詞、集合体/個人の種別、地名の本文根拠、本文空欄の補作有無を確認。舞台にいるだけの人物は追加対象とせず、確実な誤リンクはfail、曖昧さや一貫性上の不足はwarningに分けた。",
+  "summary": {
+    "counts": {
+      "pass": 256,
+      "warning": 7,
+      "fail": 3
+    },
+    "findingCount": 10,
+    "specialChecks": {
+      "acts24_7": {
+        "witnessTextStatus": "empty",
+        "webText": "",
+        "mapEntityCount": 0,
+        "resultJa": "WEB witness自体が空で、割当も空。空欄に補作された文言・variant人物/地名割当は確認されない。"
+      },
+      "variantSpellings": {
+        "27_12": "Phoenixは既存Phenice IDへの表記差として理由付きで割当。",
+        "27_27": "Adriatic Seaは既存Adria IDへの対応として理由付きで割当。",
+        "28_1": "Maltaは既存Melita IDへの対応として理由付きで割当。"
+      }
+    }
+  },
+  "verseChecks": [
+    {
+      "chapter": 21,
+      "verse": 1,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When we had departed from them and had set sail, we came with a straight course to Cos, and the next day to Rhodes, and from there to Patara.",
+      "assigned": [
+        {
+          "entityID": "place:coos_308",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:patara_924",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:rhodes_1000",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 2,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Having found a ship crossing over to Phoenicia, we went aboard and set sail.",
+      "assigned": [
+        {
+          "entityID": "place:phenicia_944",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 3,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When we had come in sight of Cyprus, leaving it on the left hand, we sailed to Syria and landed at Tyre, for the ship was there to unload her cargo.",
+      "assigned": [
+        {
+          "entityID": "place:cyprus_316",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:syria_1122",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:tyre_1184",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 4,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Having found disciples, we stayed there seven days. These said to Paul through the Spirit that he should not go up to Jerusalem.",
+      "assigned": [
+        {
+          "entityID": "person:holy_spirit_7400",
+          "relationship": "related"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 5,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When those days were over, we departed and went on our journey. They all, with wives and children, brought us on our way until we were out of the city. Kneeling down on the beach, we prayed.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 6,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "After saying goodbye to each other, we went on board the ship, and they returned home again.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 7,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When we had finished the voyage from Tyre, we arrived at Ptolemais. We greeted the brothers and stayed with them one day.",
+      "assigned": [
+        {
+          "entityID": "place:ptolemais_959",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:tyre_1184",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 8,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "On the next day, we who were Paul’s companions departed and came to Caesarea. We entered into the house of Philip the evangelist, who was one of the seven, and stayed with him.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:philip_2347",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:caesarea_266",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 9,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Now this man had four virgin daughters who prophesied.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 10,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "As we stayed there some days, a certain prophet named Agabus came down from Judea.",
+      "assigned": [
+        {
+          "entityID": "person:agabus_107",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:judea_657",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 11,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Coming to us and taking Paul’s belt, he bound his own feet and hands, and said, “The Holy Spirit says: ‘So the Jews at Jerusalem will bind the man who owns this belt, and will deliver him into the hands of the Gentiles.’”",
+      "assigned": [
+        {
+          "entityID": "person:holy_spirit_7400",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 12,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When we heard these things, both we and the people of that place begged him not to go up to Jerusalem.",
+      "assigned": [
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 13,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Then Paul answered, “What are you doing, weeping and breaking my heart? For I am ready not only to be bound, but also to die at Jerusalem for the name of the Lord Jesus.”",
+      "assigned": [
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 14,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When he would not be persuaded, we ceased, saying, “The Lord’s will be done.”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 15,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "After these days we took up our baggage and went up to Jerusalem.",
+      "assigned": [
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 16,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Some of the disciples from Caesarea also went with us, bringing one Mnason of Cyprus, an early disciple, with whom we would stay.",
+      "assigned": [
+        {
+          "entityID": "person:mnason_2102",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:caesarea_266",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:cyprus_316",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 17,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When we had come to Jerusalem, the brothers received us gladly.",
+      "assigned": [
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 18,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "The day following, Paul went in with us to James; and all the elders were present.",
+      "assigned": [
+        {
+          "entityID": "person:james_719",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 19,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When he had greeted them, he reported one by one the things which God had worked among the Gentiles through his ministry.",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 20,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "They, when they heard it, glorified God. They said to him, “You see, brother, how many thousands there are among the Jews of those who have believed, and they are all zealous for the law.",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 21,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "They have been informed about you, that you teach all the Jews who are among the Gentiles to forsake Moses, telling them not to circumcise their children and not to walk after the customs.",
+      "assigned": [
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 22,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "What then? The assembly must certainly meet, for they will hear that you have come.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 23,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Therefore do what we tell you. We have four men who have taken a vow.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 24,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Take them and purify yourself with them, and pay their expenses for them, that they may shave their heads. Then all will know that there is no truth in the things that they have been informed about you, but that you yourself also walk keeping the law.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 25,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But concerning the Gentiles who believe, we have written our decision that they should observe no such thing, except that they should keep themselves from food offered to idols, from blood, from strangled things, and from sexual immorality.”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 26,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Then Paul took the men, and the next day purified himself and went with them into the temple, declaring the fulfillment of the days of purification, until the offering was offered for every one of them.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 27,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When the seven days were almost completed, the Jews from Asia, when they saw him in the temple, stirred up all the multitude and laid hands on him,",
+      "assigned": [
+        {
+          "entityID": "place:asia_108",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 28,
+      "result": "fail",
+      "webTextStatus": "present",
+      "webText": "crying out, “Men of Israel, help! This is the man who teaches all men everywhere against the people, and the law, and this place. Moreover, he also brought Greeks into the temple and has defiled this holy place!”",
+      "assigned": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "severity": "fail",
+          "code": "collective_mapped_to_person",
+          "entityID": "person:israel_682",
+          "evidence": "Men of Israel, help!",
+          "basisJa": "「Israel」は呼びかけられた民族・共同体で、個人としての person:israel_682 ではない。person IDへの結び付けは対象種別を誤る。",
+          "correctionJa": "person:israel_682を削除。個人同定なしとして扱う。"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "verse": 29,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "For they had seen Trophimus the Ephesian with him in the city, and they supposed that Paul had brought him into the temple.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:trophimus_2880",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 30,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "All the city was moved and the people ran together. They seized Paul and dragged him out of the temple. Immediately the doors were shut.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 31,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "As they were trying to kill him, news came up to the commanding officer of the regiment that all Jerusalem was in an uproar.",
+      "assigned": [
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 32,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Immediately he took soldiers and centurions and ran down to them. They, when they saw the chief captain and the soldiers, stopped beating Paul.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 33,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Then the commanding officer came near, arrested him, commanded him to be bound with two chains, and inquired who he was and what he had done.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 34,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Some shouted one thing and some another, among the crowd. When he couldn’t find out the truth because of the noise, he commanded him to be brought into the barracks.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 35,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When he came to the stairs, he was carried by the soldiers because of the violence of the crowd;",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 36,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "for the multitude of the people followed after, crying out, “Away with him!”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 37,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "As Paul was about to be brought into the barracks, he asked the commanding officer, “May I speak to you?” He said, “Do you know Greek?",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 38,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Aren’t you then the Egyptian who before these days stirred up to sedition and led out into the wilderness the four thousand men of the Assassins?”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 39,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But Paul said, “I am a Jew from Tarsus in Cilicia, a citizen of no insignificant city. I beg you, allow me to speak to the people.”",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:cilicia_300",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:tarsus_1140",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 21,
+      "verse": 40,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When he had given him permission, Paul, standing on the stairs, beckoned with his hand to the people. When there was a great silence, he spoke to them in the Hebrew language, saying,",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 1,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "“Brothers and fathers, listen to the defense which I now make to you.”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 2,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When they heard that he spoke to them in the Hebrew language, they were even more quiet. He said,",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 3,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "“I am indeed a Jew, born in Tarsus of Cilicia, but brought up in this city at the feet of Gamaliel, instructed according to the strict tradition of the law of our fathers, being zealous for God, even as you all are today.",
+      "assigned": [
+        {
+          "entityID": "person:gamaliel_1277",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:cilicia_300",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:tarsus_1140",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 4,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "I persecuted this Way to the death, binding and delivering into prisons both men and women,",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 5,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "as also the high priest and all the council of the elders testify, from whom also I received letters to the brothers, and traveled to Damascus to bring them also who were there to Jerusalem in bonds to be punished.",
+      "assigned": [
+        {
+          "entityID": "place:damascus_322",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 6,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "“As I made my journey and came close to Damascus, about noon suddenly a great light shone around me from the sky.",
+      "assigned": [
+        {
+          "entityID": "place:damascus_322",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 7,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "I fell to the ground and heard a voice saying to me, ‘Saul, Saul, why are you persecuting me?’",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 8,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "I answered, ‘Who are you, Lord?’ He said to me, ‘I am Jesus of Nazareth, whom you persecute.’",
+      "assigned": [
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:nazareth_878",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 9,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "“Those who were with me indeed saw the light and were afraid, but they didn’t understand the voice of him who spoke to me.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 10,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "I said, ‘What shall I do, Lord?’ The Lord said to me, ‘Arise, and go into Damascus. There you will be told about all things which are appointed for you to do.’",
+      "assigned": [
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "related"
+        },
+        {
+          "entityID": "place:damascus_322",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 11,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When I couldn’t see for the glory of that light, being led by the hand of those who were with me, I came into Damascus.",
+      "assigned": [
+        {
+          "entityID": "place:damascus_322",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 12,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "“One Ananias, a devout man according to the law, well reported of by all the Jews who lived in Damascus,",
+      "assigned": [
+        {
+          "entityID": "person:ananias_259",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 13,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "came to me, and standing by me said to me, ‘Brother Saul, receive your sight!’ In that very hour I looked up at him.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 14,
+      "result": "warning",
+      "webTextStatus": "present",
+      "webText": "He said, ‘The God of our fathers has appointed you to know his will, and to see the Righteous One, and to hear a voice from his mouth.",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "severity": "warning",
+          "code": "likely_missing_known_title_alias",
+          "entityID": "person:jesus_905",
+          "evidence": "to see the Righteous One",
+          "basisJa": "「the Righteous One」は使徒言行録3:13–15で「Servant Jesus」と同一の文脈に置かれ、3:14でも「Holy and Righteous One」として言及される。22:14の呼称はイエスを指す可能性が非常に高いが、対象マップにはIDがない。",
+          "correctionJa": "person:jesus_905をrelated/directのどちらか適切な関係で追加し、呼称による同定根拠を理由欄に記す。"
+        }
+      ]
+    },
+    {
+      "chapter": 22,
+      "verse": 15,
+      "result": "warning",
+      "webTextStatus": "present",
+      "webText": "For you will be a witness for him to all men of what you have seen and heard.",
+      "assigned": [],
+      "issues": [
+        {
+          "severity": "warning",
+          "code": "continued_speech_referent_omitted",
+          "entityID": "person:jesus_905",
+          "evidence": "For you will be a witness for him",
+          "basisJa": "直前22:14の「Righteous One」を受ける「him」で、直前の発話主・対象はイエスと読める。 mapは同じ引用の22:16でLordをイエスに結んでいるが、この節にはそのIDがない。",
+          "correctionJa": "この引用の照応を対象化する方針ならperson:jesus_905をrelatedとして追加。発話継続を対象にしない方針なら、同範囲で一貫させる。"
+        }
+      ]
+    },
+    {
+      "chapter": 22,
+      "verse": 16,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Now why do you wait? Arise, be baptized, and wash away your sins, calling on the name of the Lord.’",
+      "assigned": [
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "related"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 17,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "“When I had returned to Jerusalem and while I prayed in the temple, I fell into a trance",
+      "assigned": [
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 18,
+      "result": "warning",
+      "webTextStatus": "present",
+      "webText": "and saw him saying to me, ‘Hurry and get out of Jerusalem quickly, because they will not receive testimony concerning me from you.’",
+      "assigned": [
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "severity": "warning",
+          "code": "continued_speech_referent_omitted",
+          "entityID": "person:jesus_905",
+          "evidence": "saw him saying to me, ‘Hurry and get out of Jerusalem quickly, because they will not receive testimony concerning me from you.’",
+          "basisJa": "22:16で「the name of the Lord」を呼び、22:19では「Lord」と「you」をイエスに結んでいる。ここでの幻の発話主・「me」は同じイエスと読むのが自然だが、IDがない。",
+          "correctionJa": "person:jesus_905をrelatedとして追加するか、発話主継続をこのマップで扱わない方針を明示して隣接節にも揃える。"
+        }
+      ]
+    },
+    {
+      "chapter": 22,
+      "verse": 19,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "I said, ‘Lord, they themselves know that I imprisoned and beat in every synagogue those who believed in you.",
+      "assigned": [
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "related"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 20,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When the blood of Stephen, your witness, was shed, I also was standing by, consenting to his death, and guarding the cloaks of those who killed him.’",
+      "assigned": [
+        {
+          "entityID": "person:stephen_2802",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 21,
+      "result": "warning",
+      "webTextStatus": "present",
+      "webText": "“He said to me, ‘Depart, for I will send you out far from here to the Gentiles.’ ”",
+      "assigned": [],
+      "issues": [
+        {
+          "severity": "warning",
+          "code": "continued_speech_speaker_omitted",
+          "entityID": "person:jesus_905",
+          "evidence": "He said to me, ‘Depart, for I will send you out far from here to the Gentiles.’",
+          "basisJa": "22:18–20の幻の発話継続で「He」はイエスを指す。22:19はJesus IDを付す一方、同じ発話のこの節は無割当。",
+          "correctionJa": "person:jesus_905をrelatedとして追加するか、連続引用の人物リンクを隣接節で一貫させる。"
+        }
+      ]
+    },
+    {
+      "chapter": 22,
+      "verse": 22,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "They listened to him until he said that; then they lifted up their voice and said, “Rid the earth of this fellow, for he isn’t fit to live!”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 23,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "As they cried out, threw off their cloaks, and threw dust into the air,",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 24,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "the commanding officer commanded him to be brought into the barracks, ordering him to be examined by scourging, that he might know for what crime they shouted against him like that.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 25,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When they had tied him up with straps, Paul asked the centurion who stood by, “Is it lawful for you to scourge a man who is a Roman, and not found guilty?”",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 26,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When the centurion heard it, he went to the commanding officer and told him, “Watch what you are about to do, for this man is a Roman!”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 27,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "The commanding officer came and asked him, “Tell me, are you a Roman?” He said, “Yes.”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 28,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "The commanding officer answered, “I bought my citizenship for a great price.” Paul said, “But I was born a Roman.”",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 29,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Immediately those who were about to examine him departed from him, and the commanding officer also was afraid when he realized that he was a Roman, because he had bound him.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 22,
+      "verse": 30,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But on the next day, desiring to know the truth about why he was accused by the Jews, he freed him from the bonds and commanded the chief priests and all the council to come together, and brought Paul down and set him before them.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 1,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Paul, looking steadfastly at the council, said, “Brothers, I have lived before God in all good conscience until today.”",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 2,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "The high priest, Ananias, commanded those who stood by him to strike him on the mouth.",
+      "assigned": [
+        {
+          "entityID": "person:ananias_260",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 3,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Then Paul said to him, “God will strike you, you whitewashed wall! Do you sit to judge me according to the law, and command me to be struck contrary to the law?”",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 4,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Those who stood by said, “Do you malign God’s high priest?”",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 5,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Paul said, “I didn’t know, brothers, that he was high priest. For it is written, ‘You shall not speak evil of a ruler of your people.’”",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 6,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But when Paul perceived that the one part were Sadducees and the other Pharisees, he cried out in the council, “Men and brothers, I am a Pharisee, a son of Pharisees. Concerning the hope and resurrection of the dead I am being judged!”",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 7,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When he had said this, an argument arose between the Pharisees and Sadducees, and the crowd was divided.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 8,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "For the Sadducees say that there is no resurrection, nor angel, nor spirit; but the Pharisees confess all of these.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 9,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "A great clamor arose, and some of the scribes of the Pharisees’ part stood up, and contended, saying, “We find no evil in this man. But if a spirit or angel has spoken to him, let’s not fight against God!”",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 10,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When a great argument arose, the commanding officer, fearing that Paul would be torn in pieces by them, commanded the soldiers to go down and take him by force from among them and bring him into the barracks.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 11,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "The following night, the Lord stood by him and said, “Cheer up, Paul, for as you have testified about me at Jerusalem, so you must testify also at Rome.”",
+      "assigned": [
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "related"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:rome_1013",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 12,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When it was day, some of the Jews banded together and bound themselves under a curse, saying that they would neither eat nor drink until they had killed Paul.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 13,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "There were more than forty people who had made this conspiracy.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 14,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "They came to the chief priests and the elders, and said, “We have bound ourselves under a great curse to taste nothing until we have killed Paul.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 15,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Now therefore, you with the council inform the commanding officer that he should bring him down to you tomorrow, as though you were going to judge his case more exactly. We are ready to kill him before he comes near.”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 16,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But Paul’s sister’s son heard they were lying in wait, and he came and entered into the barracks and told Paul.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 17,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Paul summoned one of the centurions and said, “Bring this young man to the commanding officer, for he has something to tell him.”",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 18,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "So he took him and brought him to the commanding officer and said, “Paul, the prisoner, summoned me and asked me to bring this young man to you. He has something to tell you.”",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 19,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "The commanding officer took him by the hand, and going aside, asked him privately, “What is it that you have to tell me?”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 20,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "He said, “The Jews have agreed to ask you to bring Paul down to the council tomorrow, as though intending to inquire somewhat more accurately concerning him.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 21,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Therefore don’t yield to them, for more than forty men lie in wait for him, who have bound themselves under a curse to neither eat nor drink until they have killed him. Now they are ready, looking for the promise from you.”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 22,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "So the commanding officer let the young man go, charging him, “Tell no one that you have revealed these things to me.”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 23,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "He called to himself two of the centurions, and said, “Prepare two hundred soldiers to go as far as Caesarea, with seventy horsemen and two hundred men armed with spears, at the third hour of the night.”",
+      "assigned": [
+        {
+          "entityID": "place:caesarea_266",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 24,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "He asked them to provide mounts, that they might set Paul on one, and bring him safely to Felix the governor.",
+      "assigned": [
+        {
+          "entityID": "person:felix_1257",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 25,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "He wrote a letter like this:",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 26,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "“Claudius Lysias to the most excellent governor Felix: Greetings.",
+      "assigned": [
+        {
+          "entityID": "person:claudius_948",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:felix_1257",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 27,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "“This man was seized by the Jews, and was about to be killed by them when I came with the soldiers and rescued him, having learned that he was a Roman.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 28,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Desiring to know the cause why they accused him, I brought him down to their council.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 29,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "I found him to be accused about questions of their law, but not to be charged with anything worthy of death or of imprisonment.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 30,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When I was told that the Jews lay in wait for the man, I sent him to you immediately, charging his accusers also to bring their accusations against him before you. Farewell.”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 31,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "So the soldiers, carrying out their orders, took Paul and brought him by night to Antipatris.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:antipatris_70",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 32,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But on the next day they left the horsemen to go with him, and returned to the barracks.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 33,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When they came to Caesarea and delivered the letter to the governor, they also presented Paul to him.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:caesarea_266",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 34,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When the governor had read it, he asked what province he was from. When he understood that he was from Cilicia, he said,",
+      "assigned": [
+        {
+          "entityID": "place:cilicia_300",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 23,
+      "verse": 35,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "“I will hear you fully when your accusers also arrive.” He commanded that he be kept in Herod’s palace.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 1,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "After five days, the high priest, Ananias, came down with certain elders and an orator, one Tertullus. They informed the governor against Paul.",
+      "assigned": [
+        {
+          "entityID": "person:ananias_260",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:tertullus_2844",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 2,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When he was called, Tertullus began to accuse him, saying, “Seeing that by you we enjoy much peace, and that prosperity is coming to this nation by your foresight,",
+      "assigned": [
+        {
+          "entityID": "person:tertullus_2844",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 3,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "we accept it in all ways and in all places, most excellent Felix, with all thankfulness.",
+      "assigned": [
+        {
+          "entityID": "person:felix_1257",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 4,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But that I don’t delay you, I entreat you to bear with us and hear a few words.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 5,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "For we have found this man to be a plague, an instigator of insurrections among all the Jews throughout the world, and a ringleader of the sect of the Nazarenes.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 6,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "He even tried to profane the temple, and we arrested him.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 7,
+      "result": "pass",
+      "webTextStatus": "empty",
+      "webText": "",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 8,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "By examining him yourself you may ascertain all these things of which we accuse him.”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 9,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "The Jews also joined in the attack, affirming that these things were so.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 10,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When the governor had beckoned to him to speak, Paul answered, “Because I know that you have been a judge of this nation for many years, I cheerfully make my defense,",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 11,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "seeing that you can verify that it is not more than twelve days since I went up to worship at Jerusalem.",
+      "assigned": [
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 12,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "In the temple they didn’t find me disputing with anyone or stirring up a crowd, either in the synagogues or in the city.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 13,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Nor can they prove to you the things of which they now accuse me.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 14,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But this I confess to you, that according to the Way, which they call a sect, so I serve the God of our fathers, believing all things which are according to the law, and which are written in the prophets;",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 15,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "having hope toward God, which these also themselves look for, that there will be a resurrection of the dead, both of the just and unjust.",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 16,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "In this I also practice always having a conscience void of offense toward God and men.",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 17,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Now after some years, I came to bring gifts for the needy to my nation, and offerings;",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 18,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "amid which certain Jews from Asia found me purified in the temple, not with a mob, nor with turmoil.",
+      "assigned": [
+        {
+          "entityID": "place:asia_108",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 19,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "They ought to have been here before you and to make accusation if they had anything against me.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 20,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Or else let these men themselves say what injustice they found in me when I stood before the council,",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 21,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "unless it is for this one thing that I cried standing among them, ‘Concerning the resurrection of the dead I am being judged before you today!’”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 22,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But Felix, having more exact knowledge concerning the Way, deferred them, saying, “When Lysias, the commanding officer, comes down, I will decide your case.”",
+      "assigned": [
+        {
+          "entityID": "person:felix_1257",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 23,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "He ordered the centurion that Paul should be kept in custody and should have some privileges, and not to forbid any of his friends to serve him or to visit him.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 24,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "After some days, Felix came with Drusilla his wife, who was a Jewess, and sent for Paul and heard him concerning the faith in Christ Jesus.",
+      "assigned": [
+        {
+          "entityID": "person:drusilla_1024",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:felix_1257",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 25,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "As he reasoned about righteousness, self-control, and the judgment to come, Felix was terrified, and answered, “Go your way for this time, and when it is convenient for me, I will summon you.”",
+      "assigned": [
+        {
+          "entityID": "person:felix_1257",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 26,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Meanwhile, he also hoped that money would be given to him by Paul, that he might release him. Therefore also he sent for him more often and talked with him.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 24,
+      "verse": 27,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But when two years were fulfilled, Felix was succeeded by Porcius Festus, and desiring to gain favor with the Jews, Felix left Paul in bonds.",
+      "assigned": [
+        {
+          "entityID": "person:felix_1257",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 1,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Festus therefore, having come into the province, after three days went up to Jerusalem from Caesarea.",
+      "assigned": [
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:caesarea_266",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 2,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Then the high priest and the principal men of the Jews informed him against Paul, and they begged him,",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 3,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "asking a favor against him, that he would summon him to Jerusalem, plotting to kill him on the way.",
+      "assigned": [
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 4,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "However Festus answered that Paul should be kept in custody at Caesarea, and that he himself was about to depart shortly.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:caesarea_266",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 5,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "“Let them therefore”, he said, “that are in power among you go down with me, and if there is anything wrong in the man, let them accuse him.”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 6,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When he had stayed among them more than ten days, he went down to Caesarea, and on the next day he sat on the judgment seat, and commanded Paul to be brought.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:caesarea_266",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 7,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When he had come, the Jews who had come down from Jerusalem stood around him, bringing against him many and grievous charges which they could not prove,",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 8,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "while he said in his defense, “Neither against the law of the Jews, nor against the temple, nor against Caesar, have I sinned at all.”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 9,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But Festus, desiring to gain favor with the Jews, answered Paul and said, “Are you willing to go up to Jerusalem and be judged by me there concerning these things?”",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 10,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But Paul said, “I am standing before Caesar’s judgment seat, where I ought to be tried. I have done no wrong to the Jews, as you also know very well.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 11,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "For if I have done wrong and have committed anything worthy of death, I don’t refuse to die; but if none of those things is true that they accuse me of, no one can give me up to them. I appeal to Caesar!”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 12,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Then Festus, when he had conferred with the council, answered, “You have appealed to Caesar. To Caesar you shall go.”",
+      "assigned": [
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 13,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Now when some days had passed, King Agrippa and Bernice arrived at Caesarea and greeted Festus.",
+      "assigned": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:bernice_482",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:caesarea_266",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 14,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "As he stayed there many days, Festus laid Paul’s case before the king, saying, “There is a certain man left a prisoner by Felix;",
+      "assigned": [
+        {
+          "entityID": "person:felix_1257",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 15,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "about whom, when I was at Jerusalem, the chief priests and the elders of the Jews informed me, asking for a sentence against him.",
+      "assigned": [
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 16,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "I answered them that it is not the custom of the Romans to give up any man to destruction before the accused has met the accusers face to face and has had opportunity to make his defense concerning the matter laid against him.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 17,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When therefore they had come together here, I didn’t delay, but on the next day sat on the judgment seat and commanded the man to be brought.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 18,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When the accusers stood up, they brought no charges against him of such things as I supposed;",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 19,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "but had certain questions against him about their own religion and about one Jesus, who was dead, whom Paul affirmed to be alive.",
+      "assigned": [
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 20,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Being perplexed how to inquire concerning these things, I asked whether he was willing to go to Jerusalem and there be judged concerning these matters.",
+      "assigned": [
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 21,
+      "result": "warning",
+      "webTextStatus": "present",
+      "webText": "But when Paul had appealed to be kept for the decision of the emperor, I commanded him to be kept until I could send him to Caesar.”",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:caesarea_266",
+          "relationship": "related"
+        }
+      ],
+      "issues": [
+        {
+          "severity": "warning",
+          "code": "location_inferred_from_scene",
+          "entityID": "place:caesarea_266",
+          "evidence": "I commanded him to be kept until I could send him to Caesar.",
+          "basisJa": "この節に場所名はなく、Caesareaは直前までの裁判所在地から補われている。relatedとした根拠は理解できるが、保持場所が本文で特定されたように読ませないよう注意が必要。",
+          "correctionJa": "場所を本文の明示地名だけに限定する運用ならCaesareaを外す。舞台継続のrelatedを許すなら、理由を「直前場面の所在地からの推定」と明記して維持。"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "verse": 22,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Agrippa said to Festus, “I also would like to hear the man myself.” “Tomorrow,” he said, “you shall hear him.”",
+      "assigned": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 23,
+      "result": "fail",
+      "webTextStatus": "present",
+      "webText": "So on the next day, when Agrippa and Bernice had come with great pomp, and they had entered into the place of hearing with the commanding officers and the principal men of the city, at the command of Festus, Paul was brought in.",
+      "assigned": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:bernice_482",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "severity": "fail",
+          "code": "explicit_named_entity_omitted",
+          "entityID": "person:portius_2367",
+          "evidence": "at the command of Festus",
+          "basisJa": "本文にFestusと明記されているが、割当はAgrippa・Bernice・PaulのみでFestus IDを欠く。",
+          "correctionJa": "person:portius_2367をdirectで追加。"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "verse": 24,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Festus said, “King Agrippa, and all men who are here present with us, you see this man about whom all the multitude of the Jews petitioned me, both at Jerusalem and here, crying that he ought not to live any longer.",
+      "assigned": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 25,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But when I found that he had committed nothing worthy of death, and as he himself appealed to the emperor, I determined to send him,",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 26,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "of whom I have no certain thing to write to my lord. Therefore I have brought him out before you, and especially before you, King Agrippa, that, after examination I may have something to write.",
+      "assigned": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 25,
+      "verse": 27,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "For it seems to me unreasonable, in sending a prisoner, not to also specify the charges against him.”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 1,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Agrippa said to Paul, “You may speak for yourself.” Then Paul stretched out his hand, and made his defense.",
+      "assigned": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 2,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "“I think myself happy, King Agrippa, that I am to make my defense before you today concerning all the things the Jews accuse me of,",
+      "assigned": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 3,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "especially because you are expert in all customs and questions which are among the Jews. Therefore I beg you to hear me patiently.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 4,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "“Indeed, all the Jews know my way of life from my youth up, which was from the beginning among my own nation and at Jerusalem;",
+      "assigned": [
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 5,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "having known me from the first, if they are willing to testify, that after the strictest sect of our religion I lived a Pharisee.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 6,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Now I stand here to be judged for the hope of the promise made by God to our fathers,",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 7,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "which our twelve tribes, earnestly serving night and day, hope to attain. Concerning this hope I am accused by the Jews, King Agrippa!",
+      "assigned": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "related"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 8,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Why is it judged incredible with you if God does raise the dead?",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 9,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "“I myself most certainly thought that I ought to do many things contrary to the name of Jesus of Nazareth.",
+      "assigned": [
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:nazareth_878",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 10,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "I also did this in Jerusalem. I both shut up many of the saints in prisons, having received authority from the chief priests; and when they were put to death I gave my vote against them.",
+      "assigned": [
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 11,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Punishing them often in all the synagogues, I tried to make them blaspheme. Being exceedingly enraged against them, I persecuted them even to foreign cities.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 12,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "“Whereupon as I traveled to Damascus with the authority and commission from the chief priests,",
+      "assigned": [
+        {
+          "entityID": "place:damascus_322",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 13,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "at noon, O king, I saw on the way a light from the sky, brighter than the sun, shining around me and those who traveled with me.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 14,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When we had all fallen to the earth, I heard a voice saying to me in the Hebrew language, ‘Saul, Saul, why are you persecuting me? It is hard for you to kick against the goads.’",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 15,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "“I said, ‘Who are you, Lord?’ “He said, ‘I am Jesus, whom you are persecuting.",
+      "assigned": [
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 16,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But arise, and stand on your feet, for I have appeared to you for this purpose: to appoint you a servant and a witness both of the things which you have seen and of the things which I will reveal to you;",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 17,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "delivering you from the people and from the Gentiles, to whom I send you,",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 18,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "to open their eyes, that they may turn from darkness to light and from the power of Satan to God, that they may receive remission of sins and an inheritance among those who are sanctified by faith in me.’",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:satan_2476",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 19,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "“Therefore, King Agrippa, I was not disobedient to the heavenly vision,",
+      "assigned": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 20,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "but declared first to them of Damascus, at Jerusalem, and throughout all the country of Judea, and also to the Gentiles, that they should repent and turn to God, doing works worthy of repentance.",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:damascus_322",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:judea_657",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 21,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "For this reason the Jews seized me in the temple and tried to kill me.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 22,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Having therefore obtained the help that is from God, I stand to this day testifying both to small and great, saying nothing but what the prophets and Moses said would happen,",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 23,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "how the Christ must suffer, and how, by the resurrection of the dead, he would be first to proclaim light both to these people and to the Gentiles.”",
+      "assigned": [
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 24,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "As he thus made his defense, Festus said with a loud voice, “Paul, you are crazy! Your great learning is driving you insane!”",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 25,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But he said, “I am not crazy, most excellent Festus, but boldly declare words of truth and reasonableness.",
+      "assigned": [
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 26,
+      "result": "warning",
+      "webTextStatus": "present",
+      "webText": "For the king knows of these things, to whom also I speak freely. For I am persuaded that none of these things is hidden from him, for this has not been done in a corner.",
+      "assigned": [],
+      "issues": [
+        {
+          "severity": "warning",
+          "code": "clear_title_referent_omitted",
+          "entityID": "person:agrippa_111",
+          "evidence": "For the king knows of these things, to whom also I speak freely.",
+          "basisJa": "直前26:19、27でPaulがAgrippaに直接呼び掛けており、この応答先「the king」はAgrippaと確定する。無割当のため、文脈上の明確な参照が欠けている。",
+          "correctionJa": "person:agrippa_111をrelatedとして追加する。"
+        }
+      ]
+    },
+    {
+      "chapter": 26,
+      "verse": 27,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "King Agrippa, do you believe the prophets? I know that you believe.”",
+      "assigned": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 28,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Agrippa said to Paul, “With a little persuasion are you trying to make me a Christian?”",
+      "assigned": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 29,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Paul said, “I pray to God, that whether with little or with much, not only you, but also all that hear me today, might become such as I am, except for these bonds.”",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 30,
+      "result": "warning",
+      "webTextStatus": "present",
+      "webText": "The king rose up with the governor and Bernice, and those who sat with them.",
+      "assigned": [
+        {
+          "entityID": "person:bernice_482",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "severity": "warning",
+          "code": "clear_title_referents_omitted",
+          "entityIDs": [
+            "person:agrippa_111",
+            "person:portius_2367"
+          ],
+          "evidence": "The king rose up with the governor and Bernice",
+          "basisJa": "この審理場面の「the king」はAgrippa、「the governor」はFestus。Berniceのみ割当済みで、同じ節に明確に指示される2人の既存IDが欠ける。",
+          "correctionJa": "person:agrippa_111とperson:portius_2367をrelatedとして追加。"
+        }
+      ]
+    },
+    {
+      "chapter": 26,
+      "verse": 31,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When they had withdrawn, they spoke to one another, saying, “This man does nothing worthy of death or of bonds.”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 26,
+      "verse": 32,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Agrippa said to Festus, “This man might have been set free if he had not appealed to Caesar.”",
+      "assigned": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 1,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When it was determined that we should sail for Italy, they delivered Paul and certain other prisoners to a centurion named Julius, of the Augustan band.",
+      "assigned": [
+        {
+          "entityID": "person:julius_1763",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:italy_601",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 2,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Embarking in a ship of Adramyttium, which was about to sail to places on the coast of Asia, we put to sea, Aristarchus, a Macedonian of Thessalonica being with us.",
+      "assigned": [
+        {
+          "entityID": "person:aristarchus_306",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:adramyttium_29",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:asia_108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:thessalonica_1158",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 3,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "The next day, we touched at Sidon. Julius treated Paul kindly and gave him permission to go to his friends and refresh himself.",
+      "assigned": [
+        {
+          "entityID": "person:julius_1763",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:sidon_1093",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 4,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Putting to sea from there, we sailed under the lee of Cyprus, because the winds were contrary.",
+      "assigned": [
+        {
+          "entityID": "place:cyprus_316",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 5,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When we had sailed across the sea which is off Cilicia and Pamphylia, we came to Myra, a city of Lycia.",
+      "assigned": [
+        {
+          "entityID": "place:cilicia_300",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:lycia_740",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:myra_864",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:pamphylia_918",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 6,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "There the centurion found a ship of Alexandria sailing for Italy, and he put us on board.",
+      "assigned": [
+        {
+          "entityID": "place:alexandria_46",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:italy_601",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 7,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When we had sailed slowly many days, and had come with difficulty opposite Cnidus, the wind not allowing us further, we sailed under the lee of Crete, opposite Salmone.",
+      "assigned": [
+        {
+          "entityID": "place:cnidus_304",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:crete_310",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:salmone_1020",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 8,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "With difficulty sailing along it we came to a certain place called Fair Havens, near the city of Lasea.",
+      "assigned": [
+        {
+          "entityID": "place:fair_havens_424",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:lasea_717",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 9,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When much time had passed and the voyage was now dangerous because the Fast had now already gone by, Paul admonished them",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 10,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "and said to them, “Sirs, I perceive that the voyage will be with injury and much loss, not only of the cargo and the ship, but also of our lives.”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 11,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But the centurion gave more heed to the master and to the owner of the ship than to those things which were spoken by Paul.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 12,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Because the haven was not suitable to winter in, the majority advised going to sea from there, if by any means they could reach Phoenix and winter there, which is a port of Crete, looking southwest and northwest.",
+      "assigned": [
+        {
+          "entityID": "place:crete_310",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:phenice_945",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 13,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When the south wind blew softly, supposing that they had obtained their purpose, they weighed anchor and sailed along Crete, close to shore.",
+      "assigned": [
+        {
+          "entityID": "place:crete_310",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 14,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But before long, a stormy wind beat down from shore, which is called Euroclydon.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 15,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When the ship was caught and couldn’t face the wind, we gave way to it and were driven along.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 16,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Running under the lee of a small island called Clauda, we were able, with difficulty, to secure the boat.",
+      "assigned": [
+        {
+          "entityID": "place:clauda_280",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 17,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "After they had hoisted it up, they used cables to help reinforce the ship. Fearing that they would run aground on the Syrtis sand bars, they lowered the sea anchor, and so were driven along.",
+      "assigned": [
+        {
+          "entityID": "place:syrtis_1123",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 18,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "As we labored exceedingly with the storm, the next day they began to throw things overboard.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 19,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "On the third day, they threw out the ship’s tackle with their own hands.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 20,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When neither sun nor stars shone on us for many days, and no small storm pressed on us, all hope that we would be saved was now taken away.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 21,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When they had been long without food, Paul stood up in the middle of them and said, “Sirs, you should have listened to me, and not have set sail from Crete and have gotten this injury and loss.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:crete_310",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 22,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Now I exhort you to cheer up, for there will be no loss of life among you, but only of the ship.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 23,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "For there stood by me this night an angel, belonging to the God whose I am and whom I serve,",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 24,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "saying, ‘Don’t be afraid, Paul. You must stand before Caesar. Behold, God has granted you all those who sail with you.’",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 25,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Therefore, sirs, cheer up! For I believe God, that it will be just as it has been spoken to me.",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 26,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But we must run aground on a certain island.”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 27,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But when the fourteenth night had come, as we were driven back and forth in the Adriatic Sea, about midnight the sailors surmised that they were drawing near to some land.",
+      "assigned": [
+        {
+          "entityID": "place:adria_30",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 28,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "They took soundings and found twenty fathoms. After a little while, they took soundings again, and found fifteen fathoms.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 29,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Fearing that we would run aground on rocky ground, they let go four anchors from the stern, and wished for daylight.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 30,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "As the sailors were trying to flee out of the ship and had lowered the boat into the sea, pretending that they would lay out anchors from the bow,",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 31,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Paul said to the centurion and to the soldiers, “Unless these stay in the ship, you can’t be saved.”",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 32,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Then the soldiers cut away the ropes of the boat and let it fall off.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 33,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "While the day was coming on, Paul begged them all to take some food, saying, “Today is the fourteenth day that you wait and continue fasting, having taken nothing.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 34,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Therefore I beg you to take some food, for this is for your safety; for not a hair will perish from any of your heads.”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 35,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When he had said this and had taken bread, he gave thanks to God in the presence of all; then he broke it and began to eat.",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 36,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Then they all cheered up, and they also took food.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 37,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "In all, we were two hundred seventy-six souls on the ship.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 38,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When they had eaten enough, they lightened the ship, throwing out the wheat into the sea.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 39,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When it was day, they didn’t recognize the land, but they noticed a certain bay with a beach, and they decided to try to drive the ship onto it.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 40,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Casting off the anchors, they left them in the sea, at the same time untying the rudder ropes. Hoisting up the foresail to the wind, they made for the beach.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 41,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But coming to a place where two seas met, they ran the vessel aground. The bow struck and remained immovable, but the stern began to break up by the violence of the waves.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 42,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "The soldiers’ counsel was to kill the prisoners, so that none of them would swim out and escape.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 43,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But the centurion, desiring to save Paul, stopped them from their purpose, and commanded that those who could swim should throw themselves overboard first to go toward the land;",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 27,
+      "verse": 44,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "and the rest should follow, some on planks and some on other things from the ship. So they all escaped safely to the land.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 1,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When we had escaped, then they learned that the island was called Malta.",
+      "assigned": [
+        {
+          "entityID": "place:melita_761",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 2,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "The natives showed us uncommon kindness; for they kindled a fire and received us all, because of the present rain and because of the cold.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 3,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But when Paul had gathered a bundle of sticks and laid them on the fire, a viper came out because of the heat and fastened on his hand.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 4,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When the natives saw the creature hanging from his hand, they said to one another, “No doubt this man is a murderer, whom, though he has escaped from the sea, yet Justice has not allowed to live.”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 5,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "However he shook off the creature into the fire, and wasn’t harmed.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 6,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But they expected that he would have swollen or fallen down dead suddenly, but when they watched for a long time and saw nothing bad happen to him, they changed their minds and said that he was a god.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 7,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Now in the neighborhood of that place were lands belonging to the chief man of the island, named Publius, who received us and courteously entertained us for three days.",
+      "assigned": [
+        {
+          "entityID": "person:publius_2374",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 8,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "The father of Publius lay sick of fever and dysentery. Paul entered in to him, prayed, and laying his hands on him, healed him.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:publius_2374",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 9,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Then when this was done, the rest also who had diseases in the island came and were cured.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 10,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "They also honored us with many honors; and when we sailed, they put on board the things that we needed.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 11,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "After three months, we set sail in a ship of Alexandria which had wintered in the island, whose figurehead was “The Twin Brothers.”",
+      "assigned": [
+        {
+          "entityID": "place:alexandria_46",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 12,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Touching at Syracuse, we stayed there three days.",
+      "assigned": [
+        {
+          "entityID": "place:syracuse_1121",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 13,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "From there we circled around and arrived at Rhegium. After one day, a south wind sprang up, and on the second day we came to Puteoli,",
+      "assigned": [
+        {
+          "entityID": "place:puteoli_963",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:rhegium_999",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 14,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "where we found brothers, and were entreated to stay with them for seven days. So we came to Rome.",
+      "assigned": [
+        {
+          "entityID": "place:rome_1013",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 15,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "From there the brothers, when they heard of us, came to meet us as far as The Market of Appius and The Three Taverns. When Paul saw them, he thanked God and took courage.",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:appii_forum_427",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:three_taverns_1159",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 16,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When we entered into Rome, the centurion delivered the prisoners to the captain of the guard, but Paul was allowed to stay by himself with the soldier who guarded him.",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:rome_1013",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 17,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "After three days Paul called together those who were the leaders of the Jews. When they had come together, he said to them, “I, brothers, though I had done nothing against the people or the customs of our fathers, still was delivered prisoner from Jerusalem into the hands of the Romans,",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 18,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "who, when they had examined me, desired to set me free, because there was no cause of death in me.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 19,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But when the Jews spoke against it, I was constrained to appeal to Caesar, not that I had anything about which to accuse my nation.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 20,
+      "result": "fail",
+      "webTextStatus": "present",
+      "webText": "For this cause therefore I asked to see you and to speak with you. For because of the hope of Israel I am bound with this chain.”",
+      "assigned": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ],
+      "issues": [
+        {
+          "severity": "fail",
+          "code": "collective_mapped_to_person",
+          "entityID": "person:israel_682",
+          "evidence": "because of the hope of Israel",
+          "basisJa": "ここでのIsraelは希望を抱く民・共同体を指す集合的表現であり、個人ID person:israel_682 に結び付けるのは誤分類。",
+          "correctionJa": "person:israel_682を削除。集合体に対応する対象IDがなければ無割当。"
+        }
+      ]
+    },
+    {
+      "chapter": 28,
+      "verse": 21,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "They said to him, “We neither received letters from Judea concerning you, nor did any of the brothers come here and report or speak any evil of you.",
+      "assigned": [
+        {
+          "entityID": "place:judea_657",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 22,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "But we desire to hear from you what you think. For, as concerning this sect, it is known to us that everywhere it is spoken against.”",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 23,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When they had appointed him a day, many people came to him at his lodging. He explained to them, testifying about God’s Kingdom, and persuading them concerning Jesus, both from the law of Moses and from the prophets, from morning until evening.",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 24,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Some believed the things which were spoken, and some disbelieved.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 25,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When they didn’t agree among themselves, they departed after Paul had spoken one message: “The Holy Spirit spoke rightly through Isaiah the prophet to our fathers,",
+      "assigned": [
+        {
+          "entityID": "person:holy_spirit_7400",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:isaiah_617",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 26,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "saying, ‘Go to this people and say, in hearing, you will hear, but will in no way understand. In seeing, you will see, but will in no way perceive.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 27,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "For this people’s heart has grown callous. Their ears are dull of hearing. Their eyes they have closed. Lest they should see with their eyes, hear with their ears, understand with their heart, and would turn again, then I would heal them.’",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 28,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "“Be it known therefore to you that the salvation of God is sent to the nations, and they will listen.”",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 29,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "When he had said these words, the Jews departed, having a great dispute among themselves.",
+      "assigned": [],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 30,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "Paul stayed two whole years in his own rented house and received all who were coming to him,",
+      "assigned": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "chapter": 28,
+      "verse": 31,
+      "result": "pass",
+      "webTextStatus": "present",
+      "webText": "preaching God’s Kingdom and teaching the things concerning the Lord Jesus Christ with all boldness, without hindrance.",
+      "assigned": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "direct"
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

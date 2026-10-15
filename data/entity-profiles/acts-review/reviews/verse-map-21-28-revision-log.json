@@ -1,0 +1,234 @@
+{
+  "title": "Acts 21–28 verse-map independent-review corrections",
+  "updatedAtUTC": "2026-10-15T13:07:27+00:00",
+  "mapPath": "reviews/verse-map-21-28.json",
+  "inputMapSHA256": "ca3b400461354b6ad544497c9bba805b7b6af7f4bb0999140cee669ca0d5b3c0",
+  "outputMapSHA256": "98ade4cf303ceab890debc96c9a5da70c9c287e5d8966c183a4c775541dc54d5",
+  "independentReviewPath": "reviews/verse-map-21-28-independent.json",
+  "independentReviewSHA256": "17033dd7a359552e1f6b71397d323a1ba8935bf1ea5e352e178870cabf96c60a",
+  "primaryWitnessPath": "acts-web-verses.json",
+  "primaryWitnessSHA256": "90e72f0410119f8fc9afd529cdd730fd261bd1d25adfb413581c1462d6e936cb",
+  "changes": [
+    {
+      "chapter": 21,
+      "verse": 28,
+      "reviewIssue": "collective_mapped_to_person",
+      "before": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "「Men of Israel」と呼びかける。イスラエルの民を指す既存の人名/集団ID。"
+        }
+      ],
+      "after": [],
+      "reasonJa": "原典WEB 21:28の「Men of Israel」は民族・共同体への呼びかけ。個人ID person:israel_682 は対象種別が異なるため除外し、既存の適切な集合体IDもないため無割当。"
+    },
+    {
+      "chapter": 22,
+      "verse": 14,
+      "reviewIssue": "likely_missing_known_title_alias",
+      "before": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "原典に「God」の明示、または同一対象の表記異形を確認。"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「God of our fathers」と明記。"
+        },
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "related",
+          "reasonJa": "「the Righteous One」は直後の22:15で「him」と受け、22:16–21の同じ証言・幻の文脈で「Lord」「me」と結ばれるイエスを指すと判断。"
+        }
+      ],
+      "reasonJa": "原典WEB 22:14の明示名Godに加え、同じ発話内の「the Righteous One」は直後の証言対象・幻の発話主の文脈からイエスを指すためrelatedで登録。"
+    },
+    {
+      "chapter": 22,
+      "verse": 15,
+      "reviewIssue": "continued_speech_referent_omitted",
+      "before": [],
+      "after": [
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "related",
+          "reasonJa": "22:14の「the Righteous One」を受ける「him」であり、直後の同一証言文脈の対象はイエス。"
+        }
+      ],
+      "reasonJa": "原典WEB 22:15の「him」は直前22:14の「the Righteous One」を受けるため、イエスをrelatedで登録。"
+    },
+    {
+      "chapter": 22,
+      "verse": 18,
+      "reviewIssue": "continued_speech_referent_omitted",
+      "before": [
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「Jerusalem」と明記。"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "related",
+          "reasonJa": "幻の発話中の「him」「me」は、同一の発話を続ける22:19–21のLord/Heと結び付くイエスを指す。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「Jerusalem」と明記。"
+        }
+      ],
+      "reasonJa": "原典WEB 22:18はエルサレムを明記し、幻の発話主・「me」は続く22:19–21と連続するイエスの発話としてrelatedで登録。"
+    },
+    {
+      "chapter": 22,
+      "verse": 21,
+      "reviewIssue": "continued_speech_speaker_omitted",
+      "before": [],
+      "after": [
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "related",
+          "reasonJa": "「He said to me」のHeは22:18–20から続く幻の発話主イエスを指す。"
+        }
+      ],
+      "reasonJa": "原典WEB 22:21の「He」は22:18–20から続く同一幻の発話主イエスを指すためrelatedで登録。"
+    },
+    {
+      "chapter": 25,
+      "verse": 21,
+      "reviewIssue": "location_inferred_from_scene",
+      "before": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「Paul」と明記。"
+        },
+        {
+          "entityID": "place:caesarea_266",
+          "relationship": "related",
+          "reasonJa": "フェストが皇帝への送致まで囚人を留置すると述べる。直前まで裁判が行われる現所在地カイサリアを談話上明確に指すが、節内に地名は再掲されない。"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「Paul」と明記。"
+        }
+      ],
+      "reasonJa": "原典WEB 25:21には地名がなく、カイサリアは前節までの場面所在地から補う推測なので、節単位の地名リンクから除外。Paulは明記。"
+    },
+    {
+      "chapter": 25,
+      "verse": 23,
+      "reviewIssue": "explicit_named_entity_omitted",
+      "before": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「Agrippa」と明記。"
+        },
+        {
+          "entityID": "person:bernice_482",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「Bernice」と明記。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「Paul」と明記。"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「Agrippa」と明記。"
+        },
+        {
+          "entityID": "person:bernice_482",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「Bernice」と明記。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「Paul」と明記。"
+        },
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「Festus」と明記。"
+        }
+      ],
+      "reasonJa": "原典WEB 25:23でAgrippa、Bernice、Paulに加えて「at the command of Festus」と明記されるFestusを追加。"
+    },
+    {
+      "chapter": 26,
+      "verse": 26,
+      "reviewIssue": "clear_title_referent_omitted",
+      "before": [],
+      "after": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "related",
+          "reasonJa": "Paulが直接Agrippaに語りかける直前の応答であり、「the king」はAgrippaを指す。"
+        }
+      ],
+      "reasonJa": "原典WEB 26:26の「the king」は直前の呼びかけ先として確定するAgrippaを指すためrelatedで登録。"
+    },
+    {
+      "chapter": 26,
+      "verse": 30,
+      "reviewIssue": "clear_title_referents_omitted",
+      "before": [
+        {
+          "entityID": "person:bernice_482",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「Bernice」と明記。"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "related",
+          "reasonJa": "「The king」は審理場面の王Agrippaを指す。"
+        },
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "related",
+          "reasonJa": "「the governor」は直前までの審理を主宰するFestusを指す。"
+        },
+        {
+          "entityID": "person:bernice_482",
+          "relationship": "direct",
+          "reasonJa": "WEB本文に「Bernice」と明記。"
+        }
+      ],
+      "reasonJa": "原典WEB 26:30の肩書「the king」「the governor」はそれぞれAgrippaとFestusを指すためrelatedで追加し、明記されたBerniceはdirectで維持。"
+    },
+    {
+      "chapter": 28,
+      "verse": 20,
+      "reviewIssue": "collective_mapped_to_person",
+      "before": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "「hope of Israel」と明記。イスラエルの民・共同体への言及。"
+        }
+      ],
+      "after": [],
+      "reasonJa": "原典WEB 28:20の「hope of Israel」は民・共同体への集合的表現。個人ID person:israel_682 は誤リンクであり、対応する集合体IDがないため無割当。"
+    }
+  ],
+  "scopeNoteJa": "独立レビューの指摘10箇所のみ、固定WEB本文および隣接文脈に照合して修正。原典に明記のない現所在地は推定リンクしない。追加IDは既存IDだけを用いた。"
+}

@@ -1,0 +1,3347 @@
+{
+  "reviewType": "Independent closure review of place_2 remediation",
+  "reviewedAtUTC": "2026-10-15T13:13:17Z",
+  "inputs": {
+    "priorReviewPath": "reviews/place_2-independent.json",
+    "priorReviewSHA256": "99657b7c1c020bfc70163c776e4ead8e3cbf7035a7160129a768e7d31cb04a62",
+    "revisionLogPath": "evidence/place_2/revision-log.json",
+    "revisionLogSHA256": "dc78c6807a97ac9bc2efb7241270d4edd41912ac4e4d4c5b9ed9d8755b1f8a2a",
+    "pinnedWitnessPath": "acts-web-verses.json",
+    "pinnedWitnessSHA256": "90e72f0410119f8fc9afd529cdd730fd261bd1d25adfb413581c1462d6e936cb",
+    "pinnedWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5"
+  },
+  "methodJa": "全34件を以前の独立レビュー項目単位で再読し、現在のプロフィール紹介文・knownBy・factsと固定Acts WEB witnessの該当節を照合した。修正ログと記事確認記録は自己申告として扱い、本文・版URLを直接確認した。Wikipedia地理記事本文を今回全件読んだとはせず、独立未確認は未解決に残した。",
+  "summary": {
+    "assignedAndReviewed": 34,
+    "priorFirstOccurrenceFailuresClosed": 18,
+    "priorCitationLinkFindings": 34,
+    "citationFindingsStatus": "closed",
+    "currentActsCitationLinks": 187,
+    "wrongPinnedEditionLinks": 0,
+    "profilesWithWrongPinnedEditionLinks": 0,
+    "priorWikipediaContentFindings": 29,
+    "wikipediaBodyClaimsIndependentlyVerifiedHere": 0,
+    "wikipediaArticleFindingsClosed": 0,
+    "revisionLogHashMatches": 0,
+    "currentDraftCountFromAssignedReview": 34,
+    "citationFindingsClosed": 34
+  },
+  "editionFinding": {
+    "status": "closed",
+    "findingJa": "最新の全34プロフィールを走査し、187 WEB出典すべてについてsource IDの章節とURLが完全一致し、URL形式が固定witness版の https://ebible.org/engwebp/ACTNN.htm#VNN であることを確認。親からの前回指摘にあった eng-web/…#vN は現行ドラフトに残っていない。",
+    "checkedExamples": [
+      "https://ebible.org/engwebp/ACT18.htm#V19",
+      "https://ebible.org/engwebp/ACT02.htm#V10"
+    ],
+    "affectedLinks": [],
+    "expectedPattern": "https://ebible.org/engwebp/ACT{chapter:02d}.htm#V{verse}",
+    "validationNoteJa": "187 exact links independently recounted and sourceId-to-URL matched. No current incorrect pinned-edition link found; drafts were not edited in this review."
+  },
+  "wikipediaFinding": {
+    "status": "unresolved",
+    "findingJa": "作者側revision log/evidenceは全件の記事読みを申告するが、本closureでは各Wikipedia記事本文の現代地理主張と古代対象の同一性を34件すべて独立に再読していない。初回レビューで示された本文未確認をcloseしない。未調査は記事不適合や記事不存在を意味しない。",
+    "previousHTTPStatusSummary": {
+      "assigned": 34,
+      "reviewed": 34,
+      "missingDrafts": 0,
+      "bodyFails": 18,
+      "bodyPassWithWarnings": 16,
+      "bodyPass": 0,
+      "wikipediaHTTPTitleVerified": 5,
+      "wikipediaNotIndependentlyRetrieved": 29
+    },
+    "verificationPolicyJa": "29件に対する初回本文未確認issue、5件のHTTP/titleのみ確認について、作者の読了申告だけを根拠にcloseしない。"
+  },
+  "items": [
+    {
+      "entityID": "place:cyrene_317",
+      "priorBodyDecision": "fail",
+      "currentDraftPath": "drafts/place_2/cyrene_317.json",
+      "currentDraftSHA256": "14400291fc5bd363fdba78ec76e27677020454fa8d4b3662e86c7217b945311f",
+      "currentEvidencePath": "evidence/place_2/cyrene_317.json",
+      "currentEvidenceSHA256": "1a4afa9fa1b5e3af663b417d81b02df5107ef767f3db49d08571469088dd7de2",
+      "revisionLogDraftSHA256": "178ff006c5b44ba125e28bd675d34ab2be08f99b628b340e610fd50b935f764e",
+      "revisionLogEvidenceSHA256": "459ff3c4c44f553f72cf70d95f6f741bd04fb7ff074b5e2f13bcaece27dfb61d",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 2,
+        "verse": 10
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-2-10",
+          "url": "https://ebible.org/engwebp/ACT02.htm#V10",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT02.htm#V10",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-11-20",
+          "url": "https://ebible.org/engwebp/ACT11.htm#V20",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT11.htm#V20",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-13-1",
+          "url": "https://ebible.org/engwebp/ACT13.htm#V1",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT13.htm#V1",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "first-occurrence-leak",
+          "status": "closed",
+          "priorFindingJa": "2:10 is the first appearance and only identifies Cyrene among visitors’ origins. The subtitle and role bring in Cyreneans in Antioch (11:20; 13:1), facts that must be gated to those verses.",
+          "actsRefs": [
+            "11:20",
+            "13:1"
+          ],
+          "currentBaseFields": {
+            "subtitleJa": "北アフリカの古代都市名。使徒言行録2章ではキレネ周辺のリビア地方を表す地名として現れる。",
+            "summaryJa": "リビア地方にあった古代都市の名です。使徒言行録2章10節では、「キレネ周辺のリビア地方」という出身地域の表現に含まれています。",
+            "historicalRoleJa": "北アフリカの古代都市名として、使徒言行録2章10節の出身地域の表現に含まれる。"
+          },
+          "currentGatedFacts": [
+            {
+              "knownBy": {
+                "chapter": 11,
+                "verse": 20
+              },
+              "textJa": "キュレネ出身の人々の中に、エルサレムからアンティオキアへ行きギリシア語を話す人々にも知らせた者たちがいた。"
+            },
+            {
+              "knownBy": {
+                "chapter": 13,
+                "verse": 1
+              },
+              "textJa": "アンティオキアの教会にいた預言者・教師の一人ルキオはキュレネ出身と記される。"
+            }
+          ],
+          "verificationJa": "現行のknownBy以前の紹介文とfactsを固定WEBの初出節および旧指摘の後出節と照合。旧指摘の後出情報は初出紹介から除かれ、必要な場合は対応節knownByのfactに分離。"
+        },
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "2:10"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/キュレネ"
+    },
+    {
+      "entityID": "place:damascus_322",
+      "priorBodyDecision": "pass_with_warnings",
+      "currentDraftPath": "drafts/place_2/damascus_322.json",
+      "currentDraftSHA256": "a3bae223f09dc25b3ae74b72de77b7c6730fbaefd908619eca44d2e1560c6ba8",
+      "currentEvidencePath": "evidence/place_2/damascus_322.json",
+      "currentEvidenceSHA256": "b92ef2f28631c74e9297281ab6e37a95211200fe3bb3e83d346403ee5690f52c",
+      "revisionLogDraftSHA256": "d16176cbfe4414bb4865d7a9063dbc79d13e09eed58831dee622f1d8b9e7a858",
+      "revisionLogEvidenceSHA256": "23460b8a1cd5e2b2b39fc2b7ae9bfe538f740131598a1af6fe95decc82ced6d2",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 9,
+        "verse": 2
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-9-2",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V2",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V2",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-9-3",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V3",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V3",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-9-8",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V8",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V8",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-9-10",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V10",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V10",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-9-19",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V19",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V19",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-9-22",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V22",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V22",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-9-27",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V27",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V27",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-22-5",
+          "url": "https://ebible.org/engwebp/ACT22.htm#V5",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT22.htm#V5",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-22-6",
+          "url": "https://ebible.org/engwebp/ACT22.htm#V6",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT22.htm#V6",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-22-10",
+          "url": "https://ebible.org/engwebp/ACT22.htm#V10",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT22.htm#V10",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-22-11",
+          "url": "https://ebible.org/engwebp/ACT22.htm#V11",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT22.htm#V11",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-26-12",
+          "url": "https://ebible.org/engwebp/ACT26.htm#V12",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT26.htm#V12",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-26-20",
+          "url": "https://ebible.org/engwebp/ACT26.htm#V20",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT26.htm#V20",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "9:2"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/ダマスカス"
+    },
+    {
+      "entityID": "place:derbe_330",
+      "priorBodyDecision": "fail",
+      "currentDraftPath": "drafts/place_2/derbe_330.json",
+      "currentDraftSHA256": "89ed214538d205c36136d44659d36698aab98e559e5f7a6c1992061494da6245",
+      "currentEvidencePath": "evidence/place_2/derbe_330.json",
+      "currentEvidenceSHA256": "171eaf13b568a5352b10116d310fd21a3d97af5766f2d9ab5872ea1fc928c23c",
+      "revisionLogDraftSHA256": "066df26a40d98f0dbecd093937e44ede4d8d141a45f93dcdfd1db0e245800853",
+      "revisionLogEvidenceSHA256": "f1715e2957aae46137512592c559d4163ca5aa66678149f326aa7d7125aecfaf",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 14,
+        "verse": 6
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-14-6",
+          "url": "https://ebible.org/engwebp/ACT14.htm#V6",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT14.htm#V6",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-14-20",
+          "url": "https://ebible.org/engwebp/ACT14.htm#V20",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT14.htm#V20",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-16-1",
+          "url": "https://ebible.org/engwebp/ACT16.htm#V1",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT16.htm#V1",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-20-4",
+          "url": "https://ebible.org/engwebp/ACT20.htm#V4",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT20.htm#V4",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "first-occurrence-leak",
+          "status": "closed",
+          "priorFindingJa": "The knownBy verse is 14:6. The subtitle and role say that Derbe is mentioned again in chapters 16 and 20; those later references should be separate gated facts.",
+          "actsRefs": [
+            "16:1",
+            "20:4"
+          ],
+          "currentBaseFields": {
+            "subtitleJa": "古代リカオニア地方の都市。",
+            "summaryJa": "小アジア内陸、古代リカオニア地方の都市名です。使徒言行録14章6節で、パウロとバルナバが向かった町の一つとして挙げられます。",
+            "historicalRoleJa": "古代リカオニア地方の都市として、使徒言行録14章6節に名が記される。"
+          },
+          "currentGatedFacts": [
+            {
+              "knownBy": {
+                "chapter": 16,
+                "verse": 1
+              },
+              "textJa": "パウロはデルベにも赴いた後、リステラへ戻った。"
+            },
+            {
+              "knownBy": {
+                "chapter": 20,
+                "verse": 4
+              },
+              "textJa": "ガイオはデルベ出身者として同行者の一覧に記される。"
+            }
+          ],
+          "verificationJa": "現行のknownBy以前の紹介文とfactsを固定WEBの初出節および旧指摘の後出節と照合。旧指摘の後出情報は初出紹介から除かれ、必要な場合は対応節knownByのfactに分離。"
+        },
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "14:6"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Derbe"
+    },
+    {
+      "entityID": "place:egypt_362",
+      "priorBodyDecision": "fail",
+      "currentDraftPath": "drafts/place_2/egypt_362.json",
+      "currentDraftSHA256": "1ab5323529bf2997e13a8a4a460434a7e00d0678019511641b7cb6b5650d68d7",
+      "currentEvidencePath": "evidence/place_2/egypt_362.json",
+      "currentEvidenceSHA256": "ca74b9362914da7695984f797347b4023cf96b0f051a174d11936b7db5b668d6",
+      "revisionLogDraftSHA256": "2b32043b4d5604b9ba04f8987a490730721344cc176a5b33c460aed8c4625eb0",
+      "revisionLogEvidenceSHA256": "62e9145c3c924ebf6b924b59f7924350457f0e60bc0828f77caa336c57b104b3",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 2,
+        "verse": 10
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-2-10",
+          "url": "https://ebible.org/engwebp/ACT02.htm#V10",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT02.htm#V10",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-7-9",
+          "url": "https://ebible.org/engwebp/ACT07.htm#V9",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT07.htm#V9",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-7-10",
+          "url": "https://ebible.org/engwebp/ACT07.htm#V10",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT07.htm#V10",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-7-11",
+          "url": "https://ebible.org/engwebp/ACT07.htm#V11",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT07.htm#V11",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-7-12",
+          "url": "https://ebible.org/engwebp/ACT07.htm#V12",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT07.htm#V12",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-7-15",
+          "url": "https://ebible.org/engwebp/ACT07.htm#V15",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT07.htm#V15",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-7-17",
+          "url": "https://ebible.org/engwebp/ACT07.htm#V17",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT07.htm#V17",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-7-20",
+          "url": "https://ebible.org/engwebp/ACT07.htm#V20",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT07.htm#V20",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-7-24",
+          "url": "https://ebible.org/engwebp/ACT07.htm#V24",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT07.htm#V24",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-7-34",
+          "url": "https://ebible.org/engwebp/ACT07.htm#V34",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT07.htm#V34",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-7-36",
+          "url": "https://ebible.org/engwebp/ACT07.htm#V36",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT07.htm#V36",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-7-39",
+          "url": "https://ebible.org/engwebp/ACT07.htm#V39",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT07.htm#V39",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-7-40",
+          "url": "https://ebible.org/engwebp/ACT07.htm#V40",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT07.htm#V40",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-13-17",
+          "url": "https://ebible.org/engwebp/ACT13.htm#V17",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT13.htm#V17",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "first-occurrence-leak",
+          "status": "closed",
+          "priorFindingJa": "The first occurrence is 2:10, where Egypt is a visitors’ origin. The profile also narrates Joseph/Moses material from Acts 7 in the base summary/role; gate that material to chapter 7.",
+          "actsRefs": [
+            "7:9",
+            "7:20",
+            "7:30"
+          ],
+          "currentBaseFields": {
+            "subtitleJa": "使徒言行録2章で来訪者の出身地域として挙げられる歴史的地域名。",
+            "summaryJa": "北東アフリカの歴史的な国・地域名です。使徒言行録2章10節では、エルサレムにいた人々の出身地域の一つとして列挙されます。古代の範囲は時代により変わり、現代の国境とは同一視しません。",
+            "historicalRoleJa": "使徒言行録2章10節で来訪者の出身地域として挙げられる。"
+          },
+          "currentGatedFacts": [
+            {
+              "knownBy": {
+                "chapter": 7,
+                "verse": 9
+              },
+              "textJa": "ヨセフが兄弟たちに売られてエジプトへ移されたと語られる。"
+            },
+            {
+              "knownBy": {
+                "chapter": 7,
+                "verse": 20
+              },
+              "textJa": "モーセはエジプトで生まれ、父の家で養育されたと語られる。"
+            }
+          ],
+          "verificationJa": "現行のknownBy以前の紹介文とfactsを固定WEBの初出節および旧指摘の後出節と照合。旧指摘の後出情報は初出紹介から除かれ、必要な場合は対応節knownByのfactに分離。"
+        },
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "2:10"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/エジプト"
+    },
+    {
+      "entityID": "place:ephesus_400",
+      "priorBodyDecision": "fail",
+      "currentDraftPath": "drafts/place_2/ephesus_400.json",
+      "currentDraftSHA256": "a16207f8b4841612361901d2002168d2c69deb09939934c07f9cc4dd140ec8d0",
+      "currentEvidencePath": "evidence/place_2/ephesus_400.json",
+      "currentEvidenceSHA256": "2fa85b7524669c98c441feaf4cd3833102aa4431d3b894aba7195f56628a4bd0",
+      "revisionLogDraftSHA256": "9594d2f603d6d8e76c097e70a0d17acc1acd5165b6047975c9cd7bf7c6e948fc",
+      "revisionLogEvidenceSHA256": "70eff33465c12cdf1ce69e4062f112b98779909680ea700ee0bc31c464f3fa9d",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 18,
+        "verse": 19
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-18-19",
+          "url": "https://ebible.org/engwebp/ACT18.htm#V19",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT18.htm#V19",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-18-21",
+          "url": "https://ebible.org/engwebp/ACT18.htm#V21",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT18.htm#V21",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-18-24",
+          "url": "https://ebible.org/engwebp/ACT18.htm#V24",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT18.htm#V24",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-19-1",
+          "url": "https://ebible.org/engwebp/ACT19.htm#V1",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT19.htm#V1",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-19-17",
+          "url": "https://ebible.org/engwebp/ACT19.htm#V17",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT19.htm#V17",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-19-26",
+          "url": "https://ebible.org/engwebp/ACT19.htm#V26",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT19.htm#V26",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-19-35",
+          "url": "https://ebible.org/engwebp/ACT19.htm#V35",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT19.htm#V35",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-20-16",
+          "url": "https://ebible.org/engwebp/ACT20.htm#V16",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT20.htm#V16",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-20-17",
+          "url": "https://ebible.org/engwebp/ACT20.htm#V17",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT20.htm#V17",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "first-occurrence-leak",
+          "status": "closed",
+          "priorFindingJa": "The first occurrence is 18:19. The subtitle/role preview activity in Acts 19; this belongs behind the later chapter’s knownBy gate.",
+          "actsRefs": [
+            "19:1",
+            "19:10"
+          ],
+          "currentBaseFields": {
+            "subtitleJa": "パウロが旅の途中で立ち寄った小アジア西岸の古代都市。",
+            "summaryJa": "小アジア西岸にあった古代都市で、現在のトルコ・セルチュク近郊に遺跡があります。使徒言行録18章19節では、パウロ一行が立ち寄った都市として記されます。",
+            "historicalRoleJa": "パウロが旅の途中で立ち寄った小アジア西岸の古代都市。"
+          },
+          "currentGatedFacts": [
+            {
+              "knownBy": {
+                "chapter": 19,
+                "verse": 1
+              },
+              "textJa": "エペソでは後にパウロが弟子たちに会い、教えた。"
+            },
+            {
+              "knownBy": {
+                "chapter": 20,
+                "verse": 17
+              },
+              "textJa": "パウロはエペソの長老たちをミレトスに呼び寄せた。"
+            }
+          ],
+          "verificationJa": "現行のknownBy以前の紹介文とfactsを固定WEBの初出節および旧指摘の後出節と照合。旧指摘の後出情報は初出紹介から除かれ、必要な場合は対応節knownByのfactに分離。"
+        },
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "18:19"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/エフェソス"
+    },
+    {
+      "entityID": "place:fair_havens_424",
+      "priorBodyDecision": "pass_with_warnings",
+      "currentDraftPath": "drafts/place_2/fair_havens_424.json",
+      "currentDraftSHA256": "a2b830957138f4862128572f0fe90774698dfbf5a31f16d012e3c7aa4ebb4d7b",
+      "currentEvidencePath": "evidence/place_2/fair_havens_424.json",
+      "currentEvidenceSHA256": "766f971f8ec4c109b8b6da4cfc1bca4b5888ba89e7590d5e48b183d6acee66cb",
+      "revisionLogDraftSHA256": "8863b8d9581b00291f8f52ca1eae97d2cff1edca6f9e81b4f4f20967de36815e",
+      "revisionLogEvidenceSHA256": "97095ac0c6a0bc212103a53bb7b72df8a8226083c9b5a764ce4fb6674407936c",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 27,
+        "verse": 8
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-27-8",
+          "url": "https://ebible.org/engwebp/ACT27.htm#V8",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT27.htm#V8",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "27:8"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://en.wikipedia.org/wiki/Kaloi_Limenes",
+          "currentWikipediaTitle": "Kaloi Limenes",
+          "authorEvidenceClaim": {
+            "articleTitle": "Kaloi Limenes",
+            "language": "en",
+            "url": "https://en.wikipedia.org/wiki/Kaloi_Limenes",
+            "decision": "related-section",
+            "status": "related-article-read-identity-qualified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "英語記事はクレタ島南岸の現代港Kaloi Limenesを扱い、使徒27:8のFair Havens上陸地点と関連づける。ただし古代Fair Havensの正確な同定が確定したとする根拠ではないため関連記事として記録。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Kaloi_Limenes"
+    },
+    {
+      "entityID": "place:galatia_431",
+      "priorBodyDecision": "fail",
+      "currentDraftPath": "drafts/place_2/galatia_431.json",
+      "currentDraftSHA256": "9e09e169c6279fcecc8aafd70579a014783360f797fa38b9337e54e14590715d",
+      "currentEvidencePath": "evidence/place_2/galatia_431.json",
+      "currentEvidenceSHA256": "2282b3fd8ccb847e701ce5ce31f1d4a68a33d707da6e1a69c1df16a2cb4cbddc",
+      "revisionLogDraftSHA256": "8a7238437d825da4dc6c45662df24a21925512556b6314295b127c8a09a50631",
+      "revisionLogEvidenceSHA256": "45dd44e8edbe14b43228afc89a78b395b9c1148069aa6bfbb5d6587eb784d521",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 16,
+        "verse": 6
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-16-6",
+          "url": "https://ebible.org/engwebp/ACT16.htm#V6",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT16.htm#V6",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-18-23",
+          "url": "https://ebible.org/engwebp/ACT18.htm#V23",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT18.htm#V23",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "first-occurrence-leak",
+          "status": "closed",
+          "priorFindingJa": "knownBy is 16:6, but the summary includes the later visit/travel in 18:23. Keep the base text within the first appearance.",
+          "actsRefs": [
+            "18:23"
+          ],
+          "currentBaseFields": {
+            "subtitleJa": "パウロの旅程に現れる地域名。",
+            "summaryJa": "小アジア内陸の歴史的地域名です。使徒言行録16章6節で、パウロ一行が通った地域の一つとして挙げられます。古代の範囲は時代により変わり、現代の行政境界には対応しません。",
+            "historicalRoleJa": "パウロの旅程に現れる地域名。"
+          },
+          "currentGatedFacts": [
+            {
+              "knownBy": {
+                "chapter": 18,
+                "verse": 23
+              },
+              "textJa": "パウロはガラテヤ地方を巡回し、弟子たちを力づけた。"
+            }
+          ],
+          "verificationJa": "現行のknownBy以前の紹介文とfactsを固定WEBの初出節および旧指摘の後出節と照合。旧指摘の後出情報は初出紹介から除かれ、必要な場合は対応節knownByのfactに分離。"
+        },
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "16:6"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/ガラティア",
+          "currentWikipediaTitle": "ガラティア",
+          "authorEvidenceClaim": {
+            "articleTitle": "ガラティア",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/ガラティア",
+            "decision": "related-section",
+            "status": "related-article-read-identity-qualified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事はアナトリアの古代地域・王国およびローマ属州のガラティアを扱う。北部／南部ガラティアなど地理範囲の議論があるため、使徒16:6等の地域名の関連記事として限定採用。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/ガラティア"
+    },
+    {
+      "entityID": "place:galilee_433",
+      "priorBodyDecision": "fail",
+      "currentDraftPath": "drafts/place_2/galilee_433.json",
+      "currentDraftSHA256": "eec83554b24d5216cfc703cc750f64e4843b335989ee837c270676cad64d0aff",
+      "currentEvidencePath": "evidence/place_2/galilee_433.json",
+      "currentEvidenceSHA256": "5bd032cf118257eaf6b33473267a79bb6d3bc0f20d004b6fefc2223243094d86",
+      "revisionLogDraftSHA256": "ecd9572baefb97a30298e1ca8ad7698ebc351d641e95fca8b41d968bc1bc67e4",
+      "revisionLogEvidenceSHA256": "bda5578869a719f419ca5e29792fa6669a03843eda6a23b775e755d0b223c75e",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 1,
+        "verse": 11
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-1-11",
+          "url": "https://ebible.org/engwebp/ACT01.htm#V11",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT01.htm#V11",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-9-31",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V31",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V31",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-10-37",
+          "url": "https://ebible.org/engwebp/ACT10.htm#V37",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT10.htm#V37",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-13-31",
+          "url": "https://ebible.org/engwebp/ACT13.htm#V31",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT13.htm#V31",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "first-occurrence-unsourced-context",
+          "status": "closed",
+          "priorFindingJa": "At 1:11 Galilee identifies the disciples’ regional origin. The introduction adds Jesus’ public life/activity as a fact about this place, which this first Acts occurrence does not establish; later Acts references or a properly cited external context should be gated/cited.",
+          "actsRefs": [
+            "9:31"
+          ],
+          "currentBaseFields": {
+            "subtitleJa": "使徒言行録1章で弟子たちの出身を示す呼称に現れる歴史的地域名。",
+            "summaryJa": "パレスチナ北部の歴史的地域名です。使徒言行録1章11節で、二人の人が弟子たちを「ガリラヤの人々」と呼ぶ際に現れます。ここでは都市や湖ではなく広域地域として扱います。",
+            "historicalRoleJa": "弟子たちの出身を示す呼称に現れる地域名。"
+          },
+          "currentGatedFacts": [
+            {
+              "knownBy": {
+                "chapter": 9,
+                "verse": 31
+              },
+              "textJa": "使徒言行録9章では、ユダヤ・ガリラヤ・サマリア各地の集会が平安を得たと記される。"
+            }
+          ],
+          "verificationJa": "現行のknownBy以前の紹介文とfactsを固定WEBの初出節および旧指摘の後出節と照合。旧指摘の後出情報は初出紹介から除かれ、必要な場合は対応節knownByのfactに分離。"
+        },
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "1:11"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/ガリラヤ",
+          "currentWikipediaTitle": "ガリラヤ",
+          "authorEvidenceClaim": {
+            "articleTitle": "ガリラヤ",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/ガリラヤ",
+            "decision": "article",
+            "status": "article-read-identity-verified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事冒頭はガリラヤをパレスチナの歴史的地域名とし、ガリラヤ湖を含む現在のイスラエル北部等の範囲を説明する。使徒9:31の地理的地域名と一致し、現代境界とは同一視しない。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/ガリラヤ"
+    },
+    {
+      "entityID": "place:gaza_446",
+      "priorBodyDecision": "pass_with_warnings",
+      "currentDraftPath": "drafts/place_2/gaza_446.json",
+      "currentDraftSHA256": "f3b505a65635d482e6e89e293d3d9d33531e78fab2467212c2249465e3b5b811",
+      "currentEvidencePath": "evidence/place_2/gaza_446.json",
+      "currentEvidenceSHA256": "ecd287f06c667662ae1312992ce09a5a6ff3e53c260fd45a3064a0db12d7363b",
+      "revisionLogDraftSHA256": "3b47d4209ddbb0eab95a92d88acf4a4643c3a6303c37f8b2d28aab5c2fe28a87",
+      "revisionLogEvidenceSHA256": "bc66095085087f36fb7ede2e1c25b52647445fe0e2693a63f434469f5597f9c2",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 8,
+        "verse": 26
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-8-26",
+          "url": "https://ebible.org/engwebp/ACT08.htm#V26",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT08.htm#V26",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "8:26"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/ガザ",
+          "currentWikipediaTitle": "ガザ",
+          "authorEvidenceClaim": {
+            "articleTitle": "ガザ",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/ガザ",
+            "decision": "related-section",
+            "status": "related-article-read-identity-qualified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事はパレスチナの現代ガザ市を主題とし、歴史節で古代都市国家としてのガザとエジプト・シリア間の交通上の位置を説明する。使徒8:26の古代都市名の関連記事だが現在の行政単位とは区別。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/ガザ"
+    },
+    {
+      "entityID": "place:greece_495",
+      "priorBodyDecision": "pass_with_warnings",
+      "currentDraftPath": "drafts/place_2/greece_495.json",
+      "currentDraftSHA256": "e2d894a897732f99a3bf0e2f6a01e1c7ec96398d196dcdfcdf1d2f6e98d9adde",
+      "currentEvidencePath": "evidence/place_2/greece_495.json",
+      "currentEvidenceSHA256": "4f5e5e45162e5afc1ad51d9fc9cd15587ce2295465fcc82345d3ba1f48172b91",
+      "revisionLogDraftSHA256": "1072e241958400ef1e479dd2a9b4cdd733144a99cd7d7cbf614875ac3784af6e",
+      "revisionLogEvidenceSHA256": "a6c09d0347b0ddaacb5fd67a4c8bfec09443b23d93b516bd2732e471cf300f2b",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 20,
+        "verse": 2
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-20-2",
+          "url": "https://ebible.org/engwebp/ACT20.htm#V2",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT20.htm#V2",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "20:2"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/ギリシャ",
+          "currentWikipediaTitle": "ギリシャ",
+          "authorEvidenceClaim": {
+            "articleTitle": "ギリシャ",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/ギリシャ",
+            "decision": "related-section",
+            "status": "related-article-read-identity-qualified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事は現代ギリシャ国家を扱う一方、歴史節に古代ギリシア・ローマ時代を含む。使徒20章の広域名に関連するが、現代国家の境界を古代ギリシアと同一視しない。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/ギリシャ"
+    },
+    {
+      "entityID": "place:iconium_590",
+      "priorBodyDecision": "fail",
+      "currentDraftPath": "drafts/place_2/iconium_590.json",
+      "currentDraftSHA256": "51185f8f8b20b2ca7138c0f0ae09fdad86697738d77e80e456f9de8e7912eb49",
+      "currentEvidencePath": "evidence/place_2/iconium_590.json",
+      "currentEvidenceSHA256": "3883997991d98791c0bbec1344011f0bd6f50ee27eab66f7e5c3fe6d8c153821",
+      "revisionLogDraftSHA256": "2ddd2aa7368a42672638c744b03ffd7f1f2cf6f45bf8ba806b39f525cafa68ba",
+      "revisionLogEvidenceSHA256": "01169075d6e1b212c653706bf316d0def209472a2711689610d4a6306e37a5db",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 13,
+        "verse": 51
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-13-51",
+          "url": "https://ebible.org/engwebp/ACT13.htm#V51",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT13.htm#V51",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-14-1",
+          "url": "https://ebible.org/engwebp/ACT14.htm#V1",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT14.htm#V1",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-14-19",
+          "url": "https://ebible.org/engwebp/ACT14.htm#V19",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT14.htm#V19",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-14-21",
+          "url": "https://ebible.org/engwebp/ACT14.htm#V21",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT14.htm#V21",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-16-2",
+          "url": "https://ebible.org/engwebp/ACT16.htm#V2",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT16.htm#V2",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "first-occurrence-leak",
+          "status": "closed",
+          "priorFindingJa": "knownBy is 13:51, while the summary says it appears in Acts 14 as well. That later return/visit should be gated to the chapter 14 references.",
+          "actsRefs": [
+            "14:1",
+            "14:21"
+          ],
+          "currentBaseFields": {
+            "subtitleJa": "小アジア内陸の都市。",
+            "summaryJa": "小アジア内陸の古代都市名で、現在のトルコ中南部コンヤにあたる場所です。使徒言行録13章51節で、パウロとバルナバがピシディアのアンティオキアを離れた後に向かった町として登場します。",
+            "historicalRoleJa": "小アジア内陸の都市。"
+          },
+          "currentGatedFacts": [
+            {
+              "knownBy": {
+                "chapter": 14,
+                "verse": 1
+              },
+              "textJa": "パウロとバルナバはイコニオンのユダヤ人会堂で語り、多くの人が信じたと記される。"
+            },
+            {
+              "knownBy": {
+                "chapter": 14,
+                "verse": 21
+              },
+              "textJa": "パウロたちはリステラからデルベなどを経て、イコニオンへ戻った。"
+            }
+          ],
+          "verificationJa": "現行のknownBy以前の紹介文とfactsを固定WEBの初出節および旧指摘の後出節と照合。旧指摘の後出情報は初出紹介から除かれ、必要な場合は対応節knownByのfactに分離。"
+        },
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "13:51"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/コンヤ",
+          "currentWikipediaTitle": "コンヤ",
+          "authorEvidenceClaim": {
+            "articleTitle": "コンヤ",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/コンヤ",
+            "decision": "related-section",
+            "status": "related-article-read-identity-qualified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事は現在のコンヤ市を主題とし、古代イコニオンとの連続・前身関係およびパウロの訪問を説明する。古代名の直接記事ではなく関連する現代都市記事。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/コンヤ"
+    },
+    {
+      "entityID": "place:italy_601",
+      "priorBodyDecision": "fail",
+      "currentDraftPath": "drafts/place_2/italy_601.json",
+      "currentDraftSHA256": "8416408ab1ea95b5db1dbada8c7ffecdd4466839d9748038b878e63f29df74a6",
+      "currentEvidencePath": "evidence/place_2/italy_601.json",
+      "currentEvidenceSHA256": "bc92a89b534d6ea131d5a8a50fbe4677dee0698c1be125434bd7241288fc8640",
+      "revisionLogDraftSHA256": "85638ac212509e92123e850360084d486a15627957157cd75ac33361d0ad07f2",
+      "revisionLogEvidenceSHA256": "ca7d3534475bb1c0ffd5aec9ad70852bc9416b371aae7fa5541cffd094acde51",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 18,
+        "verse": 2
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-18-2",
+          "url": "https://ebible.org/engwebp/ACT18.htm#V2",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT18.htm#V2",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-27-1",
+          "url": "https://ebible.org/engwebp/ACT27.htm#V1",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT27.htm#V1",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-27-6",
+          "url": "https://ebible.org/engwebp/ACT27.htm#V6",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT27.htm#V6",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "first-occurrence-leak",
+          "status": "closed",
+          "priorFindingJa": "knownBy is 18:2, where Italy is Aquila’s origin. The summary imports the later ship destination from Acts 27.",
+          "actsRefs": [
+            "27:1",
+            "27:6"
+          ],
+          "currentBaseFields": {
+            "subtitleJa": "使徒言行録18章でアクラの出身地として記される広域地域。",
+            "summaryJa": "地中海中部の半島を中心とする歴史的地域名です。使徒言行録18章2節では、アクラがローマから来たと紹介される際に出身地として挙げられます。古代ローマ期の地理的範囲を現在の国境と同一視しません。",
+            "historicalRoleJa": "アクラの出身地として使徒言行録18章2節に挙げられる。"
+          },
+          "currentGatedFacts": [
+            {
+              "knownBy": {
+                "chapter": 27,
+                "verse": 1
+              },
+              "textJa": "パウロは囚人としてローマへ送られる航海に出る。"
+            }
+          ],
+          "verificationJa": "現行のknownBy以前の紹介文とfactsを固定WEBの初出節および旧指摘の後出節と照合。旧指摘の後出情報は初出紹介から除かれ、必要な場合は対応節knownByのfactに分離。"
+        },
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "18:2"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/イタリア",
+          "currentWikipediaTitle": "イタリア",
+          "authorEvidenceClaim": {
+            "articleTitle": "イタリア",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/イタリア",
+            "decision": "related-section",
+            "status": "related-article-read-identity-qualified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事は現代国家イタリアを主題とし、古代史節でローマ時代の半島・地域を説明する。使徒27章の古代地理名を理解する関連記事として採用し、現代国家境界との同一視を避ける。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/イタリア"
+    },
+    {
+      "entityID": "place:jerusalem_636",
+      "priorBodyDecision": "fail",
+      "currentDraftPath": "drafts/place_2/jerusalem_636.json",
+      "currentDraftSHA256": "7a8e2d4d8fbbb066340b92886b9f6f27b3feabfd53cc59da24c62d9a35207a9b",
+      "currentEvidencePath": "evidence/place_2/jerusalem_636.json",
+      "currentEvidenceSHA256": "11d8237d44fb238564b732a03926c1c163efacefc9ac661137a12e58c88700c9",
+      "revisionLogDraftSHA256": "8dec7be275f212c38f4c81f0f16bd74a6dd20e2bbbf05bf1785b55dbdb5d3bf0",
+      "revisionLogEvidenceSHA256": "dcdcf2cc0420f93643d9407d99def5721fa10573e7234a5cd9c54a11609c72bf",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 1,
+        "verse": 4
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-1-4",
+          "url": "https://ebible.org/engwebp/ACT01.htm#V4",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT01.htm#V4",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-1-8",
+          "url": "https://ebible.org/engwebp/ACT01.htm#V8",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT01.htm#V8",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-1-12",
+          "url": "https://ebible.org/engwebp/ACT01.htm#V12",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT01.htm#V12",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-1-19",
+          "url": "https://ebible.org/engwebp/ACT01.htm#V19",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT01.htm#V19",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-2-5",
+          "url": "https://ebible.org/engwebp/ACT02.htm#V5",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT02.htm#V5",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-2-14",
+          "url": "https://ebible.org/engwebp/ACT02.htm#V14",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT02.htm#V14",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-4-16",
+          "url": "https://ebible.org/engwebp/ACT04.htm#V16",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT04.htm#V16",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-5-16",
+          "url": "https://ebible.org/engwebp/ACT05.htm#V16",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT05.htm#V16",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-5-28",
+          "url": "https://ebible.org/engwebp/ACT05.htm#V28",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT05.htm#V28",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-6-7",
+          "url": "https://ebible.org/engwebp/ACT06.htm#V7",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT06.htm#V7",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-8-1",
+          "url": "https://ebible.org/engwebp/ACT08.htm#V1",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT08.htm#V1",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-8-14",
+          "url": "https://ebible.org/engwebp/ACT08.htm#V14",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT08.htm#V14",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-8-25",
+          "url": "https://ebible.org/engwebp/ACT08.htm#V25",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT08.htm#V25",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-8-26",
+          "url": "https://ebible.org/engwebp/ACT08.htm#V26",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT08.htm#V26",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-8-27",
+          "url": "https://ebible.org/engwebp/ACT08.htm#V27",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT08.htm#V27",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-9-2",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V2",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V2",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-9-13",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V13",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V13",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-9-21",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V21",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V21",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-9-26",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V26",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V26",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-9-28",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V28",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V28",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-10-39",
+          "url": "https://ebible.org/engwebp/ACT10.htm#V39",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT10.htm#V39",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-11-2",
+          "url": "https://ebible.org/engwebp/ACT11.htm#V2",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT11.htm#V2",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-11-22",
+          "url": "https://ebible.org/engwebp/ACT11.htm#V22",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT11.htm#V22",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-11-27",
+          "url": "https://ebible.org/engwebp/ACT11.htm#V27",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT11.htm#V27",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-12-25",
+          "url": "https://ebible.org/engwebp/ACT12.htm#V25",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT12.htm#V25",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-13-13",
+          "url": "https://ebible.org/engwebp/ACT13.htm#V13",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT13.htm#V13",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-13-27",
+          "url": "https://ebible.org/engwebp/ACT13.htm#V27",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT13.htm#V27",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-13-31",
+          "url": "https://ebible.org/engwebp/ACT13.htm#V31",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT13.htm#V31",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-15-2",
+          "url": "https://ebible.org/engwebp/ACT15.htm#V2",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT15.htm#V2",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-15-4",
+          "url": "https://ebible.org/engwebp/ACT15.htm#V4",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT15.htm#V4",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-16-4",
+          "url": "https://ebible.org/engwebp/ACT16.htm#V4",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT16.htm#V4",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-19-21",
+          "url": "https://ebible.org/engwebp/ACT19.htm#V21",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT19.htm#V21",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-20-16",
+          "url": "https://ebible.org/engwebp/ACT20.htm#V16",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT20.htm#V16",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-20-22",
+          "url": "https://ebible.org/engwebp/ACT20.htm#V22",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT20.htm#V22",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-21-4",
+          "url": "https://ebible.org/engwebp/ACT21.htm#V4",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT21.htm#V4",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-21-11",
+          "url": "https://ebible.org/engwebp/ACT21.htm#V11",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT21.htm#V11",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-21-12",
+          "url": "https://ebible.org/engwebp/ACT21.htm#V12",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT21.htm#V12",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-21-13",
+          "url": "https://ebible.org/engwebp/ACT21.htm#V13",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT21.htm#V13",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-21-15",
+          "url": "https://ebible.org/engwebp/ACT21.htm#V15",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT21.htm#V15",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-21-17",
+          "url": "https://ebible.org/engwebp/ACT21.htm#V17",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT21.htm#V17",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-21-31",
+          "url": "https://ebible.org/engwebp/ACT21.htm#V31",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT21.htm#V31",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-22-5",
+          "url": "https://ebible.org/engwebp/ACT22.htm#V5",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT22.htm#V5",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-22-17",
+          "url": "https://ebible.org/engwebp/ACT22.htm#V17",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT22.htm#V17",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-22-18",
+          "url": "https://ebible.org/engwebp/ACT22.htm#V18",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT22.htm#V18",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-23-11",
+          "url": "https://ebible.org/engwebp/ACT23.htm#V11",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT23.htm#V11",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-24-11",
+          "url": "https://ebible.org/engwebp/ACT24.htm#V11",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT24.htm#V11",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-25-1",
+          "url": "https://ebible.org/engwebp/ACT25.htm#V1",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT25.htm#V1",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-25-3",
+          "url": "https://ebible.org/engwebp/ACT25.htm#V3",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT25.htm#V3",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-25-7",
+          "url": "https://ebible.org/engwebp/ACT25.htm#V7",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT25.htm#V7",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-25-9",
+          "url": "https://ebible.org/engwebp/ACT25.htm#V9",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT25.htm#V9",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-25-15",
+          "url": "https://ebible.org/engwebp/ACT25.htm#V15",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT25.htm#V15",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-25-20",
+          "url": "https://ebible.org/engwebp/ACT25.htm#V20",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT25.htm#V20",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-25-24",
+          "url": "https://ebible.org/engwebp/ACT25.htm#V24",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT25.htm#V24",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-26-4",
+          "url": "https://ebible.org/engwebp/ACT26.htm#V4",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT26.htm#V4",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-26-10",
+          "url": "https://ebible.org/engwebp/ACT26.htm#V10",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT26.htm#V10",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-26-20",
+          "url": "https://ebible.org/engwebp/ACT26.htm#V20",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT26.htm#V20",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-28-17",
+          "url": "https://ebible.org/engwebp/ACT28.htm#V17",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT28.htm#V17",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "first-occurrence-leak",
+          "status": "closed",
+          "priorFindingJa": "The first occurrence is 1:4, an instruction to remain in Jerusalem. Calling it the community and narrative’s central city / a setting for many Acts events draws on the later book; keep that as gated later context or use an introduction limited to 1:4.",
+          "actsRefs": [
+            "2:1",
+            "8:1"
+          ],
+          "currentBaseFields": {
+            "subtitleJa": "ユダヤ地方の都市。使徒言行録1章で弟子たちに留まるよう命じられる。",
+            "summaryJa": "ユダヤ地方の歴史的都市です。使徒言行録1章4節では、イエスが弟子たちに離れずに待つよう命じた場所として記されます。古代の市域と現在の都市区画は区別して扱います。",
+            "historicalRoleJa": "使徒言行録1章4節で、弟子たちに留まるよう命じられる都市。"
+          },
+          "currentGatedFacts": [],
+          "verificationJa": "現行のknownBy以前の紹介文とfactsを固定WEBの初出節および旧指摘の後出節と照合。旧指摘の後出情報は初出紹介から除かれ、必要な場合は対応節knownByのfactに分離。"
+        },
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "1:4"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/エルサレム",
+          "currentWikipediaTitle": "エルサレム",
+          "authorEvidenceClaim": {
+            "articleTitle": "エルサレム",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/エルサレム",
+            "decision": "article",
+            "status": "article-read-identity-verified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事はレバントの歴史的都市エルサレムを扱い、現代の都市とも連続する。使徒本文のエルサレムという都市名と一致。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/エルサレム"
+    },
+    {
+      "entityID": "place:joppa_652",
+      "priorBodyDecision": "fail",
+      "currentDraftPath": "drafts/place_2/joppa_652.json",
+      "currentDraftSHA256": "b5c61d3987cfcb87910af50c4e68d85ab36408b68399a13f048c44f6741e2829",
+      "currentEvidencePath": "evidence/place_2/joppa_652.json",
+      "currentEvidenceSHA256": "00b2f3e39023707f6fb09b10ee0318f7521bc4360b93ea7ea98d16bda186d25a",
+      "revisionLogDraftSHA256": "d8c6f28087cccec314d73ade06db4952c88a4522ea6b29c554a1b28f13378625",
+      "revisionLogEvidenceSHA256": "b5c76da4b4292753b82ff3220d4978bd1ed08e61a03e6c7dfbd308f2e6b467ba",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 9,
+        "verse": 36
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-9-36",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V36",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V36",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-9-38",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V38",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V38",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-9-42",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V42",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V42",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-9-43",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V43",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V43",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-10-5",
+          "url": "https://ebible.org/engwebp/ACT10.htm#V5",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT10.htm#V5",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-10-8",
+          "url": "https://ebible.org/engwebp/ACT10.htm#V8",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT10.htm#V8",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-10-23",
+          "url": "https://ebible.org/engwebp/ACT10.htm#V23",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT10.htm#V23",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-10-32",
+          "url": "https://ebible.org/engwebp/ACT10.htm#V32",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT10.htm#V32",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-11-5",
+          "url": "https://ebible.org/engwebp/ACT11.htm#V5",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT11.htm#V5",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-11-13",
+          "url": "https://ebible.org/engwebp/ACT11.htm#V13",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT11.htm#V13",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "first-occurrence-misstatement",
+          "status": "closed",
+          "priorFindingJa": "At 9:36 Tabitha is identified as living in Joppa. Peter is in nearby Lydda and is summoned to Joppa only in 9:38, so “Peter is staying there” is both later than knownBy and inaccurate as an account of the first verse.",
+          "actsRefs": [
+            "9:38"
+          ],
+          "currentBaseFields": {
+            "subtitleJa": "ユダヤ地方の沿岸港町。",
+            "summaryJa": "地中海東岸にあった古代の港町です。使徒言行録9章36節では、弟子タビタが住む町として紹介されます。現在のヤッファ地区と古代の港町の範囲は区別して扱います。",
+            "historicalRoleJa": "ユダヤ地方の沿岸港町。"
+          },
+          "currentGatedFacts": [],
+          "verificationJa": "現行のknownBy以前の紹介文とfactsを固定WEBの初出節および旧指摘の後出節と照合。旧指摘の後出情報は初出紹介から除かれ、必要な場合は対応節knownByのfactに分離。"
+        },
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "9:36"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/ヤッファ",
+          "currentWikipediaTitle": "ヤッファ",
+          "authorEvidenceClaim": {
+            "articleTitle": "ヤッファ",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/ヤッファ",
+            "decision": "related-section",
+            "status": "related-article-read-identity-qualified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事はテルアビブに含まれる現在のヤッファと古代以来の港を扱い、Joppa/Joppe等の名と使徒9章のペトロ伝承に触れる。本文のヨッパとの名称・都市の同一性を確認。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/ヤッファ"
+    },
+    {
+      "entityID": "place:judea_657",
+      "priorBodyDecision": "fail",
+      "currentDraftPath": "drafts/place_2/judea_657.json",
+      "currentDraftSHA256": "9b6ebc061e3a16157e55e3be8ef1e631c008939d662a8bfc452b774f58178575",
+      "currentEvidencePath": "evidence/place_2/judea_657.json",
+      "currentEvidenceSHA256": "739e3363bd239f7bf981d48c3ef9087d864a17d0c54477d641f37345c142e485",
+      "revisionLogDraftSHA256": "21cfb18d12a84eabe890d82744aeda429399c302824e296194057be3278f371d",
+      "revisionLogEvidenceSHA256": "43dd2cc2248612f21aadc85dbe96be53bda1f715ad090a5fb005a710b0caf436",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 1,
+        "verse": 8
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-1-8",
+          "url": "https://ebible.org/engwebp/ACT01.htm#V8",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT01.htm#V8",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-2-9",
+          "url": "https://ebible.org/engwebp/ACT02.htm#V9",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT02.htm#V9",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-2-14",
+          "url": "https://ebible.org/engwebp/ACT02.htm#V14",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT02.htm#V14",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-8-1",
+          "url": "https://ebible.org/engwebp/ACT08.htm#V1",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT08.htm#V1",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-9-31",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V31",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V31",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-10-37",
+          "url": "https://ebible.org/engwebp/ACT10.htm#V37",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT10.htm#V37",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-11-1",
+          "url": "https://ebible.org/engwebp/ACT11.htm#V1",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT11.htm#V1",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-11-29",
+          "url": "https://ebible.org/engwebp/ACT11.htm#V29",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT11.htm#V29",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-12-19",
+          "url": "https://ebible.org/engwebp/ACT12.htm#V19",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT12.htm#V19",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-15-1",
+          "url": "https://ebible.org/engwebp/ACT15.htm#V1",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT15.htm#V1",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-21-10",
+          "url": "https://ebible.org/engwebp/ACT21.htm#V10",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT21.htm#V10",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-26-20",
+          "url": "https://ebible.org/engwebp/ACT26.htm#V20",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT26.htm#V20",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-28-21",
+          "url": "https://ebible.org/engwebp/ACT28.htm#V21",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT28.htm#V21",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "first-occurrence-leak",
+          "status": "closed",
+          "priorFindingJa": "knownBy is 1:8. The summary attributes a geographic characterization to Acts 9:31, a later occurrence, without gating it.",
+          "actsRefs": [
+            "9:31"
+          ],
+          "currentBaseFields": {
+            "subtitleJa": "使徒言行録1章で証人の活動範囲として挙げられる歴史的地域名。",
+            "summaryJa": "地中海東岸の古代の地域・行政区画名です。使徒言行録1章8節で、証人の活動範囲としてエルサレム、サマリアとともに挙げられます。範囲は時代により異なり、現代の国境や都市の一点に還元しません。",
+            "historicalRoleJa": "証人の活動範囲として使徒言行録1章8節に挙げられる地域。"
+          },
+          "currentGatedFacts": [
+            {
+              "knownBy": {
+                "chapter": 9,
+                "verse": 31
+              },
+              "textJa": "使徒言行録9章では、ユダヤ・ガリラヤ・サマリア各地の集会が平安を得たと記される。"
+            }
+          ],
+          "verificationJa": "現行のknownBy以前の紹介文とfactsを固定WEBの初出節および旧指摘の後出節と照合。旧指摘の後出情報は初出紹介から除かれ、必要な場合は対応節knownByのfactに分離。"
+        },
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "1:8"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/ユダヤ",
+          "currentWikipediaTitle": "ユダヤ",
+          "authorEvidenceClaim": {
+            "articleTitle": "ユダヤ",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/ユダヤ",
+            "decision": "related-section",
+            "status": "related-article-read-identity-qualified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事は古代のユダヤ地域とローマ支配下のユダヤ属州を説明し、イエス時代のユダヤ・サマリア・ガリラヤを区別する。一方、記事は民族・宗教語義とも交差するため、使徒9:31の地域用法に関連する記事として扱う。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/ユダヤ"
+    },
+    {
+      "entityID": "place:lasea_717",
+      "priorBodyDecision": "pass_with_warnings",
+      "currentDraftPath": "drafts/place_2/lasea_717.json",
+      "currentDraftSHA256": "4bb632094ea689ac904560b593063d1fa58af7184a5d3d011b1c54c5b3fbbdfe",
+      "currentEvidencePath": "evidence/place_2/lasea_717.json",
+      "currentEvidenceSHA256": "a5258a7dc439158d9fd1473e1aca86b56e2659d7ce1ed6532e09d7e8cc7b1eb0",
+      "revisionLogDraftSHA256": "0f9b383b9c77021db17b3567d4bf81955e8ffcda03cbbcfc80425a601a920003",
+      "revisionLogEvidenceSHA256": "e3f3015b9d4a56e06f7d7bf38858a4180e7f40259cdfb6b9589fd35a707509bb",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 27,
+        "verse": 8
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-27-8",
+          "url": "https://ebible.org/engwebp/ACT27.htm#V8",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT27.htm#V8",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "27:8"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://en.wikipedia.org/wiki/Lasaea",
+          "currentWikipediaTitle": "Lasaea",
+          "authorEvidenceClaim": {
+            "articleTitle": "Lasaea",
+            "language": "en",
+            "url": "https://en.wikipedia.org/wiki/Lasaea",
+            "decision": "article",
+            "status": "article-read-identity-verified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "英語記事はクレタ島の古代集落Lasaeaを扱い、使徒27:8の地名として記載し、カロイ・リメネス近辺の遺跡候補に触れる。日本語で同等の記事を確認できなかったため英語記事を採用。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Lasaea"
+    },
+    {
+      "entityID": "place:libya_730",
+      "priorBodyDecision": "pass_with_warnings",
+      "currentDraftPath": "drafts/place_2/libya_730.json",
+      "currentDraftSHA256": "9f0d50d227fab022c3528ff3fb1d84df1c5ed7e227e156b090c1b2467d855c44",
+      "currentEvidencePath": "evidence/place_2/libya_730.json",
+      "currentEvidenceSHA256": "1e75a47f4c878a75540ca636b393a6d03cd8d2a82bf99bc78cc345cd9f9b7bf9",
+      "revisionLogDraftSHA256": "abd5a3771979c2586d20b62697219dca6586dfe793a4dc6441048eb315bd6e23",
+      "revisionLogEvidenceSHA256": "c7b97ea37c71d2c67900735c44acae79f0b769c612d8ab975c2d20f9aea9536a",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 2,
+        "verse": 10
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-2-10",
+          "url": "https://ebible.org/engwebp/ACT02.htm#V10",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT02.htm#V10",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "2:10"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/古代リビュア",
+          "currentWikipediaTitle": "古代リビュア",
+          "authorEvidenceClaim": {
+            "articleTitle": "古代リビュア",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/古代リビュア",
+            "decision": "related-section",
+            "status": "related-article-read-identity-qualified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事は古代リビュアを北アフリカの歴史的広域名として扱い、用法の広狭を説明する。使徒2:10の「キレネ周辺のリビア地方」と関係する範囲を示す記事で、現代リビア国との同一視はできない。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/古代リビュア"
+    },
+    {
+      "entityID": "place:lycaonia_739",
+      "priorBodyDecision": "pass_with_warnings",
+      "currentDraftPath": "drafts/place_2/lycaonia_739.json",
+      "currentDraftSHA256": "687997104b406d3c0350be1196c934cdbbf8eef1515fdb43f5c125df0b652c4f",
+      "currentEvidencePath": "evidence/place_2/lycaonia_739.json",
+      "currentEvidenceSHA256": "851913b68701fc4801df4d7a0e3d410536a376da79ba9bbe5f25785b14d31d55",
+      "revisionLogDraftSHA256": "04d6e093469bbc7fc88e961c9ce77c7bda7ac146d8ee66c92ea078883b69186d",
+      "revisionLogEvidenceSHA256": "ad6c367fc30ee51469e982d8929074b2b999c16da140b87a6769448e8760f245",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 14,
+        "verse": 6
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-14-6",
+          "url": "https://ebible.org/engwebp/ACT14.htm#V6",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT14.htm#V6",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "14:6"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/リカオニア",
+          "currentWikipediaTitle": "リカオニア",
+          "authorEvidenceClaim": {
+            "articleTitle": "リカオニア",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/リカオニア",
+            "decision": "article",
+            "status": "article-read-identity-verified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事は小アジア南東部の古代地域リカオニアを扱い、現在のトルコ領に位置する歴史地域として境界の周辺関係を記す。使徒14章の広域名と一致。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/リカオニア"
+    },
+    {
+      "entityID": "place:lycia_740",
+      "priorBodyDecision": "pass_with_warnings",
+      "currentDraftPath": "drafts/place_2/lycia_740.json",
+      "currentDraftSHA256": "eaeefb8b7d9652e412bc9223dbd3b473c80377dfc1b56c1eabc8e85c902652a6",
+      "currentEvidencePath": "evidence/place_2/lycia_740.json",
+      "currentEvidenceSHA256": "beb0cf00c47248e8f269b3a520c0bcd68d05433f54ab09a37caea393368a7f26",
+      "revisionLogDraftSHA256": "fe72ff3400a06d8878a5e82abd619f1eefbf9a127f00455c00572a60771af2a5",
+      "revisionLogEvidenceSHA256": "7dd4a2731d0b7f20095fd0780edf06f3a50098587c3e3fae0654130a6df02c2c",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 27,
+        "verse": 5
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-27-5",
+          "url": "https://ebible.org/engwebp/ACT27.htm#V5",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT27.htm#V5",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "27:5"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/リュキア",
+          "currentWikipediaTitle": "リュキア",
+          "authorEvidenceClaim": {
+            "articleTitle": "リュキア",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/リュキア",
+            "decision": "article",
+            "status": "article-read-identity-verified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事は小アジア南西部の古代地域・政治体リュキアを扱い、後のローマ行政区分やパンフィリアとの関係を記す。使徒27章の歴史的地域名と一致するが範囲は時代で変わる。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/リュキア"
+    },
+    {
+      "entityID": "place:lydda_741",
+      "priorBodyDecision": "pass_with_warnings",
+      "currentDraftPath": "drafts/place_2/lydda_741.json",
+      "currentDraftSHA256": "18a4ea051b71c5a753433bae5488efbcebac25ef00bc2fd4516013806d602a1b",
+      "currentEvidencePath": "evidence/place_2/lydda_741.json",
+      "currentEvidenceSHA256": "fea1ab6bc46ecec72310b44d7001be62520f60b27457e7e7b47fe591c19974b2",
+      "revisionLogDraftSHA256": "998fa7edefba1296fdc12ca1f95e9f1d98c2c36c69e43d7f59a3b060d0949324",
+      "revisionLogEvidenceSHA256": "117321c955993ca1f2fa9bb43e320d502a11db1a6e8e6024c39cee54a54c7638",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 9,
+        "verse": 32
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-9-32",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V32",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V32",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-9-35",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V35",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V35",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-9-38",
+          "url": "https://ebible.org/engwebp/ACT09.htm#V38",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT09.htm#V38",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "9:32"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/ロード_(イスラエル)",
+          "currentWikipediaTitle": "ロード (イスラエル)",
+          "authorEvidenceClaim": {
+            "articleTitle": "ロード (イスラエル)",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/ロード_(イスラエル)",
+            "decision": "related-section",
+            "status": "related-article-read-identity-qualified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事は現在のイスラエルのロード（Lod）を扱い、古名Lyddaおよび使徒9:32に触れる。現代都市記事の歴史的関連箇所として確認。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/ロード_(イスラエル)"
+    },
+    {
+      "entityID": "place:lystra_742",
+      "priorBodyDecision": "fail",
+      "currentDraftPath": "drafts/place_2/lystra_742.json",
+      "currentDraftSHA256": "7dcac5db8134c11c48faa3affe3776b90539be928abf8d4bafd499734ff894de",
+      "currentEvidencePath": "evidence/place_2/lystra_742.json",
+      "currentEvidenceSHA256": "236106dc61079d99aa5bf4d7a7a6aaca921efac5e98c7e36c5d794f5d6f9f9ae",
+      "revisionLogDraftSHA256": "e01fb72e7f633364a305ccd9685da0fe839d16074a9486cd72cbfc3b6f146521",
+      "revisionLogEvidenceSHA256": "f9ec68da2f1fcccb088490a499329a6b65dc4a291b4458d75877efbfd3f3699f",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 14,
+        "verse": 6
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-14-6",
+          "url": "https://ebible.org/engwebp/ACT14.htm#V6",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT14.htm#V6",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-14-8",
+          "url": "https://ebible.org/engwebp/ACT14.htm#V8",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT14.htm#V8",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-14-21",
+          "url": "https://ebible.org/engwebp/ACT14.htm#V21",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT14.htm#V21",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-16-1",
+          "url": "https://ebible.org/engwebp/ACT16.htm#V1",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT16.htm#V1",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-16-2",
+          "url": "https://ebible.org/engwebp/ACT16.htm#V2",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT16.htm#V2",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "first-occurrence-leak",
+          "status": "closed",
+          "priorFindingJa": "knownBy is 14:6. Mentioning Timothy as a native of Lystra derives from Acts 16:1 and is later information; gate it there.",
+          "actsRefs": [
+            "16:1"
+          ],
+          "currentBaseFields": {
+            "subtitleJa": "古代リカオニア地方の都市。",
+            "summaryJa": "小アジア南部、古代リカオニア地方の都市名です。使徒言行録14章6節で、パウロとバルナバが向かった町の一つとして挙げられます。",
+            "historicalRoleJa": "古代リカオニア地方の都市として、使徒言行録14章6節に名が記される。"
+          },
+          "currentGatedFacts": [
+            {
+              "knownBy": {
+                "chapter": 16,
+                "verse": 1
+              },
+              "textJa": "パウロはデルベとリステラを訪れた際、弟子テモテと出会ったと記される。"
+            }
+          ],
+          "verificationJa": "現行のknownBy以前の紹介文とfactsを固定WEBの初出節および旧指摘の後出節と照合。旧指摘の後出情報は初出紹介から除かれ、必要な場合は対応節knownByのfactに分離。"
+        },
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "14:6"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://en.wikipedia.org/wiki/Lystra",
+          "currentWikipediaTitle": "Lystra",
+          "authorEvidenceClaim": {
+            "articleTitle": "Lystra",
+            "language": "en",
+            "url": "https://en.wikipedia.org/wiki/Lystra",
+            "decision": "article",
+            "status": "article-read-identity-verified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "英語記事は古代都市リステラを扱い、現在のトルコ・ハトゥンサライ近郊、古代リュカオニア地方として記す。使徒14章での都市名と一致。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Lystra"
+    },
+    {
+      "entityID": "place:macedonia_747",
+      "priorBodyDecision": "fail",
+      "currentDraftPath": "drafts/place_2/macedonia_747.json",
+      "currentDraftSHA256": "de8a5c4b452004070dbfd89873dba6d592c2f2be86b6ae3d8d23e6097993471e",
+      "currentEvidencePath": "evidence/place_2/macedonia_747.json",
+      "currentEvidenceSHA256": "c7af1384ef5c32b8d20aecb1418691228cde45ffaa62aade82b1cf3139b80788",
+      "revisionLogDraftSHA256": "55500ec79dd49c9407cc2649fd08ce1992947651a4954b7c0636d11b42bb0a2a",
+      "revisionLogEvidenceSHA256": "1072d82ef7c27f3363cc9a8e00568fba262f5758f5fde0bdd6d9280109c45154",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 16,
+        "verse": 9
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-16-9",
+          "url": "https://ebible.org/engwebp/ACT16.htm#V9",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT16.htm#V9",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-16-10",
+          "url": "https://ebible.org/engwebp/ACT16.htm#V10",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT16.htm#V10",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-16-12",
+          "url": "https://ebible.org/engwebp/ACT16.htm#V12",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT16.htm#V12",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-18-5",
+          "url": "https://ebible.org/engwebp/ACT18.htm#V5",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT18.htm#V5",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-19-21",
+          "url": "https://ebible.org/engwebp/ACT19.htm#V21",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT19.htm#V21",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-19-22",
+          "url": "https://ebible.org/engwebp/ACT19.htm#V22",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT19.htm#V22",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-20-1",
+          "url": "https://ebible.org/engwebp/ACT20.htm#V1",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT20.htm#V1",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-20-3",
+          "url": "https://ebible.org/engwebp/ACT20.htm#V3",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT20.htm#V3",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "first-occurrence-leak",
+          "status": "closed",
+          "priorFindingJa": "The first appearance is the vision’s request in 16:9. The summary says it is the region Paul then goes to/arrives in, which is narrated at 16:10–12, not yet known at 16:9.",
+          "actsRefs": [
+            "16:10",
+            "16:12"
+          ],
+          "currentBaseFields": {
+            "subtitleJa": "使徒言行録16章の幻で名が挙がる古代地域名。",
+            "summaryJa": "バルカン半島南東部に関わる歴史的地域名です。使徒言行録16章9節では、幻の中で「マケドニアに渡って助けてほしい」と求められます。古代の地域・ローマ属州と現代の国家・地域を同一視しません。",
+            "historicalRoleJa": "幻の中で助けを求める呼びかけに名が現れる地域。"
+          },
+          "currentGatedFacts": [
+            {
+              "knownBy": {
+                "chapter": 16,
+                "verse": 10
+              },
+              "textJa": "幻を見た後、パウロ一行はマケドニアへ渡るよう神に招かれたと結論した。"
+            }
+          ],
+          "verificationJa": "現行のknownBy以前の紹介文とfactsを固定WEBの初出節および旧指摘の後出節と照合。旧指摘の後出情報は初出紹介から除かれ、必要な場合は対応節knownByのfactに分離。"
+        },
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "16:9"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/マケドニア",
+          "currentWikipediaTitle": "マケドニア",
+          "authorEvidenceClaim": {
+            "articleTitle": "マケドニア",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/マケドニア",
+            "decision": "related-section",
+            "status": "related-article-read-identity-qualified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事は古代王国・ローマ属州・後代の地域概念を区別して扱う。使徒16章以降の歴史的マケドニアに関連するが、時代ごとの範囲と現代の地域・国家を区別。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/マケドニア"
+    },
+    {
+      "entityID": "place:melita_761",
+      "priorBodyDecision": "pass_with_warnings",
+      "currentDraftPath": "drafts/place_2/melita_761.json",
+      "currentDraftSHA256": "2aad3a0e3338d3c06e711b4f46f6935b83847b4d7697ed0296dde93692d6882c",
+      "currentEvidencePath": "evidence/place_2/melita_761.json",
+      "currentEvidenceSHA256": "484110887dc2e702bde2612cbc2d912b69eab207aa76b43852ff1c43ecaac311",
+      "revisionLogDraftSHA256": "28a4bc57cc8a3d3c9a0ff62a2376dc1e8a19eb13e5ed87fc53470ec5e08318e8",
+      "revisionLogEvidenceSHA256": "76aee09c1f27ac611f4d855baabb4d8d795e28e9e3fede902b7ad0e5138c34c1",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 28,
+        "verse": 1
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-28-1",
+          "url": "https://ebible.org/engwebp/ACT28.htm#V1",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT28.htm#V1",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "28:1"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/マルタ",
+          "currentWikipediaTitle": "マルタ",
+          "authorEvidenceClaim": {
+            "articleTitle": "マルタ",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/マルタ",
+            "decision": "related-section",
+            "status": "related-article-read-identity-qualified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "日本語記事は現代の島国・諸島とそのローマ期史を扱うため関連記事として確認。使徒28章のMeliteをマルタとする同定は論争を含むため、記事の現代名だけで古代地名の同定を確定しない。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/マルタ"
+    },
+    {
+      "entityID": "place:mesopotamia_790",
+      "priorBodyDecision": "fail",
+      "currentDraftPath": "drafts/place_2/mesopotamia_790.json",
+      "currentDraftSHA256": "9154b0585d99dc5f060387e5eea44459f97afbb0327e61020842b3efe3c71a1b",
+      "currentEvidencePath": "evidence/place_2/mesopotamia_790.json",
+      "currentEvidenceSHA256": "e3509da156be38d566050eed3e73c29355887b288cb5240c9d7e120b59c8325a",
+      "revisionLogDraftSHA256": "cedb9a5c9f6d35949710d7c1bd5ef31182fc7235f1bfff9e7a25f864e2b7439a",
+      "revisionLogEvidenceSHA256": "1c2b90a2f994ddf36fc49dd1025eea08aa325eaf62c1accedc49541973ef6187",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 2,
+        "verse": 9
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-2-9",
+          "url": "https://ebible.org/engwebp/ACT02.htm#V9",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT02.htm#V9",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-7-2",
+          "url": "https://ebible.org/engwebp/ACT07.htm#V2",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT07.htm#V2",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "first-occurrence-leak",
+          "status": "closed",
+          "priorFindingJa": "knownBy is Acts 2:9, where Mesopotamia is a visitors’ origin. The profile adds Abraham’s story from Acts 7:2, later than the first mention.",
+          "actsRefs": [
+            "7:2"
+          ],
+          "currentBaseFields": {
+            "subtitleJa": "使徒言行録2章で来訪者の出身地域として挙げられる古代地域名。",
+            "summaryJa": "チグリス・ユーフラテス両河流域を中心とする古代の広域名です。使徒言行録2章9節では、エルサレムにいた人々の出身地域の一つとして列挙されます。境界は用法・時代で異なり、現代の国境とは一致しません。",
+            "historicalRoleJa": "使徒言行録2章9節で来訪者の出身地として挙げられる地域。"
+          },
+          "currentGatedFacts": [
+            {
+              "knownBy": {
+                "chapter": 7,
+                "verse": 2
+              },
+              "textJa": "ステファノは、アブラハムがハランに住む前にメソポタミアにいたと語る。"
+            }
+          ],
+          "verificationJa": "現行のknownBy以前の紹介文とfactsを固定WEBの初出節および旧指摘の後出節と照合。旧指摘の後出情報は初出紹介から除かれ、必要な場合は対応節knownByのfactに分離。"
+        },
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "2:9"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/メソポタミア",
+          "currentWikipediaTitle": "メソポタミア",
+          "authorEvidenceClaim": {
+            "articleTitle": "メソポタミア",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/メソポタミア",
+            "decision": "article",
+            "status": "article-read-identity-verified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事はチグリス・ユーフラテス両河流域を中心とする古代の歴史的地域を扱う。本文のメソポタミアという広域名と一致し、現代国境・単一都市とは同一視しない。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/メソポタミア"
+    },
+    {
+      "entityID": "place:miletus_801",
+      "priorBodyDecision": "fail",
+      "currentDraftPath": "drafts/place_2/miletus_801.json",
+      "currentDraftSHA256": "5d61ab667e93bcba17cfa3ee7c3ac76d24bdfa68ea0e34624bfffc14f9290a14",
+      "currentEvidencePath": "evidence/place_2/miletus_801.json",
+      "currentEvidenceSHA256": "0af795150988c4a67a201d7b271e690c0be573352ced49f1a433f5b02e221567",
+      "revisionLogDraftSHA256": "90a655ed0ba735013103abbfae9baf0fd4749f42312d0ea6e689ec3451a0c9ea",
+      "revisionLogEvidenceSHA256": "85eeeee3535e53a2841dc32f8f1dea3a1a221d4462590ad41f0d6d96e5b47a6f",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 20,
+        "verse": 15
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-20-15",
+          "url": "https://ebible.org/engwebp/ACT20.htm#V15",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT20.htm#V15",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-20-17",
+          "url": "https://ebible.org/engwebp/ACT20.htm#V17",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT20.htm#V17",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "first-occurrence-leak",
+          "status": "closed",
+          "priorFindingJa": "At knownBy 20:15 the party reaches Miletus. The summary says Paul calls the Ephesian elders there, which occurs in 20:17; gate the summons to that verse.",
+          "actsRefs": [
+            "20:17"
+          ],
+          "currentBaseFields": {
+            "subtitleJa": "小アジア西岸の港市。",
+            "summaryJa": "小アジア西岸の古代都市名です。使徒言行録20章15節で、パウロ一行が航海の途中に到着した町として記されます。現在のトルコ西部に遺跡がありますが、古代の海岸線や港の位置と現代の地形は異なります。",
+            "historicalRoleJa": "小アジア西岸の港市。"
+          },
+          "currentGatedFacts": [
+            {
+              "knownBy": {
+                "chapter": 20,
+                "verse": 17
+              },
+              "textJa": "パウロはエペソの教会の長老たちをミレトスに呼び寄せた。"
+            }
+          ],
+          "verificationJa": "現行のknownBy以前の紹介文とfactsを固定WEBの初出節および旧指摘の後出節と照合。旧指摘の後出情報は初出紹介から除かれ、必要な場合は対応節knownByのfactに分離。"
+        },
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "20:15"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/ミレトス",
+          "currentWikipediaTitle": "ミレトス",
+          "authorEvidenceClaim": {
+            "articleTitle": "ミレトス",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/ミレトス",
+            "decision": "article",
+            "status": "article-read-identity-verified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事はアナトリア西岸の古代ギリシア都市ミレトスを扱い、現在のトルコのバラト近郊に遺跡があると説明する。使徒20章の古代都市名との同定が合う。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/ミレトス"
+    },
+    {
+      "entityID": "place:mitylene_808",
+      "priorBodyDecision": "pass_with_warnings",
+      "currentDraftPath": "drafts/place_2/mitylene_808.json",
+      "currentDraftSHA256": "861ad8e39e877d14f74d2e62b6cc74516b4995ddc6abcdb72db0f57b75c6f0ea",
+      "currentEvidencePath": "evidence/place_2/mitylene_808.json",
+      "currentEvidenceSHA256": "503a90587149be8ac82c6b906833be7c7b70c3912ed99f082d2703b9a38fa124",
+      "revisionLogDraftSHA256": "2302349ce1ca9c8ec6a7573c4bce6a4b45e0c03fe254aad422227f09840bddf6",
+      "revisionLogEvidenceSHA256": "bf769cff208578a096ae801a0329674bf094312f990b9711e4b083d55c9fa943",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 20,
+        "verse": 14
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-20-14",
+          "url": "https://ebible.org/engwebp/ACT20.htm#V14",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT20.htm#V14",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "20:14"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/ミティリーニ",
+          "currentWikipediaTitle": "ミティリーニ",
+          "authorEvidenceClaim": {
+            "articleTitle": "ミティリーニ",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/ミティリーニ",
+            "decision": "related-section",
+            "status": "related-article-read-identity-qualified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事はレスボス島の現代中心都市ミティリーニを扱い、同島南東部の古代ミティレネおよび使徒20:14の寄港記録に触れる。古代の町と現代市街を単純に同一地点とはしない。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/ミティリーニ"
+    },
+    {
+      "entityID": "place:mount_sinai_855",
+      "priorBodyDecision": "pass_with_warnings",
+      "currentDraftPath": "drafts/place_2/mount_sinai_855.json",
+      "currentDraftSHA256": "3cbb4117b3af133a6b9fea34380a354b0c87461ffddecb7df44fe55f348b5d50",
+      "currentEvidencePath": "evidence/place_2/mount_sinai_855.json",
+      "currentEvidenceSHA256": "392f25e8bdbaaa05c109fec1f3e56121e59ce06d2d0319adfe3223bd4b21f3f7",
+      "revisionLogDraftSHA256": "b3eaf8ac920e6839d3feca8365cbed5b7fc4fba82e1e86d5e4caa5552dba8626",
+      "revisionLogEvidenceSHA256": "6d37c121387c07d194e7f59d26bc391710e2c2669dd7829b802175263c328f19",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 7,
+        "verse": 30
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-7-30",
+          "url": "https://ebible.org/engwebp/ACT07.htm#V30",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT07.htm#V30",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-7-38",
+          "url": "https://ebible.org/engwebp/ACT07.htm#V38",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT07.htm#V38",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "7:30"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/シナイ山",
+          "currentWikipediaTitle": "シナイ山",
+          "authorEvidenceClaim": {
+            "articleTitle": "シナイ山",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/シナイ山",
+            "decision": "related-section",
+            "status": "related-article-read-identity-qualified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事は聖書のシナイ山を、伝統的にはシナイ半島南部ジェベル・ムーサーに比定する一方、正確な場所は定かでなく他説もあると明記。使徒7:30等の同定不確実性を示すため関連記事として採用。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/シナイ山"
+    },
+    {
+      "entityID": "place:myra_864",
+      "priorBodyDecision": "pass_with_warnings",
+      "currentDraftPath": "drafts/place_2/myra_864.json",
+      "currentDraftSHA256": "34225f18efe6e408aba21c5e14ee3fc141540acb89f3ab48896258086ce7f0be",
+      "currentEvidencePath": "evidence/place_2/myra_864.json",
+      "currentEvidenceSHA256": "eaa91a28a7c5116d5cceca33c9834bb312ef2a4a632742b912ac293716682dcb",
+      "revisionLogDraftSHA256": "9f2cf5602f8ff9f4998ac6e2408a41f8698067389c0647a015f5fca8b186b253",
+      "revisionLogEvidenceSHA256": "52634d293543307729f65c9ccde96789d84839fd59c2c0530267b918b4048a10",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 27,
+        "verse": 5
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-27-5",
+          "url": "https://ebible.org/engwebp/ACT27.htm#V5",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT27.htm#V5",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "27:5"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/ミラ_(リュキア)",
+          "currentWikipediaTitle": "ミュラ",
+          "authorEvidenceClaim": {
+            "articleTitle": "ミュラ",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/ミラ_(リュキア)",
+            "decision": "article",
+            "status": "article-read-identity-verified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事はリュキアの古代都市ミュラを扱い、遺跡が現在のトルコ・デムレ近郊にあることと使徒27章での寄港地名を確認。URLの「ミラ」から記事見出し「ミュラ」に到達する。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/ミラ_(リュキア)"
+    },
+    {
+      "entityID": "place:mysia_865",
+      "priorBodyDecision": "fail",
+      "currentDraftPath": "drafts/place_2/mysia_865.json",
+      "currentDraftSHA256": "d0d1c56b22ee0e1f7383ee1471c935e4a7304a9d6caa3a29db0deb56812993c7",
+      "currentEvidencePath": "evidence/place_2/mysia_865.json",
+      "currentEvidenceSHA256": "745eddda98dd25a9cba04c00a0d991965c5934f563bb54626ee16b2e8a69ea05",
+      "revisionLogDraftSHA256": "412c3a4b4787672792e63887532f5f1f3add5179981af1d9f1e4c5038205c941",
+      "revisionLogEvidenceSHA256": "e815e97c8212457dd71b3cb3a50dc2e43104401af59d4bccab4242ed4621a24b",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 16,
+        "verse": 7
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-16-7",
+          "url": "https://ebible.org/engwebp/ACT16.htm#V7",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT16.htm#V7",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-16-8",
+          "url": "https://ebible.org/engwebp/ACT16.htm#V8",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT16.htm#V8",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "first-occurrence-leak",
+          "status": "closed",
+          "priorFindingJa": "knownBy is 16:7. The summary says the party passed through Mysia; that travel is narrated in 16:8. At 16:7 the party reaches the border and attempts to enter Bithynia.",
+          "actsRefs": [
+            "16:8"
+          ],
+          "currentBaseFields": {
+            "subtitleJa": "パウロ一行が通過した地域として言及される。",
+            "summaryJa": "小アジア北西部の歴史的地域名です。使徒言行録16章7節で、パウロ一行がミシアに至った後、ビテュニアへ向かおうとした地域として記されます。都市ではないため座標を置きません。",
+            "historicalRoleJa": "パウロ一行が通過した地域として言及される。"
+          },
+          "currentGatedFacts": [
+            {
+              "knownBy": {
+                "chapter": 16,
+                "verse": 8
+              },
+              "textJa": "パウロ一行はミシアを通り過ぎ、トロアスに下った。"
+            }
+          ],
+          "verificationJa": "現行のknownBy以前の紹介文とfactsを固定WEBの初出節および旧指摘の後出節と照合。旧指摘の後出情報は初出紹介から除かれ、必要な場合は対応節knownByのfactに分離。"
+        },
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "16:7"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/ミュシア",
+          "currentWikipediaTitle": "ミュシア",
+          "authorEvidenceClaim": {
+            "articleTitle": "ミュシア",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/ミュシア",
+            "decision": "article",
+            "status": "article-read-identity-verified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事は小アジア北西部の古代地域ミュシアを扱う。翻訳上の誤りが多い旨の記事内注意も確認したため、記事が明示する地域名・大まかな地理範囲に限って関連づける。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/ミュシア"
+    },
+    {
+      "entityID": "place:nazareth_878",
+      "priorBodyDecision": "fail",
+      "currentDraftPath": "drafts/place_2/nazareth_878.json",
+      "currentDraftSHA256": "f9f933df889114fe16c128fb4a31479c0f7fd5a7278dbbf283620f1d8e0c1ec2",
+      "currentEvidencePath": "evidence/place_2/nazareth_878.json",
+      "currentEvidenceSHA256": "49816e69a8aad921500852440e383fe73fc73db592ee3174652bb0373e8b9af0",
+      "revisionLogDraftSHA256": "3d233a700a7161436bd32129008534fddab979c57b8a3df5a426f06259e06946",
+      "revisionLogEvidenceSHA256": "58a776d383fb381a905a508666a71e867141f8fbe8e412804b572313cdbba9dd",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 2,
+        "verse": 22
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-2-22",
+          "url": "https://ebible.org/engwebp/ACT02.htm#V22",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT02.htm#V22",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-3-6",
+          "url": "https://ebible.org/engwebp/ACT03.htm#V6",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT03.htm#V6",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-4-10",
+          "url": "https://ebible.org/engwebp/ACT04.htm#V10",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT04.htm#V10",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-6-14",
+          "url": "https://ebible.org/engwebp/ACT06.htm#V14",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT06.htm#V14",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-10-38",
+          "url": "https://ebible.org/engwebp/ACT10.htm#V38",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT10.htm#V38",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-22-8",
+          "url": "https://ebible.org/engwebp/ACT22.htm#V8",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT22.htm#V8",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-26-9",
+          "url": "https://ebible.org/engwebp/ACT26.htm#V9",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT26.htm#V9",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "unsupported-first-context",
+          "status": "closed",
+          "priorFindingJa": "Acts 2:22 calls Jesus “the Nazarene”; it does not say in this verse that he grew up in Nazareth. The profile’s upbringing claim needs an explicit Gospel/external source and should not be presented as a fact established by the first Acts occurrence.",
+          "actsRefs": [
+            "2:22"
+          ],
+          "currentBaseFields": {
+            "subtitleJa": "イエスの呼称「ナザレの人」に含まれる町名。",
+            "summaryJa": "ガリラヤ地方の町の名です。使徒言行録2章22節では、イエスが「ナザレの人」と呼ばれます。この節は呼称に地名が含まれることを示しますが、イエスの成長地を説明する本文ではありません。",
+            "historicalRoleJa": "「ナザレの人」というイエスの呼称に含まれる地名。"
+          },
+          "currentGatedFacts": [],
+          "verificationJa": "現行のknownBy以前の紹介文とfactsを固定WEBの初出節および旧指摘の後出節と照合。旧指摘の後出情報は初出紹介から除かれ、必要な場合は対応節knownByのfactに分離。"
+        },
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "2:22"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/ナザレ",
+          "currentWikipediaTitle": "ナザレ",
+          "authorEvidenceClaim": {
+            "articleTitle": "ナザレ",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/ナザレ",
+            "decision": "article",
+            "status": "article-read-identity-verified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事は現在のイスラエル北部のナザレ市を扱い、イエスとの歴史・伝承上の結びつきを説明する。使徒10:38の「ナザレのイエス」の地名と合致する。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/ナザレ"
+    },
+    {
+      "entityID": "place:neapolis_880",
+      "priorBodyDecision": "pass_with_warnings",
+      "currentDraftPath": "drafts/place_2/neapolis_880.json",
+      "currentDraftSHA256": "daaa23331d0af5050d3f70ba1982744d7aa7ab2b71a4683dc1585616fe2be179",
+      "currentEvidencePath": "evidence/place_2/neapolis_880.json",
+      "currentEvidenceSHA256": "08e3a393ed65de09479806caa9cc82dd40d149c4bf9a3297b74814ad5d2ab885",
+      "revisionLogDraftSHA256": "2d5af4d94af15a9ea627676417d179ea75ee7507cf8b0818c380f6af0013bb66",
+      "revisionLogEvidenceSHA256": "2e291109249d8d9875dff2be3cd2b3a442618ac76f4589b83a9c4e158b9afc78",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 16,
+        "verse": 11
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-16-11",
+          "url": "https://ebible.org/engwebp/ACT16.htm#V11",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT16.htm#V11",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "16:11"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://en.wikipedia.org/wiki/Neapolis_(Thrace)",
+          "currentWikipediaTitle": "Neapolis (Thrace)",
+          "authorEvidenceClaim": {
+            "articleTitle": "Neapolis (Thrace)",
+            "language": "en",
+            "url": "https://en.wikipedia.org/wiki/Neapolis_(Thrace)",
+            "decision": "article",
+            "status": "article-read-identity-verified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "英語記事は古代マケドニア近郊のネアポリス（後のカヴァラ）を扱い、使徒16:11でパウロが到着した地名として明示。旧称を含む古代都市の同定に合う。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Neapolis_(Thrace)"
+    },
+    {
+      "entityID": "place:olivet_907",
+      "priorBodyDecision": "pass_with_warnings",
+      "currentDraftPath": "drafts/place_2/olivet_907.json",
+      "currentDraftSHA256": "eaaef14380b4f6b0aec607e3bb56ba865e5fc2ae30c28a895cc791f258a057b4",
+      "currentEvidencePath": "evidence/place_2/olivet_907.json",
+      "currentEvidenceSHA256": "691d1c66aa337b97dc269c0c273a413d9c34cf0f4441fb6d9ed8e45f4a9fa2ab",
+      "revisionLogDraftSHA256": "cdfa70e46cf1b902f2286b1065825179551f59802018b7cad30c8b7733d98a4f",
+      "revisionLogEvidenceSHA256": "0c1a784ca503aaa8f72f1300aa012c16eb451dc0442fc9cf28f34ba0a161c94d",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 1,
+        "verse": 12
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-1-12",
+          "url": "https://ebible.org/engwebp/ACT01.htm#V12",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT01.htm#V12",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "1:12"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/オリーブ山",
+          "currentWikipediaTitle": "オリーブ山",
+          "authorEvidenceClaim": {
+            "articleTitle": "オリーブ山",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/オリーブ山",
+            "decision": "article",
+            "status": "article-read-identity-verified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事はエルサレム東郊、キドロンの谷の東にある丘陵をオリーブ山として記載し、新約聖書で言及されることも説明する。使徒1:12の地名と一致。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/オリーブ山"
+    },
+    {
+      "entityID": "place:pamphylia_918",
+      "priorBodyDecision": "fail",
+      "currentDraftPath": "drafts/place_2/pamphylia_918.json",
+      "currentDraftSHA256": "2f3bb5cf9271de2a2968c4f667db45655c196a71eb7eed19171da7fd9aa3df59",
+      "currentEvidencePath": "evidence/place_2/pamphylia_918.json",
+      "currentEvidenceSHA256": "f8acba52f6878b89ba794c997147be116d274ea8ef2cd94278e93b8211f72281",
+      "revisionLogDraftSHA256": "5bba76e13e49a44c59ca1ac0572d0c842cef901e532582672b0fdde2e97c5e0d",
+      "revisionLogEvidenceSHA256": "20fd3020ed24f128849547e96f9f49ed37ddd1852c156fe31efc734d6a27e258",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 2,
+        "verse": 10
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-2-10",
+          "url": "https://ebible.org/engwebp/ACT02.htm#V10",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT02.htm#V10",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-13-13",
+          "url": "https://ebible.org/engwebp/ACT13.htm#V13",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT13.htm#V13",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-14-24",
+          "url": "https://ebible.org/engwebp/ACT14.htm#V24",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT14.htm#V24",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-15-38",
+          "url": "https://ebible.org/engwebp/ACT15.htm#V38",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT15.htm#V38",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-27-5",
+          "url": "https://ebible.org/engwebp/ACT27.htm#V5",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT27.htm#V5",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "first-occurrence-leak",
+          "status": "closed",
+          "priorFindingJa": "At 2:10 Pamphylia is listed as visitors’ region of origin. Describing it as a region in Paul’s later travel route derives from Acts 13–14 and should be gated to those later mentions.",
+          "actsRefs": [
+            "13:13",
+            "13:14",
+            "14:24"
+          ],
+          "currentBaseFields": {
+            "subtitleJa": "使徒言行録2章で来訪者の出身地域として挙げられる歴史的地方名。",
+            "summaryJa": "小アジア南岸の歴史的地方名です。使徒言行録2章10節で、エルサレムにいた人々の出身地の一つとして列挙されます。後代の行政区分や現代の県境と古代の範囲を同一視しません。",
+            "historicalRoleJa": "使徒言行録2章10節で来訪者の出身地域として挙げられる。"
+          },
+          "currentGatedFacts": [
+            {
+              "knownBy": {
+                "chapter": 13,
+                "verse": 13
+              },
+              "textJa": "パウロ一行はキプロスのパフォスからパンフィリアのペルガへ航海した。"
+            }
+          ],
+          "verificationJa": "現行のknownBy以前の紹介文とfactsを固定WEBの初出節および旧指摘の後出節と照合。旧指摘の後出情報は初出紹介から除かれ、必要な場合は対応節knownByのfactに分離。"
+        },
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "2:10"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/パンフィリア",
+          "currentWikipediaTitle": "パンフィリア",
+          "authorEvidenceClaim": {
+            "articleTitle": "パンフィリア",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/パンフィリア",
+            "decision": "article",
+            "status": "article-read-identity-verified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事は小アジア南岸の古代地方パンフィリアを扱い、リュキア・キリキア等との位置関係に言及する。ローマ期の範囲には変動があるため、使徒13/14章の広域名との照合に限定。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/パンフィリア"
+    },
+    {
+      "entityID": "place:paphos_919",
+      "priorBodyDecision": "pass_with_warnings",
+      "currentDraftPath": "drafts/place_2/paphos_919.json",
+      "currentDraftSHA256": "4d8198e0a33d25a2fc4b0186ff9168c53c65cbb4b1e264c7b0d81770fb238caa",
+      "currentEvidencePath": "evidence/place_2/paphos_919.json",
+      "currentEvidenceSHA256": "42ce127b3d9feec67c953fd792019d6be1bf204884b97f1ef10f7938fac4a0ff",
+      "revisionLogDraftSHA256": "e5e652438a509eb747668c7e4bc289caad4960b7f06ea8242975276d38c9af21",
+      "revisionLogEvidenceSHA256": "3ad08ef843172d029dc4f4a75f19aaafb671599ea56ab7c661e1ba1b163af1d9",
+      "currentHashesMatchRevisionLog": false,
+      "knownBy": {
+        "chapter": 13,
+        "verse": 6
+      },
+      "currentActsLinks": [
+        {
+          "sourceId": "webp-acts-13-6",
+          "url": "https://ebible.org/engwebp/ACT13.htm#V6",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT13.htm#V6",
+          "pinnedEditionAndVerseMatch": true
+        },
+        {
+          "sourceId": "webp-acts-13-13",
+          "url": "https://ebible.org/engwebp/ACT13.htm#V13",
+          "expectedPinnedURL": "https://ebible.org/engwebp/ACT13.htm#V13",
+          "pinnedEditionAndVerseMatch": true
+        }
+      ],
+      "originalIssues": [
+        {
+          "priorCode": "primary-citation-not-verse-specific",
+          "status": "closed",
+          "priorFindingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "13:6"
+          ],
+          "deepLinkShapeFixed": true,
+          "pinnedEditionVerified": true,
+          "currentBadLinks": [],
+          "verificationJa": "全書top linkからのdeep link化に加え、現在の全出典を固定witnessの正規形式engwebp/ACTNN.htm#VNNとsourceId内の章節に照合。現在のリンクは正確に一致。"
+        },
+        {
+          "priorCode": "wikipedia-content-not-independently-verified",
+          "status": "unresolved",
+          "priorFindingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "currentWikipediaURL": "https://ja.wikipedia.org/wiki/パフォス",
+          "currentWikipediaTitle": "パフォス",
+          "authorEvidenceClaim": {
+            "articleTitle": "パフォス",
+            "language": "ja",
+            "url": "https://ja.wikipedia.org/wiki/パフォス",
+            "decision": "related-section",
+            "status": "related-article-read-identity-qualified",
+            "checkedAt": "2026-10-15",
+            "retrievedAtUTC": "2026-10-15T13:05:43+00:00",
+            "retrievalMethod": "web page opened; relevant article introduction/history section read and identity compared with the Acts place",
+            "identityBasisJa": "記事はキプロス南西岸の現在のパフォス市と古代の旧パフォス・新パフォスを区別し、パウロの訪問に触れる。使徒の地名との関連は確認できるが、旧新両都市や現代市を同一地点とは扱わない。",
+            "geographyCoordinatesNotSupportedByWikipedia": true
+          },
+          "independentArticleBodyVerification": false,
+          "verificationJa": "evidenceには記事確認の作者記録があるが、このclosureで当該記事本文の地理主張を独立に読んで照合していないため、記事内容適合の指摘をcloseしない。記事が存在しない/同一性不適合との判定でもない。"
+        }
+      ],
+      "wikipediaContentStatus": "not_independently_verified_in_this_closure",
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/パフォス"
+    }
+  ],
+  "revisionLogCurrentHashNoteJa": "現行全34件のドラフト/evidence SHAは各itemに保存。現行内容は修正ログ記載時点以後の変更があり、ログに記録されたhashと一致しない（34件ともstale）。これは現行URLの版検査結果とは別。"
+}

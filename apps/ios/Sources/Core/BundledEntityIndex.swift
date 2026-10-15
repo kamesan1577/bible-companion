@@ -39,6 +39,8 @@ public actor BundledEntityIndex {
     }
     private var index: Index?
     private var profiles: EntityProfileCatalog?
+    private struct CandidateMapPolicy: Decodable { let id: String; let allowCandidateMap: Bool; let allowFrom: Verse? }
+    private var candidateMapPolicy: [CandidateMapPolicy] = []
     public func lookup(_ passage: Passage, kind: String, includeFuture: Bool = false) throws -> EntityIndexResult {
         guard passage.isValid, ["person", "place"].contains(kind) else { throw Failure.invalid }
         if index == nil {
@@ -50,6 +52,39 @@ public actor BundledEntityIndex {
         guard let index, let bookIndex = index.books.firstIndex(of: passage.book) else { throw Failure.invalid }
         if profiles == nil, let url = Bundle.module.url(forResource: "entity-profiles", withExtension: "json") {
             profiles = try JSONDecoder().decode(EntityProfileCatalog.self, from: Data(contentsOf: url))
+        }
+        if candidateMapPolicy.isEmpty, let url = Bundle.module.url(forResource: "acts-map-policy", withExtension: "json") {
+            let policy = try JSONDecoder().decode([CandidateMapPolicy].self, from: Data(contentsOf: url))
+            candidateMapPolicy = policy
+        }
+        // An audited Acts occurrence table supersedes upstream candidate links for this book.
+        // Other books retain their existing index until their own review is completed.
+        if passage.book == "ACT", let reviewed = profiles?.occurrences {
+            let selected = reviewed.filter {
+                let v = Verse(chapter: $0.chapter, verse: $0.verse)
+                return passage.start <= v && v <= passage.end
+            }
+            var result: [IndexedOccurrence] = []
+            for p in profiles?.profiles ?? [] where p.kind == kind {
+                let links = selected.filter { $0.entityID == p.id }
+                guard !links.isEmpty || p.supplemental,
+                      let resolved = profiles?.resolve(id: p.id, passage: passage, includeFuture: includeFuture) else { continue }
+                let references = reviewed.filter { $0.entityID == p.id }.compactMap { link -> Passage? in
+                    let v = Verse(chapter: link.chapter, verse: link.verse)
+                    guard (includeFuture || v <= passage.end), v < passage.start || v > passage.end else { return nil }
+                    return Passage(book: "ACT", start: v, end: v)
+                }
+                let upstream = index.entities.first { $0.id == p.id }
+                let allowed = candidateMapPolicy.contains { $0.id == p.id && $0.allowCandidateMap && ($0.allowFrom == nil || $0.allowFrom! <= passage.end) }
+                let candidate = allowed ? upstream?.coordinate : nil
+                let point = p.coordinate ?? candidate
+                let status = p.coordinate != nil ? "source-representative-point" : upstream?.coordinateStatus
+                let entity = IndexedEntity(id: p.id, kind: p.kind, name: resolved.nameJa, nameJa: resolved.nameJa,
+                    appearances: [], coordinate: point, coordinateStatus: point == nil ? nil : status)
+                result.append(IndexedOccurrence(entity: entity, directlyNamed: links.contains { $0.directlyNamed }, sameBookVerses: references, profile: resolved))
+            }
+            result.sort { $0.directlyNamed != $1.directlyNamed ? $0.directlyNamed : $0.entity.displayName < $1.entity.displayName }
+            return EntityIndexResult(occurrences: result, sourceURL: URL(string: index.sourceURL), attribution: index.attribution)
         }
         var matches: [Int: Bool] = [:]
         let directColumn = kind == "person" ? 1 : 3
@@ -75,7 +110,7 @@ public actor BundledEntityIndex {
                 return range
             }
             let profile = profiles?.resolve(id: entity.id, passage: passage, includeFuture: includeFuture)
-            let displayed = profile.map { p in IndexedEntity(id: entity.id, kind: entity.kind, name: entity.name, nameJa: p.profile.nameJa, appearances: entity.appearances, coordinate: p.profile.coordinate, coordinateStatus: p.profile.coordinate == nil ? nil : "source-representative-point") } ?? entity
+            let displayed = profile.map { p in IndexedEntity(id: entity.id, kind: entity.kind, name: entity.name, nameJa: p.nameJa, appearances: entity.appearances, coordinate: p.profile.coordinate, coordinateStatus: p.profile.coordinate == nil ? nil : "source-representative-point") } ?? entity
             return IndexedOccurrence(entity: displayed, directlyNamed: pair.value, sameBookVerses: references, profile: profile)
         }.sorted { $0.directlyNamed != $1.directlyNamed ? $0.directlyNamed : $0.entity.displayName < $1.entity.displayName }
         for p in profiles?.profiles ?? [] where p.supplemental && p.kind == kind {

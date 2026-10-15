@@ -1,0 +1,1668 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-context-link-omission-review",
+  "reviewedAtUTC": "2026-10-15T14:07:58+00:00",
+  "inputs": {
+    "map": {
+      "path": "reviews/verse-map-21-28.json",
+      "sha256": "dcc4e34a52bb1afd755c35b5a38ad6ec7da722c70300a76cd954c7912c5ddae5",
+      "rows": 266
+    },
+    "primaryWitness": {
+      "path": "acts-web-verses.json",
+      "sha256": "90e72f0410119f8fc9afd529cdd730fd261bd1d25adfb413581c1462d6e936cb",
+      "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "chapterVerseRows": 1007
+    },
+    "targets": {
+      "path": "targets.json",
+      "sha256": "f367a27ce1aecad25f888431ab04ffd665cd2bf91d5c6380773ced2b92f0ad53",
+      "ids": 228
+    }
+  },
+  "readScope": {
+    "from": "Acts 21:1",
+    "through": "Acts 28:31",
+    "mapVerseRowsRead": 266,
+    "sourceVerseRowsCompared": 266,
+    "all266RowsRead": true,
+    "emptySourceVersesChecked": [
+      "24:7"
+    ],
+    "precedingContextRead": true
+  },
+  "methodJa": "固定WEB本文を全266節について現行マップと逐節照合し、固有名の見落とし、he/they/him/this man/there等の指示・照応が既存target IDに一意に結び付く場合を候補化した。新しいIDは作っていない。匿名の群衆・弟子・船員など、個人IDがない集団は人物IDに割り当てていない。対象entityが既に当該節にある場合は重複提案しない。",
+  "scopeNotesJa": [
+    "Acts 24:7は固定WEB証人本文が空のため補作せず、提案なし。",
+    "person:israel_682は民族/集団を個人扱いする既知の誤リンクのため再提案していない。",
+    "本文に固有名がある場合はdirect、文脈上の指示・照応の場合はrelatedとして提案した。"
+  ],
+  "summary": {
+    "versesRead": 266,
+    "versesWithProposedDeltas": 96,
+    "proposedAdditions": 108,
+    "explicitNameOrLocationMisses": 2
+  },
+  "proposals": [
+    {
+      "chapter": 21,
+      "verse": 4,
+      "reference": "Acts 21:4",
+      "sourceText": "Having found disciples, we stayed there seven days. These said to Paul through the Spirit that he should not go up to Jerusalem.",
+      "precedingVerseText": "When we had come in sight of Cyprus, leaving it on the left hand, we sailed to Syria and landed at Tyre, for the ship was there to unload her cargo.",
+      "currentMapEntityIDs": [
+        "person:holy_spirit_7400",
+        "person:paul_2479",
+        "place:jerusalem_636"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "place:tyre_1184",
+          "relationship": "related",
+          "reasonJa": "21:3でTyreに着いた直後の「there」なので、滞在地はTyre。"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "verse": 5,
+      "reference": "Acts 21:5",
+      "sourceText": "When those days were over, we departed and went on our journey. They all, with wives and children, brought us on our way until we were out of the city. Kneeling down on the beach, we prayed.",
+      "precedingVerseText": "Having found disciples, we stayed there seven days. These said to Paul through the Spirit that he should not go up to Jerusalem.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "place:tyre_1184",
+          "relationship": "related",
+          "reasonJa": "前節までの滞在地Tyreを出て「the city」を出たという継続。"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "verse": 9,
+      "reference": "Acts 21:9",
+      "sourceText": "Now this man had four virgin daughters who prophesied.",
+      "precedingVerseText": "On the next day, we who were Paul’s companions departed and came to Caesarea. We entered into the house of Philip the evangelist, who was one of the seven, and stayed with him.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:philip_2347",
+          "relationship": "related",
+          "reasonJa": "21:8のPhilip the evangelistを受ける「this man」。"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "verse": 11,
+      "reference": "Acts 21:11",
+      "sourceText": "Coming to us and taking Paul’s belt, he bound his own feet and hands, and said, “The Holy Spirit says: ‘So the Jews at Jerusalem will bind the man who owns this belt, and will deliver him into the hands of the Gentiles.’”",
+      "precedingVerseText": "As we stayed there some days, a certain prophet named Agabus came down from Judea.",
+      "currentMapEntityIDs": [
+        "person:holy_spirit_7400",
+        "person:paul_2479",
+        "place:jerusalem_636"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:agabus_107",
+          "relationship": "related",
+          "reasonJa": "21:10で来訪した預言者Agabusが続けてPaulの帯を取り、発話する「he」。"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "verse": 12,
+      "reference": "Acts 21:12",
+      "sourceText": "When we heard these things, both we and the people of that place begged him not to go up to Jerusalem.",
+      "precedingVerseText": "Coming to us and taking Paul’s belt, he bound his own feet and hands, and said, “The Holy Spirit says: ‘So the Jews at Jerusalem will bind the man who owns this belt, and will deliver him into the hands of the Gentiles.’”",
+      "currentMapEntityIDs": [
+        "place:jerusalem_636"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "直前のAgabusの預言で言及されたPaulを指す「him」。"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "verse": 14,
+      "reference": "Acts 21:14",
+      "sourceText": "When he would not be persuaded, we ceased, saying, “The Lord’s will be done.”",
+      "precedingVerseText": "Then Paul answered, “What are you doing, weeping and breaking my heart? For I am ready not only to be bound, but also to die at Jerusalem for the name of the Lord Jesus.”",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "21:13で答えたPaulを受ける「he would not be persuaded」。"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "verse": 19,
+      "reference": "Acts 21:19",
+      "sourceText": "When he had greeted them, he reported one by one the things which God had worked among the Gentiles through his ministry.",
+      "precedingVerseText": "The day following, Paul went in with us to James; and all the elders were present.",
+      "currentMapEntityIDs": [
+        "person:god_1324"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "21:18の主語Paulが挨拶し報告した。"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "verse": 20,
+      "reference": "Acts 21:20",
+      "sourceText": "They, when they heard it, glorified God. They said to him, “You see, brother, how many thousands there are among the Jews of those who have believed, and they are all zealous for the law.",
+      "precedingVerseText": "When he had greeted them, he reported one by one the things which God had worked among the Gentiles through his ministry.",
+      "currentMapEntityIDs": [
+        "person:god_1324"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "長老たちの発話先「him」は21:18–19のPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "verse": 21,
+      "reference": "Acts 21:21",
+      "sourceText": "They have been informed about you, that you teach all the Jews who are among the Gentiles to forsake Moses, telling them not to circumcise their children and not to walk after the customs.",
+      "precedingVerseText": "They, when they heard it, glorified God. They said to him, “You see, brother, how many thousands there are among the Jews of those who have believed, and they are all zealous for the law.",
+      "currentMapEntityIDs": [
+        "person:moses_2108"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "発話中の「you」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "verse": 22,
+      "reference": "Acts 21:22",
+      "sourceText": "What then? The assembly must certainly meet, for they will hear that you have come.",
+      "precedingVerseText": "They have been informed about you, that you teach all the Jews who are among the Gentiles to forsake Moses, telling them not to circumcise their children and not to walk after the customs.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「you have come」を受けて聞く側の人々が指す対象は到着したPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "verse": 24,
+      "reference": "Acts 21:24",
+      "sourceText": "Take them and purify yourself with them, and pay their expenses for them, that they may shave their heads. Then all will know that there is no truth in the things that they have been informed about you, but that you yourself also walk keeping the law.",
+      "precedingVerseText": "Therefore do what we tell you. We have four men who have taken a vow.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「you yourself」および費用を払う対象はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "verse": 27,
+      "reference": "Acts 21:27",
+      "sourceText": "When the seven days were almost completed, the Jews from Asia, when they saw him in the temple, stirred up all the multitude and laid hands on him,",
+      "precedingVerseText": "Then Paul took the men, and the next day purified himself and went with them into the temple, declaring the fulfillment of the days of purification, until the offering was offered for every one of them.",
+      "currentMapEntityIDs": [
+        "place:asia_108"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "見つけて手をかけた「him」は直前までのPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "verse": 28,
+      "reference": "Acts 21:28",
+      "sourceText": "crying out, “Men of Israel, help! This is the man who teaches all men everywhere against the people, and the law, and this place. Moreover, he also brought Greeks into the temple and has defiled this holy place!”",
+      "precedingVerseText": "When the seven days were almost completed, the Jews from Asia, when they saw him in the temple, stirred up all the multitude and laid hands on him,",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "叫びの中の「this man」は直前文脈で捕らえようとしているPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "verse": 30,
+      "reference": "Acts 21:30",
+      "sourceText": "All the city was moved and the people ran together. They seized Paul and dragged him out of the temple. Immediately the doors were shut.",
+      "precedingVerseText": "For they had seen Trophimus the Ephesian with him in the city, and they supposed that Paul had brought him into the temple.",
+      "currentMapEntityIDs": [
+        "person:paul_2479"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "related",
+          "reasonJa": "神殿での騒動の舞台「all the city」は21:17以降のJerusalem。"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "verse": 31,
+      "reference": "Acts 21:31",
+      "sourceText": "As they were trying to kill him, news came up to the commanding officer of the regiment that all Jerusalem was in an uproar.",
+      "precedingVerseText": "All the city was moved and the people ran together. They seized Paul and dragged him out of the temple. Immediately the doors were shut.",
+      "currentMapEntityIDs": [
+        "place:jerusalem_636"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "殺そうとしている「him」は21:30で捕らえられたPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "verse": 33,
+      "reference": "Acts 21:33",
+      "sourceText": "Then the commanding officer came near, arrested him, commanded him to be bound with two chains, and inquired who he was and what he had done.",
+      "precedingVerseText": "Immediately he took soldiers and centurions and ran down to them. They, when they saw the chief captain and the soldiers, stopped beating Paul.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "逮捕し鎖につなぐ「him」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "verse": 34,
+      "reference": "Acts 21:34",
+      "sourceText": "Some shouted one thing and some another, among the crowd. When he couldn’t find out the truth because of the noise, he commanded him to be brought into the barracks.",
+      "precedingVerseText": "Then the commanding officer came near, arrested him, commanded him to be bound with two chains, and inquired who he was and what he had done.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "兵営へ連れていく「him」は騒動の中心のPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "verse": 35,
+      "reference": "Acts 21:35",
+      "sourceText": "When he came to the stairs, he was carried by the soldiers because of the violence of the crowd;",
+      "precedingVerseText": "Some shouted one thing and some another, among the crowd. When he couldn’t find out the truth because of the noise, he commanded him to be brought into the barracks.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "階段で群衆の暴力により運ばれた「he」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "verse": 36,
+      "reference": "Acts 21:36",
+      "sourceText": "for the multitude of the people followed after, crying out, “Away with him!”",
+      "precedingVerseText": "When he came to the stairs, he was carried by the soldiers because of the violence of the crowd;",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「Away with him」の対象はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "verse": 38,
+      "reference": "Acts 21:38",
+      "sourceText": "Aren’t you then the Egyptian who before these days stirred up to sedition and led out into the wilderness the four thousand men of the Assassins?”",
+      "precedingVerseText": "As Paul was about to be brought into the barracks, he asked the commanding officer, “May I speak to you?” He said, “Do you know Greek?",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "指揮官の「Are you then the Egyptian?」の相手はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 22,
+      "verse": 2,
+      "reference": "Acts 22:2",
+      "sourceText": "When they heard that he spoke to them in the Hebrew language, they were even more quiet. He said,",
+      "precedingVerseText": "“Brothers and fathers, listen to the defense which I now make to you.”",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「he spoke to them in Hebrew」のheは直前で弁明を始めるPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 22,
+      "verse": 3,
+      "reference": "Acts 22:3",
+      "sourceText": "“I am indeed a Jew, born in Tarsus of Cilicia, but brought up in this city at the feet of Gamaliel, instructed according to the strict tradition of the law of our fathers, being zealous for God, even as you all are today.",
+      "precedingVerseText": "When they heard that he spoke to them in the Hebrew language, they were even more quiet. He said,",
+      "currentMapEntityIDs": [
+        "person:gamaliel_1277",
+        "person:god_1324",
+        "place:cilicia_300",
+        "place:tarsus_1140"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "related",
+          "reasonJa": "「this city」は弁明をしているJerusalem。"
+        }
+      ]
+    },
+    {
+      "chapter": 22,
+      "verse": 9,
+      "reference": "Acts 22:9",
+      "sourceText": "“Those who were with me indeed saw the light and were afraid, but they didn’t understand the voice of him who spoke to me.",
+      "precedingVerseText": "I answered, ‘Who are you, Lord?’ He said to me, ‘I am Jesus of Nazareth, whom you persecute.’",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "related",
+          "reasonJa": "「the voice of him who spoke to me」は22:8で名乗ったJesus。"
+        }
+      ]
+    },
+    {
+      "chapter": 22,
+      "verse": 12,
+      "reference": "Acts 22:12",
+      "sourceText": "“One Ananias, a devout man according to the law, well reported of by all the Jews who lived in Damascus,",
+      "precedingVerseText": "When I couldn’t see for the glory of that light, being led by the hand of those who were with me, I came into Damascus.",
+      "currentMapEntityIDs": [
+        "person:ananias_259"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "place:damascus_322",
+          "relationship": "direct",
+          "reasonJa": "この節でAnaniasが「Damascusに住むユダヤ人に知られていた」と明記。"
+        }
+      ]
+    },
+    {
+      "chapter": 22,
+      "verse": 13,
+      "reference": "Acts 22:13",
+      "sourceText": "came to me, and standing by me said to me, ‘Brother Saul, receive your sight!’ In that very hour I looked up at him.",
+      "precedingVerseText": "“One Ananias, a devout man according to the law, well reported of by all the Jews who lived in Damascus,",
+      "currentMapEntityIDs": [
+        "person:paul_2479"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:ananias_259",
+          "relationship": "related",
+          "reasonJa": "前節で紹介されたAnaniasが来てPaulに語りかけた主語。"
+        }
+      ]
+    },
+    {
+      "chapter": 22,
+      "verse": 14,
+      "reference": "Acts 22:14",
+      "sourceText": "He said, ‘The God of our fathers has appointed you to know his will, and to see the Righteous One, and to hear a voice from his mouth.",
+      "precedingVerseText": "came to me, and standing by me said to me, ‘Brother Saul, receive your sight!’ In that very hour I looked up at him.",
+      "currentMapEntityIDs": [
+        "person:god_1324",
+        "person:jesus_905"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:ananias_259",
+          "relationship": "related",
+          "reasonJa": "「He said」は22:12–13のAnaniasの続く発話。"
+        }
+      ]
+    },
+    {
+      "chapter": 22,
+      "verse": 24,
+      "reference": "Acts 22:24",
+      "sourceText": "the commanding officer commanded him to be brought into the barracks, ordering him to be examined by scourging, that he might know for what crime they shouted against him like that.",
+      "precedingVerseText": "As they cried out, threw off their cloaks, and threw dust into the air,",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "むち打ちのため兵営へ連れて行く「him」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 22,
+      "verse": 26,
+      "reference": "Acts 22:26",
+      "sourceText": "When the centurion heard it, he went to the commanding officer and told him, “Watch what you are about to do, for this man is a Roman!”",
+      "precedingVerseText": "When they had tied him up with straps, Paul asked the centurion who stood by, “Is it lawful for you to scourge a man who is a Roman, and not found guilty?”",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「this man is a Roman」のthis manはPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 22,
+      "verse": 27,
+      "reference": "Acts 22:27",
+      "sourceText": "The commanding officer came and asked him, “Tell me, are you a Roman?” He said, “Yes.”",
+      "precedingVerseText": "When the centurion heard it, he went to the commanding officer and told him, “Watch what you are about to do, for this man is a Roman!”",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "指揮官が質問し返答を聞く「him」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 22,
+      "verse": 29,
+      "reference": "Acts 22:29",
+      "sourceText": "Immediately those who were about to examine him departed from him, and the commanding officer also was afraid when he realized that he was a Roman, because he had bound him.",
+      "precedingVerseText": "The commanding officer answered, “I bought my citizenship for a great price.” Paul said, “But I was born a Roman.”",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "取り調べようとした者が去る対象、また指揮官が縛った「him」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 23,
+      "verse": 2,
+      "reference": "Acts 23:2",
+      "sourceText": "The high priest, Ananias, commanded those who stood by him to strike him on the mouth.",
+      "precedingVerseText": "Paul, looking steadfastly at the council, said, “Brothers, I have lived before God in all good conscience until today.”",
+      "currentMapEntityIDs": [
+        "person:ananias_260"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "Ananiasが打つよう命じた「him」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 23,
+      "verse": 4,
+      "reference": "Acts 23:4",
+      "sourceText": "Those who stood by said, “Do you malign God’s high priest?”",
+      "precedingVerseText": "Then Paul said to him, “God will strike you, you whitewashed wall! Do you sit to judge me according to the law, and command me to be struck contrary to the law?”",
+      "currentMapEntityIDs": [
+        "person:god_1324"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:ananias_260",
+          "relationship": "related",
+          "reasonJa": "「God’s high priest」は23:2で名指された大祭司Ananias。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "その場で「Do you malign…?」と問われている相手はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 23,
+      "verse": 5,
+      "reference": "Acts 23:5",
+      "sourceText": "Paul said, “I didn’t know, brothers, that he was high priest. For it is written, ‘You shall not speak evil of a ruler of your people.’”",
+      "precedingVerseText": "Those who stood by said, “Do you malign God’s high priest?”",
+      "currentMapEntityIDs": [
+        "person:paul_2479"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:ananias_260",
+          "relationship": "related",
+          "reasonJa": "Paulが知らなかったと言う「he was high priest」はAnanias。"
+        }
+      ]
+    },
+    {
+      "chapter": 23,
+      "verse": 9,
+      "reference": "Acts 23:9",
+      "sourceText": "A great clamor arose, and some of the scribes of the Pharisees’ part stood up, and contended, saying, “We find no evil in this man. But if a spirit or angel has spoken to him, let’s not fight against God!”",
+      "precedingVerseText": "For the Sadducees say that there is no resurrection, nor angel, nor spirit; but the Pharisees confess all of these.",
+      "currentMapEntityIDs": [
+        "person:god_1324"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "書記官らの「this man」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 23,
+      "verse": 15,
+      "reference": "Acts 23:15",
+      "sourceText": "Now therefore, you with the council inform the commanding officer that he should bring him down to you tomorrow, as though you were going to judge his case more exactly. We are ready to kill him before he comes near.”",
+      "precedingVerseText": "They came to the chief priests and the elders, and said, “We have bound ourselves under a great curse to taste nothing until we have killed Paul.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "陰謀者が近づいて殺すと述べる「him」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 23,
+      "verse": 21,
+      "reference": "Acts 23:21",
+      "sourceText": "Therefore don’t yield to them, for more than forty men lie in wait for him, who have bound themselves under a curse to neither eat nor drink until they have killed him. Now they are ready, looking for the promise from you.”",
+      "precedingVerseText": "He said, “The Jews have agreed to ask you to bring Paul down to the council tomorrow, as though intending to inquire somewhat more accurately concerning him.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "待ち伏せして殺そうとする「him」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 23,
+      "verse": 25,
+      "reference": "Acts 23:25",
+      "sourceText": "He wrote a letter like this:",
+      "precedingVerseText": "He asked them to provide mounts, that they might set Paul on one, and bring him safely to Felix the governor.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:claudius_948",
+          "relationship": "related",
+          "reasonJa": "「He wrote a letter」は23:26の差出人Claudius Lysiasに続く。"
+        }
+      ]
+    },
+    {
+      "chapter": 23,
+      "verse": 27,
+      "reference": "Acts 23:27",
+      "sourceText": "“This man was seized by the Jews, and was about to be killed by them when I came with the soldiers and rescued him, having learned that he was a Roman.",
+      "precedingVerseText": "“Claudius Lysias to the most excellent governor Felix: Greetings.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "手紙中の「this man」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 23,
+      "verse": 28,
+      "reference": "Acts 23:28",
+      "sourceText": "Desiring to know the cause why they accused him, I brought him down to their council.",
+      "precedingVerseText": "“This man was seized by the Jews, and was about to be killed by them when I came with the soldiers and rescued him, having learned that he was a Roman.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "評議会へ連れて行った「him」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 23,
+      "verse": 29,
+      "reference": "Acts 23:29",
+      "sourceText": "I found him to be accused about questions of their law, but not to be charged with anything worthy of death or of imprisonment.",
+      "precedingVerseText": "Desiring to know the cause why they accused him, I brought him down to their council.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "告発された「him」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 23,
+      "verse": 30,
+      "reference": "Acts 23:30",
+      "sourceText": "When I was told that the Jews lay in wait for the man, I sent him to you immediately, charging his accusers also to bring their accusations against him before you. Farewell.”",
+      "precedingVerseText": "I found him to be accused about questions of their law, but not to be charged with anything worthy of death or of imprisonment.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「the man」「him」は手紙の対象Paul。"
+        }
+      ]
+    },
+    {
+      "chapter": 23,
+      "verse": 32,
+      "reference": "Acts 23:32",
+      "sourceText": "But on the next day they left the horsemen to go with him, and returned to the barracks.",
+      "precedingVerseText": "So the soldiers, carrying out their orders, took Paul and brought him by night to Antipatris.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "騎兵が同行した「him」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 23,
+      "verse": 34,
+      "reference": "Acts 23:34",
+      "sourceText": "When the governor had read it, he asked what province he was from. When he understood that he was from Cilicia, he said,",
+      "precedingVerseText": "When they came to Caesarea and delivered the letter to the governor, they also presented Paul to him.",
+      "currentMapEntityIDs": [
+        "place:cilicia_300"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "出身州を尋ねられた「he」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 23,
+      "verse": 35,
+      "reference": "Acts 23:35",
+      "sourceText": "“I will hear you fully when your accusers also arrive.” He commanded that he be kept in Herod’s palace.",
+      "precedingVerseText": "When the governor had read it, he asked what province he was from. When he understood that he was from Cilicia, he said,",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:felix_1257",
+          "relationship": "related",
+          "reasonJa": "23:34のgovernor Felixが「He commanded」と続く。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "宮殿に留置された「he」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 24,
+      "verse": 2,
+      "reference": "Acts 24:2",
+      "sourceText": "When he was called, Tertullus began to accuse him, saying, “Seeing that by you we enjoy much peace, and that prosperity is coming to this nation by your foresight,",
+      "precedingVerseText": "After five days, the high priest, Ananias, came down with certain elders and an orator, one Tertullus. They informed the governor against Paul.",
+      "currentMapEntityIDs": [
+        "person:tertullus_2844"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "呼び出された「he」とTertullusが告発する「him」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 24,
+      "verse": 5,
+      "reference": "Acts 24:5",
+      "sourceText": "For we have found this man to be a plague, an instigator of insurrections among all the Jews throughout the world, and a ringleader of the sect of the Nazarenes.",
+      "precedingVerseText": "But that I don’t delay you, I entreat you to bear with us and hear a few words.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "Tertullusの「this man」は告発対象Paul。"
+        }
+      ]
+    },
+    {
+      "chapter": 24,
+      "verse": 6,
+      "reference": "Acts 24:6",
+      "sourceText": "He even tried to profane the temple, and we arrested him.",
+      "precedingVerseText": "For we have found this man to be a plague, an instigator of insurrections among all the Jews throughout the world, and a ringleader of the sect of the Nazarenes.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「He tried… we arrested him」はPaulについての告発。"
+        }
+      ]
+    },
+    {
+      "chapter": 24,
+      "verse": 8,
+      "reference": "Acts 24:8",
+      "sourceText": "By examining him yourself you may ascertain all these things of which we accuse him.”",
+      "precedingVerseText": "",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「examining him」「accuse him」はPaul、yourselfは裁判官Felix。"
+        },
+        {
+          "entityID": "person:felix_1257",
+          "relationship": "related",
+          "reasonJa": "「yourself」で直接呼びかけられる裁判官はFelix。"
+        }
+      ]
+    },
+    {
+      "chapter": 24,
+      "verse": 9,
+      "reference": "Acts 24:9",
+      "sourceText": "The Jews also joined in the attack, affirming that these things were so.",
+      "precedingVerseText": "By examining him yourself you may ascertain all these things of which we accuse him.”",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "ユダヤ人たちが肯定した告発対象は前後でPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 24,
+      "verse": 12,
+      "reference": "Acts 24:12",
+      "sourceText": "In the temple they didn’t find me disputing with anyone or stirring up a crowd, either in the synagogues or in the city.",
+      "precedingVerseText": "seeing that you can verify that it is not more than twelve days since I went up to worship at Jerusalem.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「they didn’t find me」のmeはこの弁明者Paul。"
+        }
+      ]
+    },
+    {
+      "chapter": 24,
+      "verse": 13,
+      "reference": "Acts 24:13",
+      "sourceText": "Nor can they prove to you the things of which they now accuse me.",
+      "precedingVerseText": "In the temple they didn’t find me disputing with anyone or stirring up a crowd, either in the synagogues or in the city.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "告発を証明できない相手・「me」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 24,
+      "verse": 19,
+      "reference": "Acts 24:19",
+      "sourceText": "They ought to have been here before you and to make accusation if they had anything against me.",
+      "precedingVerseText": "amid which certain Jews from Asia found me purified in the temple, not with a mob, nor with turmoil.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「against me」は24:10以降弁明中のPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 24,
+      "verse": 22,
+      "reference": "Acts 24:22",
+      "sourceText": "But Felix, having more exact knowledge concerning the Way, deferred them, saying, “When Lysias, the commanding officer, comes down, I will decide your case.”",
+      "precedingVerseText": "unless it is for this one thing that I cried standing among them, ‘Concerning the resurrection of the dead I am being judged before you today!’”",
+      "currentMapEntityIDs": [
+        "person:felix_1257"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:claudius_948",
+          "relationship": "direct",
+          "reasonJa": "この節でFelixが呼び下すよう述べる「Lysias」は既存のClaudius Lysias ID。"
+        }
+      ]
+    },
+    {
+      "chapter": 24,
+      "verse": 23,
+      "reference": "Acts 24:23",
+      "sourceText": "He ordered the centurion that Paul should be kept in custody and should have some privileges, and not to forbid any of his friends to serve him or to visit him.",
+      "precedingVerseText": "But Felix, having more exact knowledge concerning the Way, deferred them, saying, “When Lysias, the commanding officer, comes down, I will decide your case.”",
+      "currentMapEntityIDs": [
+        "person:paul_2479"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:felix_1257",
+          "relationship": "related",
+          "reasonJa": "「He ordered」は直前から判断を延期していたFelix。"
+        }
+      ]
+    },
+    {
+      "chapter": 24,
+      "verse": 25,
+      "reference": "Acts 24:25",
+      "sourceText": "As he reasoned about righteousness, self-control, and the judgment to come, Felix was terrified, and answered, “Go your way for this time, and when it is convenient for me, I will summon you.”",
+      "precedingVerseText": "After some days, Felix came with Drusilla his wife, who was a Jewess, and sent for Paul and heard him concerning the faith in Christ Jesus.",
+      "currentMapEntityIDs": [
+        "person:felix_1257"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "Felixの前で義・節制・審判を論じる「he」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 24,
+      "verse": 26,
+      "reference": "Acts 24:26",
+      "sourceText": "Meanwhile, he also hoped that money would be given to him by Paul, that he might release him. Therefore also he sent for him more often and talked with him.",
+      "precedingVerseText": "As he reasoned about righteousness, self-control, and the judgment to come, Felix was terrified, and answered, “Go your way for this time, and when it is convenient for me, I will summon you.”",
+      "currentMapEntityIDs": [
+        "person:paul_2479"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:felix_1257",
+          "relationship": "related",
+          "reasonJa": "金銭を期待し何度も呼び出す「he」は24:24–25のFelix。"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "verse": 2,
+      "reference": "Acts 25:2",
+      "sourceText": "Then the high priest and the principal men of the Jews informed him against Paul, and they begged him,",
+      "precedingVerseText": "Festus therefore, having come into the province, after three days went up to Jerusalem from Caesarea.",
+      "currentMapEntityIDs": [
+        "person:paul_2479"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "related",
+          "reasonJa": "25:1でCaesareaからJerusalemへ来たFestusを受ける「him」。"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "verse": 3,
+      "reference": "Acts 25:3",
+      "sourceText": "asking a favor against him, that he would summon him to Jerusalem, plotting to kill him on the way.",
+      "precedingVerseText": "Then the high priest and the principal men of the Jews informed him against Paul, and they begged him,",
+      "currentMapEntityIDs": [
+        "place:jerusalem_636"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "殺害を企てて召喚を求める対象「him」はPaul。"
+        },
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "related",
+          "reasonJa": "「he would summon him」のheは前節で応答したFestus。"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "verse": 5,
+      "reference": "Acts 25:5",
+      "sourceText": "“Let them therefore”, he said, “that are in power among you go down with me, and if there is anything wrong in the man, let them accuse him.”",
+      "precedingVerseText": "However Festus answered that Paul should be kept in custody at Caesarea, and that he himself was about to depart shortly.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「the man」「him」はFestusの審理対象Paul。"
+        },
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "related",
+          "reasonJa": "「he said」は25:4–5のFestusの返答。"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "verse": 6,
+      "reference": "Acts 25:6",
+      "sourceText": "When he had stayed among them more than ten days, he went down to Caesarea, and on the next day he sat on the judgment seat, and commanded Paul to be brought.",
+      "precedingVerseText": "“Let them therefore”, he said, “that are in power among you go down with me, and if there is anything wrong in the man, let them accuse him.”",
+      "currentMapEntityIDs": [
+        "person:paul_2479",
+        "place:caesarea_266"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "related",
+          "reasonJa": "「he had stayed… he went down」は州に来たFestusを指す。"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "verse": 8,
+      "reference": "Acts 25:8",
+      "sourceText": "while he said in his defense, “Neither against the law of the Jews, nor against the temple, nor against Caesar, have I sinned at all.”",
+      "precedingVerseText": "When he had come, the Jews who had come down from Jerusalem stood around him, bringing against him many and grievous charges which they could not prove,",
+      "currentMapEntityIDs": [
+        "title:roman-emperor-acts"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "弁明を述べるheは25:7に来廷したPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "verse": 10,
+      "reference": "Acts 25:10",
+      "sourceText": "But Paul said, “I am standing before Caesar’s judgment seat, where I ought to be tried. I have done no wrong to the Jews, as you also know very well.",
+      "precedingVerseText": "But Festus, desiring to gain favor with the Jews, answered Paul and said, “Are you willing to go up to Jerusalem and be judged by me there concerning these things?”",
+      "currentMapEntityIDs": [
+        "person:paul_2479",
+        "title:roman-emperor-acts"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "related",
+          "reasonJa": "Paulの「as you also know very well」のyouは裁判官Festus。"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "verse": 11,
+      "reference": "Acts 25:11",
+      "sourceText": "For if I have done wrong and have committed anything worthy of death, I don’t refuse to die; but if none of those things is true that they accuse me of, no one can give me up to them. I appeal to Caesar!”",
+      "precedingVerseText": "But Paul said, “I am standing before Caesar’s judgment seat, where I ought to be tried. I have done no wrong to the Jews, as you also know very well.",
+      "currentMapEntityIDs": [
+        "title:roman-emperor-acts"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「they accuse him」のhimはPaul（同じ発話のI）。"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "verse": 12,
+      "reference": "Acts 25:12",
+      "sourceText": "Then Festus, when he had conferred with the council, answered, “You have appealed to Caesar. To Caesar you shall go.”",
+      "precedingVerseText": "For if I have done wrong and have committed anything worthy of death, I don’t refuse to die; but if none of those things is true that they accuse me of, no one can give me up to them. I appeal to Caesar!”",
+      "currentMapEntityIDs": [
+        "person:portius_2367",
+        "title:roman-emperor-acts"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "Festusの「You have appealed to Caesar」のyouはPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "verse": 15,
+      "reference": "Acts 25:15",
+      "sourceText": "about whom, when I was at Jerusalem, the chief priests and the elders of the Jews informed me, asking for a sentence against him.",
+      "precedingVerseText": "As he stayed there many days, Festus laid Paul’s case before the king, saying, “There is a certain man left a prisoner by Felix;",
+      "currentMapEntityIDs": [
+        "place:jerusalem_636"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "Festusが告発・判決要求について述べる「him」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "verse": 16,
+      "reference": "Acts 25:16",
+      "sourceText": "I answered them that it is not the custom of the Romans to give up any man to destruction before the accused has met the accusers face to face and has had opportunity to make his defense concerning the matter laid against him.",
+      "precedingVerseText": "about whom, when I was at Jerusalem, the chief priests and the elders of the Jews informed me, asking for a sentence against him.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「the accused」「him」は25:14–15のPaulの事件。"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "verse": 17,
+      "reference": "Acts 25:17",
+      "sourceText": "When therefore they had come together here, I didn’t delay, but on the next day sat on the judgment seat and commanded the man to be brought.",
+      "precedingVerseText": "I answered them that it is not the custom of the Romans to give up any man to destruction before the accused has met the accusers face to face and has had opportunity to make his defense concerning the matter laid against him.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「the man to be brought」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "verse": 18,
+      "reference": "Acts 25:18",
+      "sourceText": "When the accusers stood up, they brought no charges against him of such things as I supposed;",
+      "precedingVerseText": "When therefore they had come together here, I didn’t delay, but on the next day sat on the judgment seat and commanded the man to be brought.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "告発を受けた「him」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "verse": 20,
+      "reference": "Acts 25:20",
+      "sourceText": "Being perplexed how to inquire concerning these things, I asked whether he was willing to go to Jerusalem and there be judged concerning these matters.",
+      "precedingVerseText": "but had certain questions against him about their own religion and about one Jesus, who was dead, whom Paul affirmed to be alive.",
+      "currentMapEntityIDs": [
+        "place:jerusalem_636"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "Festusが尋ねた「whether he was willing」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "verse": 22,
+      "reference": "Acts 25:22",
+      "sourceText": "Agrippa said to Festus, “I also would like to hear the man myself.” “Tomorrow,” he said, “you shall hear him.”",
+      "precedingVerseText": "But when Paul had appealed to be kept for the decision of the emperor, I commanded him to be kept until I could send him to Caesar.”",
+      "currentMapEntityIDs": [
+        "person:agrippa_111",
+        "person:portius_2367"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「you shall hear him」のhimはPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "verse": 24,
+      "reference": "Acts 25:24",
+      "sourceText": "Festus said, “King Agrippa, and all men who are here present with us, you see this man about whom all the multitude of the Jews petitioned me, both at Jerusalem and here, crying that he ought not to live any longer.",
+      "precedingVerseText": "So on the next day, when Agrippa and Bernice had come with great pomp, and they had entered into the place of hearing with the commanding officers and the principal men of the city, at the command of Festus, Paul was brought in.",
+      "currentMapEntityIDs": [
+        "person:agrippa_111",
+        "person:portius_2367",
+        "place:jerusalem_636"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "Festusの「this man」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "verse": 25,
+      "reference": "Acts 25:25",
+      "sourceText": "But when I found that he had committed nothing worthy of death, and as he himself appealed to the emperor, I determined to send him,",
+      "precedingVerseText": "Festus said, “King Agrippa, and all men who are here present with us, you see this man about whom all the multitude of the Jews petitioned me, both at Jerusalem and here, crying that he ought not to live any longer.",
+      "currentMapEntityIDs": [
+        "title:roman-emperor-acts"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「he himself appealed」「send him」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "verse": 26,
+      "reference": "Acts 25:26",
+      "sourceText": "of whom I have no certain thing to write to my lord. Therefore I have brought him out before you, and especially before you, King Agrippa, that, after examination I may have something to write.",
+      "precedingVerseText": "But when I found that he had committed nothing worthy of death, and as he himself appealed to the emperor, I determined to send him,",
+      "currentMapEntityIDs": [
+        "person:agrippa_111"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "Festusが審査のため連れ出した「him」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "verse": 27,
+      "reference": "Acts 25:27",
+      "sourceText": "For it seems to me unreasonable, in sending a prisoner, not to also specify the charges against him.”",
+      "precedingVerseText": "of whom I have no certain thing to write to my lord. Therefore I have brought him out before you, and especially before you, King Agrippa, that, after examination I may have something to write.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「a prisoner」「him」はこの弁論の対象Paul。"
+        }
+      ]
+    },
+    {
+      "chapter": 26,
+      "verse": 3,
+      "reference": "Acts 26:3",
+      "sourceText": "especially because you are expert in all customs and questions which are among the Jews. Therefore I beg you to hear me patiently.",
+      "precedingVerseText": "“I think myself happy, King Agrippa, that I am to make my defense before you today concerning all the things the Jews accuse me of,",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "related",
+          "reasonJa": "Paulが「you are expert」と呼びかける相手はKing Agrippa。"
+        }
+      ]
+    },
+    {
+      "chapter": 26,
+      "verse": 8,
+      "reference": "Acts 26:8",
+      "sourceText": "Why is it judged incredible with you if God does raise the dead?",
+      "precedingVerseText": "which our twelve tribes, earnestly serving night and day, hope to attain. Concerning this hope I am accused by the Jews, King Agrippa!",
+      "currentMapEntityIDs": [
+        "person:god_1324"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "related",
+          "reasonJa": "「incredible with you」のyouは呼びかけられているAgrippa。"
+        }
+      ]
+    },
+    {
+      "chapter": 26,
+      "verse": 16,
+      "reference": "Acts 26:16",
+      "sourceText": "But arise, and stand on your feet, for I have appeared to you for this purpose: to appoint you a servant and a witness both of the things which you have seen and of the things which I will reveal to you;",
+      "precedingVerseText": "“I said, ‘Who are you, Lord?’ “He said, ‘I am Jesus, whom you are persecuting.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "related",
+          "reasonJa": "「I have appeared to you」のIは26:15で名乗ったJesus。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「to appoint you a servant and a witness」のyouはPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 26,
+      "verse": 17,
+      "reference": "Acts 26:17",
+      "sourceText": "delivering you from the people and from the Gentiles, to whom I send you,",
+      "precedingVerseText": "But arise, and stand on your feet, for I have appeared to you for this purpose: to appoint you a servant and a witness both of the things which you have seen and of the things which I will reveal to you;",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "related",
+          "reasonJa": "「I send you」のIはJesus。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「you」を諸民族へ送る対象はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 26,
+      "verse": 18,
+      "reference": "Acts 26:18",
+      "sourceText": "to open their eyes, that they may turn from darkness to light and from the power of Satan to God, that they may receive remission of sins and an inheritance among those who are sanctified by faith in me.’",
+      "precedingVerseText": "delivering you from the people and from the Gentiles, to whom I send you,",
+      "currentMapEntityIDs": [
+        "person:god_1324",
+        "person:satan_2476"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:jesus_905",
+          "relationship": "related",
+          "reasonJa": "引用中の「faith in me」のmeはJesus。"
+        }
+      ]
+    },
+    {
+      "chapter": 26,
+      "verse": 25,
+      "reference": "Acts 26:25",
+      "sourceText": "But he said, “I am not crazy, most excellent Festus, but boldly declare words of truth and reasonableness.",
+      "precedingVerseText": "As he thus made his defense, Festus said with a loud voice, “Paul, you are crazy! Your great learning is driving you insane!”",
+      "currentMapEntityIDs": [
+        "person:portius_2367"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "Festusに返答した「he」は弁明中のPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 26,
+      "verse": 31,
+      "reference": "Acts 26:31",
+      "sourceText": "When they had withdrawn, they spoke to one another, saying, “This man does nothing worthy of death or of bonds.”",
+      "precedingVerseText": "The king rose up with the governor and Bernice, and those who sat with them.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:agrippa_111",
+          "relationship": "related",
+          "reasonJa": "「they had withdrawn」は26:30に立ち上がった王Agrippaら。"
+        },
+        {
+          "entityID": "person:portius_2367",
+          "relationship": "related",
+          "reasonJa": "「they had withdrawn」は26:30に立ち上がったgovernor Festusら。"
+        },
+        {
+          "entityID": "person:bernice_482",
+          "relationship": "related",
+          "reasonJa": "「they had withdrawn」は26:30に立ち上がったBerniceら。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「this man」は審査されてきたPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 26,
+      "verse": 32,
+      "reference": "Acts 26:32",
+      "sourceText": "Agrippa said to Festus, “This man might have been set free if he had not appealed to Caesar.”",
+      "precedingVerseText": "When they had withdrawn, they spoke to one another, saying, “This man does nothing worthy of death or of bonds.”",
+      "currentMapEntityIDs": [
+        "person:agrippa_111",
+        "person:portius_2367",
+        "title:roman-emperor-acts"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "Agrippaの「This man」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 27,
+      "verse": 8,
+      "reference": "Acts 27:8",
+      "sourceText": "With difficulty sailing along it we came to a certain place called Fair Havens, near the city of Lasea.",
+      "precedingVerseText": "When we had sailed slowly many days, and had come with difficulty opposite Cnidus, the wind not allowing us further, we sailed under the lee of Crete, opposite Salmone.",
+      "currentMapEntityIDs": [
+        "place:fair_havens_424",
+        "place:lasea_717"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "place:crete_310",
+          "relationship": "related",
+          "reasonJa": "27:7で航行していたCrete沿いを受ける「along it」。"
+        }
+      ]
+    },
+    {
+      "chapter": 27,
+      "verse": 35,
+      "reference": "Acts 27:35",
+      "sourceText": "When he had said this and had taken bread, he gave thanks to God in the presence of all; then he broke it and began to eat.",
+      "precedingVerseText": "Therefore I beg you to take some food, for this is for your safety; for not a hair will perish from any of your heads.”",
+      "currentMapEntityIDs": [
+        "person:god_1324"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "直前のPaulの行動・発話を受ける「he had said this and had taken bread」。"
+        }
+      ]
+    },
+    {
+      "chapter": 28,
+      "verse": 4,
+      "reference": "Acts 28:4",
+      "sourceText": "When the natives saw the creature hanging from his hand, they said to one another, “No doubt this man is a murderer, whom, though he has escaped from the sea, yet Justice has not allowed to live.”",
+      "precedingVerseText": "But when Paul had gathered a bundle of sticks and laid them on the fire, a viper came out because of the heat and fastened on his hand.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "島民の「this man is a murderer」は28:3で蛇にかまれたPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 28,
+      "verse": 5,
+      "reference": "Acts 28:5",
+      "sourceText": "However he shook off the creature into the fire, and wasn’t harmed.",
+      "precedingVerseText": "When the natives saw the creature hanging from his hand, they said to one another, “No doubt this man is a murderer, whom, though he has escaped from the sea, yet Justice has not allowed to live.”",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "蛇を火に振り落とした「he」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 28,
+      "verse": 6,
+      "reference": "Acts 28:6",
+      "sourceText": "But they expected that he would have swollen or fallen down dead suddenly, but when they watched for a long time and saw nothing bad happen to him, they changed their minds and said that he was a god.",
+      "precedingVerseText": "However he shook off the creature into the fire, and wasn’t harmed.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "島民が腫れる/倒れると見守った「him」はPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 28,
+      "verse": 11,
+      "reference": "Acts 28:11",
+      "sourceText": "After three months, we set sail in a ship of Alexandria which had wintered in the island, whose figurehead was “The Twin Brothers.”",
+      "precedingVerseText": "They also honored us with many honors; and when we sailed, they put on board the things that we needed.",
+      "currentMapEntityIDs": [
+        "place:alexandria_46"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "place:melita_761",
+          "relationship": "related",
+          "reasonJa": "28:1で島名とされたMalta（Melita）を受ける「the island」。"
+        }
+      ]
+    },
+    {
+      "chapter": 28,
+      "verse": 14,
+      "reference": "Acts 28:14",
+      "sourceText": "where we found brothers, and were entreated to stay with them for seven days. So we came to Rome.",
+      "precedingVerseText": "From there we circled around and arrived at Rhegium. After one day, a south wind sprang up, and on the second day we came to Puteoli,",
+      "currentMapEntityIDs": [
+        "place:rome_1013"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "place:puteoli_963",
+          "relationship": "related",
+          "reasonJa": "直前に着いたPuteoliを受ける関係節「where we found brothers」。"
+        }
+      ]
+    },
+    {
+      "chapter": 28,
+      "verse": 15,
+      "reference": "Acts 28:15",
+      "sourceText": "From there the brothers, when they heard of us, came to meet us as far as The Market of Appius and The Three Taverns. When Paul saw them, he thanked God and took courage.",
+      "precedingVerseText": "where we found brothers, and were entreated to stay with them for seven days. So we came to Rome.",
+      "currentMapEntityIDs": [
+        "person:god_1324",
+        "person:paul_2479",
+        "place:appii_forum_427",
+        "place:three_taverns_1159"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "place:rome_1013",
+          "relationship": "related",
+          "reasonJa": "28:14で到着したRomeを受ける「From there」。"
+        }
+      ]
+    },
+    {
+      "chapter": 28,
+      "verse": 21,
+      "reference": "Acts 28:21",
+      "sourceText": "They said to him, “We neither received letters from Judea concerning you, nor did any of the brothers come here and report or speak any evil of you.",
+      "precedingVerseText": "For this cause therefore I asked to see you and to speak with you. For because of the hope of Israel I am bound with this chain.”",
+      "currentMapEntityIDs": [
+        "place:judea_657"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "28:17でPaulが訪問を求めて話した人々の「They said to him」のhimはPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 28,
+      "verse": 23,
+      "reference": "Acts 28:23",
+      "sourceText": "When they had appointed him a day, many people came to him at his lodging. He explained to them, testifying about God’s Kingdom, and persuading them concerning Jesus, both from the law of Moses and from the prophets, from morning until evening.",
+      "precedingVerseText": "But we desire to hear from you what you think. For, as concerning this sect, it is known to us that everywhere it is spoken against.”",
+      "currentMapEntityIDs": [
+        "person:god_1324",
+        "person:jesus_905",
+        "person:moses_2108"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "「came to him」「He explained」は宿にいるPaul。"
+        }
+      ]
+    },
+    {
+      "chapter": 28,
+      "verse": 26,
+      "reference": "Acts 28:26",
+      "sourceText": "saying, ‘Go to this people and say, in hearing, you will hear, but will in no way understand. In seeing, you will see, but will in no way perceive.",
+      "precedingVerseText": "When they didn’t agree among themselves, they departed after Paul had spoken one message: “The Holy Spirit spoke rightly through Isaiah the prophet to our fathers,",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "related",
+          "reasonJa": "28:25から続くIsaiah 6の引用中の「I would heal them」の一人称の発話者は神。"
+        },
+        {
+          "entityID": "person:isaiah_617",
+          "relationship": "related",
+          "reasonJa": "28:25の「through Isaiah」から続く預言引用。"
+        }
+      ]
+    },
+    {
+      "chapter": 28,
+      "verse": 27,
+      "reference": "Acts 28:27",
+      "sourceText": "For this people’s heart has grown callous. Their ears are dull of hearing. Their eyes they have closed. Lest they should see with their eyes, hear with their ears, understand with their heart, and would turn again, then I would heal them.’",
+      "precedingVerseText": "saying, ‘Go to this people and say, in hearing, you will hear, but will in no way understand. In seeing, you will see, but will in no way perceive.",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "related",
+          "reasonJa": "前節から続くIsaiah 6引用の一人称「I would heal them」は神。"
+        },
+        {
+          "entityID": "person:isaiah_617",
+          "relationship": "related",
+          "reasonJa": "28:25の「through Isaiah」から続く預言引用。"
+        }
+      ]
+    },
+    {
+      "chapter": 28,
+      "verse": 29,
+      "reference": "Acts 28:29",
+      "sourceText": "When he had said these words, the Jews departed, having a great dispute among themselves.",
+      "precedingVerseText": "“Be it known therefore to you that the salvation of God is sent to the nations, and they will listen.”",
+      "currentMapEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "ユダヤ人たちが去った「after Paul had spoken」の話者Paul。"
+        }
+      ]
+    },
+    {
+      "chapter": 28,
+      "verse": 31,
+      "reference": "Acts 28:31",
+      "sourceText": "preaching God’s Kingdom and teaching the things concerning the Lord Jesus Christ with all boldness, without hindrance.",
+      "precedingVerseText": "Paul stayed two whole years in his own rented house and received all who were coming to him,",
+      "currentMapEntityIDs": [
+        "person:god_1324",
+        "person:jesus_905"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "relationship": "related",
+          "reasonJa": "28:30の主語Paulが続けて教えた。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1060 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-content-review",
+  "utcReviewedAt": "2026-10-15T13:01:54Z",
+  "assignmentFile": "assignments/person_1.json",
+  "primaryWitness": "acts-web-verses.json",
+  "scope": "41件のperson_1候補を割当て・固定WEB Acts本文に照合。base summary/subtitle/identityNoteの初出節時点、事実の帰属、候補同定、全出現の処理、Wikipedia記事の取得と対象同一性を独立確認。原稿は編集していない。",
+  "parseAndContentStatusAreSeparate": true,
+  "counts": {
+    "assignedIDs": 41,
+    "profileFilesFound": 41,
+    "profileFilesMissing": 0,
+    "parsePass": 41,
+    "contentPass": 36,
+    "contentNeedsReview": 3,
+    "contentFail": 2,
+    "profileNulls": 2,
+    "wikipediaArticleLinks": 35,
+    "wikipediaNullOnProfiles": 4,
+    "wikipediaNoMatchingArticle": 3,
+    "exactSharedSectionFoundButNotApplied": 1
+  },
+  "crossProfileFindings": [
+    {
+      "entityIDs": [
+        "person:alexander_187",
+        "person:alexander_188"
+      ],
+      "severity": "pass-with-distinct-identities",
+      "coordinates": [
+        "ACT 4:6",
+        "ACT 19:33"
+      ],
+      "basisJa": "同じアレクサンドロス名だが、4:6はエルサレムの大祭司一族周辺にいた人物、19:33はエフェソス騒動で前に出された人物。Acts本文上で同一性を示す結び付きはなく、別IDと役割分けを維持する。Wikipediaの一般名記事のActs 4:6の項目は前者のみを明示する。",
+      "suggestionJa": "両候補を統合しない。alexander_187の共有節リンク候補だけを検討し、alexander_188はnullを維持。"
+    }
+  ],
+  "files": [
+    {
+      "entityID": "person:aaron_1",
+      "path": "drafts/person_1/aaron_1.json",
+      "sha256": "cf3fd14d8959f52aa9d1a19ca73c858cc81edd284549cee2b4be70c792f719d1",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AD%E3%83%B3"
+    },
+    {
+      "entityID": "person:abraham_58",
+      "path": "drafts/person_1/abraham_58.json",
+      "sha256": "a800fc475b6d9e3eaeff7f450427c6594ad60dd329dd9f87fa3cd3a18a3b1722",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 8,
+      "profilePassageCount": 8,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%96%E3%83%A9%E3%83%8F%E3%83%A0"
+    },
+    {
+      "entityID": "person:aeneas_106",
+      "path": "drafts/person_1/aeneas_106.json",
+      "sha256": "b898b2a58e386a039b3202abfd64bcf3b7b7f7f9ccf181f42c5f2b6827706791",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 2,
+      "profilePassageCount": 2,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Aeneas_(biblical_figure)"
+    },
+    {
+      "entityID": "person:agabus_107",
+      "path": "drafts/person_1/agabus_107.json",
+      "sha256": "cca854a0ec5443eaf4d6f10c3a67f50649fd11a33f68fb92ae214857745e662a",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 2,
+      "profilePassageCount": 2,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Agabus"
+    },
+    {
+      "entityID": "person:agrippa_111",
+      "path": "drafts/person_1/agrippa_111.json",
+      "sha256": "3aadff0ff3aa607e0508bdcebf2c6f5b98497f70fb52333d908dc76a7ff7baaf",
+      "parseStatus": "pass",
+      "contentReviewStatus": "fail",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 12,
+      "profilePassageCount": 12,
+      "excludedOccurrenceCount": 0,
+      "issues": [
+        {
+          "severity": "fail",
+          "category": "unsupported-or-misleading-subtitle",
+          "coordinates": [
+            "ACT 25:13"
+          ],
+          "basisJa": "初出本文は単に「King Agrippa」と呼ぶ。独立取得したHerod Agrippa II記事は、彼の王権をガリラヤ、ペレア、イツレア等として掲げ、ユダヤの王とはしない（英語版記事の王権表、行153–163）。「ユダヤの王」は領土を誤解させる。",
+          "suggestionJa": "「王アグリッパ」または「ヘロデ朝の王」とし、ユダヤ領の王という地域指定を外す。既存identityNoteのヘロデ・アグリッパ2世同定は維持可能。"
+        }
+      ],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Herod_Agrippa_II"
+    },
+    {
+      "entityID": "person:alexander_187",
+      "path": "drafts/person_1/alexander_187.json",
+      "sha256": "e89418e9f554e70abdb818f100e47eefefc3e95397cfe19137a7575daebc71c5",
+      "parseStatus": "pass",
+      "contentReviewStatus": "needs-review",
+      "completionStatus": "wikipedia-null-reviewed",
+      "wikipediaStatus": "exact-shared-section-found-but-draft-still-null",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [
+        {
+          "severity": "warn",
+          "category": "role-claim-not-explicit-at-first-verse",
+          "coordinates": [
+            "ACT 4:6"
+          ],
+          "basisJa": "WEBはアンナスを大祭司と明示し、カイアファ、ヨハネ、アレクサンドロスを列挙した後、「大祭司の一族の者たち」と続ける。現在subtitleの「大祭司の一族の人物」は可能な読みだが、節の構文だけからアレクサンドロス個人がその親族に含まれると断定するのはやや強い。",
+          "suggestionJa": "「ペテロとヨハネの尋問に立ち会った人物」へ弱めるか、親族関係を「大祭司一族の人々とともに名が挙がる」と限定する。"
+        },
+        {
+          "severity": "warn",
+          "category": "wikipedia-null-incomplete",
+          "coordinates": [
+            "ACT 4:6"
+          ],
+          "basisJa": "現状のwikipedia=nullとreview理由は「個別記事なし」だが、実取得した英語版Wikipedia “Alexander” のOther people > Antiquityの列挙に「Jerusalem Temple Sanhedrin member mentioned in Acts 4:6」とこの人物の完全一致がある（本文行306）。一般的な名前記事ではあるが、本文が該当節を明示する共有セクションで、同一性は確認できる。",
+          "suggestionJa": "リンクを採用するなら https://en.wikipedia.org/wiki/Alexander#Other_people またはAntiquity節に更新し、kind=shared-section、表示注記に「Other people > AntiquityのActs 4:6の項目」と記す。最終的なfragmentは保存前に実リンク表示を確認する。"
+        }
+      ],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Alexander"
+    },
+    {
+      "entityID": "person:alexander_188",
+      "path": "drafts/person_1/alexander_188.json",
+      "sha256": "9ebedb4abae6aaf325b51e11e8390c1d773fa3feed7d2b82e7f434b8fe37d53a",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "wikipedia-null-reviewed",
+      "wikipediaStatus": "url-retrieved-no-identity-match",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Alexander"
+    },
+    {
+      "entityID": "person:alphaeus_192",
+      "path": "drafts/person_1/alphaeus_192.json",
+      "sha256": "209238922414392b2106ee31db0d1736de7beef5da8b878d8f31b2e0bd3e13b4",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Alphaeus"
+    },
+    {
+      "entityID": "person:ananias_258",
+      "path": "drafts/person_1/ananias_258.json",
+      "sha256": "32554279a1feffd2822836c885516903f6f6af1b0cb55c0a3031b88f560d54e7",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 3,
+      "profilePassageCount": 3,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Ananias_and_Sapphira"
+    },
+    {
+      "entityID": "person:ananias_259",
+      "path": "drafts/person_1/ananias_259.json",
+      "sha256": "2af31969301c94207e75b887865ac35d64287ed4665bc83d91a7b96108392000",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 5,
+      "profilePassageCount": 5,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Ananias_of_Damascus"
+    },
+    {
+      "entityID": "person:ananias_260",
+      "path": "drafts/person_1/ananias_260.json",
+      "sha256": "37bdd06fa8e7b7b0b7b1f3d133ad0f8555675f9552f395106a7eb14ad922e9b2",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 2,
+      "profilePassageCount": 2,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Ananias_ben_Nebedeus"
+    },
+    {
+      "entityID": "person:andrew_264",
+      "path": "drafts/person_1/andrew_264.json",
+      "sha256": "7540abd4bae2485e39c3ee4e2d70cd8688b5253192efa8c14b925286f8bb6c22",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%B3%E3%83%87%E3%83%AC"
+    },
+    {
+      "entityID": "person:annas_269",
+      "path": "drafts/person_1/annas_269.json",
+      "sha256": "2cf73b6f92f898724762d74b533c392127ca05b81dedf423d2246557caaae347",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%B3%E3%83%8A%E3%82%B9"
+    },
+    {
+      "entityID": "person:apollos_276",
+      "path": "drafts/person_1/apollos_276.json",
+      "sha256": "ccc0d69f688f864701ca730089b75b75682a34ece2b374ddfb2c1f8114c60d84",
+      "parseStatus": "pass",
+      "contentReviewStatus": "needs-review",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 2,
+      "profilePassageCount": 2,
+      "excludedOccurrenceCount": 0,
+      "issues": [
+        {
+          "severity": "warn",
+          "category": "subtitle-uses-following-verse",
+          "coordinates": [
+            "ACT 18:24",
+            "ACT 18:25"
+          ],
+          "basisJa": "knownBy/最初の名指し18:24はアポロをアレクサンドリア出身、雄弁、聖書に通じた人と記す。「教師」というsubtitleは次節18:25の会堂で教える記述からの情報。",
+          "suggestionJa": "subtitleを18:24で直接分かる「アレクサンドリア出身の雄弁なユダヤ人」等にするか、knownBy/導入範囲を18:24–25として整理し、教授活動は18:25のfactとして示す。"
+        }
+      ],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Apollos"
+    },
+    {
+      "entityID": "person:aquila_279",
+      "path": "drafts/person_1/aquila_279.json",
+      "sha256": "21c12d92826be31d7c229f1b23bf8a71cf38fe191f48169f9993fead2ffc72c5",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 3,
+      "profilePassageCount": 3,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AA%E3%82%B9%E3%82%AD%E3%83%A9%E3%81%A8%E3%82%A2%E3%82%AF%E3%83%A9"
+    },
+    {
+      "entityID": "person:aristarchus_306",
+      "path": "drafts/person_1/aristarchus_306.json",
+      "sha256": "00f3943595af3b2acb896dbc961241d6890d31c30610f5eaf2c3cbf4766ca833",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 3,
+      "profilePassageCount": 3,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AA%E3%82%B9%E3%82%BF%E3%83%AB%E3%82%B3"
+    },
+    {
+      "entityID": "person:augustus_366",
+      "path": "drafts/person_1/augustus_366.json",
+      "sha256": "12d782af2795f76d22cbbe2df5c3d7ad05f8f4d235df4122fa80992aec793d1c",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "not-applicable-excluded-person-candidate",
+      "wikipediaStatus": "not-applicable-entity-excluded",
+      "assignmentOccurrenceCount": 2,
+      "profilePassageCount": 0,
+      "excludedOccurrenceCount": 2,
+      "issues": []
+    },
+    {
+      "entityID": "person:barnabas_1722",
+      "path": "drafts/person_1/barnabas_1722.json",
+      "sha256": "f3e98df3fb2a52fbba9d77a476c7678674830f07f2d5d8138b4cc03c3d069138",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 24,
+      "profilePassageCount": 24,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%AB%E3%83%8A%E3%83%90"
+    },
+    {
+      "entityID": "person:barsabas_1720",
+      "path": "drafts/person_1/barsabas_1720.json",
+      "sha256": "b9ccac3dda45556f8cd4e088236da14575797a6828925638c7d8f8794693c9e6",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Joseph_Barsabbas"
+    },
+    {
+      "entityID": "person:bartholomew_405",
+      "path": "drafts/person_1/bartholomew_405.json",
+      "sha256": "0cea28553b148b8b9d71e9a1a56aecff76fee074fd8dcb8c1a3bc4863d1cebcf",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%AB%E3%83%88%E3%83%AD%E3%83%9E%E3%82%A4"
+    },
+    {
+      "entityID": "person:benjamin_463",
+      "path": "drafts/person_1/benjamin_463.json",
+      "sha256": "9c283b5369e65aa8aa0976205ccd2139a884ab861f8131acdacc095e60661e08",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "not-applicable-excluded-person-candidate",
+      "wikipediaStatus": "not-applicable-entity-excluded",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 0,
+      "excludedOccurrenceCount": 1,
+      "issues": []
+    },
+    {
+      "entityID": "person:bernice_482",
+      "path": "drafts/person_1/bernice_482.json",
+      "sha256": "b407e2ee93a35223461d651f8c86bd32e7434c106eb6725616cffe4948895593",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 3,
+      "profilePassageCount": 3,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Berenice_(daughter_of_Herod_Agrippa_I)"
+    },
+    {
+      "entityID": "person:blastus_518",
+      "path": "drafts/person_1/blastus_518.json",
+      "sha256": "8707a723a64f50d83cbe15674e2230201d0c5db293618c187f3dc10caadd5083",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Blastus"
+    },
+    {
+      "entityID": "person:caiaphas_532",
+      "path": "drafts/person_1/caiaphas_532.json",
+      "sha256": "d79679e33fb6b18062d225dd2dac73e26ac38c89944d190e7fbb5772e2bb2b90",
+      "parseStatus": "pass",
+      "contentReviewStatus": "needs-review",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [
+        {
+          "severity": "warn",
+          "category": "role-source-scope",
+          "coordinates": [
+            "ACT 4:6"
+          ],
+          "basisJa": "初出のActs 4:6は「大祭司アンナス」と述べ、カイアファは同席者として列挙する。独立取得した日本語版Wikipedia「カイアファ」は大祭司として紹介するため歴史的称号自体は一致するが、初出節単体からの根拠ではない。",
+          "suggestionJa": "本文だけに厳密に寄せるなら導入を「尋問に立ち会った一人」とし、大祭司職は外部の出典として役割欄に根拠を明示する。"
+        }
+      ],
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/%E3%82%AB%E3%82%A4%E3%82%A2%E3%83%95%E3%82%A1"
+    },
+    {
+      "entityID": "person:candace_916",
+      "path": "drafts/person_1/candace_916.json",
+      "sha256": "be8b6476ae05ee136021d44500f5c38ccff85444fd2fb3e11bd74b41843469d2",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Kandake"
+    },
+    {
+      "entityID": "person:claudius_947",
+      "path": "drafts/person_1/claudius_947.json",
+      "sha256": "8d6ef640ffb68f6c2db1533e69abd040ba13969a1a8e1585c99754c3c87c2afa",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 2,
+      "profilePassageCount": 2,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%87%E3%82%A3%E3%82%A6%E3%82%B9"
+    },
+    {
+      "entityID": "person:claudius_948",
+      "path": "drafts/person_1/claudius_948.json",
+      "sha256": "a9a24d672364037d84a3fe6f3d2015a24504f45fefb8c8f3149ae68990072a84",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Claudius_Lysias"
+    },
+    {
+      "entityID": "person:cornelius_956",
+      "path": "drafts/person_1/cornelius_956.json",
+      "sha256": "bb0385546eba5ad88cb56a7e2d392bc5f9d6e84fb054459bb7b9bdc0c5ed10a6",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 10,
+      "profilePassageCount": 10,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Cornelius_the_Centurion"
+    },
+    {
+      "entityID": "person:crispus_961",
+      "path": "drafts/person_1/crispus_961.json",
+      "sha256": "522f23990b8949b4dd013370e117d01826507efb57bf1a4c6b15bdaf77ab2891",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "wikipedia-null-reviewed",
+      "wikipediaStatus": "url-retrieved-no-identity-match",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Crispus"
+    },
+    {
+      "entityID": "person:damaris_972",
+      "path": "drafts/person_1/damaris_972.json",
+      "sha256": "a5c6bed0a5a24c062be1e20807c509017b035c6d9f03e2c964a464cc86f32ec2",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Damaris_(biblical_figure)"
+    },
+    {
+      "entityID": "person:daughter_of_pharaoh_988",
+      "path": "drafts/person_1/daughter_of_pharaoh_988.json",
+      "sha256": "e639b812aab66d28b814ad5ca9bab52ba31925c413df081b6a72f1169c0affb5",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Pharaoh%27s_daughter_(Exodus)"
+    },
+    {
+      "entityID": "person:david_994",
+      "path": "drafts/person_1/david_994.json",
+      "sha256": "9842e328d687893da4790ca2429cf777c36539d81e6b45578fff74bf0302fafc",
+      "parseStatus": "pass",
+      "contentReviewStatus": "fail",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 10,
+      "profilePassageCount": 10,
+      "excludedOccurrenceCount": 0,
+      "issues": [
+        {
+          "severity": "fail",
+          "category": "future-Acts-fact-in-subtitle",
+          "coordinates": [
+            "ACT 1:16",
+            "ACT 13:22"
+          ],
+          "basisJa": "knownBy 1:16ではダビデはユダに関する聖句を語った者として名指されるが、「イスラエルの王」は後の13:22に初めてActs本文で述べられる。現subtitleは初出プロフィールに後続章の情報を漏らしている。",
+          "suggestionJa": "初出時点で分かる内容にsubtitleを変更する（例「ユダについての聖句を語った人物」）。王としての役割は既存の13:22 factに限定する。"
+        }
+      ],
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%93%E3%83%87"
+    },
+    {
+      "entityID": "person:demetrius_1007",
+      "path": "drafts/person_1/demetrius_1007.json",
+      "sha256": "3d213cecd1079c70869bf906b9e1057e62e7049bb1443433637613fe4e24ab4a",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "wikipedia-null-reviewed",
+      "wikipediaStatus": "url-retrieved-no-identity-match",
+      "assignmentOccurrenceCount": 2,
+      "profilePassageCount": 2,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Demetrius"
+    },
+    {
+      "entityID": "person:diana_1008",
+      "path": "drafts/person_1/diana_1008.json",
+      "sha256": "87be00ba1e381d3248c1cd517ba73f1da06d9eb610b5edc3446d7cf8da30db1a",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 5,
+      "profilePassageCount": 5,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AB%E3%83%86%E3%83%9F%E3%82%B9"
+    },
+    {
+      "entityID": "person:dionysius_1013",
+      "path": "drafts/person_1/dionysius_1013.json",
+      "sha256": "4a43b59e1a909c46d024d404e6838a11ec49dcaf75348d46da3fd196163d8144",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Dionysius_the_Areopagite"
+    },
+    {
+      "entityID": "person:dorcas_2810",
+      "path": "drafts/person_1/dorcas_2810.json",
+      "sha256": "b3a49b04304fd4716dcc8a83b94383835a94efb630f51647927d0f17e50c2942",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 3,
+      "profilePassageCount": 3,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/%E3%83%89%E3%83%AB%E3%82%AB%E3%82%B9"
+    },
+    {
+      "entityID": "person:drusilla_1024",
+      "path": "drafts/person_1/drusilla_1024.json",
+      "sha256": "a7f4b309e31d0c6a5abbae572f943b44e3eb4df450cb50acd662ce4d2b8c856d",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Drusilla_(daughter_of_Herod_Agrippa_I)"
+    },
+    {
+      "entityID": "person:elymas_403",
+      "path": "drafts/person_1/elymas_403.json",
+      "sha256": "35163d9502e64116b02f37bcd055165b31f9be45dc3f578108dbe80e555894fe",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 2,
+      "profilePassageCount": 2,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Elymas"
+    },
+    {
+      "entityID": "person:erastus_1213",
+      "path": "drafts/person_1/erastus_1213.json",
+      "sha256": "d820801003b5933f28474d3e98b7a9f212555d5faa120c4f5de998447da5c360",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Erastus_of_Corinth"
+    },
+    {
+      "entityID": "person:eutychus_1230",
+      "path": "drafts/person_1/eutychus_1230.json",
+      "sha256": "bfd3fa3e2d7ee739b8e02cc4b5e433b4a93a3139ce22910f55463dcd0f25e50e",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Eutychus"
+    },
+    {
+      "entityID": "person:felix_1257",
+      "path": "drafts/person_1/felix_1257.json",
+      "sha256": "4bcb35e55d9e47e64ea890a63e7a37576414feaba764feb378c27768a58b0780",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-independently-read",
+      "wikipediaStatus": "article-retrieved-and-identity-matched",
+      "assignmentOccurrenceCount": 8,
+      "profilePassageCount": 8,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Antonius_Felix"
+    }
+  ],
+  "independentWikipediaChecks": [
+    {
+      "entityID": "person:aaron_1",
+      "draftURL": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AD%E3%83%B3",
+      "retrievedArticleTitle": "アロン",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "日本語版記事の冒頭が旧約聖書のモーセの兄アロンを扱うことを確認。Acts 7:40 の人物名と一致。",
+      "draftFragmentVerified": true,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:abraham_58",
+      "draftURL": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%96%E3%83%A9%E3%83%8F%E3%83%A0",
+      "retrievedArticleTitle": "アブラハム",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "日本語版記事のページ見出しが聖書の族長アブラハムであることを確認。Acts 3:13 の先祖としての言及と一致。",
+      "draftFragmentVerified": true,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:aeneas_106",
+      "draftURL": "https://en.wikipedia.org/wiki/Aeneas_(biblical_figure)",
+      "retrievedArticleTitle": "Aeneas (biblical figure)",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "英語版記事を閲覧し、Acts 9:33–34 の麻痺した人物を主題とする記事であることを確認。",
+      "draftFragmentVerified": true,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:agabus_107",
+      "draftURL": "https://en.wikipedia.org/wiki/Agabus",
+      "retrievedArticleTitle": "Agabus",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "英語版記事を閲覧し、使徒言行録に登場する預言者を扱うことを確認。記事は Acts 11 と 21 の同一人物説を伝統的理解として記すが、プロフィールでは本文が明示しない同一性を確定扱いしない。",
+      "draftFragmentVerified": true,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:agrippa_111",
+      "draftURL": "https://en.wikipedia.org/wiki/Herod_Agrippa_II",
+      "retrievedArticleTitle": "Herod Agrippa II",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "英語版記事を閲覧し、Herod Agrippa II の王権とベルニケとの関係を扱うことを確認。Acts 25–26 の王アグリッパという文脈に合う。",
+      "draftFragmentVerified": true,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:alexander_187",
+      "draftURL": "https://en.wikipedia.org/wiki/Alexander#Other_people",
+      "retrievedArticleTitle": "Alexander",
+      "draftKind": "shared-section (recommended; current draft null)",
+      "independentStatus": "exact-Acts-4:6-entry-found",
+      "identityEvidenceJa": "記事のAntiquity列挙に「Alexander, a member of the Jerusalem Temple Sanhedrin mentioned in Acts 4:6」と明記（本文行306）。一般名記事の共有セクションなので専用記事とは区別。",
+      "draftFragmentVerified": true,
+      "notes": "上流プロフィールは未リンク。既存null理由を訂正しsectionリンク候補を明記。fragmentは保存前に最終確認推奨。"
+    },
+    {
+      "entityID": "person:alphaeus_192",
+      "draftURL": "https://en.wikipedia.org/wiki/Alphaeus",
+      "retrievedArticleTitle": "Alphaeus",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はアルパヨを新約聖書の人物として説明し、ヤコブの父とする伝承と他の人物との同定の不確実さを区別している。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:ananias_258",
+      "draftURL": "https://en.wikipedia.org/wiki/Ananias_and_Sapphira",
+      "retrievedArticleTitle": "Ananias and Sapphira",
+      "draftKind": "shared-section",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はアナニアと妻サッピラを使徒言行録5章の夫婦として扱う。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:ananias_259",
+      "draftURL": "https://en.wikipedia.org/wiki/Ananias_of_Damascus",
+      "retrievedArticleTitle": "Ananias of Damascus",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はダマスコの弟子アナニアを使徒言行録9章のサウロ訪問場面に結びつける。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:ananias_260",
+      "draftURL": "https://en.wikipedia.org/wiki/Ananias_ben_Nebedeus",
+      "retrievedArticleTitle": "Ananias son of Nedebeus",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はネベデの子アナニアを大祭司として記し、使徒言行録23章のパウロの裁判場面に結びつける。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:andrew_264",
+      "draftURL": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%B3%E3%83%87%E3%83%AC",
+      "retrievedArticleTitle": "アンデレ",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はアンデレをイエスの使徒、シモン・ペトロの兄弟として紹介する。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:annas_269",
+      "draftURL": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%B3%E3%83%8A%E3%82%B9",
+      "retrievedArticleTitle": "アンナス",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はアンナスを古代ユダヤの大祭司とし、使徒言行録4:6に触れる。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:apollos_276",
+      "draftURL": "https://en.wikipedia.org/wiki/Apollos",
+      "retrievedArticleTitle": "Apollos",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はアポロをアレクサンドリア出身のユダヤ人キリスト者とし、使徒言行録18章のエフェソスでの初登場を説明する。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:aquila_279",
+      "draftURL": "https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AA%E3%82%B9%E3%82%AD%E3%83%A9%E3%81%A8%E3%82%A2%E3%82%AF%E3%83%A9",
+      "retrievedArticleTitle": "プリスキラとアクラ",
+      "draftKind": "shared-section",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はアクラとプリスキラを夫婦として扱い、使徒言行録18章でアポロに神の道を説明した二人とする。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:aristarchus_306",
+      "draftURL": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AA%E3%82%B9%E3%82%BF%E3%83%AB%E3%82%B3",
+      "retrievedArticleTitle": "アリスタルコ",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はアリスタルコをテサロニケ出身のパウロの同行者として、使徒言行録に照合している。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:barnabas_1722",
+      "draftURL": "https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%AB%E3%83%8A%E3%83%90",
+      "retrievedArticleTitle": "バルナバ",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はヨセフを本名とするキプロス出身のレビ人として説明し、使徒言行録4:36–37に結びつける。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:barsabas_1720",
+      "draftURL": "https://en.wikipedia.org/wiki/Joseph_Barsabbas",
+      "retrievedArticleTitle": "Joseph Barsabbas",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はヨセフ・バルサバ（ユストとも呼ばれる）を使徒選出の候補として使徒言行録1章に結びつける。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:bartholomew_405",
+      "draftURL": "https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%AB%E3%83%88%E3%83%AD%E3%83%9E%E3%82%A4",
+      "retrievedArticleTitle": "バルトロマイ",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はバルトロマイをイエスの使徒として扱い、弟子の名簿に現れる人物とする。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:bernice_482",
+      "draftURL": "https://en.wikipedia.org/wiki/Berenice_(daughter_of_Herod_Agrippa_I)",
+      "retrievedArticleTitle": "Berenice (daughter of Herod Agrippa)",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はベルニケをアグリッパ2世の妹として記し、使徒言行録25–26章の場面に結びつける。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:blastus_518",
+      "draftURL": "https://en.wikipedia.org/wiki/Blastus",
+      "retrievedArticleTitle": "Blastus",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はブラストをヘロデ・アグリッパ1世の侍従として、使徒言行録12:20の交渉に結びつける。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:caiaphas_532",
+      "draftURL": "https://ja.wikipedia.org/wiki/%E3%82%AB%E3%82%A4%E3%82%A2%E3%83%95%E3%82%A1",
+      "retrievedArticleTitle": "カイアファ",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はカイアファを大祭司として紹介し、イエスや使徒言行録の裁判場面に関係づける。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:candace_916",
+      "draftURL": "https://en.wikipedia.org/wiki/Kandake",
+      "retrievedArticleTitle": "Kandake",
+      "draftKind": "related-section",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はカンダケをメロエの女王たちに用いられた称号として説明し、単独の女王個人を同定するものではない。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:claudius_947",
+      "draftURL": "https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%87%E3%82%A3%E3%82%A6%E3%82%B9",
+      "retrievedArticleTitle": "クラウディウス",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "日本語記事はローマ皇帝クラウディウスを扱い、使徒言行録11:28の飢饉記事との歴史的関係を確認できる。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:claudius_948",
+      "draftURL": "https://en.wikipedia.org/wiki/Claudius_Lysias",
+      "retrievedArticleTitle": "Claudius Lysias",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はクラウディウス・リュシアをローマ軍の千人隊長として記し、パウロを総督フェリクスへ送った人物とする。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:cornelius_956",
+      "draftURL": "https://en.wikipedia.org/wiki/Cornelius_the_Centurion",
+      "retrievedArticleTitle": "Cornelius the Centurion",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はイタリア隊の百人隊長としてカイサリアにいたコルネリウスを記し、使徒言行録10章の人物と照合できる。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:damaris_972",
+      "draftURL": "https://en.wikipedia.org/wiki/Damaris_(biblical_figure)",
+      "retrievedArticleTitle": "Damaris (biblical figure)",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はダマリスを使徒言行録17:34に登場するアテネの女性として特定する。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:daughter_of_pharaoh_988",
+      "draftURL": "https://en.wikipedia.org/wiki/Pharaoh%27s_daughter_(Exodus)",
+      "retrievedArticleTitle": "Pharaoh's daughter (Exodus)",
+      "draftKind": "related-section",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事は名前の記されないファラオの娘がモーセを見つけて養子にした物語を扱う。使徒言行録7:21が言及する人物との物語上の関係に限る。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:david_994",
+      "draftURL": "https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%93%E3%83%87",
+      "retrievedArticleTitle": "ダビデ",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はダビデをイスラエルの王として扱い、旧約聖書の詩篇伝承とも関連づける。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:diana_1008",
+      "draftURL": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AB%E3%83%86%E3%83%9F%E3%82%B9",
+      "retrievedArticleTitle": "アルテミス",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はアルテミスをギリシア神話の女神として紹介する。本文名との照合は使徒言行録19:27以降による。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:dionysius_1013",
+      "draftURL": "https://en.wikipedia.org/wiki/Dionysius_the_Areopagite",
+      "retrievedArticleTitle": "Dionysius the Areopagite",
+      "draftKind": "related-section",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事は使徒言行録17:34のアレオパゴス議員を指す一方、後代の偽ディオニュシオスとの混同を分けている。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:dorcas_2810",
+      "draftURL": "https://ja.wikipedia.org/wiki/%E3%83%89%E3%83%AB%E3%82%AB%E3%82%B9",
+      "retrievedArticleTitle": "ドルカス",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はドルカスをヨッパの弟子タビタとして、使徒言行録9:36以下の人物と特定する。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:drusilla_1024",
+      "draftURL": "https://en.wikipedia.org/wiki/Drusilla_(daughter_of_Herod_Agrippa_I)",
+      "retrievedArticleTitle": "Drusilla (daughter of Herod Agrippa)",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はヘロデ・アグリッパ1世の娘ドルシラとフェリクスとの婚姻を扱う。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:elymas_403",
+      "draftURL": "https://en.wikipedia.org/wiki/Elymas",
+      "retrievedArticleTitle": "Elymas",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事は使徒言行録13:8のエルマを、13:6のバル・イエスと同じ魔術師として説明する。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:erastus_1213",
+      "draftURL": "https://en.wikipedia.org/wiki/Erastus_of_Corinth",
+      "retrievedArticleTitle": "Erastus of Corinth",
+      "draftKind": "related-section",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事は使徒言行録19:22のエラストとローマ16:23、二テモテ4:20の同名人物を並記するが、同一視を確定していない。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:eutychus_1230",
+      "draftURL": "https://en.wikipedia.org/wiki/Eutychus",
+      "retrievedArticleTitle": "Eutychus",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はエウテュコをトロアスの若者として、使徒言行録20:7–12の落下場面と結びつける。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    },
+    {
+      "entityID": "person:felix_1257",
+      "draftURL": "https://en.wikipedia.org/wiki/Antonius_Felix",
+      "retrievedArticleTitle": "Antonius Felix",
+      "draftKind": "article",
+      "independentStatus": "article-retrieved-and-identity-matched",
+      "identityEvidenceJa": "記事はフェリクスをユダヤ属州の総督とし、使徒言行録23–24章のパウロ拘束中の総督として明示する。",
+      "draftFragmentVerified": false,
+      "notes": "記事取得可否と対象同一性を分離。記事のHTTP成功だけではmatchにしていない。"
+    }
+  ],
+  "methodNotes": [
+    "各profile JSONを現バイト列のSHA-256に結び付けた。原稿は変更していない。",
+    "WEBローカル固定版 webp-usfx-2026-10-13-35a6adf626e5 の各knownBy本文と全factsのknownByを直接照合。base summaryは初出場面に留まり、後続の同一人物factsはfacts[].knownByでゲートされているか確認した。",
+    "person:claudius_948 は書簡の差出人として正しく千人隊長クラウディウス・リュシアを記述し、総督フェリクスを宛先とする。person:felix_1257 は移送先の総督で、フェリクスが書簡の主体という取り違えなし。person:cornelius_956 のbaseはActs 10:1の居住地・イタリア隊・百人隊長に限定。敬虔、祈り、幻、使者は後続factsに分離済み。",
+    "Acts 1:16のダビデを「イスラエルの王」とするsubtitleはActs 13:22の後続情報を先取り。Acts 25:13のアグリッパは王とだけ書くため「ユダヤの王」は範囲を誤認させる。",
+    "Wikipediaリンク有り35件はURLを実際に取得し、記事見出しと該当人物の記事内容または対応節を独立確認。HTTP200/取得成功とidentity matchを分けた。",
+    "Wikipedia未リンクのprofileは4件。Alexander 4:6は generic “Alexander” 記事内にexactなActs 4:6項目があり共有節リンクを採用できる可能性がある。Alexander 19:33、Crispus of Corinth、Demetrius the Ephesian silversmithは取得した記事が対象を扱わないためnull維持が妥当。",
+    "profile=null 2件は人物候補ではない理由を本文から再確認した。AugustusはCaesarという称号だけ、BenjaminはSaulの部族名。",
+    "profile.passagesは全候補の割当出現をカバーし、profile nullの2件だけは割当出現全てを明示除外。構文確認と内容合格は区別する。",
+    "これは独立した本文照合であり、専門家レビューではない。"
+  ],
+  "nullEntityChecks": [
+    {
+      "entityID": "person:augustus_366",
+      "sha256": "12d782af2795f76d22cbbe2df5c3d7ad05f8f4d235df4122fa80992aec793d1c",
+      "reasonJa": "ACT 25:21,25の固定本文は「Caesar」とだけ記す。Augustusとの明示的結びつきはなく、人物profileを作らない判断を支持。",
+      "occurrencesExcluded": 2
+    },
+    {
+      "entityID": "person:benjamin_463",
+      "sha256": "9c283b5369e65aa8aa0976205ccd2139a884ab861f8131acdacc095e60661e08",
+      "reasonJa": "ACT 13:21ではSaulがBenjamin部族出身と記される。ベニヤミン個人の言及ではなく、人物profileを作らない判断を支持。",
+      "occurrencesExcluded": 1
+    }
+  ]
+}

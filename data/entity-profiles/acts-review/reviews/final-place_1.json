@@ -1,0 +1,3228 @@
+{
+  "reviewType": "final independent, read-only place profile review",
+  "reviewedAtUTC": "2026-10-15T13:33:16.695186+00:00",
+  "scope": {
+    "group": "place_1",
+    "entryCount": 33,
+    "expectedAssignedEntryCount": 33,
+    "allAssignedIDsPresent": true,
+    "readOnly": true,
+    "noteJa": "凍結後の現ドラフトを一件ずつ読み、旧レビュー判定を流用していない。ドラフト・証拠は変更していない。"
+  },
+  "inputs": {
+    "manifestPath": "final-input-manifest.json",
+    "manifestSHA256": "472328d6d48fbcb816bbbfb35f698cfd26e962578ca18fb253e4d796b27bc2e6",
+    "manifestPhase": "frozen for final independent read; changes require re-review",
+    "witnessPath": "acts-web-verses.json",
+    "witnessSHA256": "90e72f0410119f8fc9afd529cdd730fd261bd1d25adfb413581c1462d6e936cb",
+    "witnessRecordCount": 1007,
+    "fixedWEBChapterHTTPAnchorCheckPath": "primary-link-checks.json",
+    "fixedWEBChapterHTTPAnchorCheckSHA256": "fc1d3cb595e870fa23c0e9060c1babd69d0d681afd45195b2e76cde6ba5a22ad",
+    "parentReportedAll28Chapters1007AnchorsHTTP200": true,
+    "pleiadesFixedEvidencePath": "candidate/data/geography/pleiades-evidence.json",
+    "pleiadesEvidenceSHA256": "4e0608f31640a9e62144daa58aafa35e4db7e4134ca5d6c5542a0a50e4f34256"
+  },
+  "overallDecision": "fail",
+  "summary": {
+    "pass": 3,
+    "qualified": 29,
+    "fail": 1,
+    "allDraftHashesMatchFrozenManifest": true,
+    "allPrimaryActSourceURLsUseFixedWEBPPath": true,
+    "allSourceIdsResolve": true,
+    "allProfilePassagesMatchEvidenceVerseSet": true,
+    "excludedOccurrencesAllKeptOutOfPassages": true
+  },
+  "globalFindingsJa": [
+    "全33件のWEB一次引用は固定版パス https://ebible.org/engwebp/ACTNN.htm#VN を参照し、HTTP検査ログで章ページの200・アンカー欠落なしを確認（28章/全1007節のHTTP検査は親報告も確認）。",
+    "全33件のドラフトSHA256はfinal-input-manifest.jsonの凍結SHAと一致。Acts箇所・プロフィールのpassages/evidence対応・sourceIds/fact sourceIdsを機械照合し、欠落なし。これは本文の地理学的妥当性自体の保証とは分ける。",
+    "地域・島・海域・曖昧地名でcoordinate=nullとする判断は適切。非nullはAlexandria, Cenchreae, Corinthの3件で、固定Pleiades代表点と緯度経度順が一致。ただしCorinthのOSM権利表記はプロフィールsource attributionから欠落。",
+    "Areopagus 17:34を地名用例から除外した判断は正しい。これはアレオパゴス人という人物称号の用例。"
+  ],
+  "items": [
+    {
+      "entityID": "place:achaia_16",
+      "displayNameJa": "アカイア",
+      "draftPath": "drafts/place_1/place_achaia_16.json",
+      "draftSHA256": "4b56b71574cf27d36064cfce5f43fd7da630a904f7c6812963d46cc3939d14a8",
+      "manifestSHA256": "4b56b71574cf27d36064cfce5f43fd7da630a904f7c6812963d46cc3939d14a8",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_achaia_16.json",
+      "evidenceSHA256": "6b7e2f7ada58d134a164efa76f06ef41a6cade866c18e967bf6c71ae6e48cc31",
+      "decision": "pass",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            18,
+            12
+          ],
+          [
+            18,
+            27
+          ],
+          [
+            19,
+            21
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-18-12",
+            "url": "https://ebible.org/engwebp/ACT18.htm#V12",
+            "expectedFixedWEBPPath": true,
+            "chapter": 18,
+            "verse": 12
+          },
+          {
+            "sourceID": "web-act-18-27",
+            "url": "https://ebible.org/engwebp/ACT18.htm#V27",
+            "expectedFixedWEBPPath": true,
+            "chapter": 18,
+            "verse": 27
+          },
+          {
+            "sourceID": "web-act-19-21",
+            "url": "https://ebible.org/engwebp/ACT19.htm#V21",
+            "expectedFixedWEBPPath": true,
+            "chapter": 19,
+            "verse": 21
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [
+          {
+            "sourceID": "pleiades-981502",
+            "title": "Pleiades · Achaia (province)",
+            "url": "https://raw.githubusercontent.com/isawnyu/pleiades.datasets/e0ad89cad8f55ab4b85138fb4f852d9ca07b1ebc/data/json/9/8/1/5/0/2/981502.json",
+            "license": "CC BY 3.0",
+            "licenseURL": "https://creativecommons.org/licenses/by/3.0/",
+            "attribution": "Pleiades contributors / ISAW, NYU。固定版データの日本語要約と代表位置。変更:日本語編集・緯度経度順の変換。"
+          }
+        ],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "属州・地域名を一点の都市位置として表示しない。Pleiades の地域レコードは確認したが、このプロフィールでは境界を示す代表座標を採用しない。",
+        "wikipediaIdentity": {
+          "title": "Achaia (Roman province)",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Achaia_(Roman_province)",
+          "kind": "article",
+          "noteJa": "ローマ属州アカイアの記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "Achaia (Roman province)",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Achaia_(Roman_province)",
+          "kind": "article",
+          "identityBasisJa": "The page identifies Achaia as the Roman province, matching the Acts proconsul/administrative-region use.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "18:12はガリオの属州統治、18:27・19:21は後発言及。Pleiades地域レコード981502を付すが代表座標nullであり、地方／属州を一点化しない。",
+      "remainingUncertaintyJa": "属州・地域名を一点の都市位置として表示しない。Pleiades の地域レコードは確認したが、このプロフィールでは境界を示す代表座標を採用しない。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:adramyttium_29",
+      "displayNameJa": "アドラミュティオン",
+      "draftPath": "drafts/place_1/place_adramyttium_29.json",
+      "draftSHA256": "cefb3e83797e58958721653ac685735cf01eff8232dc4a0891b7739969dec790",
+      "manifestSHA256": "cefb3e83797e58958721653ac685735cf01eff8232dc4a0891b7739969dec790",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_adramyttium_29.json",
+      "evidenceSHA256": "f51daf79983933e3ca238113f26a1ea5c7179e81b3be1b74d5fed84410379875",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            27,
+            2
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-27-2",
+            "url": "https://ebible.org/engwebp/ACT27.htm#V2",
+            "expectedFixedWEBPPath": true,
+            "chapter": 27,
+            "verse": 2
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は採用していない。今回確認できた地理資料では、古代港の位置を固定データで照合できなかったため座標は未設定。",
+        "wikipediaIdentity": {
+          "title": "Adramyttium",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Adramyttium",
+          "kind": "article",
+          "noteJa": "古代のアドラミュティオン市の記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "Adramyttium",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Adramyttium",
+          "kind": "article",
+          "identityBasisJa": "The page treats Adramyttium as the ancient city in Aeolis, matching the ship named for/from this port in Acts 27:2.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒27:2は船の船籍・出所を示す。トルコ西部沿岸という現代対応と古代港市の関係は概略として提示し、正確な地点未確認・座標nullを明記している。地理の独立した固定資料がないため条件付き。",
+      "remainingUncertaintyJa": "候補座標は採用していない。今回確認できた地理資料では、古代港の位置を固定データで照合できなかったため座標は未設定。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:adria_30",
+      "displayNameJa": "アドリア海域",
+      "draftPath": "drafts/place_1/place_adria_30.json",
+      "draftSHA256": "1da3c2e7be4af9a2c3c35ebb5f3ca4525e082b615e5e1cbdffa6694914ba5079",
+      "manifestSHA256": "1da3c2e7be4af9a2c3c35ebb5f3ca4525e082b615e5e1cbdffa6694914ba5079",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_adria_30.json",
+      "evidenceSHA256": "75503654512dfca2194019b1cddc09a626ef21eeea58348723105120352368e9",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            27,
+            27
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-27-27",
+            "url": "https://ebible.org/engwebp/ACT27.htm#V27",
+            "expectedFixedWEBPPath": true,
+            "chapter": 27,
+            "verse": 27
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "海域名であり、出来事の位置を示す座標は与えない。現代のアドリア海の範囲を古代の語の意味へ遡及させない。",
+        "wikipediaIdentity": {
+          "title": "Adriatic Sea",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Adriatic_Sea",
+          "kind": "article",
+          "noteJa": "現代のアドリア海の記事。古代の呼称範囲との一致は保証しない。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "Adriatic Sea",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Adriatic_Sea",
+          "kind": "article",
+          "identityBasisJa": "The article is the present Adriatic Sea; it is a contextual match for the sea-name but does not define the full ancient Adria range.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒27:27は海域名を示すが古代の範囲は確定しない。現代アドリア海の範囲へ直結させず、座標を付さない点は適切。古代の海域境界自体は未確定。",
+      "remainingUncertaintyJa": "海域名であり、出来事の位置を示す座標は与えない。現代のアドリア海の範囲を古代の語の意味へ遡及させない。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:akeldama_43",
+      "displayNameJa": "アケルダマ",
+      "draftPath": "drafts/place_1/place_akeldama_43.json",
+      "draftSHA256": "77b934d22f36730e0278665944a9910802dbae4d17bdce5e0786944bfc3e0043",
+      "manifestSHA256": "77b934d22f36730e0278665944a9910802dbae4d17bdce5e0786944bfc3e0043",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_akeldama_43.json",
+      "evidenceSHA256": "6b709f58ccb91725dfe3043e196279528e124685c8c78e5883a75a8d401b2785",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            1,
+            19
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-1-19",
+            "url": "https://ebible.org/engwebp/ACT01.htm#V19",
+            "expectedFixedWEBPPath": true,
+            "chapter": 1,
+            "verse": 19
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未確認で採用しない。本文の場所表現だけでは、現地の遺跡または墓地との正確な同定を確定できない。",
+        "wikipediaIdentity": {
+          "title": "Akeldama",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Akeldama",
+          "kind": "related-section",
+          "noteJa": "エルサレムの関連遺跡・墓地の記事。使徒1:19の畑との考古学的同定は確定できない。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "Akeldama",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Akeldama",
+          "kind": "related-section",
+          "identityBasisJa": "The article is about the Jerusalem site/cemetery associated with Akeldama, but the archaeological identification of Acts 1:19’s field is not established by the page.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒1:19は「血の畑」という語義を示すが、エルサレム周辺の現地遺跡との同定はしていない。地理・遺跡根拠は限定的で、本文の限定とnull座標は適切。",
+      "remainingUncertaintyJa": "候補座標は未確認で採用しない。本文の場所表現だけでは、現地の遺跡または墓地との正確な同定を確定できない。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:alexandria_46",
+      "displayNameJa": "アレクサンドリア",
+      "draftPath": "drafts/place_1/place_alexandria_46.json",
+      "draftSHA256": "fbe0820c7d43b2aee7d8e3a0af8f2eed2005ae3d0d763ace1e1bd9dc4e27767b",
+      "manifestSHA256": "fbe0820c7d43b2aee7d8e3a0af8f2eed2005ae3d0d763ace1e1bd9dc4e27767b",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_alexandria_46.json",
+      "evidenceSHA256": "ef133973e044a82a9845a9bfbdf10a21d11bd0244d19c77c989a2b52d277f2fe",
+      "decision": "pass",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            18,
+            24
+          ],
+          [
+            27,
+            6
+          ],
+          [
+            28,
+            11
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-18-24",
+            "url": "https://ebible.org/engwebp/ACT18.htm#V24",
+            "expectedFixedWEBPPath": true,
+            "chapter": 18,
+            "verse": 24
+          },
+          {
+            "sourceID": "web-act-27-6",
+            "url": "https://ebible.org/engwebp/ACT27.htm#V6",
+            "expectedFixedWEBPPath": true,
+            "chapter": 27,
+            "verse": 6
+          },
+          {
+            "sourceID": "web-act-28-11",
+            "url": "https://ebible.org/engwebp/ACT28.htm#V11",
+            "expectedFixedWEBPPath": true,
+            "chapter": 28,
+            "verse": 11
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [
+          {
+            "sourceID": "pleiades-727070",
+            "title": "Pleiades · Alexandria",
+            "url": "https://raw.githubusercontent.com/isawnyu/pleiades.datasets/e0ad89cad8f55ab4b85138fb4f852d9ca07b1ebc/data/json/7/2/7/0/727070.json",
+            "license": "CC BY 3.0",
+            "licenseURL": "https://creativecommons.org/licenses/by/3.0/",
+            "attribution": "Pleiades contributors / ISAW, NYU。固定版データの日本語要約と代表位置。変更:日本語編集・緯度経度順の変換。"
+          }
+        ],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": [
+          31.201435,
+          29.909773
+        ],
+        "coordinateNote": "古代都市の代表位置（Pleiades）。現代市街中心や使徒記事の出来事地点ではない。",
+        "wikipediaIdentity": {
+          "title": "アレクサンドリア",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/アレクサンドリア",
+          "kind": "article",
+          "noteJa": "エジプトのアレクサンドリア市とその歴史を扱う日本語記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "アレクサンドリア",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/アレクサンドリア",
+          "kind": "article",
+          "identityBasisJa": "The Japanese page covers Alexandria in Egypt and its ancient-city history, matching Acts 18:24, 27:6, and 28:11.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "18:24のアポロ出身地、27:6・28:11の船籍を分離。Pleiades 727070代表点のlat/lon順が固定データと一致し、後発の船情報はfactsへ分離。",
+      "remainingUncertaintyJa": "代表座標は古代地名の代表点であり、使徒記事の出来事地点ではない。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:amphipolis_59",
+      "displayNameJa": "アンフィポリス",
+      "draftPath": "drafts/place_1/place_amphipolis_59.json",
+      "draftSHA256": "6c00efed51fe10a7e222a9a78f0307379622860478e731954ff47226be9292db",
+      "manifestSHA256": "6c00efed51fe10a7e222a9a78f0307379622860478e731954ff47226be9292db",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_amphipolis_59.json",
+      "evidenceSHA256": "daaed740963a81aafc30ab20ee45f1e3ae63c79cec4a8570c9c3d4c7e3b9170b",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            17,
+            1
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-17-1",
+            "url": "https://ebible.org/engwebp/ACT17.htm#V1",
+            "expectedFixedWEBPPath": true,
+            "chapter": 17,
+            "verse": 1
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "アンフィポリス",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/アンフィポリス",
+          "kind": "article",
+          "noteJa": "古代都市アンフィポリスと現代アンフィポリを区別する日本語記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "アンフィポリス",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/アンフィポリス",
+          "kind": "article",
+          "identityBasisJa": "The article explicitly distinguishes ancient Amphipolis from the present municipality of Amphipoli and places the ancient city on the Strymonas east bank.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒17:1で経由町として記される。現代ギリシア北部の遺跡周辺という対応は広く限定し、正確な地点未照合とnullを明記。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:antioch_68",
+      "displayNameJa": "アンティオキア",
+      "draftPath": "drafts/place_1/place_antioch_68.json",
+      "draftSHA256": "aa864db2b34d37d441b64f2c5c6c86ff5aec97467ad1602400ed120bac951d1a",
+      "manifestSHA256": "aa864db2b34d37d441b64f2c5c6c86ff5aec97467ad1602400ed120bac951d1a",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_antioch_68.json",
+      "evidenceSHA256": "f22da809fd434158285ac0a65c1de9126c472ff4b68d898fe8d22380d01519d4",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            6,
+            5
+          ],
+          [
+            11,
+            19
+          ],
+          [
+            11,
+            20
+          ],
+          [
+            11,
+            22
+          ],
+          [
+            11,
+            26
+          ],
+          [
+            11,
+            27
+          ],
+          [
+            13,
+            1
+          ],
+          [
+            14,
+            26
+          ],
+          [
+            15,
+            22
+          ],
+          [
+            15,
+            23
+          ],
+          [
+            15,
+            30
+          ],
+          [
+            15,
+            35
+          ],
+          [
+            18,
+            22
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-6-5",
+            "url": "https://ebible.org/engwebp/ACT06.htm#V5",
+            "expectedFixedWEBPPath": true,
+            "chapter": 6,
+            "verse": 5
+          },
+          {
+            "sourceID": "web-act-11-19",
+            "url": "https://ebible.org/engwebp/ACT11.htm#V19",
+            "expectedFixedWEBPPath": true,
+            "chapter": 11,
+            "verse": 19
+          },
+          {
+            "sourceID": "web-act-11-20",
+            "url": "https://ebible.org/engwebp/ACT11.htm#V20",
+            "expectedFixedWEBPPath": true,
+            "chapter": 11,
+            "verse": 20
+          },
+          {
+            "sourceID": "web-act-11-22",
+            "url": "https://ebible.org/engwebp/ACT11.htm#V22",
+            "expectedFixedWEBPPath": true,
+            "chapter": 11,
+            "verse": 22
+          },
+          {
+            "sourceID": "web-act-11-26",
+            "url": "https://ebible.org/engwebp/ACT11.htm#V26",
+            "expectedFixedWEBPPath": true,
+            "chapter": 11,
+            "verse": 26
+          },
+          {
+            "sourceID": "web-act-11-27",
+            "url": "https://ebible.org/engwebp/ACT11.htm#V27",
+            "expectedFixedWEBPPath": true,
+            "chapter": 11,
+            "verse": 27
+          },
+          {
+            "sourceID": "web-act-13-1",
+            "url": "https://ebible.org/engwebp/ACT13.htm#V1",
+            "expectedFixedWEBPPath": true,
+            "chapter": 13,
+            "verse": 1
+          },
+          {
+            "sourceID": "web-act-14-26",
+            "url": "https://ebible.org/engwebp/ACT14.htm#V26",
+            "expectedFixedWEBPPath": true,
+            "chapter": 14,
+            "verse": 26
+          },
+          {
+            "sourceID": "web-act-15-22",
+            "url": "https://ebible.org/engwebp/ACT15.htm#V22",
+            "expectedFixedWEBPPath": true,
+            "chapter": 15,
+            "verse": 22
+          },
+          {
+            "sourceID": "web-act-15-23",
+            "url": "https://ebible.org/engwebp/ACT15.htm#V23",
+            "expectedFixedWEBPPath": true,
+            "chapter": 15,
+            "verse": 23
+          },
+          {
+            "sourceID": "web-act-15-30",
+            "url": "https://ebible.org/engwebp/ACT15.htm#V30",
+            "expectedFixedWEBPPath": true,
+            "chapter": 15,
+            "verse": 30
+          },
+          {
+            "sourceID": "web-act-15-35",
+            "url": "https://ebible.org/engwebp/ACT15.htm#V35",
+            "expectedFixedWEBPPath": true,
+            "chapter": 15,
+            "verse": 35
+          },
+          {
+            "sourceID": "web-act-18-22",
+            "url": "https://ebible.org/engwebp/ACT18.htm#V22",
+            "expectedFixedWEBPPath": true,
+            "chapter": 18,
+            "verse": 22
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "アンティオキア",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/アンティオキア#シリアのアンティオキアの歴史",
+          "kind": "shared-section",
+          "noteJa": "複数のアンティオキアを扱う記事。シリアのアンティオキアの歴史節を指定。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "アンティオキア",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/アンティオキア#シリアのアンティオキアの歴史",
+          "kind": "shared-section",
+          "identityBasisJa": "This is a multi-city Antioch overview; the checked section is explicitly titled “シリアのアンティオキアの歴史” and identifies the Orontes-side Syrian city.",
+          "fragmentRequired": true,
+          "fragmentVerified": true,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "初出6:5はニコラオを「アンティオキア出身」とだけ記し、シリアとは明記しない。後続用例はシリアのアンティオキアを支持するが、identityNoteJaは初出の曖昧さを明示すべき。本文の要約は初出時点に留まる。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": "identityNoteに初出6:5はシリアと限定しない旨を補う。"
+    },
+    {
+      "entityID": "place:antioch_69",
+      "displayNameJa": "ピシディアのアンティオキア",
+      "draftPath": "drafts/place_1/place_antioch_69.json",
+      "draftSHA256": "0cc0d28a4e83036c4e1e838e88eb5e9f2cb165bcf0ee3d7952384389d4283360",
+      "manifestSHA256": "0cc0d28a4e83036c4e1e838e88eb5e9f2cb165bcf0ee3d7952384389d4283360",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_antioch_69.json",
+      "evidenceSHA256": "115f551105c307660b4d37eabee5c5544228396cba5cbcdc4bb70a28723c77f0",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            19
+          ],
+          [
+            14,
+            21
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-13-14",
+            "url": "https://ebible.org/engwebp/ACT13.htm#V14",
+            "expectedFixedWEBPPath": true,
+            "chapter": 13,
+            "verse": 14
+          },
+          {
+            "sourceID": "web-act-14-19",
+            "url": "https://ebible.org/engwebp/ACT14.htm#V19",
+            "expectedFixedWEBPPath": true,
+            "chapter": 14,
+            "verse": 19
+          },
+          {
+            "sourceID": "web-act-14-21",
+            "url": "https://ebible.org/engwebp/ACT14.htm#V21",
+            "expectedFixedWEBPPath": true,
+            "chapter": 14,
+            "verse": 21
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "Antioch of Pisidia",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Antioch_of_Pisidia",
+          "kind": "article",
+          "noteJa": "ピシディアの古代都市の記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "Antioch of Pisidia",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Antioch_of_Pisidia",
+          "kind": "article",
+          "identityBasisJa": "The article identifies the ancient city as Antioch of Pisidia, matching Acts 13:14’s explicit regional qualifier.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒13:14は「ピシディアのアンティオキア」と明記。町の現代地理は概略・未照合と開示し、座標null。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:antipatris_70",
+      "displayNameJa": "アンティパトリス",
+      "draftPath": "drafts/place_1/place_antipatris_70.json",
+      "draftSHA256": "48204b638688b3e2fef829c6e4cab632d6251021f742156dfa9314b7053eb11d",
+      "manifestSHA256": "48204b638688b3e2fef829c6e4cab632d6251021f742156dfa9314b7053eb11d",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_antipatris_70.json",
+      "evidenceSHA256": "64ad6683c64424c01e251190cfc97df5a671ab5e5795347e088a7be174557af6",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            23,
+            31
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-23-31",
+            "url": "https://ebible.org/engwebp/ACT23.htm#V31",
+            "expectedFixedWEBPPath": true,
+            "chapter": 23,
+            "verse": 31
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "Antipatris",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Antipatris",
+          "kind": "article",
+          "noteJa": "古代都市アンティパトリスの記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "Antipatris",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Antipatris",
+          "kind": "article",
+          "identityBasisJa": "The page is specifically the ancient city Antipatris and describes its location in the Sharon plain, matching Acts 23:31.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒23:31は護送経由地を裏付ける。アフェク遺跡周辺という現代比定は未照合と明記し、座標null。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:apollonia_76",
+      "displayNameJa": "アポロニア",
+      "draftPath": "drafts/place_1/place_apollonia_76.json",
+      "draftSHA256": "45f8f5fb3fb0ebe89fe89cfca97f0c7ad35733425853800f65ac34d037cb7540",
+      "manifestSHA256": "45f8f5fb3fb0ebe89fe89cfca97f0c7ad35733425853800f65ac34d037cb7540",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_apollonia_76.json",
+      "evidenceSHA256": "80c7e5d2bbe19a536e8c82afff1190799e286dbd687063744a8fe8079b3f60d7",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            17,
+            1
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-17-1",
+            "url": "https://ebible.org/engwebp/ACT17.htm#V1",
+            "expectedFixedWEBPPath": true,
+            "chapter": 17,
+            "verse": 1
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "Apollonia (Mygdonia)",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Apollonia_(Mygdonia)",
+          "kind": "article",
+          "noteJa": "マケドニアのミュグドニア地方にあるアポロニアの記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "Apollonia (Mygdonia)",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Apollonia_(Mygdonia)",
+          "kind": "article",
+          "identityBasisJa": "The article is Apollonia in Mygdonia, Macedonia, on the route between Amphipolis and Thessalonica; it explicitly includes Acts 17:1.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒17:1で経由地として記される。現代ギリシア北部という概略以外の対応を断定せず、座標null。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:appii_forum_427",
+      "displayNameJa": "アッピウスの市場",
+      "draftPath": "drafts/place_1/place_appii_forum_427.json",
+      "draftSHA256": "644c66db6ff471eeab5b273cb0cdd15a90f998c16f64b15fe052ef33ff3f1f78",
+      "manifestSHA256": "644c66db6ff471eeab5b273cb0cdd15a90f998c16f64b15fe052ef33ff3f1f78",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_appii_forum_427.json",
+      "evidenceSHA256": "20d68c1549f5e21d76dad977fdab112916f874f105f6ca41a34c8da0679f6a7b",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            28,
+            15
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-28-15",
+            "url": "https://ebible.org/engwebp/ACT28.htm#V15",
+            "expectedFixedWEBPPath": true,
+            "chapter": 28,
+            "verse": 15
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "Forum Appii",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Forum_Appii",
+          "kind": "article",
+          "noteJa": "アッピア街道沿いの宿駅Forum Appiiの記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "Forum Appii",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Forum_Appii",
+          "kind": "article",
+          "identityBasisJa": "The article identifies Forum Appii/Appii Forum as a Via Appia post station and explicitly notes Acts 28:15.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒28:15はローマへ向かう一行を迎えた地点を裏付ける。街道沿いの宿駅という同定は概略で、遺跡未照合・座標null。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:areopagus_87",
+      "displayNameJa": "アレオパゴス",
+      "draftPath": "drafts/place_1/place_areopagus_87.json",
+      "draftSHA256": "532edc557ad1a6ae09a0e7516c9198a60bf5e4f8c1122dee2ee355ec80ca1e45",
+      "manifestSHA256": "532edc557ad1a6ae09a0e7516c9198a60bf5e4f8c1122dee2ee355ec80ca1e45",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_areopagus_87.json",
+      "evidenceSHA256": "2a1d62d6926fb73bff004ada34cbad5b697a2e95c75d63e90ab75b65eee463db",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            17,
+            19
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            17,
+            34
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-17-19",
+            "url": "https://ebible.org/engwebp/ACT17.htm#V19",
+            "expectedFixedWEBPPath": true,
+            "chapter": 17,
+            "verse": 19
+          },
+          {
+            "sourceID": "web-act-17-22",
+            "url": "https://ebible.org/engwebp/ACT17.htm#V22",
+            "expectedFixedWEBPPath": true,
+            "chapter": 17,
+            "verse": 22
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "アレオパゴス会議",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/アレオパゴス",
+          "kind": "related-section",
+          "noteJa": "会議の記事だが、概要でアクロポリス西北の丘として説明する。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "アレオパゴス会議",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/アレオパゴス",
+          "kind": "related-section",
+          "identityBasisJa": "The Japanese article is council-focused, but its overview identifies Areopagus as the hill northwest of the Acropolis and says the name also denotes the institution.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "17:19と17:22の地名用例を本文照合。17:34は「アレオパゴスの人」という人物称号として除外しており正しい。丘／評議会の曖昧さを明示するが、地形的な西方位置はActs本文外の資料に依存。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:asia_108",
+      "displayNameJa": "アジア州",
+      "draftPath": "drafts/place_1/place_asia_108.json",
+      "draftSHA256": "045e8f1134ca0e3f87286a777b71303b880a1eaca6b360a4688436f09702fdcc",
+      "manifestSHA256": "045e8f1134ca0e3f87286a777b71303b880a1eaca6b360a4688436f09702fdcc",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_asia_108.json",
+      "evidenceSHA256": "d66bdb8d58af723e66a40daf3600301b85354f5aa533741c57a443adfa999dc8",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            2,
+            9
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            16,
+            6
+          ],
+          [
+            19,
+            10
+          ],
+          [
+            19,
+            22
+          ],
+          [
+            19,
+            26
+          ],
+          [
+            19,
+            27
+          ],
+          [
+            20,
+            16
+          ],
+          [
+            20,
+            18
+          ],
+          [
+            21,
+            27
+          ],
+          [
+            24,
+            18
+          ],
+          [
+            27,
+            2
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-2-9",
+            "url": "https://ebible.org/engwebp/ACT02.htm#V9",
+            "expectedFixedWEBPPath": true,
+            "chapter": 2,
+            "verse": 9
+          },
+          {
+            "sourceID": "web-act-6-9",
+            "url": "https://ebible.org/engwebp/ACT06.htm#V9",
+            "expectedFixedWEBPPath": true,
+            "chapter": 6,
+            "verse": 9
+          },
+          {
+            "sourceID": "web-act-16-6",
+            "url": "https://ebible.org/engwebp/ACT16.htm#V6",
+            "expectedFixedWEBPPath": true,
+            "chapter": 16,
+            "verse": 6
+          },
+          {
+            "sourceID": "web-act-19-10",
+            "url": "https://ebible.org/engwebp/ACT19.htm#V10",
+            "expectedFixedWEBPPath": true,
+            "chapter": 19,
+            "verse": 10
+          },
+          {
+            "sourceID": "web-act-19-22",
+            "url": "https://ebible.org/engwebp/ACT19.htm#V22",
+            "expectedFixedWEBPPath": true,
+            "chapter": 19,
+            "verse": 22
+          },
+          {
+            "sourceID": "web-act-19-26",
+            "url": "https://ebible.org/engwebp/ACT19.htm#V26",
+            "expectedFixedWEBPPath": true,
+            "chapter": 19,
+            "verse": 26
+          },
+          {
+            "sourceID": "web-act-19-27",
+            "url": "https://ebible.org/engwebp/ACT19.htm#V27",
+            "expectedFixedWEBPPath": true,
+            "chapter": 19,
+            "verse": 27
+          },
+          {
+            "sourceID": "web-act-20-16",
+            "url": "https://ebible.org/engwebp/ACT20.htm#V16",
+            "expectedFixedWEBPPath": true,
+            "chapter": 20,
+            "verse": 16
+          },
+          {
+            "sourceID": "web-act-20-18",
+            "url": "https://ebible.org/engwebp/ACT20.htm#V18",
+            "expectedFixedWEBPPath": true,
+            "chapter": 20,
+            "verse": 18
+          },
+          {
+            "sourceID": "web-act-21-27",
+            "url": "https://ebible.org/engwebp/ACT21.htm#V27",
+            "expectedFixedWEBPPath": true,
+            "chapter": 21,
+            "verse": 27
+          },
+          {
+            "sourceID": "web-act-24-18",
+            "url": "https://ebible.org/engwebp/ACT24.htm#V18",
+            "expectedFixedWEBPPath": true,
+            "chapter": 24,
+            "verse": 18
+          },
+          {
+            "sourceID": "web-act-27-2",
+            "url": "https://ebible.org/engwebp/ACT27.htm#V2",
+            "expectedFixedWEBPPath": true,
+            "chapter": 27,
+            "verse": 2
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "アシア属州",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/アジア属州",
+          "kind": "article",
+          "noteJa": "アナトリア西部のローマ属州アシアの記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "アシア属州",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/アジア属州",
+          "kind": "article",
+          "identityBasisJa": "The Japanese page is explicitly the Roman province Asia in western Anatolia, not the continent of Asia.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒2:9等のAsiaをローマ時代の小アジア西部地域と読む。近代アジア大陸・現代境界を除外している。歴史地理の比定はActsだけで証明されないため条件付き。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:assos_110",
+      "displayNameJa": "アソス",
+      "draftPath": "drafts/place_1/place_assos_110.json",
+      "draftSHA256": "3b7a2672b139415c7bceffe7bb4c1a9b1f9ce0c1a04d37472290d89fe7f523fb",
+      "manifestSHA256": "3b7a2672b139415c7bceffe7bb4c1a9b1f9ce0c1a04d37472290d89fe7f523fb",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_assos_110.json",
+      "evidenceSHA256": "cd30c6c0235503da387c47c643a56090dad7c4a471990ed6a2c33c024c32d303",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            20,
+            13
+          ],
+          [
+            20,
+            14
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-20-13",
+            "url": "https://ebible.org/engwebp/ACT20.htm#V13",
+            "expectedFixedWEBPPath": true,
+            "chapter": 20,
+            "verse": 13
+          },
+          {
+            "sourceID": "web-act-20-14",
+            "url": "https://ebible.org/engwebp/ACT20.htm#V14",
+            "expectedFixedWEBPPath": true,
+            "chapter": 20,
+            "verse": 14
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "Assos",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Assos",
+          "kind": "article",
+          "noteJa": "トロード地方の古代都市アソスの記事。日本語版記事は確認できず英語版を採用。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "Assos",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Assos",
+          "kind": "article",
+          "identityBasisJa": "The article identifies the ancient Greek city near Behramkale in the Troad and explicitly says Acts 20 records the Troas–Assos voyage.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒20:13–14の予定・到着町として裏付け。ベフラムカレ近郊という古代市街比定は概略とし固定地理資料未照合を開示。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:athens_118",
+      "displayNameJa": "アテネ",
+      "draftPath": "drafts/place_1/place_athens_118.json",
+      "draftSHA256": "0c4871f0feb4f9d283632080936d27f01f63dc1af421d8e52bd3b5139514f8ec",
+      "manifestSHA256": "0c4871f0feb4f9d283632080936d27f01f63dc1af421d8e52bd3b5139514f8ec",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_athens_118.json",
+      "evidenceSHA256": "97eb138006c453197fe12cf12c8fa1b57f15f498e62458a94ca0edb14e5ff15b",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            17,
+            15
+          ],
+          [
+            17,
+            16
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            18,
+            1
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-17-15",
+            "url": "https://ebible.org/engwebp/ACT17.htm#V15",
+            "expectedFixedWEBPPath": true,
+            "chapter": 17,
+            "verse": 15
+          },
+          {
+            "sourceID": "web-act-17-16",
+            "url": "https://ebible.org/engwebp/ACT17.htm#V16",
+            "expectedFixedWEBPPath": true,
+            "chapter": 17,
+            "verse": 16
+          },
+          {
+            "sourceID": "web-act-17-22",
+            "url": "https://ebible.org/engwebp/ACT17.htm#V22",
+            "expectedFixedWEBPPath": true,
+            "chapter": 17,
+            "verse": 22
+          },
+          {
+            "sourceID": "web-act-18-1",
+            "url": "https://ebible.org/engwebp/ACT18.htm#V1",
+            "expectedFixedWEBPPath": true,
+            "chapter": 18,
+            "verse": 1
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。公式Pleiadesページは確認したが、指定された固定データセット上の記録・権利情報に接続できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "アテネ",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/アテネ",
+          "kind": "article",
+          "noteJa": "アテネの都市・古代史を扱う日本語記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "アテネ",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/アテネ",
+          "kind": "article",
+          "identityBasisJa": "The Japanese article treats Athens as the Greek city with ancient history, matching the city in Acts 17:15–18:1.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒17:15–18:1の町名・場面は適切。現代都市との連続性は明瞭だが、固定Pleiades/考古資料の点を確認できず座標nullという扱いが保守的。",
+      "remainingUncertaintyJa": "候補座標は未採用。公式Pleiadesページは確認したが、指定された固定データセット上の記録・権利情報に接続できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:attalia_120",
+      "displayNameJa": "アッタリア",
+      "draftPath": "drafts/place_1/place_attalia_120.json",
+      "draftSHA256": "4c35b5bb5b65bf46520860b10cdbe5e74e3f90a486840e5beaf9ad9026831225",
+      "manifestSHA256": "4c35b5bb5b65bf46520860b10cdbe5e74e3f90a486840e5beaf9ad9026831225",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_attalia_120.json",
+      "evidenceSHA256": "a7284199ce5e1ad6ad7ead7bd9fdb96361413a47c8e0a2c1daa09d887d3fe3d1",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            14,
+            25
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-14-25",
+            "url": "https://ebible.org/engwebp/ACT14.htm#V25",
+            "expectedFixedWEBPPath": true,
+            "chapter": 14,
+            "verse": 25
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "Antalya",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Antalya#History",
+          "kind": "related-section",
+          "noteJa": "Attalia から Antalya へ転送される記事。歴史節で古代名Attaleia/Attaliaと使徒14:25の航路を確認。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "Antalya",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Antalya#History",
+          "kind": "related-section",
+          "identityBasisJa": "The Attalia link redirects to Antalya; the checked history section says the ancient city was Attaleia/Attalia and explicitly links its visit to Acts 14:25.",
+          "fragmentRequired": true,
+          "fragmentVerified": true,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒14:25はパウロらがペルゲから下った町を記す。アンタルヤ旧市街との継続は記事の転送・歴史節に基づく関連づけで、固定地理確認は未実施。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:azotus_132",
+      "displayNameJa": "アゾト",
+      "draftPath": "drafts/place_1/place_azotus_132.json",
+      "draftSHA256": "94212c82e3ad1a4d0bfbe04c02c12e1294aafdf9169ea47806a3a0da7f730359",
+      "manifestSHA256": "94212c82e3ad1a4d0bfbe04c02c12e1294aafdf9169ea47806a3a0da7f730359",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_azotus_132.json",
+      "evidenceSHA256": "018f32d53233007a3bc4989d3027b94b5781324305f59cb093a01f150f283d4f",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            8,
+            40
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-8-40",
+            "url": "https://ebible.org/engwebp/ACT08.htm#V40",
+            "expectedFixedWEBPPath": true,
+            "chapter": 8,
+            "verse": 40
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "Azotus",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Azotus",
+          "kind": "article",
+          "noteJa": "Azotusの名称を扱う索引記事。内陸都市と沿岸港の区別があり、本文だけでは小地点を絞れない。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "Azotus",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Azotus",
+          "kind": "article",
+          "identityBasisJa": "This exact-name set-index article says Azotus is the Hellenistic Greek name of Ashdod and distinguishes inland Ashdod from the coastal port; the passage alone does not settle that sub-site.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒8:40はフィリポの到着先を記す。沿岸都市アシュドド周辺との現代比定は断定を避け、遺跡位置未照合・座標null。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:babylon_151",
+      "displayNameJa": "バビロン",
+      "draftPath": "drafts/place_1/place_babylon_151.json",
+      "draftSHA256": "2123cb7ac6002d1e4ae0e5b15f6c1d05a395987d6fc2f3392a7e05cc603bda71",
+      "manifestSHA256": "2123cb7ac6002d1e4ae0e5b15f6c1d05a395987d6fc2f3392a7e05cc603bda71",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_babylon_151.json",
+      "evidenceSHA256": "21e6f258f69f0191b9a85c684305b8e7c98dbf650d99b58ef117133dc6e53006",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            7,
+            43
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-7-43",
+            "url": "https://ebible.org/engwebp/ACT07.htm#V43",
+            "expectedFixedWEBPPath": true,
+            "chapter": 7,
+            "verse": 43
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "バビロン",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/バビロン",
+          "kind": "article",
+          "noteJa": "メソポタミアの古代都市バビロンの記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "バビロン",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/バビロン",
+          "kind": "article",
+          "identityBasisJa": "The article concerns the ancient Babylonian city in Mesopotamia, matching the named place in Acts 7:43.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒7:43の引用に捕囚先として現れる。バグダード南方という古代都市の対応は本文外地理情報だが、座標未確認としている。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:beautiful_gate_163",
+      "displayNameJa": "美しの門",
+      "draftPath": "drafts/place_1/place_beautiful_gate_163.json",
+      "draftSHA256": "c8325c87dc2d736b3a3f7d111ffec8bb2fbab8b95bb8ac8b63d07be8a16528d4",
+      "manifestSHA256": "c8325c87dc2d736b3a3f7d111ffec8bb2fbab8b95bb8ac8b63d07be8a16528d4",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_beautiful_gate_163.json",
+      "evidenceSHA256": "5b4929bb28eb65ef7c9283976c16b954032cf8874b3cd993b2d42452cd8cdc5a",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            10
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-3-2",
+            "url": "https://ebible.org/engwebp/ACT03.htm#V2",
+            "expectedFixedWEBPPath": true,
+            "chapter": 3,
+            "verse": 2
+          },
+          {
+            "sourceID": "web-act-3-10",
+            "url": "https://ebible.org/engwebp/ACT03.htm#V10",
+            "expectedFixedWEBPPath": true,
+            "chapter": 3,
+            "verse": 10
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "Beautiful Gate",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Beautiful_Gate",
+          "kind": "article",
+          "noteJa": "エルサレム神殿の門として使徒3章に関連づける英語記事。具体的な同定は不確かで、ニカノル門とシュシャン門が候補として挙がる。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "Beautiful Gate",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Beautiful_Gate",
+          "kind": "article",
+          "identityBasisJa": "The article identifies the Beautiful Gate as a Jerusalem Temple gate in Acts 3:2,10; its physical-location section says identification is unsettled and lists Nicanor and Shushan as proposed candidates.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; page title, Acts references, and uncertainty about physical identity checked"
+        }
+      },
+      "findingJa": "3:2,10の神殿門という本文と、門同定が不確かという注意は適切。3:2 summaryに「では、、」の重複句読点があり、要修正。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": "summaryの「では、、」を「では、」へ直す。"
+    },
+    {
+      "entityID": "place:berea_177",
+      "displayNameJa": "ベレア",
+      "draftPath": "drafts/place_1/place_berea_177.json",
+      "draftSHA256": "8610b391bd524c37fe56af99b4ada6f5e8aeff4df4d9951bab4dd8a361846bea",
+      "manifestSHA256": "8610b391bd524c37fe56af99b4ada6f5e8aeff4df4d9951bab4dd8a361846bea",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_berea_177.json",
+      "evidenceSHA256": "3b1e4475f75916e87507865e8b1698a1857f61733742a7bc66537b72b28c0e6f",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            17,
+            10
+          ],
+          [
+            17,
+            13
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-17-10",
+            "url": "https://ebible.org/engwebp/ACT17.htm#V10",
+            "expectedFixedWEBPPath": true,
+            "chapter": 17,
+            "verse": 10
+          },
+          {
+            "sourceID": "web-act-17-13",
+            "url": "https://ebible.org/engwebp/ACT17.htm#V13",
+            "expectedFixedWEBPPath": true,
+            "chapter": 17,
+            "verse": 13
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "Beroea",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Beroea",
+          "kind": "article",
+          "noteJa": "マケドニアの古代都市ベレア（現ヴェリア）を扱う英語記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "Beroea",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Beroea",
+          "kind": "article",
+          "identityBasisJa": "The article identifies Beroea as the ancient city now Veria in Macedonia and cites the Acts 17 visit.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒17:10,13はベレアでの訪問・追跡を裏付ける。現代ヴェリア周辺という比定は概略で、固定地理確認なし・座標null。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:bithynia_250",
+      "displayNameJa": "ビテュニア",
+      "draftPath": "drafts/place_1/place_bithynia_250.json",
+      "draftSHA256": "acda470ecdd085d06a450fe332cf43978df9df6d6c4e9ff63412cadbe06aeb10",
+      "manifestSHA256": "acda470ecdd085d06a450fe332cf43978df9df6d6c4e9ff63412cadbe06aeb10",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_bithynia_250.json",
+      "evidenceSHA256": "55014eac267bb03e43c340a5acea7d807c18f6f8a7cfef2116ba210b2edc8244",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            16,
+            7
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-16-7",
+            "url": "https://ebible.org/engwebp/ACT16.htm#V7",
+            "expectedFixedWEBPPath": true,
+            "chapter": 16,
+            "verse": 7
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "ビテュニア",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/ビテュニア",
+          "kind": "article",
+          "noteJa": "アナトリア北西部の古代地域ビテュニアの記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "ビテュニア",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/ビテュニア",
+          "kind": "article",
+          "identityBasisJa": "The Japanese page identifies Bithynia as the ancient region of northwestern Anatolia, matching the regional name in Acts 16:7.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒16:7は入ろうとした地域として記す。現代トルコ北西部という概略・州境との非同一性は慎重だが地理比定は本文外。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:caesarea_266",
+      "displayNameJa": "カイサリア",
+      "draftPath": "drafts/place_1/place_caesarea_266.json",
+      "draftSHA256": "195c6c5c9d5cbbbe0b1982be73e6fcafa1d1bfa5c9538a4d46ea1f44d44e18ff",
+      "manifestSHA256": "195c6c5c9d5cbbbe0b1982be73e6fcafa1d1bfa5c9538a4d46ea1f44d44e18ff",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_caesarea_266.json",
+      "evidenceSHA256": "60fc9170dd9b440e064347b89bfe4760b0eb05d77da0117d07ab9b0b17b30726",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            8,
+            40
+          ],
+          [
+            9,
+            30
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            10,
+            24
+          ],
+          [
+            11,
+            11
+          ],
+          [
+            12,
+            19
+          ],
+          [
+            18,
+            22
+          ],
+          [
+            21,
+            8
+          ],
+          [
+            21,
+            16
+          ],
+          [
+            23,
+            23
+          ],
+          [
+            23,
+            33
+          ],
+          [
+            25,
+            1
+          ],
+          [
+            25,
+            4
+          ],
+          [
+            25,
+            6
+          ],
+          [
+            25,
+            13
+          ],
+          [
+            25,
+            21
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-8-40",
+            "url": "https://ebible.org/engwebp/ACT08.htm#V40",
+            "expectedFixedWEBPPath": true,
+            "chapter": 8,
+            "verse": 40
+          },
+          {
+            "sourceID": "web-act-9-30",
+            "url": "https://ebible.org/engwebp/ACT09.htm#V30",
+            "expectedFixedWEBPPath": true,
+            "chapter": 9,
+            "verse": 30
+          },
+          {
+            "sourceID": "web-act-10-1",
+            "url": "https://ebible.org/engwebp/ACT10.htm#V1",
+            "expectedFixedWEBPPath": true,
+            "chapter": 10,
+            "verse": 1
+          },
+          {
+            "sourceID": "web-act-10-24",
+            "url": "https://ebible.org/engwebp/ACT10.htm#V24",
+            "expectedFixedWEBPPath": true,
+            "chapter": 10,
+            "verse": 24
+          },
+          {
+            "sourceID": "web-act-11-11",
+            "url": "https://ebible.org/engwebp/ACT11.htm#V11",
+            "expectedFixedWEBPPath": true,
+            "chapter": 11,
+            "verse": 11
+          },
+          {
+            "sourceID": "web-act-12-19",
+            "url": "https://ebible.org/engwebp/ACT12.htm#V19",
+            "expectedFixedWEBPPath": true,
+            "chapter": 12,
+            "verse": 19
+          },
+          {
+            "sourceID": "web-act-18-22",
+            "url": "https://ebible.org/engwebp/ACT18.htm#V22",
+            "expectedFixedWEBPPath": true,
+            "chapter": 18,
+            "verse": 22
+          },
+          {
+            "sourceID": "web-act-21-8",
+            "url": "https://ebible.org/engwebp/ACT21.htm#V8",
+            "expectedFixedWEBPPath": true,
+            "chapter": 21,
+            "verse": 8
+          },
+          {
+            "sourceID": "web-act-21-16",
+            "url": "https://ebible.org/engwebp/ACT21.htm#V16",
+            "expectedFixedWEBPPath": true,
+            "chapter": 21,
+            "verse": 16
+          },
+          {
+            "sourceID": "web-act-23-23",
+            "url": "https://ebible.org/engwebp/ACT23.htm#V23",
+            "expectedFixedWEBPPath": true,
+            "chapter": 23,
+            "verse": 23
+          },
+          {
+            "sourceID": "web-act-23-33",
+            "url": "https://ebible.org/engwebp/ACT23.htm#V33",
+            "expectedFixedWEBPPath": true,
+            "chapter": 23,
+            "verse": 33
+          },
+          {
+            "sourceID": "web-act-25-1",
+            "url": "https://ebible.org/engwebp/ACT25.htm#V1",
+            "expectedFixedWEBPPath": true,
+            "chapter": 25,
+            "verse": 1
+          },
+          {
+            "sourceID": "web-act-25-4",
+            "url": "https://ebible.org/engwebp/ACT25.htm#V4",
+            "expectedFixedWEBPPath": true,
+            "chapter": 25,
+            "verse": 4
+          },
+          {
+            "sourceID": "web-act-25-6",
+            "url": "https://ebible.org/engwebp/ACT25.htm#V6",
+            "expectedFixedWEBPPath": true,
+            "chapter": 25,
+            "verse": 6
+          },
+          {
+            "sourceID": "web-act-25-13",
+            "url": "https://ebible.org/engwebp/ACT25.htm#V13",
+            "expectedFixedWEBPPath": true,
+            "chapter": 25,
+            "verse": 13
+          },
+          {
+            "sourceID": "web-act-25-21",
+            "url": "https://ebible.org/engwebp/ACT25.htm#V21",
+            "expectedFixedWEBPPath": true,
+            "chapter": 25,
+            "verse": 21
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "カイサリア・マリティマ",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/カイサリア・マリティマ",
+          "kind": "article",
+          "noteJa": "海辺のカイサリアの記事。使徒の単独表記からの同定は行程に基づく推定。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "カイサリア・マリティマ",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/カイサリア・マリティマ",
+          "kind": "article",
+          "identityBasisJa": "The page identifies the Palestinian coastal port city Caesarea Maritima and explicitly connects it with Acts; Acts’ bare “Caesarea” remains contextually inferred from the route.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "8:40の初出にはカイサリアの限定語がなく、マリティマ同定はアゾトス後の経路からの推定と明示。後続の使徒記事も同じ都市という個別同定は文脈上妥当だが、名称の曖昧さ・地理資料未確認が残る。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:canaan_272",
+      "displayNameJa": "カナン",
+      "draftPath": "drafts/place_1/place_canaan_272.json",
+      "draftSHA256": "be69ec34eec082ea7fb1db7d0062711f3bf51949865e6c61ba2a69ed1ff2ef70",
+      "manifestSHA256": "be69ec34eec082ea7fb1db7d0062711f3bf51949865e6c61ba2a69ed1ff2ef70",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_canaan_272.json",
+      "evidenceSHA256": "16c90dde6b8fd1a2e9cf26a80760b1b2812a691e8d4d9a9f4e2f5a54c880f025",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            7,
+            11
+          ],
+          [
+            13,
+            19
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-7-11",
+            "url": "https://ebible.org/engwebp/ACT07.htm#V11",
+            "expectedFixedWEBPPath": true,
+            "chapter": 7,
+            "verse": 11
+          },
+          {
+            "sourceID": "web-act-13-19",
+            "url": "https://ebible.org/engwebp/ACT13.htm#V19",
+            "expectedFixedWEBPPath": true,
+            "chapter": 13,
+            "verse": 19
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "カナン",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/カナン",
+          "kind": "article",
+          "noteJa": "古代の地域名カナンの記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "カナン",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/カナン",
+          "kind": "article",
+          "identityBasisJa": "The article describes Canaan as an ancient geographic region between the Mediterranean and Jordan/Dead Sea, matching a regional rather than city referent.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "7:11の飢饉の地、13:19の土地という文脈は合う。現代国境に置き換えない広域記述で、境界・座標なしとしている。歴史的範囲は時期依存。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:cappadocia_276",
+      "displayNameJa": "カッパドキア",
+      "draftPath": "drafts/place_1/place_cappadocia_276.json",
+      "draftSHA256": "fcf3baad7903108a09c1b7aa8f3e07b24fe286e2d9e92923a5c95655a4807c74",
+      "manifestSHA256": "fcf3baad7903108a09c1b7aa8f3e07b24fe286e2d9e92923a5c95655a4807c74",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_cappadocia_276.json",
+      "evidenceSHA256": "7b953c47aa02819b516968fbf95194fad5e2fb201d5f2a6c70b60c484e551d38",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            2,
+            9
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-2-9",
+            "url": "https://ebible.org/engwebp/ACT02.htm#V9",
+            "expectedFixedWEBPPath": true,
+            "chapter": 2,
+            "verse": 9
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "カッパドキア",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/カッパドキア",
+          "kind": "article",
+          "noteJa": "古代地域・王国を含むカッパドキアの記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "カッパドキア",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/カッパドキア",
+          "kind": "article",
+          "identityBasisJa": "The Japanese article includes ancient Cappadocia and its historical polity/region, matching the region listed in Acts 2:9.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒2:9の出身地列挙。現代の観光地域や行政境界との非同一性を留保し、座標null。古代領域範囲の出典照合は未解決。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:cenchreae_281",
+      "displayNameJa": "ケンクレア",
+      "draftPath": "drafts/place_1/place_cenchreae_281.json",
+      "draftSHA256": "8fb01185c74c1706e4986086e72c86d82155ffd8ef892682640c368cf2a42ad1",
+      "manifestSHA256": "8fb01185c74c1706e4986086e72c86d82155ffd8ef892682640c368cf2a42ad1",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_cenchreae_281.json",
+      "evidenceSHA256": "6fb886503d198ceec1f9edbb41431ef48e04c9b17f44e8bbb67c4cf2db23deb1",
+      "decision": "pass",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            18,
+            18
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-18-18",
+            "url": "https://ebible.org/engwebp/ACT18.htm#V18",
+            "expectedFixedWEBPPath": true,
+            "chapter": 18,
+            "verse": 18
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [
+          {
+            "sourceID": "pleiades-570347",
+            "title": "Pleiades · Kenchreai",
+            "url": "https://raw.githubusercontent.com/isawnyu/pleiades.datasets/e0ad89cad8f55ab4b85138fb4f852d9ca07b1ebc/data/json/5/7/0/3/570347.json",
+            "license": "CC BY 3.0",
+            "licenseURL": "https://creativecommons.org/licenses/by/3.0/",
+            "attribution": "Pleiades contributors / ISAW, NYU。固定版代表点。変更:日本語編集、緯度経度順へ変換。"
+          }
+        ],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": [
+          37.88239,
+          22.992532
+        ],
+        "coordinateNote": "古代ケンクレア港のPleiades代表点。特定の船着場や出来事位置を示さない。",
+        "wikipediaIdentity": {
+          "title": "Kechries",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Cenchreae",
+          "kind": "related-section",
+          "noteJa": "古代港ケンクレアイと同じ場所にある現ケクリエスの記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "Kechries",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Cenchreae",
+          "kind": "related-section",
+          "identityBasisJa": "The Cenchreae URL resolves to Kechries; the article says the present village takes its name from the ancient port at the same location.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "18:18の港と出航を記す。Pleiades固定レコード570347 / DARE代表点 (lat 37.88239, lon 22.992532) と一致し、点が船着場・事件地点でないと限定。",
+      "remainingUncertaintyJa": "代表座標は古代地名の代表点であり、使徒記事の出来事地点ではない。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:chios_296",
+      "displayNameJa": "キオス",
+      "draftPath": "drafts/place_1/place_chios_296.json",
+      "draftSHA256": "e099f7baf30a9f50c6c9f9c1e68c2a054a25ef1ca3c55fe7ea80f8e2e3ce281a",
+      "manifestSHA256": "e099f7baf30a9f50c6c9f9c1e68c2a054a25ef1ca3c55fe7ea80f8e2e3ce281a",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_chios_296.json",
+      "evidenceSHA256": "beb737b4090d8ab112ba00a4c5fd45862755afd1caf81dcc771afe729196cd92",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            20,
+            15
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-20-15",
+            "url": "https://ebible.org/engwebp/ACT20.htm#V15",
+            "expectedFixedWEBPPath": true,
+            "chapter": 20,
+            "verse": 15
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "ヒオス",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/キオス",
+          "kind": "article",
+          "noteJa": "ギリシアのキオス島（ヒオス）の記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "ヒオス",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/キオス",
+          "kind": "article",
+          "identityBasisJa": "The Japanese article is the Greek island Chios, matching the island passed offshore in Acts 20:15.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒20:15は船が沖を通る島として記す。現代キオス島との同一性は自然だが固定地理資料による確認なし、島に座標ピンを置かない。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:cilicia_300",
+      "displayNameJa": "キリキア",
+      "draftPath": "drafts/place_1/place_cilicia_300.json",
+      "draftSHA256": "00a3af39ce6376858873bec35c19373e47b5cbb5af0296abdd1a52aaee1e464c",
+      "manifestSHA256": "00a3af39ce6376858873bec35c19373e47b5cbb5af0296abdd1a52aaee1e464c",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_cilicia_300.json",
+      "evidenceSHA256": "e25b57da3c047d57ad56db3e7dbf3139e2a73bb933b569f79008f5da12ba532b",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            6,
+            9
+          ],
+          [
+            15,
+            23
+          ],
+          [
+            15,
+            41
+          ],
+          [
+            21,
+            39
+          ],
+          [
+            22,
+            3
+          ],
+          [
+            23,
+            34
+          ],
+          [
+            27,
+            5
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-6-9",
+            "url": "https://ebible.org/engwebp/ACT06.htm#V9",
+            "expectedFixedWEBPPath": true,
+            "chapter": 6,
+            "verse": 9
+          },
+          {
+            "sourceID": "web-act-15-23",
+            "url": "https://ebible.org/engwebp/ACT15.htm#V23",
+            "expectedFixedWEBPPath": true,
+            "chapter": 15,
+            "verse": 23
+          },
+          {
+            "sourceID": "web-act-15-41",
+            "url": "https://ebible.org/engwebp/ACT15.htm#V41",
+            "expectedFixedWEBPPath": true,
+            "chapter": 15,
+            "verse": 41
+          },
+          {
+            "sourceID": "web-act-21-39",
+            "url": "https://ebible.org/engwebp/ACT21.htm#V39",
+            "expectedFixedWEBPPath": true,
+            "chapter": 21,
+            "verse": 39
+          },
+          {
+            "sourceID": "web-act-22-3",
+            "url": "https://ebible.org/engwebp/ACT22.htm#V3",
+            "expectedFixedWEBPPath": true,
+            "chapter": 22,
+            "verse": 3
+          },
+          {
+            "sourceID": "web-act-23-34",
+            "url": "https://ebible.org/engwebp/ACT23.htm#V34",
+            "expectedFixedWEBPPath": true,
+            "chapter": 23,
+            "verse": 34
+          },
+          {
+            "sourceID": "web-act-27-5",
+            "url": "https://ebible.org/engwebp/ACT27.htm#V5",
+            "expectedFixedWEBPPath": true,
+            "chapter": 27,
+            "verse": 5
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "キリキア",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/キリキア",
+          "kind": "article",
+          "noteJa": "アナトリア南東部の古代地域キリキアの記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "キリキア",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/キリキア",
+          "kind": "article",
+          "identityBasisJa": "The Japanese page describes Cilicia as the ancient region in southeastern Anatolia, matching the regional name in Acts.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒6:9,15:23,41,21:39,22:3,23:34,27:5各用例は地域を指し、一点の都市候補を避けた。現代トルコ南部との範囲対応は概略、座標null。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:clauda_280",
+      "displayNameJa": "クラウダ島",
+      "draftPath": "drafts/place_1/place_clauda_280.json",
+      "draftSHA256": "9103686c3bdecb67a42ffa2038147da8978dc825166c63b2e0a4c578403dfa15",
+      "manifestSHA256": "9103686c3bdecb67a42ffa2038147da8978dc825166c63b2e0a4c578403dfa15",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_clauda_280.json",
+      "evidenceSHA256": "7fb4fd9c81cd7b7b0ed1f4b7a587027f48f86e20336d36f36f580d983b57c25e",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            27,
+            16
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-27-16",
+            "url": "https://ebible.org/engwebp/ACT27.htm#V16",
+            "expectedFixedWEBPPath": true,
+            "chapter": 27,
+            "verse": 16
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "Gavdos",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Clauda",
+          "kind": "related-section",
+          "noteJa": "Clauda から現ガヴドス島の記事へ転送され、記事が使徒27章の旧称として明記。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "Gavdos",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Clauda",
+          "kind": "related-section",
+          "identityBasisJa": "The Clauda URL redirects to Gavdos; the article explicitly lists Clauda/Cauda as the name used in Acts 27 for this island.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒27:16の小島。ガヴドス比定は記事に基づく候補であると明記し、座標未設定。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:cnidus_304",
+      "displayNameJa": "クニドス",
+      "draftPath": "drafts/place_1/place_cnidus_304.json",
+      "draftSHA256": "4c6b3426c7f7c330a5cac2217b8c774f3140018aed313eed01f80f06a13c74c8",
+      "manifestSHA256": "4c6b3426c7f7c330a5cac2217b8c774f3140018aed313eed01f80f06a13c74c8",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_cnidus_304.json",
+      "evidenceSHA256": "6ea3ef00765b0789be90caf3bd8c6486bd4ea04b0be6d1855b1365e8dbae0330",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            27,
+            7
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-27-7",
+            "url": "https://ebible.org/engwebp/ACT27.htm#V7",
+            "expectedFixedWEBPPath": true,
+            "chapter": 27,
+            "verse": 7
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "Cnidos",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Cnidos",
+          "kind": "article",
+          "noteJa": "ダッチャ半島の古代都市クニドスの記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "Cnidos",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Cnidos",
+          "kind": "article",
+          "identityBasisJa": "The article is the ancient city Cnidos on the Datça peninsula in southwestern Turkey, matching the ship-route name in Acts 27:7.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒27:7で船が沖を通る町。ダッチャ半島先端という古代遺跡対応は概略、Pleiades未照合・座標null。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:coos_308",
+      "displayNameJa": "コス島",
+      "draftPath": "drafts/place_1/place_coos_308.json",
+      "draftSHA256": "042f423f3aabda2b1b39415efdc7ce33392f53d6626dac5ba5998d70238bb513",
+      "manifestSHA256": "042f423f3aabda2b1b39415efdc7ce33392f53d6626dac5ba5998d70238bb513",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_coos_308.json",
+      "evidenceSHA256": "5ca9c82d6eef32beb469e15533f8843dc25aaf740c4c0af4148cf59dd5abcfb0",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            21,
+            1
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-21-1",
+            "url": "https://ebible.org/engwebp/ACT21.htm#V1",
+            "expectedFixedWEBPPath": true,
+            "chapter": 21,
+            "verse": 1
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "コス島",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/コス島",
+          "kind": "article",
+          "noteJa": "古代名Coos/Cosに連なるギリシアのコス島の記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "コス島",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/コス島",
+          "kind": "article",
+          "identityBasisJa": "The Japanese page identifies the Greek island Kos (ancient Coos/Cos), matching Acts 21:1.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒21:1の寄港島。現代コス島との連続性を述べ、点座標を採用しない。地理資料による独立照合は残る。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:corinth_306",
+      "displayNameJa": "コリント",
+      "draftPath": "drafts/place_1/place_corinth_306.json",
+      "draftSHA256": "bf484cdc7b27baa09d3ab200b5bf1d7a465a4c70135fe1b3df615f960c9f80e1",
+      "manifestSHA256": "bf484cdc7b27baa09d3ab200b5bf1d7a465a4c70135fe1b3df615f960c9f80e1",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_corinth_306.json",
+      "evidenceSHA256": "bb6f73f9a20cb8ec050ea2956470f22f88f99b5fb494a56bfaf673eb52498837",
+      "decision": "fail",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            18,
+            1
+          ],
+          [
+            19,
+            1
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-18-1",
+            "url": "https://ebible.org/engwebp/ACT18.htm#V1",
+            "expectedFixedWEBPPath": true,
+            "chapter": 18,
+            "verse": 1
+          },
+          {
+            "sourceID": "web-act-19-1",
+            "url": "https://ebible.org/engwebp/ACT19.htm#V1",
+            "expectedFixedWEBPPath": true,
+            "chapter": 19,
+            "verse": 1
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [
+          {
+            "sourceID": "pleiades-570182",
+            "title": "Pleiades · Corinthus/Korinthos",
+            "url": "https://raw.githubusercontent.com/isawnyu/pleiades.datasets/e0ad89cad8f55ab4b85138fb4f852d9ca07b1ebc/data/json/5/7/0/1/570182.json",
+            "license": "CC BY 3.0",
+            "licenseURL": "https://creativecommons.org/licenses/by/3.0/",
+            "attribution": "Pleiades contributors / ISAW, NYU。固定版代表点。変更:日本語編集、緯度経度順へ変換。"
+          }
+        ],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": [
+          37.90564164345828,
+          22.878614390874485
+        ],
+        "coordinateNote": "古代コリント遺跡のPleiades代表点。現代市街や個別の出来事の地点ではない。",
+        "wikipediaIdentity": {
+          "title": "古代コリントス",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/古代コリントス",
+          "kind": "article",
+          "noteJa": "記事見出しは「古代コリントス」。冒頭で古代都市と現代市街が別位置にあると明記し、使徒言行録のパウロの宣教旅行にも言及する。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "古代コリントス",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/古代コリントス",
+          "kind": "article",
+          "identityBasisJa": "記事見出しは「古代コリントス」。本文冒頭は古代都市コリントスと現代都市コリントスが別位置にあると明記し、同段落は使徒言行録のパウロの宣教旅行にも言及する。古代遺跡というprofileの場所同定に合致。",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "2026-10-15にWikipedia記事本文を取得し、見出し、記事冒頭の古代都市と現代市街の区別、使徒言行録との関係を読んで同一性確認"
+        }
+      },
+      "findingJa": "18:1到着地は古代コリントスの遺跡を指すと解釈し、現代市街と区別している。Pleiades固定点(37.90564164345828,22.878614390874485)は一致。ただしpleiades-evidence.jsonのrecord 570182はOSM Way 224709706由来・© OpenStreetMap contributors/ODbL 1.0と明示する一方、プロフィールのpleiades-570182 attributionはOSM権利・出所を記載しない。利用者へ渡るsource attributionにOSM権利とWay番号を含める必要がある。",
+      "remainingUncertaintyJa": "代表座標は古代地名の代表点であり、使徒記事の出来事地点ではない。",
+      "correctiveActionJa": "OSM由来の権利・Way番号をsource attributionへ明記する。"
+    },
+    {
+      "entityID": "place:crete_310",
+      "displayNameJa": "クレタ島",
+      "draftPath": "drafts/place_1/place_crete_310.json",
+      "draftSHA256": "877dede48338395892a7afb834492e290bcb1640db798ebbd627efed1f2c34c3",
+      "manifestSHA256": "877dede48338395892a7afb834492e290bcb1640db798ebbd627efed1f2c34c3",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_crete_310.json",
+      "evidenceSHA256": "909bb46cb78775971faeca1712c10f64fddaa793782ab9e38c901af6109232aa",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            27,
+            7
+          ],
+          [
+            27,
+            12
+          ],
+          [
+            27,
+            13
+          ],
+          [
+            27,
+            21
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-27-7",
+            "url": "https://ebible.org/engwebp/ACT27.htm#V7",
+            "expectedFixedWEBPPath": true,
+            "chapter": 27,
+            "verse": 7
+          },
+          {
+            "sourceID": "web-act-27-12",
+            "url": "https://ebible.org/engwebp/ACT27.htm#V12",
+            "expectedFixedWEBPPath": true,
+            "chapter": 27,
+            "verse": 12
+          },
+          {
+            "sourceID": "web-act-27-13",
+            "url": "https://ebible.org/engwebp/ACT27.htm#V13",
+            "expectedFixedWEBPPath": true,
+            "chapter": 27,
+            "verse": 13
+          },
+          {
+            "sourceID": "web-act-27-21",
+            "url": "https://ebible.org/engwebp/ACT27.htm#V21",
+            "expectedFixedWEBPPath": true,
+            "chapter": 27,
+            "verse": 21
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "クレタ島",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/クレタ島",
+          "kind": "article",
+          "noteJa": "ギリシアのクレタ島の記事。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "クレタ島",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/クレタ島",
+          "kind": "article",
+          "identityBasisJa": "The page identifies the Greek island Crete, matching the island in the Acts 27 voyage.",
+          "fragmentRequired": false,
+          "fragmentVerified": null,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia article body read; title/redirect and identity checked"
+        }
+      },
+      "findingJa": "使徒27:7,12,13,21の島・航海文脈は一致。島全体として扱い特定港と混同せず、座標null。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    },
+    {
+      "entityID": "place:cyprus_316",
+      "displayNameJa": "キプロス島",
+      "draftPath": "drafts/place_1/place_cyprus_316.json",
+      "draftSHA256": "2b2ce0d194ddbe46dd430a4eb62bfc328202a529b95c594c834d740cff692989",
+      "manifestSHA256": "2b2ce0d194ddbe46dd430a4eb62bfc328202a529b95c594c834d740cff692989",
+      "draftMatchesFrozenManifest": true,
+      "evidencePath": "evidence/place_1/place_cyprus_316.json",
+      "evidenceSHA256": "668e72861e2a2cef8d7cb478d9a843d67c1dde2c86089f043acfc8cec46617c0",
+      "decision": "qualified",
+      "reviewedFields": [
+        "summaryJa",
+        "subtitleJa",
+        "knownBy",
+        "identityNoteJa",
+        "historicalRoleJa",
+        "modernLocationJa",
+        "facts",
+        "sources",
+        "coordinate",
+        "locationNoteJa",
+        "passages"
+      ],
+      "sourceAudit": {
+        "actsVerses": [
+          [
+            4,
+            36
+          ],
+          [
+            11,
+            19
+          ],
+          [
+            11,
+            20
+          ],
+          [
+            13,
+            4
+          ],
+          [
+            15,
+            39
+          ],
+          [
+            21,
+            3
+          ],
+          [
+            21,
+            16
+          ],
+          [
+            27,
+            4
+          ]
+        ],
+        "actCitations": [
+          {
+            "sourceID": "web-act-4-36",
+            "url": "https://ebible.org/engwebp/ACT04.htm#V36",
+            "expectedFixedWEBPPath": true,
+            "chapter": 4,
+            "verse": 36
+          },
+          {
+            "sourceID": "web-act-11-19",
+            "url": "https://ebible.org/engwebp/ACT11.htm#V19",
+            "expectedFixedWEBPPath": true,
+            "chapter": 11,
+            "verse": 19
+          },
+          {
+            "sourceID": "web-act-11-20",
+            "url": "https://ebible.org/engwebp/ACT11.htm#V20",
+            "expectedFixedWEBPPath": true,
+            "chapter": 11,
+            "verse": 20
+          },
+          {
+            "sourceID": "web-act-13-4",
+            "url": "https://ebible.org/engwebp/ACT13.htm#V4",
+            "expectedFixedWEBPPath": true,
+            "chapter": 13,
+            "verse": 4
+          },
+          {
+            "sourceID": "web-act-15-39",
+            "url": "https://ebible.org/engwebp/ACT15.htm#V39",
+            "expectedFixedWEBPPath": true,
+            "chapter": 15,
+            "verse": 39
+          },
+          {
+            "sourceID": "web-act-21-3",
+            "url": "https://ebible.org/engwebp/ACT21.htm#V3",
+            "expectedFixedWEBPPath": true,
+            "chapter": 21,
+            "verse": 3
+          },
+          {
+            "sourceID": "web-act-21-16",
+            "url": "https://ebible.org/engwebp/ACT21.htm#V16",
+            "expectedFixedWEBPPath": true,
+            "chapter": 21,
+            "verse": 16
+          },
+          {
+            "sourceID": "web-act-27-4",
+            "url": "https://ebible.org/engwebp/ACT27.htm#V4",
+            "expectedFixedWEBPPath": true,
+            "chapter": 27,
+            "verse": 4
+          }
+        ],
+        "sourceIDsResolve": true,
+        "factSourceIDsResolve": true,
+        "passageVersesMatchEvidenceVerseSet": true,
+        "excludedOccurrencesCorrectlyNotInPassages": true,
+        "geographyAndWikiSources": [],
+        "sourceObjectsHaveRequiredFields": true,
+        "coordinate": null,
+        "coordinateNote": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+        "wikipediaIdentity": {
+          "title": "キプロス島",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/キプロス島",
+          "kind": "article",
+          "noteJa": "記事見出しと本文がキプロス島を東地中海の島として説明する。島の領域はキプロス共和国だけでなく北キプロスと英国主権基地領域にも及ぶと記され、現代国家との混同を避けられる。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        },
+        "wikipediaEvidence": {
+          "title": "キプロス島",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/キプロス島",
+          "kind": "article",
+          "identityBasisJa": "本文見出し（「キプロス島」）と冒頭が東地中海の島を対象とし、島内の領域にキプロス共和国・北キプロス・英国主権基地領域を含むと明記。現代国家を古代の島名と取り違えない。",
+          "fragmentRequired": false,
+          "fragmentVerified": true,
+          "checkedAt": "2026-10-15",
+          "recordedFrom": "Wikipedia本文を読み、記事タイトル・島の地理説明・島内領域を照合。冒頭および地理節。"
+        }
+      },
+      "findingJa": "4:36,11:19–20,13:4,15:39,21:3,16,27:4の島名用例を本文照合。現在のキプロス国家との混同を避けたプロフィール。",
+      "remainingUncertaintyJa": "候補座標は未採用。地理記述は概略に留め、Pleiades公式固定データまたは考古学機関でこの対象を照合できていないため座標はnull。",
+      "correctiveActionJa": null
+    }
+  ]
+}

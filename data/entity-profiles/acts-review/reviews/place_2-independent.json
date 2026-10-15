@@ -1,0 +1,2191 @@
+{
+  "reviewedAtUTC": "2026-10-15T13:01:18Z",
+  "reviewType": "independent content/source review; not expert review",
+  "group": "place_2",
+  "assignmentSHA256": "f20e9358f809046dc9412242ccc4e2ed939a42a1c0683c2f3057fd0753990b57",
+  "sourceWitness": {
+    "path": "acts-web-verses.json",
+    "version": "webp-usfx-2026-10-13-35a6adf626e5",
+    "sha256": "90e72f0410119f8fc9afd529cdd730fd261bd1d25adfb413581c1462d6e936cb"
+  },
+  "overallDecision": "fail",
+  "groupSummary": {
+    "assigned": 34,
+    "reviewed": 34,
+    "missingDrafts": 0,
+    "bodyFails": 18,
+    "bodyPassWithWarnings": 16,
+    "bodyPass": 0,
+    "wikipediaHTTPTitleVerified": 5,
+    "wikipediaNotIndependentlyRetrieved": 29
+  },
+  "scopeNotes": [
+    "全34件について現行ドラフトと各evidenceのknownBy/出現節を照合し、初出時点の本文、後出情報の漏れ、都市/地域/現代所在地の扱いを独立レビューした。ドラフト・evidenceは変更していない。",
+    "本文のPASS/FAILとWikipedia補助出典確認は分離。Wikipediaはprofileにリンク・検証記載があっても、ローカル取得ログ（wikipedia-http-checks.json）に各IDの記事取得がなければ未確認と扱った。取得ログがある5件も確認できるのはHTTP到達とページtitleまでで、本文詳細確認の証跡はない。",
+    "座標はエフェソス以外すべてnullで、今回の地理資料セット内で固定Pleiades/考古学機関の裏付けがない場合の処理として適切。",
+    "原典本文は固定WEB witnessのローカル版を使用。下記のcitation URL指摘は原典テキスト照合の有無とは別。"
+  ],
+  "globalIssues": [
+    {
+      "severity": "moderate",
+      "code": "primary-citation-links-not-verse-specific",
+      "findingJa": "34件ともprimary Acts出典のURLがhttps://ebible.org/web/ACT.htm（ACT全書トップ）に止まり、著者契約が要求する章節へのexact linkではない。固定本文のローカル照合結果は個別行に記録した。",
+      "affectedCount": 34
+    },
+    {
+      "severity": "moderate",
+      "code": "modern-geography-auxiliary-evidence-incomplete",
+      "findingJa": "現代所在地や古代遺跡の現代位置はActs本文そのものからは支えられない。Wikipedia出典URLをプロフィールに置くことと記事本文・同一性の実取得確認は別であり、29件は取得ログ未確認、5件もtitle到達のみ。補助出典の本文適合は未完了。座標nullはエフェソス以外で保持されている。",
+      "affectedCount": 33
+    }
+  ],
+  "items": [
+    {
+      "entityID": "place:cyrene_317",
+      "draftPath": "drafts/place_2/cyrene_317.json",
+      "draftSHA256": "a87906e88ff6841430f1b439d996a500b31cfaaaba58b877338b2c578a6edc90",
+      "evidencePath": "evidence/place_2/cyrene_317.json",
+      "evidenceSHA256": "9cb4b802e576afe6c97fb028018a190182b205f4bf470c661d2199354cd89d5e",
+      "knownBy": {
+        "chapter": 2,
+        "verse": 10
+      },
+      "firstOccurrenceText": "Phrygia, Pamphylia, Egypt, the parts of Libya around Cyrene, visitors from Rome, both Jews and proselytes,",
+      "bodyDecision": "fail",
+      "issues": [
+        {
+          "severity": "major",
+          "code": "first-occurrence-leak",
+          "fields": "subtitleJa/historicalRoleJa",
+          "findingJa": "2:10 is the first appearance and only identifies Cyrene among visitors’ origins. The subtitle and role bring in Cyreneans in Antioch (11:20; 13:1), facts that must be gated to those verses.",
+          "actsRefs": [
+            "11:20",
+            "13:1"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "2:10"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "2:10",
+          "text": "Phrygia, Pamphylia, Egypt, the parts of Libya around Cyrene, visitors from Rome, both Jews and proselytes,",
+          "role": "first-occurrence witness"
+        },
+        {
+          "ref": "11:20",
+          "text": "But there were some of them, men of Cyprus and Cyrene, who, when they had come to Antioch, spoke to the Hellenists, preaching the Lord Jesus.",
+          "role": "later passage establishing spoiler boundary"
+        },
+        {
+          "ref": "13:1",
+          "text": "Now in the assembly that was at Antioch there were some prophets and teachers: Barnabas, Simeon who was called Niger, Lucius of Cyrene, Manaen the foster brother of Herod the tetrarch, and Saul.",
+          "role": "later passage establishing spoiler boundary"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地に関係するWikipediaページはHTTP取得・ページtitleのログがあり、プロフィール出典にも掲載。ただしその本文の具体的地理主張までは独立に照合されていない。Pleiades/考古学機関出典は確認できず、座標nullは適切。",
+        "wikiRetrievedStatus": "retrieved_title_verified"
+      },
+      "wikipediaReview": {
+        "status": "retrieved_page_title_only",
+        "draftTitle": "キュレネ — Wikipedia",
+        "draftURL": "https://ja.wikipedia.org/wiki/キュレネ",
+        "retrievalLog": {
+          "httpStatus": 200,
+          "pageTitle": "キュレネ - Wikipedia",
+          "requestedURL": "https://ja.wikipedia.org/wiki/キュレネ",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%A5%E3%83%AC%E3%83%8D",
+          "fragmentVerified": false
+        },
+        "identityBasisJa": "実取得ログにHTTP 200、ページtitle「キュレネ - Wikipedia」、requestedURL/resolvedURLが残る。これでURL到達・見出し確認はできるが、記事本文の主張適合を独立確認した証拠までは残っていない。"
+      }
+    },
+    {
+      "entityID": "place:damascus_322",
+      "draftPath": "drafts/place_2/damascus_322.json",
+      "draftSHA256": "f6eda77d285bccd76bb265b5ebcee5936b5b76ad9e2d4076f2b250e469612e8d",
+      "evidencePath": "evidence/place_2/damascus_322.json",
+      "evidenceSHA256": "359d021268978f8e8d9f4b9178e34582e383c645d30306b341138b8fb11757de",
+      "knownBy": {
+        "chapter": 9,
+        "verse": 2
+      },
+      "firstOccurrenceText": "and asked for letters from him to the synagogues of Damascus, that if he found any who were of the Way, whether men or women, he might bring them bound to Jerusalem.",
+      "bodyDecision": "pass_with_warnings",
+      "issues": [
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "9:2"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "9:2",
+          "text": "and asked for letters from him to the synagogues of Damascus, that if he found any who were of the Way, whether men or women, he might bring them bound to Jerusalem.",
+          "role": "first-occurrence witness"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地に関係するWikipediaページはHTTP取得・ページtitleのログがあり、プロフィール出典にも掲載。ただしその本文の具体的地理主張までは独立に照合されていない。Pleiades/考古学機関出典は確認できず、座標nullは適切。",
+        "wikiRetrievedStatus": "retrieved_title_verified"
+      },
+      "wikipediaReview": {
+        "status": "retrieved_page_title_only",
+        "draftTitle": "ダマスコ — Wikipedia",
+        "draftURL": "https://ja.wikipedia.org/wiki/ダマスカス",
+        "retrievalLog": {
+          "httpStatus": 200,
+          "pageTitle": "ダマスカス - Wikipedia",
+          "requestedURL": "https://ja.wikipedia.org/wiki/ダマスカス",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%9E%E3%82%B9%E3%82%AB%E3%82%B9",
+          "fragmentVerified": false
+        },
+        "identityBasisJa": "実取得ログにHTTP 200、ページtitle「ダマスカス - Wikipedia」、requestedURL/resolvedURLが残る。これでURL到達・見出し確認はできるが、記事本文の主張適合を独立確認した証拠までは残っていない。"
+      }
+    },
+    {
+      "entityID": "place:derbe_330",
+      "draftPath": "drafts/place_2/derbe_330.json",
+      "draftSHA256": "da2bb4dbb2987c4060825c62e809ce114c2368739f1c1e21332219e6a5670ba7",
+      "evidencePath": "evidence/place_2/derbe_330.json",
+      "evidenceSHA256": "4bcf428eb440fa98d9f12384356ffba5c86497a98de68b572bb92153c0783b1b",
+      "knownBy": {
+        "chapter": 14,
+        "verse": 6
+      },
+      "firstOccurrenceText": "they became aware of it and fled to the cities of Lycaonia, Lystra, Derbe, and the surrounding region.",
+      "bodyDecision": "fail",
+      "issues": [
+        {
+          "severity": "major",
+          "code": "first-occurrence-leak",
+          "fields": "subtitleJa/historicalRoleJa",
+          "findingJa": "The knownBy verse is 14:6. The subtitle and role say that Derbe is mentioned again in chapters 16 and 20; those later references should be separate gated facts.",
+          "actsRefs": [
+            "16:1",
+            "20:4"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "14:6"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "14:6",
+          "text": "they became aware of it and fled to the cities of Lycaonia, Lystra, Derbe, and the surrounding region.",
+          "role": "first-occurrence witness"
+        },
+        {
+          "ref": "16:1",
+          "text": "He came to Derbe and Lystra; and behold, a certain disciple was there, named Timothy, the son of a Jewess who believed, but his father was a Greek.",
+          "role": "later passage establishing spoiler boundary"
+        },
+        {
+          "ref": "20:4",
+          "text": "These accompanied him as far as Asia: Sopater of Beroea, Aristarchus and Secundus of the Thessalonians, Gaius of Derbe, Timothy, and Tychicus and Trophimus of Asia.",
+          "role": "later passage establishing spoiler boundary"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地に関係するWikipediaページはHTTP取得・ページtitleのログがあり、プロフィール出典にも掲載。ただしその本文の具体的地理主張までは独立に照合されていない。Pleiades/考古学機関出典は確認できず、座標nullは適切。",
+        "wikiRetrievedStatus": "retrieved_title_verified"
+      },
+      "wikipediaReview": {
+        "status": "retrieved_page_title_only",
+        "draftTitle": "デルベ — Wikipedia",
+        "draftURL": "https://en.wikipedia.org/wiki/Derbe",
+        "retrievalLog": {
+          "httpStatus": 200,
+          "pageTitle": "Derbe - Wikipedia",
+          "requestedURL": "https://en.wikipedia.org/wiki/Derbe",
+          "resolvedURL": "https://en.wikipedia.org/wiki/Derbe",
+          "fragmentVerified": false
+        },
+        "identityBasisJa": "実取得ログにHTTP 200、ページtitle「Derbe - Wikipedia」、requestedURL/resolvedURLが残る。これでURL到達・見出し確認はできるが、記事本文の主張適合を独立確認した証拠までは残っていない。"
+      }
+    },
+    {
+      "entityID": "place:egypt_362",
+      "draftPath": "drafts/place_2/egypt_362.json",
+      "draftSHA256": "e76befa3441fefef518a7e4f852d18e4506feffc69d29d0f95e628660b15c0cd",
+      "evidencePath": "evidence/place_2/egypt_362.json",
+      "evidenceSHA256": "26eaff63a15a3384cf854f06c94717d31500e0459cd5f6d27a162991584273c8",
+      "knownBy": {
+        "chapter": 2,
+        "verse": 10
+      },
+      "firstOccurrenceText": "Phrygia, Pamphylia, Egypt, the parts of Libya around Cyrene, visitors from Rome, both Jews and proselytes,",
+      "bodyDecision": "fail",
+      "issues": [
+        {
+          "severity": "major",
+          "code": "first-occurrence-leak",
+          "fields": "summaryJa/historicalRoleJa",
+          "findingJa": "The first occurrence is 2:10, where Egypt is a visitors’ origin. The profile also narrates Joseph/Moses material from Acts 7 in the base summary/role; gate that material to chapter 7.",
+          "actsRefs": [
+            "7:9",
+            "7:20",
+            "7:30"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "2:10"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "2:10",
+          "text": "Phrygia, Pamphylia, Egypt, the parts of Libya around Cyrene, visitors from Rome, both Jews and proselytes,",
+          "role": "first-occurrence witness"
+        },
+        {
+          "ref": "7:9",
+          "text": "“The patriarchs, moved with jealousy against Joseph, sold him into Egypt. God was with him",
+          "role": "later passage establishing spoiler boundary"
+        },
+        {
+          "ref": "7:20",
+          "text": "At that time Moses was born, and was exceedingly handsome to God. He was nourished three months in his father’s house.",
+          "role": "later passage establishing spoiler boundary"
+        },
+        {
+          "ref": "7:30",
+          "text": "“When forty years were fulfilled, an angel of the Lord appeared to him in the wilderness of Mount Sinai, in a flame of fire in a bush.",
+          "role": "later passage establishing spoiler boundary"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地に関係するWikipediaページはHTTP取得・ページtitleのログがあり、プロフィール出典にも掲載。ただしその本文の具体的地理主張までは独立に照合されていない。Pleiades/考古学機関出典は確認できず、座標nullは適切。",
+        "wikiRetrievedStatus": "retrieved_title_verified"
+      },
+      "wikipediaReview": {
+        "status": "retrieved_page_title_only",
+        "draftTitle": "エジプト — Wikipedia",
+        "draftURL": "https://ja.wikipedia.org/wiki/エジプト",
+        "retrievalLog": {
+          "httpStatus": 200,
+          "pageTitle": "エジプト - Wikipedia",
+          "requestedURL": "https://ja.wikipedia.org/wiki/エジプト",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%A8%E3%82%B8%E3%83%97%E3%83%88",
+          "fragmentVerified": false
+        },
+        "identityBasisJa": "実取得ログにHTTP 200、ページtitle「エジプト - Wikipedia」、requestedURL/resolvedURLが残る。これでURL到達・見出し確認はできるが、記事本文の主張適合を独立確認した証拠までは残っていない。"
+      }
+    },
+    {
+      "entityID": "place:ephesus_400",
+      "draftPath": "drafts/place_2/ephesus_400.json",
+      "draftSHA256": "45f3846a67b27a4d6ed2ec1c158262bbe39a72fe6ff7e50bb27546586f848022",
+      "evidencePath": "evidence/place_2/ephesus_400.json",
+      "evidenceSHA256": "9c1619178f60bb4e575ebfa41eb51e825a37f66dcdc3ae19baf015d3959eef56",
+      "knownBy": {
+        "chapter": 18,
+        "verse": 19
+      },
+      "firstOccurrenceText": "He came to Ephesus, and he left them there; but he himself entered into the synagogue and reasoned with the Jews.",
+      "bodyDecision": "fail",
+      "issues": [
+        {
+          "severity": "major",
+          "code": "first-occurrence-leak",
+          "fields": "subtitleJa/historicalRoleJa",
+          "findingJa": "The first occurrence is 18:19. The subtitle/role preview activity in Acts 19; this belongs behind the later chapter’s knownBy gate.",
+          "actsRefs": [
+            "19:1",
+            "19:10"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "18:19"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "18:19",
+          "text": "He came to Ephesus, and he left them there; but he himself entered into the synagogue and reasoned with the Jews.",
+          "role": "first-occurrence witness"
+        },
+        {
+          "ref": "19:1",
+          "text": "While Apollos was at Corinth, Paul, having passed through the upper country, came to Ephesus and found certain disciples.",
+          "role": "later passage establishing spoiler boundary"
+        },
+        {
+          "ref": "19:10",
+          "text": "This continued for two years, so that all those who lived in Asia heard the word of the Lord Jesus, both Jews and Greeks.",
+          "role": "later passage establishing spoiler boundary"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": [
+          37.940164271971945,
+          27.34240298195866
+        ],
+        "findingJa": "現代所在地・代表点は記事リンクに加えてPleiades固定データ（source object）を含む。代表点と遺跡範囲を区別する注記もあり、この点は適切。",
+        "wikiRetrievedStatus": "retrieved_title_verified"
+      },
+      "wikipediaReview": {
+        "status": "retrieved_page_title_only",
+        "draftTitle": "エペソ — Wikipedia",
+        "draftURL": "https://ja.wikipedia.org/wiki/エフェソス",
+        "retrievalLog": {
+          "httpStatus": 200,
+          "pageTitle": "エフェソス - Wikipedia",
+          "requestedURL": "https://ja.wikipedia.org/wiki/エフェソス",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%95%E3%82%A7%E3%82%BD%E3%82%B9",
+          "fragmentVerified": false
+        },
+        "identityBasisJa": "実取得ログにHTTP 200、ページtitle「エフェソス - Wikipedia」、requestedURL/resolvedURLが残る。これでURL到達・見出し確認はできるが、記事本文の主張適合を独立確認した証拠までは残っていない。"
+      }
+    },
+    {
+      "entityID": "place:fair_havens_424",
+      "draftPath": "drafts/place_2/fair_havens_424.json",
+      "draftSHA256": "a17c5901ca2c5d0c15b94252f4d002dcd8c97d1f3838a4e6b98cf08f9df5fbac",
+      "evidencePath": "evidence/place_2/fair_havens_424.json",
+      "evidenceSHA256": "a7a6691029a71dd87b1c7294eaa3a42a2bfec416bd33b59739f452642781e808",
+      "knownBy": {
+        "chapter": 27,
+        "verse": 8
+      },
+      "firstOccurrenceText": "With difficulty sailing along it we came to a certain place called Fair Havens, near the city of Lasea.",
+      "bodyDecision": "pass_with_warnings",
+      "issues": [
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "27:8"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "27:8",
+          "text": "With difficulty sailing along it we came to a certain place called Fair Havens, near the city of Lasea.",
+          "role": "first-occurrence witness"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass_with_uncertainty",
+        "findingJa": "地点同定の不確実性を本文上で明示し、座標を置いていない。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "Kaloi Limenes",
+        "draftURL": "https://en.wikipedia.org/wiki/Kaloi_Limenes",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:galatia_431",
+      "draftPath": "drafts/place_2/galatia_431.json",
+      "draftSHA256": "6f530462f26235d6970ef1af06484f3c9fb4c9670c091a3467e5d73cbc130c94",
+      "evidencePath": "evidence/place_2/galatia_431.json",
+      "evidenceSHA256": "ef1141aba7b59eb8b770e2940618ddeb357868eb2bb7a6f7f84b339ac38cf490",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 6
+      },
+      "firstOccurrenceText": "When they had gone through the region of Phrygia and Galatia, they were forbidden by the Holy Spirit to speak the word in Asia.",
+      "bodyDecision": "fail",
+      "issues": [
+        {
+          "severity": "major",
+          "code": "first-occurrence-leak",
+          "fields": "summaryJa",
+          "findingJa": "knownBy is 16:6, but the summary includes the later visit/travel in 18:23. Keep the base text within the first appearance.",
+          "actsRefs": [
+            "18:23"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "16:6"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "16:6",
+          "text": "When they had gone through the region of Phrygia and Galatia, they were forbidden by the Holy Spirit to speak the word in Asia.",
+          "role": "first-occurrence witness"
+        },
+        {
+          "ref": "18:23",
+          "text": "Having spent some time there, he departed and went through the region of Galatia and Phrygia, in order, establishing all the disciples.",
+          "role": "later passage establishing spoiler boundary"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "ガラティア",
+        "draftURL": "https://ja.wikipedia.org/wiki/ガラティア",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:galilee_433",
+      "draftPath": "drafts/place_2/galilee_433.json",
+      "draftSHA256": "190ae3af7f76af01525a9e4efc747536d6436872a8da6e39e7785eced0e61884",
+      "evidencePath": "evidence/place_2/galilee_433.json",
+      "evidenceSHA256": "1afa0a3711190973df26b8c1386918dc8c23aefa7a8c064904be18eea5d8b95f",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 11
+      },
+      "firstOccurrenceText": "who also said, “You men of Galilee, why do you stand looking into the sky? This Jesus, who was received up from you into the sky, will come back in the same way as you saw him going into the sky.”",
+      "bodyDecision": "fail",
+      "issues": [
+        {
+          "severity": "major",
+          "code": "first-occurrence-unsourced-context",
+          "fields": "subtitleJa/summaryJa",
+          "findingJa": "At 1:11 Galilee identifies the disciples’ regional origin. The introduction adds Jesus’ public life/activity as a fact about this place, which this first Acts occurrence does not establish; later Acts references or a properly cited external context should be gated/cited.",
+          "actsRefs": [
+            "9:31"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "1:11"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "1:11",
+          "text": "who also said, “You men of Galilee, why do you stand looking into the sky? This Jesus, who was received up from you into the sky, will come back in the same way as you saw him going into the sky.”",
+          "role": "first-occurrence witness"
+        },
+        {
+          "ref": "9:31",
+          "text": "So the assemblies throughout all Judea, Galilee, and Samaria had peace and were built up. They were multiplied, walking in the fear of the Lord and in the comfort of the Holy Spirit.",
+          "role": "later passage establishing spoiler boundary"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "ガリラヤ",
+        "draftURL": "https://ja.wikipedia.org/wiki/ガリラヤ",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:gaza_446",
+      "draftPath": "drafts/place_2/gaza_446.json",
+      "draftSHA256": "7d177a71c6af72ddda955152fbc3a57f94bb4856241a03f35d1c8cbdd34c735e",
+      "evidencePath": "evidence/place_2/gaza_446.json",
+      "evidenceSHA256": "e7d1950684314c8d82fdbf024fb75af782fa39f0f483ae4d5b3249c8ad83365a",
+      "knownBy": {
+        "chapter": 8,
+        "verse": 26
+      },
+      "firstOccurrenceText": "Then an angel of the Lord spoke to Philip, saying, “Arise, and go toward the south to the way that goes down from Jerusalem to Gaza. This is a desert.”",
+      "bodyDecision": "pass_with_warnings",
+      "issues": [
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "8:26"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "8:26",
+          "text": "Then an angel of the Lord spoke to Philip, saying, “Arise, and go toward the south to the way that goes down from Jerusalem to Gaza. This is a desert.”",
+          "role": "first-occurrence witness"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "ガザ",
+        "draftURL": "https://ja.wikipedia.org/wiki/ガザ",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:greece_495",
+      "draftPath": "drafts/place_2/greece_495.json",
+      "draftSHA256": "dcd6944b12bbce558e73f425c115cb24f607d9b43d193e4bd48044afb6ed7774",
+      "evidencePath": "evidence/place_2/greece_495.json",
+      "evidenceSHA256": "7fe14d69072f0174e4d605c76e80735fb89b5a6327f0d6be36d0e56d7ebee3d7",
+      "knownBy": {
+        "chapter": 20,
+        "verse": 2
+      },
+      "firstOccurrenceText": "When he had gone through those parts and had encouraged them with many words, he came into Greece.",
+      "bodyDecision": "pass_with_warnings",
+      "issues": [
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "20:2"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "20:2",
+          "text": "When he had gone through those parts and had encouraged them with many words, he came into Greece.",
+          "role": "first-occurrence witness"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "ギリシャ",
+        "draftURL": "https://ja.wikipedia.org/wiki/ギリシャ",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:iconium_590",
+      "draftPath": "drafts/place_2/iconium_590.json",
+      "draftSHA256": "1d7c07563b6d284e33cc245fcdef704fca5f81d6c1b3100c35a870c1b423456a",
+      "evidencePath": "evidence/place_2/iconium_590.json",
+      "evidenceSHA256": "1b427bc08f5ff0c19b968d5c5b87c8b54ba6df57070e588b51f39573b1f94689",
+      "knownBy": {
+        "chapter": 13,
+        "verse": 51
+      },
+      "firstOccurrenceText": "But they shook off the dust of their feet against them, and came to Iconium.",
+      "bodyDecision": "fail",
+      "issues": [
+        {
+          "severity": "major",
+          "code": "first-occurrence-leak",
+          "fields": "summaryJa",
+          "findingJa": "knownBy is 13:51, while the summary says it appears in Acts 14 as well. That later return/visit should be gated to the chapter 14 references.",
+          "actsRefs": [
+            "14:1",
+            "14:21"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "13:51"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "13:51",
+          "text": "But they shook off the dust of their feet against them, and came to Iconium.",
+          "role": "first-occurrence witness"
+        },
+        {
+          "ref": "14:1",
+          "text": "In Iconium, they entered together into the synagogue of the Jews, and so spoke that a great multitude both of Jews and of Greeks believed.",
+          "role": "later passage establishing spoiler boundary"
+        },
+        {
+          "ref": "14:21",
+          "text": "When they had preached the Good News to that city and had made many disciples, they returned to Lystra, Iconium, and Antioch,",
+          "role": "later passage establishing spoiler boundary"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "コンヤ",
+        "draftURL": "https://ja.wikipedia.org/wiki/コンヤ",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:italy_601",
+      "draftPath": "drafts/place_2/italy_601.json",
+      "draftSHA256": "0553b496182425244349d13b5566385438716eb2630efb2f1769a623e81661d9",
+      "evidencePath": "evidence/place_2/italy_601.json",
+      "evidenceSHA256": "ef8352b6644ad702cfc218d73b2dbb65b310e221cd8e1feab05659f0cf27ebac",
+      "knownBy": {
+        "chapter": 18,
+        "verse": 2
+      },
+      "firstOccurrenceText": "He found a certain Jew named Aquila, a man of Pontus by race, who had recently come from Italy with his wife Priscilla, because Claudius had commanded all the Jews to depart from Rome. He came to them,",
+      "bodyDecision": "fail",
+      "issues": [
+        {
+          "severity": "major",
+          "code": "first-occurrence-leak",
+          "fields": "summaryJa/historicalRoleJa",
+          "findingJa": "knownBy is 18:2, where Italy is Aquila’s origin. The summary imports the later ship destination from Acts 27.",
+          "actsRefs": [
+            "27:1",
+            "27:6"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "18:2"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "18:2",
+          "text": "He found a certain Jew named Aquila, a man of Pontus by race, who had recently come from Italy with his wife Priscilla, because Claudius had commanded all the Jews to depart from Rome. He came to them,",
+          "role": "first-occurrence witness"
+        },
+        {
+          "ref": "27:1",
+          "text": "When it was determined that we should sail for Italy, they delivered Paul and certain other prisoners to a centurion named Julius, of the Augustan band.",
+          "role": "later passage establishing spoiler boundary"
+        },
+        {
+          "ref": "27:6",
+          "text": "There the centurion found a ship of Alexandria sailing for Italy, and he put us on board.",
+          "role": "later passage establishing spoiler boundary"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "イタリア",
+        "draftURL": "https://ja.wikipedia.org/wiki/イタリア",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:jerusalem_636",
+      "draftPath": "drafts/place_2/jerusalem_636.json",
+      "draftSHA256": "4b6202beedb5d09361774793ffedd7c3e774f2b349663847b4ead2aab2f2950a",
+      "evidencePath": "evidence/place_2/jerusalem_636.json",
+      "evidenceSHA256": "42462d446b42e7e41c54db9ac7ef88c44918f22c21a83f3fffed13d28a37f677",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 4
+      },
+      "firstOccurrenceText": "Being assembled together with them, he commanded them, “Don’t depart from Jerusalem, but wait for the promise of the Father, which you heard from me.",
+      "bodyDecision": "fail",
+      "issues": [
+        {
+          "severity": "major",
+          "code": "first-occurrence-leak",
+          "fields": "subtitleJa/summaryJa/historicalRoleJa",
+          "findingJa": "The first occurrence is 1:4, an instruction to remain in Jerusalem. Calling it the community and narrative’s central city / a setting for many Acts events draws on the later book; keep that as gated later context or use an introduction limited to 1:4.",
+          "actsRefs": [
+            "2:1",
+            "8:1"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "1:4"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "1:4",
+          "text": "Being assembled together with them, he commanded them, “Don’t depart from Jerusalem, but wait for the promise of the Father, which you heard from me.",
+          "role": "first-occurrence witness"
+        },
+        {
+          "ref": "2:1",
+          "text": "Now when the day of Pentecost had come, they were all with one accord in one place.",
+          "role": "later passage establishing spoiler boundary"
+        },
+        {
+          "ref": "8:1",
+          "text": "Saul was consenting to his death. A great persecution arose against the assembly which was in Jerusalem in that day. They were all scattered abroad throughout the regions of Judea and Samaria, except for the apostles.",
+          "role": "later passage establishing spoiler boundary"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "エルサレム",
+        "draftURL": "https://ja.wikipedia.org/wiki/エルサレム",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:joppa_652",
+      "draftPath": "drafts/place_2/joppa_652.json",
+      "draftSHA256": "e0e14de54efb3b33ba6b322ebebd5db6b14ed4a526b5eb30787884a031ec12b7",
+      "evidencePath": "evidence/place_2/joppa_652.json",
+      "evidenceSHA256": "4b5f25ed4fa133745259c30f79a102564da085b586e91a260abd7a2c2379c4f7",
+      "knownBy": {
+        "chapter": 9,
+        "verse": 36
+      },
+      "firstOccurrenceText": "Now there was at Joppa a certain disciple named Tabitha, which when translated means Dorcas. This woman was full of good works and acts of mercy which she did.",
+      "bodyDecision": "fail",
+      "issues": [
+        {
+          "severity": "major",
+          "code": "first-occurrence-misstatement",
+          "fields": "summaryJa",
+          "findingJa": "At 9:36 Tabitha is identified as living in Joppa. Peter is in nearby Lydda and is summoned to Joppa only in 9:38, so “Peter is staying there” is both later than knownBy and inaccurate as an account of the first verse.",
+          "actsRefs": [
+            "9:38"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "9:36"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "9:36",
+          "text": "Now there was at Joppa a certain disciple named Tabitha, which when translated means Dorcas. This woman was full of good works and acts of mercy which she did.",
+          "role": "first-occurrence witness"
+        },
+        {
+          "ref": "9:38",
+          "text": "As Lydda was near Joppa, the disciples, hearing that Peter was there, sent two men to him, imploring him not to delay in coming to them.",
+          "role": "later passage establishing spoiler boundary"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "ヤッファ",
+        "draftURL": "https://ja.wikipedia.org/wiki/ヤッファ",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:judea_657",
+      "draftPath": "drafts/place_2/judea_657.json",
+      "draftSHA256": "c8346823adb614c4cfb5b5d9d2d2455292b0fc3303075c4923caf5d789fa8c23",
+      "evidencePath": "evidence/place_2/judea_657.json",
+      "evidenceSHA256": "d2ef800256f195f2157e98fd83766c7d98ba9c4d5df5b4838f2f263f9e2005e4",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 8
+      },
+      "firstOccurrenceText": "But you will receive power when the Holy Spirit has come upon you. You will be witnesses to me in Jerusalem, in all Judea and Samaria, and to the uttermost parts of the earth.”",
+      "bodyDecision": "fail",
+      "issues": [
+        {
+          "severity": "major",
+          "code": "first-occurrence-leak",
+          "fields": "summaryJa",
+          "findingJa": "knownBy is 1:8. The summary attributes a geographic characterization to Acts 9:31, a later occurrence, without gating it.",
+          "actsRefs": [
+            "9:31"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "1:8"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "1:8",
+          "text": "But you will receive power when the Holy Spirit has come upon you. You will be witnesses to me in Jerusalem, in all Judea and Samaria, and to the uttermost parts of the earth.”",
+          "role": "first-occurrence witness"
+        },
+        {
+          "ref": "9:31",
+          "text": "So the assemblies throughout all Judea, Galilee, and Samaria had peace and were built up. They were multiplied, walking in the fear of the Lord and in the comfort of the Holy Spirit.",
+          "role": "later passage establishing spoiler boundary"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "ユダヤ",
+        "draftURL": "https://ja.wikipedia.org/wiki/ユダヤ",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:lasea_717",
+      "draftPath": "drafts/place_2/lasea_717.json",
+      "draftSHA256": "ca2cccb68112e2d78008e855243ccd69099fca2dc35b72b7add421133b6db19e",
+      "evidencePath": "evidence/place_2/lasea_717.json",
+      "evidenceSHA256": "367e1a1b91c93dc58083c8f0c604bb631c110edaac172397c613743a3dacc1ed",
+      "knownBy": {
+        "chapter": 27,
+        "verse": 8
+      },
+      "firstOccurrenceText": "With difficulty sailing along it we came to a certain place called Fair Havens, near the city of Lasea.",
+      "bodyDecision": "pass_with_warnings",
+      "issues": [
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "27:8"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "27:8",
+          "text": "With difficulty sailing along it we came to a certain place called Fair Havens, near the city of Lasea.",
+          "role": "first-occurrence witness"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass_with_uncertainty",
+        "findingJa": "地点同定の不確実性を本文上で明示し、座標を置いていない。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "Lasaea",
+        "draftURL": "https://en.wikipedia.org/wiki/Lasaea",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:libya_730",
+      "draftPath": "drafts/place_2/libya_730.json",
+      "draftSHA256": "6fc109534525e984dec8538fc63e02f047b1c1ee710ca7e78dacb6dcc23cf36c",
+      "evidencePath": "evidence/place_2/libya_730.json",
+      "evidenceSHA256": "6cb784e5ddfe5ab40e54016a0bed08942916e2dc4d6330f3ece117ae409860e9",
+      "knownBy": {
+        "chapter": 2,
+        "verse": 10
+      },
+      "firstOccurrenceText": "Phrygia, Pamphylia, Egypt, the parts of Libya around Cyrene, visitors from Rome, both Jews and proselytes,",
+      "bodyDecision": "pass_with_warnings",
+      "issues": [
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "2:10"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "2:10",
+          "text": "Phrygia, Pamphylia, Egypt, the parts of Libya around Cyrene, visitors from Rome, both Jews and proselytes,",
+          "role": "first-occurrence witness"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "古代リビュア",
+        "draftURL": "https://ja.wikipedia.org/wiki/古代リビュア",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:lycaonia_739",
+      "draftPath": "drafts/place_2/lycaonia_739.json",
+      "draftSHA256": "15ef78128207b95115fd639797c04cfe5f3bbad2c705759748796ef2d16d8dc9",
+      "evidencePath": "evidence/place_2/lycaonia_739.json",
+      "evidenceSHA256": "83bfe9fcb8b19eec3ed1afc3939baa4c435ed0bff260720dfcd49759f13f76b0",
+      "knownBy": {
+        "chapter": 14,
+        "verse": 6
+      },
+      "firstOccurrenceText": "they became aware of it and fled to the cities of Lycaonia, Lystra, Derbe, and the surrounding region.",
+      "bodyDecision": "pass_with_warnings",
+      "issues": [
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "14:6"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "14:6",
+          "text": "they became aware of it and fled to the cities of Lycaonia, Lystra, Derbe, and the surrounding region.",
+          "role": "first-occurrence witness"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "リカオニア",
+        "draftURL": "https://ja.wikipedia.org/wiki/リカオニア",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:lycia_740",
+      "draftPath": "drafts/place_2/lycia_740.json",
+      "draftSHA256": "59867e1fe4c1ce27019cacc2ac4340364e988a4d8dc03b9265deffab65980c32",
+      "evidencePath": "evidence/place_2/lycia_740.json",
+      "evidenceSHA256": "095ceded2a3203bcf18470c5ac692e0fdab9df662087fffcd2aa95a20928bfad",
+      "knownBy": {
+        "chapter": 27,
+        "verse": 5
+      },
+      "firstOccurrenceText": "When we had sailed across the sea which is off Cilicia and Pamphylia, we came to Myra, a city of Lycia.",
+      "bodyDecision": "pass_with_warnings",
+      "issues": [
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "27:5"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "27:5",
+          "text": "When we had sailed across the sea which is off Cilicia and Pamphylia, we came to Myra, a city of Lycia.",
+          "role": "first-occurrence witness"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "リュキア",
+        "draftURL": "https://ja.wikipedia.org/wiki/リュキア",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:lydda_741",
+      "draftPath": "drafts/place_2/lydda_741.json",
+      "draftSHA256": "f0517b4e2123e24d1f0df34df5b50faa21edee1eeaafb9f9370e53f78a149dde",
+      "evidencePath": "evidence/place_2/lydda_741.json",
+      "evidenceSHA256": "3b882943995cb9abeb75131a2c0c010c007d79371b68e38631e3a7fc42e1a9f5",
+      "knownBy": {
+        "chapter": 9,
+        "verse": 32
+      },
+      "firstOccurrenceText": "As Peter went throughout all those parts, he came down also to the saints who lived at Lydda.",
+      "bodyDecision": "pass_with_warnings",
+      "issues": [
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "9:32"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "9:32",
+          "text": "As Peter went throughout all those parts, he came down also to the saints who lived at Lydda.",
+          "role": "first-occurrence witness"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "ロード (イスラエル)",
+        "draftURL": "https://ja.wikipedia.org/wiki/ロード_(イスラエル)",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:lystra_742",
+      "draftPath": "drafts/place_2/lystra_742.json",
+      "draftSHA256": "d67b32008c010f8cee203947b01478318d28aaac0a68b87e5ecb2684bf85678e",
+      "evidencePath": "evidence/place_2/lystra_742.json",
+      "evidenceSHA256": "ec3aabb8a3131ebdf9c5124873c22453dc6624ec7befea6807c3adbb7deca8a5",
+      "knownBy": {
+        "chapter": 14,
+        "verse": 6
+      },
+      "firstOccurrenceText": "they became aware of it and fled to the cities of Lycaonia, Lystra, Derbe, and the surrounding region.",
+      "bodyDecision": "fail",
+      "issues": [
+        {
+          "severity": "major",
+          "code": "first-occurrence-leak",
+          "fields": "summaryJa/historicalRoleJa",
+          "findingJa": "knownBy is 14:6. Mentioning Timothy as a native of Lystra derives from Acts 16:1 and is later information; gate it there.",
+          "actsRefs": [
+            "16:1"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "14:6"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "14:6",
+          "text": "they became aware of it and fled to the cities of Lycaonia, Lystra, Derbe, and the surrounding region.",
+          "role": "first-occurrence witness"
+        },
+        {
+          "ref": "16:1",
+          "text": "He came to Derbe and Lystra; and behold, a certain disciple was there, named Timothy, the son of a Jewess who believed, but his father was a Greek.",
+          "role": "later passage establishing spoiler boundary"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "Lystra",
+        "draftURL": "https://en.wikipedia.org/wiki/Lystra",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:macedonia_747",
+      "draftPath": "drafts/place_2/macedonia_747.json",
+      "draftSHA256": "8691978fe280e2e4ac5146b475dd5050e63aa31ca06a098f3293d61d094b4d9c",
+      "evidencePath": "evidence/place_2/macedonia_747.json",
+      "evidenceSHA256": "654b0d398472f8f5ac442d9c224717a2837c78844ee6b6f4290b6816f3331a0d",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 9
+      },
+      "firstOccurrenceText": "A vision appeared to Paul in the night. There was a man of Macedonia standing, begging him and saying, “Come over into Macedonia and help us.”",
+      "bodyDecision": "fail",
+      "issues": [
+        {
+          "severity": "major",
+          "code": "first-occurrence-leak",
+          "fields": "summaryJa/historicalRoleJa",
+          "findingJa": "The first appearance is the vision’s request in 16:9. The summary says it is the region Paul then goes to/arrives in, which is narrated at 16:10–12, not yet known at 16:9.",
+          "actsRefs": [
+            "16:10",
+            "16:12"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "16:9"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "16:9",
+          "text": "A vision appeared to Paul in the night. There was a man of Macedonia standing, begging him and saying, “Come over into Macedonia and help us.”",
+          "role": "first-occurrence witness"
+        },
+        {
+          "ref": "16:10",
+          "text": "When he had seen the vision, immediately we sought to go out to Macedonia, concluding that the Lord had called us to preach the Good News to them.",
+          "role": "later passage establishing spoiler boundary"
+        },
+        {
+          "ref": "16:12",
+          "text": "and from there to Philippi, which is a city of Macedonia, the foremost of the district, a Roman colony. We were staying some days in this city.",
+          "role": "later passage establishing spoiler boundary"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "マケドニア",
+        "draftURL": "https://ja.wikipedia.org/wiki/マケドニア",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:melita_761",
+      "draftPath": "drafts/place_2/melita_761.json",
+      "draftSHA256": "7fde866c4e72ea7191080cdd961dc1c61cea4f8f05090c12a3396bf73b4ca6b4",
+      "evidencePath": "evidence/place_2/melita_761.json",
+      "evidenceSHA256": "05553343d0d2aab56f3470da07bc603aaa903c46f66c6decce2983ff288591a5",
+      "knownBy": {
+        "chapter": 28,
+        "verse": 1
+      },
+      "firstOccurrenceText": "When we had escaped, then they learned that the island was called Malta.",
+      "bodyDecision": "pass_with_warnings",
+      "issues": [
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "28:1"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "28:1",
+          "text": "When we had escaped, then they learned that the island was called Malta.",
+          "role": "first-occurrence witness"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass_with_uncertainty",
+        "findingJa": "地点同定の不確実性を本文上で明示し、座標を置いていない。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "マルタ",
+        "draftURL": "https://ja.wikipedia.org/wiki/マルタ",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:mesopotamia_790",
+      "draftPath": "drafts/place_2/mesopotamia_790.json",
+      "draftSHA256": "9c0e372141df29262fe29513f6d4b4bac2b9b89a2d2f98ee6960961e6f0ea1dc",
+      "evidencePath": "evidence/place_2/mesopotamia_790.json",
+      "evidenceSHA256": "6f0895183e9d114b19d0fd7a66e804d85130d5c61c70af32791334e328a35677",
+      "knownBy": {
+        "chapter": 2,
+        "verse": 9
+      },
+      "firstOccurrenceText": "Parthians, Medes, Elamites, and people from Mesopotamia, Judea, Cappadocia, Pontus, Asia,",
+      "bodyDecision": "fail",
+      "issues": [
+        {
+          "severity": "major",
+          "code": "first-occurrence-leak",
+          "fields": "subtitleJa/summaryJa/historicalRoleJa",
+          "findingJa": "knownBy is Acts 2:9, where Mesopotamia is a visitors’ origin. The profile adds Abraham’s story from Acts 7:2, later than the first mention.",
+          "actsRefs": [
+            "7:2"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "2:9"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "2:9",
+          "text": "Parthians, Medes, Elamites, and people from Mesopotamia, Judea, Cappadocia, Pontus, Asia,",
+          "role": "first-occurrence witness"
+        },
+        {
+          "ref": "7:2",
+          "text": "He said, “Brothers and fathers, listen. The God of glory appeared to our father Abraham when he was in Mesopotamia, before he lived in Haran,",
+          "role": "later passage establishing spoiler boundary"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "メソポタミア",
+        "draftURL": "https://ja.wikipedia.org/wiki/メソポタミア",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:miletus_801",
+      "draftPath": "drafts/place_2/miletus_801.json",
+      "draftSHA256": "11b5ac9523f14df7b1e563aa3f1a2e8dd4ee596e429e0fbc70d4cf4be4c773cb",
+      "evidencePath": "evidence/place_2/miletus_801.json",
+      "evidenceSHA256": "f2563bb483a35c9aee5a254dc3cc13dad46150b0b5ae400859f9c02ab4e87e0a",
+      "knownBy": {
+        "chapter": 20,
+        "verse": 15
+      },
+      "firstOccurrenceText": "Sailing from there, we came the following day opposite Chios. The next day we touched at Samos and stayed at Trogyllium, and the day after we came to Miletus.",
+      "bodyDecision": "fail",
+      "issues": [
+        {
+          "severity": "major",
+          "code": "first-occurrence-leak",
+          "fields": "summaryJa",
+          "findingJa": "At knownBy 20:15 the party reaches Miletus. The summary says Paul calls the Ephesian elders there, which occurs in 20:17; gate the summons to that verse.",
+          "actsRefs": [
+            "20:17"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "20:15"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "20:15",
+          "text": "Sailing from there, we came the following day opposite Chios. The next day we touched at Samos and stayed at Trogyllium, and the day after we came to Miletus.",
+          "role": "first-occurrence witness"
+        },
+        {
+          "ref": "20:17",
+          "text": "From Miletus he sent to Ephesus and called to himself the elders of the assembly.",
+          "role": "later passage establishing spoiler boundary"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "ミレトス",
+        "draftURL": "https://ja.wikipedia.org/wiki/ミレトス",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:mitylene_808",
+      "draftPath": "drafts/place_2/mitylene_808.json",
+      "draftSHA256": "9b5cedea033689207ff13330e724e28b96c95baec088b8833893ae936c9ba5ad",
+      "evidencePath": "evidence/place_2/mitylene_808.json",
+      "evidenceSHA256": "61ae2d4f21adec698262ad63f385efee1b56b3d967706821782f7ab6ef5be492",
+      "knownBy": {
+        "chapter": 20,
+        "verse": 14
+      },
+      "firstOccurrenceText": "When he met us at Assos, we took him aboard and came to Mitylene.",
+      "bodyDecision": "pass_with_warnings",
+      "issues": [
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "20:14"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "20:14",
+          "text": "When he met us at Assos, we took him aboard and came to Mitylene.",
+          "role": "first-occurrence witness"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "ミティリーニ",
+        "draftURL": "https://ja.wikipedia.org/wiki/ミティリーニ",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:mount_sinai_855",
+      "draftPath": "drafts/place_2/mount_sinai_855.json",
+      "draftSHA256": "5c2bc372ad421450fd9340cabdeaf817bbed0e286db831e91fd5a3bb853344cb",
+      "evidencePath": "evidence/place_2/mount_sinai_855.json",
+      "evidenceSHA256": "44e9eaec8cf288fd8ed851e98cbfda236bc2329a24e39c58f6ff851c32dc1b2e",
+      "knownBy": {
+        "chapter": 7,
+        "verse": 30
+      },
+      "firstOccurrenceText": "“When forty years were fulfilled, an angel of the Lord appeared to him in the wilderness of Mount Sinai, in a flame of fire in a bush.",
+      "bodyDecision": "pass_with_warnings",
+      "issues": [
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "7:30"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "7:30",
+          "text": "“When forty years were fulfilled, an angel of the Lord appeared to him in the wilderness of Mount Sinai, in a flame of fire in a bush.",
+          "role": "first-occurrence witness"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass_with_uncertainty",
+        "findingJa": "地点同定の不確実性を本文上で明示し、座標を置いていない。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "シナイ山",
+        "draftURL": "https://ja.wikipedia.org/wiki/シナイ山",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:myra_864",
+      "draftPath": "drafts/place_2/myra_864.json",
+      "draftSHA256": "7fb26c905a04b6025e7bb46386c12ef38ec63db55c7094cd5ca0913949bfddf2",
+      "evidencePath": "evidence/place_2/myra_864.json",
+      "evidenceSHA256": "21ffe5c2617efc665128a791431d454f3580cbbb55675c339bb2fb900204b856",
+      "knownBy": {
+        "chapter": 27,
+        "verse": 5
+      },
+      "firstOccurrenceText": "When we had sailed across the sea which is off Cilicia and Pamphylia, we came to Myra, a city of Lycia.",
+      "bodyDecision": "pass_with_warnings",
+      "issues": [
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "27:5"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "27:5",
+          "text": "When we had sailed across the sea which is off Cilicia and Pamphylia, we came to Myra, a city of Lycia.",
+          "role": "first-occurrence witness"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "ミュラ",
+        "draftURL": "https://ja.wikipedia.org/wiki/ミラ_(リュキア)",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:mysia_865",
+      "draftPath": "drafts/place_2/mysia_865.json",
+      "draftSHA256": "ae9e5c7777facfad284cfe226cff409c2ac69490823edd36c0b772c8dab46bd9",
+      "evidencePath": "evidence/place_2/mysia_865.json",
+      "evidenceSHA256": "54638c99abef8df594d0a039168ebd176ab42dc68082f0c7ace4fbe9136ba7b8",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 7
+      },
+      "firstOccurrenceText": "When they had come opposite Mysia, they tried to go into Bithynia, but the Spirit didn’t allow them.",
+      "bodyDecision": "fail",
+      "issues": [
+        {
+          "severity": "major",
+          "code": "first-occurrence-leak",
+          "fields": "summaryJa",
+          "findingJa": "knownBy is 16:7. The summary says the party passed through Mysia; that travel is narrated in 16:8. At 16:7 the party reaches the border and attempts to enter Bithynia.",
+          "actsRefs": [
+            "16:8"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "16:7"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "16:7",
+          "text": "When they had come opposite Mysia, they tried to go into Bithynia, but the Spirit didn’t allow them.",
+          "role": "first-occurrence witness"
+        },
+        {
+          "ref": "16:8",
+          "text": "Passing by Mysia, they came down to Troas.",
+          "role": "later passage establishing spoiler boundary"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "ミュシア",
+        "draftURL": "https://ja.wikipedia.org/wiki/ミュシア",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:nazareth_878",
+      "draftPath": "drafts/place_2/nazareth_878.json",
+      "draftSHA256": "809c4d3471d6972c8124368e4a8e7356cc4d34a6f9af39b678da846b41dc26e5",
+      "evidencePath": "evidence/place_2/nazareth_878.json",
+      "evidenceSHA256": "8af9b0f41ce8dcafa5e439d1a8543142b5d318176ee6f583c643ff02c7738c33",
+      "knownBy": {
+        "chapter": 2,
+        "verse": 22
+      },
+      "firstOccurrenceText": "“Men of Israel, hear these words! Jesus of Nazareth, a man approved by God to you by mighty works and wonders and signs which God did by him among you, even as you yourselves know,",
+      "bodyDecision": "fail",
+      "issues": [
+        {
+          "severity": "major",
+          "code": "unsupported-first-context",
+          "fields": "summaryJa",
+          "findingJa": "Acts 2:22 calls Jesus “the Nazarene”; it does not say in this verse that he grew up in Nazareth. The profile’s upbringing claim needs an explicit Gospel/external source and should not be presented as a fact established by the first Acts occurrence.",
+          "actsRefs": [
+            "2:22"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "2:22"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "2:22",
+          "text": "“Men of Israel, hear these words! Jesus of Nazareth, a man approved by God to you by mighty works and wonders and signs which God did by him among you, even as you yourselves know,",
+          "role": "first-occurrence witness"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "ナザレ",
+        "draftURL": "https://ja.wikipedia.org/wiki/ナザレ",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:neapolis_880",
+      "draftPath": "drafts/place_2/neapolis_880.json",
+      "draftSHA256": "333352f216fd5069bb78411aea95276bb09fc2620940243f7a0785b72ce6f4c9",
+      "evidencePath": "evidence/place_2/neapolis_880.json",
+      "evidenceSHA256": "dde2bbd0d8ad2822c6dacf83e071531385bd0f18539248fdf697bec968990d17",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 11
+      },
+      "firstOccurrenceText": "Setting sail therefore from Troas, we made a straight course to Samothrace, and the day following to Neapolis;",
+      "bodyDecision": "pass_with_warnings",
+      "issues": [
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "16:11"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "16:11",
+          "text": "Setting sail therefore from Troas, we made a straight course to Samothrace, and the day following to Neapolis;",
+          "role": "first-occurrence witness"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "Neapolis (Thrace)",
+        "draftURL": "https://en.wikipedia.org/wiki/Neapolis_(Thrace)",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:olivet_907",
+      "draftPath": "drafts/place_2/olivet_907.json",
+      "draftSHA256": "21cf93f1a936b807b12e88c0811bad35f2d009ba51ebf03cecad68de2154d5e0",
+      "evidencePath": "evidence/place_2/olivet_907.json",
+      "evidenceSHA256": "da0dcfdded5c8d613fa93f0499ae3072d9f3598d52dc4f73e654b38c7a75b467",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 12
+      },
+      "firstOccurrenceText": "Then they returned to Jerusalem from the mountain called Olivet, which is near Jerusalem, a Sabbath day’s journey away.",
+      "bodyDecision": "pass_with_warnings",
+      "issues": [
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "1:12"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "1:12",
+          "text": "Then they returned to Jerusalem from the mountain called Olivet, which is near Jerusalem, a Sabbath day’s journey away.",
+          "role": "first-occurrence witness"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "オリーブ山",
+        "draftURL": "https://ja.wikipedia.org/wiki/オリーブ山",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:pamphylia_918",
+      "draftPath": "drafts/place_2/pamphylia_918.json",
+      "draftSHA256": "39bace63120d2d38ad135addcd6c1902eca88f28b3644cbbcc43f9f2fdf9d484",
+      "evidencePath": "evidence/place_2/pamphylia_918.json",
+      "evidenceSHA256": "17ffebdb73d71df7eb007c47ea9257f1eb6db309ef0b1477a6242ae3931d5c29",
+      "knownBy": {
+        "chapter": 2,
+        "verse": 10
+      },
+      "firstOccurrenceText": "Phrygia, Pamphylia, Egypt, the parts of Libya around Cyrene, visitors from Rome, both Jews and proselytes,",
+      "bodyDecision": "fail",
+      "issues": [
+        {
+          "severity": "major",
+          "code": "first-occurrence-leak",
+          "fields": "summaryJa/historicalRoleJa",
+          "findingJa": "At 2:10 Pamphylia is listed as visitors’ region of origin. Describing it as a region in Paul’s later travel route derives from Acts 13–14 and should be gated to those later mentions.",
+          "actsRefs": [
+            "13:13",
+            "13:14",
+            "14:24"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "2:10"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "2:10",
+          "text": "Phrygia, Pamphylia, Egypt, the parts of Libya around Cyrene, visitors from Rome, both Jews and proselytes,",
+          "role": "first-occurrence witness"
+        },
+        {
+          "ref": "13:13",
+          "text": "Now Paul and his company set sail from Paphos and came to Perga in Pamphylia. John departed from them and returned to Jerusalem.",
+          "role": "later passage establishing spoiler boundary"
+        },
+        {
+          "ref": "13:14",
+          "text": "But they, passing on from Perga, came to Antioch of Pisidia. They went into the synagogue on the Sabbath day and sat down.",
+          "role": "later passage establishing spoiler boundary"
+        },
+        {
+          "ref": "14:24",
+          "text": "They passed through Pisidia and came to Pamphylia.",
+          "role": "later passage establishing spoiler boundary"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "パンフィリア",
+        "draftURL": "https://ja.wikipedia.org/wiki/パンフィリア",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    },
+    {
+      "entityID": "place:paphos_919",
+      "draftPath": "drafts/place_2/paphos_919.json",
+      "draftSHA256": "fe390ffe1110d9450298582c2a14d3e3ae42571237ec41b64f1f33ed4743ff91",
+      "evidencePath": "evidence/place_2/paphos_919.json",
+      "evidenceSHA256": "b62c0b184aa75ab94579c4b40934d8c8635d9ad05162ca3d9c21be1fc5fa9ee8",
+      "knownBy": {
+        "chapter": 13,
+        "verse": 6
+      },
+      "firstOccurrenceText": "When they had gone through the island to Paphos, they found a certain sorcerer, a false prophet, a Jew whose name was Bar Jesus,",
+      "bodyDecision": "pass_with_warnings",
+      "issues": [
+        {
+          "severity": "moderate",
+          "code": "primary-citation-not-verse-specific",
+          "fields": "sources",
+          "findingJa": "WEB出典URLが章節へ直接リンクせず、ACT全書のトップページに止まる。ローカル固定本文で照合可能だが、契約の「exact chapter/verse links」を満たしていない。",
+          "actsRefs": [
+            "13:6"
+          ]
+        },
+        {
+          "severity": "moderate",
+          "code": "wikipedia-content-not-independently-verified",
+          "fields": "profile.wikipedia/modernLocationJa",
+          "findingJa": "Wikipedia URLがドラフトにあるが、この記事の実取得・同一性確認を示すログがない。現代所在地をWikipediaで支える場合は未確認として扱う。",
+          "actsRefs": []
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "ref": "13:6",
+          "text": "When they had gone through the island to Paphos, they found a certain sorcerer, a false prophet, a Jew whose name was Bar Jesus,",
+          "role": "first-occurrence witness"
+        }
+      ],
+      "identityAndCategoryReview": {
+        "decision": "pass",
+        "findingJa": "都市・広域地域・島・沿岸停泊地等の区別は本文で概ね保たれ、古代境界と現代行政境界を混同しない注記がある。ナザレ/ヨッパ等の個別内容指摘はissues参照。"
+      },
+      "geographyReview": {
+        "coordinate": null,
+        "findingJa": "現代所在地は使徒言行録本文だけからは立証できない。Wikipediaリンクはあるが実取得同一性を示すログがなく、地理補助根拠は未検証。Pleiades/考古学機関資料なし、座標nullは適切。",
+        "wikiRetrievedStatus": "not_checked"
+      },
+      "wikipediaReview": {
+        "status": "not_independently_retrieved",
+        "draftTitle": "パフォス",
+        "draftURL": "https://ja.wikipedia.org/wiki/パフォス",
+        "retrievalLog": null,
+        "identityBasisJa": "Wikipediaのprofile記載はあるが、このローカル検証ログに記事取得結果がないため、ページ内容・同一性を独立に確認できていない。"
+      }
+    }
+  ]
+}

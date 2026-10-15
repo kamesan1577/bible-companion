@@ -1,0 +1,729 @@
+{
+  "publication": "Release build for v0.1.10-preview.1; published state is recorded in release provenance",
+  "scope": "Acts people/place profiles and occurrence links only; not new verse commentary or all-Bible completion",
+  "metrics": {
+    "targetCandidateIDs": 228,
+    "drafts": 228,
+    "candidateProfiles": 225,
+    "excludedIDs": [
+      "person:augustus_366",
+      "person:benjamin_463",
+      "person:heber_1469",
+      "person:shechem_2588"
+    ],
+    "auditedVerseCount": 1007,
+    "mappedVerseCount": 911,
+    "wikipediaLinks": 217,
+    "placesWithCheckedCoordinates": 4,
+    "errors": [],
+    "profilesReadyForPublication": false
+  },
+  "geography": {
+    "originalPlaces": 102,
+    "originalWithCoordinates": 97,
+    "independentlyCheckedPoints": 4,
+    "retainedCandidateMaps": 88,
+    "visibleMapsIncludingChecked": 92,
+    "withoutOriginalCoordinates": [
+      "place:phrygia_946",
+      "place:azotus_132",
+      "place:chios_296",
+      "place:lasea_717",
+      "place:clauda_280"
+    ],
+    "withheldExistingCoordinates": [
+      {
+        "id": "place:beautiful_gate_163",
+        "category": "uncertain",
+        "allowCandidateMap": false,
+        "reasonJa": "神殿域の門までは分かるが、ニカノル門・シュシャン門など複数候補があり本文から選べない。旧候補点(31.777444,35.234935)はAkeldama候補の座標と一致し、特定の門への出典接続も確認できないため誤同定を避けて抑制する。",
+        "legacyCandidateCoordinate": [
+          31.777444,
+          35.234935
+        ],
+        "legacyCoordinateStatus": "unverified-candidate",
+        "draftSHA256": "0a7c4cacdee4b51bb77c54e20d9181941d195144e406afa84d65631304deee5f",
+        "evidenceSHA256": "5b4929bb28eb65ef7c9283976c16b954032cf8874b3cd993b2d42452cd8cdc5a",
+        "allowFrom": null,
+        "suppressionReasonClass": [
+          "multiple-candidate-identifications",
+          "legacy-point-unlinked"
+        ]
+      },
+      {
+        "id": "place:mount_sinai_855",
+        "category": "uncertain",
+        "geographicFeatureJa": "山（聖書の山名に対応する山頂の同定に不確実性）",
+        "allowCandidateMap": false,
+        "reasonJa": "Acts 7:30,38のシナイ山は複数の伝統的候補がありprofileも場所を未確定。既存source-verified candidateが特定の山頂を選ぶため表示を抑止。",
+        "existingCandidateCoordinatePresent": true,
+        "existingCandidateCoordinateStatus": "source-verified-candidate",
+        "profileCoordinatePublished": false,
+        "mapLabelRequirementJa": "候補座標を地図に出さない。座標値や場所同定を確定しない。",
+        "draftPath": "drafts/place_2/mount_sinai_855.json",
+        "draftSHA256": "be76680ffa8964399a7ed7de5e1c9afa33c18cf204ba6b8f99f3cc58355983d0",
+        "candidateVerificationState": "target index labels this as source-verified-candidate; it remains a candidate, not a profile coordinate"
+      },
+      {
+        "id": "place:phenice_945",
+        "category": "uncertain",
+        "allowCandidateMap": false,
+        "reasonJa": "クレタ島南岸の港名としては本文と合うが、古代Phoenixの候補地が複数あり現代地点を確定できない。単一点は特定の港への同定と誤認されるため抑制する。",
+        "candidateCoordinate": [
+          35.19888577,
+          24.08098202
+        ],
+        "candidateStatus": "unverified-candidate",
+        "profileCoordinate": null,
+        "draftSha256": "14a8b06aed56a50e95283e96c12ef0af2e79836eb46d1b39223c774c5f85177e"
+      },
+      {
+        "id": "place:salmone_1020",
+        "category": "uncertain",
+        "allowCandidateMap": false,
+        "reasonJa": "候補座標(37.69636,21.56999)はクレタ島でなくギリシャのElisにある同名Salmoneに一致する。Acts 27のクレタ東端地名候補とは別地点なので誤位置として抑制する。",
+        "candidateCoordinate": [
+          37.69636,
+          21.56999
+        ],
+        "candidateStatus": "source-verified-candidate",
+        "profileCoordinate": null,
+        "draftSha256": "99d0008ad9b32b6bd95f011649993aa966d5049b60ba8bee3b668064e1e17821"
+      },
+      {
+        "id": "place:solomons_portico_1109",
+        "category": "uncertain",
+        "allowCandidateMap": false,
+        "reasonJa": "神殿域の列柱廊という建造物で、現存する確定遺構として正確な一点を置けない。候補点を建物の場所と誤認させるためピン表示を抑制する。",
+        "candidateCoordinate": [
+          31.777444,
+          35.234935
+        ],
+        "candidateStatus": "unverified-candidate",
+        "profileCoordinate": null,
+        "draftSha256": "69d5dee53ddd95989d92f76efe4d0c0e2dc370d6cf001bd0b5ad3a4815dbc472"
+      }
+    ],
+    "classificationCounts": {
+      "city": 22,
+      "city/site": 16,
+      "island": 7,
+      "region": 26,
+      "sea": 3,
+      "site": 15,
+      "uncertain": 13
+    },
+    "reviews": [
+      {
+        "path": "reviews/map-policy-place_1.json",
+        "sha256": "2ab3f932a094f9aec7ab9e29765a28f660b074a4d49dd90e240a53b029ef96d5"
+      },
+      {
+        "path": "reviews/map-policy-place_2.json",
+        "sha256": "0b91203dca17149aa4e44ad0c6c58cecb01b45ae6e54ed6a3fbc45ee3f37b513"
+      },
+      {
+        "path": "reviews/map-policy-place_3.json",
+        "sha256": "6d2b68eef5ef96cc770df0c7e8c11e0f830f1af622a1c6258f3d9ab88fcfd471"
+      },
+      {
+        "path": "reviews/map-policy-place_extra.json",
+        "sha256": "d950e7607f448f27b85330b21acfb3edacc29ef946b2c3bd8de37469ad6d8911"
+      }
+    ],
+    "resourceSHA256": "79164feac8ab339d8247c23fac634f2976e8dfd581245e2d60e7a03eb13014c6"
+  },
+  "emptyVerses": [
+    {
+      "chapter": 2,
+      "verse": 1,
+      "reasonJa": "Pentecostの集団を「they」とだけ記し、個々の参加者は名指されない。"
+    },
+    {
+      "chapter": 2,
+      "verse": 2,
+      "reasonJa": "匿名の集団がいた家を説明する節。固有人物・地名はない。"
+    },
+    {
+      "chapter": 2,
+      "verse": 3,
+      "reasonJa": "匿名の集団に現れた現象を説明する節。個別に同定できる人物はいない。"
+    },
+    {
+      "chapter": 2,
+      "verse": 6,
+      "reasonJa": "集まった群衆・話者を個別名ではなく集団として記す。"
+    },
+    {
+      "chapter": 2,
+      "verse": 7,
+      "reasonJa": "驚いた群衆の反応で、個人名・固有地名はない。"
+    },
+    {
+      "chapter": 2,
+      "verse": 8,
+      "reasonJa": "群衆の問いかけで、話者は個別同定されない。"
+    },
+    {
+      "chapter": 2,
+      "verse": 12,
+      "reasonJa": "驚いた人々の反応で、特定の発話者名はない。"
+    },
+    {
+      "chapter": 2,
+      "verse": 13,
+      "reasonJa": "嘲笑した「others」は匿名で、既存IDへ安全に対応しない。"
+    },
+    {
+      "chapter": 2,
+      "verse": 41,
+      "reasonJa": "洗礼を受けた約三千人は集団として記され、個人名がない。"
+    },
+    {
+      "chapter": 2,
+      "verse": 42,
+      "reasonJa": "使徒たちの教えを受けた信徒集団は個別名で特定されない。"
+    },
+    {
+      "chapter": 2,
+      "verse": 43,
+      "reasonJa": "「every soul」は集団表現で、個別人物を指さない。"
+    },
+    {
+      "chapter": 2,
+      "verse": 44,
+      "reasonJa": "信者全体についての説明で個人名はない。"
+    },
+    {
+      "chapter": 2,
+      "verse": 45,
+      "reasonJa": "資産を分けた信者集団を示し、個人名はない。"
+    },
+    {
+      "chapter": 2,
+      "verse": 46,
+      "reasonJa": "日ごとに集まった信者集団の行動を記し、個人名はない。"
+    },
+    {
+      "chapter": 4,
+      "verse": 4,
+      "reasonJa": "信じた人々は匿名の集団として記される。"
+    },
+    {
+      "chapter": 4,
+      "verse": 22,
+      "reasonJa": "癒された男性は匿名で、年齢だけで個人IDに同定しない。"
+    },
+    {
+      "chapter": 4,
+      "verse": 32,
+      "reasonJa": "信徒の群れについての一般記述で個人は名指されない。"
+    },
+    {
+      "chapter": 4,
+      "verse": 34,
+      "reasonJa": "土地・家を売った者は匿名の集団。"
+    },
+    {
+      "chapter": 4,
+      "verse": 35,
+      "reasonJa": "売却代金を持ち寄った人々は匿名の集団。"
+    },
+    {
+      "chapter": 5,
+      "verse": 11,
+      "reasonJa": "恐れたのは集会全体・聞いた人々という匿名集団。"
+    },
+    {
+      "chapter": 5,
+      "verse": 13,
+      "reasonJa": "「the rest」「the people」は個別人物を指さない。"
+    },
+    {
+      "chapter": 5,
+      "verse": 14,
+      "reasonJa": "新たに加わった信者は集団として記される。 「added to the Lord」は信徒集団の増加を表す一般表現で、この文だけでJesus個人IDへの確実な指示とはしない。"
+    },
+    {
+      "chapter": 5,
+      "verse": 17,
+      "reasonJa": "高位祭司は無名で、同行するサドカイ派も集団名。個人IDへの安全な結びつきはない。"
+    },
+    {
+      "chapter": 5,
+      "verse": 18,
+      "reasonJa": "捕えられた使徒たちは無名の集団。"
+    },
+    {
+      "chapter": 5,
+      "verse": 19,
+      "reasonJa": "主の天使は匿名で、既存個人IDに対応しない。 「angel of the Lord」は神の使いを示す語句で、Jesus個人IDとは同定しない。"
+    },
+    {
+      "chapter": 5,
+      "verse": 20,
+      "reasonJa": "発話者は直前の無名の天使。"
+    },
+    {
+      "chapter": 5,
+      "verse": 21,
+      "reasonJa": "本文の「children of Israel」はイスラエルの民・集団を指す。族長ヤコブの個人ID person:israel_682 には結ばない。"
+    },
+    {
+      "chapter": 5,
+      "verse": 22,
+      "reasonJa": "牢へ行った役人は匿名の集団。"
+    },
+    {
+      "chapter": 5,
+      "verse": 23,
+      "reasonJa": "牢番・報告者は匿名で既存人物IDに特定できない。"
+    },
+    {
+      "chapter": 5,
+      "verse": 24,
+      "reasonJa": "高位祭司らの反応は無名の役職集団。"
+    },
+    {
+      "chapter": 5,
+      "verse": 25,
+      "reasonJa": "知らせを伝えた者は匿名。"
+    },
+    {
+      "chapter": 5,
+      "verse": 26,
+      "reasonJa": "神殿の隊長と役人は個別名がない。"
+    },
+    {
+      "chapter": 5,
+      "verse": 27,
+      "reasonJa": "大祭司・議会はこの節では個人名を示さず集団・役職のみ。"
+    },
+    {
+      "chapter": 5,
+      "verse": 33,
+      "reasonJa": "殺そうとした人々は議会の匿名集団。"
+    },
+    {
+      "chapter": 6,
+      "verse": 1,
+      "reasonJa": "ヘレニストとヘブライ人の信徒集団の対立を述べ、個人名はない。"
+    },
+    {
+      "chapter": 6,
+      "verse": 4,
+      "reasonJa": "使徒たちの一人称複数の発言で、個別の話者を名指さない。"
+    },
+    {
+      "chapter": 8,
+      "verse": 4,
+      "reasonJa": "散らされた信徒は匿名集団で個人IDに対応しない。"
+    },
+    {
+      "chapter": 8,
+      "verse": 7,
+      "reasonJa": "癒された人々は匿名で、個人IDはない。"
+    },
+    {
+      "chapter": 8,
+      "verse": 32,
+      "reasonJa": "8:32は聖書の無名の引用文で、本文は「he」を名前で同定しない。解釈上の人物同定を補わず空配列とする。"
+    },
+    {
+      "chapter": 8,
+      "verse": 33,
+      "reasonJa": "8:33も8:32から続く無名の聖書引用で、指示対象となる人物名がない。後続解釈から名前を補わず空配列とする。"
+    },
+    {
+      "chapter": 8,
+      "verse": 37,
+      "reasonJa": "WEB本文には8:37の節テキストがない。別伝承の補足を持ち込まず、人物リンクを空配列とする。"
+    },
+    {
+      "chapter": 13,
+      "verse": 40,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 13,
+      "verse": 41,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 13,
+      "verse": 42,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 13,
+      "verse": 48,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 14,
+      "verse": 10,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 15,
+      "verse": 6,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 15,
+      "verse": 15,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 15,
+      "verse": 24,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 15,
+      "verse": 29,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 15,
+      "verse": 31,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 15,
+      "verse": 34,
+      "reasonJa": "WEB原文データのこの節は空欄（15:34は収録本文なし）。索引候補は節本文で確認できないため結びつけない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 5,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 16,
+      "verse": 16,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 16,
+      "verse": 26,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 16,
+      "verse": 27,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 17,
+      "verse": 8,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 17,
+      "verse": 12,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 17,
+      "verse": 21,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 17,
+      "verse": 32,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 19,
+      "verse": 7,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 19,
+      "verse": 16,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 19,
+      "verse": 18,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 19,
+      "verse": 19,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 19,
+      "verse": 23,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 19,
+      "verse": 32,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 19,
+      "verse": 36,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 19,
+      "verse": 39,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 19,
+      "verse": 40,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 19,
+      "verse": 41,
+      "reasonJa": "WEB本文を確認したが、既存IDに結びつく固有名または確実に同定できる指示対象はない。匿名の人物・集団や一般的な語だけのため空配列とする。"
+    },
+    {
+      "chapter": 21,
+      "verse": 23,
+      "reasonJa": "原典WEB本文 Acts 21:23を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 21,
+      "verse": 25,
+      "reasonJa": "原典WEB本文 Acts 21:25を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 22,
+      "verse": 23,
+      "reasonJa": "原典WEB本文 Acts 22:23を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 23,
+      "verse": 8,
+      "reasonJa": "原典WEB本文 Acts 23:8を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 23,
+      "verse": 13,
+      "reasonJa": "原典WEB本文 Acts 23:13を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 23,
+      "verse": 19,
+      "reasonJa": "原典WEB本文 Acts 23:19を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 23,
+      "verse": 22,
+      "reasonJa": "原典WEB本文 Acts 23:22を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 23,
+      "verse": 25,
+      "reasonJa": "原典WEB本文 Acts 23:25を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 24,
+      "verse": 7,
+      "reasonJa": "原典WEB本文 Acts 24:7を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 24,
+      "verse": 20,
+      "reasonJa": "原典WEB本文 Acts 24:20を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 27,
+      "verse": 14,
+      "reasonJa": "原典WEB本文 Acts 27:14を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 27,
+      "verse": 19,
+      "reasonJa": "原典WEB本文 Acts 27:19を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 27,
+      "verse": 28,
+      "reasonJa": "原典WEB本文 Acts 27:28を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 27,
+      "verse": 30,
+      "reasonJa": "原典WEB本文 Acts 27:30を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 27,
+      "verse": 32,
+      "reasonJa": "原典WEB本文 Acts 27:32を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 27,
+      "verse": 36,
+      "reasonJa": "原典WEB本文 Acts 27:36を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 27,
+      "verse": 37,
+      "reasonJa": "原典WEB本文 Acts 27:37を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 27,
+      "verse": 38,
+      "reasonJa": "原典WEB本文 Acts 27:38を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 27,
+      "verse": 39,
+      "reasonJa": "原典WEB本文 Acts 27:39を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 27,
+      "verse": 40,
+      "reasonJa": "原典WEB本文 Acts 27:40を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 27,
+      "verse": 41,
+      "reasonJa": "原典WEB本文 Acts 27:41を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 27,
+      "verse": 42,
+      "reasonJa": "原典WEB本文 Acts 27:42を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 27,
+      "verse": 44,
+      "reasonJa": "原典WEB本文 Acts 27:44を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 28,
+      "verse": 2,
+      "reasonJa": "原典WEB本文 Acts 28:2を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 28,
+      "verse": 9,
+      "reasonJa": "原典WEB本文 Acts 28:9を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    },
+    {
+      "chapter": 28,
+      "verse": 24,
+      "reasonJa": "原典WEB本文 Acts 28:24を確認。本文に既存対象IDの明示名・同一対象の別表記、または確実な照応なし。 舞台上にいた可能性だけでは人物を結び付けない。"
+    }
+  ],
+  "missingWikipedia": {
+    "count": 8,
+    "suitableArticleNotConfirmed": 4,
+    "identityOrArticleScopeHeld": 3,
+    "supportedLanguageMismatch": 1,
+    "unsearched": 0,
+    "details": "reviews/root-wiki-adoption.json remaining entries"
+  },
+  "independentReview": {
+    "candidateIDsReviewed": 228,
+    "dispositionClosed": 164,
+    "qualified": 64,
+    "unresolvedFailures": 0,
+    "qualificationMeaning": "AI editorial review retains historical/geographic/secondary-source uncertainty; does not mean expert verification. Original 227 receipts plus independently reviewed Shechem. Paul last delta and Theudas HTTP result close earlier outstanding findings.",
+    "receipts": [
+      {
+        "path": "reviews/accepted-person_1.json",
+        "sha256": "026862437a7934648496c5b4fe78c616ee86a39cfd83791ea01cbf7fcd827ac1"
+      },
+      {
+        "path": "reviews/accepted-person_2.json",
+        "sha256": "78b8bb9b442751e24d56142ea195993dff90182ec9db16837ab47930064292ee"
+      },
+      {
+        "path": "reviews/accepted-person_3.json",
+        "sha256": "39cc9bcb9723e1cc1764b11feb6e2500089d49fe16e35ee50036b22a91b413f0"
+      },
+      {
+        "path": "reviews/accepted-person_3-last-delta.json",
+        "sha256": "38509fa8909d2c0ec0df8c3f8d2195bf931e08d0ac7be2912ac4553b4cebf5ce"
+      },
+      {
+        "path": "reviews/accepted-place_1.json",
+        "sha256": "6cb5fb730bebe8203092da93fcad45e7d998b1b1b9087bdb6dcc8e9b0c99ef67"
+      },
+      {
+        "path": "reviews/accepted-place_2.json",
+        "sha256": "1db71612eaf9c1e403eb70882889bc856840ab9989c3957a707c06bcac732d9d"
+      },
+      {
+        "path": "reviews/final-place_3.json",
+        "sha256": "5ac2574938aac9f0314c11641553680e4003d822375cfadf290e9e8128f6b6f1"
+      },
+      {
+        "path": "reviews/root-last-boundary-repair.json",
+        "sha256": "2ed7da1ef9eae0dcfb4a2b100964fa028b25aa6d5e0d0f525ce5986685dd8618"
+      },
+      {
+        "path": "reviews/shechem-independent.json",
+        "sha256": "8cbcd7cf6f6aee54cbaec3b4e2caf99b98995bc9eadb1b7313d659c3e3713f02"
+      },
+      {
+        "path": "reviews/root-wiki-adoption.json",
+        "sha256": "11ebc04ef02604850d22d73022fc889529ecfa3fd1908dd112e43ec0758a0e6a"
+      },
+      {
+        "path": "reviews/wikipedia-missing-independent.json",
+        "sha256": "79456609872329e7f0422e56c63eed3f938c91a30c46f319a13211ffd42dcbad"
+      },
+      {
+        "path": "reviews/empty-verse-final-audit.json",
+        "sha256": "0210c1922e207116d127f1a3177b48d394188baa322b143eebdcdedbc5427487"
+      },
+      {
+        "path": "reviews/empty-verse-independent-01-14.json",
+        "sha256": "77a677bef3a9ab69f4edc7bf356a8791ad661b348534a48d3b0d1c76ee09ee4b"
+      },
+      {
+        "path": "reviews/empty-verse-independent-15-28.json",
+        "sha256": "75c6e685451e04fc972b1ff102ee1c66c7d81955795a39c380c1140a658aee64"
+      },
+      {
+        "path": "reviews/context-link-independent-01-10.json",
+        "sha256": "5b03b36d88c8b2214d71c400ad47b438560c966db23657528578b85cee6563b9"
+      },
+      {
+        "path": "reviews/context-link-independent-11-20.json",
+        "sha256": "6d11ae15b344ba16a92c96a525d78416f8ca8dc96b6d5acae2bcfff526961eda"
+      },
+      {
+        "path": "reviews/context-link-independent-21-28.json",
+        "sha256": "3c419daf16dfe30456342edfd61da2eb069d265448e1c99987ea85b35aba8356"
+      },
+      {
+        "path": "reviews/root-context-adoption.json",
+        "sha256": "cb49c0a828d2a4d6a916440304927f1232298bd663323f501387b065fedd8549"
+      },
+      {
+        "path": "reviews/final-integration-independent.json",
+        "sha256": "b24431ce2fc23d23471186914d986dec4aaad3bda1b5477fe0a0533aceacab23"
+      },
+      {
+        "path": "reviews/root-location-note-cleanup.json",
+        "sha256": "3c872ce8fd6616a6192f7a4e9e499c322ce923e2a7e52a62acd557e04565b039"
+      }
+    ]
+  },
+  "verification": {
+    "core": "180 tests passed; all 1007 coordinates checked both kinds; exact map-access count checked",
+    "webPrimary": "28 chapters and all 1007 anchor links checked",
+    "wikipediaHTTP": "217 entries; no HTTP/title/fragment errors; semantic review is separate",
+    "geographicPoints": "4 fixed official Pleiades JSON points exactly matched; remaining88 maps are labelled legacy candidates, not independently verified",
+    "fullRepository": "npm run validate passed earlier including 628 Vitest tests; API/auth/budget files unchanged since that check",
+    "ui": "6 final iOS Simulator UI tests passed; actual share, early/late profiles, original cards/maps, restored candidate map, Wikipedia, repeated return. ui-delivery-final-test.log / ActsEntitiesUI11.xcresult",
+    "manualDesktop": "No manual desktop or physical-device test claimed; visual QA uses exported automated Simulator screenshots.",
+    "physicalDevice": "not tested on signed physical device; no claim about SideStore re-signing/AI handoff"
+  },
+  "provider": "6 gpt-6-luna workers through Codex subscription; no paid provider API/new keys/billing change",
+  "candidateReadyForParentReview": true,
+  "publicationGateReasonJa": "未公開候補。公開承認、署名した実機、リリース/配布手順は別。専門家未校閲と地理候補の留保は明示。",
+  "validatedAtUTC": "2026-10-15T14:21:49.175761+00:00"
+}

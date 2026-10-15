@@ -8,6 +8,7 @@ struct OfflineEntityPane: View {
     let kind: String
     var ask: ((String) -> Void)? = nil
     var coveredMaterialCardIDs: [String] = []
+    var inlineDetails = false
     @State private var result: EntityIndexResult?
     @State private var includeFuture = false
     @State private var message: String?
@@ -20,24 +21,43 @@ struct OfflineEntityPane: View {
         VStack(alignment: .leading, spacing: BibleTheme.Space.section) {
             if let result {
                 if !additions.isEmpty {
-                    BibleSectionHeader(title: coveredMaterialCardIDs.isEmpty ? (kind == "person" ? "この箇所に関係する人物" : "この箇所に関係する場所") : (kind == "person" ? "ほかの人物・関連する名前" : "ほかの場所"))
+                    BibleSectionHeader(title: coveredMaterialCardIDs.isEmpty ? (kind == "person" ? "この箇所に関係する人物・名前" : "この箇所に関係する場所") : (kind == "person" ? "ほかの人物・関連する名前" : "ほかの場所"))
+                }
+                if additions.isEmpty && coveredMaterialCardIDs.isEmpty {
+                    Text(kind == "person" ? "この箇所に対応する人物の説明はありません。名前のない人物に、推測で名前を付けてはいません。" : "この箇所に対応する地名の説明はありません。同定できない場所には地図の印を置いていません。").bibleTextStyle(.body)
                 }
                 ForEach(additions) { item in
                     BibleReadingSurface {
                         VStack(alignment: .leading, spacing: BibleTheme.Space.lg) {
                             BibleSectionHeader(title: item.entity.displayName, subtitle: item.profile?.profile.subtitleJa ?? (item.directlyNamed ? "本文に名前が登場" : "この箇所の関連候補"))
                             if let profile = item.profile {
+                                if inlineDetails {
+                                    EntityProfileContent(resolved: profile).accessibilityIdentifier("entity-inline-detail-" + item.id)
+                                    if profile.profile.coordinate?.count == 2 {
+                                        EntityProfileInlineMap(resolved: profile)
+                                    }
+                                } else {
                                 Text(profile.profile.summaryJa).bibleTextStyle(.body)
                                 if profile.profile.coordinate?.count == 2 {
                                     NavigationLink("地図で概略位置を確認") { EntityProfileMap(resolved: profile, passage: passage) }
                                         .accessibilityIdentifier("entity-map-" + item.id)
                                 }
-                                NavigationLink(kind == "person" ? "この人物について" : "この場所について") { EntityProfileDetail(initial: profile, passage: passage) }
+                                NavigationLink(profile.profile.detailLinkLabelJa) { EntityProfileDetail(initial: profile, passage: passage) }
                                     .accessibilityIdentifier("entity-detail-" + item.id)
+                                }
                             } else {
                                 Text("この人物・場所の日本語の説明は、まだ収録していません。").bibleTextStyle(.body)
                                 if let point = item.entity.coordinate, point.count == 2 {
-                                    NavigationLink("現代の地図で候補地を見る") { UnreviewedIndexedPlaceMap(entity: item.entity) }
+                                    NavigationLink("現代の地図で候補地を見る") { UnreviewedIndexedPlaceMap(entity: item.entity, note: item.profile?.profile.locationNoteJa) }
+                                }
+                            }
+                            if item.profile != nil, item.profile?.profile.coordinate == nil,
+                               let point = item.entity.coordinate, point.count == 2 {
+                                if inlineDetails {
+                                    UnreviewedIndexedPlaceMap(entity: item.entity, inline: true, note: item.profile?.profile.locationNoteJa)
+                                } else {
+                                    NavigationLink("従来資料の候補位置を地図で見る") { UnreviewedIndexedPlaceMap(entity: item.entity, note: item.profile?.profile.locationNoteJa) }
+                                        .accessibilityIdentifier("entity-candidate-map-" + item.id)
                                 }
                             }
                             if let ask { Button("この\(kind == "person" ? "人物" : "場所")について質問") { ask("\(item.entity.displayName)について、この箇所との関係をやさしく説明してください。") } }
@@ -54,7 +74,7 @@ struct OfflineEntityPane: View {
                 Toggle("先の登場箇所も見る", isOn: $includeFuture)
                 Text(includeFuture ? "この書の先の登場箇所と補足説明も表示しています。" : "選んだ箇所までの情報を表示しています。").bibleTextStyle(.caption).bibleForeground(.textSecondary)
                 DisclosureGroup("一覧の出典と利用条件") {
-                    Text("KJVの節番号をもとにした人物・場所の参考一覧です。関連候補と本文に名前がある場合を区別しています。").bibleTextStyle(.caption)
+                    Text(passage.book == "ACT" ? "使徒言行録はWEB本文と照合した人物・場所の対応を表示します。名前の明記と、文脈上の指示を区別しています。" : "KJVの節番号をもとにした人物・場所の参考一覧です。関連候補と本文に名前がある場合を区別しています。").bibleTextStyle(.caption)
                     Text(result.attribution).bibleTextStyle(.caption)
                     if let url = result.sourceURL { Link("Theographic Bible Metadata · CC BY-SA 4.0", destination: url) }
                 }
@@ -76,11 +96,11 @@ struct EntityProfileDetail: View {
     var body: some View {
         ScrollView {
             BibleReadingColumn {
-                BibleSectionHeader(title: value.profile.nameJa, subtitle: value.profile.subtitleJa)
+                BibleSectionHeader(title: value.nameJa, subtitle: value.profile.subtitleJa)
                 EntityProfileContent(resolved: value)
                 Toggle("先の補足説明も見る", isOn: $includeFuture)
             }
-        }.bibleCanvas().navigationTitle(initial.profile.nameJa).navigationBarTitleDisplayMode(.inline)
+        }.bibleCanvas().navigationTitle(initial.nameJa).navigationBarTitleDisplayMode(.inline)
         .task(id: String(includeFuture)) {
             if let result = try? await BundledEntityIndex.shared.lookup(passage, kind: initial.profile.kind, includeFuture: includeFuture) {
                 resolved = result.occurrences.first(where: { $0.id == initial.profile.id })?.profile
@@ -97,17 +117,17 @@ struct EntityProfileMap: View {
     var body: some View {
         ScrollView {
             BibleReadingColumn {
-                BibleSectionHeader(title: resolved.profile.nameJa, subtitle: "地名の参考位置")
+                BibleSectionHeader(title: resolved.nameJa, subtitle: "地名の参考位置")
                 Text("現代の地図に古代遺跡・地名の代表点を示しています。出来事が起きた正確な場所や、当時の道・海岸線・移動経路を示すものではありません。").bibleTextStyle(.body)
                 if let point = resolved.profile.coordinate, point.count == 2 {
                     let coordinate = CLLocationCoordinate2D(latitude: point[0], longitude: point[1])
                     Map(initialPosition: .camera(MapCamera(centerCoordinate: coordinate, distance: 50_000)), interactionModes: [.pan, .zoom]) {
-                        Marker("\(resolved.profile.nameJa)（概略位置）", coordinate: coordinate).tint(BibleTheme.color(.accent, scheme: scheme))
+                        Marker("\(resolved.nameJa)（概略位置）", coordinate: coordinate).tint(BibleTheme.color(.accent, scheme: scheme))
                     }
                     .mapStyle(.standard(elevation: .flat, emphasis: .muted, pointsOfInterest: .excludingAll, showsTraffic: false))
                     .mapControls { MapScaleView() }
                     .aspectRatio(1, contentMode: .fit)
-                    .accessibilityLabel("\(resolved.profile.nameJa)付近の概略地図。現代の地図上の代表位置です。")
+                    .accessibilityLabel("\(resolved.nameJa)付近の概略地図。現代の地図上の代表位置です。")
                     NavigationLink("この場所について") { EntityProfileDetail(initial: resolved, passage: passage) }
                     if let note = resolved.profile.locationNoteJa { Text(note).bibleTextStyle(.body) }
                     Text("地図上の目安（参考地点）: 緯度 \(point[0].formatted(.number.precision(.fractionLength(5))))、経度 \(point[1].formatted(.number.precision(.fractionLength(5))))").bibleTextStyle(.caption)
@@ -123,16 +143,61 @@ struct EntityProfileMap: View {
         }.bibleCanvas().navigationTitle("地図").navigationBarTitleDisplayMode(.inline)
     }
 }
+/// Share extensions show the stored explanation and map in their reading surface.
+/// No containing-app launch or second navigation controller is needed.
+struct EntityProfileInlineMap: View {
+    let resolved: ResolvedEntityProfile
+    @Environment(\.colorScheme) private var scheme
+    var body: some View {
+        if let point = resolved.profile.coordinate, point.count == 2 {
+            let coordinate = CLLocationCoordinate2D(latitude: point[0], longitude: point[1])
+            Text("現代の地図上の代表位置です。出来事の正確な地点や古代の海岸線を示すものではありません。").bibleTextStyle(.caption)
+            Map(initialPosition: .camera(MapCamera(centerCoordinate: coordinate, distance: 50_000)), interactionModes: [.pan, .zoom]) {
+                Marker("\(resolved.nameJa)（概略位置）", coordinate: coordinate).tint(BibleTheme.color(.accent, scheme: scheme))
+            }
+            .mapStyle(.standard(elevation: .flat, emphasis: .muted, pointsOfInterest: .excludingAll, showsTraffic: false))
+            .mapControls { MapScaleView() }
+            .aspectRatio(1, contentMode: .fit)
+            .accessibilityIdentifier("entity-inline-map-" + resolved.profile.id)
+            .accessibilityLabel("\(resolved.nameJa)付近の概略地図。現代の地図上の代表位置です。")
+            Text("地図の背景には通信が必要な場合があります。現在地は取得していません。").bibleTextStyle(.caption).bibleForeground(.textSecondary)
+        }
+    }
+}
+
 private struct UnreviewedIndexedPlaceMap: View {
     let entity: IndexedEntity
+    var inline = false
+    var note: String? = nil
+    @Environment(\.colorScheme) private var scheme
     var body: some View {
-        VStack {
+        Group {
+            if inline { content }
+            else {
+                ScrollView { BibleReadingColumn { content } }.bibleCanvas()
+                    .navigationTitle(entity.displayName).navigationBarTitleDisplayMode(.inline)
+            }
+        }
+    }
+    private var content: some View {
+        VStack(alignment: .leading, spacing: BibleTheme.Space.sm) {
+            Text("従来資料の候補位置").bibleTextStyle(.heading)
+            Text("Theographicの既存座標を保持しています。このアプリで独立に位置を確認した地点ではありません。地域・島・海の場合は範囲の目安であり、出来事の場所や境界を示しません。").bibleTextStyle(.caption)
             if let position = entity.coordinate, position.count == 2 {
                 let point = CLLocationCoordinate2D(latitude: position[0], longitude: position[1])
-                Map(initialPosition: .camera(MapCamera(centerCoordinate: point, distance: 50000))) { Marker("\(entity.displayName)（同定候補）", coordinate: point).tint(.orange) }
-                Text("現代の地図上の同定候補です。背景の地図には通信が必要です。").bibleTextStyle(.caption).padding()
+                Map(initialPosition: .camera(MapCamera(centerCoordinate: point, distance: 50_000)), interactionModes: [.pan, .zoom]) {
+                    Marker("\(entity.displayName)（資料上の候補位置）", coordinate: point).tint(BibleTheme.color(.accent, scheme: scheme))
+                }
+                .mapStyle(.standard(elevation: .flat, emphasis: .muted, pointsOfInterest: .excludingAll, showsTraffic: false))
+                .mapControls { MapScaleView() }
+                .aspectRatio(1, contentMode: .fit)
+                .accessibilityIdentifier("entity-candidate-map-content-" + entity.id)
             }
-        }.navigationTitle(entity.displayName)
+            if let note { Text(note).bibleTextStyle(.caption) }
+            Text(entity.coordinateStatus == "source-verified-candidate" ? "元資料の状態: VERIFIED。アプリ側の独立照合とは区別しています。" : "元資料の状態: 未確認の座標候補。").bibleTextStyle(.caption)
+            Link("Theographic Bible Metadata · CC BY-SA 4.0", destination: URL(string: "https://github.com/robertrouse/theographic-bible-metadata/tree/52e049efb3b95e4f1da52d11a3303fbd2d648922")!)
+            Text("Robert Rouse and contributors。現在地は取得していません。背景地図には通信が必要な場合があります。").bibleTextStyle(.caption)
+        }
     }
 }
 
@@ -162,10 +227,16 @@ struct EntityProfileContent: View {
             }
             DisclosureGroup("この説明の出典") {
                 Text("AIによる日本語編集。出典本文と照合していますが、専門家の校閲はありません。端末に保存した説明を表示しています。").bibleTextStyle(.caption)
-                ForEach(resolved.sources) { source in
-                    if let url = source.safeURL { Link(source.title, destination: url) }
-                    Text(source.license + " · " + source.attribution).bibleTextStyle(.caption)
-                    if let url = URL(string: source.licenseURL), url.scheme == "https" { Link("利用条件", destination: url) }
+                ForEach(["primary-text", "geographic-reference", "secondary-reference"], id: \.self) { category in
+                    let items = resolved.sources.filter { ($0.category ?? "primary-text") == category }
+                    if !items.isEmpty {
+                        Text(category == "primary-text" ? "聖書本文の出典" : category == "geographic-reference" ? "地理資料" : "補助資料").bibleTextStyle(.heading)
+                        ForEach(items) { source in
+                            if let url = source.safeURL { Link(source.title, destination: url) }
+                            Text(source.license + " · " + source.attribution).bibleTextStyle(.caption)
+                            if let url = URL(string: source.licenseURL), url.scheme == "https" { Link("利用条件", destination: url) }
+                        }
+                    }
                 }
                 Text("出典の外部ページには、選んだ箇所より先の内容が含まれる場合があります。").bibleTextStyle(.caption)
                 Text("資料上の識別ID: " + resolved.profile.id).bibleTextStyle(.caption)

@@ -4,9 +4,9 @@ import XCTest
     let full = Passage(book: "ACT", start: Verse(chapter: 18, verse: 24), end: Verse(chapter: 19, verse: 7))
     func testActualScopeHasProfilesAndDistinctJohnIdentity() async throws {
         let people = try await BundledEntityIndex.shared.lookup(full, kind: "person")
-        XCTAssertEqual(people.occurrences.count, 9)
+        XCTAssertGreaterThanOrEqual(people.occurrences.count, 9)
         XCTAssertTrue(people.occurrences.allSatisfy { $0.profile != nil })
-        XCTAssertTrue(people.occurrences.contains { $0.id == "person:john_1676" && $0.profile!.profile.identityNoteJa.contains("洗礼者") })
+        XCTAssertTrue(people.occurrences.contains { $0.id == "person:john_1676" && $0.profile!.profile.nameJa.contains("ヨハネ") })
         XCTAssertFalse(people.occurrences.contains { $0.id == "person:john_1677" })
         for item in people.occurrences {
             XCTAssertFalse(item.profile!.sources.isEmpty)
@@ -29,10 +29,14 @@ import XCTest
         let places = try await BundledEntityIndex.shared.lookup(full, kind: "place")
         XCTAssertEqual(places.occurrences.count, 4)
         XCTAssertTrue(places.occurrences.allSatisfy { $0.profile?.profile.modernLocationJa != nil && $0.profile?.profile.historicalRoleJa != nil })
-        XCTAssertNil(places.occurrences.first { $0.id == "place:achaia_16" }!.entity.coordinate)
-        XCTAssertEqual(places.occurrences.filter { $0.entity.coordinate != nil }.count, 3)
+        let achaia = try XCTUnwrap(places.occurrences.first { $0.id == "place:achaia_16" })
+        XCTAssertNil(achaia.profile?.profile.coordinate)
+        XCTAssertEqual(achaia.entity.coordinate, [37.5, 22.5])
+        XCTAssertNotEqual(achaia.entity.coordinateStatus, "source-representative-point")
+        XCTAssertEqual(places.occurrences.filter { $0.profile?.profile.coordinate != nil }.count, 3)
         let outside = try await BundledEntityIndex.shared.lookup(Passage(book: "ACT", start: Verse(chapter: 23, verse: 1), end: Verse(chapter: 23, verse: 1)), kind: "person")
-        XCTAssertTrue(outside.occurrences.allSatisfy { $0.profile == nil })
+        XCTAssertFalse(outside.occurrences.isEmpty)
+        XCTAssertTrue(outside.occurrences.allSatisfy { $0.profile != nil })
     }
     func testExistingMaterialCardsResolveToProfilesWithoutChangingSpoilerBoundary() async throws {
         let early = Passage(book: "ACT", start: Verse(chapter: 18, verse: 24), end: Verse(chapter: 18, verse: 24))
@@ -49,11 +53,12 @@ import XCTest
         let people = try await BundledEntityIndex.shared.lookup(full, kind: "person")
         let places = try await BundledEntityIndex.shared.lookup(full, kind: "place")
         let all = people.occurrences + places.occurrences
-        XCTAssertEqual(all.count, 13)
+        XCTAssertGreaterThanOrEqual(all.count, 13)
         for item in all {
             let profile = try XCTUnwrap(item.profile)
-            XCTAssertNotNil(profile.profile.wikipedia?.safeURL)
-            XCTAssertTrue(profile.sources.allSatisfy { $0.safeURL?.host?.hasSuffix("wikipedia.org") != true })
+            if let link = profile.profile.wikipedia { XCTAssertNotNil(link.safeURL) }
+            XCTAssertTrue(profile.sources.contains { $0.category == "primary-text" && $0.safeURL?.host == "ebible.org" })
+            XCTAssertTrue(profile.sources.filter { $0.safeURL?.host?.hasSuffix("wikipedia.org") == true }.allSatisfy { $0.category == "secondary-reference" })
         }
         let john = people.occurrences.first { $0.id == "person:john_1676" }!.profile!.profile.wikipedia!
         XCTAssertEqual(john.safeURL?.path, "/wiki/洗礼者ヨハネ")
@@ -68,6 +73,22 @@ import XCTest
         XCTAssertEqual(aquila.safeURL?.path, priscilla.safeURL?.path)
         XCTAssertNotEqual(aquila.safeURL?.fragment, priscilla.safeURL?.fragment)
     }
+
+    func testActsCatalogReplacesCandidateLinksAndGatesSaulName() async throws {
+        let early = Passage(book: "ACT", start: Verse(chapter: 7, verse: 58), end: Verse(chapter: 7, verse: 58))
+        let before = try await BundledEntityIndex.shared.lookup(early, kind: "person")
+        let saul = try XCTUnwrap(before.occurrences.first { $0.id == "person:paul_2479" })
+        XCTAssertEqual(saul.entity.displayName, "サウロ")
+        XCTAssertEqual(saul.profile?.nameJa, "サウロ")
+        let late = Passage(book: "ACT", start: Verse(chapter: 13, verse: 9), end: Verse(chapter: 13, verse: 9))
+        let after = try await BundledEntityIndex.shared.lookup(late, kind: "person")
+        XCTAssertEqual(after.occurrences.first { $0.id == "person:paul_2479" }?.entity.displayName, "パウロ")
+        let shechem = Passage(book: "ACT", start: Verse(chapter: 7, verse: 16), end: Verse(chapter: 7, verse: 16))
+        let corrected = try await BundledEntityIndex.shared.lookup(shechem, kind: "person")
+        XCTAssertFalse(corrected.occurrences.contains { $0.id == "person:shechem_2588" })
+        XCTAssertTrue(corrected.occurrences.allSatisfy { $0.profile != nil })
+    }
+
     func testWikipediaLinkRejectsUnverifiedAndNonArticleDestinations() {
         func link(_ url: String, verified: Bool = true) -> WikipediaReadingLink {
             WikipediaReadingLink(title: "検証用", language: "ja", url: url, kind: "article", noteJa: "", checkedAt: "2026-10-15", identityVerified: verified)

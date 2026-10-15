@@ -1,0 +1,796 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-content-review",
+  "utcReviewedAt": "2026-10-15T13:02:57.317684+00:00",
+  "assignmentFile": "assignments/person_2.json",
+  "primaryWitness": "acts-web-verses.json",
+  "scope": "Compare every existing person_2 profile file against its assignment and pinned WEB Acts verse. Read/verify direct identity, summary/subtitle/identityNote first-appearance scope, candidate/person linkage and assigned occurrence coverage. Does not modify any draft.",
+  "parseAndContentStatusAreSeparate": true,
+  "counts": {
+    "assignedIDs": 41,
+    "profileFilesFound": 41,
+    "profileFilesMissing": 0,
+    "parsePass": 41,
+    "contentPass": 30,
+    "contentNeedsReview": 5,
+    "contentFail": 6,
+    "incompleteWikipediaNull": 35
+  },
+  "crossProfileFindings": [
+    {
+      "entityIDs": [
+        "person:gaius_1269",
+        "person:gaius_1270"
+      ],
+      "severity": "fail",
+      "coordinates": [
+        "ACT 19:29",
+        "ACT 20:4"
+      ],
+      "basisJa": "原文は19:29で「マケドニア人」のガイオ、20:4で「デルベ出身のガイオ」と別々の出身地を添えて名指す。割当ては二つのIDに分けており、別人の可能性は高いが、両節は同一／別人を明文で確定しない。1269のidentityNoteは20:4を初出プロフィール内で先取りし、1270のreview.identityCheckJaは自分の20:4を19:29の人物と取り違える。",
+      "suggestionJa": "上流エンティティ対応を確認して2IDの扱いを確定する。現在の原文だけで無理に統合はしない。1269の導入から将来節の比較を外し、1270のidentityCheckを20:4に合わせる。"
+    },
+    {
+      "entityIDs": [
+        "person:judas_1758"
+      ],
+      "severity": "needs-review",
+      "coordinates": [
+        "ACT 9:11"
+      ],
+      "basisJa": "「house of Judah」の属格は人名・家主を示し得る。原文対応がKJV「house of Judas」とされ、英語表記の語形だけで固有名を除外する根拠は不足。",
+      "suggestionJa": "名前表記差と文法を照合して、プロフィールの除外/復元を再判定する。独立レビューで確定できないためneeds-reviewとした。"
+    }
+  ],
+  "files": [
+    {
+      "entityID": "person:gaius_1269",
+      "path": "drafts/person_2/person_gaius_1269.json",
+      "sha256": "b3060418d79d0f6d6922b3d19d952e5691c4e6ba1120c90606f444e4c44e9137",
+      "parseStatus": "pass",
+      "contentReviewStatus": "fail",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [
+        {
+          "severity": "fail",
+          "category": "identity-and-spoiler",
+          "coordinates": [
+            "ACT 19:29",
+            "ACT 20:4"
+          ],
+          "basisJa": "このIDは割当て上ACT 19:29だけをprofile.passagesに含む一方、identityNoteJaで未出の20:4を先取りして別人と断定します。原文は19:29を「マケドニア人」複数とし、20:4には「デルベ出身のガイオ」がいます。別IDへの分離自体は地理的手掛かりと整合しますが、原文は両者の同一／別人を明記しません。",
+          "suggestionJa": "19:29のprofileは19:29に限定し、初出のidentityNoteJaから20:4への比較を外す。二つのIDを分ける根拠は別の照合記録に置き、上流インデックスが同一人物を指す設計なら20:4の欠落を解消する。現データだけで自動統合しない。"
+        }
+      ]
+    },
+    {
+      "entityID": "person:gaius_1270",
+      "path": "drafts/person_2/person_gaius_1270.json",
+      "sha256": "ac7ef53f7e2749f3e4e5729166f717bf91acb1e3dc1688dcc3c777d84e144e00",
+      "parseStatus": "pass",
+      "contentReviewStatus": "fail",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [
+        {
+          "severity": "fail",
+          "category": "identity-check-error",
+          "coordinates": [
+            "ACT 19:29",
+            "ACT 20:4"
+          ],
+          "basisJa": "このファイルのknownByとpassagesは20:4のデルベ出身ガイオだが、review.identityCheckJaは「19:29のマケドニア人ガイオを指す」と記し、別IDの識別説明を誤って複写している。",
+          "suggestionJa": "identityCheckJaを20:4の人物について書き直し、19:29とは出身地の記述が異なることと、同一性が本文だけでは確定しない点を記す。19:29側の漏れ／分離も上流ID対応と照合する。"
+        }
+      ]
+    },
+    {
+      "entityID": "person:gallio_1275",
+      "path": "drafts/person_2/person_gallio_1275.json",
+      "sha256": "c17056413c927e4f14a1df5fe35c68237c4aac6b17716e6b9da4ac9c2319c464",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-link-identity-independently-checked",
+      "wikipediaStatus": "present-identity-verified-by-independent-review",
+      "assignmentOccurrenceCount": 3,
+      "profilePassageCount": 3,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Lucius_Junius_Gallio_Annaeanus"
+    },
+    {
+      "entityID": "person:gamaliel_1277",
+      "path": "drafts/person_2/person_gamaliel_1277.json",
+      "sha256": "4301ff37ae48a3735b32a0bc160cb102803b9c415faf46faea14c558ff4cb6d9",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-link-identity-independently-checked",
+      "wikipediaStatus": "present-identity-verified-by-independent-review",
+      "assignmentOccurrenceCount": 2,
+      "profilePassageCount": 2,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Gamaliel"
+    },
+    {
+      "entityID": "person:god_1324",
+      "path": "drafts/person_2/person_god_1324.json",
+      "sha256": "592b14bed8675d3284a81bdce5afdba757ee2f8ddd771dd653b9afdfa962dbe9",
+      "parseStatus": "pass",
+      "contentReviewStatus": "needs-review",
+      "completionStatus": "article-present-link-identity-independently-checked",
+      "wikipediaStatus": "present-identity-verified-by-independent-review",
+      "assignmentOccurrenceCount": 158,
+      "profilePassageCount": 158,
+      "excludedOccurrenceCount": 0,
+      "issues": [
+        {
+          "severity": "warn",
+          "category": "generic-introduction",
+          "coordinates": [
+            "ACT 1:3"
+          ],
+          "basisJa": "summaryJaは「教えと復活の証言、宣教の中で語られる神を記す」と広い編集要約に留まり、人物紹介として誰をどの箇所のどの役割で示すかが曖昧。初出1:3は「神の国」を語る文脈。",
+          "suggestionJa": "初出で確認できる神の国への言及を起点に、ACT本文内の固有の役割を簡潔な導入として示す。復活を述べるfactは2:24以後のknownByに保つ。"
+        }
+      ],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/God_in_Christianity"
+    },
+    {
+      "entityID": "person:hamor_1365",
+      "path": "drafts/person_2/person_hamor_1365.json",
+      "sha256": "a3f691b2902d78e22a2258fe1aec78390b63575f771c9a1dc53cf381001146fb",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:heber_1469",
+      "path": "drafts/person_2/person_heber_1469.json",
+      "sha256": "81ff0b96bdab992867f4b10257bb7b9caa1e66f9d986fe3d254e55138f87d04a",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 0,
+      "excludedOccurrenceCount": 1,
+      "issues": []
+    },
+    {
+      "entityID": "person:herod_1505",
+      "path": "drafts/person_2/person_herod_1505.json",
+      "sha256": "6922c1057542f1654d12beb5e8f588ae8994ec1b8b1084cf9f2b39d316b0283f",
+      "parseStatus": "pass",
+      "contentReviewStatus": "needs-review",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 2,
+      "profilePassageCount": 2,
+      "excludedOccurrenceCount": 0,
+      "issues": [
+        {
+          "severity": "warn",
+          "category": "future-identity-note",
+          "coordinates": [
+            "ACT 4:27",
+            "ACT 12:1"
+          ],
+          "basisJa": "knownByは4:27だが、identityNoteJaが未出の12章のアグリッパ王との比較を先に示す。4:27でヘロデは名指しされるものの、アンティパスという特定はこの節だけでは明示されない。",
+          "suggestionJa": "identityNoteJaを空にするか4:27の文脈だけに制限し、12章のアグリッパとの区別はレビュー記録に置く。アンティパスの同定根拠を明記する。"
+        }
+      ]
+    },
+    {
+      "entityID": "person:herod_1506",
+      "path": "drafts/person_2/person_herod_1506.json",
+      "sha256": "31e748626d47d26a09e4fe82fe78e4aa208b6fcdb89348fea38db573c9b39d2b",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-link-identity-independently-checked",
+      "wikipediaStatus": "present-identity-verified-by-independent-review",
+      "assignmentOccurrenceCount": 6,
+      "profilePassageCount": 6,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://en.wikipedia.org/wiki/Herod_Agrippa"
+    },
+    {
+      "entityID": "person:holy_spirit_7400",
+      "path": "drafts/person_2/person_holy_spirit_7400.json",
+      "sha256": "e3cdf69ba66e58c224c51261d85b708117a8a105a9485dbaf54a8d1851633970",
+      "parseStatus": "pass",
+      "contentReviewStatus": "needs-review",
+      "completionStatus": "article-present-link-identity-independently-checked",
+      "wikipediaStatus": "present-identity-verified-by-independent-review",
+      "assignmentOccurrenceCount": 51,
+      "profilePassageCount": 51,
+      "excludedOccurrenceCount": 0,
+      "issues": [
+        {
+          "severity": "warn",
+          "category": "direct-vs-related",
+          "coordinates": [
+            "ACT 1:2",
+            "ACT 1:5",
+            "ACT 2:4",
+            "ACT 5:3",
+            "ACT 13:2",
+            "ACT 20:28",
+            "ACT 28:25"
+          ],
+          "basisJa": "割当て41箇所すべてのrelationshipがrelatedで、review.occurrenceChecksもrelated-link-checkedだが、原文の41箇所中41箇所ではなく少なくとも上記箇所を含む41件中41件の多くが「Holy Spirit」と明記される（実数は51箇所中41箇所）。例の箇所はHoly Spiritと直接名指しされ、1:2、1:5、2:4、5:3、13:2、20:28、28:25はいずれも明示的。",
+          "suggestionJa": "各節を原文で個別に分け、Holy Spirit/Spiritの直接名指しと、代名詞・文脈からの指示を区別してrelationshipとoccurrenceChecksを修正する。"
+        }
+      ],
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/%E8%81%96%E9%9C%8A"
+    },
+    {
+      "entityID": "person:isaac_616",
+      "path": "drafts/person_2/person_isaac_616.json",
+      "sha256": "d24926cec8a4b9d8427d8cce9d4a200f4ecfe3e19399a440a8460481e1588f00",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 3,
+      "profilePassageCount": 3,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:isaiah_617",
+      "path": "drafts/person_2/person_isaiah_617.json",
+      "sha256": "3e3e8ba1f31a59f053736581290475b7d2ba1bfdd6bcdbb2837fbe4ad423ff11",
+      "parseStatus": "pass",
+      "contentReviewStatus": "needs-review",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 3,
+      "profilePassageCount": 3,
+      "excludedOccurrenceCount": 0,
+      "issues": [
+        {
+          "severity": "warn",
+          "category": "direct-vs-related",
+          "coordinates": [
+            "ACT 8:28",
+            "ACT 8:30",
+            "ACT 28:25"
+          ],
+          "basisJa": "各箇所で「預言者イザヤ」／「イザヤ預言者」と名が明記される。relationship=relatedおよびrelated-link-checkedは、契約上の「直接の名指しはdirect」という基準と合わない。8章は預言者の書を読む場面、28:25は預言者本人を引用元として明示する。",
+          "suggestionJa": "3箇所とも原文がイザヤ名を明記するためdirectとして記録する。8章の読書場面と28:25の引用元という関係の違いはreasonJaに残す。"
+        }
+      ]
+    },
+    {
+      "entityID": "person:israel_682",
+      "path": "drafts/person_2/person_israel_682.json",
+      "sha256": "075594d709500f4ca137dbe9ddcc71c0d68eff65a82d20ca1df8a088d24e646f",
+      "parseStatus": "pass",
+      "contentReviewStatus": "fail",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 12,
+      "profilePassageCount": 7,
+      "excludedOccurrenceCount": 5,
+      "issues": [
+        {
+          "severity": "fail",
+          "category": "wrong-entity-and-excluded-occurrences",
+          "coordinates": [
+            "ACT 3:13",
+            "ACT 5:21",
+            "ACT 7:8",
+            "ACT 7:23",
+            "ACT 7:37",
+            "ACT 9:15",
+            "ACT 10:36"
+          ],
+          "basisJa": "profile.kindはpersonだが、5:21、7:23、7:37、9:15、10:36は「イスラエルの子ら／長老会」の集合・民族を指し、個人ではない。7:8、7:12、7:14、7:15、7:32、7:46は「イスラエル」という人名でなくヤコブ／族長やその神への言及。3:13にもIsraelの人名・民族名はなく、アブラハム、イサク、ヤコブの神とある。reviewでは5箇所をexcludedと記すが、それらもprofile.passagesに残る。summaryは初出を5:21と述べる一方、knownByは3:13。",
+          "suggestionJa": "現行IDを個人プロフィールとして公開しない。実際のIsraelという語が集合・民族を指す箇所は人物IDから除外し、3:13等の間接連想も除外する。上流インデックスが集団エンティティを支える場合のみ別kindで再設計し、summary/knownByを一致させる。"
+        },
+        {
+          "severity": "fail",
+          "category": "assigned-occurrence-coverage",
+          "coordinates": [
+            "ACT 5:21",
+            "ACT 7:23",
+            "ACT 7:37",
+            "ACT 9:15",
+            "ACT 10:36"
+          ],
+          "basisJa": "profile.passagesと割当occurrencesが一致しない。",
+          "suggestionJa": "原文照合後、妥当なoccurrenceをprofile.passagesへ加えるか、誤リンクなら明示的に除外する。"
+        }
+      ]
+    },
+    {
+      "entityID": "person:james_717",
+      "path": "drafts/person_2/person_james_717.json",
+      "sha256": "46f51853269225556cffe6ed6a0973369a2d87a23d234e2126da38dd7b1d36a9",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:james_718",
+      "path": "drafts/person_2/person_james_718.json",
+      "sha256": "e4ab5179e9e8de253b0a33e8f1c356b4c725f57df40074863bed4ab9a08ca60d",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:james_719",
+      "path": "drafts/person_2/person_james_719.json",
+      "sha256": "dd9a588913d624933fa1022d6412b115554958c54f6f087da39f3ec97cd520fc",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 3,
+      "profilePassageCount": 3,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:jason_742",
+      "path": "drafts/person_2/person_jason_742.json",
+      "sha256": "44be932c467c90c45636237e8c3c768fbf449571409b42cc19826be73379058a",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 4,
+      "profilePassageCount": 4,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:jesse_903",
+      "path": "drafts/person_2/person_jesse_903.json",
+      "sha256": "98f947e2ea0518879d1f76042a56ce5f84e1e02ec5f6f8cd1e4f2e0d43537401",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:jesus_905",
+      "path": "drafts/person_2/person_jesus_905.json",
+      "sha256": "056a951f1113da6e35e1674e64b510f372a3dc63182f488fd7dd5573debf4bb4",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "article-present-link-identity-independently-checked",
+      "wikipediaStatus": "present-identity-verified-by-independent-review",
+      "assignmentOccurrenceCount": 154,
+      "profilePassageCount": 154,
+      "excludedOccurrenceCount": 0,
+      "issues": [],
+      "wikipediaURL": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%82%A8%E3%82%B9%E3%83%BB%E3%82%AD%E3%83%AA%E3%82%B9%E3%83%88"
+    },
+    {
+      "entityID": "person:joel_1660",
+      "path": "drafts/person_2/person_joel_1660.json",
+      "sha256": "5b442a0848c406be1c78dd162d7abc92a81c201fc347e7477b575a864b7f88dc",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:john_1676",
+      "path": "drafts/person_2/person_john_1676.json",
+      "sha256": "0cc44505b5f99065785998ea0aa3d01109024e6ee72cac57925e9e6de9997d45",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 9,
+      "profilePassageCount": 9,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:john_1677",
+      "path": "drafts/person_2/person_john_1677.json",
+      "sha256": "bc94dd3b5b1ef58c5de9e9bceb39abee472443739f703d411db92ef225163024",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 9,
+      "profilePassageCount": 9,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:john_1678",
+      "path": "drafts/person_2/person_john_1678.json",
+      "sha256": "c948309307690655f20ad261257bd009d9d197e4fab32b1aa6a6af15c2c1054d",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:joseph_1710",
+      "path": "drafts/person_2/person_joseph_1710.json",
+      "sha256": "7186c046202a098d9703709efc4650fbacb56e95afc6b240e15a5e60b30caa8c",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 4,
+      "profilePassageCount": 4,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:joshua_1727",
+      "path": "drafts/person_2/person_joshua_1727.json",
+      "sha256": "ff0d5b6c082b238e59e7f5f0acbfa763eca2416c0a9479d7201150837f19186c",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:judas_1757",
+      "path": "drafts/person_2/person_judas_1757.json",
+      "sha256": "16f0d63dfb72a756d09573c06e3fb958a03afe462b233f7b47064a1c5e42ced7",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:judas_1758",
+      "path": "drafts/person_2/person_judas_1758.json",
+      "sha256": "7b241cd370f2d274eaa57debed29bd35d88c120af980bc703d6f84482b70d4bd",
+      "parseStatus": "pass",
+      "contentReviewStatus": "needs-review",
+      "completionStatus": "content-needs-review-wikipedia-null-incomplete",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 0,
+      "excludedOccurrenceCount": 1,
+      "issues": [
+        {
+          "severity": "needs-review",
+          "category": "name-variant-and-syntax",
+          "coordinates": [
+            "ACT 9:11"
+          ],
+          "basisJa": "WEBの「house of Judah」は所有者を示す属格の人名とも読める。Judas/Judah の英語表記差に注意が必要で、KJVの「house of Judas」に対応するため、文字列だけで人名出現を否定できない。",
+          "suggestionJa": "この箇所は除外確定でなく、原文の人名・WEB訳語と人物ID対応を再照合し、適切なら人物IDに復元する。"
+        }
+      ]
+    },
+    {
+      "entityID": "person:judas_1759",
+      "path": "drafts/person_2/person_judas_1759.json",
+      "sha256": "b89af844cd5fc1f1e9a91569049c06ebae85bf1f58b57ec56debf48849c7607e",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 3,
+      "profilePassageCount": 3,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:judas_1760",
+      "path": "drafts/person_2/person_judas_1760.json",
+      "sha256": "e0f469175dba7ee3e3d7c41de6561ff2ae82d1b37d2deccad8006ad9bab8db4d",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 2,
+      "profilePassageCount": 2,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:julius_1763",
+      "path": "drafts/person_2/person_julius_1763.json",
+      "sha256": "bc283162fb658859e665052921f402c1371a275b167cb45bc87171d073d62b92",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 2,
+      "profilePassageCount": 2,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:justus_1766",
+      "path": "drafts/person_2/person_justus_1766.json",
+      "sha256": "c4c39cf5a94e0b5be2b9e139ce6645b9774bc25442759b0d25e9fcbada0eb4e7",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:kish_1784",
+      "path": "drafts/person_2/person_kish_1784.json",
+      "sha256": "2fcd036e1fb2765f18e547b74c7ff6b7a30798f2128c71843de870908624a57b",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:lebbaeus_1815",
+      "path": "drafts/person_2/person_lebbaeus_1815.json",
+      "sha256": "ee24d01afbe1f63ef47d7e1e27d48c0c4440fc1a5167413a019ba17e8c09c754",
+      "parseStatus": "pass",
+      "contentReviewStatus": "fail",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": [
+        {
+          "severity": "fail",
+          "category": "unsupported-alias-link",
+          "coordinates": [
+            "ACT 1:13"
+          ],
+          "basisJa": "WEBは「ヤコブの子ユダ」と記すが、使徒言行録本文ではLebbaeusという名は出ず、この人物とLebbaeusの同一性も示さない。現profileはidentityNoteJaで不確実性を認めながら、間接関連だけでACT 1:13を同IDのpassagesに保持している。",
+          "suggestionJa": "ACT 1:13をperson:lebbaeusへのoccurrenceとしては除外し、候補の同一性は外部の明確な照合根拠がある場合だけ別記する。原文上の「ヤコブの子ユダ」は別の候補として記述しない。"
+        }
+      ]
+    },
+    {
+      "entityID": "person:lucius_1833",
+      "path": "drafts/person_2/person_lucius_1833.json",
+      "sha256": "eebd8d5efdd975a66d554c071137dd2fa1b9d5d8a38e72b424ad486f47e401c5",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:lydia_1837",
+      "path": "drafts/person_2/person_lydia_1837.json",
+      "sha256": "976d0454be2fea6e3154f165e93bce62f344091ca59a084c85f1542ea561ed74",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 2,
+      "profilePassageCount": 2,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:manaen_1926",
+      "path": "drafts/person_2/person_manaen_1926.json",
+      "sha256": "2b78c39c8bba9c457e1b9cfa08f4040643239b053ad40d60c22e94fe24da14bd",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:mark_1679",
+      "path": "drafts/person_2/person_mark_1679.json",
+      "sha256": "267827765bfcf81c0c1b51bd45179418de561fda5539e2d96b33dd8c3f1417b1",
+      "parseStatus": "pass",
+      "contentReviewStatus": "fail",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 6,
+      "profilePassageCount": 6,
+      "excludedOccurrenceCount": 0,
+      "issues": [
+        {
+          "severity": "fail",
+          "category": "spoiler-in-subtitle",
+          "coordinates": [
+            "ACT 12:12",
+            "ACT 12:25",
+            "ACT 13:5"
+          ],
+          "basisJa": "初出knownByは12:12で、ここではマリアの子ヨハネ、別名マルコとして紹介される。subtitleJaは「バルナバとサウロの宣教旅行に同行する」と後の12:25／13:5の内容を先取りする。",
+          "suggestionJa": "subtitleを初出で分かる親族・別名情報に限定し、同行・旅行は12:25以後のfactに置く。"
+        }
+      ]
+    },
+    {
+      "entityID": "person:mary_1938",
+      "path": "drafts/person_2/person_mary_1938.json",
+      "sha256": "b14f4ba88eaeeffdbfad3655aca7a28197e9b7565b8acdd9adae5f70d1472043",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:mary_1941",
+      "path": "drafts/person_2/person_mary_1941.json",
+      "sha256": "8eefdd1f2491981f90570c1736630c064d8f03c852728a66a95412212a8f726b",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:matthew_1971",
+      "path": "drafts/person_2/person_matthew_1971.json",
+      "sha256": "e74587dfadcfc7d6ba95f92c2ec6b8f10dbc6c522bf53e1c7635c37b9d1f725a",
+      "parseStatus": "pass",
+      "contentReviewStatus": "pass",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 1,
+      "profilePassageCount": 1,
+      "excludedOccurrenceCount": 0,
+      "issues": []
+    },
+    {
+      "entityID": "person:matthias_1972",
+      "path": "drafts/person_2/person_matthias_1972.json",
+      "sha256": "043e1a68c5dcf5236d1ad25274d09dc1908dd6ab185d32e3fc8280ddb83f6a7c",
+      "parseStatus": "pass",
+      "contentReviewStatus": "fail",
+      "completionStatus": "incomplete-wikipedia-null",
+      "wikipediaStatus": "null-by-author-review-unverified-incomplete",
+      "assignmentOccurrenceCount": 2,
+      "profilePassageCount": 2,
+      "excludedOccurrenceCount": 0,
+      "issues": [
+        {
+          "severity": "fail",
+          "category": "spoiler-in-subtitle",
+          "coordinates": [
+            "ACT 1:23",
+            "ACT 1:26"
+          ],
+          "basisJa": "knownByは1:23だがsubtitleJaは「ユダに代わり、使徒の一人に選ばれた」と結果を述べる。選出は後の1:26で初めて記され、別factにもある。",
+          "suggestionJa": "subtitleを1:23時点の「使徒候補として推薦された人物」に改め、選出は1:26のfactだけに残す。"
+        }
+      ]
+    }
+  ],
+  "progressFile": {
+    "path": "drafts/person_2/progress.json",
+    "sha256": "7fcef6c084344ac27fefcc112e4138cf1835e03b3924cc54ccccf2ab8989f421",
+    "parseStatus": "pass",
+    "contentReviewStatus": "not-applicable",
+    "completionStatus": "incomplete-wikipedia-null",
+    "wikipediaStatus": "progress says profiles have null links and verification remains pending"
+  },
+  "methodNotes": [
+    "All 41 profile files exist and parse. Every file hash was calculated from the bytes reviewed.",
+    "The local WEB witness supplied exact Acts verse text. Coverage comparison against assigned occurrence lists found two expected deliberate exclusions (Heber 23:35 and the “house of Judah” link at 9:11), each absent from profile.passages; Israel includes excluded occurrences despite review status.",
+    "A parse pass only records JSON validity. It is not evidence of identity/content correctness or independent expert review.",
+    "Wikipedia null links were not treated as fabrication or as verified links; they leave the entries incomplete until identity-matched articles are read and checked.",
+    "This is a reasoned independent source comparison, not expert review.",
+    "リンクあり6件は独立レビューで実ページ本文を読み、URL・記事タイトル・対象適合を確認。神は人物記事でなくキリスト教の神概念の記事である。Wikipedia未設定35件は null を捏造回避として尊重するが、未完のまま数える。drafts/person_2 は一切変更していない。",
+    "親レビューの照合指摘を受け、ACT 9:11 “house of Judah” を地名・家への誤リンクと断定していた所見を取り消した。KJVにある “house of Judas” と対応する固有名の可能性があり、原文・異訳・属格構文を再照合する要確認事項とした（編集者には別途復元の指示あり）。"
+  ],
+  "independentWikipediaChecks": [
+    {
+      "entityID": "person:herod_1506",
+      "url": "https://en.wikipedia.org/wiki/Herod_Agrippa",
+      "articleTitle": "Herod Agrippa",
+      "status": "verified-identity-match",
+      "basisJa": "記事本文はHerod Agrippa I（アグリッパ1世）を扱い、使徒言行録12章の王とする説明を確認。",
+      "scopeNote": "lines 203, 210, 354; claims framed as traditional identification."
+    },
+    {
+      "entityID": "person:jesus_905",
+      "url": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%82%A8%E3%82%B9%E3%83%BB%E3%82%AD%E3%83%AA%E3%82%B9%E3%83%88",
+      "articleTitle": "イエス・キリスト",
+      "status": "verified-identity-match",
+      "basisJa": "日本語記事のタイトルと本文冒頭で対象がイエス・キリストであることを確認。",
+      "scopeNote": "page title and opening paragraph."
+    },
+    {
+      "entityID": "person:god_1324",
+      "url": "https://en.wikipedia.org/wiki/God_in_Christianity",
+      "articleTitle": "God in Christianity",
+      "status": "verified-identity-match",
+      "basisJa": "記事冒頭がキリスト教における神概念を扱う。特定の一人の歴史的人物を扱うページではない点を記録。",
+      "scopeNote": "opening paragraph."
+    },
+    {
+      "entityID": "person:gallio_1275",
+      "url": "https://en.wikipedia.org/wiki/Lucius_Junius_Gallio_Annaeanus",
+      "articleTitle": "Lucius Junius Gallio Annaeanus",
+      "status": "verified-identity-match",
+      "basisJa": "記事はアカイア総督ガリオを扱い、使徒言行録でパウロに対する告訴を退けた件を記す。",
+      "scopeNote": "Acts reference and Achaia proconsul text."
+    },
+    {
+      "entityID": "person:gamaliel_1277",
+      "url": "https://en.wikipedia.org/wiki/Gamaliel",
+      "articleTitle": "Gamaliel",
+      "status": "verified-identity-match",
+      "basisJa": "記事は使徒言行録5章の人物および22:3に言及し、対象のガマリエルと一致する。",
+      "scopeNote": "Acts 5 and Acts 22:3 references."
+    },
+    {
+      "entityID": "person:holy_spirit_7400",
+      "url": "https://ja.wikipedia.org/wiki/%E8%81%96%E9%9C%8A",
+      "articleTitle": "聖霊",
+      "status": "verified-identity-match",
+      "basisJa": "日本語記事がキリスト教の聖霊を扱うことを確認。profile候補と同じ概念を指す。",
+      "scopeNote": "opening section on Christian Holy Spirit."
+    }
+  ]
+}

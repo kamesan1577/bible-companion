@@ -1,0 +1,2199 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent context-link delta verification",
+  "reviewedAtUTC": "2026-10-15T14:07:34.999821+00:00",
+  "readOnly": true,
+  "scope": {
+    "chapters": "11–20",
+    "proposalVerseCount": 64,
+    "proposalLinkCount": 92
+  },
+  "inputs": {
+    "delta": {
+      "path": "reviews/context-link-deltas-11-20.json",
+      "sha256": "f7c146ed6b48e6cc64318fe2a52fc1e8571aac9185e5526d43e9af070b373107"
+    },
+    "actsWebVerses": {
+      "path": "acts-web-verses.json",
+      "sha256": "90e72f0410119f8fc9afd529cdd730fd261bd1d25adfb413581c1462d6e936cb",
+      "version": "webp-usfx-2026-10-13-35a6adf626e5"
+    },
+    "currentVerseMap": {
+      "path": "reviews/verse-map-11-20.json",
+      "sha256": "760fe46e07f1b17fa0dbc011b8b2dcb723bf3d83cbaf28b25f840e15d4f503b1",
+      "rows": 357
+    },
+    "targets": {
+      "path": "targets.json",
+      "sha256": "f367a27ce1aecad25f888431ab04ffd665cd2bf91d5c6380773ced2b92f0ad53",
+      "count": 228
+    }
+  },
+  "methodJa": "提案92リンクを固定版WEBの該当節と直前節で個別照合し、指示対象、既存IDの同一性、relationshipのdirect/relatedを評価した。既存mapの実レコードもdelta記載のcurrentEntityIDsと突合。人物が旅行団に含まれることを明示列挙や連続叙述で確認できる場合のみ採用し、旅程にいた可能性だけでLuke等を補わない。新規人物IDを作らず、map・draftは編集していない。knownByは節リンク案に値が含まれないためプロフィール内容を変更せず、名前や個人同定を先取りする提案がないかを文脈境界で評価した。",
+  "summary": {
+    "proposedLinks": 92,
+    "accepted": 87,
+    "qualified": 4,
+    "rejected": 1,
+    "additionalOmissionFindings": 1,
+    "targetIDsMissing": [],
+    "mapVsDeltaCurrentEntityMismatches": [],
+    "additionalCorrectionFindings": 1
+  },
+  "additionalFindings": [
+    {
+      "chapter": 12,
+      "verse": 15,
+      "entityID": "person:rhoda_2439",
+      "decision": "additional-omission",
+      "recommendedRelationship": "related",
+      "reasonJa": "本文の「They said to her」「she insisted」の女性代名詞は、直前12:13–14で行動を描写されたロダ。デルタはPeterのhis angel照応だけを提案しており、ロダの明確な主語照応を追加漏れしている。",
+      "targetExists": true,
+      "webText": "They said to her, “You are crazy!” But she insisted that it was so. They said, “It is his angel.”",
+      "previousVerseText": "When she recognized Peter’s voice, she didn’t open the gate for joy, but ran in and reported that Peter was standing in front of the gate."
+    },
+    {
+      "chapter": 15,
+      "verse": 30,
+      "entityID": "person:judas_1759",
+      "decision": "corrected-identity",
+      "recommendedRelationship": "related",
+      "reasonJa": "提案のperson:judas_1757はActs 5:37のユダ・ガリラヤ人で誤同定。15:22でバルナバ・パウロと共に派遣されたユダ・バルサバの既存ID person:judas_1759を関連リンクとして提案する。15:27の書簡本文もこの同じ四使節を指す。",
+      "targetExists": true,
+      "webText": "So, when they were sent off, they came to Antioch. Having gathered the multitude together, they delivered the letter.",
+      "previousVerseText": "that you abstain from things sacrificed to idols, from blood, from things strangled, and from sexual immorality, from which if you keep yourselves, it will be well with you. Farewell.”"
+    }
+  ],
+  "proposals": [
+    {
+      "chapter": 11,
+      "verse": 3,
+      "webText": "saying, “You went in to uncircumcised men and ate with them!”",
+      "previousVerse": {
+        "chapter": 11,
+        "verse": 2,
+        "text": "When Peter had come up to Jerusalem, those who were of the circumcision contended with him,"
+      },
+      "actualMapEntityIDs": [],
+      "sourceListedCurrentEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:peter_2745",
+          "targetName": "Simon",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "11:2でPeterに対する非難として始まり、引用の二人称youはPeterを指す。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 11,
+      "verse": 12,
+      "webText": "The Spirit told me to go with them without discriminating. These six brothers also accompanied me, and we entered into the man’s house.",
+      "previousVerse": {
+        "chapter": 11,
+        "verse": 11,
+        "text": "Behold, immediately three men stood before the house where I was, having been sent from Caesarea to me."
+      },
+      "actualMapEntityIDs": [
+        "person:holy_spirit_7400"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:holy_spirit_7400"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:cornelius_956",
+          "targetName": "Cornelius",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Peterの回想は使徒10章のCornelius宅訪問を指す。ここでのthe man’s houseの所有者はCornelius。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 11,
+      "verse": 13,
+      "webText": "He told us how he had seen the angel standing in his house and saying to him, ‘Send to Joppa and get Simon, who is called Peter,",
+      "previousVerse": {
+        "chapter": 11,
+        "verse": 12,
+        "text": "The Spirit told me to go with them without discriminating. These six brothers also accompanied me, and we entered into the man’s house."
+      },
+      "actualMapEntityIDs": [
+        "person:peter_2745",
+        "place:joppa_652"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:peter_2745",
+        "place:joppa_652"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:cornelius_956",
+          "targetName": "Cornelius",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "He told usのheは直前のthe man（Cornelius）。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 11,
+      "verse": 14,
+      "webText": "who will speak to you words by which you will be saved, you and all your house.’",
+      "previousVerse": {
+        "chapter": 11,
+        "verse": 13,
+        "text": "He told us how he had seen the angel standing in his house and saying to him, ‘Send to Joppa and get Simon, who is called Peter,"
+      },
+      "actualMapEntityIDs": [],
+      "sourceListedCurrentEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:cornelius_956",
+          "targetName": "Cornelius",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "the angelの引用中のyouは、その家の主人Corneliusを指す。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 12,
+      "verse": 4,
+      "webText": "When he had arrested him, he put him in prison and delivered him to four squads of four soldiers each to guard him, intending to bring him out to the people after the Passover.",
+      "previousVerse": {
+        "chapter": 12,
+        "verse": 3,
+        "text": "When he saw that it pleased the Jews, he proceeded to seize Peter also. This was during the days of unleavened bread."
+      },
+      "actualMapEntityIDs": [],
+      "sourceListedCurrentEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:herod_1506",
+          "targetName": "Herod Agrippa I",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "12:3–4のheはHerod Agrippa I、himは逮捕されたPeter。"
+        },
+        {
+          "entityID": "person:peter_2745",
+          "targetName": "Simon",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "12:3–4のheはHerod Agrippa I、himは逮捕されたPeter。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 12,
+      "verse": 8,
+      "webText": "The angel said to him, “Get dressed and put on your sandals.” He did so. He said to him, “Put on your cloak and follow me.”",
+      "previousVerse": {
+        "chapter": 12,
+        "verse": 7,
+        "text": "And behold, an angel of the Lord stood by him, and a light shone in the cell. He struck Peter on the side and woke him up, saying, “Stand up quickly!” His chains fell off his hands."
+      },
+      "actualMapEntityIDs": [],
+      "sourceListedCurrentEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:peter_2745",
+          "targetName": "Simon",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "天使が命じるget dressed等のhimは、前節で起こされたPeter。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 12,
+      "verse": 9,
+      "webText": "And he went out and followed him. He didn’t know that what was being done by the angel was real, but thought he saw a vision.",
+      "previousVerse": {
+        "chapter": 12,
+        "verse": 8,
+        "text": "The angel said to him, “Get dressed and put on your sandals.” He did so. He said to him, “Put on your cloak and follow me.”"
+      },
+      "actualMapEntityIDs": [],
+      "sourceListedCurrentEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:peter_2745",
+          "targetName": "Simon",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "heは牢から出たPeter。followed himの後者は天使だが対象IDがなく追加しない。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 12,
+      "verse": 10,
+      "webText": "When they were past the first and the second guard, they came to the iron gate that leads into the city, which opened to them by itself. They went out and went down one street, and immediately the angel departed from him.",
+      "previousVerse": {
+        "chapter": 12,
+        "verse": 9,
+        "text": "And he went out and followed him. He didn’t know that what was being done by the angel was real, but thought he saw a vision."
+      },
+      "actualMapEntityIDs": [],
+      "sourceListedCurrentEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:peter_2745",
+          "targetName": "Simon",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "they came out etcの中心人物として牢を出るPeterが明確。天使の対象IDはない。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 12,
+      "verse": 12,
+      "webText": "Thinking about that, he came to the house of Mary, the mother of John who was called Mark, where many were gathered together and were praying.",
+      "previousVerse": {
+        "chapter": 12,
+        "verse": 11,
+        "text": "When Peter had come to himself, he said, “Now I truly know that the Lord has sent out his angel and delivered me out of the hand of Herod, and from everything the Jewish people were expecting.”"
+      },
+      "actualMapEntityIDs": [
+        "person:mark_1679",
+        "person:mary_1941"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:mark_1679",
+        "person:mary_1941"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:peter_2745",
+          "targetName": "Simon",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Thinking about that, he cameのheは脱獄後のPeter。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 12,
+      "verse": 14,
+      "webText": "When she recognized Peter’s voice, she didn’t open the gate for joy, but ran in and reported that Peter was standing in front of the gate.",
+      "previousVerse": {
+        "chapter": 12,
+        "verse": 13,
+        "text": "When Peter knocked at the door of the gate, a servant girl named Rhoda came to answer."
+      },
+      "actualMapEntityIDs": [
+        "person:peter_2745"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:peter_2745"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:rhoda_2439",
+          "targetName": "Rhoda",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "she recognized/ran/reportedの主語は直前に登場したRhoda。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 12,
+      "verse": 15,
+      "webText": "They said to her, “You are crazy!” But she insisted that it was so. They said, “It is his angel.”",
+      "previousVerse": {
+        "chapter": 12,
+        "verse": 14,
+        "text": "When she recognized Peter’s voice, she didn’t open the gate for joy, but ran in and reported that Peter was standing in front of the gate."
+      },
+      "actualMapEntityIDs": [],
+      "sourceListedCurrentEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:peter_2745",
+          "targetName": "Simon",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "his angelのhisは、直前に来訪したPeterを指す。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 12,
+      "verse": 17,
+      "webText": "But he, beckoning to them with his hand to be silent, declared to them how the Lord had brought him out of the prison. He said, “Tell these things to James and to the brothers.” Then he departed and went to another place.",
+      "previousVerse": {
+        "chapter": 12,
+        "verse": 16,
+        "text": "But Peter continued knocking. When they had opened, they saw him and were amazed."
+      },
+      "actualMapEntityIDs": [
+        "person:god_1324",
+        "person:james_719"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:god_1324",
+        "person:james_719"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:peter_2745",
+          "targetName": "Simon",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "he beckoned、Lord had brought him outのhe/himはいずれもPeter。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 12,
+      "verse": 19,
+      "webText": "When Herod had sought for him and didn’t find him, he examined the guards, then commanded that they should be put to death. He went down from Judea to Caesarea, and stayed there.",
+      "previousVerse": {
+        "chapter": 12,
+        "verse": 18,
+        "text": "Now as soon as it was day, there was no small stir among the soldiers about what had become of Peter."
+      },
+      "actualMapEntityIDs": [
+        "person:herod_1506",
+        "place:caesarea_266",
+        "place:judea_657"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:herod_1506",
+        "place:caesarea_266",
+        "place:judea_657"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:peter_2745",
+          "targetName": "Simon",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Herod sought for him and did not find himのhimは12:18まで話題のPeter。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 12,
+      "verse": 22,
+      "webText": "The people shouted, “The voice of a god, and not of a man!”",
+      "previousVerse": {
+        "chapter": 12,
+        "verse": 21,
+        "text": "On an appointed day, Herod dressed himself in royal clothing, sat on the throne, and gave a speech to them."
+      },
+      "actualMapEntityIDs": [],
+      "sourceListedCurrentEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:herod_1506",
+          "targetName": "Herod Agrippa I",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "群衆の「a god, not a man」は直前の演説者Herodへの叫び。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 12,
+      "verse": 23,
+      "webText": "Immediately an angel of the Lord struck him, because he didn’t give God the glory. Then he was eaten by worms and died.",
+      "previousVerse": {
+        "chapter": 12,
+        "verse": 22,
+        "text": "The people shouted, “The voice of a god, and not of a man!”"
+      },
+      "actualMapEntityIDs": [
+        "person:god_1324"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:god_1324"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:herod_1506",
+          "targetName": "Herod Agrippa I",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "angel struck him、he did not give God gloryのhim/heはHerod。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 13,
+      "verse": 10,
+      "webText": "and said, “You son of the devil, full of all deceit and all cunning, you enemy of all righteousness, will you not cease to pervert the right ways of the Lord?",
+      "previousVerse": {
+        "chapter": 13,
+        "verse": 9,
+        "text": "But Saul, who is also called Paul, filled with the Holy Spirit, fastened his eyes on him"
+      },
+      "actualMapEntityIDs": [
+        "person:god_1324"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:god_1324"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:elymas_403",
+          "targetName": "Elymas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Paulの発話中のyou son of the devilは直前に対峙しているElymas。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 13,
+      "verse": 11,
+      "webText": "Now, behold, the hand of the Lord is on you, and you will be blind, not seeing the sun for a season!” Immediately a mist and darkness fell on him. He went around seeking someone to lead him by the hand.",
+      "previousVerse": {
+        "chapter": 13,
+        "verse": 10,
+        "text": "and said, “You son of the devil, full of all deceit and all cunning, you enemy of all righteousness, will you not cease to pervert the right ways of the Lord?"
+      },
+      "actualMapEntityIDs": [
+        "person:god_1324"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:god_1324"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:elymas_403",
+          "targetName": "Elymas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "you will be blind、およびhe sought someone to lead himはElymasを指す。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 13,
+      "verse": 18,
+      "webText": "For a period of about forty years he put up with them in the wilderness.",
+      "previousVerse": {
+        "chapter": 13,
+        "verse": 17,
+        "text": "The God of this people chose our fathers, and exalted the people when they stayed as aliens in the land of Egypt, and with an uplifted arm, he led them out of it."
+      },
+      "actualMapEntityIDs": [],
+      "sourceListedCurrentEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:god_1324",
+          "targetName": "God",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "13:17のGodを受けるhe。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 13,
+      "verse": 19,
+      "webText": "When he had destroyed seven nations in the land of Canaan, he gave them their land for an inheritance for about four hundred fifty years.",
+      "previousVerse": {
+        "chapter": 13,
+        "verse": 18,
+        "text": "For a period of about forty years he put up with them in the wilderness."
+      },
+      "actualMapEntityIDs": [
+        "place:canaan_272"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "place:canaan_272"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:god_1324",
+          "targetName": "God",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "destroyed / gaveの主語heは直前から続くGod。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 13,
+      "verse": 20,
+      "webText": "After these things, he gave them judges until Samuel the prophet.",
+      "previousVerse": {
+        "chapter": 13,
+        "verse": 19,
+        "text": "When he had destroyed seven nations in the land of Canaan, he gave them their land for an inheritance for about four hundred fifty years."
+      },
+      "actualMapEntityIDs": [
+        "person:samuel_2469"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:samuel_2469"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:god_1324",
+          "targetName": "God",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "gave them judgesの主語heはGod。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 13,
+      "verse": 22,
+      "webText": "When he had removed him, he raised up David to be their king, to whom he also testified, ‘I have found David the son of Jesse, a man after my heart, who will do all my will.’",
+      "previousVerse": {
+        "chapter": 13,
+        "verse": 21,
+        "text": "Afterward they asked for a king, and God gave to them Saul the son of Kish, a man of the tribe of Benjamin, for forty years."
+      },
+      "actualMapEntityIDs": [
+        "person:david_994",
+        "person:jesse_903"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:david_994",
+        "person:jesse_903"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:god_1324",
+          "targetName": "God",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "removed himのhimは先行する王Saul、raised Davidの主語heはGod。"
+        },
+        {
+          "entityID": "person:saul_2478",
+          "targetName": "Saul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "removed himのhimは先行する王Saul、raised Davidの主語heはGod。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 13,
+      "verse": 23,
+      "webText": "From this man’s offspring, God has brought salvation to Israel according to his promise,",
+      "previousVerse": {
+        "chapter": 13,
+        "verse": 22,
+        "text": "When he had removed him, he raised up David to be their king, to whom he also testified, ‘I have found David the son of Jesse, a man after my heart, who will do all my will.’"
+      },
+      "actualMapEntityIDs": [
+        "person:god_1324",
+        "person:jesus_905"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:god_1324",
+        "person:jesus_905"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:david_994",
+          "targetName": "David",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "this man’s offspringは直前のDavidを受ける。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 13,
+      "verse": 27,
+      "webText": "For those who dwell in Jerusalem, and their rulers, because they didn’t know him, nor the voices of the prophets which are read every Sabbath, fulfilled them by condemning him.",
+      "previousVerse": {
+        "chapter": 13,
+        "verse": 26,
+        "text": "“Brothers, children of the stock of Abraham, and those among you who fear God, the word of this salvation is sent out to you."
+      },
+      "actualMapEntityIDs": [
+        "place:jerusalem_636"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "place:jerusalem_636"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:jesus_905",
+          "targetName": "Jesus",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Jerusalemの住民・ rulersが知らずcondemning himとされるhimは文脈上Jesus。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 13,
+      "verse": 28,
+      "webText": "Though they found no cause for death, they still asked Pilate to have him killed.",
+      "previousVerse": {
+        "chapter": 13,
+        "verse": 27,
+        "text": "For those who dwell in Jerusalem, and their rulers, because they didn’t know him, nor the voices of the prophets which are read every Sabbath, fulfilled them by condemning him."
+      },
+      "actualMapEntityIDs": [
+        "person:pilate_2365"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:pilate_2365"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:jesus_905",
+          "targetName": "Jesus",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Pilateに殺すよう求めたhimは前節から続くJesus。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 13,
+      "verse": 29,
+      "webText": "When they had fulfilled all things that were written about him, they took him down from the tree and laid him in a tomb.",
+      "previousVerse": {
+        "chapter": 13,
+        "verse": 28,
+        "text": "Though they found no cause for death, they still asked Pilate to have him killed."
+      },
+      "actualMapEntityIDs": [],
+      "sourceListedCurrentEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:jesus_905",
+          "targetName": "Jesus",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "himを木から降ろし墓に置いた対象は前節からのJesus。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 13,
+      "verse": 30,
+      "webText": "But God raised him from the dead,",
+      "previousVerse": {
+        "chapter": 13,
+        "verse": 29,
+        "text": "When they had fulfilled all things that were written about him, they took him down from the tree and laid him in a tomb."
+      },
+      "actualMapEntityIDs": [
+        "person:god_1324"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:god_1324"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:jesus_905",
+          "targetName": "Jesus",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "God raised him from the deadのhimはJesus。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 13,
+      "verse": 31,
+      "webText": "and he was seen for many days by those who came up with him from Galilee to Jerusalem, who are his witnesses to the people.",
+      "previousVerse": {
+        "chapter": 13,
+        "verse": 30,
+        "text": "But God raised him from the dead,"
+      },
+      "actualMapEntityIDs": [
+        "place:galilee_433",
+        "place:jerusalem_636"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "place:galilee_433",
+        "place:jerusalem_636"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:jesus_905",
+          "targetName": "Jesus",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "he was seen for many daysは復活したJesus。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 13,
+      "verse": 34,
+      "webText": "“Concerning that he raised him up from the dead, now no more to return to corruption, he has spoken thus: ‘I will give you the holy and sure blessings of David.’",
+      "previousVerse": {
+        "chapter": 13,
+        "verse": 33,
+        "text": "that God has fulfilled this to us, their children, in that he raised up Jesus. As it is also written in the second psalm, ‘You are my Son. Today I have become your father.’"
+      },
+      "actualMapEntityIDs": [
+        "person:david_994"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:david_994"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:god_1324",
+          "targetName": "God",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "he raised him from the deadのhe/himはGod/Jesus（13:33の直前文脈）。"
+        },
+        {
+          "entityID": "person:jesus_905",
+          "targetName": "Jesus",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "he raised him from the deadのhe/himはGod/Jesus（13:33の直前文脈）。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 13,
+      "verse": 37,
+      "webText": "But he whom God raised up saw no decay.",
+      "previousVerse": {
+        "chapter": 13,
+        "verse": 36,
+        "text": "For David, after he had in his own generation served the counsel of God, fell asleep, was laid with his fathers, and saw decay."
+      },
+      "actualMapEntityIDs": [
+        "person:god_1324"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:god_1324"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:jesus_905",
+          "targetName": "Jesus",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "he whom God raised upはJesus。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 13,
+      "verse": 39,
+      "webText": "and by him everyone who believes is justified from all things, from which you could not be justified by the law of Moses.",
+      "previousVerse": {
+        "chapter": 13,
+        "verse": 38,
+        "text": "Be it known to you therefore, brothers, that through this man is proclaimed to you remission of sins;"
+      },
+      "actualMapEntityIDs": [
+        "person:moses_2108"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:moses_2108"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:jesus_905",
+          "targetName": "Jesus",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "by him everyone who believesのhimは13:38のthis man、すなわちJesus。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 13,
+      "verse": 51,
+      "webText": "But they shook off the dust of their feet against them, and came to Iconium.",
+      "previousVerse": {
+        "chapter": 13,
+        "verse": 50,
+        "text": "But the Jews stirred up the devout and prominent women and the chief men of the city, and stirred up a persecution against Paul and Barnabas, and threw them out of their borders."
+      },
+      "actualMapEntityIDs": [
+        "place:iconium_590"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "place:iconium_590"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:barnabas_1722",
+          "targetName": "Barnabas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "they shook off their feet and came to Iconiumは直前に境外へ追い出されたPaulとBarnabas。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "they shook off their feet and came to Iconiumは直前に境外へ追い出されたPaulとBarnabas。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 14,
+      "verse": 1,
+      "webText": "In Iconium, they entered together into the synagogue of the Jews, and so spoke that a great multitude both of Jews and of Greeks believed.",
+      "previousVerse": {
+        "chapter": 14,
+        "verse": 0,
+        "text": ""
+      },
+      "actualMapEntityIDs": [
+        "place:iconium_590"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "place:iconium_590"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:barnabas_1722",
+          "targetName": "Barnabas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "13:51から続く移動で、they entered togetherはPaulとBarnabas。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "13:51から続く移動で、they entered togetherはPaulとBarnabas。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 14,
+      "verse": 3,
+      "webText": "Therefore they stayed there a long time, speaking boldly in the Lord, who testified to the word of his grace, granting signs and wonders to be done by their hands.",
+      "previousVerse": {
+        "chapter": 14,
+        "verse": 2,
+        "text": "But the disbelieving Jews stirred up and embittered the souls of the Gentiles against the brothers."
+      },
+      "actualMapEntityIDs": [
+        "person:god_1324"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:god_1324"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:barnabas_1722",
+          "targetName": "Barnabas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "14:1のthey（PaulとBarnabas）がIconiumに滞在し宣教した。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "14:1のthey（PaulとBarnabas）がIconiumに滞在し宣教した。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 14,
+      "verse": 5,
+      "webText": "When some of both the Gentiles and the Jews, with their rulers, made a violent attempt to mistreat and stone them,",
+      "previousVerse": {
+        "chapter": 14,
+        "verse": 4,
+        "text": "But the multitude of the city was divided. Part sided with the Jews and part with the apostles."
+      },
+      "actualMapEntityIDs": [],
+      "sourceListedCurrentEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:barnabas_1722",
+          "targetName": "Barnabas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "14:1–4の使徒二人を指すthemを石打ちにしようとする。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "14:1–4の使徒二人を指すthemを石打ちにしようとする。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 14,
+      "verse": 6,
+      "webText": "they became aware of it and fled to the cities of Lycaonia, Lystra, Derbe, and the surrounding region.",
+      "previousVerse": {
+        "chapter": 14,
+        "verse": 5,
+        "text": "When some of both the Gentiles and the Jews, with their rulers, made a violent attempt to mistreat and stone them,"
+      },
+      "actualMapEntityIDs": [
+        "place:derbe_330",
+        "place:lycaonia_739",
+        "place:lystra_742"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "place:derbe_330",
+        "place:lycaonia_739",
+        "place:lystra_742"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:barnabas_1722",
+          "targetName": "Barnabas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "脅威に気づいて逃れたtheyは直前のPaulとBarnabas。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "脅威に気づいて逃れたtheyは直前のPaulとBarnabas。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 14,
+      "verse": 7,
+      "webText": "There they preached the Good News.",
+      "previousVerse": {
+        "chapter": 14,
+        "verse": 6,
+        "text": "they became aware of it and fled to the cities of Lycaonia, Lystra, Derbe, and the surrounding region."
+      },
+      "actualMapEntityIDs": [],
+      "sourceListedCurrentEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:barnabas_1722",
+          "targetName": "Barnabas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "そこで福音を宣べ伝えたtheyは14:6で逃れたPaulとBarnabas。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "そこで福音を宣べ伝えたtheyは14:6で逃れたPaulとBarnabas。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 14,
+      "verse": 11,
+      "webText": "When the multitude saw what Paul had done, they lifted up their voice, saying in the language of Lycaonia, “The gods have come down to us in the likeness of men!”",
+      "previousVerse": {
+        "chapter": 14,
+        "verse": 10,
+        "text": "said with a loud voice, “Stand upright on your feet!” He leaped up and walked."
+      },
+      "actualMapEntityIDs": [
+        "person:paul_2479"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:paul_2479"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "place:lycaonia_739",
+          "targetName": "Lycaonia",
+          "proposedRelationship": "related",
+          "decision": "qualified",
+          "recommendedRelationship": "direct",
+          "targetExists": true,
+          "basisJa": "固有地名がこの節の本文に明記されているため、関連地理背景ではなくdirectとして扱うのが適切。",
+          "sourceProposalReasonJa": "「Lycaoniaの言語で」は同地域の言語を明記する地理参照。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 14,
+      "verse": 15,
+      "webText": "“Men, why are you doing these things? We also are men of the same nature as you, and bring you good news, that you should turn from these vain things to the living God, who made the sky, the earth, the sea, and all that is in them;",
+      "previousVerse": {
+        "chapter": 14,
+        "verse": 14,
+        "text": "But when the apostles, Barnabas and Paul, heard of it, they tore their clothes and sprang into the multitude, crying out,"
+      },
+      "actualMapEntityIDs": [
+        "person:god_1324"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:god_1324"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:barnabas_1722",
+          "targetName": "Barnabas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "we also are menと語る話者は直前に名指されたBarnabasとPaul。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "we also are menと語る話者は直前に名指されたBarnabasとPaul。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 14,
+      "verse": 16,
+      "webText": "who in the generations gone by allowed all the nations to walk in their own ways.",
+      "previousVerse": {
+        "chapter": 14,
+        "verse": 15,
+        "text": "“Men, why are you doing these things? We also are men of the same nature as you, and bring you good news, that you should turn from these vain things to the living God, who made the sky, the earth, the sea, and all that is in them;"
+      },
+      "actualMapEntityIDs": [],
+      "sourceListedCurrentEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:god_1324",
+          "targetName": "God",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "he allowed all nationsのheは直前で言及したliving God。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 14,
+      "verse": 17,
+      "webText": "Yet he didn’t leave himself without witness, in that he did good and gave you rains from the sky and fruitful seasons, filling our hearts with food and gladness.”",
+      "previousVerse": {
+        "chapter": 14,
+        "verse": 16,
+        "text": "who in the generations gone by allowed all the nations to walk in their own ways."
+      },
+      "actualMapEntityIDs": [],
+      "sourceListedCurrentEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:god_1324",
+          "targetName": "God",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "he did good / gave rain / filled heartsのheは同じliving God。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 14,
+      "verse": 18,
+      "webText": "Even saying these things, they hardly stopped the multitudes from making a sacrifice to them.",
+      "previousVerse": {
+        "chapter": 14,
+        "verse": 17,
+        "text": "Yet he didn’t leave himself without witness, in that he did good and gave you rains from the sky and fruitful seasons, filling our hearts with food and gladness.”"
+      },
+      "actualMapEntityIDs": [],
+      "sourceListedCurrentEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:barnabas_1722",
+          "targetName": "Barnabas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "群衆の犠牲を止めようとしたtheyは直前で話しているPaulとBarnabas。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "群衆の犠牲を止めようとしたtheyは直前で話しているPaulとBarnabas。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 14,
+      "verse": 22,
+      "webText": "strengthening the souls of the disciples, exhorting them to continue in the faith, and that through many afflictions we must enter into God’s Kingdom.",
+      "previousVerse": {
+        "chapter": 14,
+        "verse": 21,
+        "text": "When they had preached the Good News to that city and had made many disciples, they returned to Lystra, Iconium, and Antioch,"
+      },
+      "actualMapEntityIDs": [
+        "person:god_1324"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:god_1324"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:barnabas_1722",
+          "targetName": "Barnabas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "strengthening/exhortingしたtheyは帰還中のPaulとBarnabas（14:21の主語）。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "strengthening/exhortingしたtheyは帰還中のPaulとBarnabas（14:21の主語）。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 14,
+      "verse": 23,
+      "webText": "When they had appointed elders for them in every assembly, and had prayed with fasting, they commended them to the Lord on whom they had believed.",
+      "previousVerse": {
+        "chapter": 14,
+        "verse": 22,
+        "text": "strengthening the souls of the disciples, exhorting them to continue in the faith, and that through many afflictions we must enter into God’s Kingdom."
+      },
+      "actualMapEntityIDs": [
+        "person:jesus_905"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:jesus_905"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:barnabas_1722",
+          "targetName": "Barnabas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "eldersを任命し祈ったtheyは同じ帰還行程のPaulとBarnabas。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "eldersを任命し祈ったtheyは同じ帰還行程のPaulとBarnabas。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 14,
+      "verse": 24,
+      "webText": "They passed through Pisidia and came to Pamphylia.",
+      "previousVerse": {
+        "chapter": 14,
+        "verse": 23,
+        "text": "When they had appointed elders for them in every assembly, and had prayed with fasting, they commended them to the Lord on whom they had believed."
+      },
+      "actualMapEntityIDs": [
+        "place:pamphylia_918",
+        "place:pisidia_952"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "place:pamphylia_918",
+        "place:pisidia_952"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:barnabas_1722",
+          "targetName": "Barnabas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Pisidiaを通過したtheyは14:23のPaulとBarnabas。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Pisidiaを通過したtheyは14:23のPaulとBarnabas。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 14,
+      "verse": 25,
+      "webText": "When they had spoken the word in Perga, they went down to Attalia.",
+      "previousVerse": {
+        "chapter": 14,
+        "verse": 24,
+        "text": "They passed through Pisidia and came to Pamphylia."
+      },
+      "actualMapEntityIDs": [
+        "place:attalia_120",
+        "place:perga_936"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "place:attalia_120",
+        "place:perga_936"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:barnabas_1722",
+          "targetName": "Barnabas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Pergaで語りAttaliaへ行ったtheyは同じ宣教者二人。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Pergaで語りAttaliaへ行ったtheyは同じ宣教者二人。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 14,
+      "verse": 26,
+      "webText": "From there they sailed to Antioch, from where they had been committed to the grace of God for the work which they had fulfilled.",
+      "previousVerse": {
+        "chapter": 14,
+        "verse": 25,
+        "text": "When they had spoken the word in Perga, they went down to Attalia."
+      },
+      "actualMapEntityIDs": [
+        "person:god_1324",
+        "place:antioch_68"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:god_1324",
+        "place:antioch_68"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:barnabas_1722",
+          "targetName": "Barnabas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Antiochへ船で戻ったtheyはPaulとBarnabas。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Antiochへ船で戻ったtheyはPaulとBarnabas。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 14,
+      "verse": 27,
+      "webText": "When they had arrived and had gathered the assembly together, they reported all the things that God had done with them, and that he had opened a door of faith to the nations.",
+      "previousVerse": {
+        "chapter": 14,
+        "verse": 26,
+        "text": "From there they sailed to Antioch, from where they had been committed to the grace of God for the work which they had fulfilled."
+      },
+      "actualMapEntityIDs": [
+        "person:god_1324"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:god_1324"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:barnabas_1722",
+          "targetName": "Barnabas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "到着し集会を招集して報告したtheyはPaulとBarnabas。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "到着し集会を招集して報告したtheyはPaulとBarnabas。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 15,
+      "verse": 3,
+      "webText": "They, being sent on their way by the assembly, passed through both Phoenicia and Samaria, declaring the conversion of the Gentiles. They caused great joy to all the brothers.",
+      "previousVerse": {
+        "chapter": 15,
+        "verse": 2,
+        "text": "Therefore when Paul and Barnabas had no small discord and discussion with them, they appointed Paul, Barnabas, and some others of them to go up to Jerusalem to the apostles and elders about this question."
+      },
+      "actualMapEntityIDs": [
+        "place:phenicia_944",
+        "place:samaria_1022"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "place:phenicia_944",
+        "place:samaria_1022"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:barnabas_1722",
+          "targetName": "Barnabas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "15:2で派遣が決まったPaulとBarnabasがothersと共に送られたthey。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "15:2で派遣が決まったPaulとBarnabasがothersと共に送られたthey。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 15,
+      "verse": 4,
+      "webText": "When they had come to Jerusalem, they were received by the assembly and the apostles and the elders, and they reported everything that God had done with them.",
+      "previousVerse": {
+        "chapter": 15,
+        "verse": 3,
+        "text": "They, being sent on their way by the assembly, passed through both Phoenicia and Samaria, declaring the conversion of the Gentiles. They caused great joy to all the brothers."
+      },
+      "actualMapEntityIDs": [
+        "person:god_1324",
+        "place:jerusalem_636"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:god_1324",
+        "place:jerusalem_636"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:barnabas_1722",
+          "targetName": "Barnabas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Jerusalemに来て報告したtheyは15:2–3のPaulとBarnabasを含む派遣団。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Jerusalemに来て報告したtheyは15:2–3のPaulとBarnabasを含む派遣団。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 15,
+      "verse": 9,
+      "webText": "He made no distinction between us and them, cleansing their hearts by faith.",
+      "previousVerse": {
+        "chapter": 15,
+        "verse": 8,
+        "text": "God, who knows the heart, testified about them, giving them the Holy Spirit, just like he did to us."
+      },
+      "actualMapEntityIDs": [],
+      "sourceListedCurrentEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:god_1324",
+          "targetName": "God",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "He made no distinctionのheは15:8のGod。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 15,
+      "verse": 16,
+      "webText": "‘After these things I will return. I will again build the tabernacle of David, which has fallen. I will again build its ruins. I will set it up",
+      "previousVerse": {
+        "chapter": 15,
+        "verse": 15,
+        "text": "This agrees with the words of the prophets. As it is written,"
+      },
+      "actualMapEntityIDs": [
+        "person:david_994"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:david_994"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:god_1324",
+          "targetName": "God",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "引用中のI will return / buildはLord/Godの発話。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 15,
+      "verse": 30,
+      "webText": "So, when they were sent off, they came to Antioch. Having gathered the multitude together, they delivered the letter.",
+      "previousVerse": {
+        "chapter": 15,
+        "verse": 29,
+        "text": "that you abstain from things sacrificed to idols, from blood, from things strangled, and from sexual immorality, from which if you keep yourselves, it will be well with you. Farewell.”"
+      },
+      "actualMapEntityIDs": [
+        "place:antioch_68"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "place:antioch_68"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:barnabas_1722",
+          "targetName": "Barnabas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "15:22,27でAntiochへ派遣されたPaul、Barnabas、Judas Barsabbas、Silasがtheyとして到着し書簡を渡す。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "15:22,27でAntiochへ派遣されたPaul、Barnabas、Judas Barsabbas、Silasがtheyとして到着し書簡を渡す。"
+        },
+        {
+          "entityID": "person:judas_1757",
+          "targetName": "Judas",
+          "proposedRelationship": "related",
+          "decision": "rejected",
+          "recommendedRelationship": null,
+          "targetExists": true,
+          "basisJa": "人物IDが不一致。person:judas_1757はActs 5:37のユダ（ガリラヤ人）で、この使節のユダではない。使節は15:22で名指されるユダ・バルサバで、既存IDはperson:judas_1759。",
+          "sourceProposalReasonJa": "15:22,27でAntiochへ派遣されたPaul、Barnabas、Judas Barsabbas、Silasがtheyとして到着し書簡を渡す。"
+        },
+        {
+          "entityID": "person:silas_2740",
+          "targetName": "Silas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "15:22,27でAntiochへ派遣されたPaul、Barnabas、Judas Barsabbas、Silasがtheyとして到着し書簡を渡す。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 15,
+      "verse": 38,
+      "webText": "But Paul didn’t think that it was a good idea to take with them someone who had withdrawn from them in Pamphylia, and didn’t go with them to do the work.",
+      "previousVerse": {
+        "chapter": 15,
+        "verse": 37,
+        "text": "Barnabas planned to take John, who was called Mark, with them also."
+      },
+      "actualMapEntityIDs": [
+        "person:mark_1679",
+        "person:paul_2479",
+        "place:pamphylia_918"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:mark_1679",
+        "person:paul_2479",
+        "place:pamphylia_918"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:barnabas_1722",
+          "targetName": "Barnabas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "take them with themはPaulとBarnabas間の同行議論。現行リンクはPaul/JohnのみでBarnabasが欠落。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 15,
+      "verse": 41,
+      "webText": "He went through Syria and Cilicia, strengthening the assemblies.",
+      "previousVerse": {
+        "chapter": 15,
+        "verse": 40,
+        "text": "but Paul chose Silas and went out, being commended by the brothers to the grace of God."
+      },
+      "actualMapEntityIDs": [
+        "place:cilicia_300",
+        "place:syria_1122"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "place:cilicia_300",
+        "place:syria_1122"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Syria/Ciliciaを通過したheは15:40でSilasと出発したPaul。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 16,
+      "verse": 3,
+      "webText": "Paul wanted to have him go out with him, and he took and circumcised him because of the Jews who were in those parts, for they all knew that his father was a Greek.",
+      "previousVerse": {
+        "chapter": 16,
+        "verse": 2,
+        "text": "The brothers who were at Lystra and Iconium gave a good testimony about him."
+      },
+      "actualMapEntityIDs": [
+        "person:paul_2479"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:paul_2479"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:timotheus_2863",
+          "targetName": "Timotheus",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "take him / circumcised himは16:1で紹介したTimothy。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 16,
+      "verse": 4,
+      "webText": "As they went on their way through the cities, they delivered the decrees to them to keep which had been ordained by the apostles and elders who were at Jerusalem.",
+      "previousVerse": {
+        "chapter": 16,
+        "verse": 3,
+        "text": "Paul wanted to have him go out with him, and he took and circumcised him because of the Jews who were in those parts, for they all knew that his father was a Greek."
+      },
+      "actualMapEntityIDs": [
+        "place:jerusalem_636"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "place:jerusalem_636"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "citiesを巡って命令を伝えたtheyは16:1–3で構成されたPaul・Silas・Timothyの宣教団。"
+        },
+        {
+          "entityID": "person:silas_2740",
+          "targetName": "Silas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "citiesを巡って命令を伝えたtheyは16:1–3で構成されたPaul・Silas・Timothyの宣教団。"
+        },
+        {
+          "entityID": "person:timotheus_2863",
+          "targetName": "Timotheus",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "citiesを巡って命令を伝えたtheyは16:1–3で構成されたPaul・Silas・Timothyの宣教団。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 16,
+      "verse": 8,
+      "webText": "Passing by Mysia, they came down to Troas.",
+      "previousVerse": {
+        "chapter": 16,
+        "verse": 7,
+        "text": "When they had come opposite Mysia, they tried to go into Bithynia, but the Spirit didn’t allow them."
+      },
+      "actualMapEntityIDs": [
+        "place:mysia_865",
+        "place:troas_1182"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "place:mysia_865",
+        "place:troas_1182"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Troasへ来たtheyはMysiaへ進んでいたPaul・Silas・Timothy。"
+        },
+        {
+          "entityID": "person:silas_2740",
+          "targetName": "Silas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Troasへ来たtheyはMysiaへ進んでいたPaul・Silas・Timothy。"
+        },
+        {
+          "entityID": "person:timotheus_2863",
+          "targetName": "Timotheus",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Troasへ来たtheyはMysiaへ進んでいたPaul・Silas・Timothy。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 17,
+      "verse": 3,
+      "webText": "explaining and demonstrating that the Christ had to suffer and rise again from the dead, and saying, “This Jesus, whom I proclaim to you, is the Christ.”",
+      "previousVerse": {
+        "chapter": 17,
+        "verse": 2,
+        "text": "Paul, as was his custom, went in to them; and for three Sabbath days reasoned with them from the Scriptures,"
+      },
+      "actualMapEntityIDs": [
+        "person:jesus_905"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:jesus_905"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "explain/demonstrateを続ける主語は17:2で名指されたPaul。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 17,
+      "verse": 16,
+      "webText": "Now while Paul waited for them at Athens, his spirit was provoked within him as he saw the city full of idols.",
+      "previousVerse": {
+        "chapter": 17,
+        "verse": 15,
+        "text": "But those who escorted Paul brought him as far as Athens. Receiving a commandment to Silas and Timothy that they should come to him very quickly, they departed."
+      },
+      "actualMapEntityIDs": [
+        "person:paul_2479",
+        "place:athens_118"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:paul_2479",
+        "place:athens_118"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:silas_2740",
+          "targetName": "Silas",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Paulが待っていたthemは17:15で彼のもとへ来るよう命じられたSilasとTimothy。"
+        },
+        {
+          "entityID": "person:timotheus_2863",
+          "targetName": "Timotheus",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Paulが待っていたthemは17:15で彼のもとへ来るよう命じられたSilasとTimothy。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 18,
+      "verse": 10,
+      "webText": "for I am with you, and no one will attack you to harm you, for I have many people in this city.”",
+      "previousVerse": {
+        "chapter": 18,
+        "verse": 9,
+        "text": "The Lord said to Paul in the night by a vision, “Don’t be afraid, but speak and don’t be silent;"
+      },
+      "actualMapEntityIDs": [],
+      "sourceListedCurrentEntityIDs": [],
+      "proposedAdditions": [
+        {
+          "entityID": "person:jesus_905",
+          "targetName": "Jesus",
+          "proposedRelationship": "related",
+          "decision": "qualified",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "発話者が「the Lord」とのみ記され、同節・直前節でイエスと一意に特定されない。Paulへの二人称youは明確だが、Lordの個人IDをJesusと断定する提案は保留。",
+          "sourceProposalReasonJa": "前節でPaulに語った主の一人称IとyouはJesus/Paul。"
+        },
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "前節でPaulに語った主の一人称IとyouはJesus/Paul。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 18,
+      "verse": 13,
+      "webText": "saying, “This man persuades men to worship God contrary to the law.”",
+      "previousVerse": {
+        "chapter": 18,
+        "verse": 12,
+        "text": "But when Gallio was proconsul of Achaia, the Jews with one accord rose up against Paul and brought him before the judgment seat,"
+      },
+      "actualMapEntityIDs": [
+        "person:god_1324"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:god_1324"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:paul_2479",
+          "targetName": "Paul",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Gallioへの訴えのthis manはPaul（18:12）。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 19,
+      "verse": 29,
+      "webText": "The whole city was filled with confusion, and they rushed with one accord into the theater, having seized Gaius and Aristarchus, men of Macedonia, Paul’s companions in travel.",
+      "previousVerse": {
+        "chapter": 19,
+        "verse": 28,
+        "text": "When they heard this they were filled with anger, and cried out, saying, “Great is Artemis of the Ephesians!”"
+      },
+      "actualMapEntityIDs": [
+        "person:aristarchus_306",
+        "person:gaius_1269",
+        "person:paul_2479"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:aristarchus_306",
+        "person:gaius_1269",
+        "person:paul_2479"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "place:macedonia_747",
+          "targetName": "Macedonia",
+          "proposedRelationship": "related",
+          "decision": "qualified",
+          "recommendedRelationship": "direct",
+          "targetExists": true,
+          "basisJa": "固有地名がこの節の本文に明記されているため、関連地理背景ではなくdirectとして扱うのが適切。",
+          "sourceProposalReasonJa": "GaiusとAristarchusをmen of Macedoniaとする地理的明記。Gaiusの既存リンクは1269（この群）でありDerbeの別人1269/1270を混同しない。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 20,
+      "verse": 4,
+      "webText": "These accompanied him as far as Asia: Sopater of Beroea, Aristarchus and Secundus of the Thessalonians, Gaius of Derbe, Timothy, and Tychicus and Trophimus of Asia.",
+      "previousVerse": {
+        "chapter": 20,
+        "verse": 3,
+        "text": "When he had spent three months there, and a plot was made against him by Jews as he was about to set sail for Syria, he determined to return through Macedonia."
+      },
+      "actualMapEntityIDs": [
+        "person:aristarchus_306",
+        "person:gaius_1270",
+        "person:secundus_2482",
+        "person:sopater_2770",
+        "person:timotheus_2863",
+        "person:trophimus_2880",
+        "person:tychicus_2885",
+        "place:berea_177",
+        "place:derbe_330",
+        "place:thessalonica_1158"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:aristarchus_306",
+        "person:gaius_1270",
+        "person:secundus_2482",
+        "person:sopater_2770",
+        "person:timotheus_2863",
+        "person:trophimus_2880",
+        "person:tychicus_2885",
+        "place:berea_177",
+        "place:derbe_330",
+        "place:thessalonica_1158"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "place:asia_108",
+          "targetName": "Asia",
+          "proposedRelationship": "related",
+          "decision": "qualified",
+          "recommendedRelationship": "direct",
+          "targetExists": true,
+          "basisJa": "固有地名がこの節の本文に明記されているため、関連地理背景ではなくdirectとして扱うのが適切。",
+          "sourceProposalReasonJa": "Trophimus of Asiaという明示的な出身地参照。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    },
+    {
+      "chapter": 20,
+      "verse": 10,
+      "webText": "Paul went down and fell upon him, and embracing him said, “Don’t be troubled, for his life is in him.”",
+      "previousVerse": {
+        "chapter": 20,
+        "verse": 9,
+        "text": "A certain young man named Eutychus sat in the window, weighed down with deep sleep. As Paul spoke still longer, being weighed down by his sleep, he fell down from the third floor and was taken up dead."
+      },
+      "actualMapEntityIDs": [
+        "person:paul_2479"
+      ],
+      "sourceListedCurrentEntityIDs": [
+        "person:paul_2479"
+      ],
+      "proposedAdditions": [
+        {
+          "entityID": "person:eutychus_1230",
+          "targetName": "Eutychus",
+          "proposedRelationship": "related",
+          "decision": "accepted",
+          "recommendedRelationship": "related",
+          "targetExists": true,
+          "basisJa": "固定WEB本文と直前文脈の指示対象が一致し、提案されたrelationship区分も妥当。",
+          "sourceProposalReasonJa": "Paulのhim（抱きしめた対象）は直前に名指されたEutychus。"
+        }
+      ],
+      "verseReviewJa": "局所文脈から各追加対象の指示先を照合。人物・場所の同定ができても、本文中の明示的な固有名はdirect、文脈上の先行詞・話者・照応はrelatedとして評価。"
+    }
+  ]
+}

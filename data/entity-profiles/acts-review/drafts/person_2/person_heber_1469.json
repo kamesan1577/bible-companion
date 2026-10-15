@@ -1,0 +1,62 @@
+{
+  "profile": {
+    "id": "person:heber_1469",
+    "kind": "person",
+    "nameJa": "ヘベル（索引候補）",
+    "subtitleJa": "使徒言行録23:35にはこの人物の出現を確認できない。",
+    "summaryJa": "候補リンク先の使徒言行録23:35は「ヘロデの宮殿」を指し、人名ヘベルを記していない。人物プロフィールとしては裏付けられない。",
+    "identityNoteJa": "割り当てられた出現は誤った索引リンクとして除外。",
+    "knownBy": {
+      "chapter": 23,
+      "verse": 35
+    },
+    "passages": [],
+    "sourceIds": [],
+    "facts": [],
+    "modernLocationJa": null,
+    "historicalRoleJa": null,
+    "coordinate": null,
+    "locationNoteJa": null,
+    "supplemental": false,
+    "materialCardIDs": [],
+    "wikipedia": null
+  },
+  "sources": [
+    {
+      "id": "web-act-23-35",
+      "title": "使徒言行録 23:35 · World English Bible",
+      "url": "https://ebible.org/engwebp/ACT23.htm#V35",
+      "license": "Public domain",
+      "licenseURL": "https://ebible.org/engwebp/copyright.htm",
+      "attribution": "World English Bible / eBible.org。日本語は出典に基づく編集で、既存日本語訳の転載ではありません。"
+    }
+  ],
+  "review": {
+    "entityID": "person:heber_1469",
+    "primaryWitnesses": [
+      {
+        "ref": "ACT 23:35",
+        "textualBasisJa": "He commanded that he should be kept in Herod’s palace."
+      }
+    ],
+    "occurrenceChecks": [
+      {
+        "chapter": 23,
+        "verse": 35,
+        "status": "excluded-wrong-index-link",
+        "reasonJa": "WEB本文は「ヘロデの宮殿」と記す。Heber（ヘベル）という人名の出現ではなく、誤った索引リンク。"
+      }
+    ],
+    "identityCheckJa": "profile.knownByはモデル上必須のため、誤リンク検査座標ACT 23:35を暫定参照として保持するが、これはHeberの出現節ではない。passagesは空であり、ACT本文はHerod’s palaceを記すだけでHeberという人名を含まない。UI上の人物出現・knownByとして扱わない。",
+    "spoilerCheckJa": "Actsに人物出現を確認できず、人物導入を作成しない。割当候補の誤リンクは除外理由としてのみ記録。",
+    "wikipediaCheck": {
+      "url": null,
+      "status": "no-specific-article-link",
+      "identityBasisJa": "ACT 23:35の候補出現は人名Heberでなく「Herod’s palace」を指す誤リンク。該当する人物プロフィールを立てられないため記事リンクなし。",
+      "fragmentVerified": false
+    },
+    "geographyCheck": "人物プロフィールのため対象外。",
+    "remainingUncertaintyJa": "ACT 23:35のindex候補Heberは固定WEB本文で裏付けられない。knownBy座標は誤リンクを照合した位置であって人物の初出ではない。",
+    "elapsedSeconds": 0
+  }
+}

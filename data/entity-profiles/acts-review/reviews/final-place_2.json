@@ -1,0 +1,3530 @@
+{
+  "reviewType": "Independent final review of frozen place_2 profiles",
+  "reviewedAtUTC": "2026-10-15T23:45:00Z",
+  "readOnly": true,
+  "inputs": {
+    "manifest": {
+      "path": "final-input-manifest.json",
+      "sha256": "472328d6d48fbcb816bbbfb35f698cfd26e962578ca18fb253e4d796b27bc2e6",
+      "phase": "frozen for final independent read; changes require re-review"
+    },
+    "assignment": "assignments/place_2.json",
+    "primaryWitness": {
+      "path": "acts-web-verses.json",
+      "sha256": "90e72f0410119f8fc9afd529cdd730fd261bd1d25adfb413581c1462d6e936cb",
+      "version": "webp-usfx-2026-10-13-35a6adf626e5",
+      "verseCount": 1007
+    },
+    "wikiHTTPRecord": {
+      "path": "wikipedia-http-checks.json",
+      "sha256": "3695e4ae8abb4f13227173013a6459a976893c4a664d19f6cbb6b1fabf9cacba",
+      "scope": "HTTP/title/redirect/fragment only"
+    },
+    "previousReviewSeparation": {
+      "path": "reviews/place_2-closure.json",
+      "sha256": "9036ac7bb95e0b8c5b7ce4344feae55ccc4ca679cc315d4daf862c0731669172"
+    }
+  },
+  "methodJa": "manifestで凍結されたplace_2 34ファイルの現行バイトSHAを照合し、summary/subtitle/knownBy/identityNote/historicalRole/modernLocation/facts/sourceを固定WEBP Acts witnessの各節本文と独立照合した。以前のpass判定は流用していない。knownByの時点より後の旅程・出来事・同定を初出紹介へ入れないか、地域・都市・海岸停泊地・地形の種類、境界不確かさ、座標の根拠を確認した。Acts WEBリンクは全てWEBP正規版章節URLに照合。WikipediaはHTTP/title検査を意味同定と分離し、リンク先の本文対象が古代地名そのものか、現代記事・関連節かを別々に記録した。",
+  "summary": {
+    "assigned": 34,
+    "reviewed": 34,
+    "manifestMatches": 34,
+    "resultCounts": {
+      "qualified": 14,
+      "fail": 4,
+      "pass": 16
+    },
+    "wrongWEBPAnchors": 0,
+    "actsWEBLinkCount": 187,
+    "allWEBLinksCanonical": true,
+    "findingsBySeverity": {
+      "qualified": 14,
+      "fail": 4
+    },
+    "primaryTextFailIDs": [
+      "place:damascus_322",
+      "place:italy_601",
+      "place:lycia_740",
+      "place:mysia_865"
+    ]
+  },
+  "wikiReviewSeparation": {
+    "priorClosureUnconfirmedItems": 34,
+    "priorClosureStatus": "34 items were recorded not_independently_verified_in_this_closure; the earlier 29 prior content findings remain historical and are not counted as Acts-text failures or successes here.",
+    "currentHTTP200": 34,
+    "currentBodyRead": 34,
+    "identityQualifiedOrRelated": 12,
+    "noteJa": "過去の未確認判定を引き継がず、今回の本文読みとHTTP状態を別々に記録した。HTTP 200は記事の意味同定を保証しない。Wikipedia補助記事の適合度はActs本文の判定と混同しない。"
+  },
+  "items": [
+    {
+      "entityID": "place:cyrene_317",
+      "draftPath": "drafts/place_2/cyrene_317.json",
+      "currentSHA256": "14400291fc5bd363fdba78ec76e27677020454fa8d4b3662e86c7217b945311f",
+      "manifestSHA256": "14400291fc5bd363fdba78ec76e27677020454fa8d4b3662e86c7217b945311f",
+      "manifestMatch": true,
+      "result": "qualified",
+      "geographyType": "ancient/current city or city-site",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "qualified",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 2:10",
+        "quote": "Phrygia, Pamphylia, Egypt, the parts of Libya around Cyrene, visitors from Rome, both Jews and proselytes,",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [
+        {
+          "claimJa": "キュレネ出身の人々の中に、エルサレムからアンティオキアへ行きギリシア語を話す人々にも知らせた者たちがいた。",
+          "knownBy": "Acts 11:20",
+          "sourceIds": [
+            "webp-acts-11-20"
+          ],
+          "witness": {
+            "reference": "Acts 11:20",
+            "text": "But there were some of them, men of Cyprus and Cyrene, who, when they had come to Antioch, spoke to the Hellenists, preaching the Lord Jesus.",
+            "witnessStatus": "literal-source"
+          },
+          "assessment": "qualified",
+          "reasonJa": "ACT 11:20 says men of Cyprus and Cyrene came to Antioch and preached to Hellenists; it does not itself state Jerusalem as their point of departure. Acts 11:19 gives the wider scattering context."
+        },
+        {
+          "claimJa": "アンティオキアの教会にいた預言者・教師の一人ルキオはキュレネ出身と記される。",
+          "knownBy": "Acts 13:1",
+          "sourceIds": [
+            "webp-acts-13-1"
+          ],
+          "witness": {
+            "reference": "Acts 13:1",
+            "text": "Now in the assembly that was at Antioch there were some prophets and teachers: Barnabas, Simeon who was called Niger, Lucius of Cyrene, Manaen the foster brother of Herod the tetrarch, and Saul.",
+            "witnessStatus": "literal-source"
+          },
+          "assessment": "pass",
+          "reasonJa": "引用節の本文が記述の要点を直接支える。"
+        }
+      ],
+      "geographyReviewJa": "historicalRoleJa: 北アフリカの古代都市名として、使徒言行録2章10節の出身地域の表現に含まれる。 modernLocationJa: リビア東部のキレナイカ地方。古代都市遺跡は現シャッハート近郊。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-2-10",
+            "actualURL": "https://ebible.org/engwebp/ACT02.htm#V10",
+            "expectedURL": "https://ebible.org/engwebp/ACT02.htm#V10",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-11-20",
+            "actualURL": "https://ebible.org/engwebp/ACT11.htm#V20",
+            "expectedURL": "https://ebible.org/engwebp/ACT11.htm#V20",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-13-1",
+            "actualURL": "https://ebible.org/engwebp/ACT13.htm#V1",
+            "expectedURL": "https://ebible.org/engwebp/ACT13.htm#V1",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 3,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/キュレネ",
+        "draftTitle": "キュレネ — Wikipedia",
+        "declaredKind": "article",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "キュレネ - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%A5%E3%83%AC%E3%83%8D",
+          "checkedAtUTC": "2026-10-15T13:30:17.562140+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "記事見出し・導入はリビア領内の古代ギリシア都市キュレネを扱い、聖書のキュレネ節もある。古代都市同定と合う。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": [
+        {
+          "severity": "qualified",
+          "field": "facts[0]",
+          "observationJa": "ACT 11:20 says men of Cyprus and Cyrene came to Antioch and preached to Hellenists; it does not itself state Jerusalem as their point of departure. Acts 11:19 gives the wider scattering context.",
+          "evidence": "11:19–20",
+          "suggestedCorrectionJa": "「エルサレムから」を文脈推定として明示するか、アンティオキアに来たキプロス・キュレネ出身者の記述に狭める。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:damascus_322",
+      "draftPath": "drafts/place_2/damascus_322.json",
+      "currentSHA256": "a3bae223f09dc25b3ae74b72de77b7c6730fbaefd908619eca44d2e1560c6ba8",
+      "manifestSHA256": "a3bae223f09dc25b3ae74b72de77b7c6730fbaefd908619eca44d2e1560c6ba8",
+      "manifestMatch": true,
+      "result": "fail",
+      "geographyType": "ancient/current city or city-site",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "fail",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "fail",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 9:2",
+        "quote": "and asked for letters from him to the synagogues of Damascus, that if he found any who were of the Way, whether men or women, he might bring them bound to Jerusalem.",
+        "introChronologyResult": "fail"
+      },
+      "factsReview": [],
+      "geographyReviewJa": "historicalRoleJa: シリア内陸の都市。使徒言行録9章で、サウロはダマスコへ向かう途上で出来事に遭い、その後同市に入る。 modernLocationJa: シリア南西部、バラダー川のオアシスに位置する現在のダマスカス周辺。古代市域の厳密な境界は特定しない。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-9-2",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V2",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V2",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-9-3",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V3",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V3",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-9-8",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V8",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V8",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-9-10",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V10",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V10",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-9-19",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V19",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V19",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-9-22",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V22",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V22",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-9-27",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V27",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V27",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-22-5",
+            "actualURL": "https://ebible.org/engwebp/ACT22.htm#V5",
+            "expectedURL": "https://ebible.org/engwebp/ACT22.htm#V5",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-22-6",
+            "actualURL": "https://ebible.org/engwebp/ACT22.htm#V6",
+            "expectedURL": "https://ebible.org/engwebp/ACT22.htm#V6",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-22-10",
+            "actualURL": "https://ebible.org/engwebp/ACT22.htm#V10",
+            "expectedURL": "https://ebible.org/engwebp/ACT22.htm#V10",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-22-11",
+            "actualURL": "https://ebible.org/engwebp/ACT22.htm#V11",
+            "expectedURL": "https://ebible.org/engwebp/ACT22.htm#V11",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-26-12",
+            "actualURL": "https://ebible.org/engwebp/ACT26.htm#V12",
+            "expectedURL": "https://ebible.org/engwebp/ACT26.htm#V12",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-26-20",
+            "actualURL": "https://ebible.org/engwebp/ACT26.htm#V20",
+            "expectedURL": "https://ebible.org/engwebp/ACT26.htm#V20",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 13,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/ダマスカス",
+        "draftTitle": "ダマスコ — Wikipedia",
+        "declaredKind": "article",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "ダマスカス - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%9E%E3%82%B9%E3%82%AB%E3%82%B9",
+          "checkedAtUTC": "2026-10-15T13:30:18.338898+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "記事は現代シリアのダマスカス市を扱い、古代都市の歴史を含む。都市名の同定は妥当だが現代市域を古代境界とする根拠ではない。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": [
+        {
+          "severity": "fail",
+          "field": "subtitleJa/historicalRoleJa",
+          "observationJa": "At knownBy 9:2 only the letters to Damascus synagogues and intended return with prisoners to Jerusalem are stated. The road event and entry into Damascus are later at 9:3 and 9:8.",
+          "evidence": "9:2; 9:3; 9:8",
+          "suggestedCorrectionJa": "初出紹介から途上の出来事・入城の記述を外す。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:derbe_330",
+      "draftPath": "drafts/place_2/derbe_330.json",
+      "currentSHA256": "89ed214538d205c36136d44659d36698aab98e559e5f7a6c1992061494da6245",
+      "manifestSHA256": "89ed214538d205c36136d44659d36698aab98e559e5f7a6c1992061494da6245",
+      "manifestMatch": true,
+      "result": "qualified",
+      "geographyType": "ancient/current city or city-site",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "qualified",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 14:6",
+        "quote": "they became aware of it and fled to the cities of Lycaonia, Lystra, Derbe, and the surrounding region.",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [
+        {
+          "claimJa": "パウロはデルベにも赴いた後、リステラへ戻った。",
+          "knownBy": "Acts 16:1",
+          "sourceIds": [
+            "webp-acts-16-1"
+          ],
+          "witness": {
+            "reference": "Acts 16:1",
+            "text": "He came to Derbe and Lystra; and behold, a certain disciple was there, named Timothy, the son of a Jewess who believed, but his father was a Greek.",
+            "witnessStatus": "literal-source"
+          },
+          "assessment": "qualified",
+          "reasonJa": "Acts 16:1 says Paul came to Derbe and Lystra; it does not say “returned to Lystra.”"
+        },
+        {
+          "claimJa": "ガイオはデルベ出身者として同行者の一覧に記される。",
+          "knownBy": "Acts 20:4",
+          "sourceIds": [
+            "webp-acts-20-4"
+          ],
+          "witness": {
+            "reference": "Acts 20:4",
+            "text": "These accompanied him as far as Asia: Sopater of Beroea, Aristarchus and Secundus of the Thessalonians, Gaius of Derbe, Timothy, and Tychicus and Trophimus of Asia.",
+            "witnessStatus": "literal-source"
+          },
+          "assessment": "pass",
+          "reasonJa": "引用節の本文が記述の要点を直接支える。"
+        }
+      ],
+      "geographyReviewJa": "historicalRoleJa: 古代リカオニア地方の都市として、使徒言行録14章6節に名が記される。 modernLocationJa: トルコ中南部、古代リカオニア地方。古代都市の同定地点はカラマン県北東部のケルタ・ホユック周辺とされるが、遺跡の位置をここで点示しない。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-14-6",
+            "actualURL": "https://ebible.org/engwebp/ACT14.htm#V6",
+            "expectedURL": "https://ebible.org/engwebp/ACT14.htm#V6",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-14-20",
+            "actualURL": "https://ebible.org/engwebp/ACT14.htm#V20",
+            "expectedURL": "https://ebible.org/engwebp/ACT14.htm#V20",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-16-1",
+            "actualURL": "https://ebible.org/engwebp/ACT16.htm#V1",
+            "expectedURL": "https://ebible.org/engwebp/ACT16.htm#V1",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-20-4",
+            "actualURL": "https://ebible.org/engwebp/ACT20.htm#V4",
+            "expectedURL": "https://ebible.org/engwebp/ACT20.htm#V4",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 4,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://en.wikipedia.org/wiki/Derbe",
+        "draftTitle": "デルベ — Wikipedia",
+        "declaredKind": "article",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "Derbe - Wikipedia",
+          "resolvedURL": "https://en.wikipedia.org/wiki/Derbe",
+          "checkedAtUTC": "2026-10-15T13:30:18.478118+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "英語記事は古代リカオニアの都市デルベを扱う。同定候補ケルティ・ホユック周辺は有力説として示され確定扱いでない。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": [
+        {
+          "severity": "qualified",
+          "field": "facts[0]",
+          "observationJa": "Acts 16:1 says Paul came to Derbe and Lystra; it does not say “returned to Lystra.”",
+          "evidence": "16:1",
+          "suggestedCorrectionJa": "「デルベとリステラを訪れた」と本文に沿って改める。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:egypt_362",
+      "draftPath": "drafts/place_2/egypt_362.json",
+      "currentSHA256": "1ab5323529bf2997e13a8a4a460434a7e00d0678019511641b7cb6b5650d68d7",
+      "manifestSHA256": "1ab5323529bf2997e13a8a4a460434a7e00d0678019511641b7cb6b5650d68d7",
+      "manifestMatch": true,
+      "result": "qualified",
+      "geographyType": "historical region",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "qualified",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 2:10",
+        "quote": "Phrygia, Pamphylia, Egypt, the parts of Libya around Cyrene, visitors from Rome, both Jews and proselytes,",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [
+        {
+          "claimJa": "ヨセフが兄弟たちに売られてエジプトへ移されたと語られる。",
+          "knownBy": "Acts 7:9",
+          "sourceIds": [
+            "webp-acts-7-9"
+          ],
+          "witness": {
+            "reference": "Acts 7:9",
+            "text": "“The patriarchs, moved with jealousy against Joseph, sold him into Egypt. God was with him",
+            "witnessStatus": "literal-source"
+          },
+          "assessment": "pass",
+          "reasonJa": "引用節の本文が記述の要点を直接支える。"
+        },
+        {
+          "claimJa": "モーセはエジプトで生まれ、父の家で養育されたと語られる。",
+          "knownBy": "Acts 7:20",
+          "sourceIds": [
+            "webp-acts-7-20"
+          ],
+          "witness": {
+            "reference": "Acts 7:20",
+            "text": "At that time Moses was born, and was exceedingly handsome to God. He was nourished three months in his father’s house.",
+            "witnessStatus": "literal-source"
+          },
+          "assessment": "qualified",
+          "reasonJa": "Acts 7:20 says Moses was born and nourished in his father’s house, without naming Egypt in that verse; 7:17–19 supplies Egypt in the immediate narrative context."
+        }
+      ],
+      "geographyReviewJa": "historicalRoleJa: 使徒言行録2章10節で来訪者の出身地域として挙げられる。 modernLocationJa: 古代エジプトの範囲は時代により変化し、現在のエジプト国境とは一致しない。ここでは地域として扱う。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-2-10",
+            "actualURL": "https://ebible.org/engwebp/ACT02.htm#V10",
+            "expectedURL": "https://ebible.org/engwebp/ACT02.htm#V10",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-7-9",
+            "actualURL": "https://ebible.org/engwebp/ACT07.htm#V9",
+            "expectedURL": "https://ebible.org/engwebp/ACT07.htm#V9",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-7-10",
+            "actualURL": "https://ebible.org/engwebp/ACT07.htm#V10",
+            "expectedURL": "https://ebible.org/engwebp/ACT07.htm#V10",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-7-11",
+            "actualURL": "https://ebible.org/engwebp/ACT07.htm#V11",
+            "expectedURL": "https://ebible.org/engwebp/ACT07.htm#V11",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-7-12",
+            "actualURL": "https://ebible.org/engwebp/ACT07.htm#V12",
+            "expectedURL": "https://ebible.org/engwebp/ACT07.htm#V12",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-7-15",
+            "actualURL": "https://ebible.org/engwebp/ACT07.htm#V15",
+            "expectedURL": "https://ebible.org/engwebp/ACT07.htm#V15",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-7-17",
+            "actualURL": "https://ebible.org/engwebp/ACT07.htm#V17",
+            "expectedURL": "https://ebible.org/engwebp/ACT07.htm#V17",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-7-20",
+            "actualURL": "https://ebible.org/engwebp/ACT07.htm#V20",
+            "expectedURL": "https://ebible.org/engwebp/ACT07.htm#V20",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-7-24",
+            "actualURL": "https://ebible.org/engwebp/ACT07.htm#V24",
+            "expectedURL": "https://ebible.org/engwebp/ACT07.htm#V24",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-7-34",
+            "actualURL": "https://ebible.org/engwebp/ACT07.htm#V34",
+            "expectedURL": "https://ebible.org/engwebp/ACT07.htm#V34",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-7-36",
+            "actualURL": "https://ebible.org/engwebp/ACT07.htm#V36",
+            "expectedURL": "https://ebible.org/engwebp/ACT07.htm#V36",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-7-39",
+            "actualURL": "https://ebible.org/engwebp/ACT07.htm#V39",
+            "expectedURL": "https://ebible.org/engwebp/ACT07.htm#V39",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-7-40",
+            "actualURL": "https://ebible.org/engwebp/ACT07.htm#V40",
+            "expectedURL": "https://ebible.org/engwebp/ACT07.htm#V40",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-13-17",
+            "actualURL": "https://ebible.org/engwebp/ACT13.htm#V17",
+            "expectedURL": "https://ebible.org/engwebp/ACT13.htm#V17",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 14,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/エジプト",
+        "draftTitle": "エジプト — Wikipedia",
+        "declaredKind": "article",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "エジプト - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%A8%E3%82%B8%E3%83%97%E3%83%88",
+          "checkedAtUTC": "2026-10-15T13:30:18.642204+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "日本語記事は現代エジプト国家が主題で古代史節を含む。古代エジプトの地域範囲を現代国境と同一視しない用途に限定。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": [
+        {
+          "severity": "qualified",
+          "field": "facts[1]",
+          "observationJa": "Acts 7:20 says Moses was born and nourished in his father’s house, without naming Egypt in that verse; 7:17–19 supplies Egypt in the immediate narrative context.",
+          "evidence": "7:17–20",
+          "suggestedCorrectionJa": "「7:17–20の物語文脈でエジプトにいた時期」と明示するか関連節を引用する。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:ephesus_400",
+      "draftPath": "drafts/place_2/ephesus_400.json",
+      "currentSHA256": "a16207f8b4841612361901d2002168d2c69deb09939934c07f9cc4dd140ec8d0",
+      "manifestSHA256": "a16207f8b4841612361901d2002168d2c69deb09939934c07f9cc4dd140ec8d0",
+      "manifestMatch": true,
+      "result": "pass",
+      "geographyType": "ancient/current city or city-site",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 18:19",
+        "quote": "He came to Ephesus, and he left them there; but he himself entered into the synagogue and reasoned with the Jews.",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [
+        {
+          "claimJa": "エペソでは後にパウロが弟子たちに会い、教えた。",
+          "knownBy": "Acts 19:1",
+          "sourceIds": [
+            "webp-acts-19-1"
+          ],
+          "witness": {
+            "reference": "Acts 19:1",
+            "text": "While Apollos was at Corinth, Paul, having passed through the upper country, came to Ephesus and found certain disciples.",
+            "witnessStatus": "literal-source"
+          },
+          "assessment": "pass",
+          "reasonJa": "引用節の本文が記述の要点を直接支える。"
+        },
+        {
+          "claimJa": "パウロはエペソの長老たちをミレトスに呼び寄せた。",
+          "knownBy": "Acts 20:17",
+          "sourceIds": [
+            "webp-acts-20-17"
+          ],
+          "witness": {
+            "reference": "Acts 20:17",
+            "text": "From Miletus he sent to Ephesus and called to himself the elders of the assembly.",
+            "witnessStatus": "literal-source"
+          },
+          "assessment": "pass",
+          "reasonJa": "引用節の本文が記述の要点を直接支える。"
+        }
+      ],
+      "geographyReviewJa": "historicalRoleJa: パウロが旅の途中で立ち寄った小アジア西岸の古代都市。 modernLocationJa: トルコ西部セルチュク近郊の古代都市遺跡。Pleiades代表点は遺跡の概略位置であり、現代市街や出来事の地点を示さない。",
+      "coordinateReview": {
+        "value": [
+          37.940164271971945,
+          27.34240298195866
+        ],
+        "result": "pass",
+        "basis": "Pleiades 599612 representative archaeological-site point; explicitly not event point or modern-city centre"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-18-19",
+            "actualURL": "https://ebible.org/engwebp/ACT18.htm#V19",
+            "expectedURL": "https://ebible.org/engwebp/ACT18.htm#V19",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-18-21",
+            "actualURL": "https://ebible.org/engwebp/ACT18.htm#V21",
+            "expectedURL": "https://ebible.org/engwebp/ACT18.htm#V21",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-18-24",
+            "actualURL": "https://ebible.org/engwebp/ACT18.htm#V24",
+            "expectedURL": "https://ebible.org/engwebp/ACT18.htm#V24",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-19-1",
+            "actualURL": "https://ebible.org/engwebp/ACT19.htm#V1",
+            "expectedURL": "https://ebible.org/engwebp/ACT19.htm#V1",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-19-17",
+            "actualURL": "https://ebible.org/engwebp/ACT19.htm#V17",
+            "expectedURL": "https://ebible.org/engwebp/ACT19.htm#V17",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-19-26",
+            "actualURL": "https://ebible.org/engwebp/ACT19.htm#V26",
+            "expectedURL": "https://ebible.org/engwebp/ACT19.htm#V26",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-19-35",
+            "actualURL": "https://ebible.org/engwebp/ACT19.htm#V35",
+            "expectedURL": "https://ebible.org/engwebp/ACT19.htm#V35",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-20-16",
+            "actualURL": "https://ebible.org/engwebp/ACT20.htm#V16",
+            "expectedURL": "https://ebible.org/engwebp/ACT20.htm#V16",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-20-17",
+            "actualURL": "https://ebible.org/engwebp/ACT20.htm#V17",
+            "expectedURL": "https://ebible.org/engwebp/ACT20.htm#V17",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 9,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/エフェソス",
+        "draftTitle": "エペソ — Wikipedia",
+        "declaredKind": "article",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "エフェソス - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%95%E3%82%A7%E3%82%BD%E3%82%B9",
+          "checkedAtUTC": "2026-10-15T13:30:18.596575+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "日本語記事はトルコ西部セルチュク近郊の古代都市遺跡を扱う。代表点は遺跡の概略位置で、現代市街や出来事の位置ではない。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": []
+    },
+    {
+      "entityID": "place:fair_havens_424",
+      "draftPath": "drafts/place_2/fair_havens_424.json",
+      "currentSHA256": "a2b830957138f4862128572f0fe90774698dfbf5a31f16d012e3c7aa4ebb4d7b",
+      "manifestSHA256": "a2b830957138f4862128572f0fe90774698dfbf5a31f16d012e3c7aa4ebb4d7b",
+      "manifestMatch": true,
+      "result": "qualified",
+      "geographyType": "coastal anchorage / ancient site with uncertain identification",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "qualified",
+        "facts": "pass",
+        "source": "qualified"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 27:8",
+        "quote": "With difficulty sailing along it we came to a certain place called Fair Havens, near the city of Lasea.",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [],
+      "geographyReviewJa": "historicalRoleJa: 航海中の船が風を避けて停泊した場所として記される。 modernLocationJa: クレタ島南岸の古代停泊地とされる。正確な現地比定には議論があり、特定地点を置かない。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-27-8",
+            "actualURL": "https://ebible.org/engwebp/ACT27.htm#V8",
+            "expectedURL": "https://ebible.org/engwebp/ACT27.htm#V8",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 1,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://en.wikipedia.org/wiki/Kaloi_Limenes",
+        "draftTitle": "Kaloi Limenes",
+        "declaredKind": "related-section",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "Kaloi Limenes - Wikipedia",
+          "resolvedURL": "https://en.wikipedia.org/wiki/Kaloi_Limenes",
+          "checkedAtUTC": "2026-10-15T13:30:19.748156+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "related_or_qualified_identity",
+        "bodyFindingJa": "英語記事は現代港Kaloi Limenesを主題としFair Havensとの関連を述べるが、古代停泊地の厳密な同定までは示さない。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": [
+        {
+          "severity": "qualified",
+          "field": "wikipedia/modernLocationJa",
+          "observationJa": "The linked article is about modern Kaloi Limenes and reports a Fair Havens association, not an exact ancient anchorage identification. Null coordinate is appropriate.",
+          "evidence": "27:8",
+          "suggestedCorrectionJa": "関連記事・比定未確定と明示した現行の慎重な表現を維持する。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:galatia_431",
+      "draftPath": "drafts/place_2/galatia_431.json",
+      "currentSHA256": "9e09e169c6279fcecc8aafd70579a014783360f797fa38b9337e54e14590715d",
+      "manifestSHA256": "9e09e169c6279fcecc8aafd70579a014783360f797fa38b9337e54e14590715d",
+      "manifestMatch": true,
+      "result": "pass",
+      "geographyType": "historical region",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 16:6",
+        "quote": "When they had gone through the region of Phrygia and Galatia, they were forbidden by the Holy Spirit to speak the word in Asia.",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [
+        {
+          "claimJa": "パウロはガラテヤ地方を巡回し、弟子たちを力づけた。",
+          "knownBy": "Acts 18:23",
+          "sourceIds": [
+            "webp-acts-18-23"
+          ],
+          "witness": {
+            "reference": "Acts 18:23",
+            "text": "Having spent some time there, he departed and went through the region of Galatia and Phrygia, in order, establishing all the disciples.",
+            "witnessStatus": "literal-source"
+          },
+          "assessment": "pass",
+          "reasonJa": "引用節の本文が記述の要点を直接支える。"
+        }
+      ],
+      "geographyReviewJa": "historicalRoleJa: パウロの旅程に現れる地域名。 modernLocationJa: 小アジア内陸の歴史的地域。境界は時代により変化するため点を置かない。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-16-6",
+            "actualURL": "https://ebible.org/engwebp/ACT16.htm#V6",
+            "expectedURL": "https://ebible.org/engwebp/ACT16.htm#V6",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-18-23",
+            "actualURL": "https://ebible.org/engwebp/ACT18.htm#V23",
+            "expectedURL": "https://ebible.org/engwebp/ACT18.htm#V23",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 2,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/ガラティア",
+        "draftTitle": "ガラティア",
+        "declaredKind": "related-section",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "ガラティア - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%AC%E3%83%A9%E3%83%86%E3%82%A3%E3%82%A2",
+          "checkedAtUTC": "2026-10-15T13:30:19.256789+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "記事は古代地域・王国・ローマ属州のガラティアを扱い、境界変動と北部／南部解釈の差がある。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": []
+    },
+    {
+      "entityID": "place:galilee_433",
+      "draftPath": "drafts/place_2/galilee_433.json",
+      "currentSHA256": "eec83554b24d5216cfc703cc750f64e4843b335989ee837c270676cad64d0aff",
+      "manifestSHA256": "eec83554b24d5216cfc703cc750f64e4843b335989ee837c270676cad64d0aff",
+      "manifestMatch": true,
+      "result": "qualified",
+      "geographyType": "historical region",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "qualified",
+        "facts": "pass",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 1:11",
+        "quote": "who also said, “You men of Galilee, why do you stand looking into the sky? This Jesus, who was received up from you into the sky, will come back in the same way as you saw him going into the sky.”",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [
+        {
+          "claimJa": "使徒言行録9章では、ユダヤ・ガリラヤ・サマリア各地の集会が平安を得たと記される。",
+          "knownBy": "Acts 9:31",
+          "sourceIds": [
+            "webp-acts-9-31"
+          ],
+          "witness": {
+            "reference": "Acts 9:31",
+            "text": "So the assemblies throughout all Judea, Galilee, and Samaria had peace and were built up. They were multiplied, walking in the fear of the Lord and in the comfort of the Holy Spirit.",
+            "witnessStatus": "literal-source"
+          },
+          "assessment": "pass",
+          "reasonJa": "引用節の本文が記述の要点を直接支える。"
+        }
+      ],
+      "geographyReviewJa": "historicalRoleJa: 弟子たちの出身を示す呼称に現れる地域名。 modernLocationJa: 現在のイスラエル北部におおむね重なる歴史的地域。古代の境界を現在の国境と同一視しない。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-1-11",
+            "actualURL": "https://ebible.org/engwebp/ACT01.htm#V11",
+            "expectedURL": "https://ebible.org/engwebp/ACT01.htm#V11",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-9-31",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V31",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V31",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-10-37",
+            "actualURL": "https://ebible.org/engwebp/ACT10.htm#V37",
+            "expectedURL": "https://ebible.org/engwebp/ACT10.htm#V37",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-13-31",
+            "actualURL": "https://ebible.org/engwebp/ACT13.htm#V31",
+            "expectedURL": "https://ebible.org/engwebp/ACT13.htm#V31",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 4,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/ガリラヤ",
+        "draftTitle": "ガリラヤ",
+        "declaredKind": "article",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "ガリラヤ - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%AC%E3%83%AA%E3%83%A9%E3%83%A4",
+          "checkedAtUTC": "2026-10-15T13:30:19.392901+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "related_or_qualified_identity",
+        "bodyFindingJa": "記事は歴史的ガリラヤを扱い、現在のイスラエル北部だけでなくヨルダン側の一部にも触れる。プロフィールの現代範囲は部分的説明。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": [
+        {
+          "severity": "qualified",
+          "field": "modernLocationJa",
+          "observationJa": "Wikipedia’s geographic discussion also includes a Jordanian portion, while the profile only says it broadly overlaps northern Israel; this is incomplete as a modern extent.",
+          "evidence": "article geographic extent",
+          "suggestedCorrectionJa": "国境ではなく歴史地域の概略位置であることを維持し、現代範囲を補うならヨルダン側にも触れる。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:gaza_446",
+      "draftPath": "drafts/place_2/gaza_446.json",
+      "currentSHA256": "f3b505a65635d482e6e89e293d3d9d33531e78fab2467212c2249465e3b5b811",
+      "manifestSHA256": "f3b505a65635d482e6e89e293d3d9d33531e78fab2467212c2249465e3b5b811",
+      "manifestMatch": true,
+      "result": "qualified",
+      "geographyType": "ancient/current city or city-site",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "qualified"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 8:26",
+        "quote": "Then an angel of the Lord spoke to Philip, saying, “Arise, and go toward the south to the way that goes down from Jerusalem to Gaza. This is a desert.”",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [],
+      "geographyReviewJa": "historicalRoleJa: 沿岸都市。本文ではエルサレムから向かう道の行先として登場。 modernLocationJa: 地中海東岸南部。古代都市の厳密な位置と現代市街の境界は同一視しない。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-8-26",
+            "actualURL": "https://ebible.org/engwebp/ACT08.htm#V26",
+            "expectedURL": "https://ebible.org/engwebp/ACT08.htm#V26",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 1,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/ガザ",
+        "draftTitle": "ガザ",
+        "declaredKind": "related-section",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "ガザ - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%AC%E3%82%B6",
+          "checkedAtUTC": "2026-10-15T13:30:19.417473+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "related_or_qualified_identity",
+        "bodyFindingJa": "日本語記事の主題は現代ガザ市で、歴史節が古代ガザを説明する。Actsの古代都市に関連するが現代記事。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": [
+        {
+          "severity": "qualified",
+          "field": "wikipedia",
+          "observationJa": "Linked article is the modern Gaza city page; only the historical section is relevant to the ancient city.",
+          "evidence": "8:26",
+          "suggestedCorrectionJa": "関連記事として扱い、古代市域と現代市街の区別を維持する。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:greece_495",
+      "draftPath": "drafts/place_2/greece_495.json",
+      "currentSHA256": "e2d894a897732f99a3bf0e2f6a01e1c7ec96398d196dcdfcdf1d2f6e98d9adde",
+      "manifestSHA256": "e2d894a897732f99a3bf0e2f6a01e1c7ec96398d196dcdfcdf1d2f6e98d9adde",
+      "manifestMatch": true,
+      "result": "qualified",
+      "geographyType": "historical region",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "qualified",
+        "facts": "pass",
+        "source": "qualified"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 20:2",
+        "quote": "When he had gone through those parts and had encouraged them with many words, he came into Greece.",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [],
+      "geographyReviewJa": "historicalRoleJa: パウロの移動行程で言及される地域名。 modernLocationJa: 古代ギリシアの広域。現代国家の境界に一致させず、座標を置かない。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-20-2",
+            "actualURL": "https://ebible.org/engwebp/ACT20.htm#V2",
+            "expectedURL": "https://ebible.org/engwebp/ACT20.htm#V2",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 1,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/ギリシャ",
+        "draftTitle": "ギリシャ",
+        "declaredKind": "related-section",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "ギリシャ - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%AE%E3%83%AA%E3%82%B7%E3%83%A3",
+          "checkedAtUTC": "2026-10-15T13:30:20.318828+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "related_or_qualified_identity",
+        "bodyFindingJa": "日本語記事は現代ギリシャ国家が主題で古代ギリシア史節を含む。古代広域名に関連するが同一範囲とは限らない。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": [
+        {
+          "severity": "qualified",
+          "field": "wikipedia/modernLocationJa",
+          "observationJa": "The linked page is modern Greece with ancient-history material; Acts 20:2’s broad “Greece” is not a modern-border definition.",
+          "evidence": "20:2",
+          "suggestedCorrectionJa": "関連する歴史記事として扱い、現代国家と同一視しない。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:iconium_590",
+      "draftPath": "drafts/place_2/iconium_590.json",
+      "currentSHA256": "51185f8f8b20b2ca7138c0f0ae09fdad86697738d77e80e456f9de8e7912eb49",
+      "manifestSHA256": "51185f8f8b20b2ca7138c0f0ae09fdad86697738d77e80e456f9de8e7912eb49",
+      "manifestMatch": true,
+      "result": "qualified",
+      "geographyType": "ancient/current city or city-site",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "qualified"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 13:51",
+        "quote": "But they shook off the dust of their feet against them, and came to Iconium.",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [
+        {
+          "claimJa": "パウロとバルナバはイコニオンのユダヤ人会堂で語り、多くの人が信じたと記される。",
+          "knownBy": "Acts 14:1",
+          "sourceIds": [
+            "webp-acts-14-1"
+          ],
+          "witness": {
+            "reference": "Acts 14:1",
+            "text": "In Iconium, they entered together into the synagogue of the Jews, and so spoke that a great multitude both of Jews and of Greeks believed.",
+            "witnessStatus": "literal-source"
+          },
+          "assessment": "pass",
+          "reasonJa": "引用節の本文が記述の要点を直接支える。"
+        },
+        {
+          "claimJa": "パウロたちはリステラからデルベなどを経て、イコニオンへ戻った。",
+          "knownBy": "Acts 14:21",
+          "sourceIds": [
+            "webp-acts-14-21"
+          ],
+          "witness": {
+            "reference": "Acts 14:21",
+            "text": "When they had preached the Good News to that city and had made many disciples, they returned to Lystra, Iconium, and Antioch,",
+            "witnessStatus": "literal-source"
+          },
+          "assessment": "pass",
+          "reasonJa": "引用節の本文が記述の要点を直接支える。"
+        }
+      ],
+      "geographyReviewJa": "historicalRoleJa: 小アジア内陸の都市。 modernLocationJa: トルコ中南部のコンヤ周辺。現在都市と古代市域は区別する。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-13-51",
+            "actualURL": "https://ebible.org/engwebp/ACT13.htm#V51",
+            "expectedURL": "https://ebible.org/engwebp/ACT13.htm#V51",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-14-1",
+            "actualURL": "https://ebible.org/engwebp/ACT14.htm#V1",
+            "expectedURL": "https://ebible.org/engwebp/ACT14.htm#V1",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-14-19",
+            "actualURL": "https://ebible.org/engwebp/ACT14.htm#V19",
+            "expectedURL": "https://ebible.org/engwebp/ACT14.htm#V19",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-14-21",
+            "actualURL": "https://ebible.org/engwebp/ACT14.htm#V21",
+            "expectedURL": "https://ebible.org/engwebp/ACT14.htm#V21",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-16-2",
+            "actualURL": "https://ebible.org/engwebp/ACT16.htm#V2",
+            "expectedURL": "https://ebible.org/engwebp/ACT16.htm#V2",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 5,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/コンヤ",
+        "draftTitle": "コンヤ",
+        "declaredKind": "related-section",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "コンヤ - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%B3%E3%83%A4",
+          "checkedAtUTC": "2026-10-15T13:30:21.095386+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "related_or_qualified_identity",
+        "bodyFindingJa": "日本語記事は現代コンヤ市が主題で古代イコニオンとの歴史的関係に触れる。古代都市の直接記事ではない。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": [
+        {
+          "severity": "qualified",
+          "field": "wikipedia",
+          "observationJa": "Linked Konya page is a modern city article with ancient Iconium linkage, not a direct ancient-site article.",
+          "evidence": "13:51",
+          "suggestedCorrectionJa": "現在コンヤ周辺という概略に限って関連ページとして扱う。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:italy_601",
+      "draftPath": "drafts/place_2/italy_601.json",
+      "currentSHA256": "8416408ab1ea95b5db1dbada8c7ffecdd4466839d9748038b878e63f29df74a6",
+      "manifestSHA256": "8416408ab1ea95b5db1dbada8c7ffecdd4466839d9748038b878e63f29df74a6",
+      "manifestMatch": true,
+      "result": "fail",
+      "geographyType": "historical region",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "fail",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 18:2",
+        "quote": "He found a certain Jew named Aquila, a man of Pontus by race, who had recently come from Italy with his wife Priscilla, because Claudius had commanded all the Jews to depart from Rome. He came to them,",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [
+        {
+          "claimJa": "パウロは囚人としてローマへ送られる航海に出る。",
+          "knownBy": "Acts 27:1",
+          "sourceIds": [
+            "webp-acts-27-1"
+          ],
+          "witness": {
+            "reference": "Acts 27:1",
+            "text": "When it was determined that we should sail for Italy, they delivered Paul and certain other prisoners to a centurion named Julius, of the Augustan band.",
+            "witnessStatus": "literal-source"
+          },
+          "assessment": "qualified",
+          "reasonJa": "Acts 27:1 says “sail for Italy”; it does not name Rome or say Paul was being sent to Rome."
+        }
+      ],
+      "geographyReviewJa": "historicalRoleJa: アクラの出身地として使徒言行録18章2節に挙げられる。 modernLocationJa: イタリア半島を中心とする歴史的地域。古代の地域境界と現代国家境界は同一視しない。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-18-2",
+            "actualURL": "https://ebible.org/engwebp/ACT18.htm#V2",
+            "expectedURL": "https://ebible.org/engwebp/ACT18.htm#V2",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-27-1",
+            "actualURL": "https://ebible.org/engwebp/ACT27.htm#V1",
+            "expectedURL": "https://ebible.org/engwebp/ACT27.htm#V1",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-27-6",
+            "actualURL": "https://ebible.org/engwebp/ACT27.htm#V6",
+            "expectedURL": "https://ebible.org/engwebp/ACT27.htm#V6",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 3,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/イタリア",
+        "draftTitle": "イタリア",
+        "declaredKind": "related-section",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "イタリア - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2",
+          "checkedAtUTC": "2026-10-15T13:30:20.535821+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "related_or_qualified_identity",
+        "bodyFindingJa": "日本語記事は現代イタリア国家が主題。古代地理については関連資料に留まり、古代と現代の境界は一致しない。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": [
+        {
+          "severity": "fail",
+          "field": "facts[0]",
+          "observationJa": "Acts 27:1 says “sail for Italy”; it does not name Rome or say Paul was being sent to Rome.",
+          "evidence": "27:1",
+          "suggestedCorrectionJa": "「イタリアへ向かう航海に出た」と直すか、ローマを明記する後続節へknownByを移す。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:jerusalem_636",
+      "draftPath": "drafts/place_2/jerusalem_636.json",
+      "currentSHA256": "7a8e2d4d8fbbb066340b92886b9f6f27b3feabfd53cc59da24c62d9a35207a9b",
+      "manifestSHA256": "7a8e2d4d8fbbb066340b92886b9f6f27b3feabfd53cc59da24c62d9a35207a9b",
+      "manifestMatch": true,
+      "result": "pass",
+      "geographyType": "historical region",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 1:4",
+        "quote": "Being assembled together with them, he commanded them, “Don’t depart from Jerusalem, but wait for the promise of the Father, which you heard from me.",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [],
+      "geographyReviewJa": "historicalRoleJa: 使徒言行録1章4節で、弟子たちに留まるよう命じられる都市。 modernLocationJa: 現在のエルサレム旧市街周辺に古代市域が重なるが、歴史的な範囲や境界は時代により異なる。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-1-4",
+            "actualURL": "https://ebible.org/engwebp/ACT01.htm#V4",
+            "expectedURL": "https://ebible.org/engwebp/ACT01.htm#V4",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-1-8",
+            "actualURL": "https://ebible.org/engwebp/ACT01.htm#V8",
+            "expectedURL": "https://ebible.org/engwebp/ACT01.htm#V8",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-1-12",
+            "actualURL": "https://ebible.org/engwebp/ACT01.htm#V12",
+            "expectedURL": "https://ebible.org/engwebp/ACT01.htm#V12",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-1-19",
+            "actualURL": "https://ebible.org/engwebp/ACT01.htm#V19",
+            "expectedURL": "https://ebible.org/engwebp/ACT01.htm#V19",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-2-5",
+            "actualURL": "https://ebible.org/engwebp/ACT02.htm#V5",
+            "expectedURL": "https://ebible.org/engwebp/ACT02.htm#V5",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-2-14",
+            "actualURL": "https://ebible.org/engwebp/ACT02.htm#V14",
+            "expectedURL": "https://ebible.org/engwebp/ACT02.htm#V14",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-4-16",
+            "actualURL": "https://ebible.org/engwebp/ACT04.htm#V16",
+            "expectedURL": "https://ebible.org/engwebp/ACT04.htm#V16",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-5-16",
+            "actualURL": "https://ebible.org/engwebp/ACT05.htm#V16",
+            "expectedURL": "https://ebible.org/engwebp/ACT05.htm#V16",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-5-28",
+            "actualURL": "https://ebible.org/engwebp/ACT05.htm#V28",
+            "expectedURL": "https://ebible.org/engwebp/ACT05.htm#V28",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-6-7",
+            "actualURL": "https://ebible.org/engwebp/ACT06.htm#V7",
+            "expectedURL": "https://ebible.org/engwebp/ACT06.htm#V7",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-8-1",
+            "actualURL": "https://ebible.org/engwebp/ACT08.htm#V1",
+            "expectedURL": "https://ebible.org/engwebp/ACT08.htm#V1",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-8-14",
+            "actualURL": "https://ebible.org/engwebp/ACT08.htm#V14",
+            "expectedURL": "https://ebible.org/engwebp/ACT08.htm#V14",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-8-25",
+            "actualURL": "https://ebible.org/engwebp/ACT08.htm#V25",
+            "expectedURL": "https://ebible.org/engwebp/ACT08.htm#V25",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-8-26",
+            "actualURL": "https://ebible.org/engwebp/ACT08.htm#V26",
+            "expectedURL": "https://ebible.org/engwebp/ACT08.htm#V26",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-8-27",
+            "actualURL": "https://ebible.org/engwebp/ACT08.htm#V27",
+            "expectedURL": "https://ebible.org/engwebp/ACT08.htm#V27",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-9-2",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V2",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V2",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-9-13",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V13",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V13",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-9-21",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V21",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V21",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-9-26",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V26",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V26",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-9-28",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V28",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V28",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-10-39",
+            "actualURL": "https://ebible.org/engwebp/ACT10.htm#V39",
+            "expectedURL": "https://ebible.org/engwebp/ACT10.htm#V39",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-11-2",
+            "actualURL": "https://ebible.org/engwebp/ACT11.htm#V2",
+            "expectedURL": "https://ebible.org/engwebp/ACT11.htm#V2",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-11-22",
+            "actualURL": "https://ebible.org/engwebp/ACT11.htm#V22",
+            "expectedURL": "https://ebible.org/engwebp/ACT11.htm#V22",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-11-27",
+            "actualURL": "https://ebible.org/engwebp/ACT11.htm#V27",
+            "expectedURL": "https://ebible.org/engwebp/ACT11.htm#V27",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-12-25",
+            "actualURL": "https://ebible.org/engwebp/ACT12.htm#V25",
+            "expectedURL": "https://ebible.org/engwebp/ACT12.htm#V25",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-13-13",
+            "actualURL": "https://ebible.org/engwebp/ACT13.htm#V13",
+            "expectedURL": "https://ebible.org/engwebp/ACT13.htm#V13",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-13-27",
+            "actualURL": "https://ebible.org/engwebp/ACT13.htm#V27",
+            "expectedURL": "https://ebible.org/engwebp/ACT13.htm#V27",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-13-31",
+            "actualURL": "https://ebible.org/engwebp/ACT13.htm#V31",
+            "expectedURL": "https://ebible.org/engwebp/ACT13.htm#V31",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-15-2",
+            "actualURL": "https://ebible.org/engwebp/ACT15.htm#V2",
+            "expectedURL": "https://ebible.org/engwebp/ACT15.htm#V2",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-15-4",
+            "actualURL": "https://ebible.org/engwebp/ACT15.htm#V4",
+            "expectedURL": "https://ebible.org/engwebp/ACT15.htm#V4",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-16-4",
+            "actualURL": "https://ebible.org/engwebp/ACT16.htm#V4",
+            "expectedURL": "https://ebible.org/engwebp/ACT16.htm#V4",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-19-21",
+            "actualURL": "https://ebible.org/engwebp/ACT19.htm#V21",
+            "expectedURL": "https://ebible.org/engwebp/ACT19.htm#V21",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-20-16",
+            "actualURL": "https://ebible.org/engwebp/ACT20.htm#V16",
+            "expectedURL": "https://ebible.org/engwebp/ACT20.htm#V16",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-20-22",
+            "actualURL": "https://ebible.org/engwebp/ACT20.htm#V22",
+            "expectedURL": "https://ebible.org/engwebp/ACT20.htm#V22",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-21-4",
+            "actualURL": "https://ebible.org/engwebp/ACT21.htm#V4",
+            "expectedURL": "https://ebible.org/engwebp/ACT21.htm#V4",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-21-11",
+            "actualURL": "https://ebible.org/engwebp/ACT21.htm#V11",
+            "expectedURL": "https://ebible.org/engwebp/ACT21.htm#V11",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-21-12",
+            "actualURL": "https://ebible.org/engwebp/ACT21.htm#V12",
+            "expectedURL": "https://ebible.org/engwebp/ACT21.htm#V12",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-21-13",
+            "actualURL": "https://ebible.org/engwebp/ACT21.htm#V13",
+            "expectedURL": "https://ebible.org/engwebp/ACT21.htm#V13",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-21-15",
+            "actualURL": "https://ebible.org/engwebp/ACT21.htm#V15",
+            "expectedURL": "https://ebible.org/engwebp/ACT21.htm#V15",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-21-17",
+            "actualURL": "https://ebible.org/engwebp/ACT21.htm#V17",
+            "expectedURL": "https://ebible.org/engwebp/ACT21.htm#V17",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-21-31",
+            "actualURL": "https://ebible.org/engwebp/ACT21.htm#V31",
+            "expectedURL": "https://ebible.org/engwebp/ACT21.htm#V31",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-22-5",
+            "actualURL": "https://ebible.org/engwebp/ACT22.htm#V5",
+            "expectedURL": "https://ebible.org/engwebp/ACT22.htm#V5",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-22-17",
+            "actualURL": "https://ebible.org/engwebp/ACT22.htm#V17",
+            "expectedURL": "https://ebible.org/engwebp/ACT22.htm#V17",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-22-18",
+            "actualURL": "https://ebible.org/engwebp/ACT22.htm#V18",
+            "expectedURL": "https://ebible.org/engwebp/ACT22.htm#V18",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-23-11",
+            "actualURL": "https://ebible.org/engwebp/ACT23.htm#V11",
+            "expectedURL": "https://ebible.org/engwebp/ACT23.htm#V11",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-24-11",
+            "actualURL": "https://ebible.org/engwebp/ACT24.htm#V11",
+            "expectedURL": "https://ebible.org/engwebp/ACT24.htm#V11",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-25-1",
+            "actualURL": "https://ebible.org/engwebp/ACT25.htm#V1",
+            "expectedURL": "https://ebible.org/engwebp/ACT25.htm#V1",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-25-3",
+            "actualURL": "https://ebible.org/engwebp/ACT25.htm#V3",
+            "expectedURL": "https://ebible.org/engwebp/ACT25.htm#V3",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-25-7",
+            "actualURL": "https://ebible.org/engwebp/ACT25.htm#V7",
+            "expectedURL": "https://ebible.org/engwebp/ACT25.htm#V7",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-25-9",
+            "actualURL": "https://ebible.org/engwebp/ACT25.htm#V9",
+            "expectedURL": "https://ebible.org/engwebp/ACT25.htm#V9",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-25-15",
+            "actualURL": "https://ebible.org/engwebp/ACT25.htm#V15",
+            "expectedURL": "https://ebible.org/engwebp/ACT25.htm#V15",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-25-20",
+            "actualURL": "https://ebible.org/engwebp/ACT25.htm#V20",
+            "expectedURL": "https://ebible.org/engwebp/ACT25.htm#V20",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-25-24",
+            "actualURL": "https://ebible.org/engwebp/ACT25.htm#V24",
+            "expectedURL": "https://ebible.org/engwebp/ACT25.htm#V24",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-26-4",
+            "actualURL": "https://ebible.org/engwebp/ACT26.htm#V4",
+            "expectedURL": "https://ebible.org/engwebp/ACT26.htm#V4",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-26-10",
+            "actualURL": "https://ebible.org/engwebp/ACT26.htm#V10",
+            "expectedURL": "https://ebible.org/engwebp/ACT26.htm#V10",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-26-20",
+            "actualURL": "https://ebible.org/engwebp/ACT26.htm#V20",
+            "expectedURL": "https://ebible.org/engwebp/ACT26.htm#V20",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-28-17",
+            "actualURL": "https://ebible.org/engwebp/ACT28.htm#V17",
+            "expectedURL": "https://ebible.org/engwebp/ACT28.htm#V17",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 57,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/エルサレム",
+        "draftTitle": "エルサレム",
+        "declaredKind": "article",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "エルサレム - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%AB%E3%82%B5%E3%83%AC%E3%83%A0",
+          "checkedAtUTC": "2026-10-15T13:30:20.774923+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "記事はエルサレム市と旧市街を扱う。プロフィールは古代市域・時代別境界を留保している。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": []
+    },
+    {
+      "entityID": "place:joppa_652",
+      "draftPath": "drafts/place_2/joppa_652.json",
+      "currentSHA256": "b5c61d3987cfcb87910af50c4e68d85ab36408b68399a13f048c44f6741e2829",
+      "manifestSHA256": "b5c61d3987cfcb87910af50c4e68d85ab36408b68399a13f048c44f6741e2829",
+      "manifestMatch": true,
+      "result": "pass",
+      "geographyType": "ancient/current city or city-site",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 9:36",
+        "quote": "Now there was at Joppa a certain disciple named Tabitha, which when translated means Dorcas. This woman was full of good works and acts of mercy which she did.",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [],
+      "geographyReviewJa": "historicalRoleJa: ユダヤ地方の沿岸港町。 modernLocationJa: 現在のテルアビブ・ヤッフォのヤッファ地区周辺。古代港町の輪郭は現在の市街地と異なる。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-9-36",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V36",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V36",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-9-38",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V38",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V38",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-9-42",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V42",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V42",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-9-43",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V43",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V43",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-10-5",
+            "actualURL": "https://ebible.org/engwebp/ACT10.htm#V5",
+            "expectedURL": "https://ebible.org/engwebp/ACT10.htm#V5",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-10-8",
+            "actualURL": "https://ebible.org/engwebp/ACT10.htm#V8",
+            "expectedURL": "https://ebible.org/engwebp/ACT10.htm#V8",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-10-23",
+            "actualURL": "https://ebible.org/engwebp/ACT10.htm#V23",
+            "expectedURL": "https://ebible.org/engwebp/ACT10.htm#V23",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-10-32",
+            "actualURL": "https://ebible.org/engwebp/ACT10.htm#V32",
+            "expectedURL": "https://ebible.org/engwebp/ACT10.htm#V32",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-11-5",
+            "actualURL": "https://ebible.org/engwebp/ACT11.htm#V5",
+            "expectedURL": "https://ebible.org/engwebp/ACT11.htm#V5",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-11-13",
+            "actualURL": "https://ebible.org/engwebp/ACT11.htm#V13",
+            "expectedURL": "https://ebible.org/engwebp/ACT11.htm#V13",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 10,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/ヤッファ",
+        "draftTitle": "ヤッファ",
+        "declaredKind": "related-section",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "ヤッファ - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%A4%E3%83%83%E3%83%95%E3%82%A1",
+          "checkedAtUTC": "2026-10-15T13:30:22.310508+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "記事は古代港ヤッファと現在のテルアビブ・ヤッフォ内のヤッファ地区の関係を扱う。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": []
+    },
+    {
+      "entityID": "place:judea_657",
+      "draftPath": "drafts/place_2/judea_657.json",
+      "currentSHA256": "9b6ebc061e3a16157e55e3be8ef1e631c008939d662a8bfc452b774f58178575",
+      "manifestSHA256": "9b6ebc061e3a16157e55e3be8ef1e631c008939d662a8bfc452b774f58178575",
+      "manifestMatch": true,
+      "result": "pass",
+      "geographyType": "historical region",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 1:8",
+        "quote": "But you will receive power when the Holy Spirit has come upon you. You will be witnesses to me in Jerusalem, in all Judea and Samaria, and to the uttermost parts of the earth.”",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [
+        {
+          "claimJa": "使徒言行録9章では、ユダヤ・ガリラヤ・サマリア各地の集会が平安を得たと記される。",
+          "knownBy": "Acts 9:31",
+          "sourceIds": [
+            "webp-acts-9-31"
+          ],
+          "witness": {
+            "reference": "Acts 9:31",
+            "text": "So the assemblies throughout all Judea, Galilee, and Samaria had peace and were built up. They were multiplied, walking in the fear of the Lord and in the comfort of the Holy Spirit.",
+            "witnessStatus": "literal-source"
+          },
+          "assessment": "pass",
+          "reasonJa": "引用節の本文が記述の要点を直接支える。"
+        }
+      ],
+      "geographyReviewJa": "historicalRoleJa: 証人の活動範囲として使徒言行録1章8節に挙げられる地域。 modernLocationJa: レヴァント南部の歴史的地域・行政区画。時代により範囲が変化し、現代の特定国家と同一視しない。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-1-8",
+            "actualURL": "https://ebible.org/engwebp/ACT01.htm#V8",
+            "expectedURL": "https://ebible.org/engwebp/ACT01.htm#V8",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-2-9",
+            "actualURL": "https://ebible.org/engwebp/ACT02.htm#V9",
+            "expectedURL": "https://ebible.org/engwebp/ACT02.htm#V9",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-2-14",
+            "actualURL": "https://ebible.org/engwebp/ACT02.htm#V14",
+            "expectedURL": "https://ebible.org/engwebp/ACT02.htm#V14",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-8-1",
+            "actualURL": "https://ebible.org/engwebp/ACT08.htm#V1",
+            "expectedURL": "https://ebible.org/engwebp/ACT08.htm#V1",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-9-31",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V31",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V31",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-10-37",
+            "actualURL": "https://ebible.org/engwebp/ACT10.htm#V37",
+            "expectedURL": "https://ebible.org/engwebp/ACT10.htm#V37",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-11-1",
+            "actualURL": "https://ebible.org/engwebp/ACT11.htm#V1",
+            "expectedURL": "https://ebible.org/engwebp/ACT11.htm#V1",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-11-29",
+            "actualURL": "https://ebible.org/engwebp/ACT11.htm#V29",
+            "expectedURL": "https://ebible.org/engwebp/ACT11.htm#V29",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-12-19",
+            "actualURL": "https://ebible.org/engwebp/ACT12.htm#V19",
+            "expectedURL": "https://ebible.org/engwebp/ACT12.htm#V19",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-15-1",
+            "actualURL": "https://ebible.org/engwebp/ACT15.htm#V1",
+            "expectedURL": "https://ebible.org/engwebp/ACT15.htm#V1",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-21-10",
+            "actualURL": "https://ebible.org/engwebp/ACT21.htm#V10",
+            "expectedURL": "https://ebible.org/engwebp/ACT21.htm#V10",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-26-20",
+            "actualURL": "https://ebible.org/engwebp/ACT26.htm#V20",
+            "expectedURL": "https://ebible.org/engwebp/ACT26.htm#V20",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-28-21",
+            "actualURL": "https://ebible.org/engwebp/ACT28.htm#V21",
+            "expectedURL": "https://ebible.org/engwebp/ACT28.htm#V21",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 13,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/ユダヤ",
+        "draftTitle": "ユダヤ",
+        "declaredKind": "related-section",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "ユダヤ - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%A6%E3%83%80%E3%83%A4",
+          "checkedAtUTC": "2026-10-15T13:30:22.278975+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "記事はユダヤを歴史的地域として扱い、現在の国家や都市に還元しないプロフィールと一致。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": []
+    },
+    {
+      "entityID": "place:lasea_717",
+      "draftPath": "drafts/place_2/lasea_717.json",
+      "currentSHA256": "4bb632094ea689ac904560b593063d1fa58af7184a5d3d011b1c54c5b3fbbdfe",
+      "manifestSHA256": "4bb632094ea689ac904560b593063d1fa58af7184a5d3d011b1c54c5b3fbbdfe",
+      "manifestMatch": true,
+      "result": "qualified",
+      "geographyType": "coastal anchorage / ancient site with uncertain identification",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "qualified",
+        "facts": "pass",
+        "source": "qualified"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 27:8",
+        "quote": "With difficulty sailing along it we came to a certain place called Fair Havens, near the city of Lasea.",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [],
+      "geographyReviewJa": "historicalRoleJa: 海岸近くの町として航海記に現れる。 modernLocationJa: クレタ島南岸とされるが、正確な古代地点の同定には不確かさがある。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-27-8",
+            "actualURL": "https://ebible.org/engwebp/ACT27.htm#V8",
+            "expectedURL": "https://ebible.org/engwebp/ACT27.htm#V8",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 1,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://en.wikipedia.org/wiki/Lasaea",
+        "draftTitle": "Lasaea",
+        "declaredKind": "article",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "Lasaea - Wikipedia",
+          "resolvedURL": "https://en.wikipedia.org/wiki/Lasaea",
+          "checkedAtUTC": "2026-10-15T13:30:21.941249+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "英語記事はクレタ南岸の古代都市LasaeaをFair Havens/Kaloi Limenes近傍に置く。正確な遺跡同定は確定しない。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": [
+        {
+          "severity": "qualified",
+          "field": "modernLocationJa/wikipedia",
+          "observationJa": "Acts 27:8 locates Lasea near Fair Havens, but exact archaeological identification is uncertain; the linked page describes a proposed nearby site.",
+          "evidence": "27:8",
+          "suggestedCorrectionJa": "現行の不確実性・座標nullを維持し、確定遺跡とは言わない。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:libya_730",
+      "draftPath": "drafts/place_2/libya_730.json",
+      "currentSHA256": "9f0d50d227fab022c3528ff3fb1d84df1c5ed7e227e156b090c1b2467d855c44",
+      "manifestSHA256": "9f0d50d227fab022c3528ff3fb1d84df1c5ed7e227e156b090c1b2467d855c44",
+      "manifestMatch": true,
+      "result": "pass",
+      "geographyType": "historical broad region",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 2:10",
+        "quote": "Phrygia, Pamphylia, Egypt, the parts of Libya around Cyrene, visitors from Rome, both Jews and proselytes,",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [],
+      "geographyReviewJa": "historicalRoleJa: キレネ地方と関連づけて言及される広域地域。 modernLocationJa: 北アフリカの歴史的地域名。時代ごとの範囲は異なり、現代リビアの国境と同一視しない。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-2-10",
+            "actualURL": "https://ebible.org/engwebp/ACT02.htm#V10",
+            "expectedURL": "https://ebible.org/engwebp/ACT02.htm#V10",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 1,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/古代リビュア",
+        "draftTitle": "古代リビュア",
+        "declaredKind": "related-section",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "古代リビュア - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E5%8F%A4%E4%BB%A3%E3%83%AA%E3%83%93%E3%83%A5%E3%82%A2",
+          "checkedAtUTC": "2026-10-15T13:30:22.841383+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "日本語「古代リビュア」記事は古代北アフリカの広域名を扱い、現代リビア国家と区別する。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": []
+    },
+    {
+      "entityID": "place:lycaonia_739",
+      "draftPath": "drafts/place_2/lycaonia_739.json",
+      "currentSHA256": "687997104b406d3c0350be1196c934cdbbf8eef1515fdb43f5c125df0b652c4f",
+      "manifestSHA256": "687997104b406d3c0350be1196c934cdbbf8eef1515fdb43f5c125df0b652c4f",
+      "manifestMatch": true,
+      "result": "pass",
+      "geographyType": "historical region",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 14:6",
+        "quote": "they became aware of it and fled to the cities of Lycaonia, Lystra, Derbe, and the surrounding region.",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [],
+      "geographyReviewJa": "historicalRoleJa: パウロとバルナバの移動先となった内陸地域。 modernLocationJa: 小アジア内陸、現在のトルコ中南部に位置した歴史的地域。境界は不定のため点なし。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-14-6",
+            "actualURL": "https://ebible.org/engwebp/ACT14.htm#V6",
+            "expectedURL": "https://ebible.org/engwebp/ACT14.htm#V6",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 1,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/リカオニア",
+        "draftTitle": "リカオニア",
+        "declaredKind": "article",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "リカオニア - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%AA%E3%82%AB%E3%82%AA%E3%83%8B%E3%82%A2",
+          "checkedAtUTC": "2026-10-15T13:30:23.111804+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "記事は小アジア内陸の古代地域リカオニアを扱い、使徒14:6の地域名に一致。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": []
+    },
+    {
+      "entityID": "place:lycia_740",
+      "draftPath": "drafts/place_2/lycia_740.json",
+      "currentSHA256": "eaeefb8b7d9652e412bc9223dbd3b473c80377dfc1b56c1eabc8e85c902652a6",
+      "manifestSHA256": "eaeefb8b7d9652e412bc9223dbd3b473c80377dfc1b56c1eabc8e85c902652a6",
+      "manifestMatch": true,
+      "result": "fail",
+      "geographyType": "historical region",
+      "fieldResults": {
+        "summary": "fail",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "fail",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 27:5",
+        "quote": "When we had sailed across the sea which is off Cilicia and Pamphylia, we came to Myra, a city of Lycia.",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [],
+      "geographyReviewJa": "historicalRoleJa: 船の航路記述に現れる沿岸地域。 modernLocationJa: 現在のトルコ南西部沿岸におおむね重なる歴史的地域。古代境界は現在の行政区画と一致しない。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-27-5",
+            "actualURL": "https://ebible.org/engwebp/ACT27.htm#V5",
+            "expectedURL": "https://ebible.org/engwebp/ACT27.htm#V5",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 1,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/リュキア",
+        "draftTitle": "リュキア",
+        "declaredKind": "article",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "リュキア - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%AA%E3%83%A5%E3%82%AD%E3%82%A2",
+          "checkedAtUTC": "2026-10-15T13:30:23.935053+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "記事は小アジア南西部の古代リュキアを扱う。Acts 27:5はリュキアのミラを記すが、リュキア沿岸航行とは記さない。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": [
+        {
+          "severity": "fail",
+          "field": "summaryJa/historicalRoleJa",
+          "observationJa": "Acts 27:5 does not say the ship sailed along Lycia. It says they sailed off Cilicia and Pamphylia and arrived at Myra, a city of Lycia.",
+          "evidence": "27:5",
+          "suggestedCorrectionJa": "「リュキアのミラが記される歴史的地域」と記述し、航路がリュキア沿岸を通ったという断定を外す。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:lydda_741",
+      "draftPath": "drafts/place_2/lydda_741.json",
+      "currentSHA256": "18a4ea051b71c5a753433bae5488efbcebac25ef00bc2fd4516013806d602a1b",
+      "manifestSHA256": "18a4ea051b71c5a753433bae5488efbcebac25ef00bc2fd4516013806d602a1b",
+      "manifestMatch": true,
+      "result": "qualified",
+      "geographyType": "ancient/current city or city-site",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "qualified",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "qualified"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 9:32",
+        "quote": "As Peter went throughout all those parts, he came down also to the saints who lived at Lydda.",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [],
+      "geographyReviewJa": "historicalRoleJa: 沿岸地方とエルサレムの間にある町として記される。 modernLocationJa: 現在のイスラエル中部ロッド周辺。遺跡と現代市街を同一の点と断定しない。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-9-32",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V32",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V32",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-9-35",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V35",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V35",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-9-38",
+            "actualURL": "https://ebible.org/engwebp/ACT09.htm#V38",
+            "expectedURL": "https://ebible.org/engwebp/ACT09.htm#V38",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 3,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/ロード_(イスラエル)",
+        "draftTitle": "ロード (イスラエル)",
+        "declaredKind": "related-section",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "ロード (イスラエル) - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%AD%E3%83%BC%E3%83%89_(%E3%82%A4%E3%82%B9%E3%83%A9%E3%82%A8%E3%83%AB)",
+          "checkedAtUTC": "2026-10-15T13:30:23.288804+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "related_or_qualified_identity",
+        "bodyFindingJa": "日本語ロード市記事は現代イスラエルの都市を扱うが、本文はActsの古代Lyddaとの明確な同定を確認できない。現代位置の関連情報に限る。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": [
+        {
+          "severity": "qualified",
+          "field": "wikipedia/identityNoteJa",
+          "observationJa": "Linked page is for modern Lod and does not establish the Acts Lydda/ancient-site identity. It supports modern orientation only.",
+          "evidence": "9:32",
+          "suggestedCorrectionJa": "Wikipediaを関連記事・現代位置補助と表示し、古代同定の証明に使わない。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:lystra_742",
+      "draftPath": "drafts/place_2/lystra_742.json",
+      "currentSHA256": "7dcac5db8134c11c48faa3affe3776b90539be928abf8d4bafd499734ff894de",
+      "manifestSHA256": "7dcac5db8134c11c48faa3affe3776b90539be928abf8d4bafd499734ff894de",
+      "manifestMatch": true,
+      "result": "pass",
+      "geographyType": "ancient/current city or city-site",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 14:6",
+        "quote": "they became aware of it and fled to the cities of Lycaonia, Lystra, Derbe, and the surrounding region.",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [
+        {
+          "claimJa": "パウロはデルベとリステラを訪れた際、弟子テモテと出会ったと記される。",
+          "knownBy": "Acts 16:1",
+          "sourceIds": [
+            "webp-acts-16-1"
+          ],
+          "witness": {
+            "reference": "Acts 16:1",
+            "text": "He came to Derbe and Lystra; and behold, a certain disciple was there, named Timothy, the son of a Jewess who believed, but his father was a Greek.",
+            "witnessStatus": "literal-source"
+          },
+          "assessment": "pass",
+          "reasonJa": "引用節の本文が記述の要点を直接支える。"
+        }
+      ],
+      "geographyReviewJa": "historicalRoleJa: 古代リカオニア地方の都市として、使徒言行録14章6節に名が記される。 modernLocationJa: トルコ中南部、古代リカオニア地方。古代都市遺跡と現代集落は区別する。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-14-6",
+            "actualURL": "https://ebible.org/engwebp/ACT14.htm#V6",
+            "expectedURL": "https://ebible.org/engwebp/ACT14.htm#V6",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-14-8",
+            "actualURL": "https://ebible.org/engwebp/ACT14.htm#V8",
+            "expectedURL": "https://ebible.org/engwebp/ACT14.htm#V8",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-14-21",
+            "actualURL": "https://ebible.org/engwebp/ACT14.htm#V21",
+            "expectedURL": "https://ebible.org/engwebp/ACT14.htm#V21",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-16-1",
+            "actualURL": "https://ebible.org/engwebp/ACT16.htm#V1",
+            "expectedURL": "https://ebible.org/engwebp/ACT16.htm#V1",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-16-2",
+            "actualURL": "https://ebible.org/engwebp/ACT16.htm#V2",
+            "expectedURL": "https://ebible.org/engwebp/ACT16.htm#V2",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 5,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://en.wikipedia.org/wiki/Lystra",
+        "draftTitle": "Lystra",
+        "declaredKind": "article",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "Lystra - Wikipedia",
+          "resolvedURL": "https://en.wikipedia.org/wiki/Lystra",
+          "checkedAtUTC": "2026-10-15T13:30:23.981737+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "英語記事は古代リステラを扱い、現在のハトゥンサライ近郊に置く一方、古代地域区分の差を含む。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": []
+    },
+    {
+      "entityID": "place:macedonia_747",
+      "draftPath": "drafts/place_2/macedonia_747.json",
+      "currentSHA256": "de8a5c4b452004070dbfd89873dba6d592c2f2be86b6ae3d8d23e6097993471e",
+      "manifestSHA256": "de8a5c4b452004070dbfd89873dba6d592c2f2be86b6ae3d8d23e6097993471e",
+      "manifestMatch": true,
+      "result": "pass",
+      "geographyType": "historical region",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 16:9",
+        "quote": "A vision appeared to Paul in the night. There was a man of Macedonia standing, begging him and saying, “Come over into Macedonia and help us.”",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [
+        {
+          "claimJa": "幻を見た後、パウロ一行はマケドニアへ渡るよう神に招かれたと結論した。",
+          "knownBy": "Acts 16:10",
+          "sourceIds": [
+            "webp-acts-16-10"
+          ],
+          "witness": {
+            "reference": "Acts 16:10",
+            "text": "When he had seen the vision, immediately we sought to go out to Macedonia, concluding that the Lord had called us to preach the Good News to them.",
+            "witnessStatus": "literal-source"
+          },
+          "assessment": "pass",
+          "reasonJa": "引用節の本文が記述の要点を直接支える。"
+        }
+      ],
+      "geographyReviewJa": "historicalRoleJa: 幻の中で助けを求める呼びかけに名が現れる地域。 modernLocationJa: バルカン半島南東部の歴史的地域。境界は時代で異なり、現代国家の領域とは区別する。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-16-9",
+            "actualURL": "https://ebible.org/engwebp/ACT16.htm#V9",
+            "expectedURL": "https://ebible.org/engwebp/ACT16.htm#V9",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-16-10",
+            "actualURL": "https://ebible.org/engwebp/ACT16.htm#V10",
+            "expectedURL": "https://ebible.org/engwebp/ACT16.htm#V10",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-16-12",
+            "actualURL": "https://ebible.org/engwebp/ACT16.htm#V12",
+            "expectedURL": "https://ebible.org/engwebp/ACT16.htm#V12",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-18-5",
+            "actualURL": "https://ebible.org/engwebp/ACT18.htm#V5",
+            "expectedURL": "https://ebible.org/engwebp/ACT18.htm#V5",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-19-21",
+            "actualURL": "https://ebible.org/engwebp/ACT19.htm#V21",
+            "expectedURL": "https://ebible.org/engwebp/ACT19.htm#V21",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-19-22",
+            "actualURL": "https://ebible.org/engwebp/ACT19.htm#V22",
+            "expectedURL": "https://ebible.org/engwebp/ACT19.htm#V22",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-20-1",
+            "actualURL": "https://ebible.org/engwebp/ACT20.htm#V1",
+            "expectedURL": "https://ebible.org/engwebp/ACT20.htm#V1",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-20-3",
+            "actualURL": "https://ebible.org/engwebp/ACT20.htm#V3",
+            "expectedURL": "https://ebible.org/engwebp/ACT20.htm#V3",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 8,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/マケドニア",
+        "draftTitle": "マケドニア",
+        "declaredKind": "related-section",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "マケドニア - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%82%B1%E3%83%89%E3%83%8B%E3%82%A2",
+          "checkedAtUTC": "2026-10-15T13:30:23.923884+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "related_or_qualified_identity",
+        "bodyFindingJa": "日本語記事は古代王国・ローマ属州・後代地域概念を区別する複合的記事。Actsの歴史的広域名に関連する。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": []
+    },
+    {
+      "entityID": "place:melita_761",
+      "draftPath": "drafts/place_2/melita_761.json",
+      "currentSHA256": "2aad3a0e3338d3c06e711b4f46f6935b83847b4d7697ed0296dde93692d6882c",
+      "manifestSHA256": "2aad3a0e3338d3c06e711b4f46f6935b83847b4d7697ed0296dde93692d6882c",
+      "manifestMatch": true,
+      "result": "qualified",
+      "geographyType": "island; Malta/Melita naming distinction",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "qualified",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "qualified"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 28:1",
+        "quote": "When we had escaped, then they learned that the island was called Malta.",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [],
+      "geographyReviewJa": "historicalRoleJa: 難破後の一行が到着した島。本文表記は Malta。索引名 Melita との同定は推定。 modernLocationJa: 伝統的にマルタ島と同定される島。古代名との対応について異説があり、点を置かない。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-28-1",
+            "actualURL": "https://ebible.org/engwebp/ACT28.htm#V1",
+            "expectedURL": "https://ebible.org/engwebp/ACT28.htm#V1",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 1,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/マルタ",
+        "draftTitle": "マルタ",
+        "declaredKind": "related-section",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "マルタ - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%AB%E3%82%BF",
+          "checkedAtUTC": "2026-10-15T13:30:24.195510+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "related_or_qualified_identity",
+        "bodyFindingJa": "日本語記事は現代マルタ島・国家を扱う。WEB Acts 28:1は Malta と表記し、記事は索引名 Melita の同定を確定しない。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": [
+        {
+          "severity": "qualified",
+          "field": "identityNoteJa/wikipedia",
+          "observationJa": "Acts 28:1 in the pinned WEB witness says Malta; the index calls the candidate Melita. The linked page concerns the modern island and cannot alone establish the Melite identity.",
+          "evidence": "28:1",
+          "suggestedCorrectionJa": "本文の Malta と索引 Melita の区別、および伝統的同定の留保を維持する。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:mesopotamia_790",
+      "draftPath": "drafts/place_2/mesopotamia_790.json",
+      "currentSHA256": "9154b0585d99dc5f060387e5eea44459f97afbb0327e61020842b3efe3c71a1b",
+      "manifestSHA256": "9154b0585d99dc5f060387e5eea44459f97afbb0327e61020842b3efe3c71a1b",
+      "manifestMatch": true,
+      "result": "pass",
+      "geographyType": "historical region",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 2:9",
+        "quote": "Parthians, Medes, Elamites, and people from Mesopotamia, Judea, Cappadocia, Pontus, Asia,",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [
+        {
+          "claimJa": "ステファノは、アブラハムがハランに住む前にメソポタミアにいたと語る。",
+          "knownBy": "Acts 7:2",
+          "sourceIds": [
+            "webp-acts-7-2"
+          ],
+          "witness": {
+            "reference": "Acts 7:2",
+            "text": "He said, “Brothers and fathers, listen. The God of glory appeared to our father Abraham when he was in Mesopotamia, before he lived in Haran,",
+            "witnessStatus": "literal-source"
+          },
+          "assessment": "pass",
+          "reasonJa": "引用節の本文が記述の要点を直接支える。"
+        }
+      ],
+      "geographyReviewJa": "historicalRoleJa: 使徒言行録2章9節で来訪者の出身地として挙げられる地域。 modernLocationJa: 西アジアの河川流域を指す歴史的広域名。境界は文脈で異なり、現代国家と対応させない。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-2-9",
+            "actualURL": "https://ebible.org/engwebp/ACT02.htm#V9",
+            "expectedURL": "https://ebible.org/engwebp/ACT02.htm#V9",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-7-2",
+            "actualURL": "https://ebible.org/engwebp/ACT07.htm#V2",
+            "expectedURL": "https://ebible.org/engwebp/ACT07.htm#V2",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 2,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/メソポタミア",
+        "draftTitle": "メソポタミア",
+        "declaredKind": "article",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "メソポタミア - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%BD%E3%83%9D%E3%82%BF%E3%83%9F%E3%82%A2",
+          "checkedAtUTC": "2026-10-15T13:30:24.940708+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "記事はチグリス・ユーフラテス流域を中心とする古代地域を扱い、Acts 2:9・7:2の語と合う。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": []
+    },
+    {
+      "entityID": "place:miletus_801",
+      "draftPath": "drafts/place_2/miletus_801.json",
+      "currentSHA256": "5d61ab667e93bcba17cfa3ee7c3ac76d24bdfa68ea0e34624bfffc14f9290a14",
+      "manifestSHA256": "5d61ab667e93bcba17cfa3ee7c3ac76d24bdfa68ea0e34624bfffc14f9290a14",
+      "manifestMatch": true,
+      "result": "pass",
+      "geographyType": "ancient/current city or city-site",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 20:15",
+        "quote": "Sailing from there, we came the following day opposite Chios. The next day we touched at Samos and stayed at Trogyllium, and the day after we came to Miletus.",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [
+        {
+          "claimJa": "パウロはエペソの教会の長老たちをミレトスに呼び寄せた。",
+          "knownBy": "Acts 20:17",
+          "sourceIds": [
+            "webp-acts-20-17"
+          ],
+          "witness": {
+            "reference": "Acts 20:17",
+            "text": "From Miletus he sent to Ephesus and called to himself the elders of the assembly.",
+            "witnessStatus": "literal-source"
+          },
+          "assessment": "pass",
+          "reasonJa": "引用節の本文が記述の要点を直接支える。"
+        }
+      ],
+      "geographyReviewJa": "historicalRoleJa: 小アジア西岸の港市。 modernLocationJa: トルコ西部アイドゥン県の古代遺跡。現在の海岸線は古代と異なり、遺跡の代表位置は港の古代位置を意味しない。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-20-15",
+            "actualURL": "https://ebible.org/engwebp/ACT20.htm#V15",
+            "expectedURL": "https://ebible.org/engwebp/ACT20.htm#V15",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-20-17",
+            "actualURL": "https://ebible.org/engwebp/ACT20.htm#V17",
+            "expectedURL": "https://ebible.org/engwebp/ACT20.htm#V17",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 2,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/ミレトス",
+        "draftTitle": "ミレトス",
+        "declaredKind": "article",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "ミレトス - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%AC%E3%83%88%E3%82%B9",
+          "checkedAtUTC": "2026-10-15T13:30:24.917556+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "記事はアナトリア西岸の古代都市と現アイドゥン県バラト近郊の遺跡を扱う。古代海岸線との違いもプロフィールが留保。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": []
+    },
+    {
+      "entityID": "place:mitylene_808",
+      "draftPath": "drafts/place_2/mitylene_808.json",
+      "currentSHA256": "861ad8e39e877d14f74d2e62b6cc74516b4995ddc6abcdb72db0f57b75c6f0ea",
+      "manifestSHA256": "861ad8e39e877d14f74d2e62b6cc74516b4995ddc6abcdb72db0f57b75c6f0ea",
+      "manifestMatch": true,
+      "result": "qualified",
+      "geographyType": "ancient/current city or city-site",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "qualified"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 20:14",
+        "quote": "When he met us at Assos, we took him aboard and came to Mitylene.",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [],
+      "geographyReviewJa": "historicalRoleJa: 島の港町として航海記に登場する。 modernLocationJa: ギリシアのレスボス島東岸。古代都市域と現在のミティリニ市街を区別する。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-20-14",
+            "actualURL": "https://ebible.org/engwebp/ACT20.htm#V14",
+            "expectedURL": "https://ebible.org/engwebp/ACT20.htm#V14",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 1,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/ミティリーニ",
+        "draftTitle": "ミティリーニ",
+        "declaredKind": "related-section",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "ミティリーニ - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%86%E3%82%A3%E3%83%AA%E3%83%BC%E3%83%8B",
+          "checkedAtUTC": "2026-10-15T13:30:24.889724+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "related_or_qualified_identity",
+        "bodyFindingJa": "日本語記事は現代ミティリーニ市が主題で、古代ミティレネおよびActs 20:14に触れる。古代と現代市域は区別。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": [
+        {
+          "severity": "qualified",
+          "field": "wikipedia",
+          "observationJa": "The linked page is the present Mytilene city article with references to ancient Mitylene; useful related evidence, not a direct ancient-site page.",
+          "evidence": "20:14",
+          "suggestedCorrectionJa": "古代市域と現在市街を分けた現行説明を維持する。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:mount_sinai_855",
+      "draftPath": "drafts/place_2/mount_sinai_855.json",
+      "currentSHA256": "3cbb4117b3af133a6b9fea34380a354b0c87461ffddecb7df44fe55f348b5d50",
+      "manifestSHA256": "3cbb4117b3af133a6b9fea34380a354b0c87461ffddecb7df44fe55f348b5d50",
+      "manifestMatch": true,
+      "result": "qualified",
+      "geographyType": "mountain or landform",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "qualified",
+        "facts": "pass",
+        "source": "qualified"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 7:30",
+        "quote": "“When forty years were fulfilled, an angel of the Lord appeared to him in the wilderness of Mount Sinai, in a flame of fire in a bush.",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [],
+      "geographyReviewJa": "historicalRoleJa: モーセの物語に関わる山。 modernLocationJa: シナイ半島のどの山が本文のシナイ山に当たるかは確定できないため位置は未指定。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-7-30",
+            "actualURL": "https://ebible.org/engwebp/ACT07.htm#V30",
+            "expectedURL": "https://ebible.org/engwebp/ACT07.htm#V30",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-7-38",
+            "actualURL": "https://ebible.org/engwebp/ACT07.htm#V38",
+            "expectedURL": "https://ebible.org/engwebp/ACT07.htm#V38",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 2,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/シナイ山",
+        "draftTitle": "シナイ山",
+        "declaredKind": "related-section",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "シナイ山 - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%8A%E3%82%A4%E5%B1%B1",
+          "checkedAtUTC": "2026-10-15T13:30:24.926707+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "related_or_qualified_identity",
+        "bodyFindingJa": "記事はシナイ山を伝統的にジェベル・ムーサー等へ比定しつつ他説も記す。Actsの山がシナイ半島内と確定する根拠ではない。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": [
+        {
+          "severity": "qualified",
+          "field": "modernLocationJa/wikipedia",
+          "observationJa": "The linked article reports competing traditional identifications and does not prove the Acts mountain lies within the Sinai Peninsula.",
+          "evidence": "7:30",
+          "suggestedCorrectionJa": "半島内という地理範囲も断定せず、歴史的な山名として位置を未確定に保つ。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:myra_864",
+      "draftPath": "drafts/place_2/myra_864.json",
+      "currentSHA256": "34225f18efe6e408aba21c5e14ee3fc141540acb89f3ab48896258086ce7f0be",
+      "manifestSHA256": "34225f18efe6e408aba21c5e14ee3fc141540acb89f3ab48896258086ce7f0be",
+      "manifestMatch": true,
+      "result": "pass",
+      "geographyType": "ancient/current city or city-site",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 27:5",
+        "quote": "When we had sailed across the sea which is off Cilicia and Pamphylia, we came to Myra, a city of Lycia.",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [],
+      "geographyReviewJa": "historicalRoleJa: リキア沿岸の港市として航海記に現れる。 modernLocationJa: トルコ南西部アンタルヤ県デムレ周辺。古代都市と現在の市街を区別する。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-27-5",
+            "actualURL": "https://ebible.org/engwebp/ACT27.htm#V5",
+            "expectedURL": "https://ebible.org/engwebp/ACT27.htm#V5",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 1,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/ミラ_(リュキア)",
+        "draftTitle": "ミュラ",
+        "declaredKind": "article",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "ミュラ - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%A9_(%E3%83%AA%E3%83%A5%E3%82%AD%E3%82%A2)",
+          "checkedAtUTC": "2026-10-15T13:30:26.299181+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "日本語記事はリュキアの古代都市ミュラ、デムレ近郊遺跡、Acts 27章の寄港地名を扱う。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": []
+    },
+    {
+      "entityID": "place:mysia_865",
+      "draftPath": "drafts/place_2/mysia_865.json",
+      "currentSHA256": "d0d1c56b22ee0e1f7383ee1471c935e4a7304a9d6caa3a29db0deb56812993c7",
+      "manifestSHA256": "d0d1c56b22ee0e1f7383ee1471c935e4a7304a9d6caa3a29db0deb56812993c7",
+      "manifestMatch": true,
+      "result": "fail",
+      "geographyType": "historical region",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "fail",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "fail",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 16:7",
+        "quote": "When they had come opposite Mysia, they tried to go into Bithynia, but the Spirit didn’t allow them.",
+        "introChronologyResult": "fail"
+      },
+      "factsReview": [
+        {
+          "claimJa": "パウロ一行はミシアを通り過ぎ、トロアスに下った。",
+          "knownBy": "Acts 16:8",
+          "sourceIds": [
+            "webp-acts-16-8"
+          ],
+          "witness": {
+            "reference": "Acts 16:8",
+            "text": "Passing by Mysia, they came down to Troas.",
+            "witnessStatus": "literal-source"
+          },
+          "assessment": "pass",
+          "reasonJa": "引用節の本文が記述の要点を直接支える。"
+        }
+      ],
+      "geographyReviewJa": "historicalRoleJa: パウロ一行が通過した地域として言及される。 modernLocationJa: 小アジア北西部の歴史的地域。境界は時代ごとに変化するため点なし。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-16-7",
+            "actualURL": "https://ebible.org/engwebp/ACT16.htm#V7",
+            "expectedURL": "https://ebible.org/engwebp/ACT16.htm#V7",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-16-8",
+            "actualURL": "https://ebible.org/engwebp/ACT16.htm#V8",
+            "expectedURL": "https://ebible.org/engwebp/ACT16.htm#V8",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 2,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/ミュシア",
+        "draftTitle": "ミュシア",
+        "declaredKind": "article",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "ミュシア - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%A5%E3%82%B7%E3%82%A2",
+          "checkedAtUTC": "2026-10-15T13:30:25.911830+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "記事は小アジア北西部の古代地域ミュシアを扱い、範囲変動と翻訳上の注意を含む。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": [
+        {
+          "severity": "fail",
+          "field": "subtitleJa/historicalRoleJa",
+          "observationJa": "At knownBy 16:7 the party comes opposite Mysia and attempts to enter Bithynia. Passing Mysia is said in 16:8 and is later than the first occurrence.",
+          "evidence": "16:7; 16:8",
+          "suggestedCorrectionJa": "初出紹介から16:8の通過を外し、16:7の到達・進入を試みた範囲に留める。"
+        }
+      ]
+    },
+    {
+      "entityID": "place:nazareth_878",
+      "draftPath": "drafts/place_2/nazareth_878.json",
+      "currentSHA256": "f9f933df889114fe16c128fb4a31479c0f7fd5a7278dbbf283620f1d8e0c1ec2",
+      "manifestSHA256": "f9f933df889114fe16c128fb4a31479c0f7fd5a7278dbbf283620f1d8e0c1ec2",
+      "manifestMatch": true,
+      "result": "pass",
+      "geographyType": "ancient/current city or city-site",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 2:22",
+        "quote": "“Men of Israel, hear these words! Jesus of Nazareth, a man approved by God to you by mighty works and wonders and signs which God did by him among you, even as you yourselves know,",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [],
+      "geographyReviewJa": "historicalRoleJa: 「ナザレの人」というイエスの呼称に含まれる地名。 modernLocationJa: 現在のイスラエル北部ナザレ周辺。古代の町域は現在の市街と同一ではない。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-2-22",
+            "actualURL": "https://ebible.org/engwebp/ACT02.htm#V22",
+            "expectedURL": "https://ebible.org/engwebp/ACT02.htm#V22",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-3-6",
+            "actualURL": "https://ebible.org/engwebp/ACT03.htm#V6",
+            "expectedURL": "https://ebible.org/engwebp/ACT03.htm#V6",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-4-10",
+            "actualURL": "https://ebible.org/engwebp/ACT04.htm#V10",
+            "expectedURL": "https://ebible.org/engwebp/ACT04.htm#V10",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-6-14",
+            "actualURL": "https://ebible.org/engwebp/ACT06.htm#V14",
+            "expectedURL": "https://ebible.org/engwebp/ACT06.htm#V14",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-10-38",
+            "actualURL": "https://ebible.org/engwebp/ACT10.htm#V38",
+            "expectedURL": "https://ebible.org/engwebp/ACT10.htm#V38",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-22-8",
+            "actualURL": "https://ebible.org/engwebp/ACT22.htm#V8",
+            "expectedURL": "https://ebible.org/engwebp/ACT22.htm#V8",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-26-9",
+            "actualURL": "https://ebible.org/engwebp/ACT26.htm#V9",
+            "expectedURL": "https://ebible.org/engwebp/ACT26.htm#V9",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 7,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/ナザレ",
+        "draftTitle": "ナザレ",
+        "declaredKind": "article",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "ナザレ - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%8A%E3%82%B6%E3%83%AC",
+          "checkedAtUTC": "2026-10-15T13:30:27.003743+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "日本語記事は現代ナザレ市とイエスとの歴史・伝承上の関係を扱う。Acts 2:22の地名との関係は確認できる。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": []
+    },
+    {
+      "entityID": "place:neapolis_880",
+      "draftPath": "drafts/place_2/neapolis_880.json",
+      "currentSHA256": "daaa23331d0af5050d3f70ba1982744d7aa7ab2b71a4683dc1585616fe2be179",
+      "manifestSHA256": "daaa23331d0af5050d3f70ba1982744d7aa7ab2b71a4683dc1585616fe2be179",
+      "manifestMatch": true,
+      "result": "pass",
+      "geographyType": "ancient/current city or city-site",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 16:11",
+        "quote": "Setting sail therefore from Troas, we made a straight course to Samothrace, and the day following to Neapolis;",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [],
+      "geographyReviewJa": "historicalRoleJa: マケドニア東部の港町。 modernLocationJa: ギリシア北東部カヴァラ周辺。古代港と現代市街は区別する。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-16-11",
+            "actualURL": "https://ebible.org/engwebp/ACT16.htm#V11",
+            "expectedURL": "https://ebible.org/engwebp/ACT16.htm#V11",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 1,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://en.wikipedia.org/wiki/Neapolis_(Thrace)",
+        "draftTitle": "Neapolis (Thrace)",
+        "declaredKind": "article",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "Neapolis (Thrace) - Wikipedia",
+          "resolvedURL": "https://en.wikipedia.org/wiki/Neapolis_(Thrace)",
+          "checkedAtUTC": "2026-10-15T13:30:25.869732+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "英語記事は古代ネアポリス（後のカヴァラ）を扱い、Acts 16:11でパウロが到着した都市と説明する。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": []
+    },
+    {
+      "entityID": "place:olivet_907",
+      "draftPath": "drafts/place_2/olivet_907.json",
+      "currentSHA256": "eaaef14380b4f6b0aec607e3bb56ba865e5fc2ae30c28a895cc791f258a057b4",
+      "manifestSHA256": "eaaef14380b4f6b0aec607e3bb56ba865e5fc2ae30c28a895cc791f258a057b4",
+      "manifestMatch": true,
+      "result": "pass",
+      "geographyType": "mountain or landform",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 1:12",
+        "quote": "Then they returned to Jerusalem from the mountain called Olivet, which is near Jerusalem, a Sabbath day’s journey away.",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [],
+      "geographyReviewJa": "historicalRoleJa: エルサレム近郊の丘陵地。 modernLocationJa: エルサレム東側の丘陵。名称が指す範囲は幅があり、特定の頂点にはピンを置かない。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-1-12",
+            "actualURL": "https://ebible.org/engwebp/ACT01.htm#V12",
+            "expectedURL": "https://ebible.org/engwebp/ACT01.htm#V12",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 1,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/オリーブ山",
+        "draftTitle": "オリーブ山",
+        "declaredKind": "article",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "オリーブ山 - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%AA%E3%83%BC%E3%83%96%E5%B1%B1",
+          "checkedAtUTC": "2026-10-15T13:30:26.973461+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "日本語記事はエルサレム東郊の丘陵地形と新約の言及を扱い、単一の峰や建物とはしていない。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": []
+    },
+    {
+      "entityID": "place:pamphylia_918",
+      "draftPath": "drafts/place_2/pamphylia_918.json",
+      "currentSHA256": "2f3bb5cf9271de2a2968c4f667db45655c196a71eb7eed19171da7fd9aa3df59",
+      "manifestSHA256": "2f3bb5cf9271de2a2968c4f667db45655c196a71eb7eed19171da7fd9aa3df59",
+      "manifestMatch": true,
+      "result": "pass",
+      "geographyType": "historical region",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "pass",
+        "facts": "pass",
+        "source": "pass"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 2:10",
+        "quote": "Phrygia, Pamphylia, Egypt, the parts of Libya around Cyrene, visitors from Rome, both Jews and proselytes,",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [
+        {
+          "claimJa": "パウロ一行はキプロスのパフォスからパンフィリアのペルガへ航海した。",
+          "knownBy": "Acts 13:13",
+          "sourceIds": [
+            "webp-acts-13-13"
+          ],
+          "witness": {
+            "reference": "Acts 13:13",
+            "text": "Now Paul and his company set sail from Paphos and came to Perga in Pamphylia. John departed from them and returned to Jerusalem.",
+            "witnessStatus": "literal-source"
+          },
+          "assessment": "pass",
+          "reasonJa": "引用節の本文が記述の要点を直接支える。"
+        }
+      ],
+      "geographyReviewJa": "historicalRoleJa: 使徒言行録2章10節で来訪者の出身地域として挙げられる。 modernLocationJa: 現在のトルコ南部沿岸におおむね重なる歴史的地域。境界は時代ごとに異なる。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-2-10",
+            "actualURL": "https://ebible.org/engwebp/ACT02.htm#V10",
+            "expectedURL": "https://ebible.org/engwebp/ACT02.htm#V10",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-13-13",
+            "actualURL": "https://ebible.org/engwebp/ACT13.htm#V13",
+            "expectedURL": "https://ebible.org/engwebp/ACT13.htm#V13",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-14-24",
+            "actualURL": "https://ebible.org/engwebp/ACT14.htm#V24",
+            "expectedURL": "https://ebible.org/engwebp/ACT14.htm#V24",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-15-38",
+            "actualURL": "https://ebible.org/engwebp/ACT15.htm#V38",
+            "expectedURL": "https://ebible.org/engwebp/ACT15.htm#V38",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-27-5",
+            "actualURL": "https://ebible.org/engwebp/ACT27.htm#V5",
+            "expectedURL": "https://ebible.org/engwebp/ACT27.htm#V5",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 5,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/パンフィリア",
+        "draftTitle": "パンフィリア",
+        "declaredKind": "article",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "パンフィリア - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%B3%E3%83%95%E3%82%A3%E3%83%AA%E3%82%A2",
+          "checkedAtUTC": "2026-10-15T13:30:27.574045+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "verified_exact_or_contextual",
+        "bodyFindingJa": "記事は小アジア南岸の古代地方パンフィリアと時代による境界変動を扱う。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": []
+    },
+    {
+      "entityID": "place:paphos_919",
+      "draftPath": "drafts/place_2/paphos_919.json",
+      "currentSHA256": "4d8198e0a33d25a2fc4b0186ff9168c53c65cbb4b1e264c7b0d81770fb238caa",
+      "manifestSHA256": "4d8198e0a33d25a2fc4b0186ff9168c53c65cbb4b1e264c7b0d81770fb238caa",
+      "manifestMatch": true,
+      "result": "qualified",
+      "geographyType": "ancient/current city or city-site",
+      "fieldResults": {
+        "summary": "pass",
+        "subtitle": "pass",
+        "knownBy": "pass",
+        "identityNote": "pass",
+        "historicalRole": "pass",
+        "modernLocation": "qualified",
+        "facts": "pass",
+        "source": "qualified"
+      },
+      "baseIntroductionEvidence": {
+        "knownBy": "Acts 13:6",
+        "quote": "When they had gone through the island to Paphos, they found a certain sorcerer, a false prophet, a Jew whose name was Bar Jesus,",
+        "introChronologyResult": "pass"
+      },
+      "factsReview": [],
+      "geographyReviewJa": "historicalRoleJa: キプロス西部の都市。 modernLocationJa: キプロス島西部。古代のパフォスは現在のパフォス市街と異なる遺跡域を含む。",
+      "coordinateReview": {
+        "value": null,
+        "result": "pass",
+        "basis": "null is appropriate absent individually checked fixed ancient-geography data"
+      },
+      "actsSources": {
+        "urls": [
+          {
+            "sourceId": "webp-acts-13-6",
+            "actualURL": "https://ebible.org/engwebp/ACT13.htm#V6",
+            "expectedURL": "https://ebible.org/engwebp/ACT13.htm#V6",
+            "canonicalMatch": true
+          },
+          {
+            "sourceId": "webp-acts-13-13",
+            "actualURL": "https://ebible.org/engwebp/ACT13.htm#V13",
+            "expectedURL": "https://ebible.org/engwebp/ACT13.htm#V13",
+            "canonicalMatch": true
+          }
+        ],
+        "count": 2,
+        "allCanonicalWEBP": true
+      },
+      "wikipedia": {
+        "draftURL": "https://ja.wikipedia.org/wiki/パフォス",
+        "draftTitle": "パフォス",
+        "declaredKind": "related-section",
+        "httpTitleRedirectCheck": {
+          "status": 200,
+          "pageTitle": "パフォス - Wikipedia",
+          "resolvedURL": "https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%95%E3%82%A9%E3%82%B9",
+          "checkedAtUTC": "2026-10-15T13:30:26.986466+00:00",
+          "meaning": "HTTP/title/redirect/fragment only; not semantic identity"
+        },
+        "bodyRead": true,
+        "semanticResult": "related_or_qualified_identity",
+        "bodyFindingJa": "日本語記事は現代パフォスと古代の旧パフォス・新パフォス遺跡を区別し、パウロ訪問にも言及する。",
+        "fragment": null,
+        "fragmentVerified": false,
+        "separateFromActsAssessment": true
+      },
+      "findings": [
+        {
+          "severity": "qualified",
+          "field": "wikipedia/modernLocationJa",
+          "observationJa": "The linked page covers modern Paphos and multiple ancient urban/archaeological areas; it cannot support a single modern-city pin for Acts 13:6.",
+          "evidence": "13:6",
+          "suggestedCorrectionJa": "関連記事として扱い、古代の複数市域を現代一点にまとめない。"
+        }
+      ]
+    }
+  ]
+}

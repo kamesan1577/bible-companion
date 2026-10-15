@@ -7,6 +7,8 @@ public struct EntityProfileSource: Codable, Sendable, Identifiable {
     public let license: String
     public let licenseURL: String
     public let attribution: String
+    public let knownBy: Verse?
+    public let category: String?
     public var safeURL: URL? { guard let u = URL(string: url), u.scheme == "https", u.host != nil, u.user == nil, u.password == nil else { return nil }; return u }
 }
 public struct EntityProfileFact: Codable, Sendable {
@@ -35,10 +37,23 @@ public struct WikipediaReadingLink: Codable, Sendable {
     }
 }
 
+public struct EntityProfileName: Codable, Sendable {
+    public let nameJa: String
+    public let knownBy: Verse
+}
+public struct EntityProfileOccurrence: Codable, Sendable {
+    public let entityID: String
+    public let chapter: Int
+    public let verse: Int
+    public let directlyNamed: Bool
+}
+
 public struct EntityProfile: Codable, Sendable, Identifiable {
     public let id: String
     public let kind: String
     public let nameJa: String
+    public let identityType: String?
+    public let names: [EntityProfileName]?
     public let subtitleJa: String
     public let summaryJa: String
     public let identityNoteJa: String
@@ -53,21 +68,24 @@ public struct EntityProfile: Codable, Sendable, Identifiable {
     public let wikipedia: WikipediaReadingLink?
     public let materialCardIDs: [String]?
     public let supplemental: Bool
+    public var detailLinkLabelJa: String { identityType == "office-title" ? "この称号について" : identityType == "unidentified-eponym" ? "この名前について" : kind == "person" ? "この人物について" : "この場所について" }
 }
 public struct ResolvedEntityProfile: Sendable {
     public let profile: EntityProfile
     public let facts: [EntityProfileFact]
     public let sources: [EntityProfileSource]
+    public let nameJa: String
 }
 struct EntityProfileCatalog: Decodable {
     let schemaVersion: Int
     let sources: [EntityProfileSource]
     let profiles: [EntityProfile]
+    let occurrences: [EntityProfileOccurrence]?
     func resolve(id: String, passage: Passage, includeFuture: Bool) -> ResolvedEntityProfile? {
         guard schemaVersion == 1, let p = profiles.first(where: { $0.id == id }), passage.book == "ACT", p.knownBy <= passage.end,
               p.passages.contains(where: { $0.book == passage.book && $0.start <= passage.end && passage.start <= $0.end }) else { return nil }
         let facts = p.facts.filter { includeFuture || $0.knownBy <= passage.end }
         let ids = Set(p.sourceIds + facts.flatMap(\.sourceIds))
-        return ResolvedEntityProfile(profile: p, facts: facts, sources: sources.filter { ids.contains($0.id) })
+        return ResolvedEntityProfile(profile: p, facts: facts, sources: sources.filter { ids.contains($0.id) && (includeFuture || $0.knownBy == nil || $0.knownBy! <= passage.end) }, nameJa: p.names?.filter { $0.knownBy <= passage.end }.sorted { $0.knownBy < $1.knownBy }.last?.nameJa ?? p.nameJa)
     }
 }
