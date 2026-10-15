@@ -33,12 +33,21 @@ public struct CommentaryProgress: Sendable {
     public let completeActsChapters: [Int]
     public let sourceComparedEntryIds: Set<String>
 }
+public struct CommentaryCrossReference: Decodable, Identifiable, Sendable {
+    public let passage: Passage
+    public let sourceReference: String
+    public let relation: String
+    public let noteJa: String
+    public var id: String { "\(passage.book):\(passage.start.chapter):\(passage.start.verse):\(sourceReference)" }
+}
 public struct CommentaryOriginal: Decodable, Identifiable, Sendable {
     public let id: String
     public let editionId: String
     public let sourceLocator: String
     public let ranges: [Passage]
     public let originalText: String
+    public let kind: String?
+    public let crossReferences: [CommentaryCrossReference]?
 }
 public struct CommentaryDictionaryEntry: Decodable, Identifiable, Sendable {
     public let id: String
@@ -84,10 +93,12 @@ public actor StaticCommentary {
         return Array(try JSONDecoder().decode([CommentaryDictionaryEntry].self, from: data("Easton")).filter { $0.headword.localizedCaseInsensitiveContains(term) }.prefix(30))
     }
     public func originals(for passage: Passage) throws -> [CommentaryOriginal] {
-        try ["MHC", "JFB"].flatMap { name in
-            try JSONDecoder().decode([CommentaryOriginal].self, from: data("\(name):\(passage.book)")).filter { item in
-                item.ranges.contains { $0.book == passage.book && $0.start <= passage.end && passage.start <= $0.end }
-            }
+        let direct = try ["MHC", "JFB"].flatMap { name in
+            try JSONDecoder().decode([CommentaryOriginal].self, from: data("\(name):\(passage.book)"))
+        }
+        let contexts = catalog?.files["ChapterContexts"] == nil ? [] : try JSONDecoder().decode([CommentaryOriginal].self, from: data("ChapterContexts"))
+        return (direct + contexts).filter { item in
+            item.ranges.contains { $0.book == passage.book && $0.start <= passage.end && passage.start <= $0.end }
         }
     }
     private func data(_ key: String) throws -> Data {

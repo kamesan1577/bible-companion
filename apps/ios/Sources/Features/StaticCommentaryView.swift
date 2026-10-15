@@ -30,7 +30,7 @@ struct StaticCommentaryView: View {
             DisclosureGroup("資料の整備状況") {
                 Text("歴史的なプロテスタントの注解を根拠にしたAI補助の編集要約です。原文そのもの・専門家監修済みの解説とは区別します。").bibleTextStyle(.caption)
 
-                Text("英語原文の対応：31,102節座標中31,101。複数節で同じ原文を共有する場合があります。英語原文の対応は、日本語説明の完成数には数えません。").bibleTextStyle(.caption)
+                Text("英語原文の節への直接対応は31,101／31,102。章冒頭の見出し・注は別に収録しています。サムエル記下22:1も章注から読めるため、原典自体の欠落を表す数ではありません。章全体の注・節別の注・日本語説明の整備数を分けます。").bibleTextStyle(.caption)
                 Text("使徒8:37・15:34・24:7は手元のWEB本文にないため、日本語の通常説明を補作していません。KJV系の節番号との違いがあります。").bibleTextStyle(.caption)
                 if let progress {
                     Text("日本語編集：\(progress.editedRanges)範囲・\(progress.coveredCoordinates)節座標。うち8節以下の具体的説明は\(progress.detailedRanges)範囲・\(progress.detailedCoordinates)節座標、章概説は\(progress.chapterOverviews)件です。全聖書の同粒度の整備と専門家校閲は未完です。").bibleTextStyle(.caption)
@@ -59,8 +59,15 @@ private struct CommentaryOriginalView: View {
                 ForEach(originals) { item in
                     Text(item.editionId == "MHC-2.2" ? "Matthew Henry’s Complete Commentary" : "Jamieson–Fausset–Brown Commentary").bibleTextStyle(.heading)
                     Text("\(item.editionId) · \(item.sourceLocator) · Public domain").bibleTextStyle(.caption)
+                    if item.kind == "chapter-context" {
+                        Text("章冒頭の資料（章見出し・章注）。次の範囲は閲覧対象であり、各節の独立した詳細注解を示すものではありません。").bibleTextStyle(.caption)
+                    }
                     Text(item.ranges.map(\.label).joined(separator: ", ")).bibleTextStyle(.caption)
                     ForEach(Array(item.originalText.components(separatedBy: "\n\n").enumerated()), id: \.offset) { _, paragraph in Text(paragraph).bibleTextStyle(.body).textSelection(.enabled) }
+                    ForEach(item.crossReferences ?? []) { reference in
+                        Text(reference.noteJa).bibleTextStyle(.caption)
+                        NavigationLink("原典が参照する\(reference.passage.label)の英語注解") { CommentaryOriginalView(passage: reference.passage) }
+                    }
                 }
                 Link("MHC 原典・版情報", destination: URL(string: "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=MHC")!)
                 Link("JFB 原典・版情報", destination: URL(string: "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=JFB")!)

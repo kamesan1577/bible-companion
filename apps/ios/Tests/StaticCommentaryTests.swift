@@ -67,4 +67,19 @@ final class StaticCommentaryTests: XCTestCase, @unchecked Sendable {
         XCTAssertTrue(notes.contains { $0.editorialNoteForDisplay?.contains("ダマスコ") == true })
     }
 
+    func testSamuel22PreservesChapterContextAndParallelPsalmWithoutVerseAlignment() async throws {
+        let one = Passage(book: "2SA", start: Verse(chapter: 22, verse: 1), end: Verse(chapter: 22, verse: 1))
+        let originals = try await StaticCommentary.shared.originals(for: one)
+        let jfb = try XCTUnwrap(originals.first { $0.editionId == "JFB-3.0" && $0.kind == "chapter-context" })
+        XCTAssertEqual(jfb.sourceLocator, "II Samuel 22:0")
+        XCTAssertTrue(jfb.originalText.contains("eighteenth Psalm"))
+        XCTAssertEqual(jfb.ranges, [Passage(book: "2SA", start: Verse(chapter: 22, verse: 1), end: Verse(chapter: 22, verse: 51))])
+        let link = try XCTUnwrap(jfb.crossReferences?.first)
+        XCTAssertEqual(link.passage, Passage(book: "PSA", start: Verse(chapter: 18, verse: 1), end: Verse(chapter: 18, verse: 50)))
+        XCTAssertTrue(link.relation.contains("not verse alignment"))
+        XCTAssertFalse(originals.contains { $0.ranges.contains { $0.book == "PSA" } })
+        let japanese = try await StaticCommentary.shared.edits(for: one)
+        XCTAssertTrue(japanese.isEmpty)
+    }
+
 }

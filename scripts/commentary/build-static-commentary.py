@@ -34,11 +34,11 @@ def main():
  ap=argparse.ArgumentParser();ap.add_argument('--cache',type=Path,default=ROOT/'.cache/commentary');ap.add_argument('--archives',type=Path,required=True);a=ap.parse_args()
  counts=json.loads((ROOT/'packages/core/src/verse-counts.json').read_text());canon=list(counts);order={b:i for i,b in enumerate(canon)}
  output=ROOT/'apps/ios/Sources/Core/Resources';catalog={'schemaVersion':1,'license':'public-domain','referenceSystem':'KJV','editions':[],'files':{},'coverage':{}}
- allmapped=set();report={}
+ allmapped=set();report={};chapter_contexts=[];context_tools=runpy.run_path(str(ROOT/'scripts/commentary/chapter-contexts.py'))
  for name in ['MHC','JFB']:
   version,sha=PIN[name];assert digest((a.archives/(name+'.zip')).read_bytes())==sha
   raw=entries(a.cache/(name+'.imp'));raw_by_hash={digest(t.encode()):(k,t)for k,t in raw if t}
-  names=list(dict.fromkeys(re.sub(r' \d+:\d+$','',k)for k,t in raw if re.search(r' \d+:\d+$',k)));assert len(names)==66;booknames=dict(zip(canon,names))
+  names=list(dict.fromkeys(re.sub(r' \d+:\d+$','',k)for k,t in raw if re.search(r' \d+:\d+$',k)));assert len(names)==66;booknames=dict(zip(canon,names));chapter_contexts.extend(context_tools['make_contexts'](raw,name,booknames,counts,plain))
   rows=[json.loads(l)for l in (a.cache/(name+'-verse-map.ndjson')).read_text().splitlines()];assert len(rows)==31102
   groups=collections.defaultdict(list);missing=[];seen=set()
   for r in rows:
@@ -62,12 +62,15 @@ def main():
  dictionary=[{'id':'easton:'+digest(k.encode()),'headword':k,'originalText':plain(t),'sourceLocator':k,'editionId':'Easton-2.0.1','reviewStatus':'original-not-editorially-reviewed','spoilerSafe':False}for k,t in entries(a.cache/'Easton.imp')if t];assert len(dictionary)==3963
  p=output/'commentary-Easton.json';data=(json.dumps(dictionary,ensure_ascii=False,separators=(',',':'))+'\n').encode();p.write_bytes(data);catalog['files']['Easton']={'file':p.name,'bytes':len(data),'sha256':digest(data),'entries':len(dictionary)}
  catalog['editions'].append({'id':'Easton-2.0.1','title':"Easton's Bible Dictionary",'authors':'M. G. Easton','historicalDate':'1897 third edition','tradition':'historical Scottish Presbyterian','language':'en','license':'public-domain','licenseURL':'https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=Easton','sourceURL':'https://www.crosswire.org/ftpmirror/pub/sword/packages/rawzip/Easton.zip','archiveSha256':sha,'moduleVersion':version})
- catalog['coverage']={'MHC':report['MHC'],'JFB':report['JFB'],'unionLinkedVerses':len(allmapped),'dictionaryHeadwords':3963,'japaneseEditedRanges':0,'japaneseIndependentVerseExplanations':0}
+ context_path=output/'commentary-chapter-context.json';context_data=(json.dumps(chapter_contexts,ensure_ascii=False,separators=(',',':'))+'\n').encode();context_path.write_bytes(context_data)
+ catalog['files']['ChapterContexts']={'file':context_path.name,'bytes':len(context_data),'sha256':digest(context_data),'units':len(chapter_contexts)}
+ context_coordinates=context_tools['scope_coordinates'](chapter_contexts)
+ catalog['coverage']={'MHC':report['MHC'],'JFB':report['JFB'],'unionLinkedVerses':len(allmapped),'dictionaryHeadwords':3963,'japaneseEditedRanges':0,'japaneseIndependentVerseExplanations':0,'chapterContextUnits':len(chapter_contexts),'chapterContextRetrievalCoordinates':len(context_coordinates),'unionWithChapterContextCoordinates':len(allmapped|context_coordinates),'contextOnlyCoordinates':sorted(context_coordinates-allmapped),'contextScopeIsNotVerseCommentaryCoverage':True}
  ja=runpy.run_path(str(ROOT/'scripts/commentary/audit-japanese.py'))['audit'](output)
  catalog['files']['JapaneseEdits']={k:ja[k] for k in ['file','bytes','sha256']}
  catalog['coverage'].update(japaneseEditedRanges=ja['editedRanges'],japaneseCoveredCoordinates=ja['coveredCoordinates'],japaneseIndependentVerseExplanations=ja['singleVerseEntries'],japaneseDetailedRanges=ja['detailedRanges'],independentAiReviewedRanges=ja['independentAiReviewedRanges'])
  identity={'editions':catalog['editions'],'files':catalog['files']};catalog['version']=digest(json.dumps(identity,sort_keys=True,separators=(',',':')).encode())
  (output/'commentary-catalog.json').write_text(json.dumps(catalog,ensure_ascii=False,separators=(',',':'))+'\n')
- (ROOT/'docs/commentary-coverage.json').write_text(json.dumps({'schemaVersion':1,'catalogVersion':catalog['version'],'conversion':'Official mod2imp plus official SWORD1.9.0 API for all canonical coordinates. Markup stripped to plain English. GPL engine used only at build time.','sourceBodyUnits':report,'unionLinkedVerses':len(allmapped),'dictionaryHeadwords':3963,'japaneseEditedRanges':ja['editedRanges'],'japaneseCoveredCoordinates':ja['coveredCoordinates'],'japaneseAudit':ja,'semanticQuality':'not asserted by nonempty/index coverage'},ensure_ascii=False,indent=2)+'\n')
+ (ROOT/'docs/commentary-coverage.json').write_text(json.dumps({'schemaVersion':1,'catalogVersion':catalog['version'],'conversion':'Official mod2imp plus official SWORD1.9.0 API for all canonical coordinates. Markup stripped to plain English. GPL engine used only at build time.','sourceBodyUnits':report,'unionLinkedVerses':len(allmapped),'dictionaryHeadwords':3963,'chapterContextUnits':len(chapter_contexts),'chapterContextRetrievalCoordinates':len(context_coordinates),'unionWithChapterContextCoordinates':len(allmapped|context_coordinates),'contextOnlyCoordinates':sorted(context_coordinates-allmapped),'contextScopeIsNotVerseCommentaryCoverage':True,'japaneseEditedRanges':ja['editedRanges'],'japaneseCoveredCoordinates':ja['coveredCoordinates'],'japaneseAudit':ja,'semanticQuality':'not asserted by nonempty/index coverage'},ensure_ascii=False,indent=2)+'\n')
  print(json.dumps({'catalogVersion':catalog['version'],'bytes':sum(f['bytes']for f in catalog['files'].values()),'unionLinkedVerses':len(allmapped),'MHC':report['MHC']['linkedNonemptyVerses'],'JFB':report['JFB']['linkedNonemptyVerses'],'JapaneseEditedRanges':ja['editedRanges']}))
 if __name__=='__main__':main()

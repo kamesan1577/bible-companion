@@ -21,6 +21,7 @@ struct SimulatorQA: View {
                     NavigationLink("読書画面") { ReadingView() }
                     NavigationLink("使徒23:1の静的解説") { ScrollView { BibleReadingColumn { StaticCommentaryView(passage: item.ranges[0]) } }.navigationTitle("静的解説").bibleCanvas() }
                     NavigationLink("使徒18–23章の静的解説") { ScrollView { BibleReadingColumn { StaticCommentaryView(passage: Passage(book: "ACT", start: Verse(chapter: 18, verse: 1), end: Verse(chapter: 23, verse: 35))) } }.navigationTitle("静的解説の確認").bibleCanvas() }
+                    NavigationLink("サムエル記下22:1の資料") { ScrollView { BibleReadingColumn { StaticCommentaryView(passage: Passage(book: "2SA", start: Verse(chapter: 22, verse: 1), end: Verse(chapter: 22, verse: 1))) } }.navigationTitle("章冒頭資料の確認").bibleCanvas() }
                     NavigationLink("質問画面") { QuestionView(ownerID: item.id, client: client, item: item, rangeIndex: 0, target: item.ranges[0]) }
                 }
                 NavigationLink("使徒23:1の人物") { ScrollView { OfflineEntityPane(passage: item.ranges[0], kind: "person").padding() }.navigationTitle("人物") }

@@ -112,6 +112,25 @@ final class ReadingInteractionUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Matthew Henry’s Complete Commentary"].waitForExistence(timeout: 5))
         attach(app, "commentary-original-source")
     }
+    @MainActor func testChapterContextAndParallelNavigationRequireConsent() {
+        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
+        let fixture = app.buttons["サムエル記下22:1の資料"]
+        XCTAssertTrue(fixture.waitForExistence(timeout: 10)); fixture.tap()
+        let original = app.buttons["英語の注解原文・出典を読む"]
+        XCTAssertTrue(original.waitForExistence(timeout: 5)); original.tap()
+        let consent = app.buttons["先の内容を含む英語原文を開く"]
+        XCTAssertTrue(consent.waitForExistence(timeout: 5)); consent.tap()
+        let chapterNote = app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "各節の独立した詳細注解を示すものではありません")).firstMatch
+        XCTAssertTrue(chapterNote.waitForExistence(timeout: 5))
+        attach(app, "samuel22-chapter-context")
+        let parallel = app.buttons.containing(NSPredicate(format: "label BEGINSWITH %@", "原典が参照する")).firstMatch
+        for _ in 0..<30 { if parallel.exists && parallel.isHittable { break }; app.swipeUp() }
+        XCTAssertTrue(parallel.exists); XCTAssertTrue(parallel.isHittable)
+        attach(app, "samuel22-parallel-navigation")
+        parallel.tap()
+        XCTAssertTrue(consent.waitForExistence(timeout: 5))
+        attach(app, "psalm18-separate-consent")
+    }
     @MainActor private func attach(_ app: XCUIApplication, _ name: String) {
         let attachment = XCTAttachment(screenshot: app.screenshot()); attachment.name = name; attachment.lifetime = .keepAlways; add(attachment)
     }
