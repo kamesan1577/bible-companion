@@ -19,7 +19,7 @@ Results are recorded for draft PR #1 and refined before final handoff. Local out
 - Setup/doctor: passed; no credentials or live AI.
 - Data structural gate: 225 profiles / 1,506 sources / 1,921 occurrences passed. This is not a new semantic review.
 - `make check`: passed after reconnection, including 628 API/package tests, 123 Node integration/contract tests, data/checkpoint suites, OpenAPI drift, two local migrations, configuration validation and Worker dry-run. No live AI or remote D1 was used.
-- `make data` (included in check): 47 tests passed (12 jobs, 5 contexts, 5 reviews, 5 primary alignment, 14 harness mutation/artifact/checkpoint, 6 simulator selector).
+- `make data` (included in check): 50 tests passed (12 jobs, 5 contexts, 5 reviews, 5 primary alignment, 14 harness mutation/artifact/checkpoint, 9 simulator selection/ownership).
 - `make swift`: 180 tests passed, zero failures on macOS.
 - iOS Simulator core scheme: 180 tests passed, zero failures on iOS 26.0.
 - `make build`: passed after reconnection (generic Simulator build, including arm64/x86_64); Share Extension present and all 142 bundled resource/license files match this checkout.
@@ -40,3 +40,11 @@ Hosted CI remains manual. The existing public-repository standard-runner workflo
 ## Next action
 
 Read the harness guide, `make doctor`, then reproduce the relevant gate. For a new feature use a new branch; for new book data follow DATA.md and preserve per-item evidence/checkpoints. For a release verify its exact combined commit and artifact with OPERATIONS.md rather than reusing this branch's results.
+
+## Follow-up isolation validation
+
+The first hosted macOS run failed two initial-share cases despite 18/18 passing on the retained local device. A separate empty local device passed the two cases; the CI-only difference was not declared reproduced locally. The harness now creates its own device, waits for boot/migration completion and explicitly installs the containing app before XCTest. It retains the original assertions/timeouts and logs the accessibility hierarchy on share failure.
+
+A subsequent local run caught that lowercasing simctl’s UUID breaks Xcode destination matching. The regression test failed before the fix and passed afterward; `aa9918b` preserves the emitted UUID spelling. The known-bad hosted run was cancelled, not counted as passing. Linux CI [38802043786](https://github.com/kamesan1577/bible-companion/actions/runs/38802043786) passed on this corrected implementation. Hosted macOS [38802047517](https://github.com/kamesan1577/bible-companion/actions/runs/38802047517) and the fully owned local run are being confirmed.
+
+The next hosted attempt remained in its separate generic build beyond the 12-minute step bound without reaching Simulator creation; it was not counted as passing. macOS CI now invokes the exact locally verified `make ios-ui` path instead of duplicating build/boot/install/test steps. This boots the owned device before building, caps build concurrency at two and preserves the 5/12/10/20-minute boot/build/core/UI bounds. Native doctor no longer requires unrelated Node/npm tools. No XCTest wait or assertion was relaxed.

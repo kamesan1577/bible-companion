@@ -13,20 +13,25 @@ ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / '.cache/harness'
 
 
-def run(*args, capture=False):
+def run(*args, capture=False, timeout=None):
     print('+ ' + ' '.join(map(str, args)), flush=True)
     return subprocess.run(list(map(str, args)), cwd=ROOT, check=True, text=True,
-                          stdout=subprocess.PIPE if capture else None).stdout
+                          stdout=subprocess.PIPE if capture else None, timeout=timeout).stdout
 
 
 def doctor(ios=False):
-    for name in ['git', 'node', 'npm', 'python3'] + (['swift', 'xcodebuild', 'xcrun', 'xcodegen'] if ios else []):
+    names = ['git', 'python3'] + (['swift', 'xcodebuild', 'xcrun', 'xcodegen'] if ios else ['node', 'npm'])
+    for name in names:
         if not shutil.which(name):
             raise ValueError(f'Missing {name}; see docs/harness/README.md')
-    major = int(run('node', '-p', 'process.versions.node.split(".")[0]', capture=True).strip())
-    if major != 24:
-        raise ValueError(f'Use Node 24 LTS (found {major}); no automatic dependency upgrade')
-    run('node', '--version'); run('npm', '--version'); run('python3', '--version')
+    if sys.version_info < (3, 9):
+        raise ValueError('Python 3.9+ required')
+    if not ios:
+        major = int(run('node', '-p', 'process.versions.node.split(".")[0]', capture=True).strip())
+        if major != 24:
+            raise ValueError(f'Use Node 24 LTS (found {major}); no automatic dependency upgrade')
+        run('node', '--version'); run('npm', '--version')
+    run('python3', '--version')
     if ios:
         run('xcodebuild', '-version'); run('xcodegen', '--version')
         sdk = run('xcrun', '--sdk', 'iphonesimulator', '--show-sdk-version', capture=True).strip()
@@ -111,17 +116,19 @@ def ios(command, device):
             device = run(sys.executable, 'scripts/ci/create-ios-simulator.py', result / 'simulators.json', capture=True).strip()
         (result / 'device.json').write_text(json.dumps({'udid': device, 'ownedByHarness': owned}))
         try:
-            run('xcrun', 'simctl', 'bootstatus', device, '-b')
+            run('xcrun', 'simctl', 'bootstatus', device, '-b', timeout=300)
             # Install the containing app before XCTest installs its runner, so the
             # Share Extension is registered independently of the first share action.
             run(*base, '-scheme', 'BibleCompanion', '-destination', f'platform=iOS Simulator,id={device}',
-                '-resultBundlePath', result / 'Build.xcresult', 'build')
+                '-resultBundlePath', result / 'Build.xcresult', 'build', timeout=720)
             app = OUT / 'ios-derived/Build/Products/Debug-iphonesimulator/BibleCompanion.app'
-            run('xcrun', 'simctl', 'install', device, app)
+            run(sys.executable, 'scripts/harness/verify-ios-artifact.py', app)
+            run('xcrun', 'simctl', 'install', device, app, timeout=120)
             for scheme in ['BibleCompanion', 'ReadingInteractionUI']:
                 run(*base, '-scheme', scheme, '-destination', f'platform=iOS Simulator,id={device}',
                     '-destination-timeout', '90', '-parallel-testing-enabled', 'NO',
-                    '-resultBundlePath', result / f'{scheme}.xcresult', 'test')
+                    '-resultBundlePath', result / f'{scheme}.xcresult', 'test',
+                    timeout=600 if scheme == 'BibleCompanion' else 1200)
         finally:
             if owned:
                 subprocess.run(['xcrun', 'simctl', 'shutdown', device], capture_output=True)
@@ -167,6 +174,6 @@ def main():
 if __name__ == '__main__':
     try:
         main()
-    except (ValueError, OSError, subprocess.CalledProcessError) as error:
+    except (ValueError, OSError, subprocess.CalledProcessError, subprocess.TimeoutExpired) as error:
         print(f'Harness failed: {error}', file=sys.stderr)
         sys.exit(1)
