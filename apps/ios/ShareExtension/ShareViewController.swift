@@ -27,7 +27,7 @@ import CompanionCore
                 let text = parts.filter { seen.insert($0).inserted }.joined(separator: "\n")
                 guard !text.isEmpty, text.utf16.count <= 20_000 else { model.error = "章節やURLを短く共有してください。"; model.loading = false; return }
                 model.sharedText = text
-                if let parsed = try? SharedImportParser.parse(text) { model.labels = parsed.ranges.map(\.label); model.items = parsed.ranges.enumerated().map { .init(conversationId: "local-\($0.offset)", passage: $0.element) } }
+                if let parsed = try? SharedImportParser.parse(text) { model.translation = parsed.translation; model.labels = parsed.ranges.map(\.label); model.items = parsed.ranges.enumerated().map { .init(conversationId: "local-\($0.offset)", passage: $0.element) } }
                 do { try ShareInbox.enqueue(text) } catch { model.storageNotice = "アプリへの引き継ぎは利用できません。この画面で資料を確認できます。" }
                 await model.refresh()
             } catch { model.error = "共有内容を読み取れませんでした。もう一度共有してください。"; model.loading = false }
@@ -50,6 +50,7 @@ import CompanionCore
     @Published var error: String?
     @Published var labels: [String] = []
     @Published var storageNotice: String?
+    @Published var translation: String?
     @Published var needsSetup = false
     @Published var canAsk = false
     @Published var items: [Item] = []
@@ -79,7 +80,7 @@ import CompanionCore
     }
     func explain() async {
         guard answer == nil else { return }
-        await send("この箇所の出来事と意味を、初めて読む人にも分かる日本語で短く説明してください。")
+        await send("この箇所の出来事と意味を、初めて読む人にも分かる日本語で短く説明してください。", standard: true)
     }
     func sendQuestion() async {
         let question = draft.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -87,14 +88,16 @@ import CompanionCore
         await send(question)
         if error == nil { draft = "" }
     }
-    private func send(_ question: String) async {
+    private func send(_ question: String, standard: Bool = false) async {
         guard let client, let item = current, !loading, pendingRequest == nil else { return }
         loading = true; error = nil
         defer { loading = false }
         let request = UUID().uuidString; pendingRequest = request
         struct Input: Encodable, Sendable { let requestId: String; let question: String; let answerMode = "grounded-generation" }
         do {
-            let result: RequestResult = try await client.post("/share/conversations/\(item.id)/questions", body: Input(requestId: request, question: question))
+            let result: RequestResult
+            if standard { result = try await client.post("/share/conversations/\(item.id)/explanation", body: ["requestId": request]) }
+            else { result = try await client.post("/share/conversations/\(item.id)/questions", body: Input(requestId: request, question: question)) }
             guard result.status == "complete", let answer = result.result else { throw NetworkFailure.invalidResponse }
             answers[item.id] = answer; pendingRequest = nil
         } catch { show(error) }
@@ -111,6 +114,7 @@ import CompanionCore
     }
     private func show(_ failure: Error) {
         if case NetworkFailure.server(let status, let code) = failure, status == 401 || code.hasPrefix("share_access") { needsSetup = true; pendingRequest = nil; error = nil; return }
+        if case NetworkFailure.server(_, let code) = failure, ["standard_explanation_pending", "standard_explanation_unavailable"].contains(code) { pendingRequest = nil }
         error = (failure as? NetworkFailure)?.userMessage ?? "接続できませんでした。共有した箇所は保持しています。"
     }
 }
@@ -131,11 +135,11 @@ private struct SharedPreviewView: View {
                         if pane != "explanation" { OfflineEntityPane(passage: passage, kind: pane) }
                     }
                     if model.needsSetup {
-                        Text("AIの解説はアプリで確認できます。").bibleTextStyle(.heading)
+                        Text("初回の設定が必要です。").bibleTextStyle(.heading)
                         Label("この画面を閉じる", systemImage: "1.circle.fill")
                         Label("ホーム画面の聖書コンパニオンを開く", systemImage: "2.circle.fill")
-                        Label("ログインして解説を読む", systemImage: "3.circle.fill")
-                        Text("人物・地名の索引は、この画面のタブですぐ見られます。共有画面でのAI回答は準備中です。").bibleTextStyle(.caption)
+                        Label("ログインして「共有画面のAIを有効にする」を押す", systemImage: "3.circle.fill")
+                        Text("設定後、YouVersionからもう一度共有してください。人物・地名の索引はこの画面でも確認できます。").bibleTextStyle(.caption)
                     }
                     if pane == "explanation", let answer = model.answer {
                         Text(answer.answer).bibleTextStyle(.body).textSelection(.enabled)
@@ -151,7 +155,7 @@ private struct SharedPreviewView: View {
                     }
                     if model.items.isEmpty && !model.needsSetup && !model.loading { Button("もう一度開く") { Task { await model.refresh() } } }
                 }.padding(BibleTheme.Space.page).frame(maxWidth: .infinity, alignment: .leading)
-            }.bibleCanvas().navigationTitle("聖書コンパニオン").navigationBarTitleDisplayMode(.inline)
+            }.safeAreaInset(edge: .top) { if let passage = model.current?.passage { SharedScriptureHeader(passage: passage, translation: model.translation, text: model.sharedText) } }.bibleCanvas().navigationTitle("聖書コンパニオン").navigationBarTitleDisplayMode(.inline)
                 .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("閉じる", action: close) } }
                 .onChange(of: model.selectedIndex) { _, _ in Task { await model.explain() } }
         }

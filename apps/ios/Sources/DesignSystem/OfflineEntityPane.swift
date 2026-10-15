@@ -20,6 +20,8 @@ struct OfflineEntityPane: View {
                 }
                 ForEach(result.occurrences) { item in
                     DisclosureGroup {
+                        Text("索引ID: \(item.entity.id)").bibleTextStyle(.caption).textSelection(.enabled)
+                        Text("同じ名前でも別の索引IDは別人・別地点として扱います。索引の関連だけでは、この節での本人特定や役割を断定できません。").bibleTextStyle(.caption).bibleForeground(.textSecondary)
                         if let ask { Button("この\(kind == "person" ? "人物" : "場所")について質問") { ask("\(item.entity.displayName)について、この箇所との関係をやさしく説明してください。") } }
                         if !item.sameBookVerses.isEmpty {
                             Text("同じ書のほかの登場箇所").bibleTextStyle(.caption)
@@ -33,6 +35,9 @@ struct OfflineEntityPane: View {
                     } label: {
                         VStack(alignment: .leading) {
                             Text(item.entity.displayName).bibleTextStyle(.body)
+                            if result.occurrences.filter({ $0.entity.displayName == item.entity.displayName }).count > 1 {
+                                Text("同名を区別 · \(item.entity.id)").bibleTextStyle(.caption)
+                            }
                             Text(item.directlyNamed ? "本文に名前が登場" : "この箇所に関連する\(kind == "person" ? "人物" : "場所")").bibleTextStyle(.caption).foregroundStyle(.secondary)
                         }
                     }

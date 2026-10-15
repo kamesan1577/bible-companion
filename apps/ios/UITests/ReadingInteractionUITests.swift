@@ -65,6 +65,27 @@ final class ReadingInteractionUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["固定データ: followup"].waitForExistence(timeout: 5))
         attach(app, "keyboard-send-and-followup-complete")
     }
+    @MainActor func testReadingPinnedTextAndHorizontalPages() {
+        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
+        XCTAssertTrue(app.buttons["読書画面"].waitForExistence(timeout: 10)); app.buttons["読書画面"].tap()
+        let header = app.descendants(matching: .any).matching(identifier: "shared-scripture-header").firstMatch
+        XCTAssertTrue(header.waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "JCB")).firstMatch.exists)
+        XCTAssertFalse(app.staticTexts["読んだ箇所を、もう少し深く。"].exists)
+        let initialY = header.frame.minY
+        let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.82, dy: 0.55))
+        let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.18, dy: 0.55))
+        start.press(forDuration: 0.05, thenDragTo: end)
+        XCTAssertTrue(app.scrollViews["reading-page-地図"].waitForExistence(timeout: 3))
+        app.buttons["人物"].tap()
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "パウロ")).firstMatch.waitForExistence(timeout: 5))
+        XCTAssertEqual(header.frame.minY, initialY, accuracy: 2)
+        app.buttons["本文を展開"].tap(); XCTAssertTrue(app.buttons["折り畳む"].exists)
+        attach(app, "reading-pinned-original-and-people")
+        app.buttons["解説"].tap(); app.buttons["地図"].tap(); app.buttons["解説"].tap()
+        XCTAssertTrue(header.exists)
+        attach(app, "reading-repeat-tabs")
+    }
     @MainActor private func attach(_ app: XCUIApplication, _ name: String) {
         let attachment = XCTAttachment(screenshot: app.screenshot()); attachment.name = name; attachment.lifetime = .keepAlways; add(attachment)
     }

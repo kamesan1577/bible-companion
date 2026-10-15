@@ -1,7 +1,7 @@
 import {Hono} from 'hono';import {z} from 'zod';
 import {parseImport,sha256,stableJSON} from '@bible/core';
 import type {AppEnv} from './types';import {body,fail,now} from './http';
-import {ensureConsent,answerQuestion,questionStatus} from './ai';import {rateLimit} from './budget';
+import {ensureConsent,answerQuestion,questionStatus,standardExplanation} from './ai';import {rateLimit} from './budget';
 import {shareAccessUser,assertShareAccess} from './share-auth';
 export const shareAccess=new Hono<AppEnv>();
 shareAccess.post('/me/share-access',async c=>{
@@ -44,6 +44,11 @@ shareAi.post('/start',async c=>{
  }
  const results=await c.env.DB.prepare('SELECT c.id,c.passage_json FROM share_ai_conversations sc JOIN conversations c ON c.id=sc.conversation_id AND c.user_id=? WHERE sc.reading_id=? ORDER BY c.created_at,c.rowid').bind(owner,reading.id).all<{id:string;passage_json:string}>();
  await assertShareAccess(c);return c.json({ownerId:owner,importId:reading.import_id,items:results.results.map(r=>({conversationId:r.id,passage:JSON.parse(r.passage_json)}))});
+});
+shareAi.post('/conversations/:id/explanation',async c=>{
+ const scoped=await c.env.DB.prepare('SELECT sc.conversation_id FROM share_ai_conversations sc JOIN share_ai_readings r ON r.id=sc.reading_id WHERE sc.conversation_id=? AND r.access_hash=?').bind(c.req.param('id'),c.get('shareCapability')).first();
+ if(!scoped)fail(404,'not_found','この共有の会話ではありません。');
+ const response=await standardExplanation(c);await assertShareAccess(c);return response;
 });
 shareAi.post('/conversations/:id/questions',async c=>{
  const scoped=await c.env.DB.prepare('SELECT sc.conversation_id FROM share_ai_conversations sc JOIN share_ai_readings r ON r.id=sc.reading_id WHERE sc.conversation_id=? AND r.access_hash=?').bind(c.req.param('id'),c.get('shareCapability')).first();

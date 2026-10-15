@@ -330,7 +330,9 @@ function currentFreeReceipt(
     verified > nowMs ||
     expires <= nowMs ||
     expires <= verified ||
-    expires - verified > FREE_RECEIPT_MAX_AGE_MS
+    expires - verified > FREE_RECEIPT_MAX_AGE_MS ||
+    (env.AI_FREE_DEADLINE_MODE !== undefined && env.AI_FREE_DEADLINE_MODE !== 'utc-halfday') ||
+    (env.AI_FREE_DEADLINE_MODE === 'utc-halfday' && expires > (Math.floor(verified / 43200000) + 1) * 43200000)
   )
     throw new HarnessError('BUDGET_UNVERIFIED');
   return { loaded, receipt };

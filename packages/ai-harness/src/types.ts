@@ -191,7 +191,7 @@ export interface AnswerResult {
       | 'retrieval-and-reference-checks';
   };
   /** Personal questions/history/results never enter a shared cache. */
-  cacheScope: 'private';
+  cacheScope: 'private' | 'public-standard';
   requestedSettings: ModelSettings;
   effectiveSettings: Record<string, unknown>;
   usage: UsageReport;

@@ -65,7 +65,9 @@ struct PendingQuestionView: View {
     private func replay() {
         guard let pending else { return }
         Task { await perform {
-            let result: RequestResult = try await client.post("/v1/conversations/\(pending.conversationID)/questions", body: pending.body)
+            let result: RequestResult
+            if pending.standardExplanation { result = try await client.post("/v1/conversations/\(pending.conversationID)/explanation", body: ["requestId": pending.requestID]) }
+            else { result = try await client.post("/v1/conversations/\(pending.conversationID)/questions", body: pending.body) }
             try accept(result)
         } }
     }

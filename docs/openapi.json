@@ -879,6 +879,70 @@
         }
       }
     },
+    "/share/conversations/{id}/explanation": {
+      "post": {
+        "summary": "Read a globally cached fixed public explanation within this share capability",
+        "description": "Fixed Japanese prompt and model settings. No private question or chat history enters the global cache. Completed cache hits dispatch no model and consume no AI budget.",
+        "security": [
+          {
+            "shareBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "requestId": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                },
+                "required": [
+                  "requestId"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestResult"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/share/requests/{id}": {
       "get": {
         "summary": "Check only a question owned by this share capability",
@@ -1952,6 +2016,70 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/QuestionInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestResult"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/conversations/{id}/explanation": {
+      "post": {
+        "summary": "Read the standard public-scripture explanation",
+        "description": "Durable public result keyed by passage, translation, spoiler boundary, fixed settings and source/prompt versions. First misses use the existing consent and Free budget guards; cache hits cost zero inference. Private questions remain private.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "requestId": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                },
+                "required": [
+                  "requestId"
+                ],
+                "additionalProperties": false
               }
             }
           }

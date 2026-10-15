@@ -42,7 +42,7 @@ import CompanionCore
         catch { if !Task.isCancelled, policyGate.accepts(generation) { aiPolicy = nil; policyError = "AIの利用条件を確認できません。再確認するか、範囲の資料だけを確認してください。" } }
     }
     var canUseSelectedMode: Bool { sourceOnly || aiPolicy?.permits(answerMode) == true }
-    func send(target: Passage) {
+    func send(target: Passage, standard: Bool = false) {
         guard canUseSelectedMode, !resumeInvalid, item.ranges.indices.contains(rangeIndex), !isRunning, !isCheckingStatus, !needsStatusCheck, !draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, draft.utf16.count <= 2000,
               let scope = try? QuestionScope(reading: item.ranges[rangeIndex], target: target, spoilerAllowed: spoilerAllowed) else { return }
         do {
@@ -68,17 +68,19 @@ import CompanionCore
                 guard let conversationID else { throw NetworkFailure.invalidResponse }
                 try Task.checkCancellation()
                 guard gate.accepts(generation) else { return }
-                let pending = PendingQuestion(ownerID: ownerID, requestID: request, conversationID: conversationID, question: submittedQuestion, sourceOnly: submittedMode, passageLabel: scope.target.label, createdAt: Date(), answerMode: submittedAnswerMode)
+                let pending = PendingQuestion(ownerID: ownerID, requestID: request, conversationID: conversationID, question: submittedQuestion, sourceOnly: submittedMode, passageLabel: scope.target.label, createdAt: Date(), answerMode: submittedAnswerMode, standardExplanation: standard)
                 try PendingQuestionStore.save(pending)
                 needsStatusCheck = true
                 try Task.checkCancellation()
                 guard gate.accepts(generation) else { return }
-                let result: RequestResult = try await client.post("/v1/conversations/\(conversationID)/questions", body: pending.body)
+                let result: RequestResult
+                if standard { result = try await client.post("/v1/conversations/\(conversationID)/explanation", body: ["requestId": request]) }
+                else { result = try await client.post("/v1/conversations/\(conversationID)/questions", body: pending.body) }
                 guard gate.accepts(generation) else { return }
                 accept(result)
             } catch {
                 if gate.accepts(generation) {
-                    if case NetworkFailure.server(_, let code) = error, ["ai_not_connected", "ai_consent_required", "grounded_consent_required", "answer_mode_disabled", "model_unconnected", "budget_unverified"].contains(code) {
+                    if case NetworkFailure.server(_, let code) = error, ["ai_not_connected", "ai_consent_required", "grounded_consent_required", "answer_mode_disabled", "model_unconnected", "budget_unverified", "standard_explanation_pending", "standard_explanation_unavailable"].contains(code) {
                         do { try PendingQuestionStore.remove(owner: ownerID, request: request); needsStatusCheck = false }
                         catch { needsStatusCheck = true }
                         if ["grounded_consent_required", "answer_mode_disabled"].contains(code) { aiPolicy = nil; policyGate.invalidate() }

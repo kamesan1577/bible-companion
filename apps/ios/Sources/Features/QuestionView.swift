@@ -5,6 +5,7 @@ struct QuestionView: View {
     @EnvironmentObject private var store: AppStore
     @Environment(\.dismiss) private var dismiss
     @StateObject private var model: QuestionModel
+    @FocusState private var composerFocused: Bool
     @State private var target: Passage
     @State private var confirmSpoilers = false
     @State private var showScopeInfo = false
@@ -64,6 +65,7 @@ struct QuestionView: View {
                     }
                 }
             }.bibleCanvas().navigationTitle("質問").navigationBarTitleDisplayMode(.inline)
+                .safeAreaInset(edge: .top) { SharedScriptureHeader(passage: reading, translation: store.selected?.translation, text: store.sourceExcerpt, compact: composerFocused) }
                 .safeAreaInset(edge: .bottom) { composer }
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) { Button("閉じる") { model.close(); dismiss() } }
@@ -79,7 +81,7 @@ struct QuestionView: View {
     }
     private var composer: some View {
         HStack(alignment: .bottom, spacing: BibleTheme.Space.sm) {
-            TextField("質問を入力", text: $model.draft, axis: .vertical).accessibilityIdentifier("question-draft").lineLimit(1...4).bibleTextStyle(.body).disabled(model.isRunning).submitLabel(.send).onSubmit { if canSend { model.send(target: target) } }
+            TextField("質問を入力", text: $model.draft, axis: .vertical).accessibilityIdentifier("question-draft").focused($composerFocused).lineLimit(1...4).bibleTextStyle(.body).disabled(model.isRunning).submitLabel(.send).onSubmit { if canSend { model.send(target: target) } }
             Button { model.send(target: target) } label: { Image(systemName: "arrow.up.circle.fill").bibleTextStyle(.title).frame(minWidth: 44, minHeight: 44) }.accessibilityLabel("質問を送る").disabled(!canSend)
         }.padding(BibleTheme.Space.md).bibleCanvas()
     }

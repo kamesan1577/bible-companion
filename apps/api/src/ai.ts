@@ -1,3 +1,4 @@
+import {STANDARD_QUESTION,standardKey,readStandard,claimStandard,completeStandard,failStandard,cachedStandard} from './standard-cache';
 import { budgetDispatchGuard } from './budget-dispatch';
 import type { Context } from 'hono';
 import { assertShareAccess } from './share-auth';
@@ -278,8 +279,10 @@ aiRoutes.delete('/developer/model-preference', async (c) => {
     .run();
   return c.body(null, 204);
 });
-export async function answerQuestion(c: Context<AppEnv>) {
-  const v = await body(
+export async function answerQuestion(c: Context<AppEnv>) { return answerCore(c,false); }
+export async function standardExplanation(c: Context<AppEnv>) { return answerCore(c,true); }
+async function answerCore(c: Context<AppEnv>,standard:boolean) {
+  const v = standard ? {...await body(c,z.object({requestId:z.string().uuid()}).strict()),question:STANDARD_QUESTION,sourceOnly:false,answerMode:'grounded-generation' as const} : await body(
     c,
     z
       .object({
@@ -308,6 +311,7 @@ export async function answerQuestion(c: Context<AppEnv>) {
         v.answerMode === 'reviewed-claim-selection'
           ? { requestId: v.requestId, question: v.question, sourceOnly: v.sourceOnly }
           : v,
+      ...(standard ? {standardExplanation: true} : {}),
       conversationId: conversation.id,
       passage: conversation.passage_json,
       readingBoundary: readingBoundaryOf(conversation),
@@ -345,7 +349,7 @@ export async function answerQuestion(c: Context<AppEnv>) {
     );
   }
   if (!v.sourceOnly) {
-    if (c.env.AI_ENABLED !== 'true' || !c.env.AI)
+    if (!standard && (c.env.AI_ENABLED !== 'true' || !c.env.AI))
       fail(
         503,
         'ai_not_connected',
@@ -355,7 +359,7 @@ export async function answerQuestion(c: Context<AppEnv>) {
   }
   await rateLimit(c.env, 'question:' + user.id, 10);
   const preference =
-    canDebug(c.env, user) && !c.get('shareCapability')
+    canDebug(c.env, user) && !c.get('shareCapability') && !standard
       ? await c.env.DB.prepare(
           'SELECT model_id,settings_json FROM model_preferences WHERE user_id=?',
         )
@@ -390,7 +394,7 @@ export async function answerQuestion(c: Context<AppEnv>) {
   const input: AnswerInput = {
     passage,
     readingBoundary: readingBoundaryOf(conversation),
-    history,
+    history: standard ? [] : history,
     question: v.question,
     translation: conversation.translation ?? undefined,
     spoilerAllowed: !!conversation.spoiler_allowed,
@@ -400,13 +404,16 @@ export async function answerQuestion(c: Context<AppEnv>) {
       ? JSON.parse(preference.settings_json)
       : { maxOutputTokens: 2048, temperature: 0.2, timeoutMs: 30000, stream: false },
   };
+  const publicKey = standard ? await standardKey(input,sourceState.version,c.env.GENERAL_KNOWLEDGE_ENABLED==='true') : null;
+  let sharedResult = publicKey ? await readStandard(c.env,publicKey.key) : null;
+  let cacheToken:string|null=null;
   try {
-    prepareCompanionRequest(input, {
+    if(!sharedResult) prepareCompanionRequest(input, {
       authorization: authorization(c.env, user.id),
       answerMode: v.answerMode,
       allowGeneralKnowledge: c.env.GENERAL_KNOWLEDGE_ENABLED === 'true',
     });
-    if (!v.sourceOnly) {
+    if (!v.sourceOnly && !sharedResult) {
       assertModelAuthorized(input.modelId!, authorization(c.env, user.id));
     }
   } catch (e) {
@@ -415,7 +422,8 @@ export async function answerQuestion(c: Context<AppEnv>) {
   let reservationAmount = 0;
   let verifiedReservation: Awaited<ReturnType<typeof estimateReservation>> | undefined;
   try {
-    if (!v.sourceOnly) {
+    if (!v.sourceOnly && !sharedResult) {
+      if(c.env.AI_ENABLED!=='true'||!c.env.AI)fail(503,'ai_not_connected','AI is not connected');
       verifiedReservation = await estimateReservation(
         c.env,
         input,
@@ -427,17 +435,19 @@ export async function answerQuestion(c: Context<AppEnv>) {
   } catch (e) {
     aiError(e);
   }
+  if(publicKey && !sharedResult){ const ticket=await claimStandard(c.env,publicKey.key,publicKey.json);cacheToken=ticket.token;sharedResult=ticket.result; }
+  if(sharedResult) verifiedReservation=undefined;
   const claimed = await c.env.DB.prepare(
     "INSERT OR IGNORE INTO generation_requests(id,user_id,conversation_id,request_hash,status,created_at,updated_at) SELECT ?,?,?,?,'reserved',?,? WHERE NOT EXISTS(SELECT 1 FROM request_cancellations WHERE user_id=? AND id=? AND kind='question') RETURNING id",
   )
     .bind(v.requestId, user.id, conversation.id, hash, now(), now(), user.id, v.requestId)
     .first();
-  if (!claimed) fail(409, 'request_already_processed', 'Request ID is already in use');
+  if (!claimed) { if(publicKey&&cacheToken)await failStandard(c.env,publicKey.key,cacheToken);fail(409, 'request_already_processed', 'Request ID is already in use'); }
   let budgetReserved = false;
   let dispatched = false;
   let settledUsage: number | null = null;
   try {
-    if (!v.sourceOnly) {
+    if (!v.sourceOnly && !sharedResult) {
       await reserveBudget(c.env, user.id, v.requestId, reservationAmount);
       budgetReserved = true;
     }
@@ -447,7 +457,7 @@ export async function answerQuestion(c: Context<AppEnv>) {
       .bind(now(), v.requestId, user.id, user.id, v.requestId)
       .first();
     if (!started) fail(409, 'request_cancelled', 'Request was cancelled before generation');
-    const result = v.sourceOnly
+    const result = sharedResult ? cachedStandard(sharedResult) : v.sourceOnly
       ? createSourceOnlyAnswer(input, user.id)
       : await createCompanionAnswer(input, {
           answerMode: v.answerMode,
@@ -507,7 +517,8 @@ export async function answerQuestion(c: Context<AppEnv>) {
     };
     const annotated = {
       ...result,
-      budgetPolicy: verifiedReservation
+      cache: standard ? (sharedResult ? 'public-standard-hit' : 'public-standard-miss') : 'private',
+      budgetPolicy: sharedResult ? {mode:'public-standard-cache',actualNeurons:0,reservedBudgetUnits:0,usageAccounting:'cache-hit-no-provider',warnings:[]} : verifiedReservation
         ? {
             mode: verifiedReservation.budgetMode,
             reservationBasis: verifiedReservation.reservationBasis,
@@ -587,8 +598,10 @@ export async function answerQuestion(c: Context<AppEnv>) {
     if (saved?.status !== 'complete')
       fail(409, 'request_cancelled', 'The request was cancelled before completion');
     await assertShareAccess(c);
+    if(publicKey&&cacheToken)await completeStandard(c.env,publicKey.key,cacheToken,result);
     return c.json({ requestId: v.requestId, status: 'complete', result: annotated });
   } catch (error) {
+    if(publicKey&&cacheToken)await failStandard(c.env,publicKey.key,cacheToken);
     await c.env.DB.prepare(
       "UPDATE generation_requests SET status='failed',updated_at=? WHERE id=? AND user_id=? AND status!='cancelled'",
     )
@@ -600,6 +613,7 @@ export async function answerQuestion(c: Context<AppEnv>) {
   }
 }
 aiRoutes.post('/conversations/:id/questions', answerQuestion);
+aiRoutes.post('/conversations/:id/explanation', standardExplanation);
 export async function questionStatus(c: Context<AppEnv>) {
   const row = await c.env.DB.prepare(
     'SELECT g.id,g.status,g.result_json,c.spoiler_allowed,c.passage_json,c.reading_boundary_json FROM generation_requests g JOIN conversations c ON c.id=g.conversation_id AND c.user_id=g.user_id WHERE g.id=? AND g.user_id=?',

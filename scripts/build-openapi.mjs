@@ -544,6 +544,7 @@ op('post', '/share/start', 'Create canonical reading references for this share c
   description:'Only canonical references and translation metadata are persisted; shared scripture text is not stored. At most20ranges. Replay is bounded by capability and exact payload identity.',
 });
 op('post', '/share/conversations/{id}/questions', 'Ask within a conversation created by this share capability', {authScheme:'shareBearer',input:ref('QuestionInput'),output:ref('RequestResult')});
+op('post', '/share/conversations/{id}/explanation', 'Read a globally cached fixed public explanation within this share capability', {authScheme:'shareBearer',input:object({requestId:uuid}),output:ref('RequestResult'),description:'Fixed Japanese prompt and model settings. No private question or chat history enters the global cache. Completed cache hits dispatch no model and consume no AI budget.'});
 op('get', '/share/requests/{id}', 'Check only a question owned by this share capability', {authScheme:'shareBearer',output:ref('RequestResult')});
 op('post', '/public/reading-preview', 'Read public reference excerpts without AI or account history', {auth:false,input:object({sharedText:{type:'string',minLength:1,maxLength:20000}}),output:{type:'object',additionalProperties:true}});
 op('post', '/v1/me/consents', 'Confirm or revoke Cloudflare AI data transmission', {
@@ -658,6 +659,7 @@ op('post', '/v1/conversations/{id}/questions', 'Ask or explicitly request source
   description:
     'No automatic retries. Owner model preferences apply only to future answers. Ordinary clients cannot select arbitrary models, URLs, sources or owners. True AI requires recorded consent, connected allowlisted model and verified budget.',
 });
+op('post', '/v1/conversations/{id}/explanation', 'Read the standard public-scripture explanation', {input:object({requestId:uuid}),output:ref('RequestResult'),description:'Durable public result keyed by passage, translation, spoiler boundary, fixed settings and source/prompt versions. First misses use the existing consent and Free budget guards; cache hits cost zero inference. Private questions remain private.'});
 op('get', '/v1/requests/{id}', 'Check an existing private question request', {
   output: ref('RequestResult'),
 });

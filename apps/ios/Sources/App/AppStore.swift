@@ -39,6 +39,15 @@ import CompanionCore
     @Published var questionTarget: Passage?
     @Published var questionConversation: Conversation?
     @Published private(set) var client: APIClient
+    private var standardModels: [String: QuestionModel] = [:]
+    func standardModel(item: ImportRecord, passage: Passage, sourceVersion: String) -> QuestionModel? {
+        guard let owner = account?.id else { return nil }
+        let key = "\(sessionEpoch):\(item.id):\(rangeIndex):\(passage.label):\(sourceVersion)"
+        if let model = standardModels[key] { return model }
+        if standardModels.count >= 16 { standardModels.values.forEach { $0.close() }; standardModels.removeAll() }
+        let model = QuestionModel(ownerID: owner, client: client, item: item, rangeIndex: rangeIndex)
+        standardModels[key] = model; return model
+    }
     private let loginFlow = WebLogin()
     private let publicCache: PublicReadingCache
     private var gate = RequestGate()
@@ -150,6 +159,7 @@ import CompanionCore
     /// Synchronous local invalidation is shared by explicit logout and server 401.
     /// No later cleanup task may erase a newly authenticated account.
     private func invalidateLocalSession() -> APIClient {
+        standardModels.values.forEach { $0.close() }; standardModels.removeAll()
         sessionEpoch = UUID(); isAuthenticating = false; restoreNeedsRetry = false; consentMutationID = nil; aiPolicyGate.invalidate()
         gate.invalidate(); cancelSignIn(); cancelReading(); showQuestion = false; showImport = false
         account = nil; selected = nil; reading = nil; sourceExcerpt = nil; cachedSnapshot = nil; history = []; historyLoading = false; historyChecked = false; historyError = nil; usage = nil; aiPolicy = nil; aiPolicyError = nil; pendingShares = []; nextCursor = nil
@@ -429,6 +439,8 @@ extension AppStore {
     func configureSimulatorQA(client: APIClient) {
         guard ProcessInfo.processInfo.arguments.contains("--simulator-qa") else { return }
         self.client = client
+        selected = try! JSONDecoder().decode(ImportRecord.self, from: Data(#"{"id":"00000000-0000-4000-8000-000000000123","idempotencyKey":"00000000-0000-4000-8000-000000000123","ranges":[{"book":"ACT","start":{"chapter":23,"verse":1},"end":{"chapter":23,"verse":1}}],"translation":"JCB","createdAt":0}"#.utf8))
+        sourceExcerpt = "共有元の日本語本文・表示確認用。Original Case Remains.\n" + String(repeating: "長い共有本文を折り畳んで保持します。", count: 20)
         account = try! JSONDecoder().decode(Account.self, from: Data(#"{"id":"00000000-0000-4000-8000-000000000123","display_name":"Fixture reader","role":"reader","canDebug":false}"#.utf8))
     }
 }

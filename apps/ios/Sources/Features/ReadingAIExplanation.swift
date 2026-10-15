@@ -6,13 +6,13 @@ struct ReadingAIExplanation: View {
     @StateObject private var model: QuestionModel
     @State private var consentIntent: GroundedConsentIntent?
     let passage: Passage
-    init(ownerID: String, client: APIClient, item: ImportRecord, rangeIndex: Int, passage: Passage) {
+    init(model: QuestionModel, passage: Passage) {
         self.passage = passage
-        _model = StateObject(wrappedValue: QuestionModel(ownerID: ownerID, client: client, item: item, rangeIndex: rangeIndex))
+        _model = StateObject(wrappedValue: model)
     }
     var body: some View {
         VStack(alignment: .leading, spacing: BibleTheme.Space.md) {
-            Text("この箇所をやさしく解説").bibleTextStyle(.heading)
+            Text("標準解説").bibleTextStyle(.heading)
             if let answer = model.answer {
                 Text(answer.answer).bibleTextStyle(.body).textSelection(.enabled)
                 Text("AIによる解説です。出典と本文を確かめながらお読みください。").bibleTextStyle(.caption).bibleForeground(.textSecondary)
@@ -37,7 +37,6 @@ struct ReadingAIExplanation: View {
             }
         }
         .task { await prepare() }
-        .onDisappear { model.close() }
         .onChange(of: model.conversation?.id) { _, _ in if store.account?.id == model.ownerID { store.questionConversation = model.conversation } }
         .sheet(item: $consentIntent, onDismiss: { Task { await prepare() } }) { GroundedConsentView(intent: $0).environmentObject(store) }
     }
@@ -47,6 +46,6 @@ struct ReadingAIExplanation: View {
     }
     private func explain() {
         model.draft = "この箇所の出来事と意味を、初めて読む人にも分かる日本語で短く説明してください。"
-        model.send(target: passage)
+        model.send(target: passage, standard: true)
     }
 }

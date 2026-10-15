@@ -52,6 +52,20 @@ async function configured(patch: Record<string, unknown> = {}, raw?: string) {
   return env;
 }
 afterEach(() => vi.useRealTimers());
+describe('fixed UTC half-day deadline',()=>{
+ afterEach(()=>vi.useRealTimers());
+ it('cannot retain an older 23-hour receipt even when control-plane writes are unreachable',async()=>{
+  vi.useFakeTimers();vi.setSystemTime(new Date('2026-10-15T01:00:00Z'));
+  const env=await configured({verifiedAt:'2026-10-15T00:00:00.000Z',expiresAt:'2026-10-15T23:00:00.000Z'});env.AI_FREE_DEADLINE_MODE='utc-halfday';
+  const a=await loadBudgetAuthority(env,[DEFAULT_MODEL_ID]);expect(()=>estimateModelReservation(env,DEFAULT_MODEL_ID,512,a)).toThrow();
+ });
+ it('expires at the next scheduled boundary without any external revocation call',async()=>{
+  vi.useFakeTimers();vi.setSystemTime(new Date('2026-10-15T01:00:00Z'));
+  const env=await configured({verifiedAt:'2026-10-15T00:00:00.000Z',expiresAt:'2026-10-15T12:00:00.000Z'});env.AI_FREE_DEADLINE_MODE='utc-halfday';
+  const a=await loadBudgetAuthority(env,[DEFAULT_MODEL_ID]);expect(()=>estimateModelReservation(env,DEFAULT_MODEL_ID,512,a)).not.toThrow();
+  vi.setSystemTime(new Date('2026-10-15T12:00:00Z'));expect(()=>estimateModelReservation(env,DEFAULT_MODEL_ID,512,a)).toThrow();
+ });
+});
 describe('explicit provider-Free hard-stop authority, never a mathematical token proof', () => {
   it('default strict mode stays closed even when a Free receipt exists', async () => {
     const env = await configured();

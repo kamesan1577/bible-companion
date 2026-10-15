@@ -5,17 +5,19 @@ public struct PendingQuestion: Codable, Sendable {
     public let requestID: String
     public let conversationID: String
     public let question: String
+    public let standardExplanation: Bool
     public let sourceOnly: Bool
     public let answerMode: AnswerMode
     let hasExplicitAnswerMode: Bool
     public let passageLabel: String
     public let createdAt: Date
-    public init(ownerID: String, requestID: String, conversationID: String, question: String, sourceOnly: Bool, passageLabel: String, createdAt: Date, answerMode: AnswerMode = .reviewedClaimSelection) {
-        self.ownerID = ownerID; self.requestID = requestID; self.conversationID = conversationID; self.question = question; self.sourceOnly = sourceOnly; self.answerMode = answerMode; hasExplicitAnswerMode = true; self.passageLabel = passageLabel; self.createdAt = createdAt
+    public init(ownerID: String, requestID: String, conversationID: String, question: String, sourceOnly: Bool, passageLabel: String, createdAt: Date, answerMode: AnswerMode = .reviewedClaimSelection, standardExplanation: Bool = false) {
+        self.standardExplanation = standardExplanation; self.ownerID = ownerID; self.requestID = requestID; self.conversationID = conversationID; self.question = question; self.sourceOnly = sourceOnly; self.answerMode = answerMode; hasExplicitAnswerMode = true; self.passageLabel = passageLabel; self.createdAt = createdAt
     }
-    private enum CodingKeys: String, CodingKey { case ownerID, requestID, conversationID, question, sourceOnly, answerMode, passageLabel, createdAt }
+    private enum CodingKeys: String, CodingKey { case standardExplanation, ownerID, requestID, conversationID, question, sourceOnly, answerMode, passageLabel, createdAt }
     public init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
+        standardExplanation = try c.decodeIfPresent(Bool.self, forKey: .standardExplanation) ?? false
         ownerID = try c.decode(String.self, forKey: .ownerID); requestID = try c.decode(String.self, forKey: .requestID)
         conversationID = try c.decode(String.self, forKey: .conversationID); question = try c.decode(String.self, forKey: .question)
         sourceOnly = try c.decode(Bool.self, forKey: .sourceOnly); passageLabel = try c.decode(String.self, forKey: .passageLabel); createdAt = try c.decode(Date.self, forKey: .createdAt)

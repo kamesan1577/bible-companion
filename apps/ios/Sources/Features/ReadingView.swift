@@ -8,65 +8,63 @@ private enum ReadingSection: String, CaseIterable, Identifiable {
 }
 struct ReadingView: View {
     @EnvironmentObject private var store: AppStore
+    @Environment(\.accessibilityVoiceOverEnabled) private var voiceOver
     @Environment(\.dynamicTypeSize) private var typeSize
     @State private var section: ReadingSection = .explanation
     @State private var showGuide = false
     @State private var shareConsentIntent: GroundedConsentIntent?
     var body: some View {
-        ScrollView {
-            BibleReadingColumn {
-                if let passage = store.selectedPassage {
-                    rangeHeader(passage)
-                    if let record = store.selected, record.ranges.count > 1 {
-                        Picker("表示する箇所", selection: Binding(get: { store.rangeIndex }, set: { store.changeRange($0) })) {
-                            ForEach(Array(record.ranges.enumerated()), id: \.offset) { index, range in Text(range.label).tag(index) }
-                        }.pickerStyle(.menu)
-                    }
-                    if let excerpt = store.sourceExcerpt {
-                        DisclosureGroup("共有したテキスト") {
-                            Text(excerpt).bibleTextStyle(.body).textSelection(.enabled)
-                            Text("この起動中のみ保持しています。履歴には保存しません。").bibleTextStyle(.caption).bibleForeground(.textSecondary)
-                        }
-                    }
-                    if let cached = store.cachedSnapshot {
-                        BibleReadingSurface {
-                            VStack(alignment: .leading, spacing: BibleTheme.Space.sm) {
-                                Label(store.isRevalidatingSource ? "保存した資料 · 更新を確認中" : store.isOffline ? "保存した資料 · オフラインで閲覧" : "保存した資料 · 更新は未確認", systemImage: "arrow.down.circle")
-                                    .bibleTextStyle(.caption)
-                                Text("最終確認: \(cached.lastValidatedAt.formatted(date: .abbreviated, time: .shortened))").bibleTextStyle(.caption)
-                                Text("公開利用が確認された概要です。保存から24時間以内のみ表示します。地図・人物・絵画は再接続後に確認できます。").bibleTextStyle(.caption).bibleForeground(.textSecondary)
+        Group {
+            if let passage = store.selectedPassage {
+                ZStack {
+                    ForEach(ReadingSection.allCases) { page in
+                        ScrollView {
+                            BibleReadingColumn {
+                                if let record = store.selected, record.ranges.count > 1 {
+                                    Picker("表示する箇所", selection: Binding(get: { store.rangeIndex }, set: { store.changeRange($0) })) {
+                                        ForEach(Array(record.ranges.enumerated()), id: \.offset) { index, range in Text(range.label).tag(index) }
+                                    }.pickerStyle(.menu)
+                                }
+                                if page == .maps || page == .people {
+                                    if page == .people { standardExplanation(passage) }
+                                    OfflineEntityPane(passage: passage, kind: page == .maps ? "place" : "person")
+                                }
+                                if store.isLoading && page == .explanation { BibleLoadingView() }
+                                else if let reading = store.reading { sectionContent(reading, passage: passage, section: page) }
+                                else if page == .explanation || page == .art {
+                                    BibleStateView(title: "資料を読み込めません", message: store.errorMessage ?? "再読み込みしてください。", systemImage: BibleTheme.Symbol.error)
+                                    Button("再読み込み") { store.loadReading() }
+                                }
                             }
                         }
+                        .id("\(passage.label)-\(page.rawValue)")
+                        .opacity(section == page ? 1 : 0).allowsHitTesting(section == page).accessibilityHidden(section != page)
+                        .accessibilityIdentifier("reading-page-\(page.rawValue)")
+                        .simultaneousGesture(DragGesture(minimumDistance: BibleTheme.Layout.minimumTouchTarget).onEnded { value in
+                            guard !voiceOver, value.startLocation.x > BibleTheme.Layout.minimumTouchTarget, abs(value.translation.width) > BibleTheme.Layout.minimumTouchTarget * 2, abs(value.translation.width) > abs(value.translation.height) * 2 else { return }
+                            changeSection(value.translation.width < 0 ? 1 : -1)
+                        })
                     }
-                    sectionPicker
-                    if section == .maps || section == .people {
-                        OfflineEntityPane(passage: passage, kind: section == .maps ? "place" : "person")
-                    }
-                    if store.isLoading && section == .explanation {
-                        BibleLoadingView()
-                        Button("読み込みを中止") { store.cancelReading() }
-                    } else if let reading = store.reading {
-                        sectionContent(reading, passage: passage)
-                    } else if section == .explanation || section == .art {
-                        BibleStateView(title: store.isOffline ? "オフラインです" : "資料を読み込めません", message: store.errorMessage ?? "資料を読み込むと、選んだ箇所の背景を確認できます。", systemImage: BibleTheme.Symbol.error)
-                        Button("再読み込み") { store.loadReading() }.buttonStyle(.bordered)
-                    }
-                } else {
-                    BibleSectionHeader(title: "読んだ箇所を、もう少し深く。", subtitle: "YouVersionから共有した章節を、ひとつの文脈のまま。")
-                    BibleStateView(title: "最初の箇所を開く", message: "YouVersionの共有メニューから「聖書コンパニオン」を選んでください。ここから章節や共有テキストを入力することもできます。", systemImage: BibleTheme.Symbol.reading)
+                }
+                .safeAreaInset(edge: .top) {
+                    VStack(spacing: BibleTheme.Space.sm) {
+                        SharedScriptureHeader(passage: passage, translation: store.selected?.translation, text: store.sourceExcerpt)
+                        sectionPicker.padding(.horizontal, BibleTheme.Space.page)
+                    }.bibleCanvas()
+                }
+                .accessibilityAdjustableAction { direction in changeSection(direction == .increment ? 1 : -1) }
+            } else {
+                ScrollView { BibleReadingColumn {
+                    BibleStateView(title: "最初の箇所を開く", message: "YouVersionの共有メニューから「聖書コンパニオン」を選んでください。", systemImage: BibleTheme.Symbol.reading)
                     NavigationLink("サンプルの解説を読む") { SampleReadingPreview() }
                     Button("共有の手順を図で見る") { showGuide = true }
                     if store.account == nil { signInPrompt }
                     else {
-                        Button(store.aiPolicy?.shareAiEnabled == true ? "共有画面のAIを有効にする" : "AIで解説を読む") {
-                            Task { await store.loadAIPolicy(); if let owner = store.account, let policy = store.aiPolicy { shareConsentIntent = GroundedConsentIntent(ownerID: owner.id, sessionEpoch: store.sessionEpoch, policy: policy) } }
-                        }.buttonStyle(.borderedProminent)
+                        Button("共有画面のAIを有効にする") { Task { await store.loadAIPolicy(); if let owner = store.account, let policy = store.aiPolicy { shareConsentIntent = GroundedConsentIntent(ownerID: owner.id, sessionEpoch: store.sessionEpoch, policy: policy) } } }.buttonStyle(.borderedProminent)
                         Button("章節を入力する") { store.showImport = true }
                     }
-                }
-                if !store.pendingShares.isEmpty {
-                    Button { store.showImport = true } label: { BibleActionLabel(title: "共有された箇所を確認（\(store.pendingShares.count)）", systemImage: "square.and.arrow.down") }.buttonStyle(.glass)
-                }
+                    if !store.pendingShares.isEmpty { Button("共有された箇所を確認") { store.showImport = true } }
+                } }
             }
         }
         .bibleCanvas()
@@ -88,6 +86,15 @@ struct ReadingView: View {
                 Button { store.ask() } label: { BibleActionLabel(title: "この箇所について質問", systemImage: BibleTheme.Symbol.question).frame(maxWidth: .infinity) }
                     .buttonStyle(.glass).padding(.horizontal, BibleTheme.Space.page).padding(.vertical, BibleTheme.Space.sm)
             }
+        }
+    }
+    private func changeSection(_ delta: Int) {
+        guard let index = ReadingSection.allCases.firstIndex(of: section) else { return }
+        section = ReadingSection.allCases[min(max(index + delta, 0), ReadingSection.allCases.count - 1)]
+    }
+    @ViewBuilder private func standardExplanation(_ passage: Passage) -> some View {
+        if let item = store.selected, let model = store.standardModel(item: item, passage: passage, sourceVersion: store.reading?.sourceVersion ?? "loading") {
+            ReadingAIExplanation(model: model, passage: passage).id("standard-\(item.id)-\(passage.label)-\(store.reading?.sourceVersion ?? "loading")")
         }
     }
     private var signInPrompt: some View {
@@ -121,12 +128,9 @@ struct ReadingView: View {
             Picker("表示内容", selection: $section) { ForEach(ReadingSection.allCases) { Text($0.rawValue).tag($0) } }.pickerStyle(.segmented)
         }
     }
-    @ViewBuilder private func sectionContent(_ reading: ReadingResponse, passage: Passage) -> some View {
+    @ViewBuilder private func sectionContent(_ reading: ReadingResponse, passage: Passage, section: ReadingSection) -> some View {
         if section == .explanation {
-            if let item = store.selected, let owner = store.account {
-                ReadingAIExplanation(ownerID: owner.id, client: store.client, item: item, rangeIndex: store.rangeIndex, passage: passage)
-                    .id(item.id + ":" + String(store.rangeIndex))
-            }
+            standardExplanation(passage)
             DisclosureGroup("参考資料を読む") {
             BibleSectionHeader(title: reading.overview.contentKind == "literal-primary-text" ? "出典の原文を確認する" : "選んだ箇所をつなげて読む", subtitle: reading.overview.contentKind == "literal-primary-text" ? "英語 · World English Bible" : "資料からの案内")
             Text(reading.overview.noticeJa ?? "出典に基づく資料からの案内です。AI生成ではありません。")
@@ -154,7 +158,7 @@ struct ReadingView: View {
             if cards.isEmpty && section == .art {
                 BibleStateView(title: store.cachedSnapshot != nil ? "接続して\(section.rawValue)を確認" : "この箇所の\(section.rawValue)は未登録です", message: reading.materialNotice, systemImage: section.symbol)
             } else {
-                if section == .maps { Text("確認済みの地名と背景です。位置の座標が未確認の場所は、地図上に推測のピンを置きません。").bibleTextStyle(.caption).bibleForeground(.textSecondary) }
+                if section == .maps { Text("登録された地名と背景です。位置の座標が未確認の場所は、地図上に推測のピンを置きません。").bibleTextStyle(.caption).bibleForeground(.textSecondary) }
                 ForEach(cards) { MaterialCardView(card: $0, reading: passage) }
             }
         }
@@ -174,7 +178,7 @@ struct CitationList: View {
                         Text("\(citation.passage.label) · \(citation.license) · \(citation.version)").bibleTextStyle(.caption).bibleForeground(.textSecondary)
                         if let provenance = citation.materialProvenance {
                             DisclosureGroup("資料の原出典・著作権表示") {
-                                Text("\(provenance.kindLabel) · \(provenance.kind == "reviewed-material-summary" ? "編集確認済み要約" : "確認状態は未確認") · 版 \(provenance.materialVersion)").bibleTextStyle(.caption)
+                                Text("\(provenance.kindLabel) · \(provenance.kind == "reviewed-material-summary" ? "収録済み要約" : "確認状態は未確認") · 版 \(provenance.materialVersion)").bibleTextStyle(.caption)
                                 Text("以下は要約の根拠となった資料です。AIの説明全体の正確さを保証するものではありません。").bibleTextStyle(.caption)
                                 ForEach(Array(provenance.references.enumerated()), id: \.offset) { _, reference in
                                     VStack(alignment: .leading, spacing: BibleTheme.Space.xs) {

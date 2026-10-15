@@ -10,12 +10,11 @@ struct FirstRunGuide: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: BibleTheme.Space.page) {
-                    Text("聖書を読んだら、共有するだけ。") .bibleTextStyle(.heading)
                     HStack { ForEach(0..<3) { index in Capsule().fill(index == step ? Color.accentColor : Color.secondary.opacity(0.2)).frame(height: 5) } }.accessibilityLabel("手順\(step + 1)、全3手順")
                     Text(titles[step]).bibleTextStyle(.heading)
                     illustration
                     Text(instructions[step]).bibleTextStyle(.body)
-                    if step == 2 { Text("一覧にないときは「その他」→「編集」→聖書コンパニオンを「よく使う項目」に追加。右の三本線を上へ動かすと、次から先頭に出ます。人物・地名をここで確認できます。AIの解説と追加質問は、アプリでログインして利用してください。").bibleTextStyle(.caption) }
+                    if step == 2 { Text("一覧にないときは「その他」→「編集」→聖書コンパニオンを「よく使う項目」に追加。右の三本線を上へ動かすと、次から先頭に出ます。初回だけメインアプリでログインし、「共有画面のAIを有効にする」を押してください。設定後は共有画面で解説と追加質問を利用できます。").bibleTextStyle(.caption) }
                     Button(step == 2 ? "わかった、読み始める" : "次へ") { if step < 2 { step += 1 } else { dismiss() } }.buttonStyle(.borderedProminent).frame(maxWidth: .infinity)
                     NavigationLink("まずサンプルを読んでみる") { SampleReadingPreview() }
                     if step > 0 { Button("戻る") { step -= 1 } }

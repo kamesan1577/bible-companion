@@ -83,7 +83,7 @@ Section("モデル") {
                     Picker("最大出力トークン", selection: $maxTokens) { ForEach(tokenChoices, id: \.self) { Text(String($0)).tag($0) } }.disabled(operationBusy || jobID != nil)
                     Stepper("Temperature \(temperature, specifier: "%.1f")", value: $temperature, in: bounds?.temperature ?? 0...0, step: 0.1).disabled(operationBusy || jobID != nil)
                     Stepper("タイムアウト \(timeoutMs / 1000)秒", value: $timeoutMs, in: bounds?.timeoutMilliseconds ?? 15000...15000, step: 1000).disabled(operationBusy || jobID != nil || bounds == nil)
-                    Button("以後の回答に適用") { setPreference() }.disabled(first.isEmpty || operationBusy || !validSettings)
+                    Button("自由質問に適用") { setPreference() }.disabled(first.isEmpty || operationBusy || !validSettings)
                     Button("既定のモデルへ戻す") { Task { await perform { epoch, operation in try await client.empty("/v1/developer/model-preference", method: "DELETE"); guard isCurrent(epoch), operationGeneration == operation else { return }; message = "既定値へ戻しました。過去の回答は変わりません。" } } }.disabled(operationBusy)
                     Text("回答は完了したJSONで受け取ります。未検証の推論パラメーターは送信しません。").bibleTextStyle(.caption)
                 }
@@ -168,7 +168,7 @@ Section("2つの設定を比較") {
     private func setPreference() {
         guard validSettings else { return }
         let preference = JSONValue.object(["modelId": .string(first), "settings": settings])
-        Task { await perform { epoch, operation in let _: JSONValue = try await client.put("/v1/developer/model-preference", body: preference); guard isCurrent(epoch), operationGeneration == operation else { return }; message = "以後の回答に適用しました。過去の回答は変わりません。" } }
+        Task { await perform { epoch, operation in let _: JSONValue = try await client.put("/v1/developer/model-preference", body: preference); guard isCurrent(epoch), operationGeneration == operation else { return }; message = "自由質問に適用しました。過去の回答は変わりません。" } }
     }
     private func modeLabels(_ plan: JSONValue) -> String { plan["models"].array.map { AnswerMode(rawValue: $0["answerMode"].string ?? "reviewed-claim-selection")?.label ?? "未対応の回答方法" }.joined(separator: " / ") }
     private func planComparison() {

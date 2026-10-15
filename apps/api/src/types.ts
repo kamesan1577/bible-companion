@@ -23,6 +23,7 @@ export interface Env {
   WORKERS_AI_ACCOUNT_ID?: string;
   AI_FREE_RECEIPT_ID?: string;
   AI_FREE_RECEIPT_MODE?: string;
+  AI_FREE_DEADLINE_MODE?: string;
   AI_FREE_RECEIPT_SLOT?: string;
   AI?: {
     run(

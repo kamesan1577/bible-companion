@@ -18,6 +18,7 @@ struct SimulatorQA: View {
             List {
                 Text("Simulator固定データ · 通信・実認証なし").bibleTextStyle(.caption)
                 if ready {
+                    NavigationLink("読書画面") { ReadingView() }
                     NavigationLink("質問画面") { QuestionView(ownerID: item.id, client: client, item: item, rangeIndex: 0, target: item.ranges[0]) }
                 }
                 NavigationLink("使徒23:1の人物") { ScrollView { OfflineEntityPane(passage: item.ranges[0], kind: "person").padding() }.navigationTitle("人物") }
@@ -46,7 +47,7 @@ private final class SimulatorQAProtocol: URLProtocol, @unchecked Sendable {
         if request.httpMethod == "POST", url.path == "/v1/conversations" {
             ok = true
             data = try! JSONSerialization.data(withJSONObject: ["id":"00000000-0000-4000-8000-000000000123","importId":"00000000-0000-4000-8000-000000000123","passage":passage,"readingBoundary":passage,"spoilerAllowed":false,"createdAt":0])
-        } else if request.httpMethod == "POST", url.path.hasSuffix("/questions") {
+        } else if request.httpMethod == "POST", (url.path.hasSuffix("/questions") || url.path.hasSuffix("/explanation")) {
             ok = true
             data = try! JSONSerialization.data(withJSONObject: ["requestId":fields["requestId"] ?? "00000000-0000-4000-8000-000000000123","status":"complete","result":["answer":"固定データ: " + (fields["question"] as? String ?? "送信"),"status":"answered","citations":[],"modelId":"fixture-no-provider","modelInvoked":false,"mode":"grounded-generation","warnings":[],"usage":[:],"timing":[:]]])
         }

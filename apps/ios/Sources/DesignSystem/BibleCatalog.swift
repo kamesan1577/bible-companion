@@ -10,7 +10,6 @@ struct BibleDesignCatalog: View {
         NavigationStack {
             ScrollView {
                 BibleReadingColumn {
-                    BibleSectionHeader(title: "静かな読書面", subtitle: "色と材質より先に、読む順序を守る。")
                     VStack(alignment: .leading, spacing: BibleTheme.Space.md) {
                         Text("使徒の働き").bibleTextStyle(.heading)
                         Text("18:24–19:7").bibleTextStyle(.verseReference)
