@@ -93,8 +93,8 @@ struct ReadingView: View {
         section = ReadingSection.allCases[min(max(index + delta, 0), ReadingSection.allCases.count - 1)]
     }
     @ViewBuilder private func standardExplanation(_ passage: Passage) -> some View {
-        if let item = store.selected, let model = store.standardModel(item: item, passage: passage, sourceVersion: store.reading?.sourceVersion ?? "loading") {
-            ReadingAIExplanation(model: model, passage: passage).id("standard-\(item.id)-\(passage.label)-\(store.reading?.sourceVersion ?? "loading")")
+        if let reading = store.reading, let item = store.selected, let model = store.standardModel(item: item, passage: passage, sourceVersion: reading.sourceVersion) {
+            ReadingAIExplanation(model: model, passage: passage).id("standard-\(item.id)-\(passage.label)-\(reading.sourceVersion)")
         }
     }
     private var signInPrompt: some View {

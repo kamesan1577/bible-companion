@@ -30,6 +30,11 @@ struct SimulatorQA: View {
     }
 }
 private final class SimulatorQAProtocol: URLProtocol, @unchecked Sendable {
+    private final class Counter: @unchecked Sendable {
+        private let lock = NSLock(); private var value = 0
+        func next() -> Int { lock.lock(); defer { lock.unlock() }; value += 1; return value }
+    }
+    private static let standardCounter = Counter()
     override class func canInit(with request: URLRequest) -> Bool { true }
     override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
     override func startLoading() {
@@ -49,7 +54,8 @@ private final class SimulatorQAProtocol: URLProtocol, @unchecked Sendable {
             data = try! JSONSerialization.data(withJSONObject: ["id":"00000000-0000-4000-8000-000000000123","importId":"00000000-0000-4000-8000-000000000123","passage":passage,"readingBoundary":passage,"spoilerAllowed":false,"createdAt":0])
         } else if request.httpMethod == "POST", (url.path.hasSuffix("/questions") || url.path.hasSuffix("/explanation")) {
             ok = true
-            data = try! JSONSerialization.data(withJSONObject: ["requestId":fields["requestId"] ?? "00000000-0000-4000-8000-000000000123","status":"complete","result":["answer":"固定データ: " + (fields["question"] as? String ?? "送信"),"status":"answered","citations":[],"modelId":"fixture-no-provider","modelInvoked":false,"mode":"grounded-generation","warnings":[],"usage":[:],"timing":[:]]])
+            let answer = url.path.hasSuffix("/explanation") ? "固定標準解説\(Self.standardCounter.next())" : "固定データ: " + (fields["question"] as? String ?? "送信")
+            data = try! JSONSerialization.data(withJSONObject: ["requestId":fields["requestId"] ?? "00000000-0000-4000-8000-000000000123","status":"complete","result":["answer":answer,"status":"answered","citations":[],"modelId":"fixture-no-provider","modelInvoked":false,"mode":"grounded-generation","warnings":[],"usage":[:],"timing":[:]]])
         }
         client?.urlProtocol(self, didReceive: HTTPURLResponse(url: url, statusCode: ok ? 200 : 409, httpVersion: "HTTP/1.1", headerFields: ["Content-Type":"application/json"])!, cacheStoragePolicy: .notAllowed)
         client?.urlProtocol(self, didLoad: data); client?.urlProtocolDidFinishLoading(self)

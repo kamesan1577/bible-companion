@@ -440,6 +440,7 @@ extension AppStore {
         guard ProcessInfo.processInfo.arguments.contains("--simulator-qa") else { return }
         self.client = client
         selected = try! JSONDecoder().decode(ImportRecord.self, from: Data(#"{"id":"00000000-0000-4000-8000-000000000123","idempotencyKey":"00000000-0000-4000-8000-000000000123","ranges":[{"book":"ACT","start":{"chapter":23,"verse":1},"end":{"chapter":23,"verse":1}}],"translation":"JCB","createdAt":0}"#.utf8))
+        reading = try! JSONDecoder().decode(ReadingResponse.self, from: Data(#"{"passage":{"book":"ACT","start":{"chapter":23,"verse":1},"end":{"chapter":23,"verse":1}},"translation":"JCB","spoilerAllowed":false,"sourceVersion":"fixture-v1","overview":{"contentKind":"curated-reference","text":"描画確認用の資料です。","citations":[],"mode":"source-only","modelInvoked":false},"materialNotice":"固定データ","cache":"fixture","people":[],"places":[],"artworks":[]}"#.utf8))
         sourceExcerpt = "共有元の日本語本文・表示確認用。Original Case Remains.\n" + String(repeating: "長い共有本文を折り畳んで保持します。", count: 20)
         account = try! JSONDecoder().decode(Account.self, from: Data(#"{"id":"00000000-0000-4000-8000-000000000123","display_name":"Fixture reader","role":"reader","canDebug":false}"#.utf8))
     }

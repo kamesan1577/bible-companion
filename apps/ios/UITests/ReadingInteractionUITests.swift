@@ -72,6 +72,7 @@ final class ReadingInteractionUITests: XCTestCase {
         XCTAssertTrue(header.waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "JCB")).firstMatch.exists)
         XCTAssertFalse(app.staticTexts["読んだ箇所を、もう少し深く。"].exists)
+        XCTAssertTrue(app.staticTexts["固定標準解説1"].waitForExistence(timeout: 5))
         let initialY = header.frame.minY
         let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.82, dy: 0.55))
         let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.18, dy: 0.55))
@@ -84,6 +85,8 @@ final class ReadingInteractionUITests: XCTestCase {
         attach(app, "reading-pinned-original-and-people")
         app.buttons["解説"].tap(); app.buttons["地図"].tap(); app.buttons["解説"].tap()
         XCTAssertTrue(header.exists)
+        XCTAssertTrue(app.staticTexts["固定標準解説1"].exists)
+        XCTAssertFalse(app.staticTexts["固定標準解説2"].exists)
         attach(app, "reading-repeat-tabs")
     }
     @MainActor private func attach(_ app: XCUIApplication, _ name: String) {
