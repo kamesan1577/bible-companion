@@ -112,7 +112,13 @@ struct ReadingView: View {
     }
     @ViewBuilder private func standardExplanation(_ passage: Passage) -> some View {
         if let reading = store.reading, let item = store.selected, let model = store.standardModel(item: item, passage: passage, sourceVersion: reading.sourceVersion) {
-            ReadingAIExplanation(model: model, passage: passage).id("standard-\(item.id)-\(passage.label)-\(reading.sourceVersion)")
+            ScrollView {
+                BibleReadingColumn {
+                    ReadingAIExplanation(model: model, passage: passage).id("standard-\(item.id)-\(passage.label)-\(reading.sourceVersion)")
+                }
+            }
+            .safeAreaInset(edge: .top) { SharedScriptureHeader(passage: passage, translation: store.selected?.translation, text: store.sourceExcerpt) }
+            .navigationTitle("AIの解説").navigationBarTitleDisplayMode(.inline).bibleCanvas()
         }
     }
     private var signInStatus: some View {
