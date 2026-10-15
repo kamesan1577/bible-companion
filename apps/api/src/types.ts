@@ -20,11 +20,6 @@ export interface Env {
   DAILY_USER_BUDGET: string;
   AI_RESERVATION_UNITS: string;
   AI_BUDGET_MODE?: string;
-  WORKERS_AI_ACCOUNT_ID?: string;
-  AI_FREE_RECEIPT_ID?: string;
-  AI_FREE_RECEIPT_MODE?: string;
-  AI_FREE_DEADLINE_MODE?: string;
-  AI_FREE_RECEIPT_SLOT?: string;
   AI?: {
     run(
       model: string,

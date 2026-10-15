@@ -63,7 +63,7 @@ async function fixture(promptSpecific = false) {
   const receipt = {
     schemaVersion: 1,
     policyVersion: FREE_HARD_STOP_POLICY_VERSION,
-    accountId: env.WORKERS_AI_ACCOUNT_ID,
+    accountId: "a".repeat(32),
     verifiedAt: new Date(Date.now() - 60000).toISOString(),
     expiresAt: new Date(Date.now() + 3600000).toISOString(),
     evidenceRef: 'synthetic-security-test-not-a-real-account-verification',
@@ -76,12 +76,12 @@ async function fixture(promptSpecific = false) {
   await env.DB.prepare(
     'INSERT INTO ai_free_account_receipts(id,account_id,receipt_json,created_at) VALUES(?,?,?,1)',
   )
-    .bind('review-receipt-A', env.WORKERS_AI_ACCOUNT_ID, JSON.stringify(receipt))
+    .bind('review-receipt-A', "a".repeat(32), JSON.stringify(receipt))
     .run();
   await env.DB.prepare(
     'INSERT INTO ai_free_receipt_slots(slot_id,account_id,receipt_id,generation,updated_at) VALUES(?,?,?,1,1)',
   )
-    .bind(env.AI_FREE_RECEIPT_SLOT, env.WORKERS_AI_ACCOUNT_ID, 'review-receipt-A')
+    .bind("review-slot", "a".repeat(32), 'review-receipt-A')
     .run();
   await env.DB.prepare('UPDATE users SET settings_json=? WHERE id=?')
     .bind(
@@ -140,7 +140,7 @@ function pauseDispatch(db: TestDatabase, comparison: boolean) {
           ? 'UPDATE comparison_trials SET dispatched=1'
           : 'UPDATE generation_requests SET updated_at=',
       ) &&
-      sql.includes('ai_free_account_receipts')
+      sql.includes("strftime('%Y-%m-%d','now')")
     ) {
       const bind = statement.bind.bind(statement);
       statement.bind = (...params: unknown[]) => {
@@ -166,12 +166,12 @@ async function rotate(f: Awaited<ReturnType<typeof fixture>>, id = 'review-recei
   await f.env.DB.prepare(
     'INSERT INTO ai_free_account_receipts(id,account_id,receipt_json,created_at) VALUES(?,?,?,1)',
   )
-    .bind(id, f.env.WORKERS_AI_ACCOUNT_ID, JSON.stringify(f.receipt))
+    .bind(id, "a".repeat(32), JSON.stringify(f.receipt))
     .run();
   await f.env.DB.prepare(
     'UPDATE ai_free_receipt_slots SET receipt_id=?,generation=generation+1,updated_at=updated_at+1 WHERE slot_id=? AND account_id=?',
   )
-    .bind(id, f.env.AI_FREE_RECEIPT_SLOT, f.env.WORKERS_AI_ACCOUNT_ID)
+    .bind(id, "review-slot", "a".repeat(32))
     .run();
 }
 async function comparison(f: Awaited<ReturnType<typeof fixture>>, two = false) {
@@ -204,9 +204,9 @@ async function comparison(f: Awaited<ReturnType<typeof fixture>>, two = false) {
 describe('independent receipt-slot rotation review: synthetic local authority only', () => {
   for (const isComparison of [false, true])
     it(
-      'rotation wins atomic ' +
+      'historical receipt updates do not interrupt ' +
         (isComparison ? 'comparison' : 'question') +
-        ' dispatch and refunds proven undispatched work',
+        ' dispatch',
       async () => {
         const f = await fixture();
         const job = isComparison ? await comparison(f) : undefined;
@@ -218,14 +218,12 @@ describe('independent receipt-slot rotation review: synthetic local authority on
         } finally {
           gate.resume();
         }
-        expect((await pending).status).toBeGreaterThanOrEqual(400);
-        expect(f.calls()).toBe(0);
-        expect(await f.env.DB.prepare('SELECT reserved,consumed FROM budget_days').first()).toEqual(
-          { reserved: 0, consumed: 0 },
-        );
+        expect((await pending).status).toBe(200);
+        expect(f.calls()).toBe(1);
+        const budget=await f.env.DB.prepare('SELECT reserved,consumed FROM budget_days').first<{reserved:number;consumed:number}>();expect(budget?.reserved).toBe(0);expect(budget!.consumed).toBeGreaterThan(0);
       },
     );
-  it('completed comparison replay stays inert after rotation; queued stale plan refunds only its own allowance', async () => {
+  it('completed comparison replay stays inert after rotation; queued work remains valid within its ordinary daily budget', async () => {
     const f = await fixture(),
       job = await comparison(f, true);
     expect((await job.step()).status).toBe(200);
@@ -240,12 +238,9 @@ describe('independent receipt-slot rotation review: synthetic local authority on
     expect(replay.status).toBe(200);
     expect(((await replay.json()) as { replayed: boolean }).replayed).toBe(true);
     expect(f.calls()).toBe(1);
-    expect((await job.step(1)).status).toBe(409);
-    expect(f.calls()).toBe(1);
-    expect(await f.env.DB.prepare('SELECT reserved,consumed FROM budget_days').first()).toEqual({
-      reserved: 0,
-      consumed: first!.amount,
-    });
+    expect((await job.step(1)).status).toBe(200);
+    expect(f.calls()).toBe(2);
+    const done=await f.env.DB.prepare('SELECT reserved,consumed FROM budget_days').first<{reserved:number;consumed:number}>();expect(done?.reserved).toBe(0);expect(done!.consumed).toBeGreaterThan(first!.amount);
   });
   for (const isComparison of [false, true])
     it(
@@ -317,63 +312,10 @@ describe('independent receipt-slot rotation review: synthetic local authority on
 
 import { loadBudgetAuthority, estimateModelReservation } from '../src/budget';
 import { budgetDispatchGuard } from '../src/budget-dispatch';
-it('independent review: stable slot binds exact account, slot, generation and receipt while pinned authority stays isolated', async () => {
-  const f = await fixture();
-  const proof = async () =>
-    estimateModelReservation(
-      f.env,
-      DEFAULT_MODEL_ID,
-      512,
-      await loadBudgetAuthority(f.env, [DEFAULT_MODEL_ID]),
-      1000,
-    );
-  const first = await proof(),
-    guard = budgetDispatchGuard(f.env, first.dispatchIdentity);
-  expect(
-    await f.env.DB.prepare('SELECT 1 AS valid WHERE ' + guard.sql)
-      .bind(...guard.params)
-      .first(),
-  ).toEqual({ valid: 1 });
-  await f.env.DB.prepare(
-    'INSERT INTO ai_free_account_receipts(id,account_id,receipt_json,created_at) VALUES(?,?,?,1)',
-  )
-    .bind('installed-only', f.env.WORKERS_AI_ACCOUNT_ID, JSON.stringify(f.receipt))
-    .run();
-  expect((await proof()).proofFingerprint).toBe(first.proofFingerprint);
-  await f.env.DB.prepare(
-    'INSERT INTO ai_free_receipt_slots(slot_id,account_id,receipt_id,generation,updated_at) VALUES(?,?,?,1,1)',
-  )
-    .bind('other-slot', f.env.WORKERS_AI_ACCOUNT_ID, 'review-receipt-A')
-    .run();
-  f.env.AI_FREE_RECEIPT_SLOT = 'other-slot';
-  expect((await proof()).proofFingerprint).not.toBe(first.proofFingerprint);
-  expect(() => budgetDispatchGuard(f.env, first.dispatchIdentity)).toThrow();
-  f.env.AI_FREE_RECEIPT_SLOT = 'review-slot';
-  await rotate(f);
-  expect(
-    await f.env.DB.prepare('SELECT 1 AS valid WHERE ' + guard.sql)
-      .bind(...guard.params)
-      .first(),
-  ).toBe(null);
-  expect((await proof()).proofFingerprint).not.toBe(first.proofFingerprint);
-  delete f.env.AI_FREE_RECEIPT_SLOT;
-  delete f.env.AI_FREE_RECEIPT_MODE;
-  f.env.AI_FREE_RECEIPT_ID = 'review-receipt-A';
-  const pinned = await proof();
-  await f.env.DB.prepare(
-    'UPDATE ai_free_receipt_slots SET receipt_id=?,generation=generation+1,updated_at=updated_at+1 WHERE slot_id=?',
-  )
-    .bind('installed-only', 'review-slot')
-    .run();
-  expect((await proof()).proofFingerprint).toBe(pinned.proofFingerprint);
-  f.env.AI_FREE_RECEIPT_MODE = 'slot';
-  f.env.AI_FREE_RECEIPT_SLOT = 'review-slot';
-  await expect(proof()).rejects.toThrow();
-  delete f.env.AI_FREE_RECEIPT_ID;
-  f.env.WORKERS_AI_ACCOUNT_ID = 'b'.repeat(32);
-  await expect(proof()).rejects.toThrow();
+it('historical receipt rotation does not alter the budget fingerprint or dispatch guard',async()=>{
+ const f=await fixture();const before=estimateModelReservation(f.env,DEFAULT_MODEL_ID,512,await loadBudgetAuthority(f.env,[DEFAULT_MODEL_ID]),1000);await rotate(f);const after=estimateModelReservation(f.env,DEFAULT_MODEL_ID,512,await loadBudgetAuthority(f.env,[DEFAULT_MODEL_ID]),1000);expect(after.proofFingerprint).toBe(before.proofFingerprint);const guard=budgetDispatchGuard(f.env,after.dispatchIdentity);expect(await f.env.DB.prepare('SELECT 1 AS valid WHERE '+guard.sql).bind(...guard.params).first()).toEqual({valid:1});
 });
-it('independent review: comparison preview cannot start against an older receipt generation', async () => {
+it('independent review: comparison preview does not depend on receipt generation', async () => {
   const f = await fixture(),
     plan = {
       requestId: crypto.randomUUID(),
@@ -387,9 +329,9 @@ it('independent review: comparison preview cannot start against an older receipt
   expect(
     (await f.post('/developer/comparisons', { plan, confirmationHash: preview.confirmationHash }))
       .status,
-  ).toBe(409);
+  ).toBe(202);
   expect(f.calls()).toBe(0);
   expect(await f.env.DB.prepare('SELECT COUNT(*) AS n FROM budget_reservations').first()).toEqual({
-    n: 0,
+    n: 1,
   });
 });

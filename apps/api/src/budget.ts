@@ -1,4 +1,3 @@
-import { z } from 'zod';
 import { sha256 } from '@bible/core';
 import {
   prepareCompanionRequest,
@@ -165,91 +164,32 @@ export function estimateReservationFromProof(
   };
 }
 
-export const FREE_HARD_STOP_POLICY_VERSION = 'workers-ai-free-hard-stop.v1';
+export const FREE_HARD_STOP_POLICY_VERSION = 'workers-ai-free-hard-stop.v2';
 export const FREE_ESTIMATE_POLICY_VERSION = 'free-reservation-prepared-input-125pct.v2';
-const FREE_RECEIPT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 const FREE_INPUT_RESERVATION_CEILING = 64000;
 const FREE_ESTIMATE_MULTIPLIER = 1.25;
-const receiptSchema = z
-  .object({
-    schemaVersion: z.literal(1),
-    policyVersion: z.literal(FREE_HARD_STOP_POLICY_VERSION),
-    accountId: z.string().regex(/^[a-f0-9]{32}$/),
-    verifiedAt: z.iso.datetime(),
-    expiresAt: z.iso.datetime(),
-    evidenceRef: z.string().trim().min(8).max(500),
-    // The Workers billing plan for this account, not a domain/zone's DNS or website plan.
-    accountPlan: z.literal('free'),
-    providerRoute: z.literal('direct-workers-binding'),
-    gatewayCredits: z.literal(false),
-    paidModels: z.literal(false),
-    fallbacks: z.literal(false),
-  })
-  .strict();
-export type FreeAccountReceipt = z.infer<typeof receiptSchema>;
-export interface LoadedFreeAccountReceipt {
-  readonly receipt: Readonly<FreeAccountReceipt> | undefined;
-  readonly receiptFingerprint: string;
-  readonly storageIdentity: Readonly<{
-    receiptId: string;
-    accountId: string;
-    receiptJson: string;
-    slotId?: string;
-    generation?: number;
-  }>;
-}
 export type LoadedBudgetAuthority =
   | {
       readonly mode: 'strict-proof';
       readonly proofs: ReadonlyMap<string, LoadedBudgetProof | null>;
     }
-  | {
-      readonly mode: 'free-provider-hard-stop';
-      readonly accountId: string;
-      readonly receiptId?: string;
-      readonly slotId?: string;
-      readonly receipt: LoadedFreeAccountReceipt | null;
-    };
+  | { readonly mode: 'free-provider-hard-stop' };
 export type BudgetDispatchIdentity =
   | ({ readonly mode: 'strict-proof' } & DispatchProofIdentity)
   | {
       readonly mode: 'free-provider-hard-stop';
-      readonly receiptId: string;
-      readonly accountId: string;
-      readonly receiptJson: string;
-      readonly slotId?: string;
-      readonly generation?: number;
+      readonly budgetDay: string;
+      readonly appLimit: number;
+      readonly userLimit: number;
       readonly expiresAt: string;
     };
-
 export function budgetMode(env: Env): LoadedBudgetAuthority['mode'] {
   const mode = env.AI_BUDGET_MODE ?? 'strict-proof';
   if (mode !== 'strict-proof' && mode !== 'free-provider-hard-stop')
     throw new HarnessError('BUDGET_UNVERIFIED');
   return mode;
 }
-function freeReceiptConfiguration(env: Env): {
-  accountId: string;
-  receiptId?: string;
-  slotId?: string;
-} {
-  const accountId = env.WORKERS_AI_ACCOUNT_ID;
-  const mode = env.AI_FREE_RECEIPT_MODE ?? 'pinned';
-  const validId = (value: unknown): value is string =>
-    typeof value === 'string' && /^[A-Za-z0-9_-]{1,100}$/.test(value);
-  if (typeof accountId !== 'string' || !/^[a-f0-9]{32}$/.test(accountId))
-    throw new HarnessError('BUDGET_UNVERIFIED');
-  if (mode === 'slot' && validId(env.AI_FREE_RECEIPT_SLOT) && env.AI_FREE_RECEIPT_ID === undefined)
-    return { accountId, slotId: env.AI_FREE_RECEIPT_SLOT };
-  if (
-    mode === 'pinned' &&
-    validId(env.AI_FREE_RECEIPT_ID) &&
-    env.AI_FREE_RECEIPT_SLOT === undefined
-  )
-    return { accountId, receiptId: env.AI_FREE_RECEIPT_ID };
-  throw new HarnessError('BUDGET_UNVERIFIED');
-}
-/** At most one query, regardless of catalog size. No receipt is created or renewed here. */
+/** Free mode depends on provider quota and atomic app reservations, not a renewable certificate. */
 export async function loadBudgetAuthority(
   env: Env,
   modelIds: readonly string[],
@@ -258,84 +198,17 @@ export async function loadBudgetAuthority(
   if (mode === 'strict-proof') return { mode, proofs: await loadBudgetProofs(env, modelIds) };
   if (new Set(modelIds).size > 22) throw new HarnessError('INVALID_INPUT');
   modelIds.forEach(getModel);
-  const config = freeReceiptConfiguration(env);
-  const row = await env.DB.prepare(
-    config.slotId
-      ? 'SELECT r.id,r.account_id,r.receipt_json,s.generation FROM ai_free_receipt_slots s JOIN ai_free_account_receipts r ON r.id=s.receipt_id AND r.account_id=s.account_id WHERE s.slot_id=? AND s.account_id=? AND r.revoked_at IS NULL'
-      : 'SELECT id,account_id,receipt_json FROM ai_free_account_receipts WHERE id=? AND account_id=? AND revoked_at IS NULL',
-  )
-    .bind(config.slotId ?? config.receiptId, config.accountId)
-    .first<{ id: string; account_id: string; receipt_json: string; generation?: number }>();
-  if (!row) return { mode, ...config, receipt: null };
-  if (config.slotId && (!Number.isSafeInteger(row.generation) || row.generation! < 1))
-    throw new HarnessError('BUDGET_UNVERIFIED');
-  let receipt: Readonly<FreeAccountReceipt> | undefined;
-  try {
-    if (new TextEncoder().encode(row.receipt_json).byteLength <= 16384) {
-      const parsed = receiptSchema.safeParse(JSON.parse(row.receipt_json));
-      if (parsed.success) receipt = Object.freeze(parsed.data);
-    }
-  } catch {
-    /* An invalid snapshot cannot enable generation. */
-  }
-  return Object.freeze({
-    mode,
-    ...config,
-    receipt: Object.freeze({
-      receipt,
-      receiptFingerprint: await sha256(
-        JSON.stringify(
-          config.slotId
-            ? [mode, row.id, row.account_id, row.receipt_json, config.slotId, row.generation]
-            : [mode, row.id, row.account_id, row.receipt_json],
-        ),
-      ),
-      storageIdentity: Object.freeze({
-        receiptId: row.id,
-        accountId: row.account_id,
-        receiptJson: row.receipt_json,
-        ...(config.slotId ? { slotId: config.slotId, generation: row.generation! } : {}),
-      }),
-    }),
-  });
+  return Object.freeze({ mode });
 }
-function currentFreeReceipt(
-  env: Env,
-  authority: Extract<LoadedBudgetAuthority, { mode: 'free-provider-hard-stop' }>,
-  nowMs = Date.now(),
-) {
-  const config = freeReceiptConfiguration(env),
-    loaded = authority.receipt,
-    receipt = loaded?.receipt;
-  if (
-    budgetMode(env) !== authority.mode ||
-    authority.accountId !== config.accountId ||
-    authority.receiptId !== config.receiptId ||
-    authority.slotId !== config.slotId ||
-    !loaded ||
-    !receipt ||
-    receipt.accountId !== config.accountId ||
-    loaded.storageIdentity.accountId !== config.accountId ||
-    (config.slotId
-      ? loaded.storageIdentity.slotId !== config.slotId
-      : loaded.storageIdentity.receiptId !== config.receiptId)
-  )
-    throw new HarnessError('BUDGET_UNVERIFIED');
-  const verified = Date.parse(receipt.verifiedAt),
-    expires = Date.parse(receipt.expiresAt);
-  if (
-    !Number.isFinite(nowMs) ||
-    !Number.isFinite(verified) ||
-    !Number.isFinite(expires) ||
-    verified > nowMs ||
-    expires <= nowMs ||
-    expires <= verified ||
-    expires - verified > FREE_RECEIPT_MAX_AGE_MS ||
-    (env.AI_FREE_DEADLINE_MODE !== undefined && env.AI_FREE_DEADLINE_MODE !== 'utc-halfday') ||
-    (env.AI_FREE_DEADLINE_MODE === 'utc-halfday' && expires > (Math.floor(verified / 43200000) + 1) * 43200000)
-  )
-    throw new HarnessError('BUDGET_UNVERIFIED');
-  return { loaded, receipt };
+function freeBudgetWindow(env: Env) {
+  const budgetDay = new Date().toISOString().slice(0, 10);
+  return {
+    mode: 'free-provider-hard-stop' as const,
+    budgetDay,
+    appLimit: configuredBudget(env.DAILY_APP_BUDGET),
+    userLimit: configuredBudget(env.DAILY_USER_BUDGET),
+    expiresAt: new Date(Date.parse(budgetDay + 'T00:00:00Z') + 86400000).toISOString(),
+  };
 }
 function withDispatchIdentity<T extends object>(
   value: T,
@@ -382,7 +255,7 @@ export function estimateModelReservation(
   const model = getModel(modelId);
   if (model.billingTier !== 'free-allocation-candidate') throw new HarnessError('MODEL_DISABLED');
   validateSettings(modelId, { maxOutputTokens });
-  const { loaded, receipt } = currentFreeReceipt(env, authority);
+  const window = freeBudgetWindow(env);
   const ceiling = Math.min(
     FREE_INPUT_RESERVATION_CEILING,
     validatePreparedInputCapacity(modelId, 0, maxOutputTokens),
@@ -399,10 +272,12 @@ export function estimateModelReservation(
       amount,
       estimate,
       proofVersion: FREE_HARD_STOP_POLICY_VERSION,
-      // Composite identity binds receipt hash and every reservation policy input; contains no raw receipt/account data.
+      // Bind this request to its UTC budget day and configured limits; no contract certificate.
       proofFingerprint: JSON.stringify([
         authority.mode,
-        loaded.receiptFingerprint,
+        window.budgetDay,
+        window.appLimit,
+        window.userLimit,
         PRICING_VERSION,
         FREE_ESTIMATE_POLICY_VERSION,
         modelId,
@@ -411,7 +286,7 @@ export function estimateModelReservation(
         maxOutputTokens,
         amount,
       ]),
-      expiresAt: receipt.expiresAt,
+      expiresAt: window.expiresAt,
       budgetMode: 'free-provider-hard-stop' as const,
       reservationBasis: 'estimated-reservation-provider-free-hard-stop' as const,
       budgetBoundVerified: false as const,
@@ -425,13 +300,12 @@ export function estimateModelReservation(
       warnings: [
         'ESTIMATED_RESERVATION_NOT_TOKEN_PROOF',
         'PROVIDER_FREE_QUOTA_IS_FINAL_STOP',
-        'ACCOUNT_STATUS_SNAPSHOT_NOT_CONTINUOUS',
         'HIDDEN_REASONING_USAGE_UNKNOWN',
         'OTHER_ACCOUNT_USAGE_NOT_RESERVED',
         'NO_AUTOMATIC_PAID_FALLBACK',
       ],
     },
-    { mode: 'free-provider-hard-stop', ...loaded.storageIdentity, expiresAt: receipt.expiresAt },
+    window,
   );
 }
 /** Recheck request configuration immediately before the atomic evidence-row dispatch CAS. */
@@ -442,27 +316,27 @@ export function assertBudgetDispatchConfiguration(env: Env, identity: BudgetDisp
     !Number.isFinite(Date.parse(identity.expiresAt))
   )
     throw new HarnessError('BUDGET_UNVERIFIED');
-  if (identity.mode === 'free-provider-hard-stop') {
-    const config = freeReceiptConfiguration(env);
-    if (
-      config.accountId !== identity.accountId ||
-      config.slotId !== identity.slotId ||
-      (config.slotId
-        ? !Number.isSafeInteger(identity.generation) || identity.generation! < 1
-        : config.receiptId !== identity.receiptId || identity.generation !== undefined)
-    )
-      throw new HarnessError('BUDGET_UNVERIFIED');
-  }
+  if (
+    identity.mode === 'free-provider-hard-stop' &&
+    (identity.budgetDay !== new Date().toISOString().slice(0, 10) ||
+      identity.appLimit !== configuredBudget(env.DAILY_APP_BUDGET) ||
+      identity.userLimit !== configuredBudget(env.DAILY_USER_BUDGET))
+  )
+    throw new HarnessError('BUDGET_UNVERIFIED');
 }
 
-/** No HTTP route can create evidence. Default strict proofs and alternative receipts stay separate. */
+/** Default strict-proof behavior remains separate; Free mode needs no contract certificate. */
 export async function estimateReservation(
   env: Env,
   input: AnswerInput,
   authorization: ModelAuthorization,
   answerMode: 'reviewed-claim-selection' | 'grounded-generation' = 'reviewed-claim-selection',
 ) {
-  const prepared = prepareCompanionRequest(input, { authorization, answerMode, allowGeneralKnowledge: env.GENERAL_KNOWLEDGE_ENABLED === 'true' });
+  const prepared = prepareCompanionRequest(input, {
+    authorization,
+    answerMode,
+    allowGeneralKnowledge: env.GENERAL_KNOWLEDGE_ENABLED === 'true',
+  });
   const authority = await loadBudgetAuthority(env, [prepared.model.id]);
   return estimateModelReservation(
     env,
@@ -493,14 +367,14 @@ export async function modelBudgetReadiness(
         throw new HarnessError('MODEL_DISABLED');
       validateSettings(modelId, { maxOutputTokens });
       validatePreparedInputCapacity(modelId, 0, maxOutputTokens);
-      const { receipt } = currentFreeReceipt(env, authority);
+      const window = freeBudgetWindow(env);
       configuredBudget(env.DAILY_APP_BUDGET);
       configuredBudget(env.DAILY_USER_BUDGET);
       return {
         ready: true,
         reason: null,
         pricingVersion: estimate.pricingVersion,
-        expiresAt: receipt.expiresAt,
+        expiresAt: window.expiresAt,
         budgetMode: authority.mode,
         readinessScope: 'provider-policy-only' as const,
         preparedRequestBudgetRequired: true,
@@ -510,7 +384,6 @@ export async function modelBudgetReadiness(
           'EXACT_REQUEST_BUDGET_CHECK_REQUIRED',
           'ESTIMATED_RESERVATION_NOT_TOKEN_PROOF',
           'PROVIDER_FREE_QUOTA_IS_FINAL_STOP',
-          'ACCOUNT_STATUS_SNAPSHOT_NOT_CONTINUOUS',
           'NO_AUTOMATIC_PAID_FALLBACK',
         ],
       };
@@ -543,11 +416,26 @@ export async function modelBudgetReadiness(
 }
 
 /** Only plausible direct-provider metering can release an estimate. Missing/invalid usage consumes it all. */
-export function reportedBudgetConsumption(modelId: string, usage: {inputTokens:number;outputTokens:number;providerNeurons?:number}|null): number|null {
-  if (!usage || !Number.isSafeInteger(usage.inputTokens) || !Number.isSafeInteger(usage.outputTokens) || usage.inputTokens+usage.outputTokens<1) return null;
-  const value=usage.providerNeurons;
-  if (typeof value!=='number' || !Number.isFinite(value) || value<=0 || value>1000000) return null;
-  const estimate=estimateModelBudget(modelId,usage.inputTokens,usage.outputTokens,'provider-reported-token-counts').estimatedNeurons;
-  if (Math.abs(value-estimate)>Math.max(0.001,estimate*0.02)) return null;
+export function reportedBudgetConsumption(
+  modelId: string,
+  usage: { inputTokens: number; outputTokens: number; providerNeurons?: number } | null,
+): number | null {
+  if (
+    !usage ||
+    !Number.isSafeInteger(usage.inputTokens) ||
+    !Number.isSafeInteger(usage.outputTokens) ||
+    usage.inputTokens + usage.outputTokens < 1
+  )
+    return null;
+  const value = usage.providerNeurons;
+  if (typeof value !== 'number' || !Number.isFinite(value) || value <= 0 || value > 1000000)
+    return null;
+  const estimate = estimateModelBudget(
+    modelId,
+    usage.inputTokens,
+    usage.outputTokens,
+    'provider-reported-token-counts',
+  ).estimatedNeurons;
+  if (Math.abs(value - estimate) > Math.max(0.001, estimate * 0.02)) return null;
   return Math.ceil(value);
 }
