@@ -27,7 +27,8 @@ def create(document):
     kind, runtime = template(document)
     name = 'BibleHarness-' + str(uuid.uuid4())[:8]
     result = subprocess.check_output(['xcrun', 'simctl', 'create', name, kind, runtime], text=True).strip()
-    return str(uuid.UUID(result))
+    uuid.UUID(result)  # Validate without changing case: Xcode destination matching preserves it.
+    return result
 
 
 if __name__ == '__main__':

@@ -28,3 +28,8 @@ class OwnedDeviceTests(unittest.TestCase):
         with patch.object(owned.subprocess, 'check_output') as command:
             with self.assertRaises(ValueError): owned.create(document)
             command.assert_not_called()
+
+    def test_xcode_destination_preserves_simctl_uuid_case(self):
+        identifier = 'AAAAAAAA-BBBB-4CCC-8DDD-EEEEEEEEEEEE'
+        with patch.object(owned.subprocess, 'check_output', return_value=identifier+'\n'):
+            self.assertEqual(owned.create(self.document()), identifier)
