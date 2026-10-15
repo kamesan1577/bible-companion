@@ -24,8 +24,15 @@ public struct WikipediaReadingLink: Codable, Sendable {
     public let noteJa: String
     public let checkedAt: String
     public let identityVerified: Bool
+    public let relationVerified: Bool?
+    public let knownBy: Verse?
+    public init(title: String, language: String, url: String, kind: String, noteJa: String, checkedAt: String, identityVerified: Bool, relationVerified: Bool? = nil, knownBy: Verse? = nil) {
+        self.title = title; self.language = language; self.url = url; self.kind = kind
+        self.noteJa = noteJa; self.checkedAt = checkedAt; self.identityVerified = identityVerified
+        self.relationVerified = relationVerified; self.knownBy = knownBy
+    }
     public var safeURL: URL? {
-        guard identityVerified, ["ja", "en"].contains(language), ["article", "shared-section", "related-section"].contains(kind),
+        guard (identityVerified || (kind == "related-section" && relationVerified == true && !noteJa.isEmpty)), ["ja", "en"].contains(language), ["article", "shared-section", "related-section"].contains(kind),
               let value = URL(string: url), value.scheme == "https", value.host == language + ".wikipedia.org",
               value.user == nil, value.password == nil, value.port == nil, value.query == nil,
               value.path.hasPrefix("/wiki/"), value.path.count > 6, !value.path.contains(":") else { return nil }
@@ -68,13 +75,16 @@ public struct EntityProfile: Codable, Sendable, Identifiable {
     public let wikipedia: WikipediaReadingLink?
     public let materialCardIDs: [String]?
     public let supplemental: Bool
-    public var detailLinkLabelJa: String { identityType == "office-title" ? "この称号について" : identityType == "unidentified-eponym" ? "この名前について" : kind == "person" ? "この人物について" : "この場所について" }
+    public let contextProfiles: [EntityProfile]?
+    public var detailLinkLabelJa: String { identityType == "ritual-area" ? "この祭儀上の場所について" : identityType == "collective" ? "この集団名について" : identityType == "expression" ? "この表現について" : identityType == "office-title" ? "この称号について" : identityType == "unidentified-eponym" ? "この名前について" : kind == "person" ? "この人物について" : "この場所について" }
 }
 public struct ResolvedEntityProfile: Sendable {
     public let profile: EntityProfile
     public let facts: [EntityProfileFact]
     public let sources: [EntityProfileSource]
     public let nameJa: String
+    public let contextNotes: [String]
+    public let wikipedia: WikipediaReadingLink?
 }
 struct EntityProfileCatalog: Decodable {
     let schemaVersion: Int
@@ -82,10 +92,18 @@ struct EntityProfileCatalog: Decodable {
     let profiles: [EntityProfile]
     let occurrences: [EntityProfileOccurrence]?
     func resolve(id: String, passage: Passage, includeFuture: Bool) -> ResolvedEntityProfile? {
-        guard schemaVersion == 1, let p = profiles.first(where: { $0.id == id }), passage.book == "ACT", p.knownBy <= passage.end,
-              p.passages.contains(where: { $0.book == passage.book && $0.start <= passage.end && passage.start <= $0.end }) else { return nil }
+        guard schemaVersion == 1, let base = profiles.first(where: { $0.id == id }) else { return nil }
+        let overlaps: (EntityProfile) -> Bool = { p in
+            p.knownBy <= passage.end && p.passages.contains { $0.book == passage.book && $0.start <= passage.end && passage.start <= $0.end }
+        }
+        let contexts = (base.contextProfiles ?? []).filter(overlaps)
+        let exactContext = contexts.first { p in p.passages.contains { $0.book == passage.book && $0.start <= passage.start && passage.end <= $0.end } }
+        let selectedContext = exactContext ?? (overlaps(base) ? nil : contexts.first)
+        guard let p = selectedContext ?? (overlaps(base) ? base : nil) else { return nil }
         let facts = p.facts.filter { includeFuture || $0.knownBy <= passage.end }
-        let ids = Set(p.sourceIds + facts.flatMap(\.sourceIds))
-        return ResolvedEntityProfile(profile: p, facts: facts, sources: sources.filter { ids.contains($0.id) && (includeFuture || $0.knownBy == nil || $0.knownBy! <= passage.end) }, nameJa: p.names?.filter { $0.knownBy <= passage.end }.sorted { $0.knownBy < $1.knownBy }.last?.nameJa ?? p.nameJa)
+        let shownContexts = selectedContext == nil ? contexts : []
+        let ids = Set(p.sourceIds + facts.flatMap(\.sourceIds) + shownContexts.flatMap(\.sourceIds))
+        return ResolvedEntityProfile(profile: p, facts: facts, sources: sources.filter { ids.contains($0.id) && (includeFuture || $0.knownBy == nil || $0.knownBy! <= passage.end) }, nameJa: p.names?.filter { includeFuture || $0.knownBy <= passage.end }.sorted { $0.knownBy < $1.knownBy }.last?.nameJa ?? p.nameJa, contextNotes: shownContexts.map { $0.nameJa + "：" + $0.summaryJa }, wikipedia: p.wikipedia.flatMap { includeFuture || $0.knownBy == nil || $0.knownBy! <= passage.end ? $0 : nil })
+
     }
 }

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "task": "LEV26:42 identity-variant direct link correction",
+  "status": "applied",
+  "inputs": {
+    "priorFinalMap": {
+      "path": "reviews/final-verse-map-LEV-14-27.json",
+      "sha256": "ecf49db9cbd125495ac09ef227a9b595a8a52ec5b1840b06b709a7957fa114f2"
+    },
+    "fixedLEVWitness": {
+      "path": "inventory/targets/lev-web-verses.json",
+      "sha256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+      "version": "webp-usfx-2026-10-13-35a6adf626e5"
+    },
+    "collectiveProfile": {
+      "path": "candidate/apps/ios/Sources/Core/Resources/entity-profiles-LEV.json",
+      "sha256": "d33c361b806bbd43b8ff0ad70d6e6191df09fed3607a8d5c7512680301e6e957"
+    },
+    "contextVariantEvidence": {
+      "path": "reviews/LEV-israel-jacob-context-variant.json",
+      "sha256": "a03e896e65fdd8e3adefedae4a8c54aeaf2ffd8dee2a1a058a2d192a356a5018"
+    }
+  },
+  "verse": "LEV 26:42",
+  "sourceText": "then I will remember my covenant with Jacob, my covenant with Isaac, and also my covenant with Abraham; and I will remember the land.",
+  "sourceURL": "https://ebible.org/engwebp/LEV26.htm#V42",
+  "beforeEntities": [
+    {
+      "entityID": "person:isaac_616",
+      "relationship": "direct"
+    },
+    {
+      "entityID": "person:abraham_58",
+      "relationship": "direct"
+    },
+    {
+      "entityID": "person:israel_682",
+      "relationship": "related"
+    },
+    {
+      "entityID": "person:god_1324",
+      "relationship": "related"
+    }
+  ],
+  "afterEntities": [
+    {
+      "entityID": "person:isaac_616",
+      "relationship": "direct"
+    },
+    {
+      "entityID": "person:abraham_58",
+      "relationship": "direct"
+    },
+    {
+      "entityID": "person:israel_682",
+      "relationship": "direct",
+      "identityVariant": "jacob-individual"
+    },
+    {
+      "entityID": "person:god_1324",
+      "relationship": "related"
+    }
+  ],
+  "reasonJa": "本文はJacobをIsaac・Abrahamと並ぶ契約の個人名として明記する。既存のLEV person:israel_682プロフィール自体はイスラエルの民というcollectiveであり、既存のLEV26:42専用context-variantレビューは同一IDのjacob-individual用法を提案している。よって通常の集団リンクとしてrelatedに置くのではなく、同一IDへidentityVariant=jacob-individualを付したdirectリンクとする。新IDは作らない。",
+  "resultFinalMapSHA256": "04d8847b52a4d030c02879067abd55c26dcc9206451a12e5a9af096bf756ee88",
+  "validationJa": "固定WEBのsourceTextと一致、entity entryはexisting IDかつROM9:13と同じ機械可読identityVariant形式であることをJSON再読で確認。"
+}

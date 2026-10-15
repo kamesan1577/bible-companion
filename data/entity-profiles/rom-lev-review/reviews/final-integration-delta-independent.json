@@ -1,0 +1,180 @@
+{
+  "reviewType": "independent-final-integration-delta-review",
+  "reviewedAtUTC": "2026-10-15T20:32:37Z",
+  "readOnly": true,
+  "scope": "ROM/LEV integration delta only; no catalog, source, code, policy, or test files changed.",
+  "inputs": {
+    "files": [
+      {
+        "path": "candidate/apps/ios/Sources/Core/EntityProfiles.swift",
+        "sha256": "3a2d72cf63dc880bfd4f94be7f4aaf1cfe57212c8f4d32497c29b93c455d3a9d"
+      },
+      {
+        "path": "candidate/apps/ios/Sources/Core/BundledEntityIndex.swift",
+        "sha256": "207cae17cd1b481096e85e644c9fc5ea5a7074ce1e9486880dd0a6777f8be7e7"
+      },
+      {
+        "path": "staged-catalog-ROM.json",
+        "sha256": "0247b33115d068c379f6dd78d8d3c0d6cdae6b53b1fcb8cb2a6d0bad40563a34"
+      },
+      {
+        "path": "staged-catalog-LEV.json",
+        "sha256": "9bb08137a283ef52efbe108f00a0708ad2384fc7c8108ceff1227b5041b636d1"
+      },
+      {
+        "path": "candidate/apps/ios/Sources/Core/Resources/entity-profiles-ROM.json",
+        "sha256": "db0e46961c533d9f23735b5ef5497f40af437fc801e89f02f3b1e0f4be489400"
+      },
+      {
+        "path": "candidate/apps/ios/Sources/Core/Resources/entity-profiles-LEV.json",
+        "sha256": "677c2d2affde53371d42916367cc50b56f5615bc1bb6f3c8e99584ef67ca8f56"
+      },
+      {
+        "path": "candidate/apps/ios/Sources/Core/Resources/rom-map-policy.json",
+        "sha256": "93bc0c7b162d3d12802c2b389e3c6e8c52e1422720d507e9eb77ff6a8ed85df5"
+      },
+      {
+        "path": "candidate/apps/ios/Sources/Core/Resources/lev-map-policy.json",
+        "sha256": "1ebc894d4b443fc6aa14dd2418fa99bba62e885a50248426922edcf31278826c"
+      },
+      {
+        "path": "candidate/apps/ios/Sources/Core/Resources/entity-index.json",
+        "sha256": "dfe6fba1109f192548e28645cf085ddafe3baf7820d200e2e28da486dd98f11a"
+      },
+      {
+        "path": "candidate/apps/ios/Tests/RomLeviticusEntityTests.swift",
+        "sha256": "1c4bc3967d732ba670dcde6a4ff2d06e47f0b4e1b7043b3eee5cd6a431d43972"
+      },
+      {
+        "path": "candidate/apps/ios/Sources/DesignSystem/OfflineEntityPane.swift",
+        "sha256": "6f54e2c5fa2804ef5b5b35ce034442d9698679a5502dca7b12a23e1537e4e0b7"
+      },
+      {
+        "path": "inventory/targets/rom-web-verses.json",
+        "sha256": "44ec6ff9d2d29957f88db70c55210e171d3422dbc8e005545d309d665db818ed"
+      },
+      {
+        "path": "inventory/targets/lev-web-verses.json",
+        "sha256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190"
+      },
+      {
+        "path": "reviews/rom-doxology-alignment.json",
+        "sha256": "f430b79813cb9bf27af52947c96b4b453fce5d550f5d3d53b1ef17032a9660e4"
+      },
+      {
+        "path": "reviews/map-policy-independent-closure.json",
+        "sha256": "b225dc699fa1fb8649a2459570c9e93d82cf9e6411303a1055a44ca212ca1c89"
+      },
+      {
+        "path": "reviews/judea-map-candidate-review.json",
+        "sha256": "1431caba372e7c7f2dad0b19fd349bfb14f24834920b9784c061f3445a682b6f"
+      },
+      {
+        "path": "core-final-test-6.log",
+        "sha256": "379ee0365c1c7e0166d733ce7ddc016f9f352725a9359153d30d9d56e2a26711"
+      }
+    ],
+    "resourceCatalogParity": {
+      "ROM": "staged catalog equals bundled runtime JSON after parse",
+      "LEV": "staged catalog equals bundled runtime JSON after parse"
+    }
+  },
+  "summary": {
+    "overall": "fail",
+    "pass": 4,
+    "qualified": 2,
+    "fail": 2,
+    "publicationReady": false,
+    "reasonJa": "文脈バリアントの基本切替・出典ゲート・頌栄対応・地図候補の由来表示は確認できた。一方、レビ記のイスラエル基礎欄に後続節のヤコブを先取りする記述が残る。また、個人文脈として解決した後の同じ書の参照箇所は共有ID全体から集められ、集団用例を含む。画面上で読者が見る内容なので解消まで公開判定はfail。地図注記の編集指示文言と一部verificationState不整合も修正候補。"
+  },
+  "items": [
+    {
+      "id": "runtime-context-and-future-gating",
+      "status": "pass",
+      "detailsJa": "EntityProfileCatalog.resolveは既知時点でcontextProfilesを絞り、個人variantが選ばれた単独rangeではvariant自身を返してcontextNotesを重ねない。ROM9:4–13のように集団と個人双方の用例を含むrangeではcollective基礎カードにヤコブcontextNoteを添える。namesはincludeFutureまたはknownByで切替、fact/source/WikipediaのknownByもfilterされる。既存RomLeviticusEntityTestsはAdamの後発別名、ROM/JOS Israel文脈、未来資料制限を検査。",
+      "evidence": [
+        "EntityProfiles.swift:94-106",
+        "RomLeviticusEntityTests.swift:testFutureToggleExplicitlyRevealsLaterAdamName",
+        "RomLeviticusEntityTests.swift:testIsraelCollectiveAndJacobContextAreSeparatedInRomansAndLeviticus"
+      ]
+    },
+    {
+      "id": "rom-israel-jacob-context",
+      "status": "pass",
+      "detailsJa": "ROM基礎cardのknownByは9:4で、passagesは集団用例9:4,9:6等を含み、9:13を除外。contextProfilesにknownBy9:13/passages9:13/identityType individual-context-variantのヤコブを置く。固定WEB ROM9:6は「not all Israel」、9:13は引用「Jacob I loved...」なので区別と時点が一致する。単独9:13・混在9:4–13の既存testも期待に合う。",
+      "witness": [
+        "ROM9:6 “For they are not all Israel that are of Israel.”",
+        "ROM9:13 “Jacob I loved, but Esau I hated.”"
+      ]
+    },
+    {
+      "id": "lev-israel-jacob-context-and-spoiler",
+      "status": "fail",
+      "detailsJa": "LEV基礎passagesから個人用例26:42を分離しnested contextProfilesへ置いた点は正しい。固定WEB LEV1:2はイスラエルの子らへの呼びかけ、26:42で初めてこの章内で契約の相手としてJacobを名指す。しかしknownBy1:2の基礎profile.identityNoteJaは「契約の相手として名を挙げられる族長ヤコブ個人」と説明し、基礎Wikipedia noteJaも「族長ヤコブ個人ではなく」と明記する。EntityProfileContentは両noteを常時表示する。初出時点に未出の個人名を予告するため、前者のidentityNoteは空にし、Wiki noteからもJacobの比較を除くか26:42までgateする必要がある。",
+      "witness": [
+        "LEV1:2 “Speak to the children of Israel...”",
+        "LEV26:42 “then I will remember my covenant with Jacob...”"
+      ],
+      "evidence": [
+        "staged-catalog-LEV.json person:israel_682.knownBy 1:2",
+        "EntityProfiles.swift:104-106",
+        "OfflineEntityPane.swift:EntityProfileContent renders identityNoteJa and wikipedia.noteJa"
+      ]
+    },
+    {
+      "id": "same-book-reference-crosses-context-variant",
+      "status": "fail",
+      "detailsJa": "個人variantを選んだ後もBundledEntityIndex.lookupはsameBookVersesをprofiles.occurrences全体から同じentityIDだけで集め、context identityで絞らない。ROM9:13単独のヤコブcardに、同IDの集団用例ROM9:4と9:6が同じ書の参照として付く。LEV26:42のヤコブ個人cardにも、LEV1:2以後の集団Israel用例が同じ参照一覧に混入する。UIは一覧を「同じ書の参照箇所」として表示するため、individual-context-variantの参照は対応variantのpassages/occurrence relationshipで限定するか、異文脈を明示する必要がある。既存testはprofile/contextNotesを検査するがsameBookVersesを検査していない。",
+      "evidence": [
+        "BundledEntityIndex.swift:81-84",
+        "OfflineEntityPane.swift sameBookVerses disclosure",
+        "ROM9:4,9:6,9:13 fixed WEB",
+        "LEV1:2,26:42 fixed WEB"
+      ]
+    },
+    {
+      "id": "rom-doxology-canonical-alignment",
+      "status": "pass",
+      "detailsJa": "固定WEB本文のsourceChapter14 verses24–26を、出版社の明示した対応関係によりcanonical ROM16:25–27としてprofile passages/knownByへ登録。source URLは原文ROM14#V24–26を保ち、source titleが通常の節番号とWEB配置の差を説明。出典を別のWEB verseへ偽装していない。alignment reviewはWEB14:26と16:25脚注、KJVの独立並行本文を挙げる。",
+      "witness": [
+        "ROM14:24 source text begins “Now to him who is able to establish you...”",
+        "ROM14:25 and 14:26 continue the same doxology",
+        "reviews/rom-doxology-alignment.json status verified-publisher-explicit-correspondence"
+      ],
+      "test": "RomLeviticusEntityTests.testCanonicalRomansDoxologyUsesTheAlignedWEBSource"
+    },
+    {
+      "id": "candidate-map-route-retention-and-judea",
+      "status": "qualified",
+      "detailsJa": "現行ResourcesではROM11件とLEV3件の計14件がallowCandidateMap=true、ROM1件（Asia）とLEV3件（Azazel/Holy Place/Sinai wilderness）がfalse。すべてprofile.coordinate=nullのまま候補経路だけ使い、14件にdisplayNoteJaがある。UIの入口・markerは資料上の候補位置と示し、元資料VERIFIEDとアプリ独立照合を明確に分ける。ROM Judeaは過去の独立判断2件が抑制/ラベル付き維持で相違するが、現resourceはROM15:31以降に限り候補を表示し、旧参考点がエルサレム付近で地域中心・境界・出来事地点ではないと表示するため、後者の条件を満たす実装としては許容可能。Judeaを確定地点へ昇格していない。",
+      "evidence": [
+        "rom-map-policy.json and lev-map-policy.json; 14 allowed entries",
+        "OfflineEntityPane.swift:54-59,184-198",
+        "reviews/map-policy-independent-closure.json Judea recommendation=keep-suppressed",
+        "reviews/judea-map-candidate-review.json recommends labeled candidate only"
+      ]
+    },
+    {
+      "id": "map-reader-copy-and-policy-state",
+      "status": "qualified",
+      "detailsJa": "ROM Achaiaのprofile.locationNoteJaとrom-map-policy displayNoteJaには「旧候補を表示するときは...とし」、LEV Egyptの両noteには「表示する場合は...明記」とUI作成者への指示がある。EntityProfileContentはlocationNoteJaを読み手に表示し、地図画面もdisplayNoteJaを表示するため、文章を読者向けの断定文へ直す必要がある。さらにIllyricumとSodomのmap rowsはallowCandidateMap=trueで既存座標候補を保持する一方verificationStateがno-compatible-existing-candidateで矛盾する。候補保持方針自体は妥当だが監査メタを更新すべき。",
+      "evidence": [
+        "ROM place:achaia_16.locationNoteJa and rom-map-policy.json displayNoteJa",
+        "LEV place:egypt_362.locationNoteJa and lev-map-policy.json displayNoteJa",
+        "ROM place:illyricum_595 and place:sodom_1107 policy verificationState vs allowCandidateMap",
+        "OfflineEntityPane.swift:EntityProfileContent and UnreviewedIndexedPlaceMap"
+      ]
+    }
+  ],
+  "testEvidence": {
+    "log": "core-final-test-6.log",
+    "result": "188 tests executed, 0 failures; RomLeviticusEntityTests 8 executed, 0 failures",
+    "noteJa": "テスト成功を確認したが、将来の集団参照混在およびLEV Israel表示ノートの先取りを検査するtestは含まれていない。"
+  },
+  "unresolvedForOwner": [
+    "LEV person:israel_682 のknownBy1:2 identityNoteJaとWikipedia noteJaから、後続初出26:42の個人Jacobへの言及を除くか適切にgateする。",
+    "individual-context-variantでresolveした場合のsameBookVerses参照を、同じidentity contextに限定するか、別文脈であることをUIで明示する。",
+    "ROM AchaiaとLEV Egyptのreader-facing locationNoteJa/displayNoteJaから編集者向けの条件文を除去する。",
+    "ROM Illyricum/SodomのallowCandidateMap=trueとverificationState=no-compatible-existing-candidateの食い違いを解消する。"
+  ]
+}

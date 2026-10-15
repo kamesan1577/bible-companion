@@ -1,0 +1,284 @@
+{
+  "reviews": [
+    {
+      "path": "reviews/map-policy-places_1.json",
+      "sha256": "8640f5049eba0a8f708f7f8d482b7ff3a5b6f250b784b243d683f0e944f4625c"
+    },
+    {
+      "path": "reviews/map-policy-places_2.json",
+      "sha256": "41e5ccaa6cc564c66cc2220ad0411c5962fd2187487f24aad919fba98172ff63"
+    },
+    {
+      "path": "reviews/map-policy-places_3.json",
+      "sha256": "3eb802182c4c7c9718f7f52868916ede64f202f650c173e9e78d2c2b0fad1073"
+    }
+  ],
+  "policies": 18,
+  "retainedCandidates": 14,
+  "independentlyPromotedPoints": 0,
+  "items": [
+    {
+      "book": "LEV",
+      "id": "place:egypt_362",
+      "category": "region",
+      "allowCandidateMap": true,
+      "allowFrom": {
+        "chapter": 11,
+        "verse": 45
+      },
+      "reasonJa": "広域地域の概略位置候補としてのみ表示可。古代境界・現代国境・出来事地点を示さない。プロフィール座標はnullのまま。",
+      "verificationState": "legacy-candidate-only; profile.coordinate=null; no independent coordinate promotion",
+      "legacyCandidateCoordinate": [
+        26.4902014068366,
+        29.88079617
+      ],
+      "displayNoteJa": "地域の概略位置候補です。古代の境界・現代国境・個々の出来事の地点を示すものではありません。"
+    },
+    {
+      "book": "ROM",
+      "id": "place:achaia_16",
+      "category": "region",
+      "allowCandidateMap": true,
+      "allowFrom": {
+        "chapter": 15,
+        "verse": 26
+      },
+      "reasonJa": "ローマ属州という広域の代表候補としてのみ表示可。都市地点や現代ギリシアの行政境界を指すものではない。プロフィール座標はnullのまま。",
+      "verificationState": "legacy-candidate-only; profile.coordinate=null; no independent coordinate promotion",
+      "legacyCandidateCoordinate": [
+        37.5,
+        22.5
+      ],
+      "displayNoteJa": "広域の属州を一点で表すことはできません。従来資料の点は地域の概略位置候補で、現代行政区画や特定都市の確定地点を示しません。"
+    },
+    {
+      "book": "ROM",
+      "id": "place:cenchreae_281",
+      "category": "city",
+      "allowCandidateMap": true,
+      "allowFrom": {
+        "chapter": 16,
+        "verse": 1
+      },
+      "reasonJa": "古代港の出典付き候補点であり、既存の表示候補を維持できる。港湾遺構の正確な範囲やローマ16:1の集会位置を示すものではない。プロフィール座標は独立確認済みとして昇格しない。",
+      "verificationState": "legacy-candidate-only; profile.coordinate=null; no independent coordinate promotion",
+      "legacyCandidateCoordinate": [
+        37.88239,
+        22.992532
+      ],
+      "displayNoteJa": "旧候補は古代港の代表候補点。港湾施設の境界や集会の位置を意味しない。"
+    },
+    {
+      "book": "ROM",
+      "id": "place:judea_657",
+      "category": "region",
+      "allowCandidateMap": true,
+      "allowFrom": {
+        "chapter": 15,
+        "verse": 31
+      },
+      "reasonJa": "ユダヤ地方の従来資料上の参考点です。点はエルサレム市街付近にあり、広域の中心・境界・本文の出来事の場所を確定するものではありません。アプリ側では位置を独立確認していません。",
+      "verificationState": "legacy-candidate-only; profile.coordinate=null; no independent coordinate promotion",
+      "legacyCandidateCoordinate": [
+        31.777444,
+        35.234935
+      ],
+      "independentClosure": "reviews/judea-map-candidate-review.json",
+      "displayNoteJa": "ユダヤ地方は広域地域です。従来資料の参考点はエルサレム付近にあり、地域の中心・境界や出来事の位置を確定するものではありません。"
+    },
+    {
+      "book": "ROM",
+      "id": "place:spain_1111",
+      "category": "region",
+      "allowCandidateMap": true,
+      "allowFrom": {
+        "chapter": 15,
+        "verse": 24
+      },
+      "reasonJa": "西方の広域を示す旧候補を、半島の概略参考点としてのみ維持できる。都市所在地・旅程・古代属州境界と誤認させないラベルを付す。プロフィール座標はnullのまま。",
+      "verificationState": "legacy-candidate-only; profile.coordinate=null; no independent coordinate promotion",
+      "legacyCandidateCoordinate": [
+        40.481391,
+        -3.175332
+      ],
+      "displayNoteJa": "イベリア半島の広域参考点候補。都市、ローマ期の行政境界、パウロの実際の経路を示さない。"
+    },
+    {
+      "book": "LEV",
+      "id": "place:mount_sinai_855",
+      "category": "uncertain",
+      "allowCandidateMap": true,
+      "allowFrom": {
+        "chapter": 7,
+        "verse": 38
+      },
+      "reasonJa": "旧座標[28.58771,33.921682]はTheographic固定indexに存在し、同一座標はPleiades/SyriacaのMount Sinai/Syna M.候補記録とも対応する。ただし聖書のシナイ山の同定は複数説で、固定WEBは山頂座標を指定しない。候補地の一つを確定地に昇格せず、「従来の出典座標候補（比定未確定）」等と明示して表示入口を維持することを推奨。現falseの理由は不確実性だけなので抑制理由として不十分。",
+      "verificationState": "unverified-legacy-candidate; retained as approximate reference; no independent coordinate promotion",
+      "independentClosure": "reviews/map-policy-independent-closure.json",
+      "displayNoteJa": "シナイ山の比定には複数説があります。従来資料の山の候補点は比定未確定の参考位置で、聖書の山頂として確定した地点ではありません。"
+    },
+    {
+      "book": "ROM",
+      "id": "place:gomorrah_489",
+      "category": "city",
+      "allowCandidateMap": true,
+      "allowFrom": {
+        "chapter": 9,
+        "verse": 29
+      },
+      "reasonJa": "聖書本文は都市名を明記し、既存地図資料には死海周辺の位置候補がある。特定遺跡との同定は未確定なので、表示する場合は「従来の出典座標候補（位置未確定）」と明記し、確認済みの都市地点として扱わない。",
+      "verificationState": "unverified legacy point; no independent archaeological match checked",
+      "displayNoteJa": "地図上に示す点は従来の位置候補の一つであり、古代都市の所在を確定するものではありません。"
+    },
+    {
+      "book": "ROM",
+      "id": "place:macedonia_747",
+      "category": "region",
+      "allowCandidateMap": true,
+      "allowFrom": {
+        "chapter": 15,
+        "verse": 26
+      },
+      "reasonJa": "固定indexに既存の地域代表候補点がある。古代地域の境界・現代国家・都市地点を示すものではなく、「従来の出典座標候補（概略位置）」というラベルを付けてのみ表示する。",
+      "verificationState": "existing source-verified candidate; profile coordinate not independently verified",
+      "displayNoteJa": "地図上の参考点は広い地域の概略位置です。古代の境界や現代国家の範囲を示すものではありません。"
+    },
+    {
+      "book": "ROM",
+      "id": "place:zion_1263",
+      "category": "region",
+      "allowCandidateMap": true,
+      "allowFrom": {
+        "chapter": 9,
+        "verse": 33
+      },
+      "reasonJa": "既存の候補点はエルサレム周辺の参考位置として保持できるが、シオンは文脈により丘・エルサレム・イスラエルの地を指す。表示時は「従来の出典座標候補（概略位置）」とし、特定の丘の確定地点とは示さない。",
+      "verificationState": "existing source-verified candidate; semantic extent remains context-dependent",
+      "displayNoteJa": "参考位置はエルサレム周辺を示す候補です。シオンの丘や引用句の地理的範囲を確定する表示ではありません。"
+    },
+    {
+      "book": "LEV",
+      "id": "place:holy_place_574",
+      "category": "site",
+      "allowCandidateMap": false,
+      "allowFrom": null,
+      "reasonJa": "レビ記の聖所は幕屋内の祭儀区画を示す名称で、割当資料に既存の位置候補がない。現代の地点ピンには結び付けない。",
+      "verificationState": "no-coordinate-candidate",
+      "displayNoteJa": "これは古代の祭儀空間を示す名称で、現代の特定地点を指すものではありません。"
+    },
+    {
+      "book": "LEV",
+      "id": "place:azazel_127",
+      "category": "uncertain",
+      "allowCandidateMap": false,
+      "allowFrom": null,
+      "reasonJa": "固定WEBは3箇所をscapegoatと訳し地名を明記しない。英語Wikipedia記事は場所・悪霊・贖罪のやぎなどの解釈が併存することを示すが、これだけでレビ記本文の地名同定はできない。",
+      "verificationState": "excluded-no-place-match",
+      "draftSHA256": "d70ec632304d78390634e4d72a08809fc7eeecbf008f1348b973c621b89d5532",
+      "displayNoteJa": null
+    },
+    {
+      "book": "LEV",
+      "id": "place:canaan_272",
+      "category": "region",
+      "allowCandidateMap": true,
+      "allowFrom": {
+        "chapter": 14,
+        "verse": 34
+      },
+      "reasonJa": "歴史地域。既存Acts候補座標は同じ地名の概略候補としてだけ維持し、確定位置や現代国境として扱わない。",
+      "verificationState": "legacy-candidate-only; profile.coordinate=null; no independent coordinate promotion",
+      "draftSHA256": "574e87d897e73c1b49865dcb31c241af16f83fc565ae6435809c4699a52d8c2a",
+      "legacyCandidateCoordinate": [
+        31.69352950368834,
+        34.84388288576839
+      ],
+      "displayNoteJa": "位置候補は地域の概略を示す参考にとどまり、範囲や現代国境を示すものではありません。"
+    },
+    {
+      "book": "LEV",
+      "id": "place:sinai_1098",
+      "category": "uncertain",
+      "allowCandidateMap": false,
+      "allowFrom": null,
+      "reasonJa": "一節内に山と荒野の双方が出て、聖書中の山の比定も確定しない。既存Actsの別ID（Mount Sinai）の候補点は転用しない。",
+      "verificationState": "no-compatible-existing-candidate",
+      "draftSHA256": "b3e33bd19ec3a883ed873c31cd52c9faf549f0e46add5b50fbe50991492dea7d",
+      "displayNoteJa": "聖書の荒野の範囲と、同じ節に記されたシナイ山との境界は特定できません。山頂の候補位置を荒野地域の代表位置として示しません。"
+    },
+    {
+      "book": "ROM",
+      "id": "place:asia_108",
+      "category": "uncertain",
+      "allowCandidateMap": false,
+      "allowFrom": null,
+      "reasonJa": "ROM16:5の固定本文はfirst fruits of Achaia。Asiaへの結び付けは本文に反し、Achaiaとの混同も許容できない。Actsで同じIDに候補点があるが、このRomans用例に対する地図候補としては不適合。",
+      "verificationState": "excluded-no-place-match",
+      "draftSHA256": "71e7d122cb35188dd6ce4d9638c39af55c927011b1d4ba1d24235bd96f336f51",
+      "displayNoteJa": null
+    },
+    {
+      "book": "ROM",
+      "id": "place:illyricum_595",
+      "category": "region",
+      "allowCandidateMap": true,
+      "allowFrom": {
+        "chapter": 15,
+        "verse": 19
+      },
+      "reasonJa": "既存index候補[43.515484,16.071538]はSalona付近にあり、歴史的Illyricumの一部に含まれる位置候補として地理的に矛盾しない。ただし地域の時代差と境界は一定せず、この点を代表的中心・境界・特定都市と断定できない。「従来の出典座標候補（概略位置、範囲未確定）」と明示すれば候補入口を維持できる。現falseは候補がないとの誤記も含む。",
+      "verificationState": "unverified-legacy-candidate; retained as approximate reference; no independent coordinate promotion",
+      "draftSHA256": "4f4dcb14d6b75f0b80c08924e3d073b6eb1b81f930d898ca8e5be0d1000df292",
+      "independentClosure": "reviews/map-policy-independent-closure.json",
+      "displayNoteJa": "古代のイリュリコンの範囲には時代による幅があります。従来資料の候補点は域内の概略参考位置で、地域の中心やパウロの到達地点を確定するものではありません。"
+    },
+    {
+      "book": "ROM",
+      "id": "place:jerusalem_636",
+      "category": "city",
+      "allowCandidateMap": true,
+      "allowFrom": {
+        "chapter": 15,
+        "verse": 19
+      },
+      "reasonJa": "同一IDの既存Acts候補は現代都市と位置が連続する概略候補としてのみ維持。プロフィール座標は未設定で、古代市域・政治的境界を意味しない。",
+      "verificationState": "legacy-candidate-only; profile.coordinate=null; no independent coordinate promotion",
+      "legacyCandidateCoordinate": [
+        31.776667,
+        35.234167
+      ],
+      "displayNoteJa": "既存の概略候補は参考位置としてのみ扱い、古代市域・現代境界・個別の出来事の場所を示すものではありません。"
+    },
+    {
+      "book": "ROM",
+      "id": "place:rome_1013",
+      "category": "city",
+      "allowCandidateMap": true,
+      "allowFrom": {
+        "chapter": 1,
+        "verse": 7
+      },
+      "reasonJa": "同じ都市IDの既存Acts候補を参考位置として維持。プロフィール座標は未設定。現代ローマ市と古代都市の範囲の差に注意。",
+      "verificationState": "legacy-candidate-only; profile.coordinate=null; no independent coordinate promotion",
+      "legacyCandidateCoordinate": [
+        41.89262,
+        12.4843457
+      ],
+      "displayNoteJa": "既存の候補点は現代ローマ市内の参考位置です。古代市域や出来事の正確な地点を示すものではありません。"
+    },
+    {
+      "book": "ROM",
+      "id": "place:sodom_1107",
+      "category": "uncertain",
+      "allowCandidateMap": true,
+      "allowFrom": {
+        "chapter": 9,
+        "verse": 29
+      },
+      "reasonJa": "旧候補[31.19656033,35.39648412]は死海南部付近に位置し、本文上の都市名と結び付けられてきた複数の候補域の一つを示す従来点としては地理的に不可能とはいえない。ただし本文は座標を指定せず、候補遺跡・所在地説は複数で、点自体がどの遺跡説を表すかも未確認。「従来の出典座標候補（所在地・遺跡同定未確定）」と明示して入口を維持するのが、未確認を理由に隠さない方針に合う。確定地点としては扱わない。",
+      "verificationState": "unverified-legacy-candidate; retained as approximate reference; no independent coordinate promotion",
+      "independentClosure": "reviews/map-policy-independent-closure.json",
+      "displayNoteJa": "正確な所在地には複数説があります。従来資料の候補点は参考位置であり、特定の遺跡との同定は未確定です。"
+    }
+  ]
+}

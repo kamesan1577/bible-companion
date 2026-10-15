@@ -13,7 +13,7 @@
     "dev": "node scripts/wrangler.mjs dev --config apps/api/wrangler.jsonc",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "validate": "npm run typecheck && npm test && npm run design:check && npm run design:test && npm run infra:test && npm run seed:check && npm run db:local:test && npm run corpus:import:test && npm run corpus:assets:test && npm run operator:test && npm run worker:runtime:test && npm run source:export:test && npm run commentary:jobs:test && npm run commentary:contexts:test && npm run commentary:reviews:test",
+    "validate": "npm run typecheck && npm test && npm run design:check && npm run design:test && npm run infra:test && npm run seed:check && npm run db:local:test && npm run corpus:import:test && npm run corpus:assets:test && npm run operator:test && npm run worker:runtime:test && npm run source:export:test && npm run commentary:jobs:test && npm run commentary:contexts:test && npm run commentary:reviews:test && npm run entities:check",
     "migrate": "node scripts/wrangler.mjs d1 migrations apply bible-companion --local --config apps/api/wrangler.jsonc",
     "deploy:dry-run": "node scripts/wrangler.mjs deploy --dry-run --config apps/api/wrangler.jsonc",
     "infra": "node scripts/infra.mjs",
@@ -37,7 +37,8 @@
     "source:export:test": "node --test scripts/export-source.test.mjs",
     "commentary:jobs:test": "python3 scripts/commentary/codex-jobs.test.py",
     "commentary:contexts:test": "python3 scripts/commentary/chapter-contexts.test.py",
-    "commentary:reviews:test": "python3 scripts/commentary/review-ledger.test.py"
+    "commentary:reviews:test": "python3 scripts/commentary/review-ledger.test.py",
+    "entities:check": "python3 scripts/validate-rom-lev-entities.py"
   },
   "engines": {
     "node": ">=24"

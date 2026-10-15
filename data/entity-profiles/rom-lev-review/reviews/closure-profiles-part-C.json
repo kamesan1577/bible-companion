@@ -1,0 +1,3404 @@
+{
+  "reviewType": "independent-repair-closure",
+  "generatedAt": "2026-10-15",
+  "reviewerRole": "独立原典・記事再同定closure。draft/evidenceは変更していない。",
+  "scope": {
+    "group": "persons_3",
+    "expectedRecords": 36,
+    "recordsReviewed": 36,
+    "methodJa": "AUTHOR-CONTRACT、persons_3割当、固定ROM/LEV WEB witness、前回 independent-profiles-part-C findings、author-repairs log、各現行draft/evidenceを照合。変更された修正対象は現在SHAで原典と記事を再読。変更のないpassレコードは前回レビューのdraft SHAが一致するためレビューを継承し、未解決qualificationは継承して閉じたことにしない。Wikipediaの過去11 qualification対象記事は全て実記事を現在再取得し、同一性または関連伝承の範囲を確認。"
+  },
+  "inputHashes": {
+    "priorReview": "reviews/independent-profiles-part-C.json",
+    "priorReviewSHA256": "1bd50e1012a99214fc997dd1a6c877a7d9c1bddd21f5025d38478b0c2954d8f2",
+    "assignment": "assignments/persons_3.json",
+    "assignmentSHA256": "0b6ee2e28edb5b8253f09704d147c88ba739b0e087c06bbe03f37e7d6c2dc6f4",
+    "romWEB": "inventory/targets/rom-canonical-witness.json",
+    "romWEBSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+    "levWEB": "inventory/targets/lev-web-verses.json",
+    "levWEBSHA256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+    "authorRepairLog": "evidence/persons_3/author-repairs.json",
+    "authorRepairLogSHA256": "fa9bb8b81a359bed38f7633a2c110da8ccbc233f04d7dcaf2d7355b857b50a11"
+  },
+  "completeness": {
+    "assignedCount": 36,
+    "reviewRecordCount": 36,
+    "missingIDs": [],
+    "unexpectedRecords": []
+  },
+  "counts": {
+    "pass": 26,
+    "qualified": 10,
+    "fail": 0
+  },
+  "repairClosures": {
+    "priorFailuresClosed": 3,
+    "priorFailuresClosedPass": [
+      "LEV person:moses_2108",
+      "ROM person:sarah_2473",
+      "ROM person:jesus_905"
+    ],
+    "wikiQualifiedItemsRechecked": 11,
+    "articleIssuesResolvedToPass": [
+      "ROM person:mary_1942"
+    ],
+    "stillQualifiedForExplicitIdentityOrTraditionUncertainty": [
+      "LEV person:molech_2104",
+      "ROM person:apelles_273",
+      "ROM person:aristobulus_307",
+      "ROM person:baal_573",
+      "ROM person:erastus_1213",
+      "ROM person:gaius_1271",
+      "ROM person:patrobas_2289",
+      "ROM person:phlegon_2352",
+      "ROM person:quartus_2378",
+      "ROM person:stachys_2774"
+    ]
+  },
+  "globalFindingsJa": [
+    "以前の3 failは修正後本文で閉じた。SarahのROM9:9はknownBy gate付きfact、Moses10:11はアロンへの命令受け手とモーセを介した教示、Jesus8:3/8:32/10:12–13は文脈に基づくrelated用例として確認。",
+    "Wikipedia qualificationのうちMary of RomeはROM16:6を直接扱う実記事を確認できたためpassへ変更。残る10件は記事実読・該当節との関係を確認できたが、歴史的伝承/同名対象/語義の未確定点をプロフィール側で留保しているためqualifiedを維持。",
+    "ROM16:25/27などsource coordinateが物理WEB ROM14:24/26に移された本文アンカーは既存canonical relocationを前提とし、passage検査で誤失敗にしない。現行draft内source URLがROM14物理参照であることを確認。",
+    "これは現行稿の独立closure報告であり、合格済みの品質保証や専門家校閲を意味しない。"
+  ],
+  "records": [
+    {
+      "book": "LEV",
+      "entityID": "person:abraham_58",
+      "draftPath": "drafts/persons_3/LEV_abraham_58.json",
+      "draftSHA256": "2fcac02e57ce3b9981fc68b76bf0d560762be43b057dd6453979e338e0a0e32d",
+      "evidencePath": "evidence/persons_3/LEV_abraham_58.json",
+      "evidenceSHA256": "c80c3d5bb923f213b2468e511edc15fa0b646259c0998c3bbd5c7ce12185f9a3",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 26,
+        "verse": 42
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/lev-web-verses.json",
+        "witnessSHA256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "LEV 26:42"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "LEV 26:42",
+            "sourceRef": "LEV 26:42",
+            "sourceTextSHA256": "6c120cadc59d4a630281862590345b0ec92a33834cd1a9e274d3484049126737"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 1,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Abraham",
+        "articleTitle": "Abraham",
+        "kind": "article",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": false,
+        "draftRecordedBasis": "適合記事を実読。記事冒頭で族長アブラハムとして同一性確認。",
+        "independentArticleInspection": {
+          "articleTitle": "Abraham",
+          "url": "https://en.wikipedia.org/wiki/Abraham",
+          "resultJa": "記事は聖書の族長アブラハムを主題とする。LEV26:42の契約名列挙と同一。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 26, 'verse': 42}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: LEV 26:42。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "2fcac02e57ce3b9981fc68b76bf0d560762be43b057dd6453979e338e0a0e32d",
+      "previousEvidenceSHA256": "c80c3d5bb923f213b2468e511edc15fa0b646259c0998c3bbd5c7ce12185f9a3",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 1,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/lev-web-verses.json",
+        "witnessSHA256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+        "sampleAnchorRefs": [
+          "LEV 26:42"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "LEV",
+      "entityID": "person:dibri_1010",
+      "draftPath": "drafts/persons_3/LEV_dibri_1010.json",
+      "draftSHA256": "65d8f4b36433790dfa2fb9499fb0e72c920c9a6e4834f2e0a16cf2a199c7e94d",
+      "evidencePath": "evidence/persons_3/LEV_dibri_1010.json",
+      "evidenceSHA256": "d7028adc3a8298adb4c41812f36bdb32c5d4232b2ec170d40555a0a079c79f69",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 24,
+        "verse": 11
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/lev-web-verses.json",
+        "witnessSHA256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "LEV 24:11"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "LEV 24:11",
+            "sourceRef": "LEV 24:11",
+            "sourceTextSHA256": "a2ae4a8f44c57424f3821abbcc3957c0042e51751cb2ab85cbe38cd271a4c851"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 1,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": null,
+        "articleTitle": null,
+        "kind": null,
+        "identityVerifiedInDraft": null,
+        "articleReadByAuthorEvidence": false,
+        "draftRecordedBasis": "検索・実読済み。Dibri本人の記事は確認できなかった。Shelomith bat Dibriの記事は母Shelomithを主題とし、Dibri本人の伝記ではないため候補リンクにしない。",
+        "independentArticleInspection": {
+          "articleTitle": null,
+          "url": null,
+          "resultJa": "Dibri検索では独立人物記事を確認できず。Shelomith bat Dibriは母Shelomithの記事であってDibriの人物記事ではない。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 24, 'verse': 11}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: LEV 24:11。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "Dibriの独立した人物記事は見つからず。WikipediaのShelomith記事は娘を主題とするため非採用。",
+      "previousDraftSHA256": "65d8f4b36433790dfa2fb9499fb0e72c920c9a6e4834f2e0a16cf2a199c7e94d",
+      "previousEvidenceSHA256": "d7028adc3a8298adb4c41812f36bdb32c5d4232b2ec170d40555a0a079c79f69",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 1,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/lev-web-verses.json",
+        "witnessSHA256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+        "sampleAnchorRefs": [
+          "LEV 24:11"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 1
+      }
+    },
+    {
+      "book": "LEV",
+      "entityID": "person:isaac_616",
+      "draftPath": "drafts/persons_3/LEV_isaac_616.json",
+      "draftSHA256": "757fa104f4faad8c97ceb0db60a8c2978a13dda57d8eef4c8acafda3e689e53a",
+      "evidencePath": "evidence/persons_3/LEV_isaac_616.json",
+      "evidenceSHA256": "bc3520006acb8342efd93089ddbfd9f2f2b229ce1feaa9b1960b59241c8e6cbe",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 26,
+        "verse": 42
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/lev-web-verses.json",
+        "witnessSHA256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "LEV 26:42"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "LEV 26:42",
+            "sourceRef": "LEV 26:42",
+            "sourceTextSHA256": "6c120cadc59d4a630281862590345b0ec92a33834cd1a9e274d3484049126737"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 1,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://ja.wikipedia.org/wiki/イサク",
+        "articleTitle": "イサク",
+        "kind": "article",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": false,
+        "draftRecordedBasis": "日本語記事を実読し、アブラハムの子の族長として同一性確認。",
+        "independentArticleInspection": {
+          "articleTitle": "イサク",
+          "url": "https://ja.wikipedia.org/wiki/イサク",
+          "resultJa": "日本語記事は族長イサクを扱い、LEV26:42の契約相手として名指される対象と一致。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 26, 'verse': 42}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: LEV 26:42。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "757fa104f4faad8c97ceb0db60a8c2978a13dda57d8eef4c8acafda3e689e53a",
+      "previousEvidenceSHA256": "bc3520006acb8342efd93089ddbfd9f2f2b229ce1feaa9b1960b59241c8e6cbe",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 1,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/lev-web-verses.json",
+        "witnessSHA256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+        "sampleAnchorRefs": [
+          "LEV 26:42"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "LEV",
+      "entityID": "person:israel_682",
+      "draftPath": "drafts/persons_3/LEV_israel_682.json",
+      "draftSHA256": "803b56d59e7b5951bc91a1155e13d79c77466c74a247bedcca5b2154fc8c1695",
+      "evidencePath": "evidence/persons_3/LEV_israel_682.json",
+      "evidenceSHA256": "4b6103ea6cd104da3bc32271582fe7337dac4c7bcf71a1b01560c569b8acc1a0",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 2
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/lev-web-verses.json",
+        "witnessSHA256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+        "profilePassageCount": 58,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "LEV 1:2",
+          "LEV 4:2",
+          "LEV 4:13",
+          "LEV 27:34"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "LEV 1:2",
+            "sourceRef": "LEV 1:2",
+            "sourceTextSHA256": "fc9e2eff1d4b28949a571b7bfb27fab6e51da147eacc94832b5ff65a833c3ced"
+          },
+          {
+            "canonical": "LEV 4:2",
+            "sourceRef": "LEV 4:2",
+            "sourceTextSHA256": "470dd665105f7d0b909bf12e59d841186b188f90388c0a3ebca0c9b9dc37e4cf"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 1,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Israelites",
+        "articleTitle": "Israelites",
+        "kind": "article",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": false,
+        "draftRecordedBasis": "英語記事を実読し、冒頭でChildren of Israelの集団として照合。日本語記事「イスラエル」は現代国家の記事のため採用しない。",
+        "independentArticleInspection": {
+          "articleTitle": "Israelites",
+          "url": "https://en.wikipedia.org/wiki/Israelites",
+          "resultJa": "記事はChildren of Israelを古代集団として扱う。族長ヤコブ個人や現代国家Israelではなく、LEV集団profileに適合。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 1, 'verse': 2}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 58件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: LEV 1:2; LEV 4:2; LEV 4:13; LEV 27:34。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [
+        {
+          "variantPath": "reviews/LEV-israel-jacob-context-variant.json",
+          "variantKey": "LEV 26:42 · Jacob individual use",
+          "decision": "proposed-context-variant",
+          "variantProfileSHA256": "91169e062b439a936f0db71fadefd8efb7cb4932f473e8a427d17df43ba6ceff",
+          "variantSourceText": "then I will remember my covenant with Jacob, my covenant with Isaac, and also my covenant with Abraham; and I will remember the land.",
+          "reviewerFindingJa": "集団プロフィールからLEV 26:42の族長ヤコブ個人用法を分離する区別は固定WEBに合致する。variantは個人用法以外の生涯情報を加えず、集団baseから同節を除外している。"
+        }
+      ],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "803b56d59e7b5951bc91a1155e13d79c77466c74a247bedcca5b2154fc8c1695",
+      "previousEvidenceSHA256": "4b6103ea6cd104da3bc32271582fe7337dac4c7bcf71a1b01560c569b8acc1a0",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 58,
+      "factCount": 1,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/lev-web-verses.json",
+        "witnessSHA256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+        "sampleAnchorRefs": [
+          "LEV 1:2",
+          "LEV 4:2",
+          "LEV 4:13",
+          "LEV 27:34"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 59
+      }
+    },
+    {
+      "book": "LEV",
+      "entityID": "person:ithamar_649",
+      "draftPath": "drafts/persons_3/LEV_ithamar_649.json",
+      "draftSHA256": "4b32e410f5a200b348b8de4f45bbe781248484d3a2c330afab8f896be48cef6a",
+      "evidencePath": "evidence/persons_3/LEV_ithamar_649.json",
+      "evidenceSHA256": "36bc6f73f97c529c1fb03889b293590a45c940242b524c42b28be35ec99957f7",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 10,
+        "verse": 6
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/lev-web-verses.json",
+        "witnessSHA256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+        "profilePassageCount": 3,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "LEV 10:6",
+          "LEV 10:12",
+          "LEV 10:16"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "LEV 10:6",
+            "sourceRef": "LEV 10:6",
+            "sourceTextSHA256": "c2c6380200d86bfea0bd5e45d3b852ecdd929d1075b3f0ae8abbdf8ebafea067"
+          },
+          {
+            "canonical": "LEV 10:12",
+            "sourceRef": "LEV 10:12",
+            "sourceTextSHA256": "381eb1cf2e5435115ed2183531f1de14b150343cd04a2dfdfb1d6a7eb5b43d27"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 2,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Ithamar",
+        "articleTitle": "Ithamar",
+        "kind": "article",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": false,
+        "draftRecordedBasis": "英語記事を実読し、アロンの子として同一性確認。",
+        "independentArticleInspection": {
+          "articleTitle": "Ithamar",
+          "url": "https://en.wikipedia.org/wiki/Ithamar",
+          "resultJa": "記事はアロンの子イタマルを扱い、Leviticus10:6,12,16での名指しと一致。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 10, 'verse': 6}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 3件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: LEV 10:6; LEV 10:12; LEV 10:16。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "4b32e410f5a200b348b8de4f45bbe781248484d3a2c330afab8f896be48cef6a",
+      "previousEvidenceSHA256": "36bc6f73f97c529c1fb03889b293590a45c940242b524c42b28be35ec99957f7",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 3,
+      "factCount": 2,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/lev-web-verses.json",
+        "witnessSHA256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+        "sampleAnchorRefs": [
+          "LEV 10:6",
+          "LEV 10:12",
+          "LEV 10:16"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 4
+      }
+    },
+    {
+      "book": "LEV",
+      "entityID": "person:molech_2104",
+      "draftPath": "drafts/persons_3/LEV_molech_2104.json",
+      "draftSHA256": "24b29e95da7d8ee8b370f10424da89a774668f7d87cc963821309b30b67ca1f7",
+      "evidencePath": "evidence/persons_3/LEV_molech_2104.json",
+      "evidenceSHA256": "88160f3862bacef4a48d2ae079ed73972e6381b8a12c8b850d161a8aab75069b",
+      "status": "qualified",
+      "knownBy": {
+        "chapter": 18,
+        "verse": 21
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/lev-web-verses.json",
+        "witnessSHA256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+        "profilePassageCount": 5,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "LEV 18:21",
+          "LEV 20:2",
+          "LEV 20:3",
+          "LEV 20:5"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "LEV 18:21",
+            "sourceRef": "LEV 18:21",
+            "sourceTextSHA256": "334116fc0c49ea51898799ca8e7aa5470deecd3ecfd8219867c8dc5d50eb1e2c"
+          },
+          {
+            "canonical": "LEV 20:2",
+            "sourceRef": "LEV 20:2",
+            "sourceTextSHA256": "3989ef57c9fc824b2f1eb6ecbd6457e54b60fe6c51ad3dbeb951f24016a0b250"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 3,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Moloch",
+        "articleTitle": "Moloch",
+        "kind": "related-section",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はレビ記のMolech/Moloch表記を扱うが、神名か供犠名かは議論がある。本文が確定しない論点は保留する。",
+        "independentArticleInspection": {
+          "articleTitle": "Moloch",
+          "url": "https://en.wikipedia.org/wiki/Moloch",
+          "resultJa": "記事はLeviticusのMolech用例を扱う一方、神名/称号/供犠名の論争を明記する。プロフィールの留保は適切。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 18, 'verse': 21}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 5件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "WEBでは子を「Molechに与える／供える」と述べるだけで、神名・称号・供犠名の確定はできない。profileはdeity候補と注記しており断定を避ける点はよいが、kind=personかつ外部記事Molochの識別を読者が実体同定と受け取る余地がある。Wikipedia本文自体もLeviticus用例・語義論争を記す。"
+      ],
+      "issues": [
+        {
+          "field": "profile.kind / identityType / wikipedia",
+          "anchor": "LEV 18:21; 20:2–5",
+          "findingJa": "WEBでは子を「Molechに与える／供える」と述べるだけで、神名・称号・供犠名の確定はできない。profileはdeity候補と注記しており断定を避ける点はよいが、kind=personかつ外部記事Molochの識別を読者が実体同定と受け取る余地がある。Wikipedia本文自体もLeviticus用例・語義論争を記す。",
+          "recommendationJa": "本文上の用法が不確定なことを表示し続け、deityを確定プロフィールとして扱わない。"
+        }
+      ],
+      "contextVariants": [],
+      "unresolvedJa": "本文だけではモレクが神名・称号・供犠名のどれか判定できない。",
+      "previousDraftSHA256": "99edfd001cd8b95377fc0f38ab0abfb85ed60c7be0017d7a1e71fda9f9fcb4cf",
+      "previousEvidenceSHA256": "bcd5f9414fd1429de6b2c30b99f6649b6ab4a7764b6d72407be0df5eef5429c5",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 5,
+      "factCount": 3,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/lev-web-verses.json",
+        "witnessSHA256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+        "sampleAnchorRefs": [
+          "LEV 18:21",
+          "LEV 20:2",
+          "LEV 20:3",
+          "LEV 20:5"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": false
+      },
+      "currentReviewStatus": "qualified",
+      "closureBasisJa": "§Biblical attestations lines 191–200: Leviticus 18:21 and 20:2–5 explicitly; opening lines 168–171 and theories discuss deity versus sacrifice/title. Profile correctly says exact category from WEB cannot be determined; retain qualified because identityType=deity remains taxonomy-level interpretation despite note.",
+      "closureIssuesJa": [
+        "§Biblical attestations lines 191–200: Leviticus 18:21 and 20:2–5 explicitly; opening lines 168–171 and theories discuss deity versus sacrifice/title. Profile correctly says exact category from WEB cannot be determined; retain qualified because identityType=deity remains taxonomy-level interpretation despite note."
+      ],
+      "wikipediaReclosure": {
+        "url": "https://en.wikipedia.org/wiki/Moloch",
+        "actualArticleTitle": "Moloch",
+        "checkedAt": "2026-10-15",
+        "articleRead": true,
+        "sourceEvidenceJa": "§Biblical attestations lines 191–200: Leviticus 18:21 and 20:2–5 explicitly; opening lines 168–171 and theories discuss deity versus sacrifice/title. Profile correctly says exact category from WEB cannot be determined; retain qualified because identityType=deity remains taxonomy-level interpretation despite note.",
+        "identityVerifiedInDraft": false,
+        "relationVerifiedInReview": true,
+        "remainingDisposition": "qualified"
+      },
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 6
+      }
+    },
+    {
+      "book": "LEV",
+      "entityID": "person:moses_2108",
+      "draftPath": "drafts/persons_3/LEV_moses_2108.json",
+      "draftSHA256": "ea405c1c5860c81842500026014c418362ca4aeb0f0a28f6a9cd93b7ca8c417d",
+      "evidencePath": "evidence/persons_3/LEV_moses_2108.json",
+      "evidenceSHA256": "1309a46aef8b2f5f9324b06d80f64e8fa18fe7d4fb3f19c307a1118a75b03f49",
+      "status": "fail",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 1
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/lev-web-verses.json",
+        "witnessSHA256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+        "profilePassageCount": 80,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "LEV 1:1",
+          "LEV 4:1",
+          "LEV 5:14",
+          "LEV 27:34"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "LEV 1:1",
+            "sourceRef": "LEV 1:1",
+            "sourceTextSHA256": "b41b76a91d808685c4dca5a6a8edef05367743ac5cac6d7dc87532f741309981"
+          },
+          {
+            "canonical": "LEV 4:1",
+            "sourceRef": "LEV 4:1",
+            "sourceTextSHA256": "28219e5da0d26514843495c6edb280f326aa0ccffb0d2bb642d0e1b0f4478ca1"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 6,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Moses",
+        "articleTitle": "Moses",
+        "kind": "article",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はレビ記で繰り返し語りかけられるモーセを扱う。",
+        "independentArticleInspection": {
+          "articleTitle": "Moses",
+          "url": "https://en.wikipedia.org/wiki/Moses",
+          "resultJa": "記事主題は聖書のモーセで一致。プロフィールのLEV10:11命令主体誤認はWikipediaではなくWEB本文からの問題。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 1, 'verse': 1}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 80件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出LEV1:1は主が会見の天幕からモーセに語る場面。副題「律法を受け、民に伝える」は民への伝達を含み、初出時点より後の描写を常時欄へ先取りする。",
+        "固定WEB 10:11は「You are to teach...」で、直前10:8–9の主の命令の受け手アロンへの指示を継続する。現行fact「モーセを通して語られた規定を…教えるよう命じられる」はモーセの人物記録に置かれ、主語をモーセと読ませる。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "201659254af463f92ef868566eb954fe9c8e773aba09b48e9372129a23b60f03",
+      "previousEvidenceSHA256": "884a1d0ac097dca917fff88a6b04b5b5eba02622d3445d6b6b217ed6c446048f",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 80,
+      "factCount": 6,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/lev-web-verses.json",
+        "witnessSHA256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+        "sampleAnchorRefs": [
+          "LEV 1:1",
+          "LEV 4:1",
+          "LEV 5:14",
+          "LEV 27:34"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": false
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "LEV 1:1の副題は天幕から主がモーセに語ることへ限定される。LEV 10:11 fact は主が命じる掟をアロンへ教えるよう記し、10:8–11の発話者・受け手の連続と合致。",
+      "closureIssuesJa": [],
+      "repairClosure": {
+        "actionJa": "修正閉鎖: future detail removed from subtitle; 10:11 addressee correctly Aaron.",
+        "beforeSHA256": "201659254af463f92ef868566eb954fe9c8e773aba09b48e9372129a23b60f03",
+        "afterSHA256": "ea405c1c5860c81842500026014c418362ca4aeb0f0a28f6a9cd93b7ca8c417d",
+        "evidenceSHA256": "1309a46aef8b2f5f9324b06d80f64e8fa18fe7d4fb3f19c307a1118a75b03f49",
+        "fixedWEB": "LEV 10:8–11",
+        "checkJa": "LEV 1:1の副題は天幕から主がモーセに語ることへ限定される。LEV 10:11 fact は主が命じる掟をアロンへ教えるよう記し、10:8–11の発話者・受け手の連続と合致。"
+      },
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 81
+      }
+    },
+    {
+      "book": "LEV",
+      "entityID": "person:nadab_2128",
+      "draftPath": "drafts/persons_3/LEV_nadab_2128.json",
+      "draftSHA256": "966f2db078e9f50094304b5befe953a16ffe01b98ae24125082dc57c2cfad758",
+      "evidencePath": "evidence/persons_3/LEV_nadab_2128.json",
+      "evidenceSHA256": "2902626ac068340e6b2d4f2498e3c61460ccda366a8234c6528c955aea80c2a1",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 10,
+        "verse": 1
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/lev-web-verses.json",
+        "witnessSHA256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "LEV 10:1"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "LEV 10:1",
+            "sourceRef": "LEV 10:1",
+            "sourceTextSHA256": "70e4b291594ced488a228a3c96edda3ab0f256cb21918187431d35598dd4520d"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 1,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Nadab_and_Abihu",
+        "articleTitle": "Nadab and Abihu",
+        "kind": "shared-section",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はアロンの子ナダブとアビフの一組を扱う。ナダブの記事として単独の経歴を補わない。",
+        "independentArticleInspection": {
+          "articleTitle": "Nadab and Abihu",
+          "url": "https://en.wikipedia.org/wiki/Nadab_and_Abihu",
+          "resultJa": "共有記事はアロンの子ナダブとアビフの組を扱う。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 10, 'verse': 1}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: LEV 10:1。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "966f2db078e9f50094304b5befe953a16ffe01b98ae24125082dc57c2cfad758",
+      "previousEvidenceSHA256": "2902626ac068340e6b2d4f2498e3c61460ccda366a8234c6528c955aea80c2a1",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 1,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/lev-web-verses.json",
+        "witnessSHA256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+        "sampleAnchorRefs": [
+          "LEV 10:1"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "LEV",
+      "entityID": "person:uzziel_2929",
+      "draftPath": "drafts/persons_3/LEV_uzziel_2929.json",
+      "draftSHA256": "975bd9dd4265500d061b110b1ce840d43a5daaf81835c6c902d36ddbd313e36e",
+      "evidencePath": "evidence/persons_3/LEV_uzziel_2929.json",
+      "evidenceSHA256": "df360b47d15bd32e7a88ebd0d5a98a99d4ea403a2ee1d2eee3bd1a044025eb1a",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 10,
+        "verse": 4
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/lev-web-verses.json",
+        "witnessSHA256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "LEV 10:4"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "LEV 10:4",
+            "sourceRef": "LEV 10:4",
+            "sourceTextSHA256": "38aa46e87306eccc616fd1faa3f893143b84923d18c66e178789cbe85c422bc0"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 1,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Uzziel",
+        "articleTitle": "Uzziel",
+        "kind": "article",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はアロンの叔父ウジエルを扱う。",
+        "independentArticleInspection": {
+          "articleTitle": "Uzziel",
+          "url": "https://en.wikipedia.org/wiki/Uzziel",
+          "resultJa": "記事本文はミシャエル/エルツァファンの父でアロンの叔父と記し、LEV10:4の人物と一致。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 10, 'verse': 4}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: LEV 10:4。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "975bd9dd4265500d061b110b1ce840d43a5daaf81835c6c902d36ddbd313e36e",
+      "previousEvidenceSHA256": "df360b47d15bd32e7a88ebd0d5a98a99d4ea403a2ee1d2eee3bd1a044025eb1a",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 1,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/lev-web-verses.json",
+        "witnessSHA256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+        "sampleAnchorRefs": [
+          "LEV 10:4"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:abraham_58",
+      "draftPath": "drafts/persons_3/ROM_abraham_58.json",
+      "draftSHA256": "2e43e7ab57daf7bcbc0e4381bfb80b5b92154d00866b616dcb7b9039bcad4147",
+      "evidencePath": "evidence/persons_3/ROM_abraham_58.json",
+      "evidenceSHA256": "9714ae0f32a6dc4ddb92eb4187097081fe1d4b5cba18443b3ef61fe907b32218",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 4,
+        "verse": 1
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 9,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 4:1",
+          "ROM 4:2",
+          "ROM 4:3",
+          "ROM 11:1"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 4:1",
+            "sourceRef": "ROM 4:1",
+            "sourceTextSHA256": "6fec4d951bacb64ba822ecf47854e862f165fd0bc930138dded3d95e0ef7e439"
+          },
+          {
+            "canonical": "ROM 4:2",
+            "sourceRef": "ROM 4:2",
+            "sourceTextSHA256": "031362829757ddefb24aaebd52ac75156f8308ba901084464f8d7f907a0cba85"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 3,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Abraham",
+        "articleTitle": "Abraham",
+        "kind": "article",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事は創世記の族長アブラハムを扱う。",
+        "independentArticleInspection": {
+          "articleTitle": "Abraham",
+          "url": "https://en.wikipedia.org/wiki/Abraham",
+          "resultJa": "聖書の族長記事。profileはROM4:1の初出表現をそのまま限定し、記事の後代生涯を取り込まない。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 4, 'verse': 1}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 9件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: ROM 4:1; ROM 4:2; ROM 4:3; ROM 11:1。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "2e43e7ab57daf7bcbc0e4381bfb80b5b92154d00866b616dcb7b9039bcad4147",
+      "previousEvidenceSHA256": "9714ae0f32a6dc4ddb92eb4187097081fe1d4b5cba18443b3ef61fe907b32218",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 9,
+      "factCount": 3,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 4:1",
+          "ROM 4:2",
+          "ROM 4:3",
+          "ROM 11:1"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 10
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:amplias_241",
+      "draftPath": "drafts/persons_3/ROM_amplias_241.json",
+      "draftSHA256": "89ca0fa99b3ddec3daf8794310acf2de06c0cb8800fa512f11c155b46657dd32",
+      "evidencePath": "evidence/persons_3/ROM_amplias_241.json",
+      "evidenceSHA256": "a2a3d521e39988117c01668143cdc6a534e2cd577cd63b37caa302a20f6e7e60",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 8
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 16:8"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 16:8",
+            "sourceRef": "ROM 16:8",
+            "sourceTextSHA256": "ccb4df22cecc96332a863de9ad8d5168b0b215349b0530e77b597fe0097574c8"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Ampliatus",
+        "articleTitle": "Ampliatus",
+        "kind": "article",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はAmpliatusとAmpliasという表記を並べ、ローマ書16:8の人物を扱う。後代の聖人伝は本文情報と分ける。",
+        "independentArticleInspection": {
+          "articleTitle": "Ampliatus",
+          "url": "https://en.wikipedia.org/wiki/Ampliatus",
+          "resultJa": "記事はAmpliatus/Ampliasを並記してRomans16:8へ直接結びつける。後代聖人伝をprofileへ移していない。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 16, 'verse': 8}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: ROM 16:8。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "89ca0fa99b3ddec3daf8794310acf2de06c0cb8800fa512f11c155b46657dd32",
+      "previousEvidenceSHA256": "a2a3d521e39988117c01668143cdc6a534e2cd577cd63b37caa302a20f6e7e60",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 16:8"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:apelles_273",
+      "draftPath": "drafts/persons_3/ROM_apelles_273.json",
+      "draftSHA256": "92a6c5688934d11893f9ca6547010634f749463c500c61f2570f947367a5f5dd",
+      "evidencePath": "evidence/persons_3/ROM_apelles_273.json",
+      "evidenceSHA256": "60d16f3d738982d3ee653619a9a648306fa685444b650628a1a486df364703df",
+      "status": "qualified",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 10
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 16:10"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 16:10",
+            "sourceRef": "ROM 16:10",
+            "sourceTextSHA256": "b4d70247d94e11878491d2232d2dac67c6658d33a87576b970a37c732c6544af"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Apelles_of_Heraklion",
+        "articleTitle": "Apelles of Heraklion",
+        "kind": "related-section",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はローマ書16:10のApellesと後代のヘラクレアの司教を結びつける伝承を含む。両者の同一性は本文から確定しない。",
+        "independentArticleInspection": {
+          "articleTitle": "Apelles of Heraklion",
+          "url": "https://en.wikipedia.org/wiki/Apelles_of_Heraklion",
+          "resultJa": "記事はRomans16:10の名前を後代のSeventy/Heraklion bishop伝承と結合する。節本文の人物と同一であることは独立に確定しない。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 16, 'verse': 10}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "リンク先はApelles of HeraklionをSeventy/Heraclea bishopとして事実形で書き、Romans16:10との結びつけも後代資料・教会伝承由来。profile noteは伝承と同一性未確定を認めるがwikipedia.identityVerified=trueとなっている。"
+      ],
+      "issues": [
+        {
+          "field": "profile.wikipedia",
+          "anchor": "ROM 16:10; Wikipedia “Apelles of Heraklion” opening",
+          "findingJa": "リンク先はApelles of HeraklionをSeventy/Heraclea bishopとして事実形で書き、Romans16:10との結びつけも後代資料・教会伝承由来。profile noteは伝承と同一性未確定を認めるがwikipedia.identityVerified=trueとなっている。",
+          "recommendationJa": "identityVerifiedの意味を見直し、同一個人の証明ではなく伝承上の関連記事と明示するかリンクを外す。"
+        }
+      ],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "5c956b2bb430cdeb5a9449950e872f248469acd6085e6c30eddda7194807597f",
+      "previousEvidenceSHA256": "fe406225d68a2ee3e7fa76031052db178ed47d421d404f230498b3d1e9435b2a",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 16:10"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": false
+      },
+      "currentReviewStatus": "qualified",
+      "closureBasisJa": "Opening lines 119–122 connects named Apelles to Romans 16:8–11 and later Seventy/bishop traditions, but asserts connection without establishing the Pauline referent identity; profile now sets identityVerified=false and labels link related-section.",
+      "closureIssuesJa": [
+        "Opening lines 119–122 connects named Apelles to Romans 16:8–11 and later Seventy/bishop traditions, but asserts connection without establishing the Pauline referent identity; profile now sets identityVerified=false and labels link related-section."
+      ],
+      "wikipediaReclosure": {
+        "url": "https://en.wikipedia.org/wiki/Apelles_of_Heraklion",
+        "actualArticleTitle": "Apelles of Heraklion",
+        "checkedAt": "2026-10-15",
+        "articleRead": true,
+        "sourceEvidenceJa": "Opening lines 119–122 connects named Apelles to Romans 16:8–11 and later Seventy/bishop traditions, but asserts connection without establishing the Pauline referent identity; profile now sets identityVerified=false and labels link related-section.",
+        "identityVerifiedInDraft": false,
+        "relationVerifiedInReview": true,
+        "remainingDisposition": "qualified"
+      },
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:aristobulus_307",
+      "draftPath": "drafts/persons_3/ROM_aristobulus_307.json",
+      "draftSHA256": "513d1545df6a8265bbd384caf40db06199d213f6f6b5ac75ee1f9eeeb3ad7165",
+      "evidencePath": "evidence/persons_3/ROM_aristobulus_307.json",
+      "evidenceSHA256": "c35d21c2b2ae18c229cf89525f025011b6586e35214a98884d1fdd0e6ffac54b",
+      "status": "qualified",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 10
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 16:10"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 16:10",
+            "sourceRef": "ROM 16:10",
+            "sourceTextSHA256": "b4d70247d94e11878491d2232d2dac67c6658d33a87576b970a37c732c6544af"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Aristobulus_of_Britannia",
+        "articleTitle": "Aristobulus of Britannia",
+        "kind": "related-section",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はローマ書16:10の「アリストブロの家の人々」と後代の司教伝承を扱い、本人同定には異説がある。",
+        "independentArticleInspection": {
+          "articleTitle": "Aristobulus of Britannia",
+          "url": "https://en.wikipedia.org/wiki/Aristobulus_of_Britannia",
+          "resultJa": "記事自身がROM16:10が後期Aristobulus IVのhouseholdかもしれないと述べ、Britannia司教同定は伝承に依る。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 16, 'verse': 10}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "WEBは本人でなく「those who are of the household of Aristobulus」への挨拶。リンク記事自身もROM16:10が後期Aristobulus IVの家を意味する可能性を記し、Britannia司教との同一視は伝承に依存する。プロフィール本文は本人の属性を断定せず適切だが、記事タイトルとidentityVerified=trueは同定を過剰に示す。"
+      ],
+      "issues": [
+        {
+          "field": "profile.wikipedia",
+          "anchor": "ROM 16:10; Wikipedia “Aristobulus of Britannia” §Romans",
+          "findingJa": "WEBは本人でなく「those who are of the household of Aristobulus」への挨拶。リンク記事自身もROM16:10が後期Aristobulus IVの家を意味する可能性を記し、Britannia司教との同一視は伝承に依存する。プロフィール本文は本人の属性を断定せず適切だが、記事タイトルとidentityVerified=trueは同定を過剰に示す。",
+          "recommendationJa": "該当対象は家の人々で本人同定不明と保ち、記事リンクを関連伝承として明示するかnullへ。"
+        }
+      ],
+      "contextVariants": [],
+      "unresolvedJa": "本文が「アリストブロの家の人々」とだけ述べる不確定性は同名人物の曖昧さではないためidentityNoteJaからreview.remainingUncertaintyJaへ移した。",
+      "previousDraftSHA256": "eb05d5af1600de2b360eba02dfcb1b4b70510a19120d145203febdffde154546",
+      "previousEvidenceSHA256": "a6374f872daa2c51002a8b8d66803950c3333efb2503ee8930679dafee655ca4",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 16:10"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": false
+      },
+      "currentReviewStatus": "qualified",
+      "closureBasisJa": "Lines 154–160: article says Romans 16:10 may instead refer to late Aristobulus IV household; later bishop-of-Britain identity is tradition. Profile accurately describes household greeting and marks article related, identity false.",
+      "closureIssuesJa": [
+        "Lines 154–160: article says Romans 16:10 may instead refer to late Aristobulus IV household; later bishop-of-Britain identity is tradition. Profile accurately describes household greeting and marks article related, identity false."
+      ],
+      "wikipediaReclosure": {
+        "url": "https://en.wikipedia.org/wiki/Aristobulus_of_Britannia",
+        "actualArticleTitle": "Aristobulus of Britannia",
+        "checkedAt": "2026-10-15",
+        "articleRead": true,
+        "sourceEvidenceJa": "Lines 154–160: article says Romans 16:10 may instead refer to late Aristobulus IV household; later bishop-of-Britain identity is tradition. Profile accurately describes household greeting and marks article related, identity false.",
+        "identityVerifiedInDraft": false,
+        "relationVerifiedInReview": true,
+        "remainingDisposition": "qualified"
+      },
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:baal_573",
+      "draftPath": "drafts/persons_3/ROM_baal_573.json",
+      "draftSHA256": "c72c92f96829da551391b153337cf0361fb8a542b35a79179c5569abef82ca49",
+      "evidencePath": "evidence/persons_3/ROM_baal_573.json",
+      "evidenceSHA256": "28be983eb3f5bb0ea5ed67d061d1cbc1cc78e9a802bff289486daed398f55e6a",
+      "status": "qualified",
+      "knownBy": {
+        "chapter": 11,
+        "verse": 4
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 11:4"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 11:4",
+            "sourceRef": "ROM 11:4",
+            "sourceTextSHA256": "a91cf7aac8b42cee3c88527af9eb265fe56b07fbebde25449693ed4fcdad1d7b"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Baal",
+        "articleTitle": "Baal",
+        "kind": "related-section",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はバアルという称号・神名の複数用法を扱う。ローマ書11:4がどの歴史的神格像を想定するかは限定しない。",
+        "independentArticleInspection": {
+          "articleTitle": "Baal",
+          "url": "https://en.wikipedia.org/wiki/Baal",
+          "resultJa": "記事は広域Semitic deityと称号Baalを扱う。ROM11:4の引用対象を特定地域神格へ絞る根拠ではない。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 11, 'verse': 4}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "節はエリヤへの答えとして「Baalにひざをかがめなかった七千人」を引用する。Wikipedia記事はBaalを称号から多地域の神格へ展開するため、当節の具体的神格像までは同定しない。profileは細部を保留しており基部内容は妥当。"
+      ],
+      "issues": [
+        {
+          "field": "profile.wikipedia / identityType",
+          "anchor": "ROM 11:4; Wikipedia “Baal” opening",
+          "findingJa": "節はエリヤへの答えとして「Baalにひざをかがめなかった七千人」を引用する。Wikipedia記事はBaalを称号から多地域の神格へ展開するため、当節の具体的神格像までは同定しない。profileは細部を保留しており基部内容は妥当。",
+          "recommendationJa": "特定の地域神格像や属性を輸入せず、引用中の神名という最小限の範囲を維持。"
+        }
+      ],
+      "contextVariants": [],
+      "unresolvedJa": "バアルの歴史的神格像に関する留保は同名人物の曖昧さではないためidentityNoteJaからreview.remainingUncertaintyJaへ移した。",
+      "previousDraftSHA256": "b7eef82bc08a252d785758c9f5baa4879f8f5ad9ea84f2e784dd05d00aaeb17f",
+      "previousEvidenceSHA256": "76e57142932685660488cb0a6c7a02232cf4713056ff99afe788feb669f0ec6f",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 11:4"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": false
+      },
+      "currentReviewStatus": "qualified",
+      "closureBasisJa": "Article describes multiple Levantine deities and Baal as a title; lines 225–226 explicitly characterize diverse uses. Romans 11:4 is a quoted Baal reference, so profile properly limits to name and does not infer a precise historical manifestation.",
+      "closureIssuesJa": [
+        "Article describes multiple Levantine deities and Baal as a title; lines 225–226 explicitly characterize diverse uses. Romans 11:4 is a quoted Baal reference, so profile properly limits to name and does not infer a precise historical manifestation."
+      ],
+      "wikipediaReclosure": {
+        "url": "https://en.wikipedia.org/wiki/Baal",
+        "actualArticleTitle": "Baal",
+        "checkedAt": "2026-10-15",
+        "articleRead": true,
+        "sourceEvidenceJa": "Article describes multiple Levantine deities and Baal as a title; lines 225–226 explicitly characterize diverse uses. Romans 11:4 is a quoted Baal reference, so profile properly limits to name and does not infer a precise historical manifestation.",
+        "identityVerifiedInDraft": false,
+        "relationVerifiedInReview": true,
+        "remainingDisposition": "qualified"
+      },
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:elijah_1131",
+      "draftPath": "drafts/persons_3/ROM_elijah_1131.json",
+      "draftSHA256": "7484d21caafc22771ffe74e9e5ce0bea7023c36d63f258c20f5ce66ee7dc124e",
+      "evidencePath": "evidence/persons_3/ROM_elijah_1131.json",
+      "evidenceSHA256": "09ad3caad253e2c0a7d18b951af4dcb5466c21e73018057c18f0e0d18d23ac55",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 11,
+        "verse": 2
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 11:2"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 11:2",
+            "sourceRef": "ROM 11:2",
+            "sourceTextSHA256": "143536096a93bf9ed70e018cd17e6742ead694db9f6102f14fe77f3efea11341"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 1,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Elijah",
+        "articleTitle": "Elijah",
+        "kind": "article",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はローマ書11:2が参照する預言者エリヤを扱う。",
+        "independentArticleInspection": {
+          "articleTitle": "Elijah",
+          "url": "https://en.wikipedia.org/wiki/Elijah",
+          "resultJa": "記事主題は旧約の預言者エリヤ、ROM11:2の引用に合う。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 11, 'verse': 2}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: ROM 11:2。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "7484d21caafc22771ffe74e9e5ce0bea7023c36d63f258c20f5ce66ee7dc124e",
+      "previousEvidenceSHA256": "09ad3caad253e2c0a7d18b951af4dcb5466c21e73018057c18f0e0d18d23ac55",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 1,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 11:2"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:erastus_1213",
+      "draftPath": "drafts/persons_3/ROM_erastus_1213.json",
+      "draftSHA256": "6ef9ebaa11d3b98a08ccc13168eb100479da681d50ba8f76b2c1b88d1a4e625c",
+      "evidencePath": "evidence/persons_3/ROM_erastus_1213.json",
+      "evidenceSHA256": "ed8f67696ffd2d79edab61971924319470f0f269a939dea589ff7703a5b9688a",
+      "status": "qualified",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 23
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 16:23"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 16:23",
+            "sourceRef": "ROM 16:23",
+            "sourceTextSHA256": "2d632d1d946b29803b03a6a48817f749b76049ef359387ead91167dddd59d132"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Erastus_of_Corinth",
+        "articleTitle": "Erastus of Corinth",
+        "kind": "article",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はローマ書16:23の市の会計役としてのエラストを扱う。使徒言行録・碑文の別人物との同一視は議論があるため付加しない。",
+        "independentArticleInspection": {
+          "articleTitle": "Erastus of Corinth",
+          "url": "https://en.wikipedia.org/wiki/Erastus_of_Corinth",
+          "resultJa": "記事はROM16:23 treasurerに言及し、Corinth所在・Acts/2Tim人物・碑文との同一視が別途議論と確認。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 16, 'verse': 23}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "WEBは「the treasurer of the city」とのみ記す。記事タイトルはCorinthと特定し、本文は他書のErastusや碑文との同一視を論争中として扱う。現行プロフィールは市名・碑文の同一性を断定しないため本文自体は安全だが、リンクタイトルはCorinthの特定を先に提示する。"
+      ],
+      "issues": [
+        {
+          "field": "profile.wikipedia",
+          "anchor": "ROM 16:23; Wikipedia “Erastus of Corinth” opening / inscription section",
+          "findingJa": "WEBは「the treasurer of the city」とのみ記す。記事タイトルはCorinthと特定し、本文は他書のErastusや碑文との同一視を論争中として扱う。現行プロフィールは市名・碑文の同一性を断定しないため本文自体は安全だが、リンクタイトルはCorinthの特定を先に提示する。",
+          "recommendationJa": "リンク表示にもコリント特定は記事側の解釈・論争であると明示するか、より中立な関連表記へ。"
+        }
+      ],
+      "contextVariants": [],
+      "unresolvedJa": "「市」がコリントを指す推定は同名人物の曖昧さではないためidentityNoteJaからreview.remainingUncertaintyJaへ移した。",
+      "previousDraftSHA256": "b5a6ec458bab1ac7f114690d772eee7d0d0920e5445e44ea08f9e57e3eab0baf",
+      "previousEvidenceSHA256": "7c9847063e62320f4418f9c5dc6a9d76574c677a3fdfaf6ac8bc4270bf72908b",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 16:23"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": false
+      },
+      "currentReviewStatus": "qualified",
+      "closureBasisJa": "Lines 120–123 identifies Corinth and compares possible other NT people; lines 132–138 quotes Romans 16:23 and 2 Timothy 4:20; inscription date/identity is disputed at lines 141 onward. Profile keeps WEB wording “city treasurer”, no city/inscription identification; article remains related-only.",
+      "closureIssuesJa": [
+        "Lines 120–123 identifies Corinth and compares possible other NT people; lines 132–138 quotes Romans 16:23 and 2 Timothy 4:20; inscription date/identity is disputed at lines 141 onward. Profile keeps WEB wording “city treasurer”, no city/inscription identification; article remains related-only."
+      ],
+      "wikipediaReclosure": {
+        "url": "https://en.wikipedia.org/wiki/Erastus_of_Corinth",
+        "actualArticleTitle": "Erastus of Corinth",
+        "checkedAt": "2026-10-15",
+        "articleRead": true,
+        "sourceEvidenceJa": "Lines 120–123 identifies Corinth and compares possible other NT people; lines 132–138 quotes Romans 16:23 and 2 Timothy 4:20; inscription date/identity is disputed at lines 141 onward. Profile keeps WEB wording “city treasurer”, no city/inscription identification; article remains related-only.",
+        "identityVerifiedInDraft": false,
+        "relationVerifiedInReview": true,
+        "remainingDisposition": "qualified"
+      },
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:gaius_1271",
+      "draftPath": "drafts/persons_3/ROM_gaius_1271.json",
+      "draftSHA256": "76d50fa7b771f891bb3c2f85801ef5e15a9a9a35e416550c24d20a1481bdcc45",
+      "evidencePath": "evidence/persons_3/ROM_gaius_1271.json",
+      "evidenceSHA256": "8eb6ac598d41ecc4f3fff154cc4a5074ee7bef90ff01315a56cf90d2e1a37d5b",
+      "status": "qualified",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 23
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 16:23"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 16:23",
+            "sourceRef": "ROM 16:23",
+            "sourceTextSHA256": "2d632d1d946b29803b03a6a48817f749b76049ef359387ead91167dddd59d132"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Gaius_(biblical_figure)",
+        "articleTitle": "Gaius (biblical figure)",
+        "kind": "related-section",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事は複数の新約聖書のガイオを列挙し、ローマ書16:23の宿主にも触れる。別書のガイオとの同一性は確定しない。",
+        "independentArticleInspection": {
+          "articleTitle": "Gaius (biblical figure)",
+          "url": "https://en.wikipedia.org/wiki/Gaius_(biblical_figure)",
+          "resultJa": "記事は複数新約Gaiusを集め、ROM16:23のhostに言及。Corinthは推測、Ephesus bishopは伝承と区別を要する。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 16, 'verse': 23}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "profileは他の新約Gaiusと同一視せず宿主とだけ記す点が正確。Wikipedia項目はROM16:23の人を他のGaiusと並べ、Corinthの可能性やEphesus司教伝承も記す。記事は索引/複数候補を集約するため人物同一性の根拠としては限定的。"
+      ],
+      "issues": [
+        {
+          "field": "profile.wikipedia",
+          "anchor": "ROM 16:23; Wikipedia “Gaius (biblical figure)” Gaius #4",
+          "findingJa": "profileは他の新約Gaiusと同一視せず宿主とだけ記す点が正確。Wikipedia項目はROM16:23の人を他のGaiusと並べ、Corinthの可能性やEphesus司教伝承も記す。記事は索引/複数候補を集約するため人物同一性の根拠としては限定的。",
+          "recommendationJa": "関連項目リンクとしての性格と、別書Gaiusの統合が未確定である点を明示する。"
+        }
+      ],
+      "contextVariants": [],
+      "unresolvedJa": "新約聖書に同名人物が複数いる。Romans16の宿主を他書のガイオと同一視しない。",
+      "previousDraftSHA256": "f25da4f6c8aa8302570158a79a4ad2ada8718d6abdd7e2ddf4e0a8fded593d50",
+      "previousEvidenceSHA256": "e7f84f5ebfa5ced9e2adf2edfa484697fa4ed2cbd66c198546cfdcd1c0861151",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 16:23"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": false
+      },
+      "currentReviewStatus": "qualified",
+      "closureBasisJa": "Lines 110–115 groups several NT Gaiuses, says Romans 16:23 host likely Corinth and bishop identity traditional, and notes overlap among candidates is possible. Profile distinguishes this host and does not adopt those identifications.",
+      "closureIssuesJa": [
+        "Lines 110–115 groups several NT Gaiuses, says Romans 16:23 host likely Corinth and bishop identity traditional, and notes overlap among candidates is possible. Profile distinguishes this host and does not adopt those identifications."
+      ],
+      "wikipediaReclosure": {
+        "url": "https://en.wikipedia.org/wiki/Gaius_(biblical_figure)",
+        "actualArticleTitle": "Gaius (biblical figure)",
+        "checkedAt": "2026-10-15",
+        "articleRead": true,
+        "sourceEvidenceJa": "Lines 110–115 groups several NT Gaiuses, says Romans 16:23 host likely Corinth and bishop identity traditional, and notes overlap among candidates is possible. Profile distinguishes this host and does not adopt those identifications.",
+        "identityVerifiedInDraft": false,
+        "relationVerifiedInReview": true,
+        "remainingDisposition": "qualified"
+      },
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:hermes_1502",
+      "draftPath": "drafts/persons_3/ROM_hermes_1502.json",
+      "draftSHA256": "40afec10ec03f299365d21e6766576e47e0534b3406fb4ecdb07bf8d764b8363",
+      "evidencePath": "evidence/persons_3/ROM_hermes_1502.json",
+      "evidenceSHA256": "ddc1e879567b8415045694c4ad4b2538745d2fe092cc8d053db6eda1a257cbac",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 14
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 16:14"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 16:14",
+            "sourceRef": "ROM 16:14",
+            "sourceTextSHA256": "8ce0c6e4c2eb58a25cf14489b3063cc58270cd5242fdaa6db06424fec42607eb"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": null,
+        "articleTitle": null,
+        "kind": null,
+        "identityVerifiedInDraft": null,
+        "articleReadByAuthorEvidence": false,
+        "draftRecordedBasis": "検索を行い、対象の聖書人物を個別に扱うWikipedia記事を確認できなかった。検索で見つかった同名記事は別人物・神話上の人物、または人物を同定しない一般項目のためリンクしない。",
+        "reviewerReadArticleURL": "https://en.wikipedia.org/wiki/Hermes",
+        "reviewerPageTitle": "Hermes",
+        "identityBasisJa": "取得した同名記事はギリシャ神話の神。Romans16:14の人間と同一でないためwiki nullが妥当。",
+        "independentArticleInspection": {
+          "articleTitle": "Hermes",
+          "url": "https://en.wikipedia.org/wiki/Hermes",
+          "resultJa": "開いた同名記事はギリシャ神話の神であり、ROM16:14の挨拶対象の人とは別。wikipedia=nullは妥当。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 16, 'verse': 14}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: ROM 16:14。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "同じ節のHermesとHermasは別表記で列挙される。別人として保つ。",
+      "previousDraftSHA256": "40afec10ec03f299365d21e6766576e47e0534b3406fb4ecdb07bf8d764b8363",
+      "previousEvidenceSHA256": "ddc1e879567b8415045694c4ad4b2538745d2fe092cc8d053db6eda1a257cbac",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 16:14"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 1
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:hosea_1555",
+      "draftPath": "drafts/persons_3/ROM_hosea_1555.json",
+      "draftSHA256": "2109f4376322264a1de1bde40de01f0dab38f330bc2a55acaee5d6c54a03aa2d",
+      "evidencePath": "evidence/persons_3/ROM_hosea_1555.json",
+      "evidenceSHA256": "5502fe66290f949da0cd6e3e40cbe5e4b95a34ef7020c4dce1011fffeab3a69c",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 9,
+        "verse": 25
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 9:25"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 9:25",
+            "sourceRef": "ROM 9:25",
+            "sourceTextSHA256": "c790e980381ce9bfdfceecade99b34caec2fda62b8e6ff9e99a1cb9aba48f763"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Hosea",
+        "articleTitle": "Hosea",
+        "kind": "article",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はローマ書9:25で引用される預言者ホセアを扱う。",
+        "independentArticleInspection": {
+          "articleTitle": "Hosea",
+          "url": "https://en.wikipedia.org/wiki/Hosea",
+          "resultJa": "記事は預言者ホセアを扱う。ROM9:25の「ホセアにおいて」引用と一致。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 9, 'verse': 25}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: ROM 9:25。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "2109f4376322264a1de1bde40de01f0dab38f330bc2a55acaee5d6c54a03aa2d",
+      "previousEvidenceSHA256": "5502fe66290f949da0cd6e3e40cbe5e4b95a34ef7020c4dce1011fffeab3a69c",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 9:25"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:israel_682",
+      "draftPath": "drafts/persons_3/ROM_israel_682.json",
+      "draftSHA256": "6fb19726531e3a40ebcc2fdab6d02b2056ab07d62b45a04c0b6a0f8acc4d4d1c",
+      "evidencePath": "evidence/persons_3/ROM_israel_682.json",
+      "evidenceSHA256": "caf8a75e5af87712928911e15ca79d10c14e444d23bf92166fc6349f9874c42b",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 9,
+        "verse": 4
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 12,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 9:4",
+          "ROM 9:6",
+          "ROM 9:27",
+          "ROM 11:26"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 9:4",
+            "sourceRef": "ROM 9:4",
+            "sourceTextSHA256": "e3bf22f0cbb0fc04da9ebe4c3627f9246a0ad9f9b9a83ab150673512775de217"
+          },
+          {
+            "canonical": "ROM 9:6",
+            "sourceRef": "ROM 9:6",
+            "sourceTextSHA256": "4ba262a0c9a55125164a9655f4d4a8a991d2a1777e1756d55b66e963057c4dde"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Israelites",
+        "articleTitle": "Israelites",
+        "kind": "article",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "Romans 9:4以降のIsrael/Israeliteは民・集団を指す。9:13の族長ヤコブは個人用法として別記録。",
+        "independentArticleInspection": {
+          "articleTitle": "Israelites",
+          "url": "https://en.wikipedia.org/wiki/Israelites",
+          "resultJa": "記事は集団としてのIsraelitesを扱う。族長Jacob個人を含めないcollective profileに適合。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 9, 'verse': 4}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 12件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: ROM 9:4; ROM 9:6; ROM 9:27; ROM 11:26。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [
+        {
+          "variantPath": "reviews/ROM-israel-jacob-context-variant.json",
+          "variantKey": "ROM 9:13 · Jacob individual use",
+          "decision": "proposed-context-variant",
+          "variantProfileSHA256": "a0fc793dafa9d32e7db77cbf37367f906f246dca871dd301839ec6e6d5a358d0",
+          "variantSourceText": "Even as it is written, “Jacob I loved, but Esau I hated.”",
+          "reviewerFindingJa": "集団プロフィールからROM 9:13の族長ヤコブ個人用法を分離する区別は固定WEBに合致する。variantは個人用法以外の生涯情報を加えず、集団baseから同節を除外している。"
+        }
+      ],
+      "unresolvedJa": "Romans11:26ではIsraelとJacobが同じ民を指す引用として続く。9:13の族長個人と用法を分けて記録した。",
+      "previousDraftSHA256": "6fb19726531e3a40ebcc2fdab6d02b2056ab07d62b45a04c0b6a0f8acc4d4d1c",
+      "previousEvidenceSHA256": "caf8a75e5af87712928911e15ca79d10c14e444d23bf92166fc6349f9874c42b",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 12,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 9:4",
+          "ROM 9:6",
+          "ROM 9:27",
+          "ROM 11:26"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 13
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:jesse_903",
+      "draftPath": "drafts/persons_3/ROM_jesse_903.json",
+      "draftSHA256": "9247d056ff289ec07bd2c76e5924e11fc8534ce654e1065eda1eb593dbb93b3e",
+      "evidencePath": "evidence/persons_3/ROM_jesse_903.json",
+      "evidenceSHA256": "54e8f750d984514705b95a200c1c34fb1cb0121a9c12b81ccb898b8824a50b45",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 15,
+        "verse": 12
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 15:12"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 15:12",
+            "sourceRef": "ROM 15:12",
+            "sourceTextSHA256": "f8a56dc81f928617537eb1a42cbf9818538ab749de6b47d711969083671057b6"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Jesse_(biblical_figure)",
+        "articleTitle": "Jesse (biblical figure)",
+        "kind": "article",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はダビデの父エッサイを扱う。ローマ書15:12の引用は名を挙げるだけで、系譜情報は紹介欄に持ち込まない。",
+        "independentArticleInspection": {
+          "articleTitle": "Jesse (biblical figure)",
+          "url": "https://en.wikipedia.org/wiki/Jesse_(biblical_figure)",
+          "resultJa": "記事はダビデの父である聖書人物Jesse。ROM15:12の根の引用対象に適合。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 15, 'verse': 12}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: ROM 15:12。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "9247d056ff289ec07bd2c76e5924e11fc8534ce654e1065eda1eb593dbb93b3e",
+      "previousEvidenceSHA256": "54e8f750d984514705b95a200c1c34fb1cb0121a9c12b81ccb898b8824a50b45",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 15:12"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:jesus_905",
+      "draftPath": "drafts/persons_3/ROM_jesus_905.json",
+      "draftSHA256": "b12360f494d137b726ad91f3e0993fb416b2d671ff7683f170908472622a6bea",
+      "evidencePath": "evidence/persons_3/ROM_jesus_905.json",
+      "evidenceSHA256": "50e3a00c8747d01b752611e3682411edac6be751625a47b23aefd4e762d2e501",
+      "status": "fail",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 1
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 85,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 1:1",
+          "ROM 1:3",
+          "ROM 1:4",
+          "ROM 16:27"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 1:1",
+            "sourceRef": "ROM 1:1",
+            "sourceTextSHA256": "8eefdb3fc5df7da6019380c9aa3d0d9655da604ade2912aaad8e5d4adbea986f"
+          },
+          {
+            "canonical": "ROM 1:3",
+            "sourceRef": "ROM 1:3",
+            "sourceTextSHA256": "bfbcbb69f031696a8af667d1b4346b680eaac4869d471ea0002acda1224d7d18"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 9,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Jesus",
+        "articleTitle": "Jesus",
+        "kind": "article",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はローマ書に繰り返し言及されるイエスを扱う。信仰上の解釈は固定WEB本文に沿って個別のfactへ分ける。",
+        "independentArticleInspection": {
+          "articleTitle": "Jesus",
+          "url": "https://en.wikipedia.org/wiki/Jesus",
+          "resultJa": "記事主題はJesus。profile先取りではなく、ROM8:3/32のSon用例を漏らしたoccurrence-checkの問題。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 1, 'verse': 1}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 85件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "現行occurrenceChecksは8:3と8:32を除外するが、固定本文は8:3「God sending his own Son」および8:32「didn’t spare his own Son... delivered him up for us all」と明記する。8:1–2のChrist Jesusの文脈と8:29–34のSon/Christの連続から、名指しされたイエスへの明瞭な関連用例である。",
+        "10:9は「Jesus is Lord」と告白するよう明記し、直後10:12の「same Lord」および10:13の主の名を呼ぶ引用が続く。現行候補チェックでは10:12–13を固有名なしだけで除外。10:13の旧約引用との関係はあるが、文脈照応を完全に排除するのも狭い。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "候補箇所に直接名がない用例はexcludedとして保存。",
+      "previousDraftSHA256": "b67125e1b3f59d4d84fb5d14521ece6b24db10cce8c9252f4cc9a5cb76edeefe",
+      "previousEvidenceSHA256": "0a00088896c037f2c64a75c293207430ce112dcdeb4b6753acd758954e060f8b",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 89,
+      "factCount": 9,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 1:1",
+          "ROM 1:3",
+          "ROM 1:4",
+          "ROM 16:27"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": false
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "ROM8:3は8:1–2のキリスト・イエスを受ける「御子」、8:32は8:29–34の御子/彼/キリストの文脈、10:12–13は10:9「イエスは主」の直後に続く同じ主/主の名としてrelatedで追加。各用例はpassages・sourceIds・occurrenceChecksに反映。",
+      "closureIssuesJa": [],
+      "repairClosure": {
+        "actionJa": "修正閉鎖: previously omitted clear contextual references now represented and explicitly classified related.",
+        "beforeSHA256": "b67125e1b3f59d4d84fb5d14521ece6b24db10cce8c9252f4cc9a5cb76edeefe",
+        "afterSHA256": "b12360f494d137b726ad91f3e0993fb416b2d671ff7683f170908472622a6bea",
+        "evidenceSHA256": "50e3a00c8747d01b752611e3682411edac6be751625a47b23aefd4e762d2e501",
+        "fixedWEB": "ROM 8:1–3, 8:29–34, 10:9–13",
+        "checkJa": "ROM8:3は8:1–2のキリスト・イエスを受ける「御子」、8:32は8:29–34の御子/彼/キリストの文脈、10:12–13は10:9「イエスは主」の直後に続く同じ主/主の名としてrelatedで追加。各用例はpassages・sourceIds・occurrenceChecksに反映。"
+      },
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 90
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:junia_1764",
+      "draftPath": "drafts/persons_3/ROM_junia_1764.json",
+      "draftSHA256": "02236ff4842db3dca1e621a622390e98bb60c3884a49384e02522066f7e90543",
+      "evidencePath": "evidence/persons_3/ROM_junia_1764.json",
+      "evidenceSHA256": "dee987ee9a540a08b6bb2f51eb0e279cf2280567599cc8c482a11350dd356c9d",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 7
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 16:7"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 16:7",
+            "sourceRef": "ROM 16:7",
+            "sourceTextSHA256": "bae7d3c4bddb3df8e575118d6e558300d46f97c67e4ac8845478f030db543f1f"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Junia_(New_Testament_person)",
+        "articleTitle": "Junia (New Testament person)",
+        "kind": "article",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はローマ書16:7のユニアを扱う。女性名の読みや使徒との関係をめぐる解釈差、ヨアンナ同一視を確定事実として採らない。",
+        "independentArticleInspection": {
+          "articleTitle": "Junia (New Testament person)",
+          "url": "https://en.wikipedia.org/wiki/Junia_(New_Testament_person)",
+          "resultJa": "記事はROM16:7の人物を対象とし、女性名および「notable among the apostles」の訳解釈差を本文で説明。profileが肩書断定を避けるのは妥当。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 16, 'verse': 7}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: ROM 16:7。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "名前の性別・使徒関係をめぐる解釈差は同名人物の曖昧さではないためidentityNoteJaからreview.remainingUncertaintyJaへ移した。",
+      "previousDraftSHA256": "02236ff4842db3dca1e621a622390e98bb60c3884a49384e02522066f7e90543",
+      "previousEvidenceSHA256": "dee987ee9a540a08b6bb2f51eb0e279cf2280567599cc8c482a11350dd356c9d",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 16:7"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:mary_1942",
+      "draftPath": "drafts/persons_3/ROM_mary_1942.json",
+      "draftSHA256": "76a125b77e582312e3b3196af34425883251128a094990af711ec088b53d36a5",
+      "evidencePath": "evidence/persons_3/ROM_mary_1942.json",
+      "evidenceSHA256": "d0b7f5d0f32e6179bdde92234e7cfd59adca8b918549d323ccab883889479144",
+      "status": "qualified",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 6
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 16:6"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 16:6",
+            "sourceRef": "ROM 16:6",
+            "sourceTextSHA256": "2a7d8de994302765750767215b3601d936b331766207d1a496ab464241901c6b"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": null,
+        "articleTitle": null,
+        "kind": null,
+        "identityVerifiedInDraft": null,
+        "articleReadByAuthorEvidence": false,
+        "draftRecordedBasis": "検索を行い、対象の聖書人物を個別に扱うWikipedia記事を確認できなかった。検索で見つかった同名記事は別人物・神話上の人物、または人物を同定しない一般項目のためリンクしない。",
+        "reviewerReadArticleURL": "https://en.wikipedia.org/wiki/Mary_of_Rome",
+        "reviewerPageTitle": "Mary of Rome",
+        "identityBasisJa": "記事冒頭がROM16:6の女性として直接同定し、「laboured much」の句も記載。別Maryとの同一視は未証明としている。",
+        "independentArticleInspection": {
+          "articleTitle": "Mary of Rome",
+          "url": "https://en.wikipedia.org/wiki/Mary_of_Rome",
+          "resultJa": "実記事はROM16:6を明記し「laboured much」を引用。別Mary同定は未証明と説明。現profileが適合リンクを落としていた。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 16, 'verse': 6}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "null理由は対象個別記事を確認できなかったとするが、現存記事Mary of RomeがROM16:6と「laboured much」を直接記載する。現行summaryは節に忠実。ただし記事は同定を推測・伝承として述べる別Maryとの結びつけを併記し、出典の弱さもある。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "7fbd6f368bd6c0d7499d46d2ac03bda81f930fdc4939eeb71f9d02fdccf97f4b",
+      "previousEvidenceSHA256": "5b358b18daa2025abb190bfaa47e2ae408cc46f0785859f3aa5b6b602cd0fe42",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 16:6"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": false
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Wikipedia Mary of Romeの冒頭はROM16:6およびPaulがlaboured muchと述べる人物を直接扱う。別Maryとの同一視は未証明との記事本文もprofile noteで明示。固定WEB ROM16:6は“Greet Mary, who labored much for us.”",
+      "closureIssuesJa": [],
+      "repairClosure": {
+        "actionJa": "以前の未確認根拠を修正し、対象のWikipedia記事を現在の実記事で確認。別人物への推測的同一視を採用しない。",
+        "beforeSHA256": "7fbd6f368bd6c0d7499d46d2ac03bda81f930fdc4939eeb71f9d02fdccf97f4b",
+        "afterSHA256": "76a125b77e582312e3b3196af34425883251128a094990af711ec088b53d36a5",
+        "evidenceSHA256": "d0b7f5d0f32e6179bdde92234e7cfd59adca8b918549d323ccab883889479144",
+        "fixedWEB": "ROM 16:6",
+        "checkJa": "Wikipedia Mary of Romeの冒頭はROM16:6およびPaulがlaboured muchと述べる人物を直接扱う。別Maryとの同一視は未証明との記事本文もprofile noteで明示。固定WEB ROM16:6は“Greet Mary, who labored much for us.”"
+      },
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:moses_2108",
+      "draftPath": "drafts/persons_3/ROM_moses_2108.json",
+      "draftSHA256": "c3fd8d085cb463042d73f92b081c67af4502049d16201708506571f5c8945f30",
+      "evidencePath": "evidence/persons_3/ROM_moses_2108.json",
+      "evidenceSHA256": "b2fb146c88eb8949f5ee90d2ef41f8cd1d11509372752d7464bf17179c96265c",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 5,
+        "verse": 14
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 4,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 5:14",
+          "ROM 9:15",
+          "ROM 10:5",
+          "ROM 10:19"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 5:14",
+            "sourceRef": "ROM 5:14",
+            "sourceTextSHA256": "f01c28441636548eabd5e00c35bbc374c7f0296dae40e602ca245b1e1e81d0c7"
+          },
+          {
+            "canonical": "ROM 9:15",
+            "sourceRef": "ROM 9:15",
+            "sourceTextSHA256": "00c0b382d01753fe041ba1b289a9431e263b0c08760fd09c53c4feacd7d5358b"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 3,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Moses",
+        "articleTitle": "Moses",
+        "kind": "article",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はローマ書で名を挙げられるモーセを扱う。",
+        "independentArticleInspection": {
+          "articleTitle": "Moses",
+          "url": "https://en.wikipedia.org/wiki/Moses",
+          "resultJa": "記事主題は聖書のモーセ。ROM5:14,9:15,10:5,10:19の引用対象と適合。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 5, 'verse': 14}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 4件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: ROM 5:14; ROM 9:15; ROM 10:5; ROM 10:19。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "c3fd8d085cb463042d73f92b081c67af4502049d16201708506571f5c8945f30",
+      "previousEvidenceSHA256": "b2fb146c88eb8949f5ee90d2ef41f8cd1d11509372752d7464bf17179c96265c",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 4,
+      "factCount": 3,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 5:14",
+          "ROM 9:15",
+          "ROM 10:5",
+          "ROM 10:19"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 5
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:nereus_2182",
+      "draftPath": "drafts/persons_3/ROM_nereus_2182.json",
+      "draftSHA256": "519973269aad7d4a6be82377f6b7671d090f2311495619720129b591c13fcea9",
+      "evidencePath": "evidence/persons_3/ROM_nereus_2182.json",
+      "evidenceSHA256": "9845fd5aa44e139cd10c0ec42002590b128989016b2aab046e375d4a97b4c2fd",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 15
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 16:15"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 16:15",
+            "sourceRef": "ROM 16:15",
+            "sourceTextSHA256": "b41158733f2505840562615e5bcd8a557067cb6f8a7223d977f6ca94bad56941"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": null,
+        "articleTitle": null,
+        "kind": null,
+        "identityVerifiedInDraft": null,
+        "articleReadByAuthorEvidence": false,
+        "draftRecordedBasis": "検索を行い、対象の聖書人物を個別に扱うWikipedia記事を確認できなかった。検索で見つかった同名記事は別人物・神話上の人物、または人物を同定しない一般項目のためリンクしない。",
+        "independentArticleInspection": {
+          "articleTitle": null,
+          "url": null,
+          "resultJa": "Romans16:15のNereusを扱う適合する個別Wikipedia記事は検索で確認できず。一般Nereusの神話記事は別対象のためnullが適切。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 16, 'verse': 15}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: ROM 16:15。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "519973269aad7d4a6be82377f6b7671d090f2311495619720129b591c13fcea9",
+      "previousEvidenceSHA256": "9845fd5aa44e139cd10c0ec42002590b128989016b2aab046e375d4a97b4c2fd",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 16:15"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 1
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:patrobas_2289",
+      "draftPath": "drafts/persons_3/ROM_patrobas_2289.json",
+      "draftSHA256": "bf118ebd97dbec3e2b64eb3667c2ba7d54a0ab757766d9b275f82065e26d5311",
+      "evidencePath": "evidence/persons_3/ROM_patrobas_2289.json",
+      "evidenceSHA256": "2f90f9bdaab064ddde2af2289f56cdb5cb61414a574b0c1208959d900885e997",
+      "status": "qualified",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 14
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 16:14"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 16:14",
+            "sourceRef": "ROM 16:14",
+            "sourceTextSHA256": "8ce0c6e4c2eb58a25cf14489b3063cc58270cd5242fdaa6db06424fec42607eb"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": null,
+        "articleTitle": null,
+        "kind": null,
+        "identityVerifiedInDraft": null,
+        "articleReadByAuthorEvidence": false,
+        "draftRecordedBasis": "検索を行い、対象の聖書人物を個別に扱うWikipedia記事を確認できなかった。検索で見つかった同名記事は別人物・神話上の人物、または人物を同定しない一般項目のためリンクしない。",
+        "reviewerReadArticleURL": "https://en.wikipedia.org/wiki/Parrobus_of_Pottole",
+        "reviewerPageTitle": "Parrobus of Pottole",
+        "identityBasisJa": "Wikipedia本文はPatrobas/Patrobos/Patrobusと別綴りを列挙し、PaulがRomansで挨拶する人として述べる一方、司教・Seventy Disciples情報は伝承。",
+        "independentArticleInspection": {
+          "articleTitle": "Parrobus of Pottole",
+          "url": "https://en.wikipedia.org/wiki/Parrobus_of_Pottole",
+          "resultJa": "記事は別綴りPatrobas/Patrobos/Patrobusを示しRomansの挨拶対象と結ぶ。司教/Seventy情報は後代教会伝承。null理由の「記事なし」は不正確。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 16, 'verse': 14}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "現行null根拠の「対象の人物記事なし」は正確でない。WikipediaにはParrobus of Pottole（別綴りPatrobas/Patrobos/Patrobus）があり、Romansの挨拶への言及を明記する。ただし司教・Seventy Disciplesなどは後代教会伝承に依る。"
+      ],
+      "issues": [
+        {
+          "field": "profile.wikipedia / review.wikipediaCheck",
+          "anchor": "ROM 16:14; Wikipedia “Parrobus of Pottole” opening",
+          "findingJa": "現行null根拠の「対象の人物記事なし」は正確でない。WikipediaにはParrobus of Pottole（別綴りPatrobas/Patrobos/Patrobus）があり、Romansの挨拶への言及を明記する。ただし司教・Seventy Disciplesなどは後代教会伝承に依る。",
+          "recommendationJa": "同名・別綴りを実読検索し、関連伝承として利用するか、採らない理由を「本文の人物同定には使わない」と正確に記録。"
+        }
+      ],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "9727993e8c74135fe41c4bc4f10a1621219b1a4dc02fff9cdc3a88425cf7170d",
+      "previousEvidenceSHA256": "af9ba5c230548007bde8fa67452e534a81678fb75e144693abb7acf69495ddf0",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 16:14"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": false
+      },
+      "currentReviewStatus": "qualified",
+      "closureBasisJa": "Lines 114–127 calls the figure Patrobas/Patrobos/Patrobus, refers to Paul greeting him in Romans, and gives competing bishop locations and Seventy tradition. A Romans link exists, but the biography remains tradition-dependent; profile is related-only and does not assert identity.",
+      "closureIssuesJa": [
+        "Lines 114–127 calls the figure Patrobas/Patrobos/Patrobus, refers to Paul greeting him in Romans, and gives competing bishop locations and Seventy tradition. A Romans link exists, but the biography remains tradition-dependent; profile is related-only and does not assert identity."
+      ],
+      "wikipediaReclosure": {
+        "url": "https://en.wikipedia.org/wiki/Parrobus_of_Pottole",
+        "actualArticleTitle": "Parrobus of Pottole",
+        "checkedAt": "2026-10-15",
+        "articleRead": true,
+        "sourceEvidenceJa": "Lines 114–127 calls the figure Patrobas/Patrobos/Patrobus, refers to Paul greeting him in Romans, and gives competing bishop locations and Seventy tradition. A Romans link exists, but the biography remains tradition-dependent; profile is related-only and does not assert identity.",
+        "identityVerifiedInDraft": false,
+        "relationVerifiedInReview": true,
+        "remainingDisposition": "qualified"
+      },
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:persis_2317",
+      "draftPath": "drafts/persons_3/ROM_persis_2317.json",
+      "draftSHA256": "6a76f52c73f02f3ca2b4974ccb2078b2052375b0fe8bc7f983f5662122077a4e",
+      "evidencePath": "evidence/persons_3/ROM_persis_2317.json",
+      "evidenceSHA256": "108f0be8842faaf32469715f2ef63aa1df7068e0fe0d6d59f0e8ea080462ecbf",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 12
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 16:12"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 16:12",
+            "sourceRef": "ROM 16:12",
+            "sourceTextSHA256": "d65e1de57c2fc5e68ac9db3bbbfefb8f36567907d0d4ab93a77d07fe087c1ebd"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": null,
+        "articleTitle": null,
+        "kind": null,
+        "identityVerifiedInDraft": null,
+        "articleReadByAuthorEvidence": false,
+        "draftRecordedBasis": "検索を行い、対象の聖書人物を個別に扱うWikipedia記事を確認できなかった。検索で見つかった同名記事は別人物・神話上の人物、または人物を同定しない一般項目のためリンクしない。",
+        "reviewerReadArticleURL": "https://en.wikipedia.org/wiki/Persis",
+        "reviewerPageTitle": "Persis",
+        "identityBasisJa": "取得したページは古代ペルシス地方の記事。ROM16:12の女性人物とは別対象でありwiki nullは適切。",
+        "independentArticleInspection": {
+          "articleTitle": "Persis",
+          "url": "https://en.wikipedia.org/wiki/Persis",
+          "resultJa": "実在する同名記事は古代のPersis地方でRomans16:12の女性ではない。人物記事なしのnull判断は適切。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 16, 'verse': 12}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: ROM 16:12。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "6a76f52c73f02f3ca2b4974ccb2078b2052375b0fe8bc7f983f5662122077a4e",
+      "previousEvidenceSHA256": "108f0be8842faaf32469715f2ef63aa1df7068e0fe0d6d59f0e8ea080462ecbf",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 16:12"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 1
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:phebe_2340",
+      "draftPath": "drafts/persons_3/ROM_phebe_2340.json",
+      "draftSHA256": "4b1650c0469179f126d7e2ed4e250f77d0e1b3dcfe97d215505e3d9de6a4c969",
+      "evidencePath": "evidence/persons_3/ROM_phebe_2340.json",
+      "evidenceSHA256": "e09e40fe467c316e3275bf2a869a1dd70f80c0d55111cd4d925a8d4d641c1fe8",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 1
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 16:1"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 16:1",
+            "sourceRef": "ROM 16:1",
+            "sourceTextSHA256": "f6fb0b36c6678bb43d9d4ea6499b0a7d7a19cc43d292cda8388c7b1e705f4822"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Phoebe_(biblical_figure)",
+        "articleTitle": "Phoebe (biblical figure)",
+        "kind": "article",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はローマ書16:1–2でパウロが紹介するケンクレアイのフィベを扱う。手紙の運搬説や職名の解釈は本文から分ける。",
+        "independentArticleInspection": {
+          "articleTitle": "Phoebe (biblical figure)",
+          "url": "https://en.wikipedia.org/wiki/Phoebe_(biblical_figure)",
+          "resultJa": "記事はRomans16:1–2のCenchreaeのPhoebeを直接扱う。profileが手紙運搬や奉仕語の追加議論を事実扱いしないのは適切。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 16, 'verse': 1}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: ROM 16:1。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "4b1650c0469179f126d7e2ed4e250f77d0e1b3dcfe97d215505e3d9de6a4c969",
+      "previousEvidenceSHA256": "e09e40fe467c316e3275bf2a869a1dd70f80c0d55111cd4d925a8d4d641c1fe8",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 16:1"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:phlegon_2352",
+      "draftPath": "drafts/persons_3/ROM_phlegon_2352.json",
+      "draftSHA256": "648a24b18fe531b1cddcb53142d1ad7c39242aaee5a990b0ae7d7eba655a7d8e",
+      "evidencePath": "evidence/persons_3/ROM_phlegon_2352.json",
+      "evidenceSHA256": "f5f542b58c18d25dcabf717472d1d4cf6c08fb3f44ce60efa732d388eb4fa624",
+      "status": "qualified",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 14
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 16:14"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 16:14",
+            "sourceRef": "ROM 16:14",
+            "sourceTextSHA256": "8ce0c6e4c2eb58a25cf14489b3063cc58270cd5242fdaa6db06424fec42607eb"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": null,
+        "articleTitle": null,
+        "kind": null,
+        "identityVerifiedInDraft": null,
+        "articleReadByAuthorEvidence": false,
+        "draftRecordedBasis": "検索を行い、対象の聖書人物を個別に扱うWikipedia記事を確認できなかった。検索で見つかった同名記事は別人物・神話上の人物、または人物を同定しない一般項目のためリンクしない。",
+        "reviewerReadArticleURL": "https://en.wikipedia.org/wiki/Phlegon_of_Marathon",
+        "reviewerPageTitle": "Phlegon of Marathon",
+        "identityBasisJa": "Wikipedia本文がRomans16:14への言及を明示し、司教・Seventy Disciplesという後代教会伝承も含む。",
+        "independentArticleInspection": {
+          "articleTitle": "Phlegon of Marathon",
+          "url": "https://en.wikipedia.org/wiki/Phlegon_of_Marathon",
+          "resultJa": "記事はRomans16:14を明記する。Bishop/Seventy Disciple情報は後代教会伝承。null理由の「記事なし」は不正確。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 16, 'verse': 14}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "現行null根拠の「対象人物記事なし」は正確でない。Wikipedia記事Phlegon of MarathonはRomans16:14に言及し、司教/Seventy Disciplesとしての後代伝承を述べる。プロフィール自体は聖句以上の経歴を持ち込まず安全。"
+      ],
+      "issues": [
+        {
+          "field": "profile.wikipedia / review.wikipediaCheck",
+          "anchor": "ROM 16:14; Wikipedia “Phlegon of Marathon” opening",
+          "findingJa": "現行null根拠の「対象人物記事なし」は正確でない。Wikipedia記事Phlegon of MarathonはRomans16:14に言及し、司教/Seventy Disciplesとしての後代伝承を述べる。プロフィール自体は聖句以上の経歴を持ち込まず安全。",
+          "recommendationJa": "記事を関連伝承として扱うか、採用しないならその理由を同一性・伝承との区別として明記。"
+        }
+      ],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "f3a806cc4f027160b6c86c2ea67491cbf18e866373158b9b7498a7efd59564d9",
+      "previousEvidenceSHA256": "701d4e2ebc547ef6e3aaf85349544e18477aca4f79899ad483168272dcdc099e",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 16:14"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": false
+      },
+      "currentReviewStatus": "qualified",
+      "closureBasisJa": "Lines 114–116 directly says referenced in Romans 16:14 and gives Seventy/bishop/sainthood claims; sources list Prologue from Ohrid. Profile includes only Romans greeting and treats those claims as tradition, not facts.",
+      "closureIssuesJa": [
+        "Lines 114–116 directly says referenced in Romans 16:14 and gives Seventy/bishop/sainthood claims; sources list Prologue from Ohrid. Profile includes only Romans greeting and treats those claims as tradition, not facts."
+      ],
+      "wikipediaReclosure": {
+        "url": "https://en.wikipedia.org/wiki/Phlegon_of_Marathon",
+        "actualArticleTitle": "Phlegon of Marathon",
+        "checkedAt": "2026-10-15",
+        "articleRead": true,
+        "sourceEvidenceJa": "Lines 114–116 directly says referenced in Romans 16:14 and gives Seventy/bishop/sainthood claims; sources list Prologue from Ohrid. Profile includes only Romans greeting and treats those claims as tradition, not facts.",
+        "identityVerifiedInDraft": false,
+        "relationVerifiedInReview": true,
+        "remainingDisposition": "qualified"
+      },
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:quartus_2378",
+      "draftPath": "drafts/persons_3/ROM_quartus_2378.json",
+      "draftSHA256": "8a2aba93064fa3ea642649195153e104367e2bf3cb621e17dcc68a5e2d69013b",
+      "evidencePath": "evidence/persons_3/ROM_quartus_2378.json",
+      "evidenceSHA256": "3c29048e18a93d8c058fd63c8493e1e99488e6549e6f729f08bcfe2e7067f374",
+      "status": "qualified",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 23
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 16:23"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 16:23",
+            "sourceRef": "ROM 16:23",
+            "sourceTextSHA256": "2d632d1d946b29803b03a6a48817f749b76049ef359387ead91167dddd59d132"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Quartus",
+        "articleTitle": "Quartus",
+        "kind": "related-section",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はローマ書16:23のクアルトと後代のベリュトス司教伝承を結びつける。後代の経歴は聖句の事実と区別する。",
+        "independentArticleInspection": {
+          "articleTitle": "Quartus",
+          "url": "https://en.wikipedia.org/wiki/Quartus",
+          "resultJa": "記事のBible sectionはRomans16:23を直接掲載。ページのBerytus bishop伝承とWEBの「brother」の意味はprofileが区別する必要。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 16, 'verse': 23}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "聖句の「the brother」を血縁と断定せず、summaryは慎重。記事の聖書箇所はROM16:23を実際に引くが、同じページにはBerytus司教など後代伝承が混在し、related-sectionの案内が必要。"
+      ],
+      "issues": [
+        {
+          "field": "profile.wikipedia",
+          "anchor": "ROM 16:23; Wikipedia “Quartus” Biblical accounts",
+          "findingJa": "聖句の「the brother」を血縁と断定せず、summaryは慎重。記事の聖書箇所はROM16:23を実際に引くが、同じページにはBerytus司教など後代伝承が混在し、related-sectionの案内が必要。",
+          "recommendationJa": "現在の明示的留保を維持し、司教伝承をROM本文の確定事実としない。"
+        }
+      ],
+      "contextVariants": [],
+      "unresolvedJa": "「兄弟」の血縁/共同体用法の不確定性は同名人物の曖昧さではないためidentityNoteJaからreview.remainingUncertaintyJaへ移した。",
+      "previousDraftSHA256": "ebcf7fbb6272f5200dde5822c12889098934fe9022cb10438a35b17bd09a191f",
+      "previousEvidenceSHA256": "d3624d4f37ee2837b129d522996821641819e68283ee9817e4bf47ce47e9db00",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 16:23"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": false
+      },
+      "currentReviewStatus": "qualified",
+      "closureBasisJa": "Lines 148–153 quotes Romans 16:23 and says most scholars interpret “the brother” as fellow believer; page also includes Berytus bishop traditions (line 143). Profile explicitly does not assert blood relationship or the later bishop identity.",
+      "closureIssuesJa": [
+        "Lines 148–153 quotes Romans 16:23 and says most scholars interpret “the brother” as fellow believer; page also includes Berytus bishop traditions (line 143). Profile explicitly does not assert blood relationship or the later bishop identity."
+      ],
+      "wikipediaReclosure": {
+        "url": "https://en.wikipedia.org/wiki/Quartus",
+        "actualArticleTitle": "Quartus",
+        "checkedAt": "2026-10-15",
+        "articleRead": true,
+        "sourceEvidenceJa": "Lines 148–153 quotes Romans 16:23 and says most scholars interpret “the brother” as fellow believer; page also includes Berytus bishop traditions (line 143). Profile explicitly does not assert blood relationship or the later bishop identity.",
+        "identityVerifiedInDraft": false,
+        "relationVerifiedInReview": true,
+        "remainingDisposition": "qualified"
+      },
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:sarah_2473",
+      "draftPath": "drafts/persons_3/ROM_sarah_2473.json",
+      "draftSHA256": "ce04cde67fffdbbf560b6cb7120dbc6a4662966170a788c41d6451f6d3ab62b6",
+      "evidencePath": "evidence/persons_3/ROM_sarah_2473.json",
+      "evidenceSHA256": "64fc6ee161e6e1531dce49e02245ca7d68399c40d29eb4631f05626211a14ffa",
+      "status": "fail",
+      "knownBy": {
+        "chapter": 4,
+        "verse": 19
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 2,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 4:19",
+          "ROM 9:9"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 4:19",
+            "sourceRef": "ROM 4:19",
+            "sourceTextSHA256": "cd195ae3a4cef47f2747d77edf5c69018a418751dc5d2ea9fea6a8521240ae90"
+          },
+          {
+            "canonical": "ROM 9:9",
+            "sourceRef": "ROM 9:9",
+            "sourceTextSHA256": "82d6a90908b82ddbf7c5fb230b363fba3ec737d5a854fa88810fd9deb6f34b2c"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 1,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Sarah",
+        "articleTitle": "Sarah",
+        "kind": "article",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はアブラハムの妻サラを扱う。ローマ書で明示される内容のみプロフィールへ記す。",
+        "independentArticleInspection": {
+          "articleTitle": "Sarah",
+          "url": "https://en.wikipedia.org/wiki/Sarah",
+          "resultJa": "記事主題はアブラハムの妻サラ。対象同一性は正しいがsummary/subtitleの初出ゲートがROM9:9を先取り。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 4, 'verse': 19}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 2件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "knownByは4:19だがsummaryに「後には…サラに子が生まれると引用」とあり、9:9の内容を先取りする。副題も「アブラハムへの約束の引用」を示し、4:19の「Sarah’s womb」だけからはこの引用だと分からない。9:9は別factとして正しくknownBy=9:9にゲートされている。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "9c305be98f067582d11d9dd1a79b92002cccda373554e733e6721153ebc4b942",
+      "previousEvidenceSHA256": "725b0e248ca47a36ae5cbb57b0c130301bff91ca80c06eacf9e216b2ab11cd6d",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 2,
+      "factCount": 1,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 4:19",
+          "ROM 9:9"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": false
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "初出ROM4:19のsummary/subtitleはサラの胎への言及に限る。約束の引用はROM9:9 source付きfact knownBy=9:9に分離。",
+      "closureIssuesJa": [],
+      "repairClosure": {
+        "actionJa": "修正閉鎖: no ROM9:9 fact leaks into always-visible introduction.",
+        "beforeSHA256": "9c305be98f067582d11d9dd1a79b92002cccda373554e733e6721153ebc4b942",
+        "afterSHA256": "ce04cde67fffdbbf560b6cb7120dbc6a4662966170a788c41d6451f6d3ab62b6",
+        "evidenceSHA256": "64fc6ee161e6e1531dce49e02245ca7d68399c40d29eb4631f05626211a14ffa",
+        "fixedWEB": "ROM 4:19, 9:9",
+        "checkJa": "初出ROM4:19のsummary/subtitleはサラの胎への言及に限る。約束の引用はROM9:9 source付きfact knownBy=9:9に分離。"
+      },
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 3
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:satan_2476",
+      "draftPath": "drafts/persons_3/ROM_satan_2476.json",
+      "draftSHA256": "d794fb6ae11a1ba07bc9886033fa8b2a9ef6a7887816b23fde933cbd11b2a510",
+      "evidencePath": "evidence/persons_3/ROM_satan_2476.json",
+      "evidenceSHA256": "e4cbc56f9ff6a41846d79c2cf84af5e3b9f9e9cd0b55995fc2b29c9d9d53d969",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 20
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 16:20"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 16:20",
+            "sourceRef": "ROM 16:20",
+            "sourceTextSHA256": "2f3d3a56b22ad9cd749cc180db1b66aac99ccc21a9591a846c9587af606b6147"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Satan",
+        "articleTitle": "Satan",
+        "kind": "article",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はローマ書16:20で名指されるサタンを扱う。本文の比喩的表現や神学的解釈を追加しない。",
+        "independentArticleInspection": {
+          "articleTitle": "Satan",
+          "url": "https://en.wikipedia.org/wiki/Satan",
+          "resultJa": "記事は一般的な宗教概念としてのSatanを扱い、ROM16:20の名指しと適合。profileは本文の比喩解釈を膨らませない。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 16, 'verse': 20}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: ROM 16:20。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "d794fb6ae11a1ba07bc9886033fa8b2a9ef6a7887816b23fde933cbd11b2a510",
+      "previousEvidenceSHA256": "e4cbc56f9ff6a41846d79c2cf84af5e3b9f9e9cd0b55995fc2b29c9d9d53d969",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 16:20"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:stachys_2774",
+      "draftPath": "drafts/persons_3/ROM_stachys_2774.json",
+      "draftSHA256": "67f87680bffe147eb835433752d4861c9a2e55ff9756667b317e95a95a8c93d8",
+      "evidencePath": "evidence/persons_3/ROM_stachys_2774.json",
+      "evidenceSHA256": "365e9456773a9d0ecdb03b3050ed7c001988182817f7b42cd7bc523e9a74568e",
+      "status": "qualified",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 9
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 16:9"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 16:9",
+            "sourceRef": "ROM 16:9",
+            "sourceTextSHA256": "847a32c1e4913ed0fa0c8ad1178c6056672a81c40ed65d4bf9a76628eb4a9426"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Stachys_the_Apostle",
+        "articleTitle": "Stachys the Apostle",
+        "kind": "related-section",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はローマ書16:9のスタキスと後代の使徒伝承を結びつけるが、本人同定は明確でない。",
+        "independentArticleInspection": {
+          "articleTitle": "Stachys the Apostle",
+          "url": "https://en.wikipedia.org/wiki/Stachys_the_Apostle",
+          "resultJa": "記事自体がPaulのROM16:9対象と後代司教Stachysが同一か明確でないと述べる。related articleとしてなら適合するがidentityVerified=trueは過剰。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 16, 'verse': 9}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "現行identityNoteは伝承との同一性未確定と適切に述べる。実記事もPaulのROM16:9と後代の司教伝承は同一か明確でないと明記する。一方profile.wikipedia.identityVerified=trueはその非確定と不整合。"
+      ],
+      "issues": [
+        {
+          "field": "profile.wikipedia",
+          "anchor": "ROM 16:9; Wikipedia “Stachys the Apostle” §identity",
+          "findingJa": "現行identityNoteは伝承との同一性未確定と適切に述べる。実記事もPaulのROM16:9と後代の司教伝承は同一か明確でないと明記する。一方profile.wikipedia.identityVerified=trueはその非確定と不整合。",
+          "recommendationJa": "記事リンクは関連する伝承として扱い、同一人物が確認済みという印象を避ける。"
+        }
+      ],
+      "contextVariants": [],
+      "unresolvedJa": "後代のスタキス司教伝承との同一性は本文で確定しない。",
+      "previousDraftSHA256": "2266424be247ea6a49f36b44d7295516399e27d3e8e553e0beccf0fac949df26",
+      "previousEvidenceSHA256": "46a81be5f73a92d7c7cb9706d5c0c83be8706c12e34e5df1a5d7f0a64d7b6aad",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 16:9"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": false
+      },
+      "currentReviewStatus": "qualified",
+      "closureBasisJa": "Lines 161–164 says Romans 16:9 is the only NT mention and that whether the Pauline Stachys was this later bishop is unclear. Profile now identityVerified=false and clearly limits link to tradition.",
+      "closureIssuesJa": [
+        "Lines 161–164 says Romans 16:9 is the only NT mention and that whether the Pauline Stachys was this later bishop is unclear. Profile now identityVerified=false and clearly limits link to tradition."
+      ],
+      "wikipediaReclosure": {
+        "url": "https://en.wikipedia.org/wiki/Stachys_the_Apostle",
+        "actualArticleTitle": "Stachys the Apostle",
+        "checkedAt": "2026-10-15",
+        "articleRead": true,
+        "sourceEvidenceJa": "Lines 161–164 says Romans 16:9 is the only NT mention and that whether the Pauline Stachys was this later bishop is unclear. Profile now identityVerified=false and clearly limits link to tradition.",
+        "identityVerifiedInDraft": false,
+        "relationVerifiedInReview": true,
+        "remainingDisposition": "qualified"
+      },
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:timotheus_2863",
+      "draftPath": "drafts/persons_3/ROM_timotheus_2863.json",
+      "draftSHA256": "e39e981fc5aef9250ce904a09e17df3b29db8157ade2e1f5471a94ca6a9f952d",
+      "evidencePath": "evidence/persons_3/ROM_timotheus_2863.json",
+      "evidenceSHA256": "ed2d2ca935f1ec4609469798935d6f4d4d0a70ee5c57f281f04ff3490b2a23ed",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 21
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 16:21"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 16:21",
+            "sourceRef": "ROM 16:21",
+            "sourceTextSHA256": "1d8b9441925d35de6d879faf71b8a5d48c71cc3c0a40b0be00d1fb745c42756f"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Saint_Timothy",
+        "articleTitle": "Saint Timothy",
+        "kind": "article",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はローマ書16:21でパウロの同労者として挙げられるテモテを扱う。",
+        "independentArticleInspection": {
+          "articleTitle": "Saint Timothy",
+          "url": "https://en.wikipedia.org/wiki/Saint_Timothy",
+          "resultJa": "記事はパウロの同労者Timothyを扱う。ROM16:21の文脈に一致。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 16, 'verse': 21}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: ROM 16:21。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "e39e981fc5aef9250ce904a09e17df3b29db8157ade2e1f5471a94ca6a9f952d",
+      "previousEvidenceSHA256": "ed2d2ca935f1ec4609469798935d6f4d4d0a70ee5c57f281f04ff3490b2a23ed",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 16:21"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    },
+    {
+      "book": "ROM",
+      "entityID": "person:tryphosa_2882",
+      "draftPath": "drafts/persons_3/ROM_tryphosa_2882.json",
+      "draftSHA256": "fbda16247bc632d2a0364d0e11944d3a51bf8145209056a08387331577236e23",
+      "evidencePath": "evidence/persons_3/ROM_tryphosa_2882.json",
+      "evidenceSHA256": "8b8ba5893710924dc8327aa09a16e44406fee252b8004be28909f6e2ff2d2985",
+      "status": "pass",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 12
+      },
+      "primaryCheck": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "profilePassageCount": 1,
+        "allCanonicalCoordinatesPresent": true,
+        "missingCoordinates": [],
+        "anchorRefs": [
+          "ROM 16:12"
+        ],
+        "sourceCoordinateSamples": [
+          {
+            "canonical": "ROM 16:12",
+            "sourceRef": "ROM 16:12",
+            "sourceTextSHA256": "d65e1de57c2fc5e68ac9db3bbbfefb8f36567907d0d4ab93a77d07fe087c1ebd"
+          }
+        ]
+      },
+      "factGateCheck": {
+        "factCount": 0,
+        "factSourceGatesMatch": true,
+        "issues": [],
+        "allProfileSourceIDsExist": true,
+        "missingProfileSourceIDs": [],
+        "readerFacingGateCaveatJa": "profile.sourceIds/passagesが後続章の参照も含むため、source objectsのknownByをUIで適用しない場合は後続引用が初出時点に先行表示される。"
+      },
+      "identityAndWikipediaCheck": {
+        "url": "https://en.wikipedia.org/wiki/Tryphena_and_Tryphosa",
+        "articleTitle": "Tryphena and Tryphosa",
+        "kind": "shared-section",
+        "identityVerifiedInDraft": true,
+        "articleReadByAuthorEvidence": true,
+        "draftRecordedBasis": "記事はローマ書16:12に並んで登場するトリファイナとトリフォサの二人を扱う。各人の情報を混同しない。",
+        "independentArticleInspection": {
+          "articleTitle": "Tryphena and Tryphosa",
+          "url": "https://en.wikipedia.org/wiki/Tryphena_and_Tryphosa",
+          "resultJa": "共有記事はROM16:12の二人を同時に扱う。プロフィールがTryphosaをもう一方のTryphaenaと混同していない。",
+          "checkedOn": "2026-10-15"
+        }
+      },
+      "findingsJa": [
+        "knownBy={'chapter': 16, 'verse': 12}のsummary/subtitleを初出の固定WEB節と照合。profile.passages 1件は割当書の固定WEB canonical座標に対応し、欠落座標0件。",
+        "初出と引用元の対応を確認。代表アンカー: ROM 16:12。名前/関係・人物と集団の区分がWEB本文に合致し、判明後の関係・行為はfact knownByへ分離。"
+      ],
+      "issues": [],
+      "contextVariants": [],
+      "unresolvedJa": "",
+      "previousDraftSHA256": "fbda16247bc632d2a0364d0e11944d3a51bf8145209056a08387331577236e23",
+      "previousEvidenceSHA256": "8b8ba5893710924dc8327aa09a16e44406fee252b8004be28909f6e2ff2d2985",
+      "currentProfileSHA256InEvidenceMatches": true,
+      "passageCount": 1,
+      "factCount": 0,
+      "closureSourceSnapshot": {
+        "witnessPath": "inventory/targets/rom-canonical-witness.json",
+        "witnessSHA256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+        "sampleAnchorRefs": [
+          "ROM 16:12"
+        ],
+        "allPriorPassagesWereCanonicalAndPresent": true,
+        "unchangedDraftMayInheritPriorTextualReview": true
+      },
+      "currentReviewStatus": "pass",
+      "closureBasisJa": "Draft SHA is unchanged from the cited prior independent review; previous content findings and fixed-WEB checks are inherited without promoting an earlier unresolved qualification.",
+      "closureIssuesJa": [],
+      "mechanicalRecheck": {
+        "allPassageCoordinatesPresentInPinnedWEB": true,
+        "missingOrInvalidPassageCoordinates": [],
+        "profileSourceIdsExist": true,
+        "allFactSourceIdsExist": true,
+        "sourceObjectCount": 2
+      }
+    }
+  ]
+}
