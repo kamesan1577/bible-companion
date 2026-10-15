@@ -1,5 +1,6 @@
 import Foundation
 import CryptoKit
+import Darwin
 import CompanionCore
 
 /// App Group stores pending shares and a limited, expiring share-only capability.
@@ -42,34 +43,140 @@ enum ShareInbox {
         let handle = try FileHandle(forReadingFrom: file); defer { try? handle.close() }
         return try ShareOwnerMarker.decode(handle.read(upToCount: ShareOwnerMarker.maximumBytes + 1) ?? Data())
     }
+    private static func isMissing(_ error: Error) -> Bool {
+        let value = error as NSError
+        return (value.domain == NSCocoaErrorDomain && value.code == CocoaError.fileReadNoSuchFile.rawValue)
+            || (value.domain == NSPOSIXErrorDomain && value.code == Int(ENOENT))
+    }
+    private static func storageError(_ error: Error, writing: Bool = false) -> ShareAIAccessReadError {
+        if let typed = error as? ShareAIAccessReadError { return typed }
+        if let inbox = error as? InboxError, case .unavailable = inbox { return .appGroupUnavailable }
+        let value = error as NSError
+        if value.domain == NSPOSIXErrorDomain && [Int(EACCES), Int(EPERM)].contains(value.code) { return .protectedDataUnavailable }
+        if value.domain == NSCocoaErrorDomain && [CocoaError.fileReadNoPermission.rawValue, CocoaError.fileWriteNoPermission.rawValue].contains(value.code) { return .protectedDataUnavailable }
+        return writing ? .writeFailed : .readFailed
+    }
+    private static func readBytes(_ file: URL, limit: Int, missingAllowed: Bool = false) throws -> Data? {
+        do {
+            let handle = try FileHandle(forReadingFrom: file); defer { try? handle.close() }
+            let data = try handle.read(upToCount: limit + 1) ?? Data()
+            guard data.count <= limit else { throw ShareAIAccessReadError.corrupted }
+            return data
+        } catch {
+            if missingAllowed && isMissing(error) { return nil }
+            throw error
+        }
+    }
+
+    private static func validatedAccess(at root: URL, expectedOwner: String? = nil) throws -> ShareAIAccess {
+        let capability = root.appendingPathComponent("ai-access.capability")
+        let data: Data
+        do {
+            guard let bytes = try readBytes(capability, limit: 4096) else { throw ShareAIAccessReadError.missing }
+            data = bytes
+        } catch {
+            if isMissing(error) { throw ShareAIAccessReadError.missing }
+            throw error
+        }
+        let ownerFile = root.appendingPathComponent("owner.marker")
+        guard let ownerData = try readBytes(ownerFile, limit: ShareOwnerMarker.maximumBytes, missingAllowed: true) else {
+            throw ShareAIAccessReadError.ownerMismatch
+        }
+        let decodedOwner: String?
+        do { decodedOwner = try ShareOwnerMarker.decode(ownerData) }
+        catch { throw ShareAIAccessReadError.corrupted }
+        guard let owner = decodedOwner else { throw ShareAIAccessReadError.ownerMismatch }
+        if let expectedOwner, expectedOwner != owner { throw ShareAIAccessReadError.ownerMismatch }
+        return try ShareAIAccess.validated(from: data, owner: owner)
+    }
+
+    /// Reads and validates the share-only capability while preserving a safe reason
+    /// for the extension to choose an appropriate user-facing recovery action.
+    static func verifiedAIAccess(expectedOwner: String? = nil) throws -> ShareAIAccess {
+        do {
+            return try withLock { try validatedAccess(at: $0, expectedOwner: expectedOwner) }
+        } catch {
+            throw storageError(error)
+        }
+    }
+    /// Records that the extension has opened this exact current capability.
+    /// The receipt is diagnostic only and does not authorize access.
+    static func acknowledgeExtensionRead(_ access: ShareAIAccess) throws {
+        do {
+            try withLock { root in
+                let current = try validatedAccess(at: root, expectedOwner: access.ownerID)
+                guard current.token == access.token, current.ownerID == access.ownerID,
+                      current.expiresAt == access.expiresAt else { throw ShareAIAccessReadError.ownerMismatch }
+                let receipt = ShareAIAccessReadReceipt(token: access.token, readAt: Date())
+                let data = try JSONEncoder().encode(receipt)
+                try data.write(to: root.appendingPathComponent("extension-read.receipt"), options: [.atomic, .completeFileProtection])
+            }
+        } catch {
+            throw storageError(error, writing: true)
+        }
+    }
+
+    /// Checks only whether a valid receipt matches the currently active capability.
+    /// A missing or stale receipt is a normal false result; storage/corruption errors
+    /// remain typed for callers that need to show a recovery state.
+    static func extensionHasReadCurrentAccess(expectedOwner: String) throws -> Bool {
+        do {
+            return try withLock { root in
+                let current = try validatedAccess(at: root, expectedOwner: expectedOwner)
+                guard let data = try readBytes(root.appendingPathComponent("extension-read.receipt"), limit: 1024, missingAllowed: true) else { return false }
+                return try ShareAIAccessReadReceipt.matches(data, token: current.token)
+            }
+        } catch {
+            throw storageError(error)
+        }
+    }
     static func setOwner(_ owner: String?) throws {
         guard owner == nil || UUID(uuidString: owner ?? "") != nil else { throw NetworkFailure.invalidResponse }
         try withLock { root in
             if try readOwner(at: root) != owner {
                 let file = root.appendingPathComponent("ai-access.capability")
                 if FileManager.default.fileExists(atPath: file.path) { try FileManager.default.removeItem(at: file) }
+                let receipt = root.appendingPathComponent("extension-read.receipt")
+                if FileManager.default.fileExists(atPath: receipt.path) { try FileManager.default.removeItem(at: receipt) }
             }
             try Data((owner ?? "").utf8).write(to: root.appendingPathComponent("owner.marker"), options: [.atomic, .completeFileProtection])
         }
     }
     static func saveAIAccess(_ value: ShareAIAccess) throws {
-        try withLock { root in
-            guard value.isValid(owner: try readOwner(at: root)) else { throw InboxError.unavailable }
-            try JSONEncoder().encode(value).write(to: root.appendingPathComponent("ai-access.capability"), options: [.atomic, .completeFileProtection])
+        do {
+            try withLock { root in
+                let owner = try readOwner(at: root)
+                let data = try JSONEncoder().encode(value)
+                _ = try ShareAIAccess.validated(from: data, owner: owner)
+                let file = root.appendingPathComponent("ai-access.capability")
+                try data.write(to: file, options: [.atomic, .completeFileProtection])
+                guard let saved = try readBytes(file, limit: 4096),
+                      let verified = try? ShareAIAccess.validated(from: saved, owner: owner),
+                      verified.token == value.token, verified.ownerID == value.ownerID,
+                      verified.expiresAt == value.expiresAt else {
+                    throw ShareAIAccessReadError.writeFailed
+                }
+                let receipt = root.appendingPathComponent("extension-read.receipt")
+                if FileManager.default.fileExists(atPath: receipt.path) { try FileManager.default.removeItem(at: receipt) }
+            }
+        } catch {
+            throw storageError(error, writing: true)
         }
     }
     static func aiAccess() throws -> ShareAIAccess? {
-        try withLock { root in
-            let file = root.appendingPathComponent("ai-access.capability")
-            guard FileManager.default.fileExists(atPath: file.path) else { return nil }
-            let handle = try FileHandle(forReadingFrom: file); defer { try? handle.close() }
-            let data = try handle.read(upToCount: 4097) ?? Data()
-            guard data.count <= 4096, let value = try? JSONDecoder().decode(ShareAIAccess.self, from: data), value.isValid(owner: try readOwner(at: root)) else { return nil }
-            return value
-        }
+        do { return try verifiedAIAccess() }
+        catch ShareAIAccessReadError.missing,
+              ShareAIAccessReadError.expired,
+              ShareAIAccessReadError.ownerMismatch,
+              ShareAIAccessReadError.corrupted { return nil }
     }
     static func clearAIAccess() throws {
-        try withLock { root in let file = root.appendingPathComponent("ai-access.capability"); if FileManager.default.fileExists(atPath: file.path) { try FileManager.default.removeItem(at: file) } }
+        try withLock { root in
+            for name in ["ai-access.capability", "extension-read.receipt"] {
+                let file = root.appendingPathComponent(name)
+                if FileManager.default.fileExists(atPath: file.path) { try FileManager.default.removeItem(at: file) }
+            }
+        }
     }
     static func enqueue(_ text: String) throws {
         guard !text.isEmpty, text.utf16.count <= 20_000, text.utf8.count <= 60_000 else { throw InboxError.oversized }
@@ -105,8 +212,10 @@ enum ShareInbox {
     static func remove(_ id: UUID) throws { try withLock { root in try FileManager.default.removeItem(at: root.appendingPathComponent(id.uuidString).appendingPathExtension("json")) } }
     static func clear() throws {
         try withLock { root in
-            let access = root.appendingPathComponent("ai-access.capability")
-            if FileManager.default.fileExists(atPath: access.path) { try FileManager.default.removeItem(at: access) }
+            for name in ["ai-access.capability", "extension-read.receipt"] {
+                let file = root.appendingPathComponent(name)
+                if FileManager.default.fileExists(atPath: file.path) { try FileManager.default.removeItem(at: file) }
+            }
             try Data().write(to: root.appendingPathComponent("owner.marker"), options: [.atomic, .completeFileProtection])
             for url in try FileManager.default.contentsOfDirectory(at: root, includingPropertiesForKeys: nil) where url.pathExtension == "json" { try FileManager.default.removeItem(at: url) }
         }

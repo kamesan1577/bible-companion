@@ -43,6 +43,7 @@ final class ReadingInteractionUITests: XCTestCase {
             let share = app.buttons["実際の共有拡張を開く"]
             XCTAssertTrue(share.waitForExistence(timeout: 10)); share.tap()
             let candidates = app.cells.matching(identifier: "聖書コンパニオン")
+            guard candidates.firstMatch.waitForExistence(timeout: 5), candidates.count > 0 else { XCTFail("Share destination did not appear"); return }
             let companion = candidates.element(boundBy: candidates.count - 1)
             XCTAssertTrue(companion.waitForExistence(timeout: 5)); companion.tap()
             XCTAssertTrue(app.staticTexts["使徒の働き 23:1"].waitForExistence(timeout: 5))
@@ -94,18 +95,19 @@ final class ReadingInteractionUITests: XCTestCase {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
         XCTAssertTrue(app.buttons["使徒18–23章の静的解説"].waitForExistence(timeout: 10))
         app.buttons["使徒18–23章の静的解説"].tap()
-        XCTAssertTrue(app.staticTexts["出典に基づく日本語編集"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["この箇所の説明"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts["コリントでの出会いと働き"].exists)
-        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "別のAIが原典とWEBに照合")).firstMatch.exists)
+        app.buttons["解釈と出典を確かめる"].firstMatch.tap()
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "別のAIによる本文・出典との照合")).firstMatch.exists)
         attach(app, "static-commentary-japanese")
     }
     @MainActor func testOriginalRequiresExplicitSpoilerConsent() {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
         XCTAssertTrue(app.buttons["使徒23:1の静的解説"].waitForExistence(timeout: 10)); app.buttons["使徒23:1の静的解説"].tap()
-        let original = app.buttons["英語の注解原文・出典を読む"]
+        let original = app.buttons["英語の注解を読む"]
         if !original.isHittable { app.swipeUp() }
         XCTAssertTrue(original.waitForExistence(timeout: 5)); original.tap()
-        let consent = app.buttons["先の内容を含む英語原文を開く"]
+        let consent = app.buttons["先の内容を含むことを確認して開く"]
         XCTAssertTrue(consent.waitForExistence(timeout: 5))
         attach(app, "original-spoiler-consent")
         consent.tap()
@@ -116,20 +118,76 @@ final class ReadingInteractionUITests: XCTestCase {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
         let fixture = app.buttons["サムエル記下22:1の資料"]
         XCTAssertTrue(fixture.waitForExistence(timeout: 10)); fixture.tap()
-        let original = app.buttons["英語の注解原文・出典を読む"]
+        let original = app.buttons["英語の注解を読む"]
         XCTAssertTrue(original.waitForExistence(timeout: 5)); original.tap()
-        let consent = app.buttons["先の内容を含む英語原文を開く"]
+        let consent = app.buttons["先の内容を含むことを確認して開く"]
         XCTAssertTrue(consent.waitForExistence(timeout: 5)); consent.tap()
-        let chapterNote = app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "各節の独立した詳細注解を示すものではありません")).firstMatch
+        let chapterNote = app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "各節を個別に説明した文章ではありません")).firstMatch
         XCTAssertTrue(chapterNote.waitForExistence(timeout: 5))
         attach(app, "samuel22-chapter-context")
-        let parallel = app.buttons.containing(NSPredicate(format: "label BEGINSWITH %@", "原典が参照する")).firstMatch
+        let parallel = app.buttons.containing(NSPredicate(format: "label BEGINSWITH %@", "著者が参照した")).firstMatch
         for _ in 0..<30 { if parallel.exists && parallel.isHittable { break }; app.swipeUp() }
         XCTAssertTrue(parallel.exists); XCTAssertTrue(parallel.isHittable)
         attach(app, "samuel22-parallel-navigation")
         parallel.tap()
         XCTAssertTrue(consent.waitForExistence(timeout: 5))
         attach(app, "psalm18-separate-consent")
+    }
+    @MainActor func testReadingPreparationReturnsWithoutRepeatingConsentOrFalseSuccess() {
+        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa", "--qa-share-enabled"]; app.launch()
+        XCTAssertTrue(app.buttons["読書画面"].waitForExistence(timeout: 10)); app.buttons["読書画面"].tap()
+        let ai = app.buttons["AIで解説・質問"]
+        XCTAssertTrue(ai.waitForExistence(timeout: 5)); ai.tap()
+        let prepare = app.buttons["YouVersionから解説を読む準備"]
+        XCTAssertTrue(prepare.waitForExistence(timeout: 5)); prepare.tap()
+        let save = app.buttons["共有から解説を読めるようにする"]
+        XCTAssertTrue(save.waitForExistence(timeout: 5))
+        XCTAssertFalse(app.buttons["同意して解説を使う"].exists)
+        save.tap()
+        let storageFailure = app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "同意を繰り返す必要はありません")).firstMatch
+        XCTAssertTrue(storageFailure.waitForExistence(timeout: 5))
+        XCTAssertFalse(app.staticTexts["設定を保存しました"].exists)
+        XCTAssertFalse(app.buttons["同意して解説を使う"].exists)
+        attach(app, "preparation-storage-failure-no-consent-loop")
+        app.buttons["閉じる"].tap()
+        XCTAssertTrue(app.staticTexts["「良心に従ってきた」という発言"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "shared-scripture-header").firstMatch.exists)
+        XCTAssertTrue(app.buttons["AIで解説・質問"].exists)
+        attach(app, "preparation-return-original-reading")
+    }
+    @MainActor func testActualShareRecoveryPreservesVerseAndShowsConcreteSteps() {
+        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
+        let share = app.buttons["実際の共有拡張を開く"]
+        XCTAssertTrue(share.waitForExistence(timeout: 10)); share.tap()
+        let candidates = app.cells.matching(identifier: "聖書コンパニオン")
+        guard candidates.firstMatch.waitForExistence(timeout: 5), candidates.count > 0 else { XCTFail("Share destination did not appear"); return }
+        candidates.element(boundBy: candidates.count - 1).tap()
+        XCTAssertTrue(app.staticTexts["この画面で解説を開けません"].waitForExistence(timeout: 8))
+        XCTAssertTrue(app.staticTexts["使徒の働き 23:1"].exists)
+        XCTAssertFalse(app.staticTexts["初回の設定が必要です。"].exists)
+        let steps = app.buttons["準備の手順を見る"]
+        XCTAssertTrue(steps.exists); steps.tap()
+        let returnStep = app.staticTexts["YouVersionで同じ箇所を選び、もう一度共有する"]
+        for _ in 0..<5 { if returnStep.isHittable { break }; app.swipeUp() }
+        XCTAssertTrue(returnStep.exists)
+        attach(app, "actual-share-storage-recovery-keeps-verse")
+        app.navigationBars.buttons["閉じる"].tap()
+        XCTAssertTrue(share.waitForExistence(timeout: 5))
+    }
+    @MainActor func testExistingExplanationPrecedesSingleAIActionAndExplanationStillWorks() {
+        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
+        XCTAssertTrue(app.buttons["読書画面"].waitForExistence(timeout: 10)); app.buttons["読書画面"].tap()
+        let title = app.staticTexts["「良心に従ってきた」という発言"]
+        XCTAssertTrue(title.waitForExistence(timeout: 5))
+        let ai = app.buttons["AIで解説・質問"]
+        XCTAssertTrue(ai.exists); XCTAssertEqual(app.buttons.matching(identifier: "AIで解説・質問").count, 1)
+        XCTAssertLessThan(title.frame.minY, ai.frame.minY)
+        XCTAssertFalse(app.buttons["AIにこの箇所を説明してもらう"].exists)
+        attach(app, "reading-existing-explanation-first-single-ai")
+        ai.tap(); app.buttons["AIでこの箇所の解説を読む"].tap()
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label BEGINSWITH %@", "固定標準解説")).firstMatch.waitForExistence(timeout: 8))
+        XCTAssertTrue(app.buttons["続けて質問する"].exists)
+        attach(app, "single-ai-action-explanation-result")
     }
     @MainActor private func attach(_ app: XCUIApplication, _ name: String) {
         let attachment = XCTAttachment(screenshot: app.screenshot()); attachment.name = name; attachment.lifetime = .keepAlways; add(attachment)

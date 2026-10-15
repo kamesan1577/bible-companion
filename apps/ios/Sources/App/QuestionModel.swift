@@ -39,14 +39,14 @@ import CompanionCore
     func loadPolicy() async {
         let generation = policyGate.invalidate(); aiPolicy = nil; policyError = nil
         do { let value: AIPolicy = try await client.get("/v1/me/ai-policy"); guard !Task.isCancelled, policyGate.accepts(generation) else { return }; aiPolicy = value; if let selected = value.defaultAnswerMode { answerMode = selected }; policyError = nil }
-        catch { if !Task.isCancelled, policyGate.accepts(generation) { aiPolicy = nil; policyError = "AIの利用条件を確認できません。再確認するか、範囲の資料だけを確認してください。" } }
+        catch { if !Task.isCancelled, policyGate.accepts(generation) { aiPolicy = nil; policyError = "今はAIに質問できるか確認できません。通信を確かめて再確認してください。聖書の説明は引き続き読めます。" } }
     }
     var canUseSelectedMode: Bool { sourceOnly || aiPolicy?.permits(answerMode) == true }
     func send(target: Passage, standard: Bool = false) {
         guard canUseSelectedMode, !resumeInvalid, item.ranges.indices.contains(rangeIndex), !isRunning, !isCheckingStatus, !needsStatusCheck, !draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, draft.utf16.count <= 2000,
               let scope = try? QuestionScope(reading: item.ranges[rangeIndex], target: target, spoilerAllowed: spoilerAllowed) else { return }
         do {
-            if try PendingQuestionStore.read(owner: ownerID) != nil { errorMessage = "前の質問の処理状況が未確認です。設定の「送信済みの質問を確認」から確認してください。"; return }
+            if try PendingQuestionStore.read(owner: ownerID) != nil { errorMessage = "前の質問の返事を待っています。設定の「返事を待っている質問を確認する」で結果を確認してください。"; return }
         } catch { errorMessage = "送信済みの質問を確認できません。端末のロックを解除してください。"; return }
         // No automatic retry. Every explicit new question gets a unique request ID.
         let submittedQuestion = draft.trimmingCharacters(in: .whitespacesAndNewlines); let submittedMode = sourceOnly
@@ -112,7 +112,7 @@ import CompanionCore
         guard let requestID else { return }
         Task {
             do { let _: JSONValue = try await client.delete("/v1/requests/\(requestID)"); if self.requestID == requestID { needsStatusCheck = false; try PendingQuestionStore.remove(owner: ownerID, request: requestID) } }
-            catch { if self.requestID == requestID { errorMessage = "画面での待機は中止しました。サーバー側の停止は未確認です。状態を確認してください。" } }
+            catch { if self.requestID == requestID { errorMessage = "待つのをやめましたが、回答づくりが続いている可能性があります。「届いた回答を確認」で結果を確かめてください。" } }
         }
     }
     func scopeChanged() { if isRunning { cancel() }; gate.invalidate(); answer = nil; conversationID = nil; currentScope = nil; requestID = nil; needsStatusCheck = false; status = "" }
@@ -127,7 +127,7 @@ import CompanionCore
         case "complete": needsStatusCheck = false; answer = result.result; status = result.result == nil ? "資料の版・権利・表示範囲が変わり、この回答は表示できません。" : "回答を確認しました"
         case "cancelled": needsStatusCheck = false; status = "中止されています。利用量が発生している場合があります。"
         case "failed": needsStatusCheck = false; status = "処理に失敗しました。内容を確認して新しい質問として再試行できます。"
-        default: status = "サーバーで処理中です。状態確認で続きを確認できます。"
+        default: status = "回答を作っています。「届いた回答を確認」を押すと、返事が届いたか確認できます。"
         }
     }
 }

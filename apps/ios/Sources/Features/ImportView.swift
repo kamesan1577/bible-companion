@@ -25,14 +25,15 @@ struct ImportView: View {
         NavigationStack {
             Form {
                 if store.account == nil {
-                    Section { BibleStateView(title: "ログインが必要です", message: store.pendingShares.isEmpty ? "ログイン後、章節を入力して自分の履歴に保存できます。" : "共有された内容は端末で待機しています。ログイン後、保存先のアカウントと章節を確認します。")
+                    Section { BibleStateView(title: "ログインして続ける", message: store.pendingShares.isEmpty ? "ログインすると、選んだ章と節を読書履歴に保存できます。" : "共有文はこの端末で一時的に待機しています。ログイン後に、保存先と章・節を確認できます。")
                         Button(store.isAuthenticating ? "ログイン中" : "パスキーでログイン") { store.signIn() }.disabled(!store.endpointConfigured || store.isAuthenticating || store.isTransitioning || store.restoreNeedsRetry || store.localCleanupRequired)
-                        if store.isTransitioning { ProgressView("保存したログインを確認しています") }
+                        Text("初めての方は、パスキー認証画面の案内から登録できます。").bibleTextStyle(.caption)
+                        if store.isTransitioning { ProgressView("ログイン状態を確認しています") }
                         if store.isAuthenticating { Button("ログインを中止") { store.cancelSignIn() } }
-                        if store.restoreNeedsRetry { Button("保存したログインを再確認") { Task { await store.restore() } }.disabled(store.isTransitioning) }
-                        if store.localCleanupRequired { Text("この画面を閉じ、設定の「端末内データの削除を再試行」で前回の削除を完了してください。").bibleTextStyle(.caption) }
+                        if store.restoreNeedsRetry { Button("ログイン状態をもう一度確認") { Task { await store.restore() } }.disabled(store.isTransitioning) }
+                        if store.localCleanupRequired { Text("この画面を閉じて、設定の「端末内データの削除を再試行」を選んでください。").bibleTextStyle(.caption) }
                         if let error = store.errorMessage { Text(error).bibleTextStyle(.caption).bibleForeground(.textSecondary) }
-                        if !store.endpointConfigured { Text("接続先が未設定です。HTTPSサーバーを設定したビルドが必要です。").bibleTextStyle(.caption) }
+                        if !store.endpointConfigured { Text("現在のアプリではログインを利用できません。アプリの配布元にお問い合わせください。").bibleTextStyle(.caption) }
                     }
                 }
                 if !store.pendingShares.isEmpty {
@@ -42,47 +43,47 @@ struct ImportView: View {
                                 VStack(alignment: .leading, spacing: BibleTheme.Space.xs) { Text(pending.text).lineLimit(2); Text(pending.createdAt, style: .date).bibleTextStyle(.caption) }
                             }
                         }
-                        Text("共有内容は24時間を過ぎると取り込めなくなり、次回アプリや共有機能が確認するときに端末から消去されます。").bibleTextStyle(.caption)
+                        Text("共有文は受け取ってから24時間を過ぎると読み取れなくなります。その後、アプリか共有機能が次に確認したとき、端末から削除されます。").bibleTextStyle(.caption)
                     }
                 }
-                if let notice = store.shareNotice { Section { Text(notice).bibleTextStyle(.body); Button("共有内容を再確認") { store.refreshInbox() } } }
-                Section("URL・章節・共有テキスト") {
+                if let notice = store.shareNotice { Section { Text(notice).bibleTextStyle(.body); Button("共有文をもう一度確認") { store.refreshInbox() } } }
+                Section("共有された文章やリンクから選ぶ") {
                     TextEditor(text: $text).frame(minHeight: BibleTheme.Layout.minimumTouchTarget * 3).accessibilityLabel("共有テキスト")
-                    Button(isParsing ? "確認中" : "章節を確認する") { parse() }.disabled(text.isEmpty || isParsing || isSaving)
-                    Text("本文は履歴へ保存しません。保存するのは章節と訳の情報です。").bibleTextStyle(.caption).bibleForeground(.textSecondary)
+                    Button(isParsing ? "読み取り中" : "共有文から章と節を読み取る") { parse() }.disabled(text.isEmpty || isParsing || isSaving)
+                    Text("端末で読み取れない共有文は、章と節を調べるためオンラインの読み取り機能に送る場合があります。読書履歴に保存するのは章・節と訳名です。聖書本文は履歴に保存しません。").bibleTextStyle(.caption).bibleForeground(.textSecondary)
                 }
-                Section("手動で章節を指定") {
+                Section("章と節を手動で選ぶ") {
                     Picker("書", selection: $manualBook) { ForEach(Canon.books) { Text($0.ja).tag($0.id) } }
-                    Stepper("開始 \(startChapter)章", value: $startChapter, in: 1...150)
-                    Stepper("開始 \(startVerse)節", value: $startVerse, in: 1...176)
-                    Stepper("終了 \(endChapter)章", value: $endChapter, in: 1...150)
-                    Stepper("終了 \(endVerse)節", value: $endVerse, in: 1...176)
-                    Button("この範囲を使う") {
+                    Stepper("最初の章 \(startChapter)章", value: $startChapter, in: 1...150)
+                    Stepper("最初の節 \(startVerse)節", value: $startVerse, in: 1...176)
+                    Stepper("最後の章 \(endChapter)章", value: $endChapter, in: 1...150)
+                    Stepper("最後の節 \(endVerse)節", value: $endVerse, in: 1...176)
+                    Button("この箇所を選ぶ") {
                         invalidateParse()
                         let value = Passage(book: manualBook, start: Verse(chapter: startChapter, verse: startVerse), end: Verse(chapter: endChapter, verse: endVerse))
-                        guard value.isValid else { errorMessage = "存在する章節を、開始から終了の順で指定してください。"; return }
+                        guard value.isValid else { errorMessage = "存在する章と節を、最初から最後の順に選んでください。"; return }
                         ranges = [value]; idempotencyKey = UUID().uuidString; errorMessage = nil
                     }
                 }
                 if !ranges.isEmpty {
-                    Section("保存する箇所") {
+                    Section("読書履歴に保存する箇所") {
                         ForEach(ranges, id: \.self) { Text($0.label).bibleTextStyle(.body) }
                         TextField("訳名（例：JCB）", text: $translation).textInputAutocapitalization(.characters).autocorrectionDisabled()
-                        Toggle(translation.isEmpty ? "訳が不明のまま保存する" : "この訳名を確認しました", isOn: $translationConfirmed)
+                        Toggle(translation.isEmpty ? "訳名が分からないまま保存する" : "この訳名で保存することを確認", isOn: $translationConfirmed)
                         if let owner = store.account, let share, share.requiresAccountConfirmation(currentOwner: owner.id) {
-                            Toggle("\(owner.display_name)の履歴へ取り込む", isOn: $accountConfirmed)
-                            Text("この共有は現在のログインと紐づいていません。保存先を確認してください。").bibleTextStyle(.caption)
+                            Toggle("\(owner.display_name)の読書履歴に保存する", isOn: $accountConfirmed)
+                            Text("この共有は、今ログイン中のアカウントでは受け取られていません。保存先を確認してください。").bibleTextStyle(.caption)
                         }
                     }
                 }
                 if let errorMessage { Section { Text(errorMessage).bibleTextStyle(.body).bibleForeground(.danger) } }
-                if let share { Section { Button("この共有を破棄", role: .destructive) { do { try store.removeShare(share); self.share = nil; text = ""; ranges = [] } catch { errorMessage = "削除できませんでした。" } }.disabled(isSaving) } }
+                if let share { Section { Button("この共有文を端末から削除", role: .destructive) { do { try store.removeShare(share); self.share = nil; text = ""; ranges = [] } catch { errorMessage = "削除できませんでした。" } }.disabled(isSaving) } }
             }
             .disabled(isSaving)
-            .bibleCanvas().navigationTitle("箇所を取り込む").navigationBarTitleDisplayMode(.inline)
+            .bibleCanvas().navigationTitle("章と節を選ぶ").navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("閉じる") { dismiss() }.disabled(isSaving) }
-                ToolbarItem(placement: .confirmationAction) { Button(isSaving ? "保存中" : "保存") { save() }.disabled(!canSave) }
+                ToolbarItem(placement: .confirmationAction) { Button(isSaving ? "保存中" : "履歴に保存") { save() }.disabled(!canSave) }
             }
             .interactiveDismissDisabled(isSaving)
             .onDisappear { invalidateParse() }
@@ -104,7 +105,7 @@ struct ImportView: View {
             ranges = parsed.ranges; translation = parsed.translation ?? ""; translationConfirmed = false
             errorMessage = parsed.warnings.isEmpty ? nil : parsed.warnings.joined(separator: "\n")
         } catch {
-            guard store.account != nil else { errorMessage = "章節を読み取れませんでした。手動で指定するか、ログイン後に確認してください。"; return }
+            guard store.account != nil else { errorMessage = "章と節を読み取れませんでした。手動で選ぶか、ログイン後にもう一度お試しください。"; return }
             isParsing = true
             let submitted = text, generation = parseGeneration, epoch = store.sessionEpoch
             let requestClient = store.client
@@ -116,7 +117,7 @@ struct ImportView: View {
                     guard parseGeneration == generation, store.sessionEpoch == epoch, text == submitted, !Task.isCancelled else { return }
                     ranges = parsed.ranges; translation = parsed.translation ?? ""; translationConfirmed = false
                     errorMessage = parsed.warnings.isEmpty ? nil : parsed.warnings.joined(separator: "\n")
-                } catch { if parseGeneration == generation, store.sessionEpoch == epoch, !Task.isCancelled { errorMessage = "章節を読み取れませんでした。手動で指定してください。" } }
+                } catch { if parseGeneration == generation, store.sessionEpoch == epoch, !Task.isCancelled { errorMessage = "章と節を読み取れませんでした。手動で選んでください。" } }
             }
         }
     }
@@ -127,7 +128,7 @@ struct ImportView: View {
         isSaving = true; errorMessage = nil
         if let share, let owner = store.account?.id {
             do { idempotencyKey = try ShareInbox.submissionKey(share: share, owner: owner, ranges: ranges, translation: name.isEmpty ? nil : name) }
-            catch { isSaving = false; errorMessage = "取り込み識別子を作成できませんでした。"; return }
+            catch { isSaving = false; errorMessage = "保存を準備できませんでした。もう一度お試しください。"; return }
         }
         let input = ImportInput(idempotencyKey: idempotencyKey, ranges: ranges, translation: name.isEmpty ? nil : name)
         let submittedShare = share, submittedExcerpt = text

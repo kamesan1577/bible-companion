@@ -8,7 +8,7 @@ struct ConversationListView: View {
     init(ownerID: String, client: APIClient) { self.ownerID = ownerID; self.client = client; _model = StateObject(wrappedValue: HistoryPageModel(client: client, path: "/v1/conversations")) }
     var body: some View {
         List {
-            if model.hasLoadedSuccessfully && model.items.isEmpty && !model.loading && model.errorMessage == nil { BibleStateView(title: "保存した会話はまだありません", message: "質問した箇所と会話がここに並びます。") }
+            if model.hasLoadedSuccessfully && model.items.isEmpty && !model.loading && model.errorMessage == nil { BibleStateView(title: "保存した会話はまだありません", message: "保存した質問と回答を、この画面で確認できます。") }
             ForEach(model.items) { conversation in
                 NavigationLink {
                     ConversationHistoryView(ownerID: ownerID, client: client, id: conversation.id)
@@ -41,15 +41,15 @@ struct ConversationHistoryView: View {
             BibleReadingColumn {
                 if let conversation = model.window.conversation {
                     BibleSectionHeader(title: conversation.passage.label, subtitle: "保存した会話")
-                    BibleScopeNotice(text: conversation.spoilerAllowed ? "この会話は先の内容も含みます" : "\((conversation.readingBoundary ?? conversation.passage).end.label)まで · 先の内容を含めない")
+                    BibleScopeNotice(text: conversation.spoilerAllowed ? "この会話には、今読んでいる箇所以降の内容も含まれます" : "\((conversation.readingBoundary ?? conversation.passage).end.label)までの内容です。以降は含みません")
                     if model.window.nextCursor != nil { Button("以前のメッセージを読み込む") { Task { await model.load(older: true) } }.disabled(model.loading) }
-                    if model.window.omittedNewerMessages { Text("現在はこの位置から200件までを表示しています。最新の会話は再読み込みで確認できます。").bibleTextStyle(.caption) }
+                    if model.window.omittedNewerMessages { Text("表示できるメッセージは最大200件です。さらに新しい内容がある場合は「再読み込み」を押してください。").bibleTextStyle(.caption) }
                     LazyVStack(alignment: .leading, spacing: BibleTheme.Space.section) {
                         ForEach(model.window.messages) { message in SavedMessageView(message: message) }
                     }
                     if model.window.messages.isEmpty { BibleStateView(title: "メッセージはまだありません", message: "この会話で質問を続けられます。") }
                 }
-                if model.loading { BibleLoadingView(title: "会話を確認しています", message: "出典の現在の表示条件を確認しています。") }
+                if model.loading { BibleLoadingView(title: "会話を確認しています", message: "資料の利用条件を確認しています。") }
                 if let error = model.errorMessage { BibleStateView(title: "会話を確認できません", message: error, systemImage: BibleTheme.Symbol.error) }
             }
         }
@@ -73,17 +73,18 @@ private struct SavedMessageView: View {
     var body: some View {
         BibleReadingSurface {
             VStack(alignment: .leading, spacing: BibleTheme.Space.md) {
-                BibleSectionHeader(title: message.role == "user" ? "あなたの質問" : message.visibleAnswer?.modelInvoked == false ? "選んだ範囲の資料" : "回答", subtitle: Date(timeIntervalSince1970: message.createdAt).formatted(date: .abbreviated, time: .shortened))
+                BibleSectionHeader(title: message.role == "user" ? "あなたの質問" : message.visibleAnswer?.modelInvoked == false ? "選択した箇所の資料" : "回答", subtitle: Date(timeIntervalSince1970: message.createdAt).formatted(date: .abbreviated, time: .shortened))
                 if message.isHidden {
-                    Text("出典の権利・版・表示範囲が変わったため、この回答は表示できません。").bibleTextStyle(.body)
+                    Text("資料の利用条件や版が変わったため、この回答は現在表示できません。保存した記録自体は変更していません。").bibleTextStyle(.body)
                 } else if let text = message.userText { Text(text).bibleTextStyle(.body).textSelection(.enabled) }
                 else if let answer = message.visibleAnswer { StoredAnswerView(answer: answer) }
-                else { Text("この形式のメッセージは表示できません。内容は変更していません。").bibleTextStyle(.body) }
+                else { Text("この形式のメッセージは表示できません。保存した内容は変更していません。").bibleTextStyle(.body) }
             }
         }
     }
 }
 struct StoredAnswerView: View {
+    @EnvironmentObject private var store: AppStore
     let answer: AnswerResult
     var body: some View {
         VStack(alignment: .leading, spacing: BibleTheme.Space.md) {
@@ -93,7 +94,7 @@ struct StoredAnswerView: View {
             Text(answer.answer).bibleTextStyle(.body).textSelection(.enabled)
             Text(answer.referenceSystem?.noticeJa ?? ReferenceSystem.fallbackNotice).bibleTextStyle(.caption).bibleForeground(.textSecondary)
             CitationList(citations: answer.citations)
-            DisclosureGroup("回答の詳細") { Text(answer.modelId).bibleTextStyle(.caption); Text(answer.mode).bibleTextStyle(.caption) }
+            if store.account?.canDebug == true { DisclosureGroup("開発者専用：回答の詳細") { Text(answer.modelId).bibleTextStyle(.caption); Text(answer.mode).bibleTextStyle(.caption) }.bibleForeground(.danger) }
         }
     }
 }
@@ -129,7 +130,7 @@ struct SavedComparisonView: View {
             BibleReadingColumn {
                 if let state = model.state {
                     BibleSectionHeader(title: "保存した比較", subtitle: "\(state.completedCount) / \(state.trialCount)試行 · \(ComparisonDisplay.status(state.status))")
-                    if state.results?["hidden"].bool == true { Text("出典の表示条件が変わったため、保存した内容は現在表示できません。").bibleTextStyle(.body) }
+                    if state.results?["hidden"].bool == true { Text("資料の利用条件や版が変わったため、保存した比較を現在表示できません。比較記録は変更していません。").bibleTextStyle(.body) }
                     ForEach(Array((state.results?["questions"].array ?? []).enumerated()), id: \.offset) { index, question in
                         DisclosureGroup("質問 \(index + 1)") { Text(question["question"].string ?? "質問を表示できません").bibleTextStyle(.body) }
                     }
@@ -137,9 +138,9 @@ struct SavedComparisonView: View {
                         BibleReadingSurface {
                             VStack(alignment: .leading, spacing: BibleTheme.Space.md) {
                                 BibleSectionHeader(title: "試行 \(index + 1)")
-                                if trial["result"]["hidden"].bool == true { Text("出典の表示条件が変わったため、この回答は表示できません。").bibleTextStyle(.body) }
+                                if trial["result"]["hidden"].bool == true { Text("資料の利用条件や版が変わったため、この回答は現在表示できません。回答記録は変更していません。").bibleTextStyle(.body) }
                                 else if let data = try? JSONEncoder().encode(trial["result"]), let answer = try? JSONDecoder().decode(AnswerResult.self, from: data) { StoredAnswerView(answer: answer) }
-                                else { Text("回答本文は保存されていないか、現在表示できません。").bibleTextStyle(.body) }
+                                else { Text("回答本文は保存されていないか、現在表示できません。保存状態を変える操作ではありません。").bibleTextStyle(.body) }
                             }
                         }
                     }

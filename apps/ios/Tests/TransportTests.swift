@@ -50,60 +50,74 @@ final class TransportTests: XCTestCase, @unchecked Sendable {
         do { let _: JSONValue = try await api.get("/v1/me"); XCTFail() }
         catch { XCTAssertEqual(error as? NetworkFailure, .unauthenticated) }
     }
+    func testShare401EnvelopeCannotReachServerCodeBranch() async throws {
+        for code in ["share_access_required", "share_access_expired", "session_expired"] {
+            let api = try client(status: 401, payload: "{\"error\":{\"code\":\"\(code)\",\"message\":\"not forwarded\"}}")
+            await api.setToken("bcs1_" + String(repeating: "a", count: 64))
+            do { let _: JSONValue = try await api.post("/share/start", body: ["sharedText": "John 1:1"]); XCTFail("401 accepted") }
+            catch { XCTAssertEqual(error as? NetworkFailure, .unauthenticated) }
+        }
+    }
+    func testNon401ShareFailureRetainsServerCode() async throws {
+        let api = try client(status: 409, payload: "{\"error\":{\"code\":\"share_access_changed\"}}")
+        await api.setToken("session")
+        do { let _: JSONValue = try await api.post("/v1/me/share-access", body: ["enabled": true]); XCTFail("409 accepted") }
+        catch { XCTAssertEqual(error as? NetworkFailure, .server(status: 409, code: "share_access_changed")) }
+    }
     func testRateLimitCopyDoesNotClaimDailyBudgetExhaustion() {
         let rate = NetworkFailure.server(status: 429, code: "rate_limited").userMessage
         let budget = NetworkFailure.server(status: 429, code: "daily_budget_exceeded").userMessage
         XCTAssertTrue(rate.contains("時間をおいて")); XCTAssertFalse(rate.contains("リセット"))
-        XCTAssertTrue(budget.contains("リセット")); XCTAssertNotEqual(rate, budget)
+        XCTAssertTrue(budget.contains("再開できる時刻")); XCTAssertNotEqual(rate, budget)
     }
     func testOversizedComparisonDoesNotPromiseResetWillFixIt() {
         let message = NetworkFailure.server(status: 429, code: "comparison_budget_exceeded").userMessage
-        XCTAssertTrue(message.contains("質問数")); XCTAssertTrue(message.contains("最大出力トークン"))
-        XCTAssertTrue(message.contains("リセット後も実行できません")); XCTAssertTrue(message.contains("自動で設定は変更しません"))
+        XCTAssertTrue(message.contains("質問を減らす")); XCTAssertFalse(message.contains("トークン"))
+        XCTAssertTrue(message.contains("設定は自動で変更していません"))
     }
     func testBudgetVerificationDoesNotDiagnoseExpiryOrDailyExhaustion() {
         let message = NetworkFailure.server(status: 503, code: "budget_unverified").userMessage
-        XCTAssertTrue(message.contains("区別はこの応答ではできません"))
-        XCTAssertTrue(message.contains("オーナー"))
-        XCTAssertTrue(message.contains("日次上限の消費を示すものではありません"))
+        XCTAssertTrue(message.contains("管理者に確認を依頼"))
+        XCTAssertTrue(message.contains("上限に達したことを意味しません"))
+        XCTAssertFalse(message.contains("CLI"))
         XCTAssertFalse(message.contains("期限が切れました"))
         XCTAssertFalse(message.contains("リセット時刻"))
     }
-    func testOwnerBudgetRecoveryNamesCLIWithoutClaimingRenewalWasDone() {
+    func testOwnerBudgetRecoveryUsesPlainLanguageWithoutClaimingActionWasDone() {
         let message = AIAvailabilityExplanation.catalogReason("BUDGET_UNVERIFIED")
-        XCTAssertTrue(message.contains("運用CLI")); XCTAssertTrue(message.contains("Free運用では必要に応じて証跡を更新"))
-        XCTAssertTrue(message.contains("準備状況を再確認")); XCTAssertFalse(message.contains("更新しました"))
+        XCTAssertTrue(message.contains("管理者向けの手順")); XCTAssertTrue(message.contains("状態を再確認"))
+        XCTAssertFalse(message.contains("CLI")); XCTAssertFalse(message.contains("Free"))
     }
     func testConnectionAndModelTermsHaveDistinctRecovery() {
         let connection = NetworkFailure.server(status: 503, code: "ai_not_connected").userMessage
         let terms = NetworkFailure.server(status: 503, code: "model_terms_unreviewed").userMessage
-        XCTAssertTrue(connection.contains("接続状態")); XCTAssertTrue(connection.contains("オーナー"))
-        XCTAssertTrue(terms.contains("個人のAI送信への同意とは別")); XCTAssertNotEqual(connection, terms)
-        XCTAssertTrue(AIAvailabilityExplanation.catalogReason("MODEL_TERMS_UNREVIEWED").contains("この画面では同意を行いません"))
+        XCTAssertTrue(connection.contains("管理者")); XCTAssertFalse(connection.contains("CLI"))
+        XCTAssertTrue(terms.contains("ご自身の同意とは別")); XCTAssertNotEqual(connection, terms)
+        XCTAssertTrue(AIAvailabilityExplanation.catalogReason("MODEL_TERMS_UNREVIEWED").contains("この画面では同意できません"))
     }
     func testKnownCatalogReasonsDoNotLeakRawMachineCodes() {
         for code in ["CONNECTION_NOT_VERIFIED", "MODEL_UNCONNECTED", "MODEL_TERMS_UNREVIEWED", "BUDGET_UNVERIFIED", "BUDGET_EXCEEDED", "PAID_APPROVAL_REQUIRED", "MODEL_DISABLED"] {
             XCTAssertFalse(AIAvailabilityExplanation.catalogReason(code).contains(code), code)
         }
-        XCTAssertTrue(AIAvailabilityExplanation.catalogReason("PAID_APPROVAL_REQUIRED").contains("Free運用では有効にできません"))
+        XCTAssertTrue(AIAvailabilityExplanation.catalogReason("PAID_APPROVAL_REQUIRED").contains("管理者が有料利用を許可していない"))
     }
     func testRequestBudgetTooLargeDoesNotPromiseResetFixesIt() {
         let message = NetworkFailure.server(status: 429, code: "budget_exceeded").userMessage
-        XCTAssertTrue(message.contains("最大出力トークン")); XCTAssertTrue(message.contains("リセットを待つだけでは解消しません"))
+        XCTAssertTrue(message.contains("質問を短くする")); XCTAssertFalse(message.contains("トークン"))
     }
-    func testUnknownReasonsRemainExactAndDoNotInventDiagnosis() {
-        XCTAssertTrue(AIAvailabilityExplanation.catalogReason("NEW_REASON_v2").contains("NEW_REASON_v2"))
-        XCTAssertTrue(AIAvailabilityExplanation.catalogReason(nil).contains("理由を確認できません"))
+    func testUnknownReasonsDoNotLeakMachineCodesOrInventDiagnosis() {
+        XCTAssertFalse(AIAvailabilityExplanation.catalogReason("NEW_REASON_v2").contains("NEW_REASON_v2"))
+        XCTAssertTrue(AIAvailabilityExplanation.catalogReason(nil).contains("確認できませんでした"))
         let message = NetworkFailure.server(status: 429, code: "new_quota_reason").userMessage
-        XCTAssertTrue(message.contains("new_quota_reason")); XCTAssertFalse(message.contains("リセット"))
+        XCTAssertFalse(message.contains("new_quota_reason")); XCTAssertFalse(message.contains("リセット"))
     }
     func testExpiredAndStaleComparisonsHaveDifferentRecovery() {
         let expired = NetworkFailure.server(status: 409, code: "comparison_expired").userMessage
         let stale = NetworkFailure.server(status: 409, code: "plan_changed").userMessage
-        XCTAssertTrue(expired.contains("比較の実行期限")); XCTAssertTrue(expired.contains("新しい計画"))
-        XCTAssertTrue(expired.contains("利用量が戻るとは限りません"))
-        XCTAssertTrue(stale.contains("計画と利用枠を確認し直して")); XCTAssertFalse(stale.contains("期限が切れました"))
-        XCTAssertTrue(stale.contains("自動では実行しません"))
+        XCTAssertTrue(expired.contains("有効時間が過ぎました")); XCTAssertTrue(expired.contains("内容をもう一度確認"))
+        XCTAssertTrue(expired.contains("使われた分は戻らないことがあります"))
+        XCTAssertTrue(stale.contains("内容を見直し")); XCTAssertFalse(stale.contains("有効時間が過ぎました"))
+        XCTAssertTrue(stale.contains("自動では開始しません"))
     }
     func testTerminalExpiredFixtureUsesReadableRecovery() throws {
         #if SWIFT_PACKAGE
@@ -112,7 +126,7 @@ final class TransportTests: XCTestCase, @unchecked Sendable {
         let bundle = Bundle(for: Self.self)
         #endif
         let state = try JSONDecoder().decode(ComparisonState.self, from: Data(contentsOf: XCTUnwrap(bundle.url(forResource: "comparison-expired", withExtension: "json"))))
-        XCTAssertTrue(state.terminalMessage.contains("比較の実行期限"))
+        XCTAssertTrue(state.terminalMessage.contains("有効時間が過ぎました"))
         XCTAssertFalse(state.terminalMessage.contains("comparison_expired"))
     }
     func testQuotaFailurePreservesMachineCode() async throws {

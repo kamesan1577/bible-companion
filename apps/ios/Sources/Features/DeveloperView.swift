@@ -39,9 +39,13 @@ struct DeveloperView: View {
             if store.account?.canDebug != true {
                 BibleStateView(title: "開発用アカウント専用です", message: "このアカウントではモデルの設定を変更できません。")
             } else {
+                Section {
+                    Label("開発者専用の画面です", systemImage: "ladybug.fill").bibleForeground(.danger)
+                    Text("設定値や利用状況など、技術的な情報を表示します。通常の読書画面ではありません。").bibleTextStyle(.caption).bibleForeground(.danger)
+                }
                 modelSection
                 comparisonSection
-                if let message { Section { Text(message).bibleTextStyle(.body) } }
+                if let message { Section { developerDiagnostic(message) } }
             }
         }
     }
@@ -127,7 +131,7 @@ Section("2つの設定を比較") {
                     if comparison.storageBlocked { Button("保存した比較情報を再確認") { comparison.restore() }.disabled(operationBusy) }
                     if comparison.recoveryID != nil { Button("元の比較を中止して整理", role: .cancel) { comparison.cancelRecovered() }.disabled(operationBusy) }
                     if operationBusy { ProgressView("比較の処理を確認しています") }
-                    if let notice = comparison.message { Text(notice).bibleTextStyle(.body) }
+                    if let notice = comparison.message { developerDiagnostic(notice) }
                     ForEach(comparison.answers) { trial in
                         DisclosureGroup("試行 \(trial.id + 1)・\(trial.answer.modelId)") {
                             if let plan = comparison.presentationPlan { Text("この結果の対象: \(resultPassageLabel(plan, trial: trial.id))").bibleTextStyle(.caption) }
@@ -171,6 +175,12 @@ Section("2つの設定を比較") {
         Task { await perform { epoch, operation in let _: JSONValue = try await client.put("/v1/developer/model-preference", body: preference); guard isCurrent(epoch), operationGeneration == operation else { return }; message = "自由質問に適用しました。過去の回答は変わりません。" } }
     }
     private func modeLabels(_ plan: JSONValue) -> String { plan["models"].array.map { AnswerMode(rawValue: $0["answerMode"].string ?? "reviewed-claim-selection")?.label ?? "未対応の回答方法" }.joined(separator: " / ") }
+    private func developerDiagnostic(_ text: String) -> some View {
+        VStack(alignment: .leading, spacing: BibleTheme.Space.xs) {
+            Label("開発者専用の診断情報", systemImage: "exclamationmark.triangle.fill").bibleForeground(.danger)
+            Text(text).bibleTextStyle(.body).bibleForeground(.danger)
+        }
+    }
     private func planComparison() {
         guard modesPermitted, !duplicateConfiguration else { message = "回答方法の許可と同意状況を再確認してください。"; return }
         guard let passage = store.selectedPassage, questionLines.allSatisfy({ $0.utf16.count <= 2000 }), let data = try? JSONEncoder().encode(passage), let passageJSON = try? JSONDecoder().decode(JSONValue.self, from: data) else { message = "章節と各質問の長さを確認してください。"; return }

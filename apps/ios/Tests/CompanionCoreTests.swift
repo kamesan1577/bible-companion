@@ -45,6 +45,16 @@ final class CompanionCoreTests: XCTestCase {
     func testRejectOverflowingEndVerse() { XCTAssertThrowsError(try SharedImportParser.parse("ACT 18:24-" + String(repeating: "9", count: 50))) }
     func testRejectOverflowingEndChapter() { XCTAssertThrowsError(try SharedImportParser.parse("ACT 18:24-" + String(repeating: "9", count: 50) + ":7")) }
     func testNeverTruncateMultipleReferences() { XCTAssertThrowsError(try SharedImportParser.parse("ACT 18:24\nJHN 3:16")) }
+    func testYouVersionReferenceAndEquivalentURLAreNotDiscarded() throws {
+        let parsed = try SharedImportParser.parse("ヨハネの福音書 3:16 (JCB)\n選んだ聖書の本文\nhttps://bible.com/bible/83/JHN.3.16.JCB")
+        XCTAssertEqual(parsed.ranges, [Passage(book: "JHN", start: Verse(chapter: 3, verse: 16), end: Verse(chapter: 3, verse: 16))])
+        XCTAssertEqual(parsed.translation, "JCB")
+    }
+    func testDuplicateURLAndConflictingTranslationsRemainConservative() throws {
+        let url = "https://bible.com/bible/83/JHN.3.16.JCB"
+        XCTAssertEqual(try SharedImportParser.parse(url + "\n" + url).ranges.count, 1)
+        XCTAssertThrowsError(try SharedImportParser.parse("JHN 3:16 WEB\n" + url))
+    }
     func testNeverTruncateURLAndDifferentReference() { XCTAssertThrowsError(try SharedImportParser.parse("https://bible.com/bible/83/JHN.3.16.JCB\nACT 18:24")) }
     func testQueueBindsOriginalAccount() {
         let share = PendingShare(ownerID: "a", text: "ACT 18:24")
@@ -58,7 +68,7 @@ final class CompanionCoreTests: XCTestCase {
         XCTAssertTrue(share.isExpired(at: date.addingTimeInterval(86_400)))
     }
     func testCancelledAndReplacedRequestsCannotRender() { var gate = RequestGate(); let first = gate.generation; gate.invalidate(); XCTAssertFalse(gate.accepts(first)); XCTAssertTrue(gate.accepts(gate.generation)) }
-    func testOfflineMessageNeverPromisesAutomaticRetry() { XCTAssertTrue(NetworkFailure.offline.userMessage.contains("再送していません")) }
+    func testOfflineMessageNeverPromisesAutomaticRetry() { XCTAssertTrue(NetworkFailure.offline.userMessage.contains("質問は送信されていません")) }
     func testReviewedMaterialCardsDecodeAndRespectBoundary() throws {
         let cards: [MaterialCard] = try fixture("materials")
         XCTAssertEqual(cards.count, 16)

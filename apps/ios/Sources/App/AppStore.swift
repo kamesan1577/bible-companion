@@ -8,6 +8,7 @@ import CompanionCore
     @Published private(set) var localCleanupRequired = false
     @Published private(set) var exportCleanupRequired = false
     @Published private(set) var isDeleting = false
+    @Published var showAISetup = false
     @Published var privacyNotice: String?
     @Published private(set) var account: Account?
     @Published private(set) var history: [ImportRecord] = []
@@ -22,6 +23,7 @@ import CompanionCore
     @Published private(set) var pendingShares: [PendingShare] = []
     private var importingOwnedShare = false
     private var refreshingShareAI = false
+    private var shareAccessRevision = UUID()
     @Published private(set) var shareNotice: String?
     @Published private(set) var usage: UsageResponse?
     @Published private(set) var consentMutationID: UUID?
@@ -75,7 +77,7 @@ import CompanionCore
     }
     private func configureShareOwner(_ owner: String?) throws {
         do { try ShareInbox.setOwner(owner); shareNotice = nil }
-        catch ShareInbox.InboxError.unavailable { shareNotice = "共有機能の保存領域を利用できません。章節・テキストの手動入力は使えます。署名時のApp Group設定を確認してください。" }
+        catch ShareInbox.InboxError.unavailable { shareNotice = "共有した箇所をこの端末に保存できません。アプリを更新してもう一度共有するか、書名・章・節を入力して開いてください。" }
     }
     func restore() async {
         guard !isTransitioning, !isAuthenticating else { return }
@@ -93,7 +95,7 @@ import CompanionCore
             }
             guard session.expiresAt > Date().timeIntervalSince1970 else {
                 let previous = invalidateLocalSession(); await previous.setToken(nil); refreshInbox()
-                errorMessage = localCleanupRequired ? "ログインの有効期限が切れ、端末内の消去が未完了です。ロック解除後に設定から再試行してください。" : "ログインの有効期限が切れたため、端末内の個人データと待機中の共有を消去しました。サーバーの履歴はログイン後に確認できます。"
+                errorMessage = localCleanupRequired ? "ログインの有効期限が切れ、端末内の消去が未完了です。ロック解除後に設定から再試行してください。" : "ログインの有効期限が切れたため、端末内の個人データと待機中の共有を消去しました。アカウントに保存した履歴は、ログインし直すと確認できます。"
                 return
             }
             // Do not expose a signed-in UI until protected local storage is readable.
@@ -116,7 +118,7 @@ import CompanionCore
         }
     }
     func signIn() {
-        guard endpointConfigured else { errorMessage = "接続先が未設定です。HTTPSサーバーを設定したビルドが必要です。"; return }
+        guard endpointConfigured else { errorMessage = "アプリの接続設定に問題があります。最新版へ更新して、もう一度お試しください。"; return }
         guard !isAuthenticating, !isTransitioning, !localCleanupRequired, !restoreNeedsRetry else { return }
         sessionEpoch = UUID()
         isAuthenticating = true; errorMessage = nil
@@ -160,7 +162,7 @@ import CompanionCore
     /// No later cleanup task may erase a newly authenticated account.
     private func invalidateLocalSession() -> APIClient {
         standardModels.values.forEach { $0.close() }; standardModels.removeAll()
-        sessionEpoch = UUID(); isAuthenticating = false; restoreNeedsRetry = false; consentMutationID = nil; aiPolicyGate.invalidate()
+        sessionEpoch = UUID(); shareAccessRevision = UUID(); isAuthenticating = false; restoreNeedsRetry = false; consentMutationID = nil; aiPolicyGate.invalidate()
         gate.invalidate(); cancelSignIn(); cancelReading(); showQuestion = false; showImport = false
         account = nil; selected = nil; reading = nil; sourceExcerpt = nil; cachedSnapshot = nil; history = []; historyLoading = false; historyChecked = false; historyError = nil; usage = nil; aiPolicy = nil; aiPolicyError = nil; pendingShares = []; nextCursor = nil
         performLocalCleanup()
@@ -173,7 +175,7 @@ import CompanionCore
         var failed = false
         do { try SessionVault.clear() } catch { failed = true }
         do { try PrivateHistoryStore.clear() } catch { failed = true }
-        do { try ShareInbox.clear(); shareNotice = nil } catch ShareInbox.InboxError.unavailable { shareNotice = "共有機能の保存領域を利用できません。章節・テキストは手動で入力できます。" } catch { failed = true }
+        do { try ShareInbox.clear(); shareNotice = nil } catch ShareInbox.InboxError.unavailable { shareNotice = "共有した箇所をこの端末に保存できません。書名・章・節を入力して開くこともできます。" } catch { failed = true }
         do { try PendingQuestionStore.clear() } catch { failed = true }
         do { try ComparisonStore.clear() } catch { failed = true }
         do { try ExportFiles.cleanup(); exportCleanupRequired = false } catch { failed = true; exportCleanupRequired = true }
@@ -187,7 +189,7 @@ import CompanionCore
         if revokeRemote { do { try await previousClient.empty("/v1/logout") } catch { revocationFailed = true } }
         await previousClient.setToken(nil)
         if localCleanupRequired { errorMessage = "端末内データの削除を完了できませんでした。端末のロックを解除して再試行してください。" }
-        else if revocationFailed { errorMessage = "端末からログアウトしました。サーバー側のセッション失効は通信できず未確認です。" }
+        else if revocationFailed { errorMessage = "この端末からはログアウトしました。通信できなかったため、サービス側のログイン停止を確認できていません。接続が戻ったら、ログイン状況を確認してください。" }
     }
     func deletePrivateData(_ intent: DeletionIntent, typedConfirmation: String) async throws {
         guard intent.permits(ownerID: account?.id, epoch: sessionEpoch, typedConfirmation: typedConfirmation), !isTransitioning, !isAuthenticating else { throw NetworkFailure.cancelled }
@@ -201,7 +203,7 @@ import CompanionCore
             guard result.confirms(intent.kind) else { throw NetworkFailure.invalidResponse }
             isTransitioning = false
             await signOut(revokeRemote: intent.kind != .account)
-            privacyNotice = intent.kind == .account ? "アカウントと現在のサーバーデータを削除しました。" : "読書データを削除しました。アカウントは残しています。この端末からはログアウトしました。"
+            privacyNotice = intent.kind == .account ? "アカウントとサービス側の現在のデータを削除しました。" : "読書データを削除しました。アカウントは残しています。この端末からはログアウトしました。"
             if localCleanupRequired { privacyNotice = (privacyNotice ?? "") + " 端末内の削除が未完了です。設定から再試行してください。" }
             privacyNotice = (privacyNotice ?? "") + " 事業者バックアップの消去時期は未確定です。"
         } catch NetworkFailure.server(status: 403, code: "reauthentication_required") {
@@ -210,7 +212,7 @@ import CompanionCore
             guard sessionEpoch == intent.sessionEpoch else { throw error }
             isTransitioning = false
             await signOut()
-            privacyNotice = "サーバーでの削除完了を確認できませんでした。安全のため、この端末からログアウトしました。再ログインして状態を確認してください。削除を自動で繰り返してはいません。"
+            privacyNotice = "サービス側のデータが削除されたか確認できませんでした。この端末からはログアウトしています。ログインし直して記録が残っているか確認してください。削除を自動で繰り返してはいません。"
             throw error
         }
     }
@@ -250,7 +252,7 @@ import CompanionCore
             do { try await Task.sleep(for: .seconds(delay)) } catch { return }
             guard gate.accepts(generation), cachedSnapshot?.expiresAt == snapshot.expiresAt else { return }
             cachedSnapshot = nil; reading = nil
-            errorMessage = "保存した資料の有効期限が切れました。接続して更新してください。"
+            errorMessage = "この参考説明は読み込み直す必要があります。通信を確かめてから更新してください。"
         }
     }
     func loadReading() {
@@ -293,7 +295,7 @@ import CompanionCore
                 } catch {
                     guard gate.accepts(generation) else { return }
                     displayCached(nil, generation: generation)
-                    errorMessage = "端末内の資料キャッシュを更新できませんでした。接続して再確認するまで保存資料は表示しません。"
+                    errorMessage = "参考説明を端末に保存できませんでした。通信を確かめて読み込み直してください。"
                 }
                 let result: ReadingResponse = try await requestClient.get("/v1/imports/\(item.id)/reading", query: [URLQueryItem(name: "rangeIndex", value: String(index)), URLQueryItem(name: "spoilers", value: "false")])
                 guard gate.accepts(generation), selected?.id == item.id, rangeIndex == index else { return }
@@ -303,7 +305,7 @@ import CompanionCore
                 catch OfflineCacheError.ineligible { try? await publicCache.remove(key) }
                 catch {
                     guard gate.accepts(generation) else { return }
-                    errorMessage = "資料は読み込めましたが、この端末へのオフライン保存はできませんでした。"
+                    errorMessage = "参考説明は開けましたが、通信せずに読むための保存はできませんでした。"
                 }
                 guard gate.accepts(generation) else { return }
                 cacheExpiryTask?.cancel(); reading = result; cachedSnapshot = nil; isOffline = false
@@ -329,7 +331,7 @@ import CompanionCore
     func ask(target: Passage? = nil, conversation: Conversation? = nil) { questionTarget = target ?? selectedPassage; questionConversation = target == nil ? (conversation ?? questionConversation) : conversation; showQuestion = true }
     func refreshInbox() {
         do { pendingShares = try ShareInbox.pending().filter { $0.ownerID == nil || $0.ownerID == account?.id }; shareNotice = nil }
-        catch ShareInbox.InboxError.unavailable { shareNotice = "共有機能の保存領域を利用できません。章節・テキストの手動入力は使えます。署名時のApp Group設定を確認してください。" }
+        catch ShareInbox.InboxError.unavailable { shareNotice = "共有した箇所をこの端末に保存できません。アプリを更新してもう一度共有するか、書名・章・節を入力して開いてください。" }
         catch { shareNotice = "共有内容を読み出せません。端末のロックを解除して再確認してください。読み出せなかった内容は消去していません。" }
         // Only a single share already bound to this same account is automatic.
         // Anonymous shares and shares across accounts still require explicit confirmation.
@@ -372,22 +374,23 @@ import CompanionCore
             let value: AIPolicy = try await requestClient.get("/v1/me/ai-policy")
             guard sessionEpoch == epoch, account?.id == owner, !isTransitioning, !isConsentUpdating, aiPolicyGate.accepts(generation) else { return }
             aiPolicy = value
-        } catch { if sessionEpoch == epoch, account?.id == owner, aiPolicyGate.accepts(generation) { aiPolicyError = "AIの回答方法と同意状況を確認できません。再確認してください。" } }
+        } catch { if sessionEpoch == epoch, account?.id == owner, aiPolicyGate.accepts(generation) { aiPolicyError = "AIを使えるか確認できませんでした。通信を確かめて、もう一度お試しください。" } }
     }
     func consent(_ enabled: Bool, expectedEpoch: UUID) async throws {
         guard sessionEpoch == expectedEpoch, account != nil, !isTransitioning, !isConsentUpdating else { throw NetworkFailure.cancelled }
-        let mutation = UUID(); consentMutationID = mutation; aiPolicy = nil; aiPolicyGate.invalidate()
+        let mutation = UUID(); consentMutationID = mutation; shareAccessRevision = UUID(); aiPolicy = nil; aiPolicyGate.invalidate()
         defer { if consentMutationID == mutation { consentMutationID = nil } }
         let requestClient = client
         struct Consent: Codable, Sendable { let workersAi: Bool }
         let response: Consent = try await requestClient.post("/v1/me/consents", body: Consent(workersAi: enabled))
         guard sessionEpoch == expectedEpoch, consentMutationID == mutation, response.workersAi == enabled else { throw NetworkFailure.cancelled }
         consentMutationID = nil
+        if !enabled { try? ShareInbox.clearAIAccess() }
         await loadAIPolicy()
     }
     func consentGrounded(_ enabled: Bool, intent: GroundedConsentIntent) async throws {
         guard intent.permits(ownerID: account?.id, epoch: sessionEpoch, currentPolicy: aiPolicy), !isTransitioning, !isConsentUpdating else { throw NetworkFailure.cancelled }
-        let mutation = UUID(); consentMutationID = mutation; aiPolicy = nil; aiPolicyGate.invalidate()
+        let mutation = UUID(); consentMutationID = mutation; shareAccessRevision = UUID(); aiPolicy = nil; aiPolicyGate.invalidate()
         defer { if consentMutationID == mutation { consentMutationID = nil } }
         let requestClient = client
         var fields: [String: JSONValue] = ["groundedGeneration": .object(["accepted": .bool(enabled), "policyVersion": .string(intent.policy.groundedPolicyVersion)])]
@@ -396,25 +399,35 @@ import CompanionCore
         let response: JSONValue = try await requestClient.post("/v1/me/consents", body: body)
         guard sessionEpoch == intent.sessionEpoch, account?.id == intent.ownerID, consentMutationID == mutation, response["workersAi"].bool != nil, (!enabled || response["workersAi"].bool == true) else { throw NetworkFailure.cancelled }
         consentMutationID = nil
+        if !enabled { try? ShareInbox.clearAIAccess() }
         await loadAIPolicy()
     }
     func enableShareAI(expectedEpoch: UUID) async throws {
-        guard aiPolicy?.shareAiEnabled == true, sessionEpoch == expectedEpoch, let owner = account?.id else { throw NetworkFailure.cancelled }
+        guard aiPolicy?.shareAiEnabled == true, aiPolicy?.permits(.groundedGeneration) == true,
+              !isConsentUpdating, sessionEpoch == expectedEpoch, let owner = account?.id else { throw NetworkFailure.cancelled }
+        let revision = UUID(); shareAccessRevision = revision
+        do { try ShareInbox.setOwner(owner) }
+        catch ShareInbox.InboxError.unavailable { throw ShareAIAccessReadError.appGroupUnavailable }
         let value: ShareAIAccess = try await client.post("/v1/me/share-access", body: ["enabled": true])
-        guard sessionEpoch == expectedEpoch, account?.id == owner, value.isValid(owner: owner) else { throw NetworkFailure.cancelled }
+        guard sessionEpoch == expectedEpoch, account?.id == owner, shareAccessRevision == revision,
+              !isConsentUpdating, aiPolicy?.shareAiEnabled == true, aiPolicy?.permits(.groundedGeneration) == true,
+              value.isValid(owner: owner) else { throw NetworkFailure.cancelled }
         try ShareInbox.saveAIAccess(value)
+        _ = try ShareInbox.verifiedAIAccess(expectedOwner: owner)
         await loadAIPolicy()
     }
     func refreshShareAI() async {
-        guard account != nil, !isTransitioning, !refreshingShareAI else { return }
+        guard account != nil, !isTransitioning, !refreshingShareAI, !isConsentUpdating else { return }
         refreshingShareAI = true; defer { refreshingShareAI = false }
-        let epoch = sessionEpoch
+        let epoch = sessionEpoch; let revision = shareAccessRevision
         await loadAIPolicy()
-        guard sessionEpoch == epoch else { return }
+        guard sessionEpoch == epoch, shareAccessRevision == revision, !isConsentUpdating else { return }
         guard let policy = aiPolicy else { return }
         if policy.shareAiEnabled != true || policy.shareAiConsent != true { try? ShareInbox.clearAIAccess(); return }
-        if let existing = try? ShareInbox.aiAccess(), existing.expiresAt > Date().addingTimeInterval(3600).timeIntervalSince1970 { return }
-        do { try await enableShareAI(expectedEpoch: epoch) } catch { try? ShareInbox.clearAIAccess() }
+        if let existing = try? ShareInbox.verifiedAIAccess(expectedOwner: account?.id), existing.expiresAt > Date().addingTimeInterval(3600).timeIntervalSince1970 { return }
+        do { try await enableShareAI(expectedEpoch: epoch) }
+        catch NetworkFailure.cancelled { return }
+        catch { shareNotice = SharePreparationFailure.message(for: error) }
     }
     func handle(_ error: Error) {
         // The confirmed destructive transition owns its outcome and full cleanup.
@@ -428,7 +441,7 @@ import CompanionCore
                 let expiredClient = invalidateLocalSession()
                 Task { await expiredClient.setToken(nil) }
                 if localCleanupRequired { errorMessage = "ログインが失効しました。端末内の消去が未完了です。ロック解除後に設定から再試行してください。" }
-                else { errorMessage = "ログインが失効したため、端末内の個人データと待機中の共有を消去しました。サーバーの履歴はログイン後に確認できます。" }
+                else { errorMessage = "ログインが失効したため、端末内の個人データと待機中の共有を消去しました。アカウントに保存した履歴は、ログインし直すと確認できます。" }
             }
         } else { errorMessage = "処理を完了できませんでした。端末のロックと接続を確認して再試行してください。" }
     }
@@ -443,6 +456,8 @@ extension AppStore {
         reading = try! JSONDecoder().decode(ReadingResponse.self, from: Data(#"{"passage":{"book":"ACT","start":{"chapter":23,"verse":1},"end":{"chapter":23,"verse":1}},"translation":"JCB","spoilerAllowed":false,"sourceVersion":"fixture-v1","overview":{"contentKind":"curated-reference","text":"描画確認用の資料です。","citations":[],"mode":"source-only","modelInvoked":false},"materialNotice":"固定データ","cache":"fixture","people":[],"places":[],"artworks":[]}"#.utf8))
         sourceExcerpt = "共有元の日本語本文・表示確認用。Original Case Remains.\n" + String(repeating: "長い共有本文を折り畳んで保持します。", count: 20)
         account = try! JSONDecoder().decode(Account.self, from: Data(#"{"id":"00000000-0000-4000-8000-000000000123","display_name":"Fixture reader","role":"reader","canDebug":false}"#.utf8))
+        if ProcessInfo.processInfo.arguments.contains("--qa-screen=initial") { selected = nil; reading = nil; sourceExcerpt = nil; account = nil }
+
     }
 }
 #endif

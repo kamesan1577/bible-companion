@@ -4,8 +4,8 @@ public enum AnswerMode: String, Codable, CaseIterable, Identifiable, Sendable {
     case reviewedClaimSelection = "reviewed-claim-selection"
     case groundedGeneration = "grounded-generation"
     public var id: String { rawValue }
-    public var label: String { self == .groundedGeneration ? "根拠に基づく生成（実験的）" : "編集確認済みの説明から選択" }
-    public static let groundedWarning = "実験的なAI解説です。引用資料と読書範囲を確認しても、説明の正確さや未読の出来事を暗示しないことは保証できません。本文と出典を確認してください。"
+    public var label: String { self == .groundedGeneration ? "資料を使ったAIの説明（試験的）" : "編集確認済みの説明から選択" }
+    public static let groundedWarning = "試験的なAIの説明です。資料や読書範囲を確かめても、内容の正確さや未読の出来事に触れないことは保証できません。説明と出典を確認してください。"
 }
 public struct AIPolicy: Codable, Sendable {
     public struct GroundedConsent: Codable, Sendable { public let accepted: Bool; public let policyVersion: String? }

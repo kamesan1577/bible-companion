@@ -18,11 +18,11 @@ import CompanionCore
         guard !busy, file == nil, !cleanupRequired else { return }
         do {
             guard try PendingQuestionStore.read(owner: ownerID) == nil, try ComparisonStore.read(owner: ownerID) == nil else {
-                message = "確認待ちの質問または比較があります。先に処理状況を確認してください。"; return
+                message = "送信結果を確認中の質問または比較があります。重複を防ぐため、先に履歴で処理結果を確認してください。"; return
             }
-        } catch { message = "処理中の記録を確認できません。ロック解除後に再試行してください。"; return }
+        } catch { message = "送信結果を確認中の質問や比較があるか調べられません。端末のロックを解除してから、もう一度お試しください。"; return }
         let generation = UUID(); attempt = generation
-        busy = true; message = nil; progress = "書き出す範囲を確認しています"
+        busy = true; message = nil; progress = "書き出す記録を確認しています"
         task = Task {
             var writer: PrivateExportAssembler?
             defer { if attempt == generation { busy = false } }
@@ -38,7 +38,7 @@ import CompanionCore
                 while let next = try await output.nextRequest() {
                     try Task.checkCancellation()
                     guard attempt == generation else { throw CancellationError() }
-                    progress = "\(Self.sectionName(next.section))を保存しています（\(pageCount)ページ完了）"
+                    progress = "\(Self.sectionName(next.section))を書き出し用に準備しています（\(pageCount)ページ完了）"
                     var query = [URLQueryItem(name: "snapshotId", value: snapshot.snapshotId), URLQueryItem(name: "section", value: next.section)]
                     if let cursor = next.cursor { query.append(URLQueryItem(name: "cursor", value: cursor)) }
                     let page: ExportPage = try await client.get("/v1/me/export/pages", query: query)
@@ -53,18 +53,18 @@ import CompanionCore
                 do { if let writer { try await writer.discard() } else if attempt == generation { try ExportFiles.cleanup() } } catch { cleanupFailed = true }
                 guard attempt == generation else { return }
                 assembler = cleanupFailed ? writer : nil; file = nil; cleanupRequired = cleanupFailed
-                if cleanupFailed { message = "一時ファイルを削除できません。端末のロックを解除して削除を再試行してください。"; return }
+                if cleanupFailed { message = "端末内の作業用ファイルを削除できませんでした。端末のロックを解除して「端末内の作業用ファイルを削除」を押してください。"; return }
                 switch error {
                 case NetworkFailure.server(status: 409, code: "export_changed"):
-                    message = "作成中に履歴または資料の状態が変わりました。不完全なファイルは削除しました。質問や比較が終わってから再試行してください。"
+                    message = "書き出し中に履歴または資料が更新されたため、ファイルを作り直す必要があります。不完全なファイルは削除しました。質問や比較の処理が終わってから「記録を書き出す」を押してください。"
                 case NetworkFailure.server(status: 413, code: "export_entity_too_large"):
-                    message = "1件の記録が書き出し上限を超えています。内容を切り捨てず、作成を中止しました。"
+                    message = "1件の記録がファイルにできる大きさを超えたため、内容を省かず書き出しを中止して削除しました。記録を変更せず、ファイルも共有していません。"
                 case ExportFailure.expired:
-                    message = "書き出しの有効時間が切れました。もう一度開始してください。"
+                    message = "書き出しの準備に使える時間が過ぎました。「記録を書き出す」をもう一度押してください。"
                 case is CancellationError, NetworkFailure.cancelled:
-                    message = "書き出しを中止しました。"
+                    message = "書き出しを中止して削除しました。"
                 default:
-                    message = "書き出しを完了できませんでした。不完全なファイルは共有しません。接続を確認して再試行してください。"
+                    message = "ファイルを最後まで作成できませんでした。不完全なファイルは共有していません。通信状態を確認して「記録を書き出す」を押してください。"
                 }
             }
         }
@@ -79,7 +79,7 @@ import CompanionCore
             do { if let previous { try await previous.discard() } else if attempt == generation { try ExportFiles.cleanup() } } catch { failed = true }
             guard attempt == generation else { return }
             cleanupRequired = failed; assembler = failed ? previous : nil; busy = false
-            message = failed ? "一時ファイルを削除できません。ロック解除後に削除を再試行してください。" : "一時ファイルを削除しました。"
+            message = failed ? "端末内の作業用ファイルを削除できませんでした。ロックを解除してから、削除をもう一度お試しください。" : "端末内の作業用ファイルを削除しました。"
         }
     }
     private static func sectionName(_ section: String) -> String {
@@ -105,19 +105,19 @@ struct ExportView: View {
         ScrollView {
             BibleReadingColumn {
                 BibleSectionHeader(title: "自分の記録を書き出す", subtitle: "JSONファイル")
-                Text("読書履歴、質問、表示可能な回答、保存した比較、設定を含みます。ログイン情報は含みません。共有先は次の画面で自分で選べます。").bibleTextStyle(.body)
-                Text("質問や比較の実行中は、終わってから開始してください。書き出し中の変更で中断することがあります。アカウント復元用のバックアップではありません。").bibleTextStyle(.caption).bibleForeground(.textSecondary)
+                Text("読書履歴、質問、現在表示できる回答、保存した比較、設定をJSONファイルにまとめます。パスキーなどのログイン情報は含みません。準備後に保存・共有先を選ぶ画面が開くので、保存先や送信先を自分で選んでください。").bibleTextStyle(.body)
+                Text("質問や比較の送信結果を確認中の場合は、履歴で結果を確認してから始めてください。書き出し中に履歴や資料が更新されると、作成をやり直すことがあります。このファイルからアカウントやログイン情報を復元することはできません。").bibleTextStyle(.caption).bibleForeground(.textSecondary)
                 if model.busy {
-                    BibleLoadingView(title: model.progress, message: "ページごとに端末内へ保存しています。")
-                    Button("書き出しを中止", role: .cancel) { model.clear() }
+                    BibleLoadingView(title: model.progress, message: "記録をページごとにこの端末の作業用領域へ準備しています。完了後、共有先を選んで保存してください。")
+                    Button("書き出しを中止して削除", role: .cancel) { model.clear() }
                 } else if model.cleanupRequired {
-                    Button("一時ファイルの削除を再試行", role: .destructive) { model.clear() }
+                    Button("端末内の作業用ファイルを削除", role: .destructive) { model.clear() }
                 } else if model.file != nil {
-                    BibleStateView(title: "準備ができました", message: "質問などの個人データを含みます。共有先を確認してください。", systemImage: "doc")
-                    Button("共有先を選ぶ") { showShare = true }.buttonStyle(.glass)
-                    Button("ファイルを破棄", role: .destructive) { model.clear() }
+                    BibleStateView(title: "準備ができました", message: "質問などの個人データを含むファイルができました。保存・共有先を選ぶと、保存または送信できます。", systemImage: "doc")
+                    Button("保存・共有先を選ぶ") { showShare = true }.buttonStyle(.glass)
+                    Button("ファイルを削除", role: .destructive) { model.clear() }
                 } else {
-                    Button("書き出しを開始") { model.start() }.buttonStyle(.glass)
+                    Button("記録を書き出す") { model.start() }.buttonStyle(.glass)
                 }
                 if let message = model.message { Text(message).bibleTextStyle(.body) }
             }

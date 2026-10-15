@@ -3,9 +3,12 @@ import CompanionCore
 
 struct FirstRunGuide: View {
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject private var store: AppStore
     @State private var step = 0
-    private let titles = ["① 読みたい節を選ぶ", "② 共有ボタンを押す", "③ 聖書コンパニオンを選ぶ"]
-    private let instructions = ["YouVersionで、気になる節をタップ。複数の節も選べます。", "選んだ節のメニューから、四角に上矢印の共有ボタンを押します。", "共有先の「聖書コンパニオン」をタップ。解説がその場で開きます。"]
+    @State private var showPreparation = false
+    var onPrepare: (() -> Void)? = nil
+    private let titles = ["① 最初に準備する", "② YouVersionで節を選んで共有", "③ 解説を読んで質問する"]
+    private let instructions = ["共有を始める前に、アプリで解説を使う準備をします。ログインし、送る情報と利用条件を確認してください。", "YouVersionで読みたい節を選び、共有ボタンを押します。共有先から「聖書コンパニオン」を選んでください。", "共有画面に選んだ箇所の解説が表示されます。気になったことは、その画面から質問できます。"]
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -14,29 +17,38 @@ struct FirstRunGuide: View {
                     Text(titles[step]).bibleTextStyle(.heading)
                     illustration
                     Text(instructions[step]).bibleTextStyle(.body)
-                    if step == 2 { Text("一覧にないときは「その他」→「編集」→聖書コンパニオンを「よく使う項目」に追加。右の三本線を上へ動かすと、次から先頭に出ます。初回だけメインアプリでログインし、「共有画面のAIを有効にする」を押してください。設定後は共有画面で解説と追加質問を利用できます。").bibleTextStyle(.caption) }
-                    Button(step == 2 ? "わかった、読み始める" : "次へ") { if step < 2 { step += 1 } else { dismiss() } }.buttonStyle(.borderedProminent).frame(maxWidth: .infinity)
-                    NavigationLink("まずサンプルを読んでみる") { SampleReadingPreview() }
+                    if step == 0 {
+                        Button("初回準備を始める") { if let onPrepare { onPrepare() } else { showPreparation = true } }
+                            .buttonStyle(.borderedProminent).frame(maxWidth: .infinity)
+                        Text("ログイン画面では、初めての方もパスキーの案内から登録できます。AIの利用条件を確認して同意し、設定の保存が確認できたら、YouVersionから共有してください。").bibleTextStyle(.caption)
+                    }
+                    if step == 1 { Text("共有先の一覧にない場合は、「その他」や編集メニューから追加してください。共有を始めてもアプリ本体へ移動する必要はありません。").bibleTextStyle(.caption) }
+                    if step == 2 { Text("準備前に共有した場合は、共有画面に手順が表示され、選んだ箇所は保持されます。共有画面を閉じてアプリで準備を済ませた後、YouVersionから同じ箇所をもう一度共有してください。").bibleTextStyle(.caption) }
+                    Button(step == 2 ? "ガイドを閉じる" : "次へ") { if step < 2 { step += 1 } else { dismiss() } }.buttonStyle(.borderedProminent).frame(maxWidth: .infinity)
+                    if step == 2 { NavigationLink("まずサンプルを読んでみる") { SampleReadingPreview() } }
                     if step > 0 { Button("戻る") { step -= 1 } }
                 }.padding(BibleTheme.Space.page)
             }.bibleCanvas().navigationTitle("使い方")
                 .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("閉じる") { dismiss() } } }
         }
+        .sheet(isPresented: $showPreparation) { AISetupView().environmentObject(store) }
     }
     private var illustration: some View {
         BibleReadingSurface {
             VStack(alignment: .leading, spacing: BibleTheme.Space.md) {
-                Text(step == 2 ? "共有先" : "YouVersion · 操作のイメージ").bibleTextStyle(.caption)
+                Text(step == 0 ? "聖書コンパニオン · 準備のイメージ" : (step == 2 ? "共有画面" : "YouVersion · 操作のイメージ")).bibleTextStyle(.caption)
                 if step == 0 {
+                    Label("ログイン", systemImage: "person.crop.circle")
+                    Label("送る情報と利用条件を確認", systemImage: "checkmark.shield")
+                    Label("同意して解説を使う", systemImage: "checkmark.circle.fill").foregroundStyle(Color.accentColor)
+                } else if step == 1 {
                     Text("使徒の働き 18章").bibleTextStyle(.body)
                     Text("24節　…").padding().frame(maxWidth: .infinity, alignment: .leading).background(Color.accentColor.opacity(0.15), in: RoundedRectangle(cornerRadius: BibleTheme.Radius.inset))
-                    Label("ここをタップして選ぶ", systemImage: "hand.tap.fill").foregroundStyle(Color.accentColor)
-                } else if step == 1 {
-                    HStack { Label("コピー", systemImage: "doc.on.doc"); Spacer(); Label("共有", systemImage: "square.and.arrow.up").padding().background(Color.accentColor.opacity(0.15), in: RoundedRectangle(cornerRadius: BibleTheme.Radius.inset)) }
-                    Label("このマークを押す", systemImage: "arrow.up").foregroundStyle(Color.accentColor)
+                    Label("節を選んで共有", systemImage: "square.and.arrow.up").foregroundStyle(Color.accentColor)
                 } else {
                     Label("聖書コンパニオン", systemImage: "book.closed.fill").padding().frame(maxWidth: .infinity).background(Color.accentColor.opacity(0.15), in: RoundedRectangle(cornerRadius: BibleTheme.Radius.inset))
-                    Label("これを選ぶ → 解説が開く", systemImage: "hand.tap.fill").foregroundStyle(Color.accentColor)
+                    Label("解説を自動で表示", systemImage: "text.book.closed").foregroundStyle(Color.accentColor)
+                    Text("気になったことを質問").padding().frame(maxWidth: .infinity, alignment: .leading).background(Color.secondary.opacity(0.08), in: RoundedRectangle(cornerRadius: BibleTheme.Radius.inset))
                 }
             }.padding(BibleTheme.Space.md)
         }
@@ -53,14 +65,14 @@ struct SampleReadingPreview: View {
         ScrollView {
             BibleReadingColumn {
                 Text("使徒の働き 18:24–28").bibleTextStyle(.heading)
-                Text("サンプル · 履歴に保存せず、解説を試せます。").bibleTextStyle(.caption)
+                Text("サンプル · 読書履歴には保存されません。").bibleTextStyle(.caption)
                 if let preview {
                     ForEach(Array(preview.items.enumerated()), id: \.offset) { _, item in
                         Text(item.text).bibleTextStyle(.body).textSelection(.enabled)
                         CitationList(citations: item.citations)
                     }
                 } else if let message { Text(message); Button("再読み込み") { Task { await load() } } }
-                else { ProgressView("解説を開いています") }
+                else { ProgressView("サンプルを読み込んでいます") }
                 Text("次はYouVersionで読んだ節を共有してください。").bibleTextStyle(.body)
             }
         }.bibleCanvas().navigationTitle("サンプル").task { await load() }

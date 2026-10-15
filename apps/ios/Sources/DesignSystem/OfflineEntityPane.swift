@@ -13,23 +13,22 @@ struct OfflineEntityPane: View {
     var body: some View {
         VStack(alignment: .leading, spacing: BibleTheme.Space.md) {
             if let result {
-                Text(kind == "person" ? "登場人物・存在" : "この箇所の場所").bibleTextStyle(.heading)
+                Text(kind == "person" ? "この箇所に関係する人物" : "この箇所に関係する場所").bibleTextStyle(.heading)
                 if kind == "place" { OfflineLocationPlot(entities: result.occurrences.map(\.entity)) }
                 if result.occurrences.isEmpty {
-                    Text(kind == "person" ? "この節には人物の索引がありません。章全体を選ぶと、周辺の登場人物を確認できます。" : "この節には場所の索引がありません。章全体を選ぶと、周辺の場所を確認できます。").bibleTextStyle(.body)
+                    Text(kind == "person" ? "この節について表示できる人物情報はありません。章全体を選ぶと、周辺の人物も確認できます。" : "この節について表示できる場所の情報はありません。章全体を選ぶと、周辺の場所も確認できます。").bibleTextStyle(.body)
                 }
                 ForEach(result.occurrences) { item in
                     DisclosureGroup {
-                        Text("索引ID: \(item.entity.id)").bibleTextStyle(.caption).textSelection(.enabled)
-                        Text("同じ名前でも別の索引IDは別人・別地点として扱います。索引の関連だけでは、この節での本人特定や役割を断定できません。").bibleTextStyle(.caption).bibleForeground(.textSecondary)
+                        Text("同じ名前の候補が複数ある場合も、名前だけで同一人物・同一地点とは判断できません。この一覧の関連だけでは、この節での本人特定や役割も断定できません。").bibleTextStyle(.caption).bibleForeground(.textSecondary)
                         if let ask { Button("この\(kind == "person" ? "人物" : "場所")について質問") { ask("\(item.entity.displayName)について、この箇所との関係をやさしく説明してください。") } }
                         if !item.sameBookVerses.isEmpty {
-                            Text("同じ書のほかの登場箇所").bibleTextStyle(.caption)
+                            Text("一覧上で同じ候補に関連づけられた、同じ書の別の箇所").bibleTextStyle(.caption)
                             Text(item.sameBookVerses.prefix(20).map(\.reference).joined(separator: "、")).bibleTextStyle(.body)
                             if item.sameBookVerses.count > 20 { Text("ほか\(item.sameBookVerses.count - 20)箇所").bibleTextStyle(.caption) }
                         }
                         if let coordinate = item.entity.coordinate, coordinate.count == 2 {
-                            Text("同定候補 · 緯度\(coordinate[0].formatted(.number.precision(.fractionLength(3))))、経度\(coordinate[1].formatted(.number.precision(.fractionLength(3))))").bibleTextStyle(.caption)
+                            Text("地図上の参考位置（候補）: 緯度\(coordinate[0].formatted(.number.precision(.fractionLength(3))))、経度\(coordinate[1].formatted(.number.precision(.fractionLength(3))))").bibleTextStyle(.caption)
                             NavigationLink("現代の地図で候補地を見る") { IndexedPlaceMap(entity: item.entity) }
                         }
                     } label: {
@@ -43,19 +42,19 @@ struct OfflineEntityPane: View {
                     }
                 }
                 Toggle("先の登場箇所も見る", isOn: $includeFuture)
-                Text(includeFuture ? "同じ書の未読の箇所も表示しています。" : "ネタバレ防止：選んだ箇所までの登場箇所だけを表示します。").bibleTextStyle(.caption).foregroundStyle(.secondary)
-                DisclosureGroup("索引の出典とライセンス") {
-                    Text("英語KJVの節区分に基づく索引です。各訳との対応は未確認です。関連人物・場所は索引データ上の関連で、本文に名前がある場合と分けて表示します。日本語名がないものは英語名で表示します。").bibleTextStyle(.caption)
+                Text(includeFuture ? "この書の選んだ箇所以降に名前が挙がる箇所も表示しています。" : "選んだ箇所までに名前が挙がる箇所を表示しています。先の内容を見たい場合は上のスイッチをオンにしてください。").bibleTextStyle(.caption).foregroundStyle(.secondary)
+                DisclosureGroup("一覧の出典と利用条件") {
+                    Text("英語のKing James Version（KJV）の節番号をもとにした参考一覧です。日本語訳との対応は確認していません。人物・場所の関連候補は、本文に名前がある場合とは分けて表示します。日本語名がない場合は英語名で表示します。").bibleTextStyle(.caption)
                     Text(result.attribution).bibleTextStyle(.caption)
                     if let url = result.sourceURL { Link("Theographic Bible Metadata · CC BY-SA 4.0", destination: url) }
-                    Text("地理の位置は同定候補です。当時の正確な位置を保証するピンではありません。").bibleTextStyle(.caption)
+                    Text("地図の位置は候補地です。当時の正確な位置を示すものではありません。").bibleTextStyle(.caption)
                 }
             } else if let message { Text(message) }
-            else { ProgressView("索引を開いています") }
+            else { ProgressView("人物・場所の情報を準備しています") }
         }.task(id: passage.label + kind + String(includeFuture)) {
             loading = true; defer { loading = false }
             do { result = try await BundledEntityIndex.shared.lookup(passage, kind: kind, includeFuture: includeFuture) }
-            catch { message = "索引を開けませんでした。アプリの更新を確認してください。" }
+            catch { message = "人物・場所の情報を表示できませんでした。時間をおいて、もう一度お試しください。" }
         }
     }
 }

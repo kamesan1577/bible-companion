@@ -18,4 +18,53 @@ final class ShareAIAccessTests: XCTestCase {
         XCTAssertTrue(String(decoding: data, as: UTF8.self).contains("ownerId"))
         XCTAssertTrue(try JSONDecoder().decode(ShareAIAccess.self, from: data).isValid(owner: owner, at: date))
     }
+
+    func testValidatedCapabilityPreservesOwnerAndExpiryReasons() throws {
+        let live = ShareAIAccess(token: "bcs1_" + String(repeating: "a", count: 64), ownerID: owner, expiresAt: 2003600)
+        let liveData = try JSONEncoder().encode(live)
+        XCTAssertEqual(try ShareAIAccess.validated(from: liveData, owner: owner, at: date).ownerID, owner)
+        XCTAssertThrowsError(try ShareAIAccess.validated(from: liveData, owner: UUID().uuidString, at: date)) {
+            XCTAssertEqual($0 as? ShareAIAccessReadError, .ownerMismatch)
+        }
+        let expired = ShareAIAccess(token: live.token, ownerID: owner, expiresAt: 2000000)
+        XCTAssertThrowsError(try ShareAIAccess.validated(from: JSONEncoder().encode(expired), owner: owner, at: date)) {
+            XCTAssertEqual($0 as? ShareAIAccessReadError, .expired)
+        }
+    }
+
+    func testValidatedCapabilityRejectsCorruptionAndGeneralSessionToken() throws {
+        XCTAssertThrowsError(try ShareAIAccess.validated(from: Data("not json".utf8), owner: owner, at: date)) {
+            XCTAssertEqual($0 as? ShareAIAccessReadError, .corrupted)
+        }
+        let generic = ShareAIAccess(token: "general-session-token", ownerID: owner, expiresAt: 2003600)
+        XCTAssertThrowsError(try ShareAIAccess.validated(from: JSONEncoder().encode(generic), owner: owner, at: date)) {
+            XCTAssertEqual($0 as? ShareAIAccessReadError, .corrupted)
+        }
+        XCTAssertThrowsError(try ShareAIAccess.validated(from: Data(repeating: 0, count: 4097), owner: owner, at: date)) {
+            XCTAssertEqual($0 as? ShareAIAccessReadError, .corrupted)
+        }
+    }
+
+    func testReadReceiptMatchesOnlyCurrentTokenAndStoresOnlyDigest() throws {
+        let token = "bcs1_" + String(repeating: "b", count: 64)
+        let receipt = ShareAIAccessReadReceipt(token: token, readAt: date)
+        let data = try JSONEncoder().encode(receipt)
+        let json = String(decoding: data, as: UTF8.self)
+        XCTAssertFalse(json.contains(token))
+        XCTAssertTrue(json.contains(receipt.tokenDigest))
+        XCTAssertTrue(try ShareAIAccessReadReceipt.matches(data, token: token, at: date.addingTimeInterval(10)))
+        XCTAssertFalse(try ShareAIAccessReadReceipt.matches(data, token: "bcs1_" + String(repeating: "c", count: 64), at: date.addingTimeInterval(10)))
+    }
+
+    func testReadReceiptRejectsInvalidTimeAndMalformedData() throws {
+        let token = "bcs1_" + String(repeating: "b", count: 64)
+        let future = ShareAIAccessReadReceipt(token: token, readAt: date.addingTimeInterval(1))
+        let futureData = try JSONEncoder().encode(future)
+        XCTAssertThrowsError(try ShareAIAccessReadReceipt.matches(futureData, token: token, at: date)) {
+            XCTAssertEqual($0 as? ShareAIAccessReadError, .corrupted)
+        }
+        XCTAssertThrowsError(try ShareAIAccessReadReceipt.matches(Data("{}".utf8), token: token, at: date)) {
+            XCTAssertEqual($0 as? ShareAIAccessReadError, .corrupted)
+        }
+    }
 }

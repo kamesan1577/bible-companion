@@ -22,24 +22,24 @@ struct GroundedConsentView: View {
             Form {
                 Section("AIで解説を読む") {
                     Text("AIは間違えることがあります。解説は本文と出典を確かめながら読んでください。").bibleTextStyle(.body)
-                    Text("質問と関連する読書の文脈をCloudflare Workers AIへ送信し、AIが新しい文章を生成します。引用があることは、説明の正確さや先の内容を含まないことの保証ではありません。").bibleTextStyle(.body)
-                    if intent.policy.shareAiEnabled == true { Text("共有画面でも使えるように、解説・質問専用の24時間の認証をこのアプリと共有拡張だけで利用します。通常のログイン認証は共有しません。いつでも設定から停止できます。").bibleTextStyle(.caption) }
+                    Text("選んだ聖書の箇所、質問、関連する会話をCloudflare Workers AIへ送り、解説を作ります。出典があっても間違いや未読の出来事を含むことがあります。").bibleTextStyle(.body)
+                    if intent.policy.shareAiEnabled == true { Text("YouVersionから開く画面でも解説と質問を使えるよう、専用のログイン情報を端末内で最長24時間保存します。通常のログイン情報はその画面へ渡しません。設定でAIへの送信をやめることもできます。").bibleTextStyle(.caption) }
                     DisclosureGroup("詳しい注意事項") { Text(intent.policy.groundedNoticeJa).bibleTextStyle(.caption) }
                 }
                 Section {
-                    Button(intent.policy.shareAiEnabled == true ? "同意して、共有画面でもAIを使う" : "同意して解説を読む") {
+                    Button("同意して解説を使う") {
                         busy = true
                         Task {
                             defer { busy = false }
                             do { try await store.consentGrounded(true, intent: intent); if intent.policy.shareAiEnabled == true { try await store.enableShareAI(expectedEpoch: intent.sessionEpoch) }; dismiss() }
-                            catch { message = "同意の更新を確認できませんでした。アカウントと説明の版を再確認してください。自動で再送はしていません。" }
+                            catch { message = SharePreparationFailure.message(for: error) }
                         }
                     }.disabled(busy || !intent.permits(ownerID: store.account?.id, epoch: store.sessionEpoch, currentPolicy: store.aiPolicy))
-                    if busy { ProgressView("同意状況を更新しています") }
+                    if busy { ProgressView("解説を使う準備をしています") }
                     if let message { Text(message).bibleTextStyle(.body) }
                 }
             }
-            .bibleCanvas().navigationTitle("生成の注意事項").navigationBarTitleDisplayMode(.inline)
+            .bibleCanvas().navigationTitle("AI解説を使う前に").navigationBarTitleDisplayMode(.inline)
             .toolbar { ToolbarItem(placement: .cancellationAction) { Button("閉じる") { dismiss() }.disabled(busy) } }
             .interactiveDismissDisabled(busy)
         }
@@ -47,14 +47,15 @@ struct GroundedConsentView: View {
 }
 
 struct AnswerBudgetNotice: View {
+    @EnvironmentObject private var store: AppStore
     let policy: JSONValue?
     var body: some View {
-        if let policy, policy != .null {
-            DisclosureGroup("利用枠の計算") {
+        if store.account?.canDebug == true, let policy, policy != .null {
+            DisclosureGroup("開発者専用：利用枠の計算") {
                 Text(policy["budgetBoundVerified"].bool == true ? "検証済みの予約上限を使用しました。実際の請求額とは異なります。" : "予約量は推定です。厳密な使用量や請求額を証明する値ではありません。").bibleTextStyle(.caption)
                 LabeledContent("予約単位", value: policy["reservedBudgetUnits"].display)
                 ForEach(policy["warnings"].array, id: \.self) { Text($0.string ?? "利用枠の注意事項があります。").bibleTextStyle(.caption) }
-            }
+            }.bibleForeground(.danger)
         }
     }
 }

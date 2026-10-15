@@ -14,30 +14,30 @@ struct PassageSubsetPicker: View {
                 if let selection {
                     Section {
                         BibleRangeBadge(text: selection.reading.label)
-                        Text("読書範囲の中で、質問する章節を指定します。章をまたぐ範囲も選べます。").bibleTextStyle(.body)
+                        Text("読書中の箇所から、質問したい章と節を選びます。章をまたぐ場合も指定できます。").bibleTextStyle(.body)
                     }
-                    endpoint("開始", isStart: true, selection: selection)
-                    endpoint("終わり", isStart: false, selection: selection)
+                    endpoint(isStart: true, selection: selection)
+                    endpoint(isStart: false, selection: selection)
                     Section {
                         if selection.isValid {
-                            BibleSectionHeader(title: selection.passage.label, subtitle: "\(selection.passage.verseCount)節を質問の対象にします")
+                            BibleSectionHeader(title: selection.passage.label, subtitle: "この章節について質問します")
                         } else {
                             BibleStateView(title: "開始と終わりを確認してください", message: "終わりの章節を、開始と同じ位置か後にしてください。", systemImage: BibleTheme.Symbol.error)
                         }
-                        BibleScopeNotice(text: "先の情報の上限は、元の読書範囲の\(selection.reading.end.label)のままです。")
+                        BibleScopeNotice(text: "先の出来事を含めない設定は、元の読書箇所の\(selection.reading.end.label)までのままです。")
                         Text(ReferenceSystem.fallbackNotice).bibleTextStyle(.caption)
                     }
-                } else { BibleStateView(title: "範囲を確認できません", message: "読書画面から箇所を選び直してください。") }
+                } else { BibleStateView(title: "質問する箇所を選べません", message: "読書画面に戻り、読みたい箇所を選び直してください。") }
             }
-            .navigationTitle("質問の範囲").navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("質問する箇所").navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("キャンセル") { dismiss() } }
-                ToolbarItem(placement: .confirmationAction) { Button("選択") { if let selection, selection.isValid { onSelect(selection.passage); dismiss() } }.disabled(selection?.isValid != true) }
+                ToolbarItem(placement: .confirmationAction) { Button("この箇所に決める") { if let selection, selection.isValid { onSelect(selection.passage); dismiss() } }.disabled(selection?.isValid != true) }
             }
         }
     }
-    private func endpoint(_ title: String, isStart: Bool, selection: PassageSelection) -> some View {
-        Section(title) {
+    private func endpoint(isStart: Bool, selection: PassageSelection) -> some View {
+        Section(isStart ? "最初の章節" : "最後の章節") {
             Picker("章", selection: Binding(get: { isStart ? self.selection?.start.chapter ?? 1 : self.selection?.end.chapter ?? 1 }, set: { self.selection?.selectChapter($0, isStart: isStart) })) {
                 ForEach(Array(selection.chapters), id: \.self) { Text("\($0)章").tag($0) }
             }

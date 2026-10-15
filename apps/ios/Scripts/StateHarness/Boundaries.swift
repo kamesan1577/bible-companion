@@ -38,10 +38,41 @@ enum SecurityError: Error { case cancelled }
     static var unavailable = false
     static var failClear = false
     static var clears = 0
+    static var capability: ShareAIAccess?
+    static var accessSaveCount = 0
+    static var accessVerifyCount = 0
+    static var failAccessSave = false
+    static var failAccessReadback = false
     static func setOwner(_ value: String?) throws {
         if unavailable { throw InboxError.unavailable }
         if failOwner { throw InjectedFailure.locked }
+        if owner != value { capability = nil }
         owner = value
+    }
+    static func saveAIAccess(_ value: ShareAIAccess) throws {
+        accessSaveCount += 1
+        if failAccessSave { throw ShareAIAccessReadError.writeFailed }
+        guard value.isValid(owner: owner) else { throw ShareAIAccessReadError.ownerMismatch }
+        capability = value
+        _ = try verifiedAIAccess(expectedOwner: value.ownerID)
+    }
+    static func verifiedAIAccess(expectedOwner: String? = nil) throws -> ShareAIAccess {
+        accessVerifyCount += 1
+        if unavailable { throw ShareAIAccessReadError.appGroupUnavailable }
+        if failAccessReadback { throw ShareAIAccessReadError.writeFailed }
+        guard let capability else { throw ShareAIAccessReadError.missing }
+        guard expectedOwner == nil || expectedOwner == owner else { throw ShareAIAccessReadError.ownerMismatch }
+        return try ShareAIAccess.validated(from: JSONEncoder().encode(capability), owner: owner)
+    }
+    static func clearAIAccess() throws {
+        if unavailable { throw ShareAIAccessReadError.appGroupUnavailable }
+        accessClears += 1; capability = nil
+    }
+    static var accessClears = 0
+    static func submissionKey(share: PendingShare, owner: String, ranges: [Passage], translation: String?) throws -> String {
+        // The state harness only needs a stable-shaped idempotency key; it does not
+        // exercise the production SHA-256 derivation.
+        "harness-\(share.id.uuidString)-\(owner)"
     }
     static func pending() throws -> [PendingShare] { if unavailable { throw InboxError.unavailable }; return shares }
     static func remove(_ id: UUID) throws { shares.removeAll { $0.id == id } }
@@ -49,7 +80,7 @@ enum SecurityError: Error { case cancelled }
         clears += 1
         if unavailable { throw InboxError.unavailable }
         if failClear { throw InjectedFailure.locked }
-        owner = nil; shares = []
+        owner = nil; capability = nil; shares = []
     }
 }
 @MainActor enum PendingQuestionStore {

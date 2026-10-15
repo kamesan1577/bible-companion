@@ -30,22 +30,22 @@ struct QuestionView: View {
                         Button { showScopeInfo = true } label: { Image(systemName: "info.circle") }.accessibilityLabel("ネタバレ防止について")
                     }
                     if !model.canUseSelectedMode {
-                        Text("初回だけ、AIへの送信を確認します。").bibleTextStyle(.body)
+                        Text("初めてAIへ質問を送る前に、送信内容を確認できます。").bibleTextStyle(.body)
                         if let policy = store.aiPolicy, let owner = store.account, policy.allowedAnswerModes.contains(.groundedGeneration) {
                             Button("確認して質問する") { consentIntent = GroundedConsentIntent(ownerID: owner.id, sessionEpoch: store.sessionEpoch, policy: policy) }.buttonStyle(.borderedProminent)
-                        } else { Text(model.policyError ?? "AIの準備状況を確認しています。").bibleTextStyle(.caption); Button("再確認") { Task { await model.loadPolicy() } } }
+                        } else { Text(model.policyError ?? "AIに質問できるか確認しています。").bibleTextStyle(.caption); Button("再確認") { Task { await model.loadPolicy() } } }
                     }
                     if model.answer == nil && !model.isRunning {
                         Text("気になったことを聞いてください。").bibleTextStyle(.body)
                         Button("登場人物は誰？") { model.draft = "この箇所に登場する人物と、その役割を教えてください。" }
                         Button("背景を教えて") { model.draft = "この箇所の背景を、やさしく説明してください。" }
                     }
-                    if model.isRunning { ProgressView("回答を考えています"); Button("中止") { model.cancel() } }
+                    if model.isRunning { ProgressView("回答を準備しています"); Button("回答の準備をやめる") { model.cancel() } }
                     if let error = model.errorMessage { Text(error).bibleTextStyle(.body) }
-                    if model.needsStatusCheck { Button(model.isCheckingStatus ? "確認中" : "送信した回答を確認") { Task { await model.checkStatus() } }.disabled(model.isCheckingStatus || model.isRunning) }
+                    if model.needsStatusCheck { Button(model.isCheckingStatus ? "確認しています…" : "質問の状況を確認") { Task { await model.checkStatus() } }.disabled(model.isCheckingStatus || model.isRunning) }
                     if let answer = model.answer {
                         Text(answer.answer).bibleTextStyle(.body).textSelection(.enabled)
-                        Text("AIによる回答 · 本文と出典を確かめてください").bibleTextStyle(.caption).bibleForeground(.textSecondary)
+                        Text("AIの回答です。本文と出典もあわせてお確かめください。").bibleTextStyle(.caption).bibleForeground(.textSecondary)
                         DisclosureGroup("出典") { CitationList(citations: answer.citations) }
                     }
                     DisclosureGroup("質問する箇所を変更") {
@@ -80,9 +80,12 @@ struct QuestionView: View {
         }
     }
     private var composer: some View {
-        HStack(alignment: .bottom, spacing: BibleTheme.Space.sm) {
-            TextField("質問を入力", text: $model.draft, axis: .vertical).accessibilityIdentifier("question-draft").focused($composerFocused).lineLimit(1...4).bibleTextStyle(.body).disabled(model.isRunning).submitLabel(.send).onSubmit { if canSend { model.send(target: target) } }
-            Button { model.send(target: target) } label: { Image(systemName: "arrow.up.circle.fill").bibleTextStyle(.title).frame(minWidth: 44, minHeight: 44) }.accessibilityLabel("質問を送る").disabled(!canSend)
+        VStack(alignment: .trailing, spacing: BibleTheme.Space.xs) {
+            if model.draft.utf16.count > 2000 { Text("質問は2,000文字以内にしてください。").bibleTextStyle(.caption).bibleForeground(.danger).frame(maxWidth: .infinity, alignment: .leading) }
+            HStack(alignment: .bottom, spacing: BibleTheme.Space.sm) {
+                TextField("質問を入力", text: $model.draft, axis: .vertical).accessibilityIdentifier("question-draft").focused($composerFocused).lineLimit(1...4).bibleTextStyle(.body).disabled(model.isRunning || model.needsStatusCheck || model.isCheckingStatus).submitLabel(.send).onSubmit { if canSend { model.send(target: target) } }
+                Button { model.send(target: target) } label: { Image(systemName: "arrow.up.circle.fill").bibleTextStyle(.title).frame(minWidth: 44, minHeight: 44) }.accessibilityLabel("質問を送る").disabled(!canSend)
+            }
         }.padding(BibleTheme.Space.md).bibleCanvas()
     }
 }

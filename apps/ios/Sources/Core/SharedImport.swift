@@ -18,8 +18,18 @@ public enum SharedImportParser {
             }
         }
         let urlReferences = matches(#"https://(?:www\.)?(?:bible\.com|youversion\.com)/[^\s<>]+"#, in: text)
-        // Delegate combined/multiple references to the strict server parser; never truncate them locally.
-        guard referenceLines.count + urlReferences.count <= 1 else { throw ParseError.unsupported }
+        // YouVersion commonly shares both a displayed reference and the URL for that same passage.
+        // Accept equivalent duplicates only; distinct passages still go to strict server parsing.
+        if referenceLines.count + urlReferences.count > 1 {
+            let copies = try (referenceLines + urlReferences.map { $0[0] }).map { try parse($0) }
+            guard let first = copies.first, copies.allSatisfy({ $0.ranges == first.ranges }) else { throw ParseError.unsupported }
+            let translations = Set(copies.compactMap(\.translation))
+            guard translations.count <= 1 else { throw ParseError.unsupported }
+            let translation = translations.first
+            return ParsedImport(ranges: first.ranges, translation: translation,
+                sourceUrl: copies.compactMap(\.sourceUrl).first, needsConfirmation: translation == nil,
+                warnings: translation == nil ? ["訳名を読み取れませんでした。保存する前に確認してください。"] : [])
+        }
         if let match = matches(#"https://(?:www\.)?(?:bible\.com|youversion\.com)/[^\s<>]+"#, in: text).first,
            let url = URL(string: match[0].trimmingCharacters(in: CharacterSet(charactersIn: ")）。，"))),
            let path = matches(#"^/(?:[a-z]{2}/)?bible/\d+/([1-3]?[A-Z]{2,3})\.(\d+)\.(\d+)(?:-(?:(\d+)\.)?(\d+))?(?:\.([A-Z0-9]+))?/?$"#, in: url.path).first {
@@ -84,25 +94,25 @@ public enum NetworkFailure: Error, Equatable, Sendable {
     case unconfigured, insecureEndpoint, unauthenticated, offline, invalidResponse, server(status: Int, code: String), cancelled
     public var userMessage: String {
         switch self {
-        case .unconfigured: return "サーバーの接続先が未設定です。設定済みの構成でビルドしてください。"
-        case .insecureEndpoint: return "接続先には有効な HTTPS アドレスが必要です。"
-        case .unauthenticated: return "ログインし直してください。別のアカウントへ自動送信はしません。"
-        case .offline: return "通信できません。保存済みの読書履歴は確認できます。質問は再送していません。"
-        case .invalidResponse: return "応答を読み取れませんでした。"
-        case .cancelled: return "中止しました。処理や利用量が発生している場合があります。"
+        case .unconfigured: return "現在この機能を利用できません。アプリの管理者に設定を確認してもらってください。"
+        case .insecureEndpoint: return "安全な接続を確認できないため、処理を中止しました。アプリの管理者にお問い合わせください。"
+        case .unauthenticated: return "ログイン状態を確認できません。ログインし直してください。別のアカウントへ自動送信はしません。"
+        case .offline: return "インターネットに接続できません。保存済みの読書履歴は確認できますが、質問は送信されていません。接続後にもう一度お試しください。"
+        case .invalidResponse: return "内容を確認できなかったため、処理を中止しました。時間をおいてからもう一度お試しください。"
+        case .cancelled: return "処理を中止しました。利用状況に反映される場合があります。"
         case .server(let status, let code):
-            if code == "comparison_budget_exceeded" { return "比較の全体量が利用枠を超えています。質問数や最大出力トークンを減らし、残りの利用枠を確認してから新しい計画を確認してください。計画自体が大きすぎる場合、リセット後も実行できません。自動で設定は変更しません。" }
-            if status == 429 && code == "rate_limited" { return "短時間にリクエストが集中しています。少し時間をおいてから確認してください。自動で再送はしていません。" }
-            if status == 429 && code == "daily_budget_exceeded" { return "今回の処理に必要な利用枠が足りません。個人用とアプリ全体の両方の枠で制限されています。設定で利用状況と次のリセット時刻を確認してください。" }
+            if code == "comparison_budget_exceeded" { return "一度に扱う内容が大きく、今回は比較を進められませんでした。質問を減らすか、利用状況を確認して新しい内容をお試しください。設定は自動で変更していません。" }
+            if status == 429 && code == "rate_limited" { return "利用が集中しています。少し時間をおいてから、もう一度お試しください。自動でやり直してはいません。" }
+            if status == 429 && code == "daily_budget_exceeded" { return "利用上限に達したため、処理を続けられません。設定の利用状況から、再開できる時刻を確認してください。" }
             if let explanation = AIAvailabilityExplanation.message(for: code) { return explanation }
-            if code == "grounded_consent_required" { return "実験的なAI解説の注意事項を、設定で確認して同意してください。" }
-            if code == "answer_mode_disabled" { return "この回答方法は現在利用できません。利用可能な方法を確認してください。自動で別の方法へ切り替えません。" }
+            if code == "grounded_consent_required" { return "試験的なAIの説明を使うには、設定の注意事項を読み、利用に同意してください。" }
+            if code == "answer_mode_disabled" { return "選んだ説明方法は現在使えません。選べる方法を確認してください。別の方法へ自動では切り替えません。" }
             if code == "invalid_consent_policy" { return "注意事項が更新されました。設定で最新版を読み直してください。" }
-            if code == "ai_consent_required" { return "AIへの送信を設定で確認してください。" }
-            if code == "comparison_expired" { return "比較の実行期限が切れました。終了した比較の状態と利用量を確認し、続ける場合は新しい計画を確認してください。実行済みの利用量が戻るとは限りません。" }
-            if code == "plan_changed" { return "比較の条件または検証資料が変わり、前の確認を利用できません。現在の条件で計画と利用枠を確認し直してください。自動では実行しません。" }
-            if code == "source_policy_changed" { return "資料が更新されました。オンラインで読み直してください。" }
-            return "処理を完了できませんでした（\(code)）。内容を保ったまま、状態を確認できます。"
+            if code == "ai_consent_required" { return "AIを使う前に、設定で利用を許可してください。" }
+            if code == "comparison_expired" { return "この比較の有効時間が過ぎました。状態と利用状況を確認し、続ける場合は内容をもう一度確認してください。すでに使われた分は戻らないことがあります。" }
+            if code == "plan_changed" { return "確認後に条件が変わったため、処理を始められません。内容を見直し、もう一度確認してください。自動では開始しません。" }
+            if code == "source_policy_changed" { return "資料が更新されました。最新の内容を読み直してから、もう一度お試しください。" }
+            return "処理を完了できませんでした。内容は自動で変更・再送していません。時間をおいてから、もう一度お試しください。"
         }
     }
 }
@@ -126,27 +136,27 @@ public enum AIAvailabilityExplanation {
         switch code {
         case "ai_not_connected", "model_unconnected", "CONNECTION_NOT_VERIFIED", "MODEL_UNCONNECTED":
             return owner
-                ? "AIの接続が有効ではありません。運用CLIで初期設定と接続状態を確認してください。"
-                : "AIの接続が有効ではありません。オーナーに初期設定と接続状態の確認を依頼してください。「資料のみ」で利用可能な出典を確認できます。"
+                ? "AI機能の準備ができていません。管理者向けの設定を確認してください。"
+                : "AI機能は現在利用できません。管理者に準備状況の確認を依頼してください。「資料のみ」を選ぶと、利用できる出典を確認できます。"
         case "model_terms_unreviewed", "MODEL_TERMS_UNREVIEWED":
             return owner
-                ? "現在のモデル規約の確認が必要です。運用手順に沿って規約を確認してください。この画面では同意を行いません。"
-                : "現在のモデル規約が確認されていません。オーナーに確認を依頼してください。個人のAI送信への同意とは別の確認です。"
+                ? "利用前にAIの利用条件を確認する必要があります。管理者向けの手順で確認してください。この画面では同意できません。"
+                : "AIの利用条件がまだ確認されていません。管理者に確認を依頼してください。これはAI送信に関するご自身の同意とは別の確認です。"
         case "budget_unverified", "BUDGET_UNVERIFIED":
             return owner
-                ? "利用枠の検証資料が有効と確認できません。初期設定・期限切れ・失効などの区別はこの応答ではできません。運用CLIで資料を確認し、Free運用では必要に応じて証跡を更新してください。更新後は準備状況を再確認してください。"
-                : "利用枠の検証資料が有効と確認できません。初期設定・期限切れ・失効などの区別はこの応答ではできません。オーナーに確認を依頼してください。日次上限の消費を示すものではありません。「資料のみ」で利用可能な出典を確認できます。"
+                ? "利用状況を確認する資料が整っていません。管理者向けの手順で確認し、必要な対応の後に状態を再確認してください。"
+                : "利用状況を確認できないため、AIを利用できません。管理者に確認を依頼してください。これは利用上限に達したことを意味しません。「資料のみ」を選ぶと、利用できる出典を確認できます。"
         case "budget_exceeded", "BUDGET_EXCEEDED":
-            return "今回の設定で必要な利用枠が足りません。最大出力トークンや質問の量を減らし、利用枠を再確認してください。計画が上限を超える場合、リセットを待つだけでは解消しません。"
+            return "この内容を扱うには利用枠が足りません。質問を短くするか、内容を減らして利用状況を確認してください。内容が大きすぎる場合は、利用状況が戻っても扱えないことがあります。"
         case "PAID_APPROVAL_REQUIRED":
-            return "有料利用の承認がないため利用できません。Free運用では有効にできません。この画面では有料利用を承認しません。"
+            return "管理者が有料利用を許可していないため、この機能は使えません。この画面から許可することはできません。"
         case "model_disabled", "MODEL_DISABLED":
-            return "このモデルは現在の利用条件では許可されていません。オーナーがモデルの利用区分と運用設定を確認してください。"
+            return "このAIは現在利用できません。管理者に利用設定を確認してもらってください。"
         default: return nil
         }
     }
     public static func catalogReason(_ code: String?) -> String {
-        guard let code else { return "利用できない理由を確認できませんでした。" }
-        return message(for: code, owner: true) ?? "利用不可（\(code)）。運用設定を確認してください。"
+        guard let code else { return "利用できる状態か確認できませんでした。管理者に設定を確認してもらってください。" }
+        return message(for: code, owner: true) ?? "現在利用できない状態です。管理者に設定を確認してもらってください。"
     }
 }

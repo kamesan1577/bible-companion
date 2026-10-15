@@ -19,7 +19,7 @@ struct SharedScriptureHeader: View {
     var body: some View {
         VStack(alignment: .leading, spacing: BibleTheme.Space.xs) {
             HStack {
-                Text("\(passage.label) · \(translation ?? "訳未確認")").bibleTextStyle(.caption)
+                Text("\(passage.label) · \(translation ?? "訳名なし")").bibleTextStyle(.caption)
                 Spacer()
                 if !compact, bodyText != nil {
                     Button { expanded.toggle() } label: { Text("本文").bibleTextStyle(.caption) }.accessibilityLabel(expanded ? "折り畳む" : "本文を展開").frame(minWidth: BibleTheme.Layout.minimumTouchTarget, minHeight: BibleTheme.Layout.minimumTouchTarget)

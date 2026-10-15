@@ -24,7 +24,7 @@ private func api() throws -> APIClient {
     let client = try api(); await client.setToken("synthetic")
     let item = try JSONDecoder().decode(ImportRecord.self, from: fixture("import"))
     let question = QuestionModel(ownerID: account.id, client: client, item: item, rangeIndex: 0)
-    question.draft = "範囲の資料"; question.send(target: item.ranges[0])
+    question.sourceOnly = true; question.draft = "範囲の資料"; question.send(target: item.ranges[0])
     try await waitUntil { !question.isRunning }
     precondition(question.needsStatusCheck)
     let requestID = question.requestID
@@ -114,7 +114,7 @@ private final class DailyState: @unchecked Sendable {
         if path == "/v1/me" { return (200, Data(#"{"user":{"id":"11111111-1111-4111-8111-111111111111","display_name":"Test","role":"owner"}}"#.utf8)) }
         if path == "/v1/conversations" { return (200, try fixture("conversation")) }
         if path.hasSuffix("/questions") {
-            let body = try JSONDecoder().decode(JSONValue.self, from: request.httpBody!)
+            let body = try JSONDecoder().decode(JSONValue.self, from: requestBodyData(request))
             return (200, try JSONEncoder().encode(JSONValue.object(["requestId": body["requestId"], "status": .string("running"), "result": .null])))
         }
         if path.hasPrefix("/v1/requests/") {
@@ -132,7 +132,7 @@ private final class DailyState: @unchecked Sendable {
         }
         if path.hasSuffix("/steps") {
             lock.withLock { steps += 1 }
-            let body = try JSONDecoder().decode(JSONValue.self, from: request.httpBody!)
+            let body = try JSONDecoder().decode(JSONValue.self, from: requestBodyData(request))
             if body["trialIndex"] == .number(0) { return (200, try currentComparison("comparison-step", nested: true)) }
             if completeRemaining {
                 var object = try JSONSerialization.jsonObject(with: currentComparison("comparison-step", nested: true)) as! [String: Any]

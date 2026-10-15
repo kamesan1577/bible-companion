@@ -23,7 +23,7 @@ struct MaterialCardView: View {
                         if let statement = card.details["rightsStatement"].string { Text(statement).bibleTextStyle(.caption) }
                         ForEach(card.provenance) { source in
                             if let url = source.safeURL { Link(source.title, destination: url) }
-                            Text("\(source.publisher) · \(source.license) · 確認 \(source.checkedAt)").bibleTextStyle(.caption).bibleForeground(.textSecondary)
+                            Text("\(source.publisher) · \(source.license) · 情報を確認した日: \(source.checkedAt)").bibleTextStyle(.caption).bibleForeground(.textSecondary)
                             if let attribution = source.attribution { Text(attribution).bibleTextStyle(.caption) }
                             if let url = source.safeLicenseURL { Link("ライセンスを確認", destination: url) }
                         }
@@ -41,7 +41,7 @@ private struct PublicArtworkImage: View {
     var body: some View {
         Group {
             if let image { Image(uiImage: image).resizable().scaledToFit().accessibilityLabel(title) }
-            else if failed { Label("画像を読み込めませんでした。出典から作品を確認できます。", systemImage: BibleTheme.Symbol.art).bibleTextStyle(.caption) }
+            else if failed { Label("作品画像を表示できません。下の「出典と権利」から作品を確認できます。", systemImage: BibleTheme.Symbol.art).bibleTextStyle(.caption) }
             else { ProgressView("作品画像を読み込んでいます") }
         }
         .task(id: url) {

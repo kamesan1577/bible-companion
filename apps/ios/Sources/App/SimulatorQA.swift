@@ -13,8 +13,29 @@ struct SimulatorQA: View {
         _client = State(initialValue: try! APIClient(baseURL: URL(string: "https://fixture.example.org")!, configuration: config))
         item = try! JSONDecoder().decode(ImportRecord.self, from: Data(#"{"id":"00000000-0000-4000-8000-000000000123","idempotencyKey":"00000000-0000-4000-8000-000000000123","ranges":[{"book":"ACT","start":{"chapter":23,"verse":1},"end":{"chapter":23,"verse":1}}],"translation":"JCB","createdAt":0}"#.utf8))
     }
+    private var snapshotScreen: String? {
+        ProcessInfo.processInfo.arguments.first(where: { $0.hasPrefix("--qa-screen=") }).map { String($0.dropFirst("--qa-screen=".count)) }
+    }
+    @ViewBuilder private func snapshot(_ screen: String) -> some View {
+        switch screen {
+        case "initial", "reading": ReadingView()
+        case "settings": SettingsView()
+        case "setup": AISetupView()
+        case "guide": FirstRunGuide()
+        case "question": QuestionView(ownerID: item.id, client: client, item: item, rangeIndex: 0, target: item.ranges[0])
+        case "consent":
+            if let owner = store.account, let policy = store.aiPolicy {
+                GroundedConsentView(intent: GroundedConsentIntent(ownerID: owner.id, sessionEpoch: store.sessionEpoch, policy: policy))
+            }
+        default: Text("未定義の検証画面です").bibleTextStyle(.body)
+        }
+    }
     var body: some View {
         NavigationStack {
+            if let snapshotScreen {
+                if ready { snapshot(snapshotScreen) }
+                else { ProgressView("固定データを読み込んでいます") }
+            } else {
             List {
                 Text("Simulator固定データ · 通信・実認証なし").bibleTextStyle(.caption)
                 if ready {
@@ -29,7 +50,10 @@ struct SimulatorQA: View {
                 NavigationLink("使い方") { FirstRunGuide() }
                 ShareLink("実際の共有拡張を開く", item: URL(string: "https://www.bible.com/bible/83/ACT.23.1.JCB")!)
             }.navigationTitle("描画確認").bibleCanvas()
-        }.task { await client.setToken("simulator-fixture-only"); store.configureSimulatorQA(client: client); ready = true }
+            }
+        }
+        .sheet(isPresented: $store.showAISetup) { AISetupView().environmentObject(store) }
+        .task { await client.setToken("simulator-fixture-only"); store.configureSimulatorQA(client: client); await store.loadAIPolicy(); ready = true }
     }
 }
 private final class SimulatorQAProtocol: URLProtocol, @unchecked Sendable {
@@ -42,7 +66,8 @@ private final class SimulatorQAProtocol: URLProtocol, @unchecked Sendable {
     override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
     override func startLoading() {
         guard let url = request.url, url.host == "fixture.example.org" else { client?.urlProtocol(self, didFailWithError: URLError(.unsupportedURL)); return }
-        let policy = #"{"allowedAnswerModes":["grounded-generation"],"defaultAnswerMode":"grounded-generation","groundedPolicyVersion":"fixture-v1","groundedNoticeJa":"固定データ","workersAiConsent":true,"shareAiEnabled":false,"shareAiConsent":false,"groundedConsent":{"accepted":true,"policyVersion":"fixture-v1"}}"#
+        var policy = #"{"allowedAnswerModes":["grounded-generation"],"defaultAnswerMode":"grounded-generation","groundedPolicyVersion":"fixture-v1","groundedNoticeJa":"固定データ","workersAiConsent":true,"shareAiEnabled":false,"shareAiConsent":false,"groundedConsent":{"accepted":true,"policyVersion":"fixture-v1"}}"#
+        if ProcessInfo.processInfo.arguments.contains("--qa-share-enabled") { policy = policy.replacingOccurrences(of: "\"shareAiEnabled\":false", with: "\"shareAiEnabled\":true") }
         var bodyData = request.httpBody ?? Data()
         if bodyData.isEmpty, let stream = request.httpBodyStream {
             stream.open(); defer { stream.close() }; var bytes = [UInt8](repeating: 0, count: 1024)
