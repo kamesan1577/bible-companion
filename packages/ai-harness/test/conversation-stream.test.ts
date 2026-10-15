@@ -116,5 +116,7 @@ describe('screenshot question regressions and observed streaming', () => {
       allowGeneralKnowledge: true,
     });
     expect(request.history).toHaveLength(1);
+    expect(request.messages[0].content).not.toContain('根拠がない場合は不足と答えます。');
+    expect(request.messages[0].content).toContain('出典未確認の説明を分けます');
   });
 });

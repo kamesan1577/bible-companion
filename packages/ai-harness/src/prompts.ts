@@ -62,10 +62,15 @@ export function buildMessages(
   };
   const general = mode === 'grounded-generation' && allowGeneralKnowledge;
   const system = general
-    ? base.replace(
-        '記憶や訓練データから資料にない事件、人物、地理、絵画、典拠を補いません。',
-        '資料で確認できる説明と、出典未確認の一般知識を分けます。',
-      )
+    ? base
+        .replace(
+          '記憶や訓練データから資料にない事件、人物、地理、絵画、典拠を補いません。',
+          '資料で確認できる説明と、出典未確認の一般知識を分けます。',
+        )
+        .replace(
+          '根拠がない場合は不足と答えます。',
+          '資料で確かめられる範囲と出典未確認の説明を分けます。どちらでも質問に答えられない場合だけ、不足と答えます。',
+        )
     : base;
   const extra = general
     ? '\n資料だけで答えを確認できない部分は、任意のgeneralText（最大600文字）に一般的な説明として書けます。generalTextには引用、出典URL、確認済みという表現を付けません。不確かな点は断定しません。ネタバレ防止が有効なら未読の出来事・人物の結末を言わず、必要ならspoilerと返します。資料がなくても一般的な用語の説明はできます。claimsは従来どおり完全一致の根拠がある主張だけです。generalTextだけで答える場合もstatusはanswer、claimsは空です。'

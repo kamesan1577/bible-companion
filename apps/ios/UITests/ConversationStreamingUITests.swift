@@ -49,7 +49,7 @@ final class ConversationStreamingUITests: XCTestCase {
         app.buttons["同じ質問をもう一度送る"].tap()
         expectation(for:NSPredicate(format:"exists == false"),evaluatedWith:app.buttons["回答の準備をやめる"]);waitForExpectations(timeout:12)
         XCTAssertTrue(app.staticTexts["フェリクスはローマの総督で、パウロの訴えを審理した人物です。"].exists)
-        XCTAssertEqual(app.staticTexts["Who is Felix?"].count, 1)
+        XCTAssertEqual(app.staticTexts.matching(NSPredicate(format: "label == %@", "Who is Felix?")).count, 1)
         field.tap();field.typeText("His wife?");send.tap()
         expectation(for:NSPredicate(format:"exists == false"),evaluatedWith:app.buttons["回答の準備をやめる"]);waitForExpectations(timeout:12)
         XCTAssertTrue(app.staticTexts["ドルシラはフェリクスの妻です。"].exists)
