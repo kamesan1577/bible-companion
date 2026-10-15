@@ -247,7 +247,86 @@ final class ReadingInteractionUITests: XCTestCase {
         XCTAssertTrue(app.buttons["続けて質問する"].exists)
         attach(app, "single-ai-action-explanation-result")
     }
+    @MainActor func testEntityCardAndMapPreservation() {
+        let app = XCUIApplication()
+        app.launchArguments = ["--simulator-qa", "--qa-screen=entity-ui-baseline"]; app.launch()
+        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
+        let originalTitle = app.staticTexts["アポロ：エペソに来る"]
+        scrollTo(originalTitle, app: app)
+        XCTAssertTrue(originalTitle.isHittable)
+        attach(app, "baseline-018-person-card")
+        app.buttons["地図"].tap()
+        let mapLink = app.buttons["地図で概略位置を確認"].firstMatch
+        scrollTo(mapLink, app: app)
+        attach(app, "baseline-018-place-card")
+        mapLink.tap()
+        XCTAssertTrue(app.staticTexts["コリント"].firstMatch.waitForExistence(timeout: 5))
+        Thread.sleep(forTimeInterval: 3)
+        attach(app, "baseline-018-mapkit-map")
+        app.terminate()
+        app.launchArguments = ["--simulator-qa", "--qa-screen=entity-pilot-reading"]; app.launch()
+        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
+        XCTAssertTrue(originalTitle.waitForExistence(timeout: 5))
+        attach(app, "candidate-person-card-preserved")
+        let detail = app.buttons["entity-detail-person-apollos-act18-introduction"]
+        scrollTo(detail, app: app); detail.tap()
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "雄弁で聖書に詳しい")).firstMatch.waitForExistence(timeout: 5))
+        attach(app, "candidate-apollos-description-from-card")
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        app.buttons["地図"].tap()
+        XCTAssertTrue(mapLink.waitForExistence(timeout: 5))
+        attach(app, "candidate-place-card-preserved")
+        mapLink.tap(); Thread.sleep(forTimeInterval: 3)
+        attach(app, "candidate-mapkit-map-preserved")
+        let mapDetail = app.buttons["map-entity-detail-place-corinth"]
+        scrollTo(mapDetail, app: app); mapDetail.tap()
+        XCTAssertTrue(app.staticTexts["現在の場所"].waitForExistence(timeout: 5))
+        attach(app, "candidate-corinth-description-from-map")
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        let alexDetail = app.buttons["entity-detail-place:alexandria_46"]
+        scrollTo(alexDetail, app: app); alexDetail.tap()
+        XCTAssertTrue(app.staticTexts["現在の場所"].waitForExistence(timeout: 5))
+        attach(app, "candidate-alexandria-description-from-card")
+    }
+    @MainActor func testWikipediaReadingLinksKeepSourcesAndMaps() {
+        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa", "--qa-screen=entity-pilot-reading"]; app.launch()
+        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
+        let detail = app.buttons["entity-detail-person-apollos-act18-introduction"]
+        scrollTo(detail, app: app); detail.tap()
+        let wiki = app.descendants(matching: .any).matching(identifier: "wikipedia-person:apollos_276").firstMatch
+        XCTAssertTrue(wiki.waitForExistence(timeout: 5)); XCTAssertTrue(wiki.label.contains("英語"))
+        XCTAssertTrue(app.buttons["この説明の出典"].exists)
+        XCTAssertTrue(app.staticTexts["外部記事には、この箇所より先の内容が含まれることがあります。"].exists)
+        attach(app, "wikipedia-apollos-reading-link")
+        app.buttons["この説明の出典"].tap()
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "World English Bible")).firstMatch.waitForExistence(timeout: 5))
+        attach(app, "wikipedia-primary-sources-preserved")
+        app.navigationBars.buttons.element(boundBy: 0).tap(); app.buttons["地図"].tap()
+        let mapLink = app.buttons["地図で概略位置を確認"].firstMatch
+        XCTAssertTrue(mapLink.waitForExistence(timeout: 5)); mapLink.tap()
+        let mapDetail = app.buttons["map-entity-detail-place-corinth"]
+        scrollTo(mapDetail, app: app); mapDetail.tap()
+        let corinthWiki = app.descendants(matching: .any).matching(identifier: "wikipedia-place:corinth_306").firstMatch
+        scrollTo(corinthWiki, app: app)
+        XCTAssertTrue(corinthWiki.exists)
+        XCTAssertTrue(app.staticTexts["古代コリントス"].exists)
+        attach(app, "wikipedia-ancient-corinth-from-map")
+        app.navigationBars.buttons.element(boundBy: 0).tap(); app.navigationBars.buttons.element(boundBy: 0).tap()
+        let alexDetail = app.buttons["entity-detail-place:alexandria_46"]
+        scrollTo(alexDetail, app: app); alexDetail.tap()
+        let alexWiki = app.descendants(matching: .any).matching(identifier: "wikipedia-place:alexandria_46").firstMatch
+        scrollTo(alexWiki, app: app); XCTAssertTrue(alexWiki.exists)
+        attach(app, "wikipedia-alexandria-reading-link")
+    }
+    @MainActor private func scrollTo(_ element: XCUIElement, app: XCUIApplication) {
+        for _ in 0..<14 {
+            if element.exists && element.isHittable && element.frame.minY < app.frame.height * 0.78 { return }
+            app.swipeUp()
+        }
+    }
     @MainActor private func attach(_ app: XCUIApplication, _ name: String) {
+        Thread.sleep(forTimeInterval: 1) // Let native navigation and disclosure animations settle before comparison images.
         let attachment = XCTAttachment(screenshot: app.screenshot()); attachment.name = name; attachment.lifetime = .keepAlways; add(attachment)
     }
 }

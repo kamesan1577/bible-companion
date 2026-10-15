@@ -26,15 +26,14 @@ struct ReadingView: View {
                                         ForEach(Array(record.ranges.enumerated()), id: \.offset) { index, range in Text(range.label).tag(index) }
                                     }.pickerStyle(.menu)
                                 }
-                                if page == .maps || page == .people {
-                                    if page == .people { Text("人物の名前は確認できますが、日本語の説明がまだない人物もいます。").bibleTextStyle(.caption) }
-                                    OfflineEntityPane(passage: passage, kind: page == .maps ? "place" : "person")
-                                }
                                 if page == .explanation {
                                     StaticCommentaryView(passage: passage)
                                 }
                                 if store.isLoading && page == .explanation { ProgressView("この箇所に関する説明を開いています") }
                                 else if let reading = store.reading { sectionContent(reading, passage: passage, section: page) }
+                                else if page == .people || page == .maps {
+                                    OfflineEntityPane(passage: passage, kind: page == .maps ? "place" : "person")
+                                }
                                 else if page == .art {
                                     BibleStateView(title: "絵画を開けません", message: store.errorMessage ?? "再読み込みしてください。", systemImage: BibleTheme.Symbol.error)
                                     Button("再読み込み") { store.loadReading() }
@@ -182,6 +181,9 @@ struct ReadingView: View {
             } else {
                 if section == .maps { Text("場所の背景を確認できます。位置が分からない場所は、地図に表示していません。").bibleTextStyle(.caption).bibleForeground(.textSecondary) }
                 ForEach(cards) { MaterialCardView(card: $0, reading: passage) }
+                if section == .people || section == .maps {
+                    OfflineEntityPane(passage: passage, kind: section == .maps ? "place" : "person", coveredMaterialCardIDs: cards.map(\.id))
+                }
             }
         }
     }

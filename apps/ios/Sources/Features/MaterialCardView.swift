@@ -5,6 +5,7 @@ import CompanionCore
 struct MaterialCardView: View {
     let card: MaterialCard
     let reading: Passage
+    @State private var entityProfile: ResolvedEntityProfile?
     var body: some View {
         BibleReadingSurface {
             VStack(alignment: .leading, spacing: BibleTheme.Space.lg) {
@@ -18,6 +19,10 @@ struct MaterialCardView: View {
                 if let year = card.details["yearLabel"].string { Text(year).bibleTextStyle(.caption) }
                 if let collection = card.details["collection"].string { Text(collection).bibleTextStyle(.caption) }
                 if let attribution = card.details["media"]["attribution"].string { Text(attribution).bibleTextStyle(.caption).bibleForeground(.textSecondary) }
+                if let entityProfile {
+                    NavigationLink(card.kind == "person" ? "この人物について" : "この場所について") { EntityProfileDetail(initial: entityProfile, passage: reading) }
+                        .accessibilityIdentifier("entity-detail-" + card.id)
+                }
                 DisclosureGroup("出典と権利") {
                     VStack(alignment: .leading, spacing: BibleTheme.Space.md) {
                         if let statement = card.details["rightsStatement"].string { Text(statement).bibleTextStyle(.caption) }
@@ -30,7 +35,7 @@ struct MaterialCardView: View {
                     }
                 }
             }
-        }
+        }.task(id: card.id + reading.label) { entityProfile = try? await BundledEntityIndex.shared.profile(forMaterialCardID: card.id, passage: reading) }
     }
 }
 private struct PublicArtworkImage: View {

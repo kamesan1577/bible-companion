@@ -7,6 +7,7 @@ struct PlaceMapView: View {
     @Environment(\.colorScheme) private var colorScheme
     let cardID: String
     let reading: Passage
+    @State private var entityProfile: ResolvedEntityProfile?
     private var currentCard: MaterialCard? {
         guard store.selectedPassage == reading, store.cachedSnapshot == nil else { return nil }
         return store.reading?.places.first { $0.id == cardID && $0.isDisplayable(reading: reading) }
@@ -26,6 +27,10 @@ struct PlaceMapView: View {
                     .mapControls { MapScaleView() }
                     .aspectRatio(1, contentMode: .fit)
                     .accessibilityLabel("\(card.title)付近の概略地図。現代の地図上の代表位置です。")
+                    if let entityProfile {
+                        NavigationLink("この場所について") { EntityProfileDetail(initial: entityProfile, passage: reading) }
+                            .accessibilityIdentifier("map-entity-detail-" + card.id)
+                    }
                     Text(location.explanation).bibleTextStyle(.body)
                     Text("地図上の目安（参考地点）: 緯度 \(location.latitude.formatted(.number.precision(.fractionLength(5))))、経度 \(location.longitude.formatted(.number.precision(.fractionLength(5))))").bibleTextStyle(.caption)
                     Text(card.summary).bibleTextStyle(.body).textSelection(.enabled)
@@ -44,5 +49,6 @@ struct PlaceMapView: View {
             }
         }
         .bibleCanvas().navigationTitle("地図").navigationBarTitleDisplayMode(.inline)
+        .task(id: cardID + reading.label) { entityProfile = try? await BundledEntityIndex.shared.profile(forMaterialCardID: cardID, passage: reading) }
     }
 }

@@ -18,7 +18,8 @@ struct SimulatorQA: View {
     }
     @ViewBuilder private func snapshot(_ screen: String) -> some View {
         switch screen {
-        case "initial", "reading": ReadingView()
+        case "initial", "reading", "entity-pilot-reading": ReadingView()
+        case "entity-ui-baseline": Baseline018ReadingView()
         case "romans-opening", "romans-doxology":
             let passage = screen == "romans-opening" ? Passage(book: "ROM", start: Verse(chapter: 1, verse: 1), end: Verse(chapter: 1, verse: 1)) : Passage(book: "ROM", start: Verse(chapter: 16, verse: 25), end: Verse(chapter: 16, verse: 27))
             ScrollView { BibleReadingColumn { StaticCommentaryView(passage: passage) } }.navigationTitle(passage.label).bibleCanvas()

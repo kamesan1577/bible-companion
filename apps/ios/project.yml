@@ -16,8 +16,8 @@ settings:
     SWIFT_STRICT_CONCURRENCY: complete
     TARGETED_DEVICE_FAMILY: '1,2'
     IPHONEOS_DEPLOYMENT_TARGET: '26.0'
-    MARKETING_VERSION: 0.1.8
-    CURRENT_PROJECT_VERSION: 9
+    MARKETING_VERSION: 0.1.9
+    CURRENT_PROJECT_VERSION: 10
     CODE_SIGN_STYLE: Automatic
     ENABLE_USER_SCRIPT_SANDBOXING: YES
 configFiles:
@@ -30,6 +30,7 @@ targets:
     sources:
       - path: Sources/Assets.xcassets
       - path: Sources/App
+      - path: Tests/UIBaseline018
       - path: Sources/Services
       - path: Sources/Features
       - path: Sources/DesignSystem
@@ -54,6 +55,7 @@ targets:
       - path: ShareExtension
       - path: Sources/DesignSystem/SharedScriptureHeader.swift
       - path: Sources/DesignSystem/OfflineEntityPane.swift
+      - path: Sources/DesignSystem/BibleComponents.swift
       - path: Sources/DesignSystem/BibleTheme.swift
       - path: Sources/DesignSystem/BibleTokens.generated.swift
       - path: Config/Share/PrivacyInfo.xcprivacy
@@ -74,7 +76,7 @@ targets:
     platform: iOS
     sources:
       - path: Tests
-        excludes: [Fixtures]
+        excludes: [Fixtures, UIBaseline018]
       - path: Tests/Fixtures
         buildPhase: resources
     settings:

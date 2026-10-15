@@ -15,6 +15,7 @@ public struct IndexedOccurrence: Sendable, Identifiable {
     public let entity: IndexedEntity
     public let directlyNamed: Bool
     public let sameBookVerses: [Passage]
+    public let profile: ResolvedEntityProfile?
 }
 public struct EntityIndexResult: Sendable {
     public let occurrences: [IndexedOccurrence]
@@ -37,6 +38,7 @@ public actor BundledEntityIndex {
         var array: [Int] { if case .array(let values) = self { values } else { [] } }
     }
     private var index: Index?
+    private var profiles: EntityProfileCatalog?
     public func lookup(_ passage: Passage, kind: String, includeFuture: Bool = false) throws -> EntityIndexResult {
         guard passage.isValid, ["person", "place"].contains(kind) else { throw Failure.invalid }
         if index == nil {
@@ -46,6 +48,9 @@ public actor BundledEntityIndex {
             index = decoded
         }
         guard let index, let bookIndex = index.books.firstIndex(of: passage.book) else { throw Failure.invalid }
+        if profiles == nil, let url = Bundle.module.url(forResource: "entity-profiles", withExtension: "json") {
+            profiles = try JSONDecoder().decode(EntityProfileCatalog.self, from: Data(contentsOf: url))
+        }
         var matches: [Int: Bool] = [:]
         let directColumn = kind == "person" ? 1 : 3
         for chapter in passage.start.chapter...passage.end.chapter {
@@ -57,7 +62,7 @@ public actor BundledEntityIndex {
                 for i in row[directColumn + 1].array where matches[i] == nil { matches[i] = false }
             }
         }
-        let result = matches.compactMap { pair -> IndexedOccurrence? in
+        var result = matches.compactMap { pair -> IndexedOccurrence? in
             guard index.entities.indices.contains(pair.key) else { return nil }
             let entity = index.entities[pair.key]
             let references = entity.appearances.compactMap { code -> Passage? in
@@ -69,9 +74,21 @@ public actor BundledEntityIndex {
                 if chapter >= passage.start.chapter && chapter <= passage.end.chapter && (chapter != passage.start.chapter || verse >= passage.start.verse) && (chapter != passage.end.chapter || verse <= passage.end.verse) { return nil }
                 return range
             }
-            return IndexedOccurrence(entity: entity, directlyNamed: pair.value, sameBookVerses: references)
+            let profile = profiles?.resolve(id: entity.id, passage: passage, includeFuture: includeFuture)
+            let displayed = profile.map { p in IndexedEntity(id: entity.id, kind: entity.kind, name: entity.name, nameJa: p.profile.nameJa, appearances: entity.appearances, coordinate: p.profile.coordinate, coordinateStatus: p.profile.coordinate == nil ? nil : "source-representative-point") } ?? entity
+            return IndexedOccurrence(entity: displayed, directlyNamed: pair.value, sameBookVerses: references, profile: profile)
         }.sorted { $0.directlyNamed != $1.directlyNamed ? $0.directlyNamed : $0.entity.displayName < $1.entity.displayName }
+        for p in profiles?.profiles ?? [] where p.supplemental && p.kind == kind {
+            guard !result.contains(where: { $0.entity.id == p.id }), let profile = profiles?.resolve(id: p.id, passage: passage, includeFuture: includeFuture) else { continue }
+            let entity = IndexedEntity(id: p.id, kind: p.kind, name: p.nameJa, nameJa: p.nameJa, appearances: [], coordinate: nil, coordinateStatus: nil)
+            result.append(IndexedOccurrence(entity: entity, directlyNamed: false, sameBookVerses: [], profile: profile))
+        }
         return EntityIndexResult(occurrences: result, sourceURL: URL(string: index.sourceURL), attribution: index.attribution)
+    }
+    public func profile(forMaterialCardID id: String, passage: Passage, includeFuture: Bool = false) throws -> ResolvedEntityProfile? {
+        _ = try lookup(passage, kind: "person", includeFuture: includeFuture)
+        guard let profile = profiles?.profiles.first(where: { $0.materialCardIDs?.contains(id) == true }) else { return nil }
+        return profiles?.resolve(id: profile.id, passage: passage, includeFuture: includeFuture)
     }
     public enum Failure: Error { case unavailable, invalid }
 }
