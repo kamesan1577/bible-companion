@@ -1,0 +1,919 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-map-profile-gate-mismatch-review",
+  "book": "1CH",
+  "reviewer": "independent-occurrence-edge-reviewer",
+  "checkedAtUTC": "2026-10-16",
+  "scope": "全ての root-reviewed-occurrence-edge-preview にある before-profile-knownBy edge 10件。固定WEB本文と直前/直後、current map row、current profile/evidenceを照合。profile/map編集なし。",
+  "inputSHA256": {
+    "reviews/root-reviewed-occurrence-edge-preview.json": "c2f3c919c8c33da52dab4dd4b24919eb570f66673256472c92c710b1c8a24b07",
+    "reviews/root-current-independent-review-bindings.json": "ca7098b8d7be87b6c0b1b0805f69313ce5f84a92dff4948d5ec3fe173ec2d5e5",
+    "reviews/root-current-map-independent-bindings.json": "5d255697ee598696e2c024f18187dc839424c6d27a0d4403e18fe35781b44167",
+    "inventory/targets/chronicles1-web-verses.json": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+    "reviews/verse-map-1CH-01-09.json": "0f99a4de7ac0eb44fc41a1e797483fe90e89f0170a8ad20f0f35ea613931b0a9",
+    "reviews/verse-map-1CH-10-19.json": "aecf744a60cb5ac7aec2a4015fda75a21b9bd13364cd5a440e14a8fd392b0cac",
+    "reviews/independent-israel682-context-proposal.json": "69abb7c8073ab7bac03ecdaa81d5c0dd218c0f596cf161d52a48ccf75fbcc8ea",
+    "reviews/context-edits/1CH/gad-1262-personal-1ch2-2.json": "79994d894322d1eb8aaff36a2c2e273d3f24556de2bf0fd7e9be91fc720485a8"
+  },
+  "decisionCounts": {
+    "pass": 0,
+    "qualified": 4,
+    "fail": 6,
+    "pending": 0
+  },
+  "disposition": "map/profile不一致・同名誤接続・未承認個人context提案を区別して記録した。knownByの自動前倒し・map修正・variant統合は行っていない。Israel/Gad個人context提案はいずれもbase profileと異なる未承認提案であり、重複プロフィールを作らず、integrated authoring/独立closureを待つ。",
+  "rows": [
+    {
+      "ref": "1CH 1:34",
+      "entityID": "person:israel_682",
+      "decision": "fail",
+      "edgeFinding": "明示される「Israel」はIsaacの子として列挙される父祖個人で、現profileはknownBy 1:43の「イスラエルの子ら」を説明するcollective base。mapの直接言及自体は原文に合うが、現行collective profileへ接続するのは意味variant不一致。",
+      "sourceAssessment": "直前1:33はミディアンの子ら、1:34は「Isaacの子ら: Esau and Israel」、直後1:35はEsauの子ら。系譜の位置と文法が父祖個人を示す。",
+      "profileAssessment": "現draftはidentityType=collective、knownBy=1:43、passagesは1:43/6:64/16:13/27:1。1:34はcollective用例でない。",
+      "resolution": "現行edgeは不適合としてhold。既存ID person:israel_682の個人context variant提案は別途あるが、現状はqualified proposalでruntime承認ではなく、しかもその記録のdraft SHAはcurrent draftと異なる。提案が統合・独立審査されるまで重複の個人profile作成やknownBy前倒しをしない。",
+      "coordinate": {
+        "book": "1CH",
+        "chapter": 1,
+        "verse": 34
+      },
+      "sourceText": "Abraham became the father of Isaac. The sons of Isaac: Esau and Israel.",
+      "sourceTextSHA256": "31208f70863e71ace9706fd7350192292b8bd65fb1eadbed62ffbb51de7738d2",
+      "citationURL": "https://ebible.org/engwebp/1CH01.htm#V34",
+      "surroundingVerses": [
+        {
+          "verse": 33,
+          "text": "The sons of Midian: Ephah, Epher, Hanoch, Abida, and Eldaah. All these were the sons of Keturah.",
+          "textSHA256": "9719dcf72ec4e3c29eb33b38bace46acb3c36a4a1a92079e8c7c77be89d2b84a",
+          "citationURL": "https://ebible.org/engwebp/1CH01.htm#V33"
+        },
+        {
+          "verse": 34,
+          "text": "Abraham became the father of Isaac. The sons of Isaac: Esau and Israel.",
+          "textSHA256": "31208f70863e71ace9706fd7350192292b8bd65fb1eadbed62ffbb51de7738d2",
+          "citationURL": "https://ebible.org/engwebp/1CH01.htm#V34"
+        },
+        {
+          "verse": 35,
+          "text": "The sons of Esau: Eliphaz, Reuel, Jeush, Jalam, and Korah.",
+          "textSHA256": "b76b16669fe7eeeddaade653e99456daefb22640f6c632366a84b3a34d507100",
+          "citationURL": "https://ebible.org/engwebp/1CH01.htm#V35"
+        }
+      ],
+      "mapBinding": {
+        "path": "reviews/verse-map-1CH-01-09.json",
+        "fileSHA256": "0f99a4de7ac0eb44fc41a1e797483fe90e89f0170a8ad20f0f35ea613931b0a9",
+        "relationship": "direct",
+        "reasonJa": "固定WEBはEsauとIsraelをIsaacの子として明記する。ここでは族長Israel本人。",
+        "excludedCandidates": []
+      },
+      "profileBinding": {
+        "draftPath": "drafts/persons_1/1CH_israel_682.json",
+        "draftFileSHA256": "297f952dad75118fc9011f28bcef559ff7b9b575f03cafbc712a452b0765611e",
+        "profileKnownBy": {
+          "chapter": 1,
+          "verse": 43
+        },
+        "identityType": "collective",
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 1,
+              "verse": 43
+            },
+            "end": {
+              "chapter": 1,
+              "verse": 43
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 64
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 64
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 27,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 27,
+              "verse": 1
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 16,
+              "verse": 13
+            },
+            "end": {
+              "chapter": 16,
+              "verse": 13
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-israel_682-1-43",
+          "webp-1ch-israel_682-6-64",
+          "webp-1ch-israel_682-27-1",
+          "wiki-1ch-israel_682",
+          "webp-1ch-israel_682-16-13"
+        ],
+        "evidencePath": "evidence/persons_1/1CH_israel_682-sources.json",
+        "evidenceFileSHA256": "40570ffc44c0edc5a18c63742de72bf92376bba8e76187e51c5680d67ba80c54",
+        "evidenceProfileSHA256": "f11712f684ac9cac8207b22f7cd95e24140c1aa91912c1b19acbb6c795004e07",
+        "evidenceDraftSHA256": "297f952dad75118fc9011f28bcef559ff7b9b575f03cafbc712a452b0765611e"
+      }
+    },
+    {
+      "ref": "1CH 2:2",
+      "entityID": "person:gad_1262",
+      "decision": "fail",
+      "edgeFinding": "「Gad」はIsraelの子らの系譜列挙にある個人名。現行profileはknownBy 5:11のガド族collectiveであり、個人名のdirect edgeをcollective baseへ接続できない。",
+      "sourceAssessment": "2:1はIsraelの子らとしてReubenほかを列挙し、2:2がDan, Joseph, Benjamin, Naphtali, Gad, Asherを続ける。個人の祖先系譜で、部族集団の分布記述ではない。",
+      "profileAssessment": "current person:gad_1262 identityType=collective, knownBy=5:11; summary/identityNoteはガド族・子孫集団を指す。",
+      "resolution": "現行base edgeは不適合でhold。個人context variantの提案は1CH2:2用として存在するが状態はauthor-proposed/root integration and independent review pendingで、current base SHAとの一致もない。提案採用・別ID生成・gate自動移動を行わない。",
+      "coordinate": {
+        "book": "1CH",
+        "chapter": 2,
+        "verse": 2
+      },
+      "sourceText": "Dan, Joseph, Benjamin, Naphtali, Gad, and Asher.",
+      "sourceTextSHA256": "3776454b81ad749f7a150dbf7d14ed81c3c023281a3d6e48c12c310105fbf1c2",
+      "citationURL": "https://ebible.org/engwebp/1CH02.htm#V2",
+      "surroundingVerses": [
+        {
+          "verse": 1,
+          "text": "These are the sons of Israel: Reuben, Simeon, Levi, Judah, Issachar, Zebulun,",
+          "textSHA256": "ca540a9538ec383bddfdda06d66530873044633a8bfe3c1b20536e19ceb430c2",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V1"
+        },
+        {
+          "verse": 2,
+          "text": "Dan, Joseph, Benjamin, Naphtali, Gad, and Asher.",
+          "textSHA256": "3776454b81ad749f7a150dbf7d14ed81c3c023281a3d6e48c12c310105fbf1c2",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V2"
+        },
+        {
+          "verse": 3,
+          "text": "The sons of Judah: Er, Onan, and Shelah, which three were born to him of Shua’s daughter the Canaanitess. Er, Judah’s firstborn, was wicked in the LORD’s sight; and he killed him.",
+          "textSHA256": "39991bfdd724bf5cea4864aa77c39123a478a3ea53f2e04fe364da99bd2f05ca",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V3"
+        }
+      ],
+      "mapBinding": {
+        "path": "reviews/verse-map-1CH-01-09.json",
+        "fileSHA256": "0f99a4de7ac0eb44fc41a1e797483fe90e89f0170a8ad20f0f35ea613931b0a9",
+        "relationship": "direct",
+        "reasonJa": "固定WEB本文に「Gad」がこの節で明記されるため、直接言及として記録する。",
+        "excludedCandidates": []
+      },
+      "profileBinding": {
+        "draftPath": "drafts/persons_2/1CH_person_gad_1262.json",
+        "draftFileSHA256": "c9a12d9d505155b541355e48185a0f7027f36be1fe86f27a50dc24b34c2257c9",
+        "profileKnownBy": {
+          "chapter": 5,
+          "verse": 11
+        },
+        "identityType": "collective",
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 5,
+              "verse": 11
+            },
+            "end": {
+              "chapter": 5,
+              "verse": 11
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 63
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 63
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 80
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 80
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 12,
+              "verse": 14
+            },
+            "end": {
+              "chapter": 12,
+              "verse": 14
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-gad_1262-5-11",
+          "webp-1ch-gad_1262-6-63",
+          "webp-1ch-gad_1262-6-80",
+          "webp-1ch-gad_1262-12-14",
+          "chronicles-person-gad_1262-wikipedia"
+        ],
+        "evidencePath": "evidence/persons_2/1CH_person_gad_1262.json",
+        "evidenceFileSHA256": "83eb5805734eac86e6c27662b77c83966c1be6c4200be21b4d7068f2a94a26dc",
+        "evidenceProfileSHA256": "d7a35dd52b2036a953692c022ec5d4cfe7c43241189af592e5180800142523cf",
+        "evidenceDraftSHA256": "c9a12d9d505155b541355e48185a0f7027f36be1fe86f27a50dc24b34c2257c9"
+      }
+    },
+    {
+      "ref": "1CH 2:9",
+      "entityID": "person:caleb_538",
+      "decision": "qualified",
+      "edgeFinding": "原文の綴りはChelubaiでCalebとは異なる。既存profile Caleb_538は2:18以降でHezronの子として明記され、profile自身も2:9をexcluded sourceとして保持し、2:18以前の同一性を確定していない。",
+      "sourceAssessment": "2:9はHezronの子としてJerahmeel, Ram, Chelubaiを列挙し、2:10はRamをたどる。後の2:18はCaleb son of Hezronを明記する。隣接系譜は同一人物説を支えるが、2:9はCalebと明記しない。",
+      "profileAssessment": "knownBy=2:18。summaryは2:9の「ケルバイ」を後のCaleb表記と関連づけるが、passages/sourceIdsでは2:9を除外。wiki noteは2:18を対象にしており、2:9の別綴り同定を独立に閉じていない。",
+      "resolution": "同一人物の綴り異形候補として保留し、qualified扱い。direct edgeを確定する前にChelubai=Calebの書内同定根拠を明示し、現行2:9 exclusionとの矛盾を解消する。knownByを機械的に2:9へ前倒ししない。",
+      "coordinate": {
+        "book": "1CH",
+        "chapter": 2,
+        "verse": 9
+      },
+      "sourceText": "The sons also of Hezron, who were born to him: Jerahmeel, Ram, and Chelubai.",
+      "sourceTextSHA256": "583436c48139bb9147bd25b5bfe00be547ff139fa65247387d48db8bcdde9a16",
+      "citationURL": "https://ebible.org/engwebp/1CH02.htm#V9",
+      "surroundingVerses": [
+        {
+          "verse": 8,
+          "text": "The son of Ethan: Azariah.",
+          "textSHA256": "aad8aafb74b255a11ff026487d2a828b9117bca1b556b8606c8f7a7b03da5b2f",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V8"
+        },
+        {
+          "verse": 9,
+          "text": "The sons also of Hezron, who were born to him: Jerahmeel, Ram, and Chelubai.",
+          "textSHA256": "583436c48139bb9147bd25b5bfe00be547ff139fa65247387d48db8bcdde9a16",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V9"
+        },
+        {
+          "verse": 10,
+          "text": "Ram became the father of Amminadab, and Amminadab became the father of Nahshon, prince of the children of Judah;",
+          "textSHA256": "04fd30ced7f0db59ba53594fd9d1ca37b1652144717b29a958bec375d4e49748",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V10"
+        }
+      ],
+      "mapBinding": {
+        "path": "reviews/verse-map-1CH-01-09.json",
+        "fileSHA256": "0f99a4de7ac0eb44fc41a1e797483fe90e89f0170a8ad20f0f35ea613931b0a9",
+        "relationship": "direct",
+        "reasonJa": "固定WEBの綴りは「Chelubai」、既存候補名は「Caleb」。この系譜位置の明示名の異表記として対応する。",
+        "excludedCandidates": []
+      },
+      "profileBinding": {
+        "draftPath": "drafts/persons_3/1CH_caleb_538.json",
+        "draftFileSHA256": "a83ad6ec01c38bb2882ee72f56b09fd32d3245f06cad521c93c2902eb7798d8f",
+        "profileKnownBy": {
+          "chapter": 2,
+          "verse": 18
+        },
+        "identityType": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 2,
+              "verse": 18
+            },
+            "end": {
+              "chapter": 2,
+              "verse": 18
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 2,
+              "verse": 19
+            },
+            "end": {
+              "chapter": 2,
+              "verse": 19
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 2,
+              "verse": 42
+            },
+            "end": {
+              "chapter": 2,
+              "verse": 42
+            }
+          }
+        ],
+        "sourceIds": [
+          "caleb_538-webp-1ch-2-18",
+          "caleb_538-webp-1ch-2-19",
+          "caleb_538-excluded-webp-1ch-2-9",
+          "caleb_538-webp-1ch-2-42",
+          "caleb_538-excluded-webp-1ch-2-49",
+          "caleb_538-excluded-webp-1ch-2-50",
+          "caleb_538-excluded-webp-1ch-4-1",
+          "caleb_538-wikipedia"
+        ],
+        "evidencePath": "evidence/persons_3/1CH_caleb_538.json",
+        "evidenceFileSHA256": "7b1a04a964a10efdfb874256ffdaa114be3a8f11f2b88994ef2dfc9e2dcd47a1",
+        "evidenceProfileSHA256": "eb0e09e25e2671df10171aedb6df9c7149358256b4da3f3d5bb0a7f5da2499a2",
+        "evidenceDraftSHA256": "a83ad6ec01c38bb2882ee72f56b09fd32d3245f06cad521c93c2902eb7798d8f"
+      }
+    },
+    {
+      "ref": "1CH 2:24",
+      "entityID": "person:hezron_1519",
+      "decision": "fail",
+      "edgeFinding": "同じ節にHezron_1520とHezron_1519の両方が採用される。1519は現profile上Reubenの子（5:3）、1520はPerezの子のユダ系譜（2:5以降）。2:24の妻Abijah・子Ashhur・Caleb Ephrathahはユダ系譜のHezron_1520に対応し、1519は同名別人。",
+      "sourceAssessment": "2:23はMachir/Gileadの系譜、2:24はHezronの死後に妻AbijahがAshhurを産んだと述べ、2:25はHezronの長子Jerahmeelの子らへ続く。該当系譜はPerezからのユダ系譜。",
+      "profileAssessment": "Hezron_1519 current knownBy 5:3でReubenの子。別の既存Hezron_1520は2:5から始まり、2:24をpassagesに含める。",
+      "resolution": "person:hezron_1519のedgeを同名別人誤接続としてfail。正しいHezron_1520は既に同節mapに採用済みであり、1519を残す根拠はない。",
+      "coordinate": {
+        "book": "1CH",
+        "chapter": 2,
+        "verse": 24
+      },
+      "sourceText": "After Hezron died in Caleb Ephrathah, Abijah, Hezron’s wife, bore him Ashhur the father of Tekoa.",
+      "sourceTextSHA256": "b20a91f4973d19e9040ee00577516859d2f251d6ac76f3682ae4dc7015731eba",
+      "citationURL": "https://ebible.org/engwebp/1CH02.htm#V24",
+      "surroundingVerses": [
+        {
+          "verse": 23,
+          "text": "Geshur and Aram took the towns of Jair from them, with Kenath, and its villages, even sixty cities. All these were the sons of Machir the father of Gilead.",
+          "textSHA256": "eaae7bd2bb793f267b3a2e0fe9d7444730ff3eb3b1377a07b9d06e74c9e32f7d",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V23"
+        },
+        {
+          "verse": 24,
+          "text": "After Hezron died in Caleb Ephrathah, Abijah, Hezron’s wife, bore him Ashhur the father of Tekoa.",
+          "textSHA256": "b20a91f4973d19e9040ee00577516859d2f251d6ac76f3682ae4dc7015731eba",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V24"
+        },
+        {
+          "verse": 25,
+          "text": "The sons of Jerahmeel the firstborn of Hezron were Ram the firstborn, Bunah, Oren, Ozem, and Ahijah.",
+          "textSHA256": "5926b587b6b667529b5144b5f3cc08587a63748cae75c6124fb7b4fe8ebd6cdd",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V25"
+        }
+      ],
+      "mapBinding": {
+        "path": "reviews/verse-map-1CH-01-09.json",
+        "fileSHA256": "0f99a4de7ac0eb44fc41a1e797483fe90e89f0170a8ad20f0f35ea613931b0a9",
+        "relationship": "direct",
+        "reasonJa": "固定WEB本文に「Hezron」がこの節で明記されるため、直接言及として記録する。",
+        "excludedCandidates": [
+          {
+            "entityID": "place:caleb-ephratah_1298",
+            "reasonJa": "候補名「Caleb-ephratah」は固定WEBのこの節の語句「After Hezron died in Caleb Ephrathah, Abijah, Hezron’s wife, bore him Ashhur the father of Tekoa.」に一致せず、同一の人物/場所を示す異表記も確認できないため除外する。"
+          }
+        ]
+      },
+      "profileBinding": {
+        "draftPath": "drafts/persons_1/1CH_hezron_1519.json",
+        "draftFileSHA256": "3544202957e331a464969aac1c140d79d9d78082a0067a5589ed2d42ac93098a",
+        "profileKnownBy": {
+          "chapter": 5,
+          "verse": 3
+        },
+        "identityType": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 5,
+              "verse": 3
+            },
+            "end": {
+              "chapter": 5,
+              "verse": 3
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-hezron_1519-5-3",
+          "wiki-1ch-hezron_1519"
+        ],
+        "evidencePath": "evidence/persons_1/1CH_hezron_1519-sources.json",
+        "evidenceFileSHA256": "b133dc3021a8702bed53105fdbe5d63d2e8623204ed63f9bb09b7ae3d6c96caa",
+        "evidenceProfileSHA256": "6a70feab7c7fe904bce94f20c154a945020a4cde1a238e4ae2215cb3aaab4bf8",
+        "evidenceDraftSHA256": "3544202957e331a464969aac1c140d79d9d78082a0067a5589ed2d42ac93098a"
+      }
+    },
+    {
+      "ref": "1CH 2:46",
+      "entityID": "person:caleb_537",
+      "decision": "fail",
+      "edgeFinding": "Caleb_537 profileは4:15で明示されるエフンネの子。2:46のCalebはHezron系譜の子孫欄にあり、エフンネとの関係は示されない。同名別人物を採用した。",
+      "sourceAssessment": "2:42はHezronの子孫でJerahmeelの兄弟Calebに言及、2:45はMaon、2:46はEphahがCalebの側妻としてHaran/Moza/Gazezを産んだと続く。2:47はJahdaiの子らへ移る。",
+      "profileAssessment": "current person:caleb_537 knownBy 4:15、summaryは「エフンネの子カレブ」。この2:46系譜とは identity が合わない。Caleb_538は2:18のHezronの子だが、2:46へのリンクは現mapにない。",
+      "resolution": "Caleb_537 linkは同名誤接続としてfail。先行のHezron系譜内にあるCalebとの関係は別途根拠審査が必要で、別IDを推測追加したりknownByを移動したりしない。",
+      "coordinate": {
+        "book": "1CH",
+        "chapter": 2,
+        "verse": 46
+      },
+      "sourceText": "Ephah, Caleb’s concubine, bore Haran, Moza, and Gazez; and Haran became the father of Gazez.",
+      "sourceTextSHA256": "c7ff9b70d59ce7d23038954b17d4f4773722299c4b828f34187120d064e25365",
+      "citationURL": "https://ebible.org/engwebp/1CH02.htm#V46",
+      "surroundingVerses": [
+        {
+          "verse": 45,
+          "text": "The son of Shammai was Maon; and Maon was the father of Beth Zur.",
+          "textSHA256": "121d194ef207b2e97d08346db81066d5211f04b0a8f5114af58aee3d40680152",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V45"
+        },
+        {
+          "verse": 46,
+          "text": "Ephah, Caleb’s concubine, bore Haran, Moza, and Gazez; and Haran became the father of Gazez.",
+          "textSHA256": "c7ff9b70d59ce7d23038954b17d4f4773722299c4b828f34187120d064e25365",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V46"
+        },
+        {
+          "verse": 47,
+          "text": "The sons of Jahdai: Regem, Jothan, Geshan, Pelet, Ephah, and Shaaph.",
+          "textSHA256": "f60b522ab28658afe34ad8fb428231b8a34625e3a5c3e6eb0c94aacc061f0569",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V47"
+        }
+      ],
+      "mapBinding": {
+        "path": "reviews/verse-map-1CH-01-09.json",
+        "fileSHA256": "0f99a4de7ac0eb44fc41a1e797483fe90e89f0170a8ad20f0f35ea613931b0a9",
+        "relationship": "direct",
+        "reasonJa": "固定WEB本文に「Caleb」がこの節で明記されるため、直接言及として記録する。",
+        "excludedCandidates": []
+      },
+      "profileBinding": {
+        "draftPath": "drafts/persons_2/1CH_person_caleb_537.json",
+        "draftFileSHA256": "2d2383675540b72c6e02472b3b52ec08c2058c151496e69d36dc26a9d21e9e96",
+        "profileKnownBy": {
+          "chapter": 4,
+          "verse": 15
+        },
+        "identityType": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 15
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 15
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 56
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 56
+            }
+          }
+        ],
+        "sourceIds": [
+          "chronicles-person-caleb_537-webp-1ch-4-15",
+          "chronicles-person-caleb_537-webp-1ch-6-56",
+          "chronicles-person-caleb_537-wikipedia"
+        ],
+        "evidencePath": "evidence/persons_2/1CH_person_caleb_537.json",
+        "evidenceFileSHA256": "b1c1f6c31a28d053d0266a2f6053635528f325e00b8d29e8010fc48433b9c498",
+        "evidenceProfileSHA256": "16da196cbac129125cb68e247a171a64948672532d1cc46c84c116e6c01409a5",
+        "evidenceDraftSHA256": "2d2383675540b72c6e02472b3b52ec08c2058c151496e69d36dc26a9d21e9e96"
+      }
+    },
+    {
+      "ref": "1CH 2:48",
+      "entityID": "person:caleb_537",
+      "decision": "fail",
+      "edgeFinding": "2:46と同じく、本文のCalebはHezron系譜にある側妻Maacahの配偶者。現profileのエフンネの子とは異なる人物。",
+      "sourceAssessment": "2:47はJahdaiの子らを挟み、2:48はMaacahがCalebの側妻としてSheber/Tirhanahを産んだと記す。2:49では同じ系譜のCalebの娘Achsahを続けて挙げる。",
+      "profileAssessment": "Caleb_537は2:46/2:48をpassagesに含めず、knownBy=4:15。profileのエフンネの子という識別はこの節に合わない。",
+      "resolution": "同名誤接続としてfail。2:46と同じ系譜上のCaleb人物への対応は既存候補の独立同定が必要。",
+      "coordinate": {
+        "book": "1CH",
+        "chapter": 2,
+        "verse": 48
+      },
+      "sourceText": "Maacah, Caleb’s concubine, bore Sheber and Tirhanah.",
+      "sourceTextSHA256": "6295cbf52c5340e9e71630ca41af3264e2fd4e02ba32f9b86fd55a54ee050d7f",
+      "citationURL": "https://ebible.org/engwebp/1CH02.htm#V48",
+      "surroundingVerses": [
+        {
+          "verse": 47,
+          "text": "The sons of Jahdai: Regem, Jothan, Geshan, Pelet, Ephah, and Shaaph.",
+          "textSHA256": "f60b522ab28658afe34ad8fb428231b8a34625e3a5c3e6eb0c94aacc061f0569",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V47"
+        },
+        {
+          "verse": 48,
+          "text": "Maacah, Caleb’s concubine, bore Sheber and Tirhanah.",
+          "textSHA256": "6295cbf52c5340e9e71630ca41af3264e2fd4e02ba32f9b86fd55a54ee050d7f",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V48"
+        },
+        {
+          "verse": 49,
+          "text": "She bore also Shaaph the father of Madmannah, Sheva the father of Machbena and the father of Gibea; and the daughter of Caleb was Achsah.",
+          "textSHA256": "c12fb4a69ea38085a410815d6d82ddf79374faa529fbe7c246eade99bfd5d279",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V49"
+        }
+      ],
+      "mapBinding": {
+        "path": "reviews/verse-map-1CH-01-09.json",
+        "fileSHA256": "0f99a4de7ac0eb44fc41a1e797483fe90e89f0170a8ad20f0f35ea613931b0a9",
+        "relationship": "direct",
+        "reasonJa": "固定WEB本文に「Caleb」がこの節で明記されるため、直接言及として記録する。",
+        "excludedCandidates": []
+      },
+      "profileBinding": {
+        "draftPath": "drafts/persons_2/1CH_person_caleb_537.json",
+        "draftFileSHA256": "2d2383675540b72c6e02472b3b52ec08c2058c151496e69d36dc26a9d21e9e96",
+        "profileKnownBy": {
+          "chapter": 4,
+          "verse": 15
+        },
+        "identityType": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 15
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 15
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 56
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 56
+            }
+          }
+        ],
+        "sourceIds": [
+          "chronicles-person-caleb_537-webp-1ch-4-15",
+          "chronicles-person-caleb_537-webp-1ch-6-56",
+          "chronicles-person-caleb_537-wikipedia"
+        ],
+        "evidencePath": "evidence/persons_2/1CH_person_caleb_537.json",
+        "evidenceFileSHA256": "b1c1f6c31a28d053d0266a2f6053635528f325e00b8d29e8010fc48433b9c498",
+        "evidenceProfileSHA256": "16da196cbac129125cb68e247a171a64948672532d1cc46c84c116e6c01409a5",
+        "evidenceDraftSHA256": "2d2383675540b72c6e02472b3b52ec08c2058c151496e69d36dc26a9d21e9e96"
+      }
+    },
+    {
+      "ref": "1CH 4:4",
+      "entityID": "place:gedor_456",
+      "decision": "fail",
+      "edgeFinding": "文脈はPenuelが「Gedorの父」と述べる系譜上の父子関係。現place profileは4:39の「Gedorの入口」という牧草地探索地名。名前の一致だけでその場所profileへcontext edgeを接続する根拠はない。",
+      "sourceAssessment": "4:3はEtamの父の子らを列挙し、4:4はPenuel→Gedor、Ezer→Hushahという父子列挙を続け、Hur/Ephrathah/Bethlehemの親族説明で閉じる。場所への言及とは断定できない。",
+      "profileAssessment": "place:gedor_456 knownBy=4:39、4:4はpassagesに含まれない。profileの地理説明は羊の牧草地を探す「ゲドルの入口」。",
+      "resolution": "place:Gedor context edgeを不支持としてfail/hold。person/氏族Gedorと町Gedorの同一性は未確定。地名同定やprofile gate移動を先行させない。",
+      "coordinate": {
+        "book": "1CH",
+        "chapter": 4,
+        "verse": 4
+      },
+      "sourceText": "Penuel was the father of Gedor and Ezer the father of Hushah. These are the sons of Hur, the firstborn of Ephrathah, the father of Bethlehem.",
+      "sourceTextSHA256": "8751f7aaca74b9f6f97276d6adfdea02662eb34fe821135b85f3d556b8adceda",
+      "citationURL": "https://ebible.org/engwebp/1CH04.htm#V4",
+      "surroundingVerses": [
+        {
+          "verse": 3,
+          "text": "These were the sons of the father of Etam: Jezreel, Ishma, and Idbash. The name of their sister was Hazzelelponi.",
+          "textSHA256": "1a8b53e558aa568af71365b2399d0959a41db1cbfebeae26f7c343a6965d4e9e",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V3"
+        },
+        {
+          "verse": 4,
+          "text": "Penuel was the father of Gedor and Ezer the father of Hushah. These are the sons of Hur, the firstborn of Ephrathah, the father of Bethlehem.",
+          "textSHA256": "8751f7aaca74b9f6f97276d6adfdea02662eb34fe821135b85f3d556b8adceda",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V4"
+        },
+        {
+          "verse": 5,
+          "text": "Ashhur the father of Tekoa had two wives, Helah and Naarah.",
+          "textSHA256": "10630c45cc7ab396d1fed0a4c8859484f9094d9e45886bebd87c6f53e46a92d0",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V5"
+        }
+      ],
+      "mapBinding": {
+        "path": "reviews/verse-map-1CH-01-09.json",
+        "fileSHA256": "0f99a4de7ac0eb44fc41a1e797483fe90e89f0170a8ad20f0f35ea613931b0a9",
+        "relationship": "context",
+        "reasonJa": "「father of Gedor」という系譜表現が地名を含む。人物/氏族/土地の役割を同一視しない文脈リンク。",
+        "excludedCandidates": []
+      },
+      "profileBinding": {
+        "draftPath": "drafts/places_3/1CH_gedor_456.json",
+        "draftFileSHA256": "256357c903056a3cc96ad21d5ae3718d302e069c1c1070ec1075df41dc696e9b",
+        "profileKnownBy": {
+          "chapter": 4,
+          "verse": 39
+        },
+        "identityType": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 39
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 39
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-4-39"
+        ],
+        "evidencePath": "evidence/places_3/1CH_gedor_456.json",
+        "evidenceFileSHA256": "3c1a459abcd534391f4f38ba9e6cb031c3aea31d9865618de59a05038654092f",
+        "evidenceProfileSHA256": "e1eb5eedfff76bc6db7a4628767f3c3f6b704de0f106284361a587433674edb1",
+        "evidenceDraftSHA256": "256357c903056a3cc96ad21d5ae3718d302e069c1c1070ec1075df41dc696e9b"
+      }
+    },
+    {
+      "ref": "1CH 4:19",
+      "entityID": "place:eshtemoa_412",
+      "decision": "qualified",
+      "edgeFinding": "「Eshtemoa the Maacathite」は場所に由来する形容とも氏族/人名とも読めるため、mapのcontext（同一人物断定なし）はdirectより慎重。ただし現行place profileの初出は6:57のレビ人の町としての明示で、4:19だけではその町への関係は確定しない。",
+      "sourceAssessment": "4:18のJered/Gedor、Heber/Soco、Jekuthiel/Zanoahという父子列挙の直後に、4:19はKeilah the Garmite / Eshtemoa the Maacathiteを「fathers of」とする系譜記述。4:17にも同名がある。",
+      "profileAssessment": "place:eshtemoa_412 knownBy=6:57、summaryは6:57のレビ人の町を記し、4:17/19の人名・出自表現は地名用例と分ける。4:19のperson:eshtemoa_1219はexcludedCandidates。",
+      "resolution": "context edgeは保留qualified。町との出自関係が直接原典から確認できるか、人物/氏族名なのか、別の独立資料が結ぶかを残課題とする。mapの注意書きは保つが、現地名の直接出現と地名identityを混同しない。",
+      "coordinate": {
+        "book": "1CH",
+        "chapter": 4,
+        "verse": 19
+      },
+      "sourceText": "The sons of the wife of Hodiah, the sister of Naham, were the fathers of Keilah the Garmite and Eshtemoa the Maacathite.",
+      "sourceTextSHA256": "2412c36878692ffcedf920655f17d3f305698e50a843d8978ce690a1fe97997b",
+      "citationURL": "https://ebible.org/engwebp/1CH04.htm#V19",
+      "surroundingVerses": [
+        {
+          "verse": 18,
+          "text": "His wife the Jewess bore Jered the father of Gedor, Heber the father of Soco, and Jekuthiel the father of Zanoah. These are the sons of Bithiah the daughter of Pharaoh, whom Mered took.",
+          "textSHA256": "13b61e225c194c983b3bd7d6a306dd45f9da2a1cc8a58a95ee44dab5ff46e72d",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V18"
+        },
+        {
+          "verse": 19,
+          "text": "The sons of the wife of Hodiah, the sister of Naham, were the fathers of Keilah the Garmite and Eshtemoa the Maacathite.",
+          "textSHA256": "2412c36878692ffcedf920655f17d3f305698e50a843d8978ce690a1fe97997b",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V19"
+        },
+        {
+          "verse": 20,
+          "text": "The sons of Shimon: Amnon, Rinnah, Ben Hanan, and Tilon. The sons of Ishi: Zoheth, and Ben Zoheth.",
+          "textSHA256": "4b2998168c804a4f2aafb56c4720e8a1816903b9e389456b0baff46af6d3f86e",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V20"
+        }
+      ],
+      "mapBinding": {
+        "path": "reviews/verse-map-1CH-01-09.json",
+        "fileSHA256": "0f99a4de7ac0eb44fc41a1e797483fe90e89f0170a8ad20f0f35ea613931b0a9",
+        "relationship": "context",
+        "reasonJa": "「Eshtemoa the Maacathite」は系譜上の地名/氏族関係を示す。場所候補への文脈リンクとし、人物と町を同一視しない。",
+        "excludedCandidates": [
+          {
+            "entityID": "person:eshtemoa_1219",
+            "reasonJa": "本文は「Eshtemoa the Maacathite」と氏族/地名の形で記す。これを個人のEshtemoaと断定しない。place:eshtemoa_412は関係候補として別に記録する。"
+          },
+          {
+            "entityID": "person:garmite_1280",
+            "reasonJa": "本文は「the Garmite」という所属形容を記し、個人名Garmiteを指すとは確認できない。"
+          }
+        ]
+      },
+      "profileBinding": {
+        "draftPath": "drafts/places_1/1CH_place_eshtemoa_412.json",
+        "draftFileSHA256": "b194b5c2d943834b84c1380ef5bafc7d0842e13637b32ac897c23b5813d64c3c",
+        "profileKnownBy": {
+          "chapter": 6,
+          "verse": 57
+        },
+        "identityType": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 57
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 57
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-6-57",
+          "wikipedia-place-eshtemoa_412-chronicles",
+          "theographic-legacy-coordinate-candidates"
+        ],
+        "evidencePath": "evidence/places_1/1CH_place_eshtemoa_412.json",
+        "evidenceFileSHA256": "0564d18becdebd4e00ca7c6604ac7d1221099359cc381fa0c51ad8eca630a3db",
+        "evidenceProfileSHA256": "c2b2b3a8524521d9d9639400fa6c856c04430ba013677e539d2636bdec079ffe",
+        "evidenceDraftSHA256": "b194b5c2d943834b84c1380ef5bafc7d0842e13637b32ac897c23b5813d64c3c"
+      }
+    },
+    {
+      "ref": "1CH 13:5",
+      "entityID": "place:egypt_362",
+      "decision": "qualified",
+      "edgeFinding": "「Shihor River of Egypt」はEgyptという地域名を明示するためmapのdirect edgeは支持される。一方current profile knownBy=17:21で、profile sourceIdsに13:5を含み、profile passageは17:21のみという内部不整合がある。",
+      "sourceAssessment": "13:4は集会の賛同、13:5はIsrael全体をShihor River of EgyptからHamathの入口まで集めたと記す、13:6はBaalah/Kiriath Jearimへ向かったと続く。Egyptは国/地域の範囲端を示す。",
+      "profileAssessment": "place:egypt_362 current knownBy=17:21; sourceIdsにはwebp-1ch-egypt_362-13-5と17:21があるがpassages/reader summaryは17:21だけ。13:5はこの同一の広域地名の明示使用。",
+      "resolution": "semantic edgeは支持、profile gate/passagesは明らかな再点検対象なので全体判定qualified。knownByの自動前倒しはせず、原profile/evidenceの記録と同じ書の初出探索を作者が確かめるべき。",
+      "coordinate": {
+        "book": "1CH",
+        "chapter": 13,
+        "verse": 5
+      },
+      "sourceText": "So David assembled all Israel together, from the Shihor River of Egypt even to the entrance of Hamath, to bring God’s ark from Kiriath Jearim.",
+      "sourceTextSHA256": "e79af9c13b724eafb01aa26a490a4ff749cda0150154ca1da28ab211e7e0b6ad",
+      "citationURL": "https://ebible.org/engwebp/1CH13.htm#V5",
+      "surroundingVerses": [
+        {
+          "verse": 4,
+          "text": "All the assembly said that they would do so, for the thing was right in the eyes of all the people.",
+          "textSHA256": "e9c56080b364973f1b92d40c5c53321a95192398b7154caa10d42ed40c596d80",
+          "citationURL": "https://ebible.org/engwebp/1CH13.htm#V4"
+        },
+        {
+          "verse": 5,
+          "text": "So David assembled all Israel together, from the Shihor River of Egypt even to the entrance of Hamath, to bring God’s ark from Kiriath Jearim.",
+          "textSHA256": "e79af9c13b724eafb01aa26a490a4ff749cda0150154ca1da28ab211e7e0b6ad",
+          "citationURL": "https://ebible.org/engwebp/1CH13.htm#V5"
+        },
+        {
+          "verse": 6,
+          "text": "David went up with all Israel to Baalah, that is, to Kiriath Jearim, which belonged to Judah, to bring up from there God the LORD’s ark that sits above the cherubim, that is called by the Name.",
+          "textSHA256": "a0446c6b41106434a83d141924b0f27d104ba51bf5a08ef9c0d4710ddec441e5",
+          "citationURL": "https://ebible.org/engwebp/1CH13.htm#V6"
+        }
+      ],
+      "mapBinding": {
+        "path": "reviews/verse-map-1CH-10-19.json",
+        "fileSHA256": "aecf744a60cb5ac7aec2a4015fda75a21b9bd13364cd5a440e14a8fd392b0cac",
+        "relationship": "direct",
+        "reasonJa": "固定WEBに「Egypt」が明記される。 固定WEBにEgyptが明記され、Shihor川の範囲端を限定する。",
+        "excludedCandidates": [
+          {
+            "entityID": "place:nile_895",
+            "reasonJa": "「Shihor川」はWEB本文が用いる範囲端の名称で、Nileとの同一視はこの節に明記されない。入口Hamathと同様に川の同定を保留する。"
+          }
+        ]
+      },
+      "profileBinding": {
+        "draftPath": "drafts/places_2/1CH_egypt_362.json",
+        "draftFileSHA256": "2d4f190ab1500c5116cda97c20a803b5e794b30746b20c2711d64ae3756563fd",
+        "profileKnownBy": {
+          "chapter": 17,
+          "verse": 21
+        },
+        "identityType": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 17,
+              "verse": 21
+            },
+            "end": {
+              "chapter": 17,
+              "verse": 21
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-egypt_362-13-5",
+          "webp-1ch-egypt_362-17-21",
+          "wikipedia-egypt_362-chronicles"
+        ],
+        "evidencePath": "evidence/places_2/1CH_egypt_362.json",
+        "evidenceFileSHA256": "e049b9c33b1d72e5b44d8513ea187b3dbf6dc70e41632e6c9e38bb7cf66a6b06",
+        "evidenceProfileSHA256": "0649800600d2ba877314e4b60fc71e8890c1e57924bb5e974fcc855a8f6a3e96",
+        "evidenceDraftSHA256": "2d4f190ab1500c5116cda97c20a803b5e794b30746b20c2711d64ae3756563fd"
+      }
+    },
+    {
+      "ref": "1CH 18:3",
+      "entityID": "place:hamath_516",
+      "decision": "qualified",
+      "edgeFinding": "本文は「toward Hamath」と地名を直接明記するため地理参照は支持される。ただしprofile knownBy=18:9の「Hamathの王Toi」とは範囲が city/kingdom/region のどれかを同一視できるだけの説明がcurrent profileにない。profile sourceIdsには18:3が既に含まれる一方passagesは18:9のみ。",
+      "sourceAssessment": "18:2はMoabを破る記事、18:3はHadadezer/ Zobahに対してHamath方面へ進んだとする、18:4は戦車・騎兵を捕らえたと続く。18:9はToi king of Hamathを別途明記。13:5の「entrance of Hamath」は別の地名表現で、そのまま同一対象と断定しない。",
+      "profileAssessment": "place:hamath_516 knownBy=18:9、summary/historicalRoleはToiの支配地・地域を説明。sourcesはwebp-1ch-18-3, 1:16, 13:5, 18:9を含むがpassagesは18:9のみ。WikipediaはHama記事をrelated-sectionとしており、現代市と古代領域を同一視しない留保がある。",
+      "resolution": "地名のedgeは原文上directでよいが、profile初出/gateと対象範囲が未整合のためqualified。18:3のHamathが18:9の支配域/都市名と同じprofile対象であるかは地理同定せず、作者に初出と範囲の独立再検討を要求する。",
+      "coordinate": {
+        "book": "1CH",
+        "chapter": 18,
+        "verse": 3
+      },
+      "sourceText": "David defeated Hadadezer king of Zobah, toward Hamath, as he went to establish his dominion by the river Euphrates.",
+      "sourceTextSHA256": "1b9858bac8b41aa29c9c65e895e82af605a5536b8b2c9e9eb2e3a622cea790ef",
+      "citationURL": "https://ebible.org/engwebp/1CH18.htm#V3",
+      "surroundingVerses": [
+        {
+          "verse": 2,
+          "text": "He defeated Moab; and the Moabites became servants to David and brought tribute.",
+          "textSHA256": "8cdfc1496dfdd80927dcc9ecee5d863f737b0752a72ce14f7f9d838540193f26",
+          "citationURL": "https://ebible.org/engwebp/1CH18.htm#V2"
+        },
+        {
+          "verse": 3,
+          "text": "David defeated Hadadezer king of Zobah, toward Hamath, as he went to establish his dominion by the river Euphrates.",
+          "textSHA256": "1b9858bac8b41aa29c9c65e895e82af605a5536b8b2c9e9eb2e3a622cea790ef",
+          "citationURL": "https://ebible.org/engwebp/1CH18.htm#V3"
+        },
+        {
+          "verse": 4,
+          "text": "David took from him one thousand chariots, seven thousand horsemen, and twenty thousand footmen; and David hamstrung all the chariot horses, but reserved of them enough for one hundred chariots.",
+          "textSHA256": "76c69e133175d75ce3f0d69eb8671a9727edfe87252e8d0d710882b488324634",
+          "citationURL": "https://ebible.org/engwebp/1CH18.htm#V4"
+        }
+      ],
+      "mapBinding": {
+        "path": "reviews/verse-map-1CH-10-19.json",
+        "fileSHA256": "aecf744a60cb5ac7aec2a4015fda75a21b9bd13364cd5a440e14a8fd392b0cac",
+        "relationship": "direct",
+        "reasonJa": "本文は進出方向としてHamathを名指す。Zobahとは別の地域名である。",
+        "excludedCandidates": [
+          {
+            "entityID": "place:zobah-hamath_1273",
+            "reasonJa": "固定WEBは「Zobah」と「Hamath」を別々に述べる。「Zobah-Hamath」という複合地名をこの節で確定しない。"
+          }
+        ]
+      },
+      "profileBinding": {
+        "draftPath": "drafts/places_3/1CH_hamath_516.json",
+        "draftFileSHA256": "8f6f3e266c54488f5cd219486d19a1108ed1a44e4a3882ed784c0714833d218c",
+        "profileKnownBy": {
+          "chapter": 18,
+          "verse": 9
+        },
+        "identityType": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 18,
+              "verse": 9
+            },
+            "end": {
+              "chapter": 18,
+              "verse": 9
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-18-9",
+          "webp-1ch-1-16",
+          "webp-1ch-13-5",
+          "webp-1ch-18-3",
+          "wikipedia-hamath_516"
+        ],
+        "evidencePath": "evidence/places_3/1CH_hamath_516.json",
+        "evidenceFileSHA256": "520108a1c4d4eee260a544d9cb044ce239cca41e7a7578071044b8bdd18fa113",
+        "evidenceProfileSHA256": "e6aed45ffe5a00ed28b374dee9d3058fae8b1fa5f1d23a5d04cd454da9b2cc53",
+        "evidenceDraftSHA256": "8f6f3e266c54488f5cd219486d19a1108ed1a44e4a3882ed784c0714833d218c"
+      }
+    }
+  ]
+}

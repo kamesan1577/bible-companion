@@ -2,7 +2,7 @@
 from pathlib import Path
 from urllib.parse import urlsplit
 import collections,hashlib,json,re,os
-R=Path(__file__).resolve().parents[1];A=Path(os.environ.get('BIBLE_CHRONICLES_REVIEW_ROOT',str(R/'data/entity-profiles/chronicles-review')));B=R/'apps/ios/Sources/Core/Resources'
+R=Path(__file__).resolve().parents[1];A=Path(os.environ.get('BIBLE_CHRONICLES_REVIEW_ROOT',str(R/'data/entity-profiles/chronicles-extension-review')));B=R/'apps/ios/Sources/Core/Resources'
 known={e['id'] for e in json.loads((B/'entity-index.json').read_text())['entities']};errors=[];summary={}
 cv=lambda x:(x['chapter'],x['verse'])
 files={'1CH':['verse-map-1CH-01-09.json','verse-map-1CH-10-19.json','verse-map-1CH-20-29.json'],'2CH':['verse-map-2CH-01-12.json','verse-map-2CH-13-24.json','verse-map-2CH-25-36.json']}
@@ -52,6 +52,8 @@ for book,expected in [('1CH',942),('2CH',822)]:
    readerfields.update({f'fact-{i}':f['textJa']for i,f in enumerate(p.get('facts',[]))})
    for field,text in readerfields.items():
     if re.search(r'context|knownBy|sourceIds|profile|\bbase\b|(?<![A-Za-z])ID(?![A-Za-z])|プロフィール|このID|本ID|確定座標|作業で',text,re.I):errors.append(book+' editor-only language in reader field '+p['id']+' '+field)
+   for fact in p.get('facts',[]):
+    if re.search(r'[A-Za-z][A-Za-z ,;:’—-]{35,}',fact['textJa']):errors.append(book+' untranslated long English payload in Japanese reader fact '+p['id'])
    w=p.get('wikipedia')
    if w:
     u=urlsplit(w['url']);lang=w['language'];allowed=w['identityVerified'] or(w['kind']=='related-section'and w.get('relationVerified')and w.get('noteJa'))

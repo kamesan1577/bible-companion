@@ -1,0 +1,1056 @@
+{
+  "reportType": "chronicles-runtime-disposition-qualified-subset",
+  "batch": "b6p2",
+  "reviewedAtUTC": "2026-10-16T10:49:36Z",
+  "sourceReclosurePath": "reviews/reclosure-batch06-persons_2-current.json",
+  "sourceReclosureSHA256": "415b729252f89a2e4947588dbeed5032c5bd863d27abca0b00e3cd15d29f7766",
+  "currentAuthorManifestPath": "evidence/persons_2/batch06-current-manifest.json",
+  "currentAuthorManifestSHA256": "341ef2f4ed622b03a44718850ceebcad60dcc24294381a82e74bce9af28e3ef7",
+  "fixedPrimaryWitnessPath": "inventory/targets/chronicles1-web-verses.json",
+  "fixedPrimaryWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+  "rowCount": 12,
+  "dispositionCounts": {
+    "primary-only": 8,
+    "related-link": 3,
+    "hold": 1
+  },
+  "qualifiedDecisionPreserved": true,
+  "rawProfilesModified": false,
+  "methodJa": "独立closureでqualifiedとなった対象のみを現行草稿・evidence・著者manifestの三SHAで固定し、初出・読者常時欄・全factsを固定WEBに照合して、runtime上の一次のみ表示、関連記事表示、保留を区分した。未変更稿の一般判定をpassへ格上げせず、qualifiedを維持する。Wikiの未検索/nullは不適合確認と区別する。",
+  "limitationsJa": "この表は統合/runtimeの表示処置案であり、独立レビュー結果をpassへ変更しない。manifest SHA不一致がある場合は行に明示し、同一性・異綴りの二次資料依存は一次本文による確証とみなさない。",
+  "hashMismatches": [],
+  "rows": [
+    {
+      "book": "1CH",
+      "entityID": "person:michah_2052",
+      "draftPath": "drafts/persons_2/1CH_person_michah_2052.json",
+      "evidencePath": "evidence/persons_2/1CH_person_michah_2052-sources.json",
+      "currentDraftSHA256": "abd460a3082975badcf7e4086a70b6f08131a219283751976c60ed3534e5a444",
+      "currentProfileSHA256": "9505ec3f0226040ed17912aac7af31ca452e01ba7838e7d9bd17444248198efd",
+      "currentEvidenceSHA256": "81bfea1be6bfdacdf4404533624fba54db27418f047605ea95a9c2a284081bbb",
+      "currentManifestSHA256": "341ef2f4ed622b03a44718850ceebcad60dcc24294381a82e74bce9af28e3ef7",
+      "manifestRecordThreeSHAExact": true,
+      "reclosureReportPath": "reviews/reclosure-batch06-persons_2-current.json",
+      "reclosureReportSHA256": "415b729252f89a2e4947588dbeed5032c5bd863d27abca0b00e3cd15d29f7766",
+      "previousDecision": "qualified",
+      "qualifiedDecisionPreserved": true,
+      "runtimeDisposition": "primary-only",
+      "dispositionReasonJa": "固定WEBは23:20と24:24–25の系譜内のMicahを名指す。プロフィールの初出説明と後続factsを節別に保ち、同名者・外部同定を加えない。記事同定はruntime根拠に使わない。",
+      "heldScopes": [],
+      "knownBy": {
+        "chapter": 23,
+        "verse": 20
+      },
+      "readerFields": {
+        "nameJa": "ミカ",
+        "subtitleJa": "ウジエルの子らの筆頭として記されるレビ人の祖先",
+        "summaryJa": "レビの系譜において、ウジエルの子らのうちミカが筆頭、イシヤが次に挙げられます。",
+        "identityNoteJa": "ミカという名の人物は複数います。この人物はウジエルの子として記されたレビ人の系譜上の人物です。",
+        "historicalRoleJa": "ウジエルに連なるレビ人の家系の一員として記されます。",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": null
+      },
+      "allCurrentFacts": [
+        {
+          "textJa": "ウジエルの系譜では、ミカの子としてシャミルが挙げられます。",
+          "knownBy": {
+            "chapter": 24,
+            "verse": 24
+          },
+          "sourceIds": [
+            "webp-1ch-michah_2052-24-24"
+          ],
+          "sourceWitnesses": [
+            {
+              "sourceId": "webp-1ch-michah_2052-24-24",
+              "knownBy": {
+                "chapter": 24,
+                "verse": 24
+              },
+              "url": "https://ebible.org/engwebp/1CH24.htm#V24"
+            }
+          ]
+        },
+        {
+          "textJa": "イシヤはミカの兄弟として記され、その子孫にゼカリヤが挙げられます。",
+          "knownBy": {
+            "chapter": 24,
+            "verse": 25
+          },
+          "sourceIds": [
+            "webp-1ch-michah_2052-24-25"
+          ],
+          "sourceWitnesses": [
+            {
+              "sourceId": "webp-1ch-michah_2052-24-25",
+              "knownBy": {
+                "chapter": 24,
+                "verse": 25
+              },
+              "url": "https://ebible.org/engwebp/1CH24.htm#V25"
+            }
+          ]
+        }
+      ],
+      "primaryTextContextAudit": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "checks": [
+          {
+            "ref": "1CH 23:20",
+            "fixedText": "The sons of Uzziel: Micah the chief, and Isshiah the second.",
+            "fixedURL": "https://ebible.org/engwebp/1CH23.htm#V20",
+            "evidenceText": "The sons of Uzziel: Micah the chief, and Isshiah the second.",
+            "evidenceURL": "https://ebible.org/engwebp/1CH23.htm#V20",
+            "evidenceTextSHA256": "85bd3369876503756d9add7452757ea269542fdfbe8a948395c74f2d04ca1c60",
+            "exactTextURLMatch": true
+          },
+          {
+            "ref": "1CH 24:24",
+            "fixedText": "The sons of Uzziel: Micah; of the sons of Micah, Shamir.",
+            "fixedURL": "https://ebible.org/engwebp/1CH24.htm#V24",
+            "evidenceText": "The sons of Uzziel: Micah; of the sons of Micah, Shamir.",
+            "evidenceURL": "https://ebible.org/engwebp/1CH24.htm#V24",
+            "evidenceTextSHA256": "7d9e76ee0c1fcc8db914e09aafb74ad251c57dde8928855bb58b947a8fa4357e",
+            "exactTextURLMatch": true
+          },
+          {
+            "ref": "1CH 24:25",
+            "fixedText": "The brother of Micah: Isshiah; of the sons of Isshiah, Zechariah.",
+            "fixedURL": "https://ebible.org/engwebp/1CH24.htm#V25",
+            "evidenceText": "The brother of Micah: Isshiah; of the sons of Isshiah, Zechariah.",
+            "evidenceURL": "https://ebible.org/engwebp/1CH24.htm#V25",
+            "evidenceTextSHA256": "828d2b742f8dbedf6d9630b6102c391566b0660f94f7badc65984ef3a4ea4d5f",
+            "exactTextURLMatch": true
+          }
+        ],
+        "allRecordedEvidenceTextURLChecksExact": true,
+        "unrecordedEvidenceChecks": 0,
+        "coverageNoteJa": "プロフィールknownBy/passages/factsの該当節の固定WEB本文を添付。evidence側の原文チェックと照合できた節はexactを示し、sidecarが本文を個別保存していない座標はその旨を明記。"
+      },
+      "wikipediaBodyAudit": {
+        "url": null,
+        "kind": null,
+        "identityVerified": null,
+        "relationVerified": null,
+        "noteJa": null,
+        "locator": null,
+        "articleRead": false,
+        "bodyReadAtUTC": null,
+        "supportJa": null,
+        "nullSearch": {
+          "url": null,
+          "status": "searched-no-fit",
+          "identityBasisJa": "Micah disambiguation and Micah (biblical figure) targets were checked; the generic prophet article is a different individual and the dedicated title request did not yield a usable page. The A–K/L–Z lists offer no fitting Uzziel-son entry.",
+          "fragmentVerified": false,
+          "queries": [
+            "site:en.wikipedia.org/wiki \"Micah\" \"son of Uzziel\" \"1 Chronicles 23:20\"",
+            "Wikipedia Micah son of Uzziel 1 Chronicles 23:20"
+          ],
+          "checkedAtUTC": "2026-10-16T10:18:45Z"
+        }
+      },
+      "secondaryDependencyPolicyJa": "二次資料に依存する別表記・同定・称号解釈は一次資料のみの根拠として扱わず、表示はrelated-linkまたはholdへ限定する。",
+      "reclosureThreeSHAExactToCurrent": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:obadiah_2220",
+      "draftPath": "drafts/persons_2/1CH_person_obadiah_2220.json",
+      "evidencePath": "evidence/persons_2/1CH_person_obadiah_2220-sources.json",
+      "currentDraftSHA256": "8c387b49308d527ef6a449cfc65fbb727a74287556b7b55de6b87302a9b10761",
+      "currentProfileSHA256": "31e70c52d769c41b87b5921a38a5a30c1303226b200b01afe9fd5c54f020caca",
+      "currentEvidenceSHA256": "5696fc032f61d9c96e27a3907ecadb05c70715e27e99caf5ed02dce0545fb76d",
+      "currentManifestSHA256": "341ef2f4ed622b03a44718850ceebcad60dcc24294381a82e74bce9af28e3ef7",
+      "manifestRecordThreeSHAExact": true,
+      "reclosureReportPath": "reviews/reclosure-batch06-persons_2-current.json",
+      "reclosureReportSHA256": "415b729252f89a2e4947588dbeed5032c5bd863d27abca0b00e3cd15d29f7766",
+      "previousDecision": "qualified",
+      "qualifiedDecisionPreserved": true,
+      "runtimeDisposition": "primary-only",
+      "dispositionReasonJa": "12:9の指揮官名簿はObadiahを第二位として明記する。肩書き以外の履歴は本文から広げず、一次本文に限る。",
+      "heldScopes": [],
+      "knownBy": {
+        "chapter": 12,
+        "verse": 9
+      },
+      "readerFields": {
+        "nameJa": "オバデヤ",
+        "subtitleJa": "ベニヤミン人の隊長",
+        "summaryJa": "ベニヤミン族からダビデのもとに来た隊長たちの名簿で、二番目の指揮者として記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "ベニヤミン族の隊長",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": null
+      },
+      "allCurrentFacts": [],
+      "primaryTextContextAudit": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "checks": [
+          {
+            "ref": "1CH 12:9",
+            "fixedText": "Ezer the chief, Obadiah the second, Eliab the third,",
+            "fixedURL": "https://ebible.org/engwebp/1CH12.htm#V9",
+            "evidenceText": "Ezer the chief, Obadiah the second, Eliab the third,",
+            "evidenceURL": "https://ebible.org/engwebp/1CH12.htm#V9",
+            "evidenceTextSHA256": "83a5350be39b02904809c90f887d0ca598dab68753e29bbe3876360e0e1d3197",
+            "exactTextURLMatch": true
+          }
+        ],
+        "allRecordedEvidenceTextURLChecksExact": true,
+        "unrecordedEvidenceChecks": 0,
+        "coverageNoteJa": "プロフィールknownBy/passages/factsの該当節の固定WEB本文を添付。evidence側の原文チェックと照合できた節はexactを示し、sidecarが本文を個別保存していない座標はその旨を明記。"
+      },
+      "wikipediaBodyAudit": {
+        "url": null,
+        "kind": null,
+        "identityVerified": null,
+        "relationVerified": null,
+        "noteJa": null,
+        "locator": null,
+        "articleRead": false,
+        "bodyReadAtUTC": null,
+        "supportJa": null,
+        "nullSearch": {
+          "url": null,
+          "status": "searched-no-fit",
+          "identityBasisJa": "L–Z list Obadiah section lines 815–820 identifies a Davidic descendant, son of Arnan, unrelated to the Gadite warrior named in 1CH12:9. No suitable exact page/section found.",
+          "fragmentVerified": false,
+          "queries": [
+            "Wikipedia Obadiah son of Arnan 1 Chronicles 12:9",
+            "List of minor Hebrew Bible figures L–Z Obadiah"
+          ],
+          "checkedAtUTC": "2026-10-16T10:18:45Z"
+        }
+      },
+      "secondaryDependencyPolicyJa": "二次資料に依存する別表記・同定・称号解釈は一次資料のみの根拠として扱わず、表示はrelated-linkまたはholdへ限定する。",
+      "reclosureThreeSHAExactToCurrent": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:obed_2230",
+      "draftPath": "drafts/persons_2/1CH_person_obed_2230.json",
+      "evidencePath": "evidence/persons_2/1CH_person_obed_2230-sources.json",
+      "currentDraftSHA256": "3f658d508ca9ad44602decf621dc4b5f86691bc90e2e456682a9a7f3c18f8715",
+      "currentProfileSHA256": "2141e80c71090f044a0feda1e3b5e4df035a21b52c58b9e56dbea0223b2542a8",
+      "currentEvidenceSHA256": "a807ebaa399bc879c2cd95aeebc841d55da8aebb57da3ecf4e444c62e69195b5",
+      "currentManifestSHA256": "341ef2f4ed622b03a44718850ceebcad60dcc24294381a82e74bce9af28e3ef7",
+      "manifestRecordThreeSHAExact": true,
+      "reclosureReportPath": "reviews/reclosure-batch06-persons_2-current.json",
+      "reclosureReportSHA256": "415b729252f89a2e4947588dbeed5032c5bd863d27abca0b00e3cd15d29f7766",
+      "previousDecision": "qualified",
+      "qualifiedDecisionPreserved": true,
+      "runtimeDisposition": "primary-only",
+      "dispositionReasonJa": "11:47はダビデの勇士名簿のObedを名指す。外部記事の未確認・同名情報を表示根拠にしない。",
+      "heldScopes": [],
+      "knownBy": {
+        "chapter": 11,
+        "verse": 47
+      },
+      "readerFields": {
+        "nameJa": "オベデ",
+        "subtitleJa": "ダビデの勇士",
+        "summaryJa": "ダビデの勇士の名簿に、エリエル、ヤアシエルとともに挙げられています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "ダビデの勇士",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": null
+      },
+      "allCurrentFacts": [],
+      "primaryTextContextAudit": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "checks": [
+          {
+            "ref": "1CH 11:47",
+            "fixedText": "Eliel, Obed, and Jaasiel the Mezobaite.",
+            "fixedURL": "https://ebible.org/engwebp/1CH11.htm#V47",
+            "evidenceText": "Eliel, Obed, and Jaasiel the Mezobaite.",
+            "evidenceURL": "https://ebible.org/engwebp/1CH11.htm#V47",
+            "evidenceTextSHA256": "453a87031706ccd786e64c822ea5e75282b1f754b7e780da80f0004a4df0ae16",
+            "exactTextURLMatch": true
+          }
+        ],
+        "allRecordedEvidenceTextURLChecksExact": true,
+        "unrecordedEvidenceChecks": 0,
+        "coverageNoteJa": "プロフィールknownBy/passages/factsの該当節の固定WEB本文を添付。evidence側の原文チェックと照合できた節はexactを示し、sidecarが本文を個別保存していない座標はその旨を明記。"
+      },
+      "wikipediaBodyAudit": {
+        "url": null,
+        "kind": null,
+        "identityVerified": null,
+        "relationVerified": null,
+        "noteJa": null,
+        "locator": null,
+        "articleRead": false,
+        "bodyReadAtUTC": null,
+        "supportJa": null,
+        "nullSearch": {
+          "url": null,
+          "status": "searched-no-fit",
+          "identityBasisJa": "L–Z list Obed section lines 827–831 identifies the father of Azariah in 2CH23:1, not the 1CH11:47 warrior. No suitable exact page/section found.",
+          "fragmentVerified": false,
+          "queries": [
+            "Wikipedia Obed 1 Chronicles 11:47 warrior",
+            "List of minor Hebrew Bible figures L–Z Obed 1 Chronicles 11:47"
+          ],
+          "checkedAtUTC": "2026-10-16T10:18:45Z"
+        }
+      },
+      "secondaryDependencyPolicyJa": "二次資料に依存する別表記・同定・称号解釈は一次資料のみの根拠として扱わず、表示はrelated-linkまたはholdへ限定する。",
+      "reclosureThreeSHAExactToCurrent": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:pedaiah_2294",
+      "draftPath": "drafts/persons_2/1CH_person_pedaiah_2294.json",
+      "evidencePath": "evidence/persons_2/1CH_person_pedaiah_2294-sources.json",
+      "currentDraftSHA256": "3a323dbf443e0f0489445d9effb1c353d39ddac6b3514c81e100157f55bd694f",
+      "currentProfileSHA256": "3550f905d4af57a85d7b36a36d1b46f351d80f1c3a92231472e25f64ea3d32ef",
+      "currentEvidenceSHA256": "c9419bf09d2f0fe25d9bc7580f2cf590d29633e893afea84eaabf8fd220149c7",
+      "currentManifestSHA256": "341ef2f4ed622b03a44718850ceebcad60dcc24294381a82e74bce9af28e3ef7",
+      "manifestRecordThreeSHAExact": true,
+      "reclosureReportPath": "reviews/reclosure-batch06-persons_2-current.json",
+      "reclosureReportSHA256": "415b729252f89a2e4947588dbeed5032c5bd863d27abca0b00e3cd15d29f7766",
+      "previousDecision": "qualified",
+      "qualifiedDecisionPreserved": true,
+      "runtimeDisposition": "primary-only",
+      "dispositionReasonJa": "27:20はマナセ半部族の指揮官JoelをPedaiahの子として記す。profileは当該系譜・役割に限定する。",
+      "heldScopes": [],
+      "knownBy": {
+        "chapter": 27,
+        "verse": 20
+      },
+      "readerFields": {
+        "nameJa": "ペダヤ",
+        "subtitleJa": "マナセ半部族の子ペダヤ",
+        "summaryJa": "ダビデの時代の部族長名簿で、マナセ半部族の代表として記されるヨエルの父です。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "マナセ半部族の系譜",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": null
+      },
+      "allCurrentFacts": [],
+      "primaryTextContextAudit": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "checks": [
+          {
+            "ref": "1CH 27:20",
+            "fixedText": "of the children of Ephraim, Hoshea the son of Azaziah; of the half-tribe of Manasseh, Joel the son of Pedaiah;",
+            "fixedURL": "https://ebible.org/engwebp/1CH27.htm#V20",
+            "evidenceText": "of the children of Ephraim, Hoshea the son of Azaziah; of the half-tribe of Manasseh, Joel the son of Pedaiah;",
+            "evidenceURL": "https://ebible.org/engwebp/1CH27.htm#V20",
+            "evidenceTextSHA256": "77aaf285cab15e5baa26205565c7c4434120b802c1cc179bb41aea3d734062e6",
+            "exactTextURLMatch": true
+          }
+        ],
+        "allRecordedEvidenceTextURLChecksExact": true,
+        "unrecordedEvidenceChecks": 0,
+        "coverageNoteJa": "プロフィールknownBy/passages/factsの該当節の固定WEB本文を添付。evidence側の原文チェックと照合できた節はexactを示し、sidecarが本文を個別保存していない座標はその旨を明記。"
+      },
+      "wikipediaBodyAudit": {
+        "url": null,
+        "kind": null,
+        "identityVerified": null,
+        "relationVerified": null,
+        "noteJa": null,
+        "locator": null,
+        "articleRead": false,
+        "bodyReadAtUTC": null,
+        "supportJa": null,
+        "nullSearch": {
+          "url": null,
+          "status": "searched-no-fit",
+          "identityBasisJa": "A–K list search returned other Pedaiah references but no entry for the father of Joel; the Wikipedia search surfaced Bible dictionary pages outside Wikipedia. No fitting Wikipedia article section was located.",
+          "fragmentVerified": false,
+          "queries": [
+            "site:en.wikipedia.org/wiki Pedaiah 1 Chronicles 27:20",
+            "Wikipedia Pedaiah father of Joel Manasseh 1 Chronicles 27:20"
+          ],
+          "checkedAtUTC": "2026-10-16T10:18:45Z"
+        }
+      },
+      "secondaryDependencyPolicyJa": "二次資料に依存する別表記・同定・称号解釈は一次資料のみの根拠として扱わず、表示はrelated-linkまたはholdへ限定する。",
+      "reclosureThreeSHAExactToCurrent": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:pharaoh_2334",
+      "draftPath": "drafts/persons_2/1CH_person_pharaoh_2334.json",
+      "evidencePath": "evidence/persons_2/1CH_person_pharaoh_2334-sources.json",
+      "currentDraftSHA256": "24bac401038cd3a58b830cd2b40684c5e8125b7dda5dabec403820ec3f84ff7b",
+      "currentProfileSHA256": "0a27e25b7a2d359137884d290868b9f507ee2086b166e425539ee7ed49390496",
+      "currentEvidenceSHA256": "826b26599ada07f717669b8df8885e72a857137e9f36493890b7e4d11a0a8cde",
+      "currentManifestSHA256": "341ef2f4ed622b03a44718850ceebcad60dcc24294381a82e74bce9af28e3ef7",
+      "manifestRecordThreeSHAExact": true,
+      "reclosureReportPath": "reviews/reclosure-batch06-persons_2-current.json",
+      "reclosureReportSHA256": "415b729252f89a2e4947588dbeed5032c5bd863d27abca0b00e3cd15d29f7766",
+      "previousDecision": "qualified",
+      "qualifiedDecisionPreserved": true,
+      "runtimeDisposition": "related-link",
+      "dispositionReasonJa": "4:18はBithiahを「ファラオの娘」と呼ぶだけで王個人を特定しない。一般称号の記事は関連説明のみであり、特定王の同定根拠ではない。",
+      "heldScopes": [],
+      "knownBy": {
+        "chapter": 4,
+        "verse": 18
+      },
+      "readerFields": {
+        "nameJa": "ファラオ",
+        "subtitleJa": "名が記されないエジプト王の称号",
+        "summaryJa": "ビティヤは「ファラオの娘」と呼ばれますが、この節に王の個人名は記されません。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "エジプト王の称号",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": {
+          "title": "Pharaoh",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Pharaoh",
+          "kind": "related-section",
+          "noteJa": "記事は「ファラオ」を古代エジプト王の称号として解説しますが、1歴代誌4:18の王個人は特定しません。",
+          "identityVerified": false,
+          "relationVerified": true,
+          "locator": "Lead, lines 258–321: the article is about the general title and describes Pharaoh as the monarch of ancient Egypt; no identification of the ruler in 1 Chronicles 4:18.",
+          "checkedAt": "2026-10-16",
+          "knownBy": {
+            "chapter": 4,
+            "verse": 18
+          },
+          "sourceId": "chronicles-person-pharaoh_2334-wikipedia"
+        }
+      },
+      "allCurrentFacts": [],
+      "primaryTextContextAudit": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "checks": [
+          {
+            "ref": "1CH 4:18",
+            "fixedText": "His wife the Jewess bore Jered the father of Gedor, Heber the father of Soco, and Jekuthiel the father of Zanoah. These are the sons of Bithiah the daughter of Pharaoh, whom Mered took.",
+            "fixedURL": "https://ebible.org/engwebp/1CH04.htm#V18",
+            "evidenceText": "His wife the Jewess bore Jered the father of Gedor, Heber the father of Soco, and Jekuthiel the father of Zanoah. These are the sons of Bithiah the daughter of Pharaoh, whom Mered took.",
+            "evidenceURL": "https://ebible.org/engwebp/1CH04.htm#V18",
+            "evidenceTextSHA256": "13b61e225c194c983b3bd7d6a306dd45f9da2a1cc8a58a95ee44dab5ff46e72d",
+            "exactTextURLMatch": true
+          }
+        ],
+        "allRecordedEvidenceTextURLChecksExact": true,
+        "unrecordedEvidenceChecks": 0,
+        "coverageNoteJa": "プロフィールknownBy/passages/factsの該当節の固定WEB本文を添付。evidence側の原文チェックと照合できた節はexactを示し、sidecarが本文を個別保存していない座標はその旨を明記。"
+      },
+      "wikipediaBodyAudit": {
+        "url": "https://en.wikipedia.org/wiki/Pharaoh",
+        "kind": "related-section",
+        "identityVerified": false,
+        "relationVerified": true,
+        "noteJa": "記事は「ファラオ」を古代エジプト王の称号として解説しますが、1歴代誌4:18の王個人は特定しません。",
+        "locator": "Lead, lines 258–321: the article is about the general title and describes Pharaoh as the monarch of ancient Egypt; no identification of the ruler in 1 Chronicles 4:18.",
+        "articleRead": false,
+        "bodyReadAtUTC": "2026-10-16T10:16:27Z",
+        "supportJa": "ページ冒頭は王の一般的称号を説明する記事だと示し、導入部で古代エジプトの君主を指す称号と説明する。本文4:18はビティヤをファラオの娘と呼ぶが王個人名は示さないため、概念上の関連に限る。",
+        "nullSearch": null
+      },
+      "secondaryDependencyPolicyJa": "二次資料に依存する別表記・同定・称号解釈は一次資料のみの根拠として扱わず、表示はrelated-linkまたはholdへ限定する。",
+      "reclosureThreeSHAExactToCurrent": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:rapha_2447",
+      "draftPath": "drafts/persons_2/1CH_person_rapha_2447.json",
+      "evidencePath": "evidence/persons_2/1CH_person_rapha_2447-sources.json",
+      "currentDraftSHA256": "27af194f383552045e17cc81c1387bd995517189c69beed264bca8467f1aeda7",
+      "currentProfileSHA256": "ecb09647ce74b13832f397afa422f46cb1b55fd50a0a2ad1337311673c6c5c65",
+      "currentEvidenceSHA256": "2f3d8f66b55dbdd5e3366fe3dd3cbe0039ad827f657e3638139351794e87a09f",
+      "currentManifestSHA256": "341ef2f4ed622b03a44718850ceebcad60dcc24294381a82e74bce9af28e3ef7",
+      "manifestRecordThreeSHAExact": true,
+      "reclosureReportPath": "reviews/reclosure-batch06-persons_2-current.json",
+      "reclosureReportSHA256": "415b729252f89a2e4947588dbeed5032c5bd863d27abca0b00e3cd15d29f7766",
+      "previousDecision": "qualified",
+      "qualifiedDecisionPreserved": true,
+      "runtimeDisposition": "primary-only",
+      "dispositionReasonJa": "8:2はトラの子らの列挙でRaphaを第五とする。別のRapha/Rephaiahとの同一性は一次本文から確定せず、このカードには広げない。",
+      "heldScopes": [],
+      "knownBy": {
+        "chapter": 8,
+        "verse": 2
+      },
+      "readerFields": {
+        "nameJa": "ラファ",
+        "subtitleJa": "ベニヤミンの子孫",
+        "summaryJa": "ベニヤミンの子らの名簿で、ノハの後に五男として挙げられています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "系譜上の人物",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": null
+      },
+      "allCurrentFacts": [],
+      "primaryTextContextAudit": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "checks": [
+          {
+            "ref": "1CH 8:2",
+            "fixedText": "Nohah the fourth, and Rapha the fifth.",
+            "fixedURL": "https://ebible.org/engwebp/1CH08.htm#V2",
+            "evidenceText": "Nohah the fourth, and Rapha the fifth.",
+            "evidenceURL": "https://ebible.org/engwebp/1CH08.htm#V2",
+            "evidenceTextSHA256": "7fef4625397e62ab91886c9a0c9a33ae50c0f624faa45fc83077691c73ce1bac",
+            "exactTextURLMatch": true
+          }
+        ],
+        "allRecordedEvidenceTextURLChecksExact": true,
+        "unrecordedEvidenceChecks": 0,
+        "coverageNoteJa": "プロフィールknownBy/passages/factsの該当節の固定WEB本文を添付。evidence側の原文チェックと照合できた節はexactを示し、sidecarが本文を個別保存していない座標はその旨を明記。"
+      },
+      "wikipediaBodyAudit": {
+        "url": null,
+        "kind": null,
+        "identityVerified": null,
+        "relationVerified": null,
+        "noteJa": null,
+        "locator": null,
+        "articleRead": false,
+        "bodyReadAtUTC": null,
+        "supportJa": null,
+        "nullSearch": {
+          "url": null,
+          "status": "searched-no-fit",
+          "identityBasisJa": "A–K/L–Z figure-list results concern other namesakes, including Rephah/Rephaiah and descendants; none identifies the Benjamin genealogy name in 1CH8:2. No fitting page/section found.",
+          "fragmentVerified": false,
+          "queries": [
+            "Wikipedia Rapha 1 Chronicles 8:2 son of Benjamin",
+            "List of minor Hebrew Bible figures Rapha 1 Chronicles 8:2"
+          ],
+          "checkedAtUTC": "2026-10-16T10:18:45Z"
+        }
+      },
+      "secondaryDependencyPolicyJa": "二次資料に依存する別表記・同定・称号解釈は一次資料のみの根拠として扱わず、表示はrelated-linkまたはholdへ限定する。",
+      "reclosureThreeSHAExactToCurrent": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:rephaiah_2396",
+      "draftPath": "drafts/persons_2/1CH_person_rephaiah_2396.json",
+      "evidencePath": "evidence/persons_2/1CH_person_rephaiah_2396-sources.json",
+      "currentDraftSHA256": "bc3b78b7a2753a2d09ead3a1699ae8e022ecdf58855b54b797b26199ff78b6ec",
+      "currentProfileSHA256": "df14d5e5248ebc64d8e6022348c004bc54d14a9c07cfcadfabb711dc3beae13f",
+      "currentEvidenceSHA256": "5d4b3a5a88af5f82ea9784cd53e2e213ebeab6c0fc695985fbcfe3eea7b1ae33",
+      "currentManifestSHA256": "341ef2f4ed622b03a44718850ceebcad60dcc24294381a82e74bce9af28e3ef7",
+      "manifestRecordThreeSHAExact": true,
+      "reclosureReportPath": "reviews/reclosure-batch06-persons_2-current.json",
+      "reclosureReportSHA256": "415b729252f89a2e4947588dbeed5032c5bd863d27abca0b00e3cd15d29f7766",
+      "previousDecision": "qualified",
+      "qualifiedDecisionPreserved": true,
+      "runtimeDisposition": "hold",
+      "dispositionReasonJa": "8:37はRaphah、9:43はRephaiahを別綴りで記す。両者を同一人物とする接続はWikipedia記事に依存するためprofile全体をholdし、原文上の各綴りだけを個別表示可能とする。記事の異綴り主張を一次根拠にしない。",
+      "heldScopes": [],
+      "knownBy": {
+        "chapter": 8,
+        "verse": 37
+      },
+      "readerFields": {
+        "nameJa": "レファヤ",
+        "subtitleJa": "ベニヤミン族の系譜に現れる人物",
+        "summaryJa": "モツァの子ビネアに続く系譜の名として挙げられます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "系譜上の人物",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, L–Z",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Rephaiah",
+          "kind": "shared-section",
+          "noteJa": "Rephaiahの項は三人を区別し、ビネアの子でエレアサの父、ラファとも呼ばれる人物を挙げます。8:37のラファとの対応は記事に基づく表記関係です。",
+          "identityVerified": true,
+          "relationVerified": false,
+          "locator": "L–Z article, “Rephaiah” entry, lines 1172–1180; separates three namesakes and says the Binea son/father of Eleasah is also called Rapha.",
+          "checkedAt": "2026-10-16",
+          "knownBy": {
+            "chapter": 9,
+            "verse": 43
+          },
+          "sourceId": "chronicles-person-rephaiah_2396-wikipedia"
+        }
+      },
+      "allCurrentFacts": [
+        {
+          "textJa": "9章の系譜では、モツァの子ビネアに続く名がレファヤと綴られます。",
+          "knownBy": {
+            "chapter": 9,
+            "verse": 43
+          },
+          "sourceIds": [
+            "chronicles-person-rephaiah_2396-webp-1ch-9-43"
+          ],
+          "sourceWitnesses": [
+            {
+              "sourceId": "chronicles-person-rephaiah_2396-webp-1ch-9-43",
+              "knownBy": {
+                "chapter": 9,
+                "verse": 43
+              },
+              "url": "https://ebible.org/engwebp/1CH09.htm#V43"
+            }
+          ]
+        }
+      ],
+      "primaryTextContextAudit": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "checks": [
+          {
+            "ref": "1CH 8:37",
+            "fixedText": "Moza became the father of Binea. Raphah was his son, Eleasah his son, and Azel his son.",
+            "fixedURL": "https://ebible.org/engwebp/1CH08.htm#V37",
+            "evidenceText": "Moza became the father of Binea. Raphah was his son, Eleasah his son, and Azel his son.",
+            "evidenceURL": "https://ebible.org/engwebp/1CH08.htm#V37",
+            "evidenceTextSHA256": "324ed6cb366dee4df5f2ed22c236db2ba9539dbe7bf800649ea73a229a39646e",
+            "exactTextURLMatch": true
+          },
+          {
+            "ref": "1CH 9:43",
+            "fixedText": "Moza became the father of Binea, Rephaiah his son, Eleasah his son, and Azel his son.",
+            "fixedURL": "https://ebible.org/engwebp/1CH09.htm#V43",
+            "evidenceText": "Moza became the father of Binea, Rephaiah his son, Eleasah his son, and Azel his son.",
+            "evidenceURL": "https://ebible.org/engwebp/1CH09.htm#V43",
+            "evidenceTextSHA256": "82885eed5a1f3aa30f193c59c4fb9b677a3847a7738461e9d2e4750aa4b4c371",
+            "exactTextURLMatch": true
+          }
+        ],
+        "allRecordedEvidenceTextURLChecksExact": true,
+        "unrecordedEvidenceChecks": 0,
+        "coverageNoteJa": "プロフィールknownBy/passages/factsの該当節の固定WEB本文を添付。evidence側の原文チェックと照合できた節はexactを示し、sidecarが本文を個別保存していない座標はその旨を明記。"
+      },
+      "wikipediaBodyAudit": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Rephaiah",
+        "kind": "shared-section",
+        "identityVerified": true,
+        "relationVerified": false,
+        "noteJa": "Rephaiahの項は三人を区別し、ビネアの子でエレアサの父、ラファとも呼ばれる人物を挙げます。8:37のラファとの対応は記事に基づく表記関係です。",
+        "locator": "L–Z article, “Rephaiah” entry, lines 1172–1180; separates three namesakes and says the Binea son/father of Eleasah is also called Rapha.",
+        "articleRead": true,
+        "bodyReadAtUTC": "2026-10-16T10:02:56Z",
+        "supportJa": "Rephaiahの項は三人を区別し、ビネアの子でエレアサの父、ラファとも呼ばれる人物を挙げます。8:37のラファとの対応は記事に基づく表記関係です。",
+        "nullSearch": null
+      },
+      "secondaryDependencyPolicyJa": "二次資料に依存する別表記・同定・称号解釈は一次資料のみの根拠として扱わず、表示はrelated-linkまたはholdへ限定する。",
+      "reclosureThreeSHAExactToCurrent": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:rephaiah_2425",
+      "draftPath": "drafts/persons_2/1CH_person_rephaiah_2425.json",
+      "evidencePath": "evidence/persons_2/1CH_person_rephaiah_2425-sources.json",
+      "currentDraftSHA256": "4163062b1ff3795517a2bacdaa26d0b0f96bec190ce35be0e4f9d68713fe6f47",
+      "currentProfileSHA256": "3b63be85ad996815fcc44ef25bcd97d5889b7da52bb8f9b91d27aa4f9821c484",
+      "currentEvidenceSHA256": "b9192ab0b26b89a19fd61fe808ec56b6dd1d5ea468866f1a010def035a947cf9",
+      "currentManifestSHA256": "341ef2f4ed622b03a44718850ceebcad60dcc24294381a82e74bce9af28e3ef7",
+      "manifestRecordThreeSHAExact": true,
+      "reclosureReportPath": "reviews/reclosure-batch06-persons_2-current.json",
+      "reclosureReportSHA256": "415b729252f89a2e4947588dbeed5032c5bd863d27abca0b00e3cd15d29f7766",
+      "previousDecision": "qualified",
+      "qualifiedDecisionPreserved": true,
+      "runtimeDisposition": "primary-only",
+      "dispositionReasonJa": "7:2はトラの子らの系譜、父祖家の長、勇士、人口を記す。これらの役割と数値は同節に限定する。",
+      "heldScopes": [],
+      "knownBy": {
+        "chapter": 7,
+        "verse": 2
+      },
+      "readerFields": {
+        "nameJa": "レファヤ",
+        "subtitleJa": "トラの子孫の家長",
+        "summaryJa": "トラの子孫の家長たちの一人で、勇士とされます。ダビデの時代の人数は二万二千六百人と記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "イッサカル族の家長",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": null
+      },
+      "allCurrentFacts": [],
+      "primaryTextContextAudit": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "checks": [
+          {
+            "ref": "1CH 7:2",
+            "fixedText": "The sons of Tola: Uzzi, Rephaiah, Jeriel, Jahmai, Ibsam, and Shemuel, heads of their fathers’ houses, of Tola; mighty men of valor in their generations. Their number in the days of David was twenty-two thousand six hundred.",
+            "fixedURL": "https://ebible.org/engwebp/1CH07.htm#V2",
+            "evidenceText": "The sons of Tola: Uzzi, Rephaiah, Jeriel, Jahmai, Ibsam, and Shemuel, heads of their fathers’ houses, of Tola; mighty men of valor in their generations. Their number in the days of David was twenty-two thousand six hundred.",
+            "evidenceURL": "https://ebible.org/engwebp/1CH07.htm#V2",
+            "evidenceTextSHA256": "959e40287fd48e78bbb1cd932b9395d40e4334ca3a7551629ffb872bc4c3d00d",
+            "exactTextURLMatch": true
+          }
+        ],
+        "allRecordedEvidenceTextURLChecksExact": true,
+        "unrecordedEvidenceChecks": 0,
+        "coverageNoteJa": "プロフィールknownBy/passages/factsの該当節の固定WEB本文を添付。evidence側の原文チェックと照合できた節はexactを示し、sidecarが本文を個別保存していない座標はその旨を明記。"
+      },
+      "wikipediaBodyAudit": {
+        "url": null,
+        "kind": null,
+        "identityVerified": null,
+        "relationVerified": null,
+        "noteJa": null,
+        "locator": null,
+        "articleRead": false,
+        "bodyReadAtUTC": null,
+        "supportJa": null,
+        "nullSearch": {
+          "url": null,
+          "status": "searched-no-fit",
+          "identityBasisJa": "L–Z list Rephaiah entries concern other people (including a Davidic descendant and a Benjaminite); none is Tola’s son in 1CH7:2. No suitable page/section found.",
+          "fragmentVerified": false,
+          "queries": [
+            "Wikipedia Rephaiah 1 Chronicles 7:2 son of Tola",
+            "List of minor Hebrew Bible figures L–Z Rephaiah"
+          ],
+          "checkedAtUTC": "2026-10-16T10:18:45Z"
+        }
+      },
+      "secondaryDependencyPolicyJa": "二次資料に依存する別表記・同定・称号解釈は一次資料のみの根拠として扱わず、表示はrelated-linkまたはholdへ限定する。",
+      "reclosureThreeSHAExactToCurrent": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:sallu_2459",
+      "draftPath": "drafts/persons_2/1CH_person_sallu_2459.json",
+      "evidencePath": "evidence/persons_2/1CH_person_sallu_2459-sources.json",
+      "currentDraftSHA256": "c0f8f7f770ecefd79eb1f363b06c33f0603a07ae83576f21fa83fca0044c0c53",
+      "currentProfileSHA256": "36f5fe4e2f46113fa277219c16636088e552cb6b8f59c42f9ec83e10e1feea63",
+      "currentEvidenceSHA256": "bf1f39dcf0390d5c30989158d070a0a95b38e42e7e5bb4d154aa626e23bb63a6",
+      "currentManifestSHA256": "341ef2f4ed622b03a44718850ceebcad60dcc24294381a82e74bce9af28e3ef7",
+      "manifestRecordThreeSHAExact": true,
+      "reclosureReportPath": "reviews/reclosure-batch06-persons_2-current.json",
+      "reclosureReportSHA256": "415b729252f89a2e4947588dbeed5032c5bd863d27abca0b00e3cd15d29f7766",
+      "previousDecision": "qualified",
+      "qualifiedDecisionPreserved": true,
+      "runtimeDisposition": "primary-only",
+      "dispositionReasonJa": "9:7はベニヤミン系譜のSalluと父祖名を明記する。列挙外の人物情報や同名者との結合を追加しない。",
+      "heldScopes": [],
+      "knownBy": {
+        "chapter": 9,
+        "verse": 7
+      },
+      "readerFields": {
+        "nameJa": "サル",
+        "subtitleJa": "ベニヤミン人メシュラムの子",
+        "summaryJa": "エルサレムに住むベニヤミン族の名簿で、ホダウヤの子メシュラムの子、ハセヌアの子孫として挙げられます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "ベニヤミン族の系譜",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": null
+      },
+      "allCurrentFacts": [],
+      "primaryTextContextAudit": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "checks": [
+          {
+            "ref": "1CH 9:7",
+            "fixedText": "Of the sons of Benjamin: Sallu the son of Meshullam, the son of Hodaviah, the son of Hassenuah;",
+            "fixedURL": "https://ebible.org/engwebp/1CH09.htm#V7",
+            "evidenceText": "Of the sons of Benjamin: Sallu the son of Meshullam, the son of Hodaviah, the son of Hassenuah;",
+            "evidenceURL": "https://ebible.org/engwebp/1CH09.htm#V7",
+            "evidenceTextSHA256": "6c6208969a26ed223204cb976b67d7d917356b83ce02077a39597ee863126c82",
+            "exactTextURLMatch": true
+          }
+        ],
+        "allRecordedEvidenceTextURLChecksExact": true,
+        "unrecordedEvidenceChecks": 0,
+        "coverageNoteJa": "プロフィールknownBy/passages/factsの該当節の固定WEB本文を添付。evidence側の原文チェックと照合できた節はexactを示し、sidecarが本文を個別保存していない座標はその旨を明記。"
+      },
+      "wikipediaBodyAudit": {
+        "url": null,
+        "kind": null,
+        "identityVerified": null,
+        "relationVerified": null,
+        "noteJa": null,
+        "locator": null,
+        "articleRead": false,
+        "bodyReadAtUTC": null,
+        "supportJa": null,
+        "nullSearch": {
+          "url": null,
+          "status": "searched-no-fit",
+          "identityBasisJa": "The L–Z list result near the Sallu search is a different namesake (Joed/Nehemiah context); no page or list section identifies the Benjaminite in 1CH9:7.",
+          "fragmentVerified": false,
+          "queries": [
+            "Wikipedia Sallu 1 Chronicles 9:7 son of Meshullam",
+            "List of minor Hebrew Bible figures Sallu 1 Chronicles 9:7"
+          ],
+          "checkedAtUTC": "2026-10-16T10:18:45Z"
+        }
+      },
+      "secondaryDependencyPolicyJa": "二次資料に依存する別表記・同定・称号解釈は一次資料のみの根拠として扱わず、表示はrelated-linkまたはholdへ限定する。",
+      "reclosureThreeSHAExactToCurrent": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:satan_2476",
+      "draftPath": "drafts/persons_2/1CH_person_satan_2476.json",
+      "evidencePath": "evidence/persons_2/1CH_person_satan_2476-sources.json",
+      "currentDraftSHA256": "facd160accdcc41ce52b35284f6b596be3d50e3921507125fec1f3cc34623171",
+      "currentProfileSHA256": "5351733b1b06e245b7377324d2adfb84356aecb537ec69c373e05e21c7f0064d",
+      "currentEvidenceSHA256": "356944131eb12e313bd7b1d60ba23d70ab275c8f4ac3ae602bfb1f14394269c2",
+      "currentManifestSHA256": "341ef2f4ed622b03a44718850ceebcad60dcc24294381a82e74bce9af28e3ef7",
+      "manifestRecordThreeSHAExact": true,
+      "reclosureReportPath": "reviews/reclosure-batch06-persons_2-current.json",
+      "reclosureReportSHA256": "415b729252f89a2e4947588dbeed5032c5bd863d27abca0b00e3cd15d29f7766",
+      "previousDecision": "qualified",
+      "qualifiedDecisionPreserved": true,
+      "runtimeDisposition": "related-link",
+      "dispositionReasonJa": "21:1は“Satan”を名指すが固有名か敵対者の呼称かの解釈幅が残る。関連記事は解釈上の関連情報としてのみ示し、確定した個人同定とはしない。",
+      "heldScopes": [],
+      "knownBy": {
+        "chapter": 21,
+        "verse": 1
+      },
+      "readerFields": {
+        "nameJa": "サタン",
+        "subtitleJa": "ダビデに人口調査を促す敵対者",
+        "summaryJa": "イスラエルに敵対し、ダビデを促して人口調査を行わせた存在として記されます。この節の表現が固有名か「敵対者」という呼称かは、文脈上の解釈に幅があります。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "敵対する存在",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": {
+          "title": "1 Chronicles 21",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/1_Chronicles_21#David%E2%80%99s_military_census_(21:1%E2%80%936)",
+          "kind": "related-section",
+          "noteJa": "英語版章記事は21:1の「satan」を敵対者と訳す解釈を説明し、個人名と呼称の読み分けに触れます。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "relationVerified": true,
+          "locator": "“David’s military census (21:1–6)” section, text discussing the term in verse 1 and noting interpretive disagreement.",
+          "knownBy": {
+            "chapter": 21,
+            "verse": 1
+          },
+          "sourceId": "chronicles-person-satan_2476-wikipedia"
+        }
+      },
+      "allCurrentFacts": [],
+      "primaryTextContextAudit": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "checks": [
+          {
+            "ref": "1CH 21:1",
+            "fixedText": "Satan stood up against Israel, and moved David to take a census of Israel.",
+            "fixedURL": "https://ebible.org/engwebp/1CH21.htm#V1",
+            "evidenceText": "Satan stood up against Israel, and moved David to take a census of Israel.",
+            "evidenceURL": "https://ebible.org/engwebp/1CH21.htm#V1",
+            "evidenceTextSHA256": "3b67965b7d3135e632ba93aeea9fca96a57bc68b3b8d943ade9891805540f26f",
+            "exactTextURLMatch": true
+          }
+        ],
+        "allRecordedEvidenceTextURLChecksExact": true,
+        "unrecordedEvidenceChecks": 0,
+        "coverageNoteJa": "プロフィールknownBy/passages/factsの該当節の固定WEB本文を添付。evidence側の原文チェックと照合できた節はexactを示し、sidecarが本文を個別保存していない座標はその旨を明記。"
+      },
+      "wikipediaBodyAudit": {
+        "url": "https://en.wikipedia.org/wiki/1_Chronicles_21#David%E2%80%99s_military_census_(21:1%E2%80%936)",
+        "kind": "related-section",
+        "identityVerified": false,
+        "relationVerified": true,
+        "noteJa": "英語版章記事は21:1の「satan」を敵対者と訳す解釈を説明し、個人名と呼称の読み分けに触れます。",
+        "locator": "“David’s military census (21:1–6)” section, text discussing the term in verse 1 and noting interpretive disagreement.",
+        "articleRead": false,
+        "bodyReadAtUTC": "2026-10-16T09:47:04Z",
+        "supportJa": "英語版章記事は21:1の「satan」を敵対者と訳す解釈を説明し、個人名と呼称の読み分けに触れます。",
+        "nullSearch": null
+      },
+      "secondaryDependencyPolicyJa": "二次資料に依存する別表記・同定・称号解釈は一次資料のみの根拠として扱わず、表示はrelated-linkまたはholdへ限定する。",
+      "reclosureThreeSHAExactToCurrent": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:seraiah_2497",
+      "draftPath": "drafts/persons_2/1CH_person_seraiah_2497.json",
+      "evidencePath": "evidence/persons_2/1CH_person_seraiah_2497-sources.json",
+      "currentDraftSHA256": "f5f61b87b615c8e31d71a4d9527fbda108f4bf463b12e26e3fe6babfa969a0e7",
+      "currentProfileSHA256": "59af508f2f80d175e48438569309bc147b96cae66fdbc855fe0dd46a0965682d",
+      "currentEvidenceSHA256": "9f06d8a01338db2f101ca3fe040d2ec087917270d92bee959e5743ce65ae11a8",
+      "currentManifestSHA256": "341ef2f4ed622b03a44718850ceebcad60dcc24294381a82e74bce9af28e3ef7",
+      "manifestRecordThreeSHAExact": true,
+      "reclosureReportPath": "reviews/reclosure-batch06-persons_2-current.json",
+      "reclosureReportSHA256": "415b729252f89a2e4947588dbeed5032c5bd863d27abca0b00e3cd15d29f7766",
+      "previousDecision": "qualified",
+      "qualifiedDecisionPreserved": true,
+      "runtimeDisposition": "primary-only",
+      "dispositionReasonJa": "4:35の系譜はSeraiahをAsielの子孫として明記する。固定WEBにない人物像を足さない。",
+      "heldScopes": [],
+      "knownBy": {
+        "chapter": 4,
+        "verse": 35
+      },
+      "readerFields": {
+        "nameJa": "セラヤ",
+        "subtitleJa": "アシエルの子、ヨシブヤの父",
+        "summaryJa": "シメオン族の系譜で、ヨシブヤの父、アシエルの子として名が記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "シメオン族の系譜",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": null
+      },
+      "allCurrentFacts": [],
+      "primaryTextContextAudit": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "checks": [
+          {
+            "ref": "1CH 4:35",
+            "fixedText": "Joel, Jehu the son of Joshibiah, the son of Seraiah, the son of Asiel,",
+            "fixedURL": "https://ebible.org/engwebp/1CH04.htm#V35",
+            "evidenceText": "Joel, Jehu the son of Joshibiah, the son of Seraiah, the son of Asiel,",
+            "evidenceURL": "https://ebible.org/engwebp/1CH04.htm#V35",
+            "evidenceTextSHA256": "729d911789e2f5113c3376f80c958ecaa1a36086a1f6716a16bd8463b092f1d4",
+            "exactTextURLMatch": true
+          }
+        ],
+        "allRecordedEvidenceTextURLChecksExact": true,
+        "unrecordedEvidenceChecks": 0,
+        "coverageNoteJa": "プロフィールknownBy/passages/factsの該当節の固定WEB本文を添付。evidence側の原文チェックと照合できた節はexactを示し、sidecarが本文を個別保存していない座標はその旨を明記。"
+      },
+      "wikipediaBodyAudit": {
+        "url": null,
+        "kind": null,
+        "identityVerified": null,
+        "relationVerified": null,
+        "noteJa": null,
+        "locator": null,
+        "articleRead": false,
+        "bodyReadAtUTC": null,
+        "supportJa": null,
+        "nullSearch": {
+          "url": null,
+          "status": "searched-no-fit",
+          "identityBasisJa": "The Seraiah article lines 110–117 introduces a name shared by several people and lists Tanhumeth/Azriel lineages, not the Simeonite ancestor in 1CH4:35. A–K list entries likewise concern other Seraiahs. No fitting page/section found.",
+          "fragmentVerified": false,
+          "queries": [
+            "Wikipedia Seraiah son of Asiel 1 Chronicles 4:35",
+            "List of minor Hebrew Bible figures Seraiah Joshibiah Asiel"
+          ],
+          "checkedAtUTC": "2026-10-16T10:18:45Z"
+        }
+      },
+      "secondaryDependencyPolicyJa": "二次資料に依存する別表記・同定・称号解釈は一次資料のみの根拠として扱わず、表示はrelated-linkまたはholdへ限定する。",
+      "reclosureThreeSHAExactToCurrent": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shage_2541",
+      "draftPath": "drafts/persons_2/1CH_person_shage_2541.json",
+      "evidencePath": "evidence/persons_2/1CH_person_shage_2541-sources.json",
+      "currentDraftSHA256": "355532761f408ebd11ef64057eec18202d1efac0958d419a3467b4071f2daa8e",
+      "currentProfileSHA256": "26a9ffbaff4fa206ff9add02d63e04957753e609232ac94b56fdff93d9b9526d",
+      "currentEvidenceSHA256": "f4790b5354b51628672bb69450f2bfd4cd06ba4d1c1ba20e0d8b38151a196e49",
+      "currentManifestSHA256": "341ef2f4ed622b03a44718850ceebcad60dcc24294381a82e74bce9af28e3ef7",
+      "manifestRecordThreeSHAExact": true,
+      "reclosureReportPath": "reviews/reclosure-batch06-persons_2-current.json",
+      "reclosureReportSHA256": "415b729252f89a2e4947588dbeed5032c5bd863d27abca0b00e3cd15d29f7766",
+      "previousDecision": "qualified",
+      "qualifiedDecisionPreserved": true,
+      "runtimeDisposition": "related-link",
+      "dispositionReasonJa": "11:34はJonathanの父としてShageeを記す。Harariteの係り先やサムエル記側の人物との対応は確定せず、関連記事リンクも関係情報の範囲に限定する。",
+      "heldScopes": [],
+      "knownBy": {
+        "chapter": 11,
+        "verse": 34
+      },
+      "readerFields": {
+        "nameJa": "シャゲ",
+        "subtitleJa": "ハラル人シャゲの子ヨナタンの父",
+        "summaryJa": "ダビデの勇士の一覧で、ハラル人ヨナタンの父として記されています。本文の表記はShageeです。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "勇士の父",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, L–Z",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shagee",
+          "kind": "related-section",
+          "noteJa": "Shageeの項は1歴代誌11:34のヨナタンの父名を扱い、サムエル記の別表記・並びとの関係は確定できないと説明します。",
+          "identityVerified": false,
+          "relationVerified": true,
+          "locator": "L–Z article, “Shagee” entry, lines 1346–1351; notes Shagee/Shage/Shageh and discusses the uncertain relationship of 1 Chronicles 11:34 to names in 2 Samuel.",
+          "checkedAt": "2026-10-16",
+          "knownBy": {
+            "chapter": 11,
+            "verse": 34
+          },
+          "sourceId": "chronicles-person-shage_2541-wikipedia"
+        }
+      },
+      "allCurrentFacts": [
+        {
+          "textJa": "ヨナタンは「シャゲの子」として勇士の一覧に挙げられます。",
+          "knownBy": {
+            "chapter": 11,
+            "verse": 34
+          },
+          "sourceIds": [
+            "chronicles-person-shage_2541-webp-1ch-11-34"
+          ],
+          "sourceWitnesses": [
+            {
+              "sourceId": "chronicles-person-shage_2541-webp-1ch-11-34",
+              "knownBy": {
+                "chapter": 11,
+                "verse": 34
+              },
+              "url": "https://ebible.org/engwebp/1CH11.htm#V34"
+            }
+          ]
+        }
+      ],
+      "primaryTextContextAudit": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "checks": [
+          {
+            "ref": "1CH 11:34",
+            "fixedText": "the sons of Hashem the Gizonite, Jonathan the son of Shagee the Hararite,",
+            "fixedURL": "https://ebible.org/engwebp/1CH11.htm#V34",
+            "evidenceText": "the sons of Hashem the Gizonite, Jonathan the son of Shagee the Hararite,",
+            "evidenceURL": "https://ebible.org/engwebp/1CH11.htm#V34",
+            "evidenceTextSHA256": "e11d0ace5c836bd39b4e2ddad3fe766ca1c56b4a126aadadd2f6e801c9dcd62d",
+            "exactTextURLMatch": true
+          }
+        ],
+        "allRecordedEvidenceTextURLChecksExact": true,
+        "unrecordedEvidenceChecks": 0,
+        "coverageNoteJa": "プロフィールknownBy/passages/factsの該当節の固定WEB本文を添付。evidence側の原文チェックと照合できた節はexactを示し、sidecarが本文を個別保存していない座標はその旨を明記。"
+      },
+      "wikipediaBodyAudit": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shagee",
+        "kind": "related-section",
+        "identityVerified": false,
+        "relationVerified": true,
+        "noteJa": "Shageeの項は1歴代誌11:34のヨナタンの父名を扱い、サムエル記の別表記・並びとの関係は確定できないと説明します。",
+        "locator": "L–Z article, “Shagee” entry, lines 1346–1351; notes Shagee/Shage/Shageh and discusses the uncertain relationship of 1 Chronicles 11:34 to names in 2 Samuel.",
+        "articleRead": true,
+        "bodyReadAtUTC": "2026-10-16T10:02:56Z",
+        "supportJa": "Shageeの項は1歴代誌11:34のヨナタンの父名を扱い、サムエル記の別表記・並びとの関係は確定できないと説明します。",
+        "nullSearch": null
+      },
+      "secondaryDependencyPolicyJa": "二次資料に依存する別表記・同定・称号解釈は一次資料のみの根拠として扱わず、表示はrelated-linkまたはholdへ限定する。",
+      "reclosureThreeSHAExactToCurrent": true
+    }
+  ],
+  "metadataHistory": [
+    {
+      "previousReportSHA256": "3ef17a976bd42bc49da39f9baf93ff30fb1f2f00cccd5673a35fca7badb9abf3",
+      "previousBytesPreservedAt": "preservation/objects/3ef17a976bd42bc49da39f9baf93ff30fb1f2f00cccd5673a35fca7badb9abf3",
+      "changeReasonJa": "Fixed WEB cross-check fields normalized from exact source records; reclosure/manifest three-SHA drift is now explicitly flagged and runtime-held, never silently inherited.",
+      "updatedAtUTC": "2026-10-16"
+    },
+    {
+      "previousReportSHA256": "c49a598077bec4c3431152558c6c8a070d345d8c28dc5b31e70c20ad681f4335",
+      "previousBytesPreservedAt": "preservation/objects/c49a598077bec4c3431152558c6c8a070d345d8c28dc5b31e70c20ad681f4335",
+      "changeReasonJa": "レビュー時刻を実UTCに補正。レビュー内容は変更なし。",
+      "updatedAtUTC": "2026-10-16T10:49:36Z"
+    }
+  ]
+}

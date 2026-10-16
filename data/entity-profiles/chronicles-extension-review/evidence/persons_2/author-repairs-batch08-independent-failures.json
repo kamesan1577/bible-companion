@@ -1,0 +1,684 @@
+{
+  "schemaVersion": 1,
+  "task": "Chronicles persons_2 batch08 independent-fail author repairs",
+  "createdAtUTC": "2026-10-16T11:51:40.959649Z",
+  "sourceIndependentReview": {
+    "path": "reviews/independent-batch08-persons_2.json",
+    "sha256": "dfc184c6643182d1355d1744f406d925789bd4804abbbd61ecd0b2ab6ac8cd20",
+    "counts": {
+      "pass": 27,
+      "qualified": 22,
+      "fail": 11,
+      "pending": 0
+    }
+  },
+  "authorManifestBefore": {
+    "path": "evidence/persons_2/author-current-batch08.json",
+    "sha256": "8dd198d0e005eee7941049e2628a56742aa9f5cfd8df93c3abb473fdded46001",
+    "object": "preservation/objects/8dd198d0e005eee7941049e2628a56742aa9f5cfd8df93c3abb473fdded46001"
+  },
+  "authorManifestAfter": {
+    "path": "evidence/persons_2/author-current-batch08.json",
+    "sha256": "9ef1fedc9c3ad74b51a856a22fed47278336ad1bacfb38365caf43ea0b73a2f4"
+  },
+  "preservationObjectsVerified": true,
+  "preservedOriginalDraftEvidenceForEveryChangedRow": true,
+  "changes": [
+    {
+      "book": "1CH",
+      "entityID": "person:zerahiah_3047",
+      "draftPath": "drafts/persons_2/1CH_person_zerahiah_3047.json",
+      "evidencePath": "evidence/persons_2/1CH_person_zerahiah_3047-sources.json",
+      "beforeDraft": {
+        "sha256": "f06baef829e2d1fec52881dd8ee81fd7ce29496865316be1f2e7d06aa8feaa4c",
+        "object": "preservation/objects/f06baef829e2d1fec52881dd8ee81fd7ce29496865316be1f2e7d06aa8feaa4c"
+      },
+      "beforeEvidence": {
+        "sha256": "3d0697afbc66bf2e7127840feb489827c9ead586b2b3fa7061f026b7bfbf90d8",
+        "object": "preservation/objects/3d0697afbc66bf2e7127840feb489827c9ead586b2b3fa7061f026b7bfbf90d8"
+      },
+      "beforeDraftSHA256": "f06baef829e2d1fec52881dd8ee81fd7ce29496865316be1f2e7d06aa8feaa4c",
+      "beforeProfileSHA256": "4b3adec6660302eea14ea6ebdf1c1d2fb98742acd85698199dab71726515803d",
+      "beforeEvidenceSHA256": "3d0697afbc66bf2e7127840feb489827c9ead586b2b3fa7061f026b7bfbf90d8",
+      "afterDraftSHA256": "e566c5ed359bb40d81a8ff10994c5f0f1c381105c41ded6f448f8e73296148b2",
+      "afterProfileSHA256": "78b377ff1b3939a552fc165bdba3c8e774ed02d15a36d602b302304e1e883c24",
+      "afterEvidenceSHA256": "72df411a4a46b97100ba121503c9d9477ab0181d6b5f7533fcf359549793df22",
+      "changes": [
+        {
+          "field": "profile.summaryJa",
+          "before": "祭司の系譜で、ウジの子ゼラヒヤがメラヨテの父として記されます。6:51でも同じ系譜が繰り返されます。",
+          "after": "祭司の系譜で、ウジの子ゼラヒヤがメラヨテの父として記されます。",
+          "reasonJa": "1CH 6:6だけで分かる親子関係に要約を限定。6:51の繰返しを先取りしない。"
+        },
+        {
+          "field": "profile.identityNoteJa",
+          "before": "9:11はメラヨテを記しますが、ゼラヒヤ本人の名は出ていないため、この人物の出現には数えません。",
+          "after": "",
+          "reasonJa": "1CH 9:11への言及は初出時点の説明から除去。"
+        },
+        {
+          "field": "profile.wikipedia.noteJa",
+          "before": "The Zerahiah entry identifies the son of Uzzi and father of Meraioth and cites 1 Chronicles 6:6 and 6:51, matching these verses.",
+          "after": "一覧の項目は、ゼラヒヤをウジの子でメラヨテの父として記しています。",
+          "reasonJa": "後続節番号への常時言及を除き、初出で分かる関係に限定。"
+        },
+        {
+          "field": "profile.sourceIds / sources",
+          "before": "erroneous 6:50 source binding with knownBy 6:51",
+          "after": "removed; the correct 6:51 source object already exists",
+          "reasonJa": "ID・URL・knownByの座標が一致しない余分なsource objectを除去。固定WEB 6:51引用自体はsidecarで確認。"
+        }
+      ],
+      "manifestBefore": {
+        "book": "1CH",
+        "targetKey": "1CH:person:zerahiah_3047",
+        "id": "person:zerahiah_3047",
+        "draftPath": "drafts/persons_2/1CH_person_zerahiah_3047.json",
+        "draftSHA256": "f06baef829e2d1fec52881dd8ee81fd7ce29496865316be1f2e7d06aa8feaa4c",
+        "profileSHA256": "4b3adec6660302eea14ea6ebdf1c1d2fb98742acd85698199dab71726515803d",
+        "evidencePath": "evidence/persons_2/1CH_person_zerahiah_3047-sources.json",
+        "evidenceSHA256": "3d0697afbc66bf2e7127840feb489827c9ead586b2b3fa7061f026b7bfbf90d8",
+        "status": "profile",
+        "wikipediaStatus": "article-body-read; identity-fit",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Zerahiah"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:zeruiah_3055",
+      "draftPath": "drafts/persons_2/1CH_person_zeruiah_3055.json",
+      "evidencePath": "evidence/persons_2/1CH_person_zeruiah_3055-sources.json",
+      "beforeDraft": {
+        "sha256": "493834ea5a80757fdd64d059b7505f7b40ba7fdebf58840178598c81a19cfdc6",
+        "object": "preservation/objects/493834ea5a80757fdd64d059b7505f7b40ba7fdebf58840178598c81a19cfdc6"
+      },
+      "beforeEvidence": {
+        "sha256": "9a7532a49f662a72dbe3de8526f0a584187dccc056f199a0c7323bb32427728c",
+        "object": "preservation/objects/9a7532a49f662a72dbe3de8526f0a584187dccc056f199a0c7323bb32427728c"
+      },
+      "beforeDraftSHA256": "493834ea5a80757fdd64d059b7505f7b40ba7fdebf58840178598c81a19cfdc6",
+      "beforeProfileSHA256": "1ac70634a2171a010c77e9913f959ecdbc16dc45757e1e488fca3ff01b2c5872",
+      "beforeEvidenceSHA256": "9a7532a49f662a72dbe3de8526f0a584187dccc056f199a0c7323bb32427728c",
+      "afterDraftSHA256": "26a6edeb787169011b92d9192f10ac335e3393a0afddd6b178a197e0ddd1620b",
+      "afterProfileSHA256": "caa177742737013cbfb33e0d52ba36708bec3d4c9107113c4025d776c42fbd34",
+      "afterEvidenceSHA256": "f8cd3adf6bfe9c5f2ba7b4f45e2803531e5a39991072a8aa43c49269bdb8c391",
+      "changes": [
+        {
+          "field": "profile.summaryJa",
+          "before": "ユダの系譜で、ツェルヤとアビガイルはエッサイの娘として記され、その子らはアビシャイ、ヨアブ、アサヘルと列挙されます。後の箇所でも三人は「ツェルヤの子」と呼ばれます。",
+          "after": "ユダの系譜で、ツェルヤとアビガイルはエッサイの娘として記され、ツェルヤの子らとしてアビシャイ、ヨアブ、アサヘルが列挙されます。",
+          "reasonJa": "初出1CH 2:16で分かる娘・子の関係だけを残す。後の章での呼び方は出さない。"
+        },
+        {
+          "field": "profile.wikipedia.noteJa",
+          "before": "The article identifies Zeruiah as David’s sister and names her sons Abishai, Joab, and Asahel, aligning with 1 Chronicles 2:16; later references are gated to their verses.",
+          "after": "記事はツェルヤをエッサイの娘でダビデの姉妹とし、アビシャイ、ヨアブ、アサヘルの母として記しています。",
+          "reasonJa": "編集手順の説明と後続参照への言及を、記事の該当内容に置き換える。"
+        }
+      ],
+      "manifestBefore": {
+        "book": "1CH",
+        "targetKey": "1CH:person:zeruiah_3055",
+        "id": "person:zeruiah_3055",
+        "draftPath": "drafts/persons_2/1CH_person_zeruiah_3055.json",
+        "draftSHA256": "493834ea5a80757fdd64d059b7505f7b40ba7fdebf58840178598c81a19cfdc6",
+        "profileSHA256": "1ac70634a2171a010c77e9913f959ecdbc16dc45757e1e488fca3ff01b2c5872",
+        "evidencePath": "evidence/persons_2/1CH_person_zeruiah_3055-sources.json",
+        "evidenceSHA256": "9a7532a49f662a72dbe3de8526f0a584187dccc056f199a0c7323bb32427728c",
+        "status": "profile",
+        "wikipediaStatus": "article-body-read; identity-fit",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/Zeruiah"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:zibeon_3062",
+      "draftPath": "drafts/persons_2/1CH_person_zibeon_3062.json",
+      "evidencePath": "evidence/persons_2/1CH_person_zibeon_3062-sources.json",
+      "beforeDraft": {
+        "sha256": "d797b78e5ce5caaad708b16112177b7709bf36abf51bbb58d3f73570c39c1e2b",
+        "object": "preservation/objects/d797b78e5ce5caaad708b16112177b7709bf36abf51bbb58d3f73570c39c1e2b"
+      },
+      "beforeEvidence": {
+        "sha256": "2dafde4be1166191478a59d3a718dea259b0224e34fbeaf73f8e7203d8fe7e6b",
+        "object": "preservation/objects/2dafde4be1166191478a59d3a718dea259b0224e34fbeaf73f8e7203d8fe7e6b"
+      },
+      "beforeDraftSHA256": "d797b78e5ce5caaad708b16112177b7709bf36abf51bbb58d3f73570c39c1e2b",
+      "beforeProfileSHA256": "0f1df1dc764c677b9018e34627250841fefdb9e9558c7b1f2fbd4bf0fa999195",
+      "beforeEvidenceSHA256": "2dafde4be1166191478a59d3a718dea259b0224e34fbeaf73f8e7203d8fe7e6b",
+      "afterDraftSHA256": "2b476e22800c66f23915f87425f164ff792480848fbcb319b82aaf8f48e2d424",
+      "afterProfileSHA256": "67a07c417ffe64f09d906379f69d36ff2e968caa5713c8f633c39f4d06ac3d3f",
+      "afterEvidenceSHA256": "09a86b8120f77c59493737482e3056a55115b473c1eb8e794dbbc7178a47a43e",
+      "changes": [
+        {
+          "field": "profile.subtitleJa",
+          "before": "セイルの系譜に現れ、アヤとアナの父として記されます。",
+          "after": "セイルの子らの列挙に名が挙がります。",
+          "reasonJa": "1CH 1:38の列挙に限定。アヤとアナは1:40。"
+        },
+        {
+          "field": "profile.summaryJa",
+          "before": "セイルの子らの列挙に名があり、後の節ではツィブオンの子らとしてアヤとアナが挙げられます。",
+          "after": "セイルの子らとして、ロタン、ショバル、ツィブオンらとともに列挙されます。",
+          "reasonJa": "1CH 1:38の系譜列挙だけを説明。"
+        },
+        {
+          "field": "profile.historicalRoleJa",
+          "before": "セイルの系譜に現れ、アヤとアナの父として記されます。",
+          "after": "セイルの子らの列挙に名が挙がります。",
+          "reasonJa": "1CH 1:38だけで分かる系譜上の位置に限定。"
+        },
+        {
+          "field": "profile.identityNoteJa",
+          "before": "創世記の同名者との関係は外部記事でも可能性として扱われており、ここでは断定しません。",
+          "after": "創世記にも同じ名の人物が現れますが、両書の人物が同一かどうかは本文だけでは定まりません。",
+          "reasonJa": "編集・記事参照を述べるのでなく、同名関係の不確実性を読者向けに示す。"
+        }
+      ],
+      "manifestBefore": {
+        "book": "1CH",
+        "targetKey": "1CH:person:zibeon_3062",
+        "id": "person:zibeon_3062",
+        "draftPath": "drafts/persons_2/1CH_person_zibeon_3062.json",
+        "draftSHA256": "d797b78e5ce5caaad708b16112177b7709bf36abf51bbb58d3f73570c39c1e2b",
+        "profileSHA256": "0f1df1dc764c677b9018e34627250841fefdb9e9558c7b1f2fbd4bf0fa999195",
+        "evidencePath": "evidence/persons_2/1CH_person_zibeon_3062-sources.json",
+        "evidenceSHA256": "2dafde4be1166191478a59d3a718dea259b0224e34fbeaf73f8e7203d8fe7e6b",
+        "status": "profile",
+        "wikipediaStatus": "article-body-read; related-only",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/Zibeon"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:zizah_3090",
+      "draftPath": "drafts/persons_2/1CH_person_zizah_3090.json",
+      "evidencePath": "evidence/persons_2/1CH_person_zizah_3090-sources.json",
+      "beforeDraft": {
+        "sha256": "64fcb0bb92ef87b708012e25133e877bc267780dd886b00baa27159a7ff372e0",
+        "object": "preservation/objects/64fcb0bb92ef87b708012e25133e877bc267780dd886b00baa27159a7ff372e0"
+      },
+      "beforeEvidence": {
+        "sha256": "475777e0f8a152273ec1509e9698787dc1cece51b0e17966712ece30fe92df9b",
+        "object": "preservation/objects/475777e0f8a152273ec1509e9698787dc1cece51b0e17966712ece30fe92df9b"
+      },
+      "beforeDraftSHA256": "64fcb0bb92ef87b708012e25133e877bc267780dd886b00baa27159a7ff372e0",
+      "beforeProfileSHA256": "9f7824dc498747a6452cc2235579275098d361c68cbe5498f9ffd92c9c114a1c",
+      "beforeEvidenceSHA256": "475777e0f8a152273ec1509e9698787dc1cece51b0e17966712ece30fe92df9b",
+      "afterDraftSHA256": "c734e653ae923a022aa4f501c69c3ddda59c65ad038f82c20ac13480777a71cd",
+      "afterProfileSHA256": "b6b868bf5aa2cca75feca22475d91a1b05a14372d8ef0ddbab04d1a5f31f75b5",
+      "afterEvidenceSHA256": "a8c3e337022b3149c94288bc8d9be37740e98e95b40dd29a8ad700c65f45a638",
+      "changes": [
+        {
+          "field": "profile.summaryJa",
+          "before": "シメイの四人の子の列挙では「ジナ」と記されます。次節は次男の名を「ジザ」とし、綴りの違いが残ります。",
+          "after": "シメイの子ら四人の名の一つとして、「ジナ」と記されます。",
+          "reasonJa": "初出1CH 23:10の綴りだけを説明し、次節の異綴りは先取りしない。"
+        },
+        {
+          "field": "profile.identityNoteJa",
+          "before": "23:10はZina、23:11はZizahと綴るため、同一名の表記差として扱うかは留保します。",
+          "after": "",
+          "reasonJa": "1CH 23:11の綴り差と人物対応は初出説明から除く。"
+        },
+        {
+          "field": "profile.wikipedia.noteJa",
+          "before": "The Ziza entry says Zizah is another spelling for the Gershonite second son of Shimei in 1 Chronicles 23:10–11 and notes the textual spelling difference.",
+          "after": "項目はシメイの子の名をZizahとも記し、ジナとの綴りの関係を扱っています。",
+          "reasonJa": "異綴りの情報を1CH 23:11の表示ゲートへ移す。"
+        },
+        {
+          "field": "profile.wikipedia.knownBy / secondary-reference source knownBy",
+          "before": {
+            "chapter": 23,
+            "verse": 10
+          },
+          "after": {
+            "chapter": 23,
+            "verse": 11
+          },
+          "reasonJa": "記事注記が23:11の異綴りを述べるため、その節で初めて表示。"
+        }
+      ],
+      "manifestBefore": {
+        "book": "1CH",
+        "targetKey": "1CH:person:zizah_3090",
+        "id": "person:zizah_3090",
+        "draftPath": "drafts/persons_2/1CH_person_zizah_3090.json",
+        "draftSHA256": "64fcb0bb92ef87b708012e25133e877bc267780dd886b00baa27159a7ff372e0",
+        "profileSHA256": "9f7824dc498747a6452cc2235579275098d361c68cbe5498f9ffd92c9c114a1c",
+        "evidencePath": "evidence/persons_2/1CH_person_zizah_3090-sources.json",
+        "evidenceSHA256": "475777e0f8a152273ec1509e9698787dc1cece51b0e17966712ece30fe92df9b",
+        "status": "profile",
+        "wikipediaStatus": "article-body-read; related-only",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Ziza"
+      }
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:abijah_38",
+      "draftPath": "drafts/persons_2/2CH_person_abijah_38.json",
+      "evidencePath": "evidence/persons_2/2CH_person_abijah_38-sources.json",
+      "beforeDraft": {
+        "sha256": "c207dfd6a85fe4c6a47cb9399bf48db365033e7ccc4cdf0f72eb374926e178c3",
+        "object": "preservation/objects/c207dfd6a85fe4c6a47cb9399bf48db365033e7ccc4cdf0f72eb374926e178c3"
+      },
+      "beforeEvidence": {
+        "sha256": "c6892e6942e8f8f3bdc280affa3d454e28559b9f38fa5ce4adb2ab78d0c2c037",
+        "object": "preservation/objects/c6892e6942e8f8f3bdc280affa3d454e28559b9f38fa5ce4adb2ab78d0c2c037"
+      },
+      "beforeDraftSHA256": "c207dfd6a85fe4c6a47cb9399bf48db365033e7ccc4cdf0f72eb374926e178c3",
+      "beforeProfileSHA256": "0db477b6c48c168ead880f95cd04ee8d9936dc42a5498e9d07e1f7cb2b263e22",
+      "beforeEvidenceSHA256": "c6892e6942e8f8f3bdc280affa3d454e28559b9f38fa5ce4adb2ab78d0c2c037",
+      "afterDraftSHA256": "b4174fb3bf6fcd40a02b37fd30bc810d4030604982534380cc3a73dfb2ae3f11",
+      "afterProfileSHA256": "a865aa90c5704266c9beb9f12f40fedae4ca1d5b35147fc35f533ffc064d521d",
+      "afterEvidenceSHA256": "d7fb0f8b62865597c0fe5466e46f002218059cef721cbcffa4a24c2719694aed",
+      "changes": [
+        {
+          "field": "profile.wikipedia.noteJa",
+          "before": "記事はアビヤをレハブアムの子でユダの王として記します。",
+          "after": "記事はユダの王アビヤを扱っています。",
+          "reasonJa": "王位が本文で初めて明記される2CH 13:1までは王としての注記を表示しない。"
+        },
+        {
+          "field": "profile.wikipedia.knownBy / secondary-reference source knownBy",
+          "before": {
+            "chapter": 11,
+            "verse": 22
+          },
+          "after": {
+            "chapter": 13,
+            "verse": 1
+          },
+          "reasonJa": "2CH 11:22は王にする意図を述べる段階で、即位明記は13:1。"
+        },
+        {
+          "field": "profile.historicalRoleJa",
+          "before": "レハブアムとマアカの子として記されるアビヤです。別書の人物情報はここへ持ち込みません。",
+          "after": "レハブアムとマアカの子として記されます。",
+          "reasonJa": "編集過程の説明を除き、初出2CH 11:20の関係を示す。"
+        }
+      ],
+      "manifestBefore": {
+        "book": "2CH",
+        "targetKey": "2CH:person:abijah_38",
+        "id": "person:abijah_38",
+        "draftPath": "drafts/persons_2/2CH_person_abijah_38.json",
+        "draftSHA256": "c207dfd6a85fe4c6a47cb9399bf48db365033e7ccc4cdf0f72eb374926e178c3",
+        "profileSHA256": "0db477b6c48c168ead880f95cd04ee8d9936dc42a5498e9d07e1f7cb2b263e22",
+        "evidencePath": "evidence/persons_2/2CH_person_abijah_38-sources.json",
+        "evidenceSHA256": "8b897909a1a8f1a76e5fc51b81a246d79511c234de9f966091e446ce215d4449",
+        "status": "profile",
+        "wikipediaStatus": "identity fit",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/Abijah_of_Judah"
+      }
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:ahaziah_121",
+      "draftPath": "drafts/persons_2/2CH_person_ahaziah_121.json",
+      "evidencePath": "evidence/persons_2/2CH_person_ahaziah_121-sources.json",
+      "beforeDraft": {
+        "sha256": "436140e2c2f582ea1a9f6eaafcad04e93458f969cb55f51fb9549504c939eeb4",
+        "object": "preservation/objects/436140e2c2f582ea1a9f6eaafcad04e93458f969cb55f51fb9549504c939eeb4"
+      },
+      "beforeEvidence": {
+        "sha256": "9895c2ce4e40f2e5accbe71df6899381220daf6d9d246bfcfe4b023b1c27887d",
+        "object": "preservation/objects/9895c2ce4e40f2e5accbe71df6899381220daf6d9d246bfcfe4b023b1c27887d"
+      },
+      "beforeDraftSHA256": "436140e2c2f582ea1a9f6eaafcad04e93458f969cb55f51fb9549504c939eeb4",
+      "beforeProfileSHA256": "5eb97936fe433df6e498d4921544b0c838a7f0d44082ad76633366207f4c8308",
+      "beforeEvidenceSHA256": "9895c2ce4e40f2e5accbe71df6899381220daf6d9d246bfcfe4b023b1c27887d",
+      "afterDraftSHA256": "0e64c296cd48687eccf50748ec929d72774481bc2fc0be841b22c47309d51973",
+      "afterProfileSHA256": "cea9c1259df13a6fa1ad1a5b36993ef07d37c4419f32c145d9a53d3086c377fd",
+      "afterEvidenceSHA256": "2b6060f88216ad8f4a50b79b67d89546b4d359551af1a6dccbb166f7c5f7beb5",
+      "changes": [
+        {
+          "field": "profile.knownBy",
+          "before": {
+            "chapter": 21,
+            "verse": 17
+          },
+          "after": {
+            "chapter": 22,
+            "verse": 1
+          },
+          "reasonJa": "2CH 21:17は最年少の子をJehoahazと呼び、Ahaziah名は2CH 22:1で初めて明記される。"
+        },
+        {
+          "field": "profile.wikipedia.knownBy",
+          "before": {
+            "chapter": 21,
+            "verse": 17
+          },
+          "after": {
+            "chapter": 22,
+            "verse": 1
+          },
+          "reasonJa": "アハズヤという名・人物へのリンクを固定WEBで明記される2CH 22:1から表示。"
+        },
+        {
+          "field": "secondary-reference source knownBy",
+          "before": {
+            "chapter": 21,
+            "verse": 17
+          },
+          "after": {
+            "chapter": 22,
+            "verse": 1
+          },
+          "reasonJa": "プロフィール名の初出とWikipediaリンク表示を2CH 22:1に同期。"
+        }
+      ],
+      "manifestBefore": {
+        "book": "2CH",
+        "targetKey": "2CH:person:ahaziah_121",
+        "id": "person:ahaziah_121",
+        "draftPath": "drafts/persons_2/2CH_person_ahaziah_121.json",
+        "draftSHA256": "436140e2c2f582ea1a9f6eaafcad04e93458f969cb55f51fb9549504c939eeb4",
+        "profileSHA256": "5eb97936fe433df6e498d4921544b0c838a7f0d44082ad76633366207f4c8308",
+        "evidencePath": "evidence/persons_2/2CH_person_ahaziah_121-sources.json",
+        "evidenceSHA256": "863b131c72fb6fca71b5bd04200acc1fd418e4f23a88dcd95d9ca12534bc5e76",
+        "status": "profile",
+        "wikipediaStatus": "identity fit",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/Ahaziah_of_Judah"
+      }
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:conaniah_953",
+      "draftPath": "drafts/persons_2/2CH_person_conaniah_953.json",
+      "evidencePath": "evidence/persons_2/2CH_person_conaniah_953-sources.json",
+      "beforeDraft": {
+        "sha256": "c3637564d20c1c3d61e8770aed31a3ec0eca975f1f11699dc1703585ca16d972",
+        "object": "preservation/objects/c3637564d20c1c3d61e8770aed31a3ec0eca975f1f11699dc1703585ca16d972"
+      },
+      "beforeEvidence": {
+        "sha256": "5ce21d154814f479390c3a9e1e4b1dc6fab78efedde69f2a6cbda5db912c7974",
+        "object": "preservation/objects/5ce21d154814f479390c3a9e1e4b1dc6fab78efedde69f2a6cbda5db912c7974"
+      },
+      "beforeDraftSHA256": "c3637564d20c1c3d61e8770aed31a3ec0eca975f1f11699dc1703585ca16d972",
+      "beforeProfileSHA256": "c9f07ec1269f869480eb0bb759c8e7e7ec62f8817e910509a50ec19651781066",
+      "beforeEvidenceSHA256": "5ce21d154814f479390c3a9e1e4b1dc6fab78efedde69f2a6cbda5db912c7974",
+      "afterDraftSHA256": "5fb81bde6a01e0be03dbfaf23371f1f0c84a8e025d70e12f18ec3dee3135e92c",
+      "afterProfileSHA256": "e16a738d2246a1da7a7fc584bc77a0a29e54da4533d4324a7a09817a98e49e07",
+      "afterEvidenceSHA256": "3844b97503426bad64e08b4057be1559b1c923abf09f85047fdf87158489b26d",
+      "changes": [
+        {
+          "field": "profile.wikipedia.kind",
+          "before": "shared-section",
+          "after": "related-section",
+          "reasonJa": "記事の節は2CH 31:12–13の別記述を扱い、35:9対象との同一性を示していない。"
+        },
+        {
+          "field": "profile.wikipedia.identityVerified",
+          "before": true,
+          "after": false,
+          "reasonJa": "同名・近い綴りだけでは2CH 35:9の人物と同一と確定できない。"
+        },
+        {
+          "field": "profile.wikipedia.relationVerified",
+          "before": null,
+          "after": true,
+          "reasonJa": "同名の聖書人物を扱う関連記事としての関係に限定。"
+        },
+        {
+          "field": "profile.wikipedia.noteJa",
+          "before": "一覧はConaniahの綴りの異形と同名者を区別し、ヒゼキヤ期の管理者を2歴代誌31:12–13に対応させる。",
+          "after": "一覧には2歴代誌31章の管理者コンアニヤが記されています。35:9のレビ人の長と同一人物かは、記事の記述からは確認できません。",
+          "reasonJa": "記事が扱う人物と2CH 35:9の対象との同一性を過大主張しない。"
+        }
+      ],
+      "manifestBefore": {
+        "book": "2CH",
+        "targetKey": "2CH:person:conaniah_953",
+        "id": "person:conaniah_953",
+        "draftPath": "drafts/persons_2/2CH_person_conaniah_953.json",
+        "draftSHA256": "c3637564d20c1c3d61e8770aed31a3ec0eca975f1f11699dc1703585ca16d972",
+        "profileSHA256": "c9f07ec1269f869480eb0bb759c8e7e7ec62f8817e910509a50ec19651781066",
+        "evidencePath": "evidence/persons_2/2CH_person_conaniah_953-sources.json",
+        "evidenceSHA256": "9de8f48e0896587955f592b5a577ae5cc1d72c527bc9cb49cab6bdbafb7fc632",
+        "status": "profile",
+        "wikipediaStatus": "article-body-read; identity fit",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Conaniah"
+      }
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:david_994",
+      "draftPath": "drafts/persons_2/2CH_person_david_994.json",
+      "evidencePath": "evidence/persons_2/2CH_person_david_994-sources.json",
+      "beforeDraft": {
+        "sha256": "aabc934e7d5b04640068948fdd1f2c60d3e74d549d3bfba8480ce38906debaf2",
+        "object": "preservation/objects/aabc934e7d5b04640068948fdd1f2c60d3e74d549d3bfba8480ce38906debaf2"
+      },
+      "beforeEvidence": {
+        "sha256": "140adbd5cb96cbc5f68d11c4a06d3d8ed47756f2cd93b7739eabfc774fede46d",
+        "object": "preservation/objects/140adbd5cb96cbc5f68d11c4a06d3d8ed47756f2cd93b7739eabfc774fede46d"
+      },
+      "beforeDraftSHA256": "aabc934e7d5b04640068948fdd1f2c60d3e74d549d3bfba8480ce38906debaf2",
+      "beforeProfileSHA256": "9c6a8579b2fa5be1b61ba3b83031dc084ad2a736b156dfc2a182c49e25a35e68",
+      "beforeEvidenceSHA256": "140adbd5cb96cbc5f68d11c4a06d3d8ed47756f2cd93b7739eabfc774fede46d",
+      "afterDraftSHA256": "93a1177c3fe4f96f3af8743395d3d1bb047f1f6bcc8e86388f6db53dbf2cdbac",
+      "afterProfileSHA256": "f8d94b6aca2715fcf11b836831b8868e0eac293f1a3d62f4f8061728c1e075b1",
+      "afterEvidenceSHA256": "5b6a6621d97c476653c3d353f86cb428446777b9a755884b87588f5b0e1f307a",
+      "changes": [
+        {
+          "field": "profile.historicalRoleJa",
+          "before": "この書ではソロモンの父として言及されます。王位や事績などの詳しい説明は後の箇所で示される範囲に限ります。",
+          "after": "ソロモンの父としてダビデの名が記されます。",
+          "reasonJa": "2CH 1:1の具体的な関係だけを示し、後の事績や編集方針を述べない。"
+        }
+      ],
+      "manifestBefore": {
+        "book": "2CH",
+        "targetKey": "2CH:person:david_994",
+        "id": "person:david_994",
+        "draftPath": "drafts/persons_2/2CH_person_david_994.json",
+        "draftSHA256": "aabc934e7d5b04640068948fdd1f2c60d3e74d549d3bfba8480ce38906debaf2",
+        "profileSHA256": "9c6a8579b2fa5be1b61ba3b83031dc084ad2a736b156dfc2a182c49e25a35e68",
+        "evidencePath": "evidence/persons_2/2CH_person_david_994-sources.json",
+        "evidenceSHA256": "a1c6d5ae163d584dbd4b1ae871ca895d7b728fb8439464615353dc6e8c02ac03",
+        "status": "profile",
+        "wikipediaStatus": "identity fit",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/David"
+      }
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:eden_1033",
+      "draftPath": "drafts/persons_2/2CH_person_eden_1033.json",
+      "evidencePath": "evidence/persons_2/2CH_person_eden_1033-sources.json",
+      "beforeDraft": {
+        "sha256": "d5cf75650ab63051f4bbf1fc1760067083f09b375164274205a9791519cc3708",
+        "object": "preservation/objects/d5cf75650ab63051f4bbf1fc1760067083f09b375164274205a9791519cc3708"
+      },
+      "beforeEvidence": {
+        "sha256": "80b4d87fceaafcffdba4392c4dfb38356c3ddbfa50a86ac4b0afdcc53d6f1d59",
+        "object": "preservation/objects/80b4d87fceaafcffdba4392c4dfb38356c3ddbfa50a86ac4b0afdcc53d6f1d59"
+      },
+      "beforeDraftSHA256": "d5cf75650ab63051f4bbf1fc1760067083f09b375164274205a9791519cc3708",
+      "beforeProfileSHA256": "e77fc6a158515a9042f53de5923fa52a487285ecdbc71f4aa782aebff8150d4b",
+      "beforeEvidenceSHA256": "80b4d87fceaafcffdba4392c4dfb38356c3ddbfa50a86ac4b0afdcc53d6f1d59",
+      "afterDraftSHA256": "0a49b63bed8aef34a3b3f432f80e96052ab3ba6becf6993e4d88be969f921f4a",
+      "afterProfileSHA256": "7f187471add4296830030d875febcc27ae8b8eabdbb425e994722dd19d9abf3d",
+      "afterEvidenceSHA256": "061a4f9f16802fe0a16f6c4e414cfe1abac3a199a704c1af74e3c3ad24d97efb",
+      "changes": [
+        {
+          "field": "profile.wikipedia.noteJa",
+          "before": "Eden項目はレビ人ヨアの子と記し、2歴代誌29:12および31:15の分配担当を説明する。",
+          "after": "一覧の項目は、レビ人ヨアの子エデンを記しています。",
+          "reasonJa": "31:15で初めて現れる分配役割を注記から除く。"
+        }
+      ],
+      "manifestBefore": {
+        "book": "2CH",
+        "targetKey": "2CH:person:eden_1033",
+        "id": "person:eden_1033",
+        "draftPath": "drafts/persons_2/2CH_person_eden_1033.json",
+        "draftSHA256": "d5cf75650ab63051f4bbf1fc1760067083f09b375164274205a9791519cc3708",
+        "profileSHA256": "e77fc6a158515a9042f53de5923fa52a487285ecdbc71f4aa782aebff8150d4b",
+        "evidencePath": "evidence/persons_2/2CH_person_eden_1033-sources.json",
+        "evidenceSHA256": "bfaa51c1841d7165713b5651f42660c7772ba43cd04a90cb3e41357256bbcffb",
+        "status": "profile",
+        "wikipediaStatus": "article-body-read; identity fit",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Eden"
+      }
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:hanani_1379",
+      "draftPath": "drafts/persons_2/2CH_person_hanani_1379.json",
+      "evidencePath": "evidence/persons_2/2CH_person_hanani_1379-sources.json",
+      "beforeDraft": {
+        "sha256": "e3801bde4282734aea7d302beb93a91dcf1b132e2a493dca440c723b10a4374e",
+        "object": "preservation/objects/e3801bde4282734aea7d302beb93a91dcf1b132e2a493dca440c723b10a4374e"
+      },
+      "beforeEvidence": {
+        "sha256": "8737cfd43420273de7f745149be402759dbe03ffd0956adc5878805a4e32a058",
+        "object": "preservation/objects/8737cfd43420273de7f745149be402759dbe03ffd0956adc5878805a4e32a058"
+      },
+      "beforeDraftSHA256": "e3801bde4282734aea7d302beb93a91dcf1b132e2a493dca440c723b10a4374e",
+      "beforeProfileSHA256": "040b46ff106ff45f6670310a6cd7d537af48a2cad724323eac5fccb8d5d80c3a",
+      "beforeEvidenceSHA256": "8737cfd43420273de7f745149be402759dbe03ffd0956adc5878805a4e32a058",
+      "afterDraftSHA256": "c86686083bab54f0261608279a5d533a3a78fb504246087e4b2243c8565b8b3b",
+      "afterProfileSHA256": "ad6057a18759875330395815daf9eb1090b13be999b0ca3e64ddc545391a7659",
+      "afterEvidenceSHA256": "572eb078ce09094e1e6e5d650a0387300b2d0d51290bbf0de215b4dff335c826",
+      "changes": [
+        {
+          "field": "profile.identityNoteJa",
+          "before": "アサに告げる預言者です。後の箇所では同名の父としても記されますが、それをこの初出説明へ遡らせません。",
+          "after": "アサに告げる預言者として記されます。",
+          "reasonJa": "2CH 16:7の初出内容に限定し、後の同名者の親子関係を先取りしない。"
+        },
+        {
+          "field": "profile.historicalRoleJa",
+          "before": "アサに告げる預言者です。後の箇所では同名の父としても記されますが、それをこの初出説明へ遡らせません。",
+          "after": "アサに告げる預言者として記されます。",
+          "reasonJa": "2CH 16:7の初出内容だけにし、後の役割情報を表示しない。"
+        },
+        {
+          "field": "profile.wikipedia.noteJa",
+          "before": "記事は聖書に同名の男性が複数いると明記し、その一人をアサに告げる先見者として挙げる。ここでは後の父子関係の説明を用いない。",
+          "after": "記事は預言者ハナニを、アサ王に告げた人物として紹介しています。",
+          "reasonJa": "後の親子関係・同名者情報および編集判断を注記から除く。"
+        }
+      ],
+      "manifestBefore": {
+        "book": "2CH",
+        "targetKey": "2CH:person:hanani_1379",
+        "id": "person:hanani_1379",
+        "draftPath": "drafts/persons_2/2CH_person_hanani_1379.json",
+        "draftSHA256": "e3801bde4282734aea7d302beb93a91dcf1b132e2a493dca440c723b10a4374e",
+        "profileSHA256": "040b46ff106ff45f6670310a6cd7d537af48a2cad724323eac5fccb8d5d80c3a",
+        "evidencePath": "evidence/persons_2/2CH_person_hanani_1379-sources.json",
+        "evidenceSHA256": "b487063edad5f1194505295f9d7418ac3e3912b44e242df43bfbba60f1936288",
+        "status": "profile",
+        "wikipediaStatus": "article-body-read; identity fit",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/Hanani"
+      }
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:israel_682",
+      "draftPath": "drafts/persons_2/2CH_person_israel_682.json",
+      "evidencePath": "evidence/persons_2/2CH_person_israel_682-sources.json",
+      "beforeDraft": {
+        "sha256": "7944a0fb753bb113d2926f842dd9080f65eac51ab2e3b55c226c71445a683d49",
+        "object": "preservation/objects/7944a0fb753bb113d2926f842dd9080f65eac51ab2e3b55c226c71445a683d49"
+      },
+      "beforeEvidence": {
+        "sha256": "4b08bdd85ea5a9bea981b13ef583f4e9ff8fa2954f6099e27fb538da488f8718",
+        "object": "preservation/objects/4b08bdd85ea5a9bea981b13ef583f4e9ff8fa2954f6099e27fb538da488f8718"
+      },
+      "beforeDraftSHA256": "7944a0fb753bb113d2926f842dd9080f65eac51ab2e3b55c226c71445a683d49",
+      "beforeProfileSHA256": "199967fe044fd6502e1e096d04a12369bf4848ef5c17ab7dcff6bce9a442d237",
+      "beforeEvidenceSHA256": "4b08bdd85ea5a9bea981b13ef583f4e9ff8fa2954f6099e27fb538da488f8718",
+      "afterDraftSHA256": "7673e98bfd16128fa25eff44a836088828a61dbb2f69be64d6e4eaa2ebbb1169",
+      "afterProfileSHA256": "4491c901c5dbef0efff33d3157a4877bfd9db718c40cfad1690719baa308b711",
+      "afterEvidenceSHA256": "47f6570b47576e1c0a4f78fd96ba95934df68b245c37a4e13af4e452e7e8a803",
+      "changes": [
+        {
+          "field": "profile.subtitleJa",
+          "before": "ソロモンはイスラエルの長老たちと諸部族の指導者を集め、契約の箱をエルサレムへ運びました。",
+          "after": "ソロモンは契約の箱を運び上げるため、イスラエルの長老たちと部族の指導者をエルサレムに集めます。",
+          "reasonJa": "2CH 5:2では箱を運ぶために集めたと述べ、移動完了は後の節。"
+        },
+        {
+          "field": "profile.summaryJa",
+          "before": "ソロモンはイスラエルの長老たちと諸部族の指導者を集め、契約の箱をエルサレムへ運びました。",
+          "after": "ソロモンは契約の箱を運び上げるため、イスラエルの長老たちと部族の指導者をエルサレムに集めます。",
+          "reasonJa": "2CH 5:2の目的・行動を完了形で先取りしない。"
+        },
+        {
+          "field": "profile.identityNoteJa",
+          "before": "「イスラエルの子ら」は集団を指します。30:6には「アブラハム、イサク、イスラエル」という祖先名の用法も同じ節にあり、ここでは別の意味を区別して扱います。",
+          "after": "この箇所の「イスラエルの子ら」は民を指します。",
+          "reasonJa": "後の30:6の祖先イスラエル用法に言及せず、このprofileの集団用法だけを示す。"
+        },
+        {
+          "field": "profile.historicalRoleJa",
+          "before": "「イスラエルの子ら」は集団を指します。30:6には「アブラハム、イサク、イスラエル」という祖先名の用法も同じ節にあり、ここでは別の意味を区別して扱います。",
+          "after": "長老たちと部族指導者を含むイスラエルの民が、契約の箱を運び上げるためエルサレムへ集められます。",
+          "reasonJa": "2CH 5:2で分かる集団の役割と目的に限定。"
+        }
+      ],
+      "manifestBefore": {
+        "book": "2CH",
+        "targetKey": "2CH:person:israel_682",
+        "id": "person:israel_682",
+        "draftPath": "drafts/persons_2/2CH_person_israel_682.json",
+        "draftSHA256": "7944a0fb753bb113d2926f842dd9080f65eac51ab2e3b55c226c71445a683d49",
+        "profileSHA256": "199967fe044fd6502e1e096d04a12369bf4848ef5c17ab7dcff6bce9a442d237",
+        "evidencePath": "evidence/persons_2/2CH_person_israel_682-sources.json",
+        "evidenceSHA256": "108b6677f9fcebea1e0e387a14fb0b3ebece406b8095e1ef44c6e43c45f24b04",
+        "status": "profile",
+        "wikipediaStatus": "related-section fit",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/Israelites"
+      }
+    }
+  ],
+  "notesJa": [
+    "固定WEBと既存独立指摘に沿ったfail修正のみ。qualifiedの昇格・原稿の独立承認は行っていない。",
+    "source witness text自体は変更していない。",
+    "profile SHA serialization: UTF-8 JSON ensure_ascii=false indent=2 trailing newline insertion order."
+  ],
+  "metadataOnlyCorrections": [
+    {
+      "recordedAtUTC": "2026-10-16T11:52:42Z",
+      "reasonJa": "Wikipedia本文読解記録のknownByもプロフィール/ライセンス出典の表示ゲートに合わせた。プロフィール本文・独立判定は変更していない。",
+      "changes": [
+        {
+          "evidencePath": "evidence/persons_2/1CH_person_zizah_3090-sources.json",
+          "beforeSHA256": "a8c3e337022b3149c94288bc8d9be37740e98e95b40dd29a8ad700c65f45a638",
+          "beforeBackup": "preservation/objects/a8c3e337022b3149c94288bc8d9be37740e98e95b40dd29a8ad700c65f45a638",
+          "afterSHA256": "559b02a5728a474292190ead991a0801480c18a4c7b794c3d00d2159569ec95f",
+          "knownBySet": {
+            "chapter": 23,
+            "verse": 11
+          }
+        },
+        {
+          "evidencePath": "evidence/persons_2/2CH_person_abijah_38-sources.json",
+          "beforeSHA256": "d7fb0f8b62865597c0fe5466e46f002218059cef721cbcffa4a24c2719694aed",
+          "beforeBackup": "preservation/objects/d7fb0f8b62865597c0fe5466e46f002218059cef721cbcffa4a24c2719694aed",
+          "afterSHA256": "83f283396e48df556ec14804076d51d366120f9ef82d49c54e9f56faac9288e9",
+          "knownBySet": {
+            "chapter": 13,
+            "verse": 1
+          }
+        },
+        {
+          "evidencePath": "evidence/persons_2/2CH_person_ahaziah_121-sources.json",
+          "beforeSHA256": "2b6060f88216ad8f4a50b79b67d89546b4d359551af1a6dccbb166f7c5f7beb5",
+          "beforeBackup": "preservation/objects/2b6060f88216ad8f4a50b79b67d89546b4d359551af1a6dccbb166f7c5f7beb5",
+          "afterSHA256": "e20adf190995007f511d775fe8acc7ce9d98ab67d29e06fc1cf4f40e7da456f9",
+          "knownBySet": {
+            "chapter": 22,
+            "verse": 1
+          }
+        }
+      ]
+    }
+  ]
+}

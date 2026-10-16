@@ -1,0 +1,1539 @@
+{
+  "schemaVersion": 1,
+  "title": "2 Chronicles 1-12 qualified-row primary-context research ledger",
+  "createdAtUTC": "2026-10-16T11:21:53.272881Z",
+  "scope": "Research ledger only. The source map, selector, derived data and first-release resources were not changed. These are proposals before independent re-review, not approved map changes.",
+  "bindings": {
+    "mapPath": "reviews/verse-map-2CH-01-12.json",
+    "mapSHA256": "c8a56b99cccff85dcaabb47b1295d04d8d9289229a94983f0cb52cd2b07f3ded",
+    "reclosurePath": "reviews/reclosure-verse-map-2CH-01-12-after-author-repairs.json",
+    "reclosureSHA256": "a67a1bb701c032b39e6cdae845f7c0fb4ef86c38bfd814450bb9b33b2e2f6bd2",
+    "inputPath": "verse-review-inputs/2CH-01-12.json",
+    "inputSHA256": "4853744db6abe0a30bf707a72b86d9958ac5b6d8b4913fd4f49800cb2a87260d",
+    "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+    "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8",
+    "qualifiedRows": 27
+  },
+  "method": "All rows currently marked qualified by the bound reclosure were extracted. Each row includes pinned WEB text and adjacent verse context with URLs and text hashes. Dan and Benjamin book-local collective profiles were reread for the two proposed existing-ID corrections. Terms without a verified suitable existing ID remain unresolved; no IDs were invented.",
+  "limitations": [
+    "This is source-context research, not an independent review.",
+    "The row set is qualified status in the bound reclosure; unchanged links are not runtime approval.",
+    "No new collective, feature, priestly-group, ethnic-group or watercourse IDs were created."
+  ],
+  "profileBindings": {
+    "person:dan_973": {
+      "path": "drafts/persons_1/2CH_dan_973.json",
+      "draftSHA256": "79f36ae0223448f004cf3c439f9b5f392c4e9178640f0382a1bad01b1aa2eb13",
+      "identityType": "collective",
+      "knownBy": {
+        "chapter": 2,
+        "verse": 14
+      }
+    },
+    "person:benjamin_463": {
+      "path": "drafts/persons_3/2CH_benjamin_463.json",
+      "draftSHA256": "810a445e33a0e0dc1f5da1f198c07592ffc5653414b850d74b4173f00019cb98",
+      "identityType": "collective",
+      "knownBy": {
+        "chapter": 11,
+        "verse": 1
+      }
+    }
+  },
+  "counts": {
+    "qualifiedRows": 27,
+    "existingIdChangesProposed": 4,
+    "maintainUnresolvedOrCurrent": 23,
+    "mapRowsChanged": 0
+  },
+  "rows": [
+    {
+      "book": "2CH",
+      "chapter": 2,
+      "verse": 14,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "the son of a woman of the daughters of Dan; and his father was a man of Tyre. He is skillful to work in gold, in silver, in bronze, in iron, in stone, in timber, in purple, in blue, in fine linen, and in crimson, also to engrave any kind of engraving and to devise any device, that there may be a place appointed to him with your skillful men, and with the skillful men of my lord David your father.",
+      "sourceTextSHA256": "9ea1f0e37dabd5b3f972f3fac991aa28385569dfd59b3adcbd02f410c8542def",
+      "citationURL": "https://ebible.org/engwebp/2CH02.htm#V14",
+      "previousVerse": {
+        "chapter": 2,
+        "verse": 13,
+        "text": "Now I have sent a skillful man, endowed with understanding, Huram-abi,",
+        "citationURL": "https://ebible.org/engwebp/2CH02.htm#V13",
+        "textSHA256": "2182f9964b6369df7fc4d25ac4e1afe048b8a0272f2ee5c40c93d00afcddd704"
+      },
+      "nextVerse": {
+        "chapter": 2,
+        "verse": 15,
+        "text": "“Now therefore, the wheat, the barley, the oil, and the wine which my lord has spoken of, let him send to his servants;",
+        "citationURL": "https://ebible.org/engwebp/2CH02.htm#V15",
+        "textSHA256": "400c99aa69b8d7ef999c59c3c192cb6cb417b6678d78f86dab519702900f89d3"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct",
+          "reasonJa": "人物「David」が本文に名指しされる（この節での役割・親族関係は本文の表現に限る）。"
+        },
+        {
+          "entityID": "place:tyre_1184",
+          "relationship": "direct",
+          "reasonJa": "地名「Tyre」がこの節に明記されるため採用する。これは本文上の出現対応であり、座標の確定を意味しない。"
+        }
+      ],
+      "currentExcludedCandidates": [
+        {
+          "entityID": "person:dan_973",
+          "reasonJa": "「ダンの娘たちの一人」は部族・系譜的出自を指し、族祖ダン本人の出現ではない。既存の人物IDで代用せず集団呼称として保留する。"
+        }
+      ],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "daughters/tribe of Dan",
+          "chapter": 2,
+          "verse": 14,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "WEBは母を「daughters of Dan」の一人とする。person:dan_973は族祖Dan本人であり、部族・集団の出自呼称の代用にしない。"
+        }
+      ],
+      "action": "existing-id-change-proposed",
+      "proposedChange": "Add existing person:dan_973 as direct and remove its stale exclusion. The book-local Dan draft is identityType collective, known by 2:14, and describes the artisan mother as from the tribe of Dan.",
+      "basis": "The WEB phrase daughters of Dan explicitly gives tribal origin, not an action or individual genealogy of patriarch Dan. The existing 2CH Dan profile matches this collective sense; Tyre remains a separate place.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 2,
+      "verse": 17,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "Solomon counted all the foreigners who were in the land of Israel, after the census with which David his father had counted them; and they found one hundred fifty-three thousand six hundred.",
+      "sourceTextSHA256": "8aaad984b8652872bfe15d3cc1d7b9a235da55ece194bfdc8a504a73621f2a5f",
+      "citationURL": "https://ebible.org/engwebp/2CH02.htm#V17",
+      "previousVerse": {
+        "chapter": 2,
+        "verse": 16,
+        "text": "and we will cut wood out of Lebanon, as much as you need. We will bring it to you in rafts by sea to Joppa; then you shall carry it up to Jerusalem.”",
+        "citationURL": "https://ebible.org/engwebp/2CH02.htm#V16",
+        "textSHA256": "09383b60a704fdc326fe578b8e207fa49a1d5371dbc854321b32566dc97d014a"
+      },
+      "nextVerse": {
+        "chapter": 2,
+        "verse": 18,
+        "text": "He set seventy thousand of them to bear burdens, eighty thousand who were stone cutters in the mountains, and three thousand six hundred overseers to assign the people their work.",
+        "citationURL": "https://ebible.org/engwebp/2CH02.htm#V18",
+        "textSHA256": "8eec42931846d9e11d301129f245308f94a414a1c55036af779a9008d1cbc28b"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct",
+          "reasonJa": "人物「David」が本文に名指しされる（この節での役割・親族関係は本文の表現に限る）。"
+        },
+        {
+          "entityID": "person:solomon_2762",
+          "relationship": "direct",
+          "reasonJa": "人物「Solomon」が本文に名指しされる（この節での役割・親族関係は本文の表現に限る）。"
+        },
+        {
+          "entityID": "place:united-kingdom-of-israel_1301",
+          "relationship": "direct",
+          "reasonJa": "「land of Israel」はソロモン時代のイスラエルの国土を地理的に指す。分裂後の北王国とは区別する。"
+        }
+      ],
+      "currentExcludedCandidates": [],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "land of Israel",
+          "chapter": 2,
+          "verse": 17,
+          "status": "profile-review-pending",
+          "reasonJa": "固定WEBはland of Israelを地理範囲として示し、既存canonical ID place:united-kingdom-of-israel_1301を本文上の対応として記録する。ただし当該2 Chronicles書内のプロフィール審査は未完了であり、runtime統合・読者ゲート承認を意味しない。"
+        }
+      ],
+      "action": "existing-id-change-proposed",
+      "proposedChange": "Change person:david_994 from direct to context.",
+      "basis": "David is named as Solomon father in a genealogical clause; Solomon is the census actor. The surrounding verses continue Solomon labor/census context.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 3,
+      "verse": 17,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "He set up the pillars before the temple, one on the right hand and the other on the left; and called the name of that on the right hand Jachin, and the name of that on the left Boaz.",
+      "sourceTextSHA256": "c27a4b18704105269efd03f185a71815d492809268f28f8e464a87972b05cc18",
+      "citationURL": "https://ebible.org/engwebp/2CH03.htm#V17",
+      "previousVerse": {
+        "chapter": 3,
+        "verse": 16,
+        "text": "He made chains in the inner sanctuary, and put them on the tops of the pillars; and he made one hundred pomegranates, and put them on the chains.",
+        "citationURL": "https://ebible.org/engwebp/2CH03.htm#V16",
+        "textSHA256": "22cebaebe1ce3dbd97230a8263076ef3ab60bccbd9420b0c24cf9de0bbdbf0f3"
+      },
+      "nextVerse": null,
+      "currentEntities": [
+        {
+          "entityID": "person:solomon_2762",
+          "relationship": "context",
+          "reasonJa": "3:1から続く神殿建築・装飾の主語「he」はソロモン。"
+        }
+      ],
+      "currentExcludedCandidates": [
+        {
+          "entityID": "person:boaz_519",
+          "reasonJa": "ここでBoazは神殿前の柱の名で、人物Boazではない。構造物名として人物IDへ結び付けない。"
+        }
+      ],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Jachin and Boaz (temple pillars)",
+          "chapter": 3,
+          "verse": 17,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "二本の神殿柱の名称。Boazは人物IDと同名だが、ここでは人物の出現ではない。構造物として対応する既存IDを確認できない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep the named pillars out of person IDs; no suitable existing feature ID was found.",
+      "basis": "Jachin and Boaz name the two temple pillars. person:boaz_519 is a namesake individual and is correctly excluded. Do not invent a pillar entity.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。",
+      "contextAvailabilityNote": " 固定WEBの章末により直後節は存在しない。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 5,
+      "verse": 4,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "All the elders of Israel came. The Levites took up the ark.",
+      "sourceTextSHA256": "7beac72a97ddc98172e16fef8fa8e28e6295ba39499c84fb3f547074136946a5",
+      "citationURL": "https://ebible.org/engwebp/2CH05.htm#V4",
+      "previousVerse": {
+        "chapter": 5,
+        "verse": 3,
+        "text": "So all the men of Israel assembled themselves to the king at the feast, which was in the seventh month.",
+        "citationURL": "https://ebible.org/engwebp/2CH05.htm#V3",
+        "textSHA256": "452dec1784095cae535bc96b4e6f266f19dd99e42b8fb0d3e16f2b4d5b45ee7d"
+      },
+      "nextVerse": {
+        "chapter": 5,
+        "verse": 5,
+        "text": "They brought up the ark, the Tent of Meeting, and all the holy vessels that were in the Tent. The Levitical priests brought these up.",
+        "citationURL": "https://ebible.org/engwebp/2CH05.htm#V5",
+        "textSHA256": "f01c00d67b78b366807faae4af05f1b14003cd086aadf71c46daf3ad3c211756"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "「Israel／イスラエルの人々」がこの節に明記される集団用法として採用し、王国領域とは区別する。"
+        }
+      ],
+      "currentExcludedCandidates": [],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Levites/priests",
+          "chapter": 5,
+          "verse": 4,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "Levites/priestsという祭儀集団が明記されるが、当該集団に適合する既存canonical IDを確認できないため、個人IDやIsrael集団で代用しない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep Israel collective. Leave Levites/priests unresolved; no matching existing group ID was confirmed.",
+      "basis": "The verse distinguishes elders of Israel from Levites. Do not substitute ancestor Levi or Israel territory for the ritual group.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 5,
+      "verse": 5,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "They brought up the ark, the Tent of Meeting, and all the holy vessels that were in the Tent. The Levitical priests brought these up.",
+      "sourceTextSHA256": "f01c00d67b78b366807faae4af05f1b14003cd086aadf71c46daf3ad3c211756",
+      "citationURL": "https://ebible.org/engwebp/2CH05.htm#V5",
+      "previousVerse": {
+        "chapter": 5,
+        "verse": 4,
+        "text": "All the elders of Israel came. The Levites took up the ark.",
+        "citationURL": "https://ebible.org/engwebp/2CH05.htm#V4",
+        "textSHA256": "7beac72a97ddc98172e16fef8fa8e28e6295ba39499c84fb3f547074136946a5"
+      },
+      "nextVerse": {
+        "chapter": 5,
+        "verse": 6,
+        "text": "King Solomon and all the congregation of Israel who were assembled to him were before the ark, sacrificing sheep and cattle that could not be counted or numbered for multitude.",
+        "citationURL": "https://ebible.org/engwebp/2CH05.htm#V6",
+        "textSHA256": "6fa82386e057917a45b502c56b2613d368807eb5b7d1957ae855dc53475fc33d"
+      },
+      "currentEntities": [],
+      "currentExcludedCandidates": [],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Levites/priests",
+          "chapter": 5,
+          "verse": 5,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "Levites/priestsという祭儀集団が明記されるが、当該集団に適合する既存canonical IDを確認できないため、個人IDやIsrael集団で代用しない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep unresolved the Levitical priests, ark, Tent of Meeting and vessels because no matching existing IDs were confirmed.",
+      "basis": "The previous verse gives a possible antecedent for they, but this verse describes objects and an unnamed ritual group.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 5,
+      "verse": 7,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "The priests brought in the ark of the LORD’s covenant to its place, into the inner sanctuary of the house, to the most holy place, even under the wings of the cherubim.",
+      "sourceTextSHA256": "4b84676c9c48ebf383e260d48df088f21b843f90aa68d494b601ac846181cb65",
+      "citationURL": "https://ebible.org/engwebp/2CH05.htm#V7",
+      "previousVerse": {
+        "chapter": 5,
+        "verse": 6,
+        "text": "King Solomon and all the congregation of Israel who were assembled to him were before the ark, sacrificing sheep and cattle that could not be counted or numbered for multitude.",
+        "citationURL": "https://ebible.org/engwebp/2CH05.htm#V6",
+        "textSHA256": "6fa82386e057917a45b502c56b2613d368807eb5b7d1957ae855dc53475fc33d"
+      },
+      "nextVerse": {
+        "chapter": 5,
+        "verse": 8,
+        "text": "For the cherubim spread out their wings over the place of the ark, and the cherubim covered the ark and its poles above.",
+        "citationURL": "https://ebible.org/engwebp/2CH05.htm#V8",
+        "textSHA256": "9b2174c974ca963d7f9d06838c9fe3fc389e7c4dceb753203f8ba108b744e0a0"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "LORD／Godの名がこの節に明記され、神を指す用法として採用する。"
+        },
+        {
+          "entityID": "place:most_holy_place_827",
+          "relationship": "direct",
+          "reasonJa": "地名「most holy place」がこの節に明記されるため採用する。これは本文上の出現対応であり、座標の確定を意味しない。"
+        }
+      ],
+      "currentExcludedCandidates": [],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Levites/priests",
+          "chapter": 5,
+          "verse": 7,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "Levites/priestsという祭儀集団が明記されるが、当該集団に適合する既存canonical IDを確認できないため、個人IDやIsrael集団で代用しない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep God and most_holy_place; leave the priests/Levites group unresolved.",
+      "basis": "The nearby verses describe priests carrying the ark into the sanctuary. A temple/place ID for the house itself was not confirmed.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 5,
+      "verse": 11,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "When the priests had come out of the holy place (for all the priests who were present had sanctified themselves, and didn’t keep their divisions;",
+      "sourceTextSHA256": "fbdf8f1f6569b0e0b4edad73ed14eb92d59608c500d158a9c9b0af3fbb02ba62",
+      "citationURL": "https://ebible.org/engwebp/2CH05.htm#V11",
+      "previousVerse": {
+        "chapter": 5,
+        "verse": 10,
+        "text": "There was nothing in the ark except the two tablets which Moses put there at Horeb, when the LORD made a covenant with the children of Israel, when they came out of Egypt.",
+        "citationURL": "https://ebible.org/engwebp/2CH05.htm#V10",
+        "textSHA256": "b3b4b2ddfb8dd2f9a65e0ef2e6806745e8179549b1d9040b507b4085f8e0c173"
+      },
+      "nextVerse": {
+        "chapter": 5,
+        "verse": 12,
+        "text": "also the Levites who were the singers, all of them, even Asaph, Heman, Jeduthun, and their sons and their brothers, arrayed in fine linen, with cymbals and stringed instruments and harps, stood at the east end of the altar, and with them one hundred twenty priests sounding with trumpets);",
+        "citationURL": "https://ebible.org/engwebp/2CH05.htm#V12",
+        "textSHA256": "787149a24fe10fbcc3113187763a847e9baf3d249bc4da552f92899837e9f355"
+      },
+      "currentEntities": [
+        {
+          "entityID": "place:holy_place_575",
+          "relationship": "direct",
+          "reasonJa": "地名「holy place」がこの節に明記されるため採用する。これは本文上の出現対応であり、座標の確定を意味しない。"
+        }
+      ],
+      "currentExcludedCandidates": [],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Levites/priests",
+          "chapter": 5,
+          "verse": 11,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "Levites/priestsという祭儀集団が明記されるが、当該集団に適合する既存canonical IDを確認できないため、個人IDやIsrael集団で代用しない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep holy_place; leave the generic priest group unresolved.",
+      "basis": "Priests are described by office as they leave the holy place; do not substitute ancestor IDs.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 5,
+      "verse": 12,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "also the Levites who were the singers, all of them, even Asaph, Heman, Jeduthun, and their sons and their brothers, arrayed in fine linen, with cymbals and stringed instruments and harps, stood at the east end of the altar, and with them one hundred twenty priests sounding with trumpets);",
+      "sourceTextSHA256": "787149a24fe10fbcc3113187763a847e9baf3d249bc4da552f92899837e9f355",
+      "citationURL": "https://ebible.org/engwebp/2CH05.htm#V12",
+      "previousVerse": {
+        "chapter": 5,
+        "verse": 11,
+        "text": "When the priests had come out of the holy place (for all the priests who were present had sanctified themselves, and didn’t keep their divisions;",
+        "citationURL": "https://ebible.org/engwebp/2CH05.htm#V11",
+        "textSHA256": "fbdf8f1f6569b0e0b4edad73ed14eb92d59608c500d158a9c9b0af3fbb02ba62"
+      },
+      "nextVerse": {
+        "chapter": 5,
+        "verse": 13,
+        "text": "when the trumpeters and singers were as one, to make one sound to be heard in praising and thanking the LORD; and when they lifted up their voice with the trumpets and cymbals and instruments of music, and praised the LORD, saying, “For he is good, for his loving kindness endures forever!” then the house was filled with a cloud, even the LORD’s house,",
+        "citationURL": "https://ebible.org/engwebp/2CH05.htm#V13",
+        "textSHA256": "d24f6d0aa6fa1cfdfd2e3ef37ea5a64e868d9e49e650f5e9351c3d274406d1d9"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:asaph_330",
+          "relationship": "direct",
+          "reasonJa": "人物「Asaph」が本文に名指しされる（この節での役割・親族関係は本文の表現に限る）。"
+        },
+        {
+          "entityID": "person:heman_1490",
+          "relationship": "direct",
+          "reasonJa": "人物「Heman」が本文に名指しされる（この節での役割・親族関係は本文の表現に限る）。"
+        },
+        {
+          "entityID": "person:jeduthun_1224",
+          "relationship": "direct",
+          "reasonJa": "人物「Jeduthun」が本文に名指しされる（この節での役割・親族関係は本文の表現に限る）。"
+        }
+      ],
+      "currentExcludedCandidates": [],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Levites/priests",
+          "chapter": 5,
+          "verse": 12,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "Levites/priestsという祭儀集団が明記されるが、当該集団に適合する既存canonical IDを確認できないため、個人IDやIsrael集団で代用しない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep Asaph, Heman and Jeduthun; leave the unnamed Levites, priests, sons and brothers unresolved.",
+      "basis": "The three named people are explicit. Their unnamed kin and the 120 priests cannot be assigned individual IDs.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 7,
+      "verse": 2,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "The priests could not enter into the LORD’s house, because the LORD’s glory filled the LORD’s house.",
+      "sourceTextSHA256": "b04ea2abac1ea2c7c092dacefaa5cba4a5fd03a2ff534e40b1beab01dc37ec35",
+      "citationURL": "https://ebible.org/engwebp/2CH07.htm#V2",
+      "previousVerse": {
+        "chapter": 7,
+        "verse": 1,
+        "text": "Now when Solomon had finished praying, fire came down from heaven and consumed the burnt offering and the sacrifices; and the LORD’s glory filled the house.",
+        "citationURL": "https://ebible.org/engwebp/2CH07.htm#V1",
+        "textSHA256": "170220ae14c6713428c6ec4eb58b86308cfa712652512cc001e09fe891cbe538"
+      },
+      "nextVerse": {
+        "chapter": 7,
+        "verse": 3,
+        "text": "All the children of Israel looked on, when the fire came down, and the LORD’s glory was on the house. They bowed themselves with their faces to the ground on the pavement, worshiped, and gave thanks to the LORD, saying, “For he is good, for his loving kindness endures forever!”",
+        "citationURL": "https://ebible.org/engwebp/2CH07.htm#V3",
+        "textSHA256": "4f092e3cd820241b5c3ceabf1fcbe8754911eba5e46eba5e550dcbb30d1dce98"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "LORD／Godの名がこの節に明記され、神を指す用法として採用する。"
+        }
+      ],
+      "currentExcludedCandidates": [],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Levites/priests",
+          "chapter": 7,
+          "verse": 2,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "Levites/priestsという祭儀集団が明記されるが、当該集団に適合する既存canonical IDを確認できないため、個人IDやIsrael集団で代用しない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep God; no matching existing temple ID was confirmed for LORD house.",
+      "basis": "The preceding verses say the fire and glory filled the house; the priests are a generic group.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 7,
+      "verse": 6,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "The priests stood, according to their positions; the Levites also with instruments of music of the LORD, which David the king had made to give thanks to the LORD, when David praised by their ministry, saying “For his loving kindness endures forever.” The priests sounded trumpets before them; and all Israel stood.",
+      "sourceTextSHA256": "e68234c65c69b9a21db7384a307f95a812aeaddea0bfcca58b607dbfdc08250c",
+      "citationURL": "https://ebible.org/engwebp/2CH07.htm#V6",
+      "previousVerse": {
+        "chapter": 7,
+        "verse": 5,
+        "text": "King Solomon offered a sacrifice of twenty-two thousand head of cattle and a hundred twenty thousand sheep. So the king and all the people dedicated God’s house.",
+        "citationURL": "https://ebible.org/engwebp/2CH07.htm#V5",
+        "textSHA256": "ba19ab407cb41b8a2043b35f4df77c9747d280c33ba6101baf8c2b5e9bb9cdbb"
+      },
+      "nextVerse": {
+        "chapter": 7,
+        "verse": 7,
+        "text": "Moreover Solomon made the middle of the court that was before the LORD’s house holy; for there he offered the burnt offerings and the fat of the peace offerings, because the bronze altar which Solomon had made was not able to receive the burnt offering, the meal offering, and the fat.",
+        "citationURL": "https://ebible.org/engwebp/2CH07.htm#V7",
+        "textSHA256": "ed6947fde7c025f585d223276650e3970e584569562a6ccac69ea47ac6f0eb03"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct",
+          "reasonJa": "人物「David」が本文に名指しされる（この節での役割・親族関係は本文の表現に限る）。"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "LORD／Godの名がこの節に明記され、神を指す用法として採用する。"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "「Israel／イスラエルの人々」がこの節に明記される集団用法として採用し、王国領域とは区別する。"
+        }
+      ],
+      "currentExcludedCandidates": [],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Levites/priests",
+          "chapter": 7,
+          "verse": 6,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "Levites/priestsという祭儀集団が明記されるが、当該集団に適合する既存canonical IDを確認できないため、個人IDやIsrael集団で代用しない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep David, God and Israel collective; leave the Levites/priests group unresolved.",
+      "basis": "The verse names David and concludes all Israel stood. Levites and priests are distinct unnamed groups.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 7,
+      "verse": 8,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "So Solomon held the feast at that time for seven days, and all Israel with him, a very great assembly, from the entrance of Hamath to the brook of Egypt.",
+      "sourceTextSHA256": "0c3000384b67a93856d559a6162fd6d8a3c799add2fb634ec6cae90e1dfbd558",
+      "citationURL": "https://ebible.org/engwebp/2CH07.htm#V8",
+      "previousVerse": {
+        "chapter": 7,
+        "verse": 7,
+        "text": "Moreover Solomon made the middle of the court that was before the LORD’s house holy; for there he offered the burnt offerings and the fat of the peace offerings, because the bronze altar which Solomon had made was not able to receive the burnt offering, the meal offering, and the fat.",
+        "citationURL": "https://ebible.org/engwebp/2CH07.htm#V7",
+        "textSHA256": "ed6947fde7c025f585d223276650e3970e584569562a6ccac69ea47ac6f0eb03"
+      },
+      "nextVerse": {
+        "chapter": 7,
+        "verse": 9,
+        "text": "On the eighth day, they held a solemn assembly; for they kept the dedication of the altar seven days, and the feast seven days.",
+        "citationURL": "https://ebible.org/engwebp/2CH07.htm#V9",
+        "textSHA256": "30f4f02d6227a51b96d68dc6e0d445c9df3cfd167e2c3dea5c3da13a7bdd2bb0"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "「Israel／イスラエルの人々」がこの節に明記される集団用法として採用し、王国領域とは区別する。"
+        },
+        {
+          "entityID": "person:solomon_2762",
+          "relationship": "direct",
+          "reasonJa": "人物「Solomon」が本文に名指しされる（この節での役割・親族関係は本文の表現に限る）。"
+        },
+        {
+          "entityID": "place:lebo-hamath_723",
+          "relationship": "direct",
+          "reasonJa": "地名「entrance of Hamath」がこの節に明記されるため採用する。これは本文上の出現対応であり、座標の確定を意味しない。"
+        }
+      ],
+      "currentExcludedCandidates": [],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "brook of Egypt",
+          "chapter": 7,
+          "verse": 8,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "境界水路として明記されるが、既存IDに適合する水路を確認できない。国Egyptで代用しない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep Israel, Solomon and Lebo-Hamath. Leave brook of Egypt unresolved; do not substitute the country Egypt or an unrelated river.",
+      "basis": "The phrase marks a boundary watercourse. No exact existing watercourse ID was confirmed.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 8,
+      "verse": 7,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "As for all the people who were left of the Hittites, the Amorites, the Perizzites, the Hivites, and the Jebusites, who were not of Israel—",
+      "sourceTextSHA256": "c65e15e0609af6cbbd490b7ad05caa1681993a0d01136b77dafeafbebd6c6c9e",
+      "citationURL": "https://ebible.org/engwebp/2CH08.htm#V7",
+      "previousVerse": {
+        "chapter": 8,
+        "verse": 6,
+        "text": "and Baalath, and all the storage cities that Solomon had, and all the cities for his chariots, the cities for his horsemen, and all that Solomon desired to build for his pleasure in Jerusalem, in Lebanon, and in all the land of his dominion.",
+        "citationURL": "https://ebible.org/engwebp/2CH08.htm#V6",
+        "textSHA256": "f1b3ee982828a0f16cbd570d0958bf97d6a15960dcdfbf83c397762c7860672a"
+      },
+      "nextVerse": {
+        "chapter": 8,
+        "verse": 8,
+        "text": "of their children who were left after them in the land, whom the children of Israel didn’t consume—of them Solomon conscripted forced labor to this day.",
+        "citationURL": "https://ebible.org/engwebp/2CH08.htm#V8",
+        "textSHA256": "f5d6b0fda2a129f39bf1289c565a10aa62ed7ed37dc146e55a542b1efbbb6f18"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:amorite_237",
+          "relationship": "direct",
+          "reasonJa": "「Amorites」は人々の集団として名指され、地理上のAmorite landとは区別する。"
+        },
+        {
+          "entityID": "person:hivite_1534",
+          "relationship": "direct",
+          "reasonJa": "「Hivites」は人々の集団として名指される。"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "「Israel／イスラエルの人々」がこの節に明記される集団用法として採用し、王国領域とは区別する。"
+        },
+        {
+          "entityID": "person:jebusite_748",
+          "relationship": "direct",
+          "reasonJa": "「Jebusites」は人々の集団として名指され、同名の地理候補とは区別する。"
+        }
+      ],
+      "currentExcludedCandidates": [],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Hittites",
+          "chapter": 8,
+          "verse": 7,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "古代集団名が明記されるが、同じ集団を表す既存人物/集団IDを確認できず、土地IDで代用しない。"
+        },
+        {
+          "term": "Perizzites",
+          "chapter": 8,
+          "verse": 7,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "古代集団名が明記されるが、同じ集団を表す既存人物/集団IDを確認できず、土地IDで代用しない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep Amorite, Hivite, Israel and Jebusite; leave Hittite and Perizzite groups unresolved.",
+      "basis": "The verse enumerates distinct peoples. No matching existing collective IDs were confirmed for the two omitted groups.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 8,
+      "verse": 8,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "of their children who were left after them in the land, whom the children of Israel didn’t consume—of them Solomon conscripted forced labor to this day.",
+      "sourceTextSHA256": "f5d6b0fda2a129f39bf1289c565a10aa62ed7ed37dc146e55a542b1efbbb6f18",
+      "citationURL": "https://ebible.org/engwebp/2CH08.htm#V8",
+      "previousVerse": {
+        "chapter": 8,
+        "verse": 7,
+        "text": "As for all the people who were left of the Hittites, the Amorites, the Perizzites, the Hivites, and the Jebusites, who were not of Israel—",
+        "citationURL": "https://ebible.org/engwebp/2CH08.htm#V7",
+        "textSHA256": "c65e15e0609af6cbbd490b7ad05caa1681993a0d01136b77dafeafbebd6c6c9e"
+      },
+      "nextVerse": {
+        "chapter": 8,
+        "verse": 9,
+        "text": "But of the children of Israel, Solomon made no servants for his work, but they were men of war, chief of his captains, and rulers of his chariots and of his horsemen.",
+        "citationURL": "https://ebible.org/engwebp/2CH08.htm#V9",
+        "textSHA256": "4b8eed27e2819681ef37f966467d8926e466124fc3c023fb033f616c8ff6c3b0"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:amorite_237",
+          "relationship": "context",
+          "reasonJa": "「their children」は8:7で挙げたAmorite集団の子孫を指す文脈。"
+        },
+        {
+          "entityID": "person:hivite_1534",
+          "relationship": "context",
+          "reasonJa": "「their children」は8:7で挙げたHivite集団の子孫を指す文脈。"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "「Israel／イスラエルの人々」がこの節に明記される集団用法として採用し、王国領域とは区別する。"
+        },
+        {
+          "entityID": "person:jebusite_748",
+          "relationship": "context",
+          "reasonJa": "「their children」は8:7で挙げたJebusite集団の子孫を指す文脈。"
+        },
+        {
+          "entityID": "person:solomon_2762",
+          "relationship": "direct",
+          "reasonJa": "人物「Solomon」が本文に名指しされる（この節での役割・親族関係は本文の表現に限る）。"
+        }
+      ],
+      "currentExcludedCandidates": [],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Hittite/Amorite/Perizzite/Hivite/Jebusite descendants",
+          "chapter": 8,
+          "verse": 8,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "「their children」は8:7で挙げた諸集団の子孫を指す。集団の同一性・系譜を個別に割り当てられる既存IDが揃わないため、確実な集団ID以外は保留。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep current group/context links; leave unrepresented Hittite and Perizzite descendants unresolved.",
+      "basis": "This continues the prior list of peoples and their descendants, not individual namesakes.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 8,
+      "verse": 14,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "He appointed, according to the ordinance of David his father, the divisions of the priests to their service, and the Levites to their offices, to praise and to minister before the priests, as the duty of every day required, the doorkeepers also by their divisions at every gate, for David the man of God had so commanded.",
+      "sourceTextSHA256": "effb35def44089ae7bced06011eeb0dbe8695aeb501dd07c17701cdf4372a8ca",
+      "citationURL": "https://ebible.org/engwebp/2CH08.htm#V14",
+      "previousVerse": {
+        "chapter": 8,
+        "verse": 13,
+        "text": "even as the duty of every day required, offering according to the commandment of Moses on the Sabbaths, on the new moons, and on the set feasts, three times per year, during the feast of unleavened bread, during the feast of weeks, and during the feast of booths.",
+        "citationURL": "https://ebible.org/engwebp/2CH08.htm#V13",
+        "textSHA256": "e262897ba4bd7ef85296060fc383aff72b64bf710403802d2067aa58eb835940"
+      },
+      "nextVerse": {
+        "chapter": 8,
+        "verse": 15,
+        "text": "They didn’t depart from the commandment of the king to the priests and Levites concerning any matter or concerning the treasures.",
+        "citationURL": "https://ebible.org/engwebp/2CH08.htm#V15",
+        "textSHA256": "0a8afba8820e8ee7f9313139508de7deb33dcbfa4dce21eea63b680c14cf3956"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct",
+          "reasonJa": "人物「David」が本文に名指しされる（この節での役割・親族関係は本文の表現に限る）。"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context",
+          "reasonJa": "「man of God」はDavidを表す称号であり、神をこの節の行為主体として述べない。"
+        },
+        {
+          "entityID": "person:solomon_2762",
+          "relationship": "context",
+          "reasonJa": "「he appointed」は神殿礼拝の職務を定めたソロモン。"
+        }
+      ],
+      "currentExcludedCandidates": [],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Levites/priests",
+          "chapter": 8,
+          "verse": 14,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "Levites/priestsという祭儀集団が明記されるが、当該集団に適合する既存canonical IDを確認できないため、個人IDやIsrael集団で代用しない。"
+        }
+      ],
+      "action": "existing-id-change-proposed",
+      "proposedChange": "Remove person:god_1324 from this row; keep David direct and Solomon context.",
+      "basis": "David the man of God describes David, not a separate appearance of God. David is also the subject of had so commanded.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 9,
+      "verse": 14,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "in addition to that which the traders and merchants brought. All the kings of Arabia and the governors of the country brought gold and silver to Solomon.",
+      "sourceTextSHA256": "7389b15c6a7c3d678227559282e9119b9a8033ed7b72e76d25f2d6a805ef1c70",
+      "citationURL": "https://ebible.org/engwebp/2CH09.htm#V14",
+      "previousVerse": {
+        "chapter": 9,
+        "verse": 13,
+        "text": "Now the weight of gold that came to Solomon in one year was six hundred sixty-six talents of gold,",
+        "citationURL": "https://ebible.org/engwebp/2CH09.htm#V13",
+        "textSHA256": "341fe069d2df1c022a9d04d1744550716b2a0bd7014dde97022b35beff421a44"
+      },
+      "nextVerse": {
+        "chapter": 9,
+        "verse": 15,
+        "text": "King Solomon made two hundred large shields of beaten gold. Six hundred shekels of beaten gold went to one large shield.",
+        "citationURL": "https://ebible.org/engwebp/2CH09.htm#V15",
+        "textSHA256": "59fc495f91df90871e1a67d442a8b1d1eac859c6c53b7918d8152069a16c151c"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:solomon_2762",
+          "relationship": "direct",
+          "reasonJa": "人物「Solomon」が本文に名指しされる（この節での役割・親族関係は本文の表現に限る）。"
+        },
+        {
+          "entityID": "place:arabia_80",
+          "relationship": "context",
+          "reasonJa": "Arabiaは王たちの出自・支配域として記される。地理との関連であり、Arabia自体の移動行為ではない。"
+        }
+      ],
+      "currentExcludedCandidates": [],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "kings of Arabia / governors",
+          "chapter": 9,
+          "verse": 14,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "「Arabia」は既存地理IDに対応するが、王たち・地方長官を表す人物/集団IDは本文だけで特定できない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep Solomon direct and Arabia context. Leave the kings/governors as an unresolved group.",
+      "basis": "Arabia is the origin/jurisdiction of the plural rulers; it is not acting as a person. The individual kings and governors are unnamed.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 9,
+      "verse": 26,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "He ruled over all the kings from the River even to the land of the Philistines, and to the border of Egypt.",
+      "sourceTextSHA256": "a0d644fc08e0bac517094a347dee1a11baca82599d28349ec59685c3b78497fd",
+      "citationURL": "https://ebible.org/engwebp/2CH09.htm#V26",
+      "previousVerse": {
+        "chapter": 9,
+        "verse": 25,
+        "text": "Solomon had four thousand stalls for horses and chariots, and twelve thousand horsemen that he stationed in the chariot cities and with the king at Jerusalem.",
+        "citationURL": "https://ebible.org/engwebp/2CH09.htm#V25",
+        "textSHA256": "6b16973facc60ca18639b43701bec62623aee03ae5066c3e2448c76eead1d73f"
+      },
+      "nextVerse": {
+        "chapter": 9,
+        "verse": 27,
+        "text": "The king made silver as common in Jerusalem as stones, and he made cedars to be as abundant as the sycamore trees that are in the lowland.",
+        "citationURL": "https://ebible.org/engwebp/2CH09.htm#V27",
+        "textSHA256": "d0b136e8363c9a0afc472e7d1980692aee1fb8e32b7187354bd2b473b97a3aef"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:solomon_2762",
+          "relationship": "context",
+          "reasonJa": "「he ruled」の主語は直前まで王として扱われるソロモン。"
+        },
+        {
+          "entityID": "place:egypt_362",
+          "relationship": "direct",
+          "reasonJa": "地名「Egypt」がこの節に明記されるため採用する。これは本文上の出現対応であり、座標の確定を意味しない。"
+        },
+        {
+          "entityID": "place:euphrates_421",
+          "relationship": "direct",
+          "reasonJa": "王国の西境界から東へ広がる範囲の「the River」はユーフラテス川を指す定型地理表現。"
+        },
+        {
+          "entityID": "place:philistia_943",
+          "relationship": "direct",
+          "reasonJa": "「land of the Philistines」とソロモンの支配範囲の地理名が明記される。"
+        }
+      ],
+      "currentExcludedCandidates": [],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "land of the Philistines",
+          "chapter": 9,
+          "verse": 26,
+          "status": "profile-review-pending",
+          "reasonJa": "固定WEBは「land of the Philistines」を王権範囲の地理表現として明記し、既存canonical ID place:philistia_943を本文上の対応として記録する。ただし当該2 Chronicles書内のプロフィール審査は未完了であり、runtime統合・読者ゲート承認を意味しない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep Solomon, Egypt, Euphrates and Philistia in their current roles; retain the profile-review limitation on Philistia.",
+      "basis": "The verse gives a territorial span from the River to Philistine land and Egypt. The map matches the terms but the local profile review is still pending.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 10,
+      "verse": 18,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "Then King Rehoboam sent Hadoram, who was over the men subject to forced labor; and the children of Israel stoned him to death with stones. King Rehoboam hurried to get himself up to his chariot, to flee to Jerusalem.",
+      "sourceTextSHA256": "7ee494989318af146b65b3a85048f650a92a3223e9e401e29564969ba2cecfc8",
+      "citationURL": "https://ebible.org/engwebp/2CH10.htm#V18",
+      "previousVerse": {
+        "chapter": 10,
+        "verse": 17,
+        "text": "But as for the children of Israel who lived in the cities of Judah, Rehoboam reigned over them.",
+        "citationURL": "https://ebible.org/engwebp/2CH10.htm#V17",
+        "textSHA256": "48687cca363246c7bf594a764ed1f179f5d0e0882b6f37932a331651717b175c"
+      },
+      "nextVerse": {
+        "chapter": 10,
+        "verse": 19,
+        "text": "So Israel rebelled against David’s house to this day.",
+        "citationURL": "https://ebible.org/engwebp/2CH10.htm#V19",
+        "textSHA256": "18280932f929d1d5ac95383ccda768c75425bb9500b1c2dabd1cd4210f916eea"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "「Israel／イスラエルの人々」がこの節に明記される集団用法として採用し、王国領域とは区別する。"
+        },
+        {
+          "entityID": "person:rehoboam_2412",
+          "relationship": "direct",
+          "reasonJa": "人物「Rehoboam」が本文に名指しされる（この節での役割・親族関係は本文の表現に限る）。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "地名「Jerusalem」がこの節に明記されるため採用する。これは本文上の出現対応であり、座標の確定を意味しない。"
+        }
+      ],
+      "currentExcludedCandidates": [
+        {
+          "entityID": "person:adoniram_102",
+          "reasonJa": "固定WEBはHadoramと記す。既存Adoniram IDとの表記・同一性をこの節だけから確定しない。"
+        }
+      ],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Hadoram",
+          "chapter": 10,
+          "verse": 18,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "この節のWEB綴りはHadoram。類似名Adoniramとの同一性はこの節・この書の本文で確定できない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep Hadoram unresolved; do not merge him into person:adoniram_102 on similar spelling alone.",
+      "basis": "The verse names Hadoram as supervisor of forced labor. This verse does not establish that he is Adoniram.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 11,
+      "verse": 1,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "When Rehoboam had come to Jerusalem, he assembled the house of Judah and Benjamin, one hundred eighty thousand chosen men who were warriors, to fight against Israel, to bring the kingdom again to Rehoboam.",
+      "sourceTextSHA256": "e9f9a95ef0d6e846c559ef41b4b6b5d0e417f86064a7c6b16dc294b066316187",
+      "citationURL": "https://ebible.org/engwebp/2CH11.htm#V1",
+      "previousVerse": {
+        "chapter": 10,
+        "verse": 19,
+        "text": "So Israel rebelled against David’s house to this day.",
+        "citationURL": "https://ebible.org/engwebp/2CH10.htm#V19",
+        "textSHA256": "18280932f929d1d5ac95383ccda768c75425bb9500b1c2dabd1cd4210f916eea"
+      },
+      "nextVerse": {
+        "chapter": 11,
+        "verse": 2,
+        "text": "But the LORD’s word came to Shemaiah the man of God, saying,",
+        "citationURL": "https://ebible.org/engwebp/2CH11.htm#V2",
+        "textSHA256": "b713699c8bec9031e6e7b721e7d44dd03073b204b4614e6ab9453315bc18dd90"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "「Israel／イスラエルの人々」がこの節に明記される集団用法として採用し、王国領域とは区別する。"
+        },
+        {
+          "entityID": "person:rehoboam_2412",
+          "relationship": "direct",
+          "reasonJa": "人物「Rehoboam」が本文に名指しされる（この節での役割・親族関係は本文の表現に限る）。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "地名「Jerusalem」がこの節に明記されるため採用する。これは本文上の出現対応であり、座標の確定を意味しない。"
+        }
+      ],
+      "currentExcludedCandidates": [
+        {
+          "entityID": "person:benjamin_463",
+          "reasonJa": "「house of Judah and Benjamin」は戦士集団の構成を述べる。person:Benjaminは族祖個人で、集団を代替しない。"
+        }
+      ],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "house of Judah",
+          "chapter": 11,
+          "verse": 1,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "軍勢を構成する「house of Judah」は人々・部族の呼称。既存person:judah IDsは族祖/別同定であり、該当するJudah集団IDを確認できない。"
+        },
+        {
+          "term": "house of Benjamin",
+          "chapter": 11,
+          "verse": 1,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "戦士を構成するBenjaminの家・集団と明記されるが、族祖個人とは異なる。適合する集団IDは確認できない。"
+        }
+      ],
+      "action": "existing-id-change-proposed",
+      "proposedChange": "Add existing person:benjamin_463 as direct and remove the stale patriarch exclusion. Keep house of Judah unresolved as a collective.",
+      "basis": "The text names the house of Judah and Benjamin as a force. The current 2CH Benjamin profile is identityType collective and starts at 11:1. No equivalent Judah collective profile was confirmed; neither ancestor Judah nor Judah territory substitutes for the group.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。",
+      "contextAvailabilityNote": "直前節は前章の最終節から取得。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 11,
+      "verse": 3,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "“Speak to Rehoboam the son of Solomon, king of Judah, and to all Israel in Judah and Benjamin, saying,",
+      "sourceTextSHA256": "a62c6347ec33c6613aa37a409134f041f746c8ed1124f01bb999b9748a88bb61",
+      "citationURL": "https://ebible.org/engwebp/2CH11.htm#V3",
+      "previousVerse": {
+        "chapter": 11,
+        "verse": 2,
+        "text": "But the LORD’s word came to Shemaiah the man of God, saying,",
+        "citationURL": "https://ebible.org/engwebp/2CH11.htm#V2",
+        "textSHA256": "b713699c8bec9031e6e7b721e7d44dd03073b204b4614e6ab9453315bc18dd90"
+      },
+      "nextVerse": {
+        "chapter": 11,
+        "verse": 4,
+        "text": "‘The LORD says, “You shall not go up, nor fight against your brothers! Every man return to his house; for this thing is of me.”’” So they listened to the LORD’s words, and returned from going against Jeroboam.",
+        "citationURL": "https://ebible.org/engwebp/2CH11.htm#V4",
+        "textSHA256": "a2580fc2999482fbe9cd2a39643cd62da1cfa323ad548f3b2cbc3a748f78f351"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "「Israel／イスラエルの人々」がこの節に明記される集団用法として採用し、王国領域とは区別する。"
+        },
+        {
+          "entityID": "person:rehoboam_2412",
+          "relationship": "direct",
+          "reasonJa": "人物「Rehoboam」が本文に名指しされる（この節での役割・親族関係は本文の表現に限る）。"
+        },
+        {
+          "entityID": "person:solomon_2762",
+          "relationship": "context",
+          "reasonJa": "Rehoboamを「son of Solomon」とする父子関係上の言及。"
+        },
+        {
+          "entityID": "place:benjamin-territory_1293",
+          "relationship": "direct",
+          "reasonJa": "「in Judah and Benjamin」は対象地域を並べて示す地理句。Benjamin地域IDを用い、族祖個人とは区別する。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "「Judah」はここでは分裂後の南王国の領域・政体を指す用法として採用する。族祖Judahや人々の集団と同一視しない。"
+        }
+      ],
+      "currentExcludedCandidates": [
+        {
+          "entityID": "person:benjamin_463",
+          "reasonJa": "「in Judah and Benjamin」は領域を示す句で、部族集団のIDを地域IDの代用にしない。"
+        }
+      ],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Benjamin territory",
+          "chapter": 11,
+          "verse": 3,
+          "status": "profile-review-pending",
+          "reasonJa": "固定WEBはBenjamin territoryを地理範囲として示し、既存canonical ID place:benjamin-territory_1293を本文上の対応として記録する。ただし当該2 Chronicles書内のプロフィール審査は未完了であり、runtime統合・読者ゲート承認を意味しない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep Israel collective, Rehoboam/Solomon and Judah/Benjamin territorial links; retain pending profile review for Benjamin territory.",
+      "basis": "All Israel is a people phrase; Judah and Benjamin are locations in the syntax. The reclosure explicitly leaves territory profile/runtime approval pending.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 11,
+      "verse": 10,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "Zorah, Aijalon, and Hebron, which are fortified cities in Judah and in Benjamin.",
+      "sourceTextSHA256": "58a4bc53c9d31bc00bbd369e7230829ee271237076df290d25f185f7c776fe7c",
+      "citationURL": "https://ebible.org/engwebp/2CH11.htm#V10",
+      "previousVerse": {
+        "chapter": 11,
+        "verse": 9,
+        "text": "Adoraim, Lachish, Azekah,",
+        "citationURL": "https://ebible.org/engwebp/2CH11.htm#V9",
+        "textSHA256": "3979448f25ed9c264bf9f8f14b31b7fa22d3d5c8a607e787d40ee7876b0eb0e9"
+      },
+      "nextVerse": {
+        "chapter": 11,
+        "verse": 11,
+        "text": "He fortified the strongholds and put captains in them with stores of food, oil and wine.",
+        "citationURL": "https://ebible.org/engwebp/2CH11.htm#V11",
+        "textSHA256": "0d09f064b5923faa20f1abb557b9b82b11ea432b797d3493e37df68d1e5ec02b"
+      },
+      "currentEntities": [
+        {
+          "entityID": "place:aijalon_40",
+          "relationship": "direct",
+          "reasonJa": "地名「Aijalon」がこの節に明記されるため採用する。これは本文上の出現対応であり、座標の確定を意味しない。"
+        },
+        {
+          "entityID": "place:benjamin-territory_1293",
+          "relationship": "direct",
+          "reasonJa": "城塞都市が属する地域としてBenjaminが明記される。"
+        },
+        {
+          "entityID": "place:hebron_551",
+          "relationship": "direct",
+          "reasonJa": "地名「Hebron」がこの節に明記されるため採用する。これは本文上の出現対応であり、座標の確定を意味しない。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "「Judah」はここでは分裂後の南王国の領域・政体を指す用法として採用する。族祖Judahや人々の集団と同一視しない。"
+        },
+        {
+          "entityID": "place:zorah_1275",
+          "relationship": "direct",
+          "reasonJa": "地名「Zorah」がこの節に明記されるため採用する。これは本文上の出現対応であり、座標の確定を意味しない。"
+        }
+      ],
+      "currentExcludedCandidates": [
+        {
+          "entityID": "person:benjamin_463",
+          "reasonJa": "「cities in Judah and Benjamin」は町が属する領域を示すため、族祖/部族集団BenjaminのIDは採用しない。"
+        }
+      ],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Benjamin territory",
+          "chapter": 11,
+          "verse": 10,
+          "status": "profile-review-pending",
+          "reasonJa": "固定WEBはBenjamin territoryを地理範囲として示し、既存canonical ID place:benjamin-territory_1293を本文上の対応として記録する。ただし当該2 Chronicles書内のプロフィール審査は未完了であり、runtime統合・読者ゲート承認を意味しない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep the city names and Judah/Benjamin territory links; do not use ancestor or collective-person IDs for the locations.",
+      "basis": "The verse calls Zorah, Aijalon and Hebron fortified cities in Judah and Benjamin. Territory profile review remains pending.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 11,
+      "verse": 12,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "He put shields and spears in every city, and made them exceedingly strong. Judah and Benjamin belonged to him.",
+      "sourceTextSHA256": "6d5e6e6d38cb1710f5b98b3cd36f4592b9f47569c92018fa7a19e2630aad2798",
+      "citationURL": "https://ebible.org/engwebp/2CH11.htm#V12",
+      "previousVerse": {
+        "chapter": 11,
+        "verse": 11,
+        "text": "He fortified the strongholds and put captains in them with stores of food, oil and wine.",
+        "citationURL": "https://ebible.org/engwebp/2CH11.htm#V11",
+        "textSHA256": "0d09f064b5923faa20f1abb557b9b82b11ea432b797d3493e37df68d1e5ec02b"
+      },
+      "nextVerse": {
+        "chapter": 11,
+        "verse": 13,
+        "text": "The priests and the Levites who were in all Israel stood with him out of all their territory.",
+        "citationURL": "https://ebible.org/engwebp/2CH11.htm#V13",
+        "textSHA256": "067ad9dbb9b066626f74605b21bfcb6d853e1c2a04f32c4876d6f9a0f9333d30"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:rehoboam_2412",
+          "relationship": "context",
+          "reasonJa": "「belonged to him」の主語は防備を整えたレハブアム。"
+        },
+        {
+          "entityID": "place:benjamin-territory_1293",
+          "relationship": "direct",
+          "reasonJa": "Rehoboamに属する支配領域の一つとしてBenjaminが挙げられる。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "「Judah」はここでは分裂後の南王国の領域・政体を指す用法として採用する。族祖Judahや人々の集団と同一視しない。"
+        }
+      ],
+      "currentExcludedCandidates": [
+        {
+          "entityID": "person:benjamin_463",
+          "reasonJa": "「Judah and Benjamin belonged to him」は支配領域を示す文で、部族集団Benjaminを地域IDの代用にしない。"
+        }
+      ],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Benjamin territory",
+          "chapter": 11,
+          "verse": 12,
+          "status": "profile-review-pending",
+          "reasonJa": "固定WEBはBenjamin territoryを地理範囲として示し、既存canonical ID place:benjamin-territory_1293を本文上の対応として記録する。ただし当該2 Chronicles書内のプロフィール審査は未完了であり、runtime統合・読者ゲート承認を意味しない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep Rehoboam and the Judah/Benjamin territory links; retain pending profile review.",
+      "basis": "Judah and Benjamin are dominions belonging to Rehoboam. Benjamin ancestor/people IDs are not substitutes for territory.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 11,
+      "verse": 13,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "The priests and the Levites who were in all Israel stood with him out of all their territory.",
+      "sourceTextSHA256": "067ad9dbb9b066626f74605b21bfcb6d853e1c2a04f32c4876d6f9a0f9333d30",
+      "citationURL": "https://ebible.org/engwebp/2CH11.htm#V13",
+      "previousVerse": {
+        "chapter": 11,
+        "verse": 12,
+        "text": "He put shields and spears in every city, and made them exceedingly strong. Judah and Benjamin belonged to him.",
+        "citationURL": "https://ebible.org/engwebp/2CH11.htm#V12",
+        "textSHA256": "6d5e6e6d38cb1710f5b98b3cd36f4592b9f47569c92018fa7a19e2630aad2798"
+      },
+      "nextVerse": {
+        "chapter": 11,
+        "verse": 14,
+        "text": "For the Levites left their pasture lands and their possessions, and came to Judah and Jerusalem; for Jeroboam and his sons cast them off, that they should not execute the priest’s office to the LORD.",
+        "citationURL": "https://ebible.org/engwebp/2CH11.htm#V14",
+        "textSHA256": "d3fd99fe4414b2bab7859828e5e96d67076af24e4aa37d454b5c2a6025b6f789"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:rehoboam_2412",
+          "relationship": "context",
+          "reasonJa": "「stood with him」のhimは直前に明記されたレハブアム。"
+        }
+      ],
+      "currentExcludedCandidates": [
+        {
+          "entityID": "person:israel_682",
+          "reasonJa": "「in all Israel」は祭司・レビ人の所在範囲を示す表現で、person:Israelを直接の行為主体とする文ではない。"
+        }
+      ],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Levites/priests",
+          "chapter": 11,
+          "verse": 13,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "Levites/priestsという祭儀集団が明記されるが、当該集団に適合する既存canonical IDを確認できないため、個人IDやIsrael集団で代用しない。"
+        },
+        {
+          "term": "all Israel (territorial extent)",
+          "chapter": 11,
+          "verse": 13,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "祭司・レビ人の所在範囲として「all Israel」とあるが、この節だけでは領域範囲を確定できない。人々の集団IDや北王国IDで代用しない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep Rehoboam context. Leave priests/Levites and the extent meant by all Israel unresolved.",
+      "basis": "The following verse says Levites left pasturelands and came to Judah and Jerusalem. Here all Israel is a locative extent and does not clearly identify a people actor or a specific territorial ID.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 11,
+      "verse": 14,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "For the Levites left their pasture lands and their possessions, and came to Judah and Jerusalem; for Jeroboam and his sons cast them off, that they should not execute the priest’s office to the LORD.",
+      "sourceTextSHA256": "d3fd99fe4414b2bab7859828e5e96d67076af24e4aa37d454b5c2a6025b6f789",
+      "citationURL": "https://ebible.org/engwebp/2CH11.htm#V14",
+      "previousVerse": {
+        "chapter": 11,
+        "verse": 13,
+        "text": "The priests and the Levites who were in all Israel stood with him out of all their territory.",
+        "citationURL": "https://ebible.org/engwebp/2CH11.htm#V13",
+        "textSHA256": "067ad9dbb9b066626f74605b21bfcb6d853e1c2a04f32c4876d6f9a0f9333d30"
+      },
+      "nextVerse": {
+        "chapter": 11,
+        "verse": 15,
+        "text": "He himself appointed priests for the high places, for the male goat and calf idols which he had made.",
+        "citationURL": "https://ebible.org/engwebp/2CH11.htm#V15",
+        "textSHA256": "8b9f2a9703ab3673a9aca14d98835d856432eb819da40234a8d4fb5fdf54519e"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "LORD／Godの名がこの節に明記され、神を指す用法として採用する。"
+        },
+        {
+          "entityID": "person:jeroboam_872",
+          "relationship": "direct",
+          "reasonJa": "人物「Jeroboam」が本文に名指しされる（この節での役割・親族関係は本文の表現に限る）。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "地名「Jerusalem」がこの節に明記されるため採用する。これは本文上の出現対応であり、座標の確定を意味しない。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "「Judah」はここでは分裂後の南王国の領域・政体を指す用法として採用する。族祖Judahや人々の集団と同一視しない。"
+        }
+      ],
+      "currentExcludedCandidates": [],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Levites/priests",
+          "chapter": 11,
+          "verse": 14,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "Levites/priestsという祭儀集団が明記されるが、当該集団に適合する既存canonical IDを確認できないため、個人IDやIsrael集団で代用しない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep God, Jeroboam, Jerusalem and Judah; leave the Levites group unresolved.",
+      "basis": "Verses 13-15 describe Levite movement and Jeroboam appointing priests. No group ID for Levites was confirmed.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 11,
+      "verse": 15,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "He himself appointed priests for the high places, for the male goat and calf idols which he had made.",
+      "sourceTextSHA256": "8b9f2a9703ab3673a9aca14d98835d856432eb819da40234a8d4fb5fdf54519e",
+      "citationURL": "https://ebible.org/engwebp/2CH11.htm#V15",
+      "previousVerse": {
+        "chapter": 11,
+        "verse": 14,
+        "text": "For the Levites left their pasture lands and their possessions, and came to Judah and Jerusalem; for Jeroboam and his sons cast them off, that they should not execute the priest’s office to the LORD.",
+        "citationURL": "https://ebible.org/engwebp/2CH11.htm#V14",
+        "textSHA256": "d3fd99fe4414b2bab7859828e5e96d67076af24e4aa37d454b5c2a6025b6f789"
+      },
+      "nextVerse": {
+        "chapter": 11,
+        "verse": 16,
+        "text": "After them, out of all the tribes of Israel, those who set their hearts to seek the LORD, the God of Israel, came to Jerusalem to sacrifice to the LORD, the God of their fathers.",
+        "citationURL": "https://ebible.org/engwebp/2CH11.htm#V16",
+        "textSHA256": "4d4c72c4cf965bceae71ef62379783c198f63c59c56100aced8ebdaab3c3171b"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:jeroboam_872",
+          "relationship": "context",
+          "reasonJa": "「he himself」は高き所の祭司を任命したヨロブアム。"
+        }
+      ],
+      "currentExcludedCandidates": [],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Levites/priests",
+          "chapter": 11,
+          "verse": 15,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "Levites/priestsという祭儀集団が明記されるが、当該集団に適合する既存canonical IDを確認できないため、個人IDやIsrael集団で代用しない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep Jeroboam; leave the generic priests unresolved.",
+      "basis": "He refers to Jeroboam in the immediately preceding context. The priests are unnamed office holders.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 11,
+      "verse": 23,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "He dealt wisely, and dispersed some of his sons throughout all the lands of Judah and Benjamin, to every fortified city. He gave them food in abundance; and he sought many wives for them.",
+      "sourceTextSHA256": "9ade06b77013a109541d0152c31a5e615c05151656a3c3bf9046399de0838b2c",
+      "citationURL": "https://ebible.org/engwebp/2CH11.htm#V23",
+      "previousVerse": {
+        "chapter": 11,
+        "verse": 22,
+        "text": "Rehoboam appointed Abijah the son of Maacah to be chief, the prince among his brothers, for he intended to make him king.",
+        "citationURL": "https://ebible.org/engwebp/2CH11.htm#V22",
+        "textSHA256": "04d1f38815e2aa21c6e36dcbb8b68a4e5b2706a79e8c6d0e8c9692c10bf0ab4e"
+      },
+      "nextVerse": null,
+      "currentEntities": [
+        {
+          "entityID": "person:rehoboam_2412",
+          "relationship": "context",
+          "reasonJa": "息子たちを配置し食料を与えた主体はレハブアム。"
+        },
+        {
+          "entityID": "place:benjamin-territory_1293",
+          "relationship": "direct",
+          "reasonJa": "「lands of Judah and Benjamin」と明記される領域名。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "「Judah」はここでは分裂後の南王国の領域・政体を指す用法として採用する。族祖Judahや人々の集団と同一視しない。"
+        }
+      ],
+      "currentExcludedCandidates": [
+        {
+          "entityID": "person:benjamin_463",
+          "reasonJa": "「lands of Judah and Benjamin」は土地を示すので、部族集団Benjaminを地域IDの代用にしない。"
+        }
+      ],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Benjamin territory",
+          "chapter": 11,
+          "verse": 23,
+          "status": "profile-review-pending",
+          "reasonJa": "固定WEBはBenjamin territoryを地理範囲として示し、既存canonical ID place:benjamin-territory_1293を本文上の対応として記録する。ただし当該2 Chronicles書内のプロフィール審査は未完了であり、runtime統合・読者ゲート承認を意味しない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep Rehoboam and Judah/Benjamin territory links; retain pending profile review.",
+      "basis": "The verse describes Rehoboam distributing his sons throughout lands of Judah and Benjamin. These are locations, not the patriarchs or peoples.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。",
+      "contextAvailabilityNote": " 固定WEBの章末により直後節は存在しない。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 12,
+      "verse": 3,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "with twelve hundred chariots and sixty thousand horsemen. The people were without number who came with him out of Egypt: the Lubim, the Sukkiim, and the Ethiopians.",
+      "sourceTextSHA256": "9692603ff51abf6c0b292b9d0d9fd6ab32487b557846322cc6a1724ec41896ed",
+      "citationURL": "https://ebible.org/engwebp/2CH12.htm#V3",
+      "previousVerse": {
+        "chapter": 12,
+        "verse": 2,
+        "text": "In the fifth year of King Rehoboam, Shishak king of Egypt came up against Jerusalem, because they had trespassed against the LORD,",
+        "citationURL": "https://ebible.org/engwebp/2CH12.htm#V2",
+        "textSHA256": "bf2f50894abcafd02bb133fa6285969a03a4773792e8435dcd1bc92cf557d9da"
+      },
+      "nextVerse": {
+        "chapter": 12,
+        "verse": 4,
+        "text": "He took the fortified cities which belonged to Judah, and came to Jerusalem.",
+        "citationURL": "https://ebible.org/engwebp/2CH12.htm#V4",
+        "textSHA256": "9a18b2d7cb9688c9e50be9cb540adc2482c91da02187f4de1e43d626c664c1ea"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:shishak_2712",
+          "relationship": "context",
+          "reasonJa": "「came with him」は直前に名指されたシシャクの軍勢。"
+        },
+        {
+          "entityID": "place:egypt_362",
+          "relationship": "direct",
+          "reasonJa": "地名「Egypt」がこの節に明記されるため採用する。これは本文上の出現対応であり、座標の確定を意味しない。"
+        }
+      ],
+      "currentExcludedCandidates": [],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Lubim",
+          "chapter": 12,
+          "verse": 3,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "シシャク軍の民族・集団名として本文に明記されるが、当該集団に適合する既存IDを確認できない。Egypt地理IDで人々を代用しない。"
+        },
+        {
+          "term": "Sukkiim",
+          "chapter": 12,
+          "verse": 3,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "シシャク軍の民族・集団名として本文に明記されるが、当該集団に適合する既存IDを確認できない。Egypt地理IDで人々を代用しない。"
+        },
+        {
+          "term": "Ethiopians",
+          "chapter": 12,
+          "verse": 3,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "シシャク軍の民族・集団名として本文に明記されるが、当該集団に適合する既存IDを確認できない。Egypt地理IDで人々を代用しない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep Shishak context and Egypt place. Leave Lubim, Sukkiim and Ethiopians unresolved as peoples.",
+      "basis": "The passage lists ethnic/people groups accompanying Shishak from Egypt. The Egypt place ID cannot represent them; no suitable group IDs were confirmed.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    },
+    {
+      "book": "2CH",
+      "chapter": 12,
+      "verse": 13,
+      "verdictAtReclosure": "qualified",
+      "sourceText": "So King Rehoboam strengthened himself in Jerusalem and reigned; for Rehoboam was forty-one years old when he began to reign, and he reigned seventeen years in Jerusalem, the city which the LORD had chosen out of all the tribes of Israel to put his name there. His mother’s name was Naamah the Ammonitess.",
+      "sourceTextSHA256": "a0977e3c1649fad2093b74a636e6db16027a51096a7da1b1e3a2a41e92a9917b",
+      "citationURL": "https://ebible.org/engwebp/2CH12.htm#V13",
+      "previousVerse": {
+        "chapter": 12,
+        "verse": 12,
+        "text": "When he humbled himself, the LORD’s wrath turned from him, so as not to destroy him altogether. Moreover, there were good things found in Judah.",
+        "citationURL": "https://ebible.org/engwebp/2CH12.htm#V12",
+        "textSHA256": "a09d501bb3bfc8a21de79658046d7fed2f513eb6a410b1060aa037184d59a26b"
+      },
+      "nextVerse": {
+        "chapter": 12,
+        "verse": 14,
+        "text": "He did that which was evil, because he didn’t set his heart to seek the LORD.",
+        "citationURL": "https://ebible.org/engwebp/2CH12.htm#V14",
+        "textSHA256": "2c1240555a836ed1bcb47acdd490183d3a6f19908d814e5f2ab9a32f45d3f8df"
+      },
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "LORD／Godの名がこの節に明記され、神を指す用法として採用する。"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "「Israel／イスラエルの人々」がこの節に明記される集団用法として採用し、王国領域とは区別する。"
+        },
+        {
+          "entityID": "person:naamah_2119",
+          "relationship": "direct",
+          "reasonJa": "人物「Naamah」が本文に名指しされる（この節での役割・親族関係は本文の表現に限る）。"
+        },
+        {
+          "entityID": "person:rehoboam_2412",
+          "relationship": "direct",
+          "reasonJa": "人物「Rehoboam」が本文に名指しされる（この節での役割・親族関係は本文の表現に限る）。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "地名「Jerusalem」がこの節に明記されるため採用する。これは本文上の出現対応であり、座標の確定を意味しない。"
+        }
+      ],
+      "currentExcludedCandidates": [],
+      "unresolvedCanonicalTerms": [
+        {
+          "term": "Ammonitess",
+          "chapter": 12,
+          "verse": 13,
+          "status": "unresolved-canonical-candidate",
+          "reasonJa": "NaamahはAmmonitessと呼ばれるが、これは女性の民族・出自表現。Ammonの地理IDや族祖個人で代用しない。"
+        }
+      ],
+      "action": "maintain-unresolved",
+      "proposedChange": "Keep God, Israel collective, Naamah, Rehoboam and Jerusalem. Leave Ammonitess unresolved as an origin/people descriptor.",
+      "basis": "Ammonitess describes Naamah, not the country as an actor or ancestor Ammon. No matching collective ID was confirmed.",
+      "reclosureBasis": "当該本文の地名・集団表現を確認し、既存IDを誤代用しない判断は維持。該当する既存ID/意味の独立プロフィール審査または完全な対応が未解決のためqualified。"
+    }
+  ]
+}

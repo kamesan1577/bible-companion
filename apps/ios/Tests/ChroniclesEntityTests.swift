@@ -86,4 +86,26 @@ import XCTest
         XCTAssertFalse(joshua.sources.isEmpty)
         XCTAssertTrue(joshua.sources.allSatisfy { $0.category == "primary-text" && !$0.license.isEmpty && !$0.attribution.isEmpty })
     }
+    func testJoashKingshipAndDeathStayHiddenAtRescueVerse() async throws {
+        let store = BundledEntityIndex.shared
+        let early = try await store.lookup(Passage(book: "2CH", start: Verse(chapter: 22, verse: 11), end: Verse(chapter: 22, verse: 11)), kind: "person")
+        let first = try XCTUnwrap(early.occurrences.first { $0.id == "person:joash_1632" }?.profile)
+        XCTAssertFalse(text(first).contains("王として"))
+        XCTAssertFalse(text(first).contains("殺しました"))
+        let later = try await store.lookup(Passage(book: "2CH", start: Verse(chapter: 23, verse: 11), end: Verse(chapter: 23, verse: 11)), kind: "person")
+        let next = try XCTUnwrap(later.occurrences.first { $0.id == "person:joash_1632" }?.profile)
+        XCTAssertTrue(text(next).contains("王として"))
+        XCTAssertFalse(text(next).contains("殺しました"))
+    }
+
+    func testShobalFirstMentionDoesNotNameTheLaterJudahNamesake() async throws {
+        let early = try await lookup(1, 38)
+        let first = try XCTUnwrap(early.occurrences.first { $0.id == "person:shobal_2719" }?.profile)
+        XCTAssertFalse(text(first).contains("ユダ"))
+        XCTAssertFalse(text(first).contains("アリアン"))
+        let later = try await lookup(1, 40)
+        let next = try XCTUnwrap(later.occurrences.first { $0.id == "person:shobal_2719" }?.profile)
+        XCTAssertTrue(text(next).contains("アリアン"))
+    }
+
 }

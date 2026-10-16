@@ -1,0 +1,255 @@
+{
+  "reportType": "independent-current-delta-reclosure-jehoshaphat-final",
+  "book": "2CH",
+  "group": "persons_2",
+  "batch": "batch09-followup-resume",
+  "createdAtUTC": "2026-10-16T13:35:44Z",
+  "sourceManifestPath": "evidence/manifest-resume-jehoshaphat-current.json",
+  "sourceManifestSHA256": "e18d6b024a0d779636d48e36096e121050dad53518ab1b318509c58638a3245a",
+  "repairLogPath": "evidence/author-repair-resume-jehoshaphat-invitation-gate.json",
+  "repairLogSHA256": "942c130854e80c7ed75e4ee1b5c5c7c4f7d178687a99ae4f5290fc4526bd3d1c",
+  "sourceReviewPath": "reviews/reclosure-resume-jehoshaphat-simeon.json",
+  "sourceReviewSHA256": "81a88f93de838d30789967f01a3b230e1a7285696c4b2cb8b02e16a42f33d08c",
+  "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+  "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8",
+  "fixedWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+  "independentReview": true,
+  "reviewMethodJa": "delta manifestと修復ログを独立に読み、保存前draft/evidenceの実bytesもSHAで確認。現draft/evidence/profile SHAがmanifest、repair logのafter SHAと完全一致すること、プロフィール全reader欄、全facts/source knownBy、primary source参照、既存WEB全38出現、実Wikipedia本文と表示noteを照合した。",
+  "counts": {
+    "pass": 1,
+    "qualified": 0,
+    "fail": 0,
+    "pending": 0
+  },
+  "rowCount": 1,
+  "rows": [
+    {
+      "book": "2CH",
+      "entityID": "person:jehoshaphat_808",
+      "draftPath": "drafts/persons_2/2CH_person_jehoshaphat_808.json",
+      "evidencePath": "evidence/persons_2/2CH_person_jehoshaphat_808-sources.json",
+      "currentDraftSHA256": "c4f7f66310d2038816f9535e43c51a76292d6c1706c228e4c65e0d0e0420588e",
+      "currentEvidenceSHA256": "bfc8ae3a04dca89366a5309ceacc469e53e58c959aa7373a68b7d2cb04011164",
+      "currentProfileSHA256": "b6774dd0348ef830c5777157b4167d15858b4a2556adf16e707868caeab5fa39",
+      "decision": "pass",
+      "manifestBinding": {
+        "draftMatchesManifest": true,
+        "evidenceMatchesManifest": true,
+        "profileMatchesManifest": true,
+        "repairAfterSHAExact": true
+      },
+      "beforeDeltaAudit": {
+        "beforeDraftSHA256": "e0dc6c0f8d7cd24eb67eb0668c18ce8d58a6abce6e6261a93730c37cac764ed3",
+        "beforeProfileSHA256": "2b5787348089599cfed915015d30a31d4588bffab47467a559ff4d41c31b6705",
+        "beforeEvidenceSHA256": "22a17eaf41aec5de64ee8ece80e3310d40e94025f3866c5182301d605b47e96b",
+        "beforeDraftPreservedObjectVerified": true,
+        "beforeEvidencePreservedObjectVerified": true,
+        "changedField": "profile.facts[0].knownBy/sourceIds",
+        "before": {
+          "knownBy": {
+            "chapter": 18,
+            "verse": 1
+          },
+          "sourceIds": [
+            "chronicles-batch09-2ch-jehoshaphat_808-18-1"
+          ]
+        },
+        "after": {
+          "knownBy": {
+            "chapter": 18,
+            "verse": 3
+          },
+          "sourceIds": [
+            "chronicles-batch09-2ch-jehoshaphat_808-18-1",
+            "chronicles-batch09-2ch-jehoshaphat_808-18-3"
+          ]
+        },
+        "assessmentJa": "事実文が同盟(18:1)とラモテ・ギレアデへの誘い・応諾(18:3)を合成するため、両sourceを保持してknownByを最後の根拠節18:3へ移す修正は適切。"
+      },
+      "knownBy": {
+        "chapter": 17,
+        "verse": 1
+      },
+      "readerFields": {
+        "nameJa": "ヨシャファト",
+        "subtitleJa": "アサの子として、父に代わって王となります。",
+        "summaryJa": "アサの子ヨシャファトが、アサに代わって王となったと記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "アサの子として、父に代わって王となります。",
+        "knownBy": {
+          "chapter": 17,
+          "verse": 1
+        },
+        "facts": [
+          {
+            "textJa": "イスラエル王アハブと同盟し、ラモテ・ギレアデへの遠征に誘われます。",
+            "knownBy": {
+              "chapter": 18,
+              "verse": 3
+            },
+            "sourceIds": [
+              "chronicles-batch09-2ch-jehoshaphat_808-18-1",
+              "chronicles-batch09-2ch-jehoshaphat_808-18-3"
+            ]
+          },
+          {
+            "textJa": "王としての統治期間と年齢、母アズバの名が記されます。",
+            "knownBy": {
+              "chapter": 20,
+              "verse": 31
+            },
+            "sourceIds": [
+              "chronicles-batch09-2ch-jehoshaphat_808-20-31"
+            ]
+          },
+          {
+            "textJa": "ヨシャファトの死後、息子ヨラムが王位を継ぎます。",
+            "knownBy": {
+              "chapter": 21,
+              "verse": 1
+            },
+            "sourceIds": [
+              "chronicles-batch09-2ch-jehoshaphat_808-21-1"
+            ]
+          }
+        ],
+        "wikipedia": {
+          "title": "Jehoshaphat",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Jehoshaphat",
+          "kind": "article",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "knownBy": {
+            "chapter": 17,
+            "verse": 1
+          },
+          "noteJa": "英語版記事はヨシャファトを扱います。"
+        }
+      },
+      "sourceGateAudit": {
+        "sourceCount": 39,
+        "profileSourceIDCount": 39,
+        "allProfileSourceIDsResolve": true,
+        "factGateChecks": [
+          {
+            "factIndex": 0,
+            "textJa": "イスラエル王アハブと同盟し、ラモテ・ギレアデへの遠征に誘われます。",
+            "knownBy": {
+              "chapter": 18,
+              "verse": 3
+            },
+            "sources": [
+              {
+                "sourceId": "chronicles-batch09-2ch-jehoshaphat_808-18-1",
+                "category": "primary-text",
+                "sourceKnownBy": {
+                  "chapter": 18,
+                  "verse": 1
+                },
+                "factKnownBy": {
+                  "chapter": 18,
+                  "verse": 3
+                },
+                "sourceGateNotAfterFactGate": true,
+                "url": "https://ebible.org/engwebp/2CH18.htm#V1"
+              },
+              {
+                "sourceId": "chronicles-batch09-2ch-jehoshaphat_808-18-3",
+                "category": "primary-text",
+                "sourceKnownBy": {
+                  "chapter": 18,
+                  "verse": 3
+                },
+                "factKnownBy": {
+                  "chapter": 18,
+                  "verse": 3
+                },
+                "sourceGateNotAfterFactGate": true,
+                "url": "https://ebible.org/engwebp/2CH18.htm#V3"
+              }
+            ],
+            "supported": true
+          },
+          {
+            "factIndex": 1,
+            "textJa": "王としての統治期間と年齢、母アズバの名が記されます。",
+            "knownBy": {
+              "chapter": 20,
+              "verse": 31
+            },
+            "sources": [
+              {
+                "sourceId": "chronicles-batch09-2ch-jehoshaphat_808-20-31",
+                "category": "primary-text",
+                "sourceKnownBy": {
+                  "chapter": 20,
+                  "verse": 31
+                },
+                "factKnownBy": {
+                  "chapter": 20,
+                  "verse": 31
+                },
+                "sourceGateNotAfterFactGate": true,
+                "url": "https://ebible.org/engwebp/2CH20.htm#V31"
+              }
+            ],
+            "supported": true
+          },
+          {
+            "factIndex": 2,
+            "textJa": "ヨシャファトの死後、息子ヨラムが王位を継ぎます。",
+            "knownBy": {
+              "chapter": 21,
+              "verse": 1
+            },
+            "sources": [
+              {
+                "sourceId": "chronicles-batch09-2ch-jehoshaphat_808-21-1",
+                "category": "primary-text",
+                "sourceKnownBy": {
+                  "chapter": 21,
+                  "verse": 1
+                },
+                "factKnownBy": {
+                  "chapter": 21,
+                  "verse": 1
+                },
+                "sourceGateNotAfterFactGate": true,
+                "url": "https://ebible.org/engwebp/2CH21.htm#V1"
+              }
+            ],
+            "supported": true
+          }
+        ],
+        "allFactGatesSupported": true,
+        "fact0SupportJa": "WEB 18:1 says Jehoshaphat allied with Ahab. WEB 18:3 names Ahab as king of Israel, calls Jehoshaphat king of Judah, asks him to go to Ramoth Gilead, and records his assent to war. Both source gates precede or equal knownBy 18:3."
+      },
+      "occurrenceAudit": {
+        "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+        "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8",
+        "fixedWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "fixedBookVerseCount": 822,
+        "lexicalHits": 38,
+        "reviewOccurrences": 38,
+        "profilePassages": 38,
+        "allThreeSetsMatch": true,
+        "primaryTextCheckCount": 38,
+        "everyPrimaryCheckMatchesPinnedTextURLVersion": true,
+        "assessmentJa": "固定WEB全822節のJehoshaphat 38出現を再照合。draft.review occurrenceChecksとprofile passagesは38件すべて一致。証拠側のprimaryTextChecks 38件は本文・URL・版・present状態が固定witnessと一致。"
+      },
+      "wikipediaBodyAudit": {
+        "url": "https://en.wikipedia.org/wiki/Jehoshaphat",
+        "locator": "lead lines 162–184; reign lines 190–194",
+        "checkedAtUTC": "2026-10-16T13:35:00Z",
+        "kind": "article",
+        "identityOrRelation": "identity",
+        "assessmentJa": "実本文はJehoshaphatを対象とする記事であり、leadでAsaの子と同一人物を識別する。現在のnoteJaは記事がヨシャファトを扱うとの説明だけで、knownBy 17:1の常時欄へ後出の肩書・外部情報を追加していない。リンク適合。",
+        "currentReaderNoteSupported": true
+      },
+      "runtimeDisplayAssessmentJa": "常時表示欄はknownBy 2CH17:1の本文範囲に収まり、factsはそれぞれ18:3、20:31、21:1で根拠とgateが一致。追加のfact抑止は不要。",
+      "findings": []
+    }
+  ],
+  "notAnApproval": "この再照合は記載したcurrent bytesの根拠・表示範囲の評価であり、専門家承認や公開決定ではない。"
+}

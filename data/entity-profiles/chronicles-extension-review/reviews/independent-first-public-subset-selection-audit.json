@@ -1,0 +1,1047 @@
+{
+  "reportType": "independent-first-public-subset-selection-audit",
+  "createdAtUTC": "2026-10-16T11:05:30Z",
+  "scope": "Read-only selection and binding audit. Exact-byte and selector behavior were checked; semantic reader judgments are inherited only from the referenced current independent reports, not re-reviewed here. No source, normalized, preview, or candidate file was modified.",
+  "inputSHA256": {
+    "reviews/root-current-independent-review-bindings.json": "5d8c95ccb1d23f54cbaca721892f119152f2d4af44005b34d4e2b979d4957908",
+    "reviews/root-current-map-independent-bindings.json": "78ab1980fcfa6511ce0be0ef60caf69ba3a52b49a8f129e3405e93461112e6e3",
+    "reviews/root-reviewed-occurrence-edge-preview.json": "ccf001a90f55aa8e2e331d9e4d3eb70374af74317da23c1dc7e9a3cac2ac7393",
+    "normalized-staging/report.json": "9c663c97a6825bcaea93a7a2a3e5b863f7a16b35b182c5b9425aeab4adff7e14",
+    "normalized-staging/ledger.json": "e2d0e91ef413c2b319a9854eb2787dcad2d3fb67615ab65c1d67e12fc6bd17fe",
+    "conservative-runtime-preview/report.json": "291c03fd95800b221523e1f66681e1e49fc002ad6ee38cbded1716edc4041732",
+    "qualified-primary-runtime-preview/report.json": "089ed48c6bda066a68f266b8f1139f9467e78cfcaaa64e547b435221588d7184",
+    "reviewed-context-runtime-preview/report.json": "8c425484d3b55d70af4ff43e020a58f50bf10cd1ecc2e614010658aa60864eff",
+    "reviewed-alias-runtime-preview/report.json": "21904ae96691a02ef172fe3a58739b8f09bcf7293e00e1b685968d35822cd736",
+    "reviews/root-native-final-runtime-probe.json": "b9a4ba4eec6214abd73a958d87e7e1a815d24868d21c24f91a11f528fd511564",
+    "candidate/apps/ios/Sources/Core/Resources/entity-index.json": "dfe6fba1109f192548e28645cf085ddafe3baf7820d200e2e28da486dd98f11a",
+    "candidate/apps/ios/Sources/Core/Resources/entity-profiles-1CH.json": "500626f06222c2d7b2c20decec1b4970fd58a279a48a89c83eb9adda052422b7",
+    "candidate/apps/ios/Sources/Core/Resources/entity-profiles-2CH.json": "4547a56d1778042ef35bb1d081d10921eedf2e49c9abcff8d34591c8117ee931",
+    "candidate/apps/ios/Sources/Core/Resources/1ch-map-policy.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "candidate/apps/ios/Sources/Core/Resources/2ch-map-policy.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "candidate/apps/ios/Sources/Core/BundledEntityIndex.swift": "4d4c730faaec7df266a4df0f19360be486e6f99693f50fff10ab5b9865a253ac",
+    "reviews/verse-map-1CH-01-09.json": "527657a3bb1c7ecf107abc85ff6bea4ab5cdc83278252e0c241214090a762840",
+    "reviews/verse-map-1CH-10-19.json": "aecf744a60cb5ac7aec2a4015fda75a21b9bd13364cd5a440e14a8fd392b0cac",
+    "reviews/verse-map-1CH-20-29.json": "b833c5c695dc91cc6c88a07e9fce14e7af40969140a61c6303574e1262967000",
+    "reviews/verse-map-2CH-01-12.json": "c8a56b99cccff85dcaabb47b1295d04d8d9289229a94983f0cb52cd2b07f3ded",
+    "reviews/verse-map-2CH-13-24.json": "79dcb8797ce01d63370567e50844ebdcf17010e46e89ea57aab10498e2e991cd",
+    "reviews/verse-map-2CH-25-36.json": "3f0ffa4bbfb6589255d67e508e7f47b56b2ed24b6cb1c0f43034b2a753586ee0"
+  },
+  "selectionChain": {
+    "independentReviewBindings": {
+      "path": "reviews/root-current-independent-review-bindings.json",
+      "sha256": "5d8c95ccb1d23f54cbaca721892f119152f2d4af44005b34d4e2b979d4957908",
+      "groups": {
+        "batch06-persons_1": {
+          "records": 60,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch06-persons_1-current.json",
+              "sha256": "bfe7098ffc6b27bca83d9e325a84cfa5120faaacb144e0136249aaca461253c7",
+              "currentSHA256": "bfe7098ffc6b27bca83d9e325a84cfa5120faaacb144e0136249aaca461253c7",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-projected-primary-context-reclosure-batch06-persons_1.json",
+              "sha256": "6f6cf69e8e12c695afd33bc5cf4029aa86533a98245c2a563ee5088519609ec9",
+              "currentSHA256": "6f6cf69e8e12c695afd33bc5cf4029aa86533a98245c2a563ee5088519609ec9",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch05-persons_3": {
+          "records": 60,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch05-persons_3-current.json",
+              "sha256": "c5abe1b69f7c960b564604efe7b71456b8b5798e39650c21a11ca56094b5e89f",
+              "currentSHA256": "c5abe1b69f7c960b564604efe7b71456b8b5798e39650c21a11ca56094b5e89f",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch05-persons_2": {
+          "records": 58,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch05-persons_2-final-current.json",
+              "sha256": "a73ce6541c6e6303eaf09f9adf2e5bbbe86a4329a149b5c5c79204b277ca913f",
+              "currentSHA256": "a73ce6541c6e6303eaf09f9adf2e5bbbe86a4329a149b5c5c79204b277ca913f",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-reader-five-reclosure-batch05-persons_2.json",
+              "sha256": "9fc7a5a0d4995780ede3b5293a6730e2c958e4871181eb80d83322d9a6bc5085",
+              "currentSHA256": "9fc7a5a0d4995780ede3b5293a6730e2c958e4871181eb80d83322d9a6bc5085",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch05-persons_1": {
+          "records": 60,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch05-persons_1-current-v3.json",
+              "sha256": "53a4d711df1e29a7b72f1590251d77d7d49d4755c9ccb98a76877516af854c26",
+              "currentSHA256": "53a4d711df1e29a7b72f1590251d77d7d49d4755c9ccb98a76877516af854c26",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-rights-reader-three-reclosure-batch05-persons_1.json",
+              "sha256": "32fb30ad3223f2598c082ed3a87d8c30ccb5df8a6dbd62e8473bda2018680881",
+              "currentSHA256": "32fb30ad3223f2598c082ed3a87d8c30ccb5df8a6dbd62e8473bda2018680881",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch04-persons_3": {
+          "records": 60,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch04-persons_3-current.json",
+              "sha256": "f97412fa65c38d5dfc15eac3522fad1aa169acfad5664b876bc46b7b78c35e85",
+              "currentSHA256": "f97412fa65c38d5dfc15eac3522fad1aa169acfad5664b876bc46b7b78c35e85",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-jehiel770-first-use-reclosure.json",
+              "sha256": "17e85df98f6372745f67486da36acf03fb103cfb30e6c71f7b1d1ec7bf5866d8",
+              "currentSHA256": "17e85df98f6372745f67486da36acf03fb103cfb30e6c71f7b1d1ec7bf5866d8",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-projected-reader-concrete-reclosure-batch04-persons_3.json",
+              "sha256": "086a716157f2a348c0468afc56559f55df0fa81882816c179ebccff0660a9544",
+              "currentSHA256": "086a716157f2a348c0468afc56559f55df0fa81882816c179ebccff0660a9544",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch04-persons_2": {
+          "records": 60,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-independent-batch04-persons_2-after-author-fixes.json",
+              "sha256": "3b16211f5a3523762916845c2199dce7cd8eecef53ff5e265834bc628a0ca613",
+              "currentSHA256": "3b16211f5a3523762916845c2199dce7cd8eecef53ff5e265834bc628a0ca613",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch03-persons_2": {
+          "records": 60,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch03-persons_2-current-final.json",
+              "sha256": "6ee6950c0eb35fbb246212e596af420eb702b9381b1620f20eb65334fb121419",
+              "currentSHA256": "6ee6950c0eb35fbb246212e596af420eb702b9381b1620f20eb65334fb121419",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-hanun1404-reader-wording-delta.json",
+              "sha256": "8270cbbe31c39467705d6a2eb896883b36fdd6be851e545d1157d519ebb8f61b",
+              "currentSHA256": "8270cbbe31c39467705d6a2eb896883b36fdd6be851e545d1157d519ebb8f61b",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-reader-five-reclosure-batch03-persons_2.json",
+              "sha256": "c8c2647571b7e42a55905cacd7dfa03bcdffb9ebf63df567d00931035220aa20",
+              "currentSHA256": "c8c2647571b7e42a55905cacd7dfa03bcdffb9ebf63df567d00931035220aa20",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch04-persons_1": {
+          "records": 60,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch04-persons_1-after-repairs.json",
+              "sha256": "0aab9738b379522ceac68f20eac1c82456b3ce654568a063c1dcb6026b0b1033",
+              "currentSHA256": "0aab9738b379522ceac68f20eac1c82456b3ce654568a063c1dcb6026b0b1033",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-projected-primary-context-reclosure-batch04-persons_1.json",
+              "sha256": "bc2a05a14510fa2dfe1b7e23ef40e3fbc31f72ad07709799e556f4b5f97fc190",
+              "currentSHA256": "bc2a05a14510fa2dfe1b7e23ef40e3fbc31f72ad07709799e556f4b5f97fc190",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch01-persons_1": {
+          "records": 60,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/independent-reclosure-batch01-persons_1-current-amminadab.json",
+              "sha256": "1673544b1ec352c62993cf683a57af4f49642a2f03f2cb2714305e02abc3b01c",
+              "currentSHA256": "1673544b1ec352c62993cf683a57af4f49642a2f03f2cb2714305e02abc3b01c",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/independent-reclosure-amminadab229-source-dedupe.json",
+              "sha256": "f821a67ff83a6cad985ad9de131cb2822b1254b2f4e14b5fcc47460f59136d55",
+              "currentSHA256": "f821a67ff83a6cad985ad9de131cb2822b1254b2f4e14b5fcc47460f59136d55",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-independent-ashbel-source-sync-delta.json",
+              "sha256": "439f6d4e363a6b32b3ed4edbb9a59087bd6912121c11b1544d99130469910033",
+              "currentSHA256": "439f6d4e363a6b32b3ed4edbb9a59087bd6912121c11b1544d99130469910033",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-amminadab229-date-metadata-rebind.json",
+              "sha256": "4785e09d9f112a842d9698b3ba4ef5c8c071d4744f3da4fbf57f9909e51ebea7",
+              "currentSHA256": "4785e09d9f112a842d9698b3ba4ef5c8c071d4744f3da4fbf57f9909e51ebea7",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-projected-primary-context-reclosure-batch01-persons_1.json",
+              "sha256": "a26b40a368c685d6a4754071b16940462272d787ccbaee036102ec45b55e038d",
+              "currentSHA256": "a26b40a368c685d6a4754071b16940462272d787ccbaee036102ec45b55e038d",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch01-persons_2": {
+          "records": 60,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch01-persons_2-final-two.json",
+              "sha256": "6ebb0cf6bfaad1fd5f71aa9d84a8d8621ded13a8b8a51a8b4b05c8805ea6591a",
+              "currentSHA256": "6ebb0cf6bfaad1fd5f71aa9d84a8d8621ded13a8b8a51a8b4b05c8805ea6591a",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-independent-ahlai-reader-gate-delta.json",
+              "sha256": "da4e6c75f93207d349859c77ec5d0614fbec8e6b3762299cc7bb18a903753698",
+              "currentSHA256": "da4e6c75f93207d349859c77ec5d0614fbec8e6b3762299cc7bb18a903753698",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch02-persons_2": {
+          "records": 60,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch02-persons_2-after-author-fixes-v2.json",
+              "sha256": "d8b648de0752af030093faaedc76ad0da81fda7c92e1fbdf401fb0d2b921513a",
+              "currentSHA256": "d8b648de0752af030093faaedc76ad0da81fda7c92e1fbdf401fb0d2b921513a",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-reclosure-persons2-caleb-eliezer-fact-current.json",
+              "sha256": "311cdb6e6e0b298d7016edab869a5f6aea2b4e428d67cce9d684b8e2a4869657",
+              "currentSHA256": "311cdb6e6e0b298d7016edab869a5f6aea2b4e428d67cce9d684b8e2a4869657",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch03-persons_3": {
+          "records": 60,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch03-persons_3-current.json",
+              "sha256": "f6f9e41f35cd3899dc386708bea996a902c78822a1022dadcf5b886b1cdff0a0",
+              "currentSHA256": "f6f9e41f35cd3899dc386708bea996a902c78822a1022dadcf5b886b1cdff0a0",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch03-places_1": {
+          "records": 12,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/root-reclosure-batch03-places1-three-repairs.json",
+              "sha256": "cbd598178dbbb7f54e6f208839840a8f129aa724734a41c364e5a252c4c858f5",
+              "currentSHA256": "cbd598178dbbb7f54e6f208839840a8f129aa724734a41c364e5a252c4c858f5",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch03-persons_1": {
+          "records": 60,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch03-persons_1-after-repairs.json",
+              "sha256": "3d19dc797dce13811203b8cae7e1532ba08d84f50ccca5fd2b75e2da32ef9b40",
+              "currentSHA256": "3d19dc797dce13811203b8cae7e1532ba08d84f50ccca5fd2b75e2da32ef9b40",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-projected-primary-context-reclosure-batch03-persons_1.json",
+              "sha256": "a956b83bff2603f5bd9930ca474357c1a519b0fe0de7f2889fd00e34e59283cf",
+              "currentSHA256": "a956b83bff2603f5bd9930ca474357c1a519b0fe0de7f2889fd00e34e59283cf",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch02-persons_1": {
+          "records": 60,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch02-persons_1-after-repairs-v2.json",
+              "sha256": "275fe9147973ea7ea569937972f2737a76f362175cb04839bb8b317719e06bbf",
+              "currentSHA256": "275fe9147973ea7ea569937972f2737a76f362175cb04839bb8b317719e06bbf",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-projected-reader-concrete-reclosure-batch02-persons_1.json",
+              "sha256": "e4d41f6469b7f91f64634042ef0f7371f3311d16b5e777e9c2ba120d0e62017f",
+              "currentSHA256": "e4d41f6469b7f91f64634042ef0f7371f3311d16b5e777e9c2ba120d0e62017f",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch02-persons_3": {
+          "records": 60,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch02-persons_3-after-repairs.json",
+              "sha256": "1355660cc0778521b7bc1ad28d313e713cdbb2ff4d0f576c7a1bd1579c44bce7",
+              "currentSHA256": "1355660cc0778521b7bc1ad28d313e713cdbb2ff4d0f576c7a1bd1579c44bce7",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/reclosure-persons3-dodanim-subtitle-current.json",
+              "sha256": "2a0c7a97c5c90f8e3fd2f9e60ac5a3cfdb2aa21b3e3e31049d468a85c826f023",
+              "currentSHA256": "2a0c7a97c5c90f8e3fd2f9e60ac5a3cfdb2aa21b3e3e31049d468a85c826f023",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-independent-caleb538-reader-gate-delta.json",
+              "sha256": "78107fe4c3680b1a0a773c2e76179e064c61d4aaabe9d02c4df508e2cb565703",
+              "currentSHA256": "78107fe4c3680b1a0a773c2e76179e064c61d4aaabe9d02c4df508e2cb565703",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-projected-reader-concrete-reclosure-batch02-persons_3.json",
+              "sha256": "1b280d9337690b4fb1a56a81a61587d6609bb30dcc3870146672dc3698050975",
+              "currentSHA256": "1b280d9337690b4fb1a56a81a61587d6609bb30dcc3870146672dc3698050975",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch01-persons_3": {
+          "records": 60,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/independent-batch01-persons_3-v3.json",
+              "sha256": "d00675f818414e4f8641c4c43de31d1a2e16dc55ceb61400de68f728d1325106",
+              "currentSHA256": "d00675f818414e4f8641c4c43de31d1a2e16dc55ceb61400de68f728d1325106",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/independent-batch01-persons_3-v3-delta.json",
+              "sha256": "30fe6cf3ff2bdc8aa4b3beba0b5a8d5d97a8339318ef5e3d19e3c7489a9a48c5",
+              "currentSHA256": "30fe6cf3ff2bdc8aa4b3beba0b5a8d5d97a8339318ef5e3d19e3c7489a9a48c5",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch02-places_2": {
+          "records": 35,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch02-places_2-after-author-fixes.json",
+              "sha256": "538f59544d4e84c899095b917797e61f897264797d1e53b189d4cf191fd6aa10",
+              "currentSHA256": "538f59544d4e84c899095b917797e61f897264797d1e53b189d4cf191fd6aa10",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch02-places_3": {
+          "records": 35,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch02-places_3-reader-language-current.json",
+              "sha256": "86243140307bae742dc1cf30f24ebffcc67313288d81a6ba27fa5d71a72030a0",
+              "currentSHA256": "86243140307bae742dc1cf30f24ebffcc67313288d81a6ba27fa5d71a72030a0",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch02-places_1": {
+          "records": 35,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch02-places_1-three-repairs.json",
+              "sha256": "a70c066e8c05cbbf1a7be776109f0245be462bbf40b312e8924a6bddf51fbd59",
+              "currentSHA256": "a70c066e8c05cbbf1a7be776109f0245be462bbf40b312e8924a6bddf51fbd59",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch03-places_2": {
+          "records": 31,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch03-places_2-current.json",
+              "sha256": "a22ef4c41454877b6e369c51a998fc36f75f7402c5049c6dd98ebea91ca4fd9a",
+              "currentSHA256": "a22ef4c41454877b6e369c51a998fc36f75f7402c5049c6dd98ebea91ca4fd9a",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch03-places_3": {
+          "records": 32,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/root-reclosure-batch03-places3-final-three-current.json",
+              "sha256": "487f838d71727118de9b9ca8413d364b0690fdcab169dd94433208d436a8f808",
+              "currentSHA256": "487f838d71727118de9b9ca8413d364b0690fdcab169dd94433208d436a8f808",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch01-places_1": {
+          "records": 35,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch01-places_1-current.json",
+              "sha256": "4a23f68015ef7f40f72d7a5ae785f7f4263982d5b473c8497d01ad1012384417",
+              "currentSHA256": "4a23f68015ef7f40f72d7a5ae785f7f4263982d5b473c8497d01ad1012384417",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-rights-reader-three-reclosure-batch01-places_1.json",
+              "sha256": "906e0844ade0679673be26a7cd5faf9f9ee734dd9f532b50342458d04d615a35",
+              "currentSHA256": "906e0844ade0679673be26a7cd5faf9f9ee734dd9f532b50342458d04d615a35",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch01-places_2": {
+          "records": 35,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch01-places_2-current.json",
+              "sha256": "c93ec80176f827142f41a2f50daed78be22ee65f0148d9500f5fafe2b08a80c6",
+              "currentSHA256": "c93ec80176f827142f41a2f50daed78be22ee65f0148d9500f5fafe2b08a80c6",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch01-places_3": {
+          "records": 35,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch01-places_3-v3.json",
+              "sha256": "3bf40fea88936b5a9df7577f111395e36c3521221159e3ca462aa5375918c29f",
+              "currentSHA256": "3bf40fea88936b5a9df7577f111395e36c3521221159e3ca462aa5375918c29f",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch06-persons_2": {
+          "records": 60,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch06-persons_2-current.json",
+              "sha256": "415b729252f89a2e4947588dbeed5032c5bd863d27abca0b00e3cd15d29f7766",
+              "currentSHA256": "415b729252f89a2e4947588dbeed5032c5bd863d27abca0b00e3cd15d29f7766",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch06-persons_3": {
+          "records": 60,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch06-persons_3-current.json",
+              "sha256": "a86d5e6d938cc2575651d548f598a901706da8c058ccc8de8d90587df0a32fed",
+              "currentSHA256": "a86d5e6d938cc2575651d548f598a901706da8c058ccc8de8d90587df0a32fed",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch07-persons_1": {
+          "records": 60,
+          "allRowsBoundToCurrentBytes": true,
+          "bindingErrors": [],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch07-persons_1-current.json",
+              "sha256": "006e29076ece3a0c2275f5d18e4b07114367d1e7fc6f6544c94b00a21a3690e9",
+              "currentSHA256": "006e29076ece3a0c2275f5d18e4b07114367d1e7fc6f6544c94b00a21a3690e9",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-sibbechai-rationale-reclosure-delta.json",
+              "sha256": "b20f55502ce3f2cff0cc4bdf668338753f4567d83ee0d60551d129ec5b0ee7b2",
+              "currentSHA256": "b20f55502ce3f2cff0cc4bdf668338753f4567d83ee0d60551d129ec5b0ee7b2",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-projected-tahan-current-delta.json",
+              "sha256": "dc9c9ea791655dffb96e95f6ec5d9a6196420ee87ab32b3324c03411c5bb5632",
+              "currentSHA256": "dc9c9ea791655dffb96e95f6ec5d9a6196420ee87ab32b3324c03411c5bb5632",
+              "currentMatches": true
+            },
+            {
+              "path": "reviews/root-projected-shelomith-reader-note-delta.json",
+              "sha256": "c659f34069dd11f791f9d23be6d3d39d7ead99f359c242c153efa84d6def76ef",
+              "currentSHA256": "c659f34069dd11f791f9d23be6d3d39d7ead99f359c242c153efa84d6def76ef",
+              "currentMatches": true
+            }
+          ]
+        },
+        "batch07-persons_3": {
+          "records": 60,
+          "allRowsBoundToCurrentBytes": false,
+          "bindingErrors": [
+            {
+              "path": "drafts/persons_3/1CH_shobal_2719.json",
+              "field": "draftSHA"
+            },
+            {
+              "path": "evidence/persons_3/1CH_shobal_2719.json",
+              "field": "evidenceSHA"
+            }
+          ],
+          "reportSHAs": [
+            {
+              "path": "reviews/reclosure-batch07-persons_3-current.json",
+              "sha256": "1abc55942aca0c8246f14d9316baa16d0273143390e072cba8275c2dbaa4bfe5",
+              "currentSHA256": "1abc55942aca0c8246f14d9316baa16d0273143390e072cba8275c2dbaa4bfe5",
+              "currentMatches": true
+            }
+          ]
+        }
+      },
+      "staleRows": {
+        "batch07-persons_3": [
+          {
+            "path": "drafts/persons_3/1CH_shobal_2719.json",
+            "field": "draftSHA"
+          },
+          {
+            "path": "evidence/persons_3/1CH_shobal_2719.json",
+            "field": "evidenceSHA"
+          }
+        ]
+      },
+      "interpretationJa": "全報告群は保存済みbinding表に照合。batch07 persons_3のみShobal2719 draft/evidenceが旧SHAでstale。別deltaが現行SHAを結んでfail→passとするが、今回のcandidateにはShobalを含まない。"
+    },
+    "mapBindings": {
+      "path": "reviews/root-current-map-independent-bindings.json",
+      "sha256": "78ab1980fcfa6511ce0be0ef60caf69ba3a52b49a8f129e3405e93461112e6e3",
+      "coordinates": 1764,
+      "authorCoordinates": 1764,
+      "publicationApproved": false,
+      "chunks": [
+        {
+          "chunk": "1CH-01-09",
+          "verses": 407,
+          "currentMapSHA256": "527657a3bb1c7ecf107abc85ff6bea4ab5cdc83278252e0c241214090a762840",
+          "reportPath": "reviews/root-reclosure-1CH01-09-after-profile-identity-repairs.json",
+          "reportSHA256": "2cd20a0cdb38b22ae48c992cd1aaa792a4abafde973aa7b4441a331bf2df655d",
+          "reportBoundMapSHA256": "527657a3bb1c7ecf107abc85ff6bea4ab5cdc83278252e0c241214090a762840",
+          "reportBindsCurrentMap": true,
+          "lastReportedCountsNotCurrentApproval": {
+            "pass": 395,
+            "qualified": 12
+          }
+        },
+        {
+          "chunk": "1CH-10-19",
+          "verses": 267,
+          "currentMapSHA256": "aecf744a60cb5ac7aec2a4015fda75a21b9bd13364cd5a440e14a8fd392b0cac",
+          "reportPath": "reviews/root-reclosure-verse-map-1CH-10-19-shihor-current.json",
+          "reportSHA256": "68ceab5546acc3717800c71433ee08657bcd6423113513fbe7eab4005ed685d2",
+          "reportBoundMapSHA256": "aecf744a60cb5ac7aec2a4015fda75a21b9bd13364cd5a440e14a8fd392b0cac",
+          "reportBindsCurrentMap": true,
+          "lastReportedCountsNotCurrentApproval": {
+            "pass": 232,
+            "qualified": 35
+          }
+        },
+        {
+          "chunk": "1CH-20-29",
+          "verses": 268,
+          "currentMapSHA256": "b833c5c695dc91cc6c88a07e9fce14e7af40969140a61c6303574e1262967000",
+          "reportPath": "reviews/reclosure-verse-map-1CH-20-29-current.json",
+          "reportSHA256": "cc077ff29a0fb820b8552cc33f30051b3e2452c44bd8eafa8a25315bc03eba6c",
+          "reportBoundMapSHA256": "b833c5c695dc91cc6c88a07e9fce14e7af40969140a61c6303574e1262967000",
+          "reportBindsCurrentMap": true,
+          "lastReportedCountsNotCurrentApproval": {
+            "pass": 240,
+            "qualified": 28
+          }
+        },
+        {
+          "chunk": "2CH-01-12",
+          "verses": 259,
+          "currentMapSHA256": "c8a56b99cccff85dcaabb47b1295d04d8d9289229a94983f0cb52cd2b07f3ded",
+          "reportPath": "reviews/reclosure-verse-map-2CH-01-12-after-author-repairs.json",
+          "reportSHA256": "a67a1bb701c032b39e6cdae845f7c0fb4ef86c38bfd814450bb9b33b2e2f6bd2",
+          "reportBoundMapSHA256": "c8a56b99cccff85dcaabb47b1295d04d8d9289229a94983f0cb52cd2b07f3ded",
+          "reportBindsCurrentMap": true,
+          "lastReportedCountsNotCurrentApproval": {
+            "pass": 232,
+            "qualified": 27
+          }
+        },
+        {
+          "chunk": "2CH-13-24",
+          "verses": 251,
+          "currentMapSHA256": "79dcb8797ce01d63370567e50844ebdcf17010e46e89ea57aab10498e2e991cd",
+          "reportPath": "reviews/reclosure-verse-map-2CH-13-24-round1.json",
+          "reportSHA256": "5ec993bce7c43172316dbe918d51a77e9d020edb04627644e92e471697963f41",
+          "reportBoundMapSHA256": "79dcb8797ce01d63370567e50844ebdcf17010e46e89ea57aab10498e2e991cd",
+          "reportBindsCurrentMap": true,
+          "lastReportedCountsNotCurrentApproval": {
+            "pass": 206,
+            "qualified": 45
+          }
+        },
+        {
+          "chunk": "2CH-25-36",
+          "verses": 312,
+          "currentMapSHA256": "3f0ffa4bbfb6589255d67e508e7f47b56b2ed24b6cb1c0f43034b2a753586ee0",
+          "reportPath": "reviews/reclosure-independent-verse-map-2CH-25-36-round2.json",
+          "reportSHA256": "649a734d34ac50ea9eb0333037e983519ad762f7674785c4bbac085f72aba8cc",
+          "reportBoundMapSHA256": "3f0ffa4bbfb6589255d67e508e7f47b56b2ed24b6cb1c0f43034b2a753586ee0",
+          "reportBindsCurrentMap": true,
+          "lastReportedCountsNotCurrentApproval": {
+            "qualified": 92,
+            "pass": 220
+          }
+        }
+      ]
+    },
+    "edgePreview": {
+      "path": "reviews/root-reviewed-occurrence-edge-preview.json",
+      "sha256": "ccf001a90f55aa8e2e331d9e4d3eb70374af74317da23c1dc7e9a3cac2ac7393",
+      "inputSHA256": {
+        "reviews/root-current-independent-review-bindings.json": "5d8c95ccb1d23f54cbaca721892f119152f2d4af44005b34d4e2b979d4957908",
+        "reviews/root-current-map-independent-bindings.json": "78ab1980fcfa6511ce0be0ef60caf69ba3a52b49a8f129e3405e93461112e6e3",
+        "reviews/root-future-reference-reader-field-audit.json": "7c6f2c58926538594ed4f6bea4ca95bc8f55144273c624e2159ce511333a86b5",
+        "reviews/root-additional-reader-field-holds.json": "8e82b9b94aa0466feb5323389fbf096977cafb0f58da057e51dda51ff904f51f"
+      },
+      "reviewedActiveProfiles": 1446,
+      "mappedEdges": 5101,
+      "candidateEdges": 1302,
+      "holdReasons": {
+        "profile-qualified-or-failed": 1413,
+        "current-reviewed-profile-missing-or-held": 2053,
+        "unclosed-explicit-future-reader-reference": 2,
+        "map-qualified-or-failed": 731,
+        "outside-profile-passages": 436,
+        "before-profile-knownBy": 27,
+        "explicit-context-or-alias-disposition-required": 172,
+        "unclosed-root-reader-field-finding": 1
+      },
+      "publicationApproved": false
+    },
+    "normalization": {
+      "ledgerSHA256": "e2d0e91ef413c2b319a9854eb2787dcad2d3fb67615ab65c1d67e12fc6bd17fe",
+      "reportSHA256": "9c663c97a6825bcaea93a7a2a3e5b863f7a16b35b182c5b9425aeab4adff7e14",
+      "inputBindingSHA256": "5d8c95ccb1d23f54cbaca721892f119152f2d4af44005b34d4e2b979d4957908",
+      "inputPaths": 1483,
+      "books": {
+        "1CH": {
+          "inputRecords": 1372,
+          "baseProfiles": 1331,
+          "excludedOrHeld": 41,
+          "wikiLinks": 1074,
+          "sources": 3575,
+          "occurrences": 0,
+          "appResourcesWritten": false
+        },
+        "2CH": {
+          "inputRecords": 111,
+          "baseProfiles": 106,
+          "excludedOrHeld": 5,
+          "wikiLinks": 89,
+          "sources": 441,
+          "occurrences": 0,
+          "appResourcesWritten": false
+        }
+      },
+      "errors": []
+    },
+    "conservativePreview": {
+      "reportSHA256": "291c03fd95800b221523e1f66681e1e49fc002ad6ee38cbded1716edc4041732",
+      "edgePreviewSHA256": "ccf001a90f55aa8e2e331d9e4d3eb70374af74317da23c1dc7e9a3cac2ac7393",
+      "normalizationLedgerSHA256": "e2d0e91ef413c2b319a9854eb2787dcad2d3fb67615ab65c1d67e12fc6bd17fe",
+      "books": {
+        "1CH": {
+          "profiles": 768,
+          "occurrences": 1174,
+          "sources": 2009,
+          "catalogSHA256": "1921d1f52331052fff0ef7b7a2531eb2232e0093c72aa3e70a4d73517371c707",
+          "normalizedInputSHA256": "827d47efec70ca3e42b0de564bb10db4e91614ba63437ca0659282b7f3be79b9"
+        },
+        "2CH": {
+          "profiles": 24,
+          "occurrences": 128,
+          "sources": 191,
+          "catalogSHA256": "094ee9b7d45908640baf825b02d8cfb58f6ce84b4941eca94cf874f5370a3a0e",
+          "normalizedInputSHA256": "242e48e57e89da166d1e0a815a3d707b04ac607ade21b44f6244ca707ae3f6a3"
+        }
+      },
+      "publicationApproved": false
+    },
+    "qualifiedPrimaryPreview": {
+      "reportSHA256": "089ed48c6bda066a68f266b8f1139f9467e78cfcaaa64e547b435221588d7184",
+      "inputSHA256": {
+        "reviews/runtime-disposition-qualified-persons1-b01-b05.json": "cc5f9ac6f5ba0d0628c7119968c2eb213a02651ccb71ff59bdc45f4c77fba83a",
+        "reviews/runtime-disposition-qualified-persons2-b01-b04-current.json": "5d9381398649ca15b23401c1d42119bef8b3009dbd009b0597b3f92fbbb4470a",
+        "reviews/runtime-disposition-qualified-persons2-b05-current.json": "4026f460dcf4d0b9aa17cf451103e3952c533bcbbd34287f08bb5f3232e331b0",
+        "reviews/runtime-disposition-qualified-persons3-b01-b04.json": "3ccbbdaeb8eb9cc6598968b0376babf6ca828c25902fd1a23e290355f23b9e2e",
+        "reviews/runtime-disposition-batch05-persons_3-qualified.json": "108365b60008671a41959582d2324f8e7bb8f92ed708be7d63bcca2c211aad5a",
+        "reviews/runtime-disposition-batch06-persons_1-qualified.json": "5629efd1a34e7cc5ada29b7fffd1ee99f8880e8b7e99120c21b09f8fdc1b7e8a",
+        "reviews/root-reader-five-primary-disposition-delta.json": "562a2a0d5623f66d3a4f0978e1047d0c5803e3596698a6a8bc46f2961a3b9161",
+        "reviews/runtime-disposition-batch06-persons_3-qualified.json": "f6adc7e3bb6fb2528f52ca31efaa815697129950cb696fe7883458b629af8809",
+        "reviews/root-projected-reader-concrete-runtime-delta.json": "fc4707d19fd1ebafb3e6369fd47299bf45a5c6b2670d9de4dabe8ed1221143bb",
+        "reviews/runtime-disposition-primary-context-citations-delta.json": "9d73179eb4a9d25c739931c0b06fd97df815df7865f1ed1485be479d78153b06",
+        "reviews/root-sibbechai-rationale-reclosure-delta.json": "b20f55502ce3f2cff0cc4bdf668338753f4567d83ee0d60551d129ec5b0ee7b2",
+        "reviews/runtime-disposition-batch06-persons_2-qualified.json": "c31fa60a07a341fcf119c68823eb5c0ae5e3561111ce82b99fa01bea07afdb18",
+        "reviews/runtime-disposition-batch07-persons_1-qualified.json": "b44edec61146b29f684870d8c763678ab7980369d798e4d15deca56a8f1f26e7",
+        "reviews/root-projected-tahan-current-delta.json": "dc9c9ea791655dffb96e95f6ec5d9a6196420ee87ab32b3324c03411c5bb5632",
+        "reviews/root-projected-shelomith-reader-note-delta.json": "c659f34069dd11f791f9d23be6d3d39d7ead99f359c242c153efa84d6def76ef",
+        "reviews/root-reviewed-occurrence-edge-preview.json": "ccf001a90f55aa8e2e331d9e4d3eb70374af74317da23c1dc7e9a3cac2ac7393",
+        "normalized-staging/ledger.json": "e2d0e91ef413c2b319a9854eb2787dcad2d3fb67615ab65c1d67e12fc6bd17fe"
+      },
+      "books": {
+        "1CH": {
+          "profiles": 1020,
+          "occurrences": 1865,
+          "catalogSHA256": "976e5c42885c61137e16c810b89d6faff8306917b8ec99ab3e4dd9e48513e47d",
+          "baseInputSHA256": "1921d1f52331052fff0ef7b7a2531eb2232e0093c72aa3e70a4d73517371c707",
+          "stagingInputSHA256": "827d47efec70ca3e42b0de564bb10db4e91614ba63437ca0659282b7f3be79b9"
+        },
+        "2CH": {
+          "profiles": 24,
+          "occurrences": 128,
+          "catalogSHA256": "6ee239fa0557806c72d3f1b7c1bb608efdea1a1d98e4f17bc001c332d7089ee0",
+          "baseInputSHA256": "094ee9b7d45908640baf825b02d8cfb58f6ce84b4941eca94cf874f5370a3a0e",
+          "stagingInputSHA256": "242e48e57e89da166d1e0a815a3d707b04ac607ade21b44f6244ca707ae3f6a3"
+        }
+      },
+      "qualifiedAdditions": 252,
+      "holdReasons": {
+        "independent-disposition-held": 90,
+        "secondary-dependent-reader-prose-requires-separate-disposition": 30,
+        "no-independently-eligible-map-edge": 51,
+        "stale-disposition-binding": 1
+      },
+      "selectedEdgesFromHeldDecisionRows": 0,
+      "heldDecisionRowsWithSelectedEdges": 0,
+      "p3b7QualifiedTableIncluded": false
+    },
+    "contextPreview": {
+      "reportSHA256": "8c425484d3b55d70af4ff43e020a58f50bf10cd1ecc2e614010658aa60864eff",
+      "proposalSHA256": "7a338bbedf59773b78527d796f47f3234fe80a834e2a1f6eb44f7d419c12055b",
+      "independentReviewSHA256": "87fe852d913daf41e656f1fc9f9ef71f51f453bc4bb50f629ffcb3ffc287acf4",
+      "books": {
+        "1CH": {
+          "catalogEntries": 1023,
+          "activeBaseProfiles": 1020,
+          "individualContexts": 3,
+          "individualOnlyContainerIDs": [
+            "person:gad_1262",
+            "person:ephraim_1206",
+            "person:israel_682"
+          ],
+          "occurrences": 1878,
+          "catalogSHA256": "5bd5f9b678d0056dc7ba193f03e7fff1a091fa835c17d054bfe6f62fbf4e7e41",
+          "conservativeInputSHA256": "976e5c42885c61137e16c810b89d6faff8306917b8ec99ab3e4dd9e48513e47d"
+        },
+        "2CH": {
+          "catalogEntries": 24,
+          "activeBaseProfiles": 24,
+          "individualContexts": 0,
+          "individualOnlyContainerIDs": [],
+          "occurrences": 128,
+          "catalogSHA256": "6ee239fa0557806c72d3f1b7c1bb608efdea1a1d98e4f17bc001c332d7089ee0",
+          "conservativeInputSHA256": "6ee239fa0557806c72d3f1b7c1bb608efdea1a1d98e4f17bc001c332d7089ee0"
+        }
+      },
+      "publicationApproved": false
+    },
+    "aliasPreview": {
+      "reportSHA256": "21904ae96691a02ef172fe3a58739b8f09bcf7293e00e1b685968d35822cd736",
+      "reviewSHA256": "93d9085dad2dfaf23705dca8326d850f2851f5e762fcdde72d9854f8ebaffb58",
+      "proposalSHA256": "98c262a7d4fe3134b92e5dc311eb43a73986126223b156d398de018feb701304",
+      "books": {
+        "1CH": {
+          "catalogEntries": 1025,
+          "occurrences": 1882,
+          "catalogSHA256": "0043d57a41f5731c8deef3ad39eaf46e8a7a3180df2aa9d32ad31f70ee415695",
+          "inputSHA256": "5bd5f9b678d0056dc7ba193f03e7fff1a091fa835c17d054bfe6f62fbf4e7e41"
+        },
+        "2CH": {
+          "catalogEntries": 24,
+          "occurrences": 128,
+          "catalogSHA256": "6ee239fa0557806c72d3f1b7c1bb608efdea1a1d98e4f17bc001c332d7089ee0",
+          "inputSHA256": "6ee239fa0557806c72d3f1b7c1bb608efdea1a1d98e4f17bc001c332d7089ee0"
+        }
+      },
+      "publicationApproved": false
+    }
+  },
+  "actualCandidate": {
+    "resourceSHA256": {
+      "index": "dfe6fba1109f192548e28645cf085ddafe3baf7820d200e2e28da486dd98f11a",
+      "1CH": "500626f06222c2d7b2c20decec1b4970fd58a279a48a89c83eb9adda052422b7",
+      "2CH": "4547a56d1778042ef35bb1d081d10921eedf2e49c9abcff8d34591c8117ee931",
+      "1CHMapPolicy": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "2CHMapPolicy": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "BundledEntityIndex.swift": "4d4c730faaec7df266a4df0f19360be486e6f99693f50fff10ab5b9865a253ac"
+    },
+    "books": {
+      "1CH": {
+        "profileCount": 1025,
+        "occurrenceCount": 1882,
+        "sourceCount": 2796,
+        "profileCoordinateCount": 0,
+        "wikipediaProfileCount": 741,
+        "sourceIDMissing": 0,
+        "sourceIDNotBound": 0,
+        "licenseFieldsIncomplete": 0,
+        "wikipediaKnownByGateMismatches": 0,
+        "wikiSourceURLMismatches": 0,
+        "mapPolicyRows": 0,
+        "mapPolicyAllowingCandidates": 0,
+        "allCoreArraysEqualReviewedAliasPreview": true,
+        "coreArrayHashes": {
+          "schemaVersion": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+          "sources": "c53a9ed846193308641f0c94cc379b5022319cc62e733cbf97505059d7dcdadd",
+          "profiles": "608aa1f726081dac59be1c337548fd0a2a5cdea1949bbfed8b5726257e1e817a",
+          "occurrences": "fe8223a1bb91f9920fade9a21c7719968d485f57888e860801d72cb856a4b9e0",
+          "sourceBoundAliases": "8c2e66a513d0916d40578bef2ab95bb4c5a36d45750fe89bba2b37842ba788a7"
+        }
+      },
+      "2CH": {
+        "profileCount": 24,
+        "occurrenceCount": 128,
+        "sourceCount": 191,
+        "profileCoordinateCount": 0,
+        "wikipediaProfileCount": 24,
+        "sourceIDMissing": 0,
+        "sourceIDNotBound": 0,
+        "licenseFieldsIncomplete": 0,
+        "wikipediaKnownByGateMismatches": 0,
+        "wikiSourceURLMismatches": 0,
+        "mapPolicyRows": 0,
+        "mapPolicyAllowingCandidates": 0,
+        "allCoreArraysEqualReviewedAliasPreview": true,
+        "coreArrayHashes": {
+          "schemaVersion": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+          "sources": "34b1d5f0192a82a30c3cf782a30fc24ddac360606b7b70b4284abe6a5fcbd5d0",
+          "profiles": "9c3a08721315421b1fa57d850e7f8ffb67655a0dbb42767903552078ede6b588",
+          "occurrences": "ab6c4696af9aae58b548dc7d79aae90915c591c13a88f67d7a0deed042ebd39e",
+          "sourceBoundAliases": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      }
+    },
+    "sourceBindings": {
+      "1CH": {
+        "missing": [],
+        "unbound": [],
+        "incomplete": [],
+        "gateMismatches": [],
+        "urlMismatches": []
+      },
+      "2CH": {
+        "missing": [],
+        "unbound": [],
+        "incomplete": [],
+        "gateMismatches": [],
+        "urlMismatches": []
+      }
+    },
+    "activeWikipediaProfileTotal": 765,
+    "secondaryReferenceSourceObjects": 766,
+    "profileCoordinateTotal": 0,
+    "selectedIDsWithLegacyIndexCandidateCoordinates": {
+      "1CH": 68,
+      "2CH": 24
+    },
+    "allSelectedVersesEqualAliasPreviewPayload": true,
+    "candidateOccurrenceCounts": {
+      "1CH": 1882,
+      "2CH": 128
+    },
+    "occurrencesExactSHA256": {
+      "1CH": "fe8223a1bb91f9920fade9a21c7719968d485f57888e860801d72cb856a4b9e0",
+      "2CH": "ab6c4696af9aae58b548dc7d79aae90915c591c13a88f67d7a0deed042ebd39e"
+    },
+    "p3b7QualifiedProfileMembership": {
+      "1CH": {
+        "person:shammah_2540": false,
+        "person:shaphat_2555": false,
+        "person:shaul_2562": false,
+        "person:sheba_2567": false,
+        "person:sheba_2571": false,
+        "person:shemaah_2618": false,
+        "person:shepho_2665": false,
+        "person:sheva_2675": false,
+        "person:shimea_2680": false,
+        "person:shobal_2720": false,
+        "person:shubael_2579": false,
+        "person:shupham_2115": false,
+        "person:shuthelah_2735": false,
+        "person:sippai_2471": false,
+        "person:tahath_2816": false,
+        "person:tarshish_2828": false,
+        "person:telah_2835": false,
+        "person:teman_2839": false,
+        "person:timna_2860": false,
+        "person:unni_2891": false,
+        "person:uzziah_375": false
+      },
+      "2CH": {
+        "person:shammah_2540": false,
+        "person:shaphat_2555": false,
+        "person:shaul_2562": false,
+        "person:sheba_2567": false,
+        "person:sheba_2571": false,
+        "person:shemaah_2618": false,
+        "person:shepho_2665": false,
+        "person:sheva_2675": false,
+        "person:shimea_2680": false,
+        "person:shobal_2720": false,
+        "person:shubael_2579": false,
+        "person:shupham_2115": false,
+        "person:shuthelah_2735": false,
+        "person:sippai_2471": false,
+        "person:tahath_2816": false,
+        "person:tarshish_2828": false,
+        "person:telah_2835": false,
+        "person:teman_2839": false,
+        "person:timna_2860": false,
+        "person:unni_2891": false,
+        "person:uzziah_375": false
+      }
+    },
+    "shobal2719CurrentDelta": {
+      "path": "reviews/reclosure-shobal-persons3-batch07-delta.json",
+      "sha256": "c7a3f83243f497d884f554a23a80b0522e17bfda6bde5d61d9aa8413e4d0d57f",
+      "currentDecision": "pass",
+      "profileSelected": false
+    },
+    "elizaphan1189Selected": false
+  },
+  "nativeProbe": {
+    "path": "reviews/root-native-final-runtime-probe.json",
+    "reportSHA256": "b9a4ba4eec6214abd73a958d87e7e1a815d24868d21c24f91a11f528fd511564",
+    "results": [
+      {
+        "book": "1CH",
+        "errors": [],
+        "occurrences": 1882,
+        "resolved": 1882,
+        "semanticApproval": false
+      },
+      {
+        "book": "2CH",
+        "errors": [],
+        "occurrences": 128,
+        "resolved": 128,
+        "semanticApproval": false
+      }
+    ],
+    "probeInputHashMismatches": [],
+    "sameCorePayloadAsAliasPreview": true,
+    "assessmentJa": "現行candidate resourceの全入力SHAがnative probeの入力SHAと一致し、2010 occurrencesがerrorなしで解決された記録と照合した。プロフィール・source・occurrence・alias配列もreviewed-alias previewと一致する。"
+  },
+  "edgeSelectionChecks": {
+    "candidateArraysMatchReviewedAliasPreviewExactly": true,
+    "candidateCounts": {
+      "1CHprofiles": 1025,
+      "1CHoccurrences": 1882,
+      "2CHprofiles": 24,
+      "2CHoccurrences": 128
+    },
+    "heldQualifiedRuntimeDecisionsSelected": 0,
+    "p3b7QualifiedIDsSelected": 0,
+    "staleShobalSelected": false,
+    "Elizaphan1189Selected": false,
+    "sourceGateFailures": 0,
+    "wikiSourceAttributionFailures": 0,
+    "mapCandidatePolicyAllowedRows": 0,
+    "profileCoordinates": 0
+  },
+  "semanticJudgment": {
+    "status": "inherited-exact-review-bindings; no fresh semantic review",
+    "sources": [
+      "reviews/root-current-independent-review-bindings.json",
+      "reviews/root-current-map-independent-bindings.json"
+    ],
+    "warningJa": "この監査は選択経路・byte binding・source/license/gateの整合を確認するもの。原典の意味判断は参照した独立レポートに基づく。"
+  },
+  "blockersBeforePublication": [
+    {
+      "id": "stale-shobal-binding-row",
+      "severity": "release-manifest-warning",
+      "detailJa": "root-current-independent-review-bindingsにはShobal2719の修正前SHAが残る。現行fail→pass deltaは別途bind済みで、今回のcandidate/occurrenceにはShobalを含まない。後続manifestでは現行deltaと非選択状態を明示する。これはこのsubsetの混入ではない。"
+    },
+    {
+      "id": "publication-not-approved",
+      "severity": "blocker",
+      "detailJa": "現在のpreview/probeはpublicationApproved=false、candidate verificationもexpertReviewed=false / allNamedEntitiesComplete=false / allVerseCommentaryComplete=falseを記録。今回の監査は公開承認を付与しない。"
+    }
+  ],
+  "limitationsJa": "今回のselection auditではプロフィール文の新規意味再読をしていない。p3 b7 qualified21件は今回のcandidateに1件も選択されず、Shobal2719は別の現行deltaでpassでもこのsubsetへ未収録。1CHで741、2CHで24のプロフィールWiki objectがあり、対応source/license/attribution/sourceId/gate/url整合は全件。profile.coordinateは全選択プロフィールでnull、1CH/2CH map-policyもallowCandidateMap=true行なし。global entity-index側の旧座標candidate存在は各bookのmap policyなしでは表示されない。",
+  "metadataHistory": {
+    "beforeReportSHA256": "3fd000d8cef936e09a43fb51c859148a8647376b537d2a80b6b1e5af618b7f46",
+    "beforeBytesPreservedAt": "preservation/objects/3fd000d8cef936e09a43fb51c859148a8647376b537d2a80b6b1e5af618b7f46",
+    "changeReason": "Corrected inputSHA256 from logical labels to real path->digest bindings; refreshed native probe status after parent reran it against current candidate bytes."
+  }
+}

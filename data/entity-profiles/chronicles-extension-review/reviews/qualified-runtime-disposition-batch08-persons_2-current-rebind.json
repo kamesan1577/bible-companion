@@ -1,0 +1,1891 @@
+{
+  "reportType": "qualified-primary-runtime-disposition",
+  "reviewId": "qualified-runtime-disposition-batch08-persons_2-current-rebind",
+  "checkedAtUTC": "2026-10-16T11:58:51Z",
+  "scope": "Qualified-only runtime disposition rebound to the final author-current manifest and this independent current reclosure; no raw profile/selector changes.",
+  "inputs": {
+    "priorIndependentReview": {
+      "path": "reviews/independent-batch08-persons_2.json",
+      "sha256": "dfc184c6643182d1355d1744f406d925789bd4804abbbd61ecd0b2ab6ac8cd20"
+    },
+    "currentAuthorManifest": {
+      "path": "evidence/persons_2/author-current-batch08.json",
+      "sha256": "16d2ce70add05f04f13ddf158c39f07fb9b87ab8a812a21e211e959e64c9c830"
+    },
+    "assignment": {
+      "path": "assignments/batch08/persons_2.json",
+      "sha256": "d604becaa100a9813eb67d51d04dfcfd733874c292a0795e4b9316293120a3b1"
+    },
+    "fixedWitnesses": [
+      {
+        "path": "inventory/targets/chronicles1-web-verses.json",
+        "sha256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a"
+      },
+      {
+        "path": "inventory/targets/chronicles2-web-verses.json",
+        "sha256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+      }
+    ],
+    "sourceVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+    "currentIndependentReclosure": {
+      "path": "reviews/reclosure-batch08-persons_2-current.json",
+      "sha256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f"
+    }
+  },
+  "methodJa": "現草稿・証拠JSONの実SHAをマニフェストと旧独立レビューの三SHAに照合。読者向け全欄と全factsを、該当座標の固定WEB原文で再確認した。Wiki根拠は記事本文を読んだ既存独立記録のlocator・関係区分に限定して表示区分を決めた。qualified自体は維持し、primary-only表示に安全でない曖昧IDや後代情報はholdとした。",
+  "counts": {
+    "related-link-supported": 11,
+    "primary-only-display-supported": 8,
+    "hold": 5
+  },
+  "integrityNoteJa": "現在のマニフェストは割当時から更新されています。22件のdraft/profileはマニフェスト・独立レビューと一致。2CHの一部で現行evidence実SHAとマニフェスト記載evidenceSHAが不一致のため、各行へ両値を併記し、現行evidence本文を直接検査した。これは一次内容の評価とは分けて保存し、マニフェスト再同期が必要なsource-binding注意として残す。",
+  "rows": [
+    {
+      "book": "1CH",
+      "entityID": "person:zabdiel_2957",
+      "draftPath": "drafts/persons_2/1CH_person_zabdiel_2957.json",
+      "evidencePath": "evidence/persons_2/1CH_person_zabdiel_2957-sources.json",
+      "currentDraftSHA256": "783d16b7259bee750ab9b81dc64d7aa8b20ad03dd9f01c3e775443fc89761114",
+      "currentProfileSHA256": "d91c9275fe796b1078116f37da11a95221a70b771b2b88454b9164edbfc14bf3",
+      "currentEvidenceSHA256": "c8bd1197670842c2bc9281b472abfb404031cc96e431eff6d91e2af6c6cd11c7",
+      "manifestEvidenceSHA256": "c8bd1197670842c2bc9281b472abfb404031cc96e431eff6d91e2af6c6cd11c7",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "一次文はZabdielをJashobeamの父とする。Wikipediaの対象記事はJashobeamで、父との関係を補強する関連記事として読まれているため、Zabdiel本人の記事/同一性ではないことを維持する。",
+      "priorFindings": [],
+      "runtimeDisposition": "related-link-supported",
+      "primaryOnlyRationaleJa": "1CH 27:2 names Zabdiel as Jashobeam’s father. Reader prose and gate are supported by the verse; the linked Jashobeam article only corroborates that relation, and is correctly relation-only.",
+      "knownBy": {
+        "chapter": 27,
+        "verse": 2
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 27,
+            "verse": 2
+          },
+          "end": {
+            "chapter": 27,
+            "verse": 2
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "ザブディエル",
+        "subtitleJa": "ヤショブアムの父として名が記されます。",
+        "summaryJa": "第1月の部隊の長はヤショブアムで、本文は彼をザブディエルの子と記します。その部隊は24,000人とされています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "第1月の部隊を率いるヤショブアムの父として記されます。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 27:2",
+          "citationURL": "https://ebible.org/engwebp/1CH27.htm#V2",
+          "fixedWEBText": "Over the first division for the first month was Jashobeam the son of Zabdiel. In his division were twenty-four thousand.",
+          "fixedWEBTextSHA256": "1f89a5aa3fb08b6f31674bc7d7d926584aa3aac91e30ce4ecefca6efde1c0bed",
+          "evidenceMode": "verbatim-full-witness"
+        }
+      ],
+      "wikipedia": {
+        "title": "Jashobeam",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Jashobeam",
+        "kind": "related-section",
+        "noteJa": "ヤショブアムの記事は、彼の父をザブディエルと記し、1歴代誌27:2を出典に挙げています。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 27,
+          "verse": 2
+        }
+      },
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。記事固有情報は補助リンク枠に限る。",
+      "qualifierScopeJa": "1CH 27:2 names Zabdiel as Jashobeam’s father. Reader prose and gate are supported by the verse; the linked Jashobeam article only corroborates that relation, and is correctly relation-only.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "3つの現稿SHA（draft/profile/evidence）が前回独立判定と完全一致するため、前回の内容判定だけを継承。"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:zadok_2975",
+      "draftPath": "drafts/persons_2/1CH_person_zadok_2975.json",
+      "evidencePath": "evidence/persons_2/1CH_person_zadok_2975-sources.json",
+      "currentDraftSHA256": "f19d69d38933a3a2b60082c1ba5de91a67c74f16b1725b01d9e4f4c878809874",
+      "currentProfileSHA256": "ff375f467ca9bc863b6b9d6736708b012fc2801479fd7b74da65bce8ddf4e3f7",
+      "currentEvidenceSHA256": "92f02970e09d3b1fddeef7f3750e739c3bc0d1f7648b387fcdb5dd785a4d90f5",
+      "manifestEvidenceSHA256": "92f02970e09d3b1fddeef7f3750e739c3bc0d1f7648b387fcdb5dd785a4d90f5",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "6:12の系譜は明瞭だが、Zadok記事は祭司系譜の背景を扱う。記事由来の広い系譜を本文の個体同定へ拡張しない。",
+      "priorFindings": [],
+      "runtimeDisposition": "related-link-supported",
+      "primaryOnlyRationaleJa": "1CH 6:12 directly places Zadok between Ahitub and Shallum in the genealogy. Reader text is primary-supported; linked Zadok article adds priestly-family background and is explicitly not used to identify this genealogy with the priest Zadok.",
+      "knownBy": {
+        "chapter": 6,
+        "verse": 12
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 6,
+            "verse": 12
+          },
+          "end": {
+            "chapter": 6,
+            "verse": 12
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "ツァドク",
+        "subtitleJa": "アヒトブとシャルムの間に置かれる系譜上の人物です。",
+        "summaryJa": "この系譜ではアヒトブがツァドクの父、ツァドクがシャルムの父と記されます。ここでの親子関係に限って説明し、同名の祭司職者との同一性は本文だけでは断定しません。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "アヒトブからシャルムへ続く系譜の中で名が挙がります。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 6:12",
+          "citationURL": "https://ebible.org/engwebp/1CH06.htm#V12",
+          "fixedWEBText": "Ahitub became the father of Zadok. Zadok became the father of Shallum.",
+          "fixedWEBTextSHA256": "141d4cda18879d00228eff59936a0faeba8a89da0326a0d6d0b90ff2457ae95d",
+          "evidenceMode": "verbatim-full-witness"
+        },
+        {
+          "ref": "1CH 9:11",
+          "citationURL": "https://ebible.org/engwebp/1CH09.htm#V11",
+          "fixedWEBText": "and Azariah the son of Hilkiah, the son of Meshullam, the son of Zadok, the son of Meraioth, the son of Ahitub, the ruler of God’s house;",
+          "fixedWEBTextSHA256": "b869a6b61dc14ff1a28d2235b973045fdcdb09d71b16c39c7a1aa8d078c0e292",
+          "evidenceMode": "verbatim-full-witness"
+        }
+      ],
+      "wikipedia": {
+        "title": "Zadok",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Zadok#Patrilineal_ancestry",
+        "kind": "related-section",
+        "noteJa": "ザドクの記事の系譜欄は、歴代誌6章に記されるアロン系の祭司の家系とザドクを扱っています。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 6,
+          "verse": 12
+        }
+      },
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。記事固有情報は補助リンク枠に限る。",
+      "qualifierScopeJa": "1CH 6:12 directly places Zadok between Ahitub and Shallum in the genealogy. Reader text is primary-supported; linked Zadok article adds priestly-family background and is explicitly not used to identify this genealogy with the priest Zadok.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "3つの現稿SHA（draft/profile/evidence）が前回独立判定と完全一致するため、前回の内容判定だけを継承。"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:zebadiah_2989",
+      "draftPath": "drafts/persons_2/1CH_person_zebadiah_2989.json",
+      "evidencePath": "evidence/persons_2/1CH_person_zebadiah_2989-sources.json",
+      "currentDraftSHA256": "e576026819a401540b48a340586349d30c6dc56f69eff9357df48c16ac71c668",
+      "currentProfileSHA256": "22192d3fb757bbaefcce427b8071e62f08a0d3fcf49f0a0a9a10d4a5f1e1bdfd",
+      "currentEvidenceSHA256": "5b837de4e754f330003ec12e9189a0f056fe69f649b8fa06b37dca078b835de2",
+      "manifestEvidenceSHA256": "5b837de4e754f330003ec12e9189a0f056fe69f649b8fa06b37dca078b835de2",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "本文名は確実。L–Z一覧の同名者の項目がこのベリアの子と一致するとのbody recordはあるが、一覧であるため別Zebadiahの境界を維持。",
+      "priorFindings": [],
+      "runtimeDisposition": "related-link-supported",
+      "primaryOnlyRationaleJa": "1CH 8:17 directly lists this Benjaminite genealogy. The shared-list article’s exact verse entry is the independent identity aid; reader text itself stays within the verse and does not import biography.",
+      "knownBy": {
+        "chapter": 8,
+        "verse": 17
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 8,
+            "verse": 17
+          },
+          "end": {
+            "chapter": 8,
+            "verse": 17
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "ゼバドヤ",
+        "subtitleJa": "ベニヤミンの系譜に名が挙がります。",
+        "summaryJa": "1歴代誌8章のベニヤミン系譜で、ゼバドヤはメシュラム、ヒズキ、ヘベルらと並べて記されます。本文はここでその人物の役割や生涯を述べません。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "ベニヤミンの系譜の一員として名が記されます。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 8:17",
+          "citationURL": "https://ebible.org/engwebp/1CH08.htm#V17",
+          "fixedWEBText": "Zebadiah, Meshullam, Hizki, Heber,",
+          "fixedWEBTextSHA256": "4380be635d728cda5fc3c11d26bffbf9df74702215807247b988c8fcaf765c59",
+          "evidenceMode": "verbatim-full-witness"
+        },
+        {
+          "ref": "1CH 8:13",
+          "citationURL": "https://ebible.org/engwebp/1CH08.htm#V13",
+          "fixedWEBText": "and Beriah and Shema, who were heads of fathers’ households of the inhabitants of Aijalon, who put to flight the inhabitants of Gath;",
+          "fixedWEBTextSHA256": "a513409bd29882a5a28776b26bb7a57708518493ccc1b5f42740f7a04cdb28f2",
+          "evidenceMode": "verbatim-full-witness"
+        }
+      ],
+      "wikipedia": {
+        "title": "List of minor Hebrew Bible figures, L–Z",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Zebadiah",
+        "kind": "shared-section",
+        "noteJa": "一覧のゼバドヤ項目は同名者を複数に分け、ベリアの子とされる人物を別に挙げています。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": true,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 8,
+          "verse": 17
+        }
+      },
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。記事固有情報は補助リンク枠に限る。",
+      "qualifierScopeJa": "1CH 8:17 directly lists this Benjaminite genealogy. The shared-list article’s exact verse entry is the independent identity aid; reader text itself stays within the verse and does not import biography.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "3つの現稿SHA（draft/profile/evidence）が前回独立判定と完全一致するため、前回の内容判定だけを継承。"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:zebadiah_2992",
+      "draftPath": "drafts/persons_2/1CH_person_zebadiah_2992.json",
+      "evidencePath": "evidence/persons_2/1CH_person_zebadiah_2992-sources.json",
+      "currentDraftSHA256": "679dff2ea1bc3383d24212c4c8c648f9600c3631f71cd9fe5e5bfc27d39f6fe4",
+      "currentProfileSHA256": "f829ea9d37c130724b9394fad7282697be7e2c257cf5411c8c06e3735783b888",
+      "currentEvidenceSHA256": "efa30e0f92e7b67fe0390011ae07f1e58e458201e6ef452a16887cd1ce1cca54",
+      "manifestEvidenceSHA256": "efa30e0f92e7b67fe0390011ae07f1e58e458201e6ef452a16887cd1ce1cca54",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "27:7のアサヘルの子と第四月部隊の関係は明瞭。記事は共有一覧であり、同名者の同定範囲を限定する。",
+      "priorFindings": [],
+      "runtimeDisposition": "related-link-supported",
+      "primaryOnlyRationaleJa": "1CH 27:7 directly identifies Asahel’s son as the fourth-month commander. The list article is the additional same-name disambiguation; its use should remain a linked secondary aid.",
+      "knownBy": {
+        "chapter": 27,
+        "verse": 7
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 27,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 27,
+            "verse": 7
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "ゼバデヤ",
+        "subtitleJa": "アサヘルの子で、第四月の部隊を継ぐ者として記されます。",
+        "summaryJa": "アサヘルはヨアブの兄弟で、ゼバデヤはアサヘルの子として第四月の部隊を継ぎました。本文はその部隊を二万四千人と記します。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "アサヘルの子で、第四月の部隊を継ぐ者として記されます。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 27:7",
+          "citationURL": "https://ebible.org/engwebp/1CH27.htm#V7",
+          "fixedWEBText": "The fourth captain for the fourth month was Asahel the brother of Joab, and Zebadiah his son after him. In his division were twenty-four thousand.",
+          "fixedWEBTextSHA256": "b86cc48678db3f9eaf9967364abe0a8241e504f16c622b4fde7234cd398c6528",
+          "evidenceMode": "verbatim-full-witness"
+        }
+      ],
+      "wikipedia": {
+        "title": "List of minor Hebrew Bible figures, L–Z",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Zebadiah",
+        "kind": "shared-section",
+        "noteJa": "一覧は同名のゼバドヤを区別し、アサヘルの子で第四月の部隊を担う人物を1歴代誌27:7に結び付けます。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": true,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 27,
+          "verse": 7
+        }
+      },
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。記事固有情報は補助リンク枠に限る。",
+      "qualifierScopeJa": "1CH 27:7 directly identifies Asahel’s son as the fourth-month commander. The list article is the additional same-name disambiguation; its use should remain a linked secondary aid.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "3つの現稿SHA（draft/profile/evidence）が前回独立判定と完全一致するため、前回の内容判定だけを継承。"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:zechariah_3006",
+      "draftPath": "drafts/persons_2/1CH_person_zechariah_3006.json",
+      "evidencePath": "evidence/persons_2/1CH_person_zechariah_3006-sources.json",
+      "currentDraftSHA256": "a1be4414b3c8a9ed8bbe7bbdedb4e5a975cd8771a3865b3e1d383e946e7201da",
+      "currentProfileSHA256": "389631881a2ef04fd27e09bdc3a9dc5ed566a2876941191367695e1139add1d9",
+      "currentEvidenceSHA256": "45f909073454f5d3c6fc07796101581a6755f90db3a91c0acc2b25a0c3deec0b",
+      "manifestEvidenceSHA256": "45f909073454f5d3c6fc07796101581a6755f90db3a91c0acc2b25a0c3deec0b",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "26:11のホサの子らの列挙は支持される。具体的なWikipedia候補は今回の調査で確認されず、限定的検索記録のみ。",
+      "priorFindings": [],
+      "runtimeDisposition": "primary-only-display-supported",
+      "primaryOnlyRationaleJa": "1CH 26:11 supports the fourth name in Hosah’s family list and the count of thirteen. No secondary identity claim appears in reader fields; the null article record is narrowly scoped and does not assert universal nonexistence.",
+      "knownBy": {
+        "chapter": 26,
+        "verse": 11
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 26,
+            "verse": 11
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 11
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "ゼカリヤ",
+        "subtitleJa": "ホサの家族の列挙で第四の名として記されます。",
+        "summaryJa": "ホサの子らと兄弟たちの列挙で、ゼカリヤは第四の名として挙げられます。本文は一族全体を十三人と数えます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "ホサの家族の列挙で第四の名として記されます。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 26:11",
+          "citationURL": "https://ebible.org/engwebp/1CH26.htm#V11",
+          "fixedWEBText": "Hilkiah the second, Tebaliah the third, and Zechariah the fourth. All the sons and brothers of Hosah were thirteen.",
+          "fixedWEBTextSHA256": "5efbec0f261e395bbb70e003123480ecb3aaa6cc7435231c40345736da8689c1",
+          "evidenceMode": "verbatim-full-witness"
+        }
+      ],
+      "wikipedia": null,
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。",
+      "qualifierScopeJa": "1CH 26:11 supports the fourth name in Hosah’s family list and the count of thirteen. No secondary identity claim appears in reader fields; the null article record is narrowly scoped and does not assert universal nonexistence.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "3つの現稿SHA（draft/profile/evidence）が前回独立判定と完全一致するため、前回の内容判定だけを継承。"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:zedekiah_3030",
+      "draftPath": "drafts/persons_2/1CH_person_zedekiah_3030.json",
+      "evidencePath": "evidence/persons_2/1CH_person_zedekiah_3030-sources.json",
+      "currentDraftSHA256": "402a24ea8f51ec70c9e3b6dc1a07eeb1ef9b68892f6a4dc4ad343e5b0394ae26",
+      "currentProfileSHA256": "157f685ea170b5d00769bb7017c670c059df7a5f37ae521eb480f07a06857554",
+      "currentEvidenceSHA256": "06b69699ff90ce6b37274c5e016b7b08b425f320beb3231e722583077c22e5f3",
+      "manifestEvidenceSHA256": "06b69699ff90ce6b37274c5e016b7b08b425f320beb3231e722583077c22e5f3",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "3:16の系譜上のゼデキヤは明瞭。読者欄は同名の後代王との区別を示すが、それはこの節の情報ではなく、同名区別の留保としてのみ扱う。",
+      "priorFindings": [],
+      "runtimeDisposition": "hold",
+      "primaryOnlyRationaleJa": "The genealogy in 1CH 3:16 supports son-of-Jehioiakim wording, but always-visible summary/identity note distinguishes this person from a “later king,” a distinction that requires information outside the knownBy passage. Keep qualified; primary-only display is not safe until that namesake note is gated or removed.",
+      "knownBy": {
+        "chapter": 3,
+        "verse": 16
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 3,
+            "verse": 16
+          },
+          "end": {
+            "chapter": 3,
+            "verse": 16
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "ゼデキヤ",
+        "subtitleJa": "エホヤキムの子として系譜に記されます。",
+        "summaryJa": "本文はエホヤキムの子らを列挙し、エコンヤとゼデキヤをその子として記します。このゼデキヤを、同名の後代の王と同一視しません。",
+        "identityNoteJa": "同名の王とこの系譜中の人物は区別されます。",
+        "historicalRoleJa": "エホヤキムの子として系譜に記されます。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 3:16",
+          "citationURL": "https://ebible.org/engwebp/1CH03.htm#V16",
+          "fixedWEBText": "The sons of Jehoiakim: Jeconiah his son, and Zedekiah his son.",
+          "fixedWEBTextSHA256": "2303baf017e825ecccaafc69d7f8de59c420611acd69fb1a87e60e29796ad5d3",
+          "evidenceMode": "verbatim-full-witness"
+        }
+      ],
+      "wikipedia": {
+        "title": "Jehoiakim",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Jehoiakim",
+        "kind": "related-section",
+        "noteJa": "エホヤキムの記事は、その子の一人としてゼデキヤを列挙します。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 3,
+          "verse": 16
+        }
+      },
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。",
+      "qualifierScopeJa": "The genealogy in 1CH 3:16 supports son-of-Jehioiakim wording, but always-visible summary/identity note distinguishes this person from a “later king,” a distinction that requires information outside the knownBy passage. Keep qualified; primary-only display is not safe until that namesake note is gated or removed.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "3つの現稿SHA（draft/profile/evidence）が前回独立判定と完全一致するため、前回の内容判定だけを継承。"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:zemarite_3036",
+      "draftPath": "drafts/persons_2/1CH_person_zemarite_3036.json",
+      "evidencePath": "evidence/persons_2/1CH_person_zemarite_3036-sources.json",
+      "currentDraftSHA256": "6587f114d38947fbb61db1ddf6eab5ca5d6a67b5fd64abfd7852a0d5d2d653dc",
+      "currentProfileSHA256": "51d4565ca92cb57e26fc144434fb42cb5de6032ce0bfcedb614937a7915d08b6",
+      "currentEvidenceSHA256": "3723177d30a0aa9ab28c0fc7e3ae522bc4c6d6e1dfeb24fdfe3dad6c19b06afb",
+      "manifestEvidenceSHA256": "3723177d30a0aa9ab28c0fc7e3ae522bc4c6d6e1dfeb24fdfe3dad6c19b06afb",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "1:16は民族/集団名としてのゼマル人を支持。地理的位置はプロフィールでも未確定で、記事の候補地をこの用例に適用しない。",
+      "priorFindings": [],
+      "runtimeDisposition": "related-link-supported",
+      "primaryOnlyRationaleJa": "1CH 1:16 supports Zemarites as a group name in Canaan’s genealogy, not an individual or a located settlement. The body-read list article cites the same verse but also discusses proposed location, so retain it only as a scoped related link; the reader fields keep location uncertain.",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 16
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 1,
+            "verse": 16
+          },
+          "end": {
+            "chapter": 1,
+            "verse": 16
+          }
+        }
+      ],
+      "identityType": "collective",
+      "readerFields": {
+        "nameJa": "ゼマル人",
+        "subtitleJa": "カナン系譜に列挙される集団名です。",
+        "summaryJa": "ゼマル人はアルワド人とハマト人の間に挙げられる集団名です。この節だけでは、個別の人物や居住地は特定されません。",
+        "identityNoteJa": "ここでは個人名でなく、集団を指す呼称として扱います。",
+        "historicalRoleJa": "カナン系譜に列挙される集団名です。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 1:16",
+          "citationURL": "https://ebible.org/engwebp/1CH01.htm#V16",
+          "fixedWEBText": "the Arvadite, the Zemarite, and the Hamathite.",
+          "fixedWEBTextSHA256": "9b8d6d0b162ac317a4a435022c0aa095d126dbad2bef312639237d227167a746",
+          "evidenceMode": "verbatim-full-witness"
+        }
+      ],
+      "wikipedia": {
+        "title": "List of minor biblical tribes",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_biblical_tribes#Zemarites",
+        "kind": "shared-section",
+        "noteJa": "The Zemarites entry explicitly associates the group with 1 Chronicles 1:16; its proposed location is not used here.",
+        "checkedAt": "2026-10-16",
+        "identityVerified": true,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 1,
+          "verse": 16
+        }
+      },
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。記事固有情報は補助リンク枠に限る。",
+      "qualifierScopeJa": "1CH 1:16 supports Zemarites as a group name in Canaan’s genealogy, not an individual or a located settlement. The body-read list article cites the same verse but also discusses proposed location, so retain it only as a scoped related link; the reader fields keep location uncertain.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "3つの現稿SHA（draft/profile/evidence）が前回独立判定と完全一致するため、前回の内容判定だけを継承。"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:zia_3059",
+      "draftPath": "drafts/persons_2/1CH_person_zia_3059.json",
+      "evidencePath": "evidence/persons_2/1CH_person_zia_3059-sources.json",
+      "currentDraftSHA256": "bd1ca9fffc277472c7aaa7871fc0ad759536c3fcccf864eecadd778a2b7102f2",
+      "currentProfileSHA256": "d834f4207b4b16e51d3f9f870919bf767ab49e0d9da2664c9b527ece49c0e462",
+      "currentEvidenceSHA256": "b6c3acc87bd63bc2932f4bf00faf04bd209b210ce75b46dcb9e5e181bedcfee2",
+      "manifestEvidenceSHA256": "b6c3acc87bd63bc2932f4bf00faf04bd209b210ce75b46dcb9e5e181bedcfee2",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "5:13のガド系譜における兄弟列挙は支持される。指定名表記の人物に完全一致する記事は見つかったとはしておらず、検索範囲を限定したnull。",
+      "priorFindings": [],
+      "runtimeDisposition": "primary-only-display-supported",
+      "primaryOnlyRationaleJa": "1CH 5:13 lists Zia among Gad’s father-house brothers. The reader text is a close summary of that list; no article-derived facts are displayed and the limited null search is properly qualified.",
+      "knownBy": {
+        "chapter": 5,
+        "verse": 13
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 5,
+            "verse": 13
+          },
+          "end": {
+            "chapter": 5,
+            "verse": 13
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "ツィア",
+        "subtitleJa": "ガド族の父祖家の兄弟の一人として列挙されます。",
+        "summaryJa": "ガド族の系譜で、ミカエル、メシュラム、シェバ、ヨライ、ヤカン、ツィア、エベルの七人が父祖家の兄弟として列挙されます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "ガド族の父祖家の兄弟の一人として列挙されます。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 5:13",
+          "citationURL": "https://ebible.org/engwebp/1CH05.htm#V13",
+          "fixedWEBText": "Their brothers of their fathers’ houses: Michael, Meshullam, Sheba, Jorai, Jacan, Zia, and Eber, seven.",
+          "fixedWEBTextSHA256": "b01e12cf6db2760f3e2e450f76b13ec7bcc3c1710b98fce5ac98995c83eb6c54",
+          "evidenceMode": "verbatim-full-witness"
+        }
+      ],
+      "wikipedia": null,
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。",
+      "qualifierScopeJa": "1CH 5:13 lists Zia among Gad’s father-house brothers. The reader text is a close summary of that list; no article-derived facts are displayed and the limited null search is properly qualified.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "3つの現稿SHA（draft/profile/evidence）が前回独立判定と完全一致するため、前回の内容判定だけを継承。"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:zibeon_3062",
+      "draftPath": "drafts/persons_2/1CH_person_zibeon_3062.json",
+      "evidencePath": "evidence/persons_2/1CH_person_zibeon_3062-sources.json",
+      "currentDraftSHA256": "2b476e22800c66f23915f87425f164ff792480848fbcb319b82aaf8f48e2d424",
+      "currentProfileSHA256": "67a07c417ffe64f09d906379f69d36ff2e968caa5713c8f633c39f4d06ac3d3f",
+      "currentEvidenceSHA256": "09a86b8120f77c59493737482e3056a55115b473c1eb8e794dbbc7178a47a43e",
+      "manifestEvidenceSHA256": "09a86b8120f77c59493737482e3056a55115b473c1eb8e794dbbc7178a47a43e",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "fail",
+      "runtimeDisposition": "hold",
+      "primaryOnlyRationaleJa": "Genesis–Chronicles same-name ambiguity is in always-visible identityNote and is not supported by the 1CH 1:38 primary text; the related Wiki article itself discusses uncertainty. Hold until the cross-book note is treated as secondary/qualified context.",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 38
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 1,
+            "verse": 38
+          },
+          "end": {
+            "chapter": 1,
+            "verse": 38
+          }
+        },
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 1,
+            "verse": 40
+          },
+          "end": {
+            "chapter": 1,
+            "verse": 40
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "ツィブオン",
+        "subtitleJa": "セイルの子らの列挙に名が挙がります。",
+        "summaryJa": "セイルの子らとして、ロタン、ショバル、ツィブオンらとともに列挙されます。",
+        "identityNoteJa": "創世記にも同じ名の人物が現れますが、両書の人物が同一かどうかは本文だけでは定まりません。",
+        "historicalRoleJa": "セイルの子らの列挙に名が挙がります。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [
+        {
+          "textJa": "ツィブオンの子としてアヤとアナが列挙されます.",
+          "knownBy": {
+            "chapter": 1,
+            "verse": 40
+          },
+          "sourceIds": [
+            "chronicles-person-zibeon_3062-webp-1ch-1-40"
+          ]
+        }
+      ],
+      "wikipedia": {
+        "title": "Zibeon",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Zibeon",
+        "kind": "related-section",
+        "noteJa": "The article treats the Genesis and Chronicles Zibeon as possibly one or two figures and says the Chronicles figure is a son of Seir; this matches the verse but leaves cross-book identity uncertain.",
+        "checkedAt": "2026-10-16",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 1,
+          "verse": 38
+        }
+      },
+      "currentClosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "sourceTextSupportJa": "1CH 1:38 supports Seir’s descendants and lists Zibeon; 1:40 gates Aya/Anah as his sons. Those future facts are no longer in the summary. The always-visible note and related Wikipedia item discuss the unresolved cross-book identity between Genesis and Chronicles; this is an explicit identity caveat, but it depends on a cross-book comparison rather than the first Chronicles verse, so it is not fully primary-only."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:zichri_3067",
+      "draftPath": "drafts/persons_2/1CH_person_zichri_3067.json",
+      "evidencePath": "evidence/persons_2/1CH_person_zichri_3067-sources.json",
+      "currentDraftSHA256": "024cd9c5a0445ddd995ec9428d33adb6f35841647712fd76cfefe9e105a21774",
+      "currentProfileSHA256": "3d92373813b2afb7e4aba80781f8707addb828e88084f97b08d6ed653e57af3e",
+      "currentEvidenceSHA256": "8b20267fea3f97d8596e166653f46b10d0d2ffa8d734b550ecc98640267e59fd",
+      "manifestEvidenceSHA256": "8b20267fea3f97d8596e166653f46b10d0d2ffa8d734b550ecc98640267e59fd",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "8:23のベニヤミン系譜のZichriは支持されるが、検索した共有人物一覧では確実な対応節を確認できない。",
+      "priorFindings": [],
+      "runtimeDisposition": "primary-only-display-supported",
+      "primaryOnlyRationaleJa": "1CH 8:23 lists Zichri in Benjamin’s genealogy. Reader text stays with the list and distinguishes no unsupported biography; the searched lists concern other Zichris.",
+      "knownBy": {
+        "chapter": 8,
+        "verse": 23
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 8,
+            "verse": 23
+          },
+          "end": {
+            "chapter": 8,
+            "verse": 23
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "ジクリ",
+        "subtitleJa": "ベニヤミン系譜の一人として列挙されます。",
+        "summaryJa": "ベニヤミンの子孫を列挙する系譜で、アブドンとハナンの間に名が挙げられます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "ベニヤミン系譜の一人として列挙されます。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 8:23",
+          "citationURL": "https://ebible.org/engwebp/1CH08.htm#V23",
+          "fixedWEBText": "Abdon, Zichri, Hanan,",
+          "fixedWEBTextSHA256": "ba66590fe77977e3b9e236a74210eeeb6cee6db62fd9ac71fd25d78b924b3f85",
+          "evidenceMode": "verbatim-full-witness"
+        }
+      ],
+      "wikipedia": null,
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。",
+      "qualifierScopeJa": "1CH 8:23 lists Zichri in Benjamin’s genealogy. Reader text stays with the list and distinguishes no unsupported biography; the searched lists concern other Zichris.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "3つの現稿SHA（draft/profile/evidence）が前回独立判定と完全一致するため、前回の内容判定だけを継承。"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:zichri_3070",
+      "draftPath": "drafts/persons_2/1CH_person_zichri_3070.json",
+      "evidencePath": "evidence/persons_2/1CH_person_zichri_3070-sources.json",
+      "currentDraftSHA256": "abbad39242a932bbeb5ea7ed79ffb89bc47f77cecc35229953def5b27b8c95da",
+      "currentProfileSHA256": "1e7f2e5da80b242bcbd6b0b3e649efef13b56bd3569629d8653a1344dd10ef51",
+      "currentEvidenceSHA256": "1c4f2c50ef66d7eebe19bea16c93d40033ba1b12e4bb4c4ca924c031709c03fc",
+      "manifestEvidenceSHA256": "1c4f2c50ef66d7eebe19bea16c93d40033ba1b12e4bb4c4ca924c031709c03fc",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "26:25のエリエゼル系譜上のZichriは支持される。8:23の同名ベニヤミン人とは分離し、候補記事なしを全不存在とは扱わない。",
+      "priorFindings": [],
+      "runtimeDisposition": "primary-only-display-supported",
+      "primaryOnlyRationaleJa": "1CH 26:25 supports Zichri in Eliezer’s genealogy. The reader note distinguishes a namesake from 1CH 8:23, and the current search record says no exact fit rather than claiming none exists.",
+      "knownBy": {
+        "chapter": 26,
+        "verse": 25
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 26,
+            "verse": 25
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 25
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "ジクリ",
+        "subtitleJa": "エリエゼルに連なる系譜に記されます。",
+        "summaryJa": "エリエゼルの系譜で、レハブヤ、イザヤ、ヨラムに続く子孫の列挙に名が記されています。",
+        "identityNoteJa": "同名のベニヤミン人ジクリとは別の系譜用例です。",
+        "historicalRoleJa": "エリエゼルに連なる系譜に記されます。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 26:25",
+          "citationURL": "https://ebible.org/engwebp/1CH26.htm#V25",
+          "fixedWEBText": "His brothers: of Eliezer, Rehabiah his son, and Jeshaiah his son, and Joram his son, and Zichri his son, and Shelomoth his son.",
+          "fixedWEBTextSHA256": "f9bd15e33d7a737f2e10386d62c5a7f11d587f7f7d12cac946d13e676f955e3e",
+          "evidenceMode": "verbatim-full-witness"
+        }
+      ],
+      "wikipedia": null,
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。",
+      "qualifierScopeJa": "1CH 26:25 supports Zichri in Eliezer’s genealogy. The reader note distinguishes a namesake from 1CH 8:23, and the current search record says no exact fit rather than claiming none exists.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "3つの現稿SHA（draft/profile/evidence）が前回独立判定と完全一致するため、前回の内容判定だけを継承。"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:zilthai_3082",
+      "draftPath": "drafts/persons_2/1CH_person_zilthai_3082.json",
+      "evidencePath": "evidence/persons_2/1CH_person_zilthai_3082-sources.json",
+      "currentDraftSHA256": "d18c20db22c9d7782db44d2d82bf4d3ba58ca2d32e9dd81d498b24e5119aadb7",
+      "currentProfileSHA256": "e2f625309ac38f9a39b7f200db7346f7ea11f35d69efbd7ec12ac0f6fcfb7ff4",
+      "currentEvidenceSHA256": "ea289f5a9dbfbb2a394b9cced5ada47a1e5ad30d8facb32cca1b477044007cff",
+      "manifestEvidenceSHA256": "ea289f5a9dbfbb2a394b9cced5ada47a1e5ad30d8facb32cca1b477044007cff",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "8:20のWEB綴りZillethaiを保持し、割当ID名Zilthaiとの転写差を明記。現行調査では適合する記事を確認せず。",
+      "priorFindings": [],
+      "runtimeDisposition": "primary-only-display-supported",
+      "primaryOnlyRationaleJa": "The fixed WEB at 1CH 8:20 spells the name Zillethai. The reader fields explicitly mark the spelling variance and do not broaden it to other namesakes; no linked article content is used.",
+      "knownBy": {
+        "chapter": 8,
+        "verse": 20
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 8,
+            "verse": 20
+          },
+          "end": {
+            "chapter": 8,
+            "verse": 20
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "ジルタイ",
+        "subtitleJa": "ベニヤミン系譜でZillethaiと綴られる名です。",
+        "summaryJa": "ベニヤミンの子らの列挙に「Zillethai」として名が記されます。割当名のZilthaiとは綴りが異なります。",
+        "identityNoteJa": "固定WEBの表記はZillethaiです。索引のZilthaiとの対応は綴り差として記録し、他の同名者を取り込みません。",
+        "historicalRoleJa": "ベニヤミン系譜でZillethaiと綴られる名です。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 8:20",
+          "citationURL": "https://ebible.org/engwebp/1CH08.htm#V20",
+          "fixedWEBText": "Elienai, Zillethai, Eliel,",
+          "fixedWEBTextSHA256": "2fc11c4a5987e46ab94e2e4872be13fd619ec90247d19c26813d825f80d04208",
+          "evidenceMode": "verbatim-full-witness"
+        }
+      ],
+      "wikipedia": null,
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。",
+      "qualifierScopeJa": "The fixed WEB at 1CH 8:20 spells the name Zillethai. The reader fields explicitly mark the spelling variance and do not broaden it to other namesakes; no linked article content is used.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "3つの現稿SHA（draft/profile/evidence）が前回独立判定と完全一致するため、前回の内容判定だけを継承。"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:ziph_3091",
+      "draftPath": "drafts/persons_2/1CH_person_ziph_3091.json",
+      "evidencePath": "evidence/persons_2/1CH_person_ziph_3091-sources.json",
+      "currentDraftSHA256": "29cbb9eadb728fc71592d8cab00aa1b5c63ae07037e004a9dedb19d1f68ba3ea",
+      "currentProfileSHA256": "4542ff2f49d5c193c0ecbdadf03c94de85184108290a6c1e0bdd95d7c69dd3d3",
+      "currentEvidenceSHA256": "d3307fd850e9919c589fce9fbef62e67d8b2dc320a0ba0e44e04a85f29ab9245",
+      "manifestEvidenceSHA256": "d3307fd850e9919c589fce9fbef62e67d8b2dc320a0ba0e44e04a85f29ab9245",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "4:16のZiphは本文にある。Wikipedia候補はZiphahの項目で兄弟関係を述べるだけなので、関連情報に留め、同一人物記事とはしない。",
+      "priorFindings": [],
+      "runtimeDisposition": "related-link-supported",
+      "primaryOnlyRationaleJa": "1CH 4:16 names Ziph in Jerahmeel’s genealogy. The shared list entry discusses Ziphah as brother and cites the verse; it is appropriately relation-only and should remain secondary rather than merge the two people.",
+      "knownBy": {
+        "chapter": 4,
+        "verse": 16
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 4,
+            "verse": 16
+          },
+          "end": {
+            "chapter": 4,
+            "verse": 16
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "ジフ",
+        "subtitleJa": "エレレエルの子として系譜に記されます。",
+        "summaryJa": "ユダの系譜で、エレレエルの子らの一人として挙げられます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "エレレエルの子として系譜に記されます。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 4:16",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V16",
+          "fixedWEBText": "The sons of Jehallelel: Ziph, Ziphah, Tiria, and Asarel.",
+          "fixedWEBTextSHA256": "50f41750ce811658d18c29a61beb7dcadc3873b0c86e818908b301c083d30927",
+          "evidenceMode": "verbatim-full-witness"
+        }
+      ],
+      "wikipedia": {
+        "title": "List of minor Hebrew Bible figures, L–Z",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Ziphah",
+        "kind": "related-section",
+        "noteJa": "The Ziphah entry states that Ziph is his brother and cites 1 Chronicles 4:16; this supports the relation only.",
+        "checkedAt": "2026-10-16",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 4,
+          "verse": 16
+        }
+      },
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。記事固有情報は補助リンク枠に限る。",
+      "qualifierScopeJa": "1CH 4:16 names Ziph in Jerahmeel’s genealogy. The shared list entry discusses Ziphah as brother and cites the verse; it is appropriately relation-only and should remain secondary rather than merge the two people.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "3つの現稿SHA（draft/profile/evidence）が前回独立判定と完全一致するため、前回の内容判定だけを継承。"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:zizah_3090",
+      "draftPath": "drafts/persons_2/1CH_person_zizah_3090.json",
+      "evidencePath": "evidence/persons_2/1CH_person_zizah_3090-sources.json",
+      "currentDraftSHA256": "c734e653ae923a022aa4f501c69c3ddda59c65ad038f82c20ac13480777a71cd",
+      "currentProfileSHA256": "b6b868bf5aa2cca75feca22475d91a1b05a14372d8ef0ddbab04d1a5f31f75b5",
+      "currentEvidenceSHA256": "559b02a5728a474292190ead991a0801480c18a4c7b794c3d00d2159569ec95f",
+      "manifestEvidenceSHA256": "559b02a5728a474292190ead991a0801480c18a4c7b794c3d00d2159569ec95f",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "fail",
+      "runtimeDisposition": "related-link-supported",
+      "primaryOnlyRationaleJa": "WEB 1CH 23:10–11 supplies Zina/Zizah variant sequence; article’s spelling discussion is related material and stays in the auxiliary link, while the verse-gated distinction remains clear.",
+      "knownBy": {
+        "chapter": 23,
+        "verse": 10
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 23,
+            "verse": 10
+          },
+          "end": {
+            "chapter": 23,
+            "verse": 10
+          }
+        },
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 23,
+            "verse": 11
+          },
+          "end": {
+            "chapter": 23,
+            "verse": 11
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "ジナ",
+        "subtitleJa": "シメイの子らの列挙の一人として記されます。",
+        "summaryJa": "シメイの子ら四人の名の一つとして、「ジナ」と記されます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "シメイの子らの列挙の一人として記されます。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [
+        {
+          "textJa": "ジャハテに次ぐ次男をWEBはZizahと綴ります。",
+          "knownBy": {
+            "chapter": 23,
+            "verse": 11
+          },
+          "sourceIds": [
+            "chronicles-person-zizah_3090-webp-1ch-23-11"
+          ]
+        }
+      ],
+      "wikipedia": {
+        "title": "List of minor Hebrew Bible figures, L–Z",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Ziza",
+        "kind": "shared-section",
+        "noteJa": "項目はシメイの子の名をZizahとも記し、ジナとの綴りの関係を扱っています。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": true,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 23,
+          "verse": 11
+        }
+      },
+      "currentClosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "sourceTextSupportJa": "1CH 23:10 has WEB “Zina” among Shimei’s sons and 23:11 spells the parallel second name “Zizah.” Current profile gates the alternate spelling fact to 23:11 and the Wikipedia note at the same later gate. The name correspondence is plausible by list position but remains a textual-spelling relation, not an unqualified identity claim."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:zobebah_3100",
+      "draftPath": "drafts/persons_2/1CH_person_zobebah_3100.json",
+      "evidencePath": "evidence/persons_2/1CH_person_zobebah_3100-sources.json",
+      "currentDraftSHA256": "d48c6d6cdd65fbcc5e8631602fd7dfd2202ee085fcbd9e2e83078b39b8363dea",
+      "currentProfileSHA256": "b3b6c64579b0be78f3587f9511f9d8f1222588817ac07e3a9f3981404c565642",
+      "currentEvidenceSHA256": "ea0bfeb88d3e3296aaf033e214156f5b3c57996aa103e329b0b9784a390b3a8e",
+      "manifestEvidenceSHA256": "ea0bfeb88d3e3296aaf033e214156f5b3c57996aa103e329b0b9784a390b3a8e",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "4:8の父子関係は固定WEBにある。後続句「Aharhelの諸家族」を父子関係に混ぜないという注意は本文構文上の留保だが、summaryの「含めません」は編集的に読めるため、意味維持の自然文修正余地あり。",
+      "priorFindings": [],
+      "runtimeDisposition": "related-link-supported",
+      "primaryOnlyRationaleJa": "1CH 4:8 says Koz fathered Anub and Zobebah; the following Aharhel-families clause is correctly not attached as Zobebah’s parentage. The shared list article supports that exact identification. The sentence explaining the clause boundary is interpretive but grounded in the verse’s syntax.",
+      "knownBy": {
+        "chapter": 4,
+        "verse": 8
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 4,
+            "verse": 8
+          },
+          "end": {
+            "chapter": 4,
+            "verse": 8
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "ゾベバ",
+        "subtitleJa": "コズの子として系譜に記されます。",
+        "summaryJa": "ユダ系譜の列挙で、コズがアヌブとゾベバの父となったと記されます。続く「アハルヘルの諸家族」をゾベバの父子関係には含めません。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "コズの子として系譜に記されます。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 4:8",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V8",
+          "fixedWEBText": "Hakkoz became the father of Anub, Zobebah, and the families of Aharhel the son of Harum.",
+          "fixedWEBTextSHA256": "c446a4871bd022096eabc619cbe0d1cb5e8bb2a8dfc06fa31682a53eeee4cc77",
+          "evidenceMode": "verbatim-full-witness"
+        }
+      ],
+      "wikipedia": {
+        "title": "List of minor Hebrew Bible figures, L–Z",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Zobebah",
+        "kind": "shared-section",
+        "noteJa": "The Zobebah entry identifies the person in 1 Chronicles 4:8 as a son of Koz; the fixed WEB’s “families of Aharhel” clause is not treated as his parentage.",
+        "checkedAt": "2026-10-16",
+        "identityVerified": true,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 4,
+          "verse": 8
+        }
+      },
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。記事固有情報は補助リンク枠に限る。",
+      "qualifierScopeJa": "1CH 4:8 says Koz fathered Anub and Zobebah; the following Aharhel-families clause is correctly not attached as Zobebah’s parentage. The shared list article supports that exact identification. The sentence explaining the clause boundary is interpretive but grounded in the verse’s syntax.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "3つの現稿SHA（draft/profile/evidence）が前回独立判定と完全一致するため、前回の内容判定だけを継承。"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:zur_3111",
+      "draftPath": "drafts/persons_2/1CH_person_zur_3111.json",
+      "evidencePath": "evidence/persons_2/1CH_person_zur_3111-sources.json",
+      "currentDraftSHA256": "16caa471984c80a1cb03c1923de8d27f9866cfb989bf2bba0339344a4c60172d",
+      "currentProfileSHA256": "00e513a053a74a7af310681cba75e9c543848ffc62fbbc7aea91d1341cc3de4f",
+      "currentEvidenceSHA256": "619434194848a57d8a1e52428c81be33c2dde016eef1f856a89336615136ced1",
+      "manifestEvidenceSHA256": "619434194848a57d8a1e52428c81be33c2dde016eef1f856a89336615136ced1",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "8:30のベニヤミン系譜を支持。9:36の再掲もプロフィールに含むが、今回の共有記事検索で特定のZur記事を確認できず。",
+      "priorFindings": [],
+      "runtimeDisposition": "primary-only-display-supported",
+      "primaryOnlyRationaleJa": "1CH 8:30 lists Zur after Abdon and 9:36 repeats the sequence. The summary is consistent with both cited verses; the limited null search distinguishes other similar names.",
+      "knownBy": {
+        "chapter": 8,
+        "verse": 30
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 8,
+            "verse": 30
+          },
+          "end": {
+            "chapter": 8,
+            "verse": 30
+          }
+        },
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 9,
+            "verse": 36
+          },
+          "end": {
+            "chapter": 9,
+            "verse": 36
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "ツル",
+        "subtitleJa": "ベニヤミン系譜でアブドンの後に名が挙げられます。",
+        "summaryJa": "ベニヤミンの子孫の家系で、アブドンの後にツル、キシュ、バアル、ナダブが挙げられます。9:36は同じ並びを繰り返します。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "ベニヤミン系譜でアブドンの後に名が挙げられます。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 8:30",
+          "citationURL": "https://ebible.org/engwebp/1CH08.htm#V30",
+          "fixedWEBText": "with his firstborn son Abdon, Zur, Kish, Baal, Nadab,",
+          "fixedWEBTextSHA256": "f611ded5cc88c94aebbbf9607ff8a01eb0a076b807216db3cff0d1c6e823b8ca",
+          "evidenceMode": "verbatim-full-witness"
+        },
+        {
+          "ref": "1CH 9:36",
+          "citationURL": "https://ebible.org/engwebp/1CH09.htm#V36",
+          "fixedWEBText": "His firstborn son was Abdon, then Zur, Kish, Baal, Ner, Nadab,",
+          "fixedWEBTextSHA256": "89cc3440ca99bd2fcf95d0015fd8d530b4bcc5d9b348ea30a2613aa0c0e52750",
+          "evidenceMode": "verbatim-full-witness"
+        }
+      ],
+      "wikipedia": null,
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。",
+      "qualifierScopeJa": "1CH 8:30 lists Zur after Abdon and 9:36 repeats the sequence. The summary is consistent with both cited verses; the limited null search distinguishes other similar names.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "3つの現稿SHA（draft/profile/evidence）が前回独立判定と完全一致するため、前回の内容判定だけを継承。"
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:aaron_1",
+      "draftPath": "drafts/persons_2/2CH_person_aaron_1.json",
+      "evidencePath": "evidence/persons_2/2CH_person_aaron_1-sources.json",
+      "currentDraftSHA256": "33d76aceb85ef142319f7a554f96ada099d33c0eb4268f4d8698dc4c2c4c84fd",
+      "currentProfileSHA256": "5f8fae7896a1d568205fe1125182f85b61033426354f54613ba348542cb9a463",
+      "currentEvidenceSHA256": "e19076c4058b4e81901887cc9a54b7a0cd938a3a32e53783a9eb1a56fef6f2a9",
+      "manifestEvidenceSHA256": "e19076c4058b4e81901887cc9a54b7a0cd938a3a32e53783a9eb1a56fef6f2a9",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "2CH13:9などの「アロンの子ら」は祭司集団を指す本文用法で、アロン本人の行動と区別している。人物IDを集団用法へ使うためcontext/collective表示の分離が前提。",
+      "priorFindings": [],
+      "runtimeDisposition": "related-link-supported",
+      "primaryOnlyRationaleJa": "2CH 13:9 and the cited passages use “sons of Aaron” for the priestly line, not an action by Aaron himself. Reader fields explicitly explain this collective/lineage use. The Aaron article is contextual background only and is correctly relation-only.",
+      "knownBy": {
+        "chapter": 13,
+        "verse": 9
+      },
+      "passages": [
+        {
+          "book": "2CH",
+          "start": {
+            "chapter": 13,
+            "verse": 9
+          },
+          "end": {
+            "chapter": 13,
+            "verse": 9
+          }
+        },
+        {
+          "book": "2CH",
+          "start": {
+            "chapter": 13,
+            "verse": 10
+          },
+          "end": {
+            "chapter": 13,
+            "verse": 10
+          }
+        },
+        {
+          "book": "2CH",
+          "start": {
+            "chapter": 26,
+            "verse": 18
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 18
+          }
+        },
+        {
+          "book": "2CH",
+          "start": {
+            "chapter": 29,
+            "verse": 21
+          },
+          "end": {
+            "chapter": 29,
+            "verse": 21
+          }
+        },
+        {
+          "book": "2CH",
+          "start": {
+            "chapter": 31,
+            "verse": 19
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 19
+          }
+        },
+        {
+          "book": "2CH",
+          "start": {
+            "chapter": 35,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 35,
+            "verse": 14
+          }
+        }
+      ],
+      "identityType": "collective",
+      "readerFields": {
+        "nameJa": "アロンの子孫",
+        "subtitleJa": "祭司たちは「アロンの子ら」と呼ばれ、レビ人とともに主への奉仕を担う者として述べられます。ここではアロン本人の行動ではなく、祭司の家系を指しています。",
+        "summaryJa": "祭司たちは「アロンの子ら」と呼ばれ、レビ人とともに主への奉仕を担う者として述べられます。ここではアロン本人の行動ではなく、祭司の家系を指しています。",
+        "identityNoteJa": "祭司の家系名として「アロンの子ら」と記されます。個人アロンのこの書での行動を述べる箇所ではありません。",
+        "historicalRoleJa": "祭司の家系名として「アロンの子ら」と記されます。個人アロンのこの書での行動を述べる箇所ではありません。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 13:9",
+          "citationURL": "https://ebible.org/engwebp/2CH13.htm#V9",
+          "fixedWEBText": "Haven’t you driven out the priests of the LORD, the sons of Aaron, and the Levites, and made priests for yourselves according to the ways of the peoples of other lands? Whoever comes to consecrate himself with a young bull and seven rams may be a priest of those who are no gods.",
+          "fixedWEBTextSHA256": "0a91a40e32f71d4e4c0fba210376d7c009a5e7cdf8afb8381f11fbf298e84f07",
+          "evidenceMode": "verbatim"
+        },
+        {
+          "ref": "2CH 13:10",
+          "citationURL": "https://ebible.org/engwebp/2CH13.htm#V10",
+          "fixedWEBText": "“But as for us, the LORD is our God, and we have not forsaken him. We have priests serving the LORD, the sons of Aaron, and the Levites in their work.",
+          "fixedWEBTextSHA256": "f2025942c20c15523e8051f75e32c73d2abf690dbee0779da60fbc3ac76b40f7",
+          "evidenceMode": "verbatim"
+        },
+        {
+          "ref": "2CH 26:18",
+          "citationURL": "https://ebible.org/engwebp/2CH26.htm#V18",
+          "fixedWEBText": "They resisted Uzziah the king, and said to him, “It isn’t for you, Uzziah, to burn incense to the LORD, but for the priests the sons of Aaron, who are consecrated to burn incense. Go out of the sanctuary, for you have trespassed. It will not be for your honor from the LORD God.”",
+          "fixedWEBTextSHA256": "87168819ad6f48e29a59fbd6b05fc48240b36227a37b0f91ffa87ee7fbbaad66",
+          "evidenceMode": "verbatim"
+        },
+        {
+          "ref": "2CH 29:21",
+          "citationURL": "https://ebible.org/engwebp/2CH29.htm#V21",
+          "fixedWEBText": "They brought seven bulls, seven rams, seven lambs, and seven male goats, for a sin offering for the kingdom, for the sanctuary, and for Judah. He commanded the priests the sons of Aaron to offer them on the LORD’s altar.",
+          "fixedWEBTextSHA256": "8e37d2ff2ad2dd48f9d2714134e1ab09014e80ff149f2a4c37ee6f724cee5937",
+          "evidenceMode": "verbatim"
+        },
+        {
+          "ref": "2CH 31:19",
+          "citationURL": "https://ebible.org/engwebp/2CH31.htm#V19",
+          "fixedWEBText": "Also for the sons of Aaron the priests, who were in the fields of the pasture lands of their cities, in every city, there were men who were mentioned by name to give portions to all the males among the priests and to all who were listed by genealogy among the Levites.",
+          "fixedWEBTextSHA256": "b85174ddbf1e99672f757615438b41169198c4ebf3a8a65725ace0f3eb05a559",
+          "evidenceMode": "verbatim"
+        },
+        {
+          "ref": "2CH 35:14",
+          "citationURL": "https://ebible.org/engwebp/2CH35.htm#V14",
+          "fixedWEBText": "Afterward they prepared for themselves and for the priests, because the priests the sons of Aaron were busy with offering the burnt offerings and the fat until night. Therefore the Levites prepared for themselves and for the priests the sons of Aaron.",
+          "fixedWEBTextSHA256": "a4b7c95eb6a93a53e6d4a500864f1f46a750b8e8180f02f01ea2dbb0ba68fe0f",
+          "evidenceMode": "verbatim"
+        }
+      ],
+      "wikipedia": {
+        "title": "Aaron",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Aaron",
+        "kind": "related-section",
+        "noteJa": "記事はアロンとその子孫に結び付く祭司職を説明する。これは2歴代誌13:9の「アロンの子ら」という家系表現に関する背景で、個人アロンとの同一視を示さない。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 13,
+          "verse": 9
+        }
+      },
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。記事固有情報は補助リンク枠に限る。",
+      "qualifierScopeJa": "2CH 13:9 and the cited passages use “sons of Aaron” for the priestly line, not an action by Aaron himself. Reader fields explicitly explain this collective/lineage use. The Aaron article is contextual background only and is correctly relation-only.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "draft/profileは前回と完全一致。旧evidence bytesをpreservation/objectsの旧SHAで復元し、JSON差分がwikiBodyReadとその複製SHAキーのみであることを全27件で確認。旧本文/source情報は不変。今回、現在のprofile/wikiリンクと記事の指定節・表行を実記事で再確認した。"
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:abihail_31",
+      "draftPath": "drafts/persons_2/2CH_person_abihail_31.json",
+      "evidencePath": "evidence/persons_2/2CH_person_abihail_31-sources.json",
+      "currentDraftSHA256": "9389a798228594dfd184569e5f27d0cd66e851f9186547bdd8346a4be08f2b3c",
+      "currentProfileSHA256": "16277e7a1e62882d6f5b5878b0e76088519247c3e8c14f0ebefb94c6486537a5",
+      "currentEvidenceSHA256": "1848426acf0f1c3d4444fe92160c3790a67efcaf2a42f1ae855205ab11d84e4b",
+      "manifestEvidenceSHA256": "1848426acf0f1c3d4444fe92160c3790a67efcaf2a42f1ae855205ab11d84e4b",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "11:18の系譜はエリヤブの娘アビハイルとマハラトの母を示す。記事は本人記事でなくEliab項目内の関連記述として採用されている。",
+      "priorFindings": [],
+      "runtimeDisposition": "related-link-supported",
+      "primaryOnlyRationaleJa": "2CH 11:18 identifies Abihail as Eliab’s daughter and Mahalath’s mother. Reader fields retain those relationships and avoid other Abihails; the Eliab article mention is properly related-only.",
+      "knownBy": {
+        "chapter": 11,
+        "verse": 18
+      },
+      "passages": [
+        {
+          "book": "2CH",
+          "start": {
+            "chapter": 11,
+            "verse": 18
+          },
+          "end": {
+            "chapter": 11,
+            "verse": 18
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "アビハイル",
+        "subtitleJa": "エリヤブの娘アビハイルは、レハブアムが迎えた妻マハラトの母として系譜に記されます。",
+        "summaryJa": "エリヤブの娘アビハイルは、レハブアムが迎えた妻マハラトの母として系譜に記されます。",
+        "identityNoteJa": "この節のアビハイルはエリヤブの娘です。同名人物との同一性は本文から広げません。",
+        "historicalRoleJa": "この節のアビハイルはエリヤブの娘です。同名人物との同一性は本文から広げません。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 11:18",
+          "citationURL": "https://ebible.org/engwebp/2CH11.htm#V18",
+          "fixedWEBText": "Rehoboam took a wife for himself, Mahalath the daughter of Jerimoth the son of David and of Abihail the daughter of Eliab the son of Jesse.",
+          "fixedWEBTextSHA256": "45aeeb9c119b4b6166059057588b2c4083f8b64608c443ab46f9918b7ab9efad",
+          "evidenceMode": "verbatim"
+        }
+      ],
+      "wikipedia": {
+        "title": "Eliab",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Eliab",
+        "kind": "related-section",
+        "noteJa": "記事本文はエリヤブの娘アビハイルについて触れます。ここでの系譜上の関係を補う関連記事で、アビハイル本人の記事ではありません。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 11,
+          "verse": 18
+        }
+      },
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。記事固有情報は補助リンク枠に限る。",
+      "qualifierScopeJa": "2CH 11:18 identifies Abihail as Eliab’s daughter and Mahalath’s mother. Reader fields retain those relationships and avoid other Abihails; the Eliab article mention is properly related-only.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "draft/profileは前回と完全一致。旧evidence bytesをpreservation/objectsの旧SHAで復元し、JSON差分がwikiBodyReadとその複製SHAキーのみであることを全27件で確認。旧本文/source情報は不変。今回、現在のprofile/wikiリンクと記事の指定節・表行を実記事で再確認した。"
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:azariah_381",
+      "draftPath": "drafts/persons_2/2CH_person_azariah_381.json",
+      "evidencePath": "evidence/persons_2/2CH_person_azariah_381-sources.json",
+      "currentDraftSHA256": "b1374da765e04ae35e57e17b6b784890f79b662046f526337181912c6a4ef583",
+      "currentProfileSHA256": "d4e68e8724ebbaa2c939b529a7dfceaced97a6e4a57f24e0eb2177e8a7148997",
+      "currentEvidenceSHA256": "521f418fdaf49f642e97e6ea887f6fc2ce9185bd4d8ebe908d0aace4efa67df4",
+      "manifestEvidenceSHA256": "521f418fdaf49f642e97e6ea887f6fc2ce9185bd4d8ebe908d0aace4efa67df4",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "21:2の列挙に同名Azariahが二度現れ、profile自体も候補IDをどちらへ割当てない。統合時に個人カードの曖昧さを解消するまで個別 identity は留保。",
+      "priorFindings": [],
+      "runtimeDisposition": "hold",
+      "primaryOnlyRationaleJa": "2CH 21:2 repeats the name Azariah among Jehoshaphat’s sons, and reader fields correctly say the two occurrences cannot be distinguished. Because the candidate ID cannot be assigned to one occurrence, suppress individual runtime display until the identity binding is resolved; linked article remains relation-only.",
+      "knownBy": {
+        "chapter": 21,
+        "verse": 2
+      },
+      "passages": [
+        {
+          "book": "2CH",
+          "start": {
+            "chapter": 21,
+            "verse": 2
+          },
+          "end": {
+            "chapter": 21,
+            "verse": 2
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "アザルヤ",
+        "subtitleJa": "ヨシャファトの子らを列挙する節には、同じ「アザルヤ」という名が二度現れます。",
+        "summaryJa": "ヨシャファトの子らを列挙する節には、同じ「アザルヤ」という名が二度現れます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "この節はアザルヤを二度列挙し、父ヨシャファトを共通に記しますが、両者を区別する情報はありません。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 21:2",
+          "citationURL": "https://ebible.org/engwebp/2CH21.htm#V2",
+          "fixedWEBText": "He had brothers, the sons of Jehoshaphat: Azariah, Jehiel, Zechariah, Azariah, Michael, and Shephatiah. All these were the sons of Jehoshaphat king of Israel.",
+          "fixedWEBTextSHA256": "b340c9b96e7ef9dc32831f0056dcc817ecf5343f1ad6234f00f3b047a617caa2",
+          "evidenceMode": "verbatim"
+        }
+      ],
+      "wikipedia": {
+        "title": "Jehoshaphat",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Jehoshaphat",
+        "kind": "related-section",
+        "noteJa": "記事のヨシャファトの子の一覧にAzariahとAzariahuが挙げられるが、WEB 2歴代誌21:2に重複する二つのAzariahとの対応は確定しない。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 21,
+          "verse": 2
+        }
+      },
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。",
+      "qualifierScopeJa": "2CH 21:2 repeats the name Azariah among Jehoshaphat’s sons, and reader fields correctly say the two occurrences cannot be distinguished. Because the candidate ID cannot be assigned to one occurrence, suppress individual runtime display until the identity binding is resolved; linked article remains relation-only.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "draft/profileは前回と完全一致。旧evidence bytesをpreservation/objectsの旧SHAで復元し、JSON差分がwikiBodyReadとその複製SHAキーのみであることを全27件で確認。旧本文/source情報は不変。今回、現在のprofile/wikiリンクと記事の指定節・表行を実記事で再確認した。"
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:azariah_384",
+      "draftPath": "drafts/persons_2/2CH_person_azariah_384.json",
+      "evidencePath": "evidence/persons_2/2CH_person_azariah_384-sources.json",
+      "currentDraftSHA256": "b3e25e1a5ef880ddb85ae187c6dadca0e5d34fb065070d1008f311e365bd83f1",
+      "currentProfileSHA256": "f3198b0341feea220f7f8432d41d26ffdf3f714ee0c20a56160960cc1cb1dde6",
+      "currentEvidenceSHA256": "5a84f020d14c79e6f347ff5f7a681ba999ebd49c1edd4791578e68f4b9640198",
+      "manifestEvidenceSHA256": "5a84f020d14c79e6f347ff5f7a681ba999ebd49c1edd4791578e68f4b9640198",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "23:1の二人は別父名で区別されるが、この候補IDがどちらかは判定されていない。両方を一人として扱わない。",
+      "priorFindings": [],
+      "runtimeDisposition": "hold",
+      "primaryOnlyRationaleJa": "2CH 23:1 names two centurions called Azariah, each with a different father. Reader fields preserve that ambiguity; the candidate ID is not mapped to either one. Do not render an individual card as though resolved; article remains a related disambiguation aid.",
+      "knownBy": {
+        "chapter": 23,
+        "verse": 1
+      },
+      "passages": [
+        {
+          "book": "2CH",
+          "start": {
+            "chapter": 23,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 23,
+            "verse": 1
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "アザルヤ",
+        "subtitleJa": "エホヤダが契約に加えた百人隊長たちの名簿には、アザルヤという名が二人、それぞれ異なる父名を伴って記されます。",
+        "summaryJa": "エホヤダが契約に加えた百人隊長たちの名簿には、アザルヤという名が二人、それぞれ異なる父名を伴って記されます。",
+        "identityNoteJa": "同じ節に二人のアザルヤがいます。父名で区別されますが、このID候補がどちらを指すかは確定しません。",
+        "historicalRoleJa": "同じ節に二人のアザルヤがいます。父名で区別されますが、このID候補がどちらを指すかは確定しません。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 23:1",
+          "citationURL": "https://ebible.org/engwebp/2CH23.htm#V1",
+          "fixedWEBText": "In the seventh year, Jehoiada strengthened himself, and took the captains of hundreds—Azariah the son of Jeroham, Ishmael the son of Jehohanan, Azariah the son of Obed, Maaseiah the son of Adaiah, and Elishaphat the son of Zichri—into a covenant with him.",
+          "fixedWEBTextSHA256": "ecf68f83102cedb02c63aca45dbf286e6bd36d7a0ad0295d3117bbde48fee9f4",
+          "evidenceMode": "verbatim"
+        }
+      ],
+      "wikipedia": {
+        "title": "List of minor Hebrew Bible figures, A–K",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Azariah",
+        "kind": "related-section",
+        "noteJa": "一覧は2歴代誌23:1の異なる父名を持つ二人のアザルヤを別人として列挙するが、この候補IDがどちらに対応するかは示さない。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 23,
+          "verse": 1
+        }
+      },
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。",
+      "qualifierScopeJa": "2CH 23:1 names two centurions called Azariah, each with a different father. Reader fields preserve that ambiguity; the candidate ID is not mapped to either one. Do not render an individual card as though resolved; article remains a related disambiguation aid.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "draft/profileは前回と完全一致。旧evidence bytesをpreservation/objectsの旧SHAで復元し、JSON差分がwikiBodyReadとその複製SHAキーのみであることを全27件で確認。旧本文/source情報は不変。今回、現在のprofile/wikiリンクと記事の指定節・表行を実記事で再確認した。"
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:azariah_541",
+      "draftPath": "drafts/persons_2/2CH_person_azariah_541.json",
+      "evidencePath": "evidence/persons_2/2CH_person_azariah_541-sources.json",
+      "currentDraftSHA256": "f36de7aed6494e220e16def803b729105dcedf5cfc8db6936a2d9974c35b8b17",
+      "currentProfileSHA256": "d5f9e1979c0b1b6ae403a5438a4efbd46da8ac655bc6dd656a4243447d37f4b9",
+      "currentEvidenceSHA256": "e48fb150b13c70a0a40c8378d1857bcc0690c86221ab75c12c58cc9683a2b720",
+      "manifestEvidenceSHA256": "e48fb150b13c70a0a40c8378d1857bcc0690c86221ab75c12c58cc9683a2b720",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "31:10/13で祭司長と監督一覧のAzariahを結ぶprimary文脈はある。適合する記事は特定されず、限定的な検索記録のまま。",
+      "priorFindings": [],
+      "runtimeDisposition": "primary-only-display-supported",
+      "primaryOnlyRationaleJa": "2CH 31:10 gives the chief priest Azariah’s answer, and 31:13 names Azariah among the overseers. Reader text stays within these passages; null article evidence expressly notes a conflicting secondary page rather than importing it.",
+      "knownBy": {
+        "chapter": 31,
+        "verse": 10
+      },
+      "passages": [
+        {
+          "book": "2CH",
+          "start": {
+            "chapter": 31,
+            "verse": 10
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 10
+          }
+        },
+        {
+          "book": "2CH",
+          "start": {
+            "chapter": 31,
+            "verse": 13
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 13
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "アザルヤ",
+        "subtitleJa": "祭司長アザルヤは、民が主の家へ献げ物を運び始めてから十分に食べ、余りも出ていると答えます。",
+        "summaryJa": "祭司長アザルヤは、民が主の家へ献げ物を運び始めてから十分に食べ、余りも出ていると答えます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "祭司長で、ザドクの家系に属すると記されます。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 31:10",
+          "citationURL": "https://ebible.org/engwebp/2CH31.htm#V10",
+          "fixedWEBText": "Azariah the chief priest, of the house of Zadok, answered him and said, “Since people began to bring the offerings into the LORD’s house, we have eaten and had enough, and have plenty left over, for the LORD has blessed his people; and that which is left is this great store.”",
+          "fixedWEBTextSHA256": "0bf73da54447f9207e0e2fa1ca7dfecb221746718d156d3924e479192f7d014e",
+          "evidenceMode": "verbatim"
+        },
+        {
+          "ref": "2CH 31:13",
+          "citationURL": "https://ebible.org/engwebp/2CH31.htm#V13",
+          "fixedWEBText": "Jehiel, Azaziah, Nahath, Asahel, Jerimoth, Jozabad, Eliel, Ismachiah, Mahath, and Benaiah were overseers under the hand of Conaniah and Shimei his brother, by the appointment of Hezekiah the king and Azariah the ruler of God’s house.",
+          "fixedWEBTextSHA256": "b5d9689e709bf2d8f859a64f0e9022cd3cdb677a5ddd6454c5d792cb4293a552",
+          "evidenceMode": "verbatim"
+        }
+      ],
+      "wikipedia": null,
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。",
+      "qualifierScopeJa": "2CH 31:10 gives the chief priest Azariah’s answer, and 31:13 names Azariah among the overseers. Reader text stays within these passages; null article evidence expressly notes a conflicting secondary page rather than importing it.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "3つの現稿SHA（draft/profile/evidence）が前回独立判定と完全一致するため、前回の内容判定だけを継承。"
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:cononiah_955",
+      "draftPath": "drafts/persons_2/2CH_person_cononiah_955.json",
+      "evidencePath": "evidence/persons_2/2CH_person_cononiah_955-sources.json",
+      "currentDraftSHA256": "65ca11b4bf5751a3658d3dd905e0829cec260c91a3841905f5dbe18b9a78c9b1",
+      "currentProfileSHA256": "470e2d9602c7178b4bc833b859fb58e922ca205a9d1581fb7a05e4f2e5085b53",
+      "currentEvidenceSHA256": "61a94be99db6d4bb202cd942757dd33de768c6604db64f9cf56a6c8c883bf2ac",
+      "manifestEvidenceSHA256": "61a94be99db6d4bb202cd942757dd33de768c6604db64f9cf56a6c8c883bf2ac",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "31:12–13の管理者Conaniah/Konaniah用例は本文で確実。35:9のWEB表記Conaniahとの同一性は記事もprofile noteも断定しないためrelation-onlyの扱いが必要。",
+      "priorFindings": [],
+      "runtimeDisposition": "hold",
+      "primaryOnlyRationaleJa": "2CH 31:12–13 supports the administrator Conaniah and his brother Shimei. Reader note correctly does not equate him with the similar 35:9 WEB form; the linked near-spelling list is only related. Retain as qualified and hold cross-occurrence identity until resolved.",
+      "knownBy": {
+        "chapter": 31,
+        "verse": 12
+      },
+      "passages": [
+        {
+          "book": "2CH",
+          "start": {
+            "chapter": 31,
+            "verse": 12
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 12
+          }
+        },
+        {
+          "book": "2CH",
+          "start": {
+            "chapter": 31,
+            "verse": 13
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 13
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "コナンヤ",
+        "subtitleJa": "コナンヤは献げ物や十分の一の品を忠実に扱うレビ人の監督として記されます。",
+        "summaryJa": "コナンヤは献げ物や十分の一の品を忠実に扱うレビ人の監督として記されます。",
+        "identityNoteJa": "兄弟シメイとともに、集められた献げ物を管理する立場にあります。別箇所の同名者との同一性は確定しません。",
+        "historicalRoleJa": "兄弟シメイとともに、集められた献げ物を管理する立場にあります。別箇所の同名者との同一性は確定しません。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 31:12",
+          "citationURL": "https://ebible.org/engwebp/2CH31.htm#V12",
+          "fixedWEBText": "They brought in the offerings, the tithes, and the dedicated things faithfully. Conaniah the Levite was ruler over them, and Shimei his brother was second.",
+          "fixedWEBTextSHA256": "c93da250aa767e12e10441ba374683056514b16c157324c18465fc6c614ca1f2",
+          "evidenceMode": "verbatim"
+        },
+        {
+          "ref": "2CH 31:13",
+          "citationURL": "https://ebible.org/engwebp/2CH31.htm#V13",
+          "fixedWEBText": "Jehiel, Azaziah, Nahath, Asahel, Jerimoth, Jozabad, Eliel, Ismachiah, Mahath, and Benaiah were overseers under the hand of Conaniah and Shimei his brother, by the appointment of Hezekiah the king and Azariah the ruler of God’s house.",
+          "fixedWEBTextSHA256": "b5d9689e709bf2d8f859a64f0e9022cd3cdb677a5ddd6454c5d792cb4293a552",
+          "evidenceMode": "verbatim"
+        }
+      ],
+      "wikipedia": {
+        "title": "List of minor Hebrew Bible figures, A–K",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Conaniah",
+        "kind": "related-section",
+        "noteJa": "記事は近似するConaniah/Konaniah綴りを扱うが、2歴代誌35:9のWEB表記Cononiahとの同一性は記事の項目だけでは確定しない。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 31,
+          "verse": 12
+        }
+      },
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。",
+      "qualifierScopeJa": "2CH 31:12–13 supports the administrator Conaniah and his brother Shimei. Reader note correctly does not equate him with the similar 35:9 WEB form; the linked near-spelling list is only related. Retain as qualified and hold cross-occurrence identity until resolved.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "draft/profileは前回と完全一致。旧evidence bytesをpreservation/objectsの旧SHAで復元し、JSON差分がwikiBodyReadとその複製SHAキーのみであることを全27件で確認。旧本文/source情報は不変。今回、現在のprofile/wikiリンクと記事の指定節・表行を実記事で再確認した。"
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:elizaphan_1189",
+      "draftPath": "drafts/persons_2/2CH_person_elizaphan_1189.json",
+      "evidencePath": "evidence/persons_2/2CH_person_elizaphan_1189-sources.json",
+      "currentDraftSHA256": "e2e0f868f74808b2087e5d273c96894ef68db2ff6b2adf1a22f2fff07ce3f2b2",
+      "currentProfileSHA256": "2e9f38ea3f036695534ea18d0d95901e69845616d12036ccb7c32b3f35226c8a",
+      "currentEvidenceSHA256": "531a0529329aa05ddbde3bb01237acb6d0eac8151937599685bb6f18665fc073",
+      "manifestEvidenceSHA256": "531a0529329aa05ddbde3bb01237acb6d0eac8151937599685bb6f18665fc073",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "29:13の「エリザファンの子ら」は家系/家族表現として扱われ、シムリとイエイエルを個人Elizaphan本人の行動へ転換しない。適合記事を確認したとはしていない。",
+      "priorFindings": [],
+      "runtimeDisposition": "primary-only-display-supported",
+      "primaryOnlyRationaleJa": "2CH 29:13 says “sons of Elizaphan” and names Shimri and Jeiel. Reader fields correctly describe the lineage expression without assigning the separate Numbers 34:25 Elizaphan biography; the article search is explicitly a no-exact-fit search, not proof of absence.",
+      "knownBy": {
+        "chapter": 29,
+        "verse": 13
+      },
+      "passages": [
+        {
+          "book": "2CH",
+          "start": {
+            "chapter": 29,
+            "verse": 13
+          },
+          "end": {
+            "chapter": 29,
+            "verse": 13
+          }
+        }
+      ],
+      "identityType": "collective",
+      "readerFields": {
+        "nameJa": "エリザファンの家系",
+        "subtitleJa": "この箇所では「エリザファンの子ら」としてシムリとイエイエルが挙げられます。ここでの名は家系の呼称で、祖先個人の生涯は記されません。",
+        "summaryJa": "この箇所では「エリザファンの子ら」としてシムリとイエイエルが挙げられます。ここでの名は家系の呼称で、祖先個人の生涯は記されません。",
+        "identityNoteJa": "「エリザファンの子ら」という家系表現です。",
+        "historicalRoleJa": "「エリザファンの子ら」という家系表現です。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 29:13",
+          "citationURL": "https://ebible.org/engwebp/2CH29.htm#V13",
+          "fixedWEBText": "and of the sons of Elizaphan, Shimri and Jeuel; and of the sons of Asaph, Zechariah and Mattaniah;",
+          "fixedWEBTextSHA256": "87270bce332a11c583dc6b9f3a095a2beed47981f1452c1c8fc794ecd9525769",
+          "evidenceMode": "verbatim"
+        }
+      ],
+      "wikipedia": null,
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。",
+      "qualifierScopeJa": "2CH 29:13 says “sons of Elizaphan” and names Shimri and Jeiel. Reader fields correctly describe the lineage expression without assigning the separate Numbers 34:25 Elizaphan biography; the article search is explicitly a no-exact-fit search, not proof of absence.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "3つの現稿SHA（draft/profile/evidence）が前回独立判定と完全一致するため、前回の内容判定だけを継承。"
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:huram_1575",
+      "draftPath": "drafts/persons_2/2CH_person_huram_1575.json",
+      "evidencePath": "evidence/persons_2/2CH_person_huram_1575-sources.json",
+      "currentDraftSHA256": "98ac7e7c31007d064fb60dacffc6efec9ab6a1130e73eacbb4e39434a5eff8a8",
+      "currentProfileSHA256": "e5e9196f377eb65a14f03b8c549711fac8a83069e2c2cc58e7fdf7bc6d1ad6fa",
+      "currentEvidenceSHA256": "2f042bb13423e7a80521135c67c45275ec4150d65eeae41ef8f6aa28ece32d43",
+      "manifestEvidenceSHA256": "2f042bb13423e7a80521135c67c45275ec4150d65eeae41ef8f6aa28ece32d43",
+      "evidenceManifestBinding": "match",
+      "priorIndependentDecision": "qualified",
+      "priorIndependentReviewReasonJa": "2:13はHuram-abiを熟練工として送ったと明記し、2:14が父母・技能を展開する。記事Solomon’s Temple#ConstructionはHuram-abiとの関連を示すが、監督役の情報はこの初出節のprimary claimではない。evidence 2:14行は全文ではなく正確な要約として記録されている。",
+      "priorFindings": [],
+      "runtimeDisposition": "related-link-supported",
+      "primaryOnlyRationaleJa": "2CH 2:13–14 supports the skilled artisan identity and the literal quote/paraphrase distinction is now corrected; the supervisor claim is only in the related Temple article, so that detail is not primary-only display content.",
+      "knownBy": {
+        "chapter": 2,
+        "verse": 13
+      },
+      "passages": [
+        {
+          "book": "2CH",
+          "start": {
+            "chapter": 2,
+            "verse": 13
+          },
+          "end": {
+            "chapter": 2,
+            "verse": 13
+          }
+        },
+        {
+          "book": "2CH",
+          "start": {
+            "chapter": 2,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 2,
+            "verse": 14
+          }
+        }
+      ],
+      "identityType": null,
+      "readerFields": {
+        "nameJa": "フラム・アビ",
+        "subtitleJa": "ティルスの王フラムは、技術に優れたフラム・アビをソロモンのもとへ送ったと記します。",
+        "summaryJa": "ティルスの王フラムは、技術に優れたフラム・アビをソロモンのもとへ送ったと記します。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "フラム王が派遣する、技術に優れた職人です。",
+        "modernLocationJa": null,
+        "locationNoteJa": null
+      },
+      "facts": [],
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 2:13",
+          "citationURL": "https://ebible.org/engwebp/2CH02.htm#V13",
+          "fixedWEBText": "Now I have sent a skillful man, endowed with understanding, Huram-abi,",
+          "fixedWEBTextSHA256": "2182f9964b6369df7fc4d25ac4e1afe048b8a0272f2ee5c40c93d00afcddd704",
+          "evidenceMode": "verbatim"
+        },
+        {
+          "ref": "2CH 2:14",
+          "citationURL": "https://ebible.org/engwebp/2CH02.htm#V14",
+          "fixedWEBText": "the son of a woman of the daughters of Dan; and his father was a man of Tyre. He is skillful to work in gold, in silver, in bronze, in iron, in stone, in timber, in purple, in blue, in fine linen, and in crimson, also to engrave any kind of engraving and to devise any device, that there may be a place appointed to him with your skillful men, and with the skillful men of my lord David your father.",
+          "fixedWEBTextSHA256": "9ea1f0e37dabd5b3f972f3fac991aa28385569dfd59b3adcbd02f410c8542def",
+          "evidenceMode": "paraphrase-consistent"
+        }
+      ],
+      "wikipedia": {
+        "title": "Solomon's Temple",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Solomon%27s_Temple#Construction",
+        "kind": "related-section",
+        "noteJa": "記事はティルスから来た熟練工をHiramまたはHuram-abiと呼び、神殿建設を監督したとする。これはWEBの職人名に関連する説明であり、ヒラム王とは区別する。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 2,
+          "verse": 13
+        }
+      },
+      "wikipediaVisibilityRecommendationJa": "primary-only表示では非表示。記事固有情報は補助リンク枠に限る。",
+      "qualifierScopeJa": "2CH 2:13–14 supports Huram-abi as the skilled artisan and the parentage/skills expansion. Reader fields do not state the article’s “supervised construction” claim; the Solomon’s Temple article is related-only and should stay secondary. Evidence has a source-field issue described in the paraphrase audit below.",
+      "currentReclosureReportSHA256": "22855f4e5f5ad3dc183194d88c4fbb7e0d6839c9f94894c828193d132f91113f",
+      "currentClosureBasisJa": "全reader欄、knownBy/passages、全fact gate、primary witness text/summary distinction and current Wikipedia URL/section/gate were rechecked against the pinned text. Unchanged source citations are current-manifest bound."
+    }
+  ],
+  "primaryTextFieldAudit": [
+    {
+      "book": "2CH",
+      "entityID": "person:ishmael_633",
+      "draftPath": "drafts/persons_2/2CH_person_ishmael_633.json",
+      "evidencePath": "evidence/persons_2/2CH_person_ishmael_633-sources.json",
+      "currentDraftSHA256": "a948b1d0c46da2334b208ee621a0b18ce7df801fbbdc97a775d91ef71467dd7e",
+      "currentEvidenceSHA256": "9857aaf8252d7d7139e998f6a8b66a147a13570dac9adba246205ab0a11bb7af",
+      "fieldPath": "primaryTextChecks[0].textualBasisJa",
+      "storedValue": "WEB 2CH 19:11 identifies Zebadiah as Ishmael’s son; the ruler of the house of Judah in the king’s matters is Zebadiah, not Ishmael.",
+      "fixedWEBRef": "2CH 19:11",
+      "fixedWEBText": "Behold, Amariah the chief priest is over you in all matters of the LORD; and Zebadiah the son of Ishmael, the ruler of the house of Judah, in all the king’s matters. Also the Levites shall be officers before you. Deal courageously, and may the LORD be with the good.”",
+      "fieldSemantics": "The field is expressly textualBasisJa (basis/summary), not a literal quotation. It accurately distinguishes Ishmael as Zebadiah’s father from Zebadiah as the Judah ruler; no repair is required, though it should not be presented as a verbatim quote."
+    }
+  ],
+  "authorRepairFindingCount": 1,
+  "evidenceManifestMismatchCount": 6,
+  "publicationApproved": false,
+  "reportRevisionHistory": [
+    {
+      "previousSHA256": "70c2c229aeae73ef2e6a46b44801085e4a69f7991754e96d00a117ffdbd0d021",
+      "previousBytesPreservedAt": "preservation/objects/70c2c229aeae73ef2e6a46b44801085e4a69f7991754e96d00a117ffdbd0d021",
+      "change": "Corrected Huram runtime rationale: the profile Wikipedia note is itself reader-facing and includes article-only supervision claim; related-link view only.",
+      "revisionUTC": "2026-10-16T11:51:20Z"
+    },
+    {
+      "previousSHA256": "9248badd0443c9631b8a6bf328cd5ad819490fbb273bc9c3f6e5a654417532db",
+      "previousBytesPreservedAt": "preservation/objects/9248badd0443c9631b8a6bf328cd5ad819490fbb273bc9c3f6e5a654417532db",
+      "change": "Rebound current author manifest hash after concurrent manifest update; qualified row draft/profile/evidence contents rechecked, six existing evidence hash mismatches persist.",
+      "revisionUTC": "2026-10-16T11:53:29Z"
+    }
+  ],
+  "priorQualifiedTableSHA256": "1feb16e3ee54515433fd73a602f8fe6e5f2b016cfd7f495f06d6d82ad86f1d41",
+  "priorQualifiedTablePreservedObject": "preservation/objects/1feb16e3ee54515433fd73a602f8fe6e5f2b016cfd7f495f06d6d82ad86f1d41",
+  "quoteAndSummaryClosure": {
+    "huram1575": {
+      "draftSHA256": "98ac7e7c31007d064fb60dacffc6efec9ab6a1130e73eacbb4e39434a5eff8a8",
+      "evidenceSHA256": "2f042bb13423e7a80521135c67c45275ec4150d65eeae41ef8f6aa28ece32d43",
+      "resultJa": "2:14 exact fixed WEB text is in text; Japanese paraphrase is explicitly summaryJa. Quote labeling issue closed."
+    },
+    "ishmael633": {
+      "draftSHA256": "a948b1d0c46da2334b208ee621a0b18ce7df801fbbdc97a775d91ef71467dd7e",
+      "evidenceSHA256": "9857aaf8252d7d7139e998f6a8b66a147a13570dac9adba246205ab0a11bb7af",
+      "resultJa": "textualBasisJa is an explanatory summary, not a verbatim quotation; it correctly separates Ishmael (father) from Zebadiah (ruler)."
+    }
+  },
+  "openIndependentBlockers": [
+    {
+      "book": "2CH",
+      "entityID": "person:conaniah_953",
+      "reasonJa": "Current full reclosure is fail: profile’s related-only/identity false differs from evidence.wikiBodyRead decision identity-fit. Not included in runtime qualified set pending sidecar synchronization and recheck."
+    }
+  ]
+}

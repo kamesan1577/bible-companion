@@ -1,0 +1,1939 @@
+{
+  "schemaVersion": 1,
+  "reviewTitle": "Batch02 places_3 reader-language current-SHA reclosure",
+  "checkedAtUTC": "2026-10-16T05:55:20.943771Z",
+  "scope": {
+    "batch": "batch02",
+    "bookCandidates": 35,
+    "changedRowsSemanticallyRechecked": 7,
+    "unchangedPriorSHARows": 28
+  },
+  "inputs": {
+    "frozenInputPath": "reviews/batch02-places_3-frozen-input-v3.json",
+    "frozenInputSHA256": "81d936fc1516bd3e5ce658b2ae273e838e0b64228bb97bd539025febca810cf3",
+    "authorRepairLogPath": "evidence/places_3/author-repairs-batch02-reader-language-followup.json",
+    "authorRepairLogSHA256": "d49337f67048fca663511386216c31735d6750473347bcb1d1747023411fd1ba",
+    "priorCurrentClosurePath": "reviews/reclosure-batch02-places_3-after-author-fixes.json",
+    "priorCurrentClosureSHA256": "cf701ec32d7d1d01c4ec3d065f3115d18bd54478d932f0b29cfcef03223664cd",
+    "primaryWitnesses": {
+      "1CH": {
+        "path": "inventory/targets/chronicles1-web-verses.json",
+        "sha256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a"
+      },
+      "2CH": {
+        "path": "inventory/targets/chronicles2-web-verses.json",
+        "sha256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+      }
+    },
+    "currentWikipediaBodyReads": [
+      "https://en.wikipedia.org/wiki/Sheerah",
+      "https://en.wikipedia.org/wiki/Valley_of_Rephaim",
+      "https://en.wikipedia.org/wiki/Assyria",
+      "https://en.wikipedia.org/wiki/Babylon",
+      "https://en.wikipedia.org/wiki/Beersheba",
+      "https://en.wikipedia.org/wiki/Bethoron",
+      "https://en.wikipedia.org/wiki/Dan_(ancient_city)"
+    ]
+  },
+  "summary": {
+    "rows": 35,
+    "decisions": {
+      "qualified": 27,
+      "pass": 8
+    },
+    "changedRowsSemanticallyRechecked": 7,
+    "unchangedRowsCurrentDraftAndEvidenceSHAExact": 28,
+    "openFailRows": [],
+    "publicationApproval": false
+  },
+  "methodJa": "7件について更新後の常時表示欄・fact gate・固定WEB初出節/後続節を照合し、7件のWikipedia本文を現行ページで再読。残る28件は旧current closureのdraft/evidence SHAが今回の固定manifestおよび実バイトと一致することを再計算し、既存判定を保持。全35件についてdraft SHA・canonical profile SHA（保留稿はnull）・evidence SHAのsidecar一致を確認。",
+  "rows": [
+    {
+      "book": "1CH",
+      "entityID": "place:kedesh_676",
+      "draftPath": "drafts/places_3/1CH_kedesh_676.json",
+      "currentDraftSHA256": "cd5ee77f1f61f3fd18b6506e43b56cffffa2217ae0aa67d2dc8387996c4ba68a",
+      "profileSHA256": "2542ba1956f225d3befb93868e4e1b7540d6ba5b2d9b034d2ce5c6fad0e4495d",
+      "evidencePath": "evidence/places_3/1CH_kedesh_676.json",
+      "currentEvidenceSHA256": "a9bd89792ae6af883e2c9825d5e7b2691d25980b110b633cf1275f8521cc5627",
+      "decision": "qualified",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 6:76",
+          "text": "and out of the tribe of Naphtali, Kedesh in Galilee with its pasture lands, Hammon with its pasture lands, and Kiriathaim with its pasture lands.",
+          "citationURL": "https://ebible.org/engwebp/1CH06.htm#V76",
+          "sourceTextSHA256": "acd2a1a3e5d7e0626b774dd614eabeda8b0467182d40bb5832a7eb70791d4192",
+          "previousContext": "Hukok with its pasture lands, and Rehob with its pasture lands;",
+          "nextContext": "To the rest of the Levites, the sons of Merari, were given, out of the tribe of Zebulun, Rimmono with its pasture lands, and Tabor with its pasture lands;",
+          "textStatus": "present"
+        },
+        {
+          "ref": "1CH 6:72",
+          "text": "and out of the tribe of Issachar, Kedesh with its pasture lands, Daberath with its pasture lands,",
+          "citationURL": "https://ebible.org/engwebp/1CH06.htm#V72",
+          "sourceTextSHA256": "a79d962c8ad66d86f9cb25c5b06eb4fe9e6b8db7331ca9e6f7186098028cf25e",
+          "previousContext": "To the sons of Gershom were given, out of the family of the half-tribe of Manasseh, Golan in Bashan with its pasture lands, and Ashtaroth with its pasture lands;",
+          "nextContext": "Ramoth with its pasture lands, and Anem with its pasture lands;",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:kedesh_676",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 6,
+          "verse": 76
+        },
+        "reasonJa": "既存点は「ガリラヤのケデシュ」の位置候補としてのみ表示可能です。上ガリラヤのテル・ケデシュと下ガリラヤ説のどちらかを確定位置とは扱いません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "2542ba1956f225d3befb93868e4e1b7540d6ba5b2d9b034d2ce5c6fad0e4495d",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:kiriath-jearim_701",
+      "draftPath": "drafts/places_3/1CH_kiriath-jearim_701.json",
+      "currentDraftSHA256": "a13924f13f3a245146256ddb2487ebf43a2b4386896cc29c782051827bad16c4",
+      "profileSHA256": "27115797dff2794525de5954a4475219ffaeeea32c7f637b2e31395e5c60673c",
+      "evidencePath": "evidence/places_3/1CH_kiriath-jearim_701.json",
+      "currentEvidenceSHA256": "dee83ffd78da63a83cc9bf458bc8e63b61a1321471e848e5e7503d5736b5b067",
+      "decision": "qualified",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 2:50",
+          "text": "These were the sons of Caleb, the son of Hur, the firstborn of Ephrathah: Shobal the father of Kiriath Jearim,",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V50",
+          "sourceTextSHA256": "825968d198a9153ad4c8f44ebd283512e9fc2e9a72d9dd60f09387575299ed2e",
+          "previousContext": "She bore also Shaaph the father of Madmannah, Sheva the father of Machbena and the father of Gibea; and the daughter of Caleb was Achsah.",
+          "nextContext": "Salma the father of Bethlehem, and Hareph the father of Beth Gader.",
+          "textStatus": "present"
+        },
+        {
+          "ref": "1CH 2:52",
+          "text": "Shobal the father of Kiriath Jearim had sons: Haroeh, half of the Menuhoth.",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V52",
+          "sourceTextSHA256": "a25762dcc9014b8e6a184ec06583e5806bd086f8d87e917a913e6629b0dc82ac",
+          "previousContext": "Salma the father of Bethlehem, and Hareph the father of Beth Gader.",
+          "nextContext": "The families of Kiriath Jearim: the Ithrites, the Puthites, the Shumathites, and the Mishraites; from them came the Zorathites and the Eshtaolites.",
+          "textStatus": "present"
+        },
+        {
+          "ref": "1CH 2:53",
+          "text": "The families of Kiriath Jearim: the Ithrites, the Puthites, the Shumathites, and the Mishraites; from them came the Zorathites and the Eshtaolites.",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V53",
+          "sourceTextSHA256": "4ef78a4519b7a70dece3445c8e283ecbe273ce743960535b906f28ca72eb329d",
+          "previousContext": "Shobal the father of Kiriath Jearim had sons: Haroeh, half of the Menuhoth.",
+          "nextContext": "The sons of Salma: Bethlehem, the Netophathites, Atroth Beth Joab, and half of the Manahathites, the Zorites.",
+          "textStatus": "present"
+        },
+        {
+          "ref": "1CH 13:5",
+          "text": "So David assembled all Israel together, from the Shihor River of Egypt even to the entrance of Hamath, to bring God’s ark from Kiriath Jearim.",
+          "citationURL": "https://ebible.org/engwebp/1CH13.htm#V5",
+          "sourceTextSHA256": "e79af9c13b724eafb01aa26a490a4ff749cda0150154ca1da28ab211e7e0b6ad",
+          "previousContext": "All the assembly said that they would do so, for the thing was right in the eyes of all the people.",
+          "nextContext": "David went up with all Israel to Baalah, that is, to Kiriath Jearim, which belonged to Judah, to bring up from there God the LORD’s ark that sits above the cherubim, that is called by the Name.",
+          "textStatus": "present"
+        },
+        {
+          "ref": "1CH 13:6",
+          "text": "David went up with all Israel to Baalah, that is, to Kiriath Jearim, which belonged to Judah, to bring up from there God the LORD’s ark that sits above the cherubim, that is called by the Name.",
+          "citationURL": "https://ebible.org/engwebp/1CH13.htm#V6",
+          "sourceTextSHA256": "a0446c6b41106434a83d141924b0f27d104ba51bf5a08ef9c0d4710ddec441e5",
+          "previousContext": "So David assembled all Israel together, from the Shihor River of Egypt even to the entrance of Hamath, to bring God’s ark from Kiriath Jearim.",
+          "nextContext": "They carried God’s ark on a new cart, and brought it out of Abinadab’s house; and Uzza and Ahio drove the cart.",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:kiriath-jearim_701",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 2,
+          "verse": 50
+        },
+        "reasonJa": "エルサレム西方の古代町に関する既存候補として表示できます。現代遺跡の比定には複数説があり、確定地点とは扱いません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "27115797dff2794525de5954a4475219ffaeeea32c7f637b2e31395e5c60673c",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:kiriathaim_696",
+      "draftPath": "drafts/places_3/1CH_kiriathaim_696.json",
+      "currentDraftSHA256": "316bce2ba8a342fd397f731ab2f0cf4a4a20bcd286b661d36fac218bacfcc82d",
+      "profileSHA256": "431a5486d4d6041ff891d9946c26f8bcd29cde393723b9334b8ad78cdd063a93",
+      "evidencePath": "evidence/places_3/1CH_kiriathaim_696.json",
+      "currentEvidenceSHA256": "c7beb50673c9771c4df5bfdf38021f8bc9d57eb254aab08b8c8169fb057cf57e",
+      "frozenDraftSHA256": "316bce2ba8a342fd397f731ab2f0cf4a4a20bcd286b661d36fac218bacfcc82d",
+      "frozenEvidenceSHA256": "c7beb50673c9771c4df5bfdf38021f8bc9d57eb254aab08b8c8169fb057cf57e",
+      "draftChangedAfterV2Freeze": false,
+      "evidenceChangedAfterV2Freeze": false,
+      "decision": "qualified",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "reasonJa": "1CH6:76明記の町名とナフタリ帰属を固定WEBで再確認。現在のKirjathaimセット索引106–109行は1 Chronicles 6:76を同じナフタリ項目に直接結び付け、別のヨルダン東岸Kirjathaimを別項にする。座標nullと候補点限定は妥当。記事の“city of refuge”はその記事の記述としてだけ注記され、WEB本文自体は逃れの町とは呼ばないため、その違いは残る留保。",
+      "fixedWEBChecks": [
+        {
+          "ref": "1CH 6:76",
+          "fixedWEBText": "and out of the tribe of Naphtali, Kedesh in Galilee with its pasture lands, Hammon with its pasture lands, and Kiriathaim with its pasture lands.",
+          "citationURL": "https://ebible.org/engwebp/1CH06.htm#V76",
+          "sourceTextSHA256": "acd2a1a3e5d7e0626b774dd614eabeda8b0467182d40bb5832a7eb70791d4192",
+          "priorContext": "Hukok with its pasture lands, and Rehob with its pasture lands;",
+          "nextContext": "To the rest of the Levites, the sons of Merari, were given, out of the tribe of Zebulun, Rimmono with its pasture lands, and Tabor with its pasture lands;"
+        }
+      ],
+      "wikipediaBodyRead": {
+        "url": "https://en.wikipedia.org/wiki/Kirjathaim",
+        "locator": "current body 106–109, 117; index item 1 directly names Naphtali and cites 1 Chronicles 6:76, item 2 is a different east-Jordan site; page identifies itself as set-index.",
+        "independentReadAtUTC": "2026-10-16T05:38:08Z",
+        "currentProfileURL": "https://en.wikipedia.org/wiki/Kirjathaim",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "noteJa": "記事はキルヤタイムの複数の同名地を分け、第一項をナフタリの逃れの町（歴代誌上6:76）として挙げます。東ヨルダンの町とは別項目です。現代の所在地を確定する根拠にはなりません。",
+        "evidenceLocator": "Set-index article lines 104–109: item 1 directly cites 1 Chronicles 6:76 as the Naphtali city of refuge; item 2 separately describes the east-of-Jordan/Moab town. Lines 117–118 label the page a set index.",
+        "evidenceSupportJa": "記事はキルヤタイムの複数の同名地を分け、第一項をナフタリの逃れの町（歴代誌上6:76）として挙げます。東ヨルダンの町とは別項目です。現代の所在地を確定する根拠にはなりません。",
+        "actualArticleRead": true
+      },
+      "secondarySourceRecords": [
+        {
+          "id": "wikipedia-place:kiriathaim_696",
+          "url": "https://en.wikipedia.org/wiki/Kirjathaim",
+          "license": "CC BY-SA 4.0",
+          "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "knownBy": {
+            "chapter": 6,
+            "verse": 76
+          }
+        }
+      ],
+      "coordinate": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:kiriathaim_696",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 6,
+          "verse": 76
+        },
+        "reasonJa": "本文は町名を明記しますが、ナフタリのキルヤタイムを示す現代比定は未確定です。既存点は未確定な位置候補と明示する場合だけ表示できます。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "issues": [],
+      "currentProfileCanonicalSHA256": "431a5486d4d6041ff891d9946c26f8bcd29cde393723b9334b8ad78cdd063a93",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:libnah_728",
+      "draftPath": "drafts/places_3/1CH_libnah_728.json",
+      "currentDraftSHA256": "4cd3cf3894c80d6bbeb2ed2938ac082ea3275e0c03e1461b950ed3c36a19ae84",
+      "profileSHA256": "ad7525dba6648643005661f464c6c02b4fc7676ed724f9d810e967fe95c7891d",
+      "evidencePath": "evidence/places_3/1CH_libnah_728.json",
+      "currentEvidenceSHA256": "1d270b7d53f2a3073698efcedb01af34d027808032dee5c24fe2276164aeea9c",
+      "decision": "qualified",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 6:57",
+          "text": "To the sons of Aaron they gave the cities of refuge, Hebron, Libnah also with its pasture lands, Jattir, Eshtemoa with its pasture lands,",
+          "citationURL": "https://ebible.org/engwebp/1CH06.htm#V57",
+          "sourceTextSHA256": "e4a46cb299d4dd8bd3634b8da0b8bc34499137590d93c359ded4fd3d72d1df3d",
+          "previousContext": "but the fields of the city and its villages, they gave to Caleb the son of Jephunneh.",
+          "nextContext": "Hilen with its pasture lands, Debir with its pasture lands,",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:libnah_728",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 6,
+          "verse": 57
+        },
+        "reasonJa": "アロンの子らに与えられたユダのリブナの既存候補位置としてのみ表示できます。記事に複数の遺跡候補があり、いずれも確定地点とは扱いません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "ad7525dba6648643005661f464c6c02b4fc7676ed724f9d810e967fe95c7891d",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:machbenah_1299",
+      "draftPath": "drafts/places_3/1CH_machbenah_1299.json",
+      "currentDraftSHA256": "5b5ded3b9ce97f9d6afb348974697c661bcf76201ecdb56b1f05e3ea8df658f4",
+      "profileSHA256": "38e0b9de817f645c4bec37c0d4a3e58baecccb040f5718dc069a72c7385a0bed",
+      "evidencePath": "evidence/places_3/1CH_machbenah_1299.json",
+      "currentEvidenceSHA256": "3758ada22f0ba1d19cf34f94a44e7a59f85419c92e90355dc1b7641cc13ce2ff",
+      "frozenDraftSHA256": "5b5ded3b9ce97f9d6afb348974697c661bcf76201ecdb56b1f05e3ea8df658f4",
+      "frozenEvidenceSHA256": "3758ada22f0ba1d19cf34f94a44e7a59f85419c92e90355dc1b7641cc13ce2ff",
+      "draftChangedAfterV2Freeze": false,
+      "evidenceChangedAfterV2Freeze": false,
+      "decision": "qualified",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "reasonJa": "1CH2:49の固定WEBは“father of Machbena”という系譜構文を示すが、それだけで人物か場所かを確定できない。現人物一覧Machbena節242行はShevaの息子という人物解釈。Barnes注解は同じ並びを場所とその首長と読む競合解釈を提示。profile:null・マップ抑止と不確実性表示は現時点で妥当で、位置/個人の確定を保留する必要がある。",
+      "fixedWEBChecks": [
+        {
+          "ref": "1CH 2:49",
+          "fixedWEBText": "She bore also Shaaph the father of Madmannah, Sheva the father of Machbena and the father of Gibea; and the daughter of Caleb was Achsah.",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V49",
+          "sourceTextSHA256": "c12fb4a69ea38085a410815d6d82ddf79374faa529fbe7c246eade99bfd5d279",
+          "priorContext": "Maacah, Caleb’s concubine, bore Sheber and Tirhanah.",
+          "nextContext": "These were the sons of Caleb, the son of Hur, the firstborn of Ephrathah: Shobal the father of Kiriath Jearim,"
+        }
+      ],
+      "wikipediaBodyRead": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Machbena",
+        "locator": "current body 238–242; Machbena/Machbenah identified as Sheva’s son; competing Barnes interpretation recorded separately in sidecar.",
+        "independentReadAtUTC": "2026-10-16T05:38:08Z",
+        "currentProfileURL": null,
+        "kind": null,
+        "identityVerified": null,
+        "relationVerified": null,
+        "noteJa": null,
+        "evidenceLocator": "Machbena項、240–245行",
+        "evidenceSupportJa": "共有人物一覧のMachbena項はShevaの子として説明する。これは系譜文の一つの読みであり、Barnesは同じ系譜中の複数名を地名と解する。人物同定を確定しない。",
+        "actualArticleRead": true
+      },
+      "secondarySourceRecords": [
+        {
+          "id": "wikipedia-candidate-machbenah_1299",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Machbena",
+          "license": "CC BY-SA 4.0",
+          "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "knownBy": {
+            "chapter": 2,
+            "verse": 49
+          }
+        }
+      ],
+      "coordinate": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:machbenah_1299",
+        "category": "uncertain",
+        "allowCandidateMap": false,
+        "allowFrom": null,
+        "reasonJa": "1CH2:49の系譜表現と、Wikipedia人物一覧／Barnes注解の地名解釈が競合し、場所・人物同定が未解決です。結論が定まるまで既存候補点を表示しません。",
+        "verificationState": "held; interpretive disagreement; no candidate point displayed"
+      },
+      "issues": [],
+      "currentProfileCanonicalSHA256": null,
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:manahath_763",
+      "draftPath": "drafts/places_3/1CH_manahath_763.json",
+      "currentDraftSHA256": "4a1af4b8f998c6e3b03b9475a1887cf241da5378c3c64ea928d3675700cfe190",
+      "profileSHA256": "0b17f82c7bd3ea6619f265ded7d266812d06b50c60a0b87903722bbc9e7e3efa",
+      "evidencePath": "evidence/places_3/1CH_manahath_763.json",
+      "currentEvidenceSHA256": "42a06b65a0f6b3e88d94dac90045b7138c0caa4f52fd1a145c4cc257c71bdb5e",
+      "decision": "qualified",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 1:40",
+          "text": "The sons of Shobal: Alian, Manahath, Ebal, Shephi, and Onam. The sons of Zibeon: Aiah and Anah.",
+          "citationURL": "https://ebible.org/engwebp/1CH01.htm#V40",
+          "sourceTextSHA256": "49b50cb4abbfde82d50b2dcd7b1288458c1eaf78145b6570d34fc30ae679b8dd",
+          "previousContext": "The sons of Lotan: Hori and Homam; and Timna was Lotan’s sister.",
+          "nextContext": "The son of Anah: Dishon. The sons of Dishon: Hamran, Eshban, Ithran, and Cheran.",
+          "textStatus": "present"
+        },
+        {
+          "ref": "1CH 2:54",
+          "text": "The sons of Salma: Bethlehem, the Netophathites, Atroth Beth Joab, and half of the Manahathites, the Zorites.",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V54",
+          "sourceTextSHA256": "b8f9512132c6a2d6c2a78227aca5c840146b343b95201df7f7d185a71dc30d81",
+          "previousContext": "The families of Kiriath Jearim: the Ithrites, the Puthites, the Shumathites, and the Mishraites; from them came the Zorathites and the Eshtaolites.",
+          "nextContext": "The families of scribes who lived at Jabez: the Tirathites, the Shimeathites, and the Sucathites. These are the Kenites who came from Hammath, the father of the house of Rechab.",
+          "textStatus": "present"
+        },
+        {
+          "ref": "1CH 8:6",
+          "text": "These are the sons of Ehud. These are the heads of fathers’ households of the inhabitants of Geba, who were carried captive to Manahath:",
+          "citationURL": "https://ebible.org/engwebp/1CH08.htm#V6",
+          "sourceTextSHA256": "48bd6c7fa5a7df52346f6bcafef19dd290867750cb7fc00a6a88aeac06400571",
+          "previousContext": "Gera, Shephuphan, and Huram.",
+          "nextContext": "Naaman, Ahijah, and Gera, who carried them captive; and he became the father of Uzza and Ahihud.",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:manahath_763",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 8,
+          "verse": 6
+        },
+        "reasonJa": "聖書上の町名ですが、現代の遺跡比定は確認できません。 既存位置を未確定な参考候補としてのみ表示。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "0b17f82c7bd3ea6619f265ded7d266812d06b50c60a0b87903722bbc9e7e3efa",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:medeba_775",
+      "draftPath": "drafts/places_3/1CH_medeba_775.json",
+      "currentDraftSHA256": "242b0434a3297029ebf454c198177d58b0f11316b0e09dd426be3bf3eb488882",
+      "profileSHA256": "1e95b9f4e766355da426accdcaa2daf49939a939a478ffd258ca215fdf343626",
+      "evidencePath": "evidence/places_3/1CH_medeba_775.json",
+      "currentEvidenceSHA256": "052e11a825b645b127a42cc9f0dd28f0960193c1d6292fa4e0e219a843a89739",
+      "decision": "qualified",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 19:7",
+          "text": "So they hired for themselves thirty-two thousand chariots, and the king of Maacah with his people, who came and encamped near Medeba. The children of Ammon gathered themselves together from their cities, and came to battle.",
+          "citationURL": "https://ebible.org/engwebp/1CH19.htm#V7",
+          "sourceTextSHA256": "4a3e32ec50b97a9f43dc251f76be82cc28f3435bbf7e3a9cd427eda2f44fa7d0",
+          "previousContext": "When the children of Ammon saw that they had made themselves odious to David, Hanun and the children of Ammon sent one thousand talents of silver to hire chariots and horsemen out of Mesopotamia, out of Aram-maacah, and out of Zobah.",
+          "nextContext": "When David heard of it, he sent Joab with all the army of the mighty men.",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:medeba_775",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 19,
+          "verse": 7
+        },
+        "reasonJa": "現在のマダバとの関係は関連づけられることがありますが、古代のメデバと現代市街・遺跡の連続性を確定しません。 既存位置を未確定な参考候補としてのみ表示。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "1e95b9f4e766355da426accdcaa2daf49939a939a478ffd258ca215fdf343626",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:mesopotamia_790",
+      "draftPath": "drafts/places_3/1CH_mesopotamia_790.json",
+      "currentDraftSHA256": "83da6fee414f6b09979dfa802a7c8fb68781412c1d49877bc56a0aa04ce101be",
+      "profileSHA256": "a5453beba4a989b96279c0bcb6762bd528918f4fb92e4f64c29f495a1d8c85d3",
+      "evidencePath": "evidence/places_3/1CH_mesopotamia_790.json",
+      "currentEvidenceSHA256": "5d3b4c69466902adb78246d2a4bc53568c9b9669e90cf172bc258ba1c22ea5e6",
+      "decision": "qualified",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 19:6",
+          "text": "When the children of Ammon saw that they had made themselves odious to David, Hanun and the children of Ammon sent one thousand talents of silver to hire chariots and horsemen out of Mesopotamia, out of Aram-maacah, and out of Zobah.",
+          "citationURL": "https://ebible.org/engwebp/1CH19.htm#V6",
+          "sourceTextSHA256": "3498f8d90369c006fb977387bda23788103ca81802a63b5b58c54d8386396efa",
+          "previousContext": "Then some people went and told David how the men were treated. He sent to meet them; for the men were greatly humiliated. The king said, “Stay at Jericho until your beards have grown, and then return.”",
+          "nextContext": "So they hired for themselves thirty-two thousand chariots, and the king of Maacah with his people, who came and encamped near Medeba. The children of Ammon gathered themselves together from their cities, and came to battle.",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:mesopotamia_790",
+        "category": "region",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 19,
+          "verse": 6
+        },
+        "reasonJa": "チグリス川・ユーフラテス川流域を中心とする広域名です。聖書本文の範囲を現代の国境と同一視しません。 既存位置を未確定な参考候補としてのみ表示。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "a5453beba4a989b96279c0bcb6762bd528918f4fb92e4f64c29f495a1d8c85d3",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:moladah_816",
+      "draftPath": "drafts/places_3/1CH_moladah_816.json",
+      "currentDraftSHA256": "a77b08d8fba092a85318ceb5ff971d5be412311ee7e82684a7da6e629c72b3cc",
+      "profileSHA256": "5b29e0a07749850a99547abb4769f8dbbf55eb1ae537a406939d40b184bfbb58",
+      "evidencePath": "evidence/places_3/1CH_moladah_816.json",
+      "currentEvidenceSHA256": "667a5c90142a5237059bc17e47fc365e17d70566f04e93de39a173ab2b4357db",
+      "decision": "qualified",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 4:28",
+          "text": "They lived at Beersheba, Moladah, Hazarshual,",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V28",
+          "sourceTextSHA256": "801ea5cc00a8c795ae6a044a1b2cac4fb23fd9796ff5286321c247a9e173ece0",
+          "previousContext": "Shimei had sixteen sons and six daughters; but his brothers didn’t have many children, and all their family didn’t multiply like the children of Judah.",
+          "nextContext": "at Bilhah, at Ezem, at Tolad,",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:moladah_816",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 4,
+          "verse": 28
+        },
+        "reasonJa": "ネゲブの町とされますが、現代の位置比定には複数説があります。 既存位置を未確定な参考候補としてのみ表示。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "5b29e0a07749850a99547abb4769f8dbbf55eb1ae537a406939d40b184bfbb58",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:mount_seir_852",
+      "draftPath": "drafts/places_3/1CH_mount_seir_852.json",
+      "currentDraftSHA256": "e0403905a367abd411ea59d7e8ba1b21ab3c080d6de7d7edbc52791d8c652084",
+      "profileSHA256": "2a1cd97bdbd937a903e42831cee0d50c46ad65317797107be3337f8ba51bb9d7",
+      "evidencePath": "evidence/places_3/1CH_mount_seir_852.json",
+      "currentEvidenceSHA256": "3e49ad4a669f69df0d41b5e089f54623219d463db6f6c4e1cf9dfef251b5bc37",
+      "decision": "pass",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 4:42",
+          "text": "Some of them, even of the sons of Simeon, five hundred men, went to Mount Seir, having for their captains Pelatiah, Neariah, Rephaiah, and Uzziel, the sons of Ishi.",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V42",
+          "sourceTextSHA256": "e107a3a7ac8f0711fdd7d5d6ba5590b6ae078c01379c4c52086b4b831a7aa0d6",
+          "previousContext": "These written by name came in the days of Hezekiah king of Judah, and struck their tents and the Meunim who were found there; and they destroyed them utterly to this day, and lived in their place, because there was pasture there for their flocks.",
+          "nextContext": "They struck the remnant of the Amalekites who escaped, and have lived there to this day.",
+          "textStatus": "present"
+        },
+        {
+          "ref": "1CH 5:23",
+          "text": "The children of the half-tribe of Manasseh lived in the land. They increased from Bashan to Baal Hermon, Senir, and Mount Hermon.",
+          "citationURL": "https://ebible.org/engwebp/1CH05.htm#V23",
+          "sourceTextSHA256": "1e043f15fe3f5096904d841dd86a244153fa3c5c14896c531fc0890a865495a8",
+          "previousContext": "For many fell slain, because the war was of God. They lived in their place until the captivity.",
+          "nextContext": "These were the heads of their fathers’ houses: Epher, Ishi, Eliel, Azriel, Jeremiah, Hodaviah, and Jahdiel—mighty men of valor, famous men, heads of their fathers’ houses.",
+          "textStatus": "present"
+        },
+        {
+          "ref": "1CH 10:1",
+          "text": "Now the Philistines fought against Israel; and the men of Israel fled from before the Philistines, and fell down slain on Mount Gilboa.",
+          "citationURL": "https://ebible.org/engwebp/1CH10.htm#V1",
+          "sourceTextSHA256": "2224f27c504aba2ef8de0178133830063a133164532a6e7803ef19a9dfc3165c",
+          "previousContext": null,
+          "nextContext": "The Philistines followed hard after Saul and after his sons; and the Philistines killed Jonathan, Abinadab, and Malchishua, the sons of Saul.",
+          "textStatus": "present"
+        },
+        {
+          "ref": "1CH 10:8",
+          "text": "On the next day, when the Philistines came to strip the slain, they found Saul and his sons fallen on Mount Gilboa.",
+          "citationURL": "https://ebible.org/engwebp/1CH10.htm#V8",
+          "sourceTextSHA256": "942029aec5fa023295f080091e7de1a1f5e6288be671cc9e30d2b44b9c190a2b",
+          "previousContext": "When all the men of Israel who were in the valley saw that they fled, and that Saul and his sons were dead, they abandoned their cities, and fled; and the Philistines came and lived in them.",
+          "nextContext": "They stripped him and took his head and his armor, then sent into the land of the Philistines all around to carry the news to their idols and to the people.",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:mount_seir_852",
+        "category": "region",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 4,
+          "verse": 42
+        },
+        "reasonJa": "死海南方からアカバ湾方向に広がるエドム地域の山地を指します。ヨシュア記にある北方の同名山とは区別します。 既存位置を未確定な参考候補としてのみ表示。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "2a1cd97bdbd937a903e42831cee0d50c46ad65317797107be3337f8ba51bb9d7",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:nebo_883",
+      "draftPath": "drafts/places_3/1CH_nebo_883.json",
+      "currentDraftSHA256": "79b5cc3cecd77c8f254480ab1748a805b8aaf0bbc986c4745fde42d04baf0428",
+      "profileSHA256": "34a95fc20df025e6f91b192e5300a6df83ca92b2b31dc406fd254aa4872a746b",
+      "evidencePath": "evidence/places_3/1CH_nebo_883.json",
+      "currentEvidenceSHA256": "47ac184e8a90b27febd66f1b7a96cf49f6ac2899298202902c2fbffb139ef59a",
+      "decision": "pass",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 5:8",
+          "text": "and Bela the son of Azaz, the son of Shema, the son of Joel, who lived in Aroer, even to Nebo and Baal Meon;",
+          "citationURL": "https://ebible.org/engwebp/1CH05.htm#V8",
+          "sourceTextSHA256": "dc4716e1f46067861b908350b7b0c26b0edd0a5d2b18177f9a823feac177110c",
+          "previousContext": "His brothers by their families, when the genealogy of their generations was listed: the chief, Jeiel, and Zechariah,",
+          "nextContext": "and he lived eastward even to the entrance of the wilderness from the river Euphrates, because their livestock were multiplied in the land of Gilead.",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:nebo_883",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 5,
+          "verse": 8
+        },
+        "reasonJa": "聖書の地名記事はルベン領の町を別のネボ山と区別しますが、現代位置の確定はしません。 既存位置を未確定な参考候補としてのみ表示。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "34a95fc20df025e6f91b192e5300a6df83ca92b2b31dc406fd254aa4872a746b",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:nodab_903",
+      "draftPath": "drafts/places_3/1CH_nodab_903.json",
+      "currentDraftSHA256": "16d0ed434237a595100d9eb7ab2b2efcce252b9b36cccbe350e4b4e8ae49c61d",
+      "profileSHA256": "38e0b9de817f645c4bec37c0d4a3e58baecccb040f5718dc069a72c7385a0bed",
+      "evidencePath": "evidence/places_3/1CH_nodab_903.json",
+      "currentEvidenceSHA256": "9dedd9e435a6dd1c0165dc1ad99dd524f685619e2161213af452ef2ea67467a3",
+      "decision": "pass",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 5:19",
+          "text": "They made war with the Hagrites, with Jetur, and Naphish, and Nodab.",
+          "citationURL": "https://ebible.org/engwebp/1CH05.htm#V19",
+          "sourceTextSHA256": "d06f3b51b2bc6709b1381d9c3574c677e9d3e1f5ea6741e3dfa6f2162b140e87",
+          "previousContext": "The sons of Reuben, the Gadites, and the half-tribe of Manasseh, of valiant men, men able to bear buckler and sword, able to shoot with bow, and skillful in war, were forty-four thousand seven hundred sixty that were able to go out to war.",
+          "nextContext": "They were helped against them, and the Hagrites were delivered into their hand, and all who were with them; for they cried to God in the battle, and he answered them because they put their trust in him.",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:nodab_903",
+        "category": "uncertain",
+        "allowCandidateMap": false,
+        "allowFrom": null,
+        "reasonJa": "Nodabは5:19で民族・部族名として並ぶだけで場所用法がないため、この地名候補は採用しない。",
+        "verificationState": "legacy candidate suppressed or profile held; profile.coordinate remains null"
+      },
+      "currentProfileCanonicalSHA256": null,
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:ophir_911",
+      "draftPath": "drafts/places_3/1CH_ophir_911.json",
+      "currentDraftSHA256": "2f834ec8cc4951f4cddff324a9a07bc148eeea64919eddf325cc4c3dc34a7b55",
+      "profileSHA256": "400c8916c13919d541a6f7666b8dbf7b7ce208aa546ae1cff579f6bc91d51af3",
+      "evidencePath": "evidence/places_3/1CH_ophir_911.json",
+      "currentEvidenceSHA256": "4193390c6922222679ae8b0a33dce80cbb19eaaa5a7c804b0fa435ef3a9beb59",
+      "decision": "qualified",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 1:23",
+          "text": "Ophir, Havilah, and Jobab. All these were the sons of Joktan.",
+          "citationURL": "https://ebible.org/engwebp/1CH01.htm#V23",
+          "sourceTextSHA256": "242ffe59c233f61c537155c7ca034e38a883e97632f0a5291bcebb02129c96aa",
+          "previousContext": "Ebal, Abimael, Sheba,",
+          "nextContext": "Shem, Arpachshad, Shelah,",
+          "textStatus": "present"
+        },
+        {
+          "ref": "1CH 29:4",
+          "text": "even three thousand talents of gold, of the gold of Ophir, and seven thousand talents of refined silver, with which to overlay the walls of the houses;",
+          "citationURL": "https://ebible.org/engwebp/1CH29.htm#V4",
+          "sourceTextSHA256": "8b19e2c42d88191fece5044a2ea4b8695f2c396a57f3e61998ebce7fe50fd020",
+          "previousContext": "In addition, because I have set my affection on the house of my God, since I have a treasure of my own of gold and silver, I give it to the house of my God, over and above all that I have prepared for the holy house:",
+          "nextContext": "of gold for the things of gold, and of silver for the things of silver, and for all kinds of work to be made by the hands of artisans. Who then offers willingly to consecrate himself today to the LORD?”",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:ophir_911",
+        "category": "region",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 29,
+          "verse": 4
+        },
+        "reasonJa": "正確な所在地は不明で、複数地域への比定案があります。特定の現代国や遺跡に結び付けません。 既存位置を未確定な参考候補としてのみ表示。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "400c8916c13919d541a6f7666b8dbf7b7ce208aa546ae1cff579f6bc91d51af3",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:pas-dammim_923",
+      "draftPath": "drafts/places_3/1CH_pas-dammim_923.json",
+      "currentDraftSHA256": "20558521f20fe9f7d9a791398aea8e2e43c888e4ae1a257c1c9c957b969f39ad",
+      "profileSHA256": "22dcf20e03035c97ebfd9dd245c2a53c1338f9a11223ac3ec9db510e76c4acc8",
+      "evidencePath": "evidence/places_3/1CH_pas-dammim_923.json",
+      "currentEvidenceSHA256": "266bc1bd8e4d2716c0eeb4cfd9fa4506fb899085ccfed774c7c3271692f185fe",
+      "decision": "pass",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 11:13",
+          "text": "He was with David at Pasdammim, and there the Philistines were gathered together to battle, where there was a plot of ground full of barley; and the people fled from before the Philistines.",
+          "citationURL": "https://ebible.org/engwebp/1CH11.htm#V13",
+          "sourceTextSHA256": "a9ff5d585f5f6e368e385408bc37e13f28d24da74e775a8fb94a389d7090327f",
+          "previousContext": "After him was Eleazar the son of Dodo, the Ahohite, who was one of the three mighty men.",
+          "nextContext": "They stood in the middle of the plot, defended it, and killed the Philistines; and the LORD saved them by a great victory.",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:pas-dammim_923",
+        "category": "site",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 11,
+          "verse": 13
+        },
+        "reasonJa": "記事はパス・ダミムをエフェス・ダミムの異形としますが、現代の位置は特定できないとしています。既存点は未確定の参考候補として明示する場合に限り表示でき、確定地点としては扱いません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "22dcf20e03035c97ebfd9dd245c2a53c1338f9a11223ac3ec9db510e76c4acc8",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:pirathon_949",
+      "draftPath": "drafts/places_3/1CH_pirathon_949.json",
+      "currentDraftSHA256": "faf8a9dce911c3d94353fa36d54d56f06dc1d9d1738179c36fcc994673ec001b",
+      "profileSHA256": "38e0b9de817f645c4bec37c0d4a3e58baecccb040f5718dc069a72c7385a0bed",
+      "evidencePath": "evidence/places_3/1CH_pirathon_949.json",
+      "currentEvidenceSHA256": "e8a06883f3142f2f08c90e6678b755fd8d8d69ef8f45f9e7f304736ce9a99546",
+      "decision": "pass",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 11:31",
+          "text": "Ithai the son of Ribai of Gibeah of the children of Benjamin, Benaiah the Pirathonite,",
+          "citationURL": "https://ebible.org/engwebp/1CH11.htm#V31",
+          "sourceTextSHA256": "a9472d14c53844460bbea28d0c3cb006f46203d469f6fda573f16f2f2b144299",
+          "previousContext": "Maharai the Netophathite, Heled the son of Baanah the Netophathite,",
+          "nextContext": "Hurai of the brooks of Gaash, Abiel the Arbathite,",
+          "textStatus": "present"
+        },
+        {
+          "ref": "1CH 27:14",
+          "text": "The eleventh captain for the eleventh month was Benaiah the Pirathonite, of the children of Ephraim. In his division were twenty-four thousand.",
+          "citationURL": "https://ebible.org/engwebp/1CH27.htm#V14",
+          "sourceTextSHA256": "4ba103d9975e98a7ce9ec0d9179ff1651c4faf66cfa01ab7482c3b3270063a82",
+          "previousContext": "The tenth captain for the tenth month was Maharai the Netophathite, of the Zerahites. In his division were twenty-four thousand.",
+          "nextContext": "The twelfth captain for the twelfth month was Heldai the Netophathite, of Othniel. In his division were twenty-four thousand.",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:pirathon_949",
+        "category": "uncertain",
+        "allowCandidateMap": false,
+        "allowFrom": null,
+        "reasonJa": "この書の2用例はいずれもPirathoniteという出身形容で、町名の直接用例はない。別書の町記事をこの書の場所出現として流用しない。",
+        "verificationState": "legacy candidate suppressed or profile held; profile.coordinate remains null"
+      },
+      "currentProfileCanonicalSHA256": null,
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:recah_985",
+      "draftPath": "drafts/places_3/1CH_recah_985.json",
+      "currentDraftSHA256": "e5fbc45427d491f2ec9998c6077ab88c2bfd5ee0681ef2f160337f6cedad0913",
+      "profileSHA256": "c7bca81f54ffd7d19e7ccd56e01a837a12ded54dd6d6b0473fce83b6304c7d37",
+      "evidencePath": "evidence/places_3/1CH_recah_985.json",
+      "currentEvidenceSHA256": "c42bb12a681a8bc30019d38f0b28f2a430f35bf19490d5619553f6e36f0fce1a",
+      "decision": "qualified",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 4:12",
+          "text": "Eshton became the father of Beth Rapha, Paseah, and Tehinnah the father of Ir Nahash. These are the men of Recah.",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V12",
+          "sourceTextSHA256": "cf8c65b5ccd716959abddffdb7253861a7c43d2d293e2ef9d9eaa1ca730060cf",
+          "previousContext": "Chelub the brother of Shuhah became the father of Mehir, who was the father of Eshton.",
+          "nextContext": "The sons of Kenaz: Othniel and Seraiah. The sons of Othniel: Hathath.",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:recah_985",
+        "category": "uncertain",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 4,
+          "verse": 12
+        },
+        "reasonJa": "現在地や町としての同定は確認できません。 既存位置を未確定な参考候補としてのみ表示。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "c7bca81f54ffd7d19e7ccd56e01a837a12ded54dd6d6b0473fce83b6304c7d37",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:rimmon_1004",
+      "draftPath": "drafts/places_3/1CH_rimmon_1004.json",
+      "currentDraftSHA256": "7a8b5ec524421abf3db95b3eb73c51bf41327d89e6a8e9e32b70d9a7c50e9ddc",
+      "profileSHA256": "413fd8e97c510938ae4b461164793052774ef392eabb43bc2065c95804e364f9",
+      "evidencePath": "evidence/places_3/1CH_rimmon_1004.json",
+      "currentEvidenceSHA256": "38b244658be24df8b80ceb7e5141406fdc7147703199a009e6e22c6e393245d6",
+      "decision": "qualified",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 4:32",
+          "text": "Their villages were Etam, Ain, Rimmon, Tochen, and Ashan, five cities;",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V32",
+          "sourceTextSHA256": "ac742cb687c170f33e30a82d07918f2f04ea9b4fec74beed7554b04fc6d20fa9",
+          "previousContext": "at Beth Marcaboth, Hazar Susim, at Beth Biri, and at Shaaraim. These were their cities until David’s reign.",
+          "nextContext": "and all their villages that were around the same cities, as far as Baal. These were their settlements, and they kept their genealogy.",
+          "textStatus": "present"
+        },
+        {
+          "ref": "1CH 6:69",
+          "text": "Aijalon with its pasture lands, Gath Rimmon with its pasture lands;",
+          "citationURL": "https://ebible.org/engwebp/1CH06.htm#V69",
+          "sourceTextSHA256": "6254d1577ad2c6b8151f9e43d0c87b2c81bc29ddd437f2eed8d9fa692c9de2ad",
+          "previousContext": "Jokmeam with its pasture lands, Beth Horon with its pasture lands,",
+          "nextContext": "and out of the half-tribe of Manasseh, Aner with its pasture lands, and Bileam with its pasture lands, for the rest of the family of the sons of Kohath.",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:rimmon_1004",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 4,
+          "verse": 32
+        },
+        "reasonJa": "記事はシメオン領の町を挙げる一方、アインとの複合地名説や複数の遺跡候補を示します。既存点は未確定な候補としてのみ表示できます。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "413fd8e97c510938ae4b461164793052774ef392eabb43bc2065c95804e364f9",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:saron_1063",
+      "draftPath": "drafts/places_3/1CH_saron_1063.json",
+      "currentDraftSHA256": "ecc4a962eb496289047be4d49460b8325f6a6f30143bff391f8889ca508354c5",
+      "profileSHA256": "f38bf619852355ec930241150f7d9f5781bbaf65380e170180aa03cc68e79c2d",
+      "evidencePath": "evidence/places_3/1CH_saron_1063.json",
+      "currentEvidenceSHA256": "49fea2201ca20e06065661efb17323625d0ba0802c9569f151534a3cdb58b693",
+      "decision": "qualified",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 27:29",
+          "text": "Over the herds that fed in Sharon was Shitrai the Sharonite. Over the herds that were in the valleys was Shaphat the son of Adlai.",
+          "citationURL": "https://ebible.org/engwebp/1CH27.htm#V29",
+          "sourceTextSHA256": "d87a161c180cb58b24787178b5ddc3dd4f56e47ff9f17ae15419cbb4cd4102dc",
+          "previousContext": "Over the olive trees and the sycamore trees that were in the lowland was Baal Hanan the Gederite. Over the cellars of oil was Joash.",
+          "nextContext": "Over the camels was Obil the Ishmaelite. Over the donkeys was Jehdeiah the Meronothite. Over the flocks was Jaziz the Hagrite.",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:saron_1063",
+        "category": "region",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 27,
+          "verse": 29
+        },
+        "reasonJa": "記事は聖書のSharonを現代のシャロン平野と関連付けますが、古代と現代の範囲の完全な一致は未確認です。既存点は広域の参考候補と明示する場合に限り表示できます。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "f38bf619852355ec930241150f7d9f5781bbaf65380e170180aa03cc68e79c2d",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:shallecheth_1059",
+      "draftPath": "drafts/places_3/1CH_shallecheth_1059.json",
+      "currentDraftSHA256": "a2637254e21575a916b103711145d4e52cbeb5b35142c1174ffd6abf8d932665",
+      "profileSHA256": "cab0e986607019ac94c6dff8f682dcc3b705b64433e824b2d99b312d3c617667",
+      "evidencePath": "evidence/places_3/1CH_shallecheth_1059.json",
+      "currentEvidenceSHA256": "0aba0f22ebdffb8338a6a6d0e623742db34f2ef0e44b01c3334f144b129dd2fc",
+      "decision": "qualified",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 26:16",
+          "text": "To Shuppim and Hosah westward, by the gate of Shallecheth, at the causeway that goes up, watchman opposite watchman.",
+          "citationURL": "https://ebible.org/engwebp/1CH26.htm#V16",
+          "sourceTextSHA256": "14bfb1a7d601620b4f90234dd8368af6c69da391df99108a92bb4612350eed1b",
+          "previousContext": "To Obed-Edom southward; and to his sons the storehouse.",
+          "nextContext": "Eastward were six Levites, northward four a day, southward four a day, and for the storehouse two and two.",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:shallecheth_1059",
+        "category": "structure",
+        "allowCandidateMap": false,
+        "allowFrom": null,
+        "reasonJa": "検索で出た辞書記事は門の存在や候補を記すが、Wikipedia本文で同定可能な適合記事は確認できない。門を町の座標として表示する候補点は抑止。",
+        "verificationState": "legacy candidate suppressed or profile held; profile.coordinate remains null"
+      },
+      "currentProfileCanonicalSHA256": "cab0e986607019ac94c6dff8f682dcc3b705b64433e824b2d99b312d3c617667",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:taanach_1124",
+      "draftPath": "drafts/places_3/1CH_taanach_1124.json",
+      "currentDraftSHA256": "f44b6561308e8f7f89bf97243484949455b958315969766def6d2db738fdb693",
+      "profileSHA256": "60a2d14c3d8e6625e7fe9650dc94436be93534b52acab39da19241c759cde698",
+      "evidencePath": "evidence/places_3/1CH_taanach_1124.json",
+      "currentEvidenceSHA256": "f000ebffe47f91c7209e0bf81085f431845b27cf7103b2daf239f39736be6acd",
+      "decision": "pass",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 7:29",
+          "text": "and by the borders of the children of Manasseh, Beth Shean and its towns, Taanach and its towns, Megiddo and its towns, and Dor and its towns. The children of Joseph the son of Israel lived in these.",
+          "citationURL": "https://ebible.org/engwebp/1CH07.htm#V29",
+          "sourceTextSHA256": "ee2f224b69ad920cf9162f1949b72fbc8f46c1dac6a81aff48c2d03d32cfb28e",
+          "previousContext": "Their possessions and settlements were Bethel and its towns, and eastward Naaran, and westward Gezer with its towns; Shechem also and its towns, to Azzah and its towns;",
+          "nextContext": "The sons of Asher: Imnah, Ishvah, Ishvi, and Beriah. Serah was their sister.",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:taanach_1124",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 7,
+          "verse": 29
+        },
+        "reasonJa": "現代のティイニク村近くのテルが古代タアナクと同定されていますが、古代市域と現代村の範囲は同一ではありません。 既存位置を未確定な参考候補としてのみ表示。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "60a2d14c3d8e6625e7fe9650dc94436be93534b52acab39da19241c759cde698",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:tochen_1173",
+      "draftPath": "drafts/places_3/1CH_tochen_1173.json",
+      "currentDraftSHA256": "eb47a72fb976ee9a84b115c21d5793fb1ab1d3f57d2c25b171505ebdc7af0a84",
+      "profileSHA256": "eeee1aa26019ed4abe33fa57d7c4b02d4c4bbd0d8ae6a7610a70619a5984582b",
+      "evidencePath": "evidence/places_3/1CH_tochen_1173.json",
+      "currentEvidenceSHA256": "ed28c96f9fbd70215a2635c1aeb407d74a6d233d9f544f4ed5e905aa1139dc24",
+      "decision": "qualified",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 4:32",
+          "text": "Their villages were Etam, Ain, Rimmon, Tochen, and Ashan, five cities;",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V32",
+          "sourceTextSHA256": "ac742cb687c170f33e30a82d07918f2f04ea9b4fec74beed7554b04fc6d20fa9",
+          "previousContext": "at Beth Marcaboth, Hazar Susim, at Beth Biri, and at Shaaraim. These were their cities until David’s reign.",
+          "nextContext": "and all their villages that were around the same cities, as far as Baal. These were their settlements, and they kept their genealogy.",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:tochen_1173",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 4,
+          "verse": 32
+        },
+        "reasonJa": "現代の位置や遺跡比定は確認できません。 既存位置を未確定な参考候補としてのみ表示。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "eeee1aa26019ed4abe33fa57d7c4b02d4c4bbd0d8ae6a7610a70619a5984582b",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:uzzen-sheerah_1193",
+      "draftPath": "drafts/places_3/1CH_uzzen-sheerah_1193.json",
+      "currentDraftSHA256": "f1c12222058da9615d1e9f552994aa4967c5d09dc2cc4770e60abf3b5ff36c25",
+      "profileSHA256": "d1240b456cb8c0ae50419b70fab7ad52ea8fd2f363c58b77e4fb8c05b6169260",
+      "evidencePath": "evidence/places_3/1CH_uzzen-sheerah_1193.json",
+      "currentEvidenceSHA256": "643ee50979171957fbe6b896370e4bf22dce2d47dc6af7893a3282c5eec3b0cb",
+      "decision": "qualified",
+      "basis": "current-byte author-repair reclosure; exact pinned WEB and live Wikipedia body read in current turn",
+      "fixedWEBChecks": [
+        {
+          "ref": "1CH 7:24",
+          "fixedWEBText": "His daughter was Sheerah, who built Beth Horon the lower and the upper, and Uzzen Sheerah.",
+          "citationURL": "https://ebible.org/engwebp/1CH07.htm#V24",
+          "sourceTextSHA256": "6426e378a51a5ba634ad82bca4addb260632c28a6723b87a996d02d2ed98db90",
+          "priorContext": "He went in to his wife, and she conceived and bore a son, and he named him Beriah, because there was trouble with his house.",
+          "nextContext": "Rephah was his son, Resheph his son, Telah his son, Tahan his son,"
+        }
+      ],
+      "wikipediaBodyRead": {
+        "url": "https://en.wikipedia.org/wiki/Sheerah",
+        "locator": "live lines 107–110; Sheerah is a woman; 1CH7:24 says she built three cities including Uzzen-sheerah; page is person-focused, not location-specific.",
+        "currentNoteJa": "記事はシェラを人物として扱い、歴代誌上7:24に基づいてウゼン・シェラを彼女が築いた町の一つに挙げます。記事の主題は町そのものではなく、所在地も確定しません。",
+        "kind": "related-section",
+        "identityVerified": false,
+        "relationVerified": true,
+        "checkedLiveInCurrentTurn": true,
+        "evidenceSidecarLocator": "Article lead lines 104–109: Sheerah is a woman in the Hebrew Bible; 1 Chronicles 7:24 says she built three cities including Uzzen-sheerah. Article is about the person, not the city.",
+        "evidenceSidecarSupport": "記事はシェラを人物として扱い、歴代誌上7:24に基づいてウゼン・シェラを彼女が築いた町の一つに挙げます。記事の主題は町そのものではなく、所在地も確定しません。"
+      },
+      "readerFieldsReviewed": {
+        "knownBy": {
+          "chapter": 7,
+          "verse": 24
+        },
+        "summaryJa": "ウゼン・シェラは、シェラが築いた町の一つとして記されます。本文はベト・ホロン下・上と並べます。",
+        "subtitleJa": "シェラが築いた町",
+        "historicalRoleJa": "エフライムの系譜に現れる建築・集落名です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "町の正確な位置や現代遺跡比定は確認できません。",
+        "locationNoteJa": "ウゼン・シェラの現代所在地は明らかでなく、候補となる遺跡も特定されていません。"
+      },
+      "coordinate": null,
+      "facts": [],
+      "reasonJa": "1CH7:24 explicitly says Sheerah built Beth-horon upper/lower and Uzzen-sheerah; current intro is limited to that verse. The live Sheerah article lines 107–110 names the city as one Sheerah built, so relation-only is correct (not a place-identification article). The note now states this relation without future information. Current prose and evidence bindings match; no modern location is asserted. The city’s location remains unknown, so qualified.",
+      "repairLogPath": "evidence/places_3/author-repairs-batch02-reader-language-followup.json",
+      "repairLogSHA256": "d49337f67048fca663511386216c31735d6750473347bcb1d1747023411fd1ba",
+      "previousFailClosed": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:valley_of_rephaim_1214",
+      "draftPath": "drafts/places_3/1CH_valley_of_rephaim_1214.json",
+      "currentDraftSHA256": "245dbc1087ed27e612105791cc249c751dd174ab9d8796c542e030e5f100ea26",
+      "profileSHA256": "7c53f10e8b7e3474aeedacadaddc0c4c6d0d6289c439a5146f6e78fb304a42d0",
+      "evidencePath": "evidence/places_3/1CH_valley_of_rephaim_1214.json",
+      "currentEvidenceSHA256": "5c3842f1aa61a4a7dc77534551bce761a202f6a993075cee60f572f5000fae7a",
+      "decision": "qualified",
+      "basis": "current-byte author-repair reclosure; exact pinned WEB and live Wikipedia body read in current turn",
+      "fixedWEBChecks": [
+        {
+          "ref": "1CH 11:15",
+          "fixedWEBText": "Three of the thirty chief men went down to the rock to David, into the cave of Adullam; and the army of the Philistines were encamped in the valley of Rephaim.",
+          "citationURL": "https://ebible.org/engwebp/1CH11.htm#V15",
+          "sourceTextSHA256": "d185908582b7ffb3b4fe3a88572ad92cfbeca88ec9bb83365f9248a152c3d68e",
+          "priorContext": "They stood in the middle of the plot, defended it, and killed the Philistines; and the LORD saved them by a great victory.",
+          "nextContext": "David was then in the stronghold, and the garrison of the Philistines was in Bethlehem at that time."
+        },
+        {
+          "ref": "1CH 14:9",
+          "fixedWEBText": "Now the Philistines had come and made a raid in the valley of Rephaim.",
+          "citationURL": "https://ebible.org/engwebp/1CH14.htm#V9",
+          "sourceTextSHA256": "670246ce074fc55cd580f85fe2da8fb1120e5b1a77b89c6611fca4f534baf054",
+          "priorContext": "When the Philistines heard that David was anointed king over all Israel, all the Philistines went up to seek David; and David heard of it, and went out against them.",
+          "nextContext": "David inquired of God, saying, “Shall I go up against the Philistines? Will you deliver them into my hand?” The LORD said to him, “Go up; for I will deliver them into your hand.”"
+        },
+        {
+          "ref": "1CH 14:13",
+          "fixedWEBText": "The Philistines made another raid in the valley.",
+          "citationURL": "https://ebible.org/engwebp/1CH14.htm#V13",
+          "sourceTextSHA256": "bb8c2a0d4ae1d2ffa8fb1be84f260915b9aa5584c8b36132f8e58e2fb907945d",
+          "priorContext": "They left their gods there; and David gave a command, and they were burned with fire.",
+          "nextContext": "David inquired again of God; and God said to him, “You shall not go up after them. Turn away from them, and come on them opposite the mulberry trees."
+        }
+      ],
+      "wikipediaBodyRead": {
+        "url": "https://en.wikipedia.org/wiki/Valley_of_Rephaim",
+        "locator": "live lines 117, 121–123; southwest valley geography and 1CH14 narrative/second raid.",
+        "currentNoteJa": "記事はレファイムの谷をエルサレム南西の谷地形として説明します。現代地形との詳細な対応は確定しません。",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "checkedLiveInCurrentTurn": true,
+        "evidenceSidecarLocator": "Lead lines 116–117 describes the valley southwest of Jerusalem; Biblical narrative lines 121–123 directly discusses the Philistine action and cites 1 Chronicles 14:8–16.",
+        "evidenceSidecarSupport": "記事はレファイムの谷をエルサレム南西の谷地形として説明します。現代地形との詳細な対応は確定しません。"
+      },
+      "readerFieldsReviewed": {
+        "knownBy": {
+          "chapter": 11,
+          "verse": 15
+        },
+        "summaryJa": "レファイムの谷は、ダビデの時代にペリシテ軍が陣を敷いた場所として記されます。",
+        "subtitleJa": "ペリシテ軍が陣を敷いた谷",
+        "historicalRoleJa": "エルサレム南西側に関わる谷地名ですが、特定の現代地形への比定は確定しません。",
+        "identityNoteJa": "",
+        "modernLocationJa": "古代の谷の範囲や現代地形との一致には不確実性があります。",
+        "locationNoteJa": "谷が指す古代の範囲と現代地形の対応には幅があり、特定の一点には定められません。"
+      },
+      "coordinate": null,
+      "facts": [],
+      "reasonJa": "1CH11:15 and 14:9 name the Valley of Rephaim; 14:13 says “the valley” in the continuing second-raid account. Current location note limits itself to uncertainty in the ancient valley’s boundaries/current topography. The live article lines 117 and 121–123 identifies the southwest valley and discusses the Chronicles raid passages. Future article wording was removed; coordinates remain null and no exact site is claimed.",
+      "repairLogPath": "evidence/places_3/author-repairs-batch02-reader-language-followup.json",
+      "repairLogSHA256": "d49337f67048fca663511386216c31735d6750473347bcb1d1747023411fd1ba",
+      "previousFailClosed": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:zobah-hamath_1273",
+      "draftPath": "drafts/places_3/1CH_zobah-hamath_1273.json",
+      "currentDraftSHA256": "4963a64bfced30ab4697fa07530b9cbc5787f0b2e3ab9720fee11092ac31ebd8",
+      "profileSHA256": "38e0b9de817f645c4bec37c0d4a3e58baecccb040f5718dc069a72c7385a0bed",
+      "evidencePath": "evidence/places_3/1CH_zobah-hamath_1273.json",
+      "currentEvidenceSHA256": "7b1c17e750f61b356cf021b47712e8f074f96b2d63ebeceedd752e387dcfa44b",
+      "decision": "pass",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 18:3",
+          "text": "David defeated Hadadezer king of Zobah, toward Hamath, as he went to establish his dominion by the river Euphrates.",
+          "citationURL": "https://ebible.org/engwebp/1CH18.htm#V3",
+          "sourceTextSHA256": "1b9858bac8b41aa29c9c65e895e82af605a5536b8b2c9e9eb2e3a622cea790ef",
+          "previousContext": "He defeated Moab; and the Moabites became servants to David and brought tribute.",
+          "nextContext": "David took from him one thousand chariots, seven thousand horsemen, and twenty thousand footmen; and David hamstrung all the chariot horses, but reserved of them enough for one hundred chariots.",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:zobah-hamath_1273",
+        "category": "uncertain",
+        "allowCandidateMap": false,
+        "allowFrom": null,
+        "reasonJa": "assignmentの候補名は原文の句「Zobah, toward Hamath」を一体の地名に誤結合した可能性が高く、固定本文は複合名を支持しない。地名プロフィールを作らない。",
+        "verificationState": "legacy candidate suppressed or profile held; profile.coordinate remains null"
+      },
+      "currentProfileCanonicalSHA256": null,
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:zobah_1272",
+      "draftPath": "drafts/places_3/1CH_zobah_1272.json",
+      "currentDraftSHA256": "ada6c9e10a6bac515ebb1e71ee1401f84760ff985bb3999da9e214ca1bed9ccf",
+      "profileSHA256": "3f16ff7c71d919e00ca5c8c9c7c27099be5b068fc646b158c07add4ef8b92f94",
+      "evidencePath": "evidence/places_3/1CH_zobah_1272.json",
+      "currentEvidenceSHA256": "ef475404614ae1ff2aa5f573f69cedb14f18f774ff29bff7fbfac12370a3ef25",
+      "decision": "qualified",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "1CH 18:3",
+          "text": "David defeated Hadadezer king of Zobah, toward Hamath, as he went to establish his dominion by the river Euphrates.",
+          "citationURL": "https://ebible.org/engwebp/1CH18.htm#V3",
+          "sourceTextSHA256": "1b9858bac8b41aa29c9c65e895e82af605a5536b8b2c9e9eb2e3a622cea790ef",
+          "previousContext": "He defeated Moab; and the Moabites became servants to David and brought tribute.",
+          "nextContext": "David took from him one thousand chariots, seven thousand horsemen, and twenty thousand footmen; and David hamstrung all the chariot horses, but reserved of them enough for one hundred chariots.",
+          "textStatus": "present"
+        },
+        {
+          "ref": "1CH 18:5",
+          "text": "When the Syrians of Damascus came to help Hadadezer king of Zobah, David struck twenty-two thousand men of the Syrians.",
+          "citationURL": "https://ebible.org/engwebp/1CH18.htm#V5",
+          "sourceTextSHA256": "cf0464ccf00052ee81efc706c877b1a01271867df8abcbc2c9fdf5f46514ae11",
+          "previousContext": "David took from him one thousand chariots, seven thousand horsemen, and twenty thousand footmen; and David hamstrung all the chariot horses, but reserved of them enough for one hundred chariots.",
+          "nextContext": "Then David put garrisons in Syria of Damascus; and the Syrians became servants to David and brought tribute. The LORD gave victory to David wherever he went.",
+          "textStatus": "present"
+        },
+        {
+          "ref": "1CH 18:9",
+          "text": "When Tou king of Hamath heard that David had struck all the army of Hadadezer king of Zobah,",
+          "citationURL": "https://ebible.org/engwebp/1CH18.htm#V9",
+          "sourceTextSHA256": "0487476dfc7243a032e3987c22815f067ccf79186e26dd2c4550e41ea0dd8c40",
+          "previousContext": "From Tibhath and from Cun, cities of Hadadezer, David took very much bronze, with which Solomon made the bronze sea, the pillars, and the vessels of bronze.",
+          "nextContext": "he sent Hadoram his son to King David to greet him and to bless him, because he had fought against Hadadezer and struck him (for Hadadezer had wars with Tou); and he had with him all kinds of vessels of gold and silver and bronze.",
+          "textStatus": "present"
+        },
+        {
+          "ref": "1CH 19:6",
+          "text": "When the children of Ammon saw that they had made themselves odious to David, Hanun and the children of Ammon sent one thousand talents of silver to hire chariots and horsemen out of Mesopotamia, out of Aram-maacah, and out of Zobah.",
+          "citationURL": "https://ebible.org/engwebp/1CH19.htm#V6",
+          "sourceTextSHA256": "3498f8d90369c006fb977387bda23788103ca81802a63b5b58c54d8386396efa",
+          "previousContext": "Then some people went and told David how the men were treated. He sent to meet them; for the men were greatly humiliated. The king said, “Stay at Jericho until your beards have grown, and then return.”",
+          "nextContext": "So they hired for themselves thirty-two thousand chariots, and the king of Maacah with his people, who came and encamped near Medeba. The children of Ammon gathered themselves together from their cities, and came to battle.",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "1CH",
+        "id": "place:zobah_1272",
+        "category": "region",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 18,
+          "verse": 3
+        },
+        "reasonJa": "記事はツォバを広域の古代王国として扱い、都市の比定を複数説として示します。既存点は王国領の確定点や中心地ではなく未確定な参考候補と明示する場合に限り表示できます。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "3f16ff7c71d919e00ca5c8c9c7c27099be5b068fc646b158c07add4ef8b92f94",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:adullam_31",
+      "draftPath": "drafts/places_3/2CH_adullam_31.json",
+      "currentDraftSHA256": "1a8a22bc5b91e599ec22f6c780df03d412f2d9acd3cbf873b771260c71ba2a73",
+      "profileSHA256": "d7dee12f815f92c94a34ce027df518cfa5165feb42f20d7debddeb6606337428",
+      "evidencePath": "evidence/places_3/2CH_adullam_31.json",
+      "currentEvidenceSHA256": "dcb771f2f0ce7e0a6cb503205ac75391bb18d0504a78cda959963e067e14b9ba",
+      "decision": "qualified",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "2CH 11:7",
+          "text": "Beth Zur, Soco, Adullam,",
+          "citationURL": "https://ebible.org/engwebp/2CH11.htm#V7",
+          "sourceTextSHA256": "d2e5de4016eff5847be172d346a3259fbedd850ca777715666a178d3bfc7bc78",
+          "previousContext": "He built Bethlehem, Etam, Tekoa,",
+          "nextContext": "Gath, Mareshah, Ziph,",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "2CH",
+        "id": "place:adullam_31",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 11,
+          "verse": 7
+        },
+        "reasonJa": "現代遺跡候補は複数あり、記事はキルベト・エイド・エル・ミエを有力候補としつつ別候補も記します。 既存位置を未確定な参考候補としてのみ表示。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "d7dee12f815f92c94a34ce027df518cfa5165feb42f20d7debddeb6606337428",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:ashdod_101",
+      "draftPath": "drafts/places_3/2CH_ashdod_101.json",
+      "currentDraftSHA256": "f513114d4f3a033a83c76c03e83b4114ddbb8fe9e10e39e1549b2c70cef605b7",
+      "profileSHA256": "1d925b28b7d6b00c9715841609f73c5337c32b75b71a2b5ec52cb68779c179d7",
+      "evidencePath": "evidence/places_3/2CH_ashdod_101.json",
+      "currentEvidenceSHA256": "15083e593bf67a5e4b7e1cc76dae6cbe6442d882acd2871649e830e8d44154a5",
+      "decision": "qualified",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "2CH 26:6",
+          "text": "He went out and fought against the Philistines, and broke down the wall of Gath, the wall of Jabneh, and the wall of Ashdod; and he built cities in the country of Ashdod, and among the Philistines.",
+          "citationURL": "https://ebible.org/engwebp/2CH26.htm#V6",
+          "sourceTextSHA256": "9d59cdb3949b4ae626fa7d62ad389b52434a5f8228fde759fe5694f1eee4e1ae",
+          "previousContext": "He set himself to seek God in the days of Zechariah, who had understanding in the vision of God; and as long as he sought the LORD, God made him prosper.",
+          "nextContext": "God helped him against the Philistines, and against the Arabians who lived in Gur Baal, and the Meunim.",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "2CH",
+        "id": "place:ashdod_101",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 26,
+          "verse": 6
+        },
+        "reasonJa": "古代アシュドドはテル・アシュドド／イスドゥドに置かれ、現在のアシュドド市とは別の市街地です。 既存位置を未確定な参考候補としてのみ表示。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "1d925b28b7d6b00c9715841609f73c5337c32b75b71a2b5ec52cb68779c179d7",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:assyria_111",
+      "draftPath": "drafts/places_3/2CH_assyria_111.json",
+      "currentDraftSHA256": "44c0abc709fea08eef8739432f8281ba1ccc92cd7b619a556022d78b41bfd97d",
+      "profileSHA256": "ffe6f3e6e37d3b1ceab97953691c4bba379617735c6761ad174522c37711e7f8",
+      "evidencePath": "evidence/places_3/2CH_assyria_111.json",
+      "currentEvidenceSHA256": "f38c47740579b9af9803645f14927aabf12558864d50224cd69c7c7cc76568b3",
+      "decision": "qualified",
+      "basis": "current-byte author-repair reclosure; exact pinned WEB and live Wikipedia body read in current turn",
+      "fixedWEBChecks": [
+        {
+          "ref": "2CH 28:16",
+          "fixedWEBText": "At that time King Ahaz sent to the kings of Assyria to help him.",
+          "citationURL": "https://ebible.org/engwebp/2CH28.htm#V16",
+          "sourceTextSHA256": "fa3d8f69d4ea9e9d385a9f9d2eb24ff2e231b987f07581aea07e631eea474280",
+          "priorContext": "The men who have been mentioned by name rose up and took the captives, and with the plunder clothed all who were naked among them, dressed them, gave them sandals, gave them something to eat and to drink, anointed them, carried all the feeble of them on donkeys, and brought them to Jericho, the city of palm trees, to their brothers. Then they returned to Samaria.",
+          "nextContext": "For again the Edomites had come and struck Judah, and carried away captives."
+        },
+        {
+          "ref": "2CH 32:1",
+          "fixedWEBText": "After these things and this faithfulness, Sennacherib king of Assyria came, entered into Judah, encamped against the fortified cities, and intended to win them for himself.",
+          "citationURL": "https://ebible.org/engwebp/2CH32.htm#V1",
+          "sourceTextSHA256": "9b8186923d6336daf348785818232f8b4b58a113c3a0ec2ddc3564e9fd21ba92",
+          "priorContext": "In every work that he began in the service of God’s house, in the law, and in the commandments, to seek his God, he did it with all his heart and prospered.",
+          "nextContext": "When Hezekiah saw that Sennacherib had come, and that he was planning to fight against Jerusalem,"
+        }
+      ],
+      "wikipediaBodyRead": {
+        "url": "https://en.wikipedia.org/wiki/Assyria",
+        "locator": "live lines 244–251 and History; ancient Assyria/state/empire and changing territorial extent.",
+        "currentNoteJa": "記事はアッシリアを古代王国・帝国として扱います。領域は時期に応じて変わり、現在の単一国家と同一視できません。",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "checkedLiveInCurrentTurn": true,
+        "evidenceSidecarLocator": "導入および「History」sections",
+        "evidenceSidecarSupport": "記事はアッシリアを古代王国・帝国として扱います。領域は時期に応じて変わり、現在の単一国家と同一視できません。"
+      },
+      "readerFieldsReviewed": {
+        "knownBy": {
+          "chapter": 28,
+          "verse": 16
+        },
+        "summaryJa": "アハズが助けを求めた相手として、アッシリアの王たちが記されます。",
+        "subtitleJa": "王国・帝国の名として現れるアッシリア",
+        "historicalRoleJa": "古代の王国・帝国名であり、町ではありません。",
+        "identityNoteJa": "",
+        "modernLocationJa": "北メソポタミアを中心とする古代国家・帝国の範囲は時代により変化し、現代国境とは一致しません。",
+        "locationNoteJa": "アッシリアの支配域は時代とともに変わり、現代の国境線とは一致しません。"
+      },
+      "coordinate": null,
+      "facts": [
+        {
+          "textJa": "センナケリブがユダへ侵攻し、エルサレムを脅かしたと記されます。",
+          "knownBy": {
+            "chapter": 32,
+            "verse": 1
+          },
+          "sourceIds": [
+            "webp-2ch-32-1"
+          ]
+        }
+      ],
+      "reasonJa": "2CH28:16 introduces Assyrian kings as Ahaz’s requested aid. Current summary no longer previews Sennacherib’s later campaign; 32:1 is a separately gated fact. The article explicitly treats ancient Assyria as state/empire and distinguishes heartland from imperial expansion (live lines 244–251 and History). Reader note is not future-facing. Extent changes over time, so qualified.",
+      "repairLogPath": "evidence/places_3/author-repairs-batch02-reader-language-followup.json",
+      "repairLogSHA256": "d49337f67048fca663511386216c31735d6750473347bcb1d1747023411fd1ba",
+      "previousFailClosed": true
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:babylon_151",
+      "draftPath": "drafts/places_3/2CH_babylon_151.json",
+      "currentDraftSHA256": "40054ebdace824dfc3cd1263ab345d40786af41396678b2ed1b0137d8555c8df",
+      "profileSHA256": "51a435c8c877c8f3559dc436cee28a452c55598d962ed81690e453ae1e99a242",
+      "evidencePath": "evidence/places_3/2CH_babylon_151.json",
+      "currentEvidenceSHA256": "d5f9a51a86b4da3c3122761279ec8d71f97663bd1d5d381febc98caaff43b45c",
+      "decision": "qualified",
+      "basis": "current-byte author-repair reclosure; exact pinned WEB and live Wikipedia body read in current turn",
+      "fixedWEBChecks": [
+        {
+          "ref": "2CH 32:31",
+          "fixedWEBText": "However, concerning the ambassadors of the princes of Babylon, who sent to him to inquire of the wonder that was done in the land, God left him to test him, that he might know all that was in his heart.",
+          "citationURL": "https://ebible.org/engwebp/2CH32.htm#V31",
+          "sourceTextSHA256": "ade8d0629d65348f0250d5e4414155c5f30587db387dbcb92026ab0976135cfd",
+          "priorContext": "This same Hezekiah also stopped the upper spring of the waters of Gihon, and brought them straight down on the west side of David’s city. Hezekiah prospered in all his works.",
+          "nextContext": "Now the rest of the acts of Hezekiah and his good deeds, behold, they are written in the vision of Isaiah the prophet, the son of Amoz, in the book of the kings of Judah and Israel."
+        },
+        {
+          "ref": "2CH 33:11",
+          "fixedWEBText": "Therefore the LORD brought on them the captains of the army of the king of Assyria, who took Manasseh in chains, bound him with fetters, and carried him to Babylon.",
+          "citationURL": "https://ebible.org/engwebp/2CH33.htm#V11",
+          "sourceTextSHA256": "80e44283a38776fd754012e2b1f2e9d9c14ef64aafbb2dfb832c0f8b6a47cf00",
+          "priorContext": "The LORD spoke to Manasseh and to his people, but they didn’t listen.",
+          "nextContext": "When he was in distress, he begged the LORD his God, and humbled himself greatly before the God of his fathers."
+        },
+        {
+          "ref": "2CH 36:6",
+          "fixedWEBText": "Nebuchadnezzar king of Babylon came up against him, and bound him in fetters to carry him to Babylon.",
+          "citationURL": "https://ebible.org/engwebp/2CH36.htm#V6",
+          "sourceTextSHA256": "d7b48b57acc730ae9ac8ef8fe1760b9fd9cbb07776da8c057ba462f199a3edbb",
+          "priorContext": "Jehoiakim was twenty-five years old when he began to reign, and he reigned eleven years in Jerusalem. He did that which was evil in the LORD his God’s sight.",
+          "nextContext": "Nebuchadnezzar also carried some of the vessels of the LORD’s house to Babylon, and put them in his temple at Babylon."
+        },
+        {
+          "ref": "2CH 36:7",
+          "fixedWEBText": "Nebuchadnezzar also carried some of the vessels of the LORD’s house to Babylon, and put them in his temple at Babylon.",
+          "citationURL": "https://ebible.org/engwebp/2CH36.htm#V7",
+          "sourceTextSHA256": "590e5c1c95de0f835afa49337d416294b61e79a7b6e6639c03973e159968a004",
+          "priorContext": "Nebuchadnezzar king of Babylon came up against him, and bound him in fetters to carry him to Babylon.",
+          "nextContext": "Now the rest of the acts of Jehoiakim, and his abominations which he did, and that which was found in him, behold, they are written in the book of the kings of Israel and Judah; and Jehoiachin his son reigned in his place."
+        },
+        {
+          "ref": "2CH 36:10",
+          "fixedWEBText": "At the return of the year, King Nebuchadnezzar sent and brought him to Babylon, with the valuable vessels of the LORD’s house, and made Zedekiah his brother king over Judah and Jerusalem.",
+          "citationURL": "https://ebible.org/engwebp/2CH36.htm#V10",
+          "sourceTextSHA256": "f3e659af32924f0b524b6a0a9f6541c773f59dd4f1e55a32dda98cabfb0d3842",
+          "priorContext": "Jehoiachin was eight years old when he began to reign, and he reigned three months and ten days in Jerusalem. He did that which was evil in the LORD’s sight.",
+          "nextContext": "Zedekiah was twenty-one years old when he began to reign, and he reigned eleven years in Jerusalem."
+        },
+        {
+          "ref": "2CH 36:18",
+          "fixedWEBText": "All the vessels of God’s house, great and small, and the treasures of the LORD’s house, and the treasures of the king and of his princes, all these he brought to Babylon.",
+          "citationURL": "https://ebible.org/engwebp/2CH36.htm#V18",
+          "sourceTextSHA256": "4186438cec9f1048be80a3fe0e49e5fd5078f98f103da5c27f62fa054304e2a9",
+          "priorContext": "Therefore he brought on them the king of the Chaldeans, who killed their young men with the sword in the house of their sanctuary, and had no compassion on young man or virgin, old man or infirm. He gave them all into his hand.",
+          "nextContext": "They burned God’s house, broke down the wall of Jerusalem, burned all its palaces with fire, and destroyed all of its valuable vessels."
+        },
+        {
+          "ref": "2CH 36:20",
+          "fixedWEBText": "He carried those who had escaped from the sword away to Babylon, and they were servants to him and his sons until the reign of the kingdom of Persia,",
+          "citationURL": "https://ebible.org/engwebp/2CH36.htm#V20",
+          "sourceTextSHA256": "49fe9de524ae7731f9b7cbf52825d1b3bb404a74b2b9e9408fb5dd66f50ddfb1",
+          "priorContext": "They burned God’s house, broke down the wall of Jerusalem, burned all its palaces with fire, and destroyed all of its valuable vessels.",
+          "nextContext": "to fulfill the LORD’s word by Jeremiah’s mouth, until the land had enjoyed its Sabbaths. As long as it lay desolate, it kept Sabbath, to fulfill seventy years."
+        }
+      ],
+      "wikipediaBodyRead": {
+        "url": "https://en.wikipedia.org/wiki/Babylon",
+        "locator": "live lines 265–269, 288–297; ancient city near Hillah, region Babylonia, incomplete/contradictory source picture.",
+        "currentNoteJa": "記事はバビロンをユーフラテス川下流域の古代都市と説明し、都市像には資料上の不確かさもあるとします。",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "checkedLiveInCurrentTurn": true,
+        "evidenceSidecarLocator": "本文288行以降",
+        "evidenceSidecarSupport": "記事はバビロンをユーフラテス川下流域の古代都市と説明し、都市像には資料上の不確かさもあるとします。"
+      },
+      "readerFieldsReviewed": {
+        "knownBy": {
+          "chapter": 32,
+          "verse": 31
+        },
+        "summaryJa": "バビロンの王族がヒゼキヤのもとへ使節を送ったと記されます。",
+        "subtitleJa": "使節を送った王族の地として現れるバビロン",
+        "historicalRoleJa": "メソポタミアの古代都市で、文脈により王国名としても用いられます。",
+        "identityNoteJa": "",
+        "modernLocationJa": "古代都市遺跡はユーフラテス川下流域にあります。政治体としてのバビロニア領域と都市遺跡を区別します。",
+        "locationNoteJa": "古代都市遺跡と現在のバービル周辺の市街地は区別され、現在の市街地全体を古代都市域とはみなせません。"
+      },
+      "coordinate": null,
+      "facts": [
+        {
+          "textJa": "アッシリア軍がマナセを捕らえ、バビロンへ連行したと記されます。",
+          "knownBy": {
+            "chapter": 33,
+            "verse": 11
+          },
+          "sourceIds": [
+            "webp-2ch-33-11"
+          ]
+        },
+        {
+          "textJa": "ネブカドネツァルはエホヤキムを捕らえ、バビロンへ連れて行こうとしました。",
+          "knownBy": {
+            "chapter": 36,
+            "verse": 6
+          },
+          "sourceIds": [
+            "webp-2ch-36-6"
+          ]
+        },
+        {
+          "textJa": "神殿の器物の一部がバビロンへ運ばれ、王の神殿に置かれたと記されます。",
+          "knownBy": {
+            "chapter": 36,
+            "verse": 7
+          },
+          "sourceIds": [
+            "webp-2ch-36-7"
+          ]
+        },
+        {
+          "textJa": "ネブカドネツァルはエホヤキンをバビロンへ連れて行き、ゼデキヤをユダの王にしました。",
+          "knownBy": {
+            "chapter": 36,
+            "verse": 10
+          },
+          "sourceIds": [
+            "webp-2ch-36-10"
+          ]
+        },
+        {
+          "textJa": "神殿の器物や王家の財宝がバビロンへ運ばれたと記されます。",
+          "knownBy": {
+            "chapter": 36,
+            "verse": 18
+          },
+          "sourceIds": [
+            "webp-2ch-36-18"
+          ]
+        },
+        {
+          "textJa": "剣を免れた人々もバビロンへ連れて行かれたと記されます。",
+          "knownBy": {
+            "chapter": 36,
+            "verse": 20
+          },
+          "sourceIds": [
+            "webp-2ch-36-20"
+          ]
+        }
+      ],
+      "reasonJa": "2CH32:31 first mentions Babylon via its princes’ ambassadors. Current summary is limited to that; later transport/captivity uses are separate facts gated at 33:11 and 36:6–20. Live article lines 265–269 and 288–297 describe Babylon as the ancient lower-Euphrates city, its relationship to Babylonia, and uncertainty in the historical picture. Ancient city/realm distinction and modern Hillah caveat remain; no exact coordinate is promoted.",
+      "repairLogPath": "evidence/places_3/author-repairs-batch02-reader-language-followup.json",
+      "repairLogSHA256": "d49337f67048fca663511386216c31735d6750473347bcb1d1747023411fd1ba",
+      "previousFailClosed": true
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:beersheba_170",
+      "draftPath": "drafts/places_3/2CH_beersheba_170.json",
+      "currentDraftSHA256": "1388f3dc52d904caf6dca93c337cc831151175d35d80d37635039449a5e97250",
+      "profileSHA256": "36ea65d6bcace23eb448f4a51fbee9a910c17cd208e079c03b914698e9f9c95e",
+      "evidencePath": "evidence/places_3/2CH_beersheba_170.json",
+      "currentEvidenceSHA256": "310cd7c218d5c72bdb21d8d6518897923ff310eb6ddb26c68c17e8a987229fc5",
+      "decision": "qualified",
+      "basis": "current-byte author-repair reclosure; exact pinned WEB and live Wikipedia body read in current turn",
+      "fixedWEBChecks": [
+        {
+          "ref": "2CH 19:4",
+          "fixedWEBText": "Jehoshaphat lived at Jerusalem; and he went out again among the people from Beersheba to the hill country of Ephraim, and brought them back to the LORD, the God of their fathers.",
+          "citationURL": "https://ebible.org/engwebp/2CH19.htm#V4",
+          "sourceTextSHA256": "f870fdef7746592ff56a8d4bff884443ebe5b2f37839218d6885547e78932110",
+          "priorContext": "Nevertheless there are good things found in you, in that you have put away the Asheroth out of the land, and have set your heart to seek God.”",
+          "nextContext": "He set judges in the land throughout all the fortified cities of Judah, city by city,"
+        },
+        {
+          "ref": "2CH 24:1",
+          "fixedWEBText": "Joash was seven years old when he began to reign, and he reigned forty years in Jerusalem. His mother’s name was Zibiah, of Beersheba.",
+          "citationURL": "https://ebible.org/engwebp/2CH24.htm#V1",
+          "sourceTextSHA256": "03578170c1974f6155f25c0802587be823de63c355ba031f81933c05f0a93ab4",
+          "priorContext": "So all the people of the land rejoiced, and the city was quiet. They had slain Athaliah with the sword.",
+          "nextContext": "Joash did that which was right in the LORD’s eyes all the days of Jehoiada the priest."
+        }
+      ],
+      "wikipediaBodyRead": {
+        "url": "https://en.wikipedia.org/wiki/Beersheba",
+        "locator": "live lines 270–271; biblical boundary, Tel Be’er Sheva and modern city distinction.",
+        "currentNoteJa": "記事は聖書上の遺跡テル・ベエル・シェバと現代都市を区別し、両者が数キロ離れていると説明します。古代の町域を現代市街地全体と同一視しません。",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "checkedLiveInCurrentTurn": true,
+        "evidenceSidecarLocator": "Hebrew Bible section, lines 290–298: article’s verse discussion; history/geography lines 270–271 and 311–312 distinguish ancient Tel Beersheba from the present city. No later 2 Chronicles 24:1 information is included in the reader note.",
+        "evidenceSidecarSupport": "記事は聖書上の遺跡テル・ベエル・シェバと現代都市を区別し、両者が数キロ離れていると説明します。古代の町域を現代市街地全体と同一視しません。"
+      },
+      "readerFieldsReviewed": {
+        "knownBy": {
+          "chapter": 19,
+          "verse": 4
+        },
+        "summaryJa": "ベエル・シェバは、ヨシャファトが民の中を巡った範囲の南端として挙げられます。",
+        "subtitleJa": "ヨシャファトが民を巡った範囲の南端に挙がる町",
+        "historicalRoleJa": "ヨシャファトが民を巡った範囲の南端として記されます。",
+        "identityNoteJa": "",
+        "modernLocationJa": "古代の町と現代都市の関係を示す資料はありますが、古代の町域を特定の現代市街地全体と同一視しません。",
+        "locationNoteJa": "聖書時代の町と現代のベエルシェバ市は区別され、古代の町域が現代市街地全体に及ぶとは限りません。"
+      },
+      "coordinate": null,
+      "facts": [
+        {
+          "textJa": "ヨアシュの母ツィビアはベエル・シェバの出身と記されます。",
+          "knownBy": {
+            "chapter": 24,
+            "verse": 1
+          },
+          "sourceIds": [
+            "webp-2ch-24-1"
+          ]
+        }
+      ],
+      "reasonJa": "2CH19:4 identifies Beersheba as the southern extent of Jehoshaphat’s circuit. Zibiah-origin detail is gated at 24:1. The live article lines 270–271 mentions Beersheba as biblical southern boundary and distinguishes Tel Be’er Sheva from the modern city by about 4 km. Updated Wikipedia note contains no 24:1 preview. City/site extent remains uncertain.",
+      "repairLogPath": "evidence/places_3/author-repairs-batch02-reader-language-followup.json",
+      "repairLogSHA256": "d49337f67048fca663511386216c31735d6750473347bcb1d1747023411fd1ba",
+      "previousFailClosed": true
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:beth-horon_214",
+      "draftPath": "drafts/places_3/2CH_beth-horon_214.json",
+      "currentDraftSHA256": "3c386dea0e7cb2087de1dbbe5caa5930e3d61fbc411944737a7e2404142ab993",
+      "profileSHA256": "818eee68ea0a5fbb64f8d986b9b20cb02590e01bba66bfa682e8d304bac0fac1",
+      "evidencePath": "evidence/places_3/2CH_beth-horon_214.json",
+      "currentEvidenceSHA256": "7ef351c7707fccefc5a73f3f3d5940bcc4e230baa732202266c0e2777b38967e",
+      "decision": "qualified",
+      "basis": "current-byte author-repair reclosure; exact pinned WEB and live Wikipedia body read in current turn",
+      "fixedWEBChecks": [
+        {
+          "ref": "2CH 8:5",
+          "fixedWEBText": "Also he built Beth Horon the upper and Beth Horon the lower, fortified cities with walls, gates, and bars;",
+          "citationURL": "https://ebible.org/engwebp/2CH08.htm#V5",
+          "sourceTextSHA256": "373a71f2abbee82b50323ea3d344d0d1c52323015b051afdda3ce409a07888f9",
+          "priorContext": "He built Tadmor in the wilderness, and all the storage cities, which he built in Hamath.",
+          "nextContext": "and Baalath, and all the storage cities that Solomon had, and all the cities for his chariots, the cities for his horsemen, and all that Solomon desired to build for his pleasure in Jerusalem, in Lebanon, and in all the land of his dominion."
+        },
+        {
+          "ref": "2CH 25:13",
+          "fixedWEBText": "But the men of the army whom Amaziah sent back, that they should not go with him to battle, fell on the cities of Judah from Samaria even to Beth Horon, and struck of them three thousand, and took much plunder.",
+          "citationURL": "https://ebible.org/engwebp/2CH25.htm#V13",
+          "sourceTextSHA256": "d5fa1df1d671b3053a66ff2578a4be13487a6b393125d3db58795e36c4b8930f",
+          "priorContext": "The children of Judah carried away ten thousand alive, and brought them to the top of the rock, and threw them down from the top of the rock, so that they all were broken in pieces.",
+          "nextContext": "Now after Amaziah had come from the slaughter of the Edomites, he brought the gods of the children of Seir, and set them up to be his gods, and bowed down himself before them and burned incense to them."
+        }
+      ],
+      "wikipediaBodyRead": {
+        "url": "https://en.wikipedia.org/wiki/Bethoron",
+        "locator": "live lines 126–129; two neighboring towns, upper/lower distinction, modern village correspondences.",
+        "currentNoteJa": "記事はベト・ホロンを上・下の隣接する二つの古代町として扱い、それぞれに対応するとされる現代村を紹介します。古代の町域の詳細や単一地点への比定には留保が必要です。",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "checkedLiveInCurrentTurn": true,
+        "evidenceSidecarLocator": "Lead lines 126–129 describes two neighboring towns, sometimes distinguished as Upper and Lower, and modern village correspondences. The reader note omits the later 2 Chronicles 25:13 reference.",
+        "evidenceSidecarSupport": "記事はベト・ホロンを上・下の隣接する二つの古代町として扱い、それぞれに対応するとされる現代村を紹介します。古代の町域の詳細や単一地点への比定には留保が必要です。"
+      },
+      "readerFieldsReviewed": {
+        "knownBy": {
+          "chapter": 8,
+          "verse": 5
+        },
+        "summaryJa": "ベト・ホロンは、上町と下町の二つを指す地名です。ソロモンは両町を城壁・門・閂のある防備都市にしたと記されます。",
+        "subtitleJa": "上・下の二つの町",
+        "historicalRoleJa": "山地を通る古代の二つの町です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "古代名の現代所在地は確定しません。",
+        "locationNoteJa": "上・下二つの町の現代比定は確定しません。地図上の既存点を一方の町の所在地と断定できません。"
+      },
+      "coordinate": null,
+      "facts": [],
+      "reasonJa": "2CH8:5 explicitly lists upper and lower Beth-horon as two fortified cities. Revised Wikipedia note describes two neighboring towns and modern village correspondences, with location caveat, omitting later 25:13. A single candidate point must not be treated as the location of both towns. No future information remains in visible fields.",
+      "repairLogPath": "evidence/places_3/author-repairs-batch02-reader-language-followup.json",
+      "repairLogSHA256": "d49337f67048fca663511386216c31735d6750473347bcb1d1747023411fd1ba",
+      "previousFailClosed": true
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:bethel_202",
+      "draftPath": "drafts/places_3/2CH_bethel_202.json",
+      "currentDraftSHA256": "f3088dbb0c98ea34885d76a3dac8ef4ef6ede95bd77f783bc6c6645f4f3b4c2f",
+      "profileSHA256": "a0f67d3e8d972a1ae66a6cde2e58b912ee8b871650dc000a9c6a9e0b7524efda",
+      "evidencePath": "evidence/places_3/2CH_bethel_202.json",
+      "currentEvidenceSHA256": "5892bf1d95d9037a7d2b7ad53e6dcedac63706b0d8993edc6e31955465eadc6e",
+      "decision": "qualified",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "2CH 13:19",
+          "text": "Abijah pursued Jeroboam, and took cities from him: Bethel with its villages, Jeshanah with its villages, and Ephron with its villages.",
+          "citationURL": "https://ebible.org/engwebp/2CH13.htm#V19",
+          "sourceTextSHA256": "3f7ddc86db3627b96175bcbc3a5b6c3fc8d4bc976c06777fec5b99fd8f7476fa",
+          "previousContext": "Thus the children of Israel were brought under at that time, and the children of Judah prevailed, because they relied on the LORD, the God of their fathers.",
+          "nextContext": "Jeroboam didn’t recover strength again in the days of Abijah. The LORD struck him, and he died.",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "2CH",
+        "id": "place:bethel_202",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 13,
+          "verse": 19
+        },
+        "reasonJa": "多くの研究者は現代ベイティン付近に比定しますが異説があります。現在の入植地ベイト・エルとは別の地名です。 既存位置を未確定な参考候補としてのみ表示。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "a0f67d3e8d972a1ae66a6cde2e58b912ee8b871650dc000a9c6a9e0b7524efda",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:carchemish_277",
+      "draftPath": "drafts/places_3/2CH_carchemish_277.json",
+      "currentDraftSHA256": "b88f16c6f769e04dcb5812ff1f3e6dd2176205915cfbd79240b1d3640c633165",
+      "profileSHA256": "1866d0b4f34ab935732cc278566443cef681b3951adab12542e88430210045c8",
+      "evidencePath": "evidence/places_3/2CH_carchemish_277.json",
+      "currentEvidenceSHA256": "aec962c9b7c0df28461b3d3794c4738212899185c282e3ad86b4db7cedf4d2c1",
+      "decision": "pass",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "2CH 35:20",
+          "text": "After all this, when Josiah had prepared the temple, Neco king of Egypt went up to fight against Carchemish by the Euphrates, and Josiah went out against him.",
+          "citationURL": "https://ebible.org/engwebp/2CH35.htm#V20",
+          "sourceTextSHA256": "3660210f7f4fd2a74bc616f85d2ff10bb682e9085abfc5cc1d5fa0fd388b74d3",
+          "previousContext": "This Passover was kept in the eighteenth year of the reign of Josiah.",
+          "nextContext": "But he sent ambassadors to him, saying, “What have I to do with you, you king of Judah? I come not against you today, but against the house with which I have war. God has commanded me to make haste. Beware that it is God who is with me, that he not destroy you.”",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "2CH",
+        "id": "place:carchemish_277",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 35,
+          "verse": 20
+        },
+        "reasonJa": "遺跡は現代トルコ・シリア国境域にあります。 既存位置を未確定な参考候補としてのみ表示。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "1866d0b4f34ab935732cc278566443cef681b3951adab12542e88430210045c8",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:dan_323",
+      "draftPath": "drafts/places_3/2CH_dan_323.json",
+      "currentDraftSHA256": "69c4fd3208d83402154f7396e89b101e2771cbeaa435ebfb7c23091959892d52",
+      "profileSHA256": "859bd5b810eefed702166998d4b5ab7eef43d5a5f8fac3e6344e49a31f16da0a",
+      "evidencePath": "evidence/places_3/2CH_dan_323.json",
+      "currentEvidenceSHA256": "80ec05274cbf7fa3aa0bf18c8dec9e989a29b9a354eab7b8ffe366f45a9c2b31",
+      "decision": "qualified",
+      "basis": "current-byte author-repair reclosure; exact pinned WEB and live Wikipedia body read in current turn",
+      "fixedWEBChecks": [
+        {
+          "ref": "2CH 16:4",
+          "fixedWEBText": "Ben Hadad listened to King Asa, and sent the captains of his armies against the cities of Israel; and they struck Ijon, Dan, Abel Maim, and all the storage cities of Naphtali.",
+          "citationURL": "https://ebible.org/engwebp/2CH16.htm#V4",
+          "sourceTextSHA256": "d1f3a83f91deb036d43ba8819307b34a8aa199efcbd3418527d3121694be177b",
+          "priorContext": "“Let there be a treaty between me and you, as there was between my father and your father. Behold, I have sent you silver and gold. Go, break your treaty with Baasha king of Israel, that he may depart from me.”",
+          "nextContext": "When Baasha heard of it, he stopped building Ramah, and let his work cease."
+        },
+        {
+          "ref": "2CH 30:5",
+          "fixedWEBText": "So they established a decree to make proclamation throughout all Israel, from Beersheba even to Dan, that they should come to keep the Passover to the LORD, the God of Israel, at Jerusalem, for they had not kept it in great numbers in the way it is written.",
+          "citationURL": "https://ebible.org/engwebp/2CH30.htm#V5",
+          "sourceTextSHA256": "1f40763e5115aed7f9284f6b8e89a934f7bb352b493d49b8a66be3a89a21239e",
+          "priorContext": "The thing was right in the eyes of the king and of all the assembly.",
+          "nextContext": "So the couriers went with the letters from the king and his princes throughout all Israel and Judah, according to the commandment of the king, saying, “You children of Israel, turn again to the LORD, the God of Abraham, Isaac, and Israel, that he may return to the remnant of you that have escaped out of the hand of the kings of Assyria."
+        },
+        {
+          "ref": "2CH 2:14",
+          "fixedWEBText": "the son of a woman of the daughters of Dan; and his father was a man of Tyre. He is skillful to work in gold, in silver, in bronze, in iron, in stone, in timber, in purple, in blue, in fine linen, and in crimson, also to engrave any kind of engraving and to devise any device, that there may be a place appointed to him with your skillful men, and with the skillful men of my lord David your father.",
+          "citationURL": "https://ebible.org/engwebp/2CH02.htm#V14",
+          "sourceTextSHA256": "9ea1f0e37dabd5b3f972f3fac991aa28385569dfd59b3adcbd02f410c8542def",
+          "priorContext": "Now I have sent a skillful man, endowed with understanding, Huram-abi,",
+          "nextContext": "“Now therefore, the wheat, the barley, the oil, and the wine which my lord has spoken of, let him send to his servants;"
+        }
+      ],
+      "wikipediaBodyRead": {
+        "url": "https://en.wikipedia.org/wiki/Dan_(ancient_city)",
+        "locator": "live lines 146–147, 166–173; distinguishes Dan son of Jacob; ancient city/Laish, Tel Dan identification and historical misidentifications.",
+        "currentNoteJa": "記事はダンを古代都市として扱い、その遺跡をテル・ダン（テル・エル＝カディ）に結び付けます。聖書に現れる町名は、祖先名や部族名と区別されます。",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "checkedLiveInCurrentTurn": true,
+        "evidenceSidecarLocator": "Lead/history lines 166–168 identifies Dan as an ancient city and Tel Dan/Tel el-Qadi as the archaeological tell; lines 172–173 discuss older names and competing historical identifications.",
+        "evidenceSidecarSupport": "記事はダンを古代都市として扱い、その遺跡をテル・ダン（テル・エル＝カディ）に結び付けます。聖書に現れる町名は、祖先名や部族名と区別されます。"
+      },
+      "readerFieldsReviewed": {
+        "knownBy": {
+          "chapter": 16,
+          "verse": 4
+        },
+        "summaryJa": "ダンは、ベン・ハダドの軍勢が攻撃したイスラエルの町の一つとしてイヨン、アベル・マイムと並びます。",
+        "subtitleJa": "イスラエル諸都市と並んで記される古代の町",
+        "historicalRoleJa": "ベン・ハダドの軍勢が攻めたイスラエルの町々の一つとして記されます。",
+        "identityNoteJa": "",
+        "modernLocationJa": "古代遺跡テル・ダンは現在のテル・ダン自然保護区にあります。",
+        "locationNoteJa": "古代遺跡テル・ダンは現在テル・ダン自然保護区にありますが、古代都市の範囲と遺跡範囲の一致は確定しません。"
+      },
+      "coordinate": null,
+      "facts": [
+        {
+          "textJa": "ベエル・シェバからダンまでという範囲を示す表現で用いられます。",
+          "knownBy": {
+            "chapter": 30,
+            "verse": 5
+          },
+          "sourceIds": [
+            "webp-2ch-30-5"
+          ]
+        }
+      ],
+      "reasonJa": "2CH16:4 names town Dan among attacked Israelite cities; 30:5’s Beersheba-to-Dan formula is a later fact, and 2:14’s Dan is the craftsman’s maternal tribal lineage, not this town. Current summary/historical role are limited to 16:4. Note distinguishes city from ancestor/tribe without editorial process language. Live lines 146–147 and 166–173 identify ancient Dan/Laish and Tel Dan while noting historical misidentifications. Coordinates remain null; exact relation of tell and town footprint is not asserted.",
+      "repairLogPath": "evidence/places_3/author-repairs-batch02-reader-language-followup.json",
+      "repairLogSHA256": "d49337f67048fca663511386216c31735d6750473347bcb1d1747023411fd1ba",
+      "previousFailClosed": true
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:edom_357",
+      "draftPath": "drafts/places_3/2CH_edom_357.json",
+      "currentDraftSHA256": "e0d3ad991d6049ee4798472f25c2922da3b71409002bbd7ef64a1da75433f29a",
+      "profileSHA256": "ad3955560fcf5f731fd9671b7348a81686ce8b3ce003b2aca5be714aa1898682",
+      "evidencePath": "evidence/places_3/2CH_edom_357.json",
+      "currentEvidenceSHA256": "6efb84c58df7ca74b917a0489b6a62f2547ff6e95b7791ed932afe47496c1a57",
+      "decision": "qualified",
+      "basis": "prior independent closure retained after exact current draft/evidence SHA recomputation",
+      "priorReviewPath": "reviews/independent-batch02-places_3.json",
+      "priorReviewSHA256": "f70739fd99306fa6199e938d26098cd6745e1359dcd4d82824a4c91dcb069b21",
+      "currentHashMatchesPriorReview": true,
+      "primaryReferencesReviewed": [
+        {
+          "ref": "2CH 8:17",
+          "text": "Then Solomon went to Ezion Geber and to Eloth, on the seashore in the land of Edom.",
+          "citationURL": "https://ebible.org/engwebp/2CH08.htm#V17",
+          "sourceTextSHA256": "ccbfb7d807918017974ee465f047b1981819eaf0a20a2797e0b6aae7b7b0d4d2",
+          "previousContext": "Now all the work of Solomon was accomplished from the day of the foundation of the LORD’s house until it was finished. So the LORD’s house was completed.",
+          "nextContext": "Huram sent him ships and servants who had knowledge of the sea by the hands of his servants; and they came with the servants of Solomon to Ophir, and brought from there four hundred fifty talents of gold, and brought them to King Solomon.",
+          "textStatus": "present"
+        },
+        {
+          "ref": "2CH 20:2",
+          "text": "Then some came who told Jehoshaphat, saying, “A great multitude is coming against you from beyond the sea from Syria. Behold, they are in Hazazon Tamar” (that is, En Gedi).",
+          "citationURL": "https://ebible.org/engwebp/2CH20.htm#V2",
+          "sourceTextSHA256": "38a1800456963fc5220208912f51e3e06f3785a9e7ceb362ceddab9527055098",
+          "previousContext": "After this, the children of Moab, the children of Ammon, and with them some of the Meunites, came against Jehoshaphat to battle.",
+          "nextContext": "Jehoshaphat was alarmed, and set himself to seek the LORD. He proclaimed a fast throughout all Judah.",
+          "textStatus": "present"
+        },
+        {
+          "ref": "2CH 25:19",
+          "text": "You say to yourself that you have struck Edom; and your heart lifts you up to boast. Now stay at home. Why should you meddle with trouble, that you should fall, even you and Judah with you?’”",
+          "citationURL": "https://ebible.org/engwebp/2CH25.htm#V19",
+          "sourceTextSHA256": "65bb2771f9f1ae245526b2df09904365d72d77211d4e6e4fc76a116a7728c630",
+          "previousContext": "Joash king of Israel sent to Amaziah king of Judah, saying, “The thistle that was in Lebanon sent to the cedar that was in Lebanon, saying, ‘Give your daughter to my son as his wife. Then a wild animal that was in Lebanon passed by and trampled down the thistle.",
+          "nextContext": "But Amaziah would not listen; for it was of God, that he might deliver them into the hand of their enemies, because they had sought after the gods of Edom.",
+          "textStatus": "present"
+        },
+        {
+          "ref": "2CH 25:20",
+          "text": "But Amaziah would not listen; for it was of God, that he might deliver them into the hand of their enemies, because they had sought after the gods of Edom.",
+          "citationURL": "https://ebible.org/engwebp/2CH25.htm#V20",
+          "sourceTextSHA256": "4d31c5e5bf543971d1bcd5540a1f5d1acecf72d65b302f18bbb966ca83eee19d",
+          "previousContext": "You say to yourself that you have struck Edom; and your heart lifts you up to boast. Now stay at home. Why should you meddle with trouble, that you should fall, even you and Judah with you?’”",
+          "nextContext": "So Joash king of Israel went up, and he and Amaziah king of Judah looked one another in the face at Beth Shemesh, which belongs to Judah.",
+          "textStatus": "present"
+        },
+        {
+          "ref": "2CH 25:24",
+          "text": "He took all the gold and silver, and all the vessels that were found in God’s house with Obed-Edom, and the treasures of the king’s house, and the hostages, and returned to Samaria.",
+          "citationURL": "https://ebible.org/engwebp/2CH25.htm#V24",
+          "sourceTextSHA256": "6f7b336a720fdb5c6cf1097ffa5ce4979bd3555790afdfbac3077489bfb7fc8e",
+          "previousContext": "Joash king of Israel took Amaziah king of Judah, the son of Joash the son of Jehoahaz, at Beth Shemesh and brought him to Jerusalem, and broke down the wall of Jerusalem from the gate of Ephraim to the corner gate, four hundred cubits.",
+          "nextContext": "Amaziah the son of Joash, king of Judah, lived for fifteen years after the death of Joash, son of Jehoahaz, king of Israel.",
+          "textStatus": "present"
+        }
+      ],
+      "priorFindings": null,
+      "mapPolicy": {
+        "book": "2CH",
+        "id": "place:edom_357",
+        "category": "region",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 8,
+          "verse": 17
+        },
+        "reasonJa": "南レバントの広域王国で、現在の複数地域にまたがる歴史的領域です。現代国境と一致させません。 既存位置を未確定な参考候補としてのみ表示。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "currentProfileCanonicalSHA256": "ad3955560fcf5f731fd9671b7348a81686ce8b3ce003b2aca5be714aa1898682",
+      "reclosureStatus": "prior-verdict-retained-exact-current-SHA"
+    }
+  ]
+}

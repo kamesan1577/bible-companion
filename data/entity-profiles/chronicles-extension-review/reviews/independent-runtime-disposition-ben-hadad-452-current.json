@@ -1,0 +1,117 @@
+{
+  "reportType": "independent-current-runtime-disposition-delta",
+  "reviewedAtUTC": "2026-10-16T12:27:29Z",
+  "sourceDecision": "independent source-based display disposition; not profile approval or publication approval",
+  "sourceInputs": [
+    {
+      "path": "reviews/reclosure-independent-extension-reader-delta.json",
+      "sha256": "40f644fd6dc280afbee160154f0714fb78bdb1043976789a1fab01d8a82660f7"
+    },
+    {
+      "path": "evidence/author-repairs-independent-extension-reader-delta.json",
+      "sha256": "fae5c7eeb82a6ad3f747ff9425d9cfe2fe721f582883f5c6a8a33c59e8351f5a"
+    },
+    {
+      "path": "evidence/manifest-independent-extension-reader-delta-current.json",
+      "sha256": "843ff6997b84c5d4d046e997a98a4e2b1187c6b1b2a4a0910268197dc20e9114"
+    },
+    {
+      "path": "inventory/targets/chronicles2-web-verses.json",
+      "sha256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+    }
+  ],
+  "rows": [
+    {
+      "book": "2CH",
+      "entityID": "person:ben-hadad_452",
+      "draftPath": "drafts/persons_3/2CH_ben-hadad_452.json",
+      "evidencePath": "evidence/persons_3/2CH_ben-hadad_452.json",
+      "currentDraftSHA256": "8e52952a7298f9ec8756315620b1dd9b5759eb26d29851543f5a3d3fba293153",
+      "currentEvidenceSHA256": "9e66985d375681193f416237d109e20363ccd0d8c0968f72425c8bcf0339a273",
+      "currentProfileSHA256": "7a393407c8a6117ab3b885033d559c02cee09258b7e73e8069d3462b1f32eb90",
+      "decision": "qualified",
+      "runtimeDisposition": "related-link-supported",
+      "runtimeDispositionCurrentSHA256Binding": {
+        "boundDraftSHA256": "8e52952a7298f9ec8756315620b1dd9b5759eb26d29851543f5a3d3fba293153",
+        "boundEvidenceSHA256": "9e66985d375681193f416237d109e20363ccd0d8c0968f72425c8bcf0339a273",
+        "boundProfileSHA256": "7a393407c8a6117ab3b885033d559c02cee09258b7e73e8069d3462b1f32eb90",
+        "supersedesStaleBinding": {
+          "reportPath": "reviews/runtime-disposition-batch08-persons_3-qualified.json",
+          "reportSHA256": "aad484990ca426b16da43052cd0c670a2332071ef4d5c00f5d9a3e661513c81b",
+          "oldDraftSHA256": "0b13377512a3eb0416a9bc1d37cfd2693110e39b0dc9e9c65770393565485011"
+        }
+      },
+      "primaryTextChecks": [
+        {
+          "ref": "2CH 16:2",
+          "sourceID": "ben-hadad_452-webp-2ch-16-2",
+          "fixedURL": "https://ebible.org/engwebp/2CH16.htm#V2",
+          "sourceURL": "https://ebible.org/engwebp/2CH16.htm#V2",
+          "fixedText": "Then Asa brought out silver and gold out of the treasures of the LORD’s house and of the king’s house, and sent to Ben Hadad king of Syria, who lived at Damascus, saying,",
+          "evidenceText": "Then Asa brought out silver and gold out of the treasures of the LORD’s house and of the king’s house, and sent to Ben Hadad king of Syria, who lived at Damascus, saying,",
+          "textAndURLExact": true,
+          "sourceCategory": "primary-text",
+          "knownByOrFactGate": {
+            "chapter": 16,
+            "verse": 2
+          },
+          "gateMatches": true,
+          "textSHA256": "a3a06090183391bebc1e2deecdc32ea3b3bc6fa54fa205af0161545cadc250fe"
+        },
+        {
+          "ref": "2CH 16:4",
+          "sourceID": "ben-hadad_452-webp-2ch-16-4",
+          "fixedURL": "https://ebible.org/engwebp/2CH16.htm#V4",
+          "sourceURL": "https://ebible.org/engwebp/2CH16.htm#V4",
+          "fixedText": "Ben Hadad listened to King Asa, and sent the captains of his armies against the cities of Israel; and they struck Ijon, Dan, Abel Maim, and all the storage cities of Naphtali.",
+          "evidenceText": "Ben Hadad listened to King Asa, and sent the captains of his armies against the cities of Israel; and they struck Ijon, Dan, Abel Maim, and all the storage cities of Naphtali.",
+          "textAndURLExact": true,
+          "sourceCategory": "primary-text",
+          "knownByOrFactGate": {
+            "chapter": 16,
+            "verse": 4
+          },
+          "gateMatches": true,
+          "textSHA256": "d1f3a83f91deb036d43ba8819307b34a8aa199efcbd3418527d3121694be177b"
+        }
+      ],
+      "readerAndFactAssessment": {
+        "knownBy": {
+          "chapter": 16,
+          "verse": 2
+        },
+        "subtitleJa": "ダマスコに住むアラムの王として記され、アサが書簡を送った相手です。",
+        "summaryJa": "2歴代誌16:2は、ダマスコに住むアラム王ベン・ハダドへ、ユダ王アサが銀と金を携えて使者を送ったと記します。",
+        "fact": {
+          "textJa": "ベン・ハダドはアサの使者の言葉を聞き、イスラエルの町々へ軍の指揮官を送りました。",
+          "knownBy": {
+            "chapter": 16,
+            "verse": 4
+          },
+          "sourceIds": [
+            "ben-hadad_452-webp-2ch-16-4"
+          ]
+        },
+        "assessmentJa": "2CH 16:2はアサがベン・ハダドを使者の送付先として名指し、彼がダマスコ在住のアラム王であると述べる。送金を受け入れたとはこの節で断定せず、16:4の応答と軍派遣は同節をknownByとするfactに分けられている。現行profileの初出表示とfactは固定本文の時間順・主語に合う。"
+      },
+      "wikipediaAssessment": {
+        "url": "https://en.wikipedia.org/wiki/Ben-Hadad_I",
+        "title": "Ben-Hadad I",
+        "kind": "related-section",
+        "identityVerified": false,
+        "relationVerified": true,
+        "gate": {
+          "chapter": 16,
+          "verse": 2
+        },
+        "bodyRead": true,
+        "bodyLocator": "Current article lines 121–132. Lead identifies Ben-Hadad I as king of Aram-Damascus and Asa contemporary; lines 130–131 recount the Kings account of Asa calling on Ben-Hadad I and the towns taken. The article supports a relevant parallel, but does not establish that Chronicles’ unnumbered “Ben Hadad” is Ben-Hadad I.",
+        "checkedAtUTC": "2026-10-16T12:27:29Z",
+        "assessmentJa": "関連記事表示は支持できる。歴代誌本文は番号を付けず、Wikipedia記事はBen-Hadad Iを列王記上のアサ支援に結び付けるため、identityVerified=false、relationVerified=trueのままとする。"
+      },
+      "runtimeDispositionReasonJa": "現行draft/evidence/profileの3 SHAに再bind。一次本文のみで名前・王位・ダマスコ居住・アサからの送付先という初出表示は支持される。Wikipediaは同時代性と列王記の並行記述を示すが、歴代誌の無番号人物をBen-Hadad Iと同定しない。したがってプロフィール全体のqualifiedを維持し、一次本文表示＋related-sectionリンクは表示支持。",
+      "unresolvedJa": "2CH本文の無番号のBen Hadadを記事のBen-Hadad Iと同一人物とすることは未確定。この記事リンクから同一人物の断定・伝記の継承をしない。",
+      "publicationApproved": false
+    }
+  ]
+}

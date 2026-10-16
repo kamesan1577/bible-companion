@@ -1,0 +1,70 @@
+{
+  "entityID": "person:shammah_2540",
+  "book": "1CH",
+  "draftSHA256": "d24a873eee6fd631e8036710b897a59b03621bf5df22b534be1f79a808fbec3c",
+  "profileSHA256": null,
+  "sourceVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+  "sourceWitnessPath": "inventory/targets/chronicles1-web-verses.json",
+  "sourceWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+  "checkedAtUTC": "2026-10-16T10:25:41Z",
+  "sourceChecks": [
+    {
+      "sourceId": "shammah_2540-webp-1ch-11-27",
+      "chapter": 11,
+      "verse": 27,
+      "text": "Shammoth the Harorite, Helez the Pelonite,",
+      "status": "held-name-variant"
+    }
+  ],
+  "excludedCandidateChecks": [
+    {
+      "chapter": 11,
+      "verse": 27,
+      "candidate": "Shammah",
+      "reasonJa": "固定WEBはShammothと表記し、同一性は本文内に明記されない。Wikipediaは別書の対応名簿を関連情報として示すが、歴史的人物同一性は保留。"
+    }
+  ],
+  "profileDecisionJa": "割当候補Shammahと固定WEB 1CH 11:27のShammoth表記の同一性は確定せず、人物プロフィールは保留。旧wrapperのShamir/1CH24:24内容は別IDの混入として訂正した。",
+  "wikipediaSearchEvidence": {
+    "queries": [
+      "site:en.wikipedia.org/wiki \"Shammoth\" \"1 Chronicles 11:27\"",
+      "site:en.wikipedia.org/wiki \"Shammah\" \"2 Samuel 23:25\""
+    ],
+    "checkedAtUTC": "2026-10-16T10:38:41Z",
+    "searchReasonJa": "固定WEB候補表記Shammothと関連するShammahを英語表記で検索し、共有人物一覧の該当本文を読みました。",
+    "status": "searched-related-article-identity-held"
+  },
+  "wikipediaReadEvidence": {
+    "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z",
+    "title": "List of minor Hebrew Bible figures, L–Z",
+    "language": "en",
+    "kind": "shared-section",
+    "locator": "§Shammoth, lines 1388–1392: names Shammoth the Harorite in 1 Chronicles 11:27 and says the corresponding Samuel list contains Shammah the Harodite (2 Samuel 23:25).",
+    "supportJa": "The section directly documents the Chronicles spelling and reports a corresponding Samuel-list name; it does not state a firm identity equation.",
+    "checkedAtUTC": "2026-10-16T10:38:41Z",
+    "license": "Creative Commons Attribution-ShareAlike 4.0 International",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": "Wikipedia contributors.",
+    "identityVerified": false,
+    "relationVerified": true,
+    "searchQueries": [
+      "site:en.wikipedia.org/wiki \"Shammoth\" \"1 Chronicles 11:27\"",
+      "site:en.wikipedia.org/wiki \"Shammah\" \"2 Samuel 23:25\""
+    ],
+    "searchResultRef": "turn6460search19",
+    "readResultRef": "turn6461view1"
+  },
+  "wikipediaReadEvidenceSHA256": "a8bc8006877e3a7a5d34a2ccf5c6ba5aaa5726586e029c92ed1ae9e40466a9f8",
+  "authorRepairs": [
+    {
+      "checkedAtUTC": "2026-10-16T10:38:41Z",
+      "reason": "誤って混入していたShamir/24:24のwrapper情報を、割当候補person:shammah_2540の実際のWEB 11:27行へ訂正。人物同定は綴り差のため保留。",
+      "beforeDraftSHA256": "1298a1f42774bcf515c516b82dd4b046b85a91fb7f0fbdd70e1ccd6fb6086cd6",
+      "beforeEvidenceSHA256": "b7378e8b7acf286c3a3053863e6027268cfcd0b9f86b3ec8d0dd29876885f9ea",
+      "beforeBytesPreserved": [
+        "preservation/objects/1298a1f42774bcf515c516b82dd4b046b85a91fb7f0fbdd70e1ccd6fb6086cd6",
+        "preservation/objects/b7378e8b7acf286c3a3053863e6027268cfcd0b9f86b3ec8d0dd29876885f9ea"
+      ]
+    }
+  ]
+}

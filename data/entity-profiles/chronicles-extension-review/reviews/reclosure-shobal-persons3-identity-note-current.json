@@ -1,0 +1,151 @@
+{
+  "reportType": "independent-current-reclosure-delta",
+  "reviewedAtUTC": "2026-10-16T12:09:27Z",
+  "batch": "batch07/persons_3",
+  "sourceReclosurePath": "reviews/reclosure-shobal-persons3-batch07-delta.json",
+  "sourceReclosureSHA256": "c7a3f83243f497d884f554a23a80b0522e17bfda6bde5d61d9aa8413e4d0d57f",
+  "authorRepairLogPath": "evidence/persons_3/author-repair-shobal-identity-note-first-use.json",
+  "authorRepairLogSHA256": "65fb80cf44acfd616e72de4d7159214653d575d9d84115517a2de32af0fd4a2d",
+  "manifestPath": "reviews/batch07-persons_3-author-current-after-shobal-identity-note-repair.json",
+  "manifestSHA256": "df56aa8d182327d34e9fe11ebf678199a1b4d6e6957a33a951d9f7e3be88226c",
+  "rowCount": 1,
+  "rows": [
+    {
+      "book": "1CH",
+      "entityID": "person:shobal_2719",
+      "draftPath": "drafts/persons_3/1CH_shobal_2719.json",
+      "evidencePath": "evidence/persons_3/1CH_shobal_2719.json",
+      "currentDraftSHA256": "8f191f6f61be2916e4bbbeccffd1c9ae5ce9cba245500204540727038c39d77a",
+      "currentEvidenceSHA256": "16f2093776d38d7c525e71036b9d08a482335df5368b8c47ada2698d18d22743",
+      "currentProfileSHA256": "7091e3eacd0812a5f8956346d11bfc5bde0f1be72671ba1044344a00ccb1805a",
+      "decision": "pass",
+      "reviewFindings": [
+        {
+          "type": "reader-field-future-reference",
+          "field": "profile.identityNoteJa",
+          "result": "closed",
+          "basis": "The current identityNoteJa is empty. Author before/current bytes confirm only the earlier comparison to the Judah-line Shobal was removed; it was not moved to a new fact or retained in another current reader field."
+        },
+        {
+          "type": "first-use-and-current-reader-fields",
+          "result": "pass",
+          "knownBy": {
+            "chapter": 1,
+            "verse": 38
+          },
+          "subtitleJa": "セイルの子として記されるホリ人",
+          "summaryJa": "セイルの子らの一人として列挙されます。",
+          "identityNoteJa": "",
+          "historicalRoleJa": null,
+          "wikipediaNoteJa": "英語版一覧は、セイルの系譜に属するショバルを扱っています。",
+          "basis": "The summary stays with the 1:38 list of Seir’s sons. The 1:40 child list remains a gated fact. Current always-visible fields do not disclose the separate Judah genealogy at 2:50."
+        },
+        {
+          "type": "facts-and-source-gates",
+          "result": "pass",
+          "facts": [
+            {
+              "knownBy": {
+                "chapter": 1,
+                "verse": 40
+              },
+              "textJa": "ショバルの子として、アリアン、マナハト、エバル、シェフィ、オナムが挙げられます。",
+              "sourceIds": [
+                "shobal_2719-webp-1ch-1-40"
+              ]
+            }
+          ],
+          "sourceChecks": [
+            {
+              "sourceId": "shobal_2719-webp-1ch-1-40",
+              "resolves": true,
+              "sourceKnownBy": {
+                "chapter": 1,
+                "verse": 40
+              },
+              "sourceURL": "https://ebible.org/engwebp/1CH01.htm#V40"
+            },
+            {
+              "sourceId": "shobal_2719-webp-1ch-1-38",
+              "resolves": true,
+              "sourceKnownBy": {
+                "chapter": 1,
+                "verse": 38
+              },
+              "sourceURL": "https://ebible.org/engwebp/1CH01.htm#V38"
+            },
+            {
+              "sourceId": "shobal_2719-wikipedia-1-38",
+              "resolves": true,
+              "sourceKnownBy": {
+                "chapter": 1,
+                "verse": 38
+              },
+              "sourceURL": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z"
+            }
+          ],
+          "basis": "The children fact is gated at 1:40 and cites the matching 1:40 WEB source; base identity and Wikipedia object are gated at 1:38 with matching source records."
+        },
+        {
+          "type": "Wikipedia-body-and-scope",
+          "result": "pass",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shobal",
+          "locator": "Existing independently saved live body read: List of minor Hebrew Bible figures, L–Z, Shobal entry lines 1704–1708; the list identifies the Seir-line Shobal and lists his sons. Existing prior reclosure records the article’s claim “Horite chief” as secondary article content, not wording of 1CH 1:38. The current Wikipedia note now accurately says the list covers the Seir genealogy.",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 1,
+            "verse": 38
+          },
+          "basis": "The note no longer calls this a “section” in 1CH or credits “Horite chief” to 1:38; link and secondary source remain correctly gated and rights-attributed."
+        }
+      ],
+      "authorDelta": {
+        "repairLogPath": "evidence/persons_3/author-repair-shobal-identity-note-first-use.json",
+        "repairLogSHA256": "65fb80cf44acfd616e72de4d7159214653d575d9d84115517a2de32af0fd4a2d",
+        "manifestPath": "reviews/batch07-persons_3-author-current-after-shobal-identity-note-repair.json",
+        "manifestSHA256": "df56aa8d182327d34e9fe11ebf678199a1b4d6e6957a33a951d9f7e3be88226c",
+        "beforeDraftSHA256": "dec6f7db50c2c19bcc959ff1a338c34ade8473cbcb446fcc96e646c323b47cfb",
+        "beforeEvidenceSHA256": "64a965e4e04d1d3388d9db8ddf8186fff162be9dcee4816037e837b423c042f4",
+        "preservedBeforeDraftObject": "preservation/objects/dec6f7db50c2c19bcc959ff1a338c34ade8473cbcb446fcc96e646c323b47cfb",
+        "preservedBeforeEvidenceObject": "preservation/objects/64a965e4e04d1d3388d9db8ddf8186fff162be9dcee4816037e837b423c042f4",
+        "changedField": "identityNoteJa only; evidence draft/profile bindings synchronized"
+      },
+      "sourceWitnesses": [
+        {
+          "coordinate": "1CH 1:38",
+          "text": "The sons of Seir: Lotan, Shobal, Zibeon, Anah, Dishon, Ezer, and Dishan.",
+          "citationURL": "https://ebible.org/engwebp/1CH01.htm#V38",
+          "textSHA256": "5cffc77a26f8b77881338f6c840d2f060e795868a4f9d9e60f828a425b9c0afc",
+          "witnessPath": "inventory/targets/chronicles1-web-verses.json",
+          "witnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5"
+        },
+        {
+          "coordinate": "1CH 1:40",
+          "text": "The sons of Shobal: Alian, Manahath, Ebal, Shephi, and Onam. The sons of Zibeon: Aiah and Anah.",
+          "citationURL": "https://ebible.org/engwebp/1CH01.htm#V40",
+          "textSHA256": "49b50cb4abbfde82d50b2dcd7b1288458c1eaf78145b6570d34fc30ae679b8dd",
+          "witnessPath": "inventory/targets/chronicles1-web-verses.json",
+          "witnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5"
+        }
+      ],
+      "priorAuditResolution": {
+        "priorDeltaReportPath": "reviews/reclosure-shobal-persons3-batch07-delta.json",
+        "priorDeltaReportSHA256": "c7a3f83243f497d884f554a23a80b0522e17bfda6bde5d61d9aa8413e4d0d57f",
+        "priorSourceGateAuditValue": false,
+        "priorSourceGateAuditDisposition": "The prior report was tied to the old draft bytes, whose identityNoteJa exposed the 2:50 comparison at 1:38. That issue was real then. It is closed in the current bytes; the underlying fact/source and base/wiki gates now check consistently. The old report is retained unchanged."
+      },
+      "unresolved": null,
+      "changesToDraftOrEvidenceByReviewer": false
+    }
+  ],
+  "summary": {
+    "pass": 1,
+    "qualified": 0,
+    "fail": 0,
+    "open": 0,
+    "note": "This is a current-byte delta reclosure for Shobal only; it is not a publication approval."
+  }
+}

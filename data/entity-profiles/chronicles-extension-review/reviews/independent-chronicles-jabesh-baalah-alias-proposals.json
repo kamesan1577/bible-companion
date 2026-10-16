@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "title": "Independent review: 1 Chronicles place alias proposals",
+  "checkedAtUTC": "2026-10-16T06:39:00Z",
+  "scope": "Alias semantics and proposed display gates only. No profile, evidence, map-policy, canonical index, or runtime files edited; no runtime activation approved.",
+  "inputs": {
+    "fixedWitnessPath": "inventory/targets/chronicles1-web-verses.json",
+    "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+    "proposalPath": "context-edits/1CH/jabesh-alias-10-12.json",
+    "proposalSHA256": "be7795a04ce93a93199c0fbe00b3ed662ecf62ab81c658509799e2395744e89e",
+    "rootJabeshSupportPath": "reviews/root-jabesh-alias-independent-support.json",
+    "rootJabeshSupportSHA256": "fd940cbd42a08b9dbd70dccbda8140f79001f64197eba8601c30492c8e7689a3"
+  },
+  "wikipediaRetrievalNoteJa": "1CH10 WEBP URLへのライブbrowser取得はツールから利用不可だったため、固定ローカルWEB witnessの本文/URL/verse text SHAを使用。1CH13 WEBP URLと両Wikipedia記事はライブ本文を開いて節locatorsを確認。記事本文の取得SHAは提供されないためnull。",
+  "rows": [
+    {
+      "proposal": "Jabesh short-name alias to Jabesh-Gilead",
+      "decision": "conditionally_supported_with_duplicate_suppression_required",
+      "proposalPath": "context-edits/1CH/jabesh-alias-10-12.json",
+      "proposalSHA256": "be7795a04ce93a93199c0fbe00b3ed662ecf62ab81c658509799e2395744e89e",
+      "authorDrafts": [
+        {
+          "entityID": "place:jabesh_610",
+          "draftPath": "drafts/places_3/1CH_jabesh_610.json",
+          "draftSHA256": "d3ecf5caf7a9fbe586d6fa5b6501b215e6068d1db91df57ef328038f41f42ea5",
+          "profileSHA256": "18a0bb7aa13fd63c250dfe04b7af53850ceeb50f042fa06208b2bb382df5ff92",
+          "evidencePath": "evidence/places_3/1CH_jabesh_610.json",
+          "evidenceSHA256": "a40ab3c3a65be3f96c41818f8ec29b7d5634670d9a69944e07e1f51eada6caa4"
+        },
+        {
+          "entityID": "place:jabesh-gilead_611",
+          "draftPath": "drafts/places_2/1CH_jabesh-gilead_611.json",
+          "draftSHA256": "9031ad04d92d3681893b57780c8266668f18b118b3a933f6203ed178b2395a35",
+          "profileSHA256": "312c9df5a483cad1aa54d5ef6f49384f5d42ea643d02cca97c128ccb9a507e85",
+          "evidencePath": "evidence/places_2/1CH_jabesh-gilead_611.json",
+          "evidenceSHA256": "3ea901e3a2767f6c2e942777060e6f7adb801707c19e9508975deadf7559b095"
+        }
+      ],
+      "fixedWitness": {
+        "path": "inventory/targets/chronicles1-web-verses.json",
+        "sha256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "version": "webp-usfx-2026-10-13-35a6adf626e5",
+        "verses": [
+          {
+            "ref": "1CH 10:11",
+            "sourceText": "When all Jabesh Gilead heard all that the Philistines had done to Saul,",
+            "sourceTextSHA256": "2381973d7322576ed5808e2ebbc54a39a5ae50aefc7f09566748f1d3102710a3",
+            "citationURL": "https://ebible.org/engwebp/1CH10.htm#V11"
+          },
+          {
+            "ref": "1CH 10:12",
+            "sourceText": "all the valiant men arose and took away the body of Saul and the bodies of his sons, and brought them to Jabesh, and buried their bones under the oak in Jabesh, and fasted seven days.",
+            "sourceTextSHA256": "9f54e82719a35765eb39b1166fc15e2e1a191fd2e58dfee36bbd57025df570d8",
+            "citationURL": "https://ebible.org/engwebp/1CH10.htm#V12"
+          }
+        ]
+      },
+      "wikipediaRead": {
+        "url": "https://en.wikipedia.org/wiki/Jabesh-Gilead",
+        "title": "Jabesh-Gilead",
+        "locator": "lead lines 122–123; Saul’s death lines 150–153; identification lines 169–170",
+        "readDuringReviewAtUTC": "2026-10-16T06:39:00Z",
+        "bodySHA256": null,
+        "supportJa": "導入はJabesh-Gileadを古代ギレアデの町とし、短縮形Jabeshを明示する。サウルの死の節では骨がJabeshに埋葬されたと対応付ける。所在地は複数候補で争われる。"
+      },
+      "reviewedSemanticsJa": "固定WEB 1CH 10:11は「Jabesh Gilead」を住民がサウルの出来事を聞いた町として挙げ、10:12は遺体を「Jabesh」へ運び同地で骨を埋葬したと述べる。連続する同一場面と記事導入の短縮形説明により、別の場所より同一町の短縮名という判断が支持される。10:11に短名そのものを先取りさせない。",
+      "recommendedGateAndDisplayJa": {
+        "chapterVerse": "10:11–12",
+        "at10_11": "既存のcanonical place:jabesh-gilead_611を表示。短名Jabesh / place:jabesh_610はまだ表示・解決しない。10:11の地名は住民を指す文脈なので、関係ラベルは文脈用法として扱うのがより正確。",
+        "at10_12": "本文で短名Jabeshが現れる位置としてalias gateを10:12に置く。地点解決とカード/地図pinはcanonical place:jabesh-gilead_611に集約し、place:jabesh_610を別カードとして併記しない。短名は10:12以降の表示名変種としてのみ記録する。",
+        "coordinate": "両原稿ともnullを維持。記事はTell el-MaqlubとTell Abu al-Kharazを候補として示し、点を一意にしない。"
+      },
+      "independentSupportRecord": {
+        "path": "reviews/root-jabesh-alias-independent-support.json",
+        "sha256": "fd940cbd42a08b9dbd70dccbda8140f79001f64197eba8601c30492c8e7689a3",
+        "conclusion": "同一町/10:12短名は条件付き支持、統合/duplicate抑止/現行ファイルの再閉鎖は未完。"
+      },
+      "unresolvedJa": "元のplace:jabesh_610 profileはknownBy 10:11かつfull name「ヤベシュ・ギレアデ」となっており、短名対応のプロフィール/knownByとしては現状不整合。別名proposalを適用する場合、10:11から短名aliasを先取りしないようprofile/UI/mapの表示gateを一体で調整する必要がある。これは本レビューでは編集・runtime承認していない。"
+    },
+    {
+      "proposal": "Baalah alias to Kiriath-Jearim",
+      "decision": "strongly_supported_explicit_same-verse_alias",
+      "authorDrafts": [
+        {
+          "entityID": "place:baalah_135",
+          "draftPath": "drafts/places_2/1CH_baalah_135.json",
+          "draftSHA256": "036aa136bda84fc120ef20f6e2823d8db20f49610432bb1f6e140ebb607535ea",
+          "profileSHA256": "37103c1fc936a7676e81e3b00f09ddaef9d76efc038054867c01b42195e343cd",
+          "evidencePath": "evidence/places_2/1CH_baalah_135.json",
+          "evidenceSHA256": "a32e729f7869f3395c0664d24f483621410dbbef1bee220b64702c932fdefe76"
+        },
+        {
+          "entityID": "place:kiriath-jearim_701",
+          "draftPath": "drafts/places_3/1CH_kiriath-jearim_701.json",
+          "draftSHA256": "a13924f13f3a245146256ddb2487ebf43a2b4386896cc29c782051827bad16c4",
+          "profileSHA256": "27115797dff2794525de5954a4475219ffaeeea32c7f637b2e31395e5c60673c",
+          "evidencePath": "evidence/places_3/1CH_kiriath-jearim_701.json",
+          "evidenceSHA256": "dee83ffd78da63a83cc9bf458bc8e63b61a1321471e848e5e7503d5736b5b067"
+        }
+      ],
+      "fixedWitness": {
+        "path": "inventory/targets/chronicles1-web-verses.json",
+        "sha256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "version": "webp-usfx-2026-10-13-35a6adf626e5",
+        "verses": [
+          {
+            "ref": "1CH 2:50",
+            "sourceText": "These were the sons of Caleb, the son of Hur, the firstborn of Ephrathah: Shobal the father of Kiriath Jearim,",
+            "sourceTextSHA256": "825968d198a9153ad4c8f44ebd283512e9fc2e9a72d9dd60f09387575299ed2e",
+            "citationURL": "https://ebible.org/engwebp/1CH02.htm#V50"
+          },
+          {
+            "ref": "1CH 2:52",
+            "sourceText": "Shobal the father of Kiriath Jearim had sons: Haroeh, half of the Menuhoth.",
+            "sourceTextSHA256": "a25762dcc9014b8e6a184ec06583e5806bd086f8d87e917a913e6629b0dc82ac",
+            "citationURL": "https://ebible.org/engwebp/1CH02.htm#V52"
+          },
+          {
+            "ref": "1CH 2:53",
+            "sourceText": "The families of Kiriath Jearim: the Ithrites, the Puthites, the Shumathites, and the Mishraites; from them came the Zorathites and the Eshtaolites.",
+            "sourceTextSHA256": "4ef78a4519b7a70dece3445c8e283ecbe273ce743960535b906f28ca72eb329d",
+            "citationURL": "https://ebible.org/engwebp/1CH02.htm#V53"
+          },
+          {
+            "ref": "1CH 13:5",
+            "sourceText": "So David assembled all Israel together, from the Shihor River of Egypt even to the entrance of Hamath, to bring God’s ark from Kiriath Jearim.",
+            "sourceTextSHA256": "e79af9c13b724eafb01aa26a490a4ff749cda0150154ca1da28ab211e7e0b6ad",
+            "citationURL": "https://ebible.org/engwebp/1CH13.htm#V5"
+          },
+          {
+            "ref": "1CH 13:6",
+            "sourceText": "David went up with all Israel to Baalah, that is, to Kiriath Jearim, which belonged to Judah, to bring up from there God the LORD’s ark that sits above the cherubim, that is called by the Name.",
+            "sourceTextSHA256": "a0446c6b41106434a83d141924b0f27d104ba51bf5a08ef9c0d4710ddec441e5",
+            "citationURL": "https://ebible.org/engwebp/1CH13.htm#V6"
+          }
+        ]
+      },
+      "wikipediaRead": {
+        "url": "https://en.wikipedia.org/wiki/Kiriath-Jearim",
+        "title": "Kiriath-Jearim",
+        "locator": "Etymology lines 123–128; History lines 135–139",
+        "readDuringReviewAtUTC": "2026-10-16T06:39:00Z",
+        "bodySHA256": null,
+        "supportJa": "Etymology節はKiriath-Ba’al、Ba’alah、Ba’ale-Judahを別名として列挙し1 Chronicles 13:6を明記。歴史節はKhirbet ErmaとDeir el-Azar/Tel Qiryat Yearimの候補説を示す。"
+      },
+      "reviewedSemanticsJa": "固定WEB 1CH 13:6は「Baalah, that is, to Kiriath Jearim」と同一節で明示的に言い換える。Wikipedia Kiriath-Jearim記事もBa’alahを別名に挙げ、同じ13:6を根拠としている。これは曖昧な近接地名や同名推定ではなく、本文内の明示的同格表現である。1CH 2:50でcanonical place:kiriath-jearim_701は既に初出しているため、13:6に別地点カードを増やす理由はない。",
+      "recommendedGateAndDisplayJa": {
+        "chapterVerse": "1CH 13:6",
+        "display": "canonical place:kiriath-jearim_701を唯一の地物IDとして解決する。place:baalah_135は13:6で現れた別名/aliasとして同じcanonical IDへ解決し、別カード・別pinを生成しない。",
+        "coordinate": "両profileともcoordinate=null。Kiriath-Jearim記事は複数の遺跡候補を記し、alias関係は正確な現代地点を確定しない。"
+      },
+      "unresolvedJa": "原稿は未編集。Baalahの独立IDをalias metadataへ統合する際は13:6のsource gateと、canonical profileの既知範囲（2:50、2:52–53、13:5–6）を維持し、本文中の語形Baalahだけは13:6以前に見せない。"
+    }
+  ],
+  "integrityChecks": {
+    "draftEvidencePairsRecalculated": true,
+    "allCoordinatesNull": true,
+    "canonicalIDsExistingAndUnmodified": true,
+    "newEntityIDsCreated": false,
+    "originalProfileFilesEdited": false,
+    "runtimeFilesEdited": false,
+    "independentApprovalMeansRuntimeActivation": false
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "task": "Author correction for the 1CH 13:5 Shihor map row",
+  "atUTC": "2026-10-16T06:55:57+00:00",
+  "mapPath": "reviews/verse-map-1CH-10-19.json",
+  "beforeMapSHA256": "075c308253d4ef7c83c06e98bf9423629ee8e6022af29b3cac83e2ca72b5679a",
+  "afterMapSHA256": "aecf744a60cb5ac7aec2a4015fda75a21b9bd13364cd5a440e14a8fd392b0cac",
+  "beforeBytesObject": "preservation/objects/075c308253d4ef7c83c06e98bf9423629ee8e6022af29b3cac83e2ca72b5679a",
+  "beforeBytesObjectSHA256": "075c308253d4ef7c83c06e98bf9423629ee8e6022af29b3cac83e2ca72b5679a",
+  "changedCoordinates": [
+    {
+      "book": "1CH",
+      "chapter": 13,
+      "verse": 5
+    }
+  ],
+  "changes": [
+    {
+      "field": "limitations",
+      "before": "Independent review repairs used only IDs present in the current Chronicles target inventory. The report-mentioned place:shihor_1076 was not present in inventory/targets.json or the 1CH target file; 1CH 13:5 therefore remains an explicit unresolved named river rather than an invented ID. The actual Valley of Rephaim ID in the 1CH target file is place:valley_of_rephaim_1214.",
+      "after": "The Shihor name in 1CH 13:5 is linked to the already-existing global ID place:shihor_1076, confirmed in the global entity index and the JOS 13:3 / ISA 23:3 witnesses. Its absence from the local Chronicles target inventory does not make the ID nonexistent. The link records the textual name only; it does not establish that Shihor is the Nile, a precise ancient river course, a modern location, or coordinates. The actual Valley of Rephaim ID in the 1CH target file is place:valley_of_rephaim_1214."
+    },
+    {
+      "field": "unresolvedCanonicalCandidates",
+      "before": "Shihor at 1CH 13:5 listed unresolved despite an adopted existing global ID.",
+      "after": "Removed stale unresolved-candidate row. The remaining excludedCandidates row for place:nile_895 states that Shihor–Nile identity is not established."
+    }
+  ],
+  "primaryEvidence": {
+    "source": "fixed WEB",
+    "verse": "1CH 13:5",
+    "text": "So David assembled all Israel together, from the Shihor River of Egypt even to the entrance of Hamath, to bring God’s ark from Kiriath Jearim.",
+    "entityID": "place:shihor_1076",
+    "relationship": "direct",
+    "basis": "Exact named form Shihor; the existing global entity index entry is independently documented in reviews/root-shihor-index-scope-correction.json. No Nile equivalence or coordinate is asserted."
+  },
+  "globalIndexEvidencePath": "reviews/root-shihor-index-scope-correction.json",
+  "globalIndexEvidenceSHA256": "7fe3d9515d4535658fac80ae1fee1f36206fcf36f210edf66e36fe1399a42db5",
+  "globalEntityIndexSHA256": "dfe6fba1109f192548e28645cf085ddafe3baf7820d200e2e28da486dd98f11a",
+  "localTargetInventorySHA256": "9d5e61a87a9f818789b3dd388e2500b57fc1f8513a646633786ec75cfc2de623",
+  "scopeNote": "The global ID is absent from the local targets inventory; that is not evidence the ID does not exist. This row now uses the pre-existing global ID based on explicit WEB wording."
+}

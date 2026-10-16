@@ -1,0 +1,1838 @@
+{
+  "reportType": "independent-runtime-disposition-of-qualified-primary-fields",
+  "capturedAtUTC": "2026-10-16T11:37:41Z",
+  "scope": {
+    "book": "2CH",
+    "batch": "batch09",
+    "qualifiedRowsOnly": true,
+    "rowCount": 18,
+    "description": "一次本文で常時表示欄とfactsを支えられるかを分類する。Wikipedia判定は昇格しない。"
+  },
+  "sourceReviewPath": "reviews/independent-batch09-persons_3.json",
+  "sourceReviewSHA256": "4dc5271b06eec641136dd828df206e4707b30f83232271350479e02c2e3c34ac",
+  "authorManifestPath": "reviews/final-input-batch09-persons_3-author-current.json",
+  "authorManifestSHA256": "78dbb0c3f1451a3720ae1a0d7f62f3ac86f328da594ca7389e321ae1160280c8",
+  "assignmentPath": "assignments/batch09/persons_3.json",
+  "assignmentSHA256": "0ae537efdf5a4e15a2f0d5d559f9b587a2bb2050cebcbfc6d8305968398313bb",
+  "fixedPrimaryPath": "inventory/targets/chronicles2-web-verses.json",
+  "fixedPrimarySHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8",
+  "runtimeDispositionCounts": {
+    "primary-only-display-supported": 9,
+    "related-link-supported": 7,
+    "hold": 2
+  },
+  "policyJa": "primary-only-display-supportedは一次本文だけで現在のreader欄とfact内容を支えられる場合。related-link-supportedは本文の基礎記述に加え、現行読者文の補足が適合する関連記事の内容に依存する場合。holdは未確定の対応関係/同名個体を安全に表示できない場合。いずれも独立審査のqualifiedをpassへ変更せず、Wikipediaのidentity/relation判定も変更しない。",
+  "rows": [
+    {
+      "book": "2CH",
+      "entityID": "jehonathan_801",
+      "draftPath": "drafts/persons_3/2CH_jehonathan_801.json",
+      "evidencePath": "evidence/persons_3/2CH_jehonathan_801.json",
+      "currentDraftSHA256": "fb0eea5ffdd3cff9d74cf35e11785de1cb68218e37ca6e0fc82252fe68add887",
+      "currentProfileSHA256": "0ccb3a0c6298bd379edfab261419ec37b0dc766a8c07ae281c731e2c7cab34ce",
+      "currentEvidenceSHA256": "3733aa9358f0e31cc7ab0b560ae686bdd2b95a5282faf14e1ab09dba914946e8",
+      "manifestBindingsMatch": true,
+      "activeProfile": true,
+      "knownBy": {
+        "chapter": 17,
+        "verse": 8
+      },
+      "priorIndependentDecision": "qualified",
+      "priorIndependentDecisionBasis": "bounded-no-fit-search-no-wiki-identity-claim",
+      "runtimeDisposition": "primary-only-display-supported",
+      "dispositionReasonJa": "固定WEB 2CH 17:8が名とレビ人としての所属、派遣された列挙内の位置を直接示す。表示文は同節だけで支えられ、適合Wikipedia本文への依存はない。",
+      "currentReaderFieldsAndFacts": {
+        "profileID": "person:jehonathan_801",
+        "kind": "person",
+        "identityType": null,
+        "nameJa": "エホナタン",
+        "subtitleJa": "エホナタンは、ヨシャパテがユダの町々へ遣わしたレビ人の一人として列挙されています。",
+        "summaryJa": "エホナタンは、ヨシャパテがユダの町々へ遣わしたレビ人の一人として列挙されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "レビ人",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "knownBy": {
+          "chapter": 17,
+          "verse": 8
+        },
+        "passages": [
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 17,
+              "verse": 8
+            },
+            "end": {
+              "chapter": 17,
+              "verse": 8
+            }
+          }
+        ],
+        "facts": [],
+        "wikipedia": null
+      },
+      "primaryEvidence": [
+        {
+          "ref": "2CH 17:8",
+          "citationURL": "https://ebible.org/engwebp/2CH17.htm#V8",
+          "sourceText": "and with them Levites, even Shemaiah, Nethaniah, Zebadiah, Asahel, Shemiramoth, Jehonathan, Adonijah, Tobijah, and Tobadonijah, the Levites; and with them Elishama and Jehoram, the priests.",
+          "sourceTextSHA256": "f22d36ffbd9801e1c8f3822ffc8888f9862010b9cb13d1bf233ab3247d4a4908",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEB本文に対象名があり、指定の親子・役割・所属をこの節の文脈に限定して確認。"
+        }
+      ],
+      "primaryChecksAllExact": true,
+      "factSourceBindingsValid": true,
+      "wikipediaReview": {
+        "status": "no-current-wikipedia-object",
+        "boundedSearch": {
+          "queries": [
+            "site:en.wikipedia.org/wiki \"Jehonathan\" Hebrew Bible Levite",
+            "site:en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K Jehonathan",
+            "\"Jehonathan\" \"2 Chronicles 17:8\" Wikipedia"
+          ],
+          "checkedAtUTC": "2026-10-16T11:27:29Z",
+          "status": "実検索したが適合する記事本文は確認できなかった。",
+          "notesJa": "2歴代誌17:8のレビ人エホナタンに対応するWikipedia記事・共有節は見つかりませんでした。A–K共有一覧の本文検索でも名前は見当たりません。別サイトの聖書事典にある人物説明はWikipedia記事ではないためリンク候補にしません。",
+          "articlesRead": [
+            {
+              "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K",
+              "locator": "実ページをJehonathanで検索、該当なし。通常記事検索でも適合Wikipediaページなし。JW.orgのInsight on the Scripturesには2CH17:8人物の記事があるがWikipediaではない。"
+            }
+          ]
+        },
+        "independentSearchNote": "適合記事の確定リンクなし。類似名・共有一覧の既知別人との取り違えを避けるため、未同定のままqualified。",
+        "identityNotPromoted": true
+      },
+      "specificFinding": null,
+      "wikipediaDecisionUnchanged": true,
+      "publicationApproved": false
+    },
+    {
+      "book": "2CH",
+      "entityID": "jehozabad_812",
+      "draftPath": "drafts/persons_3/2CH_jehozabad_812.json",
+      "evidencePath": "evidence/persons_3/2CH_jehozabad_812.json",
+      "currentDraftSHA256": "b399669301945c2034e877d11fa6b4248a007d8739736328aef431d76c55b0a1",
+      "currentProfileSHA256": "e4ca3d764be54a90288220825b8cee5af0516926a5beebea25589d3045852a50",
+      "currentEvidenceSHA256": "46befff653a7214f460858ff0123aac281015a43687457be2a630d6110063b9c",
+      "manifestBindingsMatch": true,
+      "activeProfile": true,
+      "knownBy": {
+        "chapter": 24,
+        "verse": 26
+      },
+      "priorIndependentDecision": "qualified",
+      "priorIndependentDecisionBasis": "relation-only-not-identity",
+      "runtimeDisposition": "related-link-supported",
+      "dispositionReasonJa": "WEB 2CH 24:26はシムリトの子エホザバデを陰謀参加者として直接記す。共有記事は別の列王記人物との対応を提案するが父称が異なるため、現行のrelation-only留保を維持し、人物同一性を採用しない。",
+      "currentReaderFieldsAndFacts": {
+        "profileID": "person:jehozabad_812",
+        "kind": "person",
+        "identityType": null,
+        "nameJa": "エホザバデ",
+        "subtitleJa": "エホザバデは、ヨアシュ殺害の陰謀に加わった者の一人として挙げられます。",
+        "summaryJa": "エホザバデは、ヨアシュ殺害の陰謀に加わった者の一人として挙げられます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "knownBy": {
+          "chapter": 24,
+          "verse": 26
+        },
+        "passages": [
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 24,
+              "verse": 26
+            },
+            "end": {
+              "chapter": 24,
+              "verse": 26
+            }
+          }
+        ],
+        "facts": [],
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Jehozabad",
+          "kind": "related-section",
+          "noteJa": "共有一覧は2歴代誌24:26のZabadを2列王記12:21のJehozabadと結び付けています。両節の父称表記は異なるため、同一人物という記事の対応づけとして参照します。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "knownBy": {
+            "chapter": 24,
+            "verse": 26
+          },
+          "sourceId": "jehozabad_812-wikipedia",
+          "relationVerified": true
+        }
+      },
+      "primaryEvidence": [
+        {
+          "ref": "2CH 24:26",
+          "citationURL": "https://ebible.org/engwebp/2CH24.htm#V26",
+          "sourceText": "These are those who conspired against him: Zabad the son of Shimeath the Ammonitess and Jehozabad the son of Shimrith the Moabitess.",
+          "sourceTextSHA256": "b708d493e3e24edc0cc6bcc9efaeb351396711baab92346d827e2fc722ffd9a9",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEB本文に対象名があり、指定の親子・役割・所属をこの節の文脈に限定して確認。"
+        }
+      ],
+      "primaryChecksAllExact": true,
+      "factSourceBindingsValid": true,
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Jehozabad",
+        "title": "List of minor Hebrew Bible figures, A–K",
+        "kind": "related-section",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 24,
+          "verse": 26
+        },
+        "noteJa": "共有一覧は2歴代誌24:26のZabadを2列王記12:21のJehozabadと結び付けています。両節の父称表記は異なるため、同一人物という記事の対応づけとして参照します。",
+        "independentArticleBodyLocator": "Jehozabad節、行3950–3952。2列王記12:21のJehozabad son of Shomerについて「2 Chronicles 24:26ではZabadと呼ばれる」と記す一方、WEB 2CH24:26はShimrithの子とする。17:18のベニヤミン戦士は別項目。",
+        "savedBodyParaphrase": "記事が旧約の並行記事間の綴り対応を提案するが、WEBの父称が異なるため関係のみを記録し人物同一性は断定しない。",
+        "independentlyReopenedInCurrentReview": true,
+        "sourceURLLicenseAttributionGateValid": true,
+        "bodyEvidenceHasRightsAttribution": true
+      },
+      "specificFinding": null,
+      "wikipediaDecisionUnchanged": true,
+      "publicationApproved": false
+    },
+    {
+      "book": "2CH",
+      "entityID": "johanan_1672",
+      "draftPath": "drafts/persons_3/2CH_johanan_1672.json",
+      "evidencePath": "evidence/persons_3/2CH_johanan_1672.json",
+      "currentDraftSHA256": "b546d8fae7f893a03923ae65a2ceb5e44d1ff9f73f2528330aa514e13464a7dd",
+      "currentProfileSHA256": "7fce7cafb63bb765fdd59420488a78096327a35bfce00a8c9fc38d21eae10e0b",
+      "currentEvidenceSHA256": "2f24aa260d02f5db5d17ebb698a14984a41b28190defe6e9c6d77377f3e8f16c",
+      "manifestBindingsMatch": true,
+      "activeProfile": true,
+      "knownBy": {
+        "chapter": 28,
+        "verse": 12
+      },
+      "priorIndependentDecision": "qualified",
+      "priorIndependentDecisionBasis": "bounded-no-fit-search-no-wiki-identity-claim",
+      "runtimeDisposition": "primary-only-display-supported",
+      "dispositionReasonJa": "固定WEB 2CH 28:12はエフライム族指導者アザリヤの父ヨハナンと明記する。読者欄はこの関係だけを述べ、Wikipedia情報を必要としない。",
+      "currentReaderFieldsAndFacts": {
+        "profileID": "person:johanan_1672",
+        "kind": "person",
+        "identityType": null,
+        "nameJa": "ヨハナン",
+        "subtitleJa": "ヨハナンは、エフライム族の指導者アザリヤの父として記されています。",
+        "summaryJa": "ヨハナンは、エフライム族の指導者アザリヤの父として記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "knownBy": {
+          "chapter": 28,
+          "verse": 12
+        },
+        "passages": [
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 28,
+              "verse": 12
+            },
+            "end": {
+              "chapter": 28,
+              "verse": 12
+            }
+          }
+        ],
+        "facts": [],
+        "wikipedia": null
+      },
+      "primaryEvidence": [
+        {
+          "ref": "2CH 28:12",
+          "citationURL": "https://ebible.org/engwebp/2CH28.htm#V12",
+          "sourceText": "Then some of the heads of the children of Ephraim, Azariah the son of Johanan, Berechiah the son of Meshillemoth, Jehizkiah the son of Shallum, and Amasa the son of Hadlai, stood up against those who came from the war,",
+          "sourceTextSHA256": "283310366f62c5a76c9d0caba0bc23dbf6eb27c5d03f83ed39457bbaea0c19b9",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEB本文に対象名があり、指定の親子・役割・所属をこの節の文脈に限定して確認。"
+        }
+      ],
+      "primaryChecksAllExact": true,
+      "factSourceBindingsValid": true,
+      "wikipediaReview": {
+        "status": "no-current-wikipedia-object",
+        "boundedSearch": {
+          "queries": [
+            "site:en.wikipedia.org/wiki Johanan 2 Chronicles 28:12 Azariah Ephraim",
+            "site:en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K Johanan"
+          ],
+          "checkedAtUTC": "2026-10-16T11:20:31Z",
+          "status": "実検索したが適合する記事本文は確認できなかった。",
+          "notesJa": "A–K共有一覧はヨハナン六人を列挙しますが、2歴代誌28:12のエフライム族指導者アザリヤの父を含みません。別の同名者の記事を当人へ結び付けません。",
+          "articlesRead": [
+            {
+              "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K",
+              "locator": "Johanan節、行4295–4300。六人の一覧に2CH28:12の父は挙がらない。"
+            }
+          ]
+        },
+        "independentSearchNote": "適合記事の確定リンクなし。類似名・共有一覧の既知別人との取り違えを避けるため、未同定のままqualified。",
+        "identityNotPromoted": true
+      },
+      "specificFinding": null,
+      "wikipediaDecisionUnchanged": true,
+      "publicationApproved": false
+    },
+    {
+      "book": "2CH",
+      "entityID": "kish_1786",
+      "draftPath": "drafts/persons_3/2CH_kish_1786.json",
+      "evidencePath": "evidence/persons_3/2CH_kish_1786.json",
+      "currentDraftSHA256": "957e6158160c221e9c9eeb7e6feaf629cb0c3fd9b0a2ce5c5aefac6f263da63b",
+      "currentProfileSHA256": "ad7a31f3a498a37a1a418c385fdbfe661f13033de3192641f971ba65f1b65e34",
+      "currentEvidenceSHA256": "d48988e217dca32a0415b87fc20d35ccf206883fb9f0b2c1caab80be96be8764",
+      "manifestBindingsMatch": true,
+      "activeProfile": true,
+      "knownBy": {
+        "chapter": 29,
+        "verse": 12
+      },
+      "priorIndependentDecision": "qualified",
+      "priorIndependentDecisionBasis": "bounded-no-fit-search-no-wiki-identity-claim",
+      "runtimeDisposition": "primary-only-display-supported",
+      "dispositionReasonJa": "固定WEB 2CH 29:12はアブディの子キシュをメラリ族のレビ人の列挙に置く。表示内容はこの節の名・系譜・所属のみで支えられる。",
+      "currentReaderFieldsAndFacts": {
+        "profileID": "person:kish_1786",
+        "kind": "person",
+        "identityType": null,
+        "nameJa": "キシュ",
+        "subtitleJa": "キシュは、アブディの子でメラリ族に属するレビ人の系譜に記されています。",
+        "summaryJa": "キシュは、アブディの子でメラリ族に属するレビ人の系譜に記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "レビ人",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "knownBy": {
+          "chapter": 29,
+          "verse": 12
+        },
+        "passages": [
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 29,
+              "verse": 12
+            },
+            "end": {
+              "chapter": 29,
+              "verse": 12
+            }
+          }
+        ],
+        "facts": [],
+        "wikipedia": null
+      },
+      "primaryEvidence": [
+        {
+          "ref": "2CH 29:12",
+          "citationURL": "https://ebible.org/engwebp/2CH29.htm#V12",
+          "sourceText": "Then the Levites arose: Mahath, the son of Amasai, and Joel the son of Azariah, of the sons of the Kohathites; and of the sons of Merari, Kish the son of Abdi, and Azariah the son of Jehallelel; and of the Gershonites, Joah the son of Zimmah, and Eden the son of Joah;",
+          "sourceTextSHA256": "3c1fe3b717d26a9075279e3cbfd07378e6ccbeeb9cc31f5665d8af9f92dd48e4",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEB本文に対象名があり、指定の親子・役割・所属をこの節の文脈に限定して確認。"
+        }
+      ],
+      "primaryChecksAllExact": true,
+      "factSourceBindingsValid": true,
+      "wikipediaReview": {
+        "status": "no-current-wikipedia-object",
+        "boundedSearch": {
+          "queries": [
+            "site:en.wikipedia.org/wiki Kish 2 Chronicles 29:12 Abdi Levite",
+            "site:en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K Kish"
+          ],
+          "checkedAtUTC": "2026-10-16T11:20:31Z",
+          "status": "実検索したが適合する記事本文は確認できなかった。",
+          "notesJa": "KishとA–K共有一覧を実検索したが、2歴代誌29:12のアブディの子でメラリ系レビ人のキシュに対応する記事本文は確認できなかった。サウルの父キシュ等の同名者は対象外。",
+          "articlesRead": [
+            {
+              "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K",
+              "locator": "共有一覧本文をKishで検索し該当見出しなし。記事候補Kishはサウルの父など別人。"
+            }
+          ]
+        },
+        "independentSearchNote": "適合記事の確定リンクなし。類似名・共有一覧の既知別人との取り違えを避けるため、未同定のままqualified。",
+        "identityNotPromoted": true
+      },
+      "specificFinding": null,
+      "wikipediaDecisionUnchanged": true,
+      "publicationApproved": false
+    },
+    {
+      "book": "2CH",
+      "entityID": "maaseiah_1851",
+      "draftPath": "drafts/persons_3/2CH_maaseiah_1851.json",
+      "evidencePath": "evidence/persons_3/2CH_maaseiah_1851.json",
+      "currentDraftSHA256": "fddd3bda5e25a35aabdbfb1c5418bcbc4fdbd4f70c6afab01daef606c7fc87c0",
+      "currentProfileSHA256": "f9f6554e0209387a43f7490f99a83cf2fad3bc3868ef79a5b0683413b6df8566",
+      "currentEvidenceSHA256": "223fb324d911f0ea38f624aef02b2b82bb0dd9b27b8e789e01a8a4c897538517",
+      "manifestBindingsMatch": true,
+      "activeProfile": true,
+      "knownBy": {
+        "chapter": 26,
+        "verse": 11
+      },
+      "priorIndependentDecision": "qualified",
+      "priorIndependentDecisionBasis": "bounded-no-fit-search-no-wiki-identity-claim",
+      "runtimeDisposition": "primary-only-display-supported",
+      "dispositionReasonJa": "固定WEB 2CH 26:11はウジヤ軍の編成に関わる役人としてマアセヤを直接記す。reader欄に記事由来の追加主張はない。",
+      "currentReaderFieldsAndFacts": {
+        "profileID": "person:maaseiah_1851",
+        "kind": "person",
+        "identityType": null,
+        "nameJa": "マアセヤ",
+        "subtitleJa": "マアセヤは、ウジヤの軍勢の編成を担った役人として記されています。",
+        "summaryJa": "マアセヤは、ウジヤの軍勢の編成を担った役人として記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "役人",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "knownBy": {
+          "chapter": 26,
+          "verse": 11
+        },
+        "passages": [
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 26,
+              "verse": 11
+            },
+            "end": {
+              "chapter": 26,
+              "verse": 11
+            }
+          }
+        ],
+        "facts": [],
+        "wikipedia": null
+      },
+      "primaryEvidence": [
+        {
+          "ref": "2CH 26:11",
+          "citationURL": "https://ebible.org/engwebp/2CH26.htm#V11",
+          "sourceText": "Moreover Uzziah had an army of fighting men who went out to war by bands, according to the number of their reckoning made by Jeiel the scribe and Maaseiah the officer, under the hand of Hananiah, one of the king’s captains.",
+          "sourceTextSHA256": "73e42c69f20bfa4902ea0e3a9d53b9bdaa9f82f1370d3f048abc2bfe1ab3a8ba",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEB本文に対象名があり、指定の親子・役割・所属をこの節の文脈に限定して確認。"
+        }
+      ],
+      "primaryChecksAllExact": true,
+      "factSourceBindingsValid": true,
+      "wikipediaReview": {
+        "status": "no-current-wikipedia-object",
+        "boundedSearch": {
+          "queries": [
+            "site:en.wikipedia.org/wiki Maaseiah 2 Chronicles 26:11 Uzziah officer",
+            "site:en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z Maaseiah"
+          ],
+          "checkedAtUTC": "2026-10-16T11:20:31Z",
+          "status": "実検索したが適合する記事本文は確認できなかった。",
+          "notesJa": "L–Z共有一覧には複数のマアセヤが載りますが、2歴代誌26:11のウジヤの軍勢を担当した役人は挙げられていません。別節の祭司・レビ人・役人は別人として扱います。",
+          "articlesRead": [
+            {
+              "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z",
+              "locator": "Maaseiah節、行205–214。複数の同名者を列挙するが2CH26:11の役人はいない。"
+            }
+          ]
+        },
+        "independentSearchNote": "適合記事の確定リンクなし。類似名・共有一覧の既知別人との取り違えを避けるため、未同定のままqualified。",
+        "identityNotPromoted": true
+      },
+      "specificFinding": null,
+      "wikipediaDecisionUnchanged": true,
+      "publicationApproved": false
+    },
+    {
+      "book": "2CH",
+      "entityID": "merari_2004",
+      "draftPath": "drafts/persons_3/2CH_merari_2004.json",
+      "evidencePath": "evidence/persons_3/2CH_merari_2004.json",
+      "currentDraftSHA256": "7f6c4ee9278a71f31a6c44e9ed67bdf0c5a9c014a878e30c9894f16fc0f471cb",
+      "currentProfileSHA256": "2059c455d0b39d92b4f424abc376cf4aa05ccabd9110e1daf26fa0c689059b9c",
+      "currentEvidenceSHA256": "fac1152782745959432d7aef4616a75a9c0abce8b80407cea024b1a745f2b100",
+      "manifestBindingsMatch": true,
+      "activeProfile": true,
+      "knownBy": {
+        "chapter": 29,
+        "verse": 12
+      },
+      "priorIndependentDecision": "qualified",
+      "priorIndependentDecisionBasis": "relation-only-not-identity",
+      "runtimeDisposition": "related-link-supported",
+      "dispositionReasonJa": "WEB 2CH 29:12と34:12はメラリの子らというレビ人集団を示す。記事は族祖メラリ個人を扱うため、現行の集団/個人区別とrelated-onlyリンクを維持する。",
+      "currentReaderFieldsAndFacts": {
+        "profileID": "person:merari_2004",
+        "kind": "person",
+        "identityType": "collective",
+        "nameJa": "メラリの子ら",
+        "subtitleJa": "メラリの子らは、レビ人の氏族として神殿奉仕の列挙に登場します。",
+        "summaryJa": "メラリの子らは、レビ人の氏族として神殿奉仕の列挙に登場します。",
+        "identityNoteJa": "ここではレビ人の氏族名としての「メラリの子ら」を扱い、族祖個人の伝記を示すものではありません。",
+        "historicalRoleJa": "レビ人の氏族",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "knownBy": {
+          "chapter": 29,
+          "verse": 12
+        },
+        "passages": [
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 29,
+              "verse": 12
+            },
+            "end": {
+              "chapter": 29,
+              "verse": 12
+            }
+          },
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 34,
+              "verse": 12
+            },
+            "end": {
+              "chapter": 34,
+              "verse": 12
+            }
+          }
+        ],
+        "facts": [
+          {
+            "textJa": "ヨシヤの時代、メラリの子らから監督者が挙げられました。",
+            "knownBy": {
+              "chapter": 34,
+              "verse": 12
+            },
+            "sourceIds": [
+              "merari_2004-webp-2ch-34-12"
+            ],
+            "sourceIdsExistInDraft": true,
+            "missingSourceIds": []
+          }
+        ],
+        "wikipedia": {
+          "title": "Merari",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Merari",
+          "kind": "related-section",
+          "noteJa": "記事はメラリをレビの子、メラリ人の祖と説明します。ここで記される「メラリの子ら」という氏族名との関係を示す参考です。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "knownBy": {
+            "chapter": 29,
+            "verse": 12
+          },
+          "sourceId": "merari_2004-wikipedia",
+          "relationVerified": true
+        }
+      },
+      "primaryEvidence": [
+        {
+          "ref": "2CH 29:12",
+          "citationURL": "https://ebible.org/engwebp/2CH29.htm#V12",
+          "sourceText": "Then the Levites arose: Mahath, the son of Amasai, and Joel the son of Azariah, of the sons of the Kohathites; and of the sons of Merari, Kish the son of Abdi, and Azariah the son of Jehallelel; and of the Gershonites, Joah the son of Zimmah, and Eden the son of Joah;",
+          "sourceTextSHA256": "3c1fe3b717d26a9075279e3cbfd07378e6ccbeeb9cc31f5665d8af9f92dd48e4",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEBは「メラリの子ら」と氏族・レビ人を示す。祖先本人の行動とはせず、この書での氏族用法として記録。"
+        },
+        {
+          "ref": "2CH 34:12",
+          "citationURL": "https://ebible.org/engwebp/2CH34.htm#V12",
+          "sourceText": "The men did the work faithfully. Their overseers were Jahath and Obadiah the Levites, of the sons of Merari; and Zechariah and Meshullam, of the sons of the Kohathites, to give direction; and others of the Levites, who were all skillful with musical instruments.",
+          "sourceTextSHA256": "d84decde1606189b61ec973b0d8443f830ed866c9ff3424469c4ffd7bcc9b237",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEBは「メラリの子ら」と氏族・レビ人を示す。祖先本人の行動とはせず、この書での氏族用法として記録。"
+        }
+      ],
+      "primaryChecksAllExact": true,
+      "factSourceBindingsValid": true,
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Merari",
+        "title": "Merari",
+        "kind": "related-section",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 29,
+          "verse": 12
+        },
+        "noteJa": "記事はメラリをレビの子、メラリ人の祖と説明します。ここで記される「メラリの子ら」という氏族名との関係を示す参考です。",
+        "independentArticleBodyLocator": "記事本文行115–117。メラリをレビの子・メラリ人の祖とし、レビ人の主要な区分の一つと説明。",
+        "savedBodyParaphrase": "族祖個人と氏族を同一視せず、メラリ人集団の背景資料として関連する。",
+        "independentlyReopenedInCurrentReview": true,
+        "sourceURLLicenseAttributionGateValid": true,
+        "bodyEvidenceHasRightsAttribution": true
+      },
+      "specificFinding": null,
+      "wikipediaDecisionUnchanged": true,
+      "publicationApproved": false
+    },
+    {
+      "book": "2CH",
+      "entityID": "michaiah_2069",
+      "draftPath": "drafts/persons_3/2CH_michaiah_2069.json",
+      "evidencePath": "evidence/persons_3/2CH_michaiah_2069.json",
+      "currentDraftSHA256": "54aef05272d7ca738fee87b19b282862fff941fba6cde25b418664cafeb7d763",
+      "currentProfileSHA256": null,
+      "currentEvidenceSHA256": "ebf733cc2f1128c85a3d0bf86f20e308b4b2718d42bbc1c2ebe915304c315f53",
+      "manifestBindingsMatch": true,
+      "activeProfile": false,
+      "knownBy": null,
+      "priorIndependentDecision": "qualified",
+      "priorIndependentDecisionBasis": "hold-no-profile",
+      "runtimeDisposition": "hold",
+      "dispositionReasonJa": "プロフィールは非active。固定WEB 2CH 34:20は「ミカの子アブドン」とし、割当候補Michaiahへの対応を確定しない。人物カードや記事リンクをランタイム表示しない。",
+      "currentReaderFieldsAndFacts": null,
+      "primaryEvidence": [
+        {
+          "ref": "2CH 34:20",
+          "citationURL": "https://ebible.org/engwebp/2CH34.htm#V20",
+          "sourceText": "The king commanded Hilkiah, Ahikam the son of Shaphan, Abdon the son of Micah, Shaphan the scribe, and Asaiah the king’s servant, saying,",
+          "sourceTextSHA256": "3067d403306f3ba6efc3126410d7771f77f45e455ef681e7a62b112956ed53f8",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEBはミカヤではなくMicahの子アブドンとする。割当候補Michaiahとの同定根拠を確認できず、人物対応を保留。"
+        }
+      ],
+      "primaryChecksAllExact": true,
+      "factSourceBindingsValid": true,
+      "wikipediaReview": {
+        "status": "no-current-wikipedia-object",
+        "boundedSearch": {
+          "queries": [
+            "site:en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z Michaiah 2 Chronicles 34:20 Micah",
+            "site:en.wikipedia.org/wiki/Michaiah son of Imlah Micah Abdon Chronicles",
+            "site:en.wikipedia.org/wiki/2_Chronicles_34 \"Abdon the son of Micah\""
+          ],
+          "checkedAtUTC": "2026-10-16T11:27:01Z",
+          "status": "共有記事の全該当箇所と候補記事を確認したが適合しない。固定WEBと候補名の表記差は未解決のためprofile=nullを維持。",
+          "notesJa": "固定WEB 2歴代誌34:20は「ミカの子アブドン」と記し、候補名Michaiahとの同定は確認できません。共有一覧に載るMichaiahはイムラの子の預言者とゲマルヤの子で、いずれもこの系譜の人物ではありません。候補対応は保留します。",
+          "articlesRead": [
+            {
+              "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z",
+              "locator": "541–548行のMichaiah項目はイムラの子とゲマルヤの子の2人。"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/Micaiah",
+              "locator": "Micaiah son of Imlahの記事。固定WEB 2CH34:20のMicah/Abdonとは別の人物。"
+            }
+          ]
+        },
+        "independentSearchNote": "適合記事の確定リンクなし。類似名・共有一覧の既知別人との取り違えを避けるため、未同定のままqualified。",
+        "identityNotPromoted": true
+      },
+      "specificFinding": null,
+      "wikipediaDecisionUnchanged": true,
+      "publicationApproved": false
+    },
+    {
+      "book": "2CH",
+      "entityID": "moab_2103",
+      "draftPath": "drafts/persons_3/2CH_moab_2103.json",
+      "evidencePath": "evidence/persons_3/2CH_moab_2103.json",
+      "currentDraftSHA256": "949a5097d9373326e2273e87b2c26a8f4924e76bd116dea78de73f1b0b9544fb",
+      "currentProfileSHA256": "e8683c89d0f181209fa8e6365d84390f22026b89cd9630862ffd4c3f329710e8",
+      "currentEvidenceSHA256": "b42413362b50e53431d6fab25bcba15e8602cb42f2cebabeed75332d750f4c7f",
+      "manifestBindingsMatch": true,
+      "activeProfile": true,
+      "knownBy": {
+        "chapter": 20,
+        "verse": 1
+      },
+      "priorIndependentDecision": "qualified",
+      "priorIndependentDecisionBasis": "relation-only-not-identity",
+      "runtimeDisposition": "related-link-supported",
+      "dispositionReasonJa": "WEB 2CH 20章はユダに対するモアブの民を集団として挙げ、現行文は族祖個人・地理地域と区別している。記事は古代の地名/王国・民を扱う背景資料なので、identity false / relation trueの範囲でのみ支持する。",
+      "currentReaderFieldsAndFacts": {
+        "profileID": "person:moab_2103",
+        "kind": "person",
+        "identityType": "collective",
+        "nameJa": "モアブの民",
+        "subtitleJa": "この箇所では「モアブの子ら」として、ユダに対する軍事的集団が記されています。族祖モアブ個人や地理的地域とは区別されます。",
+        "summaryJa": "この箇所では「モアブの子ら」として、ユダに対する軍事的集団が記されています。族祖モアブ個人や地理的地域とは区別されます。",
+        "identityNoteJa": "ここではモアブの民を指し、創世記に登場する族祖モアブ個人を指す用法とは区別します。",
+        "historicalRoleJa": "集団",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "knownBy": {
+          "chapter": 20,
+          "verse": 1
+        },
+        "passages": [
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 20,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 20,
+              "verse": 1
+            }
+          },
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 20,
+              "verse": 10
+            },
+            "end": {
+              "chapter": 20,
+              "verse": 10
+            }
+          },
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 20,
+              "verse": 22
+            },
+            "end": {
+              "chapter": 20,
+              "verse": 22
+            }
+          },
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 20,
+              "verse": 23
+            },
+            "end": {
+              "chapter": 20,
+              "verse": 23
+            }
+          }
+        ],
+        "facts": [
+          {
+            "textJa": "ユダとイスラエルの過去の経緯に触れながら、アンモン、モアブ、セイルの人々が区別して挙げられます。",
+            "knownBy": {
+              "chapter": 20,
+              "verse": 10
+            },
+            "sourceIds": [
+              "moab_2103-webp-2ch-20-10"
+            ],
+            "sourceIdsExistInDraft": true,
+            "missingSourceIds": []
+          },
+          {
+            "textJa": "アンモン、モアブ、セイルの軍勢が互いに打たれたと記されています。",
+            "knownBy": {
+              "chapter": 20,
+              "verse": 22
+            },
+            "sourceIds": [
+              "moab_2103-webp-2ch-20-22"
+            ],
+            "sourceIdsExistInDraft": true,
+            "missingSourceIds": []
+          },
+          {
+            "textJa": "モアブとアンモンの人々がセイルの住民に向かったと記されています。",
+            "knownBy": {
+              "chapter": 20,
+              "verse": 23
+            },
+            "sourceIds": [
+              "moab_2103-webp-2ch-20-23"
+            ],
+            "sourceIdsExistInDraft": true,
+            "missingSourceIds": []
+          }
+        ],
+        "wikipedia": {
+          "title": "Moab",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Moab",
+          "kind": "related-section",
+          "noteJa": "記事はモアブの地域・古代王国とモアブ人を扱いますが、この集団との歴史的同一性を証明する個別人物記事ではありません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "knownBy": {
+            "chapter": 20,
+            "verse": 1
+          },
+          "sourceId": "moab_2103-wikipedia",
+          "relationVerified": true
+        }
+      },
+      "primaryEvidence": [
+        {
+          "ref": "2CH 20:1",
+          "citationURL": "https://ebible.org/engwebp/2CH20.htm#V1",
+          "sourceText": "After this, the children of Moab, the children of Ammon, and with them some of the Meunites, came against Jehoshaphat to battle.",
+          "sourceTextSHA256": "4e8d899e25193a55f9a3cf425956d4bfc0d2d233557a0a174faeaa16c9695ca7",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "「モアブの子ら」は軍事行動をする集団の名。族祖モアブ個人や土地としての用法とは区別。"
+        },
+        {
+          "ref": "2CH 20:10",
+          "citationURL": "https://ebible.org/engwebp/2CH20.htm#V10",
+          "sourceText": "Now, behold, the children of Ammon and Moab and Mount Seir, whom you would not let Israel invade when they came out of the land of Egypt, but they turned away from them, and didn’t destroy them;",
+          "sourceTextSHA256": "16a0c48089c781374df59cde67c6dd6b6b53d35e62b6a7fb3ddffd7b8df1ae84",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "「モアブの子ら」は軍事行動をする集団の名。族祖モアブ個人や土地としての用法とは区別。"
+        },
+        {
+          "ref": "2CH 20:22",
+          "citationURL": "https://ebible.org/engwebp/2CH20.htm#V22",
+          "sourceText": "When they began to sing and to praise, the LORD set ambushers against the children of Ammon, Moab, and Mount Seir, who had come against Judah; and they were struck.",
+          "sourceTextSHA256": "c3a58d70da9ec50685a8110a5a0f9aca7129a7c8815741a3e75977f081bd53bd",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "「モアブの子ら」は軍事行動をする集団の名。族祖モアブ個人や土地としての用法とは区別。"
+        },
+        {
+          "ref": "2CH 20:23",
+          "citationURL": "https://ebible.org/engwebp/2CH20.htm#V23",
+          "sourceText": "For the children of Ammon and Moab stood up against the inhabitants of Mount Seir to utterly kill and destroy them. When they had finished the inhabitants of Seir, everyone helped to destroy each other.",
+          "sourceTextSHA256": "299bcdd039d76961b10df552c10a6e0830a263d730b9963da2dbe876038c9d6a",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "「モアブの子ら」は軍事行動をする集団の名。族祖モアブ個人や土地としての用法とは区別。"
+        }
+      ],
+      "primaryChecksAllExact": true,
+      "factSourceBindingsValid": true,
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Moab",
+        "title": "Moab",
+        "kind": "related-section",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 20,
+          "verse": 1
+        },
+        "noteJa": "記事はモアブの地域・古代王国とモアブ人を扱いますが、この集団との歴史的同一性を証明する個別人物記事ではありません。",
+        "independentArticleBodyLocator": "記事冒頭・Biblical narratives節：古代モアブの地・王国および聖書中のモアブ人を説明。",
+        "savedBodyParaphrase": "記事はモアブの地域・古代王国とモアブ人を扱いますが、この集団との歴史的同一性を証明する個別人物記事ではありません。",
+        "independentlyReopenedInCurrentReview": true,
+        "sourceURLLicenseAttributionGateValid": true,
+        "bodyEvidenceHasRightsAttribution": true
+      },
+      "specificFinding": null,
+      "wikipediaDecisionUnchanged": true,
+      "publicationApproved": false
+    },
+    {
+      "book": "2CH",
+      "entityID": "nethaneel_2194",
+      "draftPath": "drafts/persons_3/2CH_nethaneel_2194.json",
+      "evidencePath": "evidence/persons_3/2CH_nethaneel_2194.json",
+      "currentDraftSHA256": "e8691a38c3b6584bbebe0598ac36ad6b3981790fc53ea2ada3c213d2997921ff",
+      "currentProfileSHA256": "1e5372f5123072c869489a04574be9b15db7e3dd804b4e34df0131b5556c9242",
+      "currentEvidenceSHA256": "b439f431343939d634e45a251511021f09edae0c43229c84a6df06ff7c14ed72",
+      "manifestBindingsMatch": true,
+      "activeProfile": true,
+      "knownBy": {
+        "chapter": 35,
+        "verse": 9
+      },
+      "priorIndependentDecision": "qualified",
+      "priorIndependentDecisionBasis": "bounded-no-fit-search-no-wiki-identity-claim",
+      "runtimeDisposition": "primary-only-display-supported",
+      "dispositionReasonJa": "固定WEB 2CH 35:9はレビ人の長ネタネルと献納物の管理を記す。読者欄の役割説明は一次本文で足り、記事主張には依存しない。",
+      "currentReaderFieldsAndFacts": {
+        "profileID": "person:nethaneel_2194",
+        "kind": "person",
+        "identityType": null,
+        "nameJa": "ネタネル",
+        "subtitleJa": "ネタネルは、レビ人の族長の一人として過越祭の供え物をレビ人へ渡しました。",
+        "summaryJa": "ネタネルは、レビ人の族長の一人として過越祭の供え物をレビ人へ渡しました。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "レビ人の族長",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "knownBy": {
+          "chapter": 35,
+          "verse": 9
+        },
+        "passages": [
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 35,
+              "verse": 9
+            },
+            "end": {
+              "chapter": 35,
+              "verse": 9
+            }
+          }
+        ],
+        "facts": [],
+        "wikipedia": null
+      },
+      "primaryEvidence": [
+        {
+          "ref": "2CH 35:9",
+          "citationURL": "https://ebible.org/engwebp/2CH35.htm#V9",
+          "sourceText": "Conaniah also, and Shemaiah and Nethanel, his brothers, and Hashabiah, Jeiel, and Jozabad, the chiefs of the Levites, gave to the Levites for the Passover offerings five thousand small livestock and five hundred head of cattle.",
+          "sourceTextSHA256": "414e18b55ebb0f7f97e48f69d9a0fe14c2fc22ffa3cb633423f399245ea8f4b5",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEB本文に対象名があり、指定の親子・役割・所属をこの節の文脈に限定して確認。"
+        }
+      ],
+      "primaryChecksAllExact": true,
+      "factSourceBindingsValid": true,
+      "wikipediaReview": {
+        "status": "no-current-wikipedia-object",
+        "boundedSearch": {
+          "queries": [
+            "site:en.wikipedia.org/wiki \"Nethaneel\" \"2 Chronicles 17:8\"",
+            "site:en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K Nethaneel Jehoshaphat",
+            "site:en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z Nethaneel"
+          ],
+          "checkedAtUTC": "2026-10-16T11:26:42Z",
+          "status": "実検索したが適合する記事本文は確認できなかった。",
+          "notesJa": "2歴代誌17:8のレビ人ナタナエルに合う記事項目は見つかりませんでした。L–Z共有一覧で見つかるNethaneelは、Numbersに出るイッサカル族の長で、Zuarの子とされる別人物です。",
+          "articlesRead": [
+            {
+              "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z",
+              "locator": "2087–2091行のZuar項目はNumbers 1:8のZuarと出エジプト時代の部族長Nethaneelを説明する。2CH17:8のJehoshaphat時代のレビ人ではない。A–K共有一覧でも2CH17:8該当項目なし。"
+            }
+          ]
+        },
+        "independentSearchNote": "適合記事の確定リンクなし。類似名・共有一覧の既知別人との取り違えを避けるため、未同定のままqualified。",
+        "identityNotPromoted": true
+      },
+      "specificFinding": null,
+      "wikipediaDecisionUnchanged": true,
+      "publicationApproved": false
+    },
+    {
+      "book": "2CH",
+      "entityID": "obadiah_2222",
+      "draftPath": "drafts/persons_3/2CH_obadiah_2222.json",
+      "evidencePath": "evidence/persons_3/2CH_obadiah_2222.json",
+      "currentDraftSHA256": "55658ce57979d0d1746d1cd3c953902600e311382642f35b7faf2d500af1863f",
+      "currentProfileSHA256": "a560443ba58691f83b0bbf1aa7cda328094a24033f9d065cc1b2036d75d71b01",
+      "currentEvidenceSHA256": "c635f31d5a9b3a147a5ba86f18ca4ec6bf06e3a7be71e4103234a331dee92aca",
+      "manifestBindingsMatch": true,
+      "activeProfile": true,
+      "knownBy": {
+        "chapter": 17,
+        "verse": 7
+      },
+      "priorIndependentDecision": "qualified",
+      "priorIndependentDecisionBasis": "bounded-no-fit-search-no-wiki-identity-claim",
+      "runtimeDisposition": "primary-only-display-supported",
+      "dispositionReasonJa": "固定WEB 2CH 17:7はヨシャパテが遣わした指導者オバデヤを直接列挙する。プロフィールの説明は同節に限定される。",
+      "currentReaderFieldsAndFacts": {
+        "profileID": "person:obadiah_2222",
+        "kind": "person",
+        "identityType": null,
+        "nameJa": "オバデヤ",
+        "subtitleJa": "オバデヤは、ヨシャパテがユダの町々へ遣わした指導者の一人として列挙されています。",
+        "summaryJa": "オバデヤは、ヨシャパテがユダの町々へ遣わした指導者の一人として列挙されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "knownBy": {
+          "chapter": 17,
+          "verse": 7
+        },
+        "passages": [
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 17,
+              "verse": 7
+            },
+            "end": {
+              "chapter": 17,
+              "verse": 7
+            }
+          }
+        ],
+        "facts": [],
+        "wikipedia": null
+      },
+      "primaryEvidence": [
+        {
+          "ref": "2CH 17:7",
+          "citationURL": "https://ebible.org/engwebp/2CH17.htm#V7",
+          "sourceText": "Also in the third year of his reign he sent his princes, even Ben Hail, Obadiah, Zechariah, Nethanel, and Micaiah, to teach in the cities of Judah;",
+          "sourceTextSHA256": "6fedd58c5e404ed8b993d2e104c3864a583ee8c0cea0f89c8792871159c52f2a",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEB本文に対象名があり、指定の親子・役割・所属をこの節の文脈に限定して確認。"
+        }
+      ],
+      "primaryChecksAllExact": true,
+      "factSourceBindingsValid": true,
+      "wikipediaReview": {
+        "status": "no-current-wikipedia-object",
+        "boundedSearch": {
+          "queries": [
+            "site:en.wikipedia.org/wiki \"Obadiah\" \"2 Chronicles 17:7\" Jehoshaphat",
+            "site:en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z Obadiah",
+            "site:en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K Obadiah"
+          ],
+          "checkedAtUTC": "2026-10-16T11:26:42Z",
+          "status": "実検索したが適合する記事本文は確認できなかった。",
+          "notesJa": "2歴代誌17:7のヨシャファトが派遣した役人オバデヤに合う項目は確認できませんでした。L–Z共有一覧のObadiahはダビデの子孫で、アレナンの子・シェカニヤの父とされる別人です。",
+          "articlesRead": [
+            {
+              "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z",
+              "locator": "815–819行のObadiah項目はArnanの子でSheconiahの父とする。2CH17:7の役人とは異なる。A–Kの同名検索でも対象記事なし。"
+            }
+          ]
+        },
+        "independentSearchNote": "適合記事の確定リンクなし。類似名・共有一覧の既知別人との取り違えを避けるため、未同定のままqualified。",
+        "identityNotPromoted": true
+      },
+      "specificFinding": null,
+      "wikipediaDecisionUnchanged": true,
+      "publicationApproved": false
+    },
+    {
+      "book": "2CH",
+      "entityID": "oded_2236",
+      "draftPath": "drafts/persons_3/2CH_oded_2236.json",
+      "evidencePath": "evidence/persons_3/2CH_oded_2236.json",
+      "currentDraftSHA256": "64f8f82bb486b975d6ed3bd7fbb98529e856fea480192def8e3cb1871f61cc9c",
+      "currentProfileSHA256": "4b36a7b72162425ee5429948518091180ecee90c876c559e2ad4a354d06b23f7",
+      "currentEvidenceSHA256": "87987e5d8c3eabbcf98d2337bc06ab1e97b86f275bce324d4284e34052ad7984",
+      "manifestBindingsMatch": true,
+      "activeProfile": true,
+      "knownBy": {
+        "chapter": 15,
+        "verse": 1
+      },
+      "priorIndependentDecision": "qualified",
+      "priorIndependentDecisionBasis": "bounded-no-fit-search-no-wiki-identity-claim",
+      "runtimeDisposition": "hold",
+      "dispositionReasonJa": "2CH 15:1はアザリヤの父オデドを直接記すが、後の預言者オデド(別カード)と同一か別人かを確定する根拠は見当たらない。父としての記述自体は一次本文にあるものの、別個体としてのプロフィール表示は保留する。",
+      "currentReaderFieldsAndFacts": {
+        "profileID": "person:oded_2236",
+        "kind": "person",
+        "identityType": null,
+        "nameJa": "オデド",
+        "subtitleJa": "2歴代誌15:1では、アザリヤがオデドの子として記されています。",
+        "summaryJa": "2歴代誌15:1では、アザリヤがオデドの子として記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "knownBy": {
+          "chapter": 15,
+          "verse": 1
+        },
+        "passages": [
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 15,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 15,
+              "verse": 1
+            }
+          }
+        ],
+        "facts": [],
+        "wikipedia": null
+      },
+      "primaryEvidence": [
+        {
+          "ref": "2CH 15:1",
+          "citationURL": "https://ebible.org/engwebp/2CH15.htm#V1",
+          "sourceText": "The Spirit of God came on Azariah the son of Oded.",
+          "sourceTextSHA256": "9f269f1b3c77f560a7b44c78be50c05800db6cfce23588720325d5b99a678353",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEB本文に対象名があり、指定の親子・役割・所属をこの節の文脈に限定して確認。"
+        }
+      ],
+      "primaryChecksAllExact": true,
+      "factSourceBindingsValid": true,
+      "wikipediaReview": {
+        "status": "no-current-wikipedia-object",
+        "boundedSearch": {
+          "queries": [
+            "site:en.wikipedia.org/wiki \"Oded\" \"2 Chronicles 15:1\" Azariah father",
+            "site:en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z Oded",
+            "Oded father of Azariah 2 Chronicles 15:1 Wikipedia"
+          ],
+          "checkedAtUTC": "2026-10-16T11:26:42Z",
+          "status": "実検索したが適合する記事本文は確認できなかった。",
+          "notesJa": "2歴代誌15:1のアザリヤの父として挙がるオデドに対応する独立記事・共有節は確認できませんでした。15:8の預言者オデドとは同一と明記されず、預言者の項目を父にも当てはめません。",
+          "articlesRead": [
+            {
+              "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z",
+              "locator": "本文をOded/prophet Odedで検索したが該当人物項目はなし。15:1の父の独立記事も実検索で未確認。"
+            }
+          ]
+        },
+        "independentSearchNote": "適合記事の確定リンクなし。類似名・共有一覧の既知別人との取り違えを避けるため、未同定のままqualified。",
+        "identityNotPromoted": true
+      },
+      "specificFinding": null,
+      "wikipediaDecisionUnchanged": true,
+      "publicationApproved": false
+    },
+    {
+      "book": "2CH",
+      "entityID": "oded_2237",
+      "draftPath": "drafts/persons_3/2CH_oded_2237.json",
+      "evidencePath": "evidence/persons_3/2CH_oded_2237.json",
+      "currentDraftSHA256": "58ef760b6d1912ab19be929803eb4ed0a61954ca11d76b18ba0365a1c43a96c5",
+      "currentProfileSHA256": "fed67c5cfd653d801cc8d4cd958e63b35a218f4a46d2f4bfcdae36a95ff14f89",
+      "currentEvidenceSHA256": "38e6a0bb3dc3a653bed23a04e7ab3773ebd877a283dd2144a28ecadae67647bc",
+      "manifestBindingsMatch": true,
+      "activeProfile": true,
+      "knownBy": {
+        "chapter": 28,
+        "verse": 9
+      },
+      "priorIndependentDecision": "qualified",
+      "priorIndependentDecisionBasis": "bounded-no-fit-search-no-wiki-identity-claim",
+      "runtimeDisposition": "primary-only-display-supported",
+      "dispositionReasonJa": "固定WEB 2CH 28:9はサマリアでイスラエル軍を迎えた主の預言者オデドを直接特定する。表示文は同節に基づき、15:1の同名の父との同一視は述べない。",
+      "currentReaderFieldsAndFacts": {
+        "profileID": "person:oded_2237",
+        "kind": "person",
+        "identityType": null,
+        "nameJa": "オデド",
+        "subtitleJa": "オデドは、サマリアでイスラエル軍を迎えた主の預言者です。",
+        "summaryJa": "オデドは、サマリアでイスラエル軍を迎えた主の預言者です。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "預言者",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "knownBy": {
+          "chapter": 28,
+          "verse": 9
+        },
+        "passages": [
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 28,
+              "verse": 9
+            },
+            "end": {
+              "chapter": 28,
+              "verse": 9
+            }
+          }
+        ],
+        "facts": [],
+        "wikipedia": null
+      },
+      "primaryEvidence": [
+        {
+          "ref": "2CH 28:9",
+          "citationURL": "https://ebible.org/engwebp/2CH28.htm#V9",
+          "sourceText": "But a prophet of the LORD was there, whose name was Oded; and he went out to meet the army that came to Samaria, and said to them, “Behold, because the LORD, the God of your fathers, was angry with Judah, he has delivered them into your hand, and you have slain them in a rage which has reached up to heaven.",
+          "sourceTextSHA256": "556a2a032ecc44ebb70db3ddb71ef03f1fad331f98d9a5b2aaead09ef37933dc",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEB本文に対象名があり、指定の親子・役割・所属をこの節の文脈に限定して確認。"
+        }
+      ],
+      "primaryChecksAllExact": true,
+      "factSourceBindingsValid": true,
+      "wikipediaReview": {
+        "status": "no-current-wikipedia-object",
+        "boundedSearch": {
+          "queries": [
+            "site:en.wikipedia.org/wiki \"Oded the prophet\" \"2 Chronicles 15\"",
+            "site:en.wikipedia.org/wiki \"prophet Oded\" Asa Azariah",
+            "site:en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z Oded"
+          ],
+          "checkedAtUTC": "2026-10-16T11:26:42Z",
+          "status": "実検索したが適合する記事本文は確認できなかった。",
+          "notesJa": "2歴代誌15:8などに出る預言者オデドを対象とするWikipediaの人物記事・共有節は確認できませんでした。共有一覧の本文検索でも独立項目は見つからず、一般的な預言者記事は本人に関する資料として適合しません。",
+          "articlesRead": [
+            {
+              "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z",
+              "locator": "本文をOdedで検索したが独立項目なし。Wikipediaの一般的なProphet記事は個人特定を支えない。"
+            }
+          ]
+        },
+        "independentSearchNote": "適合記事の確定リンクなし。類似名・共有一覧の既知別人との取り違えを避けるため、未同定のままqualified。",
+        "identityNotPromoted": true
+      },
+      "specificFinding": null,
+      "wikipediaDecisionUnchanged": true,
+      "publicationApproved": false
+    },
+    {
+      "book": "2CH",
+      "entityID": "queen_of_sheba_2379",
+      "draftPath": "drafts/persons_3/2CH_queen_of_sheba_2379.json",
+      "evidencePath": "evidence/persons_3/2CH_queen_of_sheba_2379.json",
+      "currentDraftSHA256": "d91df567120d6e708688b150d436160c522705ed3f1e1634c631225e00913fc9",
+      "currentProfileSHA256": "91ca91f5b99cb042097ed2a97f56ba54138968c878057904e8e698a6a17e357c",
+      "currentEvidenceSHA256": "49da3d7200afc463a455ec6e125f776912fcfd00e4415e475d0c4ede5c563693",
+      "manifestBindingsMatch": true,
+      "activeProfile": true,
+      "knownBy": {
+        "chapter": 9,
+        "verse": 1
+      },
+      "priorIndependentDecision": "qualified",
+      "priorIndependentDecisionBasis": "relation-only-not-identity",
+      "runtimeDisposition": "related-link-supported",
+      "dispositionReasonJa": "固定WEB 2CH 9:1は女王がソロモンの評判を聞き難問を携えてエルサレムを訪れたことを示す。現行の「現代的同定は確定しない」という補足は関連記事の聖書本文/後代伝承の区別を根拠にするため、リンクはrelation-onlyのまま扱う。",
+      "currentReaderFieldsAndFacts": {
+        "profileID": "person:queen_of_sheba_2379",
+        "kind": "person",
+        "identityType": null,
+        "nameJa": "シェバの女王",
+        "subtitleJa": "シェバの女王はソロモンの評判を聞き、難問を携えてエルサレムを訪れました。出身地の現代的同定は確定しません。",
+        "summaryJa": "シェバの女王はソロモンの評判を聞き、難問を携えてエルサレムを訪れました。出身地の現代的同定は確定しません。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "女王",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "knownBy": {
+          "chapter": 9,
+          "verse": 1
+        },
+        "passages": [
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 9,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 9,
+              "verse": 1
+            }
+          },
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 9,
+              "verse": 3
+            },
+            "end": {
+              "chapter": 9,
+              "verse": 3
+            }
+          },
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 9,
+              "verse": 9
+            },
+            "end": {
+              "chapter": 9,
+              "verse": 9
+            }
+          },
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 9,
+              "verse": 12
+            },
+            "end": {
+              "chapter": 9,
+              "verse": 12
+            }
+          }
+        ],
+        "facts": [
+          {
+            "textJa": "女王はソロモンの知恵と建てた宮殿を見ました。",
+            "knownBy": {
+              "chapter": 9,
+              "verse": 3
+            },
+            "sourceIds": [
+              "queen_of_sheba_2379-webp-2ch-9-3"
+            ],
+            "sourceIdsExistInDraft": true,
+            "missingSourceIds": []
+          },
+          {
+            "textJa": "女王は金、香料、宝石をソロモンに贈りました。",
+            "knownBy": {
+              "chapter": 9,
+              "verse": 9
+            },
+            "sourceIds": [
+              "queen_of_sheba_2379-webp-2ch-9-9"
+            ],
+            "sourceIdsExistInDraft": true,
+            "missingSourceIds": []
+          },
+          {
+            "textJa": "ソロモンは女王の願いに応じて贈り物を返し、女王は自分の国へ帰りました。",
+            "knownBy": {
+              "chapter": 9,
+              "verse": 12
+            },
+            "sourceIds": [
+              "queen_of_sheba_2379-webp-2ch-9-12"
+            ],
+            "sourceIdsExistInDraft": true,
+            "missingSourceIds": []
+          }
+        ],
+        "wikipedia": {
+          "title": "Queen of Sheba",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Queen_of_Sheba",
+          "kind": "related-section",
+          "noteJa": "記事はシェバの女王に関する聖書本文と後代の伝承を分けて紹介します。出身地や歴史上の同定は確定しません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "knownBy": {
+            "chapter": 9,
+            "verse": 1
+          },
+          "sourceId": "queen_of_sheba_2379-wikipedia",
+          "relationVerified": true
+        }
+      },
+      "primaryEvidence": [
+        {
+          "ref": "2CH 9:1",
+          "citationURL": "https://ebible.org/engwebp/2CH09.htm#V1",
+          "sourceText": "When the queen of Sheba heard of the fame of Solomon, she came to test Solomon with hard questions at Jerusalem, with a very great caravan, including camels that bore spices, gold in abundance, and precious stones. When she had come to Solomon, she talked with him about all that was in her heart.",
+          "sourceTextSHA256": "bfddb472283d803d618f9c3ad9937d79f61c52d27f9ca26121eaa885187f5c43",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEB本文に対象名があり、指定の親子・役割・所属をこの節の文脈に限定して確認。"
+        },
+        {
+          "ref": "2CH 9:3",
+          "citationURL": "https://ebible.org/engwebp/2CH09.htm#V3",
+          "sourceText": "When the queen of Sheba had seen the wisdom of Solomon, the house that he had built,",
+          "sourceTextSHA256": "306402d7c22ce78657576e67a96f6c345ab623103dad48962f5dafbed2fbae59",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEB本文に対象名があり、指定の親子・役割・所属をこの節の文脈に限定して確認。"
+        },
+        {
+          "ref": "2CH 9:9",
+          "citationURL": "https://ebible.org/engwebp/2CH09.htm#V9",
+          "sourceText": "She gave the king one hundred and twenty talents of gold, spices in great abundance, and precious stones. There was never before such spice as the queen of Sheba gave to King Solomon.",
+          "sourceTextSHA256": "b779b89f8b77f97a3d090ce8de3d79c65fe2548942676689eae10df0bb56b59e",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEB本文に対象名があり、指定の親子・役割・所属をこの節の文脈に限定して確認。"
+        },
+        {
+          "ref": "2CH 9:12",
+          "citationURL": "https://ebible.org/engwebp/2CH09.htm#V12",
+          "sourceText": "King Solomon gave to the queen of Sheba all her desire, whatever she asked, more than that which she had brought to the king. So she turned and went to her own land, she and her servants.",
+          "sourceTextSHA256": "5b88695307cc7c9f1bcceeaadb78a7f82f578b7ab6d755f53a54d5227c835e69",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEB本文に対象名があり、指定の親子・役割・所属をこの節の文脈に限定して確認。"
+        }
+      ],
+      "primaryChecksAllExact": true,
+      "factSourceBindingsValid": true,
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Queen_of_Sheba",
+        "title": "Queen of Sheba",
+        "kind": "related-section",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 9,
+          "verse": 1
+        },
+        "noteJa": "記事はシェバの女王に関する聖書本文と後代の伝承を分けて紹介します。出身地や歴史上の同定は確定しません。",
+        "independentArticleBodyLocator": "記事冒頭および伝承節：聖書と後代伝承の女王像を区別。",
+        "savedBodyParaphrase": "記事はシェバの女王に関する聖書本文と後代の伝承を分けて紹介します。出身地や歴史上の同定は確定しません。",
+        "independentlyReopenedInCurrentReview": true,
+        "sourceURLLicenseAttributionGateValid": true,
+        "bodyEvidenceHasRightsAttribution": true
+      },
+      "specificFinding": null,
+      "wikipediaDecisionUnchanged": true,
+      "publicationApproved": false
+    },
+    {
+      "book": "2CH",
+      "entityID": "shilhi_2676",
+      "draftPath": "drafts/persons_3/2CH_shilhi_2676.json",
+      "evidencePath": "evidence/persons_3/2CH_shilhi_2676.json",
+      "currentDraftSHA256": "48e16b98856e8417b4334d372acaeae9d3b15d4725e6697d90c971bca825ccab",
+      "currentProfileSHA256": "841fa20879ede7d278cec94e095b8c8645668193926ed956d1abb150f6ed0cc7",
+      "currentEvidenceSHA256": "caf536aacfa04ab39a519ae43eff650e8f745db480576e2c3d59e726b0a69480",
+      "manifestBindingsMatch": true,
+      "activeProfile": true,
+      "knownBy": {
+        "chapter": 20,
+        "verse": 31
+      },
+      "priorIndependentDecision": "qualified",
+      "priorIndependentDecisionBasis": "relation-only-not-identity",
+      "runtimeDisposition": "related-link-supported",
+      "dispositionReasonJa": "WEB 2CH 20:31はアズバをシルヒの娘と明記する。リンク先はアズバの記事であり、父本人の記事ではないため現行の関連限定が適切。",
+      "currentReaderFieldsAndFacts": {
+        "profileID": "person:shilhi_2676",
+        "kind": "person",
+        "identityType": null,
+        "nameJa": "シルヒ",
+        "subtitleJa": "シルヒはアズバの父として、ヨシャパテの母方の系譜に名を連ねます。",
+        "summaryJa": "シルヒはアズバの父として、ヨシャパテの母方の系譜に名を連ねます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "knownBy": {
+          "chapter": 20,
+          "verse": 31
+        },
+        "passages": [
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 20,
+              "verse": 31
+            },
+            "end": {
+              "chapter": 20,
+              "verse": 31
+            }
+          }
+        ],
+        "facts": [],
+        "wikipedia": {
+          "title": "Azubah (mother of Jehoshaphat)",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Azubah_(mother_of_Jehoshaphat)",
+          "kind": "related-section",
+          "noteJa": "記事はアズバをシルヒの娘と記します。これは父シルヒとの関係を示す短い参考で、記事の主題はアズバです。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "knownBy": {
+            "chapter": 20,
+            "verse": 31
+          },
+          "sourceId": "shilhi_2676-wikipedia",
+          "relationVerified": true
+        }
+      },
+      "primaryEvidence": [
+        {
+          "ref": "2CH 20:31",
+          "citationURL": "https://ebible.org/engwebp/2CH20.htm#V31",
+          "sourceText": "So Jehoshaphat reigned over Judah. He was thirty-five years old when he began to reign. He reigned twenty-five years in Jerusalem. His mother’s name was Azubah the daughter of Shilhi.",
+          "sourceTextSHA256": "1ffd3d7ce988d9893f716088d68654671acd68f327e6548751de7372900eb46c",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEB本文に対象名があり、指定の親子・役割・所属をこの節の文脈に限定して確認。"
+        }
+      ],
+      "primaryChecksAllExact": true,
+      "factSourceBindingsValid": true,
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Azubah_(mother_of_Jehoshaphat)",
+        "title": "Azubah (mother of Jehoshaphat)",
+        "kind": "related-section",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 20,
+          "verse": 31
+        },
+        "noteJa": "記事はアズバをシルヒの娘と記します。これは父シルヒとの関係を示す短い参考で、記事の主題はアズバです。",
+        "independentArticleBodyLocator": "本文109–111行、特に111行。AzubahをAsaの妻・Jehoshaphatの母、Shilhiの娘と記し2 Chronicles 20:31を引用。",
+        "savedBodyParaphrase": "記事は2CH20:31を引き、アズバの父をShilhiと記載する。ただし記事対象は父本人でなくアズバ。",
+        "independentlyReopenedInCurrentReview": true,
+        "sourceURLLicenseAttributionGateValid": true,
+        "bodyEvidenceHasRightsAttribution": true
+      },
+      "specificFinding": null,
+      "wikipediaDecisionUnchanged": true,
+      "publicationApproved": false
+    },
+    {
+      "book": "2CH",
+      "entityID": "tilgath-pilneser_2376",
+      "draftPath": "drafts/persons_3/2CH_tilgath-pilneser_2376.json",
+      "evidencePath": "evidence/persons_3/2CH_tilgath-pilneser_2376.json",
+      "currentDraftSHA256": "514795b4606b12e84a373fa42c4a0e6d128175cff3a4e920c09758ac240ef332",
+      "currentProfileSHA256": "9a8e7638cb543dd1dd7266b5519261848537ee54b88d5b52b829c6904422b355",
+      "currentEvidenceSHA256": "62f06ac0f5f6933fb02a1328df366da19eb15dfd7f83b7f295cf1cf47d8cc987",
+      "manifestBindingsMatch": true,
+      "activeProfile": true,
+      "knownBy": {
+        "chapter": 28,
+        "verse": 20
+      },
+      "priorIndependentDecision": "qualified",
+      "priorIndependentDecisionBasis": "bounded-no-fit-search-no-wiki-identity-claim",
+      "runtimeDisposition": "primary-only-display-supported",
+      "dispositionReasonJa": "固定WEB 2CH 28:20はティルガテ・ピルネセルをアッシリア王と明記し、アハズを苦しめたと述べる。現行読者欄はこの一次本文の範囲で完結し、II/IIIの同定を主張しない。Wikipedia未適合/曖昧というqualified状態はそのまま維持する。",
+      "currentReaderFieldsAndFacts": {
+        "profileID": "person:tilgath-pilneser_2376",
+        "kind": "person",
+        "identityType": null,
+        "nameJa": "ティルガテ・ピルネセル",
+        "subtitleJa": "ティルガテ・ピルネセルは、アッシリア王としてアハズのもとへ来て苦しめました。",
+        "summaryJa": "ティルガテ・ピルネセルは、アッシリア王としてアハズのもとへ来て苦しめました。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "アッシリアの王",
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "knownBy": {
+          "chapter": 28,
+          "verse": 20
+        },
+        "passages": [
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 28,
+              "verse": 20
+            },
+            "end": {
+              "chapter": 28,
+              "verse": 20
+            }
+          }
+        ],
+        "facts": [],
+        "wikipedia": null
+      },
+      "primaryEvidence": [
+        {
+          "ref": "2CH 28:20",
+          "citationURL": "https://ebible.org/engwebp/2CH28.htm#V20",
+          "sourceText": "Tilgath-pilneser king of Assyria came to him and gave him trouble, but didn’t strengthen him.",
+          "sourceTextSHA256": "ebc062e89d2134729693f82e0788d3ba5f3634dfa07a22b7d12080571e993278",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEB本文に対象名があり、指定の親子・役割・所属をこの節の文脈に限定して確認。"
+        }
+      ],
+      "primaryChecksAllExact": true,
+      "factSourceBindingsValid": true,
+      "wikipediaReview": {
+        "status": "no-current-wikipedia-object",
+        "boundedSearch": {
+          "queries": [
+            "site:en.wikipedia.org/wiki/Tiglath-Pileser_III \"Tilgath\"",
+            "site:en.wikipedia.org/wiki/Tiglath-Pileser_II \"Tilgath-Pilneser\" \"II or III\"",
+            "site:en.wikipedia.org/wiki \"Tilgath-Pilneser\" Chronicles 28:20"
+          ],
+          "checkedAtUTC": "2026-10-16T11:23:30Z",
+          "status": "実検索と候補記事本文を確認したが、ティグラト・ピレセル二世/三世のどちらがこの箇所に対応するか確定できず、リンクを外して保留。",
+          "notesJa": "ティグラト・ピレセル三世の記事本文に「Tilgath-Pilneser」の異表記を確認できず、ティグラト・ピレセル二世の記事の注記も二世と三世のいずれを指すか確定しません。本文が指す王への記事対応は保留します。",
+          "articlesRead": [
+            {
+              "url": "https://en.wikipedia.org/wiki/Tiglath-Pileser_III",
+              "locator": "記事本文全体。Tilgath-Pilneser検索該当なし。"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/Tiglath-Pileser_II",
+              "locator": "脚注158。Kings 15:29とChronicles 28:20の綴り差に言及するがII/IIIを未確定とする文献への参照。"
+            }
+          ]
+        },
+        "independentSearchNote": "適合記事の確定リンクなし。類似名・共有一覧の既知別人との取り違えを避けるため、未同定のままqualified。",
+        "identityNotPromoted": true
+      },
+      "specificFinding": null,
+      "wikipediaDecisionUnchanged": true,
+      "publicationApproved": false
+    },
+    {
+      "book": "2CH",
+      "entityID": "uri_2895",
+      "draftPath": "drafts/persons_3/2CH_uri_2895.json",
+      "evidencePath": "evidence/persons_3/2CH_uri_2895.json",
+      "currentDraftSHA256": "4ae9b17695130b0df60feb8f45c16e3430425eced715d29269c586910ce953d4",
+      "currentProfileSHA256": "c1c811e96d31ec7d5b05298fa6011c63669356612df1a8d5dec1158fe13f9ece",
+      "currentEvidenceSHA256": "b87dff826715932209622cc7ec3910a0a832ab8dd4d205c897229045c8548207",
+      "manifestBindingsMatch": true,
+      "activeProfile": true,
+      "knownBy": {
+        "chapter": 1,
+        "verse": 5
+      },
+      "priorIndependentDecision": "qualified",
+      "priorIndependentDecisionBasis": "relation-only-not-identity",
+      "runtimeDisposition": "related-link-supported",
+      "dispositionReasonJa": "WEB 2CH 1:5はウリをフルの子、ベツァルエルの父として示す。記事本文は息子ベツァルエルを主題に親子関係を記すため、父本人のidentity linkではなくrelation-onlyとして扱う。",
+      "currentReaderFieldsAndFacts": {
+        "profileID": "person:uri_2895",
+        "kind": "person",
+        "identityType": null,
+        "nameJa": "ウリ",
+        "subtitleJa": "ウリはフルの子で、ベツァルエルの父として名を挙げられます。",
+        "summaryJa": "ウリはフルの子で、ベツァルエルの父として名を挙げられます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "knownBy": {
+          "chapter": 1,
+          "verse": 5
+        },
+        "passages": [
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 1,
+              "verse": 5
+            },
+            "end": {
+              "chapter": 1,
+              "verse": 5
+            }
+          }
+        ],
+        "facts": [],
+        "wikipedia": {
+          "title": "Bezalel",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Bezalel",
+          "kind": "related-section",
+          "noteJa": "記事はベツァルエルをウリの子と記します。ウリ本人の伝記ではなく、親子関係を確認する参考です。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "knownBy": {
+            "chapter": 1,
+            "verse": 5
+          },
+          "sourceId": "uri_2895-wikipedia",
+          "relationVerified": true
+        }
+      },
+      "primaryEvidence": [
+        {
+          "ref": "2CH 1:5",
+          "citationURL": "https://ebible.org/engwebp/2CH01.htm#V5",
+          "sourceText": "Moreover the bronze altar that Bezalel the son of Uri, the son of Hur, had made was there before the LORD’s tabernacle; and Solomon and the assembly were seeking counsel there.",
+          "sourceTextSHA256": "ab5d808c6480ee153a5e40cacc1a91c22f55d4766e1d25dfdc69f639a78a3f59",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEB本文に対象名があり、指定の親子・役割・所属をこの節の文脈に限定して確認。"
+        }
+      ],
+      "primaryChecksAllExact": true,
+      "factSourceBindingsValid": true,
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Bezalel",
+        "title": "Bezalel",
+        "kind": "related-section",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 1,
+          "verse": 5
+        },
+        "noteJa": "記事はベツァルエルをウリの子と記します。ウリ本人の伝記ではなく、親子関係を確認する参考です。",
+        "independentArticleBodyLocator": "本文127–134行、特に132行。ベツァルエルをウリの子、フルの孫、ユダ族とする。",
+        "savedBodyParaphrase": "記事がウリをベツァルエルの父として明記するが、記事の主題は息子のベツァルエルである。",
+        "independentlyReopenedInCurrentReview": true,
+        "sourceURLLicenseAttributionGateValid": true,
+        "bodyEvidenceHasRightsAttribution": true
+      },
+      "specificFinding": null,
+      "wikipediaDecisionUnchanged": true,
+      "publicationApproved": false
+    },
+    {
+      "book": "2CH",
+      "entityID": "zadok_2974",
+      "draftPath": "drafts/persons_3/2CH_zadok_2974.json",
+      "evidencePath": "evidence/persons_3/2CH_zadok_2974.json",
+      "currentDraftSHA256": "224faa941eabb64d5b9473c5f29cd99c96527e90faeaa87b569e97292f313917",
+      "currentProfileSHA256": "11a0d2ecd50d86b185e0ca4f65d96cb6f76ec994f30cc4b2f2a68a71189eb3c2",
+      "currentEvidenceSHA256": "c33982c3c9f5f44a89c5582c513a854f38b346aba53e9f2f1db87173053244d8",
+      "manifestBindingsMatch": true,
+      "activeProfile": true,
+      "knownBy": {
+        "chapter": 27,
+        "verse": 1
+      },
+      "priorIndependentDecision": "qualified",
+      "priorIndependentDecisionBasis": "relation-only-not-identity",
+      "runtimeDisposition": "related-link-supported",
+      "dispositionReasonJa": "WEB 2CH 27:1はエルシャをザドクの娘と記す。記事は祭司ザドクを扱い、この父が本人か子孫かを留保しているので、関係資料としてのみ表示する。",
+      "currentReaderFieldsAndFacts": {
+        "profileID": "person:zadok_2974",
+        "kind": "person",
+        "identityType": null,
+        "nameJa": "ザドク",
+        "subtitleJa": "ザドクはヨタムの母エルシャの父として記されています。",
+        "summaryJa": "ザドクはヨタムの母エルシャの父として記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "knownBy": {
+          "chapter": 27,
+          "verse": 1
+        },
+        "passages": [
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 27,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 27,
+              "verse": 1
+            }
+          }
+        ],
+        "facts": [],
+        "wikipedia": {
+          "title": "Zadok",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Zadok",
+          "kind": "related-section",
+          "noteJa": "記事はヨタムの母エルシャを「ザドクの娘」とする表現について、祭司ザドクの子孫である可能性を述べています。父本人の身元は確定していません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "knownBy": {
+            "chapter": 27,
+            "verse": 1
+          },
+          "sourceId": "zadok_2974-wikipedia",
+          "relationVerified": true
+        }
+      },
+      "primaryEvidence": [
+        {
+          "ref": "2CH 27:1",
+          "citationURL": "https://ebible.org/engwebp/2CH27.htm#V1",
+          "sourceText": "Jotham was twenty-five years old when he began to reign, and he reigned sixteen years in Jerusalem. His mother’s name was Jerushah the daughter of Zadok.",
+          "sourceTextSHA256": "675ce1d106bf4354bc60f97586c38721d095b9f635bac74e531fc64e6e054b74",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEB本文に対象名があり、指定の親子・役割・所属をこの節の文脈に限定して確認。"
+        }
+      ],
+      "primaryChecksAllExact": true,
+      "factSourceBindingsValid": true,
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Zadok",
+        "title": "Zadok",
+        "kind": "related-section",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 27,
+          "verse": 1
+        },
+        "noteJa": "記事はヨタムの母エルシャを「ザドクの娘」とする表現について、祭司ザドクの子孫である可能性を述べています。父本人の身元は確定していません。",
+        "independentArticleBodyLocator": "本文175行。Jerusha, mother of Jotham が daughter of Zadok と呼ばれるのは高い家系を示すためで、父は最初のZadokの子孫かもしれない、と留保。記事全体は祭司ザドクを扱う。",
+        "savedBodyParaphrase": "WEB 2CH27:1はJerushahをZadokの娘と明記する。記事はこのZadokを有名な祭司とする可能性を述べるが、本人でなく子孫の可能性も残すため関係資料としてのみ表示する。",
+        "independentlyReopenedInCurrentReview": true,
+        "sourceURLLicenseAttributionGateValid": true,
+        "bodyEvidenceHasRightsAttribution": true
+      },
+      "specificFinding": null,
+      "wikipediaDecisionUnchanged": true,
+      "publicationApproved": false
+    },
+    {
+      "book": "2CH",
+      "entityID": "zichri_3073",
+      "draftPath": "drafts/persons_3/2CH_zichri_3073.json",
+      "evidencePath": "evidence/persons_3/2CH_zichri_3073.json",
+      "currentDraftSHA256": "6a31fb4856f73f03b389ce2f4f3629ebc4026eb900cb01f2165a83a3858158b0",
+      "currentProfileSHA256": "57a7747474f070d0a65b974975d2563c19ed8d994d1dcd1d3d02d01e9398f70f",
+      "currentEvidenceSHA256": "dec51cd5c06d8e1312f4bed120fd1b692a3d58ddd347b34263fa38de6da8a24a",
+      "manifestBindingsMatch": true,
+      "activeProfile": true,
+      "knownBy": {
+        "chapter": 23,
+        "verse": 1
+      },
+      "priorIndependentDecision": "qualified",
+      "priorIndependentDecisionBasis": "bounded-no-fit-search-no-wiki-identity-claim",
+      "runtimeDisposition": "primary-only-display-supported",
+      "dispositionReasonJa": "固定WEB 2CH 23:1は百人隊長エリシャファトの父をジクリと明記する。reader欄はこの系譜だけに限定され、共有一覧の別ジクリを取り込まない。",
+      "currentReaderFieldsAndFacts": {
+        "profileID": "person:zichri_3073",
+        "kind": "person",
+        "identityType": null,
+        "nameJa": "ジクリ",
+        "subtitleJa": "ジクリは、エリシャファトの父として百人隊長たちの列挙に名が出ます。",
+        "summaryJa": "ジクリは、エリシャファトの父として百人隊長たちの列挙に名が出ます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "knownBy": {
+          "chapter": 23,
+          "verse": 1
+        },
+        "passages": [
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 23,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 23,
+              "verse": 1
+            }
+          }
+        ],
+        "facts": [],
+        "wikipedia": null
+      },
+      "primaryEvidence": [
+        {
+          "ref": "2CH 23:1",
+          "citationURL": "https://ebible.org/engwebp/2CH23.htm#V1",
+          "sourceText": "In the seventh year, Jehoiada strengthened himself, and took the captains of hundreds—Azariah the son of Jeroham, Ishmael the son of Jehohanan, Azariah the son of Obed, Maaseiah the son of Adaiah, and Elishaphat the son of Zichri—into a covenant with him.",
+          "sourceTextSHA256": "ecf68f83102cedb02c63aca45dbf286e6bd36d7a0ad0295d3117bbde48fee9f4",
+          "matchesPinnedWEBTextAndURL": true,
+          "readingNoteJa": "固定WEB本文に対象名があり、指定の親子・役割・所属をこの節の文脈に限定して確認。"
+        }
+      ],
+      "primaryChecksAllExact": true,
+      "factSourceBindingsValid": true,
+      "wikipediaReview": {
+        "status": "no-current-wikipedia-object",
+        "boundedSearch": {
+          "queries": [
+            "site:en.wikipedia.org/wiki \"Zichri\" \"2 Chronicles 23:1\" Elishaphat",
+            "site:en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z Zichri Elishaphat",
+            "site:en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z \"2 Chron 17:16\""
+          ],
+          "checkedAtUTC": "2026-10-16T11:27:01Z",
+          "status": "実検索したが適合する記事本文は確認できなかった。",
+          "notesJa": "2歴代誌23:1のエリシャファトの父ジクリに合う記事項目は確認できませんでした。共有一覧のZichri項目は、出エジプト記6:21のレビ人と、2歴代誌17:16でアマスヤの父となる別のジクリを挙げており、23:1の父とは結び付けません。",
+          "articlesRead": [
+            {
+              "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z",
+              "locator": "2021–2025行のZichri項目。Izharの子でExodus 6:21、別のZichriはJehoshaphatの将軍Amasiahの父（2 Chron 17:16）。2CH23:1のElishaphatの父は記載されない。"
+            }
+          ]
+        },
+        "independentSearchNote": "適合記事の確定リンクなし。類似名・共有一覧の既知別人との取り違えを避けるため、未同定のままqualified。",
+        "identityNotPromoted": true
+      },
+      "specificFinding": null,
+      "wikipediaDecisionUnchanged": true,
+      "publicationApproved": false
+    }
+  ],
+  "publicationApproved": false
+}

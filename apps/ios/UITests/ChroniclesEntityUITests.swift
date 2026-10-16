@@ -62,6 +62,15 @@ final class ChroniclesEntityUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "ユダに属する")).firstMatch.waitForExistence(timeout: 5))
         attach(app, "chronicles-baalah-canonical-place")
     }
+    @MainActor func testJoashRescueDoesNotRevealLaterKingship() {
+        let app = launch("entity-2ch-joash")
+        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
+        let detail = app.buttons["entity-detail-person:joash_1632"]
+        scrollTo(detail, in: app); XCTAssertTrue(detail.exists); detail.tap()
+        XCTAssertFalse(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "王として立てられ")).firstMatch.exists)
+        XCTAssertFalse(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "その子ゼカリヤを殺し")).firstMatch.exists)
+        attach(app, "chronicles-joash-rescue-first-verse")
+    }
     @MainActor private func launch(_ screen: String) -> XCUIApplication {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa", "--qa-screen=" + screen]; app.launch(); return app
     }

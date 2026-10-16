@@ -1,0 +1,562 @@
+{
+  "schemaVersion": 1,
+  "projectionType": "format-only-runtime-disposition-q-projection",
+  "generatedAtUTC": "2026-10-16T12:07:58.512050Z",
+  "sourceReportPath": "reviews/runtime-disposition-batch09-persons_1-qualified-pending.json",
+  "sourceReportSHA256": "d3490d69e3a034180f91b6cec842354d734e5d1b9035dfb54dc1e78266e0150b",
+  "sourceReportRowsKey": "rows",
+  "sourceReportRowCount": 25,
+  "sourceReportDecisionCounts": {
+    "primary-only-display-supported": 19,
+    "related-link-supported": 2,
+    "hold": 4
+  },
+  "bookMetadataDeltaPath": null,
+  "bookMetadataDeltaSHA256": null,
+  "policy": {
+    "formatOnly": true,
+    "currentDraftSHA256AndCurrentEvidenceSHA256": "copied unchanged from source row as expected SHAs; not recomputed or rebound to current files",
+    "bookInference": "only missing book values may be inferred from literal 1CH_/2CH_ draft filename prefix; p3 batch08 book=person requires exact entityID, draftPath, evidencePath, draft SHA, and evidence SHA match to the authorized book metadata delta",
+    "primaryOnlyAlias": "primary-only-supported is normalized only as a format alias to primary-only-display-supported",
+    "p3Batch07DispositionSchema": "decision is mapped to runtimeDisposition only for the named p3 batch07 source report; no other generic verdict field is inferred",
+    "semanticPromotion": "none; row disposition values are copied, except the explicitly declared format alias",
+    "errors": "missing/invalid SHA, missing path/ID, ambiguous book, or missing disposition marks the row runtimeDisposition=hold with projectionStatus=hold-error"
+  },
+  "summary": {
+    "rowCount": 25,
+    "runtimeDispositionCounts": {
+      "related-link-supported": 2,
+      "hold": 4,
+      "primary-only-display-supported": 19
+    },
+    "errorRowCount": 0
+  },
+  "rowErrors": [],
+  "rows": [
+    {
+      "book": "2CH",
+      "entityID": "person:jeshua_892",
+      "draftPath": "drafts/persons_1/2CH_jeshua_892.json",
+      "evidencePath": "evidence/persons_1/2CH_jeshua_892-sources.json",
+      "currentDraftSHA256": "3ea761e60c9276be8883bcc3b644bf93635160f310f3cab408a8dcaa6fc6c70c",
+      "currentEvidenceSHA256": "73a2d859a3419474d209cc1a0a2df748c3b6c2a08969647d4e08173d64113821",
+      "runtimeDisposition": "related-link-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 0,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "related-link-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "3ea761e60c9276be8883bcc3b644bf93635160f310f3cab408a8dcaa6fc6c70c",
+      "expectedCurrentEvidenceSHA256": "73a2d859a3419474d209cc1a0a2df748c3b6c2a08969647d4e08173d64113821",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:joah_1625",
+      "draftPath": "drafts/persons_1/2CH_joah_1625.json",
+      "evidencePath": "evidence/persons_1/2CH_joah_1625-sources.json",
+      "currentDraftSHA256": "89cdfc497d87f2efd5c21d25832effd74f546b71800c32031299b1468cf11153",
+      "currentEvidenceSHA256": "2cfb8578b71b3c0c678e007d189c2f0423db22470d5f48c22d468063fc584bd4",
+      "runtimeDisposition": "hold",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 1,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "hold",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "89cdfc497d87f2efd5c21d25832effd74f546b71800c32031299b1468cf11153",
+      "expectedCurrentEvidenceSHA256": "2cfb8578b71b3c0c678e007d189c2f0423db22470d5f48c22d468063fc584bd4",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:maaseiah_1852",
+      "draftPath": "drafts/persons_1/2CH_maaseiah_1852.json",
+      "evidencePath": "evidence/persons_1/2CH_maaseiah_1852-sources.json",
+      "currentDraftSHA256": "97bb0ea204a5c066cf5de28ca9eb56bb460d2b8f3f4ffecac44e009057b86768",
+      "currentEvidenceSHA256": "cb7beec39c471a347ba3aca89e1dc20449e0cc959db6f4288a66af5493906a40",
+      "runtimeDisposition": "primary-only-display-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 2,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "primary-only-display-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "97bb0ea204a5c066cf5de28ca9eb56bb460d2b8f3f4ffecac44e009057b86768",
+      "expectedCurrentEvidenceSHA256": "cb7beec39c471a347ba3aca89e1dc20449e0cc959db6f4288a66af5493906a40",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:mattaniah_1953",
+      "draftPath": "drafts/persons_1/2CH_mattaniah_1953.json",
+      "evidencePath": "evidence/persons_1/2CH_mattaniah_1953-sources.json",
+      "currentDraftSHA256": "662e79e5f3c0175031e0b73327bdbc64073f2f88f84833b75c75df701282affc",
+      "currentEvidenceSHA256": "f56772f5279c669af8ef26b893012be7d2d2e1c2f4b33739d1fb5130ea62adfa",
+      "runtimeDisposition": "primary-only-display-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 3,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "primary-only-display-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "662e79e5f3c0175031e0b73327bdbc64073f2f88f84833b75c75df701282affc",
+      "expectedCurrentEvidenceSHA256": "f56772f5279c669af8ef26b893012be7d2d2e1c2f4b33739d1fb5130ea62adfa",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:meshullam_2027",
+      "draftPath": "drafts/persons_1/2CH_meshullam_2027.json",
+      "evidencePath": "evidence/persons_1/2CH_meshullam_2027-sources.json",
+      "currentDraftSHA256": "28847aebb961c1ec9768950f7e8df5ed26950547d33eda1b8de8da3375f17776",
+      "currentEvidenceSHA256": "0421ea7da2211293a2aad068f80f78daed9cbd51c53191ab98e81167b0fb7144",
+      "runtimeDisposition": "primary-only-display-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 4,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "primary-only-display-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "28847aebb961c1ec9768950f7e8df5ed26950547d33eda1b8de8da3375f17776",
+      "expectedCurrentEvidenceSHA256": "0421ea7da2211293a2aad068f80f78daed9cbd51c53191ab98e81167b0fb7144",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:michaiah_2070",
+      "draftPath": "drafts/persons_1/2CH_michaiah_2070.json",
+      "evidencePath": "evidence/persons_1/2CH_michaiah_2070-sources.json",
+      "currentDraftSHA256": "953070e2b0383f6c5bd90cdda49640b7a407bbafc42af1e5daa2d6866b95674f",
+      "currentEvidenceSHA256": "04a236f083f593e8ef85a10886d2cc7dca099e00344c3b8b956c2de0b293c63f",
+      "runtimeDisposition": "primary-only-display-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 5,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "primary-only-display-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "953070e2b0383f6c5bd90cdda49640b7a407bbafc42af1e5daa2d6866b95674f",
+      "expectedCurrentEvidenceSHA256": "04a236f083f593e8ef85a10886d2cc7dca099e00344c3b8b956c2de0b293c63f",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:nahath_2140",
+      "draftPath": "drafts/persons_1/2CH_nahath_2140.json",
+      "evidencePath": "evidence/persons_1/2CH_nahath_2140-sources.json",
+      "currentDraftSHA256": "b7520c49aa733fa1feb086a0d6dd2b3c8cd1d8ad719000718bb9600e65f3b364",
+      "currentEvidenceSHA256": "60d6f33fceba615a9b7e84f3e12372c9b26e53d915dab7f3b0a83e0edc962e93",
+      "runtimeDisposition": "primary-only-display-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 6,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "primary-only-display-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "b7520c49aa733fa1feb086a0d6dd2b3c8cd1d8ad719000718bb9600e65f3b364",
+      "expectedCurrentEvidenceSHA256": "60d6f33fceba615a9b7e84f3e12372c9b26e53d915dab7f3b0a83e0edc962e93",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:naphtali_2149",
+      "draftPath": "drafts/persons_1/2CH_naphtali_2149.json",
+      "evidencePath": "evidence/persons_1/2CH_naphtali_2149-sources.json",
+      "currentDraftSHA256": "3e06bde946cf490bc92ee2df039c9ac3bd1034949df1b279ebbb3e955b23acfc",
+      "currentEvidenceSHA256": "b9b30881a6479783f5561690a9b9e897d18129b449ee9e580e04cca1a260d195",
+      "runtimeDisposition": "related-link-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 7,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "related-link-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "3e06bde946cf490bc92ee2df039c9ac3bd1034949df1b279ebbb3e955b23acfc",
+      "expectedCurrentEvidenceSHA256": "b9b30881a6479783f5561690a9b9e897d18129b449ee9e580e04cca1a260d195",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:nebat_2165",
+      "draftPath": "drafts/persons_1/2CH_nebat_2165.json",
+      "evidencePath": "evidence/persons_1/2CH_nebat_2165-sources.json",
+      "currentDraftSHA256": "e8180ae01652e7c6fcaab0e7634102d497e27dc8c7a4d94eda9d837f14987365",
+      "currentEvidenceSHA256": "fd1fc7b8820ef0a6f665e3e856a2181641acbb64117522ceedd9c8a4bcaf7ae6",
+      "runtimeDisposition": "primary-only-display-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 8,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "primary-only-display-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "e8180ae01652e7c6fcaab0e7634102d497e27dc8c7a4d94eda9d837f14987365",
+      "expectedCurrentEvidenceSHA256": "fd1fc7b8820ef0a6f665e3e856a2181641acbb64117522ceedd9c8a4bcaf7ae6",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:nethaniah_2200",
+      "draftPath": "drafts/persons_1/2CH_nethaniah_2200.json",
+      "evidencePath": "evidence/persons_1/2CH_nethaniah_2200-sources.json",
+      "currentDraftSHA256": "fe9ee160b2fbbd9ee688da5f8f8ddfade61d27d36fb572b23a8913143a1addbc",
+      "currentEvidenceSHA256": "81d7bfc711a5b83c8cb099294d5d72db21bece8ac2b88c0a6d65ea782f66ba08",
+      "runtimeDisposition": "primary-only-display-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 9,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "primary-only-display-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "fe9ee160b2fbbd9ee688da5f8f8ddfade61d27d36fb572b23a8913143a1addbc",
+      "expectedCurrentEvidenceSHA256": "81d7bfc711a5b83c8cb099294d5d72db21bece8ac2b88c0a6d65ea782f66ba08",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:obadiah_2223",
+      "draftPath": "drafts/persons_1/2CH_obadiah_2223.json",
+      "evidencePath": "evidence/persons_1/2CH_obadiah_2223-sources.json",
+      "currentDraftSHA256": "0eef59b497e75f0a0a57bc3e05980dd36fd71aca68a6e622bae20bf824b2c4f1",
+      "currentEvidenceSHA256": "7fe7125218abb8394a80fe3bdda8fad4dc2ed4ebb26b9f4be385459be166de54",
+      "runtimeDisposition": "primary-only-display-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 10,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "primary-only-display-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "0eef59b497e75f0a0a57bc3e05980dd36fd71aca68a6e622bae20bf824b2c4f1",
+      "expectedCurrentEvidenceSHA256": "7fe7125218abb8394a80fe3bdda8fad4dc2ed4ebb26b9f4be385459be166de54",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:omri_2243",
+      "draftPath": "drafts/persons_1/2CH_omri_2243.json",
+      "evidencePath": "evidence/persons_1/2CH_omri_2243-sources.json",
+      "currentDraftSHA256": "bbaacab31c40fca377c4003037dac25dc99eed9a43c47ef852d4c2713b4b32fb",
+      "currentEvidenceSHA256": "fde98e4de5e2988713097fdd29838e801f67bcdf8c8b72a4994da6fc9ba64dc4",
+      "runtimeDisposition": "hold",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 11,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "hold",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "bbaacab31c40fca377c4003037dac25dc99eed9a43c47ef852d4c2713b4b32fb",
+      "expectedCurrentEvidenceSHA256": "fde98e4de5e2988713097fdd29838e801f67bcdf8c8b72a4994da6fc9ba64dc4",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:pharaoh_2332",
+      "draftPath": "drafts/persons_1/2CH_pharaoh_2332.json",
+      "evidencePath": "evidence/persons_1/2CH_pharaoh_2332-sources.json",
+      "currentDraftSHA256": "8c8bc40d9c78847e243918b1132f664f6e647c4b38af4033d9b7049c68ac5cc4",
+      "currentEvidenceSHA256": "cc7e09a80b2a26f75284e84485ef27083be7f0f016907b8b49bf046c1fdd9d29",
+      "runtimeDisposition": "primary-only-display-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 12,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "primary-only-display-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "8c8bc40d9c78847e243918b1132f664f6e647c4b38af4033d9b7049c68ac5cc4",
+      "expectedCurrentEvidenceSHA256": "cc7e09a80b2a26f75284e84485ef27083be7f0f016907b8b49bf046c1fdd9d29",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:shallum_2515",
+      "draftPath": "drafts/persons_1/2CH_shallum_2515.json",
+      "evidencePath": "evidence/persons_1/2CH_shallum_2515-sources.json",
+      "currentDraftSHA256": "32903f86c1f1a5fb1f6bb222645c673a6893d8f01a190ff241c5e4a8491c47a1",
+      "currentEvidenceSHA256": "3d38bad756113c8a3e5e0971cc7999cc9b05c55223cd65f38cad197b4b0152e7",
+      "runtimeDisposition": "primary-only-display-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 13,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "primary-only-display-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "32903f86c1f1a5fb1f6bb222645c673a6893d8f01a190ff241c5e4a8491c47a1",
+      "expectedCurrentEvidenceSHA256": "3d38bad756113c8a3e5e0971cc7999cc9b05c55223cd65f38cad197b4b0152e7",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:shemiramoth_2652",
+      "draftPath": "drafts/persons_1/2CH_shemiramoth_2652.json",
+      "evidencePath": "evidence/persons_1/2CH_shemiramoth_2652-sources.json",
+      "currentDraftSHA256": "118b9d3bd5dbd2c256fe950a9e462aaaa65e666ea5a2170c2ebd7cfc8623ca93",
+      "currentEvidenceSHA256": "5ed4e3a1fc77fdbd3b0cae5e1b17d23320097e4887f36d7aa4738e46c53a16fc",
+      "runtimeDisposition": "primary-only-display-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 14,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "primary-only-display-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "118b9d3bd5dbd2c256fe950a9e462aaaa65e666ea5a2170c2ebd7cfc8623ca93",
+      "expectedCurrentEvidenceSHA256": "5ed4e3a1fc77fdbd3b0cae5e1b17d23320097e4887f36d7aa4738e46c53a16fc",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:shimei_2692",
+      "draftPath": "drafts/persons_1/2CH_shimei_2692.json",
+      "evidencePath": "evidence/persons_1/2CH_shimei_2692-sources.json",
+      "currentDraftSHA256": "e730ac3c05113846469b4942fff7f516916220639417b30929fed42813a14467",
+      "currentEvidenceSHA256": "a230d08c626ebb90f3df3d45d428483ae5c79e6c97febe0a74a74708fa8aeabb",
+      "runtimeDisposition": "primary-only-display-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 15,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "primary-only-display-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "e730ac3c05113846469b4942fff7f516916220639417b30929fed42813a14467",
+      "expectedCurrentEvidenceSHA256": "a230d08c626ebb90f3df3d45d428483ae5c79e6c97febe0a74a74708fa8aeabb",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:shimrith_2724",
+      "draftPath": "drafts/persons_1/2CH_shimrith_2724.json",
+      "evidencePath": "evidence/persons_1/2CH_shimrith_2724-sources.json",
+      "currentDraftSHA256": "360e0b9e8cfd40e156bfd551639ef35313c630ccdfb4eb60a0ce42309d3e51d2",
+      "currentEvidenceSHA256": "fa19bc719f375556285c47088ed31b4e0b47150d17edcd71b87b76acdc49fb75",
+      "runtimeDisposition": "hold",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 16,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "hold",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "360e0b9e8cfd40e156bfd551639ef35313c630ccdfb4eb60a0ce42309d3e51d2",
+      "expectedCurrentEvidenceSHA256": "fa19bc719f375556285c47088ed31b4e0b47150d17edcd71b87b76acdc49fb75",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:tobadonijah_2870",
+      "draftPath": "drafts/persons_1/2CH_tobadonijah_2870.json",
+      "evidencePath": "evidence/persons_1/2CH_tobadonijah_2870-sources.json",
+      "currentDraftSHA256": "6e3b468a32de370300f1354b2624ce30fe4351864230962f7f361d395515c22f",
+      "currentEvidenceSHA256": "5abb87232600cf5804c00ffbbabefe637fad4cf7d63eeb6c6bf648c51479fdf4",
+      "runtimeDisposition": "primary-only-display-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 17,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "primary-only-display-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "6e3b468a32de370300f1354b2624ce30fe4351864230962f7f361d395515c22f",
+      "expectedCurrentEvidenceSHA256": "5abb87232600cf5804c00ffbbabefe637fad4cf7d63eeb6c6bf648c51479fdf4",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:uriel_2902",
+      "draftPath": "drafts/persons_1/2CH_uriel_2902.json",
+      "evidencePath": "evidence/persons_1/2CH_uriel_2902-sources.json",
+      "currentDraftSHA256": "41916e578b4c0819c8d7ca06194e6171c535ae293a4eb7fc6a97164d4d492074",
+      "currentEvidenceSHA256": "8f3e759ecf4500766bde91323a936f875ae7db4766d06cfdcc29613fd804767a",
+      "runtimeDisposition": "primary-only-display-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 18,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "primary-only-display-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "41916e578b4c0819c8d7ca06194e6171c535ae293a4eb7fc6a97164d4d492074",
+      "expectedCurrentEvidenceSHA256": "8f3e759ecf4500766bde91323a936f875ae7db4766d06cfdcc29613fd804767a",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:zacharias_3011",
+      "draftPath": "drafts/persons_1/2CH_zacharias_3011.json",
+      "evidencePath": "evidence/persons_1/2CH_zacharias_3011-sources.json",
+      "currentDraftSHA256": "43cbf399f2d1c34da841b68a748a58beb2d60d9ba76fc483087d9591181112d2",
+      "currentEvidenceSHA256": "e30269444479b59d19ce855a932263939f6b0331659bae6e62ad3e4170c8abdb",
+      "runtimeDisposition": "hold",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 19,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "hold",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "43cbf399f2d1c34da841b68a748a58beb2d60d9ba76fc483087d9591181112d2",
+      "expectedCurrentEvidenceSHA256": "e30269444479b59d19ce855a932263939f6b0331659bae6e62ad3e4170c8abdb",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:zechariah_2970",
+      "draftPath": "drafts/persons_1/2CH_zechariah_2970.json",
+      "evidencePath": "evidence/persons_1/2CH_zechariah_2970-sources.json",
+      "currentDraftSHA256": "00259d710fb5e09f16abe138b27a9a105dd6b11756f84d5a488f46a32b56d3d4",
+      "currentEvidenceSHA256": "9ef95642b3e82fd7959733e9386a286f3de8bc7fc0426aa746c8b5231e40cf2e",
+      "runtimeDisposition": "primary-only-display-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 20,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "primary-only-display-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "00259d710fb5e09f16abe138b27a9a105dd6b11756f84d5a488f46a32b56d3d4",
+      "expectedCurrentEvidenceSHA256": "9ef95642b3e82fd7959733e9386a286f3de8bc7fc0426aa746c8b5231e40cf2e",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:zechariah_3010",
+      "draftPath": "drafts/persons_1/2CH_zechariah_3010.json",
+      "evidencePath": "evidence/persons_1/2CH_zechariah_3010-sources.json",
+      "currentDraftSHA256": "28ab43d3eace0508199c419cea79bba89e90b4fcb64dc05420fb50cefc47f49f",
+      "currentEvidenceSHA256": "6092caa499984221041bcb8e8f27ea07a1565893652a8f73e441afc11a3ffb0a",
+      "runtimeDisposition": "primary-only-display-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 21,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "primary-only-display-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "28ab43d3eace0508199c419cea79bba89e90b4fcb64dc05420fb50cefc47f49f",
+      "expectedCurrentEvidenceSHA256": "6092caa499984221041bcb8e8f27ea07a1565893652a8f73e441afc11a3ffb0a",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:zechariah_3014",
+      "draftPath": "drafts/persons_1/2CH_zechariah_3014.json",
+      "evidencePath": "evidence/persons_1/2CH_zechariah_3014-sources.json",
+      "currentDraftSHA256": "8f04a53730ec333a77fc4d5156087a52b7082911d1bd26469c9cdad8282f7407",
+      "currentEvidenceSHA256": "2a1af7feba5967513cebf00f286ec9b15cab817246949acc962f8e3f753cbd51",
+      "runtimeDisposition": "primary-only-display-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 22,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "primary-only-display-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "8f04a53730ec333a77fc4d5156087a52b7082911d1bd26469c9cdad8282f7407",
+      "expectedCurrentEvidenceSHA256": "2a1af7feba5967513cebf00f286ec9b15cab817246949acc962f8e3f753cbd51",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:zibiah_3064",
+      "draftPath": "drafts/persons_1/2CH_zibiah_3064.json",
+      "evidencePath": "evidence/persons_1/2CH_zibiah_3064-sources.json",
+      "currentDraftSHA256": "499aa12bb05ec87632a0f5e14140499c37366394d2b267334af1462d062087fe",
+      "currentEvidenceSHA256": "be342278b509e84ae44cd9e8a592db581200a0f380b60a68b57b35293e17a437",
+      "runtimeDisposition": "primary-only-display-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 23,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "primary-only-display-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "499aa12bb05ec87632a0f5e14140499c37366394d2b267334af1462d062087fe",
+      "expectedCurrentEvidenceSHA256": "be342278b509e84ae44cd9e8a592db581200a0f380b60a68b57b35293e17a437",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:zichri_3074",
+      "draftPath": "drafts/persons_1/2CH_zichri_3074.json",
+      "evidencePath": "evidence/persons_1/2CH_zichri_3074-sources.json",
+      "currentDraftSHA256": "2e1fe49172b77170a45705d5dcc8c6926f3a70d021ae08dd0f7754c40b4b5a58",
+      "currentEvidenceSHA256": "205b5505a536cb636319d3b75741051f0ef1e98da11f7dc84c73830a037503e7",
+      "runtimeDisposition": "primary-only-display-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceReportRowIndex": 24,
+      "sourceDispositionField": "runtimeDisposition",
+      "sourceDispositionValue": "primary-only-display-supported",
+      "dispositionFormatAlias": null,
+      "expectedCurrentDraftSHA256": "2e1fe49172b77170a45705d5dcc8c6926f3a70d021ae08dd0f7754c40b4b5a58",
+      "expectedCurrentEvidenceSHA256": "205b5505a536cb636319d3b75741051f0ef1e98da11f7dc84c73830a037503e7",
+      "bookResolution": {
+        "method": "source-row-book",
+        "sourceValue": "2CH"
+      },
+      "rowErrors": []
+    }
+  ]
+}

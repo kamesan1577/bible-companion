@@ -1,0 +1,94 @@
+{
+  "book": "1CH",
+  "entityID": "person:gad_1262",
+  "proposalType": "same-ID nested contextProfiles for existing EntityProfile app schema",
+  "proposalStatus": "author-proposed; root integration and independent review pending",
+  "baseProfilePath": "drafts/persons_2/1CH_person_gad_1262.json",
+  "baseProfileSHA256": "113b5f55ea7764d7edde8fab300df987e5c9635629c267a345f058d36f8f6a1d",
+  "reasonJa": "1歴代誌2:2はイスラエルの子らの系譜にガドを個人名として列挙する。一方、5:11以降にはガドの子ら・ガド族という集団用法がある。stable IDは既存person:gad_1262を維持し、個人の系譜参照を部族集団のbase説明へ混ぜないための別context案である。新IDを作らない。",
+  "profile": {
+    "id": "person:gad_1262",
+    "kind": "person",
+    "identityType": "individual-context-variant",
+    "nameJa": "ガド",
+    "subtitleJa": "イスラエルの子らの系譜に名が挙がる人物",
+    "summaryJa": "イスラエルの子らを列挙する系譜の中で、ガドの名が記されています。",
+    "identityNoteJa": "ここでは後の部族集団ではなく、系譜に並ぶ個人名として扱います。",
+    "knownBy": {
+      "chapter": 2,
+      "verse": 2
+    },
+    "passages": [
+      {
+        "book": "1CH",
+        "start": {
+          "chapter": 2,
+          "verse": 2
+        },
+        "end": {
+          "chapter": 2,
+          "verse": 2
+        }
+      }
+    ],
+    "sourceIds": [
+      "webp-1ch-gad-1262-personal-2-2"
+    ],
+    "facts": [],
+    "modernLocationJa": null,
+    "historicalRoleJa": null,
+    "coordinate": null,
+    "locationNoteJa": null,
+    "wikipedia": null,
+    "materialCardIDs": [],
+    "supplemental": false
+  },
+  "sources": [
+    {
+      "id": "webp-1ch-gad-1262-personal-2-2",
+      "title": "World English Bible (WEB), 1CH 2:2, fixed witness webp-usfx-2026-10-13-35a6adf626e5",
+      "url": "https://ebible.org/engwebp/1CH02.htm#V2",
+      "license": "Public Domain",
+      "licenseURL": "https://ebible.org/engwebp/copyright.htm",
+      "attribution": "World English Bible (WEB), public domain; pinned fixed witness; Japanese text is an editorial paraphrase.",
+      "category": "primary-text",
+      "knownBy": {
+        "chapter": 2,
+        "verse": 2
+      }
+    }
+  ],
+  "review": {
+    "entityID": "person:gad_1262",
+    "book": "1CH",
+    "contextType": "individual",
+    "primaryWitnesses": [
+      {
+        "ref": "1CH 2:2",
+        "textualBasisJa": "These are the sons of Israel: Reuben, Simeon, Levi, Judah, Issachar, Zebulun, Dan, Joseph, Benjamin, Naphtali, Gad, and Asher."
+      }
+    ],
+    "occurrenceChecks": [
+      {
+        "chapter": 2,
+        "verse": 2,
+        "status": "direct",
+        "reasonJa": "イスラエルの子らの列挙にGadが個人名として挙がる。集団用法のbaseとは分ける。"
+      }
+    ],
+    "identityCheckJa": "同じstable IDに割り当てられた5:11以降のガド族・ガドの子らという集団用法と区別するための個人context案。",
+    "spoilerCheckJa": "1CH 2:2で分かる系譜上の名だけを記す。",
+    "wikipediaCheck": {
+      "url": null,
+      "status": "not-assessed",
+      "identityBasisJa": "この提案は1CH 2:2の固定WEBに限る。適合する個人記事は独立レビューで要判断。",
+      "fragmentVerified": false
+    },
+    "geographyCheck": "人物の系譜名であり座標対象ではない。",
+    "remainingUncertaintyJa": "本文は名前を系譜に置くが、この節だけで追加の伝記情報は示さない。",
+    "elapsedSeconds": null
+  },
+  "primaryWitnessSHA256": "3776454b81ad749f7a150dbf7d14ed81c3c023281a3d6e48c12c310105fbf1c2",
+  "newEntityIDInvented": false,
+  "independentApproval": false
+}
