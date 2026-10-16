@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "author-map-adjudication-1KI-11-1-moab-v1",
+  "book": "1KI",
+  "mapPath": "reviews/verse-map-1KI-08-15.json",
+  "beforeMapSHA256": "ae22b90c628c30ac07668f581f0e1eef074695329c60e995e3ae3d80eaa8bdb4",
+  "afterMapSHA256": "543868b8fab95ad3c6272cced4319545dc424090ac2639a2522fc6dcc1b6f095",
+  "changedCoordinate": "1KI 11:1",
+  "unchangedCoordinates": [
+    "1KI 11:7",
+    "1KI 11:33"
+  ],
+  "fixedSourceFieldsUnchanged": true,
+  "decision": "add existing person:moab_2103 direct; remove its unresolved candidate record",
+  "primaryBasisJa": "固定WEB 1KI 11:1は women of the Moabites と明記する。現行書内 profile person:moab_2103 は kind=person / identityType=collective、knownBy 11:1 のモアブ人集団であり、集団名の direct mention として一致する。",
+  "scopeJa": "11:7と11:33の “Moab” はケモシュの所属を表す宗教句で、語だけから民の直接言及や地域地点へ強制しない。既存のsourceText/citationURL/sourceTextSHA256は変更していない。",
+  "oldRow": {
+    "entities": [
+      {
+        "entityID": "person:daughter_of_pharaoh_989",
+        "relationship": "direct"
+      },
+      {
+        "entityID": "person:pharaoh_2332",
+        "relationship": "direct"
+      },
+      {
+        "entityID": "person:solomon_2762",
+        "relationship": "direct"
+      }
+    ],
+    "unresolvedCanonicalCandidates": [
+      {
+        "name": "Moabites",
+        "candidateEntityID": "person:moab_2103",
+        "reasonJa": "本文はモアブ人の女性たちを明記するが、1 Kings用の集団説明プロフィールが確認できないため、族祖候補を集団として自動採用しない。書内の集団同定を確認後にリンクを判断する。"
+      }
+    ],
+    "reasonJa": "本文で名指し、または明示される人名・地名・集団・称号に対応する既存IDをdirectとして採用（節中の語義に従い、族祖個人と集団/地域を分けた）。 明記された民族名だが適合する書内集団プロフィール未確認の語は、原典上の存在をunresolvedCanonicalCandidatesに記録しリンクを保留。 モアブ人は本文に明記されるが、祖先個人IDを集団に流用せず書内集団プロフィール未確認として保留。"
+  },
+  "reviewer": "acts_people_two"
+}

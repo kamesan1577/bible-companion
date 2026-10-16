@@ -1,0 +1,69 @@
+{
+  "books": [
+    "1KI",
+    "2KI"
+  ],
+  "assignmentKinds": [
+    "persons",
+    "places"
+  ],
+  "method": "Greedy load balancing by raw candidate occurrence count within each kind; assignment key is book,id, so same ID in 1KI and 2KI remains two separate records.",
+  "assignmentSummary": {
+    "persons_1": {
+      "records": 107,
+      "books": {
+        "1KI": 56,
+        "2KI": 51
+      },
+      "candidateOccurrenceCount": 765,
+      "uniqueBookIdKeys": true
+    },
+    "persons_2": {
+      "records": 108,
+      "books": {
+        "1KI": 55,
+        "2KI": 53
+      },
+      "candidateOccurrenceCount": 765,
+      "uniqueBookIdKeys": true
+    },
+    "persons_3": {
+      "records": 109,
+      "books": {
+        "1KI": 54,
+        "2KI": 55
+      },
+      "candidateOccurrenceCount": 765,
+      "uniqueBookIdKeys": true
+    },
+    "places_1": {
+      "records": 67,
+      "books": {
+        "1KI": 33,
+        "2KI": 34
+      },
+      "candidateOccurrenceCount": 225,
+      "uniqueBookIdKeys": true
+    },
+    "places_2": {
+      "records": 68,
+      "books": {
+        "1KI": 34,
+        "2KI": 34
+      },
+      "candidateOccurrenceCount": 225,
+      "uniqueBookIdKeys": true
+    },
+    "places_3": {
+      "records": 67,
+      "books": {
+        "1KI": 34,
+        "2KI": 33
+      },
+      "candidateOccurrenceCount": 224,
+      "uniqueBookIdKeys": true
+    }
+  },
+  "allTargetsAssignedExactlyOnce": true,
+  "reviewStatus": "initial assignment only; identity, text links, same-name, collective, title and occurrence semantics are unverified."
+}

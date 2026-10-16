@@ -51,7 +51,7 @@ public actor BundledEntityIndex {
             index = decoded
         }
         guard let index, let bookIndex = index.books.firstIndex(of: passage.book) else { throw Failure.invalid }
-        let profileResource = passage.book == "ACT" ? "entity-profiles" : ["ROM", "LEV", "NUM", "JOS", "JDG", "RUT", "1SA", "2SA"].contains(passage.book) ? "entity-profiles-" + passage.book : nil
+        let profileResource = passage.book == "ACT" ? "entity-profiles" : ["ROM", "LEV", "NUM", "JOS", "JDG", "RUT", "1SA", "2SA", "1KI", "2KI"].contains(passage.book) ? "entity-profiles-" + passage.book : nil
         if catalogs[passage.book] == nil, let profileResource,
            let url = Bundle.module.url(forResource: profileResource, withExtension: "json") {
             catalogs[passage.book] = try JSONDecoder().decode(EntityProfileCatalog.self, from: Data(contentsOf: url))
@@ -59,14 +59,14 @@ public actor BundledEntityIndex {
         let profiles = catalogs[passage.book]
         let policyResource = passage.book == "ACT" ? "acts-map-policy" : passage.book.lowercased() + "-map-policy"
         if mapPolicies[passage.book] == nil {
-            if ["ACT", "ROM", "LEV", "NUM", "JOS", "JDG", "RUT", "1SA", "2SA"].contains(passage.book), let url = Bundle.module.url(forResource: policyResource, withExtension: "json") {
+            if ["ACT", "ROM", "LEV", "NUM", "JOS", "JDG", "RUT", "1SA", "2SA", "1KI", "2KI"].contains(passage.book), let url = Bundle.module.url(forResource: policyResource, withExtension: "json") {
                 mapPolicies[passage.book] = try JSONDecoder().decode([CandidateMapPolicy].self, from: Data(contentsOf: url))
             } else { mapPolicies[passage.book] = [] }
         }
         let candidateMapPolicy = mapPolicies[passage.book] ?? []
         // Each reviewed book has an independent catalog and occurrence table.
         // Switching books must never replace or leak the fixed Acts catalog.
-        if ["ACT", "ROM", "LEV", "NUM", "JOS", "JDG", "RUT", "1SA", "2SA"].contains(passage.book), let reviewed = profiles?.occurrences {
+        if ["ACT", "ROM", "LEV", "NUM", "JOS", "JDG", "RUT", "1SA", "2SA", "1KI", "2KI"].contains(passage.book), let reviewed = profiles?.occurrences {
             let selected = reviewed.filter {
                 let v = Verse(chapter: $0.chapter, verse: $0.verse)
                 return passage.start <= v && v <= passage.end

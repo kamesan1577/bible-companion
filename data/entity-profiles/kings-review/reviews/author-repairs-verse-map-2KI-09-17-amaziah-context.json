@@ -1,0 +1,86 @@
+{
+  "reportType": "author-repairs-verse-map-row",
+  "book": "2KI",
+  "scope": "09-17",
+  "createdAtUTC": "2026-10-16T03:52:58Z",
+  "mapPath": "reviews/verse-map-2KI-09-17.json",
+  "beforeMapSHA256": "52b6a5f98b2f6758ccef1c426fc5a5dfa37f4103f88980f17555d7b3f19f3dd1",
+  "afterMapSHA256": "d7e65dab6e41ff2e7b6558333df9a9ef9f3ee856dff8b9605ab46c63f09ffd7f",
+  "fixedWitnessPath": "inventory/targets/kings2-web-verses.json",
+  "fixedWitnessSHA256": "d620db07b9f9b003053bcc0fb38fee21e6d80aff1c1b51760717e03c0127a6dd",
+  "changedRows": [
+    {
+      "chapter": 14,
+      "verse": 7,
+      "before": {
+        "book": "2KI",
+        "chapter": 14,
+        "verse": 7,
+        "sourceText": "He killed ten thousand Edomites in the Valley of Salt, and took Sela by war, and called its name Joktheel, to this day.",
+        "sourceTextSHA256": "bd231bdebae972230d8878b60b4286d6c74b2f56a4f42621b293d87cb11bd197",
+        "citationURL": "https://ebible.org/engwebp/2KI14.htm#V7",
+        "entities": [
+          {
+            "entityID": "place:joktheel_651",
+            "relationship": "direct",
+            "reasonJa": "本文はSelaを攻略し、その名をJoktheelとしたと明記する。同じ場所の改名として既存のJoktheel地名IDで記録し、Sela用の別IDは作らない。"
+          },
+          {
+            "entityID": "place:valley_of_salt_1215",
+            "relationship": "direct",
+            "reasonJa": "本文に候補名「valley of salt」が明記される。"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "person:esau_1216",
+            "reasonJa": "「Edom/Edomites」は地域・民の名で、エサウ個人の行為ではない。"
+          },
+          {
+            "entityID": "place:edom_357",
+            "reasonJa": "「Edomites」は人々の集団で、地域名エドムそのものをこの節は述べない。"
+          }
+        ],
+        "reasonJa": "固定WEB本文を前後文脈とともに読み、採用した個々の名前・照応を判断した。本文に候補名「Joktheel」が明記される。 本文に候補名「valley of salt」が明記される。 候補除外: 「Edom/Edomites」は地域・民の名で、エサウ個人の行為ではない。；「Edomites」は人々の集団で、地域名エドムそのものをこの節は述べない。"
+      },
+      "after": {
+        "book": "2KI",
+        "chapter": 14,
+        "verse": 7,
+        "sourceText": "He killed ten thousand Edomites in the Valley of Salt, and took Sela by war, and called its name Joktheel, to this day.",
+        "sourceTextSHA256": "bd231bdebae972230d8878b60b4286d6c74b2f56a4f42621b293d87cb11bd197",
+        "citationURL": "https://ebible.org/engwebp/2KI14.htm#V7",
+        "entities": [
+          {
+            "entityID": "place:joktheel_651",
+            "relationship": "direct",
+            "reasonJa": "本文はSelaを攻略し、その名をJoktheelとしたと明記する。同じ場所の改名として既存のJoktheel地名IDで記録し、Sela用の別IDは作らない。"
+          },
+          {
+            "entityID": "place:valley_of_salt_1215",
+            "relationship": "direct",
+            "reasonJa": "本文に候補名「valley of salt」が明記される。"
+          },
+          {
+            "entityID": "person:amaziah_214",
+            "relationship": "context",
+            "reasonJa": "14:1でアマツヤがユダ王として即位し、14:2–6はその治世と統治を記す。14:7の主語「He」はこの同じ王アマツヤを受けるため、節の行為者としてcontextに結ぶ。"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "person:esau_1216",
+            "reasonJa": "「Edom/Edomites」は地域・民の名で、エサウ個人の行為ではない。"
+          },
+          {
+            "entityID": "place:edom_357",
+            "reasonJa": "「Edomites」は人々の集団で、地域名エドムそのものをこの節は述べない。"
+          }
+        ],
+        "reasonJa": "固定WEB 2 Kings 14:7の “He” は14:1で即位を告げ、14:2–6で治世が継続して述べられるアマツヤを受ける。本文で名前を再記しないためcontextとする。Edomitesは民集団で、エサウ個人や地名エドムとは区別する。SelaをJoktheelと改名した同節の場所関係は既存地名プロフィールに従う。"
+      },
+      "basisJa": "固定WEB 2 Kings 14:1–7: 14:1 introduces Amaziah as Judah’s king; 14:2–6 continue the same reign; 14:7 “He” is the same subject."
+    }
+  ],
+  "reasonJa": "14:7の主語を直前の治世文脈からアマツヤと同定した。別人物IDや新IDは作成していない。"
+}

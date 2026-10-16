@@ -76,7 +76,7 @@ public struct EntityProfile: Codable, Sendable, Identifiable {
     public let materialCardIDs: [String]?
     public let supplemental: Bool
     public let contextProfiles: [EntityProfile]?
-    public var detailLinkLabelJa: String { identityType == "ritual-area" ? "この祭儀上の場所について" : identityType == "territory" ? "この地域について" : identityType == "collective" ? "この集団名について" : identityType == "expression" ? "この表現について" : identityType == "office-title" ? "この称号について" : identityType == "unidentified-eponym" ? "この名前について" : kind == "person" ? "この人物について" : "この場所について" }
+    public var detailLinkLabelJa: String { identityType == "ritual-area" ? "この祭儀上の場所について" : identityType == "territory" ? "この地域について" : identityType == "collective" ? "この集団名について" : identityType == "expression" ? "この表現について" : identityType == "deity" ? "この神名について" : identityType == "office-title" ? "この称号について" : identityType == "unidentified-eponym" ? "この名前について" : kind == "person" ? "この人物について" : "この場所について" }
 }
 public struct ResolvedEntityProfile: Sendable {
     public let profile: EntityProfile

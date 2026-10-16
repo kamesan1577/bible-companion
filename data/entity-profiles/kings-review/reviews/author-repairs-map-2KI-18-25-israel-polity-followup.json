@@ -1,0 +1,70 @@
+{
+  "task": "2KI18-25 Israel identity/period-scope follow-up correction",
+  "mapPath": "reviews/verse-map-2KI-18-25.json",
+  "beforeSHA256": "5e06a34bf96e33d27674c123a5b7a73954a243b3ace29013b2bb6cacf3f19296",
+  "afterSHA256": "7627e6dd0879c36f4b4a393c2a3e4778493f798a0581e906f64a41dd395d19fb",
+  "fixedWitnessPath": "inventory/targets/kings2-web-verses.json",
+  "fixedWitnessSHA256": "d620db07b9f9b003053bcc0fb38fee21e6d80aff1c1b51760717e03c0127a6dd",
+  "checkedAtUTC": "2026-10-16T03:12:00Z",
+  "sourceBasisJa": "固定WEBの2KI23:13/24:13は分裂前のソロモンを「king of Israel」と呼ぶため、北王国1302から統一王国1301へ区別した。23:22は士師時代とIsrael/Judah両王朝を並べるため、Israelを民と王国の用法に分け、北王国の全時代を主張しない限定を記した。23:27の「remove Israel」は民への裁きを示し地理領域自体の移動を明記しないため、民の集合IDに変更した。",
+  "changes": [
+    {
+      "chapter": 23,
+      "verse": 13,
+      "beforeIsraelIDs": [
+        "place:northern-kingdom-of-israel_1302"
+      ],
+      "adopted": [
+        [
+          "place:united-kingdom-of-israel_1301",
+          "direct"
+        ]
+      ],
+      "excluded": [
+        "place:northern-kingdom-of-israel_1302"
+      ]
+    },
+    {
+      "chapter": 24,
+      "verse": 13,
+      "beforeIsraelIDs": [
+        "place:northern-kingdom-of-israel_1302"
+      ],
+      "adopted": [
+        [
+          "place:united-kingdom-of-israel_1301",
+          "direct"
+        ]
+      ],
+      "excluded": [
+        "place:northern-kingdom-of-israel_1302"
+      ]
+    },
+    {
+      "chapter": 23,
+      "verse": 22,
+      "retained": [
+        "person:israel_682",
+        "place:northern-kingdom-of-israel_1302"
+      ],
+      "reason": "people-Israel vs kings/polity Israel separated; chronology scope of whole clause is qualified"
+    },
+    {
+      "chapter": 23,
+      "verse": 27,
+      "adopted": [
+        "person:israel_682"
+      ],
+      "excluded": [
+        "place:northern-kingdom-of-israel_1302"
+      ]
+    }
+  ],
+  "witnessTexts": {
+    "23:13": "The king defiled the high places that were before Jerusalem, which were on the right hand of the mountain of corruption, which Solomon the king of Israel had built for Ashtoreth the abomination of the Sidonians, and for Chemosh the abomination of Moab, and for Milcom the abomination of the children of Ammon.",
+    "23:22": "Surely there was not kept such a Passover from the days of the judges who judged Israel, nor in all the days of the kings of Israel, nor of the kings of Judah;",
+    "23:27": "The LORD said, “I will also remove Judah out of my sight, as I have removed Israel; and I will cast off this city which I have chosen, even Jerusalem, and the house of which I said, ‘My name shall be there.’”",
+    "24:13": "He carried out from there all the treasures of the LORD’s house and the treasures of the king’s house, and cut in pieces all the vessels of gold which Solomon king of Israel had made in the LORD’s temple, as the LORD had said."
+  },
+  "scope": "Only verse map authoring file and this repair log; no profile/app edits."
+}

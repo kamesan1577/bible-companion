@@ -1,0 +1,1645 @@
+{
+  "schemaVersion": "independent-current-adverse-adjudication-v1",
+  "checkedAtUTC": "2026-10-16T04:27:43Z",
+  "scope": "Every row in root-final-main-review-bindings.json currentAdverseReviewRows was checked against current draft/evidence bytes and a later current-SHA-bound independent closure. No author files were edited.",
+  "bindingInput": {
+    "path": "reviews/root-final-main-review-bindings.json",
+    "sha256": "1e74b91202c89fddf083aa5977ce95f8b16877c4dfb049542fa727dc9f3e8d19",
+    "counts": {
+      "drafts": 533,
+      "bound": 533
+    },
+    "adverseRowCount": 16
+  },
+  "methodJa": "旧finding/report SHAと現行draft/evidence/profile SHAを結び、旧判定を現行の同hash独立closureへ照合。current closureがpass/qualifiedでも旧finding自体が誤記・enum不一致のときは明示。sourceText/article locatorは現在のevidence/draftから取得。",
+  "rows": [
+    {
+      "draftPath": "drafts/persons_3/2KI_amaziah_214.json",
+      "entityID": "person:amaziah_214",
+      "oldFinding": {
+        "verdict": "add-article",
+        "decision": "add-article",
+        "identityAndGateBasisJa": "2KI12:21 says Amaziah, Joash’s son, succeeded him; the person and father relationship are explicit.",
+        "authorActionJa": "article; identityVerified=true; knownBy 2:21.",
+        "article": {
+          "url": "https://en.wikipedia.org/wiki/Amaziah_of_Judah",
+          "title": "Amaziah of Judah",
+          "kind": "article",
+          "locator": "Lead, lines 165–166; identifies the Judean king as Joash’s son and successor, and discusses his accession.",
+          "bodyRead": true,
+          "readAtUTC": "2026-10-16T03:52:47Z",
+          "paraphraseJa": "記事はヨアシュの子アマツヤを扱い、ユダの王として説明します。",
+          "license": "CC BY-SA 4.0",
+          "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "attribution": "Wikipedia contributors"
+        }
+      },
+      "currentDecision": "pass",
+      "disposition": "resolved_by_current_independent_closure",
+      "resolutionBasisJa": "The current profile links Amaziah of Judah at 2KI12:21. The pinned verse says Amaziah, Joash’s son, succeeded him; the current article-body locator identifies the article’s Judean king as Joash’s son/successor. The earlier add-article recommendation has been implemented and the current independent main review passes.",
+      "current": {
+        "draftPath": "drafts/persons_3/2KI_amaziah_214.json",
+        "currentDraftSHA256": "5a40576248382b9ae8ce474ea12aaed5e878f591e2ba73e28642d60010ee06af",
+        "evidencePath": "evidence/persons_3/2KI_amaziah_214.json",
+        "currentEvidenceSHA256": "878c9fd3467ecae56e10bd1b94f511dc94481bfefc7db0630093cfbb7dd69637",
+        "currentProfileSHA256": "a8a70cd5b508b3f8ae577e4fee1a7bff1555f4298f802dd4674cf84aa23dd1dd",
+        "book": "2KI",
+        "entityID": "person:amaziah_214",
+        "knownBy": {
+          "chapter": 12,
+          "verse": 21
+        },
+        "currentWikipedia": {
+          "title": "Amaziah of Judah",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Amaziah_of_Judah",
+          "kind": "article",
+          "noteJa": "記事はヨアシュの子アマツヤを扱い、ユダの王として説明します。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 12,
+            "verse": 21
+          },
+          "sourceId": "person-amaziah_214-wikipedia-judah"
+        },
+        "currentPrimaryWitnesses": [
+          {
+            "ref": "2KI 12:21",
+            "url": "https://ebible.org/engwebp/2KI12.htm#V21",
+            "text": "For Jozacar the son of Shimeath, and Jehozabad the son of Shomer, his servants, struck him, and he died; and they buried him with his fathers in David’s city; and Amaziah his son reigned in his place.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 13:12",
+            "url": "https://ebible.org/engwebp/2KI13.htm#V12",
+            "text": "Now the rest of the acts of Joash, and all that he did, and his might with which he fought against Amaziah king of Judah, aren’t they written in the book of the chronicles of the kings of Israel?",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 14:1",
+            "url": "https://ebible.org/engwebp/2KI14.htm#V1",
+            "text": "In the second year of Joash, son of Joahaz, king of Israel, Amaziah the son of Joash king of Judah began to reign.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 14:8",
+            "url": "https://ebible.org/engwebp/2KI14.htm#V8",
+            "text": "Then Amaziah sent messengers to Jehoash, the son of Jehoahaz son of Jehu, king of Israel, saying, “Come, let’s look one another in the face.”",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 14:9",
+            "url": "https://ebible.org/engwebp/2KI14.htm#V9",
+            "text": "Jehoash the king of Israel sent to Amaziah king of Judah, saying, “The thistle that was in Lebanon sent to the cedar that was in Lebanon, saying, ‘Give your daughter to my son as wife.’ Then a wild animal that was in Lebanon passed by, and trampled down the thistle.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 14:11",
+            "url": "https://ebible.org/engwebp/2KI14.htm#V11",
+            "text": "But Amaziah would not listen. So Jehoash king of Israel went up; and he and Amaziah king of Judah looked one another in the face at Beth Shemesh, which belongs to Judah.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 14:13",
+            "url": "https://ebible.org/engwebp/2KI14.htm#V13",
+            "text": "Jehoash king of Israel took Amaziah king of Judah, the son of Jehoash the son of Ahaziah, at Beth Shemesh and came to Jerusalem, then broke down the wall of Jerusalem from the gate of Ephraim to the corner gate, four hundred cubits.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 14:15",
+            "url": "https://ebible.org/engwebp/2KI14.htm#V15",
+            "text": "Now the rest of the acts of Jehoash which he did, and his might, and how he fought with Amaziah king of Judah, aren’t they written in the book of the chronicles of the kings of Israel?",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 14:17",
+            "url": "https://ebible.org/engwebp/2KI14.htm#V17",
+            "text": "Amaziah the son of Joash king of Judah lived after the death of Jehoash son of Jehoahaz, king of Israel, fifteen years.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 14:18",
+            "url": "https://ebible.org/engwebp/2KI14.htm#V18",
+            "text": "Now the rest of the acts of Amaziah, aren’t they written in the book of the chronicles of the kings of Judah?",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 14:21",
+            "url": "https://ebible.org/engwebp/2KI14.htm#V21",
+            "text": "All the people of Judah took Azariah, who was sixteen years old, and made him king in the place of his father Amaziah.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 14:23",
+            "url": "https://ebible.org/engwebp/2KI14.htm#V23",
+            "text": "In the fifteenth year of Amaziah the son of Joash king of Judah, Jeroboam the son of Joash king of Israel began to reign in Samaria for forty-one years.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 15:1",
+            "url": "https://ebible.org/engwebp/2KI15.htm#V1",
+            "text": "In the twenty-seventh year of Jeroboam king of Israel, Azariah son of Amaziah king of Judah began to reign.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 15:3",
+            "url": "https://ebible.org/engwebp/2KI15.htm#V3",
+            "text": "He did that which was right in the LORD’s eyes, according to all that his father Amaziah had done.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          }
+        ],
+        "currentArticleBodyLocator": "lead lines 165–166",
+        "currentArticleReadAtUTC": null
+      },
+      "latestCurrentClosure": {
+        "path": "reviews/independent-persons_3.json",
+        "sha256": "685be1b0671dd28c035c81701439fea2d94d32c5da0747ed6692379a8f21614a",
+        "rowDecision": "pass",
+        "rowEvidenceSHA256": "878c9fd3467ecae56e10bd1b94f511dc94481bfefc7db0630093cfbb7dd69637",
+        "rowProfileSHA256": "a8a70cd5b508b3f8ae577e4fee1a7bff1555f4298f802dd4674cf84aa23dd1dd",
+        "rowReasonJa": null
+      },
+      "oldAdverseReview": {
+        "path": "reviews/independent-extra-persons3-five-null-links.json",
+        "sha256": "81b0ba3fafe129b4c917309e7fb6e1b15c98ac8a7dc7464cc0b3aa61251d181a",
+        "verdict": "add-article",
+        "boundDraftSHA256": "5a40576248382b9ae8ce474ea12aaed5e878f591e2ba73e28642d60010ee06af"
+      },
+      "additionalCrossClosure": [
+        {
+          "path": "reviews/reclosure-persons3-13-null-links-current.json",
+          "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85"
+        }
+      ]
+    },
+    {
+      "draftPath": "drafts/persons_3/2KI_jeroboam_872.json",
+      "entityID": "person:jeroboam_872",
+      "oldFinding": {
+        "verdict": "add-article",
+        "decision": "add-article",
+        "identityAndGateBasisJa": "2KI3:3 explicitly names Jeroboam son of Nebat, matching the article’s identified figure. The note avoids adding the article’s later chronology or scholarly debate.",
+        "authorActionJa": "article; identityVerified=true; knownBy 2:3.",
+        "article": {
+          "url": "https://en.wikipedia.org/wiki/Jeroboam",
+          "title": "Jeroboam",
+          "kind": "article",
+          "locator": "Lead, lines 176–180, and Biblical background, lines 190 onward; lead identifies Jeroboam I / son of Nebat and notes the separate Jeroboam II discussion.",
+          "bodyRead": true,
+          "readAtUTC": "2026-10-16T03:52:47Z",
+          "paraphraseJa": "記事はネバトの子ヤロブアムを扱います。",
+          "license": "CC BY-SA 4.0",
+          "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "attribution": "Wikipedia contributors"
+        }
+      },
+      "currentDecision": "pass",
+      "disposition": "resolved_by_current_independent_closure",
+      "resolutionBasisJa": "The current profile links Jeroboam at 2KI3:3. The passage’s “Jeroboam the son of Nebat” matches the article’s identification of Jeroboam I; its body locator distinguishes the separate Jeroboam II discussion. The earlier add-article recommendation has been implemented and the current independent main review passes.",
+      "current": {
+        "draftPath": "drafts/persons_3/2KI_jeroboam_872.json",
+        "currentDraftSHA256": "d81c02806ce8fb4a9f4fec17faba15a2dbb5373d3f9fe0268bf88d799c090e7e",
+        "evidencePath": "evidence/persons_3/2KI_jeroboam_872.json",
+        "currentEvidenceSHA256": "e2d3e40068ecde0411ffe4eb37fd752898bd8003c5f77147dcbda9316cba25c4",
+        "currentProfileSHA256": "78b4e82245cf07727e84600a962c4d502e044cc7a972bd229fd76884d040748d",
+        "book": "2KI",
+        "entityID": "person:jeroboam_872",
+        "knownBy": {
+          "chapter": 3,
+          "verse": 3
+        },
+        "currentWikipedia": {
+          "title": "Jeroboam",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Jeroboam",
+          "kind": "article",
+          "noteJa": "記事はネバトの子ヤロブアムを扱います。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 3,
+            "verse": 3
+          },
+          "sourceId": "person-jeroboam_872-wikipedia-jeroboam"
+        },
+        "currentPrimaryWitnesses": [
+          {
+            "ref": "2KI 3:3",
+            "url": "https://ebible.org/engwebp/2KI03.htm#V3",
+            "text": "Nevertheless he held to the sins of Jeroboam the son of Nebat, with which he made Israel to sin. He didn’t depart from them.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 9:9",
+            "url": "https://ebible.org/engwebp/2KI09.htm#V9",
+            "text": "I will make Ahab’s house like the house of Jeroboam the son of Nebat, and like the house of Baasha the son of Ahijah.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 10:29",
+            "url": "https://ebible.org/engwebp/2KI10.htm#V29",
+            "text": "However, Jehu didn’t depart from the sins of Jeroboam the son of Nebat, with which he made Israel to sin—the golden calves that were in Bethel and that were in Dan.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 10:31",
+            "url": "https://ebible.org/engwebp/2KI10.htm#V31",
+            "text": "But Jehu took no heed to walk in the law of the LORD, the God of Israel, with all his heart. He didn’t depart from the sins of Jeroboam, with which he made Israel to sin.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 13:2",
+            "url": "https://ebible.org/engwebp/2KI13.htm#V2",
+            "text": "He did that which was evil in the LORD’s sight, and followed the sins of Jeroboam the son of Nebat, with which he made Israel to sin. He didn’t depart from it.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 13:6",
+            "url": "https://ebible.org/engwebp/2KI13.htm#V6",
+            "text": "Nevertheless they didn’t depart from the sins of the house of Jeroboam, with which he made Israel to sin, but walked in them; and the Asherah also remained in Samaria.)",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 13:11",
+            "url": "https://ebible.org/engwebp/2KI13.htm#V11",
+            "text": "He did that which was evil in the LORD’s sight. He didn’t depart from all the sins of Jeroboam the son of Nebat, with which he made Israel to sin; but he walked in them.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 14:24",
+            "url": "https://ebible.org/engwebp/2KI14.htm#V24",
+            "text": "He did that which was evil in the LORD’s sight. He didn’t depart from all the sins of Jeroboam the son of Nebat, with which he made Israel to sin.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 15:9",
+            "url": "https://ebible.org/engwebp/2KI15.htm#V9",
+            "text": "He did that which was evil in the LORD’s sight, as his fathers had done. He didn’t depart from the sins of Jeroboam the son of Nebat, with which he made Israel to sin.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 15:18",
+            "url": "https://ebible.org/engwebp/2KI15.htm#V18",
+            "text": "He did that which was evil in the LORD’s sight. He didn’t depart all his days from the sins of Jeroboam the son of Nebat, with which he made Israel to sin.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 15:24",
+            "url": "https://ebible.org/engwebp/2KI15.htm#V24",
+            "text": "He did that which was evil in the LORD’s sight. He didn’t depart from the sins of Jeroboam the son of Nebat, with which he made Israel to sin.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 15:28",
+            "url": "https://ebible.org/engwebp/2KI15.htm#V28",
+            "text": "He did that which was evil in the LORD’s sight. He didn’t depart from the sins of Jeroboam the son of Nebat, with which he made Israel to sin.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 17:21",
+            "url": "https://ebible.org/engwebp/2KI17.htm#V21",
+            "text": "For he tore Israel from David’s house; and they made Jeroboam the son of Nebat king; and Jeroboam drove Israel from following the LORD, and made them sin a great sin.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 17:22",
+            "url": "https://ebible.org/engwebp/2KI17.htm#V22",
+            "text": "The children of Israel walked in all the sins of Jeroboam which he did; they didn’t depart from them",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 23:15",
+            "url": "https://ebible.org/engwebp/2KI23.htm#V15",
+            "text": "Moreover the altar that was at Bethel and the high place which Jeroboam the son of Nebat, who made Israel to sin, had made, even that altar and the high place he broke down; and he burned the high place and beat it to dust, and burned the Asherah.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          }
+        ],
+        "currentArticleBodyLocator": "lead lines 176–180; Biblical background lines 190 onward",
+        "currentArticleReadAtUTC": null
+      },
+      "latestCurrentClosure": {
+        "path": "reviews/independent-persons_3.json",
+        "sha256": "685be1b0671dd28c035c81701439fea2d94d32c5da0747ed6692379a8f21614a",
+        "rowDecision": "pass",
+        "rowEvidenceSHA256": "e2d3e40068ecde0411ffe4eb37fd752898bd8003c5f77147dcbda9316cba25c4",
+        "rowProfileSHA256": "78b4e82245cf07727e84600a962c4d502e044cc7a972bd229fd76884d040748d",
+        "rowReasonJa": null
+      },
+      "oldAdverseReview": {
+        "path": "reviews/independent-extra-persons3-five-null-links.json",
+        "sha256": "81b0ba3fafe129b4c917309e7fb6e1b15c98ac8a7dc7464cc0b3aa61251d181a",
+        "verdict": "add-article",
+        "boundDraftSHA256": "d81c02806ce8fb4a9f4fec17faba15a2dbb5373d3f9fe0268bf88d799c090e7e"
+      },
+      "additionalCrossClosure": [
+        {
+          "path": "reviews/reclosure-persons3-13-null-links-current.json",
+          "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85"
+        }
+      ]
+    },
+    {
+      "draftPath": "drafts/persons_3/2KI_sennacherib_2489.json",
+      "entityID": "person:sennacherib_2489",
+      "oldFinding": {
+        "verdict": "add-article",
+        "decision": "add-article",
+        "identityAndGateBasisJa": "2KI18:13 directly names Sennacherib as king of Assyria and says he attacked Judah’s fortified cities.",
+        "authorActionJa": "article; identityVerified=true; knownBy 18:13.",
+        "article": {
+          "url": "https://en.wikipedia.org/wiki/Sennacherib",
+          "title": "Sennacherib",
+          "kind": "article",
+          "locator": "Lead, lines 186–220; identifies Sennacherib as Assyrian king and describes his biblical Levant campaign.",
+          "bodyRead": true,
+          "readAtUTC": "2026-10-16T03:52:47Z",
+          "paraphraseJa": "記事はアッシリア王センナケリブと、聖書に記されるその遠征を扱います。",
+          "license": "CC BY-SA 4.0",
+          "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "attribution": "Wikipedia contributors"
+        }
+      },
+      "currentDecision": "pass",
+      "disposition": "resolved_by_current_independent_closure",
+      "resolutionBasisJa": "The current profile links Sennacherib at 2KI18:13. WEB names him king of Assyria attacking Judah’s fortified cities; the article lead locator identifies the Assyrian king and biblical campaign. The earlier add-article recommendation has been implemented and the current independent main review passes.",
+      "current": {
+        "draftPath": "drafts/persons_3/2KI_sennacherib_2489.json",
+        "currentDraftSHA256": "6cb2626b2cb45fed9304b93934a56f7177114edc4307a27f6743878248bb6b52",
+        "evidencePath": "evidence/persons_3/2KI_sennacherib_2489.json",
+        "currentEvidenceSHA256": "cbca6d38ac65d99d6f22270b80077ddd49198dc8bad6602395108a9d2de81796",
+        "currentProfileSHA256": "a4b5da1643cadf00a592d6bafd5f350c8f4f88ea237de9b8c8a52f4283b3ab9f",
+        "book": "2KI",
+        "entityID": "person:sennacherib_2489",
+        "knownBy": {
+          "chapter": 18,
+          "verse": 13
+        },
+        "currentWikipedia": {
+          "title": "Sennacherib",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Sennacherib",
+          "kind": "article",
+          "noteJa": "記事はアッシリア王センナケリブと、聖書に記される遠征を扱います。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 18,
+            "verse": 13
+          },
+          "sourceId": "person-sennacherib_2489-wikipedia-sennacherib"
+        },
+        "currentPrimaryWitnesses": [
+          {
+            "ref": "2KI 18:13",
+            "url": "https://ebible.org/engwebp/2KI18.htm#V13",
+            "text": "Now in the fourteenth year of King Hezekiah, Sennacherib king of Assyria came up against all the fortified cities of Judah and took them.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 19:16",
+            "url": "https://ebible.org/engwebp/2KI19.htm#V16",
+            "text": "Incline your ear, LORD, and hear. Open your eyes, LORD, and see. Hear the words of Sennacherib, which he has sent to defy the living God.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 19:20",
+            "url": "https://ebible.org/engwebp/2KI19.htm#V20",
+            "text": "Then Isaiah the son of Amoz sent to Hezekiah, saying, “The LORD, the God of Israel, says ‘You have prayed to me against Sennacherib king of Assyria, and I have heard you.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 19:36",
+            "url": "https://ebible.org/engwebp/2KI19.htm#V36",
+            "text": "So Sennacherib king of Assyria departed, went home, and lived at Nineveh.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          }
+        ],
+        "currentArticleBodyLocator": "lead lines 186–220",
+        "currentArticleReadAtUTC": null
+      },
+      "latestCurrentClosure": {
+        "path": "reviews/independent-persons_3.json",
+        "sha256": "685be1b0671dd28c035c81701439fea2d94d32c5da0747ed6692379a8f21614a",
+        "rowDecision": "pass",
+        "rowEvidenceSHA256": "cbca6d38ac65d99d6f22270b80077ddd49198dc8bad6602395108a9d2de81796",
+        "rowProfileSHA256": "a4b5da1643cadf00a592d6bafd5f350c8f4f88ea237de9b8c8a52f4283b3ab9f",
+        "rowReasonJa": null
+      },
+      "oldAdverseReview": {
+        "path": "reviews/independent-extra-persons3-five-null-links.json",
+        "sha256": "81b0ba3fafe129b4c917309e7fb6e1b15c98ac8a7dc7464cc0b3aa61251d181a",
+        "verdict": "add-article",
+        "boundDraftSHA256": "6cb2626b2cb45fed9304b93934a56f7177114edc4307a27f6743878248bb6b52"
+      },
+      "additionalCrossClosure": [
+        {
+          "path": "reviews/reclosure-persons3-13-null-links-current.json",
+          "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85"
+        }
+      ]
+    },
+    {
+      "draftPath": "drafts/persons_3/2KI_jehoiada_793.json",
+      "entityID": "person:jehoiada_793",
+      "oldFinding": {
+        "verdict": "add-article",
+        "decision": "add-article",
+        "identityAndGateBasisJa": "2KI11:4 names Jehoiada in the sequence about the king’s son and the captains; this profile’s later verses continue the same priest in 2KI11–12. The article’s opening warning helps prevent the same-name mix-up.",
+        "authorActionJa": "article; identityVerified=true; knownBy 11:4. Keep reader summary at 11:4 limited to summoning the captains, covenant, and showing the king’s son; “to protect” is a contextual inference rather than an explicit purpose in that verse.",
+        "article": {
+          "url": "https://en.wikipedia.org/wiki/Jehoiada",
+          "title": "Jehoiada",
+          "kind": "article",
+          "locator": "Lead, lines 125–132; identifies the Judah priest in the Joash/Athaliah narrative and explicitly distinguishes another Jehoiada, father of Benaiah, at line 125.",
+          "bodyRead": true,
+          "readAtUTC": "2026-10-16T03:52:47Z",
+          "paraphraseJa": "記事はユダの祭司エホヤダを扱います。ベナヤの父エホヤダとは別人です。",
+          "license": "CC BY-SA 4.0",
+          "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "attribution": "Wikipedia contributors"
+        }
+      },
+      "currentDecision": "pass",
+      "disposition": "resolved_by_current_independent_closure",
+      "resolutionBasisJa": "The current profile links Jehoiada at 2KI11:4. The article body identifies the Judah priest in the Joash/Athaliah narrative and explicitly distinguishes the unrelated Jehoiada father of Benaiah. The earlier add-article recommendation has been implemented and the current independent main review passes.",
+      "current": {
+        "draftPath": "drafts/persons_3/2KI_jehoiada_793.json",
+        "currentDraftSHA256": "4b72854ea9d1aa17b171d0e5cdd26e616b58625427638a8a5d80ce7dfdaba269",
+        "evidencePath": "evidence/persons_3/2KI_jehoiada_793.json",
+        "currentEvidenceSHA256": "a28607f6cadd4ccb155e1526a988a34101bd01615b7b6c92242a851021859481",
+        "currentProfileSHA256": "246f3290ee07254ed8658560deaaee4c9cd4cf41915a1751e25388ff42276aa3",
+        "book": "2KI",
+        "entityID": "person:jehoiada_793",
+        "knownBy": {
+          "chapter": 11,
+          "verse": 4
+        },
+        "currentWikipedia": {
+          "title": "Jehoiada",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Jehoiada",
+          "kind": "article",
+          "noteJa": "英語版記事も祭司エホヤダを扱います。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 11,
+            "verse": 4
+          },
+          "sourceId": "person-jehoiada_793-wikipedia-jehoiada-priest"
+        },
+        "currentPrimaryWitnesses": [
+          {
+            "ref": "2KI 11:4",
+            "url": "https://ebible.org/engwebp/2KI11.htm#V4",
+            "text": "In the seventh year Jehoiada sent and fetched the captains over hundreds of the Carites and of the guard, and brought them to him into the LORD’s house; and he made a covenant with them, and made a covenant with them in the LORD’s house, and showed them the king’s son.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 11:9",
+            "url": "https://ebible.org/engwebp/2KI11.htm#V9",
+            "text": "The captains over hundreds did according to all that Jehoiada the priest commanded; and they each took his men, those who were to come in on the Sabbath with those who were to go out on the Sabbath, and came to Jehoiada the priest.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 11:15",
+            "url": "https://ebible.org/engwebp/2KI11.htm#V15",
+            "text": "Jehoiada the priest commanded the captains of hundreds who were set over the army, and said to them, “Bring her out between the ranks. Kill anyone who follows her with the sword.” For the priest said, “Don’t let her be slain in the LORD’s house.”",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 11:17",
+            "url": "https://ebible.org/engwebp/2KI11.htm#V17",
+            "text": "Jehoiada made a covenant between the LORD and the king and the people, that they should be the LORD’s people; also between the king and the people.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 12:2",
+            "url": "https://ebible.org/engwebp/2KI12.htm#V2",
+            "text": "Jehoash did that which was right in the LORD’s eyes all his days in which Jehoiada the priest instructed him.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 12:7",
+            "url": "https://ebible.org/engwebp/2KI12.htm#V7",
+            "text": "Then King Jehoash called for Jehoiada the priest, and for the other priests, and said to them, “Why aren’t you repairing the damage to the house? Now therefore take no more money from your treasurers, but deliver it for repair of the damage to the house.”",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 12:9",
+            "url": "https://ebible.org/engwebp/2KI12.htm#V9",
+            "text": "But Jehoiada the priest took a chest and bored a hole in its lid, and set it beside the altar, on the right side as one comes into the LORD’s house; and the priests who kept the threshold put all the money that was brought into the LORD’s house into it.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          }
+        ],
+        "currentArticleBodyLocator": "lead lines 125–132",
+        "currentArticleReadAtUTC": null
+      },
+      "latestCurrentClosure": {
+        "path": "reviews/independent-persons_3.json",
+        "sha256": "685be1b0671dd28c035c81701439fea2d94d32c5da0747ed6692379a8f21614a",
+        "rowDecision": "pass",
+        "rowEvidenceSHA256": "a28607f6cadd4ccb155e1526a988a34101bd01615b7b6c92242a851021859481",
+        "rowProfileSHA256": "246f3290ee07254ed8658560deaaee4c9cd4cf41915a1751e25388ff42276aa3",
+        "rowReasonJa": null
+      },
+      "oldAdverseReview": {
+        "path": "reviews/independent-extra-persons3-five-null-links.json",
+        "sha256": "81b0ba3fafe129b4c917309e7fb6e1b15c98ac8a7dc7464cc0b3aa61251d181a",
+        "verdict": "add-article",
+        "boundDraftSHA256": "4b72854ea9d1aa17b171d0e5cdd26e616b58625427638a8a5d80ce7dfdaba269"
+      },
+      "additionalCrossClosure": [
+        {
+          "path": "reviews/reclosure-persons3-13-null-links-current.json",
+          "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85"
+        }
+      ]
+    },
+    {
+      "draftPath": "drafts/persons_3/2KI_uzziah_375.json",
+      "entityID": "person:uzziah_375",
+      "oldFinding": {
+        "verdict": "add-article",
+        "decision": "add-article",
+        "identityAndGateBasisJa": "2KI14:21 names Azariah as Amaziah’s successor; 2KI15:13 is the first occurrence in this book of the alternate form Uzziah. Because the article title itself exposes that form, do not display this link before 2KI15:13.",
+        "authorActionJa": "article; identityVerified=true; Wikipedia/source knownBy 15:13 (not the profile’s 14:21 base gate), to avoid exposing the later name early.",
+        "gateCautionJa": "プロフィールknownByは2KI14:21だが、リンク先タイトル「Uzziah」は本文で初めて15:13に現れる。Wikipediaオブジェクトと対応secondary-sourceのknownByは15:13に遅らせる。",
+        "article": {
+          "url": "https://en.wikipedia.org/wiki/Uzziah",
+          "title": "Uzziah",
+          "kind": "article",
+          "locator": "Lead, lines 155–181; identifies Uzziah also as Azariah, and the Name section notes both names in 2 Kings.",
+          "bodyRead": true,
+          "readAtUTC": "2026-10-16T03:52:47Z",
+          "paraphraseJa": "記事はユダ王ウジヤを扱い、列王記でアザルヤとも呼ばれる人物として説明します。",
+          "license": "CC BY-SA 4.0",
+          "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "attribution": "Wikipedia contributors"
+        }
+      },
+      "currentDecision": "qualified",
+      "disposition": "resolved_as_qualified",
+      "resolutionBasisJa": "The Uzziah article/source gate is held until 2KI15:13, where WEB first uses the form “Uzziah”; the profile’s earlier 2KI14:21 name is Azariah. The alias-gate concern is preserved as qualified, while the earlier add-article action is satisfied and there is no current fail.",
+      "current": {
+        "draftPath": "drafts/persons_3/2KI_uzziah_375.json",
+        "currentDraftSHA256": "ee8ffd4c510818dfd9bcc6496bc481dfdddb3dcb205dfbad73fea824a3903dc1",
+        "evidencePath": "evidence/persons_3/2KI_uzziah_375.json",
+        "currentEvidenceSHA256": "5bd4299a47640408b6b17c49856bafab8aa02809a9d9f7e314a7c228a88d8a99",
+        "currentProfileSHA256": "c5b2911c778c10addeaa7b6cf9353d8307c1171db843fbc87f1bdbfdcf80864e",
+        "book": "2KI",
+        "entityID": "person:uzziah_375",
+        "knownBy": {
+          "chapter": 14,
+          "verse": 21
+        },
+        "currentWikipedia": {
+          "title": "Uzziah",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Uzziah",
+          "kind": "article",
+          "noteJa": "英語版記事はユダ王ウジヤを扱います。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 15,
+            "verse": 13
+          },
+          "sourceId": "person-uzziah_375-wikipedia-uzziah"
+        },
+        "currentPrimaryWitnesses": [
+          {
+            "ref": "2KI 14:21",
+            "url": "https://ebible.org/engwebp/2KI14.htm#V21",
+            "text": "All the people of Judah took Azariah, who was sixteen years old, and made him king in the place of his father Amaziah.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 15:1",
+            "url": "https://ebible.org/engwebp/2KI15.htm#V1",
+            "text": "In the twenty-seventh year of Jeroboam king of Israel, Azariah son of Amaziah king of Judah began to reign.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 15:6",
+            "url": "https://ebible.org/engwebp/2KI15.htm#V6",
+            "text": "Now the rest of the acts of Azariah, and all that he did, aren’t they written in the book of the chronicles of the kings of Judah?",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 15:7",
+            "url": "https://ebible.org/engwebp/2KI15.htm#V7",
+            "text": "Azariah slept with his fathers; and they buried him with his fathers in David’s city; and Jotham his son reigned in his place.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 15:8",
+            "url": "https://ebible.org/engwebp/2KI15.htm#V8",
+            "text": "In the thirty-eighth year of Azariah king of Judah, Zechariah the son of Jeroboam reigned over Israel in Samaria six months.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 15:13",
+            "url": "https://ebible.org/engwebp/2KI15.htm#V13",
+            "text": "Shallum the son of Jabesh began to reign in the thirty-ninth year of Uzziah king of Judah, and he reigned for a month in Samaria.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 15:17",
+            "url": "https://ebible.org/engwebp/2KI15.htm#V17",
+            "text": "In the thirty ninth year of Azariah king of Judah, Menahem the son of Gadi began to reign over Israel for ten years in Samaria.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 15:23",
+            "url": "https://ebible.org/engwebp/2KI15.htm#V23",
+            "text": "In the fiftieth year of Azariah king of Judah, Pekahiah the son of Menahem began to reign over Israel in Samaria for two years.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 15:27",
+            "url": "https://ebible.org/engwebp/2KI15.htm#V27",
+            "text": "In the fifty-second year of Azariah king of Judah, Pekah the son of Remaliah began to reign over Israel in Samaria for twenty years.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 15:30",
+            "url": "https://ebible.org/engwebp/2KI15.htm#V30",
+            "text": "Hoshea the son of Elah made a conspiracy against Pekah the son of Remaliah, attacked him, killed him, and reigned in his place, in the twentieth year of Jotham the son of Uzziah.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 15:32",
+            "url": "https://ebible.org/engwebp/2KI15.htm#V32",
+            "text": "In the second year of Pekah the son of Remaliah king of Israel, Jotham the son of Uzziah king of Judah began to reign.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 15:34",
+            "url": "https://ebible.org/engwebp/2KI15.htm#V34",
+            "text": "He did that which was right in the LORD’s eyes. He did according to all that his father Uzziah had done.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          }
+        ],
+        "currentArticleBodyLocator": "lead lines 155–181; name discussion in article body",
+        "currentArticleReadAtUTC": null
+      },
+      "latestCurrentClosure": {
+        "path": "reviews/independent-persons_3.json",
+        "sha256": "685be1b0671dd28c035c81701439fea2d94d32c5da0747ed6692379a8f21614a",
+        "rowDecision": "qualified",
+        "rowEvidenceSHA256": "5bd4299a47640408b6b17c49856bafab8aa02809a9d9f7e314a7c228a88d8a99",
+        "rowProfileSHA256": "c5b2911c778c10addeaa7b6cf9353d8307c1171db843fbc87f1bdbfdcf80864e",
+        "rowReasonJa": null
+      },
+      "oldAdverseReview": {
+        "path": "reviews/independent-extra-persons3-five-null-links.json",
+        "sha256": "81b0ba3fafe129b4c917309e7fb6e1b15c98ac8a7dc7464cc0b3aa61251d181a",
+        "verdict": "add-article",
+        "boundDraftSHA256": "ee8ffd4c510818dfd9bcc6496bc481dfdddb3dcb205dfbad73fea824a3903dc1"
+      },
+      "additionalCrossClosure": [
+        {
+          "path": "reviews/reclosure-persons3-13-null-links-current.json",
+          "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85"
+        }
+      ]
+    },
+    {
+      "draftPath": "drafts/persons_1/2KI_person_joshua_1729.json",
+      "entityID": "person:joshua_1729",
+      "oldFinding": {
+        "verdict": "fail",
+        "decision": "fail",
+        "action": "add-or-retain-related-link",
+        "wikipediaBodyReview": {
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Joshua_the_governor_of_the_city",
+          "retrievedAtUTC": "2026-10-16T03:50:00Z",
+          "locator": "A–K “Joshua the governor of the city”, lines 4372–4376",
+          "supportBasisJa": "The page gives a dedicated subsection: a city governor of Jerusalem under Josiah whose name was given to a city gate, and cites 2 Kings 23:8. Current profile has no Wikipedia link despite an exact suitable section."
+        },
+        "noteJa": "旧failは適合するWikipediaリンクの欠如を指摘。現在のプロフィールには特定節・出典・identityVerified付きで実装済み。"
+      },
+      "currentDecision": "pass",
+      "disposition": "resolved_by_current_independent_closure",
+      "resolutionBasisJa": "The current profile links the “Joshua the governor of the city” section, whose body identifies a Jerusalem city governor in Josiah’s time and cites 2KI23:8. The current WEB calls Joshua governor of the city and names his gate; the updated profile distinguishes him from Moses’ successor. The earlier fail/add-link action is superseded by the current delta pass.",
+      "current": {
+        "draftPath": "drafts/persons_1/2KI_person_joshua_1729.json",
+        "currentDraftSHA256": "904b478418a41498d3ffc62e62e6cdbeaf9e266220afa819dcfcc5e53a814f4f",
+        "evidencePath": "evidence/persons_1/2KI_person_joshua_1729-sources.json",
+        "currentEvidenceSHA256": "e64c55cf2a3b22d850da4a1df262c585f80a9f3ec307dd8a62a865b0b1cc8665",
+        "currentProfileSHA256": "7f889178d15f1216688cf9ae6faf8144a889043a65439a6c7384e509ac6cdfdd",
+        "book": "2KI",
+        "entityID": "person:joshua_1729",
+        "knownBy": {
+          "chapter": 23,
+          "verse": 8
+        },
+        "currentWikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Joshua_the_governor_of_the_city",
+          "kind": "shared-section",
+          "noteJa": "英語版の人物一覧は、ヨシヤ時代のエルサレムの町の長ヨシュアを挙げ、列王記下23:8を参照しています。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "knownBy": {
+            "chapter": 23,
+            "verse": 8
+          }
+        },
+        "currentPrimaryWitnesses": [
+          {
+            "ref": "2KI 23:8",
+            "textualBasisJa": "He brought all the priests out of the cities of Judah, and defiled the high places where the priests had burned incense, from Geba to Beersheba; and he broke down the high places of the gates that were at the entrance of the gate of Joshua the governor of the city, which were on a man’s left hand at the gate of the city."
+          }
+        ],
+        "currentArticleBodyLocator": null,
+        "currentArticleReadAtUTC": null
+      },
+      "latestCurrentClosure": {
+        "path": "reviews/independent-persons_1-wikipedia-null-current-delta.json",
+        "sha256": "1748a7fdcede848dc73e91d71b4b25be42deb602c60487bf72091d41fa4053cf",
+        "rowDecision": "pass",
+        "rowEvidenceSHA256": "e64c55cf2a3b22d850da4a1df262c585f80a9f3ec307dd8a62a865b0b1cc8665",
+        "rowProfileSHA256": null,
+        "rowReasonJa": null
+      },
+      "oldAdverseReview": {
+        "path": "reviews/independent-persons_1-wikipedia-null-followup.json",
+        "sha256": "98b404917b9595774be21a7e0fbb7568ed1e4da62e083a88b387fcc5ad11fb91",
+        "verdict": "fail",
+        "boundDraftSHA256": "904b478418a41498d3ffc62e62e6cdbeaf9e266220afa819dcfcc5e53a814f4f"
+      },
+      "additionalCrossClosure": []
+    },
+    {
+      "draftPath": "drafts/places_2/2KI_gad_1286.json",
+      "entityID": "place:gad_1286",
+      "oldFinding": {
+        "verdict": "fail",
+        "reasonJa": "2KI 10:33 explicitly says “all the land of Gilead and Gad and Reuben and Manasseh.” The profile’s subtitle/summary say Gad is not a place name but merely a tribal adjective; that erases the geographic land/territory use. Classify as a region/territory or otherwise state both territorial and tribal naming without equating it to the people.",
+        "noteJa": "旧指摘は“land of Gilead and Gad and Reuben and Manasseh”と記していたが、実際の固定WEB引用は“all the land of Gilead, the Gadites, and the Reubenites, and the Manassites”。旧findingの本文転記が不正確。"
+      },
+      "currentDecision": "qualified",
+      "disposition": "resolved_as_qualified",
+      "resolutionBasisJa": "The actual pinned WEB reads “all the land of Gilead, the Gadites, and the Reubenites, and the Manassites.” It does not say “land of Gad” as the old fail paraphrase claimed. Current prose classifies “Gadites” as a tribal demonym, relation-only Wikipedia article, null coordinate, and mapPolicy allowCandidateMap=false. The updated independent closure therefore closes the old fail as qualified, with the candidate withheld from place mapping.",
+      "current": {
+        "draftPath": "drafts/places_2/2KI_gad_1286.json",
+        "currentDraftSHA256": "0fdd9f4ad2370779e6956562e61e1453b08112725b7245ba4ec55c78ba298029",
+        "evidencePath": "evidence/places_2/2KI_gad_1286.json",
+        "currentEvidenceSHA256": "47edb6b64f2cf2c6c10eb0f34f95fb8d6973a5b53df0e9eb58ffbf5ab8fefb70",
+        "currentProfileSHA256": "37b22c7942d94e6e4ee214baca56840517e81b431397b2ee7e291ae3078024fa",
+        "book": "2KI",
+        "entityID": "place:gad_1286",
+        "knownBy": {
+          "chapter": 10,
+          "verse": 33
+        },
+        "currentWikipedia": {
+          "title": "Tribe of Gad",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Tribe_of_Gad#Tribal_territory",
+          "kind": "related-section",
+          "noteJa": "記事は「Tribe of Gad」を扱います。この記事の対象と列王記のこの用例との同一性は確認できず、地理的な関連情報としてのみ参照します。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "relationVerified": true
+        },
+        "currentPrimaryWitnesses": [
+          {
+            "ref": "2KI 10:33",
+            "textualBasisJa": "from the Jordan eastward, all the land of Gilead, the Gadites, and the Reubenites, and the Manassites, from Aroer, which is by the valley of the Arnon, even Gilead and Bashan.",
+            "sourceTextSHA256": "e7a24b65b88b35b6790816df774e17594562b378c724956d714b83b8662c82b1",
+            "citationURL": "https://ebible.org/engwebp/2KI10.htm#V33"
+          }
+        ],
+        "currentArticleBodyLocator": "Tribal territory section, lines 160–164 and 177",
+        "currentArticleReadAtUTC": "2026-10-16T01:42:34Z"
+      },
+      "latestCurrentClosure": {
+        "path": "reviews/closure-places_2-after-united-source-gate.json",
+        "sha256": "cd0f36c65f6b5a51a38c05777f65d75428292bba8b5b32e30b75cc56a8f79a21",
+        "rowDecision": "qualified",
+        "rowEvidenceSHA256": "47edb6b64f2cf2c6c10eb0f34f95fb8d6973a5b53df0e9eb58ffbf5ab8fefb70",
+        "rowProfileSHA256": "37b22c7942d94e6e4ee214baca56840517e81b431397b2ee7e291ae3078024fa",
+        "rowReasonJa": "WEB 2KI10:33 says “all the land of Gilead, the Gadites, and the Reubenites, and the Manassites.” It does not literally say “land of Gad”; current profile correctly treats “Gadites” as a demonym/collective and suppresses mapping. The place-scoped profile remains a type/placement ambiguity, so retain as qualified rather than claim a geographic Gad occurrence."
+      },
+      "oldAdverseReview": {
+        "path": "reviews/independent-places_2.json",
+        "sha256": "43bf18b749b44be66851a79150faeb15cade07cc3310cb405f6736698d33a76d",
+        "verdict": "fail",
+        "boundDraftSHA256": "0fdd9f4ad2370779e6956562e61e1453b08112725b7245ba4ec55c78ba298029"
+      },
+      "additionalCrossClosure": []
+    },
+    {
+      "draftPath": "drafts/persons_3/2KI_adrammelech_104.json",
+      "entityID": "person:adrammelech_104",
+      "oldFinding": {
+        "verdict": "identity-supported",
+        "decision": "identity-supported",
+        "findingJa": "2KI19:37 is the profile gate; current note stays at the name equivalence and parentage. The same-title deity article is explicitly unrelated, so keep the human article."
+      },
+      "currentDecision": "pass",
+      "disposition": "resolved_by_current_independent_closure",
+      "resolutionBasisJa": "The binding report’s older “identity-supported” verdict was not accepted by its enum, rather than a substantive fail. The current 109-row independent persons_3 review binds this exact draft/evidence SHA and passes the current profile/article gate and WEB first-use review.",
+      "current": {
+        "draftPath": "drafts/persons_3/2KI_adrammelech_104.json",
+        "currentDraftSHA256": "9f27af92f19f18afa68708fa0aea2de55072abe9950219057c57189a3dbd8f8e",
+        "evidencePath": "evidence/persons_3/2KI_adrammelech_104.json",
+        "currentEvidenceSHA256": "6bc48223ffcb3a7488e80b07ed74c2ffbab396af9739483dc32cc76384ec746c",
+        "currentProfileSHA256": "efb4e351e95c866bda8b049bfe6a46c43ff460decc217c06202c63b804547c6c",
+        "book": "2KI",
+        "entityID": "person:adrammelech_104",
+        "knownBy": {
+          "chapter": 19,
+          "verse": 37
+        },
+        "currentWikipedia": {
+          "title": "Arda-Mulissu",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Arda-Mulissu",
+          "kind": "article",
+          "noteJa": "英語版記事は、センナケリブの子アダド・ムリッシを、聖書でアドラムメレクと呼ばれる人物として扱います。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 19,
+            "verse": 37
+          },
+          "sourceId": "wiki-kings-adrammelech_104"
+        },
+        "currentPrimaryWitnesses": [
+          {
+            "ref": "2KI 19:37",
+            "url": "https://ebible.org/engwebp/2KI19.htm#V37",
+            "text": "As he was worshiping in the house of Nisroch his god, Adrammelech and Sharezer struck him with the sword; and they escaped into the land of Ararat. Esar Haddon his son reigned in his place.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          }
+        ],
+        "currentArticleBodyLocator": "Introduction lines 118–120; attempted-coup section lines 140, 152",
+        "currentArticleReadAtUTC": "2026-10-16T03:57:30.342152Z"
+      },
+      "latestCurrentClosure": {
+        "path": "reviews/independent-persons_3.json",
+        "sha256": "685be1b0671dd28c035c81701439fea2d94d32c5da0747ed6692379a8f21614a",
+        "rowDecision": "pass",
+        "rowEvidenceSHA256": "6bc48223ffcb3a7488e80b07ed74c2ffbab396af9739483dc32cc76384ec746c",
+        "rowProfileSHA256": "efb4e351e95c866bda8b049bfe6a46c43ff460decc217c06202c63b804547c6c",
+        "rowReasonJa": null
+      },
+      "oldAdverseReview": {
+        "path": "reviews/reclosure-persons3-13-null-links-current.json",
+        "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85",
+        "verdict": "identity-supported",
+        "boundDraftSHA256": "9f27af92f19f18afa68708fa0aea2de55072abe9950219057c57189a3dbd8f8e"
+      },
+      "additionalCrossClosure": [
+        {
+          "path": "reviews/reclosure-persons3-13-null-links-current.json",
+          "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85"
+        }
+      ]
+    },
+    {
+      "draftPath": "drafts/persons_3/2KI_amoz_240.json",
+      "entityID": "person:amoz_240",
+      "oldFinding": {
+        "verdict": "identity-supported",
+        "decision": "identity-supported",
+        "findingJa": "Current note distinguishes Amoz from Amos and gate 2KI19:2 matches first use."
+      },
+      "currentDecision": "pass",
+      "disposition": "resolved_by_current_independent_closure",
+      "resolutionBasisJa": "The binding report’s older “identity-supported” verdict was not accepted by its enum, rather than a substantive fail. The current 109-row independent persons_3 review binds this exact draft/evidence SHA and passes the current profile/article gate and WEB first-use review.",
+      "current": {
+        "draftPath": "drafts/persons_3/2KI_amoz_240.json",
+        "currentDraftSHA256": "9d3b0e829632ab2898b805c581bc58ba84ca774ba9532bb6272f16b1bc03531e",
+        "evidencePath": "evidence/persons_3/2KI_amoz_240.json",
+        "currentEvidenceSHA256": "b6f72460b2552308a5ed929d809343a3d8a44fb056520e900dc48b135755153c",
+        "currentProfileSHA256": "e55c7be5a14b92c416a1bc5102ea2970ef722f6d69a18fc9c677d74ebd2e632b",
+        "book": "2KI",
+        "entityID": "person:amoz_240",
+        "knownBy": {
+          "chapter": 19,
+          "verse": 2
+        },
+        "currentWikipedia": {
+          "title": "Amoz",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Amoz",
+          "kind": "article",
+          "noteJa": "英語版記事は、預言者イザヤの父アモツを扱い、アモスとは区別しています。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 19,
+            "verse": 2
+          },
+          "sourceId": "wiki-kings-amoz_240"
+        },
+        "currentPrimaryWitnesses": [
+          {
+            "ref": "2KI 19:2",
+            "url": "https://ebible.org/engwebp/2KI19.htm#V2",
+            "text": "He sent Eliakim, who was over the household, Shebna the scribe, and the elders of the priests, covered with sackcloth, to Isaiah the prophet the son of Amoz.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 19:20",
+            "url": "https://ebible.org/engwebp/2KI19.htm#V20",
+            "text": "Then Isaiah the son of Amoz sent to Hezekiah, saying, “The LORD, the God of Israel, says ‘You have prayed to me against Sennacherib king of Assyria, and I have heard you.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 20:1",
+            "url": "https://ebible.org/engwebp/2KI20.htm#V1",
+            "text": "In those days Hezekiah was sick and dying. Isaiah the prophet the son of Amoz came to him, and said to him, “The LORD says, ‘Set your house in order; for you will die, and not live.’”",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          }
+        ],
+        "currentArticleBodyLocator": "Introduction lines 107–111; tradition section lines 115–116",
+        "currentArticleReadAtUTC": "2026-10-16T03:57:30.342152Z"
+      },
+      "latestCurrentClosure": {
+        "path": "reviews/independent-persons_3.json",
+        "sha256": "685be1b0671dd28c035c81701439fea2d94d32c5da0747ed6692379a8f21614a",
+        "rowDecision": "pass",
+        "rowEvidenceSHA256": "b6f72460b2552308a5ed929d809343a3d8a44fb056520e900dc48b135755153c",
+        "rowProfileSHA256": "e55c7be5a14b92c416a1bc5102ea2970ef722f6d69a18fc9c677d74ebd2e632b",
+        "rowReasonJa": null
+      },
+      "oldAdverseReview": {
+        "path": "reviews/reclosure-persons3-13-null-links-current.json",
+        "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85",
+        "verdict": "identity-supported",
+        "boundDraftSHA256": "9d3b0e829632ab2898b805c581bc58ba84ca774ba9532bb6272f16b1bc03531e"
+      },
+      "additionalCrossClosure": [
+        {
+          "path": "reviews/reclosure-persons3-13-null-links-current.json",
+          "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85"
+        }
+      ]
+    },
+    {
+      "draftPath": "drafts/persons_3/2KI_hephzi-bah_1499.json",
+      "entityID": "person:hephzi-bah_1499",
+      "oldFinding": {
+        "verdict": "identity-supported",
+        "decision": "identity-supported",
+        "findingJa": "Current identity claim and 2KI21:1 gate match."
+      },
+      "currentDecision": "pass",
+      "disposition": "resolved_by_current_independent_closure",
+      "resolutionBasisJa": "The binding report’s older “identity-supported” verdict was not accepted by its enum, rather than a substantive fail. The current 109-row independent persons_3 review binds this exact draft/evidence SHA and passes the current profile/article gate and WEB first-use review.",
+      "current": {
+        "draftPath": "drafts/persons_3/2KI_hephzi-bah_1499.json",
+        "currentDraftSHA256": "2e99c02228369d08955f3acdd88c72a0126c7ca03879cad6312e2a30c86020b7",
+        "evidencePath": "evidence/persons_3/2KI_hephzi-bah_1499.json",
+        "currentEvidenceSHA256": "8efcda05b9d154452a63a12d367c906446b9fb18695dcdbb055ed4c97cccd6ff",
+        "currentProfileSHA256": "fcbc932ad42b09ebdb80dfecfcd6137ff2b309478d9bd612890e5487a9fa00ee",
+        "book": "2KI",
+        "entityID": "person:hephzi-bah_1499",
+        "knownBy": {
+          "chapter": 21,
+          "verse": 1
+        },
+        "currentWikipedia": {
+          "title": "Hephzibah",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Hephzibah",
+          "kind": "article",
+          "noteJa": "英語版記事は、マナセの母ヘフツィ・バを列王記下21:1に結び付けています。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 21,
+            "verse": 1
+          },
+          "sourceId": "wiki-kings-hephzi-bah_1499"
+        },
+        "currentPrimaryWitnesses": [
+          {
+            "ref": "2KI 21:1",
+            "url": "https://ebible.org/engwebp/2KI21.htm#V1",
+            "text": "Manasseh was twelve years old when he began to reign, and he reigned fifty-five years in Jerusalem. His mother’s name was Hephzibah.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          }
+        ],
+        "currentArticleBodyLocator": "Introduction and Biblical and rabbinic accounts lines 116–121",
+        "currentArticleReadAtUTC": "2026-10-16T03:57:30.342152Z"
+      },
+      "latestCurrentClosure": {
+        "path": "reviews/independent-persons_3.json",
+        "sha256": "685be1b0671dd28c035c81701439fea2d94d32c5da0747ed6692379a8f21614a",
+        "rowDecision": "pass",
+        "rowEvidenceSHA256": "8efcda05b9d154452a63a12d367c906446b9fb18695dcdbb055ed4c97cccd6ff",
+        "rowProfileSHA256": "fcbc932ad42b09ebdb80dfecfcd6137ff2b309478d9bd612890e5487a9fa00ee",
+        "rowReasonJa": null
+      },
+      "oldAdverseReview": {
+        "path": "reviews/reclosure-persons3-13-null-links-current.json",
+        "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85",
+        "verdict": "identity-supported",
+        "boundDraftSHA256": "2e99c02228369d08955f3acdd88c72a0126c7ca03879cad6312e2a30c86020b7"
+      },
+      "additionalCrossClosure": [
+        {
+          "path": "reviews/reclosure-persons3-13-null-links-current.json",
+          "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85"
+        }
+      ]
+    },
+    {
+      "draftPath": "drafts/persons_3/2KI_joash_1632.json",
+      "entityID": "person:joash_1632",
+      "oldFinding": {
+        "verdict": "identity-supported",
+        "decision": "identity-supported",
+        "findingJa": "Current note distinguishes him from Israel’s king Joash and only describes the identity known at 2KI11:2."
+      },
+      "currentDecision": "pass",
+      "disposition": "resolved_by_current_independent_closure",
+      "resolutionBasisJa": "The binding report’s older “identity-supported” verdict was not accepted by its enum, rather than a substantive fail. The current 109-row independent persons_3 review binds this exact draft/evidence SHA and passes the current profile/article gate and WEB first-use review.",
+      "current": {
+        "draftPath": "drafts/persons_3/2KI_joash_1632.json",
+        "currentDraftSHA256": "9eb144834171663baf01d386675ffb2e1e89b4fdf84d440253b053e7da36f375",
+        "evidencePath": "evidence/persons_3/2KI_joash_1632.json",
+        "currentEvidenceSHA256": "2cfb50c5f41be3d60b0a926a4287b769f3fba3209616c8611a14834c807546c3",
+        "currentProfileSHA256": "610b8f8b5d0cda9932b0731b4ab5887d32ab6deab730f98820c1bd6748309177",
+        "book": "2KI",
+        "entityID": "person:joash_1632",
+        "knownBy": {
+          "chapter": 11,
+          "verse": 2
+        },
+        "currentWikipedia": {
+          "title": "Jehoash of Judah",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Jehoash_of_Judah",
+          "kind": "article",
+          "noteJa": "英語版記事は、ユダ王ヨアシュをイスラエル王ヨアシュと区別して扱います。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 11,
+            "verse": 2
+          },
+          "sourceId": "wiki-kings-joash_1632"
+        },
+        "currentPrimaryWitnesses": [
+          {
+            "ref": "2KI 11:2",
+            "url": "https://ebible.org/engwebp/2KI11.htm#V2",
+            "text": "But Jehosheba, the daughter of King Joram, sister of Ahaziah, took Joash the son of Ahaziah, and stole him away from among the king’s sons who were slain, even him and his nurse, and put them in the bedroom; and they hid him from Athaliah, so that he was not slain.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 11:21",
+            "url": "https://ebible.org/engwebp/2KI11.htm#V21",
+            "text": "Jehoash was seven years old when he began to reign.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 12:1",
+            "url": "https://ebible.org/engwebp/2KI12.htm#V1",
+            "text": "Jehoash began to reign in the seventh year of Jehu, and he reigned forty years in Jerusalem. His mother’s name was Zibiah of Beersheba.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 12:2",
+            "url": "https://ebible.org/engwebp/2KI12.htm#V2",
+            "text": "Jehoash did that which was right in the LORD’s eyes all his days in which Jehoiada the priest instructed him.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 12:4",
+            "url": "https://ebible.org/engwebp/2KI12.htm#V4",
+            "text": "Jehoash said to the priests, “All the money of the holy things that is brought into the LORD’s house, in current money, the money of the people for whom each man is evaluated, and all the money that it comes into any man’s heart to bring into the LORD’s house,",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 12:6",
+            "url": "https://ebible.org/engwebp/2KI12.htm#V6",
+            "text": "But it was so, that in the twenty-third year of King Jehoash the priests had not repaired the damage to the house.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 12:7",
+            "url": "https://ebible.org/engwebp/2KI12.htm#V7",
+            "text": "Then King Jehoash called for Jehoiada the priest, and for the other priests, and said to them, “Why aren’t you repairing the damage to the house? Now therefore take no more money from your treasurers, but deliver it for repair of the damage to the house.”",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 12:18",
+            "url": "https://ebible.org/engwebp/2KI12.htm#V18",
+            "text": "Jehoash king of Judah took all the holy things that Jehoshaphat and Jehoram and Ahaziah, his fathers, kings of Judah, had dedicated, and his own holy things, and all the gold that was found in the treasures of the LORD’s house, and of the king’s house, and sent it to Hazael king of Syria; and he went away from Jerusalem.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 12:19",
+            "url": "https://ebible.org/engwebp/2KI12.htm#V19",
+            "text": "Now the rest of the acts of Joash, and all that he did, aren’t they written in the book of the chronicles of the kings of Judah?",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 12:20",
+            "url": "https://ebible.org/engwebp/2KI12.htm#V20",
+            "text": "His servants arose and made a conspiracy, and struck Joash at the house of Millo, on the way that goes down to Silla.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 13:1",
+            "url": "https://ebible.org/engwebp/2KI13.htm#V1",
+            "text": "In the twenty-third year of Joash the son of Ahaziah, king of Judah, Jehoahaz the son of Jehu began to reign over Israel in Samaria for seventeen years.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 14:3",
+            "url": "https://ebible.org/engwebp/2KI14.htm#V3",
+            "text": "He did that which was right in the LORD’s eyes, yet not like David his father. He did according to all that Joash his father had done.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          }
+        ],
+        "currentArticleBodyLocator": "Introduction lines 172–175; early life lines 182–183; refs lines 249–251",
+        "currentArticleReadAtUTC": "2026-10-16T03:57:30.342152Z"
+      },
+      "latestCurrentClosure": {
+        "path": "reviews/independent-persons_3.json",
+        "sha256": "685be1b0671dd28c035c81701439fea2d94d32c5da0747ed6692379a8f21614a",
+        "rowDecision": "pass",
+        "rowEvidenceSHA256": "2cfb50c5f41be3d60b0a926a4287b769f3fba3209616c8611a14834c807546c3",
+        "rowProfileSHA256": "610b8f8b5d0cda9932b0731b4ab5887d32ab6deab730f98820c1bd6748309177",
+        "rowReasonJa": null
+      },
+      "oldAdverseReview": {
+        "path": "reviews/reclosure-persons3-13-null-links-current.json",
+        "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85",
+        "verdict": "identity-supported",
+        "boundDraftSHA256": "9eb144834171663baf01d386675ffb2e1e89b4fdf84d440253b053e7da36f375"
+      },
+      "additionalCrossClosure": [
+        {
+          "path": "reviews/reclosure-persons3-13-null-links-current.json",
+          "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85"
+        }
+      ]
+    },
+    {
+      "draftPath": "drafts/persons_3/2KI_joram_804.json",
+      "entityID": "person:joram_804",
+      "oldFinding": {
+        "verdict": "identity-supported",
+        "decision": "identity-supported",
+        "findingJa": "Current article and note identify the Israelite king named at 2KI1:17."
+      },
+      "currentDecision": "pass",
+      "disposition": "resolved_by_current_independent_closure",
+      "resolutionBasisJa": "The binding report’s older “identity-supported” verdict was not accepted by its enum, rather than a substantive fail. The current 109-row independent persons_3 review binds this exact draft/evidence SHA and passes the current profile/article gate and WEB first-use review.",
+      "current": {
+        "draftPath": "drafts/persons_3/2KI_joram_804.json",
+        "currentDraftSHA256": "e3e063b8d62f427ec751e25166455cccfbc5076db3442bb0ebbf71203a168da4",
+        "evidencePath": "evidence/persons_3/2KI_joram_804.json",
+        "currentEvidenceSHA256": "386d5c2a015efda2e9fe0c0345adff2e45d52a0c66f80d796b6ea6ec0b6144d5",
+        "currentProfileSHA256": "9df3abe26316b54577fef911389209ef960b56962635fc58eaf48c0ba39dddac",
+        "book": "2KI",
+        "entityID": "person:joram_804",
+        "knownBy": {
+          "chapter": 1,
+          "verse": 17
+        },
+        "currentWikipedia": {
+          "title": "Jehoram of Israel",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Jehoram_of_Israel",
+          "kind": "article",
+          "noteJa": "英語版記事はイスラエル王ヨラムを、同時代のユダ王ヨラムと区別しています。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 1,
+            "verse": 17
+          },
+          "sourceId": "wiki-kings-joram_804"
+        },
+        "currentPrimaryWitnesses": [
+          {
+            "ref": "2KI 1:17",
+            "url": "https://ebible.org/engwebp/2KI01.htm#V17",
+            "text": "So he died according to the LORD’s word which Elijah had spoken. Jehoram began to reign in his place in the second year of Jehoram the son of Jehoshaphat king of Judah, because he had no son.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 3:1",
+            "url": "https://ebible.org/engwebp/2KI03.htm#V1",
+            "text": "Now Jehoram the son of Ahab began to reign over Israel in Samaria in the eighteenth year of Jehoshaphat king of Judah, and reigned twelve years.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 3:6",
+            "url": "https://ebible.org/engwebp/2KI03.htm#V6",
+            "text": "King Jehoram went out of Samaria at that time, and mustered all Israel.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 8:16",
+            "url": "https://ebible.org/engwebp/2KI08.htm#V16",
+            "text": "In the fifth year of Joram the son of Ahab king of Israel, Jehoshaphat being king of Judah then, Jehoram the son of Jehoshaphat king of Judah began to reign.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 8:25",
+            "url": "https://ebible.org/engwebp/2KI08.htm#V25",
+            "text": "In the twelfth year of Joram the son of Ahab king of Israel, Ahaziah the son of Jehoram king of Judah began to reign.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 8:28",
+            "url": "https://ebible.org/engwebp/2KI08.htm#V28",
+            "text": "He went with Joram the son of Ahab to war against Hazael king of Syria at Ramoth Gilead, and the Syrians wounded Joram.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 8:29",
+            "url": "https://ebible.org/engwebp/2KI08.htm#V29",
+            "text": "King Joram returned to be healed in Jezreel from the wounds which the Syrians had given him at Ramah, when he fought against Hazael king of Syria. Ahaziah the son of Jehoram, king of Judah, went down to see Joram the son of Ahab in Jezreel, because he was sick.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 9:14",
+            "url": "https://ebible.org/engwebp/2KI09.htm#V14",
+            "text": "So Jehu the son of Jehoshaphat the son of Nimshi conspired against Joram. (Now Joram was defending Ramoth Gilead, he and all Israel, because of Hazael king of Syria;",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 9:15",
+            "url": "https://ebible.org/engwebp/2KI09.htm#V15",
+            "text": "but King Joram had returned to be healed in Jezreel of the wounds which the Syrians had given him when he fought with Hazael king of Syria.) Jehu said, “If this is your thinking, then let no one escape and go out of the city to go to tell it in Jezreel.”",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 9:16",
+            "url": "https://ebible.org/engwebp/2KI09.htm#V16",
+            "text": "So Jehu rode in a chariot and went to Jezreel, for Joram lay there. Ahaziah king of Judah had come down to see Joram.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 9:17",
+            "url": "https://ebible.org/engwebp/2KI09.htm#V17",
+            "text": "Now the watchman was standing on the tower in Jezreel, and he spied the company of Jehu as he came, and said, “I see a company.” Joram said, “Take a horseman, and send to meet them, and let him say, ‘Is it peace?’”",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 9:21",
+            "url": "https://ebible.org/engwebp/2KI09.htm#V21",
+            "text": "Joram said, “Get ready!” They got his chariot ready. Then Joram king of Israel and Ahaziah king of Judah went out, each in his chariot; and they went out to meet Jehu, and found him on Naboth the Jezreelite’s land.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 9:22",
+            "url": "https://ebible.org/engwebp/2KI09.htm#V22",
+            "text": "When Joram saw Jehu, he said, “Is it peace, Jehu?” He answered, “What peace, so long as the prostitution of your mother Jezebel and her witchcraft abound?”",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 9:23",
+            "url": "https://ebible.org/engwebp/2KI09.htm#V23",
+            "text": "Joram turned his hands and fled, and said to Ahaziah, “This is treason, Ahaziah!”",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 9:24",
+            "url": "https://ebible.org/engwebp/2KI09.htm#V24",
+            "text": "Jehu drew his bow with his full strength, and struck Joram between his arms; and the arrow went out at his heart, and he sunk down in his chariot.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 9:29",
+            "url": "https://ebible.org/engwebp/2KI09.htm#V29",
+            "text": "In the eleventh year of Joram the son of Ahab, Ahaziah began to reign over Judah.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          }
+        ],
+        "currentArticleBodyLocator": "Disambiguating introduction lines 142–156",
+        "currentArticleReadAtUTC": "2026-10-16T03:57:30.342152Z"
+      },
+      "latestCurrentClosure": {
+        "path": "reviews/independent-persons_3.json",
+        "sha256": "685be1b0671dd28c035c81701439fea2d94d32c5da0747ed6692379a8f21614a",
+        "rowDecision": "pass",
+        "rowEvidenceSHA256": "386d5c2a015efda2e9fe0c0345adff2e45d52a0c66f80d796b6ea6ec0b6144d5",
+        "rowProfileSHA256": "9df3abe26316b54577fef911389209ef960b56962635fc58eaf48c0ba39dddac",
+        "rowReasonJa": null
+      },
+      "oldAdverseReview": {
+        "path": "reviews/reclosure-persons3-13-null-links-current.json",
+        "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85",
+        "verdict": "identity-supported",
+        "boundDraftSHA256": "e3e063b8d62f427ec751e25166455cccfbc5076db3442bb0ebbf71203a168da4"
+      },
+      "additionalCrossClosure": [
+        {
+          "path": "reviews/reclosure-persons3-13-null-links-current.json",
+          "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85"
+        }
+      ]
+    },
+    {
+      "draftPath": "drafts/persons_3/2KI_nehushta_2174.json",
+      "entityID": "person:nehushta_2174",
+      "oldFinding": {
+        "verdict": "identity-supported",
+        "decision": "identity-supported",
+        "findingJa": "Current shared-section identity and gate 2KI24:8 match; no cross-person conflation found."
+      },
+      "currentDecision": "pass",
+      "disposition": "resolved_by_current_independent_closure",
+      "resolutionBasisJa": "The binding report’s older “identity-supported” verdict was not accepted by its enum, rather than a substantive fail. The current 109-row independent persons_3 review binds this exact draft/evidence SHA and passes the current profile/article gate and WEB first-use review.",
+      "current": {
+        "draftPath": "drafts/persons_3/2KI_nehushta_2174.json",
+        "currentDraftSHA256": "705bf6146cb492462db59b5465c1a5c65431797710a437a563117a4dd612788a",
+        "evidencePath": "evidence/persons_3/2KI_nehushta_2174.json",
+        "currentEvidenceSHA256": "10018b414fdd6becd9ca7ff95603c4a3ee909eefce9dd7b3f808b741306c6126",
+        "currentProfileSHA256": "c64fde91bffbbfb04c840f70e04110f3fccf68821c58e7c7cdb1d72b118f3db7",
+        "book": "2KI",
+        "entityID": "person:nehushta_2174",
+        "knownBy": {
+          "chapter": 24,
+          "verse": 8
+        },
+        "currentWikipedia": {
+          "title": "List of minor Hebrew Bible figures, L–Z",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Nehushta",
+          "kind": "shared-section",
+          "noteJa": "英語版の人物一覧は、ネフシュタをエホヤキンの母として列王記下24:8に挙げています。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 24,
+            "verse": 8
+          },
+          "sourceId": "wiki-kings-nehushta_2174"
+        },
+        "currentPrimaryWitnesses": [
+          {
+            "ref": "2KI 24:8",
+            "url": "https://ebible.org/engwebp/2KI24.htm#V8",
+            "text": "Jehoiachin was eighteen years old when he began to reign, and he reigned in Jerusalem three months. His mother’s name was Nehushta the daughter of Elnathan of Jerusalem.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          }
+        ],
+        "currentArticleBodyLocator": "Nehushta heading and entry lines 754–758",
+        "currentArticleReadAtUTC": "2026-10-16T03:57:30.342152Z"
+      },
+      "latestCurrentClosure": {
+        "path": "reviews/independent-persons_3.json",
+        "sha256": "685be1b0671dd28c035c81701439fea2d94d32c5da0747ed6692379a8f21614a",
+        "rowDecision": "pass",
+        "rowEvidenceSHA256": "10018b414fdd6becd9ca7ff95603c4a3ee909eefce9dd7b3f808b741306c6126",
+        "rowProfileSHA256": "c64fde91bffbbfb04c840f70e04110f3fccf68821c58e7c7cdb1d72b118f3db7",
+        "rowReasonJa": null
+      },
+      "oldAdverseReview": {
+        "path": "reviews/reclosure-persons3-13-null-links-current.json",
+        "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85",
+        "verdict": "identity-supported",
+        "boundDraftSHA256": "705bf6146cb492462db59b5465c1a5c65431797710a437a563117a4dd612788a"
+      },
+      "additionalCrossClosure": [
+        {
+          "path": "reviews/reclosure-persons3-13-null-links-current.json",
+          "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85"
+        }
+      ]
+    },
+    {
+      "draftPath": "drafts/persons_3/2KI_jehoaddan_783.json",
+      "entityID": "person:jehoaddan_783",
+      "oldFinding": {
+        "verdict": "identity-supported",
+        "decision": "identity-supported",
+        "findingJa": "Current shared-section identity and gate 2KI14:2 match."
+      },
+      "currentDecision": "pass",
+      "disposition": "resolved_by_current_independent_closure",
+      "resolutionBasisJa": "The binding report’s older “identity-supported” verdict was not accepted by its enum, rather than a substantive fail. The current 109-row independent persons_3 review binds this exact draft/evidence SHA and passes the current profile/article gate and WEB first-use review.",
+      "current": {
+        "draftPath": "drafts/persons_3/2KI_jehoaddan_783.json",
+        "currentDraftSHA256": "e9b09c1c5423c4787c56251b0e5e4e38c374d6b8ac8c81b42cede1491ccb381f",
+        "evidencePath": "evidence/persons_3/2KI_jehoaddan_783.json",
+        "currentEvidenceSHA256": "a7df807c14789b1112d5da2f02dd339a05a3202bc95ae5ce47fd7de690780ad2",
+        "currentProfileSHA256": "6e8b5412283b96ce091b5aaac285082be7bc53c79524ff7357acad89cca91592",
+        "book": "2KI",
+        "entityID": "person:jehoaddan_783",
+        "knownBy": {
+          "chapter": 14,
+          "verse": 2
+        },
+        "currentWikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Jehoaddan",
+          "kind": "shared-section",
+          "noteJa": "英語版人物一覧はエホアディンをエルサレム出身、ヨアシュの妻、アマツヤの母として記し、列王記下14:2を挙げます。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 14,
+            "verse": 2
+          },
+          "sourceId": "wiki-kings-jehoaddan_783"
+        },
+        "currentPrimaryWitnesses": [
+          {
+            "ref": "2KI 14:2",
+            "url": "https://ebible.org/engwebp/2KI14.htm#V2",
+            "text": "He was twenty-five years old when he began to reign; and he reigned twenty-nine years in Jerusalem. His mother’s name was Jehoaddin of Jerusalem.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          }
+        ],
+        "currentArticleBodyLocator": "Jehoaddan entry lines 3924–3928",
+        "currentArticleReadAtUTC": "2026-10-16T03:59:31Z"
+      },
+      "latestCurrentClosure": {
+        "path": "reviews/independent-persons_3.json",
+        "sha256": "685be1b0671dd28c035c81701439fea2d94d32c5da0747ed6692379a8f21614a",
+        "rowDecision": "pass",
+        "rowEvidenceSHA256": "a7df807c14789b1112d5da2f02dd339a05a3202bc95ae5ce47fd7de690780ad2",
+        "rowProfileSHA256": "6e8b5412283b96ce091b5aaac285082be7bc53c79524ff7357acad89cca91592",
+        "rowReasonJa": null
+      },
+      "oldAdverseReview": {
+        "path": "reviews/reclosure-persons3-13-null-links-current.json",
+        "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85",
+        "verdict": "identity-supported",
+        "boundDraftSHA256": "e9b09c1c5423c4787c56251b0e5e4e38c374d6b8ac8c81b42cede1491ccb381f"
+      },
+      "additionalCrossClosure": [
+        {
+          "path": "reviews/reclosure-persons3-13-null-links-current.json",
+          "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85"
+        }
+      ]
+    },
+    {
+      "draftPath": "drafts/persons_3/2KI_joah_1621.json",
+      "entityID": "person:joah_1621",
+      "oldFinding": {
+        "verdict": "identity-supported",
+        "decision": "identity-supported",
+        "findingJa": "Current shared-section identity distinguishes the relevant recorder from same-name biblical figures and gates at 2KI18:18."
+      },
+      "currentDecision": "pass",
+      "disposition": "resolved_by_current_independent_closure",
+      "resolutionBasisJa": "The binding report’s older “identity-supported” verdict was not accepted by its enum, rather than a substantive fail. The current 109-row independent persons_3 review binds this exact draft/evidence SHA and passes the current profile/article gate and WEB first-use review.",
+      "current": {
+        "draftPath": "drafts/persons_3/2KI_joah_1621.json",
+        "currentDraftSHA256": "4ce64317d966446c76024b1d3edc76daf88a00aac84faf5d3eb36e7dada4d46d",
+        "evidencePath": "evidence/persons_3/2KI_joah_1621.json",
+        "currentEvidenceSHA256": "bde29275d0b4a86910b0c8b0e77bdb508c0f9e0ef8a15e7717390f724a1c3b43",
+        "currentProfileSHA256": "f46b56b01a0413cdfd35f98a1277b88d094adf3a72f33262d556c1d2ad8610a4",
+        "book": "2KI",
+        "entityID": "person:joah_1621",
+        "knownBy": {
+          "chapter": 18,
+          "verse": 18
+        },
+        "currentWikipedia": {
+          "title": "Joah",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Joah",
+          "kind": "shared-section",
+          "noteJa": "英語版人物一覧はアサフの子で記録官のヨアを「Joahe」と記し、列王記下18:18・26を挙げます。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 18,
+            "verse": 18
+          },
+          "sourceId": "wiki-kings-joah_1621"
+        },
+        "currentPrimaryWitnesses": [
+          {
+            "ref": "2KI 18:18",
+            "url": "https://ebible.org/engwebp/2KI18.htm#V18",
+            "text": "When they had called to the king, Eliakim the son of Hilkiah, who was over the household, and Shebnah the scribe, and Joah the son of Asaph the recorder came out to them.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 18:26",
+            "url": "https://ebible.org/engwebp/2KI18.htm#V26",
+            "text": "Then Eliakim the son of Hilkiah, Shebnah, and Joah, said to Rabshakeh, “Please speak to your servants in the Syrian language, for we understand it. Don’t speak with us in the Jews’ language, in the hearing of the people who are on the wall.”",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          },
+          {
+            "ref": "2KI 18:37",
+            "url": "https://ebible.org/engwebp/2KI18.htm#V37",
+            "text": "Then Eliakim the son of Hilkiah, who was over the household, came with Shebna the scribe and Joah the son of Asaph the recorder to Hezekiah with their clothes torn, and told him Rabshakeh’s words.",
+            "readingNoteJa": "固定WEB本文と必要な前後文脈を確認。"
+          }
+        ],
+        "currentArticleBodyLocator": "Bible section lines 117–122; set-index notes lines 144–155",
+        "currentArticleReadAtUTC": "2026-10-16T03:59:31Z"
+      },
+      "latestCurrentClosure": {
+        "path": "reviews/independent-persons_3.json",
+        "sha256": "685be1b0671dd28c035c81701439fea2d94d32c5da0747ed6692379a8f21614a",
+        "rowDecision": "pass",
+        "rowEvidenceSHA256": "bde29275d0b4a86910b0c8b0e77bdb508c0f9e0ef8a15e7717390f724a1c3b43",
+        "rowProfileSHA256": "f46b56b01a0413cdfd35f98a1277b88d094adf3a72f33262d556c1d2ad8610a4",
+        "rowReasonJa": null
+      },
+      "oldAdverseReview": {
+        "path": "reviews/reclosure-persons3-13-null-links-current.json",
+        "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85",
+        "verdict": "identity-supported",
+        "boundDraftSHA256": "4ce64317d966446c76024b1d3edc76daf88a00aac84faf5d3eb36e7dada4d46d"
+      },
+      "additionalCrossClosure": [
+        {
+          "path": "reviews/reclosure-persons3-13-null-links-current.json",
+          "sha256": "fd3f05329bc8396cebbe3e131ce2b3d8823da0ed3991a296404db6b10aea7c85"
+        }
+      ]
+    },
+    {
+      "draftPath": "drafts/places_1/2KI_place_field_1229.json",
+      "entityID": "place:field_1229",
+      "oldFinding": {
+        "verdict": "closed",
+        "decision": "closed"
+      },
+      "currentDecision": "pass",
+      "disposition": "resolved_by_current_independent_closure",
+      "resolutionBasisJa": "The current profile is based on 2KI18:17, where the emissaries came and stood by the upper-pool conduit on the highway of the fuller’s field. It retains null coordinates and says the exact location is unknown. The latest current-SHA reclosure is pass; the older “closed” verdict was not recognized by the binder’s accepted verdict vocabulary.",
+      "current": {
+        "draftPath": "drafts/places_1/2KI_place_field_1229.json",
+        "currentDraftSHA256": "033b8e067daa46eb20342572385cbeba5588e39cb65101f1c437f49398800d58",
+        "evidencePath": "evidence/places_1/2KI_place_field_1229.json",
+        "currentEvidenceSHA256": "319ce0f8c8e09827806f93a967735291c19620ea603c8249e9c244722cf22dab",
+        "currentProfileSHA256": "8810f2a1cb72b2bd931cd0bdf7c5afe79c009eb3891ceb2dafac020cfc8f4394",
+        "book": "2KI",
+        "entityID": "place:field_1229",
+        "knownBy": {
+          "chapter": 18,
+          "verse": 17
+        },
+        "currentWikipedia": null,
+        "currentPrimaryWitnesses": [
+          {
+            "ref": "2KI 18:17",
+            "textualBasisJa": "本文に地名が明記される。用例の地理的意味はprofile本文で限定した。"
+          }
+        ],
+        "currentArticleBodyLocator": null,
+        "currentArticleReadAtUTC": null
+      },
+      "latestCurrentClosure": {
+        "path": "reviews/reclosure-places_1-nine-current.json",
+        "sha256": "001ce1a329d44d628c97ebebf7e257af521ab54faa72441c1184bd9ebdd3b44c",
+        "rowDecision": "pass",
+        "rowEvidenceSHA256": "319ce0f8c8e09827806f93a967735291c19620ea603c8249e9c244722cf22dab",
+        "rowProfileSHA256": "32f017b9d5ecf79da92a0d086930ae3ab4fb64b73272f4cd28dd65a9e64e912d",
+        "rowReasonJa": "固定WEBは使者が上の池の水路のそば、洗濯人の野の大路沿いに来て立ったと記す。改訂後は「立った/到着した」範囲に限定し、位置不明・座標null。ナボテの畑2KI9:25–26とは別の用例として区別されている。"
+      },
+      "oldAdverseReview": {
+        "path": "reviews/reclosure-places_1-six.json",
+        "sha256": "dff2753fbb2784046c9aa85e240d628bf644242d9d6058c659c3ba75f0a55f46",
+        "verdict": "closed",
+        "boundDraftSHA256": "033b8e067daa46eb20342572385cbeba5588e39cb65101f1c437f49398800d58"
+      },
+      "additionalCrossClosure": []
+    }
+  ],
+  "unresolvedRows": [],
+  "summary": {
+    "total": 16,
+    "resolvedByCurrentIndependentClosure": 14,
+    "resolvedAsQualified": 2,
+    "unresolved": 0,
+    "notesJa": [
+      "5件の旧add-articleは現行2KI persons_3本文で実装・再照合済み。",
+      "Joshuaの旧failは current-delta passにより解消。",
+      "Gadの旧failは固定WEBの誤転記を含み、現在の区分・候補地図抑制を qualified closure が確認。",
+      "8件のidentity-supportedは旧verdict vocabularyの問題で、現current main reviewは各SHAをpass。",
+      "field_1229の旧closedは意味上終了済みだが、最新closureがpassであることを確認。"
+    ]
+  }
+}

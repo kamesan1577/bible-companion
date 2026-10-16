@@ -1,0 +1,73 @@
+{
+  "reportType": "independent-context-profile-current-reclosure",
+  "reviewedAtUTC": "2026-10-16T03:48:34+00:00",
+  "book": "1KI",
+  "entityID": "person:israel_682",
+  "inputs": {
+    "proposalPath": "context-edits/1KI/israel-jacob-18-31.json",
+    "proposalSHA256": "2265ebe898fb05975240c67bf544b8f808adae378d56faf37a74353009c3df1a",
+    "proposalEvidencePath": "context-edits/1KI/evidence/israel-jacob-18-31.json",
+    "proposalEvidenceSHA256": "47ac6f70db8a078166730cb4d69c1ffff2b274beb0aa2f12227e9b6740b8c7b2",
+    "additionalWrapperEvidencePath": "evidence/persons_3/context-israel-jacob-18-31.json",
+    "additionalWrapperEvidenceSHA256": "f40f41c0869b6162cc0df753a99a05dc2bb578330e44ca98659449e4c16f7078",
+    "baseDraftPath": "drafts/persons_3/1KI_israel_682.json",
+    "baseDraftSHA256": "cc7b9457685525252b671a18ffca58de0f13733893d23e51962ac5543d593051",
+    "fixedWitnessPath": "inventory/targets/kings1-web-verses.json",
+    "fixedWitnessSHA256": "c72b757cd8a5266b615d91df7478e11bad5d951a662c091b875d62dae9b5d384",
+    "priorReviewPath": "reviews/independent-context-israel-jacob-18-31.json",
+    "priorReviewSHA256": "fb904721b0df0b0b835f5cc4f4b9be994a134c527d8f3d5dfc443b7e631f3772"
+  },
+  "currentHashChecks": {
+    "proposalSHA256": "2265ebe898fb05975240c67bf544b8f808adae378d56faf37a74353009c3df1a",
+    "profileCanonicalSHA256": "4cadbbdd6b55d7511bddd0d78804ab35767531d96065226356751828fc1ced79",
+    "proposalSidecarContextSHA256": "2265ebe898fb05975240c67bf544b8f808adae378d56faf37a74353009c3df1a",
+    "proposalSidecarProfileSHA256": "4cadbbdd6b55d7511bddd0d78804ab35767531d96065226356751828fc1ced79",
+    "proposalSidecarBaseSHA256": "cc7b9457685525252b671a18ffca58de0f13733893d23e51962ac5543d593051",
+    "actualBaseSHA256": "cc7b9457685525252b671a18ffca58de0f13733893d23e51962ac5543d593051",
+    "additionalWrapperSHA256": "f40f41c0869b6162cc0df753a99a05dc2bb578330e44ca98659449e4c16f7078",
+    "additionalWrapperProposalSHA256": "2265ebe898fb05975240c67bf544b8f808adae378d56faf37a74353009c3df1a",
+    "additionalWrapperProfileSHA256": "4cadbbdd6b55d7511bddd0d78804ab35767531d96065226356751828fc1ced79",
+    "proposalSidecarSynchronized": true,
+    "additionalWrapperSynchronized": true
+  },
+  "decision": "pass",
+  "findingsJa": [
+    {
+      "severity": "closed",
+      "basis": "固定WEB 1KI18:31は「twelve stones ... tribes of the sons of Jacob ... Israel shall be your name」と記す。節内のヤコブ個人への改名と十二部族文脈の併存は妥当。summary/identityNoteは18:31に限定され、18:36祈りはknownBy 18:36のfactへ分離。"
+    },
+    {
+      "severity": "closed",
+      "basis": "固定WEB 1KI18:36は「God of Abraham, of Isaac, and of Israel」と記す。そこでのIsrael個人用法をヤコブとして扱う説明は適合。後半の「God in Israel」は別の集団/領域表現として区別されている。"
+    },
+    {
+      "severity": "closed",
+      "basis": "Wikipedia Jacob記事の見出しはJacob（lines 228–230）、別名Israel（line 235）、導入はJacobが後にIsraelと名付けられたと記す（lines 266–267）。記事対象の同一性と名前関係は支持される。"
+    },
+    {
+      "severity": "closed",
+      "basis": "proposal側evidenceは現在のproposal/profile/baseに同期 (True)。別の統合用wrapper evidenceは proposalSHA=2265ebe898fb05975240c67bf544b8f808adae378d56faf37a74353009c3df1a / profileSHA=4cadbbdd6b55d7511bddd0d78804ab35767531d96065226356751828fc1ced79 を保持し、現行値 2265ebe898fb05975240c67bf544b8f808adae378d56faf37a74353009c3df1a / 4cadbbdd6b55d7511bddd0d78804ab35767531d96065226356751828fc1ced79 と一致しない。提案内容は支持されるが、wrapper同期確認までは統合用証跡の閉鎖を保留。"
+    }
+  ],
+  "sourceBasis": [
+    {
+      "ref": "1KI 18:31",
+      "url": "https://ebible.org/engwebp/1KI18.htm#V31",
+      "text": "Elijah took twelve stones, according to the number of the tribes of the sons of Jacob, to whom the LORD’s word came, saying, “Israel shall be your name.”",
+      "interpretationJa": "ヤコブ個人と部族集団の双方が文中にあり、個人用法contextを加える提案は本文に即す。"
+    },
+    {
+      "ref": "1KI 18:36",
+      "url": "https://ebible.org/engwebp/1KI18.htm#V36",
+      "text": "LORD, the God of Abraham, of Isaac, and of Israel, let it be known today that you are God in Israel...",
+      "interpretationJa": "族長列挙では個人ヤコブ、後半句は民/領域の用法として説明を分ける。"
+    },
+    {
+      "title": "Jacob — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Jacob",
+      "bodyLocator": "Heading lines 228–230; “Other name Israel” line 235; lead lines 266–267.",
+      "supportJa": "記事は族長ヤコブを扱い、イスラエルという別名/後に与えられた名を明示する。"
+    }
+  ],
+  "remainingBlockerJa": "統合用 evidence/persons_3/context-israel-jacob-18-31.json のproposal/profileハッシュが現行バイトへ同期されていない場合のみ再確認が必要。"
+}
