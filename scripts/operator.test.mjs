@@ -290,6 +290,13 @@ test('owner invite uses atomic existing owner and pending owner exclusion and on
   assert.throws(() => inviteSql('owner', 'a'.repeat(43), 4601, 1000));
   assert.throws(() => inviteSql("owner';DROP", 'a'.repeat(43), 1100, 1000));
 });
+test('member invitation is one-hour maximum and cannot grant owner role', () => {
+  const sql = inviteSql('member', 'a'.repeat(43), 4600, 1000);
+  assert.match(sql, /'member',4600/);
+  assert.doesNotMatch(sql, /'owner'/);
+  assert.throws(() => inviteSql('member', 'a'.repeat(43), 4601, 1000));
+  assert.throws(() => inviteSql('member', 'a'.repeat(43), 1000, 1000));
+});
 test('invitation only prints token after provider confirms hashed insert, mocked', (t) => {
   const { p, path, opts, calls, messages } = setup(t);
   runOperator(['prepare', '--profile', path], opts);
