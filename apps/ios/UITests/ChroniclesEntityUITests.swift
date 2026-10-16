@@ -1,0 +1,74 @@
+import XCTest
+
+final class ChroniclesEntityUITests: XCTestCase {
+    @MainActor func testIsraelAncestorAndPrimarySourceRights() {
+        let app = launch("entity-1ch-israel")
+        app.buttons["人物"].waitForExistence(timeout: 15); app.buttons["人物"].tap()
+        let detail = app.buttons["entity-detail-person:israel_682"]
+        scrollTo(detail, in: app); XCTAssertTrue(detail.exists); detail.tap()
+        app.swipeDown(); app.swipeDown()
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "イサクの子")).firstMatch.waitForExistence(timeout: 5))
+        XCTAssertFalse(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "ヤコブ")).firstMatch.exists)
+        attach(app, "chronicles-israel-ancestor")
+        let source = app.buttons["この説明の出典"]
+        scrollTo(source, in: app); source.tap()
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "World English Bible")).firstMatch.waitForExistence(timeout: 5))
+        attach(app, "chronicles-primary-source-rights")
+    }
+    @MainActor func testEphraimFirstVerseDoesNotRevealMourning() {
+        let app = launch("entity-1ch-ephraim")
+        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
+        let detail = app.buttons["entity-detail-person:ephraim_1206"]
+        scrollTo(detail, in: app); XCTAssertTrue(detail.exists); detail.tap()
+        XCTAssertFalse(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "嘆")).firstMatch.exists)
+        XCTAssertFalse(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "殺")).firstMatch.exists)
+        attach(app, "chronicles-ephraim-first-verse")
+    }
+    @MainActor func testUncoveredNamesAreExplainedAsUnfinishedCoverage() {
+        let app = launch("entity-2ch-uncovered")
+        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
+        let notice = app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "人物や地名が登場しないという意味ではありません")).firstMatch
+        scrollTo(notice, in: app); XCTAssertTrue(notice.exists)
+        attach(app, "chronicles-unfinished-coverage")
+    }
+    @MainActor func testActualShareChroniclesUsesAncestorContext() {
+        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
+        let share = app.buttons["歴代誌上1章を共有する"]
+        scrollTo(share, in: app); XCTAssertTrue(share.waitForExistence(timeout: 10)); share.tap()
+        let destination = app.staticTexts.matching(NSPredicate(format: "label == %@", "聖書コンパニオン")).firstMatch
+        XCTAssertTrue(destination.waitForExistence(timeout: 10)); destination.tap()
+        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 10)); app.buttons["人物"].tap()
+        let detail = app.descendants(matching: .any).matching(identifier: "entity-inline-detail-person:israel_682").firstMatch
+        scrollTo(detail, in: app); XCTAssertTrue(detail.exists)
+        attach(app, "actual-share-chronicles-ancestor")
+    }
+    @MainActor func testJabeshHasOneCanonicalPlaceAndGatedBurial() {
+        let app = launch("entity-1ch-jabesh")
+        XCTAssertTrue(app.buttons["地図"].waitForExistence(timeout: 15)); app.buttons["地図"].tap()
+        let detail = app.buttons["entity-detail-place:jabesh-gilead_611"]
+        scrollTo(detail, in: app); XCTAssertTrue(detail.exists)
+        XCTAssertFalse(app.buttons["entity-detail-place:jabesh_610"].exists)
+        detail.tap()
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "七日間断食")).firstMatch.waitForExistence(timeout: 5))
+        attach(app, "chronicles-jabesh-single-place")
+    }
+    @MainActor func testBaalahResolvesToOneKiriathJearimCard() {
+        let app = launch("entity-1ch-baalah")
+        XCTAssertTrue(app.buttons["地図"].waitForExistence(timeout: 15)); app.buttons["地図"].tap()
+        let detail = app.buttons["entity-detail-place:kiriath-jearim_701"]
+        scrollTo(detail, in: app); XCTAssertTrue(detail.exists)
+        XCTAssertFalse(app.buttons["entity-detail-place:baalah_135"].exists)
+        detail.tap()
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "ユダに属する")).firstMatch.waitForExistence(timeout: 5))
+        attach(app, "chronicles-baalah-canonical-place")
+    }
+    @MainActor private func launch(_ screen: String) -> XCUIApplication {
+        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa", "--qa-screen=" + screen]; app.launch(); return app
+    }
+    @MainActor private func scrollTo(_ element: XCUIElement, in app: XCUIApplication) {
+        for _ in 0..<16 { if element.exists && element.isHittable && element.frame.minY < app.frame.height * 0.78 { return }; app.swipeUp() }
+    }
+    @MainActor private func attach(_ app: XCUIApplication, _ name: String) {
+        let item = XCTAttachment(screenshot: app.screenshot()); item.name = name; item.lifetime = .keepAlways; add(item)
+    }
+}

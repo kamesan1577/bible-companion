@@ -1,0 +1,3598 @@
+{
+  "reportType": "independent-current-SHA-reclosure-persons3-batch03",
+  "scope": "All 60 assigned 1CH/2CH persons_3 batch03 records; current-byte reclosure of changed records and exact-byte inheritance for unchanged rows.",
+  "reviewedAtUTC": "2026-10-16T06:30:25Z",
+  "currentFrozenManifest": {
+    "path": "reviews/frozen-persons3-batch03-current.json",
+    "sha256": "a5360fd725a7a639a7831e90f0bbd04537405088c6476ecf7ff10a4cd9cfac60",
+    "recordCount": 60
+  },
+  "inputs": {
+    "priorIndependentReview": {
+      "path": "reviews/independent-batch03-persons_3.json",
+      "sha256": "e632a3632aa8cbfdde8af9d32ebd460ea577b48aa6c92deefc736bb6da4edf98"
+    },
+    "authorRepairLog": {
+      "path": "evidence/persons_3/author-repairs-batch03-independent-current.json",
+      "sha256": "40368a83cb3cd313ef7cf56fef2d46ca3ae53bc7ed1a71ec1ba7ce534081623e"
+    },
+    "hosahFollowupLog": {
+      "path": "evidence/persons_3/author-repairs-hosah-26-10-fact-gate.json",
+      "sha256": "438cf5d869719f58b82e3bb3cde8adb044b208ca3793d886fe63bd3adb75fc4f"
+    },
+    "fixedWitnesses": [
+      {
+        "book": "1CH",
+        "path": "inventory/targets/chronicles1-web-verses.json",
+        "sha256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a"
+      },
+      {
+        "book": "2CH",
+        "path": "inventory/targets/chronicles2-web-verses.json",
+        "sha256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+      }
+    ]
+  },
+  "reviewMethodJa": "新しい60件manifestで現在draft/evidence/profile SHAを採取し、evidenceのdraft/profile/witness hashとsource ID/gate整合を検証。前回からバイトが変わった19件は固定WEBの根拠節と全表示欄を再読し、リンク先が有効なものはWikipedia実記事本文のlocatorを再読。変更のない41件のみ、旧独立判定をSHA完全一致に基づき継承。HTTP/hash一致だけを内容承認根拠としていない。",
+  "articleRead": {
+    "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K",
+    "title": "List of minor Hebrew Bible figures, A–K",
+    "checkedAtUTC": "2026-10-16T06:30:25Z",
+    "locators": [
+      "§Asa 1085–1089",
+      "§Elnaam 2509–2513",
+      "§Elpaal 2533–2537",
+      "§Elpalet/Elpelet 2538–2548",
+      "§Elzabad 2555–2562",
+      "§Ephlal 2582–2586",
+      "§Ezer 2646–2651",
+      "§Chelub 2024–2030",
+      "§Gera 2731–2740",
+      "§Hareph 2953–2957",
+      "§Harum 2985–2989",
+      "§Helah 3093–3097",
+      "§Hezekiah 3150–3159",
+      "§Hezron 3168–3175",
+      "§Hotham 3246–3250",
+      "§Igal 3315–3322"
+    ],
+    "articleUseNoteJa": "対象のWikipedia実ページ本文を開いて該当見出し・本文を照合。関連項目はidentityVerified=falseのまま、系譜根拠のみを説明。リンクなしの3件は既存の限定的検索根拠を保持し、不在を一般化しない。"
+  },
+  "counts": {
+    "total": 60,
+    "pass": 26,
+    "qualified": 34,
+    "fail": 0,
+    "pending": 0,
+    "changedAndReread": 19,
+    "unchangedExactInherited": 41,
+    "structuralSyncIssues": 0
+  },
+  "changedRows": [
+    "person:elkanah_1171",
+    "person:elnaam_1176",
+    "person:elpaal_1185",
+    "person:elpalet_1148",
+    "person:elzabad_1188",
+    "person:ephlal_1204",
+    "person:ethan_1622",
+    "person:ezer_1240",
+    "person:ezri_1247",
+    "person:gera_1298",
+    "person:hareph_1412",
+    "person:harum_1423",
+    "person:helah_1478",
+    "person:heman_1489",
+    "person:hezekiah_1513",
+    "person:hezron_1520",
+    "person:hosah_1554",
+    "person:hotham_1562",
+    "person:igeal_595"
+  ],
+  "structuralIssues": [],
+  "records": [
+    {
+      "book": "1CH",
+      "entityID": "person:elkanah_1171",
+      "draftPath": "drafts/persons_3/1CH_elkanah_1171.json",
+      "currentDraftSHA256": "1be74f22ef1c9191e6bdbf1383baf6a2a81d988f65feff205e547ef4f6290c6b",
+      "currentEvidenceSHA256": "9bdc2fc8341c6f17c6b35b6a82f4a8e16ace50fcd6349c4e7999caf1757071f7",
+      "currentProfileSHA256": "aa79b00dea657a8886505868882a10cb9b68021bf47edf23d9b1fe96943c190d",
+      "previousDraftSHA256": "ca7fe996dc39c83c5261c73f26727ea4cb05d3ff35ca746b2af60c87f34e7ba8",
+      "previousEvidenceSHA256": "510945c5166138031f30730b496108a103e003b9dd98634d1ad7286602b589d5",
+      "previousProfileSHA256": "ecf28dd7c83556e78287e011b86ac76fee7fb236d69bcdf4bcaef4a212855f65",
+      "closureMode": "current-bytes-rechecked",
+      "previousVerdict": "fail",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "fixedWitness": "inventory/targets/chronicles1-web-verses.json",
+        "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/1CH09.htm#V16",
+            "ref": "1CH 9:16",
+            "text": "and Obadiah the son of Shemaiah, the son of Galal, the son of Jeduthun; and Berechiah the son of Asa, the son of Elkanah, who lived in the villages of the Netophathites.",
+            "sourceTextSHA256": "4702ec32d294f78a8460317d342acd65c8f3e302c5075cdaa70bc9bb18c0e385",
+            "readingNoteJa": "固定WEB 1CH 9:16の系譜文法で、ベレキヤ—アサ—エルカナの親子関係を確認。居住句の係り先はこの説明で断定しない。"
+          }
+        ],
+        "assessmentJa": "1CH 9:16 names Berechiah as son of Asa, and Asa as son of Elkanah. The draft calls Elkanah Asa’s grandfather, reversing the direct parent-child relation. The trailing “who lived in the villages” is grammatically attached to Elkanah in this WEB rendering; the summary should avoid confidently assigning residence if uncertain."
+      },
+      "currentReaderFields": {
+        "knownBy": {
+          "chapter": 9,
+          "verse": 16
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 9,
+              "verse": 16
+            },
+            "end": {
+              "chapter": 9,
+              "verse": 16
+            }
+          }
+        ],
+        "nameJa": "エルカナ",
+        "subtitleJa": "系譜に記される人",
+        "summaryJa": "ベレキヤの父アサの父として系譜に名が記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "facts": [],
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Asa",
+          "kind": "related-section",
+          "noteJa": "記事のAsa項は、1歴代誌9:16の系譜でアサをエルカナの子と記しています。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "relationVerified": true,
+          "knownBy": {
+            "chapter": 9,
+            "verse": 16
+          },
+          "sourceId": "elkanah_1171-wikipedia"
+        }
+      },
+      "currentWikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Asa",
+        "kind": "related-section",
+        "identityVerified": false,
+        "relationVerified": true,
+        "bodyRead": true,
+        "actualCurrentArticleLocator": "§Asa, lines 1085–1089",
+        "currentArticleSupportParaphrase": "The section directly identifies the Asa in 1 Chronicles 9:16 as Elkanah’s son; it supports the relation but is not an Elkanah biography.",
+        "checkedAtUTC": "2026-10-16T06:14:24Z",
+        "nullEvidence": null
+      },
+      "decisionBasisJa": "固定WEBの初出とWikipedia実記事本文の該当箇所を再確認。記事にない同一性・系譜情報は加えず、リンク種別と表示注記を証拠範囲に限定した。 実記事本文の再読日時とURL/該当節の根拠をsidecarへ同期。",
+      "priorFindingResolutionJa": "Prior fail: 1CH 9:16 names Berechiah as son of Asa, and Asa as son of Elkanah. The draft calls Elkanah Asa’s grandfather, reversing the direct parent-child relation. The trailing “who lived in the villages” is grammatically attached to Elkanah in this WEB rendering; the summary should avoid confidently assigning residence if uncertain.; current fixed text and displayed fields re-read. Current decision: qualified."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:elnaam_1176",
+      "draftPath": "drafts/persons_3/1CH_elnaam_1176.json",
+      "currentDraftSHA256": "461c334f9bf3bd8b460d9b4ff2c2f5302950e8ebedea9f9da5584345f7de286e",
+      "currentEvidenceSHA256": "1527c5c1c017bd4df861970c2c3fd274d26dc93ab8b6c1991cf3688c45f2aab2",
+      "currentProfileSHA256": "501afd28c83904fc1992dc0f1a0778bf71ec035c550d5496661cef75170016cf",
+      "previousDraftSHA256": "45cd7a96392fc7d8065bdeeaa041907745735c08d854462a2376677333d070c7",
+      "previousEvidenceSHA256": "7ec9fd7a9a6872c9b5931434bd49d503ee4b872c956006f863340fec9b7b3f6d",
+      "previousProfileSHA256": "32f6ffa460e88b0faf5c899ffeccac5412939d2f799d5a2873f93c1380fd1058",
+      "closureMode": "current-bytes-rechecked",
+      "previousVerdict": "qualified",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "fixedWitness": "inventory/targets/chronicles1-web-verses.json",
+        "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/1CH11.htm#V46",
+            "ref": "1CH 11:46",
+            "text": "Eliel the Mahavite, and Jeribai, and Joshaviah, the sons of Elnaam, and Ithmah the Moabite,",
+            "sourceTextSHA256": "203db5fb6a55ceebc918b76ee30b7b72461e86ea905731916e5c6bc22f6d34b3",
+            "readingNoteJa": "候補名、文法上の親子関係と前後の系譜文脈を固定WEBで確認。"
+          }
+        ],
+        "assessmentJa": "11:46 explicitly makes Jeribai and Joshaviah sons of Elnaam; draft summary is accurate."
+      },
+      "currentReaderFields": {
+        "knownBy": {
+          "chapter": 11,
+          "verse": 46
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 11,
+              "verse": 46
+            },
+            "end": {
+              "chapter": 11,
+              "verse": 46
+            }
+          }
+        ],
+        "nameJa": "エルナアム",
+        "subtitleJa": "ダビデの勇士名簿に登場する人の父",
+        "summaryJa": "ダビデの勇士名簿で、エリバイとヨシャビヤの父として名が記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "facts": [],
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Elnaam",
+          "kind": "shared-section",
+          "noteJa": "記事は1歴代誌11:46に基づき、エルナアムをエリバイとヨシャビヤの父として挙げます。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 11,
+            "verse": 46
+          },
+          "sourceId": "elnaam_1176-wikipedia"
+        }
+      },
+      "currentWikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Elnaam",
+        "kind": "shared-section",
+        "identityVerified": true,
+        "relationVerified": false,
+        "bodyRead": true,
+        "actualCurrentArticleLocator": "§Elnaam, lines 2509–2513",
+        "currentArticleSupportParaphrase": "The section identifies Elnaam as father of Jeribai and Joshaviah and cites 1 Chronicles 11:46.",
+        "checkedAtUTC": "2026-10-16T06:14:24Z",
+        "nullEvidence": null
+      },
+      "decisionBasisJa": "固定WEBの初出とWikipedia実記事本文の該当箇所を再確認。記事にない同一性・系譜情報は加えず、リンク種別と表示注記を証拠範囲に限定した。 実記事本文の再読日時とURL/該当節の根拠をsidecarへ同期。",
+      "priorFindingResolutionJa": "Prior qualified: 11:46 explicitly makes Jeribai and Joshaviah sons of Elnaam; draft summary is accurate.; current fixed text and displayed fields re-read. Current decision: pass."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:elpaal_1185",
+      "draftPath": "drafts/persons_3/1CH_elpaal_1185.json",
+      "currentDraftSHA256": "8254adfb5583842c91dda946e1e68d5c39884c7513c6e5f9eb7816ee279d1000",
+      "currentEvidenceSHA256": "130a75f7f9b8e00adf696f4c3a5f70ad1436da6463aee55f14acc375a2d4dc04",
+      "currentProfileSHA256": "c4ad16c560ac9911f89d3af091842e2532c575c472ad7d08ed9f942a07378c8e",
+      "previousDraftSHA256": "d19191eab86749bda96aab68a7f621af90e8e6e114cdabf1abb4c8d7b745b457",
+      "previousEvidenceSHA256": "4d8fc8e9b1b44d6e5bfd7788c9e2bb5f5af8b95fa06d58c3a741ded30054871f",
+      "previousProfileSHA256": "7b9edd897f1e8ca500e4c884f727b617bef686ad2ae2d06021f0eb28a0bfa003",
+      "closureMode": "current-bytes-rechecked",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "fixedWitness": "inventory/targets/chronicles1-web-verses.json",
+        "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/1CH08.htm#V11",
+            "ref": "1CH 8:11",
+            "text": "By Hushim, he became the father of Abitub and Elpaal.",
+            "sourceTextSHA256": "2d2a61fa3da0346656c2d3dd433b5371a5085aea494fa52490ffe70a6c807118",
+            "readingNoteJa": "候補名、文法上の親子関係と前後の系譜文脈を固定WEBで確認。"
+          },
+          {
+            "url": "https://ebible.org/engwebp/1CH08.htm#V12",
+            "ref": "1CH 8:12",
+            "text": "The sons of Elpaal: Eber, Misham, and Shemed, who built Ono and Lod, with its towns;",
+            "sourceTextSHA256": "14f69f63a4e1a0af024cdaed0869290c14d30e52850cf6abfa7bae41d7a2b753",
+            "readingNoteJa": "候補名、文法上の親子関係と前後の系譜文脈を固定WEBで確認。"
+          },
+          {
+            "url": "https://ebible.org/engwebp/1CH08.htm#V18",
+            "ref": "1CH 8:18",
+            "text": "Ishmerai, Izliah, Jobab, the sons of Elpaal,",
+            "sourceTextSHA256": "f75f164366170cf3d6f1c9f5f2500a55971c1da84d3889b29281a6cd21d72d96",
+            "readingNoteJa": "候補名、文法上の親子関係と前後の系譜文脈を固定WEBで確認。"
+          }
+        ],
+        "assessmentJa": "8:11 directly says Elpaal is born through Hushim in the Shaharaim genealogy; 8:12 and 8:18 list his descendants. Draft includes all three verses."
+      },
+      "currentReaderFields": {
+        "knownBy": {
+          "chapter": 8,
+          "verse": 11
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 8,
+              "verse": 11
+            },
+            "end": {
+              "chapter": 8,
+              "verse": 11
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 8,
+              "verse": 12
+            },
+            "end": {
+              "chapter": 8,
+              "verse": 12
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 8,
+              "verse": 18
+            },
+            "end": {
+              "chapter": 8,
+              "verse": 18
+            }
+          }
+        ],
+        "nameJa": "エルパアル",
+        "subtitleJa": "ベニヤミン系譜に登場する人",
+        "summaryJa": "ベニヤミンの系譜で、フシムを通じてアビトブとともに父となった子として記されます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "facts": [
+          {
+            "textJa": "エルパアルの子としてエベル、ミシャム、シェメドが挙げられ、シェメドはオノとロドを建てたと記されます。",
+            "knownBy": {
+              "chapter": 8,
+              "verse": 12
+            },
+            "sourceIds": [
+              "elpaal_1185-webp-1ch-8-12"
+            ]
+          },
+          {
+            "textJa": "後の系譜にもエルパアルの子らとしてイシュメライ、イズリア、ヨバブが挙げられます。",
+            "knownBy": {
+              "chapter": 8,
+              "verse": 18
+            },
+            "sourceIds": [
+              "elpaal_1185-webp-1ch-8-18"
+            ]
+          }
+        ],
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Elpaal",
+          "kind": "shared-section",
+          "noteJa": "記事は1歴代誌8章のエルパアルを扱い、フシムを通じた系譜を記しています。シャハライムとベニヤミンの関係は明記されないとしています。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 8,
+            "verse": 11
+          },
+          "sourceId": "elpaal_1185-wikipedia"
+        }
+      },
+      "currentWikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Elpaal",
+        "kind": "shared-section",
+        "identityVerified": true,
+        "relationVerified": false,
+        "bodyRead": true,
+        "actualCurrentArticleLocator": "§Elpaal, lines 2533–2537",
+        "currentArticleSupportParaphrase": "The section covers the same 1 Chronicles 8 genealogy and explicitly cautions that Shaharaim’s relation to Benjamin is unstated.",
+        "checkedAtUTC": "2026-10-16T06:14:24Z",
+        "nullEvidence": null
+      },
+      "decisionBasisJa": "固定WEBの初出とWikipedia実記事本文の該当箇所を再確認。記事にない同一性・系譜情報は加えず、リンク種別と表示注記を証拠範囲に限定した。 実記事本文の再読日時とURL/該当節の根拠をsidecarへ同期。",
+      "priorFindingResolutionJa": "Prior qualified: 8:11 directly says Elpaal is born through Hushim in the Shaharaim genealogy; 8:12 and 8:18 list his descendants. Draft includes all three verses.; current fixed text and displayed fields re-read. Current decision: qualified."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:elpalet_1148",
+      "draftPath": "drafts/persons_3/1CH_elpalet_1148.json",
+      "currentDraftSHA256": "9af5c089b636f43205936d3318f018298e67717271ed430998661c320b678477",
+      "currentEvidenceSHA256": "5afd8d4ccbef0bf935b9d1bd1897f3278e0f2c0ab5b2fb37dac69b9eeab04fc8",
+      "currentProfileSHA256": "6f1d13fdcea2109971317a0fccad36fa43706e99fea0a3f5b350cf607d8a57c8",
+      "previousDraftSHA256": "8965b8eb90b09550a9ec9641486a90df818e3cdb8b4738495feb75cc87eefde7",
+      "previousEvidenceSHA256": "767b86dc3c843ac6d5bd8fb9078c473d86ea57af477b08ff2174231c2b0932a6",
+      "previousProfileSHA256": "3569d16e29d92b64ddbc0968a025be89eda188a58582758d2cf19ed5b535a9e8",
+      "closureMode": "current-bytes-rechecked",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "fixedWitness": "inventory/targets/chronicles1-web-verses.json",
+        "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/1CH03.htm#V6",
+            "ref": "1CH 3:6",
+            "text": "and Ibhar, Elishama, Eliphelet,",
+            "sourceTextSHA256": "fd93b2d312c9e69af3341a353d03bbb926b8cb8d187796428845b96713e6f4eb",
+            "readingNoteJa": "候補名、文法上の親子関係と前後の系譜文脈を固定WEBで確認。"
+          },
+          {
+            "url": "https://ebible.org/engwebp/1CH14.htm#V5",
+            "ref": "1CH 14:5",
+            "text": "Ibhar, Elishua, Elpelet,",
+            "sourceTextSHA256": "6b4f5797eb81b7902e3670375748941d2cb97fd935b9706d19be467327ce90af",
+            "readingNoteJa": "候補名、文法上の親子関係と前後の系譜文脈を固定WEBで確認。"
+          }
+        ],
+        "assessmentJa": "3:6 and 14:5 use spellings Eliphelet/Elpelet in David’s sons lists. The draft appropriately leaves their identity equivalence uncertain."
+      },
+      "currentReaderFields": {
+        "knownBy": {
+          "chapter": 3,
+          "verse": 6
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 3,
+              "verse": 6
+            },
+            "end": {
+              "chapter": 3,
+              "verse": 6
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 14,
+              "verse": 5
+            },
+            "end": {
+              "chapter": 14,
+              "verse": 5
+            }
+          }
+        ],
+        "nameJa": "エリペレト",
+        "subtitleJa": "ダビデの子らの系譜に名がある人",
+        "summaryJa": "ダビデの子らを挙げる系譜に、エリペレトの名が記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "facts": [
+          {
+            "textJa": "別のダビデの子らの列挙では「エルペレト」と綴られます。同一人物の異綴りと考えられますが、本文は二つの記載を明示的に結び付けていません。",
+            "knownBy": {
+              "chapter": 14,
+              "verse": 5
+            },
+            "sourceIds": [
+              "elpalet_1148-webp-1ch-14-5"
+            ]
+          }
+        ],
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Elpalet",
+          "kind": "related-section",
+          "noteJa": "記事は「Elpalet」をEliphelet項へ案内し、綴りの異なる関連項も掲載しています。本文の人物同一性は記事だけでは決まりません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "relationVerified": true,
+          "knownBy": {
+            "chapter": 3,
+            "verse": 6
+          },
+          "sourceId": "elpalet_1148-wikipedia"
+        }
+      },
+      "currentWikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Elpalet",
+        "kind": "related-section",
+        "identityVerified": false,
+        "relationVerified": true,
+        "bodyRead": true,
+        "actualCurrentArticleLocator": "§§Elpalet/Elpelet, lines 2538–2548",
+        "currentArticleSupportParaphrase": "The list treats Elpalet and Elpelet in separate entries and notes many English Bible spellings; it does not prove the two WEB occurrences are one person.",
+        "checkedAtUTC": "2026-10-16T06:14:24Z",
+        "nullEvidence": null
+      },
+      "decisionBasisJa": "固定WEBの初出とWikipedia実記事本文の該当箇所を再確認。記事にない同一性・系譜情報は加えず、リンク種別と表示注記を証拠範囲に限定した。 実記事本文の再読日時とURL/該当節の根拠をsidecarへ同期。 1CH 14:5を初出時点で先取りしない注記へ限定。",
+      "priorFindingResolutionJa": "Prior qualified: 3:6 and 14:5 use spellings Eliphelet/Elpelet in David’s sons lists. The draft appropriately leaves their identity equivalence uncertain.; current fixed text and displayed fields re-read. Current decision: qualified."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:elzabad_1188",
+      "draftPath": "drafts/persons_3/1CH_elzabad_1188.json",
+      "currentDraftSHA256": "0ecb2e13907c59f2553252c4150c9f4132f974b69f6120d4d5a14a63316ae01a",
+      "currentEvidenceSHA256": "e6a14cf6ebca0a4f3d75e4d95031455ab18f6bbc7c127cfbe60ebcf939221916",
+      "currentProfileSHA256": "c51c4dccdfcc370f5c8fc62eb654c19d2d31e5fb648a6e603ed79f3501525069",
+      "previousDraftSHA256": "3743b8a3fdabf0b661c6d4268aad9dd0bb69edb06cdc5869c2ab7622df302e54",
+      "previousEvidenceSHA256": "f90ac217a7e96e5b0841c1c7031dd54382055ff108d951d22ed666f9ac81f7ca",
+      "previousProfileSHA256": "323ba021f7561cd138c94b18e2319617b5ea5e6db7fd2bf56ad0b9414dfd46ad",
+      "closureMode": "current-bytes-rechecked",
+      "previousVerdict": "qualified",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "fixedWitness": "inventory/targets/chronicles1-web-verses.json",
+        "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/1CH26.htm#V7",
+            "ref": "1CH 26:7",
+            "text": "The sons of Shemaiah: Othni, Rephael, Obed, and Elzabad, whose relatives were valiant men, Elihu, and Semachiah.",
+            "sourceTextSHA256": "af5bfd4c1b9dc1aa95027f88c68312d2e5e7e878e23aaf9d0c2cad1f9cd26e57",
+            "readingNoteJa": "候補名、文法上の親子関係と前後の系譜文脈を固定WEBで確認。"
+          }
+        ],
+        "assessmentJa": "26:7 names Elzabad son of Shemaiah son of Obed-edom among Korahite gatekeepers; draft matches."
+      },
+      "currentReaderFields": {
+        "knownBy": {
+          "chapter": 26,
+          "verse": 7
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 26,
+              "verse": 7
+            },
+            "end": {
+              "chapter": 26,
+              "verse": 7
+            }
+          }
+        ],
+        "nameJa": "エルザバド",
+        "subtitleJa": "コラ人シェマヤの子",
+        "summaryJa": "コラ人の系譜で、シェマヤの子らの一人として名が挙げられます。本文はその親族を勇士と記します。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "facts": [],
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Elzabad",
+          "kind": "shared-section",
+          "noteJa": "記事は複数のエルザバドを分け、この項でシェマヤの子エルザバドを1歴代誌26:7の門衛として挙げます。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 26,
+            "verse": 7
+          },
+          "sourceId": "elzabad_1188-wikipedia"
+        }
+      },
+      "currentWikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Elzabad",
+        "kind": "shared-section",
+        "identityVerified": true,
+        "relationVerified": false,
+        "bodyRead": true,
+        "actualCurrentArticleLocator": "§Elzabad, lines 2555–2562",
+        "currentArticleSupportParaphrase": "The second listed Elzabad is the son of Shemaiah and a Korahite porter in 1 Chronicles 26:7, matching this profile.",
+        "checkedAtUTC": "2026-10-16T06:14:24Z",
+        "nullEvidence": null
+      },
+      "decisionBasisJa": "固定WEBの初出とWikipedia実記事本文の該当箇所を再確認。記事にない同一性・系譜情報は加えず、リンク種別と表示注記を証拠範囲に限定した。 実記事本文の再読日時とURL/該当節の根拠をsidecarへ同期。",
+      "priorFindingResolutionJa": "Prior qualified: 26:7 names Elzabad son of Shemaiah son of Obed-edom among Korahite gatekeepers; draft matches.; current fixed text and displayed fields re-read. Current decision: pass."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:ephah_1197",
+      "draftPath": "drafts/persons_3/1CH_ephah_1197.json",
+      "currentDraftSHA256": "e6299d446d2ca389ee620e730216ef3fc6277a07df073c26da3dfc4c2ff3e8e9",
+      "currentEvidenceSHA256": "b75f0ee5eefa9a20b4189e99050928e496746cb8750d9b7189594846aa477c99",
+      "currentProfileSHA256": "bcd94c248dd5c7c21ffc10fc22b569a5a4fe6fefa448cc9da46858a4f03165cb",
+      "previousDraftSHA256": "e6299d446d2ca389ee620e730216ef3fc6277a07df073c26da3dfc4c2ff3e8e9",
+      "previousEvidenceSHA256": "b75f0ee5eefa9a20b4189e99050928e496746cb8750d9b7189594846aa477c99",
+      "previousProfileSHA256": "bcd94c248dd5c7c21ffc10fc22b569a5a4fe6fefa448cc9da46858a4f03165cb",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "pass",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "1:33 lists Ephah as a son of Midian; draft is limited to that genealogy and keeps the separate Caleb/Jahdai Ephahs out.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 1:33",
+            "text": "The sons of Midian: Ephah, Epher, Hanoch, Abida, and Eldaah. All these were the sons of Keturah.",
+            "citationURL": "https://ebible.org/engwebp/1CH01.htm#V33",
+            "sourceTextSHA256": "9719dcf72ec4e3c29eb33b38bace46acb3c36a4a1a92079e8c7c77be89d2b84a"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-exact",
+        "priorFindingJa": "Dedicated Ephah article lines 110, 115 identifies Midian’s son Ephah and lists other same-name Bible uses at line 127. Current note is scoped to the correct one.",
+        "url": "https://en.wikipedia.org/wiki/Ephah"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "f56c7de22fa020ed819a4386a08b6aa8b553022d691150b09e360cd91c3be84c"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:epher_1201",
+      "draftPath": "drafts/persons_3/1CH_epher_1201.json",
+      "currentDraftSHA256": "caaee8bae05252d2cb9a56af1576cd34d6e8429a888df59f974b5d83323ba489",
+      "currentEvidenceSHA256": "edc32be61c735959c32ceba7bf106a373f0447b8182c82ff75f4af8c07b12899",
+      "currentProfileSHA256": "bb14c633ecd16b07b8336e9bd2aba1e9aaa652735a01f8291dba887b7188960b",
+      "previousDraftSHA256": "caaee8bae05252d2cb9a56af1576cd34d6e8429a888df59f974b5d83323ba489",
+      "previousEvidenceSHA256": "edc32be61c735959c32ceba7bf106a373f0447b8182c82ff75f4af8c07b12899",
+      "previousProfileSHA256": "bb14c633ecd16b07b8336e9bd2aba1e9aaa652735a01f8291dba887b7188960b",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "pass",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "1:33 lists Epher among Midian’s sons; the profile does not import Josephus or later tradition.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 1:33",
+            "text": "The sons of Midian: Ephah, Epher, Hanoch, Abida, and Eldaah. All these were the sons of Keturah.",
+            "citationURL": "https://ebible.org/engwebp/1CH01.htm#V33",
+            "sourceTextSHA256": "9719dcf72ec4e3c29eb33b38bace46acb3c36a4a1a92079e8c7c77be89d2b84a"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-exact",
+        "priorFindingJa": "Dedicated Epher article line 106 calls him Midian’s second son; lines 108–109 are later traditions not used by the draft.",
+        "url": "https://en.wikipedia.org/wiki/Epher"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "a77cf6d58c0aaebba7fba91557282804767159ef7376bf8b456a68c81d0964a0"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:ephlal_1204",
+      "draftPath": "drafts/persons_3/1CH_ephlal_1204.json",
+      "currentDraftSHA256": "cbffcfd82dccd0ed13d556fb23107fd8d053473f768b70fdb8277430b61521e3",
+      "currentEvidenceSHA256": "f5a351825d3453c66398ac40a647b51428594a69613c0dccb5f5fb21911dc4b6",
+      "currentProfileSHA256": "cbf29df6b857b6d9caa013e541003833c47672ab44043e8bb532e9cd5414a7c8",
+      "previousDraftSHA256": "b6214bf5eb04c7c54fac7f6409eb8e077ca7f51addca7501536ebafa49f46b85",
+      "previousEvidenceSHA256": "214755a9c887b707583fd6e898c56ed843b481ab6af60238afaa57f542013d7e",
+      "previousProfileSHA256": "ad32978229836c0f2ec0c0ab71253c37328682783e49fc7e933e0f4ec0907ab3",
+      "closureMode": "current-bytes-rechecked",
+      "previousVerdict": "qualified",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "fixedWitness": "inventory/targets/chronicles1-web-verses.json",
+        "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/1CH02.htm#V37",
+            "ref": "1CH 2:37",
+            "text": "and Zabad became the father of Ephlal, and Ephlal became the father of Obed,",
+            "sourceTextSHA256": "4ec00b990c0a92c41edd6b68835ea7ccdbbf187107d8130e518ec03b1ea3567c",
+            "readingNoteJa": "固定WEB本文と前後の書内文脈を確認。"
+          }
+        ],
+        "assessmentJa": "2:37 directly places Ephlal as son of Zabad in the Jerahmeel genealogy; draft is consistent."
+      },
+      "currentReaderFields": {
+        "knownBy": {
+          "chapter": 2,
+          "verse": 37
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 2,
+              "verse": 37
+            },
+            "end": {
+              "chapter": 2,
+              "verse": 37
+            }
+          }
+        ],
+        "nameJa": "エフラル",
+        "subtitleJa": "ザバドの子で、オベデの父として記されています。",
+        "summaryJa": "ザバドの子で、オベデの父として記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "facts": [],
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Ephlal",
+          "kind": "shared-section",
+          "noteJa": "記事は1歴代誌のエフラルをザバドの子として挙げ、系譜上の位置を記しています。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 2,
+            "verse": 37
+          },
+          "sourceId": "ephlal_1204-wikipedia"
+        }
+      },
+      "currentWikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Ephlal",
+        "kind": "shared-section",
+        "identityVerified": true,
+        "relationVerified": false,
+        "bodyRead": true,
+        "actualCurrentArticleLocator": "§Ephlal, lines 2582–2586",
+        "currentArticleSupportParaphrase": "The entry names Ephlal as a Jerahmeelite and identifies him as Zabad’s son in the relevant genealogy.",
+        "checkedAtUTC": "2026-10-16T06:14:24Z",
+        "nullEvidence": null
+      },
+      "decisionBasisJa": "固定WEBの初出とWikipedia実記事本文の該当箇所を再確認。記事にない同一性・系譜情報は加えず、リンク種別と表示注記を証拠範囲に限定した。 実記事本文の再読日時とURL/該当節の根拠をsidecarへ同期。",
+      "priorFindingResolutionJa": "Prior qualified: 2:37 directly places Ephlal as son of Zabad in the Jerahmeel genealogy; draft is consistent.; current fixed text and displayed fields re-read. Current decision: pass."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:eshban_1217",
+      "draftPath": "drafts/persons_3/1CH_eshban_1217.json",
+      "currentDraftSHA256": "890d5ff67b93e0540033b0cc7bbb9365a97ad1423bf65feac0e44db2be653479",
+      "currentEvidenceSHA256": "abcd6f24624c378ad7bda9385fbf130d68fb943136888e6928f91853b11f91cc",
+      "currentProfileSHA256": "0f19f0575aed35c0c4e71473f36e09cd6e6b2e5bc56735bf4c6d2d3681c70a98",
+      "previousDraftSHA256": "890d5ff67b93e0540033b0cc7bbb9365a97ad1423bf65feac0e44db2be653479",
+      "previousEvidenceSHA256": "abcd6f24624c378ad7bda9385fbf130d68fb943136888e6928f91853b11f91cc",
+      "previousProfileSHA256": "0f19f0575aed35c0c4e71473f36e09cd6e6b2e5bc56735bf4c6d2d3681c70a98",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "1:41 lists Eshban among Dishon’s sons. The parent-chain language is direct in WEB; no other role is asserted.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 1:41",
+            "text": "The son of Anah: Dishon. The sons of Dishon: Hamran, Eshban, Ithran, and Cheran.",
+            "citationURL": "https://ebible.org/engwebp/1CH01.htm#V41",
+            "sourceTextSHA256": "df8fdf0a094ce068aa6eb96e8d4e5999f620f3e4475902b85b7227006c4fd8e7"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "search-complete-no-fit",
+        "priorFindingJa": "Grouped Wikipedia search did not locate an exact A–K/L–Z subsection; a non-Wikipedia “List of minor biblical tribes” page surfaced, so it is not counted as a Wikipedia fit. No claim that no article exists.",
+        "url": null
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "deec90c7949a4824aba353fdaae7870374705a553d109c85be756a476817a18b"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:ethan_1622",
+      "draftPath": "drafts/persons_3/1CH_ethan_1622.json",
+      "currentDraftSHA256": "836c3045ed6e82d3d94ba429a07cc59707d5d93920b250c64947506f41edfecc",
+      "currentEvidenceSHA256": "573f046802924f4855061e3b98db4d69777f4edd533751e69197b5379a15e596",
+      "currentProfileSHA256": "6267695bf8888adccedfb657ad48226a5779f89ab3a78ac7ab754af5004063d5",
+      "previousDraftSHA256": "f261fade0942e924cea04d8d7a23295e25440864501da9082954b5c621185c2e",
+      "previousEvidenceSHA256": "1920696a6ee1434b250ab6b248a8cd79a69cc6a5a92f310dc1bf1ee9d97ce2a7",
+      "previousProfileSHA256": "026aa408b1c414489a88feec6ef8c33084132bf8ea45a24793ca45a005847123",
+      "closureMode": "current-bytes-rechecked",
+      "previousVerdict": "fail",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "fixedWitness": "inventory/targets/chronicles1-web-verses.json",
+        "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/1CH06.htm#V42",
+            "ref": "1CH 6:42",
+            "text": "the son of Ethan, the son of Zimmah, the son of Shimei,",
+            "sourceTextSHA256": "7fd827c7a7e8d11650e55ad91226f0af43b4bff164d58fed27a12658017dbfa5",
+            "readingNoteJa": "固定WEB 1CH 6:42はこのエタンをジンマの子とする。隣接する別のエタン系譜の父名キシを混同しない。"
+          }
+        ],
+        "assessmentJa": "6:42 says “the son of Ethan, the son of Zimmah, the son of Shimei”; the profile summary assigns the ancestor to Kishi, which belongs to a different Ethan line in the adjacent list. This is a namesake merge and wrong genealogy."
+      },
+      "currentReaderFields": {
+        "knownBy": {
+          "chapter": 6,
+          "verse": 42
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 42
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 42
+            }
+          }
+        ],
+        "nameJa": "エタン",
+        "subtitleJa": "レビ人の系譜で、ジンマの子として名が記されています。",
+        "summaryJa": "レビ人の系譜で、ジンマの子として名が記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "facts": [],
+        "wikipedia": null
+      },
+      "currentWikipediaReview": {
+        "url": null,
+        "kind": null,
+        "identityVerified": null,
+        "relationVerified": null,
+        "bodyRead": false,
+        "actualCurrentArticleLocator": null,
+        "currentArticleSupportParaphrase": "No active Wikipedia link. Earlier target-specific search found no fitting A–K/L–Z person entry; unrelated Ethan/singer pages were not treated as identity matches. Null remains a limited no-fit, not a universal absence claim.",
+        "checkedAtUTC": null,
+        "nullEvidence": {
+          "queries": [
+            "site:en.wikipedia.org/wiki (\"Ephah\" OR \"Epher\" OR \"Ephlal\" OR \"Eshban\" OR \"Ethan\" OR \"Ezbai\" OR \"Ezer\" OR \"Ezri\" OR \"Gamul\" OR \"Gatam\" OR \"Gera\" OR \"Gershom\") Bible Chronicles"
+          ],
+          "checkedAtUTC": "2026-10-16T05:38:04Z",
+          "searchReasonJa": "英語名と候補の書内節を含むWikipedia検索。適合する専用記事または同一対象を扱う共有節の本文を確認できず、リンクしなかった。",
+          "status": "no-fit-or-held; search evidence recorded"
+        }
+      },
+      "decisionBasisJa": "1CH 6:42のエタンを隣接するキシの子のエタンと混同していたため、固定WEBの系譜に訂正。",
+      "priorFindingResolutionJa": "Prior fail: 6:42 says “the son of Ethan, the son of Zimmah, the son of Shimei”; the profile summary assigns the ancestor to Kishi, which belongs to a different Ethan line in the adjacent list. This is a namesake merge and wrong genealogy.; current fixed text and displayed fields re-read. Current decision: qualified."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:ezbai_1234",
+      "draftPath": "drafts/persons_3/1CH_ezbai_1234.json",
+      "currentDraftSHA256": "014b051f29da94888e3e0c2fdcce797c4c6a2044b6033ccbff6849d4417e56dc",
+      "currentEvidenceSHA256": "feed146615b65933c6acf0da7d9032d6ad1a6ef22b24f868012fa754b303363a",
+      "currentProfileSHA256": "6fbb97734f0255e4da247b445d475a435432a0d85f8b3006503956d21adef8e0",
+      "previousDraftSHA256": "014b051f29da94888e3e0c2fdcce797c4c6a2044b6033ccbff6849d4417e56dc",
+      "previousEvidenceSHA256": "feed146615b65933c6acf0da7d9032d6ad1a6ef22b24f868012fa754b303363a",
+      "previousProfileSHA256": "6fbb97734f0255e4da247b445d475a435432a0d85f8b3006503956d21adef8e0",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "11:37 identifies Naarai as son of Ezbai; the draft preserves this relation.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 11:37",
+            "text": "Hezro the Carmelite, Naarai the son of Ezbai,",
+            "citationURL": "https://ebible.org/engwebp/1CH11.htm#V37",
+            "sourceTextSHA256": "57c1c639f68724708c0c5129beaa13715b5ce6cb71771882ac984438919532fd"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "search-complete-no-fit",
+        "priorFindingJa": "Grouped Wikipedia searches surfaced David’s Mighty Warriors list with Naarai ben Ezbai, but no fitting individual article/shared subsection was verified. Do not call article absence proven.",
+        "url": null
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "e064680cd8346ad197758722a649ce27c23428b020880cd2fe8e78256f9460fa"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:ezer_1240",
+      "draftPath": "drafts/persons_3/1CH_ezer_1240.json",
+      "currentDraftSHA256": "e951eb84759177d8898f7847876ea528003ae26c71474be5feb2410b6ff8b2c4",
+      "currentEvidenceSHA256": "2fdd59b997e0b6db802b950f24f72b69068dca5a7d05346f4575d6942497f6ee",
+      "currentProfileSHA256": "46e91e9fe3f24747fb13c765904565a28a5b8e3f381a9c1dd36d4e84bc56efe5",
+      "previousDraftSHA256": "7630cee4a3819bcbd82a0e869d7734fe63ffaf92de4a993e94e081b559e847d2",
+      "previousEvidenceSHA256": "0903204c3eb13b2c6817c019cc6bd30f6d91ba800d0b04c69e2e588475feac9c",
+      "previousProfileSHA256": "dd3c7fc64c0443101fb64ae7d2d227460bcd42a4ddffb6a2ef9a9244e63e3f9f",
+      "closureMode": "current-bytes-rechecked",
+      "previousVerdict": "qualified",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "fixedWitness": "inventory/targets/chronicles1-web-verses.json",
+        "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/1CH07.htm#V21",
+            "ref": "1CH 7:21",
+            "text": "Zabad his son, Shuthelah his son, Ezer, and Elead, whom the men of Gath who were born in the land killed, because they came down to take away their livestock.",
+            "sourceTextSHA256": "27f6c59e3e55488c2c06225df2d0026916020834346c39257536c898a2f7deab",
+            "readingNoteJa": "固定WEB本文と前後の系譜/名簿文脈を確認。"
+          }
+        ],
+        "assessmentJa": "7:21 names Ezer among Ephraim’s sons and says Gath men killed him with Elead; draft tracks that account."
+      },
+      "currentReaderFields": {
+        "knownBy": {
+          "chapter": 7,
+          "verse": 21
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 7,
+              "verse": 21
+            },
+            "end": {
+              "chapter": 7,
+              "verse": 21
+            }
+          }
+        ],
+        "nameJa": "エゼル",
+        "subtitleJa": "エフライムの系譜で、エラドとともに記されています。",
+        "summaryJa": "エフライムの系譜に記され、エラドとともにガト出身の人々に殺されたと述べられます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "facts": [],
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Ezer",
+          "kind": "shared-section",
+          "noteJa": "記事はエフライムの子エゼルと、ガトの人々に殺されたという1歴代誌7:21の記載を挙げます。ほかのエゼルとは区別されています。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 7,
+            "verse": 21
+          },
+          "sourceId": "ezer_1240-wikipedia"
+        }
+      },
+      "currentWikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Ezer",
+        "kind": "shared-section",
+        "identityVerified": true,
+        "relationVerified": false,
+        "bodyRead": true,
+        "actualCurrentArticleLocator": "§Ezer, lines 2646–2651",
+        "currentArticleSupportParaphrase": "The second Ezer entry is the son of Ephraim slain by Gath’s inhabitants at 1 Chronicles 7:21; the section separately lists other men named Ezer.",
+        "checkedAtUTC": "2026-10-16T06:14:24Z",
+        "nullEvidence": null
+      },
+      "decisionBasisJa": "固定WEBの初出とWikipedia実記事本文の該当箇所を再確認。記事にない同一性・系譜情報は加えず、リンク種別と表示注記を証拠範囲に限定した。 実記事本文の再読日時とURL/該当節の根拠をsidecarへ同期。",
+      "priorFindingResolutionJa": "Prior qualified: 7:21 names Ezer among Ephraim’s sons and says Gath men killed him with Elead; draft tracks that account.; current fixed text and displayed fields re-read. Current decision: pass."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:ezri_1247",
+      "draftPath": "drafts/persons_3/1CH_ezri_1247.json",
+      "currentDraftSHA256": "e38da186587332514c97f638044517e519bcd24a9b213a4b9b75176916c52c22",
+      "currentEvidenceSHA256": "7e89743c9e18f35c0f1313cf357b551a409a9863069bdfe2ff3c44915f02097a",
+      "currentProfileSHA256": "89db8206341e09eaab5379c1a530282de69beb0b200faf0b3df9b5f7a87b28bb",
+      "previousDraftSHA256": "191dcf5030ddcc7cbdcdacfc8b5e515a2d12af8cbfbd1c9382e35d5db8b1092f",
+      "previousEvidenceSHA256": "912c714412898ca48d11a735fde3bfa8930eac7039657bb0ae421c133d0961e3",
+      "previousProfileSHA256": "bd9847622e9d666f6ad78073fcb26c5e8c0b99708a8974116be4b5bce57b7f1a",
+      "closureMode": "current-bytes-rechecked",
+      "previousVerdict": "qualified",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "fixedWitness": "inventory/targets/chronicles1-web-verses.json",
+        "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/1CH27.htm#V26",
+            "ref": "1CH 27:26",
+            "text": "Over those who did the work of the field for tillage of the ground was Ezri the son of Chelub.",
+            "sourceTextSHA256": "634c0657864279ae15870d0f0f1944a2829488986512c96a4dc68dff5bca3ce0",
+            "readingNoteJa": "固定WEB本文と前後の系譜/名簿文脈を確認。"
+          }
+        ],
+        "assessmentJa": "27:26 names Ezri son of Chelub over field labor; draft wording is source-aligned."
+      },
+      "currentReaderFields": {
+        "knownBy": {
+          "chapter": 27,
+          "verse": 26
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 27,
+              "verse": 26
+            },
+            "end": {
+              "chapter": 27,
+              "verse": 26
+            }
+          }
+        ],
+        "nameJa": "エズリ",
+        "subtitleJa": "ダビデの所有地を管理する役人で、畑の耕作を監督しました。",
+        "summaryJa": "ダビデの所有地を管理する役人で、畑の耕作を監督しました。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "facts": [],
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Chelub",
+          "kind": "shared-section",
+          "noteJa": "記事の「Chelub」項は、ダビデ時代に畑仕事を監督したエズリを1歴代誌27:26に基づいて記しています。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 27,
+            "verse": 26
+          },
+          "sourceId": "ezri_1247-wikipedia"
+        }
+      },
+      "currentWikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Chelub",
+        "kind": "shared-section",
+        "identityVerified": true,
+        "relationVerified": false,
+        "bodyRead": true,
+        "actualCurrentArticleLocator": "§Chelub, lines 2024–2030",
+        "currentArticleSupportParaphrase": "The section explicitly says Ezri son of Chelub oversaw agricultural work in 1 Chronicles 27:26.",
+        "checkedAtUTC": "2026-10-16T06:14:24Z",
+        "nullEvidence": null
+      },
+      "decisionBasisJa": "固定WEBの初出とWikipedia実記事本文の該当箇所を再確認。記事にない同一性・系譜情報は加えず、リンク種別と表示注記を証拠範囲に限定した。 実記事本文の再読日時とURL/該当節の根拠をsidecarへ同期。",
+      "priorFindingResolutionJa": "Prior qualified: 27:26 names Ezri son of Chelub over field labor; draft wording is source-aligned.; current fixed text and displayed fields re-read. Current decision: pass."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:gamul_1278",
+      "draftPath": "drafts/persons_3/1CH_gamul_1278.json",
+      "currentDraftSHA256": "5351b0572e4c467068cc64031588003789be9f880fb45c54efa65e16bf5fc19c",
+      "currentEvidenceSHA256": "0549ff8b40cd9d92637f0f29fa5e36b63098e61182497507fab042fbde48a3eb",
+      "currentProfileSHA256": "f293b62efa4872e5a1a0f2fb71ea6d5f289d179a1474d90f8b0b661bbe315b90",
+      "previousDraftSHA256": "5351b0572e4c467068cc64031588003789be9f880fb45c54efa65e16bf5fc19c",
+      "previousEvidenceSHA256": "0549ff8b40cd9d92637f0f29fa5e36b63098e61182497507fab042fbde48a3eb",
+      "previousProfileSHA256": "f293b62efa4872e5a1a0f2fb71ea6d5f289d179a1474d90f8b0b661bbe315b90",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "24:17 identifies Gamul as head of the 22nd division; draft says 22nd.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 24:17",
+            "text": "the twenty-first to Jachin, the twenty-second to Gamul,",
+            "citationURL": "https://ebible.org/engwebp/1CH24.htm#V17",
+            "sourceTextSHA256": "3b5f794dd86b9e0b5a215de91fea7a14baa23de312c7aff55b32148482285bd6"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-discrepancy",
+        "priorFindingJa": "A–K §Gamul, line 2693 says the twentieth division, conflicting with fixed WEB 24:17. Existing note flags the disagreement, which is appropriate; keep WEB as profile basis.",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "e3407e6aee7280626bc179148d9be557d0e667eeb8c0c592e133b5ef99471548"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:gatam_1281",
+      "draftPath": "drafts/persons_3/1CH_gatam_1281.json",
+      "currentDraftSHA256": "c31b40dae8f47991791cf466501898698cb8b67b7126d03a7deadbd4260bd517",
+      "currentEvidenceSHA256": "4d7390be89cf8b8f0fb070938850e23586d1d786b2864d81539eb36986b936dd",
+      "currentProfileSHA256": "4ca29113c916deb4a2eaa98e41b617831d5257f047a6f406609ab2b91aac62db",
+      "previousDraftSHA256": "c31b40dae8f47991791cf466501898698cb8b67b7126d03a7deadbd4260bd517",
+      "previousEvidenceSHA256": "4d7390be89cf8b8f0fb070938850e23586d1d786b2864d81539eb36986b936dd",
+      "previousProfileSHA256": "4ca29113c916deb4a2eaa98e41b617831d5257f047a6f406609ab2b91aac62db",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "1:36 puts Gatam in Eliphaz’s genealogy. The profile uses the text’s “son” relation without resolving whether the genealogy is individual or clan terminology.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 1:36",
+            "text": "The sons of Eliphaz: Teman, Omar, Zephi, Gatam, Kenaz, Timna, and Amalek.",
+            "citationURL": "https://ebible.org/engwebp/1CH01.htm#V36",
+            "sourceTextSHA256": "3419279740a691fbd139e024e87117cbb5562b611fe43dd8a6d5c7e9d4cb3e2b"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-with-ontology-caveat",
+        "priorFindingJa": "A–K §Gatam lines 2694–2698 compares Genesis/Chronicles and notes Genesis 36:16 calls Gatam and others clans. Current cautious profile is acceptable; avoid asserting a settled individual ontology.",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "b6dfded78e0c261e9feb6649b976972e081bd385fd59156030c4ef849ebd9cdd"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:gera_1298",
+      "draftPath": "drafts/persons_3/1CH_gera_1298.json",
+      "currentDraftSHA256": "f46107876b80cb1cb6ab7630552dd49a63225ba3c93a2a03548634eba9ec0522",
+      "currentEvidenceSHA256": "fa0dc71e2168d6d2e2b15ac06b783aa2aadf5b9e4c5941b2342b66ab03b51fe9",
+      "currentProfileSHA256": "c56ada19587d9c79c490af89002269585a47b71e2570a1ef80a07c3701590b3c",
+      "previousDraftSHA256": "e69f7d9c22592c94c5740d583faf7569549ba2b42bf9a3080a8b8fe8f91bb2ee",
+      "previousEvidenceSHA256": "993dfec717226918cb3553603f3d5d55e8ad614378d7e62ce838276bfb189678",
+      "previousProfileSHA256": "81e4fd29d2585ae52379baa55bdab2bfb340899adb8ee4970cb1b0710df13d48",
+      "closureMode": "current-bytes-rechecked",
+      "previousVerdict": "fail",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "fixedWitness": "inventory/targets/chronicles1-web-verses.json",
+        "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/1CH08.htm#V3",
+            "ref": "1CH 8:3",
+            "text": "Bela had sons: Addar, Gera, Abihud,",
+            "sourceTextSHA256": "b7e84fe5c775165061771b5cf493624ea3b2b237b5d74f42fc675197e6a147a3",
+            "readingNoteJa": "固定WEB 8:3にベラの子としてゲラが記される。8:5にも同名があるため同一人物とは決めない。"
+          },
+          {
+            "url": "https://ebible.org/engwebp/1CH08.htm#V5",
+            "ref": "1CH 8:5",
+            "text": "Gera, Shephuphan, and Huram.",
+            "sourceTextSHA256": "6e4a765c71b472f811f388a81d009ba8a07c841e2cc8c42a9bc7350efca6af32",
+            "readingNoteJa": "固定WEB本文と前後の系譜/名簿文脈を確認。"
+          }
+        ],
+        "assessmentJa": "The WEB name Gera already occurs at 8:3 before current knownBy 8:5. The draft’s fact about a later same genealogy appears as if later but is attached at the 8:5 gate; article and fixed verse 8:3 identify another Gera son of Bela. Earliest occurrence and namesake distinction must be gated correctly."
+      },
+      "currentReaderFields": {
+        "knownBy": {
+          "chapter": 8,
+          "verse": 5
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 8,
+              "verse": 5
+            },
+            "end": {
+              "chapter": 8,
+              "verse": 5
+            }
+          }
+        ],
+        "nameJa": "ゲラ",
+        "subtitleJa": "ベニヤミンの系譜に名が記されています。",
+        "summaryJa": "ベニヤミンの系譜でゲラの名が記されています。8:3にも同名が現れますが、8:5の人物と同一かは本文だけでは確定しません。",
+        "identityNoteJa": "8:3にも同名が出ますが、8:5の人物との関係は本文から判断できません。",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "facts": [],
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K",
+          "kind": "shared-section",
+          "noteJa": "「Gera」節は複数の同名者を区別し、ベラの子としての記載を含みます。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 8,
+            "verse": 5
+          },
+          "sourceId": "gera_1298-wikipedia"
+        }
+      },
+      "currentWikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K",
+        "kind": "shared-section",
+        "identityVerified": true,
+        "relationVerified": false,
+        "bodyRead": true,
+        "actualCurrentArticleLocator": "§Gera, lines 2731–2740",
+        "currentArticleSupportParaphrase": "記事はベラの子として8:3と8:5に現れる二人のゲラを明示的に区別する。現在の人物の範囲を8:5に保ち、8:3との同一視を避ける。",
+        "checkedAtUTC": "2026-10-16T06:14:24Z",
+        "nullEvidence": null
+      },
+      "decisionBasisJa": "初出8:3の同名用例と8:5の割当候補を区別。未来を示すfactを除き、同一性不確定を既知時点で説明。 初出/同名出現の除外理由と後続関係のfact gateを明示。 実記事本文の再読日時とURL/該当節の根拠をsidecarへ同期。 8:3の同名言及を明示的に未確定として記録。",
+      "priorFindingResolutionJa": "Prior fail: The WEB name Gera already occurs at 8:3 before current knownBy 8:5. The draft’s fact about a later same genealogy appears as if later but is attached at the 8:5 gate; article and fixed verse 8:3 identify another Gera son of Bela. Earliest occurrence and namesake distinction must be gated correctly.; current fixed text and displayed fields re-read. Current decision: qualified."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:gershom_1302",
+      "draftPath": "drafts/persons_3/1CH_gershom_1302.json",
+      "currentDraftSHA256": "6ebc43fdecf61bdcdcc06cbc23920f2f0c0f25bfbc907153ce4e91320d737fa8",
+      "currentEvidenceSHA256": "4a22d0a0f622238774f2ce4c38d30800a7e00859761f7eb924b95ce34407a79a",
+      "currentProfileSHA256": "a2eef80a2e848c74da8e3c567e9a475886833879b672a27c53f57522e0e26875",
+      "previousDraftSHA256": "6ebc43fdecf61bdcdcc06cbc23920f2f0c0f25bfbc907153ce4e91320d737fa8",
+      "previousEvidenceSHA256": "4a22d0a0f622238774f2ce4c38d30800a7e00859761f7eb924b95ce34407a79a",
+      "previousProfileSHA256": "a2eef80a2e848c74da8e3c567e9a475886833879b672a27c53f57522e0e26875",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "pass",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "23:15–16 calls Gershom a son of Moses and names Shebuel as his son; 26:24 gives Shebuel’s office. Draft keeps the later office behind the later gate.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 23:15",
+            "text": "The sons of Moses: Gershom and Eliezer.",
+            "citationURL": "https://ebible.org/engwebp/1CH23.htm#V15",
+            "sourceTextSHA256": "7f03b19f2d8c036c09c23d10f019e390c13b50dac11a2a10c72db260b7299855"
+          },
+          {
+            "ref": "1CH 23:16",
+            "text": "The sons of Gershom: Shebuel the chief.",
+            "citationURL": "https://ebible.org/engwebp/1CH23.htm#V16",
+            "sourceTextSHA256": "e2a8032f9d483712649545c7959b5b2f0766574bef914167625ad5cf0a3a5402"
+          },
+          {
+            "ref": "1CH 26:24",
+            "text": "Shebuel the son of Gershom, the son of Moses, was ruler over the treasuries.",
+            "citationURL": "https://ebible.org/engwebp/1CH26.htm#V24",
+            "sourceTextSHA256": "619d2b9492c73b03479fb0aa1e8c2bab89d207f2f04301def25c5a3526ecf3aa"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-exact",
+        "priorFindingJa": "A–K Gershom/Levite genealogy entries discuss the Moses-son and later Levite descendants; current shared-section locator is pertinent.",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "3446a1c714a198daefe664d06bdcb1f50c185ab0002fb84e108ed35c1196b1e1"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:gesham_1306",
+      "draftPath": "drafts/persons_3/1CH_gesham_1306.json",
+      "currentDraftSHA256": "0fc9367861ccf49ed8ccce35f51bcc85bcede4978884c5501aa2938d7183af09",
+      "currentEvidenceSHA256": "186dbab5e9d6d61de818d377cd999335249c67bc91b03432e19706a5de399eeb",
+      "currentProfileSHA256": "a84eb1a86469a5167b1cbd43032b6942b705fb0d2d4dfa5e282a11163e44a2fa",
+      "previousDraftSHA256": "0fc9367861ccf49ed8ccce35f51bcc85bcede4978884c5501aa2938d7183af09",
+      "previousEvidenceSHA256": "186dbab5e9d6d61de818d377cd999335249c67bc91b03432e19706a5de399eeb",
+      "previousProfileSHA256": "a84eb1a86469a5167b1cbd43032b6942b705fb0d2d4dfa5e282a11163e44a2fa",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "2:47 lists Geshan among Jahdai’s sons; draft remains limited to this genealogy.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 2:47",
+            "text": "The sons of Jahdai: Regem, Jothan, Geshan, Pelet, Ephah, and Shaaph.",
+            "citationURL": "https://ebible.org/engwebp/1CH02.htm#V47",
+            "sourceTextSHA256": "f60b522ab28658afe34ad8fb428231b8a34625e3a5c3e6eb0c94aacc061f0569"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "search-complete-no-fit",
+        "priorFindingJa": "Exact-name grouped search did not identify a Wikipedia subsection for this Geshan. Search results for Geshan are ambiguous with other biblical name forms; no-fit remains limited to the pages/queries checked.",
+        "url": null
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "b522942b448baa1a09abf9f58c36a5907e4f6903d7ab1ca324ec2e1157481a6f"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:giddalti_1311",
+      "draftPath": "drafts/persons_3/1CH_giddalti_1311.json",
+      "currentDraftSHA256": "5a286ae7dc2f553b07d1738e8130c1b1088445a19afb90a69dca73f9f8faad4d",
+      "currentEvidenceSHA256": "b8969acdd747ddc0ca7c827e2883ffc20f0088432be7610c73bdd63a69493091",
+      "currentProfileSHA256": "f8b22634e404d5a973bcdde5d3401d6bd3d42f94ee298599c6235e1be54c90e7",
+      "previousDraftSHA256": "5a286ae7dc2f553b07d1738e8130c1b1088445a19afb90a69dca73f9f8faad4d",
+      "previousEvidenceSHA256": "b8969acdd747ddc0ca7c827e2883ffc20f0088432be7610c73bdd63a69493091",
+      "previousProfileSHA256": "f8b22634e404d5a973bcdde5d3401d6bd3d42f94ee298599c6235e1be54c90e7",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "pass",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "25:4 includes Giddalti among Heman’s sons; 25:29 assigns him the 22nd group. Both are correctly included and gated.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 25:4",
+            "text": "Of Heman, the sons of Heman: Bukkiah, Mattaniah, Uzziel, Shebuel, Jerimoth, Hananiah, Hanani, Eliathah, Giddalti, Romamti-Ezer, Joshbekashah, Mallothi, Hothir, and Mahazioth.",
+            "citationURL": "https://ebible.org/engwebp/1CH25.htm#V4",
+            "sourceTextSHA256": "45f84f57702febd107eaa62b303e6341e542a5cd713452b7fbd01cf02e836199"
+          },
+          {
+            "ref": "1CH 25:29",
+            "text": "for the twenty-second to Giddalti, his sons and his brothers, twelve;",
+            "citationURL": "https://ebible.org/engwebp/1CH25.htm#V29",
+            "sourceTextSHA256": "89c280017404299f4037e44d96cbf4186fdc7855fc1bad861d015803e7e2f443"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-exact",
+        "priorFindingJa": "A–K §Giddalti line 2759 identifies Heman’s son and chief of the 22nd division.",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "3f95e420d811baa2f4fde92898a062b8b54cb74b72d1da825415f140fabc5743"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:girgasite_1322",
+      "draftPath": "drafts/persons_3/1CH_girgasite_1322.json",
+      "currentDraftSHA256": "4b4b57878f2a38cdbb777722d386c946ca43e9cc6a12d1be2cef58f909b38aba",
+      "currentEvidenceSHA256": "3c3c16291c19f60d902070ac7e2f9b01a239e50cc55ab3600e923f7ccb02c7a8",
+      "currentProfileSHA256": "f442e26941fff05de3bbacadd9687d4c26c151fa356ec50facb30426e494b33e",
+      "previousDraftSHA256": "4b4b57878f2a38cdbb777722d386c946ca43e9cc6a12d1be2cef58f909b38aba",
+      "previousEvidenceSHA256": "3c3c16291c19f60d902070ac7e2f9b01a239e50cc55ab3600e923f7ccb02c7a8",
+      "previousProfileSHA256": "f442e26941fff05de3bbacadd9687d4c26c151fa356ec50facb30426e494b33e",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "1:14 uses Girgashite as an ethnic-group name in the Canaanite genealogy; the draft labels it collective rather than person-individual.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 1:14",
+            "text": "the Jebusite, the Amorite, the Girgashite,",
+            "citationURL": "https://ebible.org/engwebp/1CH01.htm#V14",
+            "sourceTextSHA256": "d4f4e290541aad064e926a20879641f782ebca34f49f93c16de5011a6e39a6a6"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "search-complete-no-fit",
+        "priorFindingJa": "Wikipedia searches did not locate a target-specific Girgashite section; Hivites is not interchangeable. Keep explicit collective type and do not claim the ethnicity’s exact historical identity.",
+        "url": null
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "194b850f90c4b69d7a032fa2a7f9606cce443b6d5b5054c32e9a6dca0d5c08ef"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:guni_1330",
+      "draftPath": "drafts/persons_3/1CH_guni_1330.json",
+      "currentDraftSHA256": "73837eafe922523c5e76be8f3d9bef05dbd461b49dbe80f2b8f22b8a741cfdb5",
+      "currentEvidenceSHA256": "7e4efeaa0ad6354e89f496669ed95b1451ede9a48927f8f779726ee9e88ca917",
+      "currentProfileSHA256": "8316532646ecd064fb6796d14a7062f3edfa5183a03abbe28e5ef24460b9a508",
+      "previousDraftSHA256": "73837eafe922523c5e76be8f3d9bef05dbd461b49dbe80f2b8f22b8a741cfdb5",
+      "previousEvidenceSHA256": "7e4efeaa0ad6354e89f496669ed95b1451ede9a48927f8f779726ee9e88ca917",
+      "previousProfileSHA256": "8316532646ecd064fb6796d14a7062f3edfa5183a03abbe28e5ef24460b9a508",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "pass",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "7:13 names Guni among Naphtali’s sons; draft is limited to this named lineage.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 7:13",
+            "text": "The sons of Naphtali: Jahziel, Guni, Jezer, Shallum, and the sons of Bilhah.",
+            "citationURL": "https://ebible.org/engwebp/1CH07.htm#V13",
+            "sourceTextSHA256": "52a0876e5e65ae5edee88a67b3112eecfea605db63ad39f4b824102c41daaf22"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-exact",
+        "priorFindingJa": "A–K §Guni lines 2782–2786 says son of Naphtali and cites Genesis/Numbers. It supports the profile’s relation; do not import migration facts into the 1CH profile.",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "3689c00bc8329305b3dbdcca17c135c5572c5a5b201daf54fb6a63fa61625c3b"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hachmoni_1337",
+      "draftPath": "drafts/persons_3/1CH_hachmoni_1337.json",
+      "currentDraftSHA256": "9c43d96a4058c5567599969f287e117f428dd10d43bde5be5d2df2eecb54a440",
+      "currentEvidenceSHA256": "0d5a240936dc3defd8cff46c94471cca813be5ad27c138ec3775bc171620546c",
+      "currentProfileSHA256": "5d3a7a52f7160b6846bdb8fe305b6b3654605e46d417091dddc35833252d5153",
+      "previousDraftSHA256": "9c43d96a4058c5567599969f287e117f428dd10d43bde5be5d2df2eecb54a440",
+      "previousEvidenceSHA256": "0d5a240936dc3defd8cff46c94471cca813be5ad27c138ec3775bc171620546c",
+      "previousProfileSHA256": "5d3a7a52f7160b6846bdb8fe305b6b3654605e46d417091dddc35833252d5153",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "27:32 calls Jehiel “son of Hachmoni” and says he tutors the king’s sons. Profile keeps uncertainty whether Hachmoni is a personal name or lineage label.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 27:32",
+            "text": "Also Jonathan, David’s uncle, was a counselor, a man of understanding, and a scribe. Jehiel the son of Hachmoni was with the king’s sons.",
+            "citationURL": "https://ebible.org/engwebp/1CH27.htm#V32",
+            "sourceTextSHA256": "18be2c6aed2b0a595abc5c22625ba52f87d275efe44a5edf8553bd31e3bd3829"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-related",
+        "priorFindingJa": "A–K §Hachmoni lines 2806–2810 states Jehiel is Hachmoni’s son, a scribe, and tutor. It supports the relation, not a certain individual biography for Hachmoni.",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "78c6814cf20eac6e56dde45c52b891c82c52fd955bf296bce4396f69bc253fae"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hadad_1342",
+      "draftPath": "drafts/persons_3/1CH_hadad_1342.json",
+      "currentDraftSHA256": "02fd33132ce2022beba081970ad863c2687d1c3106341a70d7643c07974082ae",
+      "currentEvidenceSHA256": "fb532c5dd9482606a397f03678d833ab058b910bc7740ca1505a651a8ba3c959",
+      "currentProfileSHA256": "fbc29bf2d293e9707b795a6a5971e789d502a632f386ca606aaf086979d61c49",
+      "previousDraftSHA256": "02fd33132ce2022beba081970ad863c2687d1c3106341a70d7643c07974082ae",
+      "previousEvidenceSHA256": "fb532c5dd9482606a397f03678d833ab058b910bc7740ca1505a651a8ba3c959",
+      "previousProfileSHA256": "fbc29bf2d293e9707b795a6a5971e789d502a632f386ca606aaf086979d61c49",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "1:50–51 names Hadad as successor in Edom’s king list, gives Pai and wife Mehetabel, then says he died and lists chiefs. Draft limits identity claims and marks article as related, not definitive individual identity.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 1:50",
+            "text": "Baal Hanan died, and Hadad reigned in his place; and the name of his city was Pai. His wife’s name was Mehetabel, the daughter of Matred, the daughter of Mezahab.",
+            "citationURL": "https://ebible.org/engwebp/1CH01.htm#V50",
+            "sourceTextSHA256": "09fbca976e75365ede0e9f10e234e6895008764da571731d02b81f5282f2dc47"
+          },
+          {
+            "ref": "1CH 1:51",
+            "text": "Then Hadad died. The chiefs of Edom were: chief Timna, chief Aliah, chief Jetheth,",
+            "citationURL": "https://ebible.org/engwebp/1CH01.htm#V51",
+            "sourceTextSHA256": "f2df7e670a04ceda4cf17af6b729195f13cc02a335c8391f2dcbf11d95338eb5"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-related-multiple-namesakes",
+        "priorFindingJa": "Hadad (Bible) lines 105–110 lists several Hadads/Hadar, including the Edomite king whose wife is Mehetabel. The notes at 1:50 association support relevance, but the article is a name-set and does not resolve spellings/identity across traditions.",
+        "url": "https://en.wikipedia.org/wiki/Hadad_(Bible)"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "8df025cc9e8f204c789692536c3d1e733b1842c56cea236bf4f75b32880c3336"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:haggeri_1350",
+      "draftPath": "drafts/persons_3/1CH_haggeri_1350.json",
+      "currentDraftSHA256": "b8419c637e0ab6e823db5722a57b6b8669c85b7aa73b8fafd02f3811a4b0c17c",
+      "currentEvidenceSHA256": "d9f5945c61a17a1e3c10e7ccc488dbbd293363e7f6ff2b1dc43c729b57fa57be",
+      "currentProfileSHA256": "d807bcf0d6e301654b3b5a333d752b99416e38d304e254211d1f82411278fa21",
+      "previousDraftSHA256": "b8419c637e0ab6e823db5722a57b6b8669c85b7aa73b8fafd02f3811a4b0c17c",
+      "previousEvidenceSHA256": "d9f5945c61a17a1e3c10e7ccc488dbbd293363e7f6ff2b1dc43c729b57fa57be",
+      "previousProfileSHA256": "d807bcf0d6e301654b3b5a333d752b99416e38d304e254211d1f82411278fa21",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "11:38 calls Mibhar the son of Hagri. Do not infer that Hagri/Haggeri is identical to an article’s Hagarene group without proof.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 11:38",
+            "text": "Joel the brother of Nathan, Mibhar the son of Hagri,",
+            "citationURL": "https://ebible.org/engwebp/1CH11.htm#V38",
+            "sourceTextSHA256": "98c8048ba3f3373c6225882284898770b5c3739e60ba77b1a16ece17f788dbb9"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "search-complete-relationship-unresolved",
+        "priorFindingJa": "Search results found the Mighty Warriors list with “Mibhar ben Hagri”; the Wikipedia L–Z Mibhar listing associates a Hagarene form, but that does not establish this father’s identity. Null/hold is more accurate than identity link.",
+        "url": null
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "b395e46c464f56c00ba011dbcc710b40614791f5e863101e43ccc854021985eb"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hakkoz_1355",
+      "draftPath": "drafts/persons_3/1CH_hakkoz_1355.json",
+      "currentDraftSHA256": "a6b6fa83bce96b419f4002dc8b803cc23556ff64081988c1f827249e877eb4ed",
+      "currentEvidenceSHA256": "d053ea8e9efd1eede39addb34a96425dbacfc5a42837f532b6e4fe8bb1010989",
+      "currentProfileSHA256": "81c8d05f5637cbcb78889ebc0cb4ad39d7497c9e28806ba5f3d1622594c43459",
+      "previousDraftSHA256": "a6b6fa83bce96b419f4002dc8b803cc23556ff64081988c1f827249e877eb4ed",
+      "previousEvidenceSHA256": "d053ea8e9efd1eede39addb34a96425dbacfc5a42837f532b6e4fe8bb1010989",
+      "previousProfileSHA256": "81c8d05f5637cbcb78889ebc0cb4ad39d7497c9e28806ba5f3d1622594c43459",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "24:10 says seventh Hakkoz, eighth Abijah; draft’s seventh course is accurate.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 24:10",
+            "text": "the seventh to Hakkoz, the eighth to Abijah,",
+            "citationURL": "https://ebible.org/engwebp/1CH24.htm#V10",
+            "sourceTextSHA256": "45ac7f25602faa9263507ebfe3f6a0f8b3c1593693409fe28aa4a752b6551f45"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "search-complete-candidate",
+        "priorFindingJa": "Searches found Bible dictionaries and concordance material but did not verify a Wikipedia individual article/body subsection. A Wikipedia shared subsection may exist; keep this null classification provisional.",
+        "url": null
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "b558281d9eb220da713462381e855942038f6762d9e76d1611ac78034c30b305"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hamuel_1366",
+      "draftPath": "drafts/persons_3/1CH_hamuel_1366.json",
+      "currentDraftSHA256": "a96377c10a91ba4e1ed03c7b02393ab14e2869c27f4e562334a4d6d1cb4de4be",
+      "currentEvidenceSHA256": "8bd62579077118aea06a85db9389ec8aeb850595033771a3bb580b3bb0027c8d",
+      "currentProfileSHA256": "1116fb14a1662316692ddb978466257e6226827538404fe5fd530d7b4e25d44e",
+      "previousDraftSHA256": "a96377c10a91ba4e1ed03c7b02393ab14e2869c27f4e562334a4d6d1cb4de4be",
+      "previousEvidenceSHA256": "8bd62579077118aea06a85db9389ec8aeb850595033771a3bb580b3bb0027c8d",
+      "previousProfileSHA256": "1116fb14a1662316692ddb978466257e6226827538404fe5fd530d7b4e25d44e",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "4:26 has the sequence “Hammuel his son, Zaccur his son, Shimei his son.” Draft identifies Hamuel as Mishma’s son, matching the clause, without collapsing the later links.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 4:26",
+            "text": "The sons of Mishma: Hammuel his son, Zaccur his son, Shimei his son.",
+            "citationURL": "https://ebible.org/engwebp/1CH04.htm#V26",
+            "sourceTextSHA256": "b6aac579aeee24d9f21742f39519c840a2034bf9832aae547b9538a1eec7d21e"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "search-complete-no-fit",
+        "priorFindingJa": "No target-specific Wikipedia article/section found in the queries checked. Preserve the exact WEB genealogy and note that the successive “his son” chain is textually stated.",
+        "url": null
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "8ccf5bc47587d115aa97cc13ea3e36524dd01d6b7f2d587520f0f33ba1b2bbf5"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hanan_1372",
+      "draftPath": "drafts/persons_3/1CH_hanan_1372.json",
+      "currentDraftSHA256": "232c564a5dd6e093fca6ae9411d50cccd21f62c9af4294c0d439504e2e881b97",
+      "currentEvidenceSHA256": "a9f3c6922e39239831bc43b9b630d2ce4e5857ffe6978d3941458690c6782ca4",
+      "currentProfileSHA256": "c0a743dad81f275653bde02b62a0ac56f8c865b28c77549f6ecc4f0ece7be18f",
+      "previousDraftSHA256": "232c564a5dd6e093fca6ae9411d50cccd21f62c9af4294c0d439504e2e881b97",
+      "previousEvidenceSHA256": "a9f3c6922e39239831bc43b9b630d2ce4e5857ffe6978d3941458690c6782ca4",
+      "previousProfileSHA256": "c0a743dad81f275653bde02b62a0ac56f8c865b28c77549f6ecc4f0ece7be18f",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "11:43 names Hanan son of Maacah among David’s warriors; draft is accurate.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 11:43",
+            "text": "Hanan the son of Maacah, Joshaphat the Mithnite,",
+            "citationURL": "https://ebible.org/engwebp/1CH11.htm#V43",
+            "sourceTextSHA256": "4781e7473e6050d78e6d3561a6f2c7e508e6b037f16e4abb7eb56500f1c5d0d3"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "search-complete-no-fit",
+        "priorFindingJa": "A–K Maacah related references did not establish a dedicated Hanan section for this specific warrior in the reviewed body. Search result match alone is insufficient; no identity link.",
+        "url": null
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "ec1fd4d4583ebfa33d11740c68847d668e4fb285e3c6bf4f00b1cf0ca9bf6ae0"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hanani_1380",
+      "draftPath": "drafts/persons_3/1CH_hanani_1380.json",
+      "currentDraftSHA256": "a473efc16b0409eeeea55201389c4c201b9eb6f31f514a78f5870e7d2c69d36b",
+      "currentEvidenceSHA256": "173b23cf19784845106592eba2a66c8b1a4d33609eea812e6b7efdacf5771028",
+      "currentProfileSHA256": "17eaaedd05973cbfb870f90f65677d670ee00cd85df5368f4dbcd2e407be35e1",
+      "previousDraftSHA256": "a473efc16b0409eeeea55201389c4c201b9eb6f31f514a78f5870e7d2c69d36b",
+      "previousEvidenceSHA256": "173b23cf19784845106592eba2a66c8b1a4d33609eea812e6b7efdacf5771028",
+      "previousProfileSHA256": "17eaaedd05973cbfb870f90f65677d670ee00cd85df5368f4dbcd2e407be35e1",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "pass",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "25:4 and 25:25 place Hanani among Heman’s sons and in the musician roster. Draft uses the matching named person.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 25:4",
+            "text": "Of Heman, the sons of Heman: Bukkiah, Mattaniah, Uzziel, Shebuel, Jerimoth, Hananiah, Hanani, Eliathah, Giddalti, Romamti-Ezer, Joshbekashah, Mallothi, Hothir, and Mahazioth.",
+            "citationURL": "https://ebible.org/engwebp/1CH25.htm#V4",
+            "sourceTextSHA256": "45f84f57702febd107eaa62b303e6341e542a5cd713452b7fbd01cf02e836199"
+          },
+          {
+            "ref": "1CH 25:25",
+            "text": "for the eighteenth to Hanani, his sons and his brothers, twelve;",
+            "citationURL": "https://ebible.org/engwebp/1CH25.htm#V25",
+            "sourceTextSHA256": "ed3a8984312e77d8c6c5d3da25f299b97380d4ddfa96bb6e1d7d9cac4bb72c8d"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-exact",
+        "priorFindingJa": "Hanani article lines 115–118 identifies one of five Hanani figures as a son of Heman, citing 1 Chronicles 25:4,25.",
+        "url": "https://en.wikipedia.org/wiki/Hanani"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "88a34ed594b4022257c0968b99b2363fbf3946129fc059a5443d135c876c0f53"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hanoch_1403",
+      "draftPath": "drafts/persons_3/1CH_hanoch_1403.json",
+      "currentDraftSHA256": "22adbfb68537a01f2ea96f9ca9cd5867a1dc9d0c5ee93736595c20447e0d0c20",
+      "currentEvidenceSHA256": "2faec5af0c6d7f35e0a08a9978a6119514a78c7e7f4ed83344e055a6fdb124b1",
+      "currentProfileSHA256": "d27b21ef9236569b95ce4568357643acc0e28b8c875c59113c1cf3403da3190c",
+      "previousDraftSHA256": "22adbfb68537a01f2ea96f9ca9cd5867a1dc9d0c5ee93736595c20447e0d0c20",
+      "previousEvidenceSHA256": "2faec5af0c6d7f35e0a08a9978a6119514a78c7e7f4ed83344e055a6fdb124b1",
+      "previousProfileSHA256": "d27b21ef9236569b95ce4568357643acc0e28b8c875c59113c1cf3403da3190c",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "pass",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "5:3 lists Hanoch among Reuben’s sons. Draft’s note distinguishes him from the Midian genealogy namesake without claiming those are one person.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 5:3",
+            "text": "the sons of Reuben the firstborn of Israel: Hanoch, Pallu, Hezron, and Carmi.",
+            "citationURL": "https://ebible.org/engwebp/1CH05.htm#V3",
+            "sourceTextSHA256": "98588ad574529ebe06374601460d6f40e99b4064302b9398466dbe9dc0e1a95f"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-exact-distinguished",
+        "priorFindingJa": "A–K §Hanoch lines 2925–2933 explicitly separates Midian’s son and Reuben’s son.",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "5fd33ccac964b860c3c60944fef90ba20933ca93ee9bcab4d6a402a0913ddac2"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hareph_1412",
+      "draftPath": "drafts/persons_3/1CH_hareph_1412.json",
+      "currentDraftSHA256": "54874b1a398891a649a12d53727a602a736cb71f16e1bf5b610d50bad87be7dd",
+      "currentEvidenceSHA256": "f61f6cd54191be0ab11ffd4591252ad545db829d6e9367d882f24d618140f685",
+      "currentProfileSHA256": "b9c6a7cb7df445cf169a4ec15e6ec596caaeae671c01e4ae891cb744599d3e2c",
+      "previousDraftSHA256": "6a52404d08bbe0b190a3958bd9b1325d203b6ee1e1967e951512d22e01016339",
+      "previousEvidenceSHA256": "c709417a36237b43c8dc49a4a1e84922308657e3dbe34289677065b4284f7c13",
+      "previousProfileSHA256": "ab21d0ccfbf966347539f8c0957a05333bad5923ab3a289110d885481cd9a46a",
+      "closureMode": "current-bytes-rechecked",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "fixedWitness": "inventory/targets/chronicles1-web-verses.json",
+        "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/1CH02.htm#V51",
+            "ref": "1CH 2:51",
+            "text": "Salma the father of Bethlehem, and Hareph the father of Beth Gader.",
+            "sourceTextSHA256": "e2ed2b4b5f2dbdaed807ec60a0a01ec2767c83e634fe3e76ce617c4387a7f66f",
+            "readingNoteJa": "固定WEB本文と前後の系譜/名簿文脈を確認。"
+          }
+        ],
+        "assessmentJa": "2:51 calls Hareph father of Beth-gader. Draft appropriately records the line while keeping group/clan interpretation unsettled."
+      },
+      "currentReaderFields": {
+        "knownBy": {
+          "chapter": 2,
+          "verse": 51
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 2,
+              "verse": 51
+            },
+            "end": {
+              "chapter": 2,
+              "verse": 51
+            }
+          }
+        ],
+        "nameJa": "ハレフ",
+        "subtitleJa": "カレブの子フルの系譜で、ベト・ガデルの父と記されています。",
+        "summaryJa": "カレブの子フルの系譜で、ベト・ガデルの父と記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "facts": [],
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Hareph",
+          "kind": "shared-section",
+          "noteJa": "記事は1歴代誌2:51のハレフをベト・ガデルの父として挙げますが、氏族を指す可能性も記します。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 2,
+            "verse": 51
+          },
+          "sourceId": "hareph_1412-wikipedia"
+        }
+      },
+      "currentWikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Hareph",
+        "kind": "shared-section",
+        "identityVerified": true,
+        "relationVerified": false,
+        "bodyRead": true,
+        "actualCurrentArticleLocator": "§Hareph, lines 2953–2957",
+        "currentArticleSupportParaphrase": "The entry cites the same verse and father relation while noting that the name may refer to a group.",
+        "checkedAtUTC": "2026-10-16T06:14:24Z",
+        "nullEvidence": null
+      },
+      "decisionBasisJa": "固定WEBの初出とWikipedia実記事本文の該当箇所を再確認。記事にない同一性・系譜情報は加えず、リンク種別と表示注記を証拠範囲に限定した。 実記事本文の再読日時とURL/該当節の根拠をsidecarへ同期。",
+      "priorFindingResolutionJa": "Prior qualified: 2:51 calls Hareph father of Beth-gader. Draft appropriately records the line while keeping group/clan interpretation unsettled.; current fixed text and displayed fields re-read. Current decision: qualified."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:harum_1423",
+      "draftPath": "drafts/persons_3/1CH_harum_1423.json",
+      "currentDraftSHA256": "d335abf444b223092b582b9d57f001278a7f81f26708e6c4b51d28f66830f834",
+      "currentEvidenceSHA256": "b77cb36e187b1eaf0aebf8b6ea09c2d42ec66ba643e05fdeb097b214b595c1c7",
+      "currentProfileSHA256": "7b70e698002cac53d34daaa06bd26474f274b99840e7a9c389e7400a795df3ed",
+      "previousDraftSHA256": "fd5847619079e53d2b3dbeedca92dc33b50dfab26f97d30ec4f68d71c1f08441",
+      "previousEvidenceSHA256": "c38f3e2ac97a0e5b1259bbd9030c6922b2989e9f8d7a52acca4a25528b16c2ca",
+      "previousProfileSHA256": "2770d2287fcf803ec8c67e24d70e1baefeb3f4e216dd3063febd02320ac9ca28",
+      "closureMode": "current-bytes-rechecked",
+      "previousVerdict": "qualified",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "fixedWitness": "inventory/targets/chronicles1-web-verses.json",
+        "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/1CH04.htm#V8",
+            "ref": "1CH 4:8",
+            "text": "Hakkoz became the father of Anub, Zobebah, and the families of Aharhel the son of Harum.",
+            "sourceTextSHA256": "c446a4871bd022096eabc619cbe0d1cb5e8bb2a8dfc06fa31682a53eeee4cc77",
+            "readingNoteJa": "固定WEB本文と前後の系譜/名簿文脈を確認。"
+          }
+        ],
+        "assessmentJa": "4:8 says Aharhel son of Harum. Draft is accurate and does not add unstated biography."
+      },
+      "currentReaderFields": {
+        "knownBy": {
+          "chapter": 4,
+          "verse": 8
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 8
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 8
+            }
+          }
+        ],
+        "nameJa": "ハルム",
+        "subtitleJa": "ハコツ系譜でアハルヘルの父として名が挙がります。",
+        "summaryJa": "ハコツ系譜でアハルヘルの父として名が挙がります。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "facts": [],
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Harum",
+          "kind": "shared-section",
+          "noteJa": "記事は1歴代誌4:8のアハルヘルの父としてハルムを記しています。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 4,
+            "verse": 8
+          },
+          "sourceId": "harum_1423-wikipedia"
+        }
+      },
+      "currentWikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Harum",
+        "kind": "shared-section",
+        "identityVerified": true,
+        "relationVerified": false,
+        "bodyRead": true,
+        "actualCurrentArticleLocator": "§Harum, lines 2985–2989",
+        "currentArticleSupportParaphrase": "The entry directly records Harum as father of Aharhel at 1 Chronicles 4:8.",
+        "checkedAtUTC": "2026-10-16T06:14:24Z",
+        "nullEvidence": null
+      },
+      "decisionBasisJa": "固定WEBの初出とWikipedia実記事本文の該当箇所を再確認。記事にない同一性・系譜情報は加えず、リンク種別と表示注記を証拠範囲に限定した。 実記事本文の再読日時とURL/該当節の根拠をsidecarへ同期。",
+      "priorFindingResolutionJa": "Prior qualified: 4:8 says Aharhel son of Harum. Draft is accurate and does not add unstated biography.; current fixed text and displayed fields re-read. Current decision: pass."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hashabiah_1428",
+      "draftPath": "drafts/persons_3/1CH_hashabiah_1428.json",
+      "currentDraftSHA256": "0d7ff23e66b293540f68aa2a01aaa95ae53005d30b211aabb661f6c986e9cb64",
+      "currentEvidenceSHA256": "09bb18ca6f88203276733c0503d5da5eef9264a9e8ef0753d4b7f67537f29233",
+      "currentProfileSHA256": "7b184c1b1254141f61b6af1a6dc86df4bb605f1cbfe6481dfb40f8fbc44b502d",
+      "previousDraftSHA256": "0d7ff23e66b293540f68aa2a01aaa95ae53005d30b211aabb661f6c986e9cb64",
+      "previousEvidenceSHA256": "09bb18ca6f88203276733c0503d5da5eef9264a9e8ef0753d4b7f67537f29233",
+      "previousProfileSHA256": "7b184c1b1254141f61b6af1a6dc86df4bb605f1cbfe6481dfb40f8fbc44b502d",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "pass",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "6:45 places Hashabiah in the Merarite/Levite genealogy. Draft’s gate starts at this verse and identifies the relevant Hashabiah.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 6:45",
+            "text": "the son of Hashabiah, the son of Amaziah, the son of Hilkiah,",
+            "citationURL": "https://ebible.org/engwebp/1CH06.htm#V45",
+            "sourceTextSHA256": "7457160007f8ac6478673c1ffacda125121415b22ab532cfd76cdd987803cd2c"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-exact",
+        "priorFindingJa": "A–K §Hashabiah lines 3010–3013 explicitly lists a Merarite Levite at 1 Chronicles 6:45 and warns of namesakes.",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "f5829b680a37b392b2b31193cdfc53d93137a1fd684849af3db6808a10afafe3"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hashabiah_1430",
+      "draftPath": "drafts/persons_3/1CH_hashabiah_1430.json",
+      "currentDraftSHA256": "6ba2557684f11625fe63eddfa3a6c558b3206466f356e42e49276d6d542e81a0",
+      "currentEvidenceSHA256": "2c4b73e2b82deb04668ebe911a3d2ab8c4176e7297a5b8b6fe0b8543868d3299",
+      "currentProfileSHA256": "65ef7b9325b3f523f634632a73d77cf78d0d5548c77b997b74a9ca1e970bfd8a",
+      "previousDraftSHA256": "6ba2557684f11625fe63eddfa3a6c558b3206466f356e42e49276d6d542e81a0",
+      "previousEvidenceSHA256": "2c4b73e2b82deb04668ebe911a3d2ab8c4176e7297a5b8b6fe0b8543868d3299",
+      "previousProfileSHA256": "65ef7b9325b3f523f634632a73d77cf78d0d5548c77b997b74a9ca1e970bfd8a",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "pass",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "25:3 and 25:19 identify the Heman/Jeduthun musical roster and the 12th division. Draft keeps the division at its later source gate.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 25:3",
+            "text": "Of Jeduthun, the sons of Jeduthun: Gedaliah, Zeri, Jeshaiah, Shimei, Hashabiah, and Mattithiah, six, under the hands of their father Jeduthun, who prophesied in giving thanks and praising the LORD with the harp.",
+            "citationURL": "https://ebible.org/engwebp/1CH25.htm#V3",
+            "sourceTextSHA256": "94ccb473e88dd0856fd160b28b21d291a2514b05e4ca761720863aaaccaffb07"
+          },
+          {
+            "ref": "1CH 25:19",
+            "text": "the twelfth to Hashabiah, his sons and his brothers, twelve;",
+            "citationURL": "https://ebible.org/engwebp/1CH25.htm#V19",
+            "sourceTextSHA256": "6240b2a35078cf3490214172e309dd4c3d6271b9eb386dd1a32bd6b0d81cf319"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-exact",
+        "priorFindingJa": "A–K §Hashabiah lines 3014–3015 describes a David-appointed temple musician; relevant shared section though it also lists other Hashabiahs.",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "8870de34f5153ecf41c1c719ebca5e0964e5be2e34ba0d0ce5950fa06aca1064"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hashabiah_1432",
+      "draftPath": "drafts/persons_3/1CH_hashabiah_1432.json",
+      "currentDraftSHA256": "2b99534612914af6b98eef9e5d87f7258cf31aeb8969a598727b9c8a0815a732",
+      "currentEvidenceSHA256": "fceb8899845b3df593c90e98628efd840ea1c334f1c9f35a8e4d84b06445d2a8",
+      "currentProfileSHA256": "d0117ce1456788af184d9605b9d5660b60937b1d564524aaa80239b6dceb2936",
+      "previousDraftSHA256": "2b99534612914af6b98eef9e5d87f7258cf31aeb8969a598727b9c8a0815a732",
+      "previousEvidenceSHA256": "fceb8899845b3df593c90e98628efd840ea1c334f1c9f35a8e4d84b06445d2a8",
+      "previousProfileSHA256": "d0117ce1456788af184d9605b9d5660b60937b1d564524aaa80239b6dceb2936",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "pass",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "27:17 names Hashabiah as Levi’s leader; draft identifies this separate Hashabiah as son of Kemuel.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 27:17",
+            "text": "of Levi, Hashabiah the son of Kemuel; of Aaron, Zadok;",
+            "citationURL": "https://ebible.org/engwebp/1CH27.htm#V17",
+            "sourceTextSHA256": "c4fe368bf84d3ce49b0b3a4afe2e35543494be177cc2b395dbbe59a744e2bf6f"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-exact",
+        "priorFindingJa": "A–K §Hashabiah line 3016 separately identifies Hashabiah son of Kemuel as Levite leader under David.",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "8643f986c824924d289d4fedf2086dae1e71e015d05ba76fc3fa3e0d14afa74a"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hathath_1453",
+      "draftPath": "drafts/persons_3/1CH_hathath_1453.json",
+      "currentDraftSHA256": "7f0d49b49b9111a571dd38ead3a921cd1ad35cb18ffc350fcb2d1f34b7c011a2",
+      "currentEvidenceSHA256": "ad1fb00e6447970da938e528f0ed5e06cff6a601143bf018233702f15620c3eb",
+      "currentProfileSHA256": "89fdea112d137a34c7aa0beead48f66966dcfc9f16d907e88a8d4b1ecbf68931",
+      "previousDraftSHA256": "7f0d49b49b9111a571dd38ead3a921cd1ad35cb18ffc350fcb2d1f34b7c011a2",
+      "previousEvidenceSHA256": "ad1fb00e6447970da938e528f0ed5e06cff6a601143bf018233702f15620c3eb",
+      "previousProfileSHA256": "89fdea112d137a34c7aa0beead48f66966dcfc9f16d907e88a8d4b1ecbf68931",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "pass",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "4:13 names Hathath as Othniel’s son; draft relation matches.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 4:13",
+            "text": "The sons of Kenaz: Othniel and Seraiah. The sons of Othniel: Hathath.",
+            "citationURL": "https://ebible.org/engwebp/1CH04.htm#V13",
+            "sourceTextSHA256": "71a04429073044c70d7130c2f89816ecc7e02118b65bc235966764abe72edf51"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-exact",
+        "priorFindingJa": "A–K §Hathath line 3063 says the same and cites 1 Chronicles 4:13.",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "3d41c2d057e9beb7ae8274f2435ad05c85612cada795e081572d00f4c1020834"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:havilah_1462",
+      "draftPath": "drafts/persons_3/1CH_havilah_1462.json",
+      "currentDraftSHA256": "c6a0d58f720ec1ee77cb10bc16b02f547a3de9605261b10f9c810bebf15c032b",
+      "currentEvidenceSHA256": "b672e3d19e7c4ff9d6bde33b13dec906b8a60fc6adeeb4b8887c098d24467d25",
+      "currentProfileSHA256": "11b653e0a32017dc3f68d99994e10f96ddc57480cf06c893646441604421d5c1",
+      "previousDraftSHA256": "c6a0d58f720ec1ee77cb10bc16b02f547a3de9605261b10f9c810bebf15c032b",
+      "previousEvidenceSHA256": "b672e3d19e7c4ff9d6bde33b13dec906b8a60fc6adeeb4b8887c098d24467d25",
+      "previousProfileSHA256": "11b653e0a32017dc3f68d99994e10f96ddc57480cf06c893646441604421d5c1",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "1:23 names Havilah among Joktan’s descendants; draft distinguishes this genealogy from earlier Havilah/Cush context without forcing one person or place.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 1:23",
+            "text": "Ophir, Havilah, and Jobab. All these were the sons of Joktan.",
+            "citationURL": "https://ebible.org/engwebp/1CH01.htm#V23",
+            "sourceTextSHA256": "242ffe59c233f61c537155c7ca034e38a883e97632f0a5291bcebb02129c96aa"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "search-complete-related-only",
+        "priorFindingJa": "Searches found Havilah geographic entries but no direct article evidence for this Joktan descendant; a land/region page is not a person identity match.",
+        "url": null
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "d71b3b03ad36a156f7d69a665eab34c93cd0b9343b7b31f04fe17d9116334593"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:haziel_1467",
+      "draftPath": "drafts/persons_3/1CH_haziel_1467.json",
+      "currentDraftSHA256": "7940defa42a6726c0d1b60fc23e2173fff3ed0e37c30db1f9d3062bc07769b1e",
+      "currentEvidenceSHA256": "88b15fa71ec5b58cbcea70ff20105583601833244657ddb18a354f2f8274f3bb",
+      "currentProfileSHA256": "169d3ad5abaede77180815fed907fb4c598b8fe1b8ca82081545ce71ab31d9e7",
+      "previousDraftSHA256": "7940defa42a6726c0d1b60fc23e2173fff3ed0e37c30db1f9d3062bc07769b1e",
+      "previousEvidenceSHA256": "88b15fa71ec5b58cbcea70ff20105583601833244657ddb18a354f2f8274f3bb",
+      "previousProfileSHA256": "169d3ad5abaede77180815fed907fb4c598b8fe1b8ca82081545ce71ab31d9e7",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "23:9 lists Haziel among Shimei’s family; draft confines itself to the genealogy.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 23:9",
+            "text": "The sons of Shimei: Shelomoth, Haziel, and Haran, three. These were the heads of the fathers’ households of Ladan.",
+            "citationURL": "https://ebible.org/engwebp/1CH23.htm#V9",
+            "sourceTextSHA256": "82cce21d1b4ecd4063ccf6c7c03d0920f158487aafcf8d7922f5da83fe89daa0"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "search-complete-no-fit",
+        "priorFindingJa": "Target-specific Wikipedia page/section not found in the searches checked; namesake hits are unrelated. Not a universal absence claim.",
+        "url": null
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "0b526b46aa7a0ede42d703d41048a44b3fa3023a5848ebfb607c907c078a47f8"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:heber_1473",
+      "draftPath": "drafts/persons_3/1CH_heber_1473.json",
+      "currentDraftSHA256": "8f08f454ce0c5429c09ae2ad3bd6c8085cafffac1a9abc4dc9b544cd8c4ceb47",
+      "currentEvidenceSHA256": "d25a978d051ce5fa1a362c2babf21ca236e04050b1c990fc3b702b6cc6e780b6",
+      "currentProfileSHA256": "d6b1f96b84ec63e5828e188a4993bacc91f31c571f7659a3c4317fb8bf41655c",
+      "previousDraftSHA256": "8f08f454ce0c5429c09ae2ad3bd6c8085cafffac1a9abc4dc9b544cd8c4ceb47",
+      "previousEvidenceSHA256": "d25a978d051ce5fa1a362c2babf21ca236e04050b1c990fc3b702b6cc6e780b6",
+      "previousProfileSHA256": "d6b1f96b84ec63e5828e188a4993bacc91f31c571f7659a3c4317fb8bf41655c",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "8:17 lists Heber in a Benjamin genealogy. Draft does not merge him with other Heber figures.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 8:17",
+            "text": "Zebadiah, Meshullam, Hizki, Heber,",
+            "citationURL": "https://ebible.org/engwebp/1CH08.htm#V17",
+            "sourceTextSHA256": "4380be635d728cda5fc3c11d26bffbf9df74702215807247b988c8fcaf765c59"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "search-complete-no-fit",
+        "priorFindingJa": "A–K §Heber lines 3080–3086 covers Jael’s Kenite husband and Asher’s grandson; neither matches Benjamin’s Heber. No target match found.",
+        "url": null
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "71e4109b30902e34fcef5362d30066963b89f48a195736d4ded06e809c528799"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hebron_1475",
+      "draftPath": "drafts/persons_3/1CH_hebron_1475.json",
+      "currentDraftSHA256": "da079053f43410d1267278c03bf1d06942073fba6c28fac62af2c34195b116d1",
+      "currentEvidenceSHA256": "314d66b48ff501bdc5c267af892b7e9294ea4b823dc2f3873d1c2b9fb30ab067",
+      "currentProfileSHA256": "34b9f125076fba9e4ebf9d7c0db6d44a6a92f4711343e599ba19f3cde8f13743",
+      "previousDraftSHA256": "da079053f43410d1267278c03bf1d06942073fba6c28fac62af2c34195b116d1",
+      "previousEvidenceSHA256": "314d66b48ff501bdc5c267af892b7e9294ea4b823dc2f3873d1c2b9fb30ab067",
+      "previousProfileSHA256": "34b9f125076fba9e4ebf9d7c0db6d44a6a92f4711343e599ba19f3cde8f13743",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "6:2,18 and later 15:9,23:12,23:19,24:23 point to the Kohathite Hebron; draft separates person from Hebron city.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 6:2",
+            "text": "The sons of Kohath: Amram, Izhar, Hebron, and Uzziel.",
+            "citationURL": "https://ebible.org/engwebp/1CH06.htm#V2",
+            "sourceTextSHA256": "4455061db06c98be0ee0088593b1d003d4388a767bf851531ebefe641fb88399"
+          },
+          {
+            "ref": "1CH 6:18",
+            "text": "The sons of Kohath were Amram, Izhar, Hebron, and Uzziel.",
+            "citationURL": "https://ebible.org/engwebp/1CH06.htm#V18",
+            "sourceTextSHA256": "932989ba7e9fc0da6be0eadd888e64f28cb8730d873fe7ffeb2fb2ecdad40c25"
+          },
+          {
+            "ref": "1CH 15:9",
+            "text": "of the sons of Hebron, Eliel the chief, and his brothers eighty;",
+            "citationURL": "https://ebible.org/engwebp/1CH15.htm#V9",
+            "sourceTextSHA256": "09640891be7bb6d3ee51e986610e3b4dcffc09f74a0d0d750313eca512583f83"
+          },
+          {
+            "ref": "1CH 23:12",
+            "text": "The sons of Kohath: Amram, Izhar, Hebron, and Uzziel, four.",
+            "citationURL": "https://ebible.org/engwebp/1CH23.htm#V12",
+            "sourceTextSHA256": "c5f2a5f91f792b21651cc512382d9f4d58d9ca9802052377b6fa60767de6eed7"
+          },
+          {
+            "ref": "1CH 23:19",
+            "text": "The sons of Hebron: Jeriah the chief, Amariah the second, Jahaziel the third, and Jekameam the fourth.",
+            "citationURL": "https://ebible.org/engwebp/1CH23.htm#V19",
+            "sourceTextSHA256": "d469dd9998d252fa936d2df20c3674e7d8d062a62b1c7ddd71fbbb262abf254f"
+          },
+          {
+            "ref": "1CH 24:23",
+            "text": "The sons of Hebron: Jeriah, Amariah the second, Jahaziel the third, and Jekameam the fourth.",
+            "citationURL": "https://ebible.org/engwebp/1CH24.htm#V23",
+            "sourceTextSHA256": "321ec2d5bf63df291e5fa67932140330750d5e411419aff7c41f438adef06f56"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "search-complete-wrong-namesake-only",
+        "priorFindingJa": "A–K Hebron lines 3087–3091 points to Caleb’s son in 1 Chronicles 2:42–43, a different person. Null is appropriate unless a separate fit is found; do not use the city article.",
+        "url": null
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "067eb8cd34e8b8d7c67bb827f3cd4211d72c700065104f44f64b205bc69ea588"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:helah_1478",
+      "draftPath": "drafts/persons_3/1CH_helah_1478.json",
+      "currentDraftSHA256": "e18bcb42454fa4fb30306d61df096ef8f311383fd9db01c8edc048126a5915b1",
+      "currentEvidenceSHA256": "90a9e434d68387d48c9d0675d92aca87cdd9d54446d643cbda1ae307517eef4d",
+      "currentProfileSHA256": "89eaf733fb93ed0283a9ddcccb988394d79b71b6c59c844815a9903a9add8c8d",
+      "previousDraftSHA256": "63d9f280b92e675890d6a4eb03b92df1c1e18c7c42152d0fedf5c926a8ab96b5",
+      "previousEvidenceSHA256": "d29d0bca500276501a73550f4d9ecd74c2fc3a1dda0c01c40f9131a0711aa283",
+      "previousProfileSHA256": "c3d06336a9ed8f02a60f2bc564d28d96c17f461a56db04414cd0142e687a211f",
+      "closureMode": "current-bytes-rechecked",
+      "previousVerdict": "fail",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "fixedWitness": "inventory/targets/chronicles1-web-verses.json",
+        "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/1CH04.htm#V5",
+            "ref": "1CH 4:5",
+            "text": "Ashhur the father of Tekoa had two wives, Helah and Naarah.",
+            "sourceTextSHA256": "10630c45cc7ab396d1fed0a4c8859484f9094d9e45886bebd87c6f53e46a92d0",
+            "readingNoteJa": "固定WEB本文と前後の系譜/名簿文脈を確認。"
+          },
+          {
+            "url": "https://ebible.org/engwebp/1CH04.htm#V7",
+            "ref": "1CH 4:7",
+            "text": "The sons of Helah were Zereth, Izhar, and Ethnan.",
+            "sourceTextSHA256": "be42c80adb8a429e58093c580aeba779a175a25f99106ecfdabd860537215a3c",
+            "readingNoteJa": "固定WEB本文と前後の系譜/名簿文脈を確認。"
+          }
+        ],
+        "assessmentJa": "knownBy 4:5, but the always-visible Wikipedia note says the article treats Helah and her children. The page section at lines 3093–3097 names children from 4:7, which is later than the profile gate. Gate that source/note to 4:7 or make the 4:5 note only identify her as Ashur’s wife."
+      },
+      "currentReaderFields": {
+        "knownBy": {
+          "chapter": 4,
+          "verse": 5
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 5
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 5
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 7
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 7
+            }
+          }
+        ],
+        "nameJa": "ヘラ",
+        "subtitleJa": "アシュルの妻の一人として記されています。",
+        "summaryJa": "アシュルの妻の一人として記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "facts": [
+          {
+            "textJa": "ヘラの子らとしてゼレト、イツハル、エトナンが挙げられます。",
+            "knownBy": {
+              "chapter": 4,
+              "verse": 7
+            },
+            "sourceIds": [
+              "helah_1478-webp-1ch-4-7"
+            ]
+          }
+        ],
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K",
+          "kind": "shared-section",
+          "noteJa": "記事はヘラをアシュルの妻として挙げます。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 4,
+            "verse": 5
+          },
+          "sourceId": "helah_1478-wikipedia"
+        }
+      },
+      "currentWikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K",
+        "kind": "shared-section",
+        "identityVerified": true,
+        "relationVerified": false,
+        "bodyRead": true,
+        "actualCurrentArticleLocator": "§Helah, lines 3093–3097",
+        "currentArticleSupportParaphrase": "4:5で確認できるアシュルの妻という関係に限って注記。記事が後続節から挙げる子どもはここでは表示しない。",
+        "checkedAtUTC": "2026-10-16T05:39:45Z",
+        "nullEvidence": null
+      },
+      "decisionBasisJa": "Wikipedia注記をknownBy 1CH 4:5時点で分かる妻の記載に限定。子らは既存の4:7 factに保持。",
+      "priorFindingResolutionJa": "Prior fail: knownBy 4:5, but the always-visible Wikipedia note says the article treats Helah and her children. The page section at lines 3093–3097 names children from 4:7, which is later than the profile gate. Gate that source/note to 4:7 or make the 4:5 note only identify her as Ashur’s wife.; current fixed text and displayed fields re-read. Current decision: pass."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:heman_1489",
+      "draftPath": "drafts/persons_3/1CH_heman_1489.json",
+      "currentDraftSHA256": "6adbc697c02f7a100adfde18329679e4c80eae705ea0dd7d9a654810c82a2824",
+      "currentEvidenceSHA256": "144572df2fbc2c844657ab4c6d23c28e067fae5d8e90a63b3a7469bbc66a76d4",
+      "currentProfileSHA256": "55b59c7e3268fdff84196445e347e3f95c767e16e2473a5e13b4b46d734b8f64",
+      "previousDraftSHA256": "816017dfdd02019172a8da17b6bb2a8761ec97cd43838d5d6b1432ca489e1aaa",
+      "previousEvidenceSHA256": "f6bc057101181a9f36f3cb4bc6d914052fc2c0d80fdc0fbc10e7af5ce4111623",
+      "previousProfileSHA256": "09af08e65faf944b7491b89d37f5a60e84695770fdc0d4f30a776bcded742ade",
+      "closureMode": "current-bytes-rechecked",
+      "previousVerdict": "fail",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "fixedWitness": "inventory/targets/chronicles1-web-verses.json",
+        "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/1CH02.htm#V6",
+            "ref": "1CH 2:6",
+            "text": "The sons of Zerah: Zimri, Ethan, Heman, Calcol, and Dara—five of them in all.",
+            "sourceTextSHA256": "e25231f2bd6955e9c3f64b3db84cccec052da20ff60de1233150e5608e6b59a5",
+            "readingNoteJa": "固定WEB 1CH 2:6でゼラの子らの一覧に名が挙がる。別書・後の役割との同一性比較は常時説明に含めない。"
+          }
+        ],
+        "assessmentJa": "2:6 names Heman among Judah-line descendants. Summary says he is not the later Levite singer; that later cross-book comparison is not known by 1CH 2:6 and is not established as a same-book identity fact. Remove the namesake disclaimer from always-visible summary; if needed, gate sourced comparison separately."
+      },
+      "currentReaderFields": {
+        "knownBy": {
+          "chapter": 2,
+          "verse": 6
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 2,
+              "verse": 6
+            },
+            "end": {
+              "chapter": 2,
+              "verse": 6
+            }
+          }
+        ],
+        "nameJa": "ヘマン",
+        "subtitleJa": "ユダ系譜でゼラの子らの一人として挙げられます。",
+        "summaryJa": "ユダ系譜でゼラの子らの一人として挙げられます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "facts": [],
+        "wikipedia": null
+      },
+      "currentWikipediaReview": {
+        "url": null,
+        "kind": null,
+        "identityVerified": null,
+        "relationVerified": null,
+        "bodyRead": false,
+        "actualCurrentArticleLocator": null,
+        "currentArticleSupportParaphrase": "No active Wikipedia link. Earlier checked Heman/singer pages did not fit this 1 Chronicles 2:6 genealogy; the corrected summary states only the WEB list entry and does not expose cross-book singer material.",
+        "checkedAtUTC": null,
+        "nullEvidence": {
+          "queries": [
+            "site:en.wikipedia.org/wiki (\"Harum\" OR \"Hashabiah\" OR \"Hathath\" OR \"Havilah\" OR \"Haziel\" OR \"Heber\" OR \"Hebron\" OR \"Helah\" OR \"Heman\" OR \"Henoch\" OR \"Heresh\") 1 Chronicles"
+          ],
+          "checkedAtUTC": "2026-10-16T05:39:45Z",
+          "searchReasonJa": "英語名と候補の書内節を含むWikipedia検索。適合する専用記事または同一対象を扱う共有節の本文を確認できず、リンクしなかった。",
+          "status": "no-fit-or-held; search evidence recorded"
+        }
+      },
+      "decisionBasisJa": "1CH 2:6の初出では分からない歌い手との比較を、subtitle/summaryから除去。",
+      "priorFindingResolutionJa": "Prior fail: 2:6 names Heman among Judah-line descendants. Summary says he is not the later Levite singer; that later cross-book comparison is not known by 1CH 2:6 and is not established as a same-book identity fact. Remove the namesake disclaimer from always-visible summary; if needed, gate sourced comparison separately.; current fixed text and displayed fields re-read. Current decision: qualified."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:henoch_1402",
+      "draftPath": "drafts/persons_3/1CH_henoch_1402.json",
+      "currentDraftSHA256": "2898b140dc1f37cf89be601996807bc23053194723c1e0b86c5c2d693cf0f00d",
+      "currentEvidenceSHA256": "c9c821bd1c7ba654c577569de31e7f32a0c066a26ce3e2357f0d2b9b5aab2f8b",
+      "currentProfileSHA256": null,
+      "previousDraftSHA256": "2898b140dc1f37cf89be601996807bc23053194723c1e0b86c5c2d693cf0f00d",
+      "previousEvidenceSHA256": "c9c821bd1c7ba654c577569de31e7f32a0c066a26ce3e2357f0d2b9b5aab2f8b",
+      "previousProfileSHA256": null,
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "Explicitly held/null profile; no identity or biography is asserted. This is a candidate disposition, not a verified absence of a distinct person.",
+        "primaryWitnesses": []
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "held-null",
+        "priorFindingJa": "No active link; evidence must retain the hold/identity-uncertain reason. Not counted as a “no article” result.",
+        "url": null
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "82e002876e3365e9aa12fabc08a478e1722f78681f5c6d2463611f708f5e4314"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:heresh_1500",
+      "draftPath": "drafts/persons_3/1CH_heresh_1500.json",
+      "currentDraftSHA256": "3589c223c2ae51977f39a095006151f2a0c30783fbd81f12c9c0bea2ccc24780",
+      "currentEvidenceSHA256": "77cebf24fa57efea325403227b19b25ff2364ee22235775aabcf90f872d90b72",
+      "currentProfileSHA256": "c235a10599e738313d4f9f59be7d0ac3833a85257ad260302fa0e5e1cc3f485c",
+      "previousDraftSHA256": "3589c223c2ae51977f39a095006151f2a0c30783fbd81f12c9c0bea2ccc24780",
+      "previousEvidenceSHA256": "77cebf24fa57efea325403227b19b25ff2364ee22235775aabcf90f872d90b72",
+      "previousProfileSHA256": "c235a10599e738313d4f9f59be7d0ac3833a85257ad260302fa0e5e1cc3f485c",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "pass",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "9:15 lists Heresh in the Jerusalem Levite roster. Draft stays within this roster.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 9:15",
+            "text": "and Bakbakkar, Heresh, Galal, and Mattaniah the son of Mica, the son of Zichri, the son of Asaph,",
+            "citationURL": "https://ebible.org/engwebp/1CH09.htm#V15",
+            "sourceTextSHA256": "be8aca17bb52314a05ce1a793b5996b654fd88b01b2489e7cbf9df79899cdc8a"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-exact",
+        "priorFindingJa": "A–K §Heresh lines 3145–3149 identifies the Levite in 1 Chronicles 9:15.",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "278576fe76e378615dc76a474ce80f94663783f3d46abff754191d28d2de21aa"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hezekiah_1512",
+      "draftPath": "drafts/persons_3/1CH_hezekiah_1512.json",
+      "currentDraftSHA256": "aa3d116f9888782739671e86e304a05aae6bb1d0679042a3d0d80af3d94cbda4",
+      "currentEvidenceSHA256": "f915a78a2ac7964963895198383c67eaa6242909f2bad289778c0241d891678c",
+      "currentProfileSHA256": "0e9b98bef1ac17af11f8851b83edffb6fa0d83fceaa2379b28bfd1debf762ca7",
+      "previousDraftSHA256": "aa3d116f9888782739671e86e304a05aae6bb1d0679042a3d0d80af3d94cbda4",
+      "previousEvidenceSHA256": "f915a78a2ac7964963895198383c67eaa6242909f2bad289778c0241d891678c",
+      "previousProfileSHA256": "0e9b98bef1ac17af11f8851b83edffb6fa0d83fceaa2379b28bfd1debf762ca7",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "pass",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "3:13 names Hezekiah in the Davidic royal genealogy as son of Ahaz; 4:41 describes Jerusalem’s deliverance under Hezekiah. Both gates are chronology-safe.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 3:13",
+            "text": "Ahaz his son, Hezekiah his son, Manasseh his son,",
+            "citationURL": "https://ebible.org/engwebp/1CH03.htm#V13",
+            "sourceTextSHA256": "13afb7f112b30f9fb33da4fc7792c8c90643904dce1bc23fe378081da8b9d9a7"
+          },
+          {
+            "ref": "1CH 4:41",
+            "text": "These written by name came in the days of Hezekiah king of Judah, and struck their tents and the Meunim who were found there; and they destroyed them utterly to this day, and lived in their place, because there was pasture there for their flocks.",
+            "citationURL": "https://ebible.org/engwebp/1CH04.htm#V41",
+            "sourceTextSHA256": "ae8da4ee6d9aa29c949f4644441d0e88e97fa3e3f0c2847164e5475cb967ad31"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-related-current-gate",
+        "priorFindingJa": "A–K §Hezekiah lines 3154–3159 differentiates minor Hezekiah namesakes and redirects the Judah king to the dedicated article. The dedicated article discusses the king/son of Ahaz; linkage is relevant for 4:41, not evidence beyond the WEB genealogy.",
+        "url": "https://en.wikipedia.org/wiki/Hezekiah"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "da21f55c6fb82793a9aa6e54b859e02a04bde3a4635e356e1e39d6154fc3e15d"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hezekiah_1513",
+      "draftPath": "drafts/persons_3/1CH_hezekiah_1513.json",
+      "currentDraftSHA256": "8978aa0f123fb159205df20fef13e3274ecc7521fe6f23b7c4a1440191a32bba",
+      "currentEvidenceSHA256": "07c1feb861d41b10330e17450b349ebe4e0ce7ddc1c4606dd580568f17dc4366",
+      "currentProfileSHA256": "863c712e23dd7bc152a19437dffc25bfc2792f6d278926d5574abc813af28a01",
+      "previousDraftSHA256": "cf834b11017c761e80b4750a04c201775c0e948f5d579979b8d69c77ee9aba58",
+      "previousEvidenceSHA256": "b537a77e4df12b3c9cc736bb83867cc618102057cabe77009385ae7eeff8ff7e",
+      "previousProfileSHA256": "55bb16ead9976e42037560eb78fff3ed021ff3de6444cdda350d8cc86d46b114",
+      "closureMode": "current-bytes-rechecked",
+      "previousVerdict": "qualified",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "fixedWitness": "inventory/targets/chronicles1-web-verses.json",
+        "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/1CH03.htm#V23",
+            "ref": "1CH 3:23",
+            "text": "The sons of Neariah: Elioenai, Hizkiah, and Azrikam, three.",
+            "sourceTextSHA256": "e0d97d1927f90f9102e932eb181dc2b41443445e0f7cac2fc36b58ac918bee92",
+            "readingNoteJa": "固定WEB本文と前後の系譜/名簿文脈を確認。"
+          }
+        ],
+        "assessmentJa": "3:23 names Hizkiah son of Neariah, a distinct Davidic genealogy figure; draft correctly distinguishes him from King Hezekiah."
+      },
+      "currentReaderFields": {
+        "knownBy": {
+          "chapter": 3,
+          "verse": 23
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 3,
+              "verse": 23
+            },
+            "end": {
+              "chapter": 3,
+              "verse": 23
+            }
+          }
+        ],
+        "nameJa": "ヒズキヤ",
+        "subtitleJa": "ネアリヤの子らの一人として記されています。",
+        "summaryJa": "ネアリヤの子らとして、エルヨエナイ、ヒズキヤ、アズリカムが挙げられます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "facts": [],
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Hezekiah",
+          "kind": "shared-section",
+          "noteJa": "記事はネアリヤの子として記される人物を挙げ、聖書によってヒズキヤなどの異綴りがあると説明します。ユダ王ヒゼキヤとは別の系譜人物です。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 3,
+            "verse": 23
+          },
+          "sourceId": "hezekiah_1513-wikipedia"
+        }
+      },
+      "currentWikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Hezekiah",
+        "kind": "shared-section",
+        "identityVerified": true,
+        "relationVerified": false,
+        "bodyRead": true,
+        "actualCurrentArticleLocator": "§Hezekiah, lines 3150–3159",
+        "currentArticleSupportParaphrase": "The article distinguishes minor figures from King Hezekiah, identifies a son of Neariah in 1 Chronicles 3, and notes Hizkiah spelling variants.",
+        "checkedAtUTC": "2026-10-16T06:14:24Z",
+        "nullEvidence": null
+      },
+      "decisionBasisJa": "固定WEBの初出とWikipedia実記事本文の該当箇所を再確認。記事にない同一性・系譜情報は加えず、リンク種別と表示注記を証拠範囲に限定した。 実記事本文の再読日時とURL/該当節の根拠をsidecarへ同期。",
+      "priorFindingResolutionJa": "Prior qualified: 3:23 names Hizkiah son of Neariah, a distinct Davidic genealogy figure; draft correctly distinguishes him from King Hezekiah.; current fixed text and displayed fields re-read. Current decision: pass."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hezron_1520",
+      "draftPath": "drafts/persons_3/1CH_hezron_1520.json",
+      "currentDraftSHA256": "20ed2fa5a03aeeddecb98087bff4c1c8800bd581e1072a0af29462e60a48df64",
+      "currentEvidenceSHA256": "0cfc6f80036dd6a33a35ba2298349101799319a2bd78a0fc50eb5e929b629295",
+      "currentProfileSHA256": "df5b8b0abd8f639a095907c8cb1b80f530d2373b3f7594cefa469c3060bc2b5b",
+      "previousDraftSHA256": "c2d9b939211214891cb5c40909d4f20306de74992f38c5bcf790a23a7fc61e97",
+      "previousEvidenceSHA256": "e678ca8f83ba0d7cc7c2f4ddf896663992ec6e8c9513cdda33324820b3cfbb4c",
+      "previousProfileSHA256": "f03f778721442fd8263bcbe1e1777313068668bd1e14171f9c4994ede0adfe27",
+      "closureMode": "current-bytes-rechecked",
+      "previousVerdict": "qualified",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "fixedWitness": "inventory/targets/chronicles1-web-verses.json",
+        "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/1CH02.htm#V5",
+            "ref": "1CH 2:5",
+            "text": "The sons of Perez: Hezron and Hamul.",
+            "sourceTextSHA256": "302321e4d37a49e84f0be921547421e64e354894ed26e59fc38668598bb96530",
+            "readingNoteJa": "固定WEB本文と前後の系譜/名簿文脈を確認。"
+          },
+          {
+            "url": "https://ebible.org/engwebp/1CH02.htm#V9",
+            "ref": "1CH 2:9",
+            "text": "The sons also of Hezron, who were born to him: Jerahmeel, Ram, and Chelubai.",
+            "sourceTextSHA256": "583436c48139bb9147bd25b5bfe00be547ff139fa65247387d48db8bcdde9a16",
+            "readingNoteJa": "固定WEB本文と前後の系譜/名簿文脈を確認。"
+          },
+          {
+            "url": "https://ebible.org/engwebp/1CH02.htm#V18",
+            "ref": "1CH 2:18",
+            "text": "Caleb the son of Hezron became the father of children by Azubah his wife, and by Jerioth; and these were her sons: Jesher, Shobab, and Ardon.",
+            "sourceTextSHA256": "c119099721f0be797f589faacfc06a9b4fb343c30785bc267c407b56e9d14315",
+            "readingNoteJa": "固定WEB本文と前後の系譜/名簿文脈を確認。"
+          },
+          {
+            "url": "https://ebible.org/engwebp/1CH02.htm#V21",
+            "ref": "1CH 2:21",
+            "text": "Afterward Hezron went in to the daughter of Machir the father of Gilead, whom he took as wife when he was sixty years old; and she bore him Segub.",
+            "sourceTextSHA256": "ed9c15c3d874278c9b9ebe674d68cb51902922e3712a1cdc2701fd7c959f9b8a",
+            "readingNoteJa": "固定WEB本文と前後の系譜/名簿文脈を確認。"
+          },
+          {
+            "url": "https://ebible.org/engwebp/1CH02.htm#V24",
+            "ref": "1CH 2:24",
+            "text": "After Hezron died in Caleb Ephrathah, Abijah, Hezron’s wife, bore him Ashhur the father of Tekoa.",
+            "sourceTextSHA256": "b20a91f4973d19e9040ee00577516859d2f251d6ac76f3682ae4dc7015731eba",
+            "readingNoteJa": "固定WEB本文と前後の系譜/名簿文脈を確認。"
+          },
+          {
+            "url": "https://ebible.org/engwebp/1CH02.htm#V25",
+            "ref": "1CH 2:25",
+            "text": "The sons of Jerahmeel the firstborn of Hezron were Ram the firstborn, Bunah, Oren, Ozem, and Ahijah.",
+            "sourceTextSHA256": "5926b587b6b667529b5144b5f3cc08587a63748cae75c6124fb7b4fe8ebd6cdd",
+            "readingNoteJa": "固定WEB本文と前後の系譜/名簿文脈を確認。"
+          },
+          {
+            "url": "https://ebible.org/engwebp/1CH04.htm#V1",
+            "ref": "1CH 4:1",
+            "text": "The sons of Judah: Perez, Hezron, Carmi, Hur, and Shobal.",
+            "sourceTextSHA256": "a5709942f4dbb2587d264b6cca108be688c4f13254707ac7ddb9f2335ef15182",
+            "readingNoteJa": "固定WEB本文と前後の系譜/名簿文脈を確認。"
+          }
+        ],
+        "assessmentJa": "2:5 names Hezron as son of Perez; later genealogy facts remain gated to later verses."
+      },
+      "currentReaderFields": {
+        "knownBy": {
+          "chapter": 2,
+          "verse": 5
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 2,
+              "verse": 5
+            },
+            "end": {
+              "chapter": 2,
+              "verse": 5
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 2,
+              "verse": 9
+            },
+            "end": {
+              "chapter": 2,
+              "verse": 9
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 2,
+              "verse": 18
+            },
+            "end": {
+              "chapter": 2,
+              "verse": 18
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 2,
+              "verse": 21
+            },
+            "end": {
+              "chapter": 2,
+              "verse": 21
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 2,
+              "verse": 24
+            },
+            "end": {
+              "chapter": 2,
+              "verse": 24
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 2,
+              "verse": 25
+            },
+            "end": {
+              "chapter": 2,
+              "verse": 25
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 1
+            }
+          }
+        ],
+        "nameJa": "ヘツロン",
+        "subtitleJa": "ペレツの子として記されています。",
+        "summaryJa": "ペレツの子として記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "facts": [
+          {
+            "textJa": "ヘツロンの子らとしてエラフメエル、ラム、ケルバイが挙げられます。",
+            "knownBy": {
+              "chapter": 2,
+              "verse": 9
+            },
+            "sourceIds": [
+              "hezron_1520-webp-1ch-2-9"
+            ]
+          },
+          {
+            "textJa": "ヘツロンの子カレブと妻アズバの子らが列挙されます。",
+            "knownBy": {
+              "chapter": 2,
+              "verse": 18
+            },
+            "sourceIds": [
+              "hezron_1520-webp-1ch-2-18"
+            ]
+          },
+          {
+            "textJa": "ヘツロンは六十歳の時にマキルの娘と結婚し、セグブの父となったと記されます。",
+            "knownBy": {
+              "chapter": 2,
+              "verse": 21
+            },
+            "sourceIds": [
+              "hezron_1520-webp-1ch-2-21"
+            ]
+          },
+          {
+            "textJa": "ヘツロンの死後、妻アビヤがアシュルを産んだと記されます。",
+            "knownBy": {
+              "chapter": 2,
+              "verse": 24
+            },
+            "sourceIds": [
+              "hezron_1520-webp-1ch-2-24"
+            ]
+          },
+          {
+            "textJa": "ヘツロンの長子エラフメエルの子らが列挙されます。",
+            "knownBy": {
+              "chapter": 2,
+              "verse": 25
+            },
+            "sourceIds": [
+              "hezron_1520-webp-1ch-2-25"
+            ]
+          },
+          {
+            "textJa": "ユダの子らの一覧にもヘツロンの名が記されています。",
+            "knownBy": {
+              "chapter": 4,
+              "verse": 1
+            },
+            "sourceIds": [
+              "hezron_1520-webp-1ch-4-1"
+            ]
+          }
+        ],
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Hezron",
+          "kind": "shared-section",
+          "noteJa": "記事はルベンの子ヘツロンと、ペレツの子であるユダ系譜のヘツロンを別に記します。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 2,
+            "verse": 5
+          },
+          "sourceId": "hezron_1520-wikipedia"
+        }
+      },
+      "currentWikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Hezron",
+        "kind": "shared-section",
+        "identityVerified": true,
+        "relationVerified": false,
+        "bodyRead": true,
+        "actualCurrentArticleLocator": "§Hezron, lines 3168–3175",
+        "currentArticleSupportParaphrase": "The second bullet identifies the Judah/Perez Hezron, distinguishing him from Reuben’s son.",
+        "checkedAtUTC": "2026-10-16T06:14:24Z",
+        "nullEvidence": null
+      },
+      "decisionBasisJa": "固定WEBの初出とWikipedia実記事本文の該当箇所を再確認。記事にない同一性・系譜情報は加えず、リンク種別と表示注記を証拠範囲に限定した。 実記事本文の再読日時とURL/該当節の根拠をsidecarへ同期。",
+      "priorFindingResolutionJa": "Prior qualified: 2:5 names Hezron as son of Perez; later genealogy facts remain gated to later verses.; current fixed text and displayed fields re-read. Current decision: pass."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hilkiah_1525",
+      "draftPath": "drafts/persons_3/1CH_hilkiah_1525.json",
+      "currentDraftSHA256": "e90be99108bff1af0e0379a1202e3b4626c7893c2d5a1427d0a8993bbaa2921e",
+      "currentEvidenceSHA256": "0e06d02537ac7979e3a4b0d810aab5126952d5e4696f549ff06548416bfdbc86",
+      "currentProfileSHA256": "dfd96782f5771da18eace1b0d8651e5fb044b55ee90fd34045fd37e98fdd150e",
+      "previousDraftSHA256": "e90be99108bff1af0e0379a1202e3b4626c7893c2d5a1427d0a8993bbaa2921e",
+      "previousEvidenceSHA256": "0e06d02537ac7979e3a4b0d810aab5126952d5e4696f549ff06548416bfdbc86",
+      "previousProfileSHA256": "dfd96782f5771da18eace1b0d8651e5fb044b55ee90fd34045fd37e98fdd150e",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "6:45’s ancestral list includes Hilkiah. The draft follows the chain without merging this ancestor with the Josiah-era high priest.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 6:45",
+            "text": "the son of Hashabiah, the son of Amaziah, the son of Hilkiah,",
+            "citationURL": "https://ebible.org/engwebp/1CH06.htm#V45",
+            "sourceTextSHA256": "7457160007f8ac6478673c1ffacda125121415b22ab532cfd76cdd987803cd2c"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "search-complete-namesake-only",
+        "priorFindingJa": "A–K page and dedicated Hilkiah results mainly identify the later high priest; no exact target section verified. Keep namesake uncertainty explicit.",
+        "url": null
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "09174e7a908c09cc07803a695efcf1e84ef075a64506d681f90cd7a00e36987a"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hivite_1534",
+      "draftPath": "drafts/persons_3/1CH_hivite_1534.json",
+      "currentDraftSHA256": "3682d189590b913abd532947050ed792cf51ed5854d2c89a4b64b39b364a81fe",
+      "currentEvidenceSHA256": "6dec7864a9a3cafb885f5d9e3952d1f6c0a1ad193a2c1d3f5e5dee0d1359a8ea",
+      "currentProfileSHA256": "ea3890c7ed034c9510fc1d34e5dea4c23e2d5c1a59fe9f10a76996042ddc5968",
+      "previousDraftSHA256": "3682d189590b913abd532947050ed792cf51ed5854d2c89a4b64b39b364a81fe",
+      "previousEvidenceSHA256": "6dec7864a9a3cafb885f5d9e3952d1f6c0a1ad193a2c1d3f5e5dee0d1359a8ea",
+      "previousProfileSHA256": "ea3890c7ed034c9510fc1d34e5dea4c23e2d5c1a59fe9f10a76996042ddc5968",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "1:15 is a collective ethnic label in the Canaan genealogy; draft correctly marks a people, not an individual.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 1:15",
+            "text": "the Hivite, the Arkite, the Sinite,",
+            "citationURL": "https://ebible.org/engwebp/1CH01.htm#V15",
+            "sourceTextSHA256": "13d66e201a8ddc520c20cd570339c044ccd33e5039a5109d36d1bdd104ba09ce"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-collective-limited",
+        "priorFindingJa": "Hivites article lines 121–123 describes the people and says their precise historical identity is unresolved; article also carries an unsourced-content warning. The draft must not claim a settled modern ethnic identification.",
+        "url": "https://en.wikipedia.org/wiki/Hivites"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "236b4cf68ce6d234f7fbe3fabb10317ba4510c82dc31224cc4dde43cff99d5cb"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hodaviah_1540",
+      "draftPath": "drafts/persons_3/1CH_hodaviah_1540.json",
+      "currentDraftSHA256": "c254e4e53396ed8275082df97874107fdbab401455e6ab827c04f68c275ddefb",
+      "currentEvidenceSHA256": "c099fa892f85c2eb7d92f753a941337d71bb38e26051ec0b82767aacd0147fce",
+      "currentProfileSHA256": "45fff3cf9987786c61f6052947b67f1c779ae3e1aa1519eadfaa14246e336fe4",
+      "previousDraftSHA256": "c254e4e53396ed8275082df97874107fdbab401455e6ab827c04f68c275ddefb",
+      "previousEvidenceSHA256": "c099fa892f85c2eb7d92f753a941337d71bb38e26051ec0b82767aacd0147fce",
+      "previousProfileSHA256": "45fff3cf9987786c61f6052947b67f1c779ae3e1aa1519eadfaa14246e336fe4",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "pass",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "5:24 lists Hodaviah among family leaders of half-Manasseh; draft names the correct group.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 5:24",
+            "text": "These were the heads of their fathers’ houses: Epher, Ishi, Eliel, Azriel, Jeremiah, Hodaviah, and Jahdiel—mighty men of valor, famous men, heads of their fathers’ houses.",
+            "citationURL": "https://ebible.org/engwebp/1CH05.htm#V24",
+            "sourceTextSHA256": "aabb5c82c3e2a86bb036d8594cd88bee1afd02ac7e2596052a4c6c38644c7c67"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-exact",
+        "priorFindingJa": "A–K §Hodaviah lines 3203–3210 lists three namesakes and identifies the 1 Chronicles 5:24 Manasseh clan leader.",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "427e2def6f2c47d829746e8ec671a9b233888c2f6ffee2a71380c11281b28490"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hodiah_1544",
+      "draftPath": "drafts/persons_3/1CH_hodiah_1544.json",
+      "currentDraftSHA256": "441a86b5bd2268ea1537b4565d4e90b93cef62c987ec670254f46c66b4d47e63",
+      "currentEvidenceSHA256": "bc0d9407011d9b9665df5ed960f3f430f300ff304a4059365a5289b83db6da83",
+      "currentProfileSHA256": "a1959b20c1cfe2b3ac27d944f71d4529b6035d6656c6f6022b0cb00c92213dbe",
+      "previousDraftSHA256": "441a86b5bd2268ea1537b4565d4e90b93cef62c987ec670254f46c66b4d47e63",
+      "previousEvidenceSHA256": "bc0d9407011d9b9665df5ed960f3f430f300ff304a4059365a5289b83db6da83",
+      "previousProfileSHA256": "a1959b20c1cfe2b3ac27d944f71d4529b6035d6656c6f6022b0cb00c92213dbe",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "4:19’s WEB wording is a complex kinship phrase (“wife of Hodiah, the sister of Naham”); profile notes the ambiguity rather than inventing a full lineage.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 4:19",
+            "text": "The sons of the wife of Hodiah, the sister of Naham, were the fathers of Keilah the Garmite and Eshtemoa the Maacathite.",
+            "citationURL": "https://ebible.org/engwebp/1CH04.htm#V19",
+            "sourceTextSHA256": "2412c36878692ffcedf920655f17d3f305698e50a843d8978ce690a1fe97997b"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "search-complete-no-fit",
+        "priorFindingJa": "No exact Wikipedia person subsection found in checked queries. Keep text-bound kinship and avoid resolving the syntax beyond WEB.",
+        "url": null
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "98ac881c86947eedbe0f9a682aaf9582b309adbd91d123778a86ed066a8778ac"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hosah_1554",
+      "draftPath": "drafts/persons_3/1CH_hosah_1554.json",
+      "currentDraftSHA256": "945ca35946bb168ddbd50673deabfb823cd484e0737c5f00d738e739ecbb41b8",
+      "currentEvidenceSHA256": "db4dfb9e46a6cc88b1153e51e7669984a57bcd6b4beae263a5ff2a731d92bdd7",
+      "currentProfileSHA256": "d959b8e61fe148dc34dc14e559909fcbe4bd9bc5b3a60e1905a61a979606e685",
+      "previousDraftSHA256": "9caa235b100cdd1db22861bb31f359ca4e284e7c64c0eeaaacad8a3a7849aa28",
+      "previousEvidenceSHA256": "ac1b98baabd6772aa9a1c703d44de663692ee2c79eb0bb361f268038250ad547",
+      "previousProfileSHA256": "30a52b39ee26742c711d0b5e75b06f605483b47a0fd67afd311741f4c2a3be25",
+      "closureMode": "current-bytes-rechecked",
+      "previousVerdict": "fail",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "fixedWitness": "inventory/targets/chronicles1-web-verses.json",
+        "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/1CH16.htm#V38",
+            "ref": "1CH 16:38",
+            "text": "and Obed-Edom with their sixty-eight relatives; Obed-Edom also the son of Jeduthun and Hosah to be doorkeepers;",
+            "sourceTextSHA256": "8a0ecb3ff7cce3e72ac870c0a30d485849a0bec1c2d3249d486530a5f50c2872",
+            "readingNoteJa": "固定WEB 1CH 16:38はホサを門衛の一人として記す。メラリ族との関係は後の26:10に限って扱う。"
+          },
+          {
+            "url": "https://ebible.org/engwebp/1CH26.htm#V10",
+            "ref": "1CH 26:10",
+            "text": "Also Hosah, of the children of Merari, had sons: Shimri the chief (for though he was not the firstborn, yet his father made him chief),",
+            "sourceTextSHA256": "125d062d9df7586ddbd26881de8de80e8ab53b55e0801375d75ed356005ebd3d",
+            "readingNoteJa": "固定WEB 26:10はホサの子らの中でシムリが長に任じられたことを述べる。ヒルキヤ以降の名は次節26:11で扱う。"
+          },
+          {
+            "url": "https://ebible.org/engwebp/1CH26.htm#V11",
+            "ref": "1CH 26:11",
+            "text": "Hilkiah the second, Tebaliah the third, and Zechariah the fourth. All the sons and brothers of Hosah were thirteen.",
+            "sourceTextSHA256": "5efbec0f261e395bbb70e003123480ecb3aaa6cc7435231c40345736da8689c1",
+            "readingNoteJa": "固定WEB 26:11はヒルキヤ、テバリヤ、ゼカリヤの順序とホサの息子・兄弟の総数を記す。"
+          },
+          {
+            "url": "https://ebible.org/engwebp/1CH26.htm#V16",
+            "ref": "1CH 26:16",
+            "text": "To Shuppim and Hosah westward, by the gate of Shallecheth, at the causeway that goes up, watchman opposite watchman.",
+            "sourceTextSHA256": "14bfb1a7d601620b4f90234dd8368af6c69da391df99108a92bb4612350eed1b",
+            "readingNoteJa": "固定WEB本文と前後の系譜/名簿文脈を確認。"
+          }
+        ],
+        "assessmentJa": "knownBy 16:38, but always-visible summary calls Hosah “Merari-line” gatekeeper; the Merari affiliation appears only in 26:10. Remove it from the base description or gate it to 26:10."
+      },
+      "currentReaderFields": {
+        "knownBy": {
+          "chapter": 16,
+          "verse": 38
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 16,
+              "verse": 38
+            },
+            "end": {
+              "chapter": 16,
+              "verse": 38
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 26,
+              "verse": 10
+            },
+            "end": {
+              "chapter": 26,
+              "verse": 10
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 26,
+              "verse": 11
+            },
+            "end": {
+              "chapter": 26,
+              "verse": 11
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 26,
+              "verse": 16
+            },
+            "end": {
+              "chapter": 26,
+              "verse": 16
+            }
+          }
+        ],
+        "nameJa": "ホサ",
+        "subtitleJa": "主の箱の門衛として名が記されています。",
+        "summaryJa": "主の箱の門衛として名が記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "facts": [
+          {
+            "textJa": "26:10では、ホサの子らの一人シムリが長として挙げられます。長子ではありませんでしたが、父が彼を長に任じたと記されています。",
+            "knownBy": {
+              "chapter": 26,
+              "verse": 10
+            },
+            "sourceIds": [
+              "hosah_1554-webp-1ch-26-10"
+            ]
+          },
+          {
+            "textJa": "26:11では、ヒルキヤが次、テバリヤが三番目、ゼカリヤが四番目として挙げられ、ホサの息子と兄弟は合計十三人と記されています。",
+            "knownBy": {
+              "chapter": 26,
+              "verse": 11
+            },
+            "sourceIds": [
+              "hosah_1554-webp-1ch-26-11"
+            ]
+          },
+          {
+            "textJa": "ホサはシュピムとともに西側、シャレケト門のそばに配置されます。",
+            "knownBy": {
+              "chapter": 26,
+              "verse": 16
+            },
+            "sourceIds": [
+              "hosah_1554-webp-1ch-26-16"
+            ]
+          }
+        ],
+        "wikipedia": null
+      },
+      "currentWikipediaReview": {
+        "url": null,
+        "kind": null,
+        "identityVerified": null,
+        "relationVerified": null,
+        "bodyRead": false,
+        "actualCurrentArticleLocator": null,
+        "currentArticleSupportParaphrase": "No active Wikipedia link. Earlier target-specific search found no fit; current base description is limited to the 16:38 doorkeeper mention, with later 26:10–16 statements gated in facts.",
+        "checkedAtUTC": null,
+        "nullEvidence": {
+          "queries": [
+            "site:en.wikipedia.org/wiki (\"Hezekiah\" OR \"Hezron\" OR \"Hilkiah\" OR \"Hivites\" OR \"Hodaviah\" OR \"Hodiah\" OR \"Hosah\" OR \"Hoshama\" OR \"Hotham\" OR \"Hul\" OR \"Hur\" OR \"Huram\" OR \"Husham\" OR \"Hushim\" OR \"Ibri\" OR \"Igeal\") Chronicles"
+          ],
+          "checkedAtUTC": "2026-10-16T05:39:45Z",
+          "searchReasonJa": "英語名と候補の書内節を含むWikipedia検索。適合する専用記事または同一対象を扱う共有節の本文を確認できず、リンクしなかった。",
+          "status": "no-fit-or-held; search evidence recorded"
+        }
+      },
+      "decisionBasisJa": "初出16:38にないメラリ族所属を常時欄から除き、後続の26:10 factに保持。 初出/同名出現の除外理由と後続関係のfact gateを明示。 実記事本文の再読日時とURL/該当節の根拠をsidecarへ同期。 メラリ族所属を26:10 factへ移動し、先行する常時欄から除いた。",
+      "priorFindingResolutionJa": "Prior fail: knownBy 16:38, but always-visible summary calls Hosah “Merari-line” gatekeeper; the Merari affiliation appears only in 26:10. Remove it from the base description or gate it to 26:10.; current fixed text and displayed fields re-read. Current decision: qualified."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hoshama_1558",
+      "draftPath": "drafts/persons_3/1CH_hoshama_1558.json",
+      "currentDraftSHA256": "15484ca00487aed2aad20f0d8b80d09f57a60954c7b66699072d7fd70704ac64",
+      "currentEvidenceSHA256": "8713ca9ecdd16c87130ce503fa09662607a5c30777bf49f51c5fbbc36b979a2d",
+      "currentProfileSHA256": "fbb0506715b8ed4bf4e6d2a9cb9f9c53aa0db3e851123840ca184d497e6072a3",
+      "previousDraftSHA256": "15484ca00487aed2aad20f0d8b80d09f57a60954c7b66699072d7fd70704ac64",
+      "previousEvidenceSHA256": "8713ca9ecdd16c87130ce503fa09662607a5c30777bf49f51c5fbbc36b979a2d",
+      "previousProfileSHA256": "fbb0506715b8ed4bf4e6d2a9cb9f9c53aa0db3e851123840ca184d497e6072a3",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "pass",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "3:18 names Hoshama among Jeconiah’s sons; draft relation is accurate.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 3:18",
+            "text": "Malchiram, Pedaiah, Shenazzar, Jekamiah, Hoshama, and Nedabiah.",
+            "citationURL": "https://ebible.org/engwebp/1CH03.htm#V18",
+            "sourceTextSHA256": "201288d0d7ef297e1f6f7d56a8d09efbaee712a20cc297618404ac260011d9df"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-exact",
+        "priorFindingJa": "A–K §Hoshama lines 3241–3245 states he is a son of Jeconiah and cites this verse.",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "cf826d04ce4388f035a82d753ccd5224540130d7aaae3ea178a2ad9490f99ace"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hotham_1562",
+      "draftPath": "drafts/persons_3/1CH_hotham_1562.json",
+      "currentDraftSHA256": "5501dcbe8026b0d679560d5a5d3ad70fa926c94695f16f1777d9ed2b345a0101",
+      "currentEvidenceSHA256": "8d2b2478eb7c132a2b3430a1dc61e1acc9b3bc30ea8da9c67d2bc857cd26b8f3",
+      "currentProfileSHA256": "f24d515c4ba23d776cfc70e80c837f606c169b2c52d0836f02e0a694dacce227",
+      "previousDraftSHA256": "0f17c7865654ba2db323895f46a2a8cbccf682492d84d8e005ac6962dab24a67",
+      "previousEvidenceSHA256": "41b8ff435822a18d0c70b2eb76cab3f3553dd7bf3294a0d0d97e749726a9570f",
+      "previousProfileSHA256": "24caf976766386f70439ca996fcdf8856d49af9ae9d68cb4ccdef1164ccbd243",
+      "closureMode": "current-bytes-rechecked",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "fixedWitness": "inventory/targets/chronicles1-web-verses.json",
+        "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/1CH07.htm#V32",
+            "ref": "1CH 7:32",
+            "text": "Heber became the father of Japhlet, Shomer, Hotham, and Shua their sister.",
+            "sourceTextSHA256": "b3bb4cb6e67777be7ff5eddb832de2a406020842708af2d3ea8e9289cb41634a",
+            "readingNoteJa": "固定WEB本文と前後の系譜/名簿文脈を確認。"
+          }
+        ],
+        "assessmentJa": "7:32 names Hotham in Asher’s genealogy; 7:35 uses Helem in a related line, but the profile does not overstate identity beyond its cautious account."
+      },
+      "currentReaderFields": {
+        "knownBy": {
+          "chapter": 7,
+          "verse": 32
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 7,
+              "verse": 32
+            },
+            "end": {
+              "chapter": 7,
+              "verse": 32
+            }
+          }
+        ],
+        "nameJa": "ホタム",
+        "subtitleJa": "アシェル系譜でヘベルの子らの一人として挙げられます。",
+        "summaryJa": "アシェル系譜でヘベルの子らの一人として挙げられます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "facts": [],
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Hotham",
+          "kind": "related-section",
+          "noteJa": "記事はアシェル系譜のホタムとして1歴代誌7:32を挙げます。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "relationVerified": true,
+          "knownBy": {
+            "chapter": 7,
+            "verse": 32
+          },
+          "sourceId": "hotham_1562-wikipedia"
+        }
+      },
+      "currentWikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Hotham",
+        "kind": "related-section",
+        "identityVerified": false,
+        "relationVerified": true,
+        "bodyRead": true,
+        "actualCurrentArticleLocator": "§Hotham, lines 3246–3250",
+        "currentArticleSupportParaphrase": "The entry explicitly says the Asher genealogy’s 7:32 Hotham is referred to as Helem in verse 35; retain the WEB profile wording and do not import the unrelated warrior.",
+        "checkedAtUTC": "2026-10-16T06:14:24Z",
+        "nullEvidence": null
+      },
+      "decisionBasisJa": "固定WEBの初出とWikipedia実記事本文の該当箇所を再確認。記事にない同一性・系譜情報は加えず、リンク種別と表示注記を証拠範囲に限定した。 実記事本文の再読日時とURL/該当節の根拠をsidecarへ同期。 1CH 7:35の「ヘレム」を初出時点の表示注記から除いた。",
+      "priorFindingResolutionJa": "Prior qualified: 7:32 names Hotham in Asher’s genealogy; 7:35 uses Helem in a related line, but the profile does not overstate identity beyond its cautious account.; current fixed text and displayed fields re-read. Current decision: qualified."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hul_1566",
+      "draftPath": "drafts/persons_3/1CH_hul_1566.json",
+      "currentDraftSHA256": "63610b924fdd4035fec4f7295edcbe746b25b3242cfd6fd2b122d15c2bdc5f2f",
+      "currentEvidenceSHA256": "4f58ea25ede01307f24d20f3e09e58ea2c8bc326370de9d0a1f240d91a7451b1",
+      "currentProfileSHA256": "1e15827ab6cfa0ce75075b3ad07cea491930ac19e46fe4b09a588b763ced42d3",
+      "previousDraftSHA256": "63610b924fdd4035fec4f7295edcbe746b25b3242cfd6fd2b122d15c2bdc5f2f",
+      "previousEvidenceSHA256": "4f58ea25ede01307f24d20f3e09e58ea2c8bc326370de9d0a1f240d91a7451b1",
+      "previousProfileSHA256": "1e15827ab6cfa0ce75075b3ad07cea491930ac19e46fe4b09a588b763ced42d3",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "1:17 lists Hul among Shem’s descendants; draft does not attach later claims.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 1:17",
+            "text": "The sons of Shem: Elam, Asshur, Arpachshad, Lud, Aram, Uz, Hul, Gether, and Meshech.",
+            "citationURL": "https://ebible.org/engwebp/1CH01.htm#V17",
+            "sourceTextSHA256": "a3b15156bdf9a3f8d887af25faaa0ddda337e2a476ee165ac7ab4032b3134cd6"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "search-complete-no-fit",
+        "priorFindingJa": "No exact Wikipedia person subsection verified; similarly named Hul/Hulites results are not sufficient proof.",
+        "url": null
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "cab219dc1ba6a7b5ad7e5c989f22f2d7751edafebc9eb79acd9b91ed435f495d"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hur_1571",
+      "draftPath": "drafts/persons_3/1CH_hur_1571.json",
+      "currentDraftSHA256": "1ac36c8ae699c290cd0ac28e9721382bfc77bc82a2bdc199d093e6ec18850e31",
+      "currentEvidenceSHA256": "6a39ad0a6e83b00d3ab558c756b8e053b379dd1c7ff8a63e5cba89bf6ab694db",
+      "currentProfileSHA256": "7ae5d6bfc238564fcc8d8e8f0fc4af1fbb1eb98eafe4f8bb90252e8dfae8c7f4",
+      "previousDraftSHA256": "1ac36c8ae699c290cd0ac28e9721382bfc77bc82a2bdc199d093e6ec18850e31",
+      "previousEvidenceSHA256": "6a39ad0a6e83b00d3ab558c756b8e053b379dd1c7ff8a63e5cba89bf6ab694db",
+      "previousProfileSHA256": "7ae5d6bfc238564fcc8d8e8f0fc4af1fbb1eb98eafe4f8bb90252e8dfae8c7f4",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "2:19,20,50 and 4:1,4 give conflicting-looking Caleb/Hur/Ephrathah genealogy clauses. Draft’s profile identifies Hur as Caleb/Ephrath’s son, but the text later also says Caleb son of Hur; identity/genealogical direction is not fully settled by these verses.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 2:19",
+            "text": "Azubah died, and Caleb married Ephrath, who bore him Hur.",
+            "citationURL": "https://ebible.org/engwebp/1CH02.htm#V19",
+            "sourceTextSHA256": "0442f27302495952d21a3e9bbd92933bb2c870d514700a90dae4cdfe1815c1f1"
+          },
+          {
+            "ref": "1CH 2:20",
+            "text": "Hur became the father of Uri, and Uri became the father of Bezalel.",
+            "citationURL": "https://ebible.org/engwebp/1CH02.htm#V20",
+            "sourceTextSHA256": "14ff4c71f0192d1a29a85f8459bb288d4de7dfed95800ef88127c8c0d4ea99b9"
+          },
+          {
+            "ref": "1CH 2:50",
+            "text": "These were the sons of Caleb, the son of Hur, the firstborn of Ephrathah: Shobal the father of Kiriath Jearim,",
+            "citationURL": "https://ebible.org/engwebp/1CH02.htm#V50",
+            "sourceTextSHA256": "825968d198a9153ad4c8f44ebd283512e9fc2e9a72d9dd60f09387575299ed2e"
+          },
+          {
+            "ref": "1CH 4:1",
+            "text": "The sons of Judah: Perez, Hezron, Carmi, Hur, and Shobal.",
+            "citationURL": "https://ebible.org/engwebp/1CH04.htm#V1",
+            "sourceTextSHA256": "a5709942f4dbb2587d264b6cca108be688c4f13254707ac7ddb9f2335ef15182"
+          },
+          {
+            "ref": "1CH 4:4",
+            "text": "Penuel was the father of Gedor and Ezer the father of Hushah. These are the sons of Hur, the firstborn of Ephrathah, the father of Bethlehem.",
+            "citationURL": "https://ebible.org/engwebp/1CH04.htm#V4",
+            "sourceTextSHA256": "8751f7aaca74b9f6f97276d6adfdea02662eb34fe821135b85f3d556b8adceda"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "candidate-found-not-linked",
+        "priorFindingJa": "Dedicated Hur article has multiple traditions; the fit is plausible but not sufficient to erase the internal WEB genealogical tension. Null is a false negative only if the relation is stated with that caveat.",
+        "url": null
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "55fda617f96f624393bd1f8e78c3b1b2e907862c1e939c12eb76479f34bafb1d"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:huram_1569",
+      "draftPath": "drafts/persons_3/1CH_huram_1569.json",
+      "currentDraftSHA256": "66d4a51e522ec7cfd813494dd0ab7e1f278c0c0581e55c1e65550eb133f9cd8e",
+      "currentEvidenceSHA256": "97864de02e131f309bf6699caceddb4df7aee8e23a804b8d428d930d6c6354a2",
+      "currentProfileSHA256": "6432de1846ab323a0b492f48d4d78aa4a15fb4d4a4e4c35ef634484498aefbdd",
+      "previousDraftSHA256": "66d4a51e522ec7cfd813494dd0ab7e1f278c0c0581e55c1e65550eb133f9cd8e",
+      "previousEvidenceSHA256": "97864de02e131f309bf6699caceddb4df7aee8e23a804b8d428d930d6c6354a2",
+      "previousProfileSHA256": "6432de1846ab323a0b492f48d4d78aa4a15fb4d4a4e4c35ef634484498aefbdd",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "8:5 lists Huram in Benjamin’s genealogy. Draft keeps the generic roster description and does not identify him with Hiram/Huram the Tyrian artisan.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 8:5",
+            "text": "Gera, Shephuphan, and Huram.",
+            "citationURL": "https://ebible.org/engwebp/1CH08.htm#V5",
+            "sourceTextSHA256": "6e4a765c71b472f811f388a81d009ba8a07c841e2cc8c42a9bc7350efca6af32"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "search-complete-no-fit",
+        "priorFindingJa": "A–K search did not verify a target-specific entry; similarly named Hiram/Huram of Solomon’s era is a different person.",
+        "url": null
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "deaf2b6f0e22700c58d25cf09200e439f83f48fdc50c8a79ceaa7419712c21ac"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:husham_1578",
+      "draftPath": "drafts/persons_3/1CH_husham_1578.json",
+      "currentDraftSHA256": "48c71fec542b2b4b2e0fd848ee9d6511938d4e0e08e82f30a305b5c24e214f9c",
+      "currentEvidenceSHA256": "ffae84940d78797ff8e88cf46ffa9d60f8cdf1dec32d62769a34c8b06f227c1b",
+      "currentProfileSHA256": "356872d4c22a855a615aa828fb98cff738dc5236bb508f40b8e6f5b604da613c",
+      "previousDraftSHA256": "48c71fec542b2b4b2e0fd848ee9d6511938d4e0e08e82f30a305b5c24e214f9c",
+      "previousEvidenceSHA256": "ffae84940d78797ff8e88cf46ffa9d60f8cdf1dec32d62769a34c8b06f227c1b",
+      "previousProfileSHA256": "356872d4c22a855a615aa828fb98cff738dc5236bb508f40b8e6f5b604da613c",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "pass",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "1:45 identifies Husham as a king from the land of the Temanites; 1:46 states succession. Profile’s first-use summary is safe and later succession is fact-gated.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 1:45",
+            "text": "Jobab died, and Husham of the land of the Temanites reigned in his place.",
+            "citationURL": "https://ebible.org/engwebp/1CH01.htm#V45",
+            "sourceTextSHA256": "0f78f56f5063daf599ca2ca6d1b5a71cc33e4e008a7a60bd1f01fabf30dfe6b6"
+          },
+          {
+            "ref": "1CH 1:46",
+            "text": "Husham died, and Hadad the son of Bedad, who struck Midian in the field of Moab, reigned in his place; and the name of his city was Avith.",
+            "citationURL": "https://ebible.org/engwebp/1CH01.htm#V46",
+            "sourceTextSHA256": "cf7d6d8178f60f03886fe7ab912ea20057668547e07336ad3069e8d3806a02d4"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "linked-exact-related-parallel-book",
+        "priorFindingJa": "Dedicated Husham article lines 104–106 identifies the Edomite king from Temani land and notes uncertainty about date/historicity. This confirms name/role but derives from Genesis; use as related support only, with WEB 1:45 as primary.",
+        "url": "https://en.wikipedia.org/wiki/Husham_(Edomite_king)"
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "20d9feee4638e9c6b9497d652eb0fd168d00f8c3880da95835f47a488414561a"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:hushim_1580",
+      "draftPath": "drafts/persons_3/1CH_hushim_1580.json",
+      "currentDraftSHA256": "88bfa0cb7ff1a261c0037ec0be1335575fb88780c2ea6c18fa55c04bd00ffac2",
+      "currentEvidenceSHA256": "53b3e18e782b1842ee58d129668660a3b0dbc1ff23d1f5adcc055f76a0592bba",
+      "currentProfileSHA256": "5696b2ce2f3a04f0d0cc62803bd47e958fdd346fbd3cd9d21b91026c4ea12204",
+      "previousDraftSHA256": "88bfa0cb7ff1a261c0037ec0be1335575fb88780c2ea6c18fa55c04bd00ffac2",
+      "previousEvidenceSHA256": "53b3e18e782b1842ee58d129668660a3b0dbc1ff23d1f5adcc055f76a0592bba",
+      "previousProfileSHA256": "5696b2ce2f3a04f0d0cc62803bd47e958fdd346fbd3cd9d21b91026c4ea12204",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "7:12 says Shuppim and Huppim were sons of Ir, “Hushim the son of Aher”; the syntax and surrounding genealogy do not securely identify which tribal lineage this Hushim belongs to. Draft preserves this uncertainty.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 7:12",
+            "text": "So were Shuppim, Huppim, the sons of Ir, Hushim, and the sons of Aher.",
+            "citationURL": "https://ebible.org/engwebp/1CH07.htm#V12",
+            "sourceTextSHA256": "800b57f9be42a9a3a9502b3727ffcfa5f73a682c4342c3a92637cbe1c9943b07"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "search-complete-namesake-only",
+        "priorFindingJa": "A–K §Hushim lines 3274–3278 treats the Dan genealogy in Genesis 46:23/Numbers 26:42, not this 1 Chronicles 7:12 Hushim; do not connect as same person.",
+        "url": null
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "98755ee3da2df12fcf36bb9caf2421c60252805db31a485ad8c43619174faf59"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:ibri_1587",
+      "draftPath": "drafts/persons_3/1CH_ibri_1587.json",
+      "currentDraftSHA256": "46724eb8888fe935e7d2dec1094d60f822b5433fa8eeec2b9039961d5da10a05",
+      "currentEvidenceSHA256": "8a8b4395a19399efd616c3f2be6737b8c66a4d7c66b24fff4941f377efa694ed",
+      "currentProfileSHA256": "ec6042324aaeacafd6c44fdd6a6e146352473c89eb3c30f79b0187810f4a5430",
+      "previousDraftSHA256": "46724eb8888fe935e7d2dec1094d60f822b5433fa8eeec2b9039961d5da10a05",
+      "previousEvidenceSHA256": "8a8b4395a19399efd616c3f2be6737b8c66a4d7c66b24fff4941f377efa694ed",
+      "previousProfileSHA256": "ec6042324aaeacafd6c44fdd6a6e146352473c89eb3c30f79b0187810f4a5430",
+      "closureMode": "unchanged-exact-inherited",
+      "previousVerdict": "qualified",
+      "verdict": "qualified",
+      "primarySourceReview": {
+        "inheritedExactBytes": true,
+        "priorPrimaryFindingJa": "24:27 includes Ibri in the Merari/Jahaziah genealogy; draft’s limited relation is accurate.",
+        "primaryWitnesses": [
+          {
+            "ref": "1CH 24:27",
+            "text": "The sons of Merari by Jaaziah: Beno, Shoham, Zaccur, and Ibri.",
+            "citationURL": "https://ebible.org/engwebp/1CH24.htm#V27",
+            "sourceTextSHA256": "9657d84210a00719d17e76fa742cebcf331733cf55742d4afcea6d6b6e338ee7"
+          }
+        ]
+      },
+      "currentReaderFields": null,
+      "currentWikipediaReview": {
+        "inheritedExactBytes": true,
+        "priorWikipediaStatus": "search-complete-no-fit",
+        "priorFindingJa": "No fitting exact Wikipedia article/body section verified in checked searches.",
+        "url": null
+      },
+      "decisionBasisJa": "Draft, evidence, and profile bytes exactly match the previous independent review; prior substantive judgment inherited.",
+      "priorFindingResolutionJa": "No changed bytes; previous independent primary/article reading retained without claiming a new reread.",
+      "inheritedPriorRecordSHA256": "47391d5bd77baa4430eadaa1eb4da931602e575c777fd99bbc34857a4b3cd498"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:igeal_595",
+      "draftPath": "drafts/persons_3/1CH_igeal_595.json",
+      "currentDraftSHA256": "93c1d1588da53afd6ab25e2204f80de630d3ddfed13122799c652570231b74f2",
+      "currentEvidenceSHA256": "4652c725aca231cbc85332fa3f82a38aaa32e37d2664246f1d572a240194fa69",
+      "currentProfileSHA256": "3b11b1bc4f279c6cd2d321e0493e6497827077af685023285e32c63ed38a96c7",
+      "previousDraftSHA256": "67e1cbda12d9167f802c896ecb8ee4cf5c5d8565230f164748726955eeaf333b",
+      "previousEvidenceSHA256": "3b4064b5caff083e3daad7da23a78737e26bc983df745a0673787464f384312c",
+      "previousProfileSHA256": "51502dadfd0c7eac0fafab542e47a1022676583eeb7c6c6d1be330a7338f4915",
+      "closureMode": "current-bytes-rechecked",
+      "previousVerdict": "qualified",
+      "verdict": "pass",
+      "primarySourceReview": {
+        "fixedWitness": "inventory/targets/chronicles1-web-verses.json",
+        "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/1CH03.htm#V22",
+            "ref": "1CH 3:22",
+            "text": "The son of Shecaniah: Shemaiah. The sons of Shemaiah: Hattush, Igal, Bariah, Neariah, and Shaphat, six.",
+            "sourceTextSHA256": "9a4fd25b4c67cd60b06b26a0c967f42d69fe12e9c4fefff69f9915c7fdce4634",
+            "readingNoteJa": "固定WEB本文と前後の系譜/名簿文脈を確認。"
+          }
+        ],
+        "assessmentJa": "3:22 names Igeal son of Shemaiah in the royal genealogy. Draft accurately lists him among Shemaiah’s children."
+      },
+      "currentReaderFields": {
+        "knownBy": {
+          "chapter": 3,
+          "verse": 22
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 3,
+              "verse": 22
+            },
+            "end": {
+              "chapter": 3,
+              "verse": 22
+            }
+          }
+        ],
+        "nameJa": "イガル",
+        "subtitleJa": "シェマヤの子らの一覧に名が挙がります。",
+        "summaryJa": "シェマヤの子らとして、ハトシュ、イガル、バリア、ネアリヤ、シャファトが記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "facts": [],
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Igal",
+          "kind": "shared-section",
+          "noteJa": "記事はシェマヤの子イガルを1歴代誌3:22の系譜人物として挙げ、KJVでは「Igeal」と綴られると説明します。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 3,
+            "verse": 22
+          },
+          "sourceId": "igeal_595-wikipedia"
+        }
+      },
+      "currentWikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Igal",
+        "kind": "shared-section",
+        "identityVerified": true,
+        "relationVerified": false,
+        "bodyRead": true,
+        "actualCurrentArticleLocator": "§Igal, lines 3315–3322",
+        "currentArticleSupportParaphrase": "The third Igal entry identifies Shemaiah’s son in 1 Chronicles 3:22 and notes the KJV spelling Igeal.",
+        "checkedAtUTC": "2026-10-16T06:14:24Z",
+        "nullEvidence": null
+      },
+      "decisionBasisJa": "固定WEBの初出とWikipedia実記事本文の該当箇所を再確認。記事にない同一性・系譜情報は加えず、リンク種別と表示注記を証拠範囲に限定した。 実記事本文の再読日時とURL/該当節の根拠をsidecarへ同期。",
+      "priorFindingResolutionJa": "Prior qualified: 3:22 names Igeal son of Shemaiah in the royal genealogy. Draft accurately lists him among Shemaiah’s children.; current fixed text and displayed fields re-read. Current decision: pass."
+    }
+  ]
+}

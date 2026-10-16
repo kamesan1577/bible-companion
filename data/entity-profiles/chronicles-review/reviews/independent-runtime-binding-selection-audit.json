@@ -1,0 +1,95 @@
+{
+  "reviewType": "independent-runtime-binding-and-selection-audit",
+  "checkedAtUTC": "2026-10-16T10:52:06Z",
+  "scope": "Read-only audit of exact-byte binding and occurrence-edge eligibility for current independent review inputs; does not approve semantic content.",
+  "inputs": {
+    "reconcile-current-reviews.py": "454b1cc806e2c269fe5a28b3df2e6cd3d919795ebd4ed72979d20c1cd1e5f26d",
+    "preview-reviewed-occurrence-edges.py": "8e6d16eeda1d6cb309b2b79d906b60c1e56c2f9ef04f39ba5b52b81d51840fe3",
+    "reviews/root-current-independent-review-bindings.json": "b4f09f1c58b8d31a0c2b2d4e72678294948e313864f364b9b32ae03391a103fb",
+    "reviews/root-reviewed-occurrence-edge-preview.json": "dfb936dab284dfc4e485415832161ac3b236d2c0a0ac3a9be321bb1423234f6f",
+    "reviews/reclosure-batch07-persons_1-current.json": "006e29076ece3a0c2275f5d18e4b07114367d1e7fc6f6544c94b00a21a3690e9",
+    "reviews/root-sibbechai-rationale-reclosure-delta.json": "b20f55502ce3f2cff0cc4bdf668338753f4567d83ee0d60551d129ec5b0ee7b2",
+    "evidence/persons_1/manifest-batch07-current.json": "9cebb9245d0976b9a49346172c52a076a90d2cbcc1a5aa6e34b201e7d7643d14",
+    "drafts/persons_1/1CH_tahan_2813.json": "e8a64c1031004730dbb349dec90c4fba5d74797314d2d3841d2dd18390bcbc86",
+    "evidence/persons_1/1CH_tahan_2813-sources.json": "20757d0f4e1bd693d1bfafd54d3ec92a736c8488c686d5b8d187cf86cbe3098f"
+  },
+  "batch07Persons1": {
+    "independentReports": [
+      {
+        "path": "reviews/reclosure-batch07-persons_1-current.json",
+        "sha256": "006e29076ece3a0c2275f5d18e4b07114367d1e7fc6f6544c94b00a21a3690e9"
+      },
+      {
+        "path": "reviews/root-sibbechai-rationale-reclosure-delta.json",
+        "sha256": "b20f55502ce3f2cff0cc4bdf668338753f4567d83ee0d60551d129ec5b0ee7b2"
+      }
+    ],
+    "currentRecordCount": 60,
+    "decisionCountsAsReported": {
+      "pass": 31,
+      "qualified": 29
+    },
+    "exactByteMatches": 59,
+    "byteMismatches": 1,
+    "bindingErrors": [
+      {
+        "path": "drafts/persons_1/1CH_tahan_2813.json",
+        "field": "draftSHA"
+      },
+      {
+        "path": "evidence/persons_1/1CH_tahan_2813-sources.json",
+        "field": "evidenceSHA"
+      }
+    ],
+    "mismatchedRecords": [
+      {
+        "draftPath": "drafts/persons_1/1CH_tahan_2813.json",
+        "evidencePath": "evidence/persons_1/1CH_tahan_2813-sources.json",
+        "expectedIndependentDraftSHA256": "2cb6ca3ea40589c09bd8dc27faebd4413def2fa51fb79e5eadbcc2c5a214d323",
+        "currentFilesystemDraftSHA256": "e8a64c1031004730dbb349dec90c4fba5d74797314d2d3841d2dd18390bcbc86",
+        "expectedIndependentEvidenceSHA256": "748829626466d0f4aa494e7558860dd986a4afb993fe039ac4c83091f361f249",
+        "currentFilesystemEvidenceSHA256": "20757d0f4e1bd693d1bfafd54d3ec92a736c8488c686d5b8d187cf86cbe3098f",
+        "decision": "qualified",
+        "bytesMatchIndependentReview": false
+      }
+    ],
+    "passRowsExact": 31,
+    "qualifiedRowsExact": 28,
+    "assessmentJa": "期待SHAは現行独立reclosureの行から取り、filesystem SHAを別記して比較しています。Tahanだけdraft/evidenceが不一致であり、残り59行は一致。31 passの全行は一致し、Tahanを含むqualified 1行だけがstaleです。"
+  },
+  "selectionCode": {
+    "reconcileCurrentReviewsSHA256": "454b1cc806e2c269fe5a28b3df2e6cd3d919795ebd4ed72979d20c1cd1e5f26d",
+    "expectedVsFilesystemFieldsPresent": [
+      "draftSHA256 (expected from independent row)",
+      "currentFilesystemDraftSHA256",
+      "evidenceSHA256 (expected from independent row)",
+      "currentFilesystemEvidenceSHA256",
+      "bytesMatchIndependentReview"
+    ],
+    "bindingErrorsAreRaisedPerPath": true,
+    "laterReportsReplaceOnlySameDraftPath": "rows keyed by draftPath; subsequent report rows replace that exact row only.",
+    "previewReviewedOccurrenceEdgesSHA256": "8e6d16eeda1d6cb309b2b79d906b60c1e56c2f9ef04f39ba5b52b81d51840fe3",
+    "staleHandling": "preview skips only records whose bytesMatchIndependentReview is false; it requires exact review-bound draft and evidence bytes before profile use."
+  },
+  "selectionResult": {
+    "currentBindingReportBindsPreviewInput": true,
+    "tahanMappedEdgeCount": 1,
+    "tahanHolds": [
+      {
+        "holds": [
+          "current-reviewed-profile-missing-or-held"
+        ],
+        "profileInputBinding": null
+      }
+    ],
+    "previewDoesNotLoadStaleTahanProfile": true,
+    "previewState": {
+      "furtherReviewCandidateEdges": 1232,
+      "semanticApproval": false,
+      "publicationApproved": false,
+      "appResourcesWritten": false
+    },
+    "assessmentJa": "fresh dry-run reconciliation produced 59 exact rows and one Tahan mismatch; the preview omitted Tahan’s profile input while retaining all 31 byte-exact pass rows from the same batch. The preview is a reversible eligibility filter, not semantic approval."
+  },
+  "limitationsJa": "この監査は現在のhash結合と選別挙動のみを検証し、Tahanの内容を再承認しません。qualifiedは昇格せず、選別プレビューは意味品質の承認ではありません。"
+}

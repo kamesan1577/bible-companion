@@ -1,0 +1,72 @@
+{
+  "entityID": "person:uzza_2913",
+  "book": "1CH",
+  "draftSHA256": "af036b5ebe2a469aa946eabf54c1679a539611e07241bb7d3258269f868e67a8",
+  "profileSHA256": "a89cd3a34ce97439c230229807378a68c1d3dedb316ec562b7b6719a413098e5",
+  "sourceVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+  "sourceWitnessPath": "inventory/targets/chronicles1-web-verses.json",
+  "sourceWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+  "checkedAtUTC": "2026-10-16T10:25:00Z",
+  "sourceChecks": [
+    {
+      "sourceId": "uzza_2913-webp-1ch-6-29",
+      "chapter": 6,
+      "verse": 29,
+      "text": "The sons of Merari: Mahli, Libni his son, Shimei his son, Uzzah his son,",
+      "status": "included",
+      "reasonJa": "固定WEBはメラリ系譜でシメイの子としてUzzahを記す。"
+    }
+  ],
+  "excludedCandidateChecks": [
+    {
+      "chapter": 6,
+      "verse": 29,
+      "candidate": "Ark-related Uzzah",
+      "reasonJa": "Wikipedia itself distinguishes the Merarite Uzzah from the Ark-related Uzzah; no identity is shared."
+    }
+  ],
+  "profileDecisionJa": "WEB 1CH6:29のUzzahはシメイの子でメラリ系譜に属する。WikipediaのUzzah記事は「Other」でこの別人を記し、1CH6:29を引用するため採用した。",
+  "wikipediaSearchEvidence": {
+    "queries": [
+      "site:en.wikipedia.org/wiki/Uzzah \"1 Chronicles 6:29\" Merarite Shimei",
+      "Wikipedia Uzza Uzzah different Merarite son of Shimei"
+    ],
+    "checkedAtUTC": "2026-10-16T10:38:41Z",
+    "searchReasonJa": "標準英語表記Uzzahと別表記Uzza、系譜語句で検索し、記事本文の別人記載を実読しました。",
+    "status": "searched-and-body-read-fit"
+  },
+  "wikipediaReadEvidence": {
+    "url": "https://en.wikipedia.org/wiki/Uzzah",
+    "title": "Uzzah",
+    "language": "en",
+    "kind": "shared-section",
+    "locator": "“Other” section, lines 132–136: explicitly distinguishes a different Uzzah, son of Shimei and a Merarite; reference 7 at lines 149–150 cites 1 Chronicles 6:29.",
+    "supportJa": "記事は、契約の箱に関わる人物とは別のウザをシメイの子・メラリ人として挙げ、歴代誌上6:29を出典とする。固定WEB 1CH6:29もその系譜を記す。",
+    "checkedAtUTC": "2026-10-16T10:38:41Z",
+    "license": "Creative Commons Attribution-ShareAlike 4.0 International",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": "Wikipedia contributors.",
+    "identityVerified": true,
+    "relationVerified": true,
+    "searchQueries": [
+      "site:en.wikipedia.org/wiki/Uzzah \"1 Chronicles 6:29\" Merarite Shimei",
+      "Wikipedia Uzza Uzzah different Merarite son of Shimei"
+    ],
+    "searchResultRef": "turn6460search20",
+    "readResultRef": "turn6466view0"
+  },
+  "wikipediaReadEvidenceSHA256": "dafd1a2094f46563ab74b9f54302eafda3e9331366c9eb0b6a7b69c8a49e428e",
+  "authorRepairs": [
+    {
+      "checkedAtUTC": "2026-10-16T10:38:41Z",
+      "reason": "記事本文がWEB 1CH6:29を指す別人記載と照合できたためheld/nullを安全な節限定プロフィールに更新。契約の箱の別人とは明確に分離。",
+      "beforeDraftSHA256": "353566e19a43ee5331c0df8daa9f739d0f8e50ecb5b8e0bfd39cd1427fce706a",
+      "afterDraftSHA256": "af036b5ebe2a469aa946eabf54c1679a539611e07241bb7d3258269f868e67a8",
+      "beforeEvidenceSHA256": "bcdf9295274048c7f41b08cf90d23ad983e691f4f8c4a6935897b003916d1594",
+      "beforeBytesPreserved": [
+        "preservation/objects/353566e19a43ee5331c0df8daa9f739d0f8e50ecb5b8e0bfd39cd1427fce706a",
+        "preservation/objects/bcdf9295274048c7f41b08cf90d23ad983e691f4f8c4a6935897b003916d1594"
+      ]
+    }
+  ]
+}

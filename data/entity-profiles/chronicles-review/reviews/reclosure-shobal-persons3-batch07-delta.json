@@ -1,0 +1,129 @@
+{
+  "reportType": "independent-current-reclosure-delta",
+  "reviewedAtUTC": "2026-10-16T11:03:09Z",
+  "batch": "batch07/persons_3",
+  "entityID": "person:shobal_2719",
+  "sourceReclosurePath": "reviews/reclosure-batch07-persons_3-current.json",
+  "sourceReclosureSHA256": "1abc55942aca0c8246f14d9316baa16d0273143390e072cba8275c2dbaa4bfe5",
+  "priorDecision": "fail",
+  "currentDecision": "pass",
+  "qualifiedDisposition": "not_applicable",
+  "rawDraftOrEvidenceModified": false,
+  "authorRepairLogPath": "evidence/persons_3/author-repair-shobal-wikipedia-note.json",
+  "authorRepairLogSHA256": "c8b71fad32bfc1cc8db8c1f8f42134f20571d09579b0c790cda2859688dadd9a",
+  "oldAndCurrentBytes": {
+    "beforeDraftSHA256": "bc3981d650285ae49dbc6392f84ed92bf3af42a19c4bc917822b929490b67e6c",
+    "currentDraftSHA256": "dec6f7db50c2c19bcc959ff1a338c34ade8473cbcb446fcc96e646c323b47cfb",
+    "beforeEvidenceSHA256": "9efc49382f121aaed463225766ba6c87c5764da6fffdbc608b0e850e6f3da654",
+    "currentEvidenceSHA256": "64a965e4e04d1d3388d9db8ddf8186fff162be9dcee4816037e837b423c042f4",
+    "beforeProfileSHA256": "5fd22b7f4dd2f69a39263b8ada3f6856ac3cb6cfdd23df9264757538035c7696",
+    "currentProfileSHA256": "327b2eacb7a99990cfd3b7747cd352af7f60162f57ccf75131d99264f88f80d0",
+    "preservedBeforeDraftObject": "preservation/objects/bc3981d650285ae49dbc6392f84ed92bf3af42a19c4bc917822b929490b67e6c",
+    "preservedBeforeEvidenceObject": "preservation/objects/9efc49382f121aaed463225766ba6c87c5764da6fffdbc608b0e850e6f3da654",
+    "declaredChangedFields": [
+      "profile.wikipedia.noteJa",
+      "draft.review.wikipediaCheck.identityBasisJa",
+      "evidence.wikipediaReadEvidence[0].support",
+      "evidence.wikipediaReadEvidenceSHA256",
+      "evidence.draftSHA256",
+      "evidence.profileSHA256"
+    ],
+    "diffVerificationJa": "保存済みbefore objectとcurrentを比較。profile差分はwiki.noteJaのみ。review.wikipediaCheck.identityBasisJaとevidenceの対応説明/hash・draft/profile bindも作者logの範囲で同期されている。knownBy、passages、facts、primary source URLs/texts、Wiki URL/kind/identity flag/gateは不変。"
+  },
+  "fixedPrimaryWitness": {
+    "path": "inventory/targets/chronicles1-web-verses.json",
+    "sha256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+    "witness": "webp-usfx-2026-10-13-35a6adf626e5",
+    "checks": [
+      {
+        "ref": "1CH 1:38",
+        "text": "The sons of Seir: Lotan, Shobal, Zibeon, Anah, Dishon, Ezer, and Dishan.",
+        "citationURL": "https://ebible.org/engwebp/1CH01.htm#V38",
+        "textSHA256": "5cffc77a26f8b77881338f6c840d2f060e795868a4f9d9e60f828a425b9c0afc",
+        "pinnedVersion": "webp-usfx-2026-10-13-35a6adf626e5"
+      },
+      {
+        "ref": "1CH 1:40",
+        "text": "The sons of Shobal: Alian, Manahath, Ebal, Shephi, and Onam. The sons of Zibeon: Aiah and Anah.",
+        "citationURL": "https://ebible.org/engwebp/1CH01.htm#V40",
+        "textSHA256": "49b50cb4abbfde82d50b2dcd7b1288458c1eaf78145b6570d34fc30ae679b8dd",
+        "pinnedVersion": "webp-usfx-2026-10-13-35a6adf626e5"
+      }
+    ],
+    "assessmentJa": "1:38はショバルをセイルの子らの一人として名指す。1:40はショバルの子らを列挙し、プロフィールのfactは同節までゲートされる。summaryは1:38に限定され、先行表示の漏れはない。"
+  },
+  "readerFieldsCurrent": {
+    "nameJa": "ショバル",
+    "subtitleJa": "セイルの子として記されるホリ人",
+    "summaryJa": "セイルの子らの一人として列挙されます。",
+    "identityNoteJa": "同じ書にはユダ系の別のショバルもいます。ここではセイル系のホリ人です。",
+    "historicalRoleJa": null,
+    "knownBy": {
+      "chapter": 1,
+      "verse": 38
+    },
+    "wikipedia": {
+      "title": "List of minor Hebrew Bible figures, L–Z",
+      "language": "en",
+      "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shobal",
+      "kind": "shared-section",
+      "noteJa": "英語版一覧は、セイルの系譜に属するショバルを扱っています。",
+      "checkedAt": "2026-10-16",
+      "identityVerified": true,
+      "relationVerified": false,
+      "knownBy": {
+        "chapter": 1,
+        "verse": 38
+      },
+      "sourceId": "shobal_2719-wikipedia-1-38"
+    }
+  },
+  "sourceGateAudit": {
+    "profileSourceIds": [
+      "shobal_2719-webp-1ch-1-40",
+      "shobal_2719-webp-1ch-1-38",
+      "shobal_2719-wikipedia-1-38"
+    ],
+    "factGates": [
+      {
+        "textJa": "ショバルの子として、アリアン、マナハト、エバル、シェフィ、オナムが挙げられます。",
+        "knownBy": {
+          "chapter": 1,
+          "verse": 40
+        },
+        "sourceIds": [
+          "shobal_2719-webp-1ch-1-40"
+        ]
+      }
+    ],
+    "wikipediaKnownBy": {
+      "chapter": 1,
+      "verse": 38
+    },
+    "sourceKnownBy": {
+      "shobal_2719-webp-1ch-1-40": {
+        "chapter": 1,
+        "verse": 40
+      },
+      "shobal_2719-webp-1ch-1-38": {
+        "chapter": 1,
+        "verse": 38
+      },
+      "shobal_2719-wikipedia-1-38": {
+        "chapter": 1,
+        "verse": 38
+      }
+    },
+    "gatesConsistent": false
+  },
+  "wikipediaReclosure": {
+    "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shobal",
+    "articleTitle": "List of minor Hebrew Bible figures, L–Z",
+    "locator": "Shobal entry, lines 1704–1708",
+    "checkedAtUTC": "2026-10-16T11:03:09Z",
+    "readLive": true,
+    "supportJa": "記事はショバルをセイルの子でホリ人の長として扱い、子らを列挙し、創世記36:20–29を参照する。新noteは「英語版一覧は、セイルの系譜に属するショバルを扱う」と記事の説明として述べ、1歴代誌1:38が「ホリ人の長」と呼ぶという誤帰属を避けている。記事とWEBの名前・セイル系譜の一致は同記事対象を支持する。",
+    "limitsJa": "“Horite chief”は記事が創世記側の文脈から述べる二次説明であり、1歴代誌1:38の直接引用として表現しない。"
+  },
+  "closureRationaleJa": "前回failの中心はwikipedia.noteJaが「ホリ人の長」を1CH1:38の内容として誤帰属した点だった。author fixによりnoteは一覧記事の説明として正確に限定。summaryは1:38、children factは1:40、sourceKnownByはそれぞれの節で整合し、旧指摘は解消したためpass。"
+}

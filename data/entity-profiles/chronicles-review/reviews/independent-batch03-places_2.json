@@ -1,0 +1,1289 @@
+{
+  "schemaVersion": 1,
+  "title": "Independent semantic review: Chronicles batch03 places_2",
+  "scope": {
+    "frozenInput": "reviews/batch03-places_2-frozen-input.json",
+    "frozenInputSHA256": "e1e2ed717094d81e40807045b3f7e7149454bb9ebb758b2c8e43ac521e976a66",
+    "assignmentBatch": "places_2 batch03",
+    "rowCount": 31,
+    "book": "2CH"
+  },
+  "reviewMethodJa": "各プロフィールの現在の固定WEB箇所・保存された前後文脈/全passages/facts・first-useの常時表示欄・Wikipedia記事本文locator/権利/relationship metadata・null検索記録を照合。Wikipediaページは2026-10-16 06:24–06:26 UTCに本文を再閲覧した。報告は現稿の独立意味判定であり、hash一致だけをpassの根拠にしていない。profile/evidence作者稿は編集していない。全てのプロフィールの sourceIds と evidence profile SHA は原契約の JSON pretty serialization（ensure_ascii=false, indent=2, insertion order, final newline）で照合。",
+  "reviewedAtUTC": "2026-10-16T06:26:14Z",
+  "counts": {
+    "pass": 5,
+    "qualified": 21,
+    "fail": 5
+  },
+  "overallFindingJa": "主なfailはユダの早い地理用例2CH10:17欠落、ペルシア記事の初出時点でのキュロス情報露出、サマリア都市稿への地理地域記事リンク、ラキシュ/ツロのWikipedia読者注に残る内部編集語。その他は土地/都市/地域の同定と現代地理範囲に正直な留保があるためqualified。",
+  "rows": [
+    {
+      "book": "2CH",
+      "entityID": "place:damascus_322",
+      "draftPath": "drafts/places_2/2CH_damascus_322.json",
+      "currentDraftSHA256": "0d7b160228372a33d4ae7d680ff921ff30af3acdefd30f38ae7a975f11bac000",
+      "currentProfileSHA256": "83a34dd90e3aae6a5b8c70e85e2f52d3eb859eebf8815ee9b28cf5ac1679cfe1",
+      "evidencePath": "evidence/places_2/2CH_damascus_322.json",
+      "currentEvidenceSHA256": "b9690d30012aac975ee09d0002080d255ea25bf1488918acd3c3bb7cd9430f1e",
+      "frozenDraftSHA256": "0d7b160228372a33d4ae7d680ff921ff30af3acdefd30f38ae7a975f11bac000",
+      "frozenEvidenceSHA256": "b9690d30012aac975ee09d0002080d255ea25bf1488918acd3c3bb7cd9430f1e",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "pass",
+      "findingJa": "2CH 16:2はシリア王がダマスコに住むと明記。24:23、28:5も都への送付・捕囚先。28:23の「ダマスコの神々」は地名を宗教対象の出所として使う用例で、本文の都profileに無理に新たな都市行為を付していない。全4出現と後段factは各引用に合う。現代ダマスカス記事の古代城壁都市との区別は有用。全ての座標nullは適切。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 16:2",
+          "citationURL": "https://ebible.org/engwebp/2CH16.htm#V2",
+          "text": "Then Asa brought out silver and gold out of the treasures of the LORD’s house and of the king’s house, and sent to Ben Hadad king of Syria, who lived at Damascus, saying,"
+        },
+        {
+          "ref": "2CH 24:23",
+          "citationURL": "https://ebible.org/engwebp/2CH24.htm#V23",
+          "text": "At the end of the year, the army of the Syrians came up against him. They came to Judah and Jerusalem, and destroyed all the princes of the people from among the people, and sent all their plunder to the king of Damascus."
+        },
+        {
+          "ref": "2CH 28:5",
+          "citationURL": "https://ebible.org/engwebp/2CH28.htm#V5",
+          "text": "Therefore the LORD his God delivered him into the hand of the king of Syria. They struck him, and carried away from him a great multitude of captives, and brought them to Damascus. He was also delivered into the hand of the king of Israel, who struck him with a great slaughter."
+        },
+        {
+          "ref": "2CH 28:23",
+          "citationURL": "https://ebible.org/engwebp/2CH28.htm#V23",
+          "text": "For he sacrificed to the gods of Damascus which had defeated him. He said, “Because the gods of the kings of Syria helped them, I will sacrifice to them, that they may help me.” But they were the ruin of him and of all Israel."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=3; passages=4; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://ja.wikipedia.org/wiki/ダマスカス",
+        "kind": "article",
+        "profileNoteJa": "記事は現代のダマスカスと城壁内の古代都市を区別して説明しています。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "地理節 lines 389–397; ancient city identification",
+        "auditorCurrentArticleLocatorAndFindingJa": "ja.wikipedia.org/wiki/ダマスカス 地理の本文（現代都市と古代市街の区別）を再閲覧し、関連づけの範囲は適切。",
+        "judgmentJa": "適合。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; 古代ダマスコは現代のシリアの首都ダマスカスと結びつく都市名です。古代の市域と現代の市街を同一の範囲とはみなしません。 地名は都市を指します。現代の市街中心の点を古代都市の確定地点として扱う根拠はここでは確認していません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:engedi_389",
+      "draftPath": "drafts/places_2/2CH_engedi_389.json",
+      "currentDraftSHA256": "f2bbf10f126281244991c3b53631d0e36d5d83b98b7fa92ef213c01a8021b045",
+      "currentProfileSHA256": "0d2e4d7866f2182d47a88664eddb1ba374cc982dee7912d4e39673d3836c5357",
+      "evidencePath": "evidence/places_2/2CH_engedi_389.json",
+      "currentEvidenceSHA256": "110cda5dc83e41dce6ffd94cf2cca92870a6ef9e54e2b7ef20a89b1c7bdcac1a",
+      "frozenDraftSHA256": "f2bbf10f126281244991c3b53631d0e36d5d83b98b7fa92ef213c01a8021b045",
+      "frozenEvidenceSHA256": "110cda5dc83e41dce6ffd94cf2cca92870a6ef9e54e2b7ef20a89b1c7bdcac1a",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "qualified",
+      "findingJa": "20:2自体が「ハザゾン・タマル（すなわちエン・ゲディ）」と等置するため本文同定は直接。現代町/オアシスと古代地点の範囲を同じとしない留保が妥当。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 20:2",
+          "citationURL": "https://ebible.org/engwebp/2CH20.htm#V2",
+          "text": "Then some came who told Jehoshaphat, saying, “A great multitude is coming against you from beyond the sea from Syria. Behold, they are in Hazazon Tamar” (that is, En Gedi)."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=0; passages=1; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://ja.wikipedia.org/wiki/エン・ゲディ",
+        "kind": "related-section",
+        "profileNoteJa": "記事は現代の町を説明し、2 Chronicles 20:2のハザゾン・タマルに当たるとする説を紹介します。古代の地点範囲まで同一と断定しません。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "本文 lines 138–139",
+        "auditorCurrentArticleLocatorAndFindingJa": "ja.wikipedia.org/wiki/エン・ゲディ 138–139行で現代町を説明し、2 Chronicles 20:2のハザゾン・タマル説を紹介。profile noteは記事の断定より慎重でよい。",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; 現代のエン・ゲディは死海西岸の町・オアシス名です。古代の集落や聖書のハザゾン・タマルとの具体的な範囲の一致は確定できません。 古代の地名と現代の町・自然保護区・遺跡は別の対象として扱います。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:euphrates_421",
+      "draftPath": "drafts/places_2/2CH_euphrates_421.json",
+      "currentDraftSHA256": "5d32f11e1fd6c812becf92f4b1d64133af01b2815f76b2854be2e6699375b78e",
+      "currentProfileSHA256": "a5aa2358e45d63cb9a3a7f4507dd4ecc7c3b52458b23997d4a374bd775f4270e",
+      "evidencePath": "evidence/places_2/2CH_euphrates_421.json",
+      "currentEvidenceSHA256": "4a15bdc691774cce2b906f6a4c7ae56a7603dcaa425210460d63dabcd1e033be",
+      "frozenDraftSHA256": "5d32f11e1fd6c812becf92f4b1d64133af01b2815f76b2854be2e6699375b78e",
+      "frozenEvidenceSHA256": "4a15bdc691774cce2b906f6a4c7ae56a7603dcaa425210460d63dabcd1e033be",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "qualified",
+      "findingJa": "9:26の本文は固有名を出さず「the River」。ユーフラテスとするのは長年の地理的慣用・文脈解釈であり、profile自身も推定と明記。35:20は「Euphrates」と明記するので個別factは確実。初出で河川全体を点に置かずcoordinate=null。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 9:26",
+          "citationURL": "https://ebible.org/engwebp/2CH09.htm#V26",
+          "text": "He ruled over all the kings from the River even to the land of the Philistines, and to the border of Egypt."
+        },
+        {
+          "ref": "2CH 35:20",
+          "citationURL": "https://ebible.org/engwebp/2CH35.htm#V20",
+          "text": "After all this, when Josiah had prepared the temple, Neco king of Egypt went up to fight against Carchemish by the Euphrates, and Josiah went out against him."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=1; passages=2; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Euphrates",
+        "kind": "article",
+        "profileNoteJa": "記事はユーフラテスをトルコ・シリア・イラクを流れる西アジアの河川として説明します。2 Chronicles 9:26の無名の「川」との同定は聖書本文側の文脈推定です。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "lead lines 303–304; course lines 319–321",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Euphrates 301–303行で実河川の同一性/流路確認。これは記事対象の実在を支えるが、9:26無名「川」との同定はWEBが直接確定しないので qualified。",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; ユーフラテス川はトルコからシリア・イラクを流れる大河です。特定の一点ではなく長い流路を指します。 聖書の「川」がユーフラテス川を指す解釈には文脈上の推定が含まれます。川全体を一点の位置と同一視しません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:fish_gate_426",
+      "draftPath": "drafts/places_2/2CH_fish_gate_426.json",
+      "currentDraftSHA256": "6455c62c10d302071c7f093a4549860346ce51c0fcfc59c9accb90eecb8546d8",
+      "currentProfileSHA256": "dd7dc482d7e8932f62cc95c740334038e4519c401389ed5c4bf48af10f85ed25",
+      "evidencePath": "evidence/places_2/2CH_fish_gate_426.json",
+      "currentEvidenceSHA256": "d088b0f7ec3ea8ef17d0b79f2f130bf150045d087d3eb93b995ad917c84c1475",
+      "frozenDraftSHA256": "6455c62c10d302071c7f093a4549860346ce51c0fcfc59c9accb90eecb8546d8",
+      "frozenEvidenceSHA256": "d088b0f7ec3ea8ef17d0b79f2f130bf150045d087d3eb93b995ad917c84c1475",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "qualified",
+      "findingJa": "33:14は魚の門をエルサレム外壁の門として明記。profileは門を個別施設として記し、現代の門や場所を同定せず座標もnull。WikipediaのGates of the Old City of Jerusalemは近代旧市街の門で、古代の魚の門と別対象としたnull判断が妥当。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 33:14",
+          "citationURL": "https://ebible.org/engwebp/2CH33.htm#V14",
+          "text": "Now after this, he built an outer wall to David’s city on the west side of Gihon, in the valley, even to the entrance at the fish gate. He encircled Ophel with it, and raised it up to a very great height; and he put valiant captains in all the fortified cities of Judah."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=0; passages=1; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": null,
+        "kind": null,
+        "profileNoteJa": null,
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": false,
+        "bodyLocator": "Search and body review: Fish Gate and Jerusalem, Fish Gate biblical place; “Gates of the Old City of Jerusalem” and “List of minor biblical places” inspected; no fitting entry for ancient fish gate.",
+        "auditorCurrentArticleLocatorAndFindingJa": "証拠 sidecarの実記事確認対象（Gates of the Old City of Jerusalem / List of minor biblical places）に古代魚の門の適切な該当節がないという具体検索を確認。",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; 本文は古代エルサレムの門を指しますが、現存する特定の門や現代の地点との同定は確認できません。 魚の門という名称から現代の城門を特定する根拠はありません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:geba_447",
+      "draftPath": "drafts/places_2/2CH_geba_447.json",
+      "currentDraftSHA256": "e090cc6e7902d6605eb6023048c90c244e6c56f16da397d2c41e750003ea2d45",
+      "currentProfileSHA256": "cef111068cb1ec39e73a07939fd5f04a3152a14ecc02c1f55eb1c6ff3bbb0f61",
+      "evidencePath": "evidence/places_2/2CH_geba_447.json",
+      "currentEvidenceSHA256": "97e6f1c977f594042b3e6ef4b88036f9f006c3d88766dc40eb20e5f1f33b9a37",
+      "frozenDraftSHA256": "e090cc6e7902d6605eb6023048c90c244e6c56f16da397d2c41e750003ea2d45",
+      "frozenEvidenceSHA256": "97e6f1c977f594042b3e6ef4b88036f9f006c3d88766dc40eb20e5f1f33b9a37",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "qualified",
+      "findingJa": "16:6はラマから運ばれた石材と木材でゲバを築いたと明記。profileは市・古代都市を維持し、ジェバ/Jabaʿ比定を候補説のままにし座標をnullとする。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 16:6",
+          "citationURL": "https://ebible.org/engwebp/2CH16.htm#V6",
+          "text": "Then Asa the king took all Judah, and they carried away the stones and timber of Ramah, with which Baasha had built; and he built Geba and Mizpah with them."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=0; passages=1; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Geba_(city)",
+        "kind": "article",
+        "profileNoteJa": "記事はゲバを聖書の古代都市とし、2 Chronicles 16:6でアサがラマから運んだ資材で築いた町と説明します。ジェバ比定は記事上の提案です。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "Biblical sources lines 113–121; Location lines 122–126",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Geba_(city) 113–126行は古代都市・2 Chronicles 16:6・Jabaʿ比定を記載。別のGibeah/Gibeonと混同せず、現プロフィールnoteの留保は本文と整合。",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; Wikipediaは古代ゲバを現代のジェバ（Jabaʿ）に比定していますが、profileではその比定を確定地点として採用しません。 古代ゲバと現代ジェバの同定は候補説として扱います。地名の似たギブアやギブオンとは別です。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:gerar_459",
+      "draftPath": "drafts/places_2/2CH_gerar_459.json",
+      "currentDraftSHA256": "22d41f208fdceac2679e9b249de7bf92f7dd4ab1b7f3261767ae28d17a223b9b",
+      "currentProfileSHA256": "f739fd68118218f3e574f5677ca94966a9ad548e8223aaff7efb2fd663cf0c1e",
+      "evidencePath": "evidence/places_2/2CH_gerar_459.json",
+      "currentEvidenceSHA256": "49862b3ca05354e137a2bee07d8c93deb532769539e91caae1426e9ceb65d8a4",
+      "frozenDraftSHA256": "22d41f208fdceac2679e9b249de7bf92f7dd4ab1b7f3261767ae28d17a223b9b",
+      "frozenEvidenceSHA256": "49862b3ca05354e137a2bee07d8c93deb532769539e91caae1426e9ceb65d8a4",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "qualified",
+      "findingJa": "14:13はアサ軍の追撃先としてゲラル、14:14はゲラル周辺の町を述べる。profileは都市名と周辺地区の幅を保ち、テル・ハロルを確定地点としていない。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 14:13",
+          "citationURL": "https://ebible.org/engwebp/2CH14.htm#V13",
+          "text": "Asa and the people who were with him pursued them to Gerar. So many of the Ethiopians fell that they could not recover themselves, for they were destroyed before the LORD and before his army. Judah’s army carried away very much booty."
+        },
+        {
+          "ref": "2CH 14:14",
+          "citationURL": "https://ebible.org/engwebp/2CH14.htm#V14",
+          "text": "They struck all the cities around Gerar, for the fear of the LORD came on them. They plundered all the cities, for there was much plunder in them."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=1; passages=2; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Gerar",
+        "kind": "article",
+        "profileNoteJa": "記事はテル・ハロルを有力候補とする説などを紹介しますが、特定の遺跡への同定は確定していません。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "本文冒頭(lines 120–127)は古代都市と地区を区別し、テル・ハロル等を候補として提示。2 Chronicles欄(lines 132–137)に14:12–15の記述。候補地の複数説を保つ。",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Gerar 120–127, 132行は古代都市/地区、候補地複数、2 Chronicles本文を扱う。地域範囲を一点に固定せず、記事本文の支持と一致。",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; 現在のイスラエル南部にあったとされる古代都市・地区ですが、遺跡候補には複数説があります。 記事はテル・ハロルを有力候補とする説などを紹介しますが、特定の遺跡への同定は確定していません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:gimzo_480",
+      "draftPath": "drafts/places_2/2CH_gimzo_480.json",
+      "currentDraftSHA256": "2b14e1dc7b599532b1edb50796e8044799a57393271593886740e8dbe893e187",
+      "currentProfileSHA256": "7e7d703bdf21cecd49051c98464bf124079a65d287c2daa1f088ac11c2db3d7d",
+      "evidencePath": "evidence/places_2/2CH_gimzo_480.json",
+      "currentEvidenceSHA256": "08c0f112cb455c9119419a936cefea3ddbf15e9dac112c6977ad79de64376a43",
+      "frozenDraftSHA256": "2b14e1dc7b599532b1edb50796e8044799a57393271593886740e8dbe893e187",
+      "frozenEvidenceSHA256": "08c0f112cb455c9119419a936cefea3ddbf15e9dac112c6977ad79de64376a43",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "qualified",
+      "findingJa": "28:18は低地・南部の都市列挙でギムゾと村々が住み着かれたと述べる。profileは古代の町を現代モシャブと同一視せず、村落を含む町名として記載。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 28:18",
+          "citationURL": "https://ebible.org/engwebp/2CH28.htm#V18",
+          "text": "The Philistines also had invaded the cities of the lowland and of the South of Judah, and had taken Beth Shemesh, Aijalon, Gederoth, Soco with its villages, Timnah with its villages, and also Gimzo and its villages; and they lived there."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=0; passages=1; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Gimzo",
+        "kind": "related-section",
+        "profileNoteJa": "記事は現代のモシャブの位置と2 Chronicles 28:18の言及を記しますが、古代集落との同一性を独立に確定するものではありません。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "History (lines 141–142) quotes 2 Chronicles 28:18 for biblical Gimzo; lead/geography (131,136) describes the modern moshav",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Gimzo 131, 141行は今日のモシャブと2 Chronicles 28:18を扱うが古代/近代の同一地点を確証しない。related-sectionとして正直な留保。",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; 現代イスラエル中部に同名のモシャブがありますが、古代の町との同一地点は確定できません。 記事は現代のモシャブの位置と2 Chronicles 28:18の言及を記しますが、古代集落との同一性を独立に確定するものではありません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:hamath_516",
+      "draftPath": "drafts/places_2/2CH_hamath_516.json",
+      "currentDraftSHA256": "e71c26993da2f90f3e9f642a298b7cab02cf43f2cf5a36692de58e61ac0ea2ac",
+      "currentProfileSHA256": "a79ac33f8f7e3b00109939a653b14d62e2612d2db85a3f46690909cb834d260a",
+      "evidencePath": "evidence/places_2/2CH_hamath_516.json",
+      "currentEvidenceSHA256": "2fe8f5b62cd8aaef18d25b0db3badb7aca44f29cfc8b7c8710be43db119e637e",
+      "frozenDraftSHA256": "e71c26993da2f90f3e9f642a298b7cab02cf43f2cf5a36692de58e61ac0ea2ac",
+      "frozenEvidenceSHA256": "2fe8f5b62cd8aaef18d25b0db3badb7aca44f29cfc8b7c8710be43db119e637e",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "qualified",
+      "findingJa": "8:4はタドモルと「ハマトに」築いた倉庫都市を記す。都市・周辺地域のどちらを指すかの幅をsummary/role/locationで留保し、現代ハマー市域への確定同定や座標ピンはない。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 8:4",
+          "citationURL": "https://ebible.org/engwebp/2CH08.htm#V4",
+          "text": "He built Tadmor in the wilderness, and all the storage cities, which he built in Hamath."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=0; passages=1; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Hama",
+        "kind": "related-section",
+        "profileNoteJa": "記事は現代ハマーと古代ハマトの都市史を扱いますが、本文の「ハマトに」の範囲を現代市域と同一とはみなしません。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "Lead/history describe modern Hama and ancient Hamath as a long-lived urban center; used only as related modern/ancient context, not boundary equivalence",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Hama 249–250, 300–305行は古代HamathとHamaの長期的都市関連を説明。現在のHamathは古代都市という関係の裏づけにはなるが、2CHの倉庫群の範囲まで確定しない。",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; 古代シリア北部のハマト（現ハマー）と結び付けられる名称ですが、本文の地域範囲は現代の行政境界と同じではありません。 記事は現代ハマーと古代ハマトの都市史を扱いますが、本文の「ハマトに」の範囲を現代市域と同一とはみなしません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:horeb_576",
+      "draftPath": "drafts/places_2/2CH_horeb_576.json",
+      "currentDraftSHA256": "fd0655daa7f1f614313f2683890ff0662fbfe251fedefc944435e2cfe0305126",
+      "currentProfileSHA256": "26c188b8b7b5c0222ebb083d8c853bde82190ab85feb2c92774b033848edfdee",
+      "evidencePath": "evidence/places_2/2CH_horeb_576.json",
+      "currentEvidenceSHA256": "473641d9db21247fe1654e9b48e754f54265b1118dffb14db02280eda2580357",
+      "frozenDraftSHA256": "fd0655daa7f1f614313f2683890ff0662fbfe251fedefc944435e2cfe0305126",
+      "frozenEvidenceSHA256": "473641d9db21247fe1654e9b48e754f54265b1118dffb14db02280eda2580357",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "qualified",
+      "findingJa": "5:10は契約の箱にモーセがホレブで置いた石板があったと回顧。profileの説明はこの地点用途に沿い、実際の山頂とシナイ比定の不確実性を維持する。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 5:10",
+          "citationURL": "https://ebible.org/engwebp/2CH05.htm#V10",
+          "text": "There was nothing in the ark except the two tablets which Moses put there at Horeb, when the LORD made a covenant with the children of Israel, when they came out of Egypt."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=0; passages=1; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Mount_Horeb",
+        "kind": "article",
+        "profileNoteJa": "記事はホレブを十戒授与の山と説明し、シナイ山との関係にも言及しますが、実際の山頂位置は確定していません。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "Lead (line 125) identifies the mountain in biblical tradition; later text discusses disputed geographic identification",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Mount_Horeb 125–128行は山の聖書伝承とシナイ同一視の議論を記載。現位置を確定しないことが適切。記事の十戒情報は2CH本文の証拠ではなく、本文記述をそれに依存させていない。",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; シナイ半島などのどの山頂に当たるかは特定されていません。 記事はホレブを十戒授与の山と説明し、シナイ山との関係にも言及しますが、実際の山頂位置は確定していません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:jericho_634",
+      "draftPath": "drafts/places_2/2CH_jericho_634.json",
+      "currentDraftSHA256": "b22152bc50a016e2116d3a5f343d71eee50527a4c014a8f8dd6a2ace51c4839c",
+      "currentProfileSHA256": "984374333e6e59acbca17df5195e88ee2a93d6098b83be52dff90cb2d11bb4de",
+      "evidencePath": "evidence/places_2/2CH_jericho_634.json",
+      "currentEvidenceSHA256": "85153094695c741642fe7e5b189e5b21cb95ddab5b44f1c28cdf3124c94e8444",
+      "frozenDraftSHA256": "b22152bc50a016e2116d3a5f343d71eee50527a4c014a8f8dd6a2ace51c4839c",
+      "frozenEvidenceSHA256": "85153094695c741642fe7e5b189e5b21cb95ddab5b44f1c28cdf3124c94e8444",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "pass",
+      "findingJa": "28:15は「なつめやしの町」エリコを名指し、捕虜をそこへ運ぶ。summaryとroleはこの本文だけに即する。現代都市・テル・エス・スルタン/古代層を一地点と同一視せず、座標null。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 28:15",
+          "citationURL": "https://ebible.org/engwebp/2CH28.htm#V15",
+          "text": "The men who have been mentioned by name rose up and took the captives, and with the plunder clothed all who were naked among them, dressed them, gave them sandals, gave them something to eat and to drink, anointed them, carried all the feeble of them on donkeys, and brought them to Jericho, the city of palm trees, to their brothers. Then they returned to Samaria."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=0; passages=1; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Jericho",
+        "kind": "article",
+        "profileNoteJa": "記事は古代遺跡テル・エス・スルタンと現代エリコの複数の歴史層を扱います。本文の「なつめやしの町」は古代呼称として残します。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "Lead and History discuss ancient Jericho/Tell es-Sultan and the modern city; 2 Chronicles 28:15 is within Biblical history",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Jericho 235–265行は都市と古代遺跡テル・エス・スルタン、また聖書の「city of palm trees」を明記。対象と記事の関係は本文で確認。",
+        "judgmentJa": "適合。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; 古代エリコは現代のエリコ周辺に位置しますが、古代市域と現在の市街は同一範囲ではありません。 記事は古代遺跡テル・エス・スルタンと現代エリコの複数の歴史層を扱います。本文の「なつめやしの町」は古代呼称として残します。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:jezreel_643",
+      "draftPath": "drafts/places_2/2CH_jezreel_643.json",
+      "currentDraftSHA256": "b41f1163177b1d628f935ef1baebe19908cf268925c01c9c9372d67f9ad47e00",
+      "currentProfileSHA256": "5ab1c4fe2495ab417d7edf4735a31e56ecf548d0b9321ec9788542bb3cc659c5",
+      "evidencePath": "evidence/places_2/2CH_jezreel_643.json",
+      "currentEvidenceSHA256": "65e351d5894106fadf203f3f50d47b79dde5e25e87b97b0f5798c7162d3c42e4",
+      "frozenDraftSHA256": "b41f1163177b1d628f935ef1baebe19908cf268925c01c9c9372d67f9ad47e00",
+      "frozenEvidenceSHA256": "65e351d5894106fadf203f3f50d47b79dde5e25e87b97b0f5798c7162d3c42e4",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "qualified",
+      "findingJa": "22:6はヨラムの療養地として都市イズレエルを明記。プロフィールは都市と遺跡範囲を区別する。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 22:6",
+          "citationURL": "https://ebible.org/engwebp/2CH22.htm#V6",
+          "text": "He returned to be healed in Jezreel of the wounds which they had given him at Ramah, when he fought against Hazael king of Syria. Azariah the son of Jehoram, king of Judah, went down to see Jehoram the son of Ahab in Jezreel, because he was sick."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=0; passages=1; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Tel_Jezreel",
+        "kind": "related-section",
+        "profileNoteJa": "Tel Jezreelの記事はこの遺跡を古代イズレエルの都市跡とし、北イスラエル王国の要地だったと説明します。古代市域の範囲には留保します。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "Lead/history lines 151–153 identify archaeological site and ancient city; article chiefly covers excavated tell, not the full ancient urban footprint",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Tel_Jezreel 151–153行は考古学遺跡と古代都市イズレエルを関連づけるが、発掘地点と市域を同一視しないnoteが必要。current relation-onlyが適切。",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; イズレエル平野東部のテル・イズレエルが古代都市跡とされますが、本文の都市範囲と遺跡範囲は一致を断定できません。 Tel Jezreelの記事はこの遺跡を古代イズレエルの都市跡とし、北イスラエル王国の要地だったと説明します。古代市域の範囲には留保します。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:judah-southern_1281",
+      "draftPath": "drafts/places_2/2CH_judah-southern_1281.json",
+      "currentDraftSHA256": "a8e58770f6456fad29cc355d49b9599a09d9cad60f695743eb73371eff80d2bf",
+      "currentProfileSHA256": "0066a48fec1f6097e944cfe3980a94a27fdc2134998c26de4c7b1ffbd365680f",
+      "evidencePath": "evidence/places_2/2CH_judah-southern_1281.json",
+      "currentEvidenceSHA256": "dfa3f8b356fba7304c0dff31dafdb6fba16d19fd41d5bd5e330a76e533d8fe8a",
+      "frozenDraftSHA256": "a8e58770f6456fad29cc355d49b9599a09d9cad60f695743eb73371eff80d2bf",
+      "frozenEvidenceSHA256": "dfa3f8b356fba7304c0dff31dafdb6fba16d19fd41d5bd5e330a76e533d8fe8a",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "fail",
+      "findingJa": "現profile knownBy/passagesは11:5のみだが、2CH 10:17はすでに「cities of Judah」を地理用法で名指す。さらに11:1の「house of Judah and Benjamin」、11:3の「king of Judah / all Israel in Judah and Benjamin」がある。少なくとも10:17を含めるべきで、初出ゲート11:5は遅い。10:17を地域用法として加え、11:1/3は政治共同体・地理的領域を分けて採否を記録し、初出説明を過去情報のない10:17に合わせる必要がある。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 11:3",
+          "citationURL": "https://ebible.org/engwebp/2CH11.htm#V3",
+          "text": "“Speak to Rehoboam the son of Solomon, king of Judah, and to all Israel in Judah and Benjamin, saying,",
+          "auditorAddedMissedOccurrence": true
+        },
+        {
+          "ref": "2CH 11:1",
+          "citationURL": "https://ebible.org/engwebp/2CH11.htm#V1",
+          "text": "When Rehoboam had come to Jerusalem, he assembled the house of Judah and Benjamin, one hundred eighty thousand chosen men who were warriors, to fight against Israel, to bring the kingdom again to Rehoboam.",
+          "auditorAddedMissedOccurrence": true
+        },
+        {
+          "ref": "2CH 10:17",
+          "citationURL": "https://ebible.org/engwebp/2CH10.htm#V17",
+          "text": "But as for the children of Israel who lived in the cities of Judah, Rehoboam reigned over them.",
+          "auditorAddedMissedOccurrence": true
+        },
+        {
+          "ref": "2CH 11:5",
+          "citationURL": "https://ebible.org/engwebp/2CH11.htm#V5",
+          "text": "Rehoboam lived in Jerusalem, and built cities for defense in Judah."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=0; passages=1; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Kingdom_of_Judah",
+        "kind": "related-section",
+        "profileNoteJa": "Kingdom of Judahの記事は古代の政治体を扱います。ここでは都市国家・領域名との関連に限り、現代の領域を確定表示しません。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "Lead and geography/history describe the polity and changing extent; not a fixed modern-border polygon",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Kingdom_of_Judah 235–250行は鉄器時代南レバントの王国・中心地・領域を説明するため大まかな関連は適合。固定WEBの早い地名用例を逃している点がfail。",
+        "judgmentJa": "現稿修正が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; 古代ユダ王国の領域は時代により変化し、現代の国境とは一致しません。 Kingdom of Judahの記事は古代の政治体を扱います。ここでは都市国家・領域名との関連に限り、現代の領域を確定表示しません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:kidron_687",
+      "draftPath": "drafts/places_2/2CH_kidron_687.json",
+      "currentDraftSHA256": "a849e307f41073bf1023068a1427c1ed7ad56bc0cc7d17e4e8a639960c185c7c",
+      "currentProfileSHA256": "110b695d26df17cba2dcb6cf75509389b3ab2ec9e3c1585e1987bc25ea52f90c",
+      "evidencePath": "evidence/places_2/2CH_kidron_687.json",
+      "currentEvidenceSHA256": "b49ba38964f8ab459485580d6cad62dad281652e9af483f8a54ca3438719f50e",
+      "frozenDraftSHA256": "a849e307f41073bf1023068a1427c1ed7ad56bc0cc7d17e4e8a639960c185c7c",
+      "frozenEvidenceSHA256": "b49ba38964f8ab459485580d6cad62dad281652e9af483f8a54ca3438719f50e",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "qualified",
+      "findingJa": "15:16はアサが像をキデロンの谷川で焼くこと、29:16は寺院の汚れを谷川へ運ぶことを記す。プロフィールは川/谷の広域と特定区間を分けている。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 15:16",
+          "citationURL": "https://ebible.org/engwebp/2CH15.htm#V16",
+          "text": "Also Maacah, the mother of Asa the king, he removed from being queen mother, because she had made an abominable image for an Asherah; so Asa cut down her image, ground it into dust, and burned it at the brook Kidron."
+        },
+        {
+          "ref": "2CH 29:16",
+          "citationURL": "https://ebible.org/engwebp/2CH29.htm#V16",
+          "text": "The priests went into the inner part of the LORD’s house to cleanse it, and brought out all the uncleanness that they found in the LORD’s temple into the court of the LORD’s house. The Levites took it from there to carry it out to the brook Kidron."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=0; passages=2; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Kidron_Valley",
+        "kind": "related-section",
+        "profileNoteJa": "記事はキデロン谷の地形と流路を説明します。「谷川」の用例を谷全体の一点と同一視しません。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "Lead lines 155–156 describes the valley/river between Jerusalem and Dead Sea; the profile is a brook/valley usage, so only relation is asserted",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Kidron_Valley 155–157行はエルサレム外から死海へ続く谷・水路を説明。profileのrelation-only限定は谷川用例に合う。",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; キデロン谷はエルサレム北東から死海へ延びますが、聖書の「谷川」の水路・区間は限定されません。 記事はキデロン谷の地形と流路を説明します。「谷川」の用例を谷全体の一点と同一視しません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:kue_709",
+      "draftPath": "drafts/places_2/2CH_kue_709.json",
+      "currentDraftSHA256": "456de935cf496bfecd6d698d81309c37d2aed42d2bd58633340ac8b29bb059b2",
+      "currentProfileSHA256": "b07b9da2e80fb20011c7e1a99bc0e4f33d852d26a88940784a6b8644b9c2aeb9",
+      "evidencePath": "evidence/places_2/2CH_kue_709.json",
+      "currentEvidenceSHA256": "97302b6d84f030538ac55f508ab61ba658fcec62e3a159567fbed59d340cb11d",
+      "frozenDraftSHA256": "456de935cf496bfecd6d698d81309c37d2aed42d2bd58633340ac8b29bb059b2",
+      "frozenEvidenceSHA256": "97302b6d84f030538ac55f508ab61ba658fcec62e3a159567fbed59d340cb11d",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "qualified",
+      "findingJa": "1:16はエジプトとクエを別々の馬の仕入れ元として明記。profileの古代地理的位置・キリキア周辺説への留保とcoordinate=nullは適切。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 1:16",
+          "citationURL": "https://ebible.org/engwebp/2CH01.htm#V16",
+          "text": "The horses which Solomon had were brought out of Egypt and from Kue. The king’s merchants purchased them from Kue."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=0; passages=1; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": null,
+        "kind": null,
+        "profileNoteJa": null,
+        "actualArticleBodyRead": false,
+        "currentLivePageCheck": false,
+        "bodyLocator": null,
+        "auditorCurrentArticleLocatorAndFindingJa": "保存済みnegative searchで “Kue/Que ancient region”, “Que Cilicia biblical”, 日本語クエを調べ、Ciliciaの一般記事も閲覧したが、クエそのものを同定する適合記事なし。未発見を不存在の証明にしていない。",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; クエの古代地理的位置は小アジア南東部のキリキア周辺とする説がありますが、同定と範囲には留保があります。 「Que (ancient region)」の完全一致記事は見当たりませんでした。Cilicia等は候補説を示す一般地域記事にとどまるため、特定位置を示す記事リンクを採用しません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:lachish_711",
+      "draftPath": "drafts/places_2/2CH_lachish_711.json",
+      "currentDraftSHA256": "967a41d1ec4ba610468e692c8ae19b509743284d65f47f5e60d4965fa9f8f41a",
+      "currentProfileSHA256": "4b032c866d262e4a9c06b796af70d39544c7785342c5ecef5e21642700e525e6",
+      "evidencePath": "evidence/places_2/2CH_lachish_711.json",
+      "currentEvidenceSHA256": "a80cb4c9b9005668acaa5fa97b065e3085e3c54ba3575c487d06c76461e2c18d",
+      "frozenDraftSHA256": "967a41d1ec4ba610468e692c8ae19b509743284d65f47f5e60d4965fa9f8f41a",
+      "frozenEvidenceSHA256": "a80cb4c9b9005668acaa5fa97b065e3085e3c54ba3575c487d06c76461e2c18d",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "fail",
+      "findingJa": "11:9はラキシュを防備都市として列挙、25:27と32:9の後続用例はそれぞれ逃亡/包囲のfact gateに正しく分けられる。ただしWikipedia.noteJaに「初出欄では後の包囲を述べず」と内部編集過程を説明する語が残る。読者向けに都市/遺跡の実内容のみを説明する文へ置換が必要。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 11:9",
+          "citationURL": "https://ebible.org/engwebp/2CH11.htm#V9",
+          "text": "Adoraim, Lachish, Azekah,"
+        },
+        {
+          "ref": "2CH 25:27",
+          "citationURL": "https://ebible.org/engwebp/2CH25.htm#V27",
+          "text": "Now from the time that Amaziah turned away from following the LORD, they made a conspiracy against him in Jerusalem. He fled to Lachish, but they sent after him to Lachish and killed him there."
+        },
+        {
+          "ref": "2CH 32:9",
+          "citationURL": "https://ebible.org/engwebp/2CH32.htm#V9",
+          "text": "After this, Sennacherib king of Assyria sent his servants to Jerusalem, (now he was attacking Lachish, and all his forces were with him), to Hezekiah king of Judah, and to all Judah who were at Jerusalem, saying,"
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=2; passages=3; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Lachish",
+        "kind": "article",
+        "profileNoteJa": "記事は古代都市ラキシュと遺跡テル・ラキシュを扱います。初出欄では後の包囲を述べず、遺跡と都市範囲を区別します。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "Lead/history identifies the ancient city and archaeological mound; profile citation is same city, but not exact ancient boundary",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Lachish 167–180行は古代の町/テルを区別。記事適合はよいがnoteのeditorial-process wordingは不適合。",
+        "judgmentJa": "現稿修正が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; テル・ラキシュは古代ラキシュの遺跡として知られますが、聖書の町の範囲を遺跡の点だけに限定しません。 記事は古代都市ラキシュと遺跡テル・ラキシュを扱います。初出欄では後の包囲を述べず、遺跡と都市範囲を区別します。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:mareshah_767",
+      "draftPath": "drafts/places_2/2CH_mareshah_767.json",
+      "currentDraftSHA256": "fda1b6fd9b9c1f980668644e169e42df3babe3d80dff1244ef3fb76fa8f94990",
+      "currentProfileSHA256": "dc272dab239162e3dac581c868bdce4239b364bbfc7814c7ae1794048b2cde62",
+      "evidencePath": "evidence/places_2/2CH_mareshah_767.json",
+      "currentEvidenceSHA256": "8b207b586b8207d4d2018960709e05c5d0e94b475c230d6dc86f1973be586a77",
+      "frozenDraftSHA256": "fda1b6fd9b9c1f980668644e169e42df3babe3d80dff1244ef3fb76fa8f94990",
+      "frozenEvidenceSHA256": "8b207b586b8207d4d2018960709e05c5d0e94b475c230d6dc86f1973be586a77",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "qualified",
+      "findingJa": "11:8の防備都市、14:9–10の軍の進出とマレシャの谷、20:37の「マレシャ出身」を別々の用法として把握。fact 20:37は人の出自であり、場所と谷を同一化しない注記は適切。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 11:8",
+          "citationURL": "https://ebible.org/engwebp/2CH11.htm#V8",
+          "text": "Gath, Mareshah, Ziph,"
+        },
+        {
+          "ref": "2CH 14:9",
+          "citationURL": "https://ebible.org/engwebp/2CH14.htm#V9",
+          "text": "Zerah the Ethiopian came out against them with an army of a million troops and three hundred chariots, and he came to Mareshah."
+        },
+        {
+          "ref": "2CH 14:10",
+          "citationURL": "https://ebible.org/engwebp/2CH14.htm#V10",
+          "text": "Then Asa went out to meet him, and they set the battle in array in the valley of Zephathah at Mareshah."
+        },
+        {
+          "ref": "2CH 20:37",
+          "citationURL": "https://ebible.org/engwebp/2CH20.htm#V37",
+          "text": "Then Eliezer the son of Dodavahu of Mareshah prophesied against Jehoshaphat, saying, “Because you have joined yourself with Ahaziah, the LORD has destroyed your works.” The ships were wrecked, so that they were not able to go to Tarshish."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=3; passages=4; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Mareshah",
+        "kind": "article",
+        "profileNoteJa": "記事は古代都市マレシャとその遺跡を扱いますが、都市範囲を現在の遺跡一点と同一視しません。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "Lead and history identify ancient Maresha and archaeological site; distinction from the valley named “at Mareshah” is retained",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Mareshah 147行は古代都市と遺跡を対応させる。2CH20:37の出自箇所を都市同定の新根拠に使っていない点を確認。",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; テル・マレシャ（ベト・グブリン周辺）は古代マレシャの遺跡候補ですが、本文の「マレシャの谷」の範囲は特定されません。 記事は古代都市マレシャの遺跡を説明しますが、古代都市の全範囲は特定できず、遺跡の一点が市域全体を表すとは限りません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:megiddo_777",
+      "draftPath": "drafts/places_2/2CH_megiddo_777.json",
+      "currentDraftSHA256": "79144274f2419d7acf7e551881c45cafcfec4ea3b6a96e828c707b870bbfc0af",
+      "currentProfileSHA256": "1a4f15351722e719a90d868a7d6e400ae91d91795117f2a160af817caf5af78d",
+      "evidencePath": "evidence/places_2/2CH_megiddo_777.json",
+      "currentEvidenceSHA256": "3e9702dc07af14fc41b842a0cbae5c1892072b32a08e12c46bc63b89afda194c",
+      "frozenDraftSHA256": "79144274f2419d7acf7e551881c45cafcfec4ea3b6a96e828c707b870bbfc0af",
+      "frozenEvidenceSHA256": "3e9702dc07af14fc41b842a0cbae5c1892072b32a08e12c46bc63b89afda194c",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "qualified",
+      "findingJa": "35:22は「メギドの谷」で、本文はテル/市そのものではなく戦場の谷を指す。profileは「谷」と都市遺跡を明示的に区別してrelated-onlyを使う。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 35:22",
+          "citationURL": "https://ebible.org/engwebp/2CH35.htm#V22",
+          "text": "Nevertheless Josiah would not turn his face from him, but disguised himself, that he might fight with him, and didn’t listen to the words of Neco from the mouth of God, and came to fight in the valley of Megiddo."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=0; passages=1; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Tel_Megiddo",
+        "kind": "related-section",
+        "profileNoteJa": "Tel Megiddoの記事は古代都市遺跡を説明しますが、2 Chronicles 35:22の「谷」は遺跡と同じ地物ではありません。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "Lead/history describe the tell; link is contextual only since the biblical occurrence names the valley of Megiddo, not the tell itself",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Tel_Megiddoは遺跡/古代都市を扱う。現profileはそこを谷と同一視しないためリンクの関係は限定的だが透明。谷の正確な範囲は未特定、coordinate=null。",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; メギドの谷の正確な範囲は、テル・メギド遺跡の地点だけでは表せません。 Tel Megiddoの記事は古代都市遺跡を説明しますが、2 Chronicles 35:22の「谷」は遺跡と同じ地物ではありません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:mount_moriah_848",
+      "draftPath": "drafts/places_2/2CH_mount_moriah_848.json",
+      "currentDraftSHA256": "cef1e0c80820e2ef964a8f424335e508430a91cac195f737a4ef0118e5095277",
+      "currentProfileSHA256": "9d1aae9632df6c5182e76edbb2fa6942ce7e6703748a80d47593065e6d201431",
+      "evidencePath": "evidence/places_2/2CH_mount_moriah_848.json",
+      "currentEvidenceSHA256": "a43a839537660462ad40bcd4d394c1fa9c949c40777e7bb65fa7f9501bd52f08",
+      "frozenDraftSHA256": "cef1e0c80820e2ef964a8f424335e508430a91cac195f737a4ef0118e5095277",
+      "frozenEvidenceSHA256": "a43a839537660462ad40bcd4d394c1fa9c949c40777e7bb65fa7f9501bd52f08",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "qualified",
+      "findingJa": "3:1はエルサレムのモリヤ山で神殿建設を始めたとし、オルナンの打ち場と結びつける。profileは他の伝承や現在の神殿の丘との同一性を断定せず位置を保留。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 3:1",
+          "citationURL": "https://ebible.org/engwebp/2CH03.htm#V1",
+          "text": "Then Solomon began to build the LORD’s house at Jerusalem on Mount Moriah, where the LORD appeared to David his father, which he prepared in the place that David had appointed, on the threshing floor of Ornan the Jebusite."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=0; passages=1; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Moriah",
+        "kind": "related-section",
+        "profileNoteJa": "Moriahの記事は創世記と歴代誌の同名比定に複数の宗教的・学術的見解があると記します。ここでは2 Chronicles 3:1の文脈だけを指し、別伝承の同定を確定しません。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "Article body “Biblical references” and “Speculation and debate” discusses 2 Chronicles 3:1 and differing identifications; related-only, no claim of exact physical identity",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Moriah 130–132行は創世記/歴代誌の場所同定が伝承間で異なることを明記。related-onlyは適切。",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; 伝統的には現在の神殿の丘と結び付けられますが、古代の記述や異なる伝承の関係を一律に同一視しません。 Moriahの記事は創世記と歴代誌の同名比定に複数の宗教的・学術的見解があると記します。ここでは2 Chronicles 3:1の文脈だけを指し、別伝承の同定を確定しません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:northern-kingdom-of-israel_1302",
+      "draftPath": "drafts/places_2/2CH_northern-kingdom-of-israel_1302.json",
+      "currentDraftSHA256": "229c248e1e0d3bd725d5bf862cc1201f8b07f3a2e2a87bca99130eb3d25251f9",
+      "currentProfileSHA256": null,
+      "evidencePath": "evidence/places_2/2CH_northern-kingdom-of-israel_1302.json",
+      "currentEvidenceSHA256": "d8b2bdc02e1d68f956206b26261fabe81ee9eb4b266be39ca637f279db1a179b",
+      "frozenDraftSHA256": "229c248e1e0d3bd725d5bf862cc1201f8b07f3a2e2a87bca99130eb3d25251f9",
+      "frozenEvidenceSHA256": "d8b2bdc02e1d68f956206b26261fabe81ee9eb4b266be39ca637f279db1a179b",
+      "matchesFrozenInput": true,
+      "profileIsNull": true,
+      "verdict": "qualified",
+      "findingJa": "10:19の固定本文は「Israel rebelled against David’s house」。これは反乱する集団・政治主体で、当節は「北王国」という地理的領域を名指さない。profile=nullで後段の王国同定を遡及しない判断は妥当。記事自体は北王国を別の政治体として説明するが、この節に自動でリンクすべきではない。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 10:19",
+          "text": "So Israel rebelled against David’s house to this day."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 profile nullの理由は原典の文脈に即している。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Kingdom_of_Israel_(Samaria)",
+        "kind": null,
+        "profileNoteJa": null,
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": false,
+        "bodyLocator": "lead lines 218–222; inspected to test political-polity distinction",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Kingdom_of_Israel_(Samaria) 218–222行は分裂後の北王国とイスラエル集団を明確に区別。null理由は具体的。これは執筆者自身のprofile-null審査で独立承認ではなく、独立本文判断としてqualified。",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "座標はprofile nullのため表示なし。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:ophel_910",
+      "draftPath": "drafts/places_2/2CH_ophel_910.json",
+      "currentDraftSHA256": "9fbb9094458181e5ce70db67f8d2611cc2c40647368276ff859ef23fac461994",
+      "currentProfileSHA256": "21b40abffc6658594cb3efdaf90bf27515a6a861c3ad481eaaee9cc42c6fda80",
+      "evidencePath": "evidence/places_2/2CH_ophel_910.json",
+      "currentEvidenceSHA256": "1c6ebd02f4b04149156bace2655e866674f28d80412c793156ddf7529532ff6e",
+      "frozenDraftSHA256": "9fbb9094458181e5ce70db67f8d2611cc2c40647368276ff859ef23fac461994",
+      "frozenEvidenceSHA256": "1c6ebd02f4b04149156bace2655e866674f28d80412c793156ddf7529532ff6e",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "pass",
+      "findingJa": "27:3はオフェルで壁を築き、33:14はオフェルを囲む外壁を述べる。二箇所ともエルサレムの高まり/防備地区の用法。座標を地区面積と混同せずnull。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 27:3",
+          "citationURL": "https://ebible.org/engwebp/2CH27.htm#V3",
+          "text": "He built the upper gate of the LORD’s house, and he built much on the wall of Ophel."
+        },
+        {
+          "ref": "2CH 33:14",
+          "citationURL": "https://ebible.org/engwebp/2CH33.htm#V14",
+          "text": "Now after this, he built an outer wall to David’s city on the west side of Gihon, in the valley, even to the entrance at the fish gate. He encircled Ophel with it, and raised it up to a very great height; and he put valiant captains in all the fortified cities of Judah."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=0; passages=2; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Ophel",
+        "kind": "related-section",
+        "profileNoteJa": "記事は「オフェル」を高く盛り上がった集落部分という聖書用語とし、エルサレムとサマリアの別用例を挙げます。この記事の座標を2 Chroniclesの地区範囲と同一視しません。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "Lead lines 137 describes ophel as elevated/fortified settlement area and cites both 2CH27 and 33; it also distinguishes Jerusalem and Samaria usages",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Ophel 136–138行はOphelを高い/要塞化された集落部分とし、2CH27・33のエルサレム用例とSamaria用例を区別。",
+        "judgmentJa": "適合。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; エルサレムの南東丘陵にあるとされますが、古代の「オフェル」は高まり・要塞地区を表す語でもあり、境界は確定できません。 記事は「オフェル」を高く盛り上がった集落部分という聖書用語とし、エルサレムとサマリアの別用例を挙げます。この記事の座標を2 Chroniclesの地区範囲と同一視しません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:persia_938",
+      "draftPath": "drafts/places_2/2CH_persia_938.json",
+      "currentDraftSHA256": "4541091896a046cfa17b6805bf5b2c8ead434cf1160ba4d9bb81227a21641233",
+      "currentProfileSHA256": "d5581266c489e08107ae4b99f0306eed8ed1571bb7faeb3762b775648260ad1c",
+      "evidencePath": "evidence/places_2/2CH_persia_938.json",
+      "currentEvidenceSHA256": "13ecc297cfbe83c3ba69ed86aba42c890674b2e08db0fbf36d787217d000824a",
+      "frozenDraftSHA256": "4541091896a046cfa17b6805bf5b2c8ead434cf1160ba4d9bb81227a21641233",
+      "frozenEvidenceSHA256": "13ecc297cfbe83c3ba69ed86aba42c890674b2e08db0fbf36d787217d000824a",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "fail",
+      "findingJa": "primary facts 36:22–23のゲートは正しいが、36:20の初出で表示されるWikipedia.noteJaがキュロスを明記し「初出記述に後の布告を先取りしません」と編集過程まで説明する。WEBではキュロスは36:22になって初めて名が出る。記事source/titleもAchaemenid Empireで、帝国の君主欄にCyrusを含むため、リンク自体を36:22へ遅らせるか36:20のnoteを無情報にするべき。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 36:20",
+          "citationURL": "https://ebible.org/engwebp/2CH36.htm#V20",
+          "text": "He carried those who had escaped from the sword away to Babylon, and they were servants to him and his sons until the reign of the kingdom of Persia,"
+        },
+        {
+          "ref": "2CH 36:22",
+          "citationURL": "https://ebible.org/engwebp/2CH36.htm#V22",
+          "text": "Now in the first year of Cyrus king of Persia, that the LORD’s word by the mouth of Jeremiah might be accomplished, the LORD stirred up the spirit of Cyrus king of Persia, so that he made a proclamation throughout all his kingdom, and put it also in writing, saying,"
+        },
+        {
+          "ref": "2CH 36:23",
+          "citationURL": "https://ebible.org/engwebp/2CH36.htm#V23",
+          "text": "“Cyrus king of Persia says, ‘The LORD, the God of heaven, has given all the kingdoms of the earth to me; and he has commanded me to build him a house in Jerusalem, which is in Judah. Whoever there is among you of all his people, the LORD his God be with him, and let him go up.’”"
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=2; passages=3; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Persian_Empire",
+        "kind": "related-section",
+        "profileNoteJa": "記事は「Persian Empire」からアケメネス朝の記事へ転送され、キュロスを含む帝国を扱います。ここでは後代の王国名との関連に限り、初出記述に後の布告を先取りしません。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "URL redirects to Achaemenid Empire",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Persian_Empire redirects to Achaemenid Empire; current article lines 250–258/288 includes Cyrus by name. Link/gate at 36:20 is not first-use-safe. This is a definite spoiler and workflow-note fail.",
+        "judgmentJa": "現稿修正が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; 後段に登場するキュロスの王国は古代ペルシア帝国ですが、本文の領土は現代の国境とは異なります。 記事は「Persian Empire」からアケメネス朝の記事へ転送され、キュロスを含む帝国を扱います。ここでは後代の王国名との関連に限り、初出記述に後の布告を先取りしません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:samaria_1022",
+      "draftPath": "drafts/places_2/2CH_samaria_1022.json",
+      "currentDraftSHA256": "56ffdced936750a2aebeb36d2f966acb652f4e4dc84e663fab839bbde646368b",
+      "currentProfileSHA256": "fffb936aa746d72f072129c4f9e0625b8d2354d62b7f628425e2bc4c3738f5b2",
+      "evidencePath": "evidence/places_2/2CH_samaria_1022.json",
+      "currentEvidenceSHA256": "9d4f09ccdf12f8a049971149171ad734c36c106297cd7bbe6b6358fed73acc41",
+      "frozenDraftSHA256": "56ffdced936750a2aebeb36d2f966acb652f4e4dc84e663fab839bbde646368b",
+      "frozenEvidenceSHA256": "9d4f09ccdf12f8a049971149171ad734c36c106297cd7bbe6b6358fed73acc41",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "fail",
+      "findingJa": "2CH 18:2はサマリアの都市を訪問先と明記し、profile baseも都市説明。一方現リンク /wiki/Samaria は現在地域記事のタイトルで、本文188行が「This article is about the geographic region; for the city see Samaria (ancient city)」と区別する。profile上の都市対象にidentityVerified=trueでリンクするなら専用の Samaria (ancient city) を使う必要がある。後続の広域用例はfactsで留保する点自体は妥当。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 18:2",
+          "citationURL": "https://ebible.org/engwebp/2CH18.htm#V2",
+          "text": "After some years, he went down to Ahab to Samaria. Ahab killed sheep and cattle for him in abundance, and for the people who were with him, and moved him to go up with him to Ramoth Gilead."
+        },
+        {
+          "ref": "2CH 18:9",
+          "citationURL": "https://ebible.org/engwebp/2CH18.htm#V9",
+          "text": "Now the king of Israel and Jehoshaphat the king of Judah each sat on his throne, arrayed in their robes, and they were sitting in an open place at the entrance of the gate of Samaria; and all the prophets were prophesying before them."
+        },
+        {
+          "ref": "2CH 22:9",
+          "citationURL": "https://ebible.org/engwebp/2CH22.htm#V9",
+          "text": "He sought Ahaziah, and they caught him (now he was hiding in Samaria), and they brought him to Jehu and killed him; and they buried him, for they said, “He is the son of Jehoshaphat, who sought the LORD with all his heart.” The house of Ahaziah had no power to hold the kingdom."
+        },
+        {
+          "ref": "2CH 25:13",
+          "citationURL": "https://ebible.org/engwebp/2CH25.htm#V13",
+          "text": "But the men of the army whom Amaziah sent back, that they should not go with him to battle, fell on the cities of Judah from Samaria even to Beth Horon, and struck of them three thousand, and took much plunder."
+        },
+        {
+          "ref": "2CH 25:24",
+          "citationURL": "https://ebible.org/engwebp/2CH25.htm#V24",
+          "text": "He took all the gold and silver, and all the vessels that were found in God’s house with Obed-Edom, and the treasures of the king’s house, and the hostages, and returned to Samaria."
+        },
+        {
+          "ref": "2CH 28:8",
+          "citationURL": "https://ebible.org/engwebp/2CH28.htm#V8",
+          "text": "The children of Israel carried away captive of their brothers two hundred thousand women, sons, and daughters, and also took away much plunder from them, and brought the plunder to Samaria."
+        },
+        {
+          "ref": "2CH 28:9",
+          "citationURL": "https://ebible.org/engwebp/2CH28.htm#V9",
+          "text": "But a prophet of the LORD was there, whose name was Oded; and he went out to meet the army that came to Samaria, and said to them, “Behold, because the LORD, the God of your fathers, was angry with Judah, he has delivered them into your hand, and you have slain them in a rage which has reached up to heaven."
+        },
+        {
+          "ref": "2CH 28:15",
+          "citationURL": "https://ebible.org/engwebp/2CH28.htm#V15",
+          "text": "The men who have been mentioned by name rose up and took the captives, and with the plunder clothed all who were naked among them, dressed them, gave them sandals, gave them something to eat and to drink, anointed them, carried all the feeble of them on donkeys, and brought them to Jericho, the city of palm trees, to their brothers. Then they returned to Samaria."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=7; passages=8; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Samaria",
+        "kind": "article",
+        "profileNoteJa": "記事は古代サマリアの遺跡を扱います。本文では18:2の都市と後の方面名が同じ名称で現れるため、各用例の範囲を一律に都市中心点へ限定しません。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "Lead/history identify ancient city of Samaria and archaeological site; profile notes that other assigned occurrences can use the name more broadly",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Samaria current lines 188–196 explicitly region; newly opened https://en.wikipedia.org/wiki/Samaria_(ancient_city) lines 161–180 is the dedicated city article and directly supports current base. Current URL/article mismatch is concrete.",
+        "judgmentJa": "現稿修正が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; サマリアは古代都市名であると同時に広域名にも使われます。現代のセバスティヤ遺跡と古代都市範囲の関係は参考扱いです。 記事は古代サマリアの遺跡を扱います。本文では18:2の都市と後の方面名が同じ名称で現れるため、各用例の範囲を一律に都市中心点へ限定しません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:second_quarter_1040",
+      "draftPath": "drafts/places_2/2CH_second_quarter_1040.json",
+      "currentDraftSHA256": "dd654afada72d727b6a0fc2e5f29347112854bb5e7fa8786a60cd489ebb526c8",
+      "currentProfileSHA256": "c7a7a1645dd780bd8c4c35ecc883f4cf043129571640629cedb444c9eefb1d28",
+      "evidencePath": "evidence/places_2/2CH_second_quarter_1040.json",
+      "currentEvidenceSHA256": "a70935065e556f0ad5e0a9bdbdea1e78de3c1c74b94ed65f8b569767336e5984",
+      "frozenDraftSHA256": "dd654afada72d727b6a0fc2e5f29347112854bb5e7fa8786a60cd489ebb526c8",
+      "frozenEvidenceSHA256": "a70935065e556f0ad5e0a9bdbdea1e78de3c1c74b94ed65f8b569767336e5984",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "qualified",
+      "findingJa": "34:22はフルダの居住地区を「second quarter」とするが、古代地区の現代位置/境界は本文にない。coordinate=null。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 34:22",
+          "citationURL": "https://ebible.org/engwebp/2CH34.htm#V22",
+          "text": "So Hilkiah and those whom the king had commanded went to Huldah the prophetess, the wife of Shallum the son of Tokhath, the son of Hasrah, keeper of the wardrobe (now she lived in Jerusalem in the second quarter), and they spoke to her to that effect."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=0; passages=1; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": null,
+        "kind": null,
+        "profileNoteJa": null,
+        "actualArticleBodyRead": false,
+        "currentLivePageCheck": false,
+        "bodyLocator": null,
+        "auditorCurrentArticleLocatorAndFindingJa": "saved search records exact English/Japanese phrases; inspected Jerusalem article but no matching district section. Null is appropriate; the profile communicates uncertainty without claiming modern district. No article absence proven.",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; 古代エルサレム内の区画ですが、正確な位置・境界は特定されていません。 この呼称に適合するWikipedia記事・節は確認できませんでした。エルサレムの区画名として本文に記されることと、現代の特定地区への同定は区別します。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:seir_1042",
+      "draftPath": "drafts/places_2/2CH_seir_1042.json",
+      "currentDraftSHA256": "bf484fe6f184689fd8211995ca5e61d91aba088a89f4e0c5e76db0532e4557fa",
+      "currentProfileSHA256": "51dc5ca7d0013692f3181d2b6872a88ad5368657ca6a93bfd7771dc1cd6f8d9e",
+      "evidencePath": "evidence/places_2/2CH_seir_1042.json",
+      "currentEvidenceSHA256": "bcf4172371f3d2bcdd988c177d82ef6bda9cc04b2b285e41e004e5464c0205b4",
+      "frozenDraftSHA256": "bf484fe6f184689fd8211995ca5e61d91aba088a89f4e0c5e76db0532e4557fa",
+      "frozenEvidenceSHA256": "bcf4172371f3d2bcdd988c177d82ef6bda9cc04b2b285e41e004e5464c0205b4",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "pass",
+      "findingJa": "20:23は住民の攻撃対象として「Mount Seir」を明記。profileは地域/山地として記述し、セイルの住民を地理点や別の氏族IDと取り違えない。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 20:23",
+          "citationURL": "https://ebible.org/engwebp/2CH20.htm#V23",
+          "text": "For the children of Ammon and Moab stood up against the inhabitants of Mount Seir to utterly kill and destroy them. When they had finished the inhabitants of Seir, everyone helped to destroy each other."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=0; passages=1; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Mount_Seir",
+        "kind": "article",
+        "profileNoteJa": "記事はMount Seirを死海南部からアカバ湾にかけての山地として説明しますが、古代の境界を現代地図へ固定しません。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "Lead lines 129–131 identifies the biblical mountainous region in Edom; used for geographic region only",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Mount_Seir 129–131行は死海南部からアカバ湾までのエドム山地と説明。地域の範囲に留保し、coordinate=nullが適切。",
+        "judgmentJa": "適合。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; エドムに関わる南方山地名ですが、その範囲は現代の一点・国境とは一致しません。 記事はMount Seirを死海南部からアカバ湾にかけての山地として説明しますが、古代の境界を現代地図へ固定しません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:sheba_1067",
+      "draftPath": "drafts/places_2/2CH_sheba_1067.json",
+      "currentDraftSHA256": "cc0b3b35f508421460c244ba6e2c5facafb38d604dda54ebeeeefae908880a4f",
+      "currentProfileSHA256": "04f1de6c5cfef5df95ee61dadff915f98014b984c6ce3cdb250b19dc8a57a9ff",
+      "evidencePath": "evidence/places_2/2CH_sheba_1067.json",
+      "currentEvidenceSHA256": "d57849d174fb0cd36d8985c7e14a6484fc2a220e43bc77e1ed0d819a5df4b0b4",
+      "frozenDraftSHA256": "cc0b3b35f508421460c244ba6e2c5facafb38d604dda54ebeeeefae908880a4f",
+      "frozenEvidenceSHA256": "d57849d174fb0cd36d8985c7e14a6484fc2a220e43bc77e1ed0d819a5df4b0b4",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "qualified",
+      "findingJa": "9:1,3,9,12はシェバの女王を起点に語るが、WEB自身は出身地を現代地図上に特定しない。南アラビアのSaba王国記事との関連だけに留め、同定しないnoteは適切。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 9:1",
+          "citationURL": "https://ebible.org/engwebp/2CH09.htm#V1",
+          "text": "When the queen of Sheba heard of the fame of Solomon, she came to test Solomon with hard questions at Jerusalem, with a very great caravan, including camels that bore spices, gold in abundance, and precious stones. When she had come to Solomon, she talked with him about all that was in her heart."
+        },
+        {
+          "ref": "2CH 9:3",
+          "citationURL": "https://ebible.org/engwebp/2CH09.htm#V3",
+          "text": "When the queen of Sheba had seen the wisdom of Solomon, the house that he had built,"
+        },
+        {
+          "ref": "2CH 9:9",
+          "citationURL": "https://ebible.org/engwebp/2CH09.htm#V9",
+          "text": "She gave the king one hundred and twenty talents of gold, spices in great abundance, and precious stones. There was never before such spice as the queen of Sheba gave to King Solomon."
+        },
+        {
+          "ref": "2CH 9:12",
+          "citationURL": "https://ebible.org/engwebp/2CH09.htm#V12",
+          "text": "King Solomon gave to the queen of Sheba all her desire, whatever she asked, more than that which she had brought to the king. So she turned and went to her own land, she and her servants."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=3; passages=4; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Kingdom_of_Saba",
+        "kind": "related-section",
+        "profileNoteJa": "この記事は古代南アラビアのシェバ／サバ王国を扱いますが、歴代誌下の女王の出身地との同一性を確定する根拠とはしません。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "lead and infobox lines 179–206",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Kingdom_of_Saba 179–206行は南アラビアの古代王国を説明する。女王の国と同一であることを本文だけで証明しないのでrelated-section/identity falseが妥当。",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; 一般に南アラビアのサバ王国などと関連づけられますが、女王の出身地・王国の特定には異説があります。 Shebaは複数の聖書用法・候補地を扱う記事で、Kingdom of Sabaは南アラビアの古代王国です。2 Chroniclesの女王との同定は確定せず、関連のみ示します。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:succoth_1113",
+      "draftPath": "drafts/places_2/2CH_succoth_1113.json",
+      "currentDraftSHA256": "d5c141f1b8938016ba3b142c7608c966f0f5471565ed883600bf5e97e66dd623",
+      "currentProfileSHA256": "065cdccfe34ac45161c4ed076f7fd96ac3490a836bc3e1248fb0c1602769135b",
+      "evidencePath": "evidence/places_2/2CH_succoth_1113.json",
+      "currentEvidenceSHA256": "436b5d84e59cda5e197ee825118494995e02cdac8ad9e555555b98b7cfce6007",
+      "frozenDraftSHA256": "d5c141f1b8938016ba3b142c7608c966f0f5471565ed883600bf5e97e66dd623",
+      "frozenEvidenceSHA256": "436b5d84e59cda5e197ee825118494995e02cdac8ad9e555555b98b7cfce6007",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "qualified",
+      "findingJa": "4:17はヨルダン平野の粘土地でスコテとツェレダの間に鋳造したとする。profileは候補となるヨルダン川東岸のSuccothを確定せず、本文の地点/Genesis/Judges別用例を混同しない。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 4:17",
+          "citationURL": "https://ebible.org/engwebp/2CH04.htm#V17",
+          "text": "The king cast them in the plain of the Jordan, in the clay ground between Succoth and Zeredah."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=0; passages=1; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Succoth",
+        "kind": "related-section",
+        "profileNoteJa": "WikipediaのSuccothページは複数地名の曖昧さ回避です。本文の鋳造地が創世記・士師記の別のスコテと同じかは、この資料だけでは確定できません。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "Disambiguation page only; distinguishes multiple biblical place-names, no exact Chronicles site",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Succoth 98–105行はdisambiguation pageで、Transjordan Succothと他の用例を列挙するが、2CH4:17を直接特定しない。current noteはそれを明示。記事ではなく曖昧さ回避ページなので採用適合性はqualifiedのまま。",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; ヨルダン川東岸のスコテとする比定がありますが、同名地や異なる聖書用例との混同を避け、現代位置は確定しません。 WikipediaのSuccothページは複数地名の曖昧さ回避です。本文の鋳造地が創世記・士師記の別のスコテと同じかは、この資料だけでは確定できません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:tyre_1184",
+      "draftPath": "drafts/places_2/2CH_tyre_1184.json",
+      "currentDraftSHA256": "6f1c97ea363f1fc96929e91d25998056ea6c5cad8a11e1ac44183feff7ccef77",
+      "currentProfileSHA256": "a42006a539171e744c40e2ed8a03389de6c5c86576670db9026bb1edf7859a61",
+      "evidencePath": "evidence/places_2/2CH_tyre_1184.json",
+      "currentEvidenceSHA256": "14a070834cc177db8ac409f87a6085659262ed3261545703fa40fbcab88bddd7",
+      "frozenDraftSHA256": "6f1c97ea363f1fc96929e91d25998056ea6c5cad8a11e1ac44183feff7ccef77",
+      "frozenEvidenceSHA256": "14a070834cc177db8ac409f87a6085659262ed3261545703fa40fbcab88bddd7",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "fail",
+      "findingJa": "2:3はツロ王フラムとの文書連絡、2:11は王の返信、2:14は職人の父がツロ人と明記。profileの都市としての同定/全3箇所は根拠に合う。ただしwiki.noteJaに「profile source link uses...」という内部実装文言が残る。読者向けの都市紹介に直す必要がある。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 2:3",
+          "citationURL": "https://ebible.org/engwebp/2CH02.htm#V3",
+          "text": "Solomon sent to Huram the king of Tyre, saying, “As you dealt with David my father, and sent him cedars to build him a house in which to dwell, so deal with me."
+        },
+        {
+          "ref": "2CH 2:11",
+          "citationURL": "https://ebible.org/engwebp/2CH02.htm#V11",
+          "text": "Then Huram the king of Tyre answered in writing, which he sent to Solomon, “Because the LORD loves his people, he has made you king over them.”"
+        },
+        {
+          "ref": "2CH 2:14",
+          "citationURL": "https://ebible.org/engwebp/2CH02.htm#V14",
+          "text": "the son of a woman of the daughters of Dan; and his father was a man of Tyre. He is skillful to work in gold, in silver, in bronze, in iron, in stone, in timber, in purple, in blue, in fine linen, and in crimson, also to engrave any kind of engraving and to devise any device, that there may be a place appointed to him with your skillful men, and with the skillful men of my lord David your father."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=2; passages=3; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Tyre,_Lebanon",
+        "kind": "article",
+        "profileNoteJa": "Tyre disambiguation page lists Tyre, Lebanon as Mediterranean city; profile source link uses the dedicated Tyre, Lebanon article and distinguishes the city from the wheel sense.",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "Tyre, Lebanon article lead/history; dedicated page, not the Tyre disambiguation page",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Tyre,_Lebanon 219–252行は現代沿岸都市と古代都市を説明し、targetは適合。reader-noteの内部用語だけがfail。",
+        "judgmentJa": "現稿修正が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; 現代レバノン南部のティールに結び付く古代沿岸都市名ですが、古代港・都市の範囲を現代市街と同一視しません。 Tyre disambiguation page lists Tyre, Lebanon as Mediterranean city; profile source link uses the dedicated Tyre, Lebanon article and distinguishes the city from the wheel sense.",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:valley_of_beracah_1200",
+      "draftPath": "drafts/places_2/2CH_valley_of_beracah_1200.json",
+      "currentDraftSHA256": "d907be3f73dde2194c0d701acb569e5a7052a2be150dbac8738800754a917daa",
+      "currentProfileSHA256": "37e11018a0444cc580400f7bb8e1f8d4ef166d04d4c25bf4d62ab1e2d84d04b5",
+      "evidencePath": "evidence/places_2/2CH_valley_of_beracah_1200.json",
+      "currentEvidenceSHA256": "26cefaa8cdbda779d0fbe7b6c413c4ff971a8c8774dd8142e0b0f981e0b97696",
+      "frozenDraftSHA256": "d907be3f73dde2194c0d701acb569e5a7052a2be150dbac8738800754a917daa",
+      "frozenEvidenceSHA256": "26cefaa8cdbda779d0fbe7b6c413c4ff971a8c8774dd8142e0b0f981e0b97696",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "qualified",
+      "findingJa": "20:26はその場所で主を祝福したため「ベラカの谷」と名付けたと明記。地形の存在は本文にあるが場所の具体的範囲は不明。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 20:26",
+          "citationURL": "https://ebible.org/engwebp/2CH20.htm#V26",
+          "text": "On the fourth day, they assembled themselves in Beracah Valley, for there they blessed the LORD. Therefore the name of that place was called “Beracah Valley” to this day."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=0; passages=1; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": null,
+        "kind": null,
+        "profileNoteJa": null,
+        "actualArticleBodyRead": false,
+        "currentLivePageCheck": false,
+        "bodyLocator": null,
+        "auditorCurrentArticleLocatorAndFindingJa": "sidecar records searches for Valley of Beracah / Beracah Valley / Hebrew ברכה and checks nearby generic valleys; no exact site-identifying Wikipedia article. Coordinate null; null is a supported disposition.",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; 地名は本文に記されますが、正確な谷の位置は確定できません。テコア近郊説は推定にとどまります。 適合するWikipedia記事・節は確認できませんでした。検索で見つかる説は現地写真・巡礼記や一般解説で、確定した古代地形同定を提供しません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:valley_of_the_son_of_hinnom_1226",
+      "draftPath": "drafts/places_2/2CH_valley_of_the_son_of_hinnom_1226.json",
+      "currentDraftSHA256": "69782e8edc519e5550f66dc7169f750f80dd7480a124f927894d68aa44ed8b08",
+      "currentProfileSHA256": "5dae623adec003bb944837db0679858c1bef0671f5c1f1d3d3650f5cf077db5a",
+      "evidencePath": "evidence/places_2/2CH_valley_of_the_son_of_hinnom_1226.json",
+      "currentEvidenceSHA256": "3025c11d999924c2990df1973b149fcc412d62c343594831b16ae58f5aa1474d",
+      "frozenDraftSHA256": "69782e8edc519e5550f66dc7169f750f80dd7480a124f927894d68aa44ed8b08",
+      "frozenEvidenceSHA256": "3025c11d999924c2990df1973b149fcc412d62c343594831b16ae58f5aa1474d",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "qualified",
+      "findingJa": "28:3と33:6は子を火に通した谷として同じ地名を直接記す。profileは後代のGehenna概念と地形を明確に区別し、谷の境界/儀礼地点も特定しない。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 28:3",
+          "citationURL": "https://ebible.org/engwebp/2CH28.htm#V3",
+          "text": "Moreover he burned incense in the valley of the son of Hinnom, and burned his children in the fire, according to the abominations of the nations whom the LORD cast out before the children of Israel."
+        },
+        {
+          "ref": "2CH 33:6",
+          "citationURL": "https://ebible.org/engwebp/2CH33.htm#V6",
+          "text": "He also made his children to pass through the fire in the valley of the son of Hinnom. He practiced sorcery, divination, and witchcraft, and dealt with those who had familiar spirits and with wizards. He did much evil in the LORD’s sight, to provoke him to anger."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=1; passages=2; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/Hinnom_Valley",
+        "kind": "related-section",
+        "profileNoteJa": "WikipediaのGehenna記事はエルサレムの谷と後代の宗教概念を同一ページで扱います。ここでは地形との関連だけを示し、谷と「ゲヘナ」という後代概念を同一視しません。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "Article lines 169–183 explicitly says it covers both valley in Jerusalem and theological term; geographic relation only",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/Hinnom_Valley redirects to Gehenna; current lines 168–184 explicitly covers both Jerusalem valley and later religious connotation. Related-only note accurately limits relation.",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; エルサレム南西側のヒンノム谷に結び付く地形名ですが、古代の境界・具体的な儀礼地点は特定できません。 WikipediaのGehenna記事はエルサレムの谷と後代の宗教概念を同一ページで扱います。ここでは地形との関連だけを示し、谷と「ゲヘナ」という後代概念を同一視しません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:zeredah_1255",
+      "draftPath": "drafts/places_2/2CH_zeredah_1255.json",
+      "currentDraftSHA256": "b9a94ed2e26bf00f37907547e31b7acdac2dcc1d8e21b6848842d7bd01e16acf",
+      "currentProfileSHA256": "1bef2b59a50e7c9dd1545da9276cfe69b773bb8b60ed94bbf52d90c368386e0f",
+      "evidencePath": "evidence/places_2/2CH_zeredah_1255.json",
+      "currentEvidenceSHA256": "fc645520896a43a77ab30660c59d8e0d0278a9f73da027d182c4ab8bbbb9a0e6",
+      "frozenDraftSHA256": "b9a94ed2e26bf00f37907547e31b7acdac2dcc1d8e21b6848842d7bd01e16acf",
+      "frozenEvidenceSHA256": "fc645520896a43a77ab30660c59d8e0d0278a9f73da027d182c4ab8bbbb9a0e6",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "qualified",
+      "findingJa": "4:17はスコテとの間の鋳造地名ツェレダを示す。古代位置は不明とし、別書のヤロブアム出身地ゼレダとの同一性を断定しない。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 4:17",
+          "citationURL": "https://ebible.org/engwebp/2CH04.htm#V17",
+          "text": "The king cast them in the plain of the Jordan, in the clay ground between Succoth and Zeredah."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=0; passages=1; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_biblical_places",
+        "kind": "related-section",
+        "profileNoteJa": "Wikipediaのminor biblical places記事にあるZereda(h)は列王記のヤロブアム出身地として説明されていますが、2 Chroniclesのスコテとの間の地名と同一とは確認できません。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "Zereda section lines 1436–1440 discusses Jeroboam birthplace in Kings; it does not establish identity with 2CH4:17",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/List_of_minor_biblical_places 1436–1440行のZereda(h)はKingsのヤロブアム出身地のみを説明し、2CH4:17地点を立証しない。現noteが非同定を明記するため留保付き。",
+        "judgmentJa": "適切だが同定/範囲に留保が必要。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; 古代ツェレダの位置は確定していません。後代資料の「ゼレダ」とヨルダン平野の地名を同じ場所と断定できません。 Wikipediaのminor biblical places記事にあるZereda(h)は列王記のヤロブアム出身地として説明されていますが、2 Chroniclesのスコテとの間の地名と同一とは確認できません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    },
+    {
+      "book": "2CH",
+      "entityID": "place:ziz_1269",
+      "draftPath": "drafts/places_2/2CH_ziz_1269.json",
+      "currentDraftSHA256": "cfacec41397644205ea79aa4cf1682e02fcdd7918666ef733660a300a9ce905f",
+      "currentProfileSHA256": "517e6737bdf68c8a4dce8c5b2351b141b960dc1be71cea5c21c8ade3199ae08c",
+      "evidencePath": "evidence/places_2/2CH_ziz_1269.json",
+      "currentEvidenceSHA256": "c3a0f44eb7dff902464360cdcf3dd676b81cf56f1cdc38afde494b4791a2b5fb",
+      "frozenDraftSHA256": "cfacec41397644205ea79aa4cf1682e02fcdd7918666ef733660a300a9ce905f",
+      "frozenEvidenceSHA256": "c3a0f44eb7dff902464360cdcf3dd676b81cf56f1cdc38afde494b4791a2b5fb",
+      "matchesFrozenInput": true,
+      "profileIsNull": false,
+      "verdict": "pass",
+      "findingJa": "20:16は侵攻軍が上る「ツィツの坂」を明記。プロフィールは荒野エルエル手前の経路として本文を超えず、現代の正確な位置は不明とする。",
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 20:16",
+          "citationURL": "https://ebible.org/engwebp/2CH20.htm#V16",
+          "text": "Tomorrow, go down against them. Behold, they are coming up by the ascent of Ziz. You will find them at the end of the valley, before the wilderness of Jeruel."
+        }
+      ],
+      "firstUseAndFactsGateCheckJa": "初出の常時欄を固定WEB原文と照合。後続factは各source knownByまでに本文支持があるか、初出欄への先取りがないか確認。 sourceIds resolved=True; facts=0; passages=1; coordinate=None、現代位置の不確実性は本文で過度に断定されていない。",
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_biblical_places",
+        "kind": "shared-section",
+        "profileNoteJa": "minor biblical places記事は2 Chronicles 20:16を引用し、ツィツの坂を侵攻軍の上り口として記しますが、現代地点を特定しません。",
+        "actualArticleBodyRead": true,
+        "currentLivePageCheck": true,
+        "bodyLocator": "Ziz section lines 1442–1446 explicitly treats 2 Chronicles 20:16 and ascent of Ziz; exact modern location not supplied",
+        "auditorCurrentArticleLocatorAndFindingJa": "en.wikipedia.org/wiki/List_of_minor_biblical_places 1442–1446行は2 Chronicles 20:16のAscent of Zizそのものを説明し、正確なmodern locationなし。shared-sectionは直接適合。",
+        "judgmentJa": "適合。"
+      },
+      "coordinateAndModernLocationCheckJa": "coordinate=None; ツィツの坂の正確な位置は不明です。荒野エルエルに面する経路という本文の説明を越えて地点を特定しません。 minor biblical places記事は2 Chronicles 20:16を引用し、ツィツの坂を侵攻軍の上り口として記しますが、現代地点を特定しません。",
+      "dataIntegrityIssues": [],
+      "reviewedAtUTC": "2026-10-16T06:26:14Z"
+    }
+  ]
+}
