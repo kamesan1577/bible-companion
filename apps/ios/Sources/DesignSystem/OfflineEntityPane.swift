@@ -74,7 +74,7 @@ struct OfflineEntityPane: View {
                 Toggle("先の登場箇所も見る", isOn: $includeFuture)
                 Text(includeFuture ? "この書の先の登場箇所と補足説明も表示しています。" : "選んだ箇所までの情報を表示しています。").bibleTextStyle(.caption).bibleForeground(.textSecondary)
                 DisclosureGroup("一覧の出典と利用条件") {
-                    Text(["ACT", "ROM", "LEV", "NUM", "JOS"].contains(passage.book) ? "この書はWEB本文と照合した人物・場所の対応を表示します。名前の明記と、文脈上の指示を区別しています。" : "KJVの節番号をもとにした人物・場所の参考一覧です。関連候補と本文に名前がある場合を区別しています。").bibleTextStyle(.caption)
+                    Text(["ACT", "ROM", "LEV", "NUM", "JOS", "JDG", "RUT"].contains(passage.book) ? "この書はWEB本文と照合した人物・場所の対応を表示します。名前の明記と、文脈上の指示を区別しています。" : "KJVの節番号をもとにした人物・場所の参考一覧です。関連候補と本文に名前がある場合を区別しています。").bibleTextStyle(.caption)
                     Text(result.attribution).bibleTextStyle(.caption)
                     if let url = result.sourceURL { Link("Theographic Bible Metadata · CC BY-SA 4.0", destination: url) }
                 }
