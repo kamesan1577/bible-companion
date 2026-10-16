@@ -1,0 +1,78 @@
+{
+  "reviewType": "independent-root-person-identity-proposals",
+  "reviewedAtUTC": "2026-10-16T01:40:32Z",
+  "sourceDecisionFile": "reviews/root-integration-decisions.json",
+  "sourceDecisionSHA256": "8f00a7bebc8526568598b7dbdade62ff046fb0f11b732408bc6d9c21788582a8",
+  "fixedWitness": "WEBP webp-usfx-2026-10-13-35a6adf626e5",
+  "fixedWitnessPath": "inventory/targets/samuel1-web-verses.json",
+  "fixedWitnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab",
+  "items": [
+    {
+      "proposal": "1SA person:eliab_1073 -> person:eliab_1075 at 1SA17:28",
+      "decision": "approved",
+      "currentDraftSHA256": "6b4eb1b07f228ec886681326319f00f212b754e6d2e65dafa79f66ef3784e03f",
+      "canonicalDraftSHA256": "e7e422744361cec1b1b24a8d426fd29ad0a223de425f7afd8ca8493efe75b70a",
+      "nullProfile": null,
+      "canonicalProfileSHA256": "232b6ab48b6a342783346d791d30adcff0ba5415e3637e3a1b083f5c32458bce",
+      "fixedWEBWitnesses": [
+        {
+          "ref": "1SA16:6",
+          "url": "https://ebible.org/engwebp/1SA16.htm#V6",
+          "text": "When they had come, he looked at Eliab, and said, “Surely the LORD’s anointed is before him.”"
+        },
+        {
+          "ref": "1SA17:13",
+          "url": "https://ebible.org/engwebp/1SA17.htm#V13",
+          "text": "The three oldest sons of Jesse had gone after Saul to the battle; and the names of his three sons who went to the battle were Eliab the firstborn, and next to him Abinadab, and the third Shammah."
+        },
+        {
+          "ref": "1SA17:28",
+          "url": "https://ebible.org/engwebp/1SA17.htm#V28",
+          "text": "Eliab his oldest brother heard when he spoke to the men; and Eliab’s anger burned against David, and he said, “Why have you come down? With whom have you left those few sheep in the wilderness? I know your pride and the evil of your heart; for you have come down that you might see the battle.”"
+        }
+      ],
+      "reasonJa": "1SA16:6でエリアブはエッサイの子らの一人として導入され、17:13では長子と明記される。17:28の「彼の兄エリアブ」はダビデの兄を指し、この文脈は同一人物を支持する。1073はprofile:nullで、1075の現行profileは同じ人物を表すため、書内mapを既存canonical IDへ寄せる判断を支持する。新しい人物IDや異同の断定は不要。"
+    },
+    {
+      "proposal": "context-edits/1SA/israel-jacob-12-8.json individual context on person:israel_682",
+      "decision": "approved",
+      "wrapperSHA256": "3ba1a0eb4b4103876447f3c2ac7ba4d7276649bb68b6e178fb3d857a7a83a51c",
+      "contextProfileSHA256": "45092f0d63081a2f4fe3f07c7cd99fd385a229461cecb7b0d7aa112fcdef7d5c",
+      "contextEvidenceSHA256": "1d7962a64547592ec293bfb193259887f6ddcca3a9d5dddbec25d6c678d21ab5",
+      "currentBaseDraftSHA256": "05add0cce980b3d9c04bda9ad98bf0dab849bf92ab0d6fce00166c1e7ebe49c7",
+      "currentBaseProfileSHA256": "058f6c3918c824735084f94748024b2c8f967c90e492367218250ad43c518493",
+      "fixedWEBWitness": {
+        "ref": "1SA12:8",
+        "url": "https://ebible.org/engwebp/1SA12.htm#V8",
+        "text": "“When Jacob had come into Egypt, and your fathers cried to the LORD, then the LORD sent Moses and Aaron, who brought your fathers out of Egypt, and made them to dwell in this place."
+      },
+      "reasonJa": "本文は「Jacob」を名指しし、ヤコブがエジプトへ来た後に父祖たちが主へ叫んだこと、主がモーセとアロンを遣わしたことを述べる。提案のknownBy/passagesは12:8だけで、モーセやアロンの行為をヤコブへ帰属させない。既存Israel collective baseのpassages/factsを改変せずに、同じcanonical ID内の個人contextとして分離できる。Matthew 1章等の別person:jacob_683 IDを流用・統合する根拠はない。Wikipediaは個人context用として未調査/nullを明示し、集団記事を流用していない。",
+      "contextFieldsSafeAtGate": {
+        "knownBy": {
+          "chapter": 12,
+          "verse": 8
+        },
+        "passages": [
+          {
+            "book": "1SA",
+            "start": {
+              "chapter": 12,
+              "verse": 8
+            },
+            "end": {
+              "chapter": 12,
+              "verse": 8
+            }
+          }
+        ],
+        "summaryJa": "サムエルは、ヤコブがエジプトへ来た時、父祖たちが主に叫び、主がモーセとアロンを送って彼らを連れ出したと語ります。",
+        "identityNoteJa": "ここで名指されるヤコブは、民の名としての「イスラエル」とは異なり、エジプトへ来た父祖です。",
+        "historicalRoleJa": "エジプトへ来た父祖として語られる人物"
+      }
+    }
+  ],
+  "notReviewed": [
+    "person:ahimelech_149 -> person:ahimelech_126; proposer requested independent review exclude reviewer’s own draft, assigned separately."
+  ],
+  "limitationsJa": "本文照合に基づく提案レビュー。統合作業やruntime出力は検証していない。"
+}

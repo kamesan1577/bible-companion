@@ -1,0 +1,4770 @@
+{
+  "status": "independent-source-review-findings-not-approval",
+  "book": "2SA",
+  "scope": {
+    "chapterStart": 9,
+    "chapterEnd": 16,
+    "verseCount": 222
+  },
+  "reviewer": "/root/acts_places_one",
+  "reviewedAtUTC": "2026-10-16T01:50:30Z",
+  "currentMapPath": "reviews/verse-map-2SA-09-16.json",
+  "currentMapSHA256": "7989949264bec7734721f5666698136678676c3e7579713a35f4ec502f22547f",
+  "sourceInputPath": "verse-review-inputs/2SA-09-16.json",
+  "sourceInputSHA256": "60ff891e03a4aa9f6409c2a38d5d23abed3cb158c3d347d2cc58fa31e210eafc",
+  "fixedWitnessPath": "inventory/targets/samuel2-web-verses.json",
+  "fixedWitnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+  "readMethodJa": "222節すべての現在sourceTextを固定WEB witnessの同一節本文と照合し、候補入力・現entities・direct/context・直前後の会話主体・固有名/地名の意味範囲を読んだ。以下は各節の本文と現時点のリンクを固定する独立監査記録であり、機械的な構造検査を品質承認としていない。",
+  "mechanicalChecks": {
+    "verseRows": 222,
+    "inputTextExactMatches": 222,
+    "fixedWitnessExactMatches": 222,
+    "citationURLExactMatches": 222,
+    "sourceTextSHA256Valid": true
+  },
+  "summary": {
+    "pass": 181,
+    "qualified": 1,
+    "fail": 40,
+    "findings": 23
+  },
+  "findings": [
+    {
+      "refs": [
+        "2SA9:1",
+        "2SA9:2",
+        "2SA9:3",
+        "2SA9:6",
+        "2SA9:7"
+      ],
+      "issueJa": "Saulは死後でも『Saul's house』『Saul your father』として実名で明示される。9:1,2,3,6,7にperson:saul_2478 directを追加する。"
+    },
+    {
+      "refs": [
+        "2SA9:3",
+        "2SA9:4",
+        "2SA9:5"
+      ],
+      "issueJa": "Jonathanの『息子』と各he/himは、既出2SA4:4のMephiboshethに一意に照応する。初出を9:6と扱わずperson:mephibosheth_1999 contextを追加する。9:3はその息子の直接発話主体ではないがJonathanとZibaは現行リンク妥当。"
+    },
+    {
+      "refs": [
+        "2SA9:10",
+        "2SA9:13"
+      ],
+      "issueJa": "9:10はZibaへの命令を話すDavidが文中に省略され、9:13も『king's table』はDavidの食卓を指す。person:david_994 contextを追加する。"
+    },
+    {
+      "refs": [
+        "2SA10:2",
+        "2SA10:3"
+      ],
+      "issueJa": "10:2のNahashは直名で、同定の不確実さは別のNahash IDとの統合を制限するだけで本文の父名を消す根拠にならない。person:nahash_2137 directを10:2へ追加。10:3の『your father』もHanunの父Nahashを受けcontextで追加する。"
+    },
+    {
+      "refs": [
+        "2SA10:6",
+        "2SA10:8"
+      ],
+      "issueJa": "『men of Tob』が両節に明示される。root指定の既存place:tob_1172があるので新IDは不要。場所・地域の意味留保を確認のうえ両節へdirect追加する。"
+    },
+    {
+      "refs": [
+        "2SA10:12"
+      ],
+      "issueJa": "JoabがAbishaiへ呼びかける継続発話で『let us』『our people』の話者を欠く。person:joab_1617 contextを追加し、『you shall help me』の受け手Abishaiもcontext候補として判定理由を明記する。"
+    },
+    {
+      "refs": [
+        "2SA11:9"
+      ],
+      "issueJa": "『his lord』は前節から一意にDavidを指す。person:david_994 contextを追加する。"
+    },
+    {
+      "refs": [
+        "2SA11:11"
+      ],
+      "issueJa": "Uriahの『my wife』は2SA11:3–5で同定済みのBathshebaを指す。person:bathsheba_416 contextを追加する。"
+    },
+    {
+      "refs": [
+        "2SA11:13"
+      ],
+      "issueJa": "節はDavidがUriahを呼んだ場面から続き、Uriahが食べ・飲み・寝に出る一方、Davidが彼を酔わせる。現行はDavidだけでUriahが欠落。person:uriah_2898 contextを追加。"
+    },
+    {
+      "refs": [
+        "2SA11:15"
+      ],
+      "issueJa": "『he wrote in the letter』のheは11:14で手紙を書いたDavid。命令はJoab宛て。person:david_994 contextを加え、既存Joab contextは宛先として残す。"
+    },
+    {
+      "refs": [
+        "2SA11:16",
+        "2SA11:17",
+        "2SA11:20",
+        "2SA11:21",
+        "2SA11:23",
+        "2SA11:24",
+        "2SA11:25"
+      ],
+      "issueJa": "11:1で包囲しているRabbahが『the city / gate / wall』の継続的な舞台。明確な箇所（少なくとも11:16,17,20,21,23,24,25）へplace:rabbah_966 contextを加える。現11:23のJoab contextは『we/us/the men』が匿名の使者/部隊を指し、指揮官のJoab本人への一意照応でないため除去。11:20–21はJoabの指示が続き、Joab contextを追加。11:24の『your servants』はDavidへの呼びかけなのでDavid contextも追加。"
+    },
+    {
+      "refs": [
+        "2SA12:8",
+        "2SA12:9",
+        "2SA12:10",
+        "2SA12:12"
+      ],
+      "issueJa": "12:7の神託が続く。『I/me』=God、『you/your』=David。12:8はDavid contextとGod context、12:9はDavid context、12:10はGod context、12:12はDavidとGod contextを加える。現12:12のIsrael directは『before all Israel』の人々として支持。"
+    },
+    {
+      "refs": [
+        "2SA12:14"
+      ],
+      "issueJa": "12:13の末尾からNathanがDavidへ答え続けている。David/God現行リンクを保ち、speaker person:nathan_2153 contextを追加する。"
+    },
+    {
+      "refs": [
+        "2SA12:22"
+      ],
+      "issueJa": "一人称で子のために断食した話者は前後からDavid。person:david_994 contextを追加する（God directは主名の明記に基づき維持）。"
+    },
+    {
+      "refs": [
+        "2SA12:28"
+      ],
+      "issueJa": "Joabが前節からDavidに送る指示中の『the city』はRabbah。place:rabbah_966 contextを追加する。"
+    },
+    {
+      "refs": [
+        "2SA14:4"
+      ],
+      "issueJa": "『woman of Tekoa』は現行のTekoa directを支持する一方、彼女が『O king』とDavidへ話す。person:david_994 contextを追加する。"
+    },
+    {
+      "refs": [
+        "2SA14:13"
+      ],
+      "issueJa": "『the people of God』はイスラエルの人々を指す可能性が高いが、女性の寓話的発話なのでIsrael IDとの等価性を本文だけで強く断定しない。person:israel_682 contextを追加するか、候補を除外して根拠を明示するか要判断。"
+    },
+    {
+      "refs": [
+        "2SA15:8"
+      ],
+      "issueJa": "Absalomの15:7から続く発話の『I stayed at Geshur』の話者が現行entitiesにない。person:absalom_59 contextを追加する。"
+    },
+    {
+      "refs": [
+        "2SA15:19"
+      ],
+      "issueJa": "IttaiをGittiteとした15:18の直後に『your own place』へ帰れとあるためGathは文脈上候補。ただし『own place』がGathと一意に確定するかは弱いのでqualifiedで扱い、contextを加える場合は理由と推論性を記す。"
+    },
+    {
+      "refs": [
+        "2SA15:26"
+      ],
+      "issueJa": "15:25の条件文『If I find favor in the LORD’s eyes』が続き、『if he says / let him do』のhe/himはGod。person:god_1324 contextを追加する。"
+    },
+    {
+      "refs": [
+        "2SA15:34"
+      ],
+      "issueJa": "HushaiがAbsalomに言う台詞『your father’s servant』の父はDavid。現行Hushai/Absalom/Ahithophelからperson:david_994 contextが欠落している。"
+    },
+    {
+      "refs": [
+        "2SA16:12"
+      ],
+      "issueJa": "Davidの16:11の発話が続く。『wrong done to me / repay me』のmeはDavid、現行God directのみでDavid contextが欠落。"
+    },
+    {
+      "refs": [
+        "2SA16:19"
+      ],
+      "issueJa": "Hushaiの16:18の発話継続。『whom should I serve?』の話者が現行リンクにない。person:hushai_1577 contextを追加し、Absalom/Davidの指示先は現行contextで妥当。"
+    }
+  ],
+  "verses": [
+    {
+      "chapter": 9,
+      "verse": 1,
+      "status": "fail",
+      "sourceText": "David said, “Is there yet any who is left of Saul’s house, that I may show him kindness for Jonathan’s sake?”",
+      "sourceTextSHA256": "fb565fc9ec1028daf23f05ca147ee1a3fe3da145e5c62ea0567098e598fcae45",
+      "citationURL": "https://ebible.org/engwebp/2SA09.htm#V1",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:jonathan_1692",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "Saulは死後でも『Saul's house』『Saul your father』として実名で明示される。9:1,2,3,6,7にperson:saul_2478 directを追加する。"
+    },
+    {
+      "chapter": 9,
+      "verse": 2,
+      "status": "fail",
+      "sourceText": "There was of Saul’s house a servant whose name was Ziba, and they called him to David; and the king said to him, “Are you Ziba?” He said, “I am your servant.”",
+      "sourceTextSHA256": "c3ddb3931c6ebd7c8c7987686d818e215bad8f608116d20a1d923d267ad18188",
+      "citationURL": "https://ebible.org/engwebp/2SA09.htm#V2",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ziba_3060",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "Saulは死後でも『Saul's house』『Saul your father』として実名で明示される。9:1,2,3,6,7にperson:saul_2478 directを追加する。"
+    },
+    {
+      "chapter": 9,
+      "verse": 3,
+      "status": "fail",
+      "sourceText": "The king said, “Is there not yet any of Saul’s house, that I may show the kindness of God to him?” Ziba said to the king, “Jonathan still has a son, who is lame in his feet.”",
+      "sourceTextSHA256": "cf0dce65720f543b2f49b28155f90fe79adf006aed36b21bac6c6a02a88da22b",
+      "citationURL": "https://ebible.org/engwebp/2SA09.htm#V3",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:jonathan_1692",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ziba_3060",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "Saulは死後でも『Saul's house』『Saul your father』として実名で明示される。9:1,2,3,6,7にperson:saul_2478 directを追加する。; Jonathanの『息子』と各he/himは、既出2SA4:4のMephiboshethに一意に照応する。初出を9:6と扱わずperson:mephibosheth_1999 contextを追加する。9:3はその息子の直接発話主体ではないがJonathanとZibaは現行リンク妥当。"
+    },
+    {
+      "chapter": 9,
+      "verse": 4,
+      "status": "fail",
+      "sourceText": "The king said to him, “Where is he?” Ziba said to the king, “Behold, he is in the house of Machir the son of Ammiel, in Lo Debar.”",
+      "sourceTextSHA256": "dba15e3a3157f4558b228748879b34fa3f92a744cae8f2b57612a663fdad293b",
+      "citationURL": "https://ebible.org/engwebp/2SA09.htm#V4",
+      "entities": [
+        {
+          "entityID": "person:ammiel_221",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:machir_1878",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ziba_3060",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:lo-debar_732",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "Jonathanの『息子』と各he/himは、既出2SA4:4のMephiboshethに一意に照応する。初出を9:6と扱わずperson:mephibosheth_1999 contextを追加する。9:3はその息子の直接発話主体ではないがJonathanとZibaは現行リンク妥当。"
+    },
+    {
+      "chapter": 9,
+      "verse": 5,
+      "status": "fail",
+      "sourceText": "Then King David sent and brought him out of the house of Machir the son of Ammiel, from Lo Debar.",
+      "sourceTextSHA256": "25e1e71164a82ecd3ff9cf538fae5222084a67da19fe962a27e3369fe2a31f55",
+      "citationURL": "https://ebible.org/engwebp/2SA09.htm#V5",
+      "entities": [
+        {
+          "entityID": "person:ammiel_221",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:machir_1878",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:lo-debar_732",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "Jonathanの『息子』と各he/himは、既出2SA4:4のMephiboshethに一意に照応する。初出を9:6と扱わずperson:mephibosheth_1999 contextを追加する。9:3はその息子の直接発話主体ではないがJonathanとZibaは現行リンク妥当。"
+    },
+    {
+      "chapter": 9,
+      "verse": 6,
+      "status": "fail",
+      "sourceText": "Mephibosheth, the son of Jonathan, the son of Saul, came to David, fell on his face, and showed respect. David said, “Mephibosheth?” He answered, “Behold, your servant!”",
+      "sourceTextSHA256": "f600c541e53226a3ee3d659efd948b3d777bab22c7c19a5add4e93ff3968824b",
+      "citationURL": "https://ebible.org/engwebp/2SA09.htm#V6",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:jonathan_1692",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:mephibosheth_1999",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "Saulは死後でも『Saul's house』『Saul your father』として実名で明示される。9:1,2,3,6,7にperson:saul_2478 directを追加する。"
+    },
+    {
+      "chapter": 9,
+      "verse": 7,
+      "status": "fail",
+      "sourceText": "David said to him, “Don’t be afraid, for I will surely show you kindness for Jonathan your father’s sake, and will restore to you all the land of Saul your father. You will eat bread at my table continually.”",
+      "sourceTextSHA256": "a8c5657ae4a30dba8172b7600074aaa423abceed9c8ec4e4ec6bb429dbc7305b",
+      "citationURL": "https://ebible.org/engwebp/2SA09.htm#V7",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:jonathan_1692",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:mephibosheth_1999",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "Saulは死後でも『Saul's house』『Saul your father』として実名で明示される。9:1,2,3,6,7にperson:saul_2478 directを追加する。"
+    },
+    {
+      "chapter": 9,
+      "verse": 8,
+      "status": "pass",
+      "sourceText": "He bowed down, and said, “What is your servant, that you should look at such a dead dog as I am?”",
+      "sourceTextSHA256": "215131f67f14a35ea4935838d6eb91e9ce7143384397f2ac1ce43aec1ca72f34",
+      "citationURL": "https://ebible.org/engwebp/2SA09.htm#V8",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:mephibosheth_1999",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 9,
+      "verse": 9,
+      "status": "pass",
+      "sourceText": "Then the king called to Ziba, Saul’s servant, and said to him, “All that belonged to Saul and to all his house I have given to your master’s son.",
+      "sourceTextSHA256": "743a353d4d5afa7a872935a1d24290ed5fbc3a445f5619dae42dd7f263c6cf60",
+      "citationURL": "https://ebible.org/engwebp/2SA09.htm#V9",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:mephibosheth_1999",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:saul_2478",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ziba_3060",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 9,
+      "verse": 10,
+      "status": "fail",
+      "sourceText": "Till the land for him—you, your sons, and your servants. Bring in the harvest, that your master’s son may have bread to eat; but Mephibosheth your master’s son will always eat bread at my table.” Now Ziba had fifteen sons and twenty servants.",
+      "sourceTextSHA256": "854b41988bb5ca98dca949c0141b2f55606321deaceff43f900aeb328f41d8f8",
+      "citationURL": "https://ebible.org/engwebp/2SA09.htm#V10",
+      "entities": [
+        {
+          "entityID": "person:mephibosheth_1999",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ziba_3060",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "9:10はZibaへの命令を話すDavidが文中に省略され、9:13も『king's table』はDavidの食卓を指す。person:david_994 contextを追加する。"
+    },
+    {
+      "chapter": 9,
+      "verse": 11,
+      "status": "pass",
+      "sourceText": "Then Ziba said to the king, “According to all that my lord the king commands his servant, so your servant will do.” So Mephibosheth ate at the king’s table like one of the king’s sons.",
+      "sourceTextSHA256": "07b805583fa8b3ea3ce04edca50be69eb51f27b3a816b4f8a7ef8222a3a5146d",
+      "citationURL": "https://ebible.org/engwebp/2SA09.htm#V11",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:mephibosheth_1999",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ziba_3060",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 9,
+      "verse": 12,
+      "status": "pass",
+      "sourceText": "Mephibosheth had a young son, whose name was Mica. All who lived in Ziba’s house were servants to Mephibosheth.",
+      "sourceTextSHA256": "0ae3e3b3c42d55b65ad7c3901d715ece8f684b70c1fba84e449a7f3be10ec012",
+      "citationURL": "https://ebible.org/engwebp/2SA09.htm#V12",
+      "entities": [
+        {
+          "entityID": "person:mephibosheth_1999",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:micah_2055",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ziba_3060",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 9,
+      "verse": 13,
+      "status": "fail",
+      "sourceText": "So Mephibosheth lived in Jerusalem, for he ate continually at the king’s table. He was lame in both his feet.",
+      "sourceTextSHA256": "da03e791eae338c01ebdaa7b11ab1274609b6d4224825c37d79f2f9f0fcfa641",
+      "citationURL": "https://ebible.org/engwebp/2SA09.htm#V13",
+      "entities": [
+        {
+          "entityID": "person:mephibosheth_1999",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "9:10はZibaへの命令を話すDavidが文中に省略され、9:13も『king's table』はDavidの食卓を指す。person:david_994 contextを追加する。"
+    },
+    {
+      "chapter": 10,
+      "verse": 1,
+      "status": "pass",
+      "sourceText": "After this, the king of the children of Ammon died, and Hanun his son reigned in his place.",
+      "sourceTextSHA256": "c2e554db0bf7f1640a609d0ac49342cf3f1e465f5d3f9ccf3d1c129a98db5c36",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V1",
+      "entities": [
+        {
+          "entityID": "person:hanun_1404",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 10,
+      "verse": 2,
+      "status": "fail",
+      "sourceText": "David said, “I will show kindness to Hanun the son of Nahash, as his father showed kindness to me.” So David sent by his servants to comfort him concerning his father. David’s servants came into the land of the children of Ammon.",
+      "sourceTextSHA256": "8f9e4311b7b86e79bc1cc6695eee688384cd308fdd2593eab7bb616e2233311e",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V2",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:hanun_1404",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "10:2のNahashは直名で、同定の不確実さは別のNahash IDとの統合を制限するだけで本文の父名を消す根拠にならない。person:nahash_2137 directを10:2へ追加。10:3の『your father』もHanunの父Nahashを受けcontextで追加する。"
+    },
+    {
+      "chapter": 10,
+      "verse": 3,
+      "status": "fail",
+      "sourceText": "But the princes of the children of Ammon said to Hanun their lord, “Do you think that David honors your father, in that he has sent comforters to you? Hasn’t David sent his servants to you to search the city, to spy it out, and to overthrow it?”",
+      "sourceTextSHA256": "70e9c39d0ed7db9d8c33c442e0d5bd4e1f197146e5741e9a1e5df69e429494c1",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V3",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:hanun_1404",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "10:2のNahashは直名で、同定の不確実さは別のNahash IDとの統合を制限するだけで本文の父名を消す根拠にならない。person:nahash_2137 directを10:2へ追加。10:3の『your father』もHanunの父Nahashを受けcontextで追加する。"
+    },
+    {
+      "chapter": 10,
+      "verse": 4,
+      "status": "pass",
+      "sourceText": "So Hanun took David’s servants, shaved off one half of their beards, and cut off their garments in the middle, even to their buttocks, and sent them away.",
+      "sourceTextSHA256": "a75f47031a0ceb62275e4837c435584bdd7440514b631ce9519bd5a6ed2626c7",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V4",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:hanun_1404",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 10,
+      "verse": 5,
+      "status": "pass",
+      "sourceText": "When they told David this, he sent to meet them, for the men were greatly ashamed. The king said, “Wait at Jericho until your beards have grown, and then return.”",
+      "sourceTextSHA256": "c0e41d746d15c110f4b0d0b857398d24bf08c685f4b7db220cf35ec990e3d193",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V5",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jericho_634",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 10,
+      "verse": 6,
+      "status": "fail",
+      "sourceText": "When the children of Ammon saw that they had become odious to David, the children of Ammon sent and hired the Syrians of Beth Rehob and the Syrians of Zobah, twenty thousand footmen, and the king of Maacah with one thousand men, and the men of Tob twelve thousand men.",
+      "sourceTextSHA256": "91f8d1fbd3d34cf53b4ed764e06a0a51741c39cb63ccea53ded5a371c9904c54",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V6",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:beth-rehob_230",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:maacah_743",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:zobah_1272",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "『men of Tob』が両節に明示される。root指定の既存place:tob_1172があるので新IDは不要。場所・地域の意味留保を確認のうえ両節へdirect追加する。"
+    },
+    {
+      "chapter": 10,
+      "verse": 7,
+      "status": "pass",
+      "sourceText": "When David heard of it, he sent Joab and all the army of the mighty men.",
+      "sourceTextSHA256": "e5272b369ca5b6f4f8fbbb782fdd9f335540793a53f7252b693766d8c5bf1ca3",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V7",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 10,
+      "verse": 8,
+      "status": "fail",
+      "sourceText": "The children of Ammon came out, and put the battle in array at the entrance of the gate. The Syrians of Zobah and of Rehob and the men of Tob and Maacah were by themselves in the field.",
+      "sourceTextSHA256": "760f5356b1450efdf1ca8f07f1464be9d56a0a707f9964bdfa9a01e4ca09c4d9",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V8",
+      "entities": [
+        {
+          "entityID": "place:maacah_743",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:rehob_987",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:zobah_1272",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "『men of Tob』が両節に明示される。root指定の既存place:tob_1172があるので新IDは不要。場所・地域の意味留保を確認のうえ両節へdirect追加する。"
+    },
+    {
+      "chapter": 10,
+      "verse": 9,
+      "status": "pass",
+      "sourceText": "Now when Joab saw that the battle was set against him before and behind, he chose of all the choice men of Israel and put them in array against the Syrians.",
+      "sourceTextSHA256": "c7660d3d7cf617bea58d99afbde83bf1b0221782add4dfc8955c0c6eff1b1593",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V9",
+      "entities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 10,
+      "verse": 10,
+      "status": "pass",
+      "sourceText": "The rest of the people he committed into the hand of Abishai his brother; and he put them in array against the children of Ammon.",
+      "sourceTextSHA256": "6c9df8f7ca63eec727c10a461e1432bb8c4487f2ea31e7328aae2026ff2dec52",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V10",
+      "entities": [
+        {
+          "entityID": "person:abishai_50",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 10,
+      "verse": 11,
+      "status": "pass",
+      "sourceText": "He said, “If the Syrians are too strong for me, then you shall help me; but if the children of Ammon are too strong for you, then I will come and help you.",
+      "sourceTextSHA256": "9c260df6da27615e7cf5320366ee2379b00d4a0ad174f30d54a48027af5e3fe1",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V11",
+      "entities": [
+        {
+          "entityID": "person:abishai_50",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 10,
+      "verse": 12,
+      "status": "fail",
+      "sourceText": "Be courageous, and let’s be strong for our people and for the cities of our God; and may the LORD do what seems good to him.”",
+      "sourceTextSHA256": "51047a516197a1900c1dfa3f44bc76001ac3130d21992bcfaa20944a6bdb1ff8",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V12",
+      "entities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "JoabがAbishaiへ呼びかける継続発話で『let us』『our people』の話者を欠く。person:joab_1617 contextを追加し、『you shall help me』の受け手Abishaiもcontext候補として判定理由を明記する。"
+    },
+    {
+      "chapter": 10,
+      "verse": 13,
+      "status": "pass",
+      "sourceText": "So Joab and the people who were with him came near to the battle against the Syrians, and they fled before him.",
+      "sourceTextSHA256": "1576e34bf9a68e8f221dcbb913fdf82b3fee2948daf1a76460806c9561f53f66",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V13",
+      "entities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 10,
+      "verse": 14,
+      "status": "pass",
+      "sourceText": "When the children of Ammon saw that the Syrians had fled, they likewise fled before Abishai, and entered into the city. Then Joab returned from the children of Ammon and came to Jerusalem.",
+      "sourceTextSHA256": "6f55c17dfd03427e130604ef993817a8e0e5fcb2e378112d008186949e4ea853",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V14",
+      "entities": [
+        {
+          "entityID": "person:abishai_50",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 10,
+      "verse": 15,
+      "status": "pass",
+      "sourceText": "When the Syrians saw that they were defeated by Israel, they gathered themselves together.",
+      "sourceTextSHA256": "8366e041400344334f95e591e56cc874da2733c6fc91b7ca14bb14a1c1c73ecc",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V15",
+      "entities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 10,
+      "verse": 16,
+      "status": "pass",
+      "sourceText": "Hadadezer sent and brought out the Syrians who were beyond the River; and they came to Helam, with Shobach the captain of the army of Hadadezer at their head.",
+      "sourceTextSHA256": "c8459b8be2468807969ba92bc51dd28f71eec7d42fa24ab95d2c81de9680fcf2",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V16",
+      "entities": [
+        {
+          "entityID": "person:hadarezer_1340",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shobach_2717",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:helam_552",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 10,
+      "verse": 17,
+      "status": "pass",
+      "sourceText": "David was told that; and he gathered all Israel together, passed over the Jordan, and came to Helam. The Syrians set themselves in array against David and fought with him.",
+      "sourceTextSHA256": "407bdef1763827fae6b0052244164ff7940cf10359287053ddb5dbee3371e231",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V17",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:helam_552",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jordan_653",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 10,
+      "verse": 18,
+      "status": "pass",
+      "sourceText": "The Syrians fled before Israel; and David killed seven hundred charioteers of the Syrians and forty thousand horsemen, and struck Shobach the captain of their army, so that he died there.",
+      "sourceTextSHA256": "87bb07587762499bc2d085d00ecd801e59788c5074e95b291bc84a2f7190b467",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V18",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shobach_2717",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 10,
+      "verse": 19,
+      "status": "pass",
+      "sourceText": "When all the kings who were servants to Hadadezer saw that they were defeated before Israel, they made peace with Israel and served them. So the Syrians were afraid to help the children of Ammon any more.",
+      "sourceTextSHA256": "3b0cde3711c5630b4673294226a54969a1fda357e8afd9d6180caa4883d27eb2",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V19",
+      "entities": [
+        {
+          "entityID": "person:hadarezer_1340",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 11,
+      "verse": 1,
+      "status": "pass",
+      "sourceText": "At the return of the year, at the time when kings go out, David sent Joab and his servants with him, and all Israel; and they destroyed the children of Ammon and besieged Rabbah. But David stayed at Jerusalem.",
+      "sourceTextSHA256": "9e332599f00766bdd665a9ada21b0bc27a7c0bac907c4b057331d5e716b8642c",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V1",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:rabbah_966",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 11,
+      "verse": 2,
+      "status": "pass",
+      "sourceText": "At evening, David arose from his bed and walked on the roof of the king’s house. From the roof, he saw a woman bathing, and the woman was very beautiful to look at.",
+      "sourceTextSHA256": "d2035805eb0a5b88d3b3c3f84a20d17f953b053f2623aa3acf770b08e28df242",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V2",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 11,
+      "verse": 3,
+      "status": "pass",
+      "sourceText": "David sent and inquired after the woman. One said, “Isn’t this Bathsheba, the daughter of Eliam, Uriah the Hittite’s wife?”",
+      "sourceTextSHA256": "663b5373533020e460ebb955e03577ce6344e80ff7c019865aa8c36095520d1a",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V3",
+      "entities": [
+        {
+          "entityID": "person:bathsheba_416",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:eliam_1089",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:uriah_2898",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 11,
+      "verse": 4,
+      "status": "pass",
+      "sourceText": "David sent messengers, and took her; and she came in to him, and he lay with her (for she was purified from her uncleanness); and she returned to her house.",
+      "sourceTextSHA256": "71fb5a6b446e8a4244c39eb228d9b5522e1ea4b53ff4be4c9fca6466bf3d8b7c",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V4",
+      "entities": [
+        {
+          "entityID": "person:bathsheba_416",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 11,
+      "verse": 5,
+      "status": "pass",
+      "sourceText": "The woman conceived; and she sent and told David, and said, “I am with child.”",
+      "sourceTextSHA256": "528aaf37348035202a7f18add32d8161d6523e7be5a39b3cbbdec89d9d16bba2",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V5",
+      "entities": [
+        {
+          "entityID": "person:bathsheba_416",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 11,
+      "verse": 6,
+      "status": "pass",
+      "sourceText": "David sent to Joab, “Send me Uriah the Hittite.” Joab sent Uriah to David.",
+      "sourceTextSHA256": "ba40f6f8eebb95a3bca212aadf71ad3939f7a989b040b6575cd273fef6f36d18",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V6",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:uriah_2898",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 11,
+      "verse": 7,
+      "status": "pass",
+      "sourceText": "When Uriah had come to him, David asked him how Joab did, and how the people fared, and how the war prospered.",
+      "sourceTextSHA256": "bf1b84d6b01510277784515e7e63c5a101fe5ac99776a7043d4c1bbdf9b3e6b8",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V7",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:uriah_2898",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 11,
+      "verse": 8,
+      "status": "pass",
+      "sourceText": "David said to Uriah, “Go down to your house and wash your feet.” Uriah departed out of the king’s house, and a gift from the king was sent after him.",
+      "sourceTextSHA256": "8f52de43fa90327e89c6424b0be56c0e06992535583f90651fd60ddd8eb3f39f",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V8",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:uriah_2898",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 11,
+      "verse": 9,
+      "status": "fail",
+      "sourceText": "But Uriah slept at the door of the king’s house with all the servants of his lord, and didn’t go down to his house.",
+      "sourceTextSHA256": "bec9e438b0bad2ca2563aa647d8bc0c231d140a25ccb194e4cefd2918b0ad189",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V9",
+      "entities": [
+        {
+          "entityID": "person:uriah_2898",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "『his lord』は前節から一意にDavidを指す。person:david_994 contextを追加する。"
+    },
+    {
+      "chapter": 11,
+      "verse": 10,
+      "status": "pass",
+      "sourceText": "When they had told David, saying, “Uriah didn’t go down to his house,” David said to Uriah, “Haven’t you come from a journey? Why didn’t you go down to your house?”",
+      "sourceTextSHA256": "c8bcb56b7d3f59cc443bcb2ccd7113c3b3788b499ef65511cd621c2f46d08172",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V10",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:uriah_2898",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 11,
+      "verse": 11,
+      "status": "fail",
+      "sourceText": "Uriah said to David, “The ark, Israel, and Judah, are staying in tents; and my lord Joab and the servants of my lord are encamped in the open field. Shall I then go into my house to eat and to drink, and to lie with my wife? As you live, and as your soul lives, I will not do this thing!”",
+      "sourceTextSHA256": "5355d5c6b7999d216cf4a983bc9de849f6d123379b05e0152a97a9241cfca882",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V11",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:judah_1751",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:uriah_2898",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "Uriahの『my wife』は2SA11:3–5で同定済みのBathshebaを指す。person:bathsheba_416 contextを追加する。"
+    },
+    {
+      "chapter": 11,
+      "verse": 12,
+      "status": "pass",
+      "sourceText": "David said to Uriah, “Stay here today also, and tomorrow I will let you depart.” So Uriah stayed in Jerusalem that day and the next day.",
+      "sourceTextSHA256": "9c241d0d378a6abe9b212df2e5dd0389d85110e7fba279638a4c727e2e6349c8",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V12",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:uriah_2898",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 11,
+      "verse": 13,
+      "status": "fail",
+      "sourceText": "When David had called him, he ate and drank before him; and he made him drunk. At evening, he went out to lie on his bed with the servants of his lord, but didn’t go down to his house.",
+      "sourceTextSHA256": "535eaa6fc7d65595e6f15d3e68c7429064cdb54a7709e633ab1a305bcc491581",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V13",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "節はDavidがUriahを呼んだ場面から続き、Uriahが食べ・飲み・寝に出る一方、Davidが彼を酔わせる。現行はDavidだけでUriahが欠落。person:uriah_2898 contextを追加。"
+    },
+    {
+      "chapter": 11,
+      "verse": 14,
+      "status": "pass",
+      "sourceText": "In the morning, David wrote a letter to Joab and sent it by the hand of Uriah.",
+      "sourceTextSHA256": "ac84d08ed817c12f74af95bca7c0c6c7ba3300bb28b178eebe065f77bad27a7d",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V14",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:uriah_2898",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 11,
+      "verse": 15,
+      "status": "fail",
+      "sourceText": "He wrote in the letter, saying, “Send Uriah to the forefront of the hottest battle, and retreat from him, that he may be struck and die.”",
+      "sourceTextSHA256": "8475fb43807b001f0c3cecff75d2eea03d5c18b15409b6b9eddf23e63412c624",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V15",
+      "entities": [
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:uriah_2898",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "『he wrote in the letter』のheは11:14で手紙を書いたDavid。命令はJoab宛て。person:david_994 contextを加え、既存Joab contextは宛先として残す。"
+    },
+    {
+      "chapter": 11,
+      "verse": 16,
+      "status": "fail",
+      "sourceText": "When Joab kept watch on the city, he assigned Uriah to the place where he knew that valiant men were.",
+      "sourceTextSHA256": "dff1fb9cea2a603603efa61d437dda7d9bbf56b954baa6952791567df43c7716",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V16",
+      "entities": [
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:uriah_2898",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "11:1で包囲しているRabbahが『the city / gate / wall』の継続的な舞台。明確な箇所（少なくとも11:16,17,20,21,23,24,25）へplace:rabbah_966 contextを加える。現11:23のJoab contextは『we/us/the men』が匿名の使者/部隊を指し、指揮官のJoab本人への一意照応でないため除去。11:20–21はJoabの指示が続き、Joab contextを追加。11:24の『your servants』はDavidへの呼びかけなのでDavid contextも追加。"
+    },
+    {
+      "chapter": 11,
+      "verse": 17,
+      "status": "fail",
+      "sourceText": "The men of the city went out and fought with Joab. Some of the people fell, even of David’s servants; and Uriah the Hittite died also.",
+      "sourceTextSHA256": "277beec5333bb1a8aadd33a6c1cf4e320696dbcef0c0ac287421f7fe805ebe38",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V17",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:uriah_2898",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "11:1で包囲しているRabbahが『the city / gate / wall』の継続的な舞台。明確な箇所（少なくとも11:16,17,20,21,23,24,25）へplace:rabbah_966 contextを加える。現11:23のJoab contextは『we/us/the men』が匿名の使者/部隊を指し、指揮官のJoab本人への一意照応でないため除去。11:20–21はJoabの指示が続き、Joab contextを追加。11:24の『your servants』はDavidへの呼びかけなのでDavid contextも追加。"
+    },
+    {
+      "chapter": 11,
+      "verse": 18,
+      "status": "pass",
+      "sourceText": "Then Joab sent and told David all the things concerning the war;",
+      "sourceTextSHA256": "fbf4e017a698f119ec32bd269c2f9ffddb89f330246a19bbc626bf2aa2930b80",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V18",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 11,
+      "verse": 19,
+      "status": "pass",
+      "sourceText": "and he commanded the messenger, saying, “When you have finished telling all the things concerning the war to the king,",
+      "sourceTextSHA256": "f2d33f4b28718a6600703c624abc073aa8a59967b614de3210023cbe3608b9d2",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V19",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 11,
+      "verse": 20,
+      "status": "fail",
+      "sourceText": "it shall be that, if the king’s wrath arise, and he asks you, ‘Why did you go so near to the city to fight? Didn’t you know that they would shoot from the wall?",
+      "sourceTextSHA256": "68c3f6ad32b80073879933b98e0727435349f16bffdfa289bcb1be7d2d574ef9",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V20",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "11:1で包囲しているRabbahが『the city / gate / wall』の継続的な舞台。明確な箇所（少なくとも11:16,17,20,21,23,24,25）へplace:rabbah_966 contextを加える。現11:23のJoab contextは『we/us/the men』が匿名の使者/部隊を指し、指揮官のJoab本人への一意照応でないため除去。11:20–21はJoabの指示が続き、Joab contextを追加。11:24の『your servants』はDavidへの呼びかけなのでDavid contextも追加。"
+    },
+    {
+      "chapter": 11,
+      "verse": 21,
+      "status": "fail",
+      "sourceText": "Who struck Abimelech the son of Jerubbesheth? Didn’t a woman cast an upper millstone on him from the wall, so that he died at Thebez? Why did you go so near the wall?’ then you shall say, ‘Your servant Uriah the Hittite is also dead.’”",
+      "sourceTextSHA256": "cb92972833eb6bb5d5b11a13601d3fe9fa32c9778ee0cd94067e7f00920dc7a4",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V21",
+      "entities": [
+        {
+          "entityID": "person:abimelech_42",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:jerubbesheth_881",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:uriah_2898",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:thebez_1157",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "11:1で包囲しているRabbahが『the city / gate / wall』の継続的な舞台。明確な箇所（少なくとも11:16,17,20,21,23,24,25）へplace:rabbah_966 contextを加える。現11:23のJoab contextは『we/us/the men』が匿名の使者/部隊を指し、指揮官のJoab本人への一意照応でないため除去。11:20–21はJoabの指示が続き、Joab contextを追加。11:24の『your servants』はDavidへの呼びかけなのでDavid contextも追加。"
+    },
+    {
+      "chapter": 11,
+      "verse": 22,
+      "status": "pass",
+      "sourceText": "So the messenger went, and came and showed David all that Joab had sent him for.",
+      "sourceTextSHA256": "1162b526f050150cefa9fcfa89176809b31a46a66cfeeb154ad61cc89110ff32",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V22",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 11,
+      "verse": 23,
+      "status": "fail",
+      "sourceText": "The messenger said to David, “The men prevailed against us, and came out to us into the field; and we were on them even to the entrance of the gate.",
+      "sourceTextSHA256": "836cd2b05cbd2d0ca2011e716c706355887d4f0183783ec32f7fdb7f511ad09c",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V23",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "11:1で包囲しているRabbahが『the city / gate / wall』の継続的な舞台。明確な箇所（少なくとも11:16,17,20,21,23,24,25）へplace:rabbah_966 contextを加える。現11:23のJoab contextは『we/us/the men』が匿名の使者/部隊を指し、指揮官のJoab本人への一意照応でないため除去。11:20–21はJoabの指示が続き、Joab contextを追加。11:24の『your servants』はDavidへの呼びかけなのでDavid contextも追加。"
+    },
+    {
+      "chapter": 11,
+      "verse": 24,
+      "status": "fail",
+      "sourceText": "The shooters shot at your servants from off the wall; and some of the king’s servants are dead, and your servant Uriah the Hittite is also dead.”",
+      "sourceTextSHA256": "e14f31bb7913cb5900eb9a6aa51e7ac161b448034741d2d14c84dea673c32d11",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V24",
+      "entities": [
+        {
+          "entityID": "person:uriah_2898",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "11:1で包囲しているRabbahが『the city / gate / wall』の継続的な舞台。明確な箇所（少なくとも11:16,17,20,21,23,24,25）へplace:rabbah_966 contextを加える。現11:23のJoab contextは『we/us/the men』が匿名の使者/部隊を指し、指揮官のJoab本人への一意照応でないため除去。11:20–21はJoabの指示が続き、Joab contextを追加。11:24の『your servants』はDavidへの呼びかけなのでDavid contextも追加。"
+    },
+    {
+      "chapter": 11,
+      "verse": 25,
+      "status": "fail",
+      "sourceText": "Then David said to the messenger, “Tell Joab, ‘Don’t let this thing displease you, for the sword devours one as well as another. Make your battle stronger against the city, and overthrow it.’ Encourage him.”",
+      "sourceTextSHA256": "1a4ea933fea8a874ba8716ee4b5f5ccaf3e355af7a8a1e4371d4ca7132dd3410",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V25",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "11:1で包囲しているRabbahが『the city / gate / wall』の継続的な舞台。明確な箇所（少なくとも11:16,17,20,21,23,24,25）へplace:rabbah_966 contextを加える。現11:23のJoab contextは『we/us/the men』が匿名の使者/部隊を指し、指揮官のJoab本人への一意照応でないため除去。11:20–21はJoabの指示が続き、Joab contextを追加。11:24の『your servants』はDavidへの呼びかけなのでDavid contextも追加。"
+    },
+    {
+      "chapter": 11,
+      "verse": 26,
+      "status": "pass",
+      "sourceText": "When Uriah’s wife heard that Uriah her husband was dead, she mourned for her husband.",
+      "sourceTextSHA256": "e0492124bfea4b2e5689c3aaff5def9b68f15d0ab9b7f5560ade2a021f97083b",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V26",
+      "entities": [
+        {
+          "entityID": "person:bathsheba_416",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:uriah_2898",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 11,
+      "verse": 27,
+      "status": "pass",
+      "sourceText": "When the mourning was past, David sent and took her home to his house, and she became his wife and bore him a son. But the thing that David had done displeased the LORD.",
+      "sourceTextSHA256": "a88248af9aa48f03987ab2f759135962eed1bf00aad00d54f270ea2360ddcad6",
+      "citationURL": "https://ebible.org/engwebp/2SA11.htm#V27",
+      "entities": [
+        {
+          "entityID": "person:bathsheba_416",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 1,
+      "status": "pass",
+      "sourceText": "The LORD sent Nathan to David. He came to him, and said to him, “There were two men in one city: the one rich, and the other poor.",
+      "sourceTextSHA256": "8e01d564d5c5f1ea180ba8f5fddd4f5248e97b96cc88b73e29951c5a7250d045",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V1",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:nathan_2153",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 2,
+      "status": "pass",
+      "sourceText": "The rich man had very many flocks and herds,",
+      "sourceTextSHA256": "b40631ba9f301a33fe5189a16014166915ec8dd7fb1bedd2b0ce1a8b3e165bd0",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V2",
+      "entities": [
+        {
+          "entityID": "person:nathan_2153",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 3,
+      "status": "pass",
+      "sourceText": "but the poor man had nothing, except one little ewe lamb, which he had bought and raised. It grew up together with him and with his children. It ate of his own food, drank of his own cup, and lay in his bosom, and was like a daughter to him.",
+      "sourceTextSHA256": "e4e645e41a5340e3483fb1d3b0fa230cd4ed7eee7decf881107788126a504b41",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V3",
+      "entities": [
+        {
+          "entityID": "person:nathan_2153",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 4,
+      "status": "pass",
+      "sourceText": "A traveler came to the rich man, and he didn’t want to take of his own flock and of his own herd to prepare for the wayfaring man who had come to him, but took the poor man’s lamb and prepared it for the man who had come to him.”",
+      "sourceTextSHA256": "f01d23666c88ae8ed25b8aa62323a9332547388c227cee805b314b7d1f6f891d",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V4",
+      "entities": [
+        {
+          "entityID": "person:nathan_2153",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 5,
+      "status": "pass",
+      "sourceText": "David’s anger burned hot against the man, and he said to Nathan, “As the LORD lives, the man who has done this deserves to die!",
+      "sourceTextSHA256": "d1f3b52fba161f804e62ede3fd2b1ddccc528006ea08bab82d20e9dada5b9f00",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V5",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:nathan_2153",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 6,
+      "status": "pass",
+      "sourceText": "He must restore the lamb fourfold, because he did this thing and because he had no pity!”",
+      "sourceTextSHA256": "6f29944fefd570f54d6c8a1afd43baac5c9f6b438066984b9d738a7a058aa5ef",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V6",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 7,
+      "status": "pass",
+      "sourceText": "Nathan said to David, “You are the man! This is what the LORD, the God of Israel, says: ‘I anointed you king over Israel, and I delivered you out of the hand of Saul.",
+      "sourceTextSHA256": "eeefcb905217325bb25224fbc1edad001266fe32b5a6e507e87bd92f8b853d56",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V7",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:nathan_2153",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 8,
+      "status": "fail",
+      "sourceText": "I gave you your master’s house and your master’s wives into your bosom, and gave you the house of Israel and of Judah; and if that would have been too little, I would have added to you many more such things.",
+      "sourceTextSHA256": "ec6ffbd5cfe6411ad0638d1ec06419e2fadbeb8319aac811509c94431f30c353",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V8",
+      "entities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:judah_1751",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "12:7の神託が続く。『I/me』=God、『you/your』=David。12:8はDavid contextとGod context、12:9はDavid context、12:10はGod context、12:12はDavidとGod contextを加える。現12:12のIsrael directは『before all Israel』の人々として支持。"
+    },
+    {
+      "chapter": 12,
+      "verse": 9,
+      "status": "fail",
+      "sourceText": "Why have you despised the LORD’s word, to do that which is evil in his sight? You have struck Uriah the Hittite with the sword, have taken his wife to be your wife, and have slain him with the sword of the children of Ammon.",
+      "sourceTextSHA256": "62b6c7d868fa47b49ae7c462c543738632fdbe8b09156e0c4c6815a30ac2edfa",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V9",
+      "entities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:uriah_2898",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "12:7の神託が続く。『I/me』=God、『you/your』=David。12:8はDavid contextとGod context、12:9はDavid context、12:10はGod context、12:12はDavidとGod contextを加える。現12:12のIsrael directは『before all Israel』の人々として支持。"
+    },
+    {
+      "chapter": 12,
+      "verse": 10,
+      "status": "fail",
+      "sourceText": "Now therefore the sword will never depart from your house, because you have despised me and have taken Uriah the Hittite’s wife to be your wife.’",
+      "sourceTextSHA256": "de1d628221bc0eb80f1c5e017f0e6e921fe602a4712a63d887697977e29266d7",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V10",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:uriah_2898",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "12:7の神託が続く。『I/me』=God、『you/your』=David。12:8はDavid contextとGod context、12:9はDavid context、12:10はGod context、12:12はDavidとGod contextを加える。現12:12のIsrael directは『before all Israel』の人々として支持。"
+    },
+    {
+      "chapter": 12,
+      "verse": 11,
+      "status": "pass",
+      "sourceText": "“This is what the LORD says: ‘Behold, I will raise up evil against you out of your own house; and I will take your wives before your eyes and give them to your neighbor, and he will lie with your wives in the sight of this sun.",
+      "sourceTextSHA256": "d0be6a9558d555b74000d41c904ed30def31be71ae2c46c1a2280b391a7d49fe",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V11",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 12,
+      "status": "fail",
+      "sourceText": "For you did this secretly, but I will do this thing before all Israel, and before the sun.’”",
+      "sourceTextSHA256": "b3e2fe85a8fa24cddcc9b90727160902341bd036e368b4a85d2c4f906168d791",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V12",
+      "entities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "12:7の神託が続く。『I/me』=God、『you/your』=David。12:8はDavid contextとGod context、12:9はDavid context、12:10はGod context、12:12はDavidとGod contextを加える。現12:12のIsrael directは『before all Israel』の人々として支持。"
+    },
+    {
+      "chapter": 12,
+      "verse": 13,
+      "status": "pass",
+      "sourceText": "David said to Nathan, “I have sinned against the LORD.” Nathan said to David, “The LORD also has put away your sin. You will not die.",
+      "sourceTextSHA256": "e96da44dfc7809c1b1e7634bc5568a2083f479ba94e93fe62257f98f35d5ff34",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V13",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:nathan_2153",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 14,
+      "status": "fail",
+      "sourceText": "However, because by this deed you have given great occasion to the LORD’s enemies to blaspheme, the child also who is born to you will surely die.”",
+      "sourceTextSHA256": "d01e2300179f0c65a323e24e056bba7b36de9e88aa633aa1b0defdb56576c4b7",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V14",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "12:13の末尾からNathanがDavidへ答え続けている。David/God現行リンクを保ち、speaker person:nathan_2153 contextを追加する。"
+    },
+    {
+      "chapter": 12,
+      "verse": 15,
+      "status": "pass",
+      "sourceText": "Then Nathan departed to his house. The LORD struck the child that Uriah’s wife bore to David, and he was very sick.",
+      "sourceTextSHA256": "e4c90d0f0eb443d853c08160d3141a5d441207554f94e785fb187ac04cbb9061",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V15",
+      "entities": [
+        {
+          "entityID": "person:bathsheba_416",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:nathan_2153",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:uriah_2898",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 16,
+      "status": "pass",
+      "sourceText": "David therefore begged God for the child; and David fasted, and went in and lay all night on the ground.",
+      "sourceTextSHA256": "00811a251667fc1fad6f6e3a558c213e5017967e27116ec46507e43cdc9ac063",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V16",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 17,
+      "status": "pass",
+      "sourceText": "The elders of his house arose beside him, to raise him up from the earth; but he would not, and he didn’t eat bread with them.",
+      "sourceTextSHA256": "b3f39b0b96b49fd03de2952f59d62ca1438883a983f69ff9a2f445aebec8d16f",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V17",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 18,
+      "status": "pass",
+      "sourceText": "On the seventh day, the child died. David’s servants were afraid to tell him that the child was dead, for they said, “Behold, while the child was yet alive, we spoke to him and he didn’t listen to our voice. How will he then harm himself if we tell him that the child is dead?”",
+      "sourceTextSHA256": "9d30b011c4b1af4111b222b970e5a2737e065a3d347e61589b4480b8dd5958b8",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V18",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 19,
+      "status": "pass",
+      "sourceText": "But when David saw that his servants were whispering together, David perceived that the child was dead; and David said to his servants, “Is the child dead?” They said, “He is dead.”",
+      "sourceTextSHA256": "bec99094311fd65c4d39a5dacf752930b3475a3b828db9bebe49376b8181aad2",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V19",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 20,
+      "status": "pass",
+      "sourceText": "Then David arose from the earth, and washed and anointed himself, and changed his clothing; and he came into the LORD’s house, and worshiped. Then he came to his own house; and when he requested, they set bread before him and he ate.",
+      "sourceTextSHA256": "10cf454fae99cb170b425f76c05c82aa17c198a6fe964850d8d2ce3500b145f5",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V20",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 21,
+      "status": "pass",
+      "sourceText": "Then his servants said to him, “What is this that you have done? You fasted and wept for the child while he was alive, but when the child was dead, you rose up and ate bread.”",
+      "sourceTextSHA256": "177e88f0f19efb75dc761519f7392bbba492447e7017598fa9c54163717da210",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V21",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 22,
+      "status": "fail",
+      "sourceText": "He said, “While the child was yet alive, I fasted and wept; for I said, ‘Who knows whether the LORD will not be gracious to me, that the child may live?’",
+      "sourceTextSHA256": "4769822c0cd9f8520ed3dfd00b39b47570b5a6055b35969e9785b9ebb8bfc295",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V22",
+      "entities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "一人称で子のために断食した話者は前後からDavid。person:david_994 contextを追加する（God directは主名の明記に基づき維持）。"
+    },
+    {
+      "chapter": 12,
+      "verse": 23,
+      "status": "pass",
+      "sourceText": "But now he is dead. Why should I fast? Can I bring him back again? I will go to him, but he will not return to me.”",
+      "sourceTextSHA256": "387d3772d8bf46d30f699f8470366f7f6d0b868596a4dede384ce2f49965b71f",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V23",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 24,
+      "status": "pass",
+      "sourceText": "David comforted Bathsheba his wife, and went in to her, and lay with her. She bore a son, and he called his name Solomon. The LORD loved him;",
+      "sourceTextSHA256": "302f97b1cc51035d7aa996597356eae1e8f33f25d7ccdf36e50a2cf30afc8fc0",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V24",
+      "entities": [
+        {
+          "entityID": "person:bathsheba_416",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:solomon_2762",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 25,
+      "status": "pass",
+      "sourceText": "and he sent by the hand of Nathan the prophet, and he named him Jedidiah, for the LORD’s sake.",
+      "sourceTextSHA256": "9091a4a3ec1fb4befc4a43c4f54737daeef9bf0c2b3ea4549a6a1529b95ead17",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V25",
+      "entities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:nathan_2153",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:solomon_2762",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 26,
+      "status": "pass",
+      "sourceText": "Now Joab fought against Rabbah of the children of Ammon, and took the royal city.",
+      "sourceTextSHA256": "e99ea2415ce63c7ddf61f7f89b73c0ac04cc6b33528b3dc1bc3444d059e7fa37",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V26",
+      "entities": [
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:rabbah_966",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 27,
+      "status": "pass",
+      "sourceText": "Joab sent messengers to David, and said, “I have fought against Rabbah. Yes, I have taken the city of waters.",
+      "sourceTextSHA256": "75ff11d6097703dec12d5604bc4709b27637c74996c6a7957952c024aa04edc8",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V27",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:rabbah_966",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 28,
+      "status": "fail",
+      "sourceText": "Now therefore gather the rest of the people together, and encamp against the city and take it; lest I take the city, and it be called by my name.”",
+      "sourceTextSHA256": "b4abd38f8aab0e4889017f832b78d02bbb9b06f44e7ab2c4464d81f7f18fd15c",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V28",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "Joabが前節からDavidに送る指示中の『the city』はRabbah。place:rabbah_966 contextを追加する。"
+    },
+    {
+      "chapter": 12,
+      "verse": 29,
+      "status": "pass",
+      "sourceText": "David gathered all the people together and went to Rabbah, and fought against it and took it.",
+      "sourceTextSHA256": "86dabe28da27e2dba6237a092fe02a11ee16cbd723cc98a2b2032959eb41a961",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V29",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:rabbah_966",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 30,
+      "status": "pass",
+      "sourceText": "He took the crown of their king from off his head; and its weight was a talent of gold, and in it were precious stones; and it was set on David’s head. He brought a great quantity of plunder out of the city.",
+      "sourceTextSHA256": "8aac77472af96fe45d78d0b5c9b906e10175cd784698009efa435c743c91c654",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V30",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:rabbah_966",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 12,
+      "verse": 31,
+      "status": "qualified",
+      "sourceText": "He brought out the people who were in it, and put them to work under saws, under iron picks, under axes of iron, and made them go to the brick kiln; and he did so to all the cities of the children of Ammon. Then David and all the people returned to Jerusalem.",
+      "sourceTextSHA256": "02e3220f5bfbd515cb0eb77630706f4c53f3db277bf6574b1c4997616bb18890",
+      "citationURL": "https://ebible.org/engwebp/2SA12.htm#V31",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "「David and all the people」はイスラエル軍と読む余地はあるが、本文は集団名を明記しない。person:israel_682 contextを残すなら局所文脈の一意性を説明する。"
+    },
+    {
+      "chapter": 13,
+      "verse": 1,
+      "status": "pass",
+      "sourceText": "After this, Absalom the son of David had a beautiful sister, whose name was Tamar; and Amnon the son of David loved her.",
+      "sourceTextSHA256": "ae1ca72672a61a2630200c6bb123c28a43a164367b53b96d4806c635ae29530d",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V1",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 2,
+      "status": "pass",
+      "sourceText": "Amnon was so troubled that he became sick because of his sister Tamar, for she was a virgin, and it seemed hard to Amnon to do anything to her.",
+      "sourceTextSHA256": "1fe2c373339c9caa168ef04b7598546a6a590572de59a81501b6afa20ccaa355",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V2",
+      "entities": [
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 3,
+      "status": "pass",
+      "sourceText": "But Amnon had a friend whose name was Jonadab the son of Shimeah, David’s brother; and Jonadab was a very subtle man.",
+      "sourceTextSHA256": "c6a60bdc8a090abb8bef01c20821ecf7c046d857a7da3952a1911bf5bef3335e",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V3",
+      "entities": [
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:jonadab_1688",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shammah_2700",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 4,
+      "status": "pass",
+      "sourceText": "He said to him, “Why, son of the king, are you so sad from day to day? Won’t you tell me?” Amnon said to him, “I love Tamar, my brother Absalom’s sister.”",
+      "sourceTextSHA256": "015c0f39856d1e30bf2d87718efc60e51b0bd64810368663f4649efb4bd6e4ab",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V4",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 5,
+      "status": "pass",
+      "sourceText": "Jonadab said to him, “Lay down on your bed and pretend to be sick. When your father comes to see you, tell him, ‘Please let my sister Tamar come and give me bread to eat, and prepare the food in my sight, that I may see it and eat it from her hand.’”",
+      "sourceTextSHA256": "b30bc1b25c82fabf17a096230d75bbac3c18b77cee7422c54d2d22aa01248e39",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V5",
+      "entities": [
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:jonadab_1688",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 6,
+      "status": "pass",
+      "sourceText": "So Amnon lay down and faked being sick. When the king came to see him, Amnon said to the king, “Please let my sister Tamar come and make me a couple of cakes in my sight, that I may eat from her hand.”",
+      "sourceTextSHA256": "3d2ba94cf2008bc6be7f6e6519377d90b0d86fbaafe8ad4c0e9018537c222230",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V6",
+      "entities": [
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 7,
+      "status": "pass",
+      "sourceText": "Then David sent home to Tamar, saying, “Go now to your brother Amnon’s house, and prepare food for him.”",
+      "sourceTextSHA256": "f993951f919462e49d6ca1c7ba51b75087ae6dc2b0a3e0f099f2cfcaed9ecfb6",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V7",
+      "entities": [
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 8,
+      "status": "pass",
+      "sourceText": "So Tamar went to her brother Amnon’s house; and he was lying down. She took dough, kneaded it, made cakes in his sight, and baked the cakes.",
+      "sourceTextSHA256": "b0596511b9b4367b98ec6c0df198fff14ad41948c1b3cd8a411f36c6b66fa5f0",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V8",
+      "entities": [
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 9,
+      "status": "pass",
+      "sourceText": "She took the pan and poured them out before him, but he refused to eat. Amnon said, “Have all men leave me.” Then every man went out from him.",
+      "sourceTextSHA256": "bec13772d0d3c96336aff544be110d4cb360e38b1b852df46887901adf8068d5",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V9",
+      "entities": [
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 10,
+      "status": "pass",
+      "sourceText": "Amnon said to Tamar, “Bring the food into the room, that I may eat from your hand.” Tamar took the cakes which she had made, and brought them into the room to Amnon her brother.",
+      "sourceTextSHA256": "fae48478cc466609c27e087da799732da770b92eac71463e61db0623306bdc08",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V10",
+      "entities": [
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 11,
+      "status": "pass",
+      "sourceText": "When she had brought them near to him to eat, he took hold of her and said to her, “Come, lie with me, my sister!”",
+      "sourceTextSHA256": "c031e5ff2a6e9d49d94ffd03f61488a2b91ea5b44e6af328cf17be925ab723c7",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V11",
+      "entities": [
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 12,
+      "status": "pass",
+      "sourceText": "She answered him, “No, my brother, do not force me! For no such thing ought to be done in Israel. Don’t you do this folly!",
+      "sourceTextSHA256": "7625d923c133910064a1c60b84c46c50bc38c88a35a4b64fad87b4b334a2f10a",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V12",
+      "entities": [
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 13,
+      "status": "pass",
+      "sourceText": "As for me, where would I carry my shame? And as for you, you will be as one of the fools in Israel. Now therefore, please speak to the king; for he will not withhold me from you.”",
+      "sourceTextSHA256": "038b20e2cc8a82db05e4f0a0cfc889f1bf6a6469be6f4ec73397db6c70946371",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V13",
+      "entities": [
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 14,
+      "status": "pass",
+      "sourceText": "However, he would not listen to her voice; but being stronger than she, he forced her and lay with her.",
+      "sourceTextSHA256": "002806bb726aa3f49c141ff6f364aa97f784c5aa9960d83816bcbc0595caccab",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V14",
+      "entities": [
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 15,
+      "status": "pass",
+      "sourceText": "Then Amnon hated her with exceedingly great hatred; for the hatred with which he hated her was greater than the love with which he had loved her. Amnon said to her, “Arise, be gone!”",
+      "sourceTextSHA256": "1f3d406784cc185e7f52418c3539740af3b67a88a5e3c564145923c0b761fe76",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V15",
+      "entities": [
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 16,
+      "status": "pass",
+      "sourceText": "She said to him, “Not so, because this great wrong in sending me away is worse than the other that you did to me!” But he would not listen to her.",
+      "sourceTextSHA256": "0137c426ad6f4881b78cc2a59186e7d3b124571241ecec7930cbbd2d1db01b8f",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V16",
+      "entities": [
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 17,
+      "status": "pass",
+      "sourceText": "Then he called his servant who ministered to him, and said, “Now put this woman out from me, and bolt the door after her.”",
+      "sourceTextSHA256": "5006841a531dc5356a6236e2b1df410761cd6a6c16a2216b19b38f2673d11c63",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V17",
+      "entities": [
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 18,
+      "status": "pass",
+      "sourceText": "She had a garment of various colors on her, for the king’s daughters who were virgins dressed in such robes. Then his servant brought her out and bolted the door after her.",
+      "sourceTextSHA256": "0a568a07835b474ed5ea0fa97c8b29d3ff48a3e1f98c12f08e4585b9e004921c",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V18",
+      "entities": [
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 19,
+      "status": "pass",
+      "sourceText": "Tamar put ashes on her head, and tore her garment of various colors that was on her; and she laid her hand on her head and went her way, crying aloud as she went.",
+      "sourceTextSHA256": "273b1329e481a0c5b8dbe43931ef73f4cd5fe52bb3955b13ea1d1a08647e84c3",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V19",
+      "entities": [
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 20,
+      "status": "pass",
+      "sourceText": "Absalom her brother said to her, “Has Amnon your brother been with you? But now hold your peace, my sister. He is your brother. Don’t take this thing to heart.” So Tamar remained desolate in her brother Absalom’s house.",
+      "sourceTextSHA256": "557e06d3bf736b3eeebe34727bff62dd791e0da8019b5badd411d00428b5d153",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V20",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 21,
+      "status": "pass",
+      "sourceText": "But when King David heard of all these things, he was very angry.",
+      "sourceTextSHA256": "d9a6b101081a4c58cfd63007abded509d1d719dc4ed8fc46edf2aa9039e39402",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V21",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 22,
+      "status": "pass",
+      "sourceText": "Absalom spoke to Amnon neither good nor bad; for Absalom hated Amnon, because he had forced his sister Tamar.",
+      "sourceTextSHA256": "15a3a8017dad0f0e1ab1144973b271f15594feafb9f22c851d5a9e6067db8aea",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V22",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 23,
+      "status": "pass",
+      "sourceText": "After two full years, Absalom had sheep shearers in Baal Hazor, which is beside Ephraim; and Absalom invited all the king’s sons.",
+      "sourceTextSHA256": "4ce3fb3308720626a835d626854e2892f020851af68b6205f6c33b1730f2ca77",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V23",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:baal-hazor_142",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 24,
+      "status": "pass",
+      "sourceText": "Absalom came to the king and said, “See now, your servant has sheep shearers. Please let the king and his servants go with your servant.”",
+      "sourceTextSHA256": "50f93f317386946c35b90d2e3225a036e692bbdf61a9fdb64a05cd30cd6be803",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V24",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 25,
+      "status": "pass",
+      "sourceText": "The king said to Absalom, “No, my son, let’s not all go, lest we be burdensome to you.” He pressed him; however he would not go, but blessed him.",
+      "sourceTextSHA256": "9f6ad652a79e68fe7eba29dfe7ec9accd68ec25847927cfcae8596dd6f3099f4",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V25",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 26,
+      "status": "pass",
+      "sourceText": "Then Absalom said, “If not, please let my brother Amnon go with us.” The king said to him, “Why should he go with you?”",
+      "sourceTextSHA256": "a2ed575633fd12342864bd6c4cbee45e395c5b5716c67c5646af7ecaac8bcc3c",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V26",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 27,
+      "status": "pass",
+      "sourceText": "But Absalom pressed him, and he let Amnon and all the king’s sons go with him.",
+      "sourceTextSHA256": "a1ec0ecfcca68cfa0d1cbbabb74d16a333cef5b20cb881745a43b25ed4ee96df",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V27",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 28,
+      "status": "pass",
+      "sourceText": "Absalom commanded his servants, saying, “Mark now, when Amnon’s heart is merry with wine; and when I tell you, ‘Strike Amnon,’ then kill him. Don’t be afraid. Haven’t I commanded you? Be courageous, and be valiant!”",
+      "sourceTextSHA256": "2ae8fbe06ecdce964ed0f698665978a12cad7868b7480030348abdeeb328e4b2",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V28",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 29,
+      "status": "pass",
+      "sourceText": "The servants of Absalom did to Amnon as Absalom had commanded. Then all the king’s sons arose, and every man got up on his mule and fled.",
+      "sourceTextSHA256": "52a603278b16a80098007d8432977cf960be8ad597f5ff0e88f3e72da7470afd",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V29",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 30,
+      "status": "pass",
+      "sourceText": "While they were on the way, the news came to David, saying, “Absalom has slain all the king’s sons, and there is not one of them left!”",
+      "sourceTextSHA256": "ff437a9d9e8f765e2b34a5218987b0da0209ef401bf4b4446adbb39e5042e25a",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V30",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 31,
+      "status": "pass",
+      "sourceText": "Then the king arose, and tore his garments, and lay on the earth; and all his servants stood by with their clothes torn.",
+      "sourceTextSHA256": "2287fc6c2a2c6932437859434ea51d098f0057282475df06ce1feef872017650",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V31",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 32,
+      "status": "pass",
+      "sourceText": "Jonadab the son of Shimeah, David’s brother, answered, “Don’t let my lord suppose that they have killed all the young men, the king’s sons, for Amnon only is dead; for by the appointment of Absalom this has been determined from the day that he forced his sister Tamar.",
+      "sourceTextSHA256": "e8e9416a6c9c24d05f8cf91ccc3187c9d335f95fc2b6b216489b22cdc336b82c",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V32",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:jonadab_1688",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shammah_2700",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:tamar_2822",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 33,
+      "status": "pass",
+      "sourceText": "Now therefore don’t let my lord the king take the thing to his heart, to think that all the king’s sons are dead; for only Amnon is dead.”",
+      "sourceTextSHA256": "59b063fafa8cf13089ab47e90814a21d66961528d2d22c71c15d0748db3f7c34",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V33",
+      "entities": [
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 34,
+      "status": "pass",
+      "sourceText": "But Absalom fled. The young man who kept the watch lifted up his eyes and looked, and behold, many people were coming by way of the hillside behind him.",
+      "sourceTextSHA256": "cda47f0498e41afad0a6451560fb39ed3710a37772e3288ec5ed13fbfa897542",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V34",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 35,
+      "status": "pass",
+      "sourceText": "Jonadab said to the king, “Behold, the king’s sons are coming! It is as your servant said.”",
+      "sourceTextSHA256": "b34094a0a50b18472aa2ad6bc6972adef79e0f7cc929d5520cc6cf81a9edc2bd",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V35",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:jonadab_1688",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 36,
+      "status": "pass",
+      "sourceText": "As soon as he had finished speaking, behold, the king’s sons came, and lifted up their voices and wept. The king also and all his servants wept bitterly.",
+      "sourceTextSHA256": "5594008e9b62d7c1ac585bfdb3a5c7829374cf8c3dfd35d8739386fe1383c7d5",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V36",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 37,
+      "status": "pass",
+      "sourceText": "But Absalom fled and went to Talmai the son of Ammihur, king of Geshur. David mourned for his son every day.",
+      "sourceTextSHA256": "d2f130797cccecbca5e30efce426a50fce5f9b6213127fc6e628f9d890cc7861",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V37",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:talmai_2819",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:geshur_461",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 38,
+      "status": "pass",
+      "sourceText": "So Absalom fled and went to Geshur, and was there three years.",
+      "sourceTextSHA256": "b78102281d2fa587b5731ce68e4d7d93e0377ce532f15cd99125272cc9bceea7",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V38",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:geshur_461",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 13,
+      "verse": 39,
+      "status": "pass",
+      "sourceText": "King David longed to go out to Absalom, for he was comforted concerning Amnon, since he was dead.",
+      "sourceTextSHA256": "92eb6d151c7c943b6e2b1548d44068e629a2068a6398dedcea76e722fa9896a0",
+      "citationURL": "https://ebible.org/engwebp/2SA13.htm#V39",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:amnon_232",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 1,
+      "status": "pass",
+      "sourceText": "Now Joab the son of Zeruiah perceived that the king’s heart was toward Absalom.",
+      "sourceTextSHA256": "f15e6932ff6b4128c9d3ad5871cf14594564df0d4a4faf9c4707b3d38cef05d3",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V1",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:zeruiah_3055",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 2,
+      "status": "pass",
+      "sourceText": "Joab sent to Tekoa and brought a wise woman from there, and said to her, “Please act like a mourner, and put on mourning clothing, please, and don’t anoint yourself with oil; but be as a woman who has mourned a long time for the dead.",
+      "sourceTextSHA256": "96100db79a763c5db2f2e34d9d17363e0c19b5ea8214c4f127871d0eae620e2e",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V2",
+      "entities": [
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:tekoa_1142",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 3,
+      "status": "pass",
+      "sourceText": "Go in to the king and speak like this to him.” So Joab put the words in her mouth.",
+      "sourceTextSHA256": "4e3b502e9cb0a4bfb5b5c2cbefb825d50ce9966ba668a683007bc698f47b540e",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V3",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 4,
+      "status": "fail",
+      "sourceText": "When the woman of Tekoa spoke to the king, she fell on her face to the ground, showed respect, and said, “Help, O king!”",
+      "sourceTextSHA256": "76c018379c92dbc1e3df150327be5886d1e53f874a2cacc4748020423f3a6cab",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V4",
+      "entities": [
+        {
+          "entityID": "place:tekoa_1142",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "『woman of Tekoa』は現行のTekoa directを支持する一方、彼女が『O king』とDavidへ話す。person:david_994 contextを追加する。"
+    },
+    {
+      "chapter": 14,
+      "verse": 5,
+      "status": "pass",
+      "sourceText": "The king said to her, “What ails you?” She answered, “Truly I am a widow, and my husband is dead.",
+      "sourceTextSHA256": "fa44fb7b1d0beaa1a086ff5dccca59e491824713c402347f68adc624562d2e27",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V5",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 6,
+      "status": "pass",
+      "sourceText": "Your servant had two sons; and they both fought together in the field, and there was no one to part them, but the one struck the other and killed him.",
+      "sourceTextSHA256": "465114a25f089c92ff1905a0f6bf48b5f4f8ebe065193858fcd15717f2ab875d",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V6",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 7,
+      "status": "pass",
+      "sourceText": "Behold, the whole family has risen against your servant, and they say, ‘Deliver him who struck his brother, that we may kill him for the life of his brother whom he killed, and so destroy the heir also.’ Thus they would quench my coal which is left, and would leave to my husband neither name nor remainder on the surface of the earth.”",
+      "sourceTextSHA256": "2edae7787d874f7da3b2e8c096cfcf9cbd1a723f8c5cac419ab77ec2c04dd65d",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V7",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 8,
+      "status": "pass",
+      "sourceText": "The king said to the woman, “Go to your house, and I will give a command concerning you.”",
+      "sourceTextSHA256": "0ba4b6ae28f1f2c4b77940a1d1fca3aa2207105355318400a08f4bf0402eb29a",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V8",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 9,
+      "status": "pass",
+      "sourceText": "The woman of Tekoa said to the king, “My lord, O king, may the iniquity be on me, and on my father’s house; and may the king and his throne be guiltless.”",
+      "sourceTextSHA256": "8aa8eb6e6212672754de1f704d2c6136bd5ce44848c177f28bf623327de763d4",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V9",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "place:tekoa_1142",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 10,
+      "status": "pass",
+      "sourceText": "The king said, “Whoever says anything to you, bring him to me, and he will not bother you any more.”",
+      "sourceTextSHA256": "13b35c1d2c593740012ad970916d13b4496729e37385a063d591419af20713c9",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V10",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 11,
+      "status": "pass",
+      "sourceText": "Then she said, “Please let the king remember the LORD your God, that the avenger of blood destroy not any more, lest they destroy my son.” He said, “As the LORD lives, not one hair of your son shall fall to the earth.”",
+      "sourceTextSHA256": "028c0db29b8a5c6e2b88c7b1420027e53d662419092704b4e4a3572a1c58cfed",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V11",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 12,
+      "status": "pass",
+      "sourceText": "Then the woman said, “Please let your servant speak a word to my lord the king.” He said, “Say on.”",
+      "sourceTextSHA256": "b8bbeddb20e3bb52932702d62570bd10e4a5519470a85ee0ea339c8904513d07",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V12",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 13,
+      "status": "fail",
+      "sourceText": "The woman said, “Why then have you devised such a thing against the people of God? For in speaking this word the king is as one who is guilty, in that the king does not bring home again his banished one.",
+      "sourceTextSHA256": "d722ecef7c465a20a50ea94d7ea0a7cdfafe49d7781a61c39f049ce13fd098ed",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V13",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "『the people of God』はイスラエルの人々を指す可能性が高いが、女性の寓話的発話なのでIsrael IDとの等価性を本文だけで強く断定しない。person:israel_682 contextを追加するか、候補を除外して根拠を明示するか要判断。"
+    },
+    {
+      "chapter": 14,
+      "verse": 14,
+      "status": "pass",
+      "sourceText": "For we must die, and are like water spilled on the ground, which can’t be gathered up again; neither does God take away life, but devises means, that he who is banished not be an outcast from him.",
+      "sourceTextSHA256": "f591956c99214ed6bdcbb49a63fd288cfe87e7becb8826329c6efe0974bdd1fc",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V14",
+      "entities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 15,
+      "status": "pass",
+      "sourceText": "Now therefore, seeing that I have come to speak this word to my lord the king, it is because the people have made me afraid. Your servant said, ‘I will now speak to the king; it may be that the king will perform the request of his servant.’",
+      "sourceTextSHA256": "b661a8cbdbdfd42c7353aef8ca723c261466067430fbffb1416f706841a88650",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V15",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 16,
+      "status": "pass",
+      "sourceText": "For the king will hear, to deliver his servant out of the hand of the man who would destroy me and my son together out of the inheritance of God.",
+      "sourceTextSHA256": "ead3a8fdb835ca9feb6aaa7a48b12336cc28a3b83fe5b27f30e9f142dc41d971",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V16",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 17,
+      "status": "pass",
+      "sourceText": "Then your servant said, ‘Please let the word of my lord the king bring rest; for as an angel of God, so is my lord the king to discern good and bad. May the LORD, your God, be with you.’”",
+      "sourceTextSHA256": "36cab3b9320be5eb712aa5b61ffdeb67f5275b544fb8d1274b0dec8ac7299619",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V17",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 18,
+      "status": "pass",
+      "sourceText": "Then the king answered the woman, “Please don’t hide anything from me that I ask you.” The woman said, “Let my lord the king now speak.”",
+      "sourceTextSHA256": "16126d7c811422c97227a8f976bb8ba425fe5e59d7b21d8ad02730dbeba0468f",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V18",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 19,
+      "status": "pass",
+      "sourceText": "The king said, “Is the hand of Joab with you in all this?” The woman answered, “As your soul lives, my lord the king, no one can turn to the right hand or to the left from anything that my lord the king has spoken; for your servant Joab urged me, and he put all these words in the mouth of your servant.",
+      "sourceTextSHA256": "3c3a4088997dbd92a0372e50b87918660ef7e8858c03304211cafa76e72eefb7",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V19",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 20,
+      "status": "pass",
+      "sourceText": "Your servant Joab has done this thing to change the face of the matter. My lord is wise, according to the wisdom of an angel of God, to know all things that are on the earth.”",
+      "sourceTextSHA256": "18b6f26cac83b14a154d23fa7f35b7bb76ed1c33a75904e7795902c5ec0c0471",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V20",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 21,
+      "status": "pass",
+      "sourceText": "The king said to Joab, “Behold now, I have granted this thing. Go therefore, and bring the young man Absalom back.”",
+      "sourceTextSHA256": "f3b8864aca95dbac46a8047ba84a268e2fa9a966ec6d3afd62e1a7cbcfb7df44",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V21",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 22,
+      "status": "pass",
+      "sourceText": "Joab fell to the ground on his face, showed respect, and blessed the king. Joab said, “Today your servant knows that I have found favor in your sight, my lord, O king, in that the king has performed the request of his servant.”",
+      "sourceTextSHA256": "8a61da9d8478ad2565079dd80237146bf77d57be90ee79518e47894bb116f7d6",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V22",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 23,
+      "status": "pass",
+      "sourceText": "So Joab arose and went to Geshur, and brought Absalom to Jerusalem.",
+      "sourceTextSHA256": "abad7f217e86a93694686c5771c11ad4cc96f52ca5f86831ae79f8b8e30ca2ca",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V23",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:geshur_461",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 24,
+      "status": "pass",
+      "sourceText": "The king said, “Let him return to his own house, but let him not see my face.” So Absalom returned to his own house, and didn’t see the king’s face.",
+      "sourceTextSHA256": "c317124c18532fc76625abf2b5d61e4505e18cbf3ce0ba2bc8694d1ce8dc368f",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V24",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 25,
+      "status": "pass",
+      "sourceText": "Now in all Israel there was no one to be so much praised as Absalom for his beauty. From the sole of his foot even to the crown of his head there was no defect in him.",
+      "sourceTextSHA256": "6781bc119d7e0b93a898cd64d646b0f65ee6bad1ef4dff633a9462722fd95719",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V25",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 26,
+      "status": "pass",
+      "sourceText": "When he cut the hair of his head (now it was at every year’s end that he cut it; because it was heavy on him, therefore he cut it), he weighed the hair of his head at two hundred shekels, after the king’s weight.",
+      "sourceTextSHA256": "23e4e59efeba63191a8b4c6fcc21f15d8992adca2fae5536541779eac401da69",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V26",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 27,
+      "status": "pass",
+      "sourceText": "Three sons were born to Absalom, and one daughter, whose name was Tamar. She was a woman with a beautiful face.",
+      "sourceTextSHA256": "a4feaf3250791c98eaccd992e088e2bc7b16087bca15f7d292a73a82c63fb0c8",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V27",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:tamar_2823",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 28,
+      "status": "pass",
+      "sourceText": "Absalom lived two full years in Jerusalem, and he didn’t see the king’s face.",
+      "sourceTextSHA256": "4cea82137c939bbcadeaee550524ab20033c4b6a0a990d7d9cb55946ccacb141",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V28",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 29,
+      "status": "pass",
+      "sourceText": "Then Absalom sent for Joab, to send him to the king, but he would not come to him. Then he sent again a second time, but he would not come.",
+      "sourceTextSHA256": "64d1bc72203f1a8d98e19962e34eafbd0a771e647e1863408ca2a951adf1d484",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V29",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 30,
+      "status": "pass",
+      "sourceText": "Therefore he said to his servants, “Behold, Joab’s field is near mine, and he has barley there. Go and set it on fire.” So Absalom’s servants set the field on fire.",
+      "sourceTextSHA256": "4f6dc3e589c0327eed4fd10bb78a62330087dfd5d26bcc34aaab457eddd85adf",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V30",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 31,
+      "status": "pass",
+      "sourceText": "Then Joab arose and came to Absalom to his house, and said to him, “Why have your servants set my field on fire?”",
+      "sourceTextSHA256": "f1533ccbafd7f2a957851c1e1e40f88566e8fce420a2ce504e1f0a58009d6e27",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V31",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 32,
+      "status": "pass",
+      "sourceText": "Absalom answered Joab, “Behold, I sent to you, saying, ‘Come here, that I may send you to the king, to say, “Why have I come from Geshur? It would be better for me to be there still. Now therefore, let me see the king’s face; and if there is iniquity in me, let him kill me.”’”",
+      "sourceTextSHA256": "40a09de91bd0d1f8f702b99e8893f39a9701065399f4c71da1685d6f95329533",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V32",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:geshur_461",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 14,
+      "verse": 33,
+      "status": "pass",
+      "sourceText": "So Joab came to the king and told him; and when he had called for Absalom, he came to the king and bowed himself on his face to the ground before the king; and the king kissed Absalom.",
+      "sourceTextSHA256": "7b433ee8e0d02a87e77be62da71c0ff951b855472057e503cad145d4fa37e39d",
+      "citationURL": "https://ebible.org/engwebp/2SA14.htm#V33",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 1,
+      "status": "pass",
+      "sourceText": "After this, Absalom prepared a chariot and horses for himself, and fifty men to run before him.",
+      "sourceTextSHA256": "4bbebe767ecbc042964b906e4e48694cd34df2479140336ff82279696903a9df",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V1",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 2,
+      "status": "pass",
+      "sourceText": "Absalom rose up early, and stood beside the way of the gate. When any man had a suit which should come to the king for judgment, then Absalom called to him, and said, “What city are you from?” He said, “Your servant is of one of the tribes of Israel.”",
+      "sourceTextSHA256": "87fa41d5688636832c741b14d36f5b281e426f3d5d60179633a7f0d63e293d72",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V2",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 3,
+      "status": "pass",
+      "sourceText": "Absalom said to him, “Behold, your matters are good and right; but there is no man deputized by the king to hear you.”",
+      "sourceTextSHA256": "248d08461582456cca778a95a17685b70e4eb1eeda05703dc979a4f864132738",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V3",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 4,
+      "status": "pass",
+      "sourceText": "Absalom said moreover, “Oh that I were made judge in the land, that every man who has any suit or cause might come to me, and I would do him justice!”",
+      "sourceTextSHA256": "54c81d906557282d6328889b2238b4966f27483405895bc2d2a54e3e86de17cd",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V4",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 5,
+      "status": "pass",
+      "sourceText": "It was so, that when any man came near to bow down to him, he stretched out his hand, took hold of him, and kissed him.",
+      "sourceTextSHA256": "4e59ec59fff59746d7a0c5c6e28f8a9729f278d89e76f3cad599d148f9b727c0",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V5",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 6,
+      "status": "pass",
+      "sourceText": "Absalom did this sort of thing to all Israel who came to the king for judgment. So Absalom stole the hearts of the men of Israel.",
+      "sourceTextSHA256": "ba6739abbc47fea8c246075f196da211c9fdc0230aedb5dfc79619a024630f86",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V6",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 7,
+      "status": "pass",
+      "sourceText": "At the end of forty years, Absalom said to the king, “Please let me go and pay my vow, which I have vowed to the LORD, in Hebron.",
+      "sourceTextSHA256": "39da5a359cb19c1b4de5fe25e0da44df3e5038bc1d75d30daeae4a815013ecfc",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V7",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:hebron_551",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 8,
+      "status": "fail",
+      "sourceText": "For your servant vowed a vow while I stayed at Geshur in Syria, saying, ‘If the LORD shall indeed bring me again to Jerusalem, then I will serve the LORD.’”",
+      "sourceTextSHA256": "b4467ad9d5ab0698afded9f2a91050ab2de7e19b8680d0c233993af39f92c15a",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V8",
+      "entities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:aram_82",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:geshur_461",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "Absalomの15:7から続く発話の『I stayed at Geshur』の話者が現行entitiesにない。person:absalom_59 contextを追加する。"
+    },
+    {
+      "chapter": 15,
+      "verse": 9,
+      "status": "pass",
+      "sourceText": "The king said to him, “Go in peace.” So he arose and went to Hebron.",
+      "sourceTextSHA256": "b4b510961d7578116aea44c619116e785ca29ccfb3432ce2777587518a984094",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V9",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "place:hebron_551",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 10,
+      "status": "pass",
+      "sourceText": "But Absalom sent spies throughout all the tribes of Israel, saying, “As soon as you hear the sound of the trumpet, then you shall say, ‘Absalom is king in Hebron!’”",
+      "sourceTextSHA256": "025702cded9f76f9bd9ac9601e11c9bd0892e32fbd2941ceefec965fb2b08dbb",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V10",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:hebron_551",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 11,
+      "status": "pass",
+      "sourceText": "Two hundred men went with Absalom out of Jerusalem, who were invited, and went in their simplicity; and they didn’t know anything.",
+      "sourceTextSHA256": "7c264ef6a1f57f46d0b9c5b31e5bdcf9cd72b3918d0821de77ca4b46bd1c70c5",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V11",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 12,
+      "status": "pass",
+      "sourceText": "Absalom sent for Ahithophel the Gilonite, David’s counselor, from his city, even from Giloh, while he was offering the sacrifices. The conspiracy was strong, for the people increased continually with Absalom.",
+      "sourceTextSHA256": "32005601cfa33574a09f0eb3edc8265761a9b690a8803d50632ca504818174dd",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V12",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ahithophel_162",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:giloh_479",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 13,
+      "status": "pass",
+      "sourceText": "A messenger came to David, saying, “The hearts of the men of Israel are after Absalom.”",
+      "sourceTextSHA256": "ef20b5c41ff1d794dac9e127b6b7f4738a929a9f6df60975eebf21b8c20823e4",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V13",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 14,
+      "status": "pass",
+      "sourceText": "David said to all his servants who were with him at Jerusalem, “Arise! Let’s flee, or else none of us will escape from Absalom. Hurry to depart, lest he overtake us quickly and bring down evil on us, and strike the city with the edge of the sword.”",
+      "sourceTextSHA256": "7d47716586c1c27dbc261e3db14834e3b4d77d62e0506aef09dddea489c8abfb",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V14",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 15,
+      "status": "pass",
+      "sourceText": "The king’s servants said to the king, “Behold, your servants are ready to do whatever my lord the king chooses.”",
+      "sourceTextSHA256": "2a00bc626e70dea3a6315f29b5b1b10124d6ea5965df935f9f0c52cfcf390b0e",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V15",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 16,
+      "status": "pass",
+      "sourceText": "The king went out, and all his household after him. The king left ten women, who were concubines, to keep the house.",
+      "sourceTextSHA256": "4d111732ba56e588784fa1c29d59e1f105d5af67379d68d02603e2f84aac6e9b",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V16",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 17,
+      "status": "pass",
+      "sourceText": "The king went out, and all the people after him; and they stayed in Beth Merhak.",
+      "sourceTextSHA256": "b3d9cae1ac2601a9fcf755a5248c9b94c6011cf501c82b5aee4ca2eb2c357624",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V17",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 18,
+      "status": "pass",
+      "sourceText": "All his servants passed on beside him; and all the Cherethites, and all the Pelethites, and all the Gittites, six hundred men who came after him from Gath, passed on before the king.",
+      "sourceTextSHA256": "c053bfd9eee69f252b8f8ffe590e96b83b62c95e84a1c8a2ad2482de99edd350",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V18",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "place:gath_442",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 19,
+      "status": "fail",
+      "sourceText": "Then the king said to Ittai the Gittite, “Why do you also go with us? Return, and stay with the king; for you are a foreigner and also an exile. Return to your own place.",
+      "sourceTextSHA256": "d800bbe1f7c6d8b917542ce7c22d5ce78e6988a5f62fd9aeb4c7402f774d8eec",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V19",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:ittai_656",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "IttaiをGittiteとした15:18の直後に『your own place』へ帰れとあるためGathは文脈上候補。ただし『own place』がGathと一意に確定するかは弱いのでqualifiedで扱い、contextを加える場合は理由と推論性を記す。"
+    },
+    {
+      "chapter": 15,
+      "verse": 20,
+      "status": "pass",
+      "sourceText": "Whereas you came but yesterday, should I today make you go up and down with us, since I go where I may? Return, and take back your brothers. Mercy and truth be with you.”",
+      "sourceTextSHA256": "db93337b57273af3e97b9893abfa78fa60242d347ab9ffec03a1fb86ff2d0657",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V20",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:ittai_656",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 21,
+      "status": "pass",
+      "sourceText": "Ittai answered the king and said, “As the LORD lives, and as my lord the king lives, surely in what place my lord the king is, whether for death or for life, your servant will be there also.”",
+      "sourceTextSHA256": "9b224b435e7a108991138733dcd93a5797637d681b6dff7e343c135d16b74e25",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V21",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ittai_656",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 22,
+      "status": "pass",
+      "sourceText": "David said to Ittai, “Go and pass over.” Ittai the Gittite passed over, and all his men, and all the little ones who were with him.",
+      "sourceTextSHA256": "d76f49fc624cb292979c39905f1878b7267d72bc382d31bbf5ca5ce587fa7d8a",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V22",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ittai_656",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 23,
+      "status": "pass",
+      "sourceText": "All the country wept with a loud voice, and all the people passed over. The king also himself passed over the brook Kidron, and all the people passed over toward the way of the wilderness.",
+      "sourceTextSHA256": "4c4aae8039c564d7758603dc6e9dc818a9804e92836b51e14df639394f6af718",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V23",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "place:kidron_687",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 24,
+      "status": "pass",
+      "sourceText": "Behold, Zadok also came, and all the Levites with him, bearing the ark of the covenant of God; and they set down God’s ark; and Abiathar went up until all the people finished passing out of the city.",
+      "sourceTextSHA256": "a01c8f0ffc8cf7132ecc41aface3766a6c11fe1024b5314dd22e7ba62f3e6490",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V24",
+      "entities": [
+        {
+          "entityID": "person:abiathar_20",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:zadok_2973",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 25,
+      "status": "pass",
+      "sourceText": "The king said to Zadok, “Carry God’s ark back into the city. If I find favor in the LORD’s eyes, he will bring me again, and show me both it and his habitation;",
+      "sourceTextSHA256": "e81214e8ae926de79956ab718c6239f9675aa994ab38462baa6ad696e5e59b9c",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V25",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:zadok_2973",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 26,
+      "status": "fail",
+      "sourceText": "but if he says, ‘I have no delight in you,’ behold, here I am. Let him do to me as seems good to him.”",
+      "sourceTextSHA256": "3f08d401a3273d7dfc3940a4fe32ef87fd78b66fee037ffb787ad97f18d3a72c",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V26",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "15:25の条件文『If I find favor in the LORD’s eyes』が続き、『if he says / let him do』のhe/himはGod。person:god_1324 contextを追加する。"
+    },
+    {
+      "chapter": 15,
+      "verse": 27,
+      "status": "pass",
+      "sourceText": "The king said also to Zadok the priest, “Aren’t you a seer? Return into the city in peace, and your two sons with you, Ahimaaz your son and Jonathan the son of Abiathar.",
+      "sourceTextSHA256": "95bd9f256efe09ac597d55e0dc71ab7c890216d7c2e940dd222d9789bdf1a94f",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V27",
+      "entities": [
+        {
+          "entityID": "person:abiathar_20",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ahimaaz_144",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:jonathan_1693",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:zadok_2973",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 28,
+      "status": "pass",
+      "sourceText": "Behold, I will stay at the fords of the wilderness until word comes from you to inform me.”",
+      "sourceTextSHA256": "2ebe9f294b14290ba594fb6fa7e05cbd9fe1766a5cc1a2b943a1e3efec0927cd",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V28",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:zadok_2973",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 29,
+      "status": "pass",
+      "sourceText": "Zadok therefore and Abiathar carried God’s ark to Jerusalem again; and they stayed there.",
+      "sourceTextSHA256": "966e047e9127354b2155b4ed8e12022f65a8571753b581cc3974a2992c71d655",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V29",
+      "entities": [
+        {
+          "entityID": "person:abiathar_20",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:zadok_2973",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 30,
+      "status": "pass",
+      "sourceText": "David went up by the ascent of the Mount of Olives, and wept as he went up; and he had his head covered and went barefoot. All the people who were with him each covered his head, and they went up, weeping as they went up.",
+      "sourceTextSHA256": "eebaf698cbdeb3f4ee73b7234a3c5758282452001fb7a8b28cde55b3fc878216",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V30",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:mount_of_olives_861",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 31,
+      "status": "pass",
+      "sourceText": "Someone told David, saying, “Ahithophel is among the conspirators with Absalom.” David said, “LORD, please turn the counsel of Ahithophel into foolishness.”",
+      "sourceTextSHA256": "fdcf1715b15519c77ca699119cbb2d2e88c4ffa32df99d0115abe3d09f0267d0",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V31",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ahithophel_162",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 32,
+      "status": "pass",
+      "sourceText": "When David had come to the top, where God was worshiped, behold, Hushai the Archite came to meet him with his tunic torn and earth on his head.",
+      "sourceTextSHA256": "daf6eca957166bf6c6a7c1dbfb3e8d11737e37cb7df3832115eb19c91ea6d7de",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V32",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:hushai_1577",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 33,
+      "status": "pass",
+      "sourceText": "David said to him, “If you pass on with me, then you will be a burden to me;",
+      "sourceTextSHA256": "5714c9ee314667ce758e8a03dbfde1dae5d6b9dd14fc6e82b80686f6eb1afd8f",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V33",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:hushai_1577",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 34,
+      "status": "fail",
+      "sourceText": "but if you return to the city, and tell Absalom, ‘I will be your servant, O king. As I have been your father’s servant in time past, so I will now be your servant; then you will defeat for me the counsel of Ahithophel.’",
+      "sourceTextSHA256": "232766f79b2f2fa2a53b7e38a48f23435d55e1347e17f88e36199401782ef184",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V34",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ahithophel_162",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:hushai_1577",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "HushaiがAbsalomに言う台詞『your father’s servant』の父はDavid。現行Hushai/Absalom/Ahithophelからperson:david_994 contextが欠落している。"
+    },
+    {
+      "chapter": 15,
+      "verse": 35,
+      "status": "pass",
+      "sourceText": "Don’t you have Zadok and Abiathar the priests there with you? Therefore whatever you hear out of the king’s house, tell it to Zadok and Abiathar the priests.",
+      "sourceTextSHA256": "24fac3aefd8cda390b88dbc84674a6a1d81caffc7eeae518cec10ed4f3403854",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V35",
+      "entities": [
+        {
+          "entityID": "person:abiathar_20",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:hushai_1577",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:zadok_2973",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 36,
+      "status": "pass",
+      "sourceText": "Behold, they have there with them their two sons, Ahimaaz, Zadok’s son, and Jonathan, Abiathar’s son. Send to me everything that you shall hear by them.”",
+      "sourceTextSHA256": "b1cea049c3101d365ded88dc7a46f6d3e7778e9816d31147f6ba4cbc04f1edf3",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V36",
+      "entities": [
+        {
+          "entityID": "person:abiathar_20",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ahimaaz_144",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:hushai_1577",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:jonathan_1693",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:zadok_2973",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 15,
+      "verse": 37,
+      "status": "pass",
+      "sourceText": "So Hushai, David’s friend, came into the city; and Absalom came into Jerusalem.",
+      "sourceTextSHA256": "40beb2b9027c724d0b168da0b1422fce5752a2a09d16a456d7ed57dab0e671e0",
+      "citationURL": "https://ebible.org/engwebp/2SA15.htm#V37",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:hushai_1577",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 1,
+      "status": "pass",
+      "sourceText": "When David was a little past the top, behold, Ziba the servant of Mephibosheth met him with a couple of donkeys saddled, and on them two hundred loaves of bread, and one hundred clusters of raisins, and one hundred summer fruits, and a container of wine.",
+      "sourceTextSHA256": "880ed8c85cc2814e3d45c3ddea68e1cf15a0acee23dfb6ca9e6c4f5cb636730a",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V1",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:mephibosheth_1999",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ziba_3060",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 2,
+      "status": "pass",
+      "sourceText": "The king said to Ziba, “What do you mean by these?” Ziba said, “The donkeys are for the king’s household to ride on; and the bread and summer fruit for the young men to eat; and the wine, that those who are faint in the wilderness may drink.”",
+      "sourceTextSHA256": "909cee931184a04eb1771579de10e8dae6838e94f0eab3d5baa9c8bf20156634",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V2",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:ziba_3060",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 3,
+      "status": "pass",
+      "sourceText": "The king said, “Where is your master’s son?” Ziba said to the king, “Behold, he is staying in Jerusalem; for he said, ‘Today the house of Israel will restore me the kingdom of my father.’”",
+      "sourceTextSHA256": "0957334007d73fa461a6fbfd2979552c01d805dea9d5f4e6cf252aa1a0e11afd",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V3",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:mephibosheth_1999",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:ziba_3060",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 4,
+      "status": "pass",
+      "sourceText": "Then the king said to Ziba, “Behold, all that belongs to Mephibosheth is yours.” Ziba said, “I bow down. Let me find favor in your sight, my lord, O king.”",
+      "sourceTextSHA256": "af624e85b0470bc563464c15f60bce92595b930827bef0918e7e8f9cd9ab8e64",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V4",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:mephibosheth_1999",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ziba_3060",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 5,
+      "status": "pass",
+      "sourceText": "When King David came to Bahurim, behold, a man of the family of Saul’s house came out, whose name was Shimei, the son of Gera. He came out and cursed as he came.",
+      "sourceTextSHA256": "71d7f4c4c8afb89232268119073439dc3ab9e5cf86576f0bf63bdd3961ddd714",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V5",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:gera_1299",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:saul_2478",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shimei_2684",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:bahurim_154",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 6,
+      "status": "pass",
+      "sourceText": "He cast stones at David and at all the servants of King David, and all the people and all the mighty men were on his right hand and on his left.",
+      "sourceTextSHA256": "ffb4249f27aa70be3765eb6afe844964c5595045581e1d1d3bd47a041d20af81",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V6",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shimei_2684",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 7,
+      "status": "pass",
+      "sourceText": "Shimei said when he cursed, “Be gone, be gone, you man of blood, and wicked fellow!",
+      "sourceTextSHA256": "87c0f6fc45963d3d30b7ce7dfa5c7134b488b987d5946a47286486861a4b4a28",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V7",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:shimei_2684",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 8,
+      "status": "pass",
+      "sourceText": "The LORD has returned on you all the blood of Saul’s house, in whose place you have reigned! The LORD has delivered the kingdom into the hand of Absalom your son! Behold, you are caught by your own mischief, because you are a man of blood!”",
+      "sourceTextSHA256": "1822097427835f74797fb9e76c1bf64650cb5a1b15103e4a6604838c3b10eef5",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V8",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:saul_2478",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shimei_2684",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 9,
+      "status": "pass",
+      "sourceText": "Then Abishai the son of Zeruiah said to the king, “Why should this dead dog curse my lord the king? Please let me go over and take off his head.”",
+      "sourceTextSHA256": "04d41a93618767ee5460ac33daa89084851220673b3019ba141e9edb0d11cc9e",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V9",
+      "entities": [
+        {
+          "entityID": "person:abishai_50",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:shimei_2684",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:zeruiah_3055",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 10,
+      "status": "pass",
+      "sourceText": "The king said, “What have I to do with you, you sons of Zeruiah? Because he curses, and because the LORD has said to him, ‘Curse David,’ who then shall say, ‘Why have you done so?’”",
+      "sourceTextSHA256": "d491f8c7507b2beafbd1f1d9bf3669064fd59d8fc9fa2e8e94a79cab06ae0671",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V10",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shimei_2684",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:zeruiah_3055",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 11,
+      "status": "pass",
+      "sourceText": "David said to Abishai and to all his servants, “Behold, my son, who came out of my bowels, seeks my life. How much more this Benjamite, now? Leave him alone, and let him curse; for the LORD has invited him.",
+      "sourceTextSHA256": "6f4bf193d39473f8b0762b87fca430e5d70419dff2ea820ee52e2a7e4a517dc1",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V11",
+      "entities": [
+        {
+          "entityID": "person:abishai_50",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:benjamin_463",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shimei_2684",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 12,
+      "status": "fail",
+      "sourceText": "It may be that the LORD will look on the wrong done to me, and that the LORD will repay me good for the cursing of me today.”",
+      "sourceTextSHA256": "810542899ced040ceda06045c81073d5efa5997a2ddba9d82650fff58bd56bd6",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V12",
+      "entities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "Davidの16:11の発話が続く。『wrong done to me / repay me』のmeはDavid、現行God directのみでDavid contextが欠落。"
+    },
+    {
+      "chapter": 16,
+      "verse": 13,
+      "status": "pass",
+      "sourceText": "So David and his men went by the way; and Shimei went along on the hillside opposite him and cursed as he went, threw stones at him, and threw dust.",
+      "sourceTextSHA256": "aff19bffb64f13333fb9954ec3023b34bb43ae3f37cf1b4f061c6b6da954d38b",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V13",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shimei_2684",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 14,
+      "status": "pass",
+      "sourceText": "The king and all the people who were with him arrived weary; and he refreshed himself there.",
+      "sourceTextSHA256": "e705959804f13b4e40fd9f2a2f24c1e11876362b944c37a2c9c21066c3f2cb5e",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V14",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 15,
+      "status": "pass",
+      "sourceText": "Absalom and all the people, the men of Israel, came to Jerusalem, and Ahithophel with him.",
+      "sourceTextSHA256": "cb435c9a6aad6087bae9104ca358c999b16339c83ba0856bfed6191fed74b7a1",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V15",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ahithophel_162",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 16,
+      "status": "pass",
+      "sourceText": "When Hushai the Archite, David’s friend, had come to Absalom, Hushai said to Absalom, “Long live the king! Long live the king!”",
+      "sourceTextSHA256": "df50833693fa4afa81a9c352669c7d616817b68cc820f81171ab4c798816e561",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V16",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:hushai_1577",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 17,
+      "status": "pass",
+      "sourceText": "Absalom said to Hushai, “Is this your kindness to your friend? Why didn’t you go with your friend?”",
+      "sourceTextSHA256": "c4be7b513c49d5fb76cce5a8b22af46e42e3572f29f1208e7902bf58a7b214cd",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V17",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:hushai_1577",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 18,
+      "status": "pass",
+      "sourceText": "Hushai said to Absalom, “No; but whomever the LORD and this people and all the men of Israel have chosen, I will be his, and I will stay with him.",
+      "sourceTextSHA256": "04892a7e955548323fef50188f867cdacbe3ebfd7fcec8c2ddf295b9e6eb0771",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V18",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:hushai_1577",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 19,
+      "status": "fail",
+      "sourceText": "Again, whom should I serve? Shouldn’t I serve in the presence of his son? As I have served in your father’s presence, so I will be in your presence.”",
+      "sourceTextSHA256": "4e016b992fbac7b0e7be37408100c950fba40e9451eac8e272f0454fe994b70e",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V19",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "reviewNoteJa": "Hushaiの16:18の発話継続。『whom should I serve?』の話者が現行リンクにない。person:hushai_1577 contextを追加し、Absalom/Davidの指示先は現行contextで妥当。"
+    },
+    {
+      "chapter": 16,
+      "verse": 20,
+      "status": "pass",
+      "sourceText": "Then Absalom said to Ahithophel, “Give your counsel what we shall do.”",
+      "sourceTextSHA256": "604259891a7dfef6f29e8a55491f17fe2f920497318c599a8b82b46264c1dbcf",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V20",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ahithophel_162",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 21,
+      "status": "pass",
+      "sourceText": "Ahithophel said to Absalom, “Go in to your father’s concubines that he has left to keep the house. Then all Israel will hear that you are abhorred by your father. Then the hands of all who are with you will be strong.”",
+      "sourceTextSHA256": "9cc435008c2560f1ab4a80b85d301248b32eedc6b6ed450ee2062e73a6c91a56",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V21",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ahithophel_162",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 22,
+      "status": "pass",
+      "sourceText": "So they spread a tent for Absalom on the top of the house, and Absalom went in to his father’s concubines in the sight of all Israel.",
+      "sourceTextSHA256": "3c74b202018e6082f217fcd0314a9a247d1a5d102e7b2eb659d25c2cffec51ed",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V22",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    },
+    {
+      "chapter": 16,
+      "verse": 23,
+      "status": "pass",
+      "sourceText": "The counsel of Ahithophel, which he gave in those days, was as if a man inquired at the inner sanctuary of God. All the counsel of Ahithophel was like this both with David and with Absalom.",
+      "sourceTextSHA256": "2ea8ab5fbe880990a462e5ab6d27266ff2f2f00eeaef6ebd4f115c2e38413beb",
+      "citationURL": "https://ebible.org/engwebp/2SA16.htm#V23",
+      "entities": [
+        {
+          "entityID": "person:absalom_59",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ahithophel_162",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "reviewNoteJa": "この節の固定WEB本文と直前/継続文脈を読み、採用IDの語形・発話者・一意照応を確認。特段の修正指摘なし。"
+    }
+  ],
+  "limitationsJa": "地理・集団の限定的意味は原文以外の学術的同定を確定していない。特にTobの既存IDはrootの書別プロフィール作成を前提に追加指摘。著者修正後の再照合が必要。"
+}

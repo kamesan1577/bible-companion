@@ -1,0 +1,52 @@
+{
+  "status": "author-repair-record",
+  "book": "2SA",
+  "sourceMapPath": "reviews/verse-map-2SA-17-24.json",
+  "beforeMapSHA256": "f6fa9a9080061b242c137489dd63767059165fae9e72ea199e5057452511dd95",
+  "afterMapSHA256": "05b874547ee2c355edcdf16ad374dc6a9b24ed9f12a4f08ee95e674fb7c0acbe",
+  "sourceReportPath": "reviews/independent-source-map-2SA-09-16.json; peer finding from acts_people_two rechecked against fixed WEB and authored Pirathon profile",
+  "sourceReportSHA256": null,
+  "fixedWitnessPath": "inventory/targets/samuel2-web-verses.json",
+  "fixedWitnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+  "createdAtUTC": "2026-10-16T02:05:51Z",
+  "elapsedSeconds": null,
+  "elapsedReasonJa": "作業時間は計測していないため推定しない。",
+  "change": {
+    "ref": "23:30",
+    "before": [
+      {
+        "entityID": "person:benaiah_440",
+        "relationship": "direct"
+      },
+      {
+        "entityID": "person:hurai_1521",
+        "relationship": "direct"
+      },
+      {
+        "entityID": "place:gaash_429",
+        "relationship": "direct"
+      }
+    ],
+    "after": [
+      {
+        "entityID": "person:benaiah_440",
+        "relationship": "direct"
+      },
+      {
+        "entityID": "person:hurai_1521",
+        "relationship": "direct"
+      },
+      {
+        "entityID": "place:gaash_429",
+        "relationship": "direct"
+      },
+      {
+        "entityID": "place:pirathon_949",
+        "relationship": "direct"
+      }
+    ],
+    "removedExcludedCandidate": "place:pirathon_949",
+    "sourceVerseText": "Benaiah a Pirathonite, Hiddai of the brooks of Gaash.",
+    "reasonJa": "23:30はBenaiahをPirathoniteと呼び、出身呼称は選択済みplace:pirathon_949 profileの2SA23:30に一致。誤った候補除外を修正し、profileの不確実な現代位置は維持。"
+  }
+}

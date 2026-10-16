@@ -1,0 +1,1483 @@
+{
+  "reportType": "independent-current-snapshot-closure",
+  "group": "places_3",
+  "round": 1,
+  "capturedAtUTC": "2026-10-16T01:23:07Z",
+  "reviewerRole": "independent reclosure of author-repaired fail rows; no draft/evidence edited",
+  "workspace": "samuel-entities-work",
+  "sourceReport": {
+    "path": "reviews/independent-places_3.json",
+    "sha256": "7c7c5af5e42b34be60e1d791b92915c669598d213eb99952a31cbc55647ec6eb"
+  },
+  "authorRepairLog": {
+    "path": "evidence/places_3/author-repairs-wikipedia-links.json",
+    "sha256": "4edfa00ea300322d0b9a89bba8db85b92f6fd29c754b8419a0b5f0e6373211d8"
+  },
+  "fixedWitnesses": {
+    "1SA": {
+      "path": "inventory/targets/samuel1-web-verses.json",
+      "sha256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab",
+      "version": "webp-usfx-2026-10-13-35a6adf626e5"
+    },
+    "2SA": {
+      "path": "inventory/targets/samuel2-web-verses.json",
+      "sha256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+      "version": "webp-usfx-2026-10-13-35a6adf626e5"
+    }
+  },
+  "method": "Re-read current draft and evidence bytes; checked current serialized profile hash against evidence and draft hash against evidence; compared the pinned local WEB text at all currently listed profile passages with the previous independent occurrence audit; read the current Wikipedia article body and section locations from current web responses; verified link/source URL alignment and kept uncertain modern geography qualified.",
+  "entries": [
+    {
+      "book": "1SA",
+      "entityID": "place:aphek_72",
+      "nameJa": "アフェク",
+      "draftPath": "drafts/places_3/1SA_aphek_72.json",
+      "evidencePath": "evidence/places_3/1SA_aphek_72.json",
+      "priorIndependentReview": {
+        "path": "reviews/independent-places_3.json",
+        "sha256": "7c7c5af5e42b34be60e1d791b92915c669598d213eb99952a31cbc55647ec6eb",
+        "priorDraftSHA256": "f2508dffad1624e43254edd3982ec1bb00423dcdbc3ec6bf8254c338979bc3fd",
+        "priorVerdict": "fail"
+      },
+      "currentSHA256": {
+        "draft": "c2430e9a7f4b1a2be35a8bb0453d1cac2b5c0e9d9963bd93200e00dff85f857c",
+        "evidence": "d0ce5171bbbf71312059ccaaa4f28b03e18043e8ea7c7ca9aa8cd72325a452e8",
+        "profile": "fa0fd6e918ce0e696d2938f0b1cd2a05493bb518017e19084ce7aa33372850fd",
+        "evidenceReportedProfileSHA256": "fa0fd6e918ce0e696d2938f0b1cd2a05493bb518017e19084ce7aa33372850fd",
+        "evidenceReportedDraftSHA256": "c2430e9a7f4b1a2be35a8bb0453d1cac2b5c0e9d9963bd93200e00dff85f857c",
+        "profileHashMatches": true,
+        "draftHashMatches": true
+      },
+      "bookLocalSource": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "sourceFile": "inventory/targets/samuel1-web-verses.json",
+        "witnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab",
+        "knownBy": {
+          "chapter": 4,
+          "verse": 1
+        },
+        "firstOccurrence": {
+          "chapter": 4,
+          "verse": 1,
+          "text": "The word of Samuel came to all Israel. Now Israel went out against the Philistines to battle, and encamped beside Ebenezer; and the Philistines encamped in Aphek.",
+          "url": "https://ebible.org/engwebp/1SA04.htm#V1"
+        },
+        "allProfilePassageTexts": [
+          {
+            "chapter": 4,
+            "verse": 1,
+            "text": "The word of Samuel came to all Israel. Now Israel went out against the Philistines to battle, and encamped beside Ebenezer; and the Philistines encamped in Aphek.",
+            "url": "https://ebible.org/engwebp/1SA04.htm#V1",
+            "textStatus": "present"
+          }
+        ],
+        "priorOccurrenceAudit": [
+          {
+            "chapter": 4,
+            "verse": 1,
+            "text": "The word of Samuel came to all Israel. Now Israel went out against the Philistines to battle, and encamped beside Ebenezer; and the Philistines encamped in Aphek.",
+            "url": "https://ebible.org/engwebp/1SA04.htm#V1",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "本文はペリシテ軍がアフェクに陣を置いたと明記する。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          },
+          {
+            "chapter": 29,
+            "verse": 1,
+            "text": "Now the Philistines gathered together all their armies to Aphek; and the Israelites encamped by the spring which is in Jezreel.",
+            "url": "https://ebible.org/engwebp/1SA29.htm#V1",
+            "decisionRecorded": "excluded-homonym",
+            "profilePassageIncludes": false,
+            "authorRationale": "本文の名称は同じだが、記事導入は4:1の場所と29:1の北方用例を別候補として区別する。既存IDの誤同定を避け、このプロフィールには含めない。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          }
+        ]
+      },
+      "currentReaderFields": {
+        "summaryJa": "サムエル記上4:1では、イスラエル軍がエベン・エゼルに陣を敷いたとき、ペリシテ軍がアフェクに陣を置いたと記されます。",
+        "subtitleJa": "ペリシテ軍が陣を置いた地名",
+        "identityNoteJa": "",
+        "historicalRoleJa": "ペリシテ軍の野営地として現れる地名。",
+        "modernLocationJa": "所在地の比定には複数案があり、正確な位置は定まりません。",
+        "locationNoteJa": "地図上の点は従来資料に基づく参考位置であり、古代地点の所在地を確定するものではありません。"
+      },
+      "sourceIntegrity": {
+        "sourceIdsAllResolve": true,
+        "missingSourceIds": [],
+        "primaryURLsWellFormed": true,
+        "profileAndWikipediaCitationURLMatch": true,
+        "profileWikipediaURL": "https://en.wikipedia.org/wiki/Aphek_(biblical)#Judaean_hills",
+        "sourceWikipediaURL": "https://en.wikipedia.org/wiki/Aphek_(biblical)#Judaean_hills"
+      },
+      "wikipedia": {
+        "currentMetadata": {
+          "title": "Aphek (biblical)",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Aphek_(biblical)#Judaean_hills",
+          "kind": "shared-section",
+          "noteJa": "記事は1サムエル記4:1のアフェクをペリシテ軍の野営地として挙げ、所在地候補を紹介します。正確な比定は確定していません。",
+          "identityVerified": true,
+          "checkedAt": "2026-10-16"
+        },
+        "currentBodyRead": {
+          "url": "https://en.wikipedia.org/wiki/Aphek_(biblical)#Judaean_hills",
+          "bodyLocator": "Aphek page lines 113–115 and 128–129; section anchor Judaean hills appears in contents.",
+          "supportJa": "1 Samuel 4:1のペリシテ軍の野営地を本文で明示し、複数のアフェクを分けた上でユダ丘陵の候補を記す。正確な候補の確定ではない。",
+          "checkedAtUTC": "2026-10-16T01:21:45Z"
+        },
+        "assessmentJa": "Current Aphek section explicitly cites 1 Sam 4:1 and labels distinct Aphek locations; Judaean hill candidate is qualified, not verified fixed coordinate."
+      },
+      "geography": {
+        "coordinate": null,
+        "assessmentJa": "現代位置の確定根拠をWEB本文は与えない。座標nullを保持し、プロフィール上の候補表現も確定地点として扱っていない。"
+      },
+      "verdict": "qualified",
+      "closureStatus": "closed",
+      "reasonJa": "wikipedia.noteJaに29:1という後続の同書用例を初出4:1時点で明記している。ページ本文の29章用例との区別を読者欄へ先出しせず、4:1に関する異説・候補地の説明だけを残す。",
+      "checks": {
+        "bookLocalFirstAppearanceSafe": true,
+        "sameNameOrPlaceTypeReviewed": true,
+        "sourceAndEvidenceHashSynchronized": true,
+        "wikiBodyActuallyReadThisRound": true,
+        "coordinatePromotionAbsent": true
+      }
+    },
+    {
+      "book": "1SA",
+      "entityID": "place:beth-car_196",
+      "nameJa": "ベト・カル",
+      "draftPath": "drafts/places_3/1SA_beth-car_196.json",
+      "evidencePath": "evidence/places_3/1SA_beth-car_196.json",
+      "priorIndependentReview": {
+        "path": "reviews/independent-places_3.json",
+        "sha256": "7c7c5af5e42b34be60e1d791b92915c669598d213eb99952a31cbc55647ec6eb",
+        "priorDraftSHA256": "a80a31f3eb83355857d6ab28278d4f8d7b494cf829aa3c29164995dc7f9922a4",
+        "priorVerdict": "fail"
+      },
+      "currentSHA256": {
+        "draft": "d3f37e48ad1211c55993e9939269dc6d894ce65920139058e66b1c3cb01c0b1c",
+        "evidence": "8e4f1fe05f2b5d8fe54cd6de90e6f115681a3af569c6e2288bbb3277fe916070",
+        "profile": "dcac99476d346e81be2cef6c8923255d3465a13891bfc0e7d915cc7942dd2bb7",
+        "evidenceReportedProfileSHA256": "dcac99476d346e81be2cef6c8923255d3465a13891bfc0e7d915cc7942dd2bb7",
+        "evidenceReportedDraftSHA256": "d3f37e48ad1211c55993e9939269dc6d894ce65920139058e66b1c3cb01c0b1c",
+        "profileHashMatches": true,
+        "draftHashMatches": true
+      },
+      "bookLocalSource": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "sourceFile": "inventory/targets/samuel1-web-verses.json",
+        "witnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab",
+        "knownBy": {
+          "chapter": 7,
+          "verse": 11
+        },
+        "firstOccurrence": {
+          "chapter": 7,
+          "verse": 11,
+          "text": "The men of Israel went out of Mizpah and pursued the Philistines, and struck them until they came under Beth Kar.",
+          "url": "https://ebible.org/engwebp/1SA07.htm#V11"
+        },
+        "allProfilePassageTexts": [
+          {
+            "chapter": 7,
+            "verse": 11,
+            "text": "The men of Israel went out of Mizpah and pursued the Philistines, and struck them until they came under Beth Kar.",
+            "url": "https://ebible.org/engwebp/1SA07.htm#V11",
+            "textStatus": "present"
+          }
+        ],
+        "priorOccurrenceAudit": [
+          {
+            "chapter": 7,
+            "verse": 11,
+            "text": "The men of Israel went out of Mizpah and pursued the Philistines, and struck them until they came under Beth Kar.",
+            "url": "https://ebible.org/engwebp/1SA07.htm#V11",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEBは「under Beth Kar」と記し、地名自体は直接確認できるが対象が市街か地形かは不明。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          }
+        ]
+      },
+      "currentReaderFields": {
+        "summaryJa": "サムエル記上7:11は、ミツパから追撃したイスラエル人が「ベト・カルの下まで」ペリシテ人を打ったと記します。本文だけでは、都市・丘陵地・地域のいずれを指すか、現代の位置も特定できません。",
+        "subtitleJa": "所在未詳の地名",
+        "identityNoteJa": "",
+        "historicalRoleJa": "ペリシテ人への追撃が達した地点として現れる地名。",
+        "modernLocationJa": "現代の所在地は未確定です。",
+        "locationNoteJa": "地図上の点は従来資料に基づく参考位置であり、古代地点の所在地を確定するものではありません。"
+      },
+      "sourceIntegrity": {
+        "sourceIdsAllResolve": true,
+        "missingSourceIds": [],
+        "primaryURLsWellFormed": true,
+        "profileAndWikipediaCitationURLMatch": true,
+        "profileWikipediaURL": "https://en.wikipedia.org/wiki/Mizpah_in_Benjamin#Biblical_references",
+        "sourceWikipediaURL": "https://en.wikipedia.org/wiki/Mizpah_in_Benjamin#Biblical_references"
+      },
+      "wikipedia": {
+        "currentMetadata": {
+          "title": "Mizpah in Benjamin",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Mizpah_in_Benjamin#Biblical_references",
+          "kind": "related-section",
+          "noteJa": "記事はサムエルがミツパに集まった場面を述べ、ペリシテ人をベト・カルの下まで追い返したと記します。これは出来事上の関連を示すだけで、ベト・カルの同定や所在地を確定しません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "relationVerified": true
+        },
+        "currentBodyRead": {
+          "url": "https://en.wikipedia.org/wiki/Mizpah_in_Benjamin#Biblical_references",
+          "bodyLocator": "Biblical references section lines 133–134; fragment is the section heading.",
+          "supportJa": "サムエルがミツパに集めた場面と、ペリシテ人をBeth Carの下まで追い返した記事がある。出来事上の関係は支えるが、Beth-Carの同定や位置は示さない。",
+          "checkedAtUTC": "2026-10-16T01:21:45Z"
+        },
+        "assessmentJa": "Related article recounts the same 1 Sam 7 event; its relation-only metadata is accurate, identity and site remain unproved."
+      },
+      "geography": {
+        "coordinate": null,
+        "assessmentJa": "現代位置の確定根拠をWEB本文は与えない。座標nullを保持し、プロフィール上の候補表現も確定地点として扱っていない。"
+      },
+      "verdict": "qualified",
+      "closureStatus": "closed",
+      "reasonJa": "Wikipediaをnullにしているが、実読した Mizpah in Benjamin が1 Samuel 7:11の出来事をBeth Carまで追撃したと明記（本文L133）。対象地そのものの記事ではないので related-section、identity=false/relation=true のみが適切。",
+      "checks": {
+        "bookLocalFirstAppearanceSafe": true,
+        "sameNameOrPlaceTypeReviewed": true,
+        "sourceAndEvidenceHashSynchronized": true,
+        "wikiBodyActuallyReadThisRound": true,
+        "coordinatePromotionAbsent": true
+      }
+    },
+    {
+      "book": "1SA",
+      "entityID": "place:hachilah_500",
+      "nameJa": "ハキラの丘",
+      "draftPath": "drafts/places_3/1SA_hachilah_500.json",
+      "evidencePath": "evidence/places_3/1SA_hachilah_500.json",
+      "priorIndependentReview": {
+        "path": "reviews/independent-places_3.json",
+        "sha256": "7c7c5af5e42b34be60e1d791b92915c669598d213eb99952a31cbc55647ec6eb",
+        "priorDraftSHA256": "56ad7151af02d978b2d2f03cd1ebc1d731f019d1f1304fb941033bc723e9ad11",
+        "priorVerdict": "fail"
+      },
+      "currentSHA256": {
+        "draft": "c1b6389a95e6ec34c6f7ec3ea49b272c7e5e59ae9237a0e7fe140f595313b8f3",
+        "evidence": "eb3caa625bf448e25955dd5d8c6c05841e3386496443bfb358ef7e82a36b68a9",
+        "profile": "7e7e214c9a69e341297312f746861d7259bd77fa8158bdaf68ca8bc69479db85",
+        "evidenceReportedProfileSHA256": "7e7e214c9a69e341297312f746861d7259bd77fa8158bdaf68ca8bc69479db85",
+        "evidenceReportedDraftSHA256": "c1b6389a95e6ec34c6f7ec3ea49b272c7e5e59ae9237a0e7fe140f595313b8f3",
+        "profileHashMatches": true,
+        "draftHashMatches": true
+      },
+      "bookLocalSource": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "sourceFile": "inventory/targets/samuel1-web-verses.json",
+        "witnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab",
+        "knownBy": {
+          "chapter": 23,
+          "verse": 19
+        },
+        "firstOccurrence": {
+          "chapter": 23,
+          "verse": 19,
+          "text": "Then the Ziphites came up to Saul to Gibeah, saying, “Doesn’t David hide himself with us in the strongholds in the woods, in the hill of Hachilah, which is on the south of the desert?",
+          "url": "https://ebible.org/engwebp/1SA23.htm#V19"
+        },
+        "allProfilePassageTexts": [
+          {
+            "chapter": 23,
+            "verse": 19,
+            "text": "Then the Ziphites came up to Saul to Gibeah, saying, “Doesn’t David hide himself with us in the strongholds in the woods, in the hill of Hachilah, which is on the south of the desert?",
+            "url": "https://ebible.org/engwebp/1SA23.htm#V19",
+            "textStatus": "present"
+          },
+          {
+            "chapter": 26,
+            "verse": 1,
+            "text": "The Ziphites came to Saul to Gibeah, saying, “Doesn’t David hide himself in the hill of Hachilah, which is before the desert?”",
+            "url": "https://ebible.org/engwebp/1SA26.htm#V1",
+            "textStatus": "present"
+          },
+          {
+            "chapter": 26,
+            "verse": 3,
+            "text": "Saul encamped in the hill of Hachilah, which is before the desert, by the way. But David stayed in the wilderness, and he saw that Saul came after him into the wilderness.",
+            "url": "https://ebible.org/engwebp/1SA26.htm#V3",
+            "textStatus": "present"
+          }
+        ],
+        "priorOccurrenceAudit": [
+          {
+            "chapter": 23,
+            "verse": 19,
+            "text": "Then the Ziphites came up to Saul to Gibeah, saying, “Doesn’t David hide himself with us in the strongholds in the woods, in the hill of Hachilah, which is on the south of the desert?",
+            "url": "https://ebible.org/engwebp/1SA23.htm#V19",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          },
+          {
+            "chapter": 26,
+            "verse": 1,
+            "text": "The Ziphites came to Saul to Gibeah, saying, “Doesn’t David hide himself in the hill of Hachilah, which is before the desert?”",
+            "url": "https://ebible.org/engwebp/1SA26.htm#V1",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          },
+          {
+            "chapter": 26,
+            "verse": 3,
+            "text": "Saul encamped in the hill of Hachilah, which is before the desert, by the way. But David stayed in the wilderness, and he saw that Saul came after him into the wilderness.",
+            "url": "https://ebible.org/engwebp/1SA26.htm#V3",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          }
+        ]
+      },
+      "currentReaderFields": {
+        "summaryJa": "サムエル記上23:19では、ジフの人々がダビデの隠れ場所をハキラの丘としてサウルに告げます。本文は丘の正確な場所を示しません。",
+        "subtitleJa": "ジフの荒野にある丘",
+        "identityNoteJa": "",
+        "historicalRoleJa": "ダビデの隠れ場所として言及される丘。",
+        "modernLocationJa": "本文は「丘」と呼びますが、現代の位置を特定する根拠はありません。",
+        "locationNoteJa": "地図の点は従来資料による未確認の参考候補で、古代の所在を確定するものではありません。"
+      },
+      "sourceIntegrity": {
+        "sourceIdsAllResolve": true,
+        "missingSourceIds": [],
+        "primaryURLsWellFormed": true,
+        "profileAndWikipediaCitationURLMatch": false,
+        "profileWikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_biblical_places#Hachilah",
+        "sourceWikipediaURL": "https://en.wikipedia.org/wiki/Hachilah"
+      },
+      "wikipedia": {
+        "currentMetadata": {
+          "title": "List of minor biblical places",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_biblical_places#Hachilah",
+          "kind": "shared-section",
+          "noteJa": "記事のハキラ節は、ハキラの丘をユダの荒野にある丘として扱い、正確な所在地は特定していません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": null
+        },
+        "currentBodyRead": {
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_biblical_places#Hachilah",
+          "bodyLocator": "Hachilah section lines 684–688; heading Hachilah appears in contents.",
+          "supportJa": "ユダの荒野にあるハキラの丘とし、1 Samuel 23:19、26:1を例示。正確な位置は記載されない。",
+          "checkedAtUTC": "2026-10-16T01:21:45Z"
+        },
+        "assessmentJa": "The Hachilah shared section and note are correct; however source citation URL remains the standalone Hachilah page, so this item stays open."
+      },
+      "geography": {
+        "coordinate": null,
+        "assessmentJa": "現代位置の確定根拠をWEB本文は与えない。座標nullを保持し、プロフィール上の候補表現も確定地点として扱っていない。"
+      },
+      "verdict": "fail",
+      "closureStatus": "open",
+      "reasonJa": "Source URL for the Wikipedia citation does not match the profile URL; author synchronization required.",
+      "checks": {
+        "bookLocalFirstAppearanceSafe": true,
+        "sameNameOrPlaceTypeReviewed": true,
+        "sourceAndEvidenceHashSynchronized": true,
+        "wikiBodyActuallyReadThisRound": true,
+        "coordinatePromotionAbsent": true
+      }
+    },
+    {
+      "book": "1SA",
+      "entityID": "place:hazor_545",
+      "nameJa": "ハツォル",
+      "draftPath": "drafts/places_3/1SA_hazor_545.json",
+      "evidencePath": "evidence/places_3/1SA_hazor_545.json",
+      "priorIndependentReview": {
+        "path": "reviews/independent-places_3.json",
+        "sha256": "7c7c5af5e42b34be60e1d791b92915c669598d213eb99952a31cbc55647ec6eb",
+        "priorDraftSHA256": "b65baab756ea5d5f5905e3c98b8be6099e6d9b6c26762f53667b3f7a89856cde",
+        "priorVerdict": "fail"
+      },
+      "currentSHA256": {
+        "draft": "8bbf07cac8966e183de64d2bb6e9b77fe7e75fa539d7a5830d3f065de0429b2a",
+        "evidence": "9dc8c15e558ce602c24368056a94d8fd2134c6c2de114318061aaa77ffb22288",
+        "profile": "6c9641ea861dc7452f2e9e64bf73f8375e5a14f57cf295331e404e00e6438224",
+        "evidenceReportedProfileSHA256": "6c9641ea861dc7452f2e9e64bf73f8375e5a14f57cf295331e404e00e6438224",
+        "evidenceReportedDraftSHA256": "8bbf07cac8966e183de64d2bb6e9b77fe7e75fa539d7a5830d3f065de0429b2a",
+        "profileHashMatches": true,
+        "draftHashMatches": true
+      },
+      "bookLocalSource": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "sourceFile": "inventory/targets/samuel1-web-verses.json",
+        "witnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab",
+        "knownBy": {
+          "chapter": 12,
+          "verse": 9
+        },
+        "firstOccurrence": {
+          "chapter": 12,
+          "verse": 9,
+          "text": "But they forgot the LORD their God; and he sold them into the hand of Sisera, captain of the army of Hazor, and into the hand of the Philistines, and into the hand of the king of Moab; and they fought against them.",
+          "url": "https://ebible.org/engwebp/1SA12.htm#V9"
+        },
+        "allProfilePassageTexts": [
+          {
+            "chapter": 12,
+            "verse": 9,
+            "text": "But they forgot the LORD their God; and he sold them into the hand of Sisera, captain of the army of Hazor, and into the hand of the Philistines, and into the hand of the king of Moab; and they fought against them.",
+            "url": "https://ebible.org/engwebp/1SA12.htm#V9",
+            "textStatus": "present"
+          }
+        ],
+        "priorOccurrenceAudit": [
+          {
+            "chapter": 12,
+            "verse": 9,
+            "text": "But they forgot the LORD their God; and he sold them into the hand of Sisera, captain of the army of Hazor, and into the hand of the Philistines, and into the hand of the king of Moab; and they fought against them.",
+            "url": "https://ebible.org/engwebp/1SA12.htm#V9",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          }
+        ]
+      },
+      "currentReaderFields": {
+        "summaryJa": "サムエル記上12:9は、イスラエルがハツォルの軍司令官シセラの手に渡された時代を回顧します。ここでのハツォルは軍勢の出所を示す名称で、本文は都市の所在地を説明しません。",
+        "subtitleJa": "シセラが軍司令官を務めたハツォル",
+        "identityNoteJa": "",
+        "historicalRoleJa": "イスラエルがシセラの手に渡された時代、シセラの軍司令官としての肩書とともに挙がる地名。",
+        "modernLocationJa": "本文だけでは古代ハツォルの具体的所在地・同名遺跡を特定できません。",
+        "locationNoteJa": "地図の点は従来資料による未確認の参考候補で、古代の所在を確定するものではありません。"
+      },
+      "sourceIntegrity": {
+        "sourceIdsAllResolve": true,
+        "missingSourceIds": [],
+        "primaryURLsWellFormed": true,
+        "profileAndWikipediaCitationURLMatch": true,
+        "profileWikipediaURL": "https://en.wikipedia.org/wiki/Tel_Hazor#Biblical_archaelogy",
+        "sourceWikipediaURL": "https://en.wikipedia.org/wiki/Tel_Hazor#Biblical_archaelogy"
+      },
+      "wikipedia": {
+        "currentMetadata": {
+          "title": "Tel Hazor",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Tel_Hazor#Biblical_archaelogy",
+          "kind": "related-section",
+          "noteJa": "記事は古代ハツォルの遺跡を扱い、士師記ではヤビン王とその軍司令官シセラを結び付けています。サムエル記上12:9の用例そのものや、そこに述べられる出来事の同定を示すものではありません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "relationVerified": true
+        },
+        "currentBodyRead": {
+          "url": "https://en.wikipedia.org/wiki/Tel_Hazor#Biblical_archaelogy",
+          "bodyLocator": "Heading (spelled “Biblical archaelogy” in page) and body lines 305–309; the misspelled fragment matches the actual heading id.",
+          "supportJa": "遺跡の聖書考古学節は、士師記のヤビンの都と軍司令官シセラの関係を説明。サムエル記上12:9の出来事自体の同定ではない。関連ページとしての限定が適切。",
+          "checkedAtUTC": "2026-10-16T01:21:45Z"
+        },
+        "assessmentJa": "Tel Hazor section discusses Judges/Jabin/Sisera as related context, distinct from this Samuel retrospective; relation-only metadata and note are bounded."
+      },
+      "geography": {
+        "coordinate": null,
+        "assessmentJa": "現代位置の確定根拠をWEB本文は与えない。座標nullを保持し、プロフィール上の候補表現も確定地点として扱っていない。"
+      },
+      "verdict": "qualified",
+      "closureStatus": "closed",
+      "reasonJa": "subtitleJa「王バアシャの町」は1SA12:9と矛盾する。固定本文はシセラを「ハツォルの軍の長」とするだけで、バアシャは登場しない。Wikipedia Tel Hazor本文L308–309はハツォルとシセラの結び付きを扱うため、別記事リンク候補にできるが1SA12:9の出来事と記事の士師記場面を混同せず related とする。",
+      "checks": {
+        "bookLocalFirstAppearanceSafe": true,
+        "sameNameOrPlaceTypeReviewed": true,
+        "sourceAndEvidenceHashSynchronized": true,
+        "wikiBodyActuallyReadThisRound": true,
+        "coordinatePromotionAbsent": true
+      }
+    },
+    {
+      "book": "1SA",
+      "entityID": "place:paran_921",
+      "nameJa": "パラン",
+      "draftPath": "drafts/places_3/1SA_paran_921.json",
+      "evidencePath": "evidence/places_3/1SA_paran_921.json",
+      "priorIndependentReview": {
+        "path": "reviews/independent-places_3.json",
+        "sha256": "7c7c5af5e42b34be60e1d791b92915c669598d213eb99952a31cbc55647ec6eb",
+        "priorDraftSHA256": "e917d74b8966dd7885edf83f38aade4a36b0dc410c6243c3d6fe33844e5c7f76",
+        "priorVerdict": "fail"
+      },
+      "currentSHA256": {
+        "draft": "9fb8c64a067c2cb69e12bd3c844a55bd6e5c6aa9cd6f9baea1e315bc6f4dc3a7",
+        "evidence": "7bfea1a223e5d3ca3443a43f3992441c3fb026962bd25074d2bdedcc28253a53",
+        "profile": "b950946cf9c73065d611ca0bb825da89bac9855491b1ae44cd0b933c65e93de8",
+        "evidenceReportedProfileSHA256": "b950946cf9c73065d611ca0bb825da89bac9855491b1ae44cd0b933c65e93de8",
+        "evidenceReportedDraftSHA256": "9fb8c64a067c2cb69e12bd3c844a55bd6e5c6aa9cd6f9baea1e315bc6f4dc3a7",
+        "profileHashMatches": true,
+        "draftHashMatches": true
+      },
+      "bookLocalSource": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "sourceFile": "inventory/targets/samuel1-web-verses.json",
+        "witnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab",
+        "knownBy": {
+          "chapter": 25,
+          "verse": 1
+        },
+        "firstOccurrence": {
+          "chapter": 25,
+          "verse": 1,
+          "text": "Samuel died; and all Israel gathered themselves together and mourned for him, and buried him at his house at Ramah. Then David arose and went down to the wilderness of Paran.",
+          "url": "https://ebible.org/engwebp/1SA25.htm#V1"
+        },
+        "allProfilePassageTexts": [
+          {
+            "chapter": 25,
+            "verse": 1,
+            "text": "Samuel died; and all Israel gathered themselves together and mourned for him, and buried him at his house at Ramah. Then David arose and went down to the wilderness of Paran.",
+            "url": "https://ebible.org/engwebp/1SA25.htm#V1",
+            "textStatus": "present"
+          }
+        ],
+        "priorOccurrenceAudit": [
+          {
+            "chapter": 25,
+            "verse": 1,
+            "text": "Samuel died; and all Israel gathered themselves together and mourned for him, and buried him at his house at Ramah. Then David arose and went down to the wilderness of Paran.",
+            "url": "https://ebible.org/engwebp/1SA25.htm#V1",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          }
+        ]
+      },
+      "currentReaderFields": {
+        "summaryJa": "サムエルの死が伝えられた後、ダビデはパランの荒野へ下ります。この節は荒野の広がりや経路の詳細を示していません。",
+        "subtitleJa": "ダビデが向かったパランの荒野",
+        "identityNoteJa": "",
+        "historicalRoleJa": "ダビデの移動先として挙がる荒野名。",
+        "modernLocationJa": "荒野の範囲と現代地理の正確な対応は確定できません。",
+        "locationNoteJa": "地図の点は従来資料による未確認の参考候補で、古代の所在を確定するものではありません。"
+      },
+      "sourceIntegrity": {
+        "sourceIdsAllResolve": true,
+        "missingSourceIds": [],
+        "primaryURLsWellFormed": true,
+        "profileAndWikipediaCitationURLMatch": true,
+        "profileWikipediaURL": "https://en.wikipedia.org/wiki/Desert_of_Paran",
+        "sourceWikipediaURL": "https://en.wikipedia.org/wiki/Desert_of_Paran"
+      },
+      "wikipedia": {
+        "currentMetadata": {
+          "title": "Desert of Paran",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Desert_of_Paran",
+          "kind": "article",
+          "noteJa": "記事はサムエルの死後、ダビデがパランの荒野へ向かったと記し、地域の比定には複数の説を挙げています。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true
+        },
+        "currentBodyRead": {
+          "url": "https://en.wikipedia.org/wiki/Desert_of_Paran",
+          "bodyLocator": "Lead line 131; Biblical section line 151; competing-geography section lines 152–160.",
+          "supportJa": "パランの荒野を聖書上の場所、ダビデの避難先とし、本文はサムエルの死後ダビデがそこへ行ったと明記。位置候補には異説がある。",
+          "checkedAtUTC": "2026-10-16T01:21:45Z"
+        },
+        "assessmentJa": "Page directly states David went to Wilderness of Paran after Samuel died; its competing locations support qualified regional uncertainty."
+      },
+      "geography": {
+        "coordinate": null,
+        "assessmentJa": "現代位置の確定根拠をWEB本文は与えない。座標nullを保持し、プロフィール上の候補表現も確定地点として扱っていない。"
+      },
+      "verdict": "qualified",
+      "closureStatus": "closed",
+      "reasonJa": "subtitleJa「パランというサムエルが戻った地名」は主語・行先を取り違える。1SA25:1ではサムエルの死後、ダビデがパランの荒野へ下る。実読 Wikipedia Desert of Paran L151も同じ記述を確認できるので記事候補が適切。広域の場所同定は複数説のままにする。",
+      "checks": {
+        "bookLocalFirstAppearanceSafe": true,
+        "sameNameOrPlaceTypeReviewed": true,
+        "sourceAndEvidenceHashSynchronized": true,
+        "wikiBodyActuallyReadThisRound": true,
+        "coordinatePromotionAbsent": true
+      }
+    },
+    {
+      "book": "1SA",
+      "entityID": "place:ramah_975",
+      "nameJa": "ラマ",
+      "draftPath": "drafts/places_3/1SA_ramah_975.json",
+      "evidencePath": "evidence/places_3/1SA_ramah_975.json",
+      "priorIndependentReview": {
+        "path": "reviews/independent-places_3.json",
+        "sha256": "7c7c5af5e42b34be60e1d791b92915c669598d213eb99952a31cbc55647ec6eb",
+        "priorDraftSHA256": "e58417f168bc7493e8361245d9a25d9d49e9b84ca898c47264a25b5e0ec83577",
+        "priorVerdict": "fail"
+      },
+      "currentSHA256": {
+        "draft": "fcc6a6d6dad1ff732e44a8cc368ff03b96fc0cdef6e428597ff979ee0e6d2a7f",
+        "evidence": "ff9b15ca2338fd6a7b7d2a83dd5f23fb2e9889b60db6b3e39092770da0131fda",
+        "profile": "b2716af706200e31fabd2d60c347c6574bd168eaf246279c1f80f08227b727cc",
+        "evidenceReportedProfileSHA256": "b2716af706200e31fabd2d60c347c6574bd168eaf246279c1f80f08227b727cc",
+        "evidenceReportedDraftSHA256": "fcc6a6d6dad1ff732e44a8cc368ff03b96fc0cdef6e428597ff979ee0e6d2a7f",
+        "profileHashMatches": true,
+        "draftHashMatches": true
+      },
+      "bookLocalSource": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "sourceFile": "inventory/targets/samuel1-web-verses.json",
+        "witnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab",
+        "knownBy": {
+          "chapter": 1,
+          "verse": 19
+        },
+        "firstOccurrence": {
+          "chapter": 1,
+          "verse": 19,
+          "text": "They rose up in the morning early and worshiped the LORD, then returned and came to their house to Ramah. Then Elkanah knew Hannah his wife; and the LORD remembered her.",
+          "url": "https://ebible.org/engwebp/1SA01.htm#V19"
+        },
+        "allProfilePassageTexts": [
+          {
+            "chapter": 1,
+            "verse": 19,
+            "text": "They rose up in the morning early and worshiped the LORD, then returned and came to their house to Ramah. Then Elkanah knew Hannah his wife; and the LORD remembered her.",
+            "url": "https://ebible.org/engwebp/1SA01.htm#V19",
+            "textStatus": "present"
+          },
+          {
+            "chapter": 2,
+            "verse": 11,
+            "text": "Elkanah went to Ramah to his house. The child served the LORD before Eli the priest.",
+            "url": "https://ebible.org/engwebp/1SA02.htm#V11",
+            "textStatus": "present"
+          },
+          {
+            "chapter": 7,
+            "verse": 17,
+            "text": "His return was to Ramah, for his house was there, and he judged Israel there; and he built an altar to the LORD there.",
+            "url": "https://ebible.org/engwebp/1SA07.htm#V17",
+            "textStatus": "present"
+          },
+          {
+            "chapter": 8,
+            "verse": 4,
+            "text": "Then all the elders of Israel gathered themselves together and came to Samuel to Ramah.",
+            "url": "https://ebible.org/engwebp/1SA08.htm#V4",
+            "textStatus": "present"
+          },
+          {
+            "chapter": 15,
+            "verse": 34,
+            "text": "Then Samuel went to Ramah; and Saul went up to his house to Gibeah of Saul.",
+            "url": "https://ebible.org/engwebp/1SA15.htm#V34",
+            "textStatus": "present"
+          },
+          {
+            "chapter": 16,
+            "verse": 13,
+            "text": "Then Samuel took the horn of oil and anointed him in the middle of his brothers. Then the LORD’s Spirit came mightily on David from that day forward. So Samuel rose up and went to Ramah.",
+            "url": "https://ebible.org/engwebp/1SA16.htm#V13",
+            "textStatus": "present"
+          },
+          {
+            "chapter": 19,
+            "verse": 18,
+            "text": "Now David fled and escaped, and came to Samuel at Ramah, and told him all that Saul had done to him. He and Samuel went and lived in Naioth.",
+            "url": "https://ebible.org/engwebp/1SA19.htm#V18",
+            "textStatus": "present"
+          },
+          {
+            "chapter": 19,
+            "verse": 19,
+            "text": "Saul was told, saying, “Behold, David is at Naioth in Ramah.”",
+            "url": "https://ebible.org/engwebp/1SA19.htm#V19",
+            "textStatus": "present"
+          },
+          {
+            "chapter": 19,
+            "verse": 22,
+            "text": "Then he also went to Ramah, and came to the great well that is in Secu: and he asked, “Where are Samuel and David?” One said, “Behold, they are at Naioth in Ramah.”",
+            "url": "https://ebible.org/engwebp/1SA19.htm#V22",
+            "textStatus": "present"
+          },
+          {
+            "chapter": 19,
+            "verse": 23,
+            "text": "He went there to Naioth in Ramah. Then God’s Spirit came on him also, and he went on, and prophesied, until he came to Naioth in Ramah.",
+            "url": "https://ebible.org/engwebp/1SA19.htm#V23",
+            "textStatus": "present"
+          },
+          {
+            "chapter": 20,
+            "verse": 1,
+            "text": "David fled from Naioth in Ramah, and came and said to Jonathan, “What have I done? What is my iniquity? What is my sin before your father, that he seeks my life?”",
+            "url": "https://ebible.org/engwebp/1SA20.htm#V1",
+            "textStatus": "present"
+          },
+          {
+            "chapter": 25,
+            "verse": 1,
+            "text": "Samuel died; and all Israel gathered themselves together and mourned for him, and buried him at his house at Ramah. Then David arose and went down to the wilderness of Paran.",
+            "url": "https://ebible.org/engwebp/1SA25.htm#V1",
+            "textStatus": "present"
+          },
+          {
+            "chapter": 28,
+            "verse": 3,
+            "text": "Now Samuel was dead, and all Israel had mourned for him and buried him in Ramah, even in his own city. Saul had sent away those who had familiar spirits and the wizards out of the land.",
+            "url": "https://ebible.org/engwebp/1SA28.htm#V3",
+            "textStatus": "present"
+          }
+        ],
+        "priorOccurrenceAudit": [
+          {
+            "chapter": 1,
+            "verse": 19,
+            "text": "They rose up in the morning early and worshiped the LORD, then returned and came to their house to Ramah. Then Elkanah knew Hannah his wife; and the LORD remembered her.",
+            "url": "https://ebible.org/engwebp/1SA01.htm#V19",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          },
+          {
+            "chapter": 2,
+            "verse": 11,
+            "text": "Elkanah went to Ramah to his house. The child served the LORD before Eli the priest.",
+            "url": "https://ebible.org/engwebp/1SA02.htm#V11",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          },
+          {
+            "chapter": 7,
+            "verse": 17,
+            "text": "His return was to Ramah, for his house was there, and he judged Israel there; and he built an altar to the LORD there.",
+            "url": "https://ebible.org/engwebp/1SA07.htm#V17",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          },
+          {
+            "chapter": 8,
+            "verse": 4,
+            "text": "Then all the elders of Israel gathered themselves together and came to Samuel to Ramah.",
+            "url": "https://ebible.org/engwebp/1SA08.htm#V4",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          },
+          {
+            "chapter": 15,
+            "verse": 34,
+            "text": "Then Samuel went to Ramah; and Saul went up to his house to Gibeah of Saul.",
+            "url": "https://ebible.org/engwebp/1SA15.htm#V34",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          },
+          {
+            "chapter": 16,
+            "verse": 13,
+            "text": "Then Samuel took the horn of oil and anointed him in the middle of his brothers. Then the LORD’s Spirit came mightily on David from that day forward. So Samuel rose up and went to Ramah.",
+            "url": "https://ebible.org/engwebp/1SA16.htm#V13",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          },
+          {
+            "chapter": 19,
+            "verse": 18,
+            "text": "Now David fled and escaped, and came to Samuel at Ramah, and told him all that Saul had done to him. He and Samuel went and lived in Naioth.",
+            "url": "https://ebible.org/engwebp/1SA19.htm#V18",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          },
+          {
+            "chapter": 19,
+            "verse": 19,
+            "text": "Saul was told, saying, “Behold, David is at Naioth in Ramah.”",
+            "url": "https://ebible.org/engwebp/1SA19.htm#V19",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          },
+          {
+            "chapter": 19,
+            "verse": 22,
+            "text": "Then he also went to Ramah, and came to the great well that is in Secu: and he asked, “Where are Samuel and David?” One said, “Behold, they are at Naioth in Ramah.”",
+            "url": "https://ebible.org/engwebp/1SA19.htm#V22",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          },
+          {
+            "chapter": 19,
+            "verse": 23,
+            "text": "He went there to Naioth in Ramah. Then God’s Spirit came on him also, and he went on, and prophesied, until he came to Naioth in Ramah.",
+            "url": "https://ebible.org/engwebp/1SA19.htm#V23",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          },
+          {
+            "chapter": 20,
+            "verse": 1,
+            "text": "David fled from Naioth in Ramah, and came and said to Jonathan, “What have I done? What is my iniquity? What is my sin before your father, that he seeks my life?”",
+            "url": "https://ebible.org/engwebp/1SA20.htm#V1",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          },
+          {
+            "chapter": 25,
+            "verse": 1,
+            "text": "Samuel died; and all Israel gathered themselves together and mourned for him, and buried him at his house at Ramah. Then David arose and went down to the wilderness of Paran.",
+            "url": "https://ebible.org/engwebp/1SA25.htm#V1",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          },
+          {
+            "chapter": 28,
+            "verse": 3,
+            "text": "Now Samuel was dead, and all Israel had mourned for him and buried him in Ramah, even in his own city. Saul had sent away those who had familiar spirits and the wizards out of the land.",
+            "url": "https://ebible.org/engwebp/1SA28.htm#V3",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          }
+        ]
+      },
+      "currentReaderFields": {
+        "summaryJa": "サムエル記上1:19で、エルカナ一家はラマの自宅へ戻ったと記されます。ここでは家族の居住地として現れる地名を扱います。",
+        "subtitleJa": "エルカナ一家が帰ったラマ",
+        "identityNoteJa": "",
+        "historicalRoleJa": "エルカナ一家が住み、祭りの後に帰った地名。",
+        "modernLocationJa": "同名のラマが複数あります。サムエルのラマを他のラマと確定的に同一視しません。",
+        "locationNoteJa": "地図の点は従来資料による未確認の参考候補で、古代の所在を確定するものではありません。"
+      },
+      "sourceIntegrity": {
+        "sourceIdsAllResolve": true,
+        "missingSourceIds": [],
+        "primaryURLsWellFormed": true,
+        "profileAndWikipediaCitationURLMatch": true,
+        "profileWikipediaURL": "https://en.wikipedia.org/wiki/Ramah_in_Benjamin",
+        "sourceWikipediaURL": "https://en.wikipedia.org/wiki/Ramah_in_Benjamin"
+      },
+      "wikipedia": {
+        "currentMetadata": {
+          "title": "Ramah in Benjamin",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Ramah_in_Benjamin",
+          "kind": "related-section",
+          "noteJa": "記事はベニヤミンのラマと他の聖書中のラマを扱い、候補地や同一視に幅があると述べています。1:19にある家族のラマを特定の現代遺跡へ結び付ける根拠にはなりません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "relationVerified": true
+        },
+        "currentBodyRead": {
+          "url": "https://en.wikipedia.org/wiki/Ramah_in_Benjamin",
+          "bodyLocator": "Lead lines 118–120; Biblical accounts lines 125–129.",
+          "supportJa": "ベニヤミンのラマと複数の候補地を記し、1 Samuel 1:1のRamathaim-zophimとElkanah/Hannah、8:4を併記する。プロフィールが扱う1:19のRamahがこの記事の町と同一という確証にはならない。",
+          "checkedAtUTC": "2026-10-16T01:21:45Z"
+        },
+        "assessmentJa": "Article is about Ramah in Benjamin, also references Ramathaim-zophim; relationship to the 1:19 homonymous family location is not established. Related-only note is accurate."
+      },
+      "geography": {
+        "coordinate": null,
+        "assessmentJa": "現代位置の確定根拠をWEB本文は与えない。座標nullを保持し、プロフィール上の候補表現も確定地点として扱っていない。"
+      },
+      "verdict": "qualified",
+      "closureStatus": "closed",
+      "reasonJa": "summaryは1:19の家族の帰宅として正確だが、subtitleJa「サムエルの居所・活動地」とhistoricalRoleJaの「サムエルに結び付く居住地名」は後の活動地情報を初出の常時表示欄へ持ち込む。1:19時点のエルカナ一家の家・帰宅先へ限定し、後のサムエル活動はfactに隔離する。",
+      "checks": {
+        "bookLocalFirstAppearanceSafe": true,
+        "sameNameOrPlaceTypeReviewed": true,
+        "sourceAndEvidenceHashSynchronized": true,
+        "wikiBodyActuallyReadThisRound": true,
+        "coordinatePromotionAbsent": true
+      }
+    },
+    {
+      "book": "1SA",
+      "entityID": "place:ramoth_982",
+      "nameJa": "ラモト",
+      "draftPath": "drafts/places_3/1SA_ramoth_982.json",
+      "evidencePath": "evidence/places_3/1SA_ramoth_982.json",
+      "priorIndependentReview": {
+        "path": "reviews/independent-places_3.json",
+        "sha256": "7c7c5af5e42b34be60e1d791b92915c669598d213eb99952a31cbc55647ec6eb",
+        "priorDraftSHA256": "ed10b477505ea12f77aa494fbaeb464e735bcfbdf5f5ad3bf817c759d9644463",
+        "priorVerdict": "fail"
+      },
+      "currentSHA256": {
+        "draft": "2fe84069a8c7092994770caa918535f568c4f1ab08ad8f8e3b21974deab24213",
+        "evidence": "b8c7b24d8b445d5367d10c0737cd1c36a8e93660fbcede1638e618158dcf7e63",
+        "profile": "b99d9dbef36ab039237f123bbf877700d37fa0a510dd7b47234c3cd6fed622f2",
+        "evidenceReportedProfileSHA256": "b99d9dbef36ab039237f123bbf877700d37fa0a510dd7b47234c3cd6fed622f2",
+        "evidenceReportedDraftSHA256": "2fe84069a8c7092994770caa918535f568c4f1ab08ad8f8e3b21974deab24213",
+        "profileHashMatches": true,
+        "draftHashMatches": true
+      },
+      "bookLocalSource": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "sourceFile": "inventory/targets/samuel1-web-verses.json",
+        "witnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab",
+        "knownBy": {
+          "chapter": 30,
+          "verse": 27
+        },
+        "firstOccurrence": {
+          "chapter": 30,
+          "verse": 27,
+          "text": "He sent it to those who were in Bethel, to those who were in Ramoth of the South, to those who were in Jattir,",
+          "url": "https://ebible.org/engwebp/1SA30.htm#V27"
+        },
+        "allProfilePassageTexts": [
+          {
+            "chapter": 30,
+            "verse": 27,
+            "text": "He sent it to those who were in Bethel, to those who were in Ramoth of the South, to those who were in Jattir,",
+            "url": "https://ebible.org/engwebp/1SA30.htm#V27",
+            "textStatus": "present"
+          }
+        ],
+        "priorOccurrenceAudit": [
+          {
+            "chapter": 30,
+            "verse": 27,
+            "text": "He sent it to those who were in Bethel, to those who were in Ramoth of the South, to those who were in Jattir,",
+            "url": "https://ebible.org/engwebp/1SA30.htm#V27",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          }
+        ]
+      },
+      "currentReaderFields": {
+        "summaryJa": "30:27では、ダビデが戦利品をユダの長老たちへ送った町々の一つにラモトが挙がります。",
+        "subtitleJa": "ラモトというダビデが略奪品を送った先",
+        "identityNoteJa": "",
+        "historicalRoleJa": "戦利品の送付先となった町の一つ。",
+        "modernLocationJa": "正確な位置と同名の他のラモトとの関係は不明です。",
+        "locationNoteJa": "地図の点は従来資料による未確認の参考候補で、古代の所在を確定するものではありません。"
+      },
+      "sourceIntegrity": {
+        "sourceIdsAllResolve": true,
+        "missingSourceIds": [],
+        "primaryURLsWellFormed": true,
+        "profileAndWikipediaCitationURLMatch": true,
+        "profileWikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_biblical_places#Ramat-Negev",
+        "sourceWikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_biblical_places#Ramat-Negev"
+      },
+      "wikipedia": {
+        "currentMetadata": {
+          "title": "List of minor biblical places",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_biblical_places#Ramat-Negev",
+          "kind": "related-section",
+          "noteJa": "記事の「ラマト・ネゲブ」節は、サムエル記上30:27のラモト・ネゲブと同じ場所の可能性を挙げ、現代の候補地も可能性として記します。確定した比定ではありません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "relationVerified": true
+        },
+        "currentBodyRead": {
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_biblical_places#Ramat-Negev",
+          "bodyLocator": "Ramat-Negev section lines 1241–1246; fragment heading present.",
+          "supportJa": "Ramat-Negevは1 Samuel 30:27のRamot-Negevと「likely the same」とされ、Hurvath Uza同定はpossibleと記述。可能性を示す関連記事に留まる。",
+          "checkedAtUTC": "2026-10-16T01:21:45Z"
+        },
+        "assessmentJa": "Ramat-Negev section calls association with 1 Sam 30:27 likely and modern site merely possible; existing note accurately preserves uncertainty."
+      },
+      "geography": {
+        "coordinate": null,
+        "assessmentJa": "現代位置の確定根拠をWEB本文は与えない。座標nullを保持し、プロフィール上の候補表現も確定地点として扱っていない。"
+      },
+      "verdict": "qualified",
+      "closureStatus": "closed",
+      "reasonJa": "Wikipedia nullのままだが実読した List of minor biblical places L1241–1246にRamat-Negev項があり、1SA30:27のRamot-Negevとおそらく同地と記す。現プロフィールは不確実な同定を保っているため、related-sectionリンク候補として追加し、同一性・現代地点は確定しない。",
+      "checks": {
+        "bookLocalFirstAppearanceSafe": true,
+        "sameNameOrPlaceTypeReviewed": true,
+        "sourceAndEvidenceHashSynchronized": true,
+        "wikiBodyActuallyReadThisRound": true,
+        "coordinatePromotionAbsent": true
+      }
+    },
+    {
+      "book": "1SA",
+      "entityID": "place:shalishah_1058",
+      "nameJa": "シャリシャ地方",
+      "draftPath": "drafts/places_3/1SA_shalishah_1058.json",
+      "evidencePath": "evidence/places_3/1SA_shalishah_1058.json",
+      "priorIndependentReview": {
+        "path": "reviews/independent-places_3.json",
+        "sha256": "7c7c5af5e42b34be60e1d791b92915c669598d213eb99952a31cbc55647ec6eb",
+        "priorDraftSHA256": "fe2bf1ec146cbfd2e68c99ced35d5ebf22776e1967508cfdd76dadf34d7a8110",
+        "priorVerdict": "fail"
+      },
+      "currentSHA256": {
+        "draft": "97870811cb12e495f74a6bd28b73afcc1671b1db06b07b24a31cc5d47a074193",
+        "evidence": "9bb59058702c11e0cecaf0ae1349001f5bd1daf208f430314f758b1940e9f3b8",
+        "profile": "ee4d06740ee995228208c2065d486a13ca5d0aa811422b40c80127676a254cc6",
+        "evidenceReportedProfileSHA256": "ee4d06740ee995228208c2065d486a13ca5d0aa811422b40c80127676a254cc6",
+        "evidenceReportedDraftSHA256": "97870811cb12e495f74a6bd28b73afcc1671b1db06b07b24a31cc5d47a074193",
+        "profileHashMatches": true,
+        "draftHashMatches": true
+      },
+      "bookLocalSource": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "sourceFile": "inventory/targets/samuel1-web-verses.json",
+        "witnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab",
+        "knownBy": {
+          "chapter": 9,
+          "verse": 4
+        },
+        "firstOccurrence": {
+          "chapter": 9,
+          "verse": 4,
+          "text": "He passed through the hill country of Ephraim, and passed through the land of Shalishah, but they didn’t find them. Then they passed through the land of Shaalim, and they weren’t there. Then he passed through the land of the Benjamites, but they didn’t find them.",
+          "url": "https://ebible.org/engwebp/1SA09.htm#V4"
+        },
+        "allProfilePassageTexts": [
+          {
+            "chapter": 9,
+            "verse": 4,
+            "text": "He passed through the hill country of Ephraim, and passed through the land of Shalishah, but they didn’t find them. Then they passed through the land of Shaalim, and they weren’t there. Then he passed through the land of the Benjamites, but they didn’t find them.",
+            "url": "https://ebible.org/engwebp/1SA09.htm#V4",
+            "textStatus": "present"
+          }
+        ],
+        "priorOccurrenceAudit": [
+          {
+            "chapter": 9,
+            "verse": 4,
+            "text": "He passed through the hill country of Ephraim, and passed through the land of Shalishah, but they didn’t find them. Then they passed through the land of Shaalim, and they weren’t there. Then he passed through the land of the Benjamites, but they didn’t find them.",
+            "url": "https://ebible.org/engwebp/1SA09.htm#V4",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          }
+        ]
+      },
+      "currentReaderFields": {
+        "summaryJa": "9:4では、サウルと従者が雌ろばを探してシャリシャ地方を通ります。本文は町か広域かの詳しい範囲を示しません。",
+        "subtitleJa": "シャリシャ地方というサウルが通った地方名",
+        "identityNoteJa": "",
+        "historicalRoleJa": "サウルの捜索行の経由地。",
+        "modernLocationJa": "古代の地方範囲・現代位置とも確定しません。",
+        "locationNoteJa": "地図の点は従来資料による未確認の参考候補で、古代の所在を確定するものではありません。"
+      },
+      "sourceIntegrity": {
+        "sourceIdsAllResolve": true,
+        "missingSourceIds": [],
+        "primaryURLsWellFormed": true,
+        "profileAndWikipediaCitationURLMatch": true,
+        "profileWikipediaURL": "https://en.wikipedia.org/wiki/Shalishah",
+        "sourceWikipediaURL": "https://en.wikipedia.org/wiki/Shalishah"
+      },
+      "wikipedia": {
+        "currentMetadata": {
+          "title": "Shalishah",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Shalishah",
+          "kind": "related-section",
+          "noteJa": "記事はバアル・シャリシャを扱い、脚注でサムエル記上9:4の欽定訳聖書が「Shalisha」と綴ることに触れます。WEBPの「シャリシャ地方」と同じ地点だとは説明していません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "relationVerified": true
+        },
+        "currentBodyRead": {
+          "url": "https://en.wikipedia.org/wiki/Shalishah",
+          "bodyLocator": "Article body lines 107–110; note 115.",
+          "supportJa": "本文はBaal-Shalishaを扱い、脚注だけがKJVの1 Samuel 9:4綴り「Shalisha」を指摘。WEBPが示す「land of Shalishah」と同一地点だとは述べない。related-onlyが適切。",
+          "checkedAtUTC": "2026-10-16T01:21:45Z"
+        },
+        "assessmentJa": "Page is about Baal-Shalisha; its KJV note on the spelling Shalisha only establishes a spelling relation, not the WEBP route district’s identity."
+      },
+      "geography": {
+        "coordinate": null,
+        "assessmentJa": "現代位置の確定根拠をWEB本文は与えない。座標nullを保持し、プロフィール上の候補表現も確定地点として扱っていない。"
+      },
+      "verdict": "qualified",
+      "closureStatus": "closed",
+      "reasonJa": "Wikipedia nullは不完全。実読 Shalishah 記事L115は1SA9:4のKJVがShalisha表記と記す。記事の主題Baal-ShalishaとWEBPの地方名Shalishahが同一とは記事本文から断定できないので、related-section/identity=false/relation=trueに限って候補提示し、所在地の比定は現状どおり保留する。",
+      "checks": {
+        "bookLocalFirstAppearanceSafe": true,
+        "sameNameOrPlaceTypeReviewed": true,
+        "sourceAndEvidenceHashSynchronized": true,
+        "wikiBodyActuallyReadThisRound": true,
+        "coordinatePromotionAbsent": true
+      }
+    },
+    {
+      "book": "2SA",
+      "entityID": "place:baale-judah_139",
+      "nameJa": "バアレ・ユダ",
+      "draftPath": "drafts/places_3/2SA_baale-judah_139.json",
+      "evidencePath": "evidence/places_3/2SA_baale-judah_139.json",
+      "priorIndependentReview": {
+        "path": "reviews/independent-places_3.json",
+        "sha256": "7c7c5af5e42b34be60e1d791b92915c669598d213eb99952a31cbc55647ec6eb",
+        "priorDraftSHA256": "da920ff75e9655102b503a753533177401ff6900000704fb8c724247e4506234",
+        "priorVerdict": "fail"
+      },
+      "currentSHA256": {
+        "draft": "6fb3936c4f1db21657e9c7977d41e684867a1c240d1c32715d40840995839382",
+        "evidence": "6ff8c25bd9041fe8961e5c5d2d5ea41459e2dd9a86a7580cddc61b87c35e4f93",
+        "profile": "2cbec3f53f6c0b6125d352cb8441897e0216535f560f0230bbc40a179a7a40a3",
+        "evidenceReportedProfileSHA256": "2cbec3f53f6c0b6125d352cb8441897e0216535f560f0230bbc40a179a7a40a3",
+        "evidenceReportedDraftSHA256": "6fb3936c4f1db21657e9c7977d41e684867a1c240d1c32715d40840995839382",
+        "profileHashMatches": true,
+        "draftHashMatches": true
+      },
+      "bookLocalSource": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "sourceFile": "inventory/targets/samuel2-web-verses.json",
+        "witnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+        "knownBy": {
+          "chapter": 6,
+          "verse": 2
+        },
+        "firstOccurrence": {
+          "chapter": 6,
+          "verse": 2,
+          "text": "David arose and went with all the people who were with him from Baale Judah, to bring up from there God’s ark, which is called by the Name, even the name of the LORD of Armies who sits above the cherubim.",
+          "url": "https://ebible.org/engwebp/2SA06.htm#V2"
+        },
+        "allProfilePassageTexts": [
+          {
+            "chapter": 6,
+            "verse": 2,
+            "text": "David arose and went with all the people who were with him from Baale Judah, to bring up from there God’s ark, which is called by the Name, even the name of the LORD of Armies who sits above the cherubim.",
+            "url": "https://ebible.org/engwebp/2SA06.htm#V2",
+            "textStatus": "present"
+          }
+        ],
+        "priorOccurrenceAudit": [
+          {
+            "chapter": 6,
+            "verse": 2,
+            "text": "David arose and went with all the people who were with him from Baale Judah, to bring up from there God’s ark, which is called by the Name, even the name of the LORD of Armies who sits above the cherubim.",
+            "url": "https://ebible.org/engwebp/2SA06.htm#V2",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          }
+        ]
+      },
+      "currentReaderFields": {
+        "summaryJa": "6:2では、ダビデがバアレ・ユダから契約の箱を運び出そうとしたと記されます。",
+        "subtitleJa": "バアレ・ユダという契約の箱を取りに向かった町",
+        "identityNoteJa": "",
+        "historicalRoleJa": "契約の箱を移す行程の出発地点。",
+        "modernLocationJa": "バアレ・ユダをキルヤト・エアリムと同一視する伝統的理解がありますが、本文の表現だけでは地点比定を確定しません。",
+        "locationNoteJa": "地図の点は従来資料による未確認の参考候補で、古代の所在を確定するものではありません。"
+      },
+      "sourceIntegrity": {
+        "sourceIdsAllResolve": true,
+        "missingSourceIds": [],
+        "primaryURLsWellFormed": true,
+        "profileAndWikipediaCitationURLMatch": true,
+        "profileWikipediaURL": "https://en.wikipedia.org/wiki/Baale_of_Judah",
+        "sourceWikipediaURL": "https://en.wikipedia.org/wiki/Baale_of_Judah"
+      },
+      "wikipedia": {
+        "currentMetadata": {
+          "title": "Baale of Judah",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Baale_of_Judah",
+          "kind": "article",
+          "noteJa": "記事はバアレ・ユダを、ダビデが契約の箱を運び出した町として説明しています。現代の所在地や遺跡比定は示していません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true
+        },
+        "currentBodyRead": {
+          "url": "https://en.wikipedia.org/wiki/Baale_of_Judah",
+          "bodyLocator": "Lead lines 103–114.",
+          "supportJa": "バアレ・ユダをダビデが契約の箱を運び出した町とし、2 Samuel 6:2を引用。1 Chronicles 13:6でKirjath-jearimという記載もあるが、記事は現代の遺跡地点を示さない。",
+          "checkedAtUTC": "2026-10-16T01:21:45Z"
+        },
+        "assessmentJa": "Article directly identifies the ark’s departure town and cites 2 Sam 6:2; modern location remains unsupported, and profile properly uses null coordinate."
+      },
+      "geography": {
+        "coordinate": null,
+        "assessmentJa": "現代位置の確定根拠をWEB本文は与えない。座標nullを保持し、プロフィール上の候補表現も確定地点として扱っていない。"
+      },
+      "verdict": "qualified",
+      "closureStatus": "closed",
+      "reasonJa": "Wikipedia nullだが実読 Baale of Judah 記事L103はこの名を町として説明し、ダビデが箱を運び出した場所とし、1 Chronicles 13:6でKirjath-jearimと呼ぶと明記。現代位置/名称関係を記事の記述以上に拡張せず、articleリンクを追加する。",
+      "checks": {
+        "bookLocalFirstAppearanceSafe": true,
+        "sameNameOrPlaceTypeReviewed": true,
+        "sourceAndEvidenceHashSynchronized": true,
+        "wikiBodyActuallyReadThisRound": true,
+        "coordinatePromotionAbsent": true
+      }
+    },
+    {
+      "book": "2SA",
+      "entityID": "place:gilboa_474",
+      "nameJa": "ギルボア山地",
+      "draftPath": "drafts/places_3/2SA_gilboa_474.json",
+      "evidencePath": "evidence/places_3/2SA_gilboa_474.json",
+      "priorIndependentReview": {
+        "path": "reviews/independent-places_3.json",
+        "sha256": "7c7c5af5e42b34be60e1d791b92915c669598d213eb99952a31cbc55647ec6eb",
+        "priorDraftSHA256": "c2abf10f61099948a24b5bf22d3c74594429c5d4b45970a062ea7ef776062a49",
+        "priorVerdict": "fail"
+      },
+      "currentSHA256": {
+        "draft": "e65ec7d809f97f77dd7117e10e05672b98db8a841e2bc1569e6f0702e85077f9",
+        "evidence": "d9a86e0d7af58d00cc1057aa0011d50ecf13ea1b2b97d0e73a2fbaeaf104daed",
+        "profile": "cb9a8f81412b483ae654456a7f2e83b1fb4e8b66e3b7a56fb5459b0f6058aa7c",
+        "evidenceReportedProfileSHA256": "cb9a8f81412b483ae654456a7f2e83b1fb4e8b66e3b7a56fb5459b0f6058aa7c",
+        "evidenceReportedDraftSHA256": "e65ec7d809f97f77dd7117e10e05672b98db8a841e2bc1569e6f0702e85077f9",
+        "profileHashMatches": true,
+        "draftHashMatches": true
+      },
+      "bookLocalSource": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "sourceFile": "inventory/targets/samuel2-web-verses.json",
+        "witnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+        "knownBy": {
+          "chapter": 1,
+          "verse": 21
+        },
+        "firstOccurrence": {
+          "chapter": 1,
+          "verse": 21,
+          "text": "You mountains of Gilboa, let there be no dew or rain on you, and no fields of offerings; for there the shield of the mighty was defiled and cast away, the shield of Saul was not anointed with oil.",
+          "url": "https://ebible.org/engwebp/2SA01.htm#V21"
+        },
+        "allProfilePassageTexts": [
+          {
+            "chapter": 1,
+            "verse": 21,
+            "text": "You mountains of Gilboa, let there be no dew or rain on you, and no fields of offerings; for there the shield of the mighty was defiled and cast away, the shield of Saul was not anointed with oil.",
+            "url": "https://ebible.org/engwebp/2SA01.htm#V21",
+            "textStatus": "present"
+          },
+          {
+            "chapter": 21,
+            "verse": 12,
+            "text": "So David went and took the bones of Saul and the bones of Jonathan his son from the men of Jabesh Gilead, who had stolen them from the street of Beth Shan, where the Philistines had hanged them in the day that the Philistines killed Saul in Gilboa;",
+            "url": "https://ebible.org/engwebp/2SA21.htm#V12",
+            "textStatus": "present"
+          }
+        ],
+        "priorOccurrenceAudit": [
+          {
+            "chapter": 1,
+            "verse": 21,
+            "text": "You mountains of Gilboa, let there be no dew or rain on you, and no fields of offerings; for there the shield of the mighty was defiled and cast away, the shield of Saul was not anointed with oil.",
+            "url": "https://ebible.org/engwebp/2SA01.htm#V21",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          },
+          {
+            "chapter": 21,
+            "verse": 12,
+            "text": "So David went and took the bones of Saul and the bones of Jonathan his son from the men of Jabesh Gilead, who had stolen them from the street of Beth Shan, where the Philistines had hanged them in the day that the Philistines killed Saul in Gilboa;",
+            "url": "https://ebible.org/engwebp/2SA21.htm#V12",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          }
+        ]
+      },
+      "currentReaderFields": {
+        "summaryJa": "サムエル記下1:21の哀歌は、サウルがギルボア山地で倒れたことを語ります。ここでは都市でなく山地を指す地名として扱います。",
+        "subtitleJa": "サウルが倒れた山地",
+        "identityNoteJa": "",
+        "historicalRoleJa": "サウルの最終戦の場として哀歌に現れる山地。",
+        "modernLocationJa": "山地として扱い、点の候補を確定地点として扱いません。",
+        "locationNoteJa": "地図の点は従来資料による未確認の参考候補で、古代の所在を確定するものではありません。"
+      },
+      "sourceIntegrity": {
+        "sourceIdsAllResolve": true,
+        "missingSourceIds": [],
+        "primaryURLsWellFormed": true,
+        "profileAndWikipediaCitationURLMatch": true,
+        "profileWikipediaURL": "https://en.wikipedia.org/wiki/Mount_Gilboa",
+        "sourceWikipediaURL": "https://en.wikipedia.org/wiki/Mount_Gilboa"
+      },
+      "wikipedia": {
+        "currentMetadata": {
+          "title": "Mount Gilboa",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Mount_Gilboa",
+          "kind": "article",
+          "noteJa": "記事はギルボアを山地として扱い、サウルに関わる戦いと結び付けています。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": null
+        },
+        "currentBodyRead": {
+          "url": "https://en.wikipedia.org/wiki/Mount_Gilboa",
+          "bodyLocator": "Lead lines 154–155; In the Bible lines 169–170.",
+          "supportJa": "ギルボアを山地として説明し、サウルの最後の戦いをSamuel書と結び、2 Samuel 1:21の哀歌を引用。山地profileと整合。",
+          "checkedAtUTC": "2026-10-16T01:21:45Z"
+        },
+        "assessmentJa": "Page supports mountain-range type and Samuel battle/lament references; current reader text identifies the 2 Sam 1:21 as a lament and contains no later-book spoiler."
+      },
+      "geography": {
+        "coordinate": null,
+        "assessmentJa": "現代位置の確定根拠をWEB本文は与えない。座標nullを保持し、プロフィール上の候補表現も確定地点として扱っていない。"
+      },
+      "verdict": "qualified",
+      "closureStatus": "closed",
+      "reasonJa": "wikipedia.noteJaに「2 Samuelの哀歌・遺体記事をプロフィール本文に追加しない」という編集者向けの内部指示があり、さらに21:12の後続情報を予告する。読者欄は1:21の哀歌がギルボアを語ることと山地の場所説明に限定。",
+      "checks": {
+        "bookLocalFirstAppearanceSafe": true,
+        "sameNameOrPlaceTypeReviewed": true,
+        "sourceAndEvidenceHashSynchronized": true,
+        "wikiBodyActuallyReadThisRound": true,
+        "coordinatePromotionAbsent": true
+      }
+    },
+    {
+      "book": "2SA",
+      "entityID": "place:jezreel_643",
+      "nameJa": "イズレエル",
+      "draftPath": "drafts/places_3/2SA_jezreel_643.json",
+      "evidencePath": "evidence/places_3/2SA_jezreel_643.json",
+      "priorIndependentReview": {
+        "path": "reviews/independent-places_3.json",
+        "sha256": "7c7c5af5e42b34be60e1d791b92915c669598d213eb99952a31cbc55647ec6eb",
+        "priorDraftSHA256": "a78dbdef040d4f5006402b434ee6f2ff40cc7686e4bce3de3354400660af7002",
+        "priorVerdict": "fail"
+      },
+      "currentSHA256": {
+        "draft": "05eaecc7a8760e18dba0b823532c249f4f9cf0dc52532b871897b7adfbadc415",
+        "evidence": "0118c8ab0af11129bbdf7292e57a0e3e1d1ede7bc6d883a18c440f8e893677bb",
+        "profile": "e476c3828245b6b94994b95df2ee99a9ec64af28bf0282361454299d8dad9f3a",
+        "evidenceReportedProfileSHA256": "e476c3828245b6b94994b95df2ee99a9ec64af28bf0282361454299d8dad9f3a",
+        "evidenceReportedDraftSHA256": "05eaecc7a8760e18dba0b823532c249f4f9cf0dc52532b871897b7adfbadc415",
+        "profileHashMatches": true,
+        "draftHashMatches": true
+      },
+      "bookLocalSource": {
+        "pinnedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+        "sourceFile": "inventory/targets/samuel2-web-verses.json",
+        "witnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+        "knownBy": {
+          "chapter": 2,
+          "verse": 9
+        },
+        "firstOccurrence": {
+          "chapter": 2,
+          "verse": 9,
+          "text": "He made him king over Gilead, over the Ashurites, over Jezreel, over Ephraim, over Benjamin, and over all Israel.",
+          "url": "https://ebible.org/engwebp/2SA02.htm#V9"
+        },
+        "allProfilePassageTexts": [
+          {
+            "chapter": 2,
+            "verse": 9,
+            "text": "He made him king over Gilead, over the Ashurites, over Jezreel, over Ephraim, over Benjamin, and over all Israel.",
+            "url": "https://ebible.org/engwebp/2SA02.htm#V9",
+            "textStatus": "present"
+          }
+        ],
+        "priorOccurrenceAudit": [
+          {
+            "chapter": 2,
+            "verse": 9,
+            "text": "He made him king over Gilead, over the Ashurites, over Jezreel, over Ephraim, over Benjamin, and over all Israel.",
+            "url": "https://ebible.org/engwebp/2SA02.htm#V9",
+            "decisionRecorded": "direct",
+            "profilePassageIncludes": true,
+            "authorRationale": "固定WEB本文がこの地名を直接記す。",
+            "reviewerFinding": "原文と現行プロフィール初出/範囲を照合。記載のdirect/excludedは理由欄を含め下記 reviewer assessment と突き合わせる。"
+          }
+        ]
+      },
+      "currentReaderFields": {
+        "summaryJa": "サムエル記下2:9では、イシュ・ボシェテがギレアデ、アシュリ人、イズレエル、エフライム、ベニヤミン、全イスラエルの上に王とされたと記されます。この列挙だけでは、イズレエルが町か周辺地域かを特定できません。",
+        "subtitleJa": "王権の及ぶ範囲として列挙されるイズレエル",
+        "identityNoteJa": "",
+        "historicalRoleJa": "イシュ・ボシェテの王としての支配範囲を列挙する中で現れる地名。",
+        "modernLocationJa": "この用例がイズレエルの町と周辺地域のどちらを指すか、また現代地理との対応は確定できません。",
+        "locationNoteJa": "地図の点は従来資料による未確認の参考候補で、古代の所在を確定するものではありません。"
+      },
+      "sourceIntegrity": {
+        "sourceIdsAllResolve": true,
+        "missingSourceIds": [],
+        "primaryURLsWellFormed": true,
+        "profileAndWikipediaCitationURLMatch": true,
+        "profileWikipediaURL": "https://en.wikipedia.org/wiki/Jezreel_(city)",
+        "sourceWikipediaURL": "https://en.wikipedia.org/wiki/Jezreel_(city)"
+      },
+      "wikipedia": {
+        "currentMetadata": {
+          "title": "Jezreel",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Jezreel_(city)",
+          "kind": "related-section",
+          "noteJa": "記事は同名の古代都市を近隣のイズレエル谷などと区別して扱いますが、サムエル記下2:9の列挙がこの町を指すかは示していません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "relationVerified": true
+        },
+        "currentBodyRead": {
+          "url": "https://en.wikipedia.org/wiki/Jezreel_(city)",
+          "bodyLocator": "Lead lines 153–155.",
+          "supportJa": "古代都市イズレエルを、イズレエル谷などと別に説明。2 Samuel 2:9の統治範囲列挙がこの都市を指すとは示さないため、related-onlyと所在地留保が妥当。",
+          "checkedAtUTC": "2026-10-16T01:21:45Z"
+        },
+        "assessmentJa": "Article identifies an ancient city but does not establish that the 2 Sam 2:9 list means that city; related-only link and regional uncertainty are accurate."
+      },
+      "geography": {
+        "coordinate": null,
+        "assessmentJa": "現代位置の確定根拠をWEB本文は与えない。座標nullを保持し、プロフィール上の候補表現も確定地点として扱っていない。"
+      },
+      "verdict": "qualified",
+      "closureStatus": "closed",
+      "reasonJa": "WEB 2:9はイシュ・ボシェテの王権領域の列挙でイズレエルをギレアデやアシェル等と並べるが、単独で都市とは明記しない。profileはsubtitle/historicalRole/modernLocation/identity-noteで都市と断定し、Jezreel_(city)へのidentity確認も強すぎる。この用例だけなら地域・領域として扱い、同定と現代位置は留保する。",
+      "checks": {
+        "bookLocalFirstAppearanceSafe": true,
+        "sameNameOrPlaceTypeReviewed": true,
+        "sourceAndEvidenceHashSynchronized": true,
+        "wikiBodyActuallyReadThisRound": true,
+        "coordinatePromotionAbsent": true
+      }
+    }
+  ],
+  "counts": {
+    "reviewed": 11,
+    "qualifiedClosed": 10,
+    "passClosed": 0,
+    "failOpen": 1
+  },
+  "openFailures": [
+    {
+      "entityID": "place:hachilah_500",
+      "draftPath": "drafts/places_3/1SA_hachilah_500.json",
+      "issue": "Source URL for the Wikipedia citation does not match the profile URL; author synchronization required."
+    }
+  ]
+}

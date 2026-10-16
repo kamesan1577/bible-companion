@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "createdAtUTC": "2026-10-16T02:21:34Z",
+  "changeType": "validator-qualification-and-evidence-sync",
+  "entityID": "person:pharaoh_2331",
+  "draftPath": "drafts/persons_1/1SA_pharaoh_2331.json",
+  "evidencePath": "evidence/persons_1/1SA_pharaoh_2331-sources.json",
+  "beforeDraftSHA256": "54147d7b6dbe692e1cc33399cc68bbf65a3b4e68cd5ccdfa943791e06b5b0537",
+  "afterDraftSHA256": "21dae7bced6f2c1a434dd7827406aa39b388c1f56b088142597e7db7da26396e",
+  "beforeProfileSHA256": "5864bba31323937fa1687fb1b9d7048a2e558022f5a3af53c8268e69f2602e78",
+  "afterProfileSHA256": "3ae96a8d58af06a5d7979cfc47d3cf8ee63ed95cd664fd080399823b504a0c5d",
+  "beforeEvidenceSHA256": "6caa2cf3750319ea8abb20418c05ea62c98d5cee5e47be2b8d294075f3d2e914",
+  "afterEvidenceSHA256": "63cf3ad33285715b31ed29c2e38934c9db9aaf9fcd60debb48d4bb2def65da7f",
+  "fieldChanges": [
+    "profile.wikipedia.kind",
+    "profile.wikipedia.noteJa",
+    "evidence draft/profile hashes",
+    "evidence.wikipediaRead locator/status"
+  ],
+  "reasonJa": "固定WEB 1SA2:27/6:6は個人名でなく称号用法。日本語版Wikipedia導入行309はファラオを古代エジプト王の称号と定義するが、特定の王は同定しない。safeURL条件を満たすためkindをrelated-sectionへ変更し、identityVerified=falseを維持。",
+  "articleRead": {
+    "url": "https://ja.wikipedia.org/wiki/ファラオ",
+    "title": "ファラオ",
+    "locator": "導入、行309",
+    "supportJa": "「ファラオ」を古代エジプト王の称号として定義。個別王の同定には使わない。",
+    "observedAtUTC": "2026-10-16T02:21:34Z"
+  },
+  "validation": {
+    "requiredPredicate": "identityVerified OR (kind=related-section AND relationVerified=true AND noteJa nonempty)",
+    "result": "pass",
+    "identityVerified": false,
+    "relationVerified": true,
+    "kind": "related-section"
+  }
+}

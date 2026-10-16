@@ -1,0 +1,82 @@
+{
+  "status": "author-repair-record",
+  "book": "2SA",
+  "sourceMapPath": "reviews/verse-map-2SA-17-24.json",
+  "beforeMapSHA256": "05b874547ee2c355edcdf16ad374dc6a9b24ed9f12a4f08ee95e674fb7c0acbe",
+  "afterMapSHA256": "727e3fda99ad58806d52c278f216e1b97199caf7eefac4afba89f84221e3cc5d",
+  "sourceReportPath": "reviews/root-source-map-2SA-23-24-round1.json; acts_people_two independent findings and root clarification rechecked against fixed WEB",
+  "sourceReportSHA256": "0018c6a7f3ad38d78eeb82b6ebaf7cbfaebd18087f55cd33a60abab40ebe15eb",
+  "fixedWitnessPath": "inventory/targets/samuel2-web-verses.json",
+  "fixedWitnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+  "createdAtUTC": "2026-10-16T02:06:02Z",
+  "elapsedSeconds": null,
+  "elapsedReasonJa": "作業時間は計測していないため推定しない。",
+  "changes": [
+    {
+      "ref": "23:4",
+      "before": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        }
+      ]
+    },
+    {
+      "ref": "23:4",
+      "reasonBefore": "23:1で始まったDavidの詩の続きで、朝の光を比喩として述べる。Godへの名指しや一意な神の代名詞はないため、背景の神リンクを付けない。",
+      "reasonAfter": "23:3の「God of Israel」から続く引用発話はWEBの閉じ引用符が23:4末にあり、神を継続話者contextとして結ぶ。23:5はDavidの家・契約の発話へ移る。"
+    },
+    {
+      "ref": "23:33",
+      "before": [
+        {
+          "entityID": "person:ahiam_129",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shammah_2540",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:sharar_2558",
+          "relationship": "direct"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:ahiam_129",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:sharar_2558",
+          "relationship": "direct"
+        }
+      ]
+    },
+    {
+      "ref": "23:33",
+      "reasonBefore": "Shammah the Hararite, Ahiam, Shararを本文どおり採用。既存person:shammah_2540はこの勇士のprofileで、別節のShammah son of AgeeやShageとは区別する。",
+      "reasonAfter": "Shammah the Hararite, Ahiam, Shararを本文どおり区別。23:25のShammah the Haroditeは別の名簿項目で、同一人物の根拠がないため適用しない。"
+    },
+    {
+      "ref": "23:31",
+      "reasonBefore": "AzmavethをBarhumiteと呼ぶ地名由来の帰属表現。既存Bahurim候補へdirectで記録するが、語形差の確実性はprofileの根拠に従い無理な同一化を足さない。",
+      "reasonAfter": "AbialbonとAzmavethを本文どおり採用。Arbathiteは本文に明記される出身呼称だが適合profileがなく保留。Barhumiteは既存のBahurim候補との関連を別途限定している。"
+    },
+    {
+      "ref": "23:38",
+      "reasonBefore": "Ira and Gareb named.",
+      "reasonAfter": "Ira/Garebを本文どおり採用。二人のIthrite呼称も明記されるが、適合する選択済み地名profileがないため保留。"
+    }
+  ]
+}

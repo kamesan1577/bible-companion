@@ -18,7 +18,7 @@ struct SimulatorQA: View {
     }
     @ViewBuilder private func snapshot(_ screen: String) -> some View {
         switch screen {
-        case "initial", "reading", "entity-pilot-reading", "entity-acts-early", "entity-acts-late", "entity-existing-map", "entity-rom-early", "entity-rom-jacob", "entity-rom-late", "entity-lev-early", "entity-lev-sinai", "entity-lev-jacob", "entity-num-hoshea", "entity-num-gilead", "entity-jos-bohan", "entity-jos-alias", "entity-jos-burial", "entity-jdg-dan", "entity-jdg-luz", "entity-rut-early": ReadingView()
+        case "initial", "reading", "entity-pilot-reading", "entity-acts-early", "entity-acts-late", "entity-existing-map", "entity-rom-early", "entity-rom-jacob", "entity-rom-late", "entity-lev-early", "entity-lev-sinai", "entity-lev-jacob", "entity-num-hoshea", "entity-num-gilead", "entity-jos-bohan", "entity-jos-alias", "entity-jos-burial", "entity-jdg-dan", "entity-jdg-luz", "entity-rut-early", "entity-1sa-jacob", "entity-1sa-ahimelech", "entity-2sa-dual": ReadingView()
         case "entity-ui-baseline": Baseline018ReadingView()
         case "romans-opening", "romans-doxology":
             let passage = screen == "romans-opening" ? Passage(book: "ROM", start: Verse(chapter: 1, verse: 1), end: Verse(chapter: 1, verse: 1)) : Passage(book: "ROM", start: Verse(chapter: 16, verse: 25), end: Verse(chapter: 16, verse: 27))
@@ -66,6 +66,7 @@ struct SimulatorQA: View {
                 ShareLink("ヨシュア記15章を共有する", item: URL(string: "https://www.bible.com/bible/83/JOS.15.49.JCB")!)
                 ShareLink("士師記18章を共有する", item: URL(string: "https://www.bible.com/bible/83/JDG.18.29.JCB")!)
                 ShareLink("ルツ記1章を共有する", item: URL(string: "https://www.bible.com/bible/83/RUT.1.1-2.JCB")!)
+                ShareLink("サムエル記上1章を共有する", item: URL(string: "https://www.bible.com/bible/83/1SA.1.1-2.JCB")!)
                 ShareLink("実際の共有拡張を開く", item: URL(string: "https://www.bible.com/bible/83/ACT.23.1.JCB")!)
             }.navigationTitle("描画確認").bibleCanvas()
             }

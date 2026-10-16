@@ -1,0 +1,300 @@
+{
+  "title": "Samuel native projection cleanup independent reclosure round 2",
+  "reviewedAtUTC": "2026-10-16T02:24:52Z",
+  "decision": "fail-needs-targeted-prose-revision",
+  "inputs": {
+    "buildScriptPath": "build-integrated-staging.py",
+    "buildScriptSHA256": "62ae33c6388c519272eacf992e1add79674601cb6c83ee659655f1f7fec7b9d7",
+    "projectionReportPath": "integrated-staging/report.json",
+    "projectionReportSHA256": "b18eac4765c99e71203a2e9a53766268076aaaa7a9671e508e9a795304a58b99",
+    "catalogs": {
+      "1SA": {
+        "path": "integrated-staging/entity-profiles-1SA.json",
+        "sha256": "4b31bde78d2ba3700265d9d45549e335d8ce906e8f0af51f7c76f93a69ebe5ea"
+      },
+      "2SA": {
+        "path": "integrated-staging/entity-profiles-2SA.json",
+        "sha256": "7f93bf7b793f79013fe541b74b2521357d0212a6bb52c6460a8aae13b83ec370"
+      }
+    },
+    "normalizedCatalogHashes": {
+      "1SA": "4b2b8b96ae16b67383ba9171155ef9747c02feb6f0480b6c5d066eb36fb61a9e",
+      "2SA": "f6c6accbd9874cb78b31906f1a71624b78b6211d45d4bcf450a0b3b42122e215"
+    },
+    "ledgerPath": "normalized-staging/ledger.json",
+    "ledgerSHA256": "6d808d6e14ff70c625abc63ed244fd52ab832ee0eaa902436943ad310a3779b1"
+  },
+  "projectionState": {
+    "published": false,
+    "semanticApproval": false,
+    "appResourcesWritten": true,
+    "buildErrors": 0,
+    "readerWordChanges": 18,
+    "factSourceGateFilters": 2
+  },
+  "sourceGateFilterAudit": {
+    "decision": "pass",
+    "factsByBook": {
+      "1SA": {
+        "facts": 315,
+        "sourceLinks": 357,
+        "errors": []
+      },
+      "2SA": {
+        "facts": 261,
+        "sourceLinks": 300,
+        "errors": []
+      }
+    },
+    "filters": [
+      {
+        "book": "1SA",
+        "id": "place:gilboa_474",
+        "action": "filter-future-source-from-gated-fact",
+        "knownBy": {
+          "chapter": 31,
+          "verse": 1
+        },
+        "removedSourceIds": [
+          "1SA-place-mount_gilboa_837-webp-1sa-31-08-alias-revelation-place-gilboa_474"
+        ],
+        "retainedSourceIds": [
+          "1SA-place-mount_gilboa_837-webp-1sa-31-01-alias-revelation-place-gilboa_474",
+          "1SA-place-mount_gilboa_837-wikipedia-mount_gilboa_837-alias-revelation-place-gilboa_474"
+        ]
+      },
+      {
+        "book": "2SA",
+        "id": "place:mount_gilboa_837",
+        "action": "filter-future-source-from-gated-fact",
+        "knownBy": {
+          "chapter": 1,
+          "verse": 21
+        },
+        "removedSourceIds": [
+          "2SA-place-gilboa_474-webp-2sa-gilboa_474-21-12-alias-revelation-place-mount_gilboa_837"
+        ],
+        "retainedSourceIds": [
+          "2SA-place-gilboa_474-webp-2sa-gilboa_474-1-21-alias-revelation-place-mount_gilboa_837",
+          "2SA-place-gilboa_474-wikipedia-2sa-gilboa_474-alias-revelation-place-mount_gilboa_837"
+        ]
+      }
+    ],
+    "findingJa": "両書の現行fact sourceIdsを全件確認し、未知sourceまたはfact knownBy後のsource knownByは0。2件のalias factの除去ログにある後出一次引用は除かれ、同gate primary sourceは各factに残る。"
+  },
+  "territoryWikipediaFieldAudit": {
+    "decision": "pass",
+    "items": [
+      {
+        "entityID": "place:benjamin-territory_1293",
+        "normalizedNote": "記事はベニヤミン族を主題とし、相続地にも触れます。本文2:9の地域名と歴史上の部族領域が同一であることや境界を確定する資料ではありません。",
+        "nativeNoteJa": "記事はベニヤミン族を主題とし、相続地にも触れます。本文2:9の地域名と歴史上の部族領域が同一であることや境界を確定する資料ではありません。",
+        "exactlySameText": true
+      },
+      {
+        "entityID": "place:ephraim-territory_1292",
+        "normalizedNote": "記事の「Tribal territory」節はエフライム部族領域を扱います。本文2:9の地域名との正確な境界や同一性を示すものではありません。",
+        "nativeNoteJa": "記事の「Tribal territory」節はエフライム部族領域を扱います。本文2:9の地域名との正確な境界や同一性を示すものではありません。",
+        "exactlySameText": true
+      }
+    ],
+    "findingJa": "2SA Benjamin territoryおよびEphraim territoryのwikipedia.noteはnative noteJaへ移され、本文文字列は逐字一致。"
+  },
+  "rawDraftIntegrity": {
+    "decision": "pass",
+    "draftCount": 447,
+    "mismatches": [],
+    "findingJa": "normalize/buildの書込み先はnormalized-staging/integrated-staging。raw draft/evidenceはレビュー中に編集しておらず、ledgerの現在SHAと全raw draft byte SHAが一致。"
+  },
+  "readerProseAudit": {
+    "decision": "fail",
+    "findings": [
+      {
+        "book": "1SA",
+        "id": "place:amalek_53",
+        "action": "reader-wording-cleanup",
+        "field": "identityNoteJa",
+        "before": "同じ章の他の「アマレク」は主に民族集団・敵を指します。このプロフィールは15:5の「町」という地名用法に限ります。",
+        "after": "同じ章の他の「アマレク」は主に民族集団・敵を指します。この説明は15:5の「町」という地名用法に限ります。",
+        "independentDecision": "fail",
+        "findingJa": "この説明は…用法に限ります、という編集上のプロフィール範囲説明が残る。本文の語義/指示対象を直接説明する形が必要。"
+      },
+      {
+        "book": "1SA",
+        "id": "place:ekron_364",
+        "action": "reader-wording-cleanup",
+        "field": "locationNoteJa",
+        "before": "Wikipediaが示すテル・ミクネ同定は考古学的見解の紹介。プロフィール座標は未照合。",
+        "after": "Wikipediaが示すテル・ミクネ同定は考古学的見解の紹介。地図上の候補位置は独立した資料で未照合。",
+        "independentDecision": "pass",
+        "findingJa": "読者向けに自然な日本語で対象と確度を直接説明し、内部作業語を残していない。"
+      },
+      {
+        "book": "1SA",
+        "id": "place:ephraim-territory_1292",
+        "action": "reader-wording-cleanup",
+        "field": "noteJa",
+        "before": "記事の「Tribal territory」節は、エフライム部族領域を中央カナンの山地地域として説明します。ただし、このプロフィールの地域と境界が完全に一致するものとしては扱いません。",
+        "after": "記事の「Tribal territory」節は、エフライム部族領域を中央カナンの山地地域として説明します。ただし、この説明の地域と境界が完全に一致するものとしては扱いません。",
+        "independentDecision": "qualified",
+        "findingJa": "「この説明の地域と境界」が何を指すかやや曖昧。部族領域の範囲と本文地名の関係を直接説明する文へ推敲を推奨。"
+      },
+      {
+        "book": "1SA",
+        "id": "place:geba_447",
+        "action": "reader-wording-cleanup",
+        "field": "locationNoteJa",
+        "before": "ヤバとの比定は記事上の同定。プロフィール座標は独立した地理資料で照合していない。",
+        "after": "ヤバとの比定は記事上の同定。地図上の候補位置は独立した地理資料で照合していない。",
+        "independentDecision": "pass",
+        "findingJa": "読者向けに自然な日本語で対象と確度を直接説明し、内部作業語を残していない。"
+      },
+      {
+        "book": "1SA",
+        "id": "place:jabesh-gilead_611",
+        "action": "reader-wording-cleanup",
+        "field": "locationNoteJa",
+        "before": "候補遺跡の位置比定には複数説がある。プロフィール座標は未照合。",
+        "after": "候補遺跡の位置比定には複数説がある。地図上の候補位置は独立した資料で未照合。",
+        "independentDecision": "pass",
+        "findingJa": "読者向けに自然な日本語で対象と確度を直接説明し、内部作業語を残していない。"
+      },
+      {
+        "book": "1SA",
+        "id": "place:ashdod_101",
+        "action": "reader-wording-cleanup",
+        "field": "modernLocationJa",
+        "before": "古代都市の遺跡はテル・アシュドドにあり、現代アシュドド市の南に位置すると記事は説明します。候補座標はこの作業で独立確認していません。",
+        "after": "古代都市の遺跡はテル・アシュドドにあり、現代アシュドド市の南に位置すると記事は説明します。候補位置は独立した地理資料で確認されていません。",
+        "independentDecision": "pass",
+        "findingJa": "読者向けに自然な日本語で対象と確度を直接説明し、内部作業語を残していない。"
+      },
+      {
+        "book": "1SA",
+        "id": "place:gath_442",
+        "action": "reader-wording-cleanup",
+        "field": "modernLocationJa",
+        "before": "テル・エス・サフィが古代ガトと広く同定されていますが、本プロフィールの座標は未確認です。",
+        "after": "テル・エス・サフィが古代ガトと広く同定されていますが、地図上の候補位置は未確認です。",
+        "independentDecision": "pass",
+        "findingJa": "読者向けに自然な日本語で対象と確度を直接説明し、内部作業語を残していない。"
+      },
+      {
+        "book": "1SA",
+        "id": "place:jezreel_642",
+        "action": "reader-wording-cleanup",
+        "field": "noteJa",
+        "before": "記事はテル・イズレエルを古代都市の遺跡として扱い、アヒノアムの故郷と1サムエル25:43を明記します。記事内の遺跡座標はプロフィールの確認済み座標としては採用していません。",
+        "after": "記事はテル・イズレエルを古代都市の遺跡として扱い、アヒノアムの故郷と1サムエル25:43を明記します。記事内の遺跡座標は確認済みの所在地を示すものではありません。",
+        "independentDecision": "fail",
+        "findingJa": "記事にある遺跡座標そのものを「確認済みの所在地を示すものではない」と述べるため、記事の座標の確度について誤解を招く。記事の遺跡位置と当カタログの未照合候補位置を別々に記述すべき。"
+      },
+      {
+        "book": "1SA",
+        "id": "place:jordan_653",
+        "action": "reader-wording-cleanup",
+        "field": "noteJa",
+        "before": "記事はヨルダン川そのものを扱う。1 Samuelの二箇所は渡河・川の向こう側を述べるが、プロフィールは特定の渡河地点を示さない。",
+        "after": "記事はヨルダン川そのものを扱う。1 Samuelの二箇所は渡河・川の向こう側を述べるが、説明は特定の渡河地点を示さない。",
+        "independentDecision": "qualified",
+        "findingJa": "「説明は…示さない」はまだプロフィール記述を主語にする。本文がどの川/渡河を示すか、特定地点を示さない点を直接説明できる。"
+      },
+      {
+        "book": "1SA",
+        "id": "place:michmash_793",
+        "action": "reader-wording-cleanup",
+        "field": "noteJa",
+        "before": "記事はミクマス/ミクマシュを古代の町とし、サウル・ヨナタンとペリシテ人の戦闘（1 Samuel 13–14）に結び付ける。現代ムクマスとの同定も記事に記すが、profile座標は未照合。",
+        "after": "記事はミクマス/ミクマシュを古代の町とし、サウル・ヨナタンとペリシテ人の戦闘（1 Samuel 13–14）に結び付ける。現代ムクマスとの同定も記事に記すが、地図上の候補位置は独立した資料で未照合。",
+        "independentDecision": "pass",
+        "findingJa": "読者向けに自然な日本語で対象と確度を直接説明し、内部作業語を残していない。"
+      },
+      {
+        "book": "1SA",
+        "id": "place:nob_900",
+        "action": "reader-wording-cleanup",
+        "field": "noteJa",
+        "before": "記事本文はノブを祭司の町とし、1 Samuel 21–22の出来事を明記する。北エルサレムの位置説もあるが、本プロフィールは未確定点を座標化しない。",
+        "after": "記事本文はノブを祭司の町とし、1 Samuel 21–22の出来事を明記する。北エルサレムの位置説もあるが、正確な所在地には未確定な点があります。",
+        "independentDecision": "pass",
+        "findingJa": "読者向けに自然な日本語で対象と確度を直接説明し、内部作業語を残していない。"
+      },
+      {
+        "book": "2SA",
+        "id": "person:adoniram_102",
+        "action": "reader-wording-cleanup",
+        "field": "identityNoteJa",
+        "before": "WEBの表記は「Adoram」。割当IDの「Adoniram」と同一人物かは本文だけで確定せず、記事の表記差情報と関連付けに限る。",
+        "after": "WEBの表記は「Adoram」。資料上の「Adoniram」と同一人物かは本文だけで確定せず、記事の表記差情報と関連付けに限る。",
+        "independentDecision": "qualified",
+        "findingJa": "「資料上の」名称が曖昧なまま。WEB表記と記事/他資料の表記の差として読者向けに具体化するのが望ましい。"
+      },
+      {
+        "book": "2SA",
+        "id": "person:ammihud_226",
+        "action": "reader-wording-cleanup",
+        "field": "identityNoteJa",
+        "before": "固定WEBの綴りは「Ammihur」であり、割当IDのAmmihudと異なります。原文の読みを保ち、他資料の同名人物と同一視しません。",
+        "after": "固定WEBの綴りは「Ammihur」であり、資料上のAmmihudと異なります。原文の読みを保ち、他資料の同名人物と同一視しません。",
+        "independentDecision": "qualified",
+        "findingJa": "「資料上の」名称が曖昧なまま。WEB表記と記事/他資料の表記の差として読者向けに具体化するのが望ましい。"
+      },
+      {
+        "book": "2SA",
+        "id": "place:beth-shan_232",
+        "action": "reader-wording-cleanup",
+        "field": "locationNoteJa",
+        "before": "古代の遺跡と現在の市の関係は記事に基づく。プロフィール座標は未照合のためnull。",
+        "after": "古代の遺跡と現在の市の関係は記事に基づく。地図上の候補位置は独立した資料で未照合のため未確定。",
+        "independentDecision": "pass",
+        "findingJa": "読者向けに自然な日本語で対象と確度を直接説明し、内部作業語を残していない。"
+      },
+      {
+        "book": "2SA",
+        "id": "place:jerusalem_636",
+        "action": "reader-wording-cleanup",
+        "field": "noteJa",
+        "before": "記事はエルサレムの歴史ある都市として説明します。現代の政治的地位や後代の宗教施設をこの本書プロフィールの根拠にはしません。",
+        "after": "記事はエルサレムの歴史ある都市として説明します。現代の政治的地位や後代の宗教施設をこの説明の根拠にはしません。",
+        "independentDecision": "pass",
+        "findingJa": "読者向けに自然な日本語で対象と確度を直接説明し、内部作業語を残していない。"
+      },
+      {
+        "book": "2SA",
+        "id": "place:gezer_463",
+        "action": "reader-wording-cleanup",
+        "field": "noteJa",
+        "before": "記事はゲゼルをユダ山地とシェフェラの境にある考古学遺跡とし、聖書上のゲゼルに結び付ける。座標は本プロフィールで独立照合していない。",
+        "after": "記事はゲゼルをユダ山地とシェフェラの境にある考古学遺跡とし、聖書上のゲゼルに結び付ける。候補位置は独立した地理資料で照合されていません。",
+        "independentDecision": "pass",
+        "findingJa": "読者向けに自然な日本語で対象と確度を直接説明し、内部作業語を残していない。"
+      },
+      {
+        "book": "2SA",
+        "id": "place:rabbah_966",
+        "action": "reader-wording-cleanup",
+        "field": "noteJa",
+        "before": "現代アンマンの古代史にラバ（Philadelphia以前のRabbath Ammon）が関わる。ただしプロフィールは古代王都と現代都市の同一視を避ける。",
+        "after": "現代アンマンの古代史にラバ（Philadelphia以前のRabbath Ammon）が関わる。ただし古代王都の範囲と現代都市の範囲が同じであるとは限りません。",
+        "independentDecision": "pass",
+        "findingJa": "読者向けに自然な日本語で対象と確度を直接説明し、内部作業語を残していない。"
+      },
+      {
+        "book": "2SA",
+        "id": "place:valley_of_salt_1215",
+        "action": "reader-wording-cleanup",
+        "field": "noteJa",
+        "before": "記事は2 Samuel 8:13の戦場として当該谷を明記し、アラバとする説を紹介する。一方、アラム人/エドム人の読みをめぐる本文異同も記すため、プロフィールでは位置を確定しない。",
+        "after": "記事は2 Samuel 8:13の戦場として当該谷を明記し、アラバとする説を紹介する。一方、アラム人/エドム人の読みをめぐる本文異同も記すため、正確な位置は確定していません。",
+        "independentDecision": "pass",
+        "findingJa": "読者向けに自然な日本語で対象と確度を直接説明し、内部作業語を残していない。"
+      }
+    ],
+    "findingJa": "前回指摘した「説明座標」や「ここで独立確認」は解消。残る2件のfailは意味範囲の曖昧/編集メタまたは記事座標自体への誤った含意がある。qualified 4件は理解可能だが、表示文の精度/自然さを上げる余地がある。"
+  },
+  "recommendedFixesJa": [
+    "Amalek noteは「この説明の範囲」ではなく、1SA15:5のAmalekが町/地名の用法であることを直接述べる。",
+    "Jezreel noteはWikipediaの遺跡座標とnative候補位置を明確に分け、記事側の既知座標の確度を否定しない。",
+    "Ephraim/Jordan/Adoram/Ammihurの qualified 文言は本文表記・地域関係を直接主語にして読みやすくする。"
+  ]
+}

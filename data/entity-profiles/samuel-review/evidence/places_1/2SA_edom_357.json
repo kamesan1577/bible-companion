@@ -1,0 +1,96 @@
+{
+  "book": "2SA",
+  "entityID": "place:edom_357",
+  "assignmentTargetKey": "2SA:place:edom_357",
+  "draftFile": "drafts/places_1/2SA_edom_357.json",
+  "draftSHA256": "f55992db4e78b829ced3eb5dcffc9a73f4a313e7bd852969dee4f2c76bb94792",
+  "profileSHA256": "bc4637e95da38039d33dcec4851b2ac74127e97611c6b4ba0568d00db75bba56",
+  "pinnedWEB": {
+    "sourceId": "webp",
+    "version": "webp-usfx-2026-10-13-35a6adf626e5",
+    "file": "inventory/targets/samuel2-web-verses.json",
+    "fileSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2"
+  },
+  "candidateSource": {
+    "url": "https://github.com/robertrouse/theographic-bible-metadata/tree/52e049efb3b95e4f1da52d11a3303fbd2d648922",
+    "commit": "52e049efb3b95e4f1da52d11a3303fbd2d648922",
+    "license": "CC-BY-SA-4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": "Derived from Theographic Bible Metadata by Robert Rouse and contributors. Names and occurrence indexes only; prose removed, Japanese labels added, coordinates marked as candidates. Candidate coordinates are not independently verified."
+  },
+  "primaryContext": [
+    {
+      "chapter": 8,
+      "verse": 14,
+      "candidateText": "He put garrisons in Edom. Throughout all Edom, he put garrisons, and all the Edomites became servants to David. The LORD gave victory to David wherever he went.",
+      "fixedText": "He put garrisons in Edom. Throughout all Edom, he put garrisons, and all the Edomites became servants to David. The LORD gave victory to David wherever he went.",
+      "sourceTextSHA256": "ce29eb999a29fb40087157c16a8308b96f3ece9d0a3eb062739721e1338af805",
+      "context": [
+        {
+          "chapter": 7,
+          "verse": 29,
+          "text": "Now therefore, let it please you to bless the house of your servant, that it may continue forever before you; for you, Lord GOD, have spoken it. Let the house of your servant be blessed forever with your blessing.”",
+          "citationURL": "https://ebible.org/engwebp/2SA07.htm#V29",
+          "sourceTextSHA256": "9b5988eec7c36aba7156b94c3350deedc57f20c494699b35f6f8a6cb6a194cea"
+        },
+        {
+          "chapter": 8,
+          "verse": 14,
+          "text": "He put garrisons in Edom. Throughout all Edom, he put garrisons, and all the Edomites became servants to David. The LORD gave victory to David wherever he went.",
+          "citationURL": "https://ebible.org/engwebp/2SA08.htm#V14",
+          "sourceTextSHA256": "ce29eb999a29fb40087157c16a8308b96f3ece9d0a3eb062739721e1338af805"
+        },
+        {
+          "chapter": 9,
+          "verse": 1,
+          "text": "David said, “Is there yet any who is left of Saul’s house, that I may show him kindness for Jonathan’s sake?”",
+          "citationURL": "https://ebible.org/engwebp/2SA09.htm#V1",
+          "sourceTextSHA256": "fb565fc9ec1028daf23f05ca147ee1a3fe3da145e5c62ea0567098e598fcae45"
+        }
+      ]
+    }
+  ],
+  "occurrenceChecks": [
+    {
+      "chapter": 8,
+      "verse": 14,
+      "status": "direct",
+      "reasonJa": "固定WEB本文で場所名を名指す。"
+    }
+  ],
+  "wikipediaBodyRead": {
+    "title": "Edom",
+    "url": "https://en.wikipedia.org/wiki/Edom",
+    "checkedAtUTC": "2026-10-16T01:08:03Z",
+    "locator": "Edom, opening and geography sections",
+    "supportJa": "Edom article opening describes ancient kingdom/region east of Jordan and its geographic extent."
+  },
+  "wikipediaNegativeSearch": null,
+  "geography": {
+    "identityCheck": "2サムエル記8:14が「エドム全域」と明記するため、民族名だけでなく古代地域の用例と確認できる。",
+    "uncertainty": "地域名であり、特定都市の点とは異なります。",
+    "review": {
+      "category": "region",
+      "coordinatePublished": false,
+      "legacyCandidateStatus": "candidate-unverified",
+      "indexCandidateCoordinate": [
+        31.25,
+        34.75
+      ],
+      "indexCoordinateStatus": "source-verified-candidate",
+      "independentOfficialGeographyCheck": "未実施。プロフィール座標はnull。",
+      "reasonJa": "既存候補点は古代地域の参考位置としてのみ保持可能。現代国境・地域範囲の代表地点とは説明せず、広域候補と明示する。"
+    }
+  },
+  "profileTextSHA256Method": "SHA-256 of ensure_ascii=False, indent=2, insertion-order JSON serialization of profile plus trailing newline.",
+  "metadataHistory": [
+    {
+      "atUTC": "2026-10-16T01:10:28Z",
+      "change": "Added pinned assignment/source candidate metadata and exact immediate-verse context blocks for every assigned occurrence; no claims/draft fields changed."
+    },
+    {
+      "atUTC": "2026-10-16T02:07:01Z",
+      "change": "Removed forward-reference claims from always-visible reader fields; added or retained supported later statements as facts gated to their cited verse. Updated factual first occurrence for Edom to 2 Samuel 8:14 after confirming 8:12 does not name Edom; synchronized draft/profile hashes."
+    }
+  ]
+}

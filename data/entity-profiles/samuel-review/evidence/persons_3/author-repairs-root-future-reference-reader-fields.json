@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "title": "2 Samuel first-appearance reader-field spoiler repairs",
+  "createdAtUTC": "2026-10-16T02:10:17Z",
+  "basis": "reviews/root-future-reference-reader-field-audit.json",
+  "changes": [
+    {
+      "entityID": "person:jonathan_1692",
+      "draftPath": "drafts/persons_3/2SA_jonathan_1692.json",
+      "evidencePath": "evidence/persons_3/2SA_jonathan_1692.json",
+      "beforeDraftSHA256": "1104e67c04d42861f8e746db9d4c0a0850372b7b61b4390c89a402343a3f57c0",
+      "afterDraftSHA256": "dbbf91c66ddd0a3e2192a3588c2132fe3ca85c44a3a9a726a9bca2ec03719dff",
+      "beforeEvidenceSHA256": "c396dafc0c0432ae06bfb02710e876ff5e80e237e4d44a1f4c56266ad6a62da2",
+      "afterEvidenceSHA256": "8a1dcfbd42ec5463ac6ab28ba7e31236a3578813d9601f6de62338378838c5fe",
+      "afterProfileSHA256": "d48525c417489a641aedd2747c9637ac04cb267f5f0662f22f823aa8c67654fd",
+      "beforeReaderFields": {
+        "subtitleJa": "サウルの子、ダビデの友",
+        "identityNoteJa": "この記述のヨナタンはサウルの子です。アビヤタルの子ヨナタン（15:27）とは別人。",
+        "wikipedia": {
+          "title": "Jonathan (1 Samuel)",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Jonathan_(1_Samuel)",
+          "kind": "article",
+          "noteJa": "記事はサウルの子ヨナタンを扱い、サムエル記下1章の死の知らせと21章の埋葬にも触れています。",
+          "identityVerified": true,
+          "checkedAt": "2026-10-16",
+          "knownBy": {
+            "chapter": 21,
+            "verse": 14
+          }
+        }
+      },
+      "afterReaderFields": {
+        "subtitleJa": "サウルの子ヨナタン",
+        "identityNoteJa": "同名の人物と区別するため、ここではサウルの子ヨナタンを指します。",
+        "wikipedia": {
+          "title": "Jonathan (1 Samuel)",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Jonathan_(1_Samuel)",
+          "kind": "article",
+          "noteJa": "記事はサウルの子ヨナタンを扱い、サムエル記下1章の死の知らせと21章の埋葬にも触れています。",
+          "identityVerified": true,
+          "checkedAt": "2026-10-16",
+          "knownBy": {
+            "chapter": 21,
+            "verse": 14
+          }
+        }
+      },
+      "basisJa": "固定WEB 2SA1:4は「Saul and Jonathan his son」と明記する。アビヤタルの子ヨナタンは15:27なので、常時表示の同名注意は一般形にし、別人の名前・所在は示さない。subtitleから1:26のダビデとの友愛を先取りする語を除いた。Wikipedia注記が21章の埋葬にも触れるため、プロフィールとsecondary sourceを21:14までゲートした。"
+    },
+    {
+      "entityID": "person:solomon_2762",
+      "draftPath": "drafts/persons_3/2SA_solomon_2762.json",
+      "evidencePath": "evidence/persons_3/2SA_solomon_2762.json",
+      "beforeDraftSHA256": "b004941437fe6cd6f8edc0fdfed644a3bd28981f15208250fd3fe7d0f22d5f0e",
+      "afterDraftSHA256": "b8cabae0059165bab9c30769962d7090e2ddad5736dc57a9a5e832b09579d97b",
+      "beforeEvidenceSHA256": "1a79df34d5fb09c1d9e9a50f6cb412e0540f31080b6972fa6cb312dabd399e68",
+      "afterEvidenceSHA256": "85f75d39d74edd555bbd2a99656a27d4881bf62893bd7dfb2c094f1011f73edb",
+      "afterProfileSHA256": "0099ce369a216feeb0e1618c2b6d94da36a487a0d5cd8878c5f8ee55f2cf4a68",
+      "beforeReaderFields": {
+        "subtitleJa": "ダビデとバテ・シェバの子",
+        "identityNoteJa": "最初の名簿は子らの名前を挙げるが、母親の情報は12:24に現れる。",
+        "wikipedia": {
+          "title": "Solomon",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Solomon",
+          "kind": "article",
+          "noteJa": "記事は聖書中のソロモンについて概説します。",
+          "identityVerified": true,
+          "checkedAt": "2026-10-16",
+          "knownBy": {
+            "chapter": 12,
+            "verse": 24
+          }
+        }
+      },
+      "afterReaderFields": {
+        "subtitleJa": "エルサレムで生まれた子の名簿に記される人物",
+        "identityNoteJa": "2サムエル記5:14では、エルサレムで生まれた子どもたちの名簿に名が挙がります。",
+        "wikipedia": {
+          "title": "Solomon",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Solomon",
+          "kind": "article",
+          "noteJa": "記事は聖書中のソロモンについて概説します。",
+          "identityVerified": true,
+          "checkedAt": "2026-10-16",
+          "knownBy": {
+            "chapter": 12,
+            "verse": 24
+          }
+        }
+      },
+      "basisJa": "固定WEB 2SA5:14はソロモンをエルサレムで生まれた子の名簿に挙げ、母親を明記しない。subtitleとidentityNoteから12:24のバテ・シェバ情報を除いた。Wikipedia source/linkを母親の名が本文に現れる12:24までゲートし、12:24/25 factsは個別knownByのまま維持した。"
+    }
+  ]
+}

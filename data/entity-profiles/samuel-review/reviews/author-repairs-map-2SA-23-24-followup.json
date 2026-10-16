@@ -1,0 +1,130 @@
+{
+  "status": "author-repair-record",
+  "book": "2SA",
+  "sourceMapPath": "reviews/verse-map-2SA-17-24.json",
+  "beforeMapSHA256": "03bd3e296b16bfed0e3abdcfecede0c7386e636f06a08da6dac1ff412d27ff0b",
+  "afterMapSHA256": "f6fa9a9080061b242c137489dd63767059165fae9e72ea199e5057452511dd95",
+  "sourceReviewPath": "reviews/root-source-map-2SA-23-24-round1.json; peer independent findings rechecked against fixed WEB",
+  "sourceReviewSHA256": "0018c6a7f3ad38d78eeb82b6ebaf7cbfaebd18087f55cd33a60abab40ebe15eb",
+  "fixedWitnessPath": "inventory/targets/samuel2-web-verses.json",
+  "fixedWitnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+  "createdAtUTC": "2026-10-16T02:05:10Z",
+  "elapsedSeconds": null,
+  "elapsedReasonJa": "作業時間は計測していないため推定しない。",
+  "changes": [
+    {
+      "ref": "19:30",
+      "before": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:mephibosheth_1999",
+          "relationship": "direct"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:mephibosheth_1999",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ziba_3060",
+          "relationship": "context"
+        }
+      ]
+    },
+    {
+      "ref": "19:30",
+      "reasonBefore": "Mephiboshethが王に答える。my lord the kingはDavidであってGodではない。",
+      "reasonAfter": "MephiboshethがDavidへ答え、「let him take all」と言う。直前19:29で土地を分ける対象として名指されたZibaを指すためcontextで結ぶ。"
+    },
+    {
+      "ref": "23:4",
+      "before": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ]
+    },
+    {
+      "ref": "23:4",
+      "reasonBefore": "Continuing quotation; David remains speaker. context項目は前後の一意な先行詞・話者・応答先に限定した。",
+      "reasonAfter": "23:1で始まったDavidの詩の続きで、朝の光を比喩として述べる。Godへの名指しや一意な神の代名詞はないため、背景の神リンクを付けない。"
+    },
+    {
+      "ref": "23:25",
+      "reasonBefore": "Shammah/Elika and Harod are named.",
+      "reasonAfter": "Shammah/Elikaを本文どおり採用。Haroditeも記録するが、候補place:harod_529に選択済みprofileがないため地理対応は未確定。"
+    },
+    {
+      "ref": "23:28",
+      "reasonBefore": "WEB says Zalmon and Ilai profile describes the parallel form; Maharai/Netophah also named or related.",
+      "reasonAfter": "Zalmon/Maharaiを本文どおり採用。Netophathiteは名簿の出身呼称として記録し、候補place:netophah_890にprofileがないため地理対応を保留。"
+    },
+    {
+      "ref": "23:29",
+      "reasonBefore": "Heleb/Baanah/Ittai/Ribai/GibeahとBenjaminは本文の名/帰属呼称として明記。Benjaminは部族帰属の直接表現。",
+      "reasonAfter": "Heleb/Baanah/Ittai/Ribai/Gibeah/Benjaminを本文どおり採用。Netophathiteは明記されるが、候補place:netophah_890にprofileがないため地理対応を保留。"
+    },
+    {
+      "ref": "23:37",
+      "reasonBefore": "NaharaiをBeerothiteと呼び、既存Beerothからの地名由来表現としてdirect。",
+      "reasonAfter": "Zelek/Naharai/Joab/Zeruiah/Beerothを本文どおり採用。Ammoniteも出自呼称として記録するが、既存集団profileがないため保留。"
+    },
+    {
+      "ref": "24:5",
+      "reasonBefore": "Jordan/Aroer/Jazer named; valley of Gad is not prophet Gad. context項目は前後の一意な先行詞・話者・応答先に限定した。 無名者・適合IDなし・不確かな異綴りは推測リンクせずunresolvedMentionsへ記録。",
+      "reasonAfter": "Jordan/Aroer/Jazerは名指し。valley of Gadは地理表現で人Gadとは別だが、この谷に適合する2SA地理profileがないため保留。既存1SA Gad地域profileも谷との同定根拠にならない。"
+    },
+    {
+      "ref": "24:17",
+      "before": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:jesse_903",
+          "relationship": "context"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ]
+    },
+    {
+      "ref": "24:17",
+      "reasonBefore": "Davidが主に告白し、自分と「my father’s house」へ手を向けるよう願う。Jesseは23:1でDavidの父と明示されるためfamily phraseの候補contextとして示すが、家全体をJesse個人と同一視しない。",
+      "reasonAfter": "Davidが主に告白し、御使いではなく自分と「my father’s house」に対する罰を願う。後者は集団的家族表現として記録し、Jesse個人へ同一化しない。"
+    }
+  ],
+  "notesJa": "表記関連性だけが示されたDodo候補は同一人物contextへ採用しない。プロフィール未確認のHarod/Netophah、1SAだけのGad地域候補は明確に未解決に保持。 追加peer指摘は原典現物で照合し、未保存のレビュー報告をsource fileとして偽装しない。"
+}

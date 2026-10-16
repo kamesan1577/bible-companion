@@ -1,0 +1,262 @@
+{
+  "reportType": "independent-place-alias-review",
+  "book": "2SA",
+  "reviewerRole": "independent primary-text and current-profile review",
+  "checkedAtUTC": "2026-10-16T02:05:40Z",
+  "inputPath": "reviews/root-integration-decisions.json",
+  "inputSHA256": "726281e61f8105d9004a7889e1a31d1ce54412296d80dac07c323aa26c8128d4",
+  "fixedWitnessPath": "inventory/targets/samuel2-web-verses.json",
+  "fixedWitnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+  "decisionScopeJa": "原典と両方の現profileの現在内容を照合。ここでのacceptは2SA内での同名/地名用例のcanonical alias提案を支持する判断であり、草稿やmapの変更ではない。座標昇格・別書へのalias波及を含まない。",
+  "entries": [
+    {
+      "book": "2SA",
+      "aliasID": "place:gilboa_474",
+      "canonicalID": "place:mount_gilboa_837",
+      "rootProposal": {
+        "book": "2SA",
+        "aliasID": "place:gilboa_474",
+        "canonicalID": "place:mount_gilboa_837",
+        "knownBy": {
+          "chapter": 1,
+          "verse": 21
+        },
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/2SA01.htm#V6"
+          },
+          {
+            "url": "https://ebible.org/engwebp/2SA01.htm#V21"
+          }
+        ],
+        "reasonJa": "同じSaul戦死の山域が山と山地の呼称で現れる。2SAのみで先出1:6の837を基準、21:12の短縮名も統合候補。",
+        "independentApproval": false
+      },
+      "decision": "accept",
+      "basisJa": "2SA1:6でMount Gilboa、1:21でMountains of Gilboa、21:12でGilboaと同じサウル戦没山域が短縮/複数形を含めて記される。固定WEBの相互文脈と、Mount Gilboa記事が山地として扱うことは2SA内の同一地物を支持する。canonicalIDの早い出現1:6を維持し、1:21/21:12を同地の用例として束ねる。 21:12も「Gilboa」と短縮して同じ戦没山域を示す文脈にある。",
+      "scopeAndCoordinateCaveatsJa": "根拠は2SAの山域内に限定。1SA側alias案へ波及させず、二つの現profile coordinate=nullを維持。代表点・座標昇格は承認しない。",
+      "profiles": [
+        {
+          "id": "place:gilboa_474",
+          "draftPath": "drafts/places_3/2SA_gilboa_474.json",
+          "draftSHA256": "e65ec7d809f97f77dd7117e10e05672b98db8a841e2bc1569e6f0702e85077f9",
+          "profileSHA256": "cb9a8f81412b483ae654456a7f2e83b1fb4e8b66e3b7a56fb5459b0f6058aa7c",
+          "evidencePath": "evidence/places_3/2SA_gilboa_474.json",
+          "evidenceSHA256": "d9a86e0d7af58d00cc1057aa0011d50ecf13ea1b2b97d0e73a2fbaeaf104daed",
+          "knownBy": {
+            "chapter": 1,
+            "verse": 21
+          },
+          "passages": [
+            {
+              "book": "2SA",
+              "start": {
+                "chapter": 1,
+                "verse": 21
+              },
+              "end": {
+                "chapter": 1,
+                "verse": 21
+              }
+            },
+            {
+              "book": "2SA",
+              "start": {
+                "chapter": 21,
+                "verse": 12
+              },
+              "end": {
+                "chapter": 21,
+                "verse": 12
+              }
+            }
+          ],
+          "coordinate": null,
+          "wikipedia": {
+            "title": "Mount Gilboa",
+            "language": "en",
+            "url": "https://en.wikipedia.org/wiki/Mount_Gilboa",
+            "kind": "article",
+            "noteJa": "記事はギルボアを山地として扱い、サウルに関わる戦いと結び付けています。",
+            "checkedAt": "2026-10-16",
+            "identityVerified": true,
+            "relationVerified": null
+          }
+        },
+        {
+          "id": "place:mount_gilboa_837",
+          "draftPath": "drafts/places_1/2SA_mount_gilboa_837.json",
+          "draftSHA256": "3563d735202bfc10791a82e44c61de822d572da72e2ca1a9c6f2e8feb7188c88",
+          "profileSHA256": "35b24bf05a157b7df3b8342298e753556505f2d0c2581436e8dad491a58f4098",
+          "evidencePath": "evidence/places_1/2SA_mount_gilboa_837.json",
+          "evidenceSHA256": "128b385273b76809170553c41ddf05e0c114da2b535bbcec0b3b78e67e958fd0",
+          "knownBy": {
+            "chapter": 1,
+            "verse": 6
+          },
+          "passages": [
+            {
+              "book": "2SA",
+              "start": {
+                "chapter": 1,
+                "verse": 6
+              },
+              "end": {
+                "chapter": 1,
+                "verse": 6
+              }
+            }
+          ],
+          "coordinate": null,
+          "wikipedia": {
+            "title": "Mount Gilboa",
+            "language": "en",
+            "url": "https://en.wikipedia.org/wiki/Mount_Gilboa",
+            "kind": "article",
+            "noteJa": "記事はギルボアを山地として説明し、サムエル記のサウル最期の戦場に結び付けます。",
+            "checkedAt": "2026-10-16",
+            "identityVerified": true
+          }
+        }
+      ],
+      "fixedWEBWitnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+      "sourceChecks": [
+        {
+          "ref": "2SA 1:6",
+          "url": "https://ebible.org/engwebp/2SA01.htm#V6",
+          "text": "The young man who told him said, “As I happened by chance on Mount Gilboa, behold, Saul was leaning on his spear; and behold, the chariots and the horsemen followed close behind him.",
+          "sourceTextSHA256": "01f176265a8142a72b9ff060fc4db994d14f89c030ca9753fe99314da71bfc7c"
+        },
+        {
+          "ref": "2SA 1:21",
+          "url": "https://ebible.org/engwebp/2SA01.htm#V21",
+          "text": "You mountains of Gilboa, let there be no dew or rain on you, and no fields of offerings; for there the shield of the mighty was defiled and cast away, the shield of Saul was not anointed with oil.",
+          "sourceTextSHA256": "1b118cd665d8c17e67ad84138ac7e8d4d0a080b4d475d80ad07a2d14e9ee91fe"
+        },
+        {
+          "ref": "2SA 21:12",
+          "url": "https://ebible.org/engwebp/2SA21.htm#V12",
+          "text": "So David went and took the bones of Saul and the bones of Jonathan his son from the men of Jabesh Gilead, who had stolen them from the street of Beth Shan, where the Philistines had hanged them in the day that the Philistines killed Saul in Gilboa;",
+          "sourceTextSHA256": "2a2d94a8b6745740b9c80a2d1e060fbf58c929ba20a2625aa5c68aca4a2514dd"
+        }
+      ],
+      "checkedAtUTC": "2026-10-16T02:05:40Z"
+    },
+    {
+      "book": "2SA",
+      "aliasID": "place:gilo_478",
+      "canonicalID": "place:giloh_479",
+      "rootProposal": {
+        "book": "2SA",
+        "aliasID": "place:gilo_478",
+        "canonicalID": "place:giloh_479",
+        "knownBy": {
+          "chapter": 23,
+          "verse": 34
+        },
+        "citations": [
+          {
+            "url": "https://ebible.org/engwebp/2SA15.htm#V12"
+          },
+          {
+            "url": "https://ebible.org/engwebp/2SA23.htm#V34"
+          }
+        ],
+        "reasonJa": "15:12のAhithophel GiloniteとGiloh、23:34同AhithophelのGilonite派生地名。JOSの同名候補には変更を波及しない。",
+        "independentApproval": false
+      },
+      "decision": "accept",
+      "basisJa": "2SA15:12は「the Gilonite」Ahithophelを「his city, even from Giloh」と明示し、ここでGiloniteが指す町を同節でGilohに結ぶ。23:34もEliamの父を同じ固有名Ahithophel the Giloniteと呼ぶため、同書の同じ人物の形容に対応する町名をGilohへ統合する判断を支持する。",
+      "scopeAndCoordinateCaveatsJa": "根拠は2SA15:12と23:34の同名・同じGilonite呼称に限る。JOS等の同名候補に波及させず、両profileのcoordinate=nullを維持。23:34は町の直名ではなく、先行する15:12の本文による地名由来形容の照応として扱う。",
+      "profiles": [
+        {
+          "id": "place:gilo_478",
+          "draftPath": "drafts/places_1/2SA_gilo_478.json",
+          "draftSHA256": "b8174852f556ab6d5a382febeeba57f553bc3e680f08348de64b96cb75f42120",
+          "profileSHA256": "8aea33cbb12c6a6d3299a62a536bc16735e93ce30ae4ff5821359b3bef302c26",
+          "evidencePath": "evidence/places_1/2SA_gilo_478.json",
+          "evidenceSHA256": "29498d10482688d28effd79963c06729970881d07e6450cc120a7110ccfd4ca2",
+          "knownBy": {
+            "chapter": 23,
+            "verse": 34
+          },
+          "passages": [
+            {
+              "book": "2SA",
+              "start": {
+                "chapter": 23,
+                "verse": 34
+              },
+              "end": {
+                "chapter": 23,
+                "verse": 34
+              }
+            }
+          ],
+          "coordinate": null,
+          "wikipedia": {
+            "title": "Giloh",
+            "language": "en",
+            "url": "https://en.wikipedia.org/wiki/Giloh",
+            "kind": "related-section",
+            "noteJa": "記事はギロをユダの町として説明し、アヒトフェルがそこに由来するとしてサムエル記下23:34の「ギロ人」に触れます。この節の語は出身を示す形容であり、町の所在地を確定する記述ではありません。",
+            "checkedAt": "2026-10-16",
+            "identityVerified": false,
+            "relationVerified": true
+          }
+        },
+        {
+          "id": "place:giloh_479",
+          "draftPath": "drafts/places_2/2SA_giloh_479.json",
+          "draftSHA256": "f727b625eee1f2a496c4196aa745184a1f0b76c188a7b3cb0d5f60266b7a8fe0",
+          "profileSHA256": "f4066bb8809a507ba6d8beff361d0f4a89deb4fb767e75d5d0c32fa8d2ee8754",
+          "evidencePath": "evidence/places_2/2SA_giloh_479.json",
+          "evidenceSHA256": "2a96658588810b2f1f8d74f94c3a231106dc7b3886c37da0eceb2e7c7e02d5b3",
+          "knownBy": {
+            "chapter": 15,
+            "verse": 12
+          },
+          "passages": [
+            {
+              "book": "2SA",
+              "start": {
+                "chapter": 15,
+                "verse": 12
+              },
+              "end": {
+                "chapter": 15,
+                "verse": 12
+              }
+            }
+          ],
+          "coordinate": null,
+          "wikipedia": {
+            "title": "Giloh",
+            "language": "en",
+            "url": "https://en.wikipedia.org/wiki/Giloh",
+            "kind": "article",
+            "noteJa": "記事はギロをユダの町とし、アヒトフェルの出身地として2サムエル15:12を明記します。ベイト・ジャラとの同定には異説があり、現代の正確な位置は確定していません。",
+            "checkedAt": "2026-10-16",
+            "identityVerified": true
+          }
+        }
+      ],
+      "fixedWEBWitnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+      "sourceChecks": [
+        {
+          "ref": "2SA 15:12",
+          "url": "https://ebible.org/engwebp/2SA15.htm#V12",
+          "text": "Absalom sent for Ahithophel the Gilonite, David’s counselor, from his city, even from Giloh, while he was offering the sacrifices. The conspiracy was strong, for the people increased continually with Absalom.",
+          "sourceTextSHA256": "32005601cfa33574a09f0eb3edc8265761a9b690a8803d50632ca504818174dd"
+        },
+        {
+          "ref": "2SA 23:34",
+          "url": "https://ebible.org/engwebp/2SA23.htm#V34",
+          "text": "Eliphelet the son of Ahasbai, the son of the Maacathite, Eliam the son of Ahithophel the Gilonite,",
+          "sourceTextSHA256": "110f39afbf0022bf2cdcdfbb4d85d61e1004922e1cad83a0316aed61f78bc2d5"
+        }
+      ],
+      "checkedAtUTC": "2026-10-16T02:05:40Z"
+    }
+  ]
+}

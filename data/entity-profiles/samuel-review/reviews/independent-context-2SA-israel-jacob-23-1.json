@@ -1,0 +1,42 @@
+{
+  "title": "2 Samuel Israel/Jacob individual-context proposal independent reclosure",
+  "reviewedAtUTC": "2026-10-16T02:11:20Z",
+  "entityID": "person:israel_682",
+  "book": "2SA",
+  "reference": "23:1",
+  "decision": "pass",
+  "currentHashes": {
+    "contextProposalSHA256": "33d60d63da0a290f5a011041f3da23b25c9d9c229a2eb722de6e69511ebd3718",
+    "contextProfileSHA256": "05ec6aedbfee7e044bf8b5b75eb08fbf86f968c5293b1235e473979c5dff1dde",
+    "evidenceSHA256": "c9aaabdba634ed8274c6912d4b2c3824e320b66a5ca3c90dcd0e12c1435170cf",
+    "baseDraftSHA256": "6e08dd4e9164357dc074cf1dc678b404252d1d21bd2024786962638a20e6a7f6",
+    "contextIndexSHA256": "40f65760ebe96f743ec6ee54f62c16299a2df06235ae146a86df47e739441746"
+  },
+  "primaryReview": {
+    "decision": "pass",
+    "text": "Now these are the last words of David. David the son of Jesse says, the man who was raised on high says, the anointed of the God of Jacob, the sweet psalmist of Israel:",
+    "sourceTextSHA256": "eabba497d3cf795e783be573cae71175030a7e5f58c08d5fe3329a24127493fc",
+    "citationURL": "https://ebible.org/engwebp/2SA23.htm#V1",
+    "findingJa": "固定WEB 2SA23:1に「the anointed of the God of Jacob」とあり、Jacobは父祖個人の名として明記される。同節の「psalmist of Israel」は民の呼称として異なる用法であり、現baseの集団profileも同節に残る。提案は同一既存ID person:israel_682のcontext variantとしてpersonal senseだけを追加し、新IDを作っていない。knownBy/passagesは23:1のみに限定。"
+  },
+  "wikiReview": {
+    "decision": "pass",
+    "url": "https://en.wikipedia.org/wiki/Jacob",
+    "articleTitle": "Jacob",
+    "locator": "Article lead, current lines 228–269",
+    "findingJa": "実記事のタイトルはJacob、導入は族長Jacob本人を説明するので、WEBの「God of Jacob」と対象同一性が合う。プロフィールのnoteはこの節の呼称に限定され、Wikipedia knownByとsecondary sourceも23:1でゲートされている。記事導入に「later given the name Israel」とあるが、関連するcontext proposalは2SA23:1初出まで隠され、記事はこの時点で確定した人名の同一性を説明する。UIで節ゲートする方式は適切。",
+    "retrievedAtUTC": null,
+    "retrievalTimeNoteJa": "Web検索結果には日単位のcrawl表示のみで取得時刻は示されないため、分単位時刻は記録しない。"
+  },
+  "baseAndDualUseReview": {
+    "decision": "pass",
+    "findingJa": "現base `drafts/persons_1/2SA_israel_682.json` SHAがevidenceと一致し、passagesに2SA23:1を保持する。よって同節の「psalmist of Israel」集団用法は失われず、Jacob個人用法と両方を持てる。"
+  },
+  "evidenceIntegrity": {
+    "decision": "pass",
+    "findingJa": "提案SHA、pretty serialized context-profile SHA、evidence SHA、base draft SHA、fixed witness/source inventory SHAの対応を再計算した。WEB excerptと2SA23:1固定本文/hash一致。Wiki article read locator/URL/identity assertionsも提案内の同記事記録とcurrent実読に一致。"
+  },
+  "limitationsJa": [
+    "WikipediaはJacobという記事対象との一致を支えるが、プロフィールの本文事実は2SA23:1の呼称のみから取る。"
+  ]
+}

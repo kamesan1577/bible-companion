@@ -1,0 +1,601 @@
+{
+  "reportType": "author-repair-log",
+  "scope": "reviews/verse-map-2SA-01-08.json",
+  "issue": "採用済みentityIDと同一の候補がexcludedCandidatesにも重複した validator conflict。実際の語義上の注意はrow reasonJaへ保存し、異なるIDへの正当な除外は維持。",
+  "beforeMapSHA256": "de09afaf97b9a1f7e907ea857d3c126bcc03daf39d0b4838bc6f39fc9b604cbf",
+  "afterMapSHA256": "d0a0c8e168e6822f273c4dedd03a3f5d81aad7a02448450bac0a86ea3e6c35ab",
+  "fixedWitnessPath": "inventory/targets/samuel2-web-verses.json",
+  "fixedWitnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+  "changedVerses": [
+    {
+      "chapter": 2,
+      "verse": 2,
+      "citationURL": "https://ebible.org/engwebp/2SA02.htm#V2",
+      "sourceText": "So David went up there with his two wives, Ahinoam the Jezreelitess, and Abigail the wife of Nabal the Carmelite.",
+      "sourceTextSHA256": "8c8cfe989a667104530f38675f1d2a85cf0eedb5c065270f5bfb045a4f8e5216",
+      "removedConflictingExclusions": [
+        "place:carmel_278",
+        "place:jezreel_642"
+      ],
+      "before": {
+        "book": "2SA",
+        "chapter": 2,
+        "verse": 2,
+        "sourceText": "So David went up there with his two wives, Ahinoam the Jezreelitess, and Abigail the wife of Nabal the Carmelite.",
+        "sourceTextSHA256": "8c8cfe989a667104530f38675f1d2a85cf0eedb5c065270f5bfb045a4f8e5216",
+        "citationURL": "https://ebible.org/engwebp/2SA02.htm#V2",
+        "entities": [
+          {
+            "entityID": "person:abigail_26",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:ahinoam_153",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:david_994",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:nabal_2126",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:carmel_278",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:hebron_551",
+            "relationship": "context"
+          },
+          {
+            "entityID": "place:jezreel_642",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "place:carmel_278",
+            "name": "Carmel",
+            "reasonJa": "Carmeliteという出自形容で、町Carmelを直接指す用例ではないため除外。"
+          },
+          {
+            "entityID": "place:jezreel_642",
+            "name": "Jezreel",
+            "reasonJa": "Jezreeliteという人の出自形容で、場所を直接指す用例ではないため除外。"
+          }
+        ],
+        "reasonJa": "Jezreel人Ahinoamを示す地名由来表現を、出身呼称の適合プロフィールplace:jezreel_642へ対応する。支配範囲の列挙に使われるJezreel_643とは区別する。"
+      },
+      "after": {
+        "book": "2SA",
+        "chapter": 2,
+        "verse": 2,
+        "sourceText": "So David went up there with his two wives, Ahinoam the Jezreelitess, and Abigail the wife of Nabal the Carmelite.",
+        "sourceTextSHA256": "8c8cfe989a667104530f38675f1d2a85cf0eedb5c065270f5bfb045a4f8e5216",
+        "citationURL": "https://ebible.org/engwebp/2SA02.htm#V2",
+        "entities": [
+          {
+            "entityID": "person:abigail_26",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:ahinoam_153",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:david_994",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:nabal_2126",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:carmel_278",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:hebron_551",
+            "relationship": "context"
+          },
+          {
+            "entityID": "place:jezreel_642",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [],
+        "reasonJa": "「Jezreelite／Carmelite」は地名由来の出自形容として現れるため、該当する既存の地名プロフィールを索引する。これは本人の居住地や特定の町への訪問を断定するものではなく、広域のJezreel領域IDとも区別する。"
+      }
+    },
+    {
+      "chapter": 3,
+      "verse": 2,
+      "citationURL": "https://ebible.org/engwebp/2SA03.htm#V2",
+      "sourceText": "Sons were born to David in Hebron. His firstborn was Amnon, of Ahinoam the Jezreelitess;",
+      "sourceTextSHA256": "47999b32b209478a6da1ed838a0c917a399a260586c6a02ba0b891ffc2ccf8a5",
+      "removedConflictingExclusions": [
+        "place:jezreel_642"
+      ],
+      "before": {
+        "book": "2SA",
+        "chapter": 3,
+        "verse": 2,
+        "sourceText": "Sons were born to David in Hebron. His firstborn was Amnon, of Ahinoam the Jezreelitess;",
+        "sourceTextSHA256": "47999b32b209478a6da1ed838a0c917a399a260586c6a02ba0b891ffc2ccf8a5",
+        "citationURL": "https://ebible.org/engwebp/2SA03.htm#V2",
+        "entities": [
+          {
+            "entityID": "person:ahinoam_153",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:amnon_232",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:david_994",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:hebron_551",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:jezreel_642",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "place:jezreel_642",
+            "name": "Jezreel",
+            "reasonJa": "Jezreeliteという人の出自形容で、場所を直接指す用例ではないため除外。"
+          }
+        ],
+        "reasonJa": "Jezreel人Ahinoamを示す地名由来表現を、出身呼称の適合プロフィールplace:jezreel_642へ対応する。支配範囲の列挙に使われるJezreel_643とは区別する。"
+      },
+      "after": {
+        "book": "2SA",
+        "chapter": 3,
+        "verse": 2,
+        "sourceText": "Sons were born to David in Hebron. His firstborn was Amnon, of Ahinoam the Jezreelitess;",
+        "sourceTextSHA256": "47999b32b209478a6da1ed838a0c917a399a260586c6a02ba0b891ffc2ccf8a5",
+        "citationURL": "https://ebible.org/engwebp/2SA03.htm#V2",
+        "entities": [
+          {
+            "entityID": "person:ahinoam_153",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:amnon_232",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:david_994",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:hebron_551",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:jezreel_642",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [],
+        "reasonJa": "「Jezreelite／Carmelite」は地名由来の出自形容として現れるため、該当する既存の地名プロフィールを索引する。これは本人の居住地や特定の町への訪問を断定するものではなく、広域のJezreel領域IDとも区別する。"
+      }
+    },
+    {
+      "chapter": 3,
+      "verse": 14,
+      "citationURL": "https://ebible.org/engwebp/2SA03.htm#V14",
+      "sourceText": "David sent messengers to Ishbosheth, Saul’s son, saying, “Deliver me my wife Michal, whom I was given to marry for one hundred foreskins of the Philistines.”",
+      "sourceTextSHA256": "b2c4fec0504e4ad5d5704f5888f6997b59ff7ea0f826e875fae7b24c432b879b",
+      "removedConflictingExclusions": [
+        "person:ish-bosheth_622"
+      ],
+      "before": {
+        "book": "2SA",
+        "chapter": 3,
+        "verse": 14,
+        "sourceText": "David sent messengers to Ishbosheth, Saul’s son, saying, “Deliver me my wife Michal, whom I was given to marry for one hundred foreskins of the Philistines.”",
+        "sourceTextSHA256": "b2c4fec0504e4ad5d5704f5888f6997b59ff7ea0f826e875fae7b24c432b879b",
+        "citationURL": "https://ebible.org/engwebp/2SA03.htm#V14",
+        "entities": [
+          {
+            "entityID": "person:david_994",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:ish-bosheth_622",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:michal_2073",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:saul_2478",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "person:ish-bosheth_622",
+            "name": "Ish-bosheth",
+            "reasonJa": "候補名は節本文に明記されず、前後からの一意な照応も確認できないため追加しない。"
+          }
+        ],
+        "reasonJa": "DavidがIshboshethに使者を送り、Michalを返すよう要求する節。"
+      },
+      "after": {
+        "book": "2SA",
+        "chapter": 3,
+        "verse": 14,
+        "sourceText": "David sent messengers to Ishbosheth, Saul’s son, saying, “Deliver me my wife Michal, whom I was given to marry for one hundred foreskins of the Philistines.”",
+        "sourceTextSHA256": "b2c4fec0504e4ad5d5704f5888f6997b59ff7ea0f826e875fae7b24c432b879b",
+        "citationURL": "https://ebible.org/engwebp/2SA03.htm#V14",
+        "entities": [
+          {
+            "entityID": "person:david_994",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:ish-bosheth_622",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:michal_2073",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:saul_2478",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [],
+        "reasonJa": "DavidがIshboshethに使者を送り、Michalを返すよう求める。Ishboshethは本文に明記される。"
+      }
+    },
+    {
+      "chapter": 3,
+      "verse": 15,
+      "citationURL": "https://ebible.org/engwebp/2SA03.htm#V15",
+      "sourceText": "Ishbosheth sent and took her from her husband, Paltiel the son of Laish.",
+      "sourceTextSHA256": "01e0c7cb55a59536f86eff34de0f105cdc52560b03846d7b9075fdeb9eb19491",
+      "removedConflictingExclusions": [
+        "person:ish-bosheth_622",
+        "person:phaltiel_2326"
+      ],
+      "before": {
+        "book": "2SA",
+        "chapter": 3,
+        "verse": 15,
+        "sourceText": "Ishbosheth sent and took her from her husband, Paltiel the son of Laish.",
+        "sourceTextSHA256": "01e0c7cb55a59536f86eff34de0f105cdc52560b03846d7b9075fdeb9eb19491",
+        "citationURL": "https://ebible.org/engwebp/2SA03.htm#V15",
+        "entities": [
+          {
+            "entityID": "person:ish-bosheth_622",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:laish_1807",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:michal_2073",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:phaltiel_2326",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "person:ish-bosheth_622",
+            "name": "Ish-bosheth",
+            "reasonJa": "候補名は節本文に明記されず、前後からの一意な照応も確認できないため追加しない。"
+          },
+          {
+            "entityID": "person:phaltiel_2326",
+            "name": "Phaltiel",
+            "reasonJa": "候補名は節本文に明記されず、前後からの一意な照応も確認できないため追加しない。"
+          }
+        ],
+        "reasonJa": "IshboshethとPaltiel（既存ID表記Phaltiel）が明記され、「彼の妻Michal」は直前のMichalを指すためcontextで結ぶ。"
+      },
+      "after": {
+        "book": "2SA",
+        "chapter": 3,
+        "verse": 15,
+        "sourceText": "Ishbosheth sent and took her from her husband, Paltiel the son of Laish.",
+        "sourceTextSHA256": "01e0c7cb55a59536f86eff34de0f105cdc52560b03846d7b9075fdeb9eb19491",
+        "citationURL": "https://ebible.org/engwebp/2SA03.htm#V15",
+        "entities": [
+          {
+            "entityID": "person:ish-bosheth_622",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:laish_1807",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:michal_2073",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:phaltiel_2326",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [],
+        "reasonJa": "IshboshethとPaltiel（既存IDの表記はPhaltiel）が本文に明記される。「彼女」は直前のMichalを指すためcontextで結ぶ。"
+      }
+    },
+    {
+      "chapter": 4,
+      "verse": 2,
+      "citationURL": "https://ebible.org/engwebp/2SA04.htm#V2",
+      "sourceText": "Saul’s son had two men who were captains of raiding bands. The name of one was Baanah and the name of the other Rechab, the sons of Rimmon the Beerothite, of the children of Benjamin (for Beeroth also is considered a part of Benjamin;",
+      "sourceTextSHA256": "01b4f5686c1eb3eeb4d8365b3ab55da00948ad55683851ab9c752f2d97878d23",
+      "removedConflictingExclusions": [
+        "person:benjamin_463"
+      ],
+      "before": {
+        "book": "2SA",
+        "chapter": 4,
+        "verse": 2,
+        "sourceText": "Saul’s son had two men who were captains of raiding bands. The name of one was Baanah and the name of the other Rechab, the sons of Rimmon the Beerothite, of the children of Benjamin (for Beeroth also is considered a part of Benjamin;",
+        "sourceTextSHA256": "01b4f5686c1eb3eeb4d8365b3ab55da00948ad55683851ab9c752f2d97878d23",
+        "citationURL": "https://ebible.org/engwebp/2SA04.htm#V2",
+        "entities": [
+          {
+            "entityID": "person:baanah_582",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:benjamin_463",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:ish-bosheth_622",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:rechab_2402",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:rimmon_2441",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:saul_2478",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:beeroth_168",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "person:benjamin_463",
+            "name": "Benjamin",
+            "reasonJa": "この用例はBenjamin地域の地理用法であり、部族の人々カードを場所として流用しない。"
+          },
+          {
+            "candidate": "place:benjamin-territory_1293",
+            "reasonJa": "この節はBeerothitesのBenjamin集団への所属を述べ、地域名/境界を個別に特定しない。2SA地域profileの導入は2:9。"
+          }
+        ],
+        "reasonJa": "本文はBeerothitesをBenjaminの子らの中に数えると述べる。Benjamin集団と町Beerothを区別し、ここで後に紹介される2SA地域IDを先取りしない。"
+      },
+      "after": {
+        "book": "2SA",
+        "chapter": 4,
+        "verse": 2,
+        "sourceText": "Saul’s son had two men who were captains of raiding bands. The name of one was Baanah and the name of the other Rechab, the sons of Rimmon the Beerothite, of the children of Benjamin (for Beeroth also is considered a part of Benjamin;",
+        "sourceTextSHA256": "01b4f5686c1eb3eeb4d8365b3ab55da00948ad55683851ab9c752f2d97878d23",
+        "citationURL": "https://ebible.org/engwebp/2SA04.htm#V2",
+        "entities": [
+          {
+            "entityID": "person:baanah_582",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:benjamin_463",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:ish-bosheth_622",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:rechab_2402",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:rimmon_2441",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:saul_2478",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:beeroth_168",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "candidate": "place:benjamin-territory_1293",
+            "reasonJa": "この節はBeerothitesのBenjamin集団への所属を述べ、地域名/境界を個別に特定しない。2SA地域profileの導入は2:9。"
+          }
+        ],
+        "reasonJa": "本文はBeerothitesをBenjaminの子らの中に数えると明記するため、Benjaminの集団IDを採る。Beerothの地理的帰属は町と集団を同一視するものではなく、別IDのBenjamin地域プロフィールをこの節へ先取りしない。"
+      }
+    },
+    {
+      "chapter": 5,
+      "verse": 5,
+      "citationURL": "https://ebible.org/engwebp/2SA05.htm#V5",
+      "sourceText": "In Hebron he reigned over Judah seven years and six months, and in Jerusalem he reigned thirty-three years over all Israel and Judah.",
+      "sourceTextSHA256": "22551812f038924bd433ac8d6cea3e85f3474bef8dae88403081c92ae52d014c",
+      "removedConflictingExclusions": [
+        "person:judah_1751"
+      ],
+      "before": {
+        "book": "2SA",
+        "chapter": 5,
+        "verse": 5,
+        "sourceText": "In Hebron he reigned over Judah seven years and six months, and in Jerusalem he reigned thirty-three years over all Israel and Judah.",
+        "sourceTextSHA256": "22551812f038924bd433ac8d6cea3e85f3474bef8dae88403081c92ae52d014c",
+        "citationURL": "https://ebible.org/engwebp/2SA05.htm#V5",
+        "entities": [
+          {
+            "entityID": "person:david_994",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:israel_682",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:judah_1751",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:hebron_551",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:jerusalem_636",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "person:judah_1751",
+            "name": "Judah",
+            "reasonJa": "この用例は領域としてのJudahであり、民のカードではない。"
+          }
+        ],
+        "reasonJa": "「彼」は直前のDavid。Judahは統治対象の人々として表現され、同一語に領域placeを重複追加しない。"
+      },
+      "after": {
+        "book": "2SA",
+        "chapter": 5,
+        "verse": 5,
+        "sourceText": "In Hebron he reigned over Judah seven years and six months, and in Jerusalem he reigned thirty-three years over all Israel and Judah.",
+        "sourceTextSHA256": "22551812f038924bd433ac8d6cea3e85f3474bef8dae88403081c92ae52d014c",
+        "citationURL": "https://ebible.org/engwebp/2SA05.htm#V5",
+        "entities": [
+          {
+            "entityID": "person:david_994",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:israel_682",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:judah_1751",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:hebron_551",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:jerusalem_636",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [],
+        "reasonJa": "「Judah」はDavidの統治対象として名指され、集団・政治共同体または領域の意味を帯びる。既存のJudah collective IDを索引するが、別の地理プロフィールを追加する主張ではない。"
+      }
+    },
+    {
+      "chapter": 5,
+      "verse": 16,
+      "citationURL": "https://ebible.org/engwebp/2SA05.htm#V16",
+      "sourceText": "Elishama, Eliada, and Eliphelet.",
+      "sourceTextSHA256": "df6ae48df3866b139a2f41e85a034241f82c0af618ba302a52c5ac3e2ce989bb",
+      "removedConflictingExclusions": [
+        "person:eliphalet_1143"
+      ],
+      "before": {
+        "book": "2SA",
+        "chapter": 5,
+        "verse": 16,
+        "sourceText": "Elishama, Eliada, and Eliphelet.",
+        "sourceTextSHA256": "df6ae48df3866b139a2f41e85a034241f82c0af618ba302a52c5ac3e2ce989bb",
+        "citationURL": "https://ebible.org/engwebp/2SA05.htm#V16",
+        "entities": [
+          {
+            "entityID": "person:david_994",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:eliada_1078",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:eliphalet_1143",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:elishama_1156",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "person:eliphalet_1143",
+            "name": "Eliphalet",
+            "reasonJa": "候補名は節本文に明記されず、前後からの一意な照応も確認できないため追加しない。"
+          }
+        ],
+        "reasonJa": "Elipheletが本文に明記される。全索引照合で同節appearance 2SA5:16に適合する既存IDはEliphalet 1143。"
+      },
+      "after": {
+        "book": "2SA",
+        "chapter": 5,
+        "verse": 16,
+        "sourceText": "Elishama, Eliada, and Eliphelet.",
+        "sourceTextSHA256": "df6ae48df3866b139a2f41e85a034241f82c0af618ba302a52c5ac3e2ce989bb",
+        "citationURL": "https://ebible.org/engwebp/2SA05.htm#V16",
+        "entities": [
+          {
+            "entityID": "person:david_994",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:eliada_1078",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:eliphalet_1143",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:elishama_1156",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [],
+        "reasonJa": "本文はElipheletを名指す。既存プロフィールEliphalet 1143はこの名の異綴りを扱い、出典一覧も2 Samuel 5:16を挙げている。"
+      }
+    }
+  ],
+  "limitationsJa": "2:2/3:2の出自形容は都市所在地を断定しない。4:2ではBeerothの地理的帰属とBenjamin集団を区別し、別IDの地域除外を保持。5:5のJudah collective IDは統治対象の曖昧さを残し、別のterritorial IDを追加しない。"
+}

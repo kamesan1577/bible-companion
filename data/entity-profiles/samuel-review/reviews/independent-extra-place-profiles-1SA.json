@@ -1,0 +1,493 @@
+{
+  "title": "Independent current-source review of selected 1 Samuel and 2 Samuel place profiles",
+  "reviewedAtUTC": "2026-10-16T02:09:17Z",
+  "reviewerRole": "independent reviewer; profiles authored by another worker",
+  "scope": [
+    "1SA Gad, Socoh, Philistia, Bethlehem, Judah",
+    "2SA Aram"
+  ],
+  "readOnly": true,
+  "fixedWitnesses": {
+    "samuel1": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab",
+    "samuel2": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2"
+  },
+  "mapPolicySHA256": "72f4ea75c9a538243ae42850df081bd0b7df9c734a1e8aa57564c3d371298b6a",
+  "summary": {
+    "pass": 0,
+    "qualified": 5,
+    "fail": 1,
+    "profiles": 6,
+    "unresolvedCritical": [
+      "Philistia 1SA31:9 fact wording misstates which item/news is sent."
+    ]
+  },
+  "items": [
+    {
+      "book": "1SA",
+      "id": "place:gad_1286",
+      "draftPath": "drafts/places_3/1SA_gad_1286.json",
+      "currentDraftSHA256": "74e10cbf4fbee021618599b4d503ec67fc152bd229cb1612c3f254fd03145166",
+      "evidencePath": "evidence/places_3/1SA_gad_1286.json",
+      "currentEvidenceSHA256": "1a2640ad0fda2b12c286031780fa2e75e3dfa3591a91b633f7095d475515fdce",
+      "evidenceStoredDraftSHA256": "74e10cbf4fbee021618599b4d503ec67fc152bd229cb1612c3f254fd03145166",
+      "evidenceStoredProfileSHA256": "c3fc89a2683a6af3044c3c117f19ef34b8257537c53f5f98cdef6038eeec955b",
+      "recomputedProfileSHA256_contractIndent2": "c3fc89a2683a6af3044c3c117f19ef34b8257537c53f5f98cdef6038eeec955b",
+      "hashCheck": {
+        "draftSHA256Matches": true,
+        "profileSHA256MatchesContractIndent2": true,
+        "finding": "Current draft and profile serialization hashes match the evidence sidecar."
+      },
+      "knownBy": {
+        "chapter": 13,
+        "verse": 7
+      },
+      "alwaysVisibleFields": {
+        "subtitleJa": "ギレアデと並んで記される古代の地域名",
+        "summaryJa": "サムエル記上13:7は、「ガドの地」とギレアデを並べて記します。この節のガドは人名や部族集団ではなく、ヨルダンの向こう側にある地域の呼称です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "この呼称の古代の境界や現代の行政区域との対応は確定できません。",
+        "historicalRoleJa": "ギレアデと並列される地域呼称。",
+        "locationNoteJa": "地図上の従来候補は地域の位置を示す参考点に限られ、範囲や境界を表すものではありません。",
+        "wikipedia": {
+          "title": "Tribe of Gad",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Tribe_of_Gad#Tribal_territory",
+          "kind": "related-section",
+          "noteJa": "記事はガド族の領域をヨルダン川東側に位置づけ、境界が明瞭でないことも述べます。1 Samuelの「ガドの地」との関連情報として示し、両者の範囲を同一確定しません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "relationVerified": true
+        }
+      },
+      "fixedWEBWitness": {
+        "path": "inventory/targets/samuel1-web-verses.json",
+        "sha256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab",
+        "verses": [
+          {
+            "ref": "1SA 13:7",
+            "text": "Now some of the Hebrews had gone over the Jordan to the land of Gad and Gilead; but as for Saul, he was yet in Gilgal, and all the people followed him trembling.",
+            "url": "https://ebible.org/engwebp/1SA13.htm#V7",
+            "fixedWitnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab"
+          }
+        ]
+      },
+      "primaryAssessmentJa": "初出13:7は「the land of Gad and Gilead」と記し、Jordanを越えたことも同節に明記する。summaryの「ヨルダンの向こう側」は初出節から分かる。人名Gadや部族集団と地名用法を区別する説明も妥当。",
+      "wikipediaRead": {
+        "url": "https://en.wikipedia.org/wiki/Tribe_of_Gad#Tribal_territory",
+        "locator": "Tribal territory section, lines 160–164 and 177",
+        "supportJa": "記事はガド・ルベン・マナセ半部族のヨルダン東岸配分と境界の曖昧さを記述。現在稿も関連資料としてのみ示し範囲同一性を断定しない。",
+        "articleReadCheckedAtUTC": "2026-10-16T02:09:17Z",
+        "license": "CC BY-SA 4.0",
+        "attributionPresent": true,
+        "profileURLMatchesEvidence": true
+      },
+      "geographyAssessmentJa": "歴史的地域・部族領域に関する関連情報として適切。coordinates nullで、未検証の旧候補を地域範囲の代表候補としてのみ残すmap policyも適切。",
+      "readerLocationAssessmentJa": "「地図上の従来候補は…参考点に限られ…」は現行の読者向け位置説明として理解可能。境界を点で確定しない留保も明確。",
+      "decisionJa": "13:7は「ヨルダンを越えてガドの地とギレアデへ」と述べるため、現在summaryのヨルダン東側という文脈は原文から分かる。地名と部族の区別も妥当。Wikipediaは部族と領域についての関連情報であり、profileの範囲同定を確定しないためqualified。",
+      "status": "qualified"
+    },
+    {
+      "book": "1SA",
+      "id": "place:socoh_1105",
+      "draftPath": "drafts/places_3/1SA_socoh_1105.json",
+      "currentDraftSHA256": "52e8204ab4170f41fff7d4280a0f6ab69b200af3dea0df1985c78a848dfcc7ba",
+      "evidencePath": "evidence/places_3/1SA_socoh_1105.json",
+      "currentEvidenceSHA256": "89083296eee96546758557850733d55f5e622130456b0194b39dc11a59220210",
+      "evidenceStoredDraftSHA256": "52e8204ab4170f41fff7d4280a0f6ab69b200af3dea0df1985c78a848dfcc7ba",
+      "evidenceStoredProfileSHA256": "9ac910095b24f07da4649e81646c3f8d4cb22c41a74ad8d57a77aa3183a60484",
+      "recomputedProfileSHA256_contractIndent2": "9ac910095b24f07da4649e81646c3f8d4cb22c41a74ad8d57a77aa3183a60484",
+      "hashCheck": {
+        "draftSHA256Matches": true,
+        "profileSHA256MatchesContractIndent2": true,
+        "finding": "Current draft and profile serialization hashes match the evidence sidecar."
+      },
+      "knownBy": {
+        "chapter": 17,
+        "verse": 1
+      },
+      "alwaysVisibleFields": {
+        "subtitleJa": "ユダに属する町として記されるソコ",
+        "summaryJa": "サムエル記上17:1は、ペリシテ軍がユダに属するソコに集まり、アゼカとの間のエフェス・ダミムに陣を敷いたと記します。聖書地名のソコは複数の町に使われるため、この用例の遺跡比定は断定しません。",
+        "identityNoteJa": "",
+        "modernLocationJa": "本文の位置関係は示されますが、現在の遺跡のうちどれがこの町かは確定できません。",
+        "historicalRoleJa": "アゼカとの間にある場所として戦場の導入に現れる町。",
+        "locationNoteJa": "従来の候補位置を表示する場合も、同名の別地点があるため未確定候補として示します。",
+        "wikipedia": {
+          "title": "Sokho",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Sokho#Antiquity",
+          "kind": "related-section",
+          "noteJa": "記事はユダに属する同名の古代町を二つ挙げます。1 Samuel 17:1の町をどちらか一方の遺跡と断定せず、名称と地域の参考に限ります。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "relationVerified": true
+        }
+      },
+      "fixedWEBWitness": {
+        "path": "inventory/targets/samuel1-web-verses.json",
+        "sha256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab",
+        "verses": [
+          {
+            "ref": "1SA 17:1",
+            "text": "Now the Philistines gathered together their armies to battle; and they were gathered together at Socoh, which belongs to Judah, and encamped between Socoh and Azekah in Ephesdammim.",
+            "url": "https://ebible.org/engwebp/1SA17.htm#V1",
+            "fixedWitnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab"
+          }
+        ]
+      },
+      "primaryAssessmentJa": "初出はユダに属するソコ、アゼカとの間のエフェス・ダミムに陣を敷くという戦場の導入。summary/historicalRoleは本文の地理関係に沿う。",
+      "wikipediaRead": {
+        "url": "https://en.wikipedia.org/wiki/Sokho#Antiquity",
+        "locator": "Antiquity opening, lines 128–131",
+        "supportJa": "記事はユダ領内の同名古代町を二つ挙げ、南西の遺跡とアゼカに近いエラの谷側の遺跡を別々に記載する。後者は1SA17:1のアゼカ隣接文脈に関係するが、節だけで遺跡を確定できない。",
+        "articleReadCheckedAtUTC": "2026-10-16T02:09:17Z",
+        "license": "CC BY-SA 4.0",
+        "attributionPresent": true,
+        "profileURLMatchesEvidence": true
+      },
+      "geographyAssessmentJa": "related-section/identity falseは妥当。coordinates null、candidate mapは未確定の既存候補一点に限定して留保する。古代町を単一現代地点と確定していない。",
+      "readerLocationAssessmentJa": "現行位置説明は複数候補の存在と未確定性を明記。",
+      "decisionJa": "本文は「which belongs to Judah」と明示し、すぐ続けて「between Socoh and Azekah」と場所関係を与えるため、百科事典が示すアゼカ近くの候補遺跡との関連をより具体的に説明できる。ただし記事本文は1SA17:1対象の遺跡を断定していないのでqualified。",
+      "status": "qualified"
+    },
+    {
+      "book": "1SA",
+      "id": "place:philistia_943",
+      "draftPath": "drafts/places_3/1SA_philistia_943.json",
+      "currentDraftSHA256": "fa5d318795a3bc76c6e679087c05a10ba7b11bd75dd23b616c946853909e63f6",
+      "evidencePath": "evidence/places_3/1SA_philistia_943.json",
+      "currentEvidenceSHA256": "4818cff14216111b730ae6d79f1c0e99779e928ba801e9b71f537f62f21a72ba",
+      "evidenceStoredDraftSHA256": "fa5d318795a3bc76c6e679087c05a10ba7b11bd75dd23b616c946853909e63f6",
+      "evidenceStoredProfileSHA256": "dd7de26ba2a2ab559c95fd45f49424adf9285cf5b4879604f3e749ea193bba21",
+      "recomputedProfileSHA256_contractIndent2": "dd7de26ba2a2ab559c95fd45f49424adf9285cf5b4879604f3e749ea193bba21",
+      "hashCheck": {
+        "draftSHA256Matches": true,
+        "profileSHA256MatchesContractIndent2": true,
+        "finding": "Current draft and profile serialization hashes match the evidence sidecar."
+      },
+      "knownBy": {
+        "chapter": 6,
+        "verse": 1
+      },
+      "alwaysVisibleFields": {
+        "subtitleJa": "主の箱が七か月置かれた古代の地域",
+        "summaryJa": "サムエル記上6:1は、主の箱が七か月間「ペリシテ人の地」にあったと記します。ここではペリシテ人という集団ではなく、その地理的領域を指します。",
+        "identityNoteJa": "",
+        "modernLocationJa": "ペリシテ人の歴史的領域は時代により範囲が変わり、現代の国境と同一視できません。",
+        "historicalRoleJa": "主の箱の所在を語る場面に現れる古代の地域名。",
+        "locationNoteJa": "従来の位置候補は正しい地域内の参考位置と確認できないため、地図上には表示しません。",
+        "wikipedia": {
+          "title": "Philistia",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Philistia",
+          "kind": "article",
+          "noteJa": "記事はペリシテ人が居住したカナンの領域と主要都市を説明します。歴史上の範囲は時代で変わり、現代国家の境界とは一致しません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true
+        }
+      },
+      "fixedWEBWitness": {
+        "path": "inventory/targets/samuel1-web-verses.json",
+        "sha256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab",
+        "verses": [
+          {
+            "ref": "1SA 6:1",
+            "text": "The LORD’s ark was in the country of the Philistines seven months.",
+            "url": "https://ebible.org/engwebp/1SA06.htm#V1",
+            "fixedWitnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab"
+          },
+          {
+            "ref": "1SA 27:1",
+            "text": "David said in his heart, “I will now perish one day by the hand of Saul. There is nothing better for me than that I should escape into the land of the Philistines; and Saul will despair of me, to seek me any more in all the borders of Israel. So I will escape out of his hand.”",
+            "url": "https://ebible.org/engwebp/1SA27.htm#V1",
+            "fixedWitnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab"
+          },
+          {
+            "ref": "1SA 27:7",
+            "text": "The number of the days that David lived in the country of the Philistines was a full year and four months.",
+            "url": "https://ebible.org/engwebp/1SA27.htm#V7",
+            "fixedWitnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab"
+          },
+          {
+            "ref": "1SA 27:11",
+            "text": "David saved neither man nor woman alive to bring them to Gath, saying, “Lest they should tell about us, saying, ‘David did this, and this has been his way all the time he has lived in the country of the Philistines.’”",
+            "url": "https://ebible.org/engwebp/1SA27.htm#V11",
+            "fixedWitnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab"
+          },
+          {
+            "ref": "1SA 29:11",
+            "text": "So David rose up early, he and his men, to depart in the morning, to return into the land of the Philistines; and the Philistines went up to Jezreel.",
+            "url": "https://ebible.org/engwebp/1SA29.htm#V11",
+            "fixedWitnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab"
+          },
+          {
+            "ref": "1SA 30:16",
+            "text": "When he had brought him down, behold, they were spread around over all the ground, eating, drinking, and dancing, because of all the great plunder that they had taken out of the land of the Philistines, and out of the land of Judah.",
+            "url": "https://ebible.org/engwebp/1SA30.htm#V16",
+            "fixedWitnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab"
+          },
+          {
+            "ref": "1SA 31:9",
+            "text": "They cut off his head, stripped off his armor, and sent into the land of the Philistines all around, to carry the news to the house of their idols and to the people.",
+            "url": "https://ebible.org/engwebp/1SA31.htm#V9",
+            "fixedWitnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab"
+          }
+        ]
+      },
+      "primaryAssessmentJa": "初出6:1は「ペリシテ人の地」という地域を述べ、summaryで人々と地理領域を区別するのはよい。27章以降のfactsは本文順で適切にゲートされている。ただし31:9 factは本文を誤って「サウルの武具の知らせ」が送られたとする。WEBは首を切り武具をはぎ、その知らせを全地へ送ったと述べる。",
+      "wikipediaRead": {
+        "url": "https://en.wikipedia.org/wiki/Philistia",
+        "locator": "Lead lines 155–158; History lines 164–168",
+        "supportJa": "記事はPhilistiaをカナンのペリシテ人居住領域と定義し、主要都市を挙げ、最大範囲も時期により異なるとする。人々/民族と地域を分けるprofile分類は妥当。",
+        "articleReadCheckedAtUTC": "2026-10-16T02:09:17Z",
+        "license": "CC BY-SA 4.0",
+        "attributionPresent": true,
+        "profileURLMatchesEvidence": true
+      },
+      "geographyAssessmentJa": "identityType historical-region、coordinates null、candidate map falseは妥当。profile locationNoteJa「従来の位置候補は…地図上には表示しません」は不確かな代表点を抑制する意図を伝えるが、言い換えるなら「地域の範囲を代表する地点は確認できません」とするのが自然。",
+      "readerLocationAssessmentJa": "modernLocationJaは歴史的範囲と現代国境の違いを述べる。Wikipedia noteが現代境界と混同しない説明も適合。",
+      "decisionJa": "要修正: facts[knownBy 31:9]を「31:9はサウルの首を切り、武具をはぎ、知らせをペリシテ人の地一帯へ送ったと記す。」のように分けて忠実化する。現文の「武具の知らせ」は誤読。",
+      "status": "fail"
+    },
+    {
+      "book": "1SA",
+      "id": "place:bethlehem_218",
+      "draftPath": "drafts/places_3/1SA_bethlehem_218.json",
+      "currentDraftSHA256": "df27aaf2dbcf0dfcbfcfdf63b406aeba7d1cd792dae280fb76ea4f5312944992",
+      "evidencePath": "evidence/places_3/1SA_bethlehem_218.json",
+      "currentEvidenceSHA256": "dda24d235bc437a0061d12424a1d20e771bfe473645d0aa36e582317336b8916",
+      "evidenceStoredDraftSHA256": "df27aaf2dbcf0dfcbfcfdf63b406aeba7d1cd792dae280fb76ea4f5312944992",
+      "evidenceStoredProfileSHA256": "577c3ada863b0b82fec4c90bff38088738d3c68ddc94228b814d580fcc313808",
+      "recomputedProfileSHA256_contractIndent2": "577c3ada863b0b82fec4c90bff38088738d3c68ddc94228b814d580fcc313808",
+      "hashCheck": {
+        "draftSHA256Matches": true,
+        "profileSHA256MatchesContractIndent2": true,
+        "finding": "Current draft and profile serialization hashes match the evidence sidecar."
+      },
+      "knownBy": {
+        "chapter": 16,
+        "verse": 1
+      },
+      "alwaysVisibleFields": {
+        "subtitleJa": "エッサイの出身地として記される町",
+        "summaryJa": "サムエル記上16:1はエッサイを「ベツレヘム人」と呼びます。この箇所では、彼の出身地を示す町の名として登場します。",
+        "identityNoteJa": "",
+        "modernLocationJa": "古代のベツレヘムは現在のベツレヘム周辺と関係しますが、古代市街の範囲は確定できません。",
+        "historicalRoleJa": "エッサイの出身地として本文に現れる町。",
+        "locationNoteJa": "地図の点は従来資料による未確認の参考候補で、古代の所在を確定するものではありません。",
+        "wikipedia": {
+          "title": "Bethlehem",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Bethlehem",
+          "kind": "shared-section",
+          "noteJa": "記事は古代ベツレヘムを聖書に登場する町として説明します。現在の市街地との関係は、古代市街の範囲を確定するものではありません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": null
+        }
+      },
+      "fixedWEBWitness": {
+        "path": "inventory/targets/samuel1-web-verses.json",
+        "sha256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab",
+        "verses": [
+          {
+            "ref": "1SA 16:1",
+            "text": "The LORD said to Samuel, “How long will you mourn for Saul, since I have rejected him from being king over Israel? Fill your horn with oil, and go. I will send you to Jesse the Bethlehemite, for I have provided a king for myself among his sons.”",
+            "url": "https://ebible.org/engwebp/1SA16.htm#V1",
+            "fixedWitnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab"
+          },
+          {
+            "ref": "1SA 16:4",
+            "text": "Samuel did that which the LORD spoke, and came to Bethlehem. The elders of the city came to meet him trembling, and said, “Do you come peaceably?”",
+            "url": "https://ebible.org/engwebp/1SA16.htm#V4",
+            "fixedWitnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab"
+          },
+          {
+            "ref": "1SA 17:15",
+            "text": "Now David went back and forth from Saul to feed his father’s sheep at Bethlehem.",
+            "url": "https://ebible.org/engwebp/1SA17.htm#V15",
+            "fixedWitnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab"
+          },
+          {
+            "ref": "1SA 20:6",
+            "text": "If your father misses me at all, then say, ‘David earnestly asked leave of me that he might run to Bethlehem, his city; for it is the yearly sacrifice there for all the family.’",
+            "url": "https://ebible.org/engwebp/1SA20.htm#V6",
+            "fixedWitnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab"
+          },
+          {
+            "ref": "1SA 20:28",
+            "text": "Jonathan answered Saul, “David earnestly asked permission of me to go to Bethlehem.",
+            "url": "https://ebible.org/engwebp/1SA20.htm#V28",
+            "fixedWitnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab"
+          }
+        ]
+      },
+      "primaryAssessmentJa": "knownBy16:1の初出はJesse the Bethlehemiteという地名由来呼称。summaryは彼の町という点を示し、後の到着や反復出現はfactsにゲートされる。",
+      "wikipediaRead": {
+        "url": "https://en.wikipedia.org/wiki/Bethlehem",
+        "locator": "Lead lines 308–310; Hebrew Bible discussion lines 331–335",
+        "supportJa": "記事の導入は現代都市、聖書に関する箇所は古代の町とダビデの出生地を記述する。本文の同名古代町に関連する記事であり、現代市街と古代市街の境界不明というprofile留保に整合。",
+        "articleReadCheckedAtUTC": "2026-10-16T02:09:17Z",
+        "license": "CC BY-SA 4.0",
+        "attributionPresent": true,
+        "profileURLMatchesEvidence": true
+      },
+      "geographyAssessmentJa": "shared-section identity verifiedは名前/聖書上の町に対して妥当。ただしcoordinates nullと古代範囲の留保が適切。",
+      "readerLocationAssessmentJa": "古代ベツレヘムが現代市周辺と関係するが境界不確定という説明が正しい。Wikipedia noteが後代のイエス情報を持ち込まない。",
+      "decisionJa": "現状に重大誤りは見えない。evidence sidecarのprofileSHA256は契約記載のprofile serialize方式と一致しない（下記 hashCheck）ため、成果物の統合前に作者が方式を確認・同期する必要がある。",
+      "status": "qualified"
+    },
+    {
+      "book": "1SA",
+      "id": "place:judah_1280",
+      "draftPath": "drafts/places_3/1SA_judah_1280.json",
+      "currentDraftSHA256": "2b42c6a451ac5cee68846f1f548b1f7465bd8297bf96ca65d4bc330ea88e4ac5",
+      "evidencePath": "evidence/places_3/1SA_judah_1280.json",
+      "currentEvidenceSHA256": "2e9dfea1c71cbe523da17781efbc94a3482057ba9bfdfff2a78fade08bdcb460",
+      "evidenceStoredDraftSHA256": "2b42c6a451ac5cee68846f1f548b1f7465bd8297bf96ca65d4bc330ea88e4ac5",
+      "evidenceStoredProfileSHA256": "88d566d6b21b000975fdea04d21e2acce80031868ddbe4e3a908dca5ad906c1c",
+      "recomputedProfileSHA256_contractIndent2": "88d566d6b21b000975fdea04d21e2acce80031868ddbe4e3a908dca5ad906c1c",
+      "hashCheck": {
+        "draftSHA256Matches": true,
+        "profileSHA256MatchesContractIndent2": true,
+        "finding": "Current draft and profile serialization hashes match the evidence sidecar."
+      },
+      "knownBy": {
+        "chapter": 17,
+        "verse": 1
+      },
+      "alwaysVisibleFields": {
+        "subtitleJa": "ソコに属する土地として記される古代の地域",
+        "summaryJa": "サムエル記上17:1は、ペリシテ人が「ユダに属するソコ」に集まったと記します。ここでは人々や祖先ではなく、町が属する古代の地域名を扱います。",
+        "identityNoteJa": "",
+        "modernLocationJa": "古代の地域名であり、現代の国家・行政境界と同一視しません。",
+        "historicalRoleJa": "ソコの所属先として本文に示される古代地域。",
+        "locationNoteJa": "地図の点は従来資料による未確認の参考候補で、古代の所在を確定するものではありません。",
+        "wikipedia": {
+          "title": "Tribe of Judah",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Tribe_of_Judah",
+          "kind": "related-section",
+          "noteJa": "記事はユダを古代イスラエルの部族・領域として説明します。現代境界との同一視は避けます。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "relationVerified": true
+        }
+      },
+      "fixedWEBWitness": {
+        "path": "inventory/targets/samuel1-web-verses.json",
+        "sha256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab",
+        "verses": [
+          {
+            "ref": "1SA 17:1",
+            "text": "Now the Philistines gathered together their armies to battle; and they were gathered together at Socoh, which belongs to Judah, and encamped between Socoh and Azekah in Ephesdammim.",
+            "url": "https://ebible.org/engwebp/1SA17.htm#V1",
+            "fixedWitnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab"
+          },
+          {
+            "ref": "1SA 22:5",
+            "text": "The prophet Gad said to David, “Don’t stay in the stronghold. Depart, and go into the land of Judah.” Then David departed, and came into the forest of Hereth.",
+            "url": "https://ebible.org/engwebp/1SA22.htm#V5",
+            "fixedWitnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab"
+          },
+          {
+            "ref": "1SA 27:10",
+            "text": "Achish said, “Against whom have you made a raid today?” David said, “Against the South of Judah, against the South of the Jerahmeelites, and against the South of the Kenites.”",
+            "url": "https://ebible.org/engwebp/1SA27.htm#V10",
+            "fixedWitnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab"
+          }
+        ]
+      },
+      "primaryAssessmentJa": "17:1の「which belongs to Judah」はソコの所属する地域を指す。summaryはその地域を個人JudahやJudahite集団と区別している。22:5/27:10は後続factとして明示的にゲート。",
+      "wikipediaRead": {
+        "url": "https://en.wikipedia.org/wiki/Tribe_of_Judah",
+        "locator": "Lead lines 150–158; Biblical account / territory context lines 163–167",
+        "supportJa": "記事は古代ユダ族・南部領域を扱い、さらにKingdom of Judahとは別項と明記する。1SA17:1の地理的「Judah」の近接関連として適切で、article is not exact distinct place identity. Current related-section flags reflect this.",
+        "articleReadCheckedAtUTC": "2026-10-16T02:09:17Z",
+        "license": "CC BY-SA 4.0",
+        "attributionPresent": true,
+        "profileURLMatchesEvidence": true
+      },
+      "geographyAssessmentJa": "歴史的地域としてのprofile、related-only Wikipedia, coordinates null; old candidate only with unverified contextual label. Correctly not the eponym Judah as person or ethnic group.",
+      "readerLocationAssessmentJa": "現代国家・行政境界との混同回避は妥当。",
+      "decisionJa": "特段の原典ずれはない。profile hash sidecar mismatch persists (hashCheck).",
+      "status": "qualified"
+    },
+    {
+      "book": "2SA",
+      "id": "place:aram_82",
+      "draftPath": "drafts/places_3/2SA_aram_82.json",
+      "currentDraftSHA256": "c8a237fc6d1c00c768f5b389298ae98874c633251862562a2d2fcfb6d37879aa",
+      "evidencePath": "evidence/places_3/2SA_aram_82.json",
+      "currentEvidenceSHA256": "f46ba62deaa018fb4b165c111b44b08f4d4bddee846ffab44de4497a8de2322b",
+      "evidenceStoredDraftSHA256": "c8a237fc6d1c00c768f5b389298ae98874c633251862562a2d2fcfb6d37879aa",
+      "evidenceStoredProfileSHA256": "503849ef094100e6f4433a18a0b9866243a59ffe8fa3ad81caa46415e5ca4bab",
+      "recomputedProfileSHA256_contractIndent2": "503849ef094100e6f4433a18a0b9866243a59ffe8fa3ad81caa46415e5ca4bab",
+      "hashCheck": {
+        "draftSHA256Matches": true,
+        "profileSHA256MatchesContractIndent2": true,
+        "finding": "Current draft and profile serialization hashes match the evidence sidecar."
+      },
+      "knownBy": {
+        "chapter": 8,
+        "verse": 6
+      },
+      "alwaysVisibleFields": {
+        "subtitleJa": "アラムというダマスカスを含む古代地域・勢力名",
+        "summaryJa": "サムエル記下8:6は、ダマスカスのアラム人を敗走させたと記します。ここでは町ではなく、古代の地域・勢力を示す呼称として扱います。",
+        "identityNoteJa": "",
+        "modernLocationJa": "歴史的な広域名で、現代シリア国家と境界を同一視しません。",
+        "historicalRoleJa": "ダビデの戦役に現れる古代アラム系勢力・地域名。",
+        "locationNoteJa": "地図の点は従来資料による未確認の参考候補で、古代の所在を確定するものではありません。",
+        "wikipedia": {
+          "title": "Aram (region)",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Aram_(region)",
+          "kind": "article",
+          "noteJa": "記事はアラムを古代シリアの歴史的地域・諸政体の総称として扱い、現代国境と区別します。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": null
+        }
+      },
+      "fixedWEBWitness": {
+        "path": "inventory/targets/samuel2-web-verses.json",
+        "sha256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+        "verses": [
+          {
+            "ref": "2SA 8:5",
+            "text": "When the Syrians of Damascus came to help Hadadezer king of Zobah, David struck twenty two thousand men of the Syrians.",
+            "url": "https://ebible.org/engwebp/2SA08.htm#V5",
+            "fixedWitnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2"
+          },
+          {
+            "ref": "2SA 8:6",
+            "text": "Then David put garrisons in Syria of Damascus; and the Syrians became servants to David, and brought tribute. The LORD gave victory to David wherever he went.",
+            "url": "https://ebible.org/engwebp/2SA08.htm#V6",
+            "fixedWitnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2"
+          },
+          {
+            "ref": "2SA 15:8",
+            "text": "For your servant vowed a vow while I stayed at Geshur in Syria, saying, “If the LORD shall indeed bring me again to Jerusalem, then I will serve the LORD.”",
+            "url": "https://ebible.org/engwebp/2SA15.htm#V8",
+            "fixedWitnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2"
+          }
+        ]
+      },
+      "primaryAssessmentJa": "2SA8:5「Syrians of Damascus」は民族名+出身/所属表現で、広域地名Aramの独立初出とは扱わない。8:6の「Syria of Damascus」が地理表現なのでknownBy8:6は適切。15:8は別の後続事実としてゲート。",
+      "wikipediaRead": {
+        "url": "https://en.wikipedia.org/wiki/Aram_(region)",
+        "locator": "Lead lines 130–134",
+        "supportJa": "記事はAramを歴史地域と小国群として説明し、Aram-Damascusがヘブライ語聖書で単にAramとも呼ばれるとする。プロフィールの地域同定と「現代シリアと境界を同一視しない」説明に関連する。",
+        "articleReadCheckedAtUTC": "2026-10-16T02:09:17Z",
+        "license": "CC BY-SA 4.0",
+        "attributionPresent": true,
+        "profileURLMatchesEvidence": true
+      },
+      "geographyAssessmentJa": "広域historical region、coordinates null、旧点未確認のまま保持は適切。8:5から地理地名を先取りせず、8:6を初出にした判断を支持。",
+      "readerLocationAssessmentJa": "歴史地域と現代国家境界を分ける読者説明は適合。",
+      "decisionJa": "独立再確認でknownBy8:6維持を支持。profile hash sidecar mismatch persists (hashCheck).",
+      "status": "qualified"
+    }
+  ]
+}

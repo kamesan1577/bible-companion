@@ -1,0 +1,92 @@
+{
+  "book": "2SA",
+  "entityID": "place:beth-shan_232",
+  "assignmentTargetKey": "2SA:place:beth-shan_232",
+  "draftFile": "drafts/places_1/2SA_beth-shan_232.json",
+  "draftSHA256": "2000833016b88648877eddde4de71690643a42442bea76b6cd3209caa46e8a3f",
+  "profileSHA256": "d6020e670104966ecf28002787bfd0b7a94c4cdd8b146e72942ac28be4e53992",
+  "pinnedWEB": {
+    "sourceId": "webp",
+    "version": "webp-usfx-2026-10-13-35a6adf626e5",
+    "file": "inventory/targets/samuel2-web-verses.json",
+    "fileSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2"
+  },
+  "candidateSource": {
+    "url": "https://github.com/robertrouse/theographic-bible-metadata/tree/52e049efb3b95e4f1da52d11a3303fbd2d648922",
+    "commit": "52e049efb3b95e4f1da52d11a3303fbd2d648922",
+    "license": "CC-BY-SA-4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": "Derived from Theographic Bible Metadata by Robert Rouse and contributors. Names and occurrence indexes only; prose removed, Japanese labels added, coordinates marked as candidates. Candidate coordinates are not independently verified."
+  },
+  "primaryContext": [
+    {
+      "chapter": 21,
+      "verse": 12,
+      "candidateText": "So David went and took the bones of Saul and the bones of Jonathan his son from the men of Jabesh Gilead, who had stolen them from the street of Beth Shan, where the Philistines had hanged them in the day that the Philistines killed Saul in Gilboa;",
+      "fixedText": "So David went and took the bones of Saul and the bones of Jonathan his son from the men of Jabesh Gilead, who had stolen them from the street of Beth Shan, where the Philistines had hanged them in the day that the Philistines killed Saul in Gilboa;",
+      "sourceTextSHA256": "2a2d94a8b6745740b9c80a2d1e060fbf58c929ba20a2625aa5c68aca4a2514dd",
+      "context": [
+        {
+          "chapter": 20,
+          "verse": 26,
+          "text": "and Ira the Jairite was chief minister to David.",
+          "citationURL": "https://ebible.org/engwebp/2SA20.htm#V26",
+          "sourceTextSHA256": "3296eb8389baa13efe9afbcaab7df6f89282080a41cb601e768ee0ad717d3ba8"
+        },
+        {
+          "chapter": 21,
+          "verse": 12,
+          "text": "So David went and took the bones of Saul and the bones of Jonathan his son from the men of Jabesh Gilead, who had stolen them from the street of Beth Shan, where the Philistines had hanged them in the day that the Philistines killed Saul in Gilboa;",
+          "citationURL": "https://ebible.org/engwebp/2SA21.htm#V12",
+          "sourceTextSHA256": "2a2d94a8b6745740b9c80a2d1e060fbf58c929ba20a2625aa5c68aca4a2514dd"
+        },
+        {
+          "chapter": 22,
+          "verse": 1,
+          "text": "David spoke to the LORD the words of this song in the day that the LORD delivered him out of the hand of all his enemies, and out of the hand of Saul,",
+          "citationURL": "https://ebible.org/engwebp/2SA22.htm#V1",
+          "sourceTextSHA256": "1c050d50bd006e4a4defc5a56bce26fd316e5208ad78e3a68060563eedcc1d22"
+        }
+      ]
+    }
+  ],
+  "occurrenceChecks": [
+    {
+      "chapter": 21,
+      "verse": 12,
+      "status": "direct",
+      "reasonJa": "固定WEB本文で場所名を名指す。"
+    }
+  ],
+  "wikipediaBodyRead": {
+    "title": "Beit She'an",
+    "url": "https://en.wikipedia.org/wiki/Beth_Shean",
+    "checkedAtUTC": "2026-10-16T01:08:03Z",
+    "locator": "Beit She'an, lines 233–235 and 305–306",
+    "supportJa": "lines 233–235 identifies modern city and ancient tell; lines 305–306 discusses Saul’s body in 1 Samuel 31. The profile’s 2 Samuel 21:12 is related to the site but not cited there."
+  },
+  "wikipediaNegativeSearch": null,
+  "geography": {
+    "identityCheck": "2サムエル記21:12のBet Shanと記事の古代遺跡・現在市は関連するが、現代市街を古代都市そのものとして同じ範囲と扱わない。",
+    "uncertainty": "古代の遺跡と現在の市の関係は記事に基づく。プロフィール座標は未照合のためnull。",
+    "review": {
+      "category": "ancient-city-site",
+      "coordinatePublished": false,
+      "legacyCandidateStatus": "candidate-unverified",
+      "indexCandidateCoordinate": [
+        32.50423846,
+        35.50307739
+      ],
+      "indexCoordinateStatus": "unverified-candidate",
+      "independentOfficialGeographyCheck": "未実施。プロフィール座標はnull。",
+      "reasonJa": "古代都市の遺跡候補と現在の町は地理的に連続し、参考位置候補は対象に対応し得る。古代市街の境界を確定する点として表示しない。"
+    }
+  },
+  "profileTextSHA256Method": "SHA-256 of ensure_ascii=False, indent=2, insertion-order JSON serialization of profile plus trailing newline.",
+  "metadataHistory": [
+    {
+      "atUTC": "2026-10-16T01:10:28Z",
+      "change": "Added pinned assignment/source candidate metadata and exact immediate-verse context blocks for every assigned occurrence; no claims/draft fields changed."
+    }
+  ]
+}

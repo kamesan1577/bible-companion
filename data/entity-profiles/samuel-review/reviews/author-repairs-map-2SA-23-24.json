@@ -1,0 +1,588 @@
+{
+  "status": "author-repair-record",
+  "book": "2SA",
+  "sourceMapPath": "reviews/verse-map-2SA-17-24.json",
+  "beforeMapSHA256": "9564de994b5cb31f1dee0b9d757a2f93159b0c7fae43f5f7947547454b0840b2",
+  "afterMapSHA256": "03bd3e296b16bfed0e3abdcfecede0c7386e636f06a08da6dac1ff412d27ff0b",
+  "sourceReviewPath": "reviews/root-source-map-2SA-23-24-round1.json",
+  "sourceReviewSHA256": "0018c6a7f3ad38d78eeb82b6ebaf7cbfaebd18087f55cd33a60abab40ebe15eb",
+  "fixedWitnessPath": "inventory/targets/samuel2-web-verses.json",
+  "fixedWitnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+  "createdAtUTC": "2026-10-16T02:04:31Z",
+  "elapsedSeconds": null,
+  "elapsedReasonJa": "作業時間は計測していないため推定しない。",
+  "changes": [
+    {
+      "ref": "23:1",
+      "reasonBefore": "Heading names David/Jesse, God of Jacob, and Israel in the psalmist title.",
+      "reasonAfter": "David/Jesseと神の呼称、Israelの詩人呼称を本文どおり採用。「Jacob」は神の呼称内にありIsrael集団と同一参照にせず、人物profile対応待ち。"
+    },
+    {
+      "ref": "23:6",
+      "before": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ]
+    },
+    {
+      "ref": "23:6",
+      "reasonBefore": "General image of the ungodly, no named person. context項目は前後の一意な先行詞・話者・応答先に限定した。",
+      "reasonAfter": "一般化された悪人／刺の比喩で、この節に神への名指しや一意な照応はない。Davidは詩の話者として前段からcontext。"
+    },
+    {
+      "ref": "23:7",
+      "before": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        }
+      ]
+    },
+    {
+      "ref": "23:7",
+      "reasonBefore": "Continuing generalized image, no named person/place. context項目は前後の一意な先行詞・話者・応答先に限定した。",
+      "reasonAfter": "一般化された悪人／刺の比喩で、この節に神への名指しや一意な照応はない。Davidは詩の話者として前段からcontext。"
+    },
+    {
+      "ref": "23:9",
+      "before": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:eleazar_1064",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:adino_89",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:eleazar_1064",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ]
+    },
+    {
+      "ref": "23:9",
+      "reasonBefore": "Eleazar and David are named; Dodai is not equated with Dodo. 無名者・適合IDなし・不確かな異綴りは推測リンクせずunresolvedMentionsへ記録。",
+      "reasonAfter": "EleazarとDavid/Israelは明記。「After him」は直前23:8の勇士Adinoを受けるcontext。Dodaiは本文表記を維持しDodoとの同一性を断定しない。"
+    },
+    {
+      "ref": "23:10",
+      "before": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:eleazar_1064",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ]
+    },
+    {
+      "ref": "23:12",
+      "before": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shammah_2539",
+          "relationship": "context"
+        }
+      ]
+    },
+    {
+      "ref": "23:17",
+      "before": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ]
+    },
+    {
+      "ref": "23:26",
+      "before": [
+        {
+          "entityID": "person:helez_1482",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ikkesh_596",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ira_609",
+          "relationship": "direct"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:helez_1482",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ikkesh_596",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ira_609",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:tekoa_1142",
+          "relationship": "direct"
+        }
+      ]
+    },
+    {
+      "ref": "23:26",
+      "reasonBefore": "Helez/Ikkesh/Ira named; Tekoite has no assigned location profile.",
+      "reasonAfter": "Helez/Ira/Ikkeshを名指し。「Tekoite」はテコア由来の明示的な出身呼称で、既存place:tekoa_1142へ結ぶ。"
+    },
+    {
+      "ref": "23:27",
+      "reasonBefore": "Abiezer/Mebunnai written; no proven candidate identity for Mebunnai. 無名者・適合IDなし・不確かな異綴りは推測リンクせずunresolvedMentionsへ記録。",
+      "reasonAfter": "AbiezerとMebunnaiを本文が名指す。Mebunnaiに適合が確認できる既存個人IDはなく、似たSibbecaiへ同定しない。"
+    },
+    {
+      "ref": "23:30",
+      "before": [
+        {
+          "entityID": "person:benaiah_440",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:gaash_429",
+          "relationship": "direct"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:benaiah_440",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:hurai_1521",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:gaash_429",
+          "relationship": "direct"
+        }
+      ]
+    },
+    {
+      "ref": "23:30",
+      "reasonBefore": "Benaiah/Gaash named; Hiddai is not forced to Hurai. 無名者・適合IDなし・不確かな異綴りは推測リンクせずunresolvedMentionsへ記録。",
+      "reasonAfter": "Benaiah/Gaashを名指し。既存person:hurai_1521はWEBのHiddaiを表示名とするprofileなのでHiddaiをdirectで結ぶ。profileの注記どおり歴代誌のHuraiとの同一性は断定しない。"
+    },
+    {
+      "ref": "23:33",
+      "before": [
+        {
+          "entityID": "person:ahiam_129",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:sharar_2558",
+          "relationship": "direct"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:ahiam_129",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:shammah_2540",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:sharar_2558",
+          "relationship": "direct"
+        }
+      ]
+    },
+    {
+      "ref": "23:33",
+      "reasonBefore": "WEB says Shammah the Hararite; similar-name IDs remain unresolved. 無名者・適合IDなし・不確かな異綴りは推測リンクせずunresolvedMentionsへ記録。",
+      "reasonAfter": "Shammah the Hararite, Ahiam, Shararを本文どおり採用。既存person:shammah_2540はこの勇士のprofileで、別節のShammah son of AgeeやShageとは区別する。"
+    },
+    {
+      "ref": "23:34",
+      "before": [
+        {
+          "entityID": "person:ahasbai_116",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ahithophel_162",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:eliam_1090",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:eliphelet_1147",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:gilo_478",
+          "relationship": "direct"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:ahasbai_116",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ahithophel_162",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:eliam_1090",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:eliphelet_1147",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:gilo_478",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:maacah_743",
+          "relationship": "direct"
+        }
+      ]
+    },
+    {
+      "ref": "23:34",
+      "reasonBefore": "EliamをGiloniteと呼ぶ地名由来の帰属呼称。既存Giloをdirectで記録。",
+      "reasonAfter": "EliamとElipheletおよび父祖名は明記。「Maacathite」は地域由来の呼称として既存place:maacah_743に結び、同名人物Maacahとは区別。Giloniteの地名profile対応は別名提案の独立判定待ち。"
+    },
+    {
+      "ref": "23:35",
+      "before": [
+        {
+          "entityID": "person:paarai_2262",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:carmel_278",
+          "relationship": "direct"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:hezrai_1518",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:paarai_2262",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:carmel_278",
+          "relationship": "direct"
+        }
+      ]
+    },
+    {
+      "ref": "23:35",
+      "reasonBefore": "HezroをCarmeliteと呼び、既存Carmelからの地名由来表現としてdirect。Paaraiは本文に明記。",
+      "reasonAfter": "本文のHezroをdirectで採用する既存profile person:hezrai_1518はWEB綴りHezroを表示し、別表記Hezraiとの関係をprofile内で留保する。Carmeliteの地名呼称とPaaraiも本文どおり。"
+    },
+    {
+      "ref": "24:8",
+      "before": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "context"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:joab_1617",
+          "relationship": "context"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ]
+    },
+    {
+      "ref": "24:8",
+      "reasonBefore": "Jerusalem is the route endpoint. context項目は前後の一意な先行詞・話者・応答先に限定した。",
+      "reasonAfter": "本文は測量隊（24:8）／御使いと主（24:16）の行為を述べ、Davidの名・一意な代名詞はない。舞台背景だけのDavidリンクを除く。 Joabは先行節の測量隊長として明確なcontext。"
+    },
+    {
+      "ref": "24:16",
+      "before": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ornan_289",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ornan_289",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct"
+        }
+      ]
+    },
+    {
+      "ref": "24:16",
+      "reasonBefore": "Jerusalem/LORD/Araunah threshing floor explicit; angel has no individual ID. context項目は前後の一意な先行詞・話者・応答先に限定した。",
+      "reasonAfter": "本文は測量隊（24:8）／御使いと主（24:16）の行為を述べ、Davidの名・一意な代名詞はない。舞台背景だけのDavidリンクを除く。 Jerusalem・主・Araunahは明示。"
+    },
+    {
+      "ref": "24:13",
+      "before": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:gad_1263",
+          "relationship": "direct"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:gad_1263",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context"
+        }
+      ]
+    },
+    {
+      "ref": "24:13",
+      "reasonBefore": "Gad brings choices to David; him who sent me is God.",
+      "reasonAfter": "GadはDavidへ選択肢を伝える。「him who sent me」は24:11–12で語を送った主を一意に受けるcontext。"
+    },
+    {
+      "ref": "24:17",
+      "before": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:jesse_903",
+          "relationship": "context"
+        }
+      ]
+    },
+    {
+      "ref": "24:17",
+      "reasonBefore": "David speaks to LORD; angel unnamed.",
+      "reasonAfter": "Davidが主に告白し、自分と「my father’s house」へ手を向けるよう願う。Jesseは23:1でDavidの父と明示されるためfamily phraseの候補contextとして示すが、家全体をJesse個人と同一視しない。"
+    },
+    {
+      "ref": "24:20",
+      "before": [
+        {
+          "entityID": "person:ornan_289",
+          "relationship": "direct"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:ornan_289",
+          "relationship": "direct"
+        }
+      ]
+    },
+    {
+      "ref": "24:20",
+      "reasonBefore": "Araunah sees the king.",
+      "reasonAfter": "Araunahが王を見て応対する場面。直前24:18–19で王はaltarを築くよう命じられたDavidであるため、Davidをcontextで示す。"
+    },
+    {
+      "ref": "24:23",
+      "before": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ornan_289",
+          "relationship": "direct"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ornan_289",
+          "relationship": "direct"
+        }
+      ]
+    },
+    {
+      "ref": "24:23",
+      "reasonBefore": "Araunah/LORD explicit.",
+      "reasonAfter": "Araunahが王を見て応対する場面。直前24:18–19で王はaltarを築くよう命じられたDavidであるため、Davidをcontextで示す。"
+    },
+    {
+      "ref": "24:22",
+      "before": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ornan_289",
+          "relationship": "direct"
+        }
+      ],
+      "after": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:ornan_289",
+          "relationship": "direct"
+        }
+      ]
+    },
+    {
+      "ref": "24:22",
+      "reasonBefore": "Araunah addresses David with the offerings.",
+      "reasonAfter": "Araunahが王Davidへ供物用家畜・器具を申し出る文で、God/LORDへの名指しや一意な神指示はない。「my lord the king」を神と誤リンクしない。"
+    }
+  ],
+  "notesJa": "編集はレビュー所見で示された節に限定。Jacob個人、Ariel、未同定地名など適合profileのない候補は新IDを作らず保留。Gilo/Gilohの書内aliasは別途独立判定待ち。"
+}
