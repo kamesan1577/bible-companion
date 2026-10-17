@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 import CompanionCore
 
 struct HistoryView: View {
@@ -59,6 +60,8 @@ private struct ImportedHistoryList: View {
 }
 struct SettingsView: View {
     @EnvironmentObject private var store: AppStore
+    @Environment(\.scenePhase) private var scenePhase
+    @State private var pendingChatGPT: ChatGPTHandoff?
     @State private var showGuide = false
     @State private var prepareAfterGuide = false
     @State private var showSignOut = false
@@ -77,9 +80,10 @@ struct SettingsView: View {
                     do { try SharePresentationPreferences.setChatGPTVisible(value); showChatGPT = value; presentationError = nil }
                     catch { presentationError = "表示設定を保存できませんでした。もう一度お試しください。" }
                 })).accessibilityIdentifier("chatgpt-visibility")
-                Text("共有した本文と質問を確認してコピーするボタンです。ChatGPTを開いて貼り付けてください。自動送信はしません。").bibleTextStyle(.caption)
+                Text("共有した本文と質問を確認して、URLまたはコピーでChatGPTへ渡します。URLを開くと回答が始まる場合があります。").bibleTextStyle(.caption)
                 if let presentationError { Text(presentationError) }
             }
+            ChatGPTHandoffSection(pending: $pendingChatGPT)
             Section("アカウント") {
                 if let account = store.account {
                     LabeledContent("ログイン中", value: account.display_name)
@@ -144,16 +148,51 @@ struct SettingsView: View {
             if let owner = store.account, owner.canDebug == true { Section("開発者専用") { NavigationLink("モデル・接続・比較を確認する") { DeveloperView(ownerID: owner.id, client: store.client) } }.bibleForeground(.danger) }
         }
         .bibleCanvas().navigationTitle("設定")
+        .onAppear { refreshChatGPTHandoff() }
+        .onChange(of: store.account?.id) { _, _ in refreshChatGPTHandoff() }
+        .onChange(of: scenePhase) { _, phase in if phase == .active { refreshChatGPTHandoff() } }
         .sheet(isPresented: $showGuide, onDismiss: { if prepareAfterGuide { prepareAfterGuide = false; store.showAISetup = true } }) { FirstRunGuide(onPrepare: { prepareAfterGuide = true; showGuide = false }) }
         .confirmationDialog("この端末からログアウトしますか？", isPresented: $showSignOut, titleVisibility: .visible) {
             Button("ログアウトする", role: .destructive) { Task { await store.signOut() } }
         } message: { Text("この端末のログインと、待っている共有内容を消します。アカウントに保存した読書履歴は消しません。") }
     }
+    private func refreshChatGPTHandoff() { pendingChatGPT = try? ShareInbox.chatGPTHandoff(expectedOwner: store.account?.id) }
     private func setConsent(_ enabled: Bool) {
         let epoch = store.sessionEpoch
         Task {
             do { try await store.consent(enabled, expectedEpoch: epoch); guard store.sessionEpoch == epoch else { return }; notice = enabled ? "AIを使えるようになりました。" : "AIへの送信をやめました。保存された聖書の説明は引き続き読めます。" }
             catch { if store.sessionEpoch == epoch { store.handle(error) } }
+        }
+    }
+}
+
+private struct ChatGPTHandoffSection: View {
+    @EnvironmentObject private var store: AppStore
+    @Environment(\.openURL) private var openURL
+    @Binding var pending: ChatGPTHandoff?
+    @State private var notice: String?
+    var body: some View {
+        Group {
+            if let pending {
+                Section("ChatGPTへ引き継いだ質問") {
+                    Text(pending.prompt).lineLimit(3).accessibilityIdentifier("chatgpt-main-content")
+                    NavigationLink("本文と質問を全文で確認") { ScrollView { Text(pending.prompt).textSelection(.enabled).padding() }.navigationTitle("ChatGPTへ渡す内容") }
+                    Text("URLを開くと回答が始まる場合があります。本文と質問はURLに含まれ、ブラウザ履歴などに残る可能性があります。")
+                    if let url = try? ChatGPTQuestionLink.make(prompt: pending.prompt) {
+                        Button("ChatGPTで開く") {
+                            guard let current = try? ShareInbox.chatGPTHandoff(expectedOwner: store.account?.id), current == pending else { self.pending = nil; return }
+                            openURL(url) { accepted in if !accepted { notice = "開けませんでした。本文をコピーしてChatGPTへ貼り付けてください。" } }
+                        }.accessibilityIdentifier("chatgpt-main-open")
+                    } else { Text("URLにするには長すぎます。全文のコピーを使ってください。") }
+                    Button("本文と質問をコピー") {
+                        guard let current = try? ShareInbox.chatGPTHandoff(expectedOwner: store.account?.id), current == pending else { self.pending = nil; return }
+                        UIPasteboard.general.setItems([[UIPasteboard.typeAutomatic: pending.prompt]], options: [.localOnly: true, .expirationDate: Date().addingTimeInterval(600)])
+                        notice = "コピーしました。"
+                    }
+                    Button("引き継いだ内容を消す", role: .destructive) { do { try ShareInbox.removeChatGPTHandoff(expected: pending); self.pending = nil } catch { notice = "消去できませんでした。" } }
+                    if let notice { Text(notice) }
+                }
+            }
         }
     }
 }

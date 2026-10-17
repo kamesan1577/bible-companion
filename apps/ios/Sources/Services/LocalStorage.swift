@@ -132,10 +132,40 @@ enum ShareInbox {
     }
     /// Local identity marker only; reading it does not grant AI access.
     static func localDraftOwner() throws -> String? { try withLock { try readOwner(at: $0) } }
+    static func saveChatGPTHandoff(prompt: String, expectedOwner: String?) throws {
+        try withLock { root in
+            guard try readOwner(at: root) == expectedOwner else { throw NetworkFailure.invalidResponse }
+            let value = ChatGPTHandoff(ownerID: expectedOwner, prompt: prompt)
+            guard value.isUsable(ownerID: expectedOwner) else { throw InboxError.oversized }
+            try JSONEncoder().encode(value).write(to: root.appendingPathComponent("chatgpt.handoff"), options: [.atomic, .completeFileProtection])
+        }
+    }
+    static func chatGPTHandoff(expectedOwner: String?) throws -> ChatGPTHandoff? {
+        try withLock { root in
+            let path = root.appendingPathComponent("chatgpt.handoff")
+            guard let bytes = try readBytes(path, limit: 128_000, missingAllowed: true) else { return nil }
+            let value = try JSONDecoder().decode(ChatGPTHandoff.self, from: bytes)
+            guard try readOwner(at: root) == expectedOwner, value.ownerID == expectedOwner else { return nil }
+            guard value.isUsable(ownerID: expectedOwner) else { try FileManager.default.removeItem(at: path); return nil }
+            return value
+        }
+    }
+    static func removeChatGPTHandoff(expected: ChatGPTHandoff) throws {
+        try withLock { root in
+            let path = root.appendingPathComponent("chatgpt.handoff")
+            guard try readOwner(at: root) == expected.ownerID,
+                  let bytes = try readBytes(path, limit: 128_000, missingAllowed: true),
+                  try JSONDecoder().decode(ChatGPTHandoff.self, from: bytes) == expected else { throw NetworkFailure.invalidResponse }
+            try FileManager.default.removeItem(at: path)
+        }
+    }
+
     static func setOwner(_ owner: String?) throws {
         guard owner == nil || UUID(uuidString: owner ?? "") != nil else { throw NetworkFailure.invalidResponse }
         try withLock { root in
             if try readOwner(at: root) != owner {
+                let handoff = root.appendingPathComponent("chatgpt.handoff")
+                if FileManager.default.fileExists(atPath: handoff.path) { try FileManager.default.removeItem(at: handoff) }
                 let file = root.appendingPathComponent("ai-access.capability")
                 if FileManager.default.fileExists(atPath: file.path) { try FileManager.default.removeItem(at: file) }
                 let receipt = root.appendingPathComponent("extension-read.receipt")
@@ -214,7 +244,7 @@ enum ShareInbox {
     static func remove(_ id: UUID) throws { try withLock { root in try FileManager.default.removeItem(at: root.appendingPathComponent(id.uuidString).appendingPathExtension("json")) } }
     static func clear() throws {
         try withLock { root in
-            for name in ["ai-access.capability", "extension-read.receipt"] {
+            for name in ["ai-access.capability", "extension-read.receipt", "chatgpt.handoff"] {
                 let file = root.appendingPathComponent(name)
                 if FileManager.default.fileExists(atPath: file.path) { try FileManager.default.removeItem(at: file) }
             }

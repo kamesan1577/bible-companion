@@ -104,6 +104,7 @@ struct SimulatorQA: View {
         }
         .sheet(isPresented: Binding(get: { snapshotScreen != "configured-home" && store.showAISetup }, set: { store.showAISetup = $0 })) { AISetupView().environmentObject(store) }
         .task { try? PendingQuestionStore.clear(); await client.setToken("simulator-fixture-only"); store.configureSimulatorQA(client: client); await store.loadAIPolicy()
+            if ProcessInfo.processInfo.arguments.contains("--qa-handoff-owner") { try? ShareInbox.setOwner(store.account?.id) }
             if ProcessInfo.processInfo.arguments.contains("--qa-clear-access") { try? ShareInbox.clearAIAccess() }
             if ProcessInfo.processInfo.arguments.contains("--qa-expiring-access"), let owner = store.account?.id {
                 try? ShareInbox.setOwner(owner)

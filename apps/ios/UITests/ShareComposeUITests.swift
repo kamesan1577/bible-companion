@@ -16,6 +16,41 @@ final class ShareComposeUITests: XCTestCase {
         }
         XCTAssertTrue(field.waitForExistence(timeout:15))
     }
+    @MainActor func testQuestionURLFromShareOpensSafari() {
+        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa", "--qa-handoff-owner"]; app.launch(); open(app)
+        let field = app.descendants(matching: .any).matching(identifier: "share-question-draft").firstMatch
+        field.tap(); field.typeText("URL direct? & # + %")
+        app.buttons["chatgpt-copy-preview"].tap()
+        let urlButton = app.buttons["chatgpt-open-url"]
+        for _ in 0..<8 { if urlButton.exists && urlButton.isHittable { break }; app.swipeUp() }
+        XCTAssertTrue(urlButton.exists); attach(app, "q-share-review-before-open"); urlButton.tap()
+        let safari = XCUIApplication(bundleIdentifier: "com.apple.mobilesafari")
+        XCTAssertTrue(safari.wait(for: .runningForeground, timeout: 15))
+        let wait = expectation(description: "Safari q render"); DispatchQueue.main.asyncAfter(deadline: .now()+5) { wait.fulfill() }; waitForExpectations(timeout: 7)
+        attach(safari, "q-share-safari-result")
+        app.activate()
+    }
+    @MainActor func testQuestionURLManualMainAppHandoff() {
+        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa", "--qa-handoff-owner"]; app.launch(); open(app)
+        let field = app.descendants(matching: .any).matching(identifier: "share-question-draft").firstMatch
+        field.tap(); field.typeText("URL main? & # + %")
+        app.buttons["chatgpt-copy-preview"].tap()
+        let stage = app.buttons["chatgpt-stage-main"]
+        for _ in 0..<8 { if stage.exists && stage.isHittable { break }; app.swipeUp() }
+        stage.tap()
+        let notice = app.staticTexts["chatgpt-handoff-notice"]
+        expectation(for: NSPredicate(format: "label CONTAINS %@", "10分間"), evaluatedWith: notice); waitForExpectations(timeout: 5)
+        attach(app, "q-link-staged-for-main")
+        app.navigationBars["ChatGPTへ渡す"].buttons["閉じる"].tap()
+        XCTAssertEqual(field.value as? String, "URL main? & # + %")
+        app.buttons["閉じる"].tap()
+        app.terminate(); app.launchArguments = ["--simulator-qa", "--qa-screen=settings", "--qa-handoff-owner"]; app.launch()
+        let main = app.buttons["chatgpt-main-open"]
+        for _ in 0..<8 { if main.exists && main.isHittable { break }; app.swipeUp() }
+        XCTAssertTrue(main.waitForExistence(timeout: 10)); attach(app, "q-link-main-review")
+        main.tap(); let safari = XCUIApplication(bundleIdentifier: "com.apple.mobilesafari"); XCTAssertTrue(safari.wait(for: .runningForeground, timeout: 15))
+        attach(safari, "q-link-main-safari-result"); app.activate()
+    }
     @MainActor func testShareExtensionOfficialOpenAPIProbe() {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch(); open(app)
         let probe = app.buttons["QA: ChatGPT open probe"]
@@ -42,6 +77,7 @@ final class ShareComposeUITests: XCTestCase {
         func settings(_ visible: Bool) {
             app.terminate(); app.launchArguments = ["--simulator-qa", "--qa-screen=settings"]; app.launch()
             let toggle = app.switches["chatgpt-visibility"]
+            for _ in 0..<8 { if toggle.exists && toggle.isHittable { break }; app.swipeUp() }
             XCTAssertTrue(toggle.waitForExistence(timeout: 15))
             if (toggle.value as? String == "1") != visible {
                 toggle.coordinate(withNormalizedOffset: CGVector(dx: 0.94, dy: 0.5)).tap()
@@ -62,6 +98,7 @@ final class ShareComposeUITests: XCTestCase {
         XCTAssertLessThanOrEqual(alternative.frame.maxY, app.buttons["質問を送る"].frame.maxY + 2)
         attach(app, "chatgpt-alternative-keyboard")
         alternative.tap()
+        for _ in 0..<8 { if app.buttons["chatgpt-copy-confirm"].exists && app.buttons["chatgpt-copy-confirm"].isHittable { break }; app.swipeUp() }
         XCTAssertTrue(app.buttons["chatgpt-copy-confirm"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts["chatgpt-copy-content"].label.contains("ChatGPT draft preserved?"))
         attach(app, "chatgpt-explicit-copy-preview")

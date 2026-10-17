@@ -1,3 +1,5 @@
+> Historical result at 3200fd6. Superseded by the q-URL/SwiftUI route verification in docs/releases/v0.1.18-preview.1.md. NSExtensionContext and SwiftUI openURL are different paths; the latter subsequently succeeded.
+
 # ChatGPT handoff verification — local only, 2026-10-17
 
 The verified production candidate remains explicit preview-and-copy. Direct Share Extension opening, question prefill, and an adopted official button icon remain incomplete. No guessed URL query, private API, responder chain, account token, full conversation or model system prompt is used. Publication remains unapproved. Physical-device crash diagnosis and real Gemma answer quality remain unverified.

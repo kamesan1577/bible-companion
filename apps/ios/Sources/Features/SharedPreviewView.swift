@@ -331,7 +331,7 @@ struct SharedPreviewView: View {
     @State private var pane = "explanation"
     @State private var showSetupSteps = false
     @State private var showChatGPT = (try? SharePresentationPreferences.isChatGPTVisible()) ?? true
-    private struct ChatGPTPreview: Identifiable { let id = UUID(); let prompt: String?; let error: String? }
+    private struct ChatGPTPreview: Identifiable { let id = UUID(); let prompt: String?; let error: String?; var ownerID: String? = nil }
     @State private var chatGPTPreview: ChatGPTPreview?
     @FocusState private var composerFocused: Bool
     var body: some View {
@@ -418,8 +418,10 @@ struct SharedPreviewView: View {
                             Button {
                                 do {
                                     guard let passage = model.current?.passage else { return }
+                                    model.revalidateAccess()
+                                    let owner = try ShareInbox.localDraftOwner()
                                     let prompt = try ChatGPTCopyPrompt.make(question: model.draft, passage: passage, translation: model.translation, sharedText: model.sharedText)
-                                    chatGPTPreview = ChatGPTPreview(prompt: prompt, error: nil)
+                                    chatGPTPreview = ChatGPTPreview(prompt: prompt, error: nil, ownerID: owner)
                                 } catch { chatGPTPreview = ChatGPTPreview(prompt: nil, error: "質問と共有本文を確認してください。質問は2,000文字、共有文は20,000文字までです。") }
                             } label: { ChatGPTCopyComposerLabel() }
                             .accessibilityLabel("ChatGPT用の本文と質問を確認").accessibilityIdentifier("chatgpt-copy-preview")
@@ -431,25 +433,65 @@ struct SharedPreviewView: View {
             }.safeAreaInset(edge: .top) { if let passage = model.current?.passage { SharedScriptureHeader(passage: passage, translation: model.translation, text: model.sharedText, compact: composerFocused) } }.bibleCanvas().navigationTitle("聖書コンパニオン").navigationBarTitleDisplayMode(.inline)
                 .toolbar { ToolbarItem(placement: .topBarLeading) { if composerFocused { Button { composerFocused = false } label: { Image(systemName: "keyboard.chevron.compact.down") }.accessibilityLabel("キーボードを閉じる") } }; ToolbarItem(placement: .topBarTrailing) { Button("閉じる", action: close) } }
                 .sheet(item: $chatGPTPreview) { preview in
-                    NavigationStack {
-                        ScrollView { VStack(alignment: .leading, spacing: BibleTheme.Space.page) {
-                            Text("コピー後、ChatGPTを開いて貼り付けてください。質問付きで直接開く機能には対応していません。")
-                            Text("コピーする内容は以下だけです。会話履歴やアカウント情報は含みません。")
-                            if let error = preview.error { Text(error) }
-                            else if let chatGPTPrompt = preview.prompt {
-                                Text(chatGPTPrompt).textSelection(.enabled).accessibilityIdentifier("chatgpt-copy-content")
-                                Button("本文と質問をコピー") {
-                                    UIPasteboard.general.setItems([[UIPasteboard.typeAutomatic: chatGPTPrompt]], options: [.localOnly: true, .expirationDate: Date().addingTimeInterval(600)])
-                                    chatGPTPreview = nil
-                                }.accessibilityIdentifier("chatgpt-copy-confirm")
-                            }
-                        }.padding() }.navigationTitle("ChatGPT用にコピー")
-                        .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("閉じる") { chatGPTPreview = nil } } }
-                    }
+                    ChatGPTPreviewSheet(prompt: preview.prompt, error: preview.error, ownerID: preview.ownerID)
                 }
                 .onDisappear { model.close() }
-                .onChange(of: scenePhase) { _, phase in if phase == .active { model.revalidateAccess(); showChatGPT = (try? SharePresentationPreferences.isChatGPTVisible()) ?? showChatGPT } }
+                .onChange(of: scenePhase) { _, phase in if phase == .active {
+                    model.revalidateAccess(); showChatGPT = (try? SharePresentationPreferences.isChatGPTVisible()) ?? showChatGPT
+                    if let preview = chatGPTPreview {
+                        do { if try ShareInbox.localDraftOwner() != preview.ownerID { chatGPTPreview = nil } }
+                        catch { chatGPTPreview = nil }
+                    }
+                } }
 
+        }
+    }
+}
+
+private struct ChatGPTPreviewSheet: View {
+    let prompt: String?
+    let error: String?
+    let ownerID: String?
+    @Environment(\.openURL) private var openURL
+    @Environment(\.dismiss) private var dismiss
+    @State private var chatGPTNotice: String?
+    var body: some View {
+        NavigationStack {
+            ScrollView { VStack(alignment: .leading, spacing: BibleTheme.Space.page) {
+                Text("本文と質問をURLでChatGPTへ渡せます。開くと回答が始まる場合があります。入力欄に入るだけの場合は、内容を確認して送信してください。URLはブラウザ履歴などに残る可能性があります。")
+                Text("コピーする内容は以下だけです。会話履歴やアカウント情報は含みません。")
+                if let error = error { Text(error) }
+                else if let chatGPTPrompt = prompt {
+                    Text(chatGPTPrompt).textSelection(.enabled).accessibilityIdentifier("chatgpt-copy-content")
+                    if let url = try? ChatGPTQuestionLink.make(prompt: chatGPTPrompt) {
+                        Button("ChatGPTで開く") {
+                            do { guard try ShareInbox.localDraftOwner() == ownerID else { chatGPTNotice = "ログイン状態が変わりました。共有し直してください。"; return } }
+                            catch { chatGPTNotice = "ログイン状態を確認できませんでした。共有し直してください。"; return }
+                            openURL(url) { accepted in
+                                if !accepted { chatGPTNotice = "この共有画面からは開けませんでした。URLをコピーしてブラウザで開くか、本体の設定へ引き継いでください。" }
+                            }
+                        }.accessibilityIdentifier("chatgpt-open-url")
+        #if DEBUG && targetEnvironment(simulator)
+                        Link("QA: system link", destination: url).accessibilityIdentifier("chatgpt-system-link")
+        #endif
+                        Button("ChatGPTのURLをコピー") {
+                            UIPasteboard.general.setItems([[UIPasteboard.typeAutomatic: url.absoluteString]], options: [.localOnly: true, .expirationDate: Date().addingTimeInterval(600)])
+                            chatGPTNotice = "URLをコピーしました。ブラウザのアドレス欄へ貼り付けると、本文と質問を渡せます。"
+                        }.accessibilityIdentifier("chatgpt-copy-url")
+                    } else { Text("URLにするには本文が長すぎます。本文と質問をコピーしてChatGPTへ貼り付けてください。内容は切り詰めません。") }
+                    Button("本体の設定へ引き継ぐ") {
+                        do { try ShareInbox.saveChatGPTHandoff(prompt: chatGPTPrompt, expectedOwner: ownerID); chatGPTNotice = "10分間、同じログイン状態の本体へ引き継ぎました。共有画面を閉じ、聖書コンパニオンの設定からChatGPTで開いてください。" }
+                        catch { chatGPTNotice = "本体へ引き継げませんでした。ログイン状態を確認するか、コピーを使ってください。" }
+                    }.accessibilityIdentifier("chatgpt-stage-main")
+                    if let chatGPTNotice { Text(chatGPTNotice).accessibilityIdentifier("chatgpt-handoff-notice") }
+
+                    Button("本文と質問をコピー") {
+                        UIPasteboard.general.setItems([[UIPasteboard.typeAutomatic: chatGPTPrompt]], options: [.localOnly: true, .expirationDate: Date().addingTimeInterval(600)])
+                        dismiss()
+                    }.accessibilityIdentifier("chatgpt-copy-confirm")
+                }
+            }.padding() }.navigationTitle("ChatGPTへ渡す")
+            .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("閉じる") { dismiss() } } }
         }
     }
 }

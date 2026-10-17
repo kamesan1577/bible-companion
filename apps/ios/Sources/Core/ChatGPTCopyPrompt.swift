@@ -1,6 +1,6 @@
 import Foundation
 
-/// Explicit clipboard handoff, never a URL or an AI-system prompt.
+/// User-facing content shared by the explicit clipboard and URL handoff paths.
 public enum ChatGPTCopyPrompt {
     public enum Failure: Error { case emptyQuestion, oversized, missingBody }
     public static func make(question: String, passage: Passage, translation: String?, sharedText: String) throws -> String {
@@ -23,5 +23,30 @@ public enum ChatGPTCopyPrompt {
         質問：
         \(question)
         """
+    }
+}
+
+public enum ChatGPTQuestionLink {
+    /// Conservative interoperability policy, not a claimed ChatGPT server limit.
+    public static let maximumURLBytes = 16_384
+    public enum Failure: Error { case empty, tooLong }
+    public static func make(prompt: String) throws -> URL {
+        guard !prompt.isEmpty else { throw Failure.empty }
+        let unreserved = CharacterSet(charactersIn: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~")
+        guard let encoded = prompt.addingPercentEncoding(withAllowedCharacters: unreserved),
+              let url = URL(string: "https://chatgpt.com/?q=" + encoded) else { throw Failure.empty }
+        guard url.absoluteString.utf8.count <= maximumURLBytes else { throw Failure.tooLong }
+        return url
+    }
+}
+public struct ChatGPTHandoff: Codable, Equatable, Sendable {
+    public let ownerID: String?
+    public let prompt: String
+    public let expiresAt: Date
+    public init(ownerID: String?, prompt: String, now: Date = Date()) {
+        self.ownerID = ownerID; self.prompt = prompt; expiresAt = now.addingTimeInterval(600)
+    }
+    public func isUsable(ownerID: String?, now: Date = Date()) -> Bool {
+        self.ownerID == ownerID && expiresAt > now && expiresAt.timeIntervalSince(now) <= 600 && !prompt.isEmpty && prompt.utf16.count <= 24_000
     }
 }

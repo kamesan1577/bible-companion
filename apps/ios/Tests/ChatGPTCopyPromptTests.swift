@@ -16,4 +16,28 @@ final class ChatGPTCopyPromptTests: XCTestCase {
         XCTAssertThrowsError(try ChatGPTCopyPrompt.make(question: " ", passage: passage, translation: nil, sharedText: "原文"))
         XCTAssertThrowsError(try ChatGPTCopyPrompt.make(question: "質問", passage: passage, translation: nil, sharedText: "https://example.com"))
     }
+
+    func testQuestionURLIsLosslessAndHasOnlyOneQueryItem() throws {
+        let prompt = "日本語\n節の本文 🙏 & # + % ? = /\n質問です"
+        let url = try ChatGPTQuestionLink.make(prompt: prompt)
+        XCTAssertEqual(url.scheme, "https"); XCTAssertEqual(url.host, "chatgpt.com")
+        let parts = try XCTUnwrap(URLComponents(url: url, resolvingAgainstBaseURL: false))
+        XCTAssertEqual(parts.queryItems, [URLQueryItem(name: "q", value: prompt)])
+        XCTAssertNil(parts.fragment); XCTAssertTrue(url.absoluteString.contains("%2B")); XCTAssertTrue(url.absoluteString.contains("%0A"))
+    }
+    func testLongURLFailsWithoutTruncatingTheClipboardPrompt() throws {
+        let prompt = String(repeating: "日本語", count: 1500)
+        XCTAssertThrowsError(try ChatGPTQuestionLink.make(prompt: prompt))
+        XCTAssertEqual(prompt.count, 4500)
+        XCTAssertThrowsError(try ChatGPTQuestionLink.make(prompt: ""))
+    }
+    func testHandoffExpiresAndCannotCrossAccounts() {
+        let now = Date(timeIntervalSince1970: 10000)
+        let handoff = ChatGPTHandoff(ownerID: "A", prompt: "question", now: now)
+        XCTAssertTrue(handoff.isUsable(ownerID: "A", now: now))
+        XCTAssertFalse(handoff.isUsable(ownerID: "B", now: now))
+        XCTAssertFalse(handoff.isUsable(ownerID: nil, now: now))
+        XCTAssertFalse(handoff.isUsable(ownerID: "A", now: now.addingTimeInterval(600)))
+        XCTAssertFalse(handoff.isUsable(ownerID: "A", now: now.addingTimeInterval(-1)))
+    }
 }
