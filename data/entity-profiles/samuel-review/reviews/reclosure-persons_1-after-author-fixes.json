@@ -1,0 +1,529 @@
+{
+  "reviewType": "independent-author-repair-reclosure",
+  "scope": "Re-read all 12 changed Samuel persons_1 drafts against fixed WEB witness and current article-body evidence. This is a delta closure, not a replacement for the original 84-row independent review. Author drafts/evidence were not edited.",
+  "reviewedAtUTC": "2026-10-16T01:40:39.528953Z",
+  "previousReview": "reviews/independent-persons_1.json",
+  "previousReviewSHA256": "18be61b73c7f44686fd976637b58a397c0bbb344df64137fc62ec4b7996efb55",
+  "authorRepairLog": "evidence/persons_1/author-repairs-persons1-independent-findings.json",
+  "authorRepairLogSHA256": "9e3cb38fc1bee5e8ff4a835dfe96d9c74bcf48d1c34a7757a7cb0501cda2472c",
+  "fixedWitness": {
+    "1SA": {
+      "path": "inventory/targets/samuel1-web-verses.json",
+      "sha256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab",
+      "version": "webp-usfx-2026-10-13-35a6adf626e5"
+    },
+    "2SA": {
+      "path": "inventory/targets/samuel2-web-verses.json",
+      "sha256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+      "version": "webp-usfx-2026-10-13-35a6adf626e5"
+    }
+  },
+  "counts": {
+    "reviewed": 12,
+    "pass": 7,
+    "qualified": 5,
+    "fail": 0
+  },
+  "decisionPolicyJa": "元指摘は閉じたかを現稿の本文・facts/gates・出典で再確認した。qualifiedは原文の文脈推定/表記差/記事の限定性などが残る状態で、failは修正後も本文事実の誤帰属が残る状態。記事本文の実読根拠をURL/節/行で記録し、URL応答や作者metadataだけを記事確認とは扱わない。",
+  "items": [
+    {
+      "book": "1SA",
+      "entityID": "person:aaron_1",
+      "draftPath": "drafts/persons_1/1SA_aaron_1.json",
+      "evidencePath": "evidence/persons_1/1SA_aaron_1.json",
+      "previousDraftSHA256": "2e3c08286475ce7edfba6277bf4f72fd1b9b31161afe874e91f1be50ef5f6d9e",
+      "currentDraftSHA256": "4c26e6924154e426d7d394ac33e489a8a5d166ed657aee925f963ed8f26b672b",
+      "currentEvidenceSHA256": "1895c8f0093ab6340291d71b0a117f148c9d10bb5f1524629e24373d25a4c16a",
+      "currentProfileSHA256": "19e5dd02e716ebb98870f63f2fb739fcd792a571f23392d2645115519a9f7a4f",
+      "integrity": {
+        "draftSHA256MatchesSidecar": true,
+        "profileSHA256MatchesSidecar": true,
+        "repairLogAfterDraftMatches": true,
+        "repairLogAfterProfileMatches": true
+      },
+      "previousIndependentFinding": "1SA12:6 is the knownBy point, but summary explicitly cites 12:8.",
+      "verdict": "pass",
+      "assessmentJa": "12:6 base now only names Moses and Aaron leading ancestors from Egypt; 12:8 is represented separately as a fact gated to 12:8. Both passages/source IDs are retained.",
+      "sourceCoordinatesReviewed": [
+        {
+          "coordinate": "1SA 12:6",
+          "text": "Samuel said to the people, “It is the LORD who appointed Moses and Aaron, and that brought your fathers up out of the land of Egypt.",
+          "citationURL": "https://ebible.org/engwebp/1SA12.htm#V6"
+        },
+        {
+          "coordinate": "1SA 12:8",
+          "text": "“When Jacob had come into Egypt, and your fathers cried to the LORD, then the LORD sent Moses and Aaron, who brought your fathers out of Egypt, and made them to dwell in this place.",
+          "citationURL": "https://ebible.org/engwebp/1SA12.htm#V8"
+        }
+      ],
+      "wikipediaBodyReview": {
+        "url": "https://ja.wikipedia.org/wiki/アロン",
+        "locator": "導入 L201–208",
+        "findingJa": "アロンを旧約聖書の人物、モーセの兄・脱出指導者と説明。プロフィールの補足範囲を支持。",
+        "status": "article-read"
+      }
+    },
+    {
+      "book": "1SA",
+      "entityID": "person:agag_109",
+      "draftPath": "drafts/persons_1/1SA_agag_109.json",
+      "evidencePath": "evidence/persons_1/1SA_agag_109.json",
+      "previousDraftSHA256": "57fdb2ccb247ce885a6d5c257e76c7a9c2367206145974c2f29748cc6c353003",
+      "currentDraftSHA256": "2051a5019bf7716b9eaf34d99c1a6ab7e8539bcdedbca3a5665df799b373da8c",
+      "currentEvidenceSHA256": "518ad903cf21be8cb52652958d50600ada8065683bdd3d93f94a19365ff3f41a",
+      "currentProfileSHA256": "02af7da63cea813710b81ef5e51c59fc1cd2b926a13f391d6dfffc4426219110",
+      "integrity": {
+        "draftSHA256MatchesSidecar": true,
+        "profileSHA256MatchesSidecar": true,
+        "repairLogAfterDraftMatches": true,
+        "repairLogAfterProfileMatches": true
+      },
+      "previousIndependentFinding": "Wiki note at knownBy 15:8 describes survival of Saul’s campaign and Samuel’s execution (later 15:33); fresh article read lines 123 and 126 confirms these are later narrative facts.",
+      "verdict": "pass",
+      "assessmentJa": "15:8 summary identifies Agag as Amalekite king captured alive. Later treatment at 15:9, 15:20, 15:32, 15:33 is separated into facts with corresponding knownBy gates. Wiki note now only identifies the article subject and contains no later survival/execution information.",
+      "sourceCoordinatesReviewed": [
+        {
+          "coordinate": "1SA 15:8",
+          "text": "He took Agag the king of the Amalekites alive, and utterly destroyed all the people with the edge of the sword.",
+          "citationURL": "https://ebible.org/engwebp/1SA15.htm#V8"
+        },
+        {
+          "coordinate": "1SA 15:9",
+          "text": "But Saul and the people spared Agag and the best of the sheep, of the cattle, of the fat calves, of the lambs, and all that was good, and were not willing to utterly destroy them; but everything that was vile and refuse, that they destroyed utterly.",
+          "citationURL": "https://ebible.org/engwebp/1SA15.htm#V9"
+        },
+        {
+          "coordinate": "1SA 15:20",
+          "text": "Saul said to Samuel, “But I have obeyed the LORD’s voice, and have gone the way which the LORD sent me, and have brought Agag the king of Amalek, and have utterly destroyed the Amalekites.",
+          "citationURL": "https://ebible.org/engwebp/1SA15.htm#V20"
+        },
+        {
+          "coordinate": "1SA 15:32",
+          "text": "Then Samuel said, “Bring Agag the king of the Amalekites here to me!” Agag came to him cheerfully. Agag said, “Surely the bitterness of death is past.”",
+          "citationURL": "https://ebible.org/engwebp/1SA15.htm#V32"
+        },
+        {
+          "coordinate": "1SA 15:33",
+          "text": "Samuel said, “As your sword has made women childless, so your mother will be childless among women!” Then Samuel cut Agag in pieces before the LORD in Gilgal.",
+          "citationURL": "https://ebible.org/engwebp/1SA15.htm#V33"
+        }
+      ],
+      "wikipediaBodyReview": {
+        "url": "https://en.wikipedia.org/wiki/Agag",
+        "locator": "導入 L122–126",
+        "findingJa": "L126 discusses the later survival and execution; current note avoids those details and states only the article concerns the Amalekite king Agag of 1 Samuel 15.",
+        "status": "article-read"
+      }
+    },
+    {
+      "book": "1SA",
+      "entityID": "person:ahimelech_126",
+      "draftPath": "drafts/persons_1/1SA_ahimelech_126.json",
+      "evidencePath": "evidence/persons_1/1SA_ahimelech_126.json",
+      "previousDraftSHA256": "0d090e1df47f601b03b6e2e354108a901e1dd47855cfa0ba0932aba7132df244",
+      "currentDraftSHA256": "a32972177c6738f1178a3bef5d26f9ed583f6bf5b4023e67cbc484ff9fb024d2",
+      "currentEvidenceSHA256": "583a6b513c672f1200853e695556e9d7c6ee76e338ca348ce3373c7f0c2833ec",
+      "currentProfileSHA256": "f7fc4399ec9dbfc06dc15695ce47ddf918d1e7ca13564e0d2cc5088bd0891c6b",
+      "integrity": {
+        "draftSHA256MatchesSidecar": true,
+        "profileSHA256MatchesSidecar": true,
+        "repairLogAfterDraftMatches": true,
+        "repairLogAfterProfileMatches": true
+      },
+      "previousIndependentFinding": "Profile passages/facts at 1SA23:6 and 30:7 describe Abiathar, Ahimelech’s son; 30:7 has Abiathar as the addressee and the one who brings the ephod. These are not actions or name occurrences of Ahimelech.",
+      "verdict": "qualified",
+      "assessmentJa": "Removed the erroneous 23:6/30:7 Abiathar actions and retained Ahimelech’s own 21:1–22:16 appearances plus the 22:20 father/son mention. The base says he welcomed David while fearing Saul; WEB 21:1 directly says he came trembling, while fear of Saul is inferred from surrounding context rather than named in that verse.",
+      "sourceCoordinatesReviewed": [
+        {
+          "coordinate": "1SA 21:1",
+          "text": "Then David came to Nob to Ahimelech the priest. Ahimelech came to meet David trembling, and said to him, “Why are you alone, and no man with you?”",
+          "citationURL": "https://ebible.org/engwebp/1SA21.htm#V1"
+        },
+        {
+          "coordinate": "1SA 21:2",
+          "text": "David said to Ahimelech the priest, “The king has commanded me to do something, and has said to me, ‘Let no one know anything about the business about which I send you, and what I have commanded you. I have sent the young men to a certain place.’",
+          "citationURL": "https://ebible.org/engwebp/1SA21.htm#V2"
+        },
+        {
+          "coordinate": "1SA 22:9",
+          "text": "Then Doeg the Edomite, who stood by the servants of Saul, answered and said, “I saw the son of Jesse coming to Nob, to Ahimelech the son of Ahitub.",
+          "citationURL": "https://ebible.org/engwebp/1SA22.htm#V9"
+        },
+        {
+          "coordinate": "1SA 22:20",
+          "text": "One of the sons of Ahimelech the son of Ahitub, named Abiathar, escaped and fled after David.",
+          "citationURL": "https://ebible.org/engwebp/1SA22.htm#V20"
+        }
+      ],
+      "wikipediaBodyReview": {
+        "url": "https://en.wikipedia.org/wiki/Ahimelech",
+        "locator": "導入・Relation to David L133–140",
+        "findingJa": "Describes the Nob priest visited by David while fleeing Saul; supports the person match.",
+        "status": "article-read"
+      }
+    },
+    {
+      "book": "1SA",
+      "entityID": "person:joshua_1728",
+      "draftPath": "drafts/persons_1/1SA_joshua_1728.json",
+      "evidencePath": "evidence/persons_1/1SA_joshua_1728-sources.json",
+      "previousDraftSHA256": "a842c0544346a8bef930dc4f49d3cf289c6ac95254891015a43b2276c6fa715a",
+      "currentDraftSHA256": "de5b60f167f679c4e0aa21b42238aca3c85708ec65824611ab6dc314345553ff",
+      "currentEvidenceSHA256": "21b95df016489561a3943afc39ef51dc76f94fc08fadc21822ffe090ba203fc8",
+      "currentProfileSHA256": "5667146e71b55be9aa1aa24df3b55a75bc936fc596f12c435159834b9889fecd",
+      "integrity": {
+        "draftSHA256MatchesSidecar": true,
+        "profileSHA256MatchesSidecar": true,
+        "repairLogAfterDraftMatches": true,
+        "repairLogAfterProfileMatches": true
+      },
+      "previousIndependentFinding": "The sole fact at 1SA6:14 says cart wood was split and cows offered; the WEB verse does not assign these actions to Joshua.",
+      "verdict": "pass",
+      "assessmentJa": "The unsupported 6:14 action fact was removed. Summary accurately limits Joshua to owner named in the field where the cart stopped; 6:18 separately names his field. The note distinguishes this Beth-shemesh landowner from Joshua son of Nun.",
+      "sourceCoordinatesReviewed": [
+        {
+          "coordinate": "1SA 6:14",
+          "text": "The cart came into the field of Joshua of Beth Shemesh, and stood there, where there was a great stone. Then they split the wood of the cart and offered up the cows for a burnt offering to the LORD.",
+          "citationURL": "https://ebible.org/engwebp/1SA06.htm#V14"
+        },
+        {
+          "coordinate": "1SA 6:18",
+          "text": "and the golden mice, according to the number of all the cities of the Philistines belonging to the five lords, both of fortified cities and of country villages, even to the great stone on which they set down the LORD’s ark. That stone remains to this day in the field of Joshua of Beth Shemesh.",
+          "citationURL": "https://ebible.org/engwebp/1SA06.htm#V18"
+        }
+      ],
+      "wikipediaBodyReview": {
+        "url": null,
+        "locator": null,
+        "findingJa": "No article-body match was confirmed; profile correctly remains unlinked.",
+        "status": "no-suitable-article-confirmed"
+      }
+    },
+    {
+      "book": "1SA",
+      "entityID": "person:pharaoh_2331",
+      "draftPath": "drafts/persons_1/1SA_pharaoh_2331.json",
+      "evidencePath": "evidence/persons_1/1SA_pharaoh_2331-sources.json",
+      "previousDraftSHA256": "67a0cb7c867c9fd7de90251d5a687bfbfe88d2d68447d7b234558d37f4ebaf05",
+      "currentDraftSHA256": "54147d7b6dbe692e1cc33399cc68bbf65a3b4e68cd5ccdfa943791e06b5b0537",
+      "currentEvidenceSHA256": "6caa2cf3750319ea8abb20418c05ea62c98d5cee5e47be2b8d294075f3d2e914",
+      "currentProfileSHA256": "5864bba31323937fa1687fb1b9d7048a2e558022f5a3af53c8268e69f2602e78",
+      "integrity": {
+        "draftSHA256MatchesSidecar": true,
+        "profileSHA256MatchesSidecar": true,
+        "repairLogAfterDraftMatches": true,
+        "repairLogAfterProfileMatches": true
+      },
+      "previousIndependentFinding": "At knownBy 1SA2:27, summary explicitly says Pharaoh is used again in 6:6; the verse 6:6 is later and may concern another ruler.",
+      "verdict": "qualified",
+      "assessmentJa": "2:27 summary now only discusses the house of Pharaoh in the ancestors’ Egypt account. The profile retains a distinct 6:6 title occurrence. Since Pharaoh is an office title and the WEB does not identify a personal king, the office-title record appropriately avoids a named ruler; the note about multiple historical periods is a general title distinction, not a specific king claim.",
+      "sourceCoordinatesReviewed": [
+        {
+          "coordinate": "1SA 2:27",
+          "text": "A man of God came to Eli and said to him, “The LORD says, ‘Did I reveal myself to the house of your father when they were in Egypt in bondage to Pharaoh’s house?",
+          "citationURL": "https://ebible.org/engwebp/1SA02.htm#V27"
+        },
+        {
+          "coordinate": "1SA 6:6",
+          "text": "Why then do you harden your hearts as the Egyptians and Pharaoh hardened their hearts? When he had worked wonderfully among them, didn’t they let the people go, and they departed?",
+          "citationURL": "https://ebible.org/engwebp/1SA06.htm#V6"
+        }
+      ],
+      "wikipediaBodyReview": {
+        "url": "https://ja.wikipedia.org/wiki/ファラオ",
+        "locator": "導入 L309–316",
+        "findingJa": "Defines Pharaoh as a title for ancient Egyptian kings; supports the office-title concept but does not identify the ruler(s) in Samuel.",
+        "status": "article-read"
+      }
+    },
+    {
+      "book": "2SA",
+      "entityID": "person:abiathar_20",
+      "draftPath": "drafts/persons_1/2SA_abiathar_20.json",
+      "evidencePath": "evidence/persons_1/2SA_abiathar_20-sources.json",
+      "previousDraftSHA256": "5af3565eb1e8fc4629248ace22905f510bf18578a0a6a225481bad193229228d",
+      "currentDraftSHA256": "2bd1da7e10e5c7555bd4bfe8b6dd4229859de46f6106f0877de3585e5a04a6be",
+      "currentEvidenceSHA256": "d4554c3343bafa1fe9d7e1af7434ee53e71709f7ab1db42a7038cc3891654f85",
+      "currentProfileSHA256": "ecda503cfc92579e43b144194fae5eb16c91158b6355c7dcbd1d03e1149627c9",
+      "integrity": {
+        "draftSHA256MatchesSidecar": true,
+        "profileSHA256MatchesSidecar": true,
+        "repairLogAfterDraftMatches": true,
+        "repairLogAfterProfileMatches": true
+      },
+      "previousIndependentFinding": "Fixed WEB 2SA8:17 says “Zadok the son of Ahitub and Ahimelech the son of Abiathar were priests.” Current base and fact makes Abiathar himself the named priest; the verse names Ahimelech son of Abiathar as priest and Abiathar as father. Fresh Wikipedia read lines 134–142 likewise identifies Abiathar as Ahimelech’s son.",
+      "verdict": "qualified",
+      "assessmentJa": "The 8:17 base now says Ahimelech is named as Abiathar’s son, not that Abiathar is the priest in that clause. Current 15:35 fact correctly records David’s instruction involving Zadok and Abiathar and includes the 15:35 passage/source. The remaining qualification is textual: the linked article’s “Confusion of the name” section explains the proposed reading “Ahimelech son of Abiathar” at 2 Samuel 8:17, while its usual account identifies Abiathar as Ahimelech’s son. The profile faithfully follows fixed WEB and relation note rather than asserting the variant away.",
+      "sourceCoordinatesReviewed": [
+        {
+          "coordinate": "2SA 8:17",
+          "text": "Zadok the son of Ahitub and Ahimelech the son of Abiathar were priests, Seraiah was scribe,",
+          "citationURL": "https://ebible.org/engwebp/2SA08.htm#V17"
+        },
+        {
+          "coordinate": "2SA 15:24",
+          "text": "Behold, Zadok also came, and all the Levites with him, bearing the ark of the covenant of God; and they set down God’s ark; and Abiathar went up until all the people finished passing out of the city.",
+          "citationURL": "https://ebible.org/engwebp/2SA15.htm#V24"
+        },
+        {
+          "coordinate": "2SA 15:27",
+          "text": "The king said also to Zadok the priest, “Aren’t you a seer? Return into the city in peace, and your two sons with you, Ahimaaz your son and Jonathan the son of Abiathar.",
+          "citationURL": "https://ebible.org/engwebp/2SA15.htm#V27"
+        },
+        {
+          "coordinate": "2SA 15:29",
+          "text": "Zadok therefore and Abiathar carried God’s ark to Jerusalem again; and they stayed there.",
+          "citationURL": "https://ebible.org/engwebp/2SA15.htm#V29"
+        },
+        {
+          "coordinate": "2SA 15:35",
+          "text": "Don’t you have Zadok and Abiathar the priests there with you? Therefore whatever you hear out of the king’s house, tell it to Zadok and Abiathar the priests.",
+          "citationURL": "https://ebible.org/engwebp/2SA15.htm#V35"
+        },
+        {
+          "coordinate": "2SA 15:36",
+          "text": "Behold, they have there with them their two sons, Ahimaaz, Zadok’s son, and Jonathan, Abiathar’s son. Send to me everything that you shall hear by them.”",
+          "citationURL": "https://ebible.org/engwebp/2SA15.htm#V36"
+        },
+        {
+          "coordinate": "2SA 17:15",
+          "text": "Then Hushai said to Zadok and to Abiathar the priests, “Ahithophel counseled Absalom and the elders of Israel that way; and I have counseled this way.",
+          "citationURL": "https://ebible.org/engwebp/2SA17.htm#V15"
+        },
+        {
+          "coordinate": "2SA 19:11",
+          "text": "King David sent to Zadok and to Abiathar the priests, saying, “Speak to the elders of Judah, saying, ‘Why are you the last to bring the king back to his house, since the speech of all Israel has come to the king, to return him to his house?",
+          "citationURL": "https://ebible.org/engwebp/2SA19.htm#V11"
+        },
+        {
+          "coordinate": "2SA 20:25",
+          "text": "Sheva was scribe, Zadok and Abiathar were priests,",
+          "citationURL": "https://ebible.org/engwebp/2SA20.htm#V25"
+        }
+      ],
+      "wikipediaBodyReview": {
+        "url": "https://en.wikipedia.org/wiki/Abiathar",
+        "locator": "opening L134, confusion-of-name L150–156",
+        "findingJa": "Opening identifies Abiathar as Ahimelech’s son/priest; L154 says 2 Samuel 8:17 is suggested to read Ahimelech son of Abiathar, with alternatives not fully accepted. Current link is relevant but the textual relationship remains qualified.",
+        "status": "article-read"
+      }
+    },
+    {
+      "book": "2SA",
+      "entityID": "person:eliam_1089",
+      "draftPath": "drafts/persons_1/2SA_eliam_1089.json",
+      "evidencePath": "evidence/persons_1/2SA_eliam_1089-sources.json",
+      "previousDraftSHA256": "77edd1bf9f61550af5d59bb8577676619ba9d49d7caaefd8ac6ddfe288794c5a",
+      "currentDraftSHA256": "af0bc8c1b574cf70a17ef6bba5463231b51cddf97a8fabcb571f3335f3d83668",
+      "currentEvidenceSHA256": "e045b6b9ffa277477c1f79cfe5972c735c622fa50cfa9c0068afc72dab18e428",
+      "currentProfileSHA256": "d13a5f814f5ca973f8ef2f248ce2ef31f6f1b41a1313e5ebe9ef5ac59c9a50d2",
+      "integrity": {
+        "draftSHA256MatchesSidecar": true,
+        "profileSHA256MatchesSidecar": true,
+        "repairLogAfterDraftMatches": true,
+        "repairLogAfterProfileMatches": true
+      },
+      "previousIndependentFinding": "KnownBy is 2SA11:3, while identityNote refers to the later warrior Eliam at 23:34 and the possible sameness.",
+      "verdict": "pass",
+      "assessmentJa": "11:3 base identifies Eliam only as Bathsheba’s father. The updated Wikipedia note now mentions only the father reference available at this gate; it no longer mentions the later warrior Eliam in 23:34.",
+      "sourceCoordinatesReviewed": [
+        {
+          "coordinate": "2SA 11:3",
+          "text": "David sent and inquired after the woman. One said, “Isn’t this Bathsheba, the daughter of Eliam, Uriah the Hittite’s wife?”",
+          "citationURL": "https://ebible.org/engwebp/2SA11.htm#V3"
+        }
+      ],
+      "wikipediaBodyReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Eliam",
+        "locator": "Eliam section L464–466",
+        "findingJa": "The list separately calls an Eliam a David warrior at 23:34; current profile note no longer imports that later comparison at knownBy 11:3.",
+        "status": "article-read"
+      }
+    },
+    {
+      "book": "2SA",
+      "entityID": "person:ira_608",
+      "draftPath": "drafts/persons_1/2SA_ira_608.json",
+      "evidencePath": "evidence/persons_1/2SA_ira_608-sources.json",
+      "previousDraftSHA256": "8fd7abeb680e488525f6a7da26a75abded7be47a10e2921afa85a2e4b5001a5d",
+      "currentDraftSHA256": "bd46d551da6f78e1787456c95ba8c9755f5acbec1ccea50fbc40f221f59dce2c",
+      "currentEvidenceSHA256": "adfb970a3a64bc07a0fff74d1594cc0c598e5afb28a695f7ec631dc690c3ffe2",
+      "currentProfileSHA256": "4a17cbbd0aa05ab84bcd7f2837e88ab3e68daa265dfd62c64aeecf4c68ee99b3",
+      "integrity": {
+        "draftSHA256MatchesSidecar": true,
+        "profileSHA256MatchesSidecar": true,
+        "repairLogAfterDraftMatches": true,
+        "repairLogAfterProfileMatches": true
+      },
+      "previousIndependentFinding": "KnownBy is 2SA20:26; identityNote refers to the later 21:19 compound “Jaare-Oregim.”",
+      "verdict": "pass",
+      "assessmentJa": "20:26 summary matches the fixed WEB: Ira the Jairite is David’s chief minister. The identity note no longer cites later 21:19. Wiki shared-list entry identifies the specific Ira and notes translation differences in the office rendering; current Japanese note stays aligned with WEB.",
+      "sourceCoordinatesReviewed": [
+        {
+          "coordinate": "2SA 20:26",
+          "text": "and Ira the Jairite was chief minister to David.",
+          "citationURL": "https://ebible.org/engwebp/2SA20.htm#V26"
+        }
+      ],
+      "wikipediaBodyReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Ira",
+        "locator": "Ira the Jairite section L3385–3389",
+        "findingJa": "Identifies Ira the Jairite as David’s chief minister/priest and notes translations differ; WEB wording “chief minister” matches.",
+        "status": "article-read"
+      }
+    },
+    {
+      "book": "2SA",
+      "entityID": "person:jesse_903",
+      "draftPath": "drafts/persons_1/2SA_jesse_903.json",
+      "evidencePath": "evidence/persons_1/2SA_jesse_903-sources.json",
+      "previousDraftSHA256": "46f53ec6d0bf3acad05a04c103c527d929b15854658782dd596f3efb56be131d",
+      "currentDraftSHA256": "e93b4cdf8e09bd5c393ffe6d05259be42668a50912ff18aa5ff889a5c8bfa04e",
+      "currentEvidenceSHA256": "2b9278287db8e54e540ae3cc16e7296e111fef0d719d04e0719479e239a6592e",
+      "currentProfileSHA256": "866b1f70fcc5598c29af2e349d841471086267dfb598da65d50c50b078ac04fc",
+      "integrity": {
+        "draftSHA256MatchesSidecar": true,
+        "profileSHA256MatchesSidecar": true,
+        "repairLogAfterDraftMatches": true,
+        "repairLogAfterProfileMatches": true
+      },
+      "previousIndependentFinding": "knownBy 2SA20:1 summary also cites 23:1.",
+      "verdict": "pass",
+      "assessmentJa": "20:1 summary now only reports Sheba’s phrase “son of Jesse”; 23:1 remains a separate passage/source mention and is no longer in the initial summary. Wikipedia article supports Jesse as David’s father.",
+      "sourceCoordinatesReviewed": [
+        {
+          "coordinate": "2SA 20:1",
+          "text": "There happened to be there a wicked fellow, whose name was Sheba the son of Bichri, a Benjamite; and he blew the trumpet, and said, “We have no portion in David, neither have we inheritance in the son of Jesse. Every man to his tents, Israel!”",
+          "citationURL": "https://ebible.org/engwebp/2SA20.htm#V1"
+        },
+        {
+          "coordinate": "2SA 23:1",
+          "text": "Now these are the last words of David. David the son of Jesse says, the man who was raised on high says, the anointed of the God of Jacob, the sweet psalmist of Israel:",
+          "citationURL": "https://ebible.org/engwebp/2SA23.htm#V1"
+        }
+      ],
+      "wikipediaBodyReview": {
+        "url": "https://en.wikipedia.org/wiki/Jesse_(biblical_figure)",
+        "locator": "opening L155–177",
+        "findingJa": "Identifies Jesse as David’s father and notes “son of Jesse” as a designation.",
+        "status": "article-read"
+      }
+    },
+    {
+      "book": "2SA",
+      "entityID": "person:shammah_2700",
+      "draftPath": "drafts/persons_1/2SA_shammah_2700.json",
+      "evidencePath": "evidence/persons_1/2SA_shammah_2700-sources.json",
+      "previousDraftSHA256": "9f474d2b3c7116a67a752e794bc613299595bbfeba13bf590204e39105fa53a1",
+      "currentDraftSHA256": "f161b5a6d953abafa7bbd8754b02bb7e7100080833119b8a06ef9809ffa84e33",
+      "currentEvidenceSHA256": "f6170f9733b9e6c643e6b24fa733451168e672f452f10b8fda2e86801916e8a0",
+      "currentProfileSHA256": "2c74a08ac42bd8ef32eea1725d30aa0f1b909781399362170639a879c2f856e8",
+      "integrity": {
+        "draftSHA256MatchesSidecar": true,
+        "profileSHA256MatchesSidecar": true,
+        "repairLogAfterDraftMatches": true,
+        "repairLogAfterProfileMatches": true
+      },
+      "previousIndependentFinding": "KnownBy 2SA13:3 summary cites 13:32 as a later repetition of the father-child relation.",
+      "verdict": "qualified",
+      "assessmentJa": "13:3 summary is limited to the Shimeah father/brother relation; the 13:32 repetition is gated as a separate fact. WEB spelling is Shimeah, while the linked Shimei article lists Shammah/Shimeah/Shimea as David’s brother’s names. The article supports a related name relationship, but this is supplementary identification rather than the WEB spelling itself.",
+      "sourceCoordinatesReviewed": [
+        {
+          "coordinate": "2SA 13:3",
+          "text": "But Amnon had a friend whose name was Jonadab the son of Shimeah, David’s brother; and Jonadab was a very subtle man.",
+          "citationURL": "https://ebible.org/engwebp/2SA13.htm#V3"
+        },
+        {
+          "coordinate": "2SA 13:32",
+          "text": "Jonadab the son of Shimeah, David’s brother, answered, “Don’t let my lord suppose that they have killed all the young men, the king’s sons, for Amnon only is dead; for by the appointment of Absalom this has been determined from the day that he forced his sister Tamar.",
+          "citationURL": "https://ebible.org/engwebp/2SA13.htm#V32"
+        }
+      ],
+      "wikipediaBodyReview": {
+        "url": "https://en.wikipedia.org/wiki/Shimei",
+        "locator": "David’s brother entry L118–119",
+        "findingJa": "Lists David’s brother as called Shammah, Shimeah, and Shimea, citing 2 Samuel 13:3; supports the relation while retaining WEB name as Shimeah.",
+        "status": "article-read"
+      }
+    },
+    {
+      "book": "2SA",
+      "entityID": "person:sibbechai_2737",
+      "draftPath": "drafts/persons_1/2SA_sibbechai_2737.json",
+      "evidencePath": "evidence/persons_1/2SA_sibbechai_2737-sources.json",
+      "previousDraftSHA256": "0d144ce8682ee08fa7654aabc93aa485c6b6c68fdd2203c5a27a69e46236a8cd",
+      "currentDraftSHA256": "83b9ec38c86814b764b2452f5adc8f4a67fd5ab47757f6b36bce3f571f58d94f",
+      "currentEvidenceSHA256": "bbc5142838c617950b3c6520764951fe0a83013be73834ab3032453b53cac424",
+      "currentProfileSHA256": "01ee0bb1d2ab3a94add56567a6132adaab04db8535203720e8eb03da0150d6a9",
+      "integrity": {
+        "draftSHA256MatchesSidecar": true,
+        "profileSHA256MatchesSidecar": true,
+        "repairLogAfterDraftMatches": true,
+        "repairLogAfterProfileMatches": true
+      },
+      "previousIndependentFinding": "KnownBy is 2SA21:18; note cites the later 23:27 WEB form Mebunnai.",
+      "verdict": "qualified",
+      "assessmentJa": "The 21:18 profile and fact name Sibbechai and attribute the killing to him, matching WEB. The possible 23:27 Mebunnai reading was not forced into the profile. No fitting Wikipedia subject article was confirmed in the saved search evidence; null remains a reviewed no-fit, not a verified link.",
+      "sourceCoordinatesReviewed": [
+        {
+          "coordinate": "2SA 21:18",
+          "text": "After this, there was again war with the Philistines at Gob. Then Sibbecai the Hushathite killed Saph, who was of the sons of the giant.",
+          "citationURL": "https://ebible.org/engwebp/2SA21.htm#V18"
+        },
+        {
+          "coordinate": "2SA 23:27",
+          "text": "Abiezer the Anathothite, Mebunnai the Hushathite,",
+          "citationURL": "https://ebible.org/engwebp/2SA23.htm#V27"
+        }
+      ],
+      "wikipediaBodyReview": {
+        "url": null,
+        "locator": null,
+        "findingJa": "Saved searches for Sibbechai/Sibbecai found no exact-subject article body; the 23:27 variant is excluded as unconfirmed.",
+        "status": "no-suitable-article-confirmed"
+      }
+    },
+    {
+      "book": "2SA",
+      "entityID": "person:zeruiah_3055",
+      "draftPath": "drafts/persons_1/2SA_zeruiah_3055.json",
+      "evidencePath": "evidence/persons_1/2SA_zeruiah_3055-sources.json",
+      "previousDraftSHA256": "cfbdff45cd0c48bb6de54bb717ebd0be5484a44b8febdffb0527eaa3cda4274f",
+      "currentDraftSHA256": "554e8cc17c384b341d82abff244fce8d491f483810169f5fe25c7579c22b40c2",
+      "currentEvidenceSHA256": "0d8d1f5674b23889b3ce6c3e2a97925d4e4e0521b267b9800a22acc4e7c3a6cf",
+      "currentProfileSHA256": "8dd0eb4d60c0e128c05cb0403a2e0e60854137255c1773dee6a9a047f566ec06",
+      "integrity": {
+        "draftSHA256MatchesSidecar": true,
+        "profileSHA256MatchesSidecar": true,
+        "repairLogAfterDraftMatches": true,
+        "repairLogAfterProfileMatches": true
+      },
+      "previousIndependentFinding": "KnownBy 2SA2:13; note cites 17:25, a later relationship reference.",
+      "verdict": "pass",
+      "assessmentJa": "2:13 summary identifies Joab as Zeruiah’s son; 2:18 child list and 17:25 Abigail kinship are separate facts with their own gates. The current identity note contains no future appearance reference. Wikipedia opening supports Zeruiah as Joab’s mother and the listed sons.",
+      "sourceCoordinatesReviewed": [
+        {
+          "coordinate": "2SA 2:13",
+          "text": "Joab the son of Zeruiah and David’s servants went out, and met them by the pool of Gibeon; and they sat down, the one on the one side of the pool and the other on the other side of the pool.",
+          "citationURL": "https://ebible.org/engwebp/2SA02.htm#V13"
+        },
+        {
+          "coordinate": "2SA 2:18",
+          "text": "The three sons of Zeruiah were there: Joab, Abishai, and Asahel. Asahel was as light of foot as a wild gazelle.",
+          "citationURL": "https://ebible.org/engwebp/2SA02.htm#V18"
+        },
+        {
+          "coordinate": "2SA 17:25",
+          "text": "Absalom set Amasa over the army instead of Joab. Now Amasa was the son of a man whose name was Ithra the Israelite, who went in to Abigail the daughter of Nahash, sister to Zeruiah, Joab’s mother.",
+          "citationURL": "https://ebible.org/engwebp/2SA17.htm#V25"
+        }
+      ],
+      "wikipediaBodyReview": {
+        "url": "https://en.wikipedia.org/wiki/Zeruiah",
+        "locator": "opening L110–113",
+        "findingJa": "States Zeruiah was David’s sister and mother of Abishai, Joab, and Asahel; supports profile link.",
+        "status": "article-read"
+      }
+    }
+  ]
+}

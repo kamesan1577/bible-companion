@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "task": "independent-current-delta-reclosure",
+  "book": "JDG",
+  "entityID": "place:beth-barah_194",
+  "reviewedAtUTC": "2026-10-16T00:53:26Z",
+  "reviewerRole": "別担当による読み取り専用再照合。原稿・証拠は変更していない。",
+  "history": [
+    {
+      "priorDraftSHA256": "b9172fb21878b32e593dcf6d461ba542c64073a724d49d86895833fa29a04900",
+      "priorVerdict": "qualified",
+      "priorIssueJa": "渡河地点/通過点の断定が原典より具体的と評価。作者が通常欄を修正したため現稿で再確認。"
+    }
+  ],
+  "inputs": {
+    "draftPath": "drafts/places_1/JDG_place_beth-barah_194.json",
+    "draftSHA256": "7fedb15813dfcb33521b92da877048ac89e292ea5e33984d2f38a309d0ff81ba",
+    "profileSHA256": "ba202d8315cf1cf0c6c02837475ae00d015f944831a809bd5dc9715f57d721e2",
+    "profileSHA256Stored": "ba202d8315cf1cf0c6c02837475ae00d015f944831a809bd5dc9715f57d721e2",
+    "evidencePath": "evidence/places_1/JDG_place_beth-barah_194.json",
+    "evidenceSHA256": "d6524fc5f1442fa4d45c85afc5a4f80a3b8da9f436b1b5465b687906af133fac",
+    "fixedWitnessPath": "inventory/targets/judges-web-verses.json",
+    "fixedWitnessSHA256": "9512429eb9be7204708bebef7c2fdc41bb90f4c44c72195bf16bb4724a0c4a85",
+    "repairLogPath": "evidence/places_1/author-repairs.json",
+    "repairLogSHA256": "23b493d72992b55256b23a0b355718aeec874b92834b78edf8cc7a227d79034b"
+  },
+  "verdict": "pass",
+  "checks": [
+    {
+      "subject": "JDG 7:24 primary text",
+      "result": "pass",
+      "citationURL": "https://ebible.org/engwebp/JDG07.htm#V24",
+      "sourceText": "Gideon sent messengers throughout all the hill country of Ephraim, saying, “Come down against Midian and take the waters before them as far as Beth Barah, even the Jordan!” So all the men of Ephraim were gathered together and took the waters as far as Beth Barah, even the Jordan.",
+      "reasonJa": "固定WEBはギデオンがエフライムへベト・バラとヨルダンまでの水場を押さえるよう伝えたと記す。現稿の初出説明は「追撃時に確保する水場の範囲を示す地名」となり、渡河地点とは断定していない。knownBy・直接用例・facts gateに問題なし。"
+    },
+    {
+      "subject": "Wikipedia identity repair",
+      "result": "pass",
+      "url": "https://en.wikipedia.org/wiki/List_of_minor_biblical_places#Beth-barah",
+      "articleTitle": "List of minor biblical places",
+      "articleBodyLocator": "§ Beth-barah, lines 312–316; line 316: “A place mentioned in Judges 7:24.”",
+      "reasonJa": "現行記事本文の該当項が士師記7:24の場所と明記する。shared-section / identityVerified=trueは項目の同一性に適合し、記事が位置を示さないというnoteも正確。"
+    },
+    {
+      "subject": "Geographic precision and candidate location",
+      "result": "pass",
+      "reasonJa": "現代の所在地は特定できないと読者欄で明示しcoordinate=nullを保持。記事に渡河点・町の位置の特定がないため具体的地点を足さない判断が適切。"
+    }
+  ],
+  "conclusionJa": "前回の地理表現に関するqualified指摘は現稿で解消。Beth-barahの項目同一性、位置の不確実性、座標nullを閉じた。"
+}

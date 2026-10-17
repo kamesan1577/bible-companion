@@ -1,0 +1,4095 @@
+{
+  "book": "JDG",
+  "reviewType": "independent-third-reader-full-map-and-author-repair-closure",
+  "reviewerRole": "元map作者ではない独立照合者としてJDG 13:1–16:31の96節と作者変更23行を固定WEBで再読。mapを編集していない。",
+  "reviewedAtUTC": "2026-10-16T00:41:48+00:00",
+  "inputs": {
+    "mapPath": "reviews/verse-map-JDG-13-16.json",
+    "mapSHA256": "84a3468bb39ecd8caa7aae9c3cb691a2f692fd42da8d006ce2aaac9be6c062c4",
+    "authorRepairPath": "reviews/verse-map-JDG-13-16-author-repairs.json",
+    "authorRepairSHA256": "e9a1c415df509a97feac0cda71b8379377b1a2438aba23f8c0adb5cffa1b3503",
+    "authorRepairDeclaredBeforeMapSHA256": "03c038d4c1217d809dc8d3ba1cbf74879fd728572e4a8bb4a226a218cf246aff",
+    "authorRepairDeclaredAfterMapSHA256": "24fc377f04c58c3e54b9fa07f63c49327ca4ee3dbd878fed768b236140acf2b9",
+    "fixedWitnessPath": "inventory/targets/judges-web-verses.json",
+    "fixedWitnessSHA256": "9512429eb9be7204708bebef7c2fdc41bb90f4c44c72195bf16bb4724a0c4a85",
+    "fixedWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+    "entityIndexPath": "candidate/apps/ios/Sources/Core/Resources/entity-index.json",
+    "entityIndexSHA256": "dfe6fba1109f192548e28645cf085ddafe3baf7820d200e2e28da486dd98f11a"
+  },
+  "methodJa": "全96節のsourceText/URL/hashを固定WEBと照合し、本文の明示名、直前文脈から一意な代名詞・話者、個人/集団/地名、空節、excludedCandidates/unmappedMentionsを確認。作者説明だけで承認せず、23修正行の修正前後と現行行を各原文に照合。プロフィール本文や聖書外地理は対象外。",
+  "counts": {
+    "verses": 96,
+    "sourceMatches": 96,
+    "pass": 87,
+    "qualified": 9,
+    "fail": 0,
+    "authorRepairRows": 23,
+    "repairPass": 23,
+    "repairFail": 0,
+    "repairQualified": 0
+  },
+  "findings": {
+    "fail": [],
+    "qualified": [
+      {
+        "chapter": 13,
+        "verse": 3,
+        "reasonJa": "「LORD’s angel」をGodへdirectで結ぶのは、御使い本人との混同を避ける本文に対し関係を強く表す。天使IDがないというunmapped理由とも併記が曖昧。神の御使いという関係参照ならcontextへ格下げを推奨。"
+      },
+      {
+        "chapter": 13,
+        "verse": 6,
+        "reasonJa": "「man of God」「angel of God」は使者の説明。God directは神本人の出現と読めるため、関係を収録するならcontextが適切。wifeは無名、husband=Manoahは13:2から確実。"
+      },
+      {
+        "chapter": 13,
+        "verse": 7,
+        "reasonJa": "「a Nazirite to God」は神との関係を述べるが、神を行為主体とする文ではない。directの基準上contextも検討。"
+      },
+      {
+        "chapter": 13,
+        "verse": 13,
+        "reasonJa": "話者はLORD’s angel。God directが御使いとの同一化でない点をreasonへ明記するのが望ましい。"
+      },
+      {
+        "chapter": 13,
+        "verse": 15,
+        "reasonJa": "話し相手はLORD’s angel。God-ID directが使者自体か神への関係か曖昧。context/理由修正が望ましい。"
+      },
+      {
+        "chapter": 13,
+        "verse": 17,
+        "reasonJa": "質問対象はLORD’s angel。God-ID directは御使いを神本人と同一視しない旨を理由に明記すべき。"
+      },
+      {
+        "chapter": 13,
+        "verse": 18,
+        "reasonJa": "reasonは御使いを神本人と同一視しないとする一方、God directの付与と語義上緊張。神への関係ならcontext理由を明瞭化。"
+      },
+      {
+        "chapter": 13,
+        "verse": 20,
+        "reasonJa": "主体はLORD’s angelが炎に上ること。God directは御使いとの同一化に読めるため、区別を要す。"
+      },
+      {
+        "chapter": 13,
+        "verse": 21,
+        "reasonJa": "マノアが「he was the LORD’s angel」と知る記述。God directより、神の使者へのcontext/関連扱いが安全。"
+      },
+      {
+        "chapter": 14,
+        "verse": 4,
+        "reasonJa": "person:samson_2468は14:4冒頭の「his father and his mother」によって直接必要。直前14:3でSamsonが「my father」と述べ、所有代名詞の先行詞は一意。採用自体は適切。ただし現行reasonJaは後半の「he sought an occasion」をサムソンへ結び、ここは直前のLORDを受けるため誤り。reasonを両親の所有代名詞に合わせて修正する必要がある。"
+      }
+    ],
+    "generalJa": "13:4/13:14は文脈継続文で既存IDへ結び付く固有名がなく空配列を維持。13:25はMahaneh Danを場所として採りDan個人を除外するのが適切。15:19のhis spiritはサムソンの生命力でHoly Spirit追加は不適切。16:31の無名親族は新ID化なし。Philistines/Gazites等は既存集団IDなしとunmappedMentionsに記録し新ID捏造なし。 14:4のSamsonリンク自体は「his father and mother」が直前14:3のSamsonを指すため維持可能だが、行の理由は後半heをSamsonと誤読しているので修正が必要。"
+  },
+  "authorRepairRows": [
+    {
+      "chapter": 13,
+      "verse": 2,
+      "action": "add",
+      "entityID": "person:dan_973",
+      "relationship": "direct",
+      "status": "pass",
+      "sourceText": "There was a certain man of Zorah, of the family of the Danites, whose name was Manoah; and his wife was barren, and childless.",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V2",
+      "currentEntities": [
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "direct",
+          "reasonJa": "マノアの名が記される。"
+        },
+        {
+          "entityID": "place:zorah_1275",
+          "relationship": "direct",
+          "reasonJa": "マノアの出身地としてツォルアが記される。"
+        },
+        {
+          "entityID": "person:dan_973",
+          "relationship": "direct",
+          "reasonJa": "「family of the Danites」と氏族名を本文が明記する。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 13,
+        "verse": 2,
+        "action": "add",
+        "entityID": "person:dan_973",
+        "relationship": "direct",
+        "beforeEntities": [
+          {
+            "entityID": "person:manoah_1933",
+            "relationship": "direct",
+            "reasonJa": "マノアの名が記される。"
+          },
+          {
+            "entityID": "place:zorah_1275",
+            "relationship": "direct",
+            "reasonJa": "マノアの出身地としてツォルアが記される。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:manoah_1933",
+            "relationship": "direct",
+            "reasonJa": "マノアの名が記される。"
+          },
+          {
+            "entityID": "place:zorah_1275",
+            "relationship": "direct",
+            "reasonJa": "マノアの出身地としてツォルアが記される。"
+          },
+          {
+            "entityID": "person:dan_973",
+            "relationship": "direct",
+            "reasonJa": "「family of the Danites」と氏族名を本文が明記する。"
+          }
+        ],
+        "reasonJa": "「family of the Danites」と氏族名を本文が明記する。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 13,
+      "verse": 6,
+      "action": "add",
+      "entityID": "person:manoah_1933",
+      "relationship": "context",
+      "status": "pass",
+      "sourceText": "Then the woman came and told her husband, saying, “A man of God came to me, and his face was like the face of the angel of God, very awesome. I didn’t ask him where he was from, neither did he tell me his name;",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V6",
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "「man of God」「angel of God」の所有名Godへの言及をGod IDに表示する。使者そのものを神本人と同一視する意味ではない。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「her husband」は直前13:2で名を示されたマノア。妻はこの節でも無名。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 13,
+        "verse": 6,
+        "action": "add",
+        "entityID": "person:manoah_1933",
+        "relationship": "context",
+        "beforeEntities": [
+          {
+            "entityID": "person:god_1324",
+            "relationship": "direct",
+            "reasonJa": "「神の人」「神の御使い」と明示する。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:god_1324",
+            "relationship": "direct",
+            "reasonJa": "「神の人」「神の御使い」と明示する。"
+          },
+          {
+            "entityID": "person:manoah_1933",
+            "relationship": "context",
+            "reasonJa": "「her husband」は直前13:2で名を示されたマノア。妻はこの節でも無名。"
+          }
+        ],
+        "reasonJa": "「her husband」は直前13:2で名を示されたマノア。妻はこの節でも無名。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 13,
+      "verse": 18,
+      "action": "add",
+      "entityID": "person:manoah_1933",
+      "relationship": "context",
+      "status": "pass",
+      "sourceText": "The LORD’s angel said to him, “Why do you ask about my name, since it is incomprehensible?”",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V18",
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "「LORD’s angel」の所有名LORDへの言及をGod IDに表示する。使者そのものを神本人と同一視する意味ではない。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「to him」は名を尋ねたマノアを指す。主の御使いを神本人と同一視しない。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 13,
+        "verse": 18,
+        "action": "add",
+        "entityID": "person:manoah_1933",
+        "relationship": "context",
+        "beforeEntities": [
+          {
+            "entityID": "person:god_1324",
+            "relationship": "direct",
+            "reasonJa": "御使いが「私の名」について答える。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:god_1324",
+            "relationship": "direct",
+            "reasonJa": "御使いが「私の名」について答える。"
+          },
+          {
+            "entityID": "person:manoah_1933",
+            "relationship": "context",
+            "reasonJa": "「to him」は名を尋ねたマノアを指す。主の御使いを神本人と同一視しない。"
+          }
+        ],
+        "reasonJa": "「to him」は名を尋ねたマノアを指す。主の御使いを神本人と同一視しない。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 13,
+      "verse": 25,
+      "action": "add",
+      "entityID": "person:samson_2468",
+      "relationship": "context",
+      "status": "pass",
+      "sourceText": "The LORD’s Spirit began to move him in Mahaneh Dan, between Zorah and Eshtaol.",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V25",
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "「LORD’s Spirit」と主が明示される。御使いを神本人とは扱わない。"
+        },
+        {
+          "entityID": "person:holy_spirit_7400",
+          "relationship": "direct",
+          "reasonJa": "「主の霊」が動かすと明記される。"
+        },
+        {
+          "entityID": "place:mahaneh-dan_757",
+          "relationship": "direct",
+          "reasonJa": "マハネ・ダンが場所として明記される。"
+        },
+        {
+          "entityID": "place:zorah_1275",
+          "relationship": "direct",
+          "reasonJa": "マハネ・ダンの位置を示すツォルアが明記される。"
+        },
+        {
+          "entityID": "place:eshtaol_411",
+          "relationship": "direct",
+          "reasonJa": "マハネ・ダンの位置を示すエシュタオルが明記される。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "「him」はこの誕生物語の子サムソンを指す。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 13,
+        "verse": 25,
+        "action": "add",
+        "entityID": "person:samson_2468",
+        "relationship": "context",
+        "beforeEntities": [
+          {
+            "entityID": "person:god_1324",
+            "relationship": "context",
+            "reasonJa": "主の霊が彼を動かすという神の働き。"
+          },
+          {
+            "entityID": "person:holy_spirit_7400",
+            "relationship": "direct",
+            "reasonJa": "「主の霊」が動かすと明記される。"
+          },
+          {
+            "entityID": "place:mahaneh-dan_757",
+            "relationship": "direct",
+            "reasonJa": "マハネ・ダンが場所として明記される。"
+          },
+          {
+            "entityID": "place:zorah_1275",
+            "relationship": "direct",
+            "reasonJa": "マハネ・ダンの位置を示すツォルアが明記される。"
+          },
+          {
+            "entityID": "place:eshtaol_411",
+            "relationship": "direct",
+            "reasonJa": "マハネ・ダンの位置を示すエシュタオルが明記される。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:god_1324",
+            "relationship": "context",
+            "reasonJa": "主の霊が彼を動かすという神の働き。"
+          },
+          {
+            "entityID": "person:holy_spirit_7400",
+            "relationship": "direct",
+            "reasonJa": "「主の霊」が動かすと明記される。"
+          },
+          {
+            "entityID": "place:mahaneh-dan_757",
+            "relationship": "direct",
+            "reasonJa": "マハネ・ダンが場所として明記される。"
+          },
+          {
+            "entityID": "place:zorah_1275",
+            "relationship": "direct",
+            "reasonJa": "マハネ・ダンの位置を示すツォルアが明記される。"
+          },
+          {
+            "entityID": "place:eshtaol_411",
+            "relationship": "direct",
+            "reasonJa": "マハネ・ダンの位置を示すエシュタオルが明記される。"
+          },
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "context",
+            "reasonJa": "「him」はこの誕生物語の子サムソンを指す。"
+          }
+        ],
+        "reasonJa": "「him」はこの誕生物語の子サムソンを指す。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 13,
+      "verse": 25,
+      "action": "replace",
+      "entityID": "person:god_1324",
+      "relationship": "direct",
+      "status": "pass",
+      "sourceText": "The LORD’s Spirit began to move him in Mahaneh Dan, between Zorah and Eshtaol.",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V25",
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "「LORD’s Spirit」と主が明示される。御使いを神本人とは扱わない。"
+        },
+        {
+          "entityID": "person:holy_spirit_7400",
+          "relationship": "direct",
+          "reasonJa": "「主の霊」が動かすと明記される。"
+        },
+        {
+          "entityID": "place:mahaneh-dan_757",
+          "relationship": "direct",
+          "reasonJa": "マハネ・ダンが場所として明記される。"
+        },
+        {
+          "entityID": "place:zorah_1275",
+          "relationship": "direct",
+          "reasonJa": "マハネ・ダンの位置を示すツォルアが明記される。"
+        },
+        {
+          "entityID": "place:eshtaol_411",
+          "relationship": "direct",
+          "reasonJa": "マハネ・ダンの位置を示すエシュタオルが明記される。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "「him」はこの誕生物語の子サムソンを指す。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 13,
+        "verse": 25,
+        "action": "replace",
+        "entityID": "person:god_1324",
+        "relationship": "direct",
+        "beforeEntities": [
+          {
+            "entityID": "person:god_1324",
+            "relationship": "context",
+            "reasonJa": "主の霊が彼を動かすという神の働き。"
+          },
+          {
+            "entityID": "person:holy_spirit_7400",
+            "relationship": "direct",
+            "reasonJa": "「主の霊」が動かすと明記される。"
+          },
+          {
+            "entityID": "place:mahaneh-dan_757",
+            "relationship": "direct",
+            "reasonJa": "マハネ・ダンが場所として明記される。"
+          },
+          {
+            "entityID": "place:zorah_1275",
+            "relationship": "direct",
+            "reasonJa": "マハネ・ダンの位置を示すツォルアが明記される。"
+          },
+          {
+            "entityID": "place:eshtaol_411",
+            "relationship": "direct",
+            "reasonJa": "マハネ・ダンの位置を示すエシュタオルが明記される。"
+          },
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "context",
+            "reasonJa": "「him」はこの誕生物語の子サムソンを指す。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:god_1324",
+            "relationship": "direct",
+            "reasonJa": "「LORD’s Spirit」と主が明示される。御使いを神本人とは扱わない。"
+          },
+          {
+            "entityID": "person:holy_spirit_7400",
+            "relationship": "direct",
+            "reasonJa": "「主の霊」が動かすと明記される。"
+          },
+          {
+            "entityID": "place:mahaneh-dan_757",
+            "relationship": "direct",
+            "reasonJa": "マハネ・ダンが場所として明記される。"
+          },
+          {
+            "entityID": "place:zorah_1275",
+            "relationship": "direct",
+            "reasonJa": "マハネ・ダンの位置を示すツォルアが明記される。"
+          },
+          {
+            "entityID": "place:eshtaol_411",
+            "relationship": "direct",
+            "reasonJa": "マハネ・ダンの位置を示すエシュタオルが明記される。"
+          },
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "context",
+            "reasonJa": "「him」はこの誕生物語の子サムソンを指す。"
+          }
+        ],
+        "reasonJa": "「LORD’s Spirit」と主が明示される。御使いを神本人とは扱わない。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 2,
+      "action": "add",
+      "entityID": "person:manoah_1933",
+      "relationship": "context",
+      "status": "pass",
+      "sourceText": "He came up, and told his father and his mother, saying, “I have seen a woman in Timnah of the daughters of the Philistines. Now therefore get her for me as my wife.”",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V2",
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "父母に話す「彼」は直前のサムソン。"
+        },
+        {
+          "entityID": "place:timnah_1164",
+          "relationship": "direct",
+          "reasonJa": "サムソンがティムナの女性を見たと明言する。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 14,
+        "verse": 2,
+        "action": "add",
+        "entityID": "person:manoah_1933",
+        "relationship": "context",
+        "beforeEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "context",
+            "reasonJa": "父母に話す「彼」は直前のサムソン。"
+          },
+          {
+            "entityID": "place:timnah_1164",
+            "relationship": "direct",
+            "reasonJa": "サムソンがティムナの女性を見たと明言する。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "context",
+            "reasonJa": "父母に話す「彼」は直前のサムソン。"
+          },
+          {
+            "entityID": "place:timnah_1164",
+            "relationship": "direct",
+            "reasonJa": "サムソンがティムナの女性を見たと明言する。"
+          },
+          {
+            "entityID": "person:manoah_1933",
+            "relationship": "context",
+            "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+          }
+        ],
+        "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 3,
+      "action": "add",
+      "entityID": "person:manoah_1933",
+      "relationship": "context",
+      "status": "pass",
+      "sourceText": "Then his father and his mother said to him, “Isn’t there a woman among your brothers’ daughters, or among all my people, that you go to take a wife of the uncircumcised Philistines?” Samson said to his father, “Get her for me, for she pleases me well.”",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V3",
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "サムソンが父母と応答する。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 14,
+        "verse": 3,
+        "action": "add",
+        "entityID": "person:manoah_1933",
+        "relationship": "context",
+        "beforeEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "direct",
+            "reasonJa": "サムソンが父母と応答する。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "direct",
+            "reasonJa": "サムソンが父母と応答する。"
+          },
+          {
+            "entityID": "person:manoah_1933",
+            "relationship": "context",
+            "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+          }
+        ],
+        "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 4,
+      "action": "add",
+      "entityID": "person:manoah_1933",
+      "relationship": "context",
+      "status": "pass",
+      "sourceText": "But his father and his mother didn’t know that it was of the LORD; for he sought an occasion against the Philistines. Now at that time the Philistines ruled over Israel.",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V4",
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "出来事が主によるもので、主が機会を求めたと語り手が述べる。"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "ペリシテ人がイスラエルを支配していたと明記する。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "「his father and his mother」は婚姻の文脈でサムソンの父母を指す。後半の「he sought」は主を指す可能性があり、サムソンの行為とは断定しない。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 14,
+        "verse": 4,
+        "action": "add",
+        "entityID": "person:manoah_1933",
+        "relationship": "context",
+        "beforeEntities": [
+          {
+            "entityID": "person:god_1324",
+            "relationship": "direct",
+            "reasonJa": "出来事が主によるもので、主が機会を求めたと語り手が述べる。"
+          },
+          {
+            "entityID": "person:israel_682",
+            "relationship": "direct",
+            "reasonJa": "ペリシテ人がイスラエルを支配していたと明記する。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:god_1324",
+            "relationship": "direct",
+            "reasonJa": "出来事が主によるもので、主が機会を求めたと語り手が述べる。"
+          },
+          {
+            "entityID": "person:israel_682",
+            "relationship": "direct",
+            "reasonJa": "ペリシテ人がイスラエルを支配していたと明記する。"
+          },
+          {
+            "entityID": "person:manoah_1933",
+            "relationship": "context",
+            "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+          }
+        ],
+        "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 5,
+      "action": "add",
+      "entityID": "person:manoah_1933",
+      "relationship": "context",
+      "status": "pass",
+      "sourceText": "Then Samson went down to Timnah with his father and his mother, and came to the vineyards of Timnah; and behold, a young lion roared at him.",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V5",
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "サムソンが名指される。"
+        },
+        {
+          "entityID": "place:timnah_1164",
+          "relationship": "direct",
+          "reasonJa": "ティムナへの道とそのぶどう畑が明記される。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 14,
+        "verse": 5,
+        "action": "add",
+        "entityID": "person:manoah_1933",
+        "relationship": "context",
+        "beforeEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "direct",
+            "reasonJa": "サムソンが名指される。"
+          },
+          {
+            "entityID": "place:timnah_1164",
+            "relationship": "direct",
+            "reasonJa": "ティムナへの道とそのぶどう畑が明記される。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "direct",
+            "reasonJa": "サムソンが名指される。"
+          },
+          {
+            "entityID": "place:timnah_1164",
+            "relationship": "direct",
+            "reasonJa": "ティムナへの道とそのぶどう畑が明記される。"
+          },
+          {
+            "entityID": "person:manoah_1933",
+            "relationship": "context",
+            "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+          }
+        ],
+        "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 6,
+      "action": "add",
+      "entityID": "person:manoah_1933",
+      "relationship": "context",
+      "status": "pass",
+      "sourceText": "The LORD’s Spirit came mightily on him, and he tore him as he would have torn a young goat with his bare hands, but he didn’t tell his father or his mother what he had done.",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V6",
+      "currentEntities": [
+        {
+          "entityID": "person:holy_spirit_7400",
+          "relationship": "direct",
+          "reasonJa": "主の霊が力強く臨んだと明記される。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "「彼」はこの節の主体サムソンを指す。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 14,
+        "verse": 6,
+        "action": "add",
+        "entityID": "person:manoah_1933",
+        "relationship": "context",
+        "beforeEntities": [
+          {
+            "entityID": "person:holy_spirit_7400",
+            "relationship": "direct",
+            "reasonJa": "主の霊が力強く臨んだと明記される。"
+          },
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "context",
+            "reasonJa": "「彼」はこの節の主体サムソンを指す。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:holy_spirit_7400",
+            "relationship": "direct",
+            "reasonJa": "主の霊が力強く臨んだと明記される。"
+          },
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "context",
+            "reasonJa": "「彼」はこの節の主体サムソンを指す。"
+          },
+          {
+            "entityID": "person:manoah_1933",
+            "relationship": "context",
+            "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+          }
+        ],
+        "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 9,
+      "action": "add",
+      "entityID": "person:manoah_1933",
+      "relationship": "context",
+      "status": "pass",
+      "sourceText": "He took it into his hands, and went on, eating as he went. He came to his father and mother and gave to them, and they ate, but he didn’t tell them that he had taken the honey out of the lion’s body.",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V9",
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "蜜を取り、両親に渡す主語はサムソン。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 14,
+        "verse": 9,
+        "action": "add",
+        "entityID": "person:manoah_1933",
+        "relationship": "context",
+        "beforeEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "context",
+            "reasonJa": "蜜を取り、両親に渡す主語はサムソン。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "context",
+            "reasonJa": "蜜を取り、両親に渡す主語はサムソン。"
+          },
+          {
+            "entityID": "person:manoah_1933",
+            "relationship": "context",
+            "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+          }
+        ],
+        "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 10,
+      "action": "add",
+      "entityID": "person:manoah_1933",
+      "relationship": "context",
+      "status": "pass",
+      "sourceText": "His father went down to the woman; and Samson made a feast there, for the young men used to do so.",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V10",
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "宴を設けた者としてサムソンが名指される。"
+        },
+        {
+          "entityID": "place:timnah_1164",
+          "relationship": "context",
+          "reasonJa": "「そこ」は直前から続くティムナの婚姻場面。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 14,
+        "verse": 10,
+        "action": "add",
+        "entityID": "person:manoah_1933",
+        "relationship": "context",
+        "beforeEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "direct",
+            "reasonJa": "宴を設けた者としてサムソンが名指される。"
+          },
+          {
+            "entityID": "place:timnah_1164",
+            "relationship": "context",
+            "reasonJa": "「そこ」は直前から続くティムナの婚姻場面。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "direct",
+            "reasonJa": "宴を設けた者としてサムソンが名指される。"
+          },
+          {
+            "entityID": "place:timnah_1164",
+            "relationship": "context",
+            "reasonJa": "「そこ」は直前から続くティムナの婚姻場面。"
+          },
+          {
+            "entityID": "person:manoah_1933",
+            "relationship": "context",
+            "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+          }
+        ],
+        "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 16,
+      "action": "add",
+      "entityID": "person:manoah_1933",
+      "relationship": "context",
+      "status": "pass",
+      "sourceText": "Samson’s wife wept before him, and said, “You just hate me, and don’t love me. You’ve told a riddle to the children of my people, and haven’t told it to me.” He said to her, “Behold, I haven’t told my father or my mother, so why should I tell you?”",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V16",
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "妻と話すサムソンが名指される。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 14,
+        "verse": 16,
+        "action": "add",
+        "entityID": "person:manoah_1933",
+        "relationship": "context",
+        "beforeEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "direct",
+            "reasonJa": "妻と話すサムソンが名指される。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "direct",
+            "reasonJa": "妻と話すサムソンが名指される。"
+          },
+          {
+            "entityID": "person:manoah_1933",
+            "relationship": "context",
+            "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+          }
+        ],
+        "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 19,
+      "action": "add",
+      "entityID": "person:manoah_1933",
+      "relationship": "context",
+      "status": "pass",
+      "sourceText": "The LORD’s Spirit came mightily on him, and he went down to Ashkelon and struck thirty men of them. He took their plunder, then gave the changes of clothing to those who declared the riddle. His anger burned, and he went up to his father’s house.",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V19",
+      "currentEntities": [
+        {
+          "entityID": "person:holy_spirit_7400",
+          "relationship": "direct",
+          "reasonJa": "主の霊が力強く臨んだと明記される。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "アシュケロンへ下り、男たちを打つ主語はサムソン。"
+        },
+        {
+          "entityID": "place:ashkelon_103",
+          "relationship": "direct",
+          "reasonJa": "サムソンが下ったアシュケロンが明記される。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 14,
+        "verse": 19,
+        "action": "add",
+        "entityID": "person:manoah_1933",
+        "relationship": "context",
+        "beforeEntities": [
+          {
+            "entityID": "person:holy_spirit_7400",
+            "relationship": "direct",
+            "reasonJa": "主の霊が力強く臨んだと明記される。"
+          },
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "context",
+            "reasonJa": "アシュケロンへ下り、男たちを打つ主語はサムソン。"
+          },
+          {
+            "entityID": "place:ashkelon_103",
+            "relationship": "direct",
+            "reasonJa": "サムソンが下ったアシュケロンが明記される。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:holy_spirit_7400",
+            "relationship": "direct",
+            "reasonJa": "主の霊が力強く臨んだと明記される。"
+          },
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "context",
+            "reasonJa": "アシュケロンへ下り、男たちを打つ主語はサムソン。"
+          },
+          {
+            "entityID": "place:ashkelon_103",
+            "relationship": "direct",
+            "reasonJa": "サムソンが下ったアシュケロンが明記される。"
+          },
+          {
+            "entityID": "person:manoah_1933",
+            "relationship": "context",
+            "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+          }
+        ],
+        "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 4,
+      "action": "add",
+      "entityID": "person:samson_2468",
+      "relationship": "context",
+      "status": "pass",
+      "sourceText": "But his father and his mother didn’t know that it was of the LORD; for he sought an occasion against the Philistines. Now at that time the Philistines ruled over Israel.",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V4",
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "出来事が主によるもので、主が機会を求めたと語り手が述べる。"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "ペリシテ人がイスラエルを支配していたと明記する。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "「his father and his mother」は婚姻の文脈でサムソンの父母を指す。後半の「he sought」は主を指す可能性があり、サムソンの行為とは断定しない。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 14,
+        "verse": 4,
+        "action": "add",
+        "entityID": "person:samson_2468",
+        "relationship": "context",
+        "beforeEntities": [
+          {
+            "entityID": "person:god_1324",
+            "relationship": "direct",
+            "reasonJa": "出来事が主によるもので、主が機会を求めたと語り手が述べる。"
+          },
+          {
+            "entityID": "person:israel_682",
+            "relationship": "direct",
+            "reasonJa": "ペリシテ人がイスラエルを支配していたと明記する。"
+          },
+          {
+            "entityID": "person:manoah_1933",
+            "relationship": "context",
+            "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:god_1324",
+            "relationship": "direct",
+            "reasonJa": "出来事が主によるもので、主が機会を求めたと語り手が述べる。"
+          },
+          {
+            "entityID": "person:israel_682",
+            "relationship": "direct",
+            "reasonJa": "ペリシテ人がイスラエルを支配していたと明記する。"
+          },
+          {
+            "entityID": "person:manoah_1933",
+            "relationship": "context",
+            "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+          },
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "context",
+            "reasonJa": "「he sought an occasion」は婚姻の流れを担うサムソンを指す。"
+          }
+        ],
+        "reasonJa": "「he sought an occasion」は婚姻の流れを担うサムソンを指す。"
+      },
+      "assessmentJa": "現行reasonJaは「his father and his mother」を指示根拠にし、後半のheを主とする可能性を明記。元の修正理由は誤りだったが、現行行は固定WEBに適合。"
+    },
+    {
+      "chapter": 14,
+      "verse": 20,
+      "action": "replace",
+      "entityID": "person:samson_2468",
+      "relationship": "direct",
+      "status": "pass",
+      "sourceText": "But Samson’s wife was given to his companion, who had been his friend.",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V20",
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "「Samson’s wife」と名が本文に直接現れる。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 14,
+        "verse": 20,
+        "action": "replace",
+        "entityID": "person:samson_2468",
+        "relationship": "direct",
+        "beforeEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "context",
+            "reasonJa": "妻が与えられた相手はサムソンの仲間。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "direct",
+            "reasonJa": "「Samson’s wife」と名が本文に直接現れる。"
+          }
+        ],
+        "reasonJa": "「Samson’s wife」と名が本文に直接現れる。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 19,
+      "action": "add",
+      "entityID": "person:samson_2468",
+      "relationship": "context",
+      "status": "pass",
+      "sourceText": "But God split the hollow place that is in Lehi, and water came out of it. When he had drunk, his spirit came again, and he revived. Therefore its name was called En Hakkore, which is in Lehi, to this day.",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V19",
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "神が窪地を割り、水を出す。"
+        },
+        {
+          "entityID": "place:lehi_726",
+          "relationship": "direct",
+          "reasonJa": "水場があるレヒが明記される。"
+        },
+        {
+          "entityID": "place:en-hakkore_391",
+          "relationship": "direct",
+          "reasonJa": "泉に付けられた名エン・ハッコレが明記される。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "「he had drunk」「his spirit」「he revived」はレヒで水を飲んだサムソンを指し、Holy Spiritではない。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 15,
+        "verse": 19,
+        "action": "add",
+        "entityID": "person:samson_2468",
+        "relationship": "context",
+        "beforeEntities": [
+          {
+            "entityID": "person:god_1324",
+            "relationship": "direct",
+            "reasonJa": "神が窪地を割り、水を出す。"
+          },
+          {
+            "entityID": "place:lehi_726",
+            "relationship": "direct",
+            "reasonJa": "水場があるレヒが明記される。"
+          },
+          {
+            "entityID": "place:en-hakkore_391",
+            "relationship": "direct",
+            "reasonJa": "泉に付けられた名エン・ハッコレが明記される。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:god_1324",
+            "relationship": "direct",
+            "reasonJa": "神が窪地を割り、水を出す。"
+          },
+          {
+            "entityID": "place:lehi_726",
+            "relationship": "direct",
+            "reasonJa": "水場があるレヒが明記される。"
+          },
+          {
+            "entityID": "place:en-hakkore_391",
+            "relationship": "direct",
+            "reasonJa": "泉に付けられた名エン・ハッコレが明記される。"
+          },
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "context",
+            "reasonJa": "「he had drunk」「his spirit」「he revived」はレヒで水を飲んだサムソンを指し、Holy Spiritではない。"
+          }
+        ],
+        "reasonJa": "「he had drunk」「his spirit」「he revived」はレヒで水を飲んだサムソンを指し、Holy Spiritではない。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 3,
+      "action": "add",
+      "entityID": "place:gaza_446",
+      "relationship": "context",
+      "status": "pass",
+      "sourceText": "Samson lay until midnight, then arose at midnight and took hold of the doors of the gate of the city, with the two posts, and plucked them up, bar and all, and put them on his shoulders and carried them up to the top of the mountain that is before Hebron.",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V3",
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "門を運ぶサムソンが名指される。"
+        },
+        {
+          "entityID": "place:hebron_551",
+          "relationship": "direct",
+          "reasonJa": "山の前方にあるヘブロンが明記される。"
+        },
+        {
+          "entityID": "place:gaza_446",
+          "relationship": "context",
+          "reasonJa": "「the gate of the city」は16:1–2で舞台となるガザの町の門。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 16,
+        "verse": 3,
+        "action": "add",
+        "entityID": "place:gaza_446",
+        "relationship": "context",
+        "beforeEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "direct",
+            "reasonJa": "門を運ぶサムソンが名指される。"
+          },
+          {
+            "entityID": "place:hebron_551",
+            "relationship": "direct",
+            "reasonJa": "山の前方にあるヘブロンが明記される。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "direct",
+            "reasonJa": "門を運ぶサムソンが名指される。"
+          },
+          {
+            "entityID": "place:hebron_551",
+            "relationship": "direct",
+            "reasonJa": "山の前方にあるヘブロンが明記される。"
+          },
+          {
+            "entityID": "place:gaza_446",
+            "relationship": "context",
+            "reasonJa": "「the gate of the city」は16:1–2で舞台となるガザの町の門。"
+          }
+        ],
+        "reasonJa": "「the gate of the city」は16:1–2で舞台となるガザの町の門。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 7,
+      "action": "add",
+      "entityID": "person:delilah_1005",
+      "relationship": "context",
+      "status": "pass",
+      "sourceText": "Samson said to her, “If they bind me with seven green cords that were never dried, then shall I become weak, and be as another man.”",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V7",
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "サムソンが答える。"
+        },
+        {
+          "entityID": "person:delilah_1005",
+          "relationship": "context",
+          "reasonJa": "「her」は16:4で名指されたデリラ。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 16,
+        "verse": 7,
+        "action": "add",
+        "entityID": "person:delilah_1005",
+        "relationship": "context",
+        "beforeEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "direct",
+            "reasonJa": "サムソンが答える。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "direct",
+            "reasonJa": "サムソンが答える。"
+          },
+          {
+            "entityID": "person:delilah_1005",
+            "relationship": "context",
+            "reasonJa": "「her」は16:4で名指されたデリラ。"
+          }
+        ],
+        "reasonJa": "「her」は16:4で名指されたデリラ。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 11,
+      "action": "add",
+      "entityID": "person:delilah_1005",
+      "relationship": "context",
+      "status": "pass",
+      "sourceText": "He said to her, “If they only bind me with new ropes with which no work has been done, then I will become weak, and be as another man.”",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V11",
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "答える「彼」はサムソン。"
+        },
+        {
+          "entityID": "person:delilah_1005",
+          "relationship": "context",
+          "reasonJa": "「her」は16:4で名指されたデリラ。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 16,
+        "verse": 11,
+        "action": "add",
+        "entityID": "person:delilah_1005",
+        "relationship": "context",
+        "beforeEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "context",
+            "reasonJa": "答える「彼」はサムソン。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "context",
+            "reasonJa": "答える「彼」はサムソン。"
+          },
+          {
+            "entityID": "person:delilah_1005",
+            "relationship": "context",
+            "reasonJa": "「her」は16:4で名指されたデリラ。"
+          }
+        ],
+        "reasonJa": "「her」は16:4で名指されたデリラ。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 17,
+      "action": "add",
+      "entityID": "person:delilah_1005",
+      "relationship": "context",
+      "status": "pass",
+      "sourceText": "He told her all his heart and said to her, “No razor has ever come on my head; for I have been a Nazirite to God from my mother’s womb. If I am shaved, then my strength will go from me and I will become weak, and be like any other man.”",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V17",
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "サムソンは神へのナジル人だったと述べる。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "心を打ち明けた「彼」はサムソン。"
+        },
+        {
+          "entityID": "person:delilah_1005",
+          "relationship": "context",
+          "reasonJa": "心を打ち明ける相手の「her」は16:4で名指されたデリラ。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 16,
+        "verse": 17,
+        "action": "add",
+        "entityID": "person:delilah_1005",
+        "relationship": "context",
+        "beforeEntities": [
+          {
+            "entityID": "person:god_1324",
+            "relationship": "direct",
+            "reasonJa": "サムソンは神へのナジル人だったと述べる。"
+          },
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "context",
+            "reasonJa": "心を打ち明けた「彼」はサムソン。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:god_1324",
+            "relationship": "direct",
+            "reasonJa": "サムソンは神へのナジル人だったと述べる。"
+          },
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "context",
+            "reasonJa": "心を打ち明けた「彼」はサムソン。"
+          },
+          {
+            "entityID": "person:delilah_1005",
+            "relationship": "context",
+            "reasonJa": "心を打ち明ける相手の「her」は16:4で名指されたデリラ。"
+          }
+        ],
+        "reasonJa": "心を打ち明ける相手の「her」は16:4で名指されたデリラ。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 27,
+      "action": "replace",
+      "entityID": "person:samson_2468",
+      "relationship": "direct",
+      "status": "pass",
+      "sourceText": "Now the house was full of men and women; and all the lords of the Philistines were there; and there were on the roof about three thousand men and women, who saw while Samson performed.",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V27",
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "「Samson performed」と名前が本文に直接現れる。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 16,
+        "verse": 27,
+        "action": "replace",
+        "entityID": "person:samson_2468",
+        "relationship": "direct",
+        "beforeEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "context",
+            "reasonJa": "見世物をする「彼」はサムソン。"
+          }
+        ],
+        "afterEntities": [
+          {
+            "entityID": "person:samson_2468",
+            "relationship": "direct",
+            "reasonJa": "「Samson performed」と名前が本文に直接現れる。"
+          }
+        ],
+        "reasonJa": "「Samson performed」と名前が本文に直接現れる。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    },
+    {
+      "chapter": 13,
+      "verse": 2,
+      "action": "remove-mapped-unmapped-mention",
+      "entityID": "person:dan_973",
+      "relationship": null,
+      "status": "pass",
+      "sourceText": "There was a certain man of Zorah, of the family of the Danites, whose name was Manoah; and his wife was barren, and childless.",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V2",
+      "currentEntities": [
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "direct",
+          "reasonJa": "マノアの名が記される。"
+        },
+        {
+          "entityID": "place:zorah_1275",
+          "relationship": "direct",
+          "reasonJa": "マノアの出身地としてツォルアが記される。"
+        },
+        {
+          "entityID": "person:dan_973",
+          "relationship": "direct",
+          "reasonJa": "「family of the Danites」と氏族名を本文が明記する。"
+        }
+      ],
+      "repairRecord": {
+        "chapter": 13,
+        "verse": 2,
+        "action": "remove-mapped-unmapped-mention",
+        "entityID": "person:dan_973",
+        "beforeUnmappedMentions": [
+          "Danites — family/clan designation, no assigned existing entity ID.",
+          "Manoah’s wife — unnamed woman."
+        ],
+        "afterUnmappedMentions": [
+          "Manoah’s wife — unnamed woman."
+        ],
+        "reasonJa": "Danitesは既存IDへ追加済みなので、存在しないIDとの矛盾を避けてunmappedMentionsから除去。"
+      },
+      "assessmentJa": "修正後の対象・関係は固定WEB本文と現行行に合致。文脈関係は初出名/前後節を確認し、未命名人物を補っていない。"
+    }
+  ],
+  "verses": [
+    {
+      "chapter": 13,
+      "verse": 1,
+      "status": "pass",
+      "sourceText": "The children of Israel again did that which was evil in the LORD’s sight; and the LORD delivered them into the hand of the Philistines forty years.",
+      "sourceTextSHA256": "ad5c9cbf234756c77317248fba982f1ba1981bba3237efea80cd8ce1f20c772a",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V1",
+      "fixedWitnessText": "The children of Israel again did that which was evil in the LORD’s sight; and the LORD delivered them into the hand of the Philistines forty years.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V1",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "「主／主の目に悪」を指す神への明示的言及。"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "イスラエルの人々を集団として明示する。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "Philistines — the supplied/indexed candidate set has no entity ID for this collective."
+      ],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 13,
+      "verse": 2,
+      "status": "pass",
+      "sourceText": "There was a certain man of Zorah, of the family of the Danites, whose name was Manoah; and his wife was barren, and childless.",
+      "sourceTextSHA256": "d0751e63da86604e3e947130356a0b7c0977919876e1b8e15edc81ac7b1a11d8",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V2",
+      "fixedWitnessText": "There was a certain man of Zorah, of the family of the Danites, whose name was Manoah; and his wife was barren, and childless.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V2",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "direct",
+          "reasonJa": "マノアの名が記される。"
+        },
+        {
+          "entityID": "place:zorah_1275",
+          "relationship": "direct",
+          "reasonJa": "マノアの出身地としてツォルアが記される。"
+        },
+        {
+          "entityID": "person:dan_973",
+          "relationship": "direct",
+          "reasonJa": "「family of the Danites」と氏族名を本文が明記する。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "Manoah’s wife — unnamed woman."
+      ],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 13,
+      "verse": 3,
+      "status": "qualified",
+      "sourceText": "The LORD’s angel appeared to the woman, and said to her, “See now, you are barren and childless; but you shall conceive and bear a son.",
+      "sourceTextSHA256": "2cb77fc54fe358b93813fb6723081074af59e2a858a512597f98110258d14a45",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V3",
+      "fixedWitnessText": "The LORD’s angel appeared to the woman, and said to her, “See now, you are barren and childless; but you shall conceive and bear a son.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V3",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "「LORD’s angel」の所有名LORDへの言及をGod IDに表示する。使者そのものを神本人と同一視する意味ではない。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "the LORD’s angel — no assigned angel ID; the divine message is represented by person:god_1324."
+      ],
+      "assessmentJa": "「LORD’s angel」をGodへdirectで結ぶのは、御使い本人との混同を避ける本文に対し関係を強く表す。天使IDがないというunmapped理由とも併記が曖昧。神の御使いという関係参照ならcontextへ格下げを推奨。"
+    },
+    {
+      "chapter": 13,
+      "verse": 4,
+      "status": "pass",
+      "sourceText": "Now therefore please beware and drink no wine nor strong drink, and don’t eat any unclean thing;",
+      "sourceTextSHA256": "adcc9026c6d9fb8474af107da0a3c5fbc54f87152448f80f93497f6df3b5e10b",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V4",
+      "fixedWitnessText": "Now therefore please beware and drink no wine nor strong drink, and don’t eat any unclean thing;",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V4",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 13,
+      "verse": 5,
+      "status": "pass",
+      "sourceText": "for, behold, you shall conceive and give birth to a son. No razor shall come on his head, for the child shall be a Nazirite to God from the womb. He shall begin to save Israel out of the hand of the Philistines.”",
+      "sourceTextSHA256": "63b9a99947ef1d0fbd8ca2350e08002230b1d74919d5825c228485e220619fda",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V5",
+      "fixedWitnessText": "for, behold, you shall conceive and give birth to a son. No razor shall come on his head, for the child shall be a Nazirite to God from the womb. He shall begin to save Israel out of the hand of the Philistines.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V5",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "「神へのナジル人」とイスラエル救出の主が明記される。"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "救い出されるイスラエルが明記される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 13,
+      "verse": 6,
+      "status": "qualified",
+      "sourceText": "Then the woman came and told her husband, saying, “A man of God came to me, and his face was like the face of the angel of God, very awesome. I didn’t ask him where he was from, neither did he tell me his name;",
+      "sourceTextSHA256": "8635d338bfeeab7498a4973735d44f37469885650358c74dbf47023036032401",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V6",
+      "fixedWitnessText": "Then the woman came and told her husband, saying, “A man of God came to me, and his face was like the face of the angel of God, very awesome. I didn’t ask him where he was from, neither did he tell me his name;",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V6",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "「man of God」「angel of God」の所有名Godへの言及をGod IDに表示する。使者そのものを神本人と同一視する意味ではない。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「her husband」は直前13:2で名を示されたマノア。妻はこの節でも無名。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "Manoah’s wife — unnamed woman."
+      ],
+      "assessmentJa": "「man of God」「angel of God」は使者の説明。God directは神本人の出現と読めるため、関係を収録するならcontextが適切。wifeは無名、husband=Manoahは13:2から確実。"
+    },
+    {
+      "chapter": 13,
+      "verse": 7,
+      "status": "qualified",
+      "sourceText": "but he said to me, ‘Behold, you shall conceive and bear a son; and now drink no wine nor strong drink. Don’t eat any unclean thing, for the child shall be a Nazirite to God from the womb to the day of his death.’”",
+      "sourceTextSHA256": "954fbf2c79244a88ff6126d2c49fca537d22d83f66ad4ead6a76c34b1a11dfae",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V7",
+      "fixedWitnessText": "but he said to me, ‘Behold, you shall conceive and bear a son; and now drink no wine nor strong drink. Don’t eat any unclean thing, for the child shall be a Nazirite to God from the womb to the day of his death.’”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V7",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文が “to God” と神を明記する。ここでGod IDを表示する根拠は神への明示的言及であり、別の使者を神本人と同一視するものではない。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "「a Nazirite to God」は神との関係を述べるが、神を行為主体とする文ではない。directの基準上contextも検討。"
+    },
+    {
+      "chapter": 13,
+      "verse": 8,
+      "status": "pass",
+      "sourceText": "Then Manoah entreated the LORD, and said, “Oh, Lord, please let the man of God whom you sent come again to us, and teach us what we should do to the child who shall be born.”",
+      "sourceTextSHA256": "0dccee5a5da4bac06cddf25c82b79dd283764a98a0a0ec653697d9e3eaff68e2",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V8",
+      "fixedWitnessText": "Then Manoah entreated the LORD, and said, “Oh, Lord, please let the man of God whom you sent come again to us, and teach us what we should do to the child who shall be born.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V8",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "マノアが主に願う。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "direct",
+          "reasonJa": "祈るマノアが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 13,
+      "verse": 9,
+      "status": "pass",
+      "sourceText": "God listened to the voice of Manoah, and the angel of God came again to the woman as she sat in the field; but Manoah, her husband, wasn’t with her.",
+      "sourceTextSHA256": "3b6d9a7185320962b2f5c865f7d39239edbf0ee624ad8e5c265afde188fb9761",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V9",
+      "fixedWitnessText": "God listened to the voice of Manoah, and the angel of God came again to the woman as she sat in the field; but Manoah, her husband, wasn’t with her.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V9",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "神がマノアの願いを聞く。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "direct",
+          "reasonJa": "願い手マノアの名が記される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 13,
+      "verse": 10,
+      "status": "pass",
+      "sourceText": "The woman hurried and ran, and told her husband, saying to him, “Behold, the man who came to me that day has appeared to me.”",
+      "sourceTextSHA256": "54b72d3632b49e906ae21bf434d2fd163e2cb23eef03b564ad4e60e509f11e8a",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V10",
+      "fixedWitnessText": "The woman hurried and ran, and told her husband, saying to him, “Behold, the man who came to me that day has appeared to me.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V10",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「夫」は直前に紹介されたマノアを指す。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 13,
+      "verse": 11,
+      "status": "pass",
+      "sourceText": "Manoah arose and followed his wife, and came to the man, and said to him, “Are you the man who spoke to my wife?” He said, “I am.”",
+      "sourceTextSHA256": "7a4eb174a9041d11e9795595db164620a31dcb0dcebeb72d2593f24de176322f",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V11",
+      "fixedWitnessText": "Manoah arose and followed his wife, and came to the man, and said to him, “Are you the man who spoke to my wife?” He said, “I am.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V11",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "direct",
+          "reasonJa": "マノアが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 13,
+      "verse": 12,
+      "status": "pass",
+      "sourceText": "Manoah said, “Now let your words happen. What shall the child’s way of life and mission be?”",
+      "sourceTextSHA256": "4762d59a826a226dbaa11e61c4539d722b6176fe2253b934d88b1031c9ab12d1",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V12",
+      "fixedWitnessText": "Manoah said, “Now let your words happen. What shall the child’s way of life and mission be?”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V12",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "direct",
+          "reasonJa": "マノアが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 13,
+      "verse": 13,
+      "status": "qualified",
+      "sourceText": "The LORD’s angel said to Manoah, “Of all that I said to the woman let her beware.",
+      "sourceTextSHA256": "f96044fb2fd33896abcb751450175f67c29af0a70ffa83b4e3344cc4b15f8c34",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V13",
+      "fixedWitnessText": "The LORD’s angel said to Manoah, “Of all that I said to the woman let her beware.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V13",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "「LORD’s angel」の所有名LORDへの言及をGod IDに表示する。使者そのものを神本人と同一視する意味ではない。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "direct",
+          "reasonJa": "マノアが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "話者はLORD’s angel。God directが御使いとの同一化でない点をreasonへ明記するのが望ましい。"
+    },
+    {
+      "chapter": 13,
+      "verse": 14,
+      "status": "pass",
+      "sourceText": "She may not eat of anything that comes of the vine, neither let her drink wine or strong drink, nor eat any unclean thing. Let her observe all that I commanded her.”",
+      "sourceTextSHA256": "a7761b566bbb0ae3a9286d6804478ce64263c7ece014f439cb23b27ddd4055d9",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V14",
+      "fixedWitnessText": "She may not eat of anything that comes of the vine, neither let her drink wine or strong drink, nor eat any unclean thing. Let her observe all that I commanded her.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V14",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 13,
+      "verse": 15,
+      "status": "qualified",
+      "sourceText": "Manoah said to the LORD’s angel, “Please stay with us, that we may make a young goat ready for you.”",
+      "sourceTextSHA256": "93f87c51ff54fde7e68cc29f64a87ac40f75844d0f6b34882f5543f884a4966f",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V15",
+      "fixedWitnessText": "Manoah said to the LORD’s angel, “Please stay with us, that we may make a young goat ready for you.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V15",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "「LORD’s angel」の所有名LORDへの言及をGod IDに表示する。使者そのものを神本人と同一視する意味ではない。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "direct",
+          "reasonJa": "マノアが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "話し相手はLORD’s angel。God-ID directが使者自体か神への関係か曖昧。context/理由修正が望ましい。"
+    },
+    {
+      "chapter": 13,
+      "verse": 16,
+      "status": "pass",
+      "sourceText": "The LORD’s angel said to Manoah, “Though you detain me, I won’t eat your bread. If you will prepare a burnt offering, you must offer it to the LORD.” For Manoah didn’t know that he was the LORD’s angel.",
+      "sourceTextSHA256": "cce77148aa4dcf7b1761a35b6a189ca95bbe3dd78437a5f3c4ecde7f5cbb7e9b",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V16",
+      "fixedWitnessText": "The LORD’s angel said to Manoah, “Though you detain me, I won’t eat your bread. If you will prepare a burnt offering, you must offer it to the LORD.” For Manoah didn’t know that he was the LORD’s angel.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V16",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "供え物を受ける相手として主が明記される。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "direct",
+          "reasonJa": "マノアが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 13,
+      "verse": 17,
+      "status": "qualified",
+      "sourceText": "Manoah said to the LORD’s angel, “What is your name, that when your words happen, we may honor you?”",
+      "sourceTextSHA256": "8f522f1aa30980b35da518433eda9430e836956ea215fb4df30dbe7c3dbc448c",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V17",
+      "fixedWitnessText": "Manoah said to the LORD’s angel, “What is your name, that when your words happen, we may honor you?”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V17",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "「LORD’s angel」の所有名LORDへの言及をGod IDに表示する。使者そのものを神本人と同一視する意味ではない。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "direct",
+          "reasonJa": "マノアが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "質問対象はLORD’s angel。God-ID directは御使いを神本人と同一視しない旨を理由に明記すべき。"
+    },
+    {
+      "chapter": 13,
+      "verse": 18,
+      "status": "qualified",
+      "sourceText": "The LORD’s angel said to him, “Why do you ask about my name, since it is incomprehensible?”",
+      "sourceTextSHA256": "ee3816332b6ad5074c0376f3263f4812a9f9c94140593a942cd62055e9424f89",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V18",
+      "fixedWitnessText": "The LORD’s angel said to him, “Why do you ask about my name, since it is incomprehensible?”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V18",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "「LORD’s angel」の所有名LORDへの言及をGod IDに表示する。使者そのものを神本人と同一視する意味ではない。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「to him」は名を尋ねたマノアを指す。主の御使いを神本人と同一視しない。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "reasonは御使いを神本人と同一視しないとする一方、God directの付与と語義上緊張。神への関係ならcontext理由を明瞭化。"
+    },
+    {
+      "chapter": 13,
+      "verse": 19,
+      "status": "pass",
+      "sourceText": "So Manoah took the young goat with the meal offering, and offered it on the rock to the LORD. Then the angel did an amazing thing as Manoah and his wife watched.",
+      "sourceTextSHA256": "0e073990055524f15ebd0781a44123b1030012a815e05d6c5df1c1940a628ad0",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V19",
+      "fixedWitnessText": "So Manoah took the young goat with the meal offering, and offered it on the rock to the LORD. Then the angel did an amazing thing as Manoah and his wife watched.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V19",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "マノアが供え物を主にささげる。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "direct",
+          "reasonJa": "マノアが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 13,
+      "verse": 20,
+      "status": "qualified",
+      "sourceText": "For when the flame went up toward the sky from off the altar, the LORD’s angel ascended in the flame of the altar. Manoah and his wife watched; and they fell on their faces to the ground.",
+      "sourceTextSHA256": "df184f5007e9e0e9e8dc7bbe3027c5fb389d9f6d06c02cc065b69756ec665dab",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V20",
+      "fixedWitnessText": "For when the flame went up toward the sky from off the altar, the LORD’s angel ascended in the flame of the altar. Manoah and his wife watched; and they fell on their faces to the ground.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V20",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "「LORD’s angel」の所有名LORDへの言及をGod IDに表示する。使者そのものを神本人と同一視する意味ではない。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "direct",
+          "reasonJa": "マノアが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "主体はLORD’s angelが炎に上ること。God directは御使いとの同一化に読めるため、区別を要す。"
+    },
+    {
+      "chapter": 13,
+      "verse": 21,
+      "status": "qualified",
+      "sourceText": "But the LORD’s angel didn’t appear to Manoah or to his wife any more. Then Manoah knew that he was the LORD’s angel.",
+      "sourceTextSHA256": "da2efe47e98b9344eac71ce4bd92f1337c64aa9e08af353b543139895143c021",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V21",
+      "fixedWitnessText": "But the LORD’s angel didn’t appear to Manoah or to his wife any more. Then Manoah knew that he was the LORD’s angel.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V21",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "「LORD’s angel」の所有名LORDへの言及をGod IDに表示する。使者そのものを神本人と同一視する意味ではない。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "direct",
+          "reasonJa": "マノアが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "マノアが「he was the LORD’s angel」と知る記述。God directより、神の使者へのcontext/関連扱いが安全。"
+    },
+    {
+      "chapter": 13,
+      "verse": 22,
+      "status": "pass",
+      "sourceText": "Manoah said to his wife, “We shall surely die, because we have seen God.”",
+      "sourceTextSHA256": "53e0ea045dd819db2c7dc1ea39b35cbe3e98fbaff50ac782bae216dcac2c0be1",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V22",
+      "fixedWitnessText": "Manoah said to his wife, “We shall surely die, because we have seen God.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V22",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "マノアが「神を見た」と言う。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "direct",
+          "reasonJa": "マノアが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 13,
+      "verse": 23,
+      "status": "pass",
+      "sourceText": "But his wife said to him, “If the LORD were pleased to kill us, he wouldn’t have received a burnt offering and a meal offering at our hand, and he wouldn’t have shown us all these things, nor would he have told us such things as these at this time.”",
+      "sourceTextSHA256": "69e9c603e7bf7755027f85829dc2fcbb9a03bd5063a66b629bbaa0df42a9c008",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V23",
+      "fixedWitnessText": "But his wife said to him, “If the LORD were pleased to kill us, he wouldn’t have received a burnt offering and a meal offering at our hand, and he wouldn’t have shown us all these things, nor would he have told us such things as these at this time.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V23",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "主が命を取るかどうかについての妻の発言。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「彼に言った」の相手は直前に妻へ話したマノア。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 13,
+      "verse": 24,
+      "status": "pass",
+      "sourceText": "The woman bore a son and named him Samson. The child grew, and the LORD blessed him.",
+      "sourceTextSHA256": "dba8a41221bb5cddd0a52f170a0426f03668c5b04d9de4a5ba0cada58f1e6b22",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V24",
+      "fixedWitnessText": "The woman bore a son and named him Samson. The child grew, and the LORD blessed him.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V24",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "主が子を祝福する。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "生まれた子サムソンの名が明記される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 13,
+      "verse": 25,
+      "status": "pass",
+      "sourceText": "The LORD’s Spirit began to move him in Mahaneh Dan, between Zorah and Eshtaol.",
+      "sourceTextSHA256": "e08173692fe2db05a7738880ff1b14d704601294e05ce5305e37d6bc25129bb7",
+      "sourceURL": "https://ebible.org/engwebp/JDG13.htm#V25",
+      "fixedWitnessText": "The LORD’s Spirit began to move him in Mahaneh Dan, between Zorah and Eshtaol.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG13.htm#V25",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "「LORD’s Spirit」と主が明示される。御使いを神本人とは扱わない。"
+        },
+        {
+          "entityID": "person:holy_spirit_7400",
+          "relationship": "direct",
+          "reasonJa": "「主の霊」が動かすと明記される。"
+        },
+        {
+          "entityID": "place:mahaneh-dan_757",
+          "relationship": "direct",
+          "reasonJa": "マハネ・ダンが場所として明記される。"
+        },
+        {
+          "entityID": "place:zorah_1275",
+          "relationship": "direct",
+          "reasonJa": "マハネ・ダンの位置を示すツォルアが明記される。"
+        },
+        {
+          "entityID": "place:eshtaol_411",
+          "relationship": "direct",
+          "reasonJa": "マハネ・ダンの位置を示すエシュタオルが明記される。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "「him」はこの誕生物語の子サムソンを指す。"
+        }
+      ],
+      "excludedCandidates": [
+        {
+          "entityID": "person:dan_973",
+          "name": "Dan",
+          "reasonJa": "「マハネ・ダン」は地名の構成要素であり、族長ダンの個人行為・所在を示す文ではない。対応する既存の場所IDを採用する。"
+        }
+      ],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 1,
+      "status": "pass",
+      "sourceText": "Samson went down to Timnah, and saw a woman in Timnah of the daughters of the Philistines.",
+      "sourceTextSHA256": "bfe3941f936fa22600ba74c56c063844bf0d7e54fb7fd0e1c30bf64b7fc1ac65",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V1",
+      "fixedWitnessText": "Samson went down to Timnah, and saw a woman in Timnah of the daughters of the Philistines.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG14.htm#V1",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "サムソンが名指される。"
+        },
+        {
+          "entityID": "place:timnah_1164",
+          "relationship": "direct",
+          "reasonJa": "行先のティムナが明記される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "Philistines — collective has no assigned existing entity ID.",
+        "The woman — unnamed."
+      ],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 2,
+      "status": "pass",
+      "sourceText": "He came up, and told his father and his mother, saying, “I have seen a woman in Timnah of the daughters of the Philistines. Now therefore get her for me as my wife.”",
+      "sourceTextSHA256": "a8b4e2fd8caaa0ba2e053dd929d3757d5c1df644917031545e93fab110abdde5",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V2",
+      "fixedWitnessText": "He came up, and told his father and his mother, saying, “I have seen a woman in Timnah of the daughters of the Philistines. Now therefore get her for me as my wife.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG14.htm#V2",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "父母に話す「彼」は直前のサムソン。"
+        },
+        {
+          "entityID": "place:timnah_1164",
+          "relationship": "direct",
+          "reasonJa": "サムソンがティムナの女性を見たと明言する。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 3,
+      "status": "pass",
+      "sourceText": "Then his father and his mother said to him, “Isn’t there a woman among your brothers’ daughters, or among all my people, that you go to take a wife of the uncircumcised Philistines?” Samson said to his father, “Get her for me, for she pleases me well.”",
+      "sourceTextSHA256": "d95e9186331b7cf9b79716aee6e5224e6a8979964c11bce18eee9c0f1b6ec52b",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V3",
+      "fixedWitnessText": "Then his father and his mother said to him, “Isn’t there a woman among your brothers’ daughters, or among all my people, that you go to take a wife of the uncircumcised Philistines?” Samson said to his father, “Get her for me, for she pleases me well.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG14.htm#V3",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "サムソンが父母と応答する。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "Samson’s father and mother — unnamed.",
+        "Philistines — collective has no assigned existing entity ID."
+      ],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 4,
+      "status": "pass",
+      "sourceText": "But his father and his mother didn’t know that it was of the LORD; for he sought an occasion against the Philistines. Now at that time the Philistines ruled over Israel.",
+      "sourceTextSHA256": "dfa46f01969461cc4fa844df7b29bb1d50d62a112a36ba70cf36b89c615f75d4",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V4",
+      "fixedWitnessText": "But his father and his mother didn’t know that it was of the LORD; for he sought an occasion against the Philistines. Now at that time the Philistines ruled over Israel.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG14.htm#V4",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "出来事が主によるもので、主が機会を求めたと語り手が述べる。"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "ペリシテ人がイスラエルを支配していたと明記する。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "「his father and his mother」は婚姻の文脈でサムソンの父母を指す。後半の「he sought」は主を指す可能性があり、サムソンの行為とは断定しない。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "修正後の理由は冒頭の「his father and his mother」をサムソンへ一意に結び付け、後半のheを主とする可能性も明記する。13:3の父との会話からの文脈と固定WEBに整合。"
+    },
+    {
+      "chapter": 14,
+      "verse": 5,
+      "status": "pass",
+      "sourceText": "Then Samson went down to Timnah with his father and his mother, and came to the vineyards of Timnah; and behold, a young lion roared at him.",
+      "sourceTextSHA256": "ed50916b36d247ce54238b67c59f37263fcf50c30651c10878fb63f337f04c16",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V5",
+      "fixedWitnessText": "Then Samson went down to Timnah with his father and his mother, and came to the vineyards of Timnah; and behold, a young lion roared at him.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG14.htm#V5",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "サムソンが名指される。"
+        },
+        {
+          "entityID": "place:timnah_1164",
+          "relationship": "direct",
+          "reasonJa": "ティムナへの道とそのぶどう畑が明記される。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 6,
+      "status": "pass",
+      "sourceText": "The LORD’s Spirit came mightily on him, and he tore him as he would have torn a young goat with his bare hands, but he didn’t tell his father or his mother what he had done.",
+      "sourceTextSHA256": "d3ba3394cd3bc43b6df6471e17fe681155dbbbeb89e638deef1bd9bb183acfa2",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V6",
+      "fixedWitnessText": "The LORD’s Spirit came mightily on him, and he tore him as he would have torn a young goat with his bare hands, but he didn’t tell his father or his mother what he had done.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG14.htm#V6",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:holy_spirit_7400",
+          "relationship": "direct",
+          "reasonJa": "主の霊が力強く臨んだと明記される。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "「彼」はこの節の主体サムソンを指す。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+        }
+      ],
+      "excludedCandidates": [
+        {
+          "entityID": "person:god_1324",
+          "name": "God",
+          "reasonJa": "この節の行為主体は「主の霊」と別に明記される。主／神への独立した言及がないため、霊の用例だけを採る。"
+        }
+      ],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 7,
+      "status": "pass",
+      "sourceText": "He went down and talked with the woman, and she pleased Samson well.",
+      "sourceTextSHA256": "2dde0e516bc99f296d8c5822c6a214cc2f84f8fd5582e408d1d2614153cd7552",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V7",
+      "fixedWitnessText": "He went down and talked with the woman, and she pleased Samson well.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG14.htm#V7",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "女性がサムソンを喜ばせたと名指しする。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 8,
+      "status": "pass",
+      "sourceText": "After a while he returned to take her, and he went over to see the carcass of the lion; and behold, there was a swarm of bees in the body of the lion, and honey.",
+      "sourceTextSHA256": "764fcec034a47de66d9b57282faf5f9471d1034d2a62ac7f9e339b919458af73",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V8",
+      "fixedWitnessText": "After a while he returned to take her, and he went over to see the carcass of the lion; and behold, there was a swarm of bees in the body of the lion, and honey.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG14.htm#V8",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "「戻った」「見た」の主語は前節から続くサムソン。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 9,
+      "status": "pass",
+      "sourceText": "He took it into his hands, and went on, eating as he went. He came to his father and mother and gave to them, and they ate, but he didn’t tell them that he had taken the honey out of the lion’s body.",
+      "sourceTextSHA256": "2ea6958d36aab9d090379c04654e3ceef639a3d053b2f1a3ed0b8d7cbbc51b47",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V9",
+      "fixedWitnessText": "He took it into his hands, and went on, eating as he went. He came to his father and mother and gave to them, and they ate, but he didn’t tell them that he had taken the honey out of the lion’s body.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG14.htm#V9",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "蜜を取り、両親に渡す主語はサムソン。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 10,
+      "status": "pass",
+      "sourceText": "His father went down to the woman; and Samson made a feast there, for the young men used to do so.",
+      "sourceTextSHA256": "b5c8065bcceb3a25be26c027a7c7bc02720bd796c57e057c63448eb1b7fbdf75",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V10",
+      "fixedWitnessText": "His father went down to the woman; and Samson made a feast there, for the young men used to do so.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG14.htm#V10",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "宴を設けた者としてサムソンが名指される。"
+        },
+        {
+          "entityID": "place:timnah_1164",
+          "relationship": "context",
+          "reasonJa": "「そこ」は直前から続くティムナの婚姻場面。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 11,
+      "status": "pass",
+      "sourceText": "When they saw him, they brought thirty companions to be with him.",
+      "sourceTextSHA256": "95187cc6bb89763aeb76a200988ffef848868a68eca1e7ddfdc919a1a359a5c6",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V11",
+      "fixedWitnessText": "When they saw him, they brought thirty companions to be with him.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG14.htm#V11",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "「彼を見た」の彼は宴の主サムソン。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "The thirty companions — unnamed men."
+      ],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 12,
+      "status": "pass",
+      "sourceText": "Samson said to them, “Let me tell you a riddle now. If you can tell me the answer within the seven days of the feast, and find it out, then I will give you thirty linen garments and thirty changes of clothing;",
+      "sourceTextSHA256": "5daf2ae120dba8aafe31632a5fd03df78d85888f92a4a876328082373318de43",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V12",
+      "fixedWitnessText": "Samson said to them, “Let me tell you a riddle now. If you can tell me the answer within the seven days of the feast, and find it out, then I will give you thirty linen garments and thirty changes of clothing;",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG14.htm#V12",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "なぞを出すサムソンが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 13,
+      "status": "pass",
+      "sourceText": "but if you can’t tell me the answer, then you shall give me thirty linen garments and thirty changes of clothing.” They said to him, “Tell us your riddle, that we may hear it.”",
+      "sourceTextSHA256": "139f9b9b02d20c0cf8b52f0cba989df9e894d7714e278a22d6ecf0c4f1ce8b44",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V13",
+      "fixedWitnessText": "but if you can’t tell me the answer, then you shall give me thirty linen garments and thirty changes of clothing.” They said to him, “Tell us your riddle, that we may hear it.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG14.htm#V13",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "なぞを聞かせるよう求める相手は前節のサムソン。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 14,
+      "status": "pass",
+      "sourceText": "He said to them, “Out of the eater came out food. Out of the strong came out sweetness.” They couldn’t in three days declare the riddle.",
+      "sourceTextSHA256": "64fa3fc6f47d8b452c1d9d488d8e23bde7eec16de44473ef5166b55da8be56fb",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V14",
+      "fixedWitnessText": "He said to them, “Out of the eater came out food. Out of the strong came out sweetness.” They couldn’t in three days declare the riddle.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG14.htm#V14",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "なぞを口にする「彼」はサムソン。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 15,
+      "status": "pass",
+      "sourceText": "On the seventh day, they said to Samson’s wife, “Entice your husband, that he may declare to us the riddle, lest we burn you and your father’s house with fire. Have you called us to impoverish us? Isn’t that so?”",
+      "sourceTextSHA256": "3616ec9e49fde29e4afcad036ed59718bd492cc1d7ca5f8e599049f2c8a69545",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V15",
+      "fixedWitnessText": "On the seventh day, they said to Samson’s wife, “Entice your husband, that he may declare to us the riddle, lest we burn you and your father’s house with fire. Have you called us to impoverish us? Isn’t that so?”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG14.htm#V15",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "仲間たちはサムソンの妻に夫を誘うよう迫る。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "The thirty companions — unnamed men."
+      ],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 16,
+      "status": "pass",
+      "sourceText": "Samson’s wife wept before him, and said, “You just hate me, and don’t love me. You’ve told a riddle to the children of my people, and haven’t told it to me.” He said to her, “Behold, I haven’t told my father or my mother, so why should I tell you?”",
+      "sourceTextSHA256": "73d86b81bf0f779002d74c15f73797ace2ae5c81e1504327120d6dfae1e4e4ed",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V16",
+      "fixedWitnessText": "Samson’s wife wept before him, and said, “You just hate me, and don’t love me. You’ve told a riddle to the children of my people, and haven’t told it to me.” He said to her, “Behold, I haven’t told my father or my mother, so why should I tell you?”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG14.htm#V16",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "妻と話すサムソンが名指される。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 17,
+      "status": "pass",
+      "sourceText": "She wept before him the seven days, while their feast lasted; and on the seventh day, he told her, because she pressed him severely; and she told the riddle to the children of her people.",
+      "sourceTextSHA256": "b26c8ffe050c25bf6c5cc0004fb916c8a6f2f4bb7f47f2b0fea70114c996b444",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V17",
+      "fixedWitnessText": "She wept before him the seven days, while their feast lasted; and on the seventh day, he told her, because she pressed him severely; and she told the riddle to the children of her people.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG14.htm#V17",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "妻に押されてなぞを明かす「彼」はサムソン。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 18,
+      "status": "pass",
+      "sourceText": "The men of the city said to him on the seventh day before the sun went down, “What is sweeter than honey? What is stronger than a lion?” He said to them, “If you hadn’t plowed with my heifer, you wouldn’t have found out my riddle.”",
+      "sourceTextSHA256": "0e6ec82ef3768cd6fe81007e642d22287d0c98c672bb13afb5dd6e8d8e15b9da",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V18",
+      "fixedWitnessText": "The men of the city said to him on the seventh day before the sun went down, “What is sweeter than honey? What is stronger than a lion?” He said to them, “If you hadn’t plowed with my heifer, you wouldn’t have found out my riddle.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG14.htm#V18",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "町の人々が答えを告げる相手・話者はサムソン。"
+        },
+        {
+          "entityID": "place:timnah_1164",
+          "relationship": "context",
+          "reasonJa": "「町」は婚宴が続くティムナ。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 19,
+      "status": "pass",
+      "sourceText": "The LORD’s Spirit came mightily on him, and he went down to Ashkelon and struck thirty men of them. He took their plunder, then gave the changes of clothing to those who declared the riddle. His anger burned, and he went up to his father’s house.",
+      "sourceTextSHA256": "86346ed338a88712da3de56fa9ad7e3edecaf37b294ce9cde3a06687796bd5f1",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V19",
+      "fixedWitnessText": "The LORD’s Spirit came mightily on him, and he went down to Ashkelon and struck thirty men of them. He took their plunder, then gave the changes of clothing to those who declared the riddle. His anger burned, and he went up to his father’s house.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG14.htm#V19",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:holy_spirit_7400",
+          "relationship": "direct",
+          "reasonJa": "主の霊が力強く臨んだと明記される。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "アシュケロンへ下り、男たちを打つ主語はサムソン。"
+        },
+        {
+          "entityID": "place:ashkelon_103",
+          "relationship": "direct",
+          "reasonJa": "サムソンが下ったアシュケロンが明記される。"
+        },
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "context",
+          "reasonJa": "「his father / father and mother」は13:2から続く父マノアを指す。母は名のない人物で別IDを推定しない。"
+        }
+      ],
+      "excludedCandidates": [
+        {
+          "entityID": "person:god_1324",
+          "name": "God",
+          "reasonJa": "この節の行為主体は「主の霊」と別に明記される。主／神への独立した言及がないため、霊の用例だけを採る。"
+        }
+      ],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 14,
+      "verse": 20,
+      "status": "pass",
+      "sourceText": "But Samson’s wife was given to his companion, who had been his friend.",
+      "sourceTextSHA256": "1c6f294faa4fc40b70258e4d92a20594c6455de29d44ccc1ebdc832fb939cb37",
+      "sourceURL": "https://ebible.org/engwebp/JDG14.htm#V20",
+      "fixedWitnessText": "But Samson’s wife was given to his companion, who had been his friend.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG14.htm#V20",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "「Samson’s wife」と名が本文に直接現れる。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 1,
+      "status": "pass",
+      "sourceText": "But after a while, in the time of wheat harvest, Samson visited his wife with a young goat. He said, “I will go in to my wife’s room.” But her father wouldn’t allow him to go in.",
+      "sourceTextSHA256": "769da8b0c4e2d7889a0f55a561ee77c8ba0ca3b94a6e1a878baa04809a70082d",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V1",
+      "fixedWitnessText": "But after a while, in the time of wheat harvest, Samson visited his wife with a young goat. He said, “I will go in to my wife’s room.” But her father wouldn’t allow him to go in.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG15.htm#V1",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "妻を訪ねるサムソンが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 2,
+      "status": "pass",
+      "sourceText": "Her father said, “I most certainly thought that you utterly hated her; therefore I gave her to your companion. Isn’t her younger sister more beautiful than she? Please, take her instead.”",
+      "sourceTextSHA256": "f80d896569ee278a8a79f88b884bf9ee68e29d7e20c742e8b1de2dcf0bf79a15",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V2",
+      "fixedWitnessText": "Her father said, “I most certainly thought that you utterly hated her; therefore I gave her to your companion. Isn’t her younger sister more beautiful than she? Please, take her instead.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG15.htm#V2",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "妻の父が話しかけ、代わりに妹を受け取るよう提案する相手は前節のサムソン。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 3,
+      "status": "pass",
+      "sourceText": "Samson said to them, “This time I will be blameless in the case of the Philistines when I harm them.”",
+      "sourceTextSHA256": "d490ddda57d5d2c974e3d902cc84e660f468c4ca2716e307bc729aadd6ea4b64",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V3",
+      "fixedWitnessText": "Samson said to them, “This time I will be blameless in the case of the Philistines when I harm them.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG15.htm#V3",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "ペリシテ人に害を加えると語るサムソンが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 4,
+      "status": "pass",
+      "sourceText": "Samson went and caught three hundred foxes, and took torches, and turned tail to tail, and put a torch in the middle between every two tails.",
+      "sourceTextSHA256": "4d5a9fc88a1191a8afb0c62b19939c7b398c878793094d397fd7ead0d6311aab",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V4",
+      "fixedWitnessText": "Samson went and caught three hundred foxes, and took torches, and turned tail to tail, and put a torch in the middle between every two tails.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG15.htm#V4",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "狐を捕らえたいまつを仕掛けたサムソンが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 5,
+      "status": "pass",
+      "sourceText": "When he had set the torches on fire, he let them go into the standing grain of the Philistines, and burned up both the shocks and the standing grain, and also the olive groves.",
+      "sourceTextSHA256": "b89ad84cc05170c64ab941a1b6265c2061426a3817550d2030ac63cfe53ee387",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V5",
+      "fixedWitnessText": "When he had set the torches on fire, he let them go into the standing grain of the Philistines, and burned up both the shocks and the standing grain, and also the olive groves.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG15.htm#V5",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "火のついた松明を放った主語は前節のサムソン。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 6,
+      "status": "pass",
+      "sourceText": "Then the Philistines said, “Who has done this?” They said, “Samson, the son-in-law of the Timnite, because he has taken his wife and given her to his companion.” The Philistines came up, and burned her and her father with fire.",
+      "sourceTextSHA256": "b7252f6a49bd05a823e9b90f9613eab66aaaf11f2fef40ed591f15d55cdbbf80",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V6",
+      "fixedWitnessText": "Then the Philistines said, “Who has done this?” They said, “Samson, the son-in-law of the Timnite, because he has taken his wife and given her to his companion.” The Philistines came up, and burned her and her father with fire.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG15.htm#V6",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "ペリシテ人がサムソンを犯人として名指す。"
+        },
+        {
+          "entityID": "place:timnah_1164",
+          "relationship": "direct",
+          "reasonJa": "「ティムナ人の婿」はティムナに属する者を示す。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "Philistines — collective has no assigned existing entity ID.",
+        "The Timnite woman and her father — unnamed."
+      ],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 7,
+      "status": "pass",
+      "sourceText": "Samson said to them, “If you behave like this, surely I will take revenge on you, and after that I will cease.”",
+      "sourceTextSHA256": "0fb1c2f9e8d83976377d41f9f7074edec5fdbc85e4191875f86362bf0b8e24ee",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V7",
+      "fixedWitnessText": "Samson said to them, “If you behave like this, surely I will take revenge on you, and after that I will cease.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG15.htm#V7",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "復讐を告げるサムソンが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 8,
+      "status": "pass",
+      "sourceText": "He struck them hip and thigh with a great slaughter; and he went down and lived in the cave in Etam’s rock.",
+      "sourceTextSHA256": "97dca7b92561b0287b73fafcef1f1f99716b2e901754277998908b4d21246f17",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V8",
+      "fixedWitnessText": "He struck them hip and thigh with a great slaughter; and he went down and lived in the cave in Etam’s rock.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG15.htm#V8",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "彼らを打ち、エタムの岩の洞穴に住む主体はサムソン。"
+        },
+        {
+          "entityID": "place:etam_414",
+          "relationship": "direct",
+          "reasonJa": "エタムの岩が明記される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 9,
+      "status": "pass",
+      "sourceText": "Then the Philistines went up, encamped in Judah, and spread themselves in Lehi.",
+      "sourceTextSHA256": "29bfe91fd143a327326e6059398127b3312e3b1b409a1eefd0f75cefdd9a3836",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V9",
+      "fixedWitnessText": "Then the Philistines went up, encamped in Judah, and spread themselves in Lehi.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG15.htm#V9",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "place:judah_1280",
+          "relationship": "direct",
+          "reasonJa": "陣を張った地域としてユダが明記される。"
+        },
+        {
+          "entityID": "place:lehi_726",
+          "relationship": "direct",
+          "reasonJa": "散開した場所としてレヒが明記される。"
+        }
+      ],
+      "excludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "name": "Judah",
+          "reasonJa": "「ユダ」は陣を張った地域名であり、ここではユダの人々ではない。place:judah_1280で対応する。"
+        }
+      ],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 10,
+      "status": "pass",
+      "sourceText": "The men of Judah said, “Why have you come up against us?” They said, “We have come up to bind Samson, to do to him as he has done to us.”",
+      "sourceTextSHA256": "05090c55bde79f1c6c67ac6306aee09c0161b319fa23435a94e7834cfb058afc",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V10",
+      "fixedWitnessText": "The men of Judah said, “Why have you come up against us?” They said, “We have come up to bind Samson, to do to him as he has done to us.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG15.htm#V10",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "「ユダの人々」が名指され、ペリシテ人へ話す。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "拘束対象としてサムソンが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 11,
+      "status": "pass",
+      "sourceText": "Then three thousand men of Judah went down to the cave in Etam’s rock, and said to Samson, “Don’t you know that the Philistines are rulers over us? What then is this that you have done to us?” He said to them, “As they did to me, so I have done to them.”",
+      "sourceTextSHA256": "6173d58bd6caaa350175930108817bab9eab1684bac33324ccc689083b4a93fb",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V11",
+      "fixedWitnessText": "Then three thousand men of Judah went down to the cave in Etam’s rock, and said to Samson, “Don’t you know that the Philistines are rulers over us? What then is this that you have done to us?” He said to them, “As they did to me, so I have done to them.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG15.htm#V11",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "三千人のユダの人々が明記される。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "ユダの人々がサムソンに話す。"
+        },
+        {
+          "entityID": "place:etam_414",
+          "relationship": "direct",
+          "reasonJa": "エタムの岩の洞穴が明記される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 12,
+      "status": "pass",
+      "sourceText": "They said to him, “We have come down to bind you, that we may deliver you into the hand of the Philistines.” Samson said to them, “Swear to me that you will not attack me yourselves.”",
+      "sourceTextSHA256": "9d10a3880ed84c0a2e2c9dedab17a6cc0252d3c7773b54e3f8cfe621299e11b1",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V12",
+      "fixedWitnessText": "They said to him, “We have come down to bind you, that we may deliver you into the hand of the Philistines.” Samson said to them, “Swear to me that you will not attack me yourselves.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG15.htm#V12",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:judah_1751",
+          "relationship": "context",
+          "reasonJa": "「彼ら」は前節で示されたユダの人々。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "サムソンが答える。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 13,
+      "status": "pass",
+      "sourceText": "They spoke to him, saying, “No, but we will bind you securely and deliver you into their hands; but surely we will not kill you.” They bound him with two new ropes, and brought him up from the rock.",
+      "sourceTextSHA256": "b746d1c368ecf8d4a6f551f3d9100c27f9d068541edf76a1dc0e672d831dc99d",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V13",
+      "fixedWitnessText": "They spoke to him, saying, “No, but we will bind you securely and deliver you into their hands; but surely we will not kill you.” They bound him with two new ropes, and brought him up from the rock.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG15.htm#V13",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:judah_1751",
+          "relationship": "context",
+          "reasonJa": "「彼ら」はサムソンを縛るユダの人々。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "縛られ、岩から連れ上げられた「彼」はサムソン。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 14,
+      "status": "pass",
+      "sourceText": "When he came to Lehi, the Philistines shouted as they met him. Then the LORD’s Spirit came mightily on him, and the ropes that were on his arms became as flax that was burned with fire; and his bands dropped from off his hands.",
+      "sourceTextSHA256": "255508e7deadf815404ac94da132e6c41796fc6c9b7d717fcaadcf7f4b169981",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V14",
+      "fixedWitnessText": "When he came to Lehi, the Philistines shouted as they met him. Then the LORD’s Spirit came mightily on him, and the ropes that were on his arms became as flax that was burned with fire; and his bands dropped from off his hands.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG15.htm#V14",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:holy_spirit_7400",
+          "relationship": "direct",
+          "reasonJa": "主の霊が力強く臨んだと明記される。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "レヒに来た彼はサムソン。"
+        },
+        {
+          "entityID": "place:lehi_726",
+          "relationship": "direct",
+          "reasonJa": "到着地レヒが明記される。"
+        }
+      ],
+      "excludedCandidates": [
+        {
+          "entityID": "person:god_1324",
+          "name": "God",
+          "reasonJa": "この節の行為主体は「主の霊」と別に明記される。主／神への独立した言及がないため、霊の用例だけを採る。"
+        }
+      ],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 15,
+      "status": "pass",
+      "sourceText": "He found a fresh jawbone of a donkey, put out his hand, took it, and struck a thousand men with it.",
+      "sourceTextSHA256": "80fb26e758866427f2f3d9e7aef17e534309ccd84d7f63c65928a63c258f31a4",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V15",
+      "fixedWitnessText": "He found a fresh jawbone of a donkey, put out his hand, took it, and struck a thousand men with it.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG15.htm#V15",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "ろばのあご骨を手に取り、千人を打った主語はサムソン。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 16,
+      "status": "pass",
+      "sourceText": "Samson said, “With the jawbone of a donkey, heaps on heaps; with the jawbone of a donkey I have struck a thousand men.”",
+      "sourceTextSHA256": "6e5351c1becfba9b9f41fb32b977a3566122f0bba2f59e634e578f7748ab2498",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V16",
+      "fixedWitnessText": "Samson said, “With the jawbone of a donkey, heaps on heaps; with the jawbone of a donkey I have struck a thousand men.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG15.htm#V16",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "あご骨で千人を打ったとサムソンが語る。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 17,
+      "status": "pass",
+      "sourceText": "When he had finished speaking, he threw the jawbone out of his hand; and that place was called Ramath Lehi.",
+      "sourceTextSHA256": "77c4f8f61f4087369ec276aa8afdef04bc924f5b5536ae75a85032f1749a2023",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V17",
+      "fixedWitnessText": "When he had finished speaking, he threw the jawbone out of his hand; and that place was called Ramath Lehi.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG15.htm#V17",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "話し終えてあご骨を投げた主語はサムソン。"
+        },
+        {
+          "entityID": "place:ramath-lehi_978",
+          "relationship": "direct",
+          "reasonJa": "その場所の名としてラマト・レヒが明記される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 18,
+      "status": "pass",
+      "sourceText": "He was very thirsty, and called on the LORD and said, “You have given this great deliverance by the hand of your servant; and now shall I die of thirst, and fall into the hands of the uncircumcised?”",
+      "sourceTextSHA256": "df601ef4bc2bd8c4664d72e3f8b4d2159ee3a1c9b6d4ed8cf76c1bbd016450e5",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V18",
+      "fixedWitnessText": "He was very thirsty, and called on the LORD and said, “You have given this great deliverance by the hand of your servant; and now shall I die of thirst, and fall into the hands of the uncircumcised?”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG15.htm#V18",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "サムソンが主に呼びかけ、救いを主の業として語る。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "渇いて主に呼びかける「彼」はサムソン。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 19,
+      "status": "pass",
+      "sourceText": "But God split the hollow place that is in Lehi, and water came out of it. When he had drunk, his spirit came again, and he revived. Therefore its name was called En Hakkore, which is in Lehi, to this day.",
+      "sourceTextSHA256": "ae1fc7b2ae41a9e2d85b190a03e80ec81e2a74059c9fb1d8e0438f54ce2c2171",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V19",
+      "fixedWitnessText": "But God split the hollow place that is in Lehi, and water came out of it. When he had drunk, his spirit came again, and he revived. Therefore its name was called En Hakkore, which is in Lehi, to this day.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG15.htm#V19",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "神が窪地を割り、水を出す。"
+        },
+        {
+          "entityID": "place:lehi_726",
+          "relationship": "direct",
+          "reasonJa": "水場があるレヒが明記される。"
+        },
+        {
+          "entityID": "place:en-hakkore_391",
+          "relationship": "direct",
+          "reasonJa": "泉に付けられた名エン・ハッコレが明記される。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "「he had drunk」「his spirit」「he revived」はレヒで水を飲んだサムソンを指し、Holy Spiritではない。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 15,
+      "verse": 20,
+      "status": "pass",
+      "sourceText": "He judged Israel twenty years in the days of the Philistines.",
+      "sourceTextSHA256": "dc543866d9e7aba874de2415ee2268b04e9f89f28f910a5cad0d42837c90a321",
+      "sourceURL": "https://ebible.org/engwebp/JDG15.htm#V20",
+      "fixedWitnessText": "He judged Israel twenty years in the days of the Philistines.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG15.htm#V20",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "サムソンがイスラエルを裁いたと明記される。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "裁いた人物は直前から続くサムソン。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 1,
+      "status": "pass",
+      "sourceText": "Samson went to Gaza, and saw there a prostitute, and went in to her.",
+      "sourceTextSHA256": "973237b21657bc855da0c91edef2ee4e05ba81c8d7986590306c6757ba47d051",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V1",
+      "fixedWitnessText": "Samson went to Gaza, and saw there a prostitute, and went in to her.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V1",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "サムソンが名指される。"
+        },
+        {
+          "entityID": "place:gaza_446",
+          "relationship": "direct",
+          "reasonJa": "行先ガザが明記される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 2,
+      "status": "pass",
+      "sourceText": "The Gazites were told, “Samson is here!” They surrounded him and laid wait for him all night in the gate of the city, and were quiet all the night, saying, “Wait until morning light; then we will kill him.”",
+      "sourceTextSHA256": "ebeeafbfbda93d206c7949ffd15320c98fd4eb35d09e0ff1409abdb2bcf9d543",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V2",
+      "fixedWitnessText": "The Gazites were told, “Samson is here!” They surrounded him and laid wait for him all night in the gate of the city, and were quiet all the night, saying, “Wait until morning light; then we will kill him.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V2",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "ガザにいるサムソンが名指される。"
+        },
+        {
+          "entityID": "place:gaza_446",
+          "relationship": "context",
+          "reasonJa": "「町の門」は前文のガザを指す。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "Gazites — inhabitants as a collective, with no assigned person ID."
+      ],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 3,
+      "status": "pass",
+      "sourceText": "Samson lay until midnight, then arose at midnight and took hold of the doors of the gate of the city, with the two posts, and plucked them up, bar and all, and put them on his shoulders and carried them up to the top of the mountain that is before Hebron.",
+      "sourceTextSHA256": "ed1ec9f81d5b4db72f39d3178d208cdccb8fff5c6e6ff17815bb8a3f6e3e4a37",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V3",
+      "fixedWitnessText": "Samson lay until midnight, then arose at midnight and took hold of the doors of the gate of the city, with the two posts, and plucked them up, bar and all, and put them on his shoulders and carried them up to the top of the mountain that is before Hebron.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V3",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "門を運ぶサムソンが名指される。"
+        },
+        {
+          "entityID": "place:hebron_551",
+          "relationship": "direct",
+          "reasonJa": "山の前方にあるヘブロンが明記される。"
+        },
+        {
+          "entityID": "place:gaza_446",
+          "relationship": "context",
+          "reasonJa": "「the gate of the city」は16:1–2で舞台となるガザの町の門。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 4,
+      "status": "pass",
+      "sourceText": "It came to pass afterward that he loved a woman in the valley of Sorek, whose name was Delilah.",
+      "sourceTextSHA256": "227379d0ac1f87e3d731e73e538fba8841acfcd2cd5249f3c25d23edd8f08284",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V4",
+      "fixedWitnessText": "It came to pass afterward that he loved a woman in the valley of Sorek, whose name was Delilah.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V4",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "愛した男性「彼」はサムソン。"
+        },
+        {
+          "entityID": "person:delilah_1005",
+          "relationship": "direct",
+          "reasonJa": "女性デリラが名指される。"
+        },
+        {
+          "entityID": "place:valley_of_sorek_1220",
+          "relationship": "direct",
+          "reasonJa": "ソレクの谷が明記される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 5,
+      "status": "pass",
+      "sourceText": "The lords of the Philistines came up to her and said to her, “Entice him, and see in which his great strength lies, and by what means we may prevail against him, that we may bind him to afflict him; and we will each give you eleven hundred pieces of silver.”",
+      "sourceTextSHA256": "3ae11ba4434c6465f7208286b4ee33a2d91746885c96ba82ab7bc72253666623",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V5",
+      "fixedWitnessText": "The lords of the Philistines came up to her and said to her, “Entice him, and see in which his great strength lies, and by what means we may prevail against him, that we may bind him to afflict him; and we will each give you eleven hundred pieces of silver.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V5",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:delilah_1005",
+          "relationship": "context",
+          "reasonJa": "領主たちが誘惑を頼む相手「彼女」はデリラ。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "縛る対象「彼」はサムソン。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "Philistine lords — office-bearing collective, no assigned existing entity ID."
+      ],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 6,
+      "status": "pass",
+      "sourceText": "Delilah said to Samson, “Please tell me where your great strength lies, and what you might be bound to afflict you.”",
+      "sourceTextSHA256": "1ab49daa521deb25c7eec226b2f61ce842132dcce2422b7af92d13904d6e5483",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V6",
+      "fixedWitnessText": "Delilah said to Samson, “Please tell me where your great strength lies, and what you might be bound to afflict you.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V6",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:delilah_1005",
+          "relationship": "direct",
+          "reasonJa": "デリラが質問する。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "質問相手サムソンが明記される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 7,
+      "status": "pass",
+      "sourceText": "Samson said to her, “If they bind me with seven green cords that were never dried, then shall I become weak, and be as another man.”",
+      "sourceTextSHA256": "054ad583772c0dffca4b109463341a3945f0dd93205a37fac97a15557d3779bb",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V7",
+      "fixedWitnessText": "Samson said to her, “If they bind me with seven green cords that were never dried, then shall I become weak, and be as another man.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V7",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "サムソンが答える。"
+        },
+        {
+          "entityID": "person:delilah_1005",
+          "relationship": "context",
+          "reasonJa": "「her」は16:4で名指されたデリラ。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 8,
+      "status": "pass",
+      "sourceText": "Then the lords of the Philistines brought up to her seven green cords which had not been dried, and she bound him with them.",
+      "sourceTextSHA256": "5e2d067600fe48d30ca8ef88b8839c3eca1ff2a2ca53853dd6c63d71ca343f54",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V8",
+      "fixedWitnessText": "Then the lords of the Philistines brought up to her seven green cords which had not been dried, and she bound him with them.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V8",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:delilah_1005",
+          "relationship": "context",
+          "reasonJa": "ひもで縛った「彼女」はデリラ。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "縛られた相手はサムソン。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "Philistine lords and their men — collective, no assigned existing entity ID."
+      ],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 9,
+      "status": "pass",
+      "sourceText": "Now she had an ambush waiting in the inner room. She said to him, “The Philistines are on you, Samson!” He broke the cords as a flax thread is broken when it touches the fire. So his strength was not known.",
+      "sourceTextSHA256": "11f332b45141043a95768c5bc4a4b67adfbece1a1cc691a510a907c363e0b5dd",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V9",
+      "fixedWitnessText": "Now she had an ambush waiting in the inner room. She said to him, “The Philistines are on you, Samson!” He broke the cords as a flax thread is broken when it touches the fire. So his strength was not known.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V9",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:delilah_1005",
+          "relationship": "context",
+          "reasonJa": "待ち伏せを呼び起こす話者「彼女」はデリラ。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "「サムソン」と名を呼ばれる。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "Philistines in the ambush — collective, no assigned existing entity ID."
+      ],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 10,
+      "status": "pass",
+      "sourceText": "Delilah said to Samson, “Behold, you have mocked me, and told me lies. Now please tell me how you might be bound.”",
+      "sourceTextSHA256": "ab9eeb82470d78319c6ee7ebb3e8fed91657da9fb8f631058085c5c10b6f9d8b",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V10",
+      "fixedWitnessText": "Delilah said to Samson, “Behold, you have mocked me, and told me lies. Now please tell me how you might be bound.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V10",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:delilah_1005",
+          "relationship": "direct",
+          "reasonJa": "デリラがサムソンに話す。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "話しかけられたサムソンが明記される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 11,
+      "status": "pass",
+      "sourceText": "He said to her, “If they only bind me with new ropes with which no work has been done, then I will become weak, and be as another man.”",
+      "sourceTextSHA256": "62628b0458097bf4dec98106b694b7dadc0d13e54bcadaa61b054cd697f31f9c",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V11",
+      "fixedWitnessText": "He said to her, “If they only bind me with new ropes with which no work has been done, then I will become weak, and be as another man.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V11",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "答える「彼」はサムソン。"
+        },
+        {
+          "entityID": "person:delilah_1005",
+          "relationship": "context",
+          "reasonJa": "「her」は16:4で名指されたデリラ。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 12,
+      "status": "pass",
+      "sourceText": "So Delilah took new ropes and bound him with them, then said to him, “The Philistines are on you, Samson!” The ambush was waiting in the inner room. He broke them off his arms like a thread.",
+      "sourceTextSHA256": "537d8c37ef478c2343d3320ce99f12b537885c7aa82d1aba9806e2d6d189dfbd",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V12",
+      "fixedWitnessText": "So Delilah took new ropes and bound him with them, then said to him, “The Philistines are on you, Samson!” The ambush was waiting in the inner room. He broke them off his arms like a thread.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V12",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:delilah_1005",
+          "relationship": "direct",
+          "reasonJa": "デリラが縛り、呼びかける。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "「サムソン」と名を呼ばれる。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "Philistines in the ambush — collective, no assigned existing entity ID."
+      ],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 13,
+      "status": "pass",
+      "sourceText": "Delilah said to Samson, “Until now, you have mocked me and told me lies. Tell me with what you might be bound.” He said to her, “If you weave the seven locks of my head with the fabric on the loom.”",
+      "sourceTextSHA256": "7dc32ac2db4f6bebdf213bb1ad20d85ca81c57c32059d93ae7616ff9fd2bbdf3",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V13",
+      "fixedWitnessText": "Delilah said to Samson, “Until now, you have mocked me and told me lies. Tell me with what you might be bound.” He said to her, “If you weave the seven locks of my head with the fabric on the loom.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V13",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:delilah_1005",
+          "relationship": "direct",
+          "reasonJa": "デリラがサムソンに話す。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "答えた相手はサムソン。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 14,
+      "status": "pass",
+      "sourceText": "She fastened it with the pin, and said to him, “The Philistines are on you, Samson!” He awakened out of his sleep, and plucked away the pin of the beam and the fabric.",
+      "sourceTextSHA256": "745ac31636f84afc62e68522f7ca1232772373ee3c75b2ef9fb10f63afba8628",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V14",
+      "fixedWitnessText": "She fastened it with the pin, and said to him, “The Philistines are on you, Samson!” He awakened out of his sleep, and plucked away the pin of the beam and the fabric.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V14",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:delilah_1005",
+          "relationship": "context",
+          "reasonJa": "留め具を使い「サムソン」と呼ぶ話者はデリラ。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "呼びかけでサムソンの名が明記される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 15,
+      "status": "pass",
+      "sourceText": "She said to him, “How can you say, ‘I love you,’ when your heart is not with me? You have mocked me these three times, and have not told me where your great strength lies.”",
+      "sourceTextSHA256": "ffee6c1a5e6ebe46a56e1d072b7c49db7cc3766257f1403ae58c286a487fb910",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V15",
+      "fixedWitnessText": "She said to him, “How can you say, ‘I love you,’ when your heart is not with me? You have mocked me these three times, and have not told me where your great strength lies.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V15",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:delilah_1005",
+          "relationship": "context",
+          "reasonJa": "「彼女」はデリラで、愛を問う相手はサムソン。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "「愛している」と言った相手としてサムソンを指す。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 16,
+      "status": "pass",
+      "sourceText": "When she pressed him daily with her words and urged him, his soul was troubled to death.",
+      "sourceTextSHA256": "c73dfc2c3b6190ca06e38b9442b4e522417b62525cb8b584160420ac5952e85d",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V16",
+      "fixedWitnessText": "When she pressed him daily with her words and urged him, his soul was troubled to death.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V16",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:delilah_1005",
+          "relationship": "context",
+          "reasonJa": "日々迫る「彼女」はデリラ。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "心を苦しめられた「彼」はサムソン。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 17,
+      "status": "pass",
+      "sourceText": "He told her all his heart and said to her, “No razor has ever come on my head; for I have been a Nazirite to God from my mother’s womb. If I am shaved, then my strength will go from me and I will become weak, and be like any other man.”",
+      "sourceTextSHA256": "5f6cc853c7d9763bed14bf0d067b48d985bfaed244a191d0e5c5a789dfa50164",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V17",
+      "fixedWitnessText": "He told her all his heart and said to her, “No razor has ever come on my head; for I have been a Nazirite to God from my mother’s womb. If I am shaved, then my strength will go from me and I will become weak, and be like any other man.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V17",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "サムソンは神へのナジル人だったと述べる。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "心を打ち明けた「彼」はサムソン。"
+        },
+        {
+          "entityID": "person:delilah_1005",
+          "relationship": "context",
+          "reasonJa": "心を打ち明ける相手の「her」は16:4で名指されたデリラ。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 18,
+      "status": "pass",
+      "sourceText": "When Delilah saw that he had told her all his heart, she sent and called for the lords of the Philistines, saying, “Come up this once, for he has told me all his heart.” Then the lords of the Philistines came up to her and brought the money in their hand.",
+      "sourceTextSHA256": "b3451312627da8c31197cfc37f424c447167e41ba2234ef6aa433f9b27bfa63f",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V18",
+      "fixedWitnessText": "When Delilah saw that he had told her all his heart, she sent and called for the lords of the Philistines, saying, “Come up this once, for he has told me all his heart.” Then the lords of the Philistines came up to her and brought the money in their hand.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V18",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:delilah_1005",
+          "relationship": "direct",
+          "reasonJa": "「彼女」はデリラで、領主たちを呼ぶ。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "心を打ち明けた相手「彼」はサムソン。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "Philistine lords — collective, no assigned existing entity ID."
+      ],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 19,
+      "status": "pass",
+      "sourceText": "She made him sleep on her knees; and she called for a man and shaved off the seven locks of his head; and she began to afflict him, and his strength went from him.",
+      "sourceTextSHA256": "f8d1571d119087c67c73a131ed54a19f01854361f13b9e8300b93b26cc0b09a4",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V19",
+      "fixedWitnessText": "She made him sleep on her knees; and she called for a man and shaved off the seven locks of his head; and she began to afflict him, and his strength went from him.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V19",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:delilah_1005",
+          "relationship": "context",
+          "reasonJa": "髪を剃る手配をした「彼女」はデリラ。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "髪を剃られ、力を失う「彼」はサムソン。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 20,
+      "status": "pass",
+      "sourceText": "She said, “The Philistines are upon you, Samson!” He awoke out of his sleep, and said, “I will go out as at other times, and shake myself free.” But he didn’t know that the LORD had departed from him.",
+      "sourceTextSHA256": "2822ae9a4f1508639017a5401f2dd583463d1353ab57b41f6d610c546270093e",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V20",
+      "fixedWitnessText": "She said, “The Philistines are upon you, Samson!” He awoke out of his sleep, and said, “I will go out as at other times, and shake myself free.” But he didn’t know that the LORD had departed from him.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V20",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "主が去ったと明記される。"
+        },
+        {
+          "entityID": "person:delilah_1005",
+          "relationship": "context",
+          "reasonJa": "サムソンを呼ぶ「彼女」はデリラ。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "「サムソン」と名を呼ばれ、本人も語る。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 21,
+      "status": "pass",
+      "sourceText": "The Philistines laid hold on him and put out his eyes; and they brought him down to Gaza and bound him with fetters of bronze; and he ground at the mill in the prison.",
+      "sourceTextSHA256": "2d7f9f309d9b6445da4b64a6dc225e4d0fd3466ff0de6a7d57099dc9690f8200",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V21",
+      "fixedWitnessText": "The Philistines laid hold on him and put out his eyes; and they brought him down to Gaza and bound him with fetters of bronze; and he ground at the mill in the prison.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V21",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "目をつぶされ、ガザへ連れて行かれた「彼」はサムソン。"
+        },
+        {
+          "entityID": "place:gaza_446",
+          "relationship": "direct",
+          "reasonJa": "サムソンが連れて行かれたガザが明記される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "Philistines — collective has no assigned existing entity ID."
+      ],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 22,
+      "status": "pass",
+      "sourceText": "However, the hair of his head began to grow again after he was shaved.",
+      "sourceTextSHA256": "1f6548c2808444efdd788ce9e9c7ae38b4511859c54ba4ae1e5dd44a857ddefb",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V22",
+      "fixedWitnessText": "However, the hair of his head began to grow again after he was shaved.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V22",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "剃られた髪が伸び始める人物はサムソン。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 23,
+      "status": "pass",
+      "sourceText": "The lords of the Philistines gathered together to offer a great sacrifice to Dagon their god, and to rejoice; for they said, “Our god has delivered Samson our enemy into our hand.”",
+      "sourceTextSHA256": "d902e191632be6aee4cc7dedab09531cab2ae6dc912a2d49d41ca37472c58e59",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V23",
+      "fixedWitnessText": "The lords of the Philistines gathered together to offer a great sacrifice to Dagon their god, and to rejoice; for they said, “Our god has delivered Samson our enemy into our hand.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V23",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:dagon_969",
+          "relationship": "direct",
+          "reasonJa": "ペリシテの領主がダゴンへのいけにえを献げる。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "「敵」サムソンを神が渡したという発言の対象。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "Philistine lords — collective, no assigned existing entity ID."
+      ],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 24,
+      "status": "pass",
+      "sourceText": "When the people saw him, they praised their god; for they said, “Our god has delivered our enemy and the destroyer of our country, who has slain many of us, into our hand.”",
+      "sourceTextSHA256": "08607820746d7265959632f270c99ce479448b65975a9ed1b53faa821d8d9f2e",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V24",
+      "fixedWitnessText": "When the people saw him, they praised their god; for they said, “Our god has delivered our enemy and the destroyer of our country, who has slain many of us, into our hand.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V24",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:dagon_969",
+          "relationship": "context",
+          "reasonJa": "「彼らの神」は直前に名指されたダゴン。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "敵・国を滅ぼす者として指されるのはサムソン。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "Philistine people — collective, no assigned existing entity ID."
+      ],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 25,
+      "status": "pass",
+      "sourceText": "When their hearts were merry, they said, “Call for Samson, that he may entertain us.” They called for Samson out of the prison; and he performed before them. They set him between the pillars;",
+      "sourceTextSHA256": "5e47e1969aa654a09b1dd59f235acb0fed217235695b9dac5a5f80c699185a01",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V25",
+      "fixedWitnessText": "When their hearts were merry, they said, “Call for Samson, that he may entertain us.” They called for Samson out of the prison; and he performed before them. They set him between the pillars;",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V25",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "見世物に呼ばれたサムソンが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "Philistine lords and audience — collective/unnamed, no assigned existing entity ID."
+      ],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 26,
+      "status": "pass",
+      "sourceText": "and Samson said to the boy who held him by the hand, “Allow me to feel the pillars on which the house rests, that I may lean on them.”",
+      "sourceTextSHA256": "1fef617df690b78d73bf754b77b47cc3f9185340790ed278e460710aa5a351ee",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V26",
+      "fixedWitnessText": "and Samson said to the boy who held him by the hand, “Allow me to feel the pillars on which the house rests, that I may lean on them.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V26",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "少年に話すサムソンが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "The boy holding Samson’s hand — unnamed."
+      ],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 27,
+      "status": "pass",
+      "sourceText": "Now the house was full of men and women; and all the lords of the Philistines were there; and there were on the roof about three thousand men and women, who saw while Samson performed.",
+      "sourceTextSHA256": "a68099ecb1b27b45341d7079c2817f7bfacdc6cd956f84a3cb3a0d3fd5907eeb",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V27",
+      "fixedWitnessText": "Now the house was full of men and women; and all the lords of the Philistines were there; and there were on the roof about three thousand men and women, who saw while Samson performed.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V27",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "「Samson performed」と名前が本文に直接現れる。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "Philistine lords and the audience — collective/unnamed, no assigned existing entity ID."
+      ],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 28,
+      "status": "pass",
+      "sourceText": "Samson called to the LORD, and said, “Lord GOD, remember me, please, and strengthen me, please, only this once, God, that I may be at once avenged of the Philistines for my two eyes.”",
+      "sourceTextSHA256": "82267f948f3cfb10038b3267373cdd0610c7452f6a13650e80c531c898378239",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V28",
+      "fixedWitnessText": "Samson called to the LORD, and said, “Lord GOD, remember me, please, and strengthen me, please, only this once, God, that I may be at once avenged of the Philistines for my two eyes.”",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V28",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "サムソンが主なる神に願う。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "祈るサムソンが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 29,
+      "status": "pass",
+      "sourceText": "Samson took hold of the two middle pillars on which the house rested and leaned on them, the one with his right hand and the other with his left.",
+      "sourceTextSHA256": "aaf35b7108c9aef023ba18bf427785a787f6afac334a9df4627f75b296dc728a",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V29",
+      "fixedWitnessText": "Samson took hold of the two middle pillars on which the house rested and leaned on them, the one with his right hand and the other with his left.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V29",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "柱をつかむサムソンが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 30,
+      "status": "pass",
+      "sourceText": "Samson said, “Let me die with the Philistines!” He bowed himself with all his might; and the house fell on the lords, and on all the people who were in it. So the dead that he killed at his death were more than those who he killed in his life.",
+      "sourceTextSHA256": "32a4559d7358871989173ba93db2660199c45f000d8a57859d30d64b61e304b2",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V30",
+      "fixedWitnessText": "Samson said, “Let me die with the Philistines!” He bowed himself with all his might; and the house fell on the lords, and on all the people who were in it. So the dead that he killed at his death were more than those who he killed in his life.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V30",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "direct",
+          "reasonJa": "死を願い、建物を倒すサムソンが名指される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    },
+    {
+      "chapter": 16,
+      "verse": 31,
+      "status": "pass",
+      "sourceText": "Then his brothers and all the house of his father came down and took him, and brought him up and buried him between Zorah and Eshtaol in the burial site of Manoah his father. He judged Israel twenty years.",
+      "sourceTextSHA256": "31f1de56dfa1bebd8dd1b639eaf495d8c33e35464197216922d331287c9fe54c",
+      "sourceURL": "https://ebible.org/engwebp/JDG16.htm#V31",
+      "fixedWitnessText": "Then his brothers and all the house of his father came down and took him, and brought him up and buried him between Zorah and Eshtaol in the burial site of Manoah his father. He judged Israel twenty years.",
+      "fixedWitnessCitationURL": "https://ebible.org/engwebp/JDG16.htm#V31",
+      "sourceMatchesPinnedWitness": true,
+      "currentEntities": [
+        {
+          "entityID": "person:manoah_1933",
+          "relationship": "direct",
+          "reasonJa": "「父マノア」と名が明記される。"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "サムソンがイスラエルを裁いたと明記される。"
+        },
+        {
+          "entityID": "person:samson_2468",
+          "relationship": "context",
+          "reasonJa": "兄弟らに運ばれ、葬られた「彼」はサムソン。"
+        },
+        {
+          "entityID": "place:zorah_1275",
+          "relationship": "direct",
+          "reasonJa": "埋葬地の位置としてツォルアが明記される。"
+        },
+        {
+          "entityID": "place:eshtaol_411",
+          "relationship": "direct",
+          "reasonJa": "埋葬地の位置としてエシュタオルが明記される。"
+        }
+      ],
+      "excludedCandidates": [],
+      "unmappedMentions": [
+        "Samson’s brothers and household — unnamed."
+      ],
+      "assessmentJa": "固定WEB本文を直接読み、表示された人名・地名・確実な照応と現行entity/relationshipを確認。空節は既存候補IDへ結び付く固有言及がなく、前後から人物を補わない。"
+    }
+  ],
+  "limitationsJa": "qualified 9件は神の御使いが出る節でperson:god_1324をdirectとする意味論が曖昧。誤同定と断定せず、rootが示した「所有名として神を直接参照し、使者と神を個体同一視しない」基準で扱う。現行JDG14:4は修正後の理由を固定WEBに照合しpass。",
+  "postReviewChanges": [
+    {
+      "verse": "JDG 14:4",
+      "beforeMapSHA256": "24fc377f04c58c3e54b9fa07f63c49327ca4ee3dbd878fed768b236140acf2b9",
+      "currentMapSHA256": "84a3468bb39ecd8caa7aae9c3cb691a2f692fd42da8d006ce2aaac9be6c062c4",
+      "currentReasonJa": "「his father and his mother」は婚姻の文脈でサムソンの父母を指す。後半の「he sought」は主を指す可能性があり、サムソンの行為とは断定しない。",
+      "status": "pass",
+      "reviewJa": "entity採用は最初のhis father/his motherで成立し、現行理由も後半heの照応を留保。"
+    }
+  ]
+}

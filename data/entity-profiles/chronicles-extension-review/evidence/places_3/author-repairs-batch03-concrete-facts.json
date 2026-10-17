@@ -1,0 +1,669 @@
+{
+  "task": "batch03 concrete fact explanations and Holy Place earliest-safe summary",
+  "inputAuditPath": "reviews/root-generic-place-fact-pointers.json",
+  "inputAuditSHA256": "8b7be5d8bf96d26d224715e2c74e3b563f7b8bb90a3bc946f24ab985c2e065f6",
+  "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+  "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8",
+  "preservedBeforeFiles": [
+    {
+      "path": "drafts/places_3/2CH_gibeon_470.json",
+      "sha256": "12000bba6aeaeea068518d632e55b3fa06dd2a6f146f532751641a735c477fb9",
+      "preservedAt": "preservation/objects/12000bba6aeaeea068518d632e55b3fa06dd2a6f146f532751641a735c477fb9"
+    },
+    {
+      "path": "evidence/places_3/2CH_gibeon_470.json",
+      "sha256": "84ed428e20908b9b8a0870c6cfa74c0b0d157c895c4a98f0609ba3cc197496f0",
+      "preservedAt": "preservation/objects/84ed428e20908b9b8a0870c6cfa74c0b0d157c895c4a98f0609ba3cc197496f0"
+    },
+    {
+      "path": "drafts/places_3/2CH_holy_place_575.json",
+      "sha256": "d63ada2d22f3965da9d6e885591aa1b72a824568d3eb71ede724cfb734d01e28",
+      "preservedAt": "preservation/objects/d63ada2d22f3965da9d6e885591aa1b72a824568d3eb71ede724cfb734d01e28"
+    },
+    {
+      "path": "evidence/places_3/2CH_holy_place_575.json",
+      "sha256": "d4ddebafae7823fe3bf9b0dec359f120e7bb45faa8f8b4ac1abb8b70187066b6",
+      "preservedAt": "preservation/objects/d4ddebafae7823fe3bf9b0dec359f120e7bb45faa8f8b4ac1abb8b70187066b6"
+    },
+    {
+      "path": "drafts/places_3/2CH_lebanon_585.json",
+      "sha256": "6e6aa3f1dd071a1886b1a51b7cf7a80fb9d6811ef5f745d39f97261fc51c9252",
+      "preservedAt": "preservation/objects/6e6aa3f1dd071a1886b1a51b7cf7a80fb9d6811ef5f745d39f97261fc51c9252"
+    },
+    {
+      "path": "evidence/places_3/2CH_lebanon_585.json",
+      "sha256": "9d051d5fc1e5c4675a189a47975f365486f4d4b5f5be13e48695e2a35b3d79e7",
+      "preservedAt": "preservation/objects/9d051d5fc1e5c4675a189a47975f365486f4d4b5f5be13e48695e2a35b3d79e7"
+    },
+    {
+      "path": "drafts/places_3/2CH_lebanon_720.json",
+      "sha256": "0a6b91499d770567805bdd5f32bbccf516067c0c239d592ed04bc9a57ec0c459",
+      "preservedAt": "preservation/objects/0a6b91499d770567805bdd5f32bbccf516067c0c239d592ed04bc9a57ec0c459"
+    },
+    {
+      "path": "evidence/places_3/2CH_lebanon_720.json",
+      "sha256": "553e45a55cd162b10baf8fab468c9507e70d4fcd1037cd17e31c7ba7fd6bff1c",
+      "preservedAt": "preservation/objects/553e45a55cd162b10baf8fab468c9507e70d4fcd1037cd17e31c7ba7fd6bff1c"
+    },
+    {
+      "path": "drafts/places_3/2CH_most_holy_place_827.json",
+      "sha256": "e77f7310351201eb3c7cac7a3ab2c63ac9485370435ce05dd4cd5c1f2050d568",
+      "preservedAt": "preservation/objects/e77f7310351201eb3c7cac7a3ab2c63ac9485370435ce05dd4cd5c1f2050d568"
+    },
+    {
+      "path": "evidence/places_3/2CH_most_holy_place_827.json",
+      "sha256": "9235553780178d68197dc8db6bd9be0278027d3d5c4b579492b744c77fa1a0a8",
+      "preservedAt": "preservation/objects/9235553780178d68197dc8db6bd9be0278027d3d5c4b579492b744c77fa1a0a8"
+    },
+    {
+      "path": "drafts/places_3/2CH_ophir_911.json",
+      "sha256": "29fccbd9f465cf56a8fe315d819746963da968729d303719d094af60bd950f07",
+      "preservedAt": "preservation/objects/29fccbd9f465cf56a8fe315d819746963da968729d303719d094af60bd950f07"
+    },
+    {
+      "path": "evidence/places_3/2CH_ophir_911.json",
+      "sha256": "66787d36fd5c131a0a33ea82c9cea221094cfe429df3be202b67a6ed193670da",
+      "preservedAt": "preservation/objects/66787d36fd5c131a0a33ea82c9cea221094cfe429df3be202b67a6ed193670da"
+    },
+    {
+      "path": "drafts/places_3/2CH_ramah_972.json",
+      "sha256": "23e96ceb65d51ab2bd162908f4b056f58791dd280adda83539d556476e9a1f67",
+      "preservedAt": "preservation/objects/23e96ceb65d51ab2bd162908f4b056f58791dd280adda83539d556476e9a1f67"
+    },
+    {
+      "path": "evidence/places_3/2CH_ramah_972.json",
+      "sha256": "c121d8440aff741715c19b1f498ec875d9ad26ff556610ceaf9395b380dea942",
+      "preservedAt": "preservation/objects/c121d8440aff741715c19b1f498ec875d9ad26ff556610ceaf9395b380dea942"
+    },
+    {
+      "path": "drafts/places_3/2CH_shephelah_1074.json",
+      "sha256": "4afbe9738d339f022abdc2f29495d74f141ffddd8af12d0ff9f166ca8ee54852",
+      "preservedAt": "preservation/objects/4afbe9738d339f022abdc2f29495d74f141ffddd8af12d0ff9f166ca8ee54852"
+    },
+    {
+      "path": "evidence/places_3/2CH_shephelah_1074.json",
+      "sha256": "9d0254c5581560f47cd93358fe58ffc52e42b3869214b2576f859bf85b7394b9",
+      "preservedAt": "preservation/objects/9d0254c5581560f47cd93358fe58ffc52e42b3869214b2576f859bf85b7394b9"
+    },
+    {
+      "path": "drafts/places_3/2CH_syria_1122.json",
+      "sha256": "ab749e9d4e00b75c31b27558ff1db0c967e026cd2f2031c3c3fbb0c8214dbf1c",
+      "preservedAt": "preservation/objects/ab749e9d4e00b75c31b27558ff1db0c967e026cd2f2031c3c3fbb0c8214dbf1c"
+    },
+    {
+      "path": "evidence/places_3/2CH_syria_1122.json",
+      "sha256": "3fdd69218c0730ef4875eb6656af9aa185b5e5cd46cc0af9f1cfe1ab242bf909",
+      "preservedAt": "preservation/objects/3fdd69218c0730ef4875eb6656af9aa185b5e5cd46cc0af9f1cfe1ab242bf909"
+    },
+    {
+      "path": "drafts/places_3/2CH_tarshish_1139.json",
+      "sha256": "4fb6ec0f5f0cdead7c1631ccdfec39181575395475c90c23b06dfe6105e42a28",
+      "preservedAt": "preservation/objects/4fb6ec0f5f0cdead7c1631ccdfec39181575395475c90c23b06dfe6105e42a28"
+    },
+    {
+      "path": "evidence/places_3/2CH_tarshish_1139.json",
+      "sha256": "af5e9c5bd3a75357a07f76f205421cc88c874fcf67befe5374f1ace43de2b832",
+      "preservedAt": "preservation/objects/af5e9c5bd3a75357a07f76f205421cc88c874fcf67befe5374f1ace43de2b832"
+    }
+  ],
+  "changes": [
+    {
+      "draftPath": "drafts/places_3/2CH_ophir_911.json",
+      "entityID": "place:ophir_911",
+      "field": "profile.facts[0].textJa",
+      "knownBy": {
+        "chapter": 9,
+        "verse": 10
+      },
+      "sourceID": "webp-2ch-9-10",
+      "fixedWEBText": "The servants of Huram and the servants of Solomon, who brought gold from Ophir, also brought algum trees and precious stones.",
+      "beforeTextJa": "9章10節にもこの場所名が現れます。",
+      "afterTextJa": "ヒラムとソロモンの従者がオフィルから金を運び、アルグム材と宝石も持ち帰ったと記されます。",
+      "oldDraftSHA256": "29fccbd9f465cf56a8fe315d819746963da968729d303719d094af60bd950f07",
+      "newDraftSHA256": "0d3404f05cef895782a7719025339523af599aebedae6f8c24f23b503e15f329",
+      "newProfileSHA256": "bbe9f83879fa14f385d89af90bab64acdee68bfa534ff745b5d5b31b7cca3f8f",
+      "oldEvidenceDraftSHA256": "29fccbd9f465cf56a8fe315d819746963da968729d303719d094af60bd950f07",
+      "oldEvidenceProfileSHA256": "7f147af9d66a31aa5ba207fee7f7b4ffe5f9c2f9dcfc8e5eee1ef11442ad4f55",
+      "newEvidenceSHA256": "3e235c75c93487ff14927694ec662370000936ba5f52fdfe82bf7cc5a9c651c9",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_lebanon_720.json",
+      "entityID": "place:lebanon_720",
+      "field": "profile.facts[0].textJa",
+      "knownBy": {
+        "chapter": 2,
+        "verse": 16
+      },
+      "sourceID": "webp-2ch-2-16",
+      "fixedWEBText": "and we will cut wood out of Lebanon, as much as you need. We will bring it to you in rafts by sea to Joppa; then you shall carry it up to Jerusalem.”",
+      "beforeTextJa": "2章16節にもこの場所名が現れます。",
+      "afterTextJa": "レバノンで伐った木材をいかだでヨッパへ運び、エルサレムへ届ける計画が述べられます。",
+      "oldDraftSHA256": "0a6b91499d770567805bdd5f32bbccf516067c0c239d592ed04bc9a57ec0c459",
+      "newDraftSHA256": "252488329f9b3adea4fd023c578c5fe071f20e618da5138b2f66fb75f90af25f",
+      "newProfileSHA256": "8217423dba06ed6cedc7122249d4fa79e8f1cab358779ccca6cbb2ba02d997b3",
+      "oldEvidenceDraftSHA256": "0a6b91499d770567805bdd5f32bbccf516067c0c239d592ed04bc9a57ec0c459",
+      "oldEvidenceProfileSHA256": "3705d1c2ffaecf9013bb336ecac02393dbe591de5ef97e169bb92965cb2387f4",
+      "newEvidenceSHA256": "b6d69b838d69a83de028eded23de6c3d730c2bec516e6832eca76e5efa8becb9",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_lebanon_720.json",
+      "entityID": "place:lebanon_720",
+      "field": "profile.facts[1].textJa",
+      "knownBy": {
+        "chapter": 8,
+        "verse": 6
+      },
+      "sourceID": "webp-2ch-8-6",
+      "fixedWEBText": "and Baalath, and all the storage cities that Solomon had, and all the cities for his chariots, the cities for his horsemen, and all that Solomon desired to build for his pleasure in Jerusalem, in Lebanon, and in all the land of his dominion.",
+      "beforeTextJa": "8章6節にもこの場所名が現れます。",
+      "afterTextJa": "レバノンにはソロモンの貯蔵・戦車・騎兵用の町々があり、彼が望んだ建築も行われたと記されます。",
+      "oldDraftSHA256": "0a6b91499d770567805bdd5f32bbccf516067c0c239d592ed04bc9a57ec0c459",
+      "newDraftSHA256": "b5c26136df1f5dcb98ddec8ed8833f49aac2177bbedacf35e2b8b0c333394fc7",
+      "newProfileSHA256": "6009b9ac0dda0bafca2bbf79ea21aa7dba2222e4e3c53686a5b243ec5f3b59ab",
+      "oldEvidenceDraftSHA256": "252488329f9b3adea4fd023c578c5fe071f20e618da5138b2f66fb75f90af25f",
+      "oldEvidenceProfileSHA256": "8217423dba06ed6cedc7122249d4fa79e8f1cab358779ccca6cbb2ba02d997b3",
+      "newEvidenceSHA256": "f5bad93d744c79babf57874b03de8874fb70abc2ada239e43b944370e6abb334",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_lebanon_585.json",
+      "entityID": "place:lebanon_585",
+      "field": "profile.facts[0].textJa",
+      "knownBy": {
+        "chapter": 9,
+        "verse": 20
+      },
+      "sourceID": "webp-2ch-9-20",
+      "fixedWEBText": "All King Solomon’s drinking vessels were of gold, and all the vessels of the House of the Forest of Lebanon were of pure gold. Silver was not considered valuable in the days of Solomon.",
+      "beforeTextJa": "9章20節にもこの場所名が現れます。",
+      "afterTextJa": "ソロモンの「レバノンの森の家」にあった器は純金で、当時は銀が価値あるものと見なされなかったと記されます。",
+      "oldDraftSHA256": "6e6aa3f1dd071a1886b1a51b7cf7a80fb9d6811ef5f745d39f97261fc51c9252",
+      "newDraftSHA256": "5a2f135f739523541891740b26695758b289ccd7c02b70e57f43057ed56d24f9",
+      "newProfileSHA256": "70cefa199416397a3cc7515f4856767bbf3a451fce37c7a2f7c102845974cb1e",
+      "oldEvidenceDraftSHA256": "6e6aa3f1dd071a1886b1a51b7cf7a80fb9d6811ef5f745d39f97261fc51c9252",
+      "oldEvidenceProfileSHA256": "258b2efd7c1c3df48f4077506e656686e333e3ef7d5740a8bea4166b099b03f2",
+      "newEvidenceSHA256": "27a44128c6b93e48dcacd10cc63fccda6a307b66ab9fd79100e96e34ef4f7069",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_most_holy_place_827.json",
+      "entityID": "place:most_holy_place_827",
+      "field": "profile.facts[0].textJa",
+      "knownBy": {
+        "chapter": 3,
+        "verse": 10
+      },
+      "sourceID": "webp-2ch-3-10",
+      "fixedWEBText": "In the most holy place he made two cherubim by carving, and they overlaid them with gold.",
+      "beforeTextJa": "3章10節にもこの場所名が現れます。",
+      "afterTextJa": "至聖所には彫刻した二体のケルビムが置かれ、金で覆われたと記されます。",
+      "oldDraftSHA256": "e77f7310351201eb3c7cac7a3ab2c63ac9485370435ce05dd4cd5c1f2050d568",
+      "newDraftSHA256": "2aacc5c2817f1edf9668e34e23c08d0fdf698bfd1799b95ca84d5f82e5a9e912",
+      "newProfileSHA256": "f5c8fc50501ac17c4dad97a1ea5371986f925a4730fa73752f6965f1864252f7",
+      "oldEvidenceDraftSHA256": "e77f7310351201eb3c7cac7a3ab2c63ac9485370435ce05dd4cd5c1f2050d568",
+      "oldEvidenceProfileSHA256": "a357997d47312d1f346d162a4eee2d5cae3d7eb35ac0843e315fead86363b6f7",
+      "newEvidenceSHA256": "7b71216e8f540965f8ef6ce1822633f3a07eab97868c5e724f6883448c3fd229",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_most_holy_place_827.json",
+      "entityID": "place:most_holy_place_827",
+      "field": "profile.facts[1].textJa",
+      "knownBy": {
+        "chapter": 4,
+        "verse": 22
+      },
+      "sourceID": "webp-2ch-4-22",
+      "fixedWEBText": "and the snuffers, the basins, the spoons, and the fire pans of pure gold. As for the entry of the house, its inner doors for the most holy place and the doors of the main hall of the temple were of gold.",
+      "beforeTextJa": "4章22節にもこの場所名が現れます。",
+      "afterTextJa": "神殿の入口にある至聖所の内扉は、主広間の扉とともに金製だったと記されています。",
+      "oldDraftSHA256": "e77f7310351201eb3c7cac7a3ab2c63ac9485370435ce05dd4cd5c1f2050d568",
+      "newDraftSHA256": "512bb12d95513cb25f53d0e72e098e4894a59b3edc710db0dfc5a830030e134d",
+      "newProfileSHA256": "558a57d2def6db19529c413f5f7edd75bbcba0f690f24ef16bb86c4bf9d30b85",
+      "oldEvidenceDraftSHA256": "2aacc5c2817f1edf9668e34e23c08d0fdf698bfd1799b95ca84d5f82e5a9e912",
+      "oldEvidenceProfileSHA256": "f5c8fc50501ac17c4dad97a1ea5371986f925a4730fa73752f6965f1864252f7",
+      "newEvidenceSHA256": "f15a991a115bfcee8250d3e4a543e5a387069b1165ba52db86d0ba9c68c2162b",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_most_holy_place_827.json",
+      "entityID": "place:most_holy_place_827",
+      "field": "profile.facts[2].textJa",
+      "knownBy": {
+        "chapter": 5,
+        "verse": 7
+      },
+      "sourceID": "webp-2ch-5-7",
+      "fixedWEBText": "The priests brought in the ark of the LORD’s covenant to its place, into the inner sanctuary of the house, to the most holy place, even under the wings of the cherubim.",
+      "beforeTextJa": "5章7節にもこの場所名が現れます。",
+      "afterTextJa": "祭司たちは契約の箱を神殿内の至聖所へ運び入れ、ケルビムの翼の下に置いたと記されます。",
+      "oldDraftSHA256": "e77f7310351201eb3c7cac7a3ab2c63ac9485370435ce05dd4cd5c1f2050d568",
+      "newDraftSHA256": "40a7c686c75dce5e0d7c9df6977f8e1d85ebcb738437c2df09a21325dd77f516",
+      "newProfileSHA256": "de52df8a4a00bd9f30f8527d08541f2c591079c9a6e442b14736127d8eb5cc33",
+      "oldEvidenceDraftSHA256": "512bb12d95513cb25f53d0e72e098e4894a59b3edc710db0dfc5a830030e134d",
+      "oldEvidenceProfileSHA256": "558a57d2def6db19529c413f5f7edd75bbcba0f690f24ef16bb86c4bf9d30b85",
+      "newEvidenceSHA256": "35082606f2c1f7d270380862b0725c6c5c679014fff0c96dbe4c36d87f466859",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_syria_1122.json",
+      "entityID": "place:syria_1122",
+      "field": "profile.facts[0].textJa",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 2
+      },
+      "sourceID": "webp-2ch-16-2",
+      "fixedWEBText": "Then Asa brought out silver and gold out of the treasures of the LORD’s house and of the king’s house, and sent to Ben Hadad king of Syria, who lived at Damascus, saying,",
+      "beforeTextJa": "16章2節にもこの場所名が現れます。",
+      "afterTextJa": "アサは神殿と王宮の財宝から銀と金を取り出し、ダマスカスに住むシリア王ベン・ハダドへ使者とともに送りました。",
+      "oldDraftSHA256": "ab749e9d4e00b75c31b27558ff1db0c967e026cd2f2031c3c3fbb0c8214dbf1c",
+      "newDraftSHA256": "c57c33699a9adc56aed39fe81906841dcabb60047abbe8f6b185a8fb42f106d2",
+      "newProfileSHA256": "475258b8e4731d477a84deba75ddd630df2db84ec9d9cbe6c2b7172d6d82e0e1",
+      "oldEvidenceDraftSHA256": "ab749e9d4e00b75c31b27558ff1db0c967e026cd2f2031c3c3fbb0c8214dbf1c",
+      "oldEvidenceProfileSHA256": "7e5d82aee26ab81dcc09368a5851a9821973bc2a79bb1d05c40b832c1baf522e",
+      "newEvidenceSHA256": "19b6f9b7c1117a73e27a4109ded581c94a6d31168e066646c196f614d6c5bc48",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_syria_1122.json",
+      "entityID": "place:syria_1122",
+      "field": "profile.facts[1].textJa",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 7
+      },
+      "sourceID": "webp-2ch-16-7",
+      "fixedWEBText": "At that time Hanani the seer came to Asa king of Judah, and said to him, “Because you have relied on the king of Syria, and have not relied on the LORD your God, therefore the army of the king of Syria has escaped out of your hand.",
+      "beforeTextJa": "16章7節にもこの場所名が現れます。",
+      "afterTextJa": "預言者ハナニは、アサが主ではなくシリア王を頼ったため、シリア軍を手から逃したと告げます。",
+      "oldDraftSHA256": "ab749e9d4e00b75c31b27558ff1db0c967e026cd2f2031c3c3fbb0c8214dbf1c",
+      "newDraftSHA256": "e58a2a396301316722bc8a887f269672803412b44b3a3c166dfb1161300bc684",
+      "newProfileSHA256": "f3181c6179a172a965e40bd9e1522c2bc09ae9d6ddbcb0ebee68463093b0de4f",
+      "oldEvidenceDraftSHA256": "c57c33699a9adc56aed39fe81906841dcabb60047abbe8f6b185a8fb42f106d2",
+      "oldEvidenceProfileSHA256": "475258b8e4731d477a84deba75ddd630df2db84ec9d9cbe6c2b7172d6d82e0e1",
+      "newEvidenceSHA256": "bc95d9019a0fb874ba40e234362a97fbd09e109b267e7f877f4c843c82dcb8cd",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_syria_1122.json",
+      "entityID": "place:syria_1122",
+      "field": "profile.facts[2].textJa",
+      "knownBy": {
+        "chapter": 18,
+        "verse": 30
+      },
+      "sourceID": "webp-2ch-18-30",
+      "fixedWEBText": "Now the king of Syria had commanded the captains of his chariots, saying, “Don’t fight with small nor great, except only with the king of Israel.”",
+      "beforeTextJa": "18章30節にもこの場所名が現れます。",
+      "afterTextJa": "シリア王は戦車隊長たちに、イスラエル王以外の者とは戦わないよう命じたと記されています。",
+      "oldDraftSHA256": "ab749e9d4e00b75c31b27558ff1db0c967e026cd2f2031c3c3fbb0c8214dbf1c",
+      "newDraftSHA256": "99a27e93fbd3b9acb58b737d9b8f5864222e069cb3c0359b302db85901d1dd35",
+      "newProfileSHA256": "056628d4e0373e0360a3ffd28eb2205226431ca3f864918f91c4cea5c42519c1",
+      "oldEvidenceDraftSHA256": "e58a2a396301316722bc8a887f269672803412b44b3a3c166dfb1161300bc684",
+      "oldEvidenceProfileSHA256": "f3181c6179a172a965e40bd9e1522c2bc09ae9d6ddbcb0ebee68463093b0de4f",
+      "newEvidenceSHA256": "fb775952176a33ea3871c27fcc5341c1c40f8badffeca647c2814742ba035a4f",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_syria_1122.json",
+      "entityID": "place:syria_1122",
+      "field": "profile.facts[3].textJa",
+      "knownBy": {
+        "chapter": 22,
+        "verse": 5
+      },
+      "sourceID": "webp-2ch-22-5",
+      "fixedWEBText": "He also followed their counsel, and went with Jehoram the son of Ahab king of Israel to war against Hazael king of Syria at Ramoth Gilead; and the Syrians wounded Joram.",
+      "beforeTextJa": "22章5節にもこの場所名が現れます。",
+      "afterTextJa": "ユダ王アハズヤはヨラムとともにラモト・ギレアドでシリア王ハザエルと戦い、シリア軍はヨラムを負傷させました。",
+      "oldDraftSHA256": "ab749e9d4e00b75c31b27558ff1db0c967e026cd2f2031c3c3fbb0c8214dbf1c",
+      "newDraftSHA256": "931864aeb948eabca22e1d8139f804ba13952cc440a17e7a42adbd4011feb01b",
+      "newProfileSHA256": "5830ac100cdf40c71699f4cf3c2db0c942cabf1079ce1450daa6cf1d84b2a580",
+      "oldEvidenceDraftSHA256": "99a27e93fbd3b9acb58b737d9b8f5864222e069cb3c0359b302db85901d1dd35",
+      "oldEvidenceProfileSHA256": "056628d4e0373e0360a3ffd28eb2205226431ca3f864918f91c4cea5c42519c1",
+      "newEvidenceSHA256": "51469d6358dcccc74d97f30a52477dd60c5c9075375af9a6faf2348adc27857e",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_syria_1122.json",
+      "entityID": "place:syria_1122",
+      "field": "profile.facts[4].textJa",
+      "knownBy": {
+        "chapter": 22,
+        "verse": 6
+      },
+      "sourceID": "webp-2ch-22-6",
+      "fixedWEBText": "He returned to be healed in Jezreel of the wounds which they had given him at Ramah, when he fought against Hazael king of Syria. Azariah the son of Jehoram, king of Judah, went down to see Jehoram the son of Ahab in Jezreel, because he was sick.",
+      "beforeTextJa": "22章6節にもこの場所名が現れます。",
+      "afterTextJa": "負傷したヨラムはイズレエルで療養し、アハズヤは彼を見舞います。ヨラムの傷は、シリア王ハザエルとの戦いで受けたものでした。",
+      "oldDraftSHA256": "ab749e9d4e00b75c31b27558ff1db0c967e026cd2f2031c3c3fbb0c8214dbf1c",
+      "newDraftSHA256": "8f77576443a4b474fdd6157b96b6e023132bb5bf3d1c59968272f35dd6d1d72f",
+      "newProfileSHA256": "9d62f826aadd127fb116e30d9c4aef8b23b15c7dec3645e8a8722e30d73f6583",
+      "oldEvidenceDraftSHA256": "931864aeb948eabca22e1d8139f804ba13952cc440a17e7a42adbd4011feb01b",
+      "oldEvidenceProfileSHA256": "5830ac100cdf40c71699f4cf3c2db0c942cabf1079ce1450daa6cf1d84b2a580",
+      "newEvidenceSHA256": "59247e8b17f032773f5e793d52ebbf40e458a80e0cc6ad7deac3623aff7740cc",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_syria_1122.json",
+      "entityID": "place:syria_1122",
+      "field": "profile.facts[5].textJa",
+      "knownBy": {
+        "chapter": 28,
+        "verse": 5
+      },
+      "sourceID": "webp-2ch-28-5",
+      "fixedWEBText": "Therefore the LORD his God delivered him into the hand of the king of Syria. They struck him, and carried away from him a great multitude of captives, and brought them to Damascus. He was also delivered into the hand of the king of Israel, who struck him with a great slaughter.",
+      "beforeTextJa": "28章5節にもこの場所名が現れます。",
+      "afterTextJa": "主はアハズをシリア王の手に渡し、シリア軍は多くの捕虜を奪ってダマスカスへ連れて行ったと記されます。",
+      "oldDraftSHA256": "ab749e9d4e00b75c31b27558ff1db0c967e026cd2f2031c3c3fbb0c8214dbf1c",
+      "newDraftSHA256": "10eb4897086af71933b7f993139c2a6197a38532e11a685c6766398f74db8592",
+      "newProfileSHA256": "f44e0a1f52ce8b411476ae4ccfca90722054bc921ed0630da054ae9036be5904",
+      "oldEvidenceDraftSHA256": "8f77576443a4b474fdd6157b96b6e023132bb5bf3d1c59968272f35dd6d1d72f",
+      "oldEvidenceProfileSHA256": "9d62f826aadd127fb116e30d9c4aef8b23b15c7dec3645e8a8722e30d73f6583",
+      "newEvidenceSHA256": "36227fa2f077818b23275169e77af9f42172c1f270c4d604f93b040aebe012b3",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_syria_1122.json",
+      "entityID": "place:syria_1122",
+      "field": "profile.facts[6].textJa",
+      "knownBy": {
+        "chapter": 28,
+        "verse": 23
+      },
+      "sourceID": "webp-2ch-28-23",
+      "fixedWEBText": "For he sacrificed to the gods of Damascus which had defeated him. He said, “Because the gods of the kings of Syria helped them, I will sacrifice to them, that they may help me.” But they were the ruin of him and of all Israel.",
+      "beforeTextJa": "28章23節にもこの場所名が現れます。",
+      "afterTextJa": "アハズはダマスカスの神々にいけにえをささげ、シリアの王たちを助けた神々だと考えましたが、その行為は彼とイスラエル全体の没落につながったと記されます。",
+      "oldDraftSHA256": "ab749e9d4e00b75c31b27558ff1db0c967e026cd2f2031c3c3fbb0c8214dbf1c",
+      "newDraftSHA256": "e97975ffc4577c60f01e95521d4fa3af1fc5e663ad1188853d240e146e49185d",
+      "newProfileSHA256": "29dbe0a597b36e13c2bcec4c8dcf3c2523e853d5a1498934726bb8bc961aa8a5",
+      "oldEvidenceDraftSHA256": "10eb4897086af71933b7f993139c2a6197a38532e11a685c6766398f74db8592",
+      "oldEvidenceProfileSHA256": "f44e0a1f52ce8b411476ae4ccfca90722054bc921ed0630da054ae9036be5904",
+      "newEvidenceSHA256": "79431d49c4d094a8c3b25bf6df97191c28c5091f7258c340b71accd88bd4cc39",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_shephelah_1074.json",
+      "entityID": "place:shephelah_1074",
+      "field": "profile.facts[0].textJa",
+      "knownBy": {
+        "chapter": 9,
+        "verse": 27
+      },
+      "sourceID": "webp-2ch-9-27",
+      "fixedWEBText": "The king made silver as common in Jerusalem as stones, and he made cedars to be as abundant as the sycamore trees that are in the lowland.",
+      "beforeTextJa": "9章27節にもこの場所名が現れます。",
+      "afterTextJa": "低地ではシカモアの木が多く、銀が石のようにありふれていたことにたとえて、杉も豊富だったと記されます。この節の「低地」はシェフェラと特定されていません。",
+      "oldDraftSHA256": "4afbe9738d339f022abdc2f29495d74f141ffddd8af12d0ff9f166ca8ee54852",
+      "newDraftSHA256": "8454c1bb6bf4190d09f083b6bb9a2ebebaa580e4ab112c76982f60e0a1604032",
+      "newProfileSHA256": "c6036c958d249ee899cdf600c978e77b6ad2687913848edcfd591d7d42962923",
+      "oldEvidenceDraftSHA256": "4afbe9738d339f022abdc2f29495d74f141ffddd8af12d0ff9f166ca8ee54852",
+      "oldEvidenceProfileSHA256": "68f4485fb9f74d726a665027527d08c4b9cf827c1ac10f8601a3e906bd868f73",
+      "newEvidenceSHA256": "df0130a361348563064ee2e3c098c3ecadaacf6e8de8ad8a10ce263f3676bdda",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_shephelah_1074.json",
+      "entityID": "place:shephelah_1074",
+      "field": "profile.facts[1].textJa",
+      "knownBy": {
+        "chapter": 26,
+        "verse": 10
+      },
+      "sourceID": "webp-2ch-26-10",
+      "fixedWEBText": "He built towers in the wilderness, and dug out many cisterns, for he had much livestock, both in the lowlands and in the plains. He had farmers and vineyard keepers in the mountains and in the fruitful fields, for he loved farming.",
+      "beforeTextJa": "26章10節にもこの場所名が現れます。",
+      "afterTextJa": "ウジヤは家畜を多く持ち、低地や平地に水槽を掘り、山地や肥沃な畑では農夫やぶどう栽培者を置いたと記されます。「低地」が特定のシェフェラを指すとは本文だけでは確定できません。",
+      "oldDraftSHA256": "4afbe9738d339f022abdc2f29495d74f141ffddd8af12d0ff9f166ca8ee54852",
+      "newDraftSHA256": "d362d1f494a332033bf3bea2def11c4880fe3abcfa3ad8d96cf3ec873def2437",
+      "newProfileSHA256": "44ecc197e5e0e7312900d822113a4b4ad6e4eab290f54b995752df02d02a54fb",
+      "oldEvidenceDraftSHA256": "8454c1bb6bf4190d09f083b6bb9a2ebebaa580e4ab112c76982f60e0a1604032",
+      "oldEvidenceProfileSHA256": "c6036c958d249ee899cdf600c978e77b6ad2687913848edcfd591d7d42962923",
+      "newEvidenceSHA256": "764c7521eef43813210ca105e186ef9fdf80505c2105035da9bbf9104dd71e20",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_shephelah_1074.json",
+      "entityID": "place:shephelah_1074",
+      "field": "profile.facts[2].textJa",
+      "knownBy": {
+        "chapter": 28,
+        "verse": 18
+      },
+      "sourceID": "webp-2ch-28-18",
+      "fixedWEBText": "The Philistines also had invaded the cities of the lowland and of the South of Judah, and had taken Beth Shemesh, Aijalon, Gederoth, Soco with its villages, Timnah with its villages, and also Gimzo and its villages; and they lived there.",
+      "beforeTextJa": "28章18節にもこの場所名が現れます。",
+      "afterTextJa": "ペリシテ人はユダ南部と低地の町々を攻め、ベテ・シェメシュ、アヤロン、ゲデロト、ソコ、ティムナ、ギムゾなどを占領したと記されます。「低地」はこの節でシェフェラと名指されてはいません。",
+      "oldDraftSHA256": "4afbe9738d339f022abdc2f29495d74f141ffddd8af12d0ff9f166ca8ee54852",
+      "newDraftSHA256": "2609cfa776cea7ae7b4d326eaf7890aeceb7f921991f4c8809bb78595bfc542c",
+      "newProfileSHA256": "afba76af649804f5dbc17ba87e8d11296ea57ef147e936cbca981890479fafb0",
+      "oldEvidenceDraftSHA256": "d362d1f494a332033bf3bea2def11c4880fe3abcfa3ad8d96cf3ec873def2437",
+      "oldEvidenceProfileSHA256": "44ecc197e5e0e7312900d822113a4b4ad6e4eab290f54b995752df02d02a54fb",
+      "newEvidenceSHA256": "6864c1a39624222d3bfa4c3c30cc914fcf73b6cfcfd38680d74a11c32969dd54",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_holy_place_575.json",
+      "entityID": "place:holy_place_575",
+      "field": "profile.facts[0].textJa",
+      "knownBy": {
+        "chapter": 29,
+        "verse": 5
+      },
+      "sourceID": "webp-2ch-29-5",
+      "fixedWEBText": "and said to them, “Listen to me, you Levites! Now sanctify yourselves, and sanctify the house of the LORD, the God of your fathers, and carry the filthiness out of the holy place.",
+      "beforeTextJa": "29章5節にもこの場所名が現れます。",
+      "afterTextJa": "ヒゼキヤはレビ人に、自らを聖別し、主の神殿から汚れを取り除くよう命じます。",
+      "oldDraftSHA256": "d63ada2d22f3965da9d6e885591aa1b72a824568d3eb71ede724cfb734d01e28",
+      "newDraftSHA256": "d86e3e8fb47cfffde8cbe32b9d279fd1ee4e7d3dbbb59b0a5db321e2d8af1841",
+      "newProfileSHA256": "50dcabe592bce227b6942e1141023bfdbef1a853ab787e128bb9b05433e16aae",
+      "oldEvidenceDraftSHA256": "d63ada2d22f3965da9d6e885591aa1b72a824568d3eb71ede724cfb734d01e28",
+      "oldEvidenceProfileSHA256": "d98e6310df3828870f42cae43002cdc8b1a2743049c52d4eff892e6ebf2e0391",
+      "newEvidenceSHA256": "c05b3d58eee330c6cc1017c786b229541600eec1f94a40260bd26a6d9a87be2f",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_holy_place_575.json",
+      "entityID": "place:holy_place_575",
+      "field": "profile.facts[1].textJa",
+      "knownBy": {
+        "chapter": 29,
+        "verse": 7
+      },
+      "sourceID": "webp-2ch-29-7",
+      "fixedWEBText": "Also they have shut up the doors of the porch, and put out the lamps, and have not burned incense nor offered burnt offerings in the holy place to the God of Israel.",
+      "beforeTextJa": "29章7節にもこの場所名が現れます。",
+      "afterTextJa": "ヒゼキヤは神殿の戸が閉ざされ、ともしびが消え、聖所で香や焼き尽くす献げ物がささげられなくなっていたと述べます。",
+      "oldDraftSHA256": "d63ada2d22f3965da9d6e885591aa1b72a824568d3eb71ede724cfb734d01e28",
+      "newDraftSHA256": "67bdcf6a60c0b602ded5207f1224e90e9bcbabf86bc7be7ee67daaa347bce125",
+      "newProfileSHA256": "dbf3820b20e3d9bf25ed9b94d017ad0f76040a5e5ffb3447ea262e0e2f930077",
+      "oldEvidenceDraftSHA256": "d86e3e8fb47cfffde8cbe32b9d279fd1ee4e7d3dbbb59b0a5db321e2d8af1841",
+      "oldEvidenceProfileSHA256": "50dcabe592bce227b6942e1141023bfdbef1a853ab787e128bb9b05433e16aae",
+      "newEvidenceSHA256": "a5bc44926b7ca7feffd0c1d7550f1c3a097051c1c255c19dd502472e9297ec58",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_holy_place_575.json",
+      "entityID": "place:holy_place_575",
+      "field": "profile.facts[2].textJa",
+      "knownBy": {
+        "chapter": 35,
+        "verse": 5
+      },
+      "sourceID": "webp-2ch-35-5",
+      "fixedWEBText": "Stand in the holy place according to the divisions of the fathers’ houses of your brothers the children of the people, and let there be for each a portion of a fathers’ house of the Levites.",
+      "beforeTextJa": "35章5節にもこの場所名が現れます。",
+      "afterTextJa": "ヨシヤは祭司やレビ人の組ごとに聖所へ立つよう命じ、レビ人の家系ごとに奉仕の持ち場を割り当てます。",
+      "oldDraftSHA256": "d63ada2d22f3965da9d6e885591aa1b72a824568d3eb71ede724cfb734d01e28",
+      "newDraftSHA256": "cd331622bdb0d63451983d29a6235356100b4beabba4644446cc7948497bd29b",
+      "newProfileSHA256": "bee2c5514eb6663e9f55eb648873e412283ffcafda64af4806614d509097066c",
+      "oldEvidenceDraftSHA256": "67bdcf6a60c0b602ded5207f1224e90e9bcbabf86bc7be7ee67daaa347bce125",
+      "oldEvidenceProfileSHA256": "dbf3820b20e3d9bf25ed9b94d017ad0f76040a5e5ffb3447ea262e0e2f930077",
+      "newEvidenceSHA256": "ade6260189652733f1700976e624e46f77e7b34d673dd04db161eda9571fdd6c",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_tarshish_1139.json",
+      "entityID": "place:tarshish_1139",
+      "field": "profile.facts[0].textJa",
+      "knownBy": {
+        "chapter": 20,
+        "verse": 36
+      },
+      "sourceID": "webp-2ch-20-36",
+      "fixedWEBText": "He joined himself with him to make ships to go to Tarshish. They made the ships in Ezion Geber.",
+      "beforeTextJa": "20章36節にもこの場所名が現れます。",
+      "afterTextJa": "ヨシャファトはアハズヤと組み、タルシシュへ向かう船を造りました。船はエツヨン・ゲベルで造られたと記されます。",
+      "oldDraftSHA256": "4fb6ec0f5f0cdead7c1631ccdfec39181575395475c90c23b06dfe6105e42a28",
+      "newDraftSHA256": "110c2d0e44bafed95e25eea5f7f6ef102cc56718c05ed705d5183feadfa3503d",
+      "newProfileSHA256": "11bfb576ab3f8276a366a2b692573b42b7fb4ce647c2c76753a1665c2f50203c",
+      "oldEvidenceDraftSHA256": "4fb6ec0f5f0cdead7c1631ccdfec39181575395475c90c23b06dfe6105e42a28",
+      "oldEvidenceProfileSHA256": "94de5faaf1bb7fde5f1222289af00d18cc340533b58691f8df4988aaa0157660",
+      "newEvidenceSHA256": "86d91ac522c453859d639b152511688292a89227c96195a18134bcb53f9e7959",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_tarshish_1139.json",
+      "entityID": "place:tarshish_1139",
+      "field": "profile.facts[1].textJa",
+      "knownBy": {
+        "chapter": 20,
+        "verse": 37
+      },
+      "sourceID": "webp-2ch-20-37",
+      "fixedWEBText": "Then Eliezer the son of Dodavahu of Mareshah prophesied against Jehoshaphat, saying, “Because you have joined yourself with Ahaziah, the LORD has destroyed your works.” The ships were wrecked, so that they were not able to go to Tarshish.",
+      "beforeTextJa": "20章37節にもこの場所名が現れます。",
+      "afterTextJa": "預言者エリエゼルはアハズヤと組んだヨシャファトを責め、船が壊れてタルシシュへ行けなかったと告げます。",
+      "oldDraftSHA256": "4fb6ec0f5f0cdead7c1631ccdfec39181575395475c90c23b06dfe6105e42a28",
+      "newDraftSHA256": "6fe8d03ffba34bcf578fd6632c117f3b7cb79c234eaab9c5c8ac13329d9ed5e5",
+      "newProfileSHA256": "8c8e1a962486791d826c529eadb70a0217d02a40cad14965cd0e3c7d70cdb058",
+      "oldEvidenceDraftSHA256": "110c2d0e44bafed95e25eea5f7f6ef102cc56718c05ed705d5183feadfa3503d",
+      "oldEvidenceProfileSHA256": "11bfb576ab3f8276a366a2b692573b42b7fb4ce647c2c76753a1665c2f50203c",
+      "newEvidenceSHA256": "50d0f2f86f2668660dda17cf4516d4cdad759af94ea412d0ebd4cce494d1a478",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_ramah_972.json",
+      "entityID": "place:ramah_972",
+      "field": "profile.facts[0].textJa",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 5
+      },
+      "sourceID": "webp-2ch-16-5",
+      "fixedWEBText": "When Baasha heard of it, he stopped building Ramah, and let his work cease.",
+      "beforeTextJa": "16章5節にもこの場所名が現れます。",
+      "afterTextJa": "バアシャはラマでの建設をやめ、工事を中止したと記されます。",
+      "oldDraftSHA256": "23e96ceb65d51ab2bd162908f4b056f58791dd280adda83539d556476e9a1f67",
+      "newDraftSHA256": "118149bb1f2e9decb5d0547272115347b682996240a76bf1c4d09cf56efc23d3",
+      "newProfileSHA256": "232928a2178631ee5356327bc10bab8587cb0e3c539086d32b1e25d3080fc15e",
+      "oldEvidenceDraftSHA256": "23e96ceb65d51ab2bd162908f4b056f58791dd280adda83539d556476e9a1f67",
+      "oldEvidenceProfileSHA256": "2f5f8b650a552c069687c941a459e60de5862b7d470ae573aa54ce808c585ac3",
+      "newEvidenceSHA256": "db4b65239c3e8a80ebee8ec8d02e002ca636f042c6cb0f5451c2bfeaeca804dd",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_ramah_972.json",
+      "entityID": "place:ramah_972",
+      "field": "profile.facts[1].textJa",
+      "knownBy": {
+        "chapter": 16,
+        "verse": 6
+      },
+      "sourceID": "webp-2ch-16-6",
+      "fixedWEBText": "Then Asa the king took all Judah, and they carried away the stones and timber of Ramah, with which Baasha had built; and he built Geba and Mizpah with them.",
+      "beforeTextJa": "16章6節にもこの場所名が現れます。",
+      "afterTextJa": "アサはユダの人々を動員し、ラマから石材と木材を運び出して、ゲバとミツパの建設に用いました。",
+      "oldDraftSHA256": "23e96ceb65d51ab2bd162908f4b056f58791dd280adda83539d556476e9a1f67",
+      "newDraftSHA256": "4ac8c51369f161db847cf792e477c33ee5836598eb057452f9f952a253451c4f",
+      "newProfileSHA256": "6f4d91f2325650343c77bf6b5119584b57829edbd7ed0609b37fbd4e291a314a",
+      "oldEvidenceDraftSHA256": "118149bb1f2e9decb5d0547272115347b682996240a76bf1c4d09cf56efc23d3",
+      "oldEvidenceProfileSHA256": "232928a2178631ee5356327bc10bab8587cb0e3c539086d32b1e25d3080fc15e",
+      "newEvidenceSHA256": "7ea58aa37a3464ea674038a05cd2edf6da3bc45b055a5d668fa57470a18f2b28",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_gibeon_470.json",
+      "entityID": "place:gibeon_470",
+      "field": "profile.facts[0].textJa",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 13
+      },
+      "sourceID": "webp-2ch-1-13",
+      "fixedWEBText": "So Solomon came from the high place that was at Gibeon, from before the Tent of Meeting, to Jerusalem; and he reigned over Israel.",
+      "beforeTextJa": "1章13節にもこの場所名が現れます。",
+      "afterTextJa": "ソロモンはギブオンの高き所、会見の幕屋の前からエルサレムへ戻り、イスラエルを治めました。",
+      "oldDraftSHA256": "12000bba6aeaeea068518d632e55b3fa06dd2a6f146f532751641a735c477fb9",
+      "newDraftSHA256": "28a6845b68c418ed7a4983cc8ba148eff38425ee5aeeae4c21c8b0b87835ffd9",
+      "newProfileSHA256": "69fdcbd9f35c75628c68343b9eda52c2dc44340583e84d790ff4d00965ffc449",
+      "oldEvidenceDraftSHA256": "12000bba6aeaeea068518d632e55b3fa06dd2a6f146f532751641a735c477fb9",
+      "oldEvidenceProfileSHA256": "3e402ce1747cb9d640191a41d21e7affd1dc43be1097c4ea1811d5a9201f4623",
+      "newEvidenceSHA256": "aa442e0129852de52586b97e6998adfb0fbf07def473f019dd73ac4d04830ad2",
+      "rationaleJa": "章節番号の案内だけだったfactを、固定WEB該当節が具体的に述べる行為・対象へ置換。意味範囲・地名同定は引用文を超えて広げない。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_holy_place_575.json",
+      "entityID": "place:holy_place_575",
+      "field": "profile.summaryJa",
+      "knownBy": {
+        "chapter": 5,
+        "verse": 11
+      },
+      "sourceID": "webp-2ch-5-11",
+      "fixedWEBText": "When the priests had come out of the holy place (for all the priests who were present had sanctified themselves, and didn’t keep their divisions;",
+      "beforeTextJa": "神殿を主のために聖別する命令や祭具の運搬に関連して、「聖なる場所」が言及されます。至聖所という別の内室と区別して扱います。",
+      "afterTextJa": "神殿奉献の場面で、祭司たちが聖所から出てきたと記されます。",
+      "newDraftSHA256": "0b3b2b654f4a5408f8b547e140e0c4a23b240066876551f2824cdd6071586d61",
+      "newProfileSHA256": "d821a50ca02557266acef7a4cbb5cd0999f17173e9c0c5ff6946cc4abebf8a0b",
+      "newEvidenceSHA256": "cad7d55bcce5171cc8ea23e855ef9d3db26bbf64924e10c47f5439d5292c4f65",
+      "rationaleJa": "初出の5:11で分かる祭司が聖所から出た場面に要約を限定し、29章以後の清めや奉仕の情報を常時表示から外した。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_shephelah_1074.json",
+      "entityID": "place:shephelah_1074",
+      "field": "profile.facts[1].textJa",
+      "knownBy": {
+        "chapter": 26,
+        "verse": 10
+      },
+      "sourceID": "webp-2ch-26-10",
+      "fixedWEBText": "He built towers in the wilderness, and dug out many cisterns, for he had much livestock, both in the lowlands and in the plains. He had farmers and vineyard keepers in the mountains and in the fruitful fields, for he loved farming.",
+      "beforeTextJa": "ウジヤは家畜を多く持ち、低地や平地に水槽を掘り、山地や肥沃な畑では農夫やぶどう栽培者を置いたと記されます。「低地」が特定のシェフェラを指すとは本文だけでは確定できません。",
+      "afterTextJa": "ウジヤは荒野に塔を築き、多くの水槽を掘り、低地や平地に多くの家畜を持ったと記されます。山地や肥沃な畑には農夫とぶどう栽培者を置いたとも述べます。本文は「低地」をシェフェラと明示していません。",
+      "preservedBeforeDraftSHA256": "2609cfa776cea7ae7b4d326eaf7890aeceb7f921991f4c8809bb78595bfc542c",
+      "preservedBeforeDraftPath": "preservation/objects/2609cfa776cea7ae7b4d326eaf7890aeceb7f921991f4c8809bb78595bfc542c",
+      "newDraftSHA256": "d33f2420f7a3a73c2deaf0fa3f61055230bfd542b09274198d79e25b877c9fc6",
+      "newEvidenceSHA256": "84cb9c13cb3968eaebddde218ec5d27bedeb728c81997c1cacc7b3cc01339c14",
+      "rationaleJa": "低地や平地は家畜の飼育範囲で、水槽の位置とは書かれていないため、荒野の塔・水槽と牧畜地を文法どおり分けた。低地をシェフェラと特定しない留保を残した。"
+    },
+    {
+      "draftPath": "drafts/places_3/2CH_shephelah_1074.json",
+      "entityID": "place:shephelah_1074",
+      "field": "profile.facts[0].textJa",
+      "knownBy": {
+        "chapter": 9,
+        "verse": 27
+      },
+      "sourceID": "webp-2ch-9-27",
+      "fixedWEBText": "The king made silver as common in Jerusalem as stones, and he made cedars to be as abundant as the sycamore trees that are in the lowland.",
+      "beforeTextJa": "低地ではシカモアの木が多く、銀が石のようにありふれていたことにたとえて、杉も豊富だったと記されます。この節の「低地」はシェフェラと特定されていません。",
+      "afterTextJa": "エルサレムでは銀が石のように、杉は低地のシカモアのように豊富だったと記されています。この節の「低地」はシェフェラと特定されていません。",
+      "preservedBeforeDraftSHA256": "d33f2420f7a3a73c2deaf0fa3f61055230bfd542b09274198d79e25b877c9fc6",
+      "preservedBeforeDraftPath": "preservation/objects/d33f2420f7a3a73c2deaf0fa3f61055230bfd542b09274198d79e25b877c9fc6",
+      "newDraftSHA256": "601b62011065278c6dfa08c4cf4ec67986969d9b8811d1f9d91a99c9e3c1711a",
+      "newEvidenceSHA256": "dd5fc6927831c982d7a63920704190ebcb351738da5bb8042b5bbdcacc04ea34",
+      "rationaleJa": "固定本文の比較対象を文法どおり明確にし、「低地」を特定地域シェフェラへ同定しない留保を残した。"
+    }
+  ],
+  "notesJa": [
+    "factのknownBy/sourceIdsは変更していない。",
+    "記事本文にない低地=Shephelahの同定は追加せず、一般語の留保を本文で明示した。",
+    "profile/evidenceのhashを更新し、各引用節の固定WEB本文を照合した。"
+  ]
+}

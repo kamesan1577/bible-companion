@@ -1,0 +1,199 @@
+{
+  "reportType": "fixed WEB quotation audit final delta",
+  "generatedAtUTC": "2026-10-16T12:00:22.735418Z",
+  "inputs": {
+    "checker": {
+      "path": "scripts/audit_fixed_web_citations.py",
+      "sha256": "5430b29da930539c46b4f3bf218dd8ca69830d42b2b9958debecac755206436e"
+    },
+    "previousReportPreserved": {
+      "path": "preservation/objects/4b255bfaab04d119f819c5044975ae50e8e9ec3bdead114b6adc9d093f980131",
+      "sha256": "4b255bfaab04d119f819c5044975ae50e8e9ec3bdead114b6adc9d093f980131"
+    },
+    "rerunReport": {
+      "path": "reviews/audit-fixed-web-citation-sidecars-rerun.json",
+      "sha256": "92c954d76b9cbee7cc06386fa05e828a6b89ac123db5fd6e3ab46d328cfb1b79"
+    },
+    "previousUniqueURLJoinReport": {
+      "path": "reviews/investigation-missing-fixed-web-citation-urls.json",
+      "sha256": "6e4a2f92757aed365a650f013fcf44c05b8895fadcb3a17a445aaab343ef2c0f"
+    },
+    "fixedWitnesses": {
+      "1CH": {
+        "path": "inventory/targets/chronicles1-web-verses.json",
+        "fileSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "rows": 942
+      },
+      "2CH": {
+        "path": "inventory/targets/chronicles2-web-verses.json",
+        "fileSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8",
+        "rows": 822
+      }
+    },
+    "baseAssignments": {
+      "assignments/persons_1.json": "c49c5a9f7e8da6facabc037187f07afe433a46f0339189e25e00661355c70729",
+      "assignments/persons_2.json": "a9f00fe62ef671dd7589bcf7aca6c6e5a6751a46e41887108769f31ef8cc7ffb",
+      "assignments/persons_3.json": "cf0330c4bd26e0258ebf0052e79509a9e45b7888d2da2936321737c6925dcabb",
+      "assignments/places_1.json": "728f81398b380848c548acb6cfb05eae8356337be82d0b4ca1f64f93f43840b9",
+      "assignments/places_2.json": "f6e82c8ca3bcdec5d2ecada03eb71fac6a37e4fac0eb1601a6a046635e01ae40",
+      "assignments/places_3.json": "82a04b2209f5bab65e932bad8fcc5dc17ebfd5908a592318af33e2fb910a0c3f"
+    },
+    "currentDraftEvidenceSyncReport": {
+      "path": "reviews/root-draft-evidence-sync.json",
+      "sha256": "f0f5ad9662bf73e46979179505573d39671a20b32eb0e83a3da408a3ba96e399"
+    }
+  },
+  "counts": {
+    "uniqueAssignedBookIDPairs": 1879,
+    "currentDraftEvidencePairs": 1877,
+    "currentPairSyncIssues": 0,
+    "assignedBookIDMissingCurrentPair": [
+      {
+        "book": "1CH",
+        "entityID": "person:joram_1705"
+      },
+      {
+        "book": "1CH",
+        "entityID": "person:mash_1944"
+      }
+    ],
+    "recognizedQuoteSidecars": 1818,
+    "recognizedSidecarsAlsoInCurrentPairs": 1816,
+    "quoteSidecarsWithoutCurrentPair": 2,
+    "currentPairsWithoutRecognizedQuoteSchema": 61,
+    "unrecognizedPairShapeCounts": {
+      "persons_3_occurrences_schema": 60,
+      "explicit_no-quote/excluded_schema": 1
+    },
+    "citationPayloadRows": 4191,
+    "payloadKinds": {
+      "Japanese-paraphrase-only": 484,
+      "literal-quote": 3707
+    },
+    "quoteStatuses": {
+      "no-literal-quote": 484,
+      "exact-witness-text": 3707
+    },
+    "issues": 0,
+    "warnings": 245,
+    "warningsUniquelyResolvedAgainstCurrentDraftSources": 245,
+    "warningJoinFailures": []
+  },
+  "countExplanationJa": "固定割当6群は1879の一意(book,ID)。現在のdraft+evidence pairは1877で、1CH Joram 1705とMash 1944の2件は割当targetに対応する現在draft/evidence pairがありません。引用監査がrecognizeした1818 sidecarのうち2つはこの2件のsidecar-onlyファイルで、現在pairと重なる引用sidecarは1816。残る61 current pairsの証拠形式は、引用checkerが扱う一次引用配列ではないものがpersons_3のoccurrences形式60件、明示的な引用なし除外記録が1件です。したがって1879 assigned book-IDと1818 recognized quote-sidecarの差61はこの61件で説明されます。1818はsidecar数で、内部の引用payloadは4191行（固定WEB逐語一致3707、逐語引用ではない日本語要約484）です。",
+  "repairVerification": {
+    "Huram2CH2_14": {
+      "citation": {
+        "field": "primaryTextChecks",
+        "index": 1,
+        "ref": "2CH 2:14",
+        "citationURL": "https://ebible.org/engwebp/2CH02.htm#V14",
+        "sourceId": null,
+        "pointer": "primaryTextChecks[1]",
+        "coordinates": {
+          "book": "2CH",
+          "chapter": 2,
+          "startVerse": 14,
+          "endVerse": 14
+        },
+        "witnessVersion": null,
+        "payloadKind": "literal-quote",
+        "hashStatus": "matches-payload",
+        "quoteStatus": "exact-witness-text",
+        "sourceTextSHA256": "9ea1f0e37dabd5b3f972f3fac991aa28385569dfd59b3adcbd02f410c8542def",
+        "computedQuoteSHA256": "9ea1f0e37dabd5b3f972f3fac991aa28385569dfd59b3adcbd02f410c8542def",
+        "witnessTextSHA256": "9ea1f0e37dabd5b3f972f3fac991aa28385569dfd59b3adcbd02f410c8542def"
+      },
+      "decision": "修復後にcanonical URL付きの固定WEB逐語引用として完全一致。"
+    },
+    "Huram2CH2_13": {
+      "citation": {
+        "field": "primaryTextChecks",
+        "index": 0,
+        "ref": "2CH 2:13",
+        "citationURL": null,
+        "sourceId": null,
+        "pointer": "primaryTextChecks[0]",
+        "coordinates": {
+          "book": "2CH",
+          "chapter": 2,
+          "startVerse": 13,
+          "endVerse": 13
+        },
+        "witnessVersion": null,
+        "payloadKind": "literal-quote",
+        "hashStatus": "no-hash-field",
+        "quoteStatus": "exact-witness-text",
+        "sourceTextSHA256": null,
+        "computedQuoteSHA256": "2182f9964b6369df7fc4d25ac4e1afe048b8a0272f2ee5c40c93d00afcddd704",
+        "witnessTextSHA256": "2182f9964b6369df7fc4d25ac4e1afe048b8a0272f2ee5c40c93d00afcddd704"
+      },
+      "decision": "引用本文は完全一致。ただしsidecar内のURL欠落warningは残る。既存unique join reportと現draft sourceの座標一致で一意URL解決を再確認した。"
+    },
+    "IshiSplit": {
+      "sidecar": "evidence/persons_1/1CH_ishi_626-sources.json",
+      "splitLog": {
+        "path": "evidence/persons_1/root-author-split-ishi-context-citations.json",
+        "sha256": "1e4fe75b3d590afaacb44c7d56ee42ecd639c37a95b5438ce0f45b2b7735b872"
+      },
+      "citationCount": 3,
+      "quoteStatuses": [
+        "exact-witness-text",
+        "exact-witness-text",
+        "exact-witness-text"
+      ],
+      "issues": [],
+      "warnings": []
+    },
+    "TerahNegativeControl": {
+      "historicalOnly": true,
+      "path": "evidence/persons_2/root-author-repair-terah-fixed-quote.json",
+      "ref": "1CH 1:27",
+      "storedWrongText": "The son of Terah: Abram, Nahor, and Haran.",
+      "fixedWitnessText": "Abram (also called Abraham).",
+      "mismatchDetected": true,
+      "currentTerahSidecarPath": "evidence/persons_2/1CH_person_terah_2841-sources.json",
+      "currentTerahCitationResult": {
+        "field": "sourceChecks",
+        "index": 1,
+        "ref": "1CH 1:27",
+        "citationURL": "https://ebible.org/engwebp/1CH01.htm#V27",
+        "sourceId": null,
+        "pointer": "sourceChecks[1]",
+        "coordinates": {
+          "book": "1CH",
+          "chapter": 1,
+          "startVerse": 27,
+          "endVerse": 27
+        },
+        "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "payloadKind": "literal-quote",
+        "hashStatus": "no-hash-field",
+        "quoteStatus": "exact-witness-text",
+        "sourceTextSHA256": null,
+        "computedQuoteSHA256": "84f41074dcf7f4cac08cf38cd104d54d23a2f8775f227a5ac0461318dd39c161",
+        "witnessTextSHA256": "84f41074dcf7f4cac08cf38cd104d54d23a2f8775f227a5ac0461318dd39c161"
+      }
+    }
+  },
+  "URLWarnings": {
+    "previousWarningRows": 246,
+    "previousUniqueCanonicalURLsResolved": 246,
+    "previousUnresolvedOrAmbiguous": 0,
+    "currentWarningRows": 245,
+    "currentRowsUniquelyJoinedToCurrentDraftSources": 245,
+    "removedWarning": {
+      "sidecarPath": "evidence/persons_2/2CH_person_huram_1575-sources.json",
+      "pointer": "primaryTextChecks[1]",
+      "ref": "2CH 2:14",
+      "reasonJa": "逐語引用とcanonical URLが修復されwarningから消えた。"
+    }
+  },
+  "negativeControlVerification": {
+    "historicalWrongTerahPayloadDetected": true,
+    "historicalWrongText": "The son of Terah: Abram, Nahor, and Haran.",
+    "fixedWitness": "Abram (also called Abraham).",
+    "currentTerah1CH1_27QuoteStatus": "exact-witness-text"
+  },
+  "semanticLimitJa": "機械的な一致は引用・URL・座標の整合を示すだけで、プロフィールや同定の意味的妥当性を承認しない。no-literal-quote 484件は日本語要約として別集計。unknown currentness 656件をcurrentと扱っていない。",
+  "mutations": "この報告作成ではaudit reportの新規出力以外にdraft/evidence/raw/manifest/selector/witnessを変更していない。旧audit reportのバイト列はcontent-addressed preservation objectに保存した。"
+}

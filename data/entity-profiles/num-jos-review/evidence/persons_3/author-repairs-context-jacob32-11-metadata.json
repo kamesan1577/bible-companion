@@ -1,0 +1,30 @@
+{
+  "task": "Hash-only synchronization of NUM Jacob 32:11 context metadata; no profile/source/witness content changed.",
+  "path": "context-edits/NUM/NUM_israel-682-personal-jacob-32-11.json",
+  "beforeWrapperSHA256": "484f377dbc471694de1a666644abc37a12d4f3b12dfd3836435b3bcb2da02a37",
+  "afterWrapperSHA256": "484f377dbc471694de1a666644abc37a12d4f3b12dfd3836435b3bcb2da02a37",
+  "canonicalProfileSHA256": "e696818be5b50cdea9209db2e70701bc171b340ca2450d80d91d63d4ece13213",
+  "evidencePath": "context-edits/NUM/evidence/NUM_israel-682-personal-jacob-32-11.json",
+  "beforeEvidenceSHA256": "3fe1b1ef28ba3963abb25145f4ad9e642d2acb4921a716033e60b99eabb5b75e",
+  "afterEvidenceSHA256": "8c7eb57584ef6f2025fa63a8a8cc30f62aa60b54744f2feff8bb663eb8246a7f",
+  "beforeContextIndexSHA256": "aea99f541e6dee198cc7a0735b9c0fc2e944b15d7e35c39602f6b5763d7d36db",
+  "afterContextIndexSHA256": "428580080ea4fbd9fddce7a180d5ccaa7843e390233cceeef66557484f54bfc7",
+  "fieldsSynchronized": [
+    "evidence.contextDraftSHA256",
+    "evidence.contextProfileSHA256",
+    "evidence.canonicalIDValidation.contextProfileSHA256",
+    "context-index.profileSHA256"
+  ],
+  "reasonJa": "本文を変更せず、実wrapper raw SHA・canonical profile SHAを再計算し、sidecar/indexの旧profile hashのみ同期。17件すべてのindex profileSHAは実profile canonical hashに一致し、saved baseDraftSHAはindexと各wrapper review間で一致する。別途現drafts/persons_3のactual raw hashを比較するとIsrael/Jacob・Gilead関連の4variantsでauthoring時base SHAから後続draft変更があるため、出典時点のbase hashを保全し、現SHA差分は親へ報告した。",
+  "profileHashSerialization": "UTF-8 JSON, ensure_ascii=false, indent=2, trailing newline=true, insertion order",
+  "checkedAtUTC": "2026-10-15T23:22:44.853600+00:00",
+  "baseHashComparison": {
+    "savedAuthoringBaseHashesPreserved": true,
+    "currentBaseDraftDeltasReported": {
+      "NUM_israel-682-personal-1-20.json": "78516d38411b4c0b73615cc8e866280a738d71a4202b6b097fcbdb763802ce56 -> bfe89783093016cb1c0da385d2e1aa356cdac4b7a1e1930ddaeb10e1aafb6218",
+      "NUM_israel-682-personal-jacob-32-11.json": "78516d38411b4c0b73615cc8e866280a738d71a4202b6b097fcbdb763802ce56 -> bfe89783093016cb1c0da385d2e1aa356cdac4b7a1e1930ddaeb10e1aafb6218",
+      "NUM_gilead-1317-personal.json": "75560f6f164c8e9e622b40fbc99b9419246103cb684fe84c730dae27d1c89a83 -> 90ef1a40e5e7fceb6e9cef7282889ce7da16e1f89cba46dc4934b1837cb133c1",
+      "NUM_gilead-1317-collective.json": "75560f6f164c8e9e622b40fbc99b9419246103cb684fe84c730dae27d1c89a83 -> 90ef1a40e5e7fceb6e9cef7282889ce7da16e1f89cba46dc4934b1837cb133c1"
+    }
+  }
+}

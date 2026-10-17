@@ -1,0 +1,83 @@
+{
+  "reviewedAtUTC": "2026-10-16T01:56:05Z",
+  "reviewer": "independent profile/primary and article-body review",
+  "book": "2SA",
+  "entityID": "person:jebusite_748",
+  "decision": "fail",
+  "currentDraftSHA256": "97273d53a05d9c818545a1efeb392f114a79b42adc632415aab87cb07a6b575b",
+  "currentProfilePrettySHA256": "829a9f76a1ce86c8b248a824a9c2540b4e138a9cd3ccfe689e6e85f640e13c4b",
+  "currentEvidenceSHA256": "5b341ea358dcfd52e6587fb57867df447470b41c3d826fcb4bc90ac6aa97b1d9",
+  "fixedWitnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+  "primaryVerses": [
+    {
+      "ref": "2SA5:6",
+      "text": "The king and his men went to Jerusalem against the Jebusites, the inhabitants of the land, who spoke to David, saying, “The blind and the lame will keep you out of here,” thinking, “David can’t come in here.”",
+      "url": "https://ebible.org/engwebp/2SA05.htm#V6",
+      "finding": "Jebusites is explicitly plural and described as inhabitants of Jerusalem; supports collective knownBy/base summary."
+    },
+    {
+      "ref": "2SA5:7",
+      "text": "Nevertheless David took the stronghold of Zion. This is David’s city.",
+      "url": "https://ebible.org/engwebp/2SA05.htm#V7",
+      "finding": "The WEB says David took Zion stronghold. It does not name Jebusites; valid display gate for the linked article introduction, which says conquest was completed by David."
+    },
+    {
+      "ref": "2SA5:8",
+      "text": "David said on that day, “Whoever strikes the Jebusites, let him go up to the watercourse and strike those lame and blind, who are hated by David’s soul.” Therefore they say, “The blind and the lame can’t come into the house.”",
+      "url": "https://ebible.org/engwebp/2SA05.htm#V8",
+      "finding": "Jebusites explicitly plural; fact is correctly gated at this verse."
+    },
+    {
+      "ref": "2SA24:16",
+      "text": "When the angel stretched out his hand toward Jerusalem to destroy it, the LORD relented of the disaster, and said to the angel who destroyed the people, “It is enough. Now withdraw your hand.” The LORD’s angel was by the threshing floor of Araunah the Jebusite.",
+      "url": "https://ebible.org/engwebp/2SA24.htm#V16",
+      "finding": "“the Jebusite” is an individual epithet for Araunah, not a collective-use occurrence."
+    },
+    {
+      "ref": "2SA24:18",
+      "text": "Gad came that day to David and said to him, “Go up, build an altar to the LORD on the threshing floor of Araunah the Jebusite.”",
+      "url": "https://ebible.org/engwebp/2SA24.htm#V18",
+      "finding": "“the Jebusite” again describes Araunah individually; it does not belong in the collective passages."
+    }
+  ],
+  "wikipedia": {
+    "url": "https://en.wikipedia.org/wiki/Jebusites",
+    "title": "Jebusites",
+    "locator": "Introduction, line 143",
+    "actualBodyRead": true,
+    "support": "The page describes Jebusites as a Canaanite tribe inhabiting Jerusalem and explicitly ties the account to Samuel; the same introduction says David completed the conquest, so profile/article link is gated at 2SA5:7. This supports the group connection, not the genealogical ancestor ID in Genesis.",
+    "gate": {
+      "chapter": 5,
+      "verse": 7
+    },
+    "decision": "pass"
+  },
+  "classificationAndGates": {
+    "decision": "pass",
+    "reasonJa": "The profile is an existing ID used as a book-local collective, not a personal Jebusite. It correctly limits passages to 2SA5:6,8 and excludes Araunah’s singular personal epithet at 24:16,18. Base knownBy 5:6 and base prose are supported at first occurrence; later saying fact is gated 5:8."
+  },
+  "sourceAndEvidence": {
+    "decision": "fail",
+    "reasonJa": "The profile contains `wikipedia` and the draft `sources` array contains `wiki-samuel-persons-extra-jebusite_748`, but profile.sourceIds lists only the WEB primary ID. Other profiles in this corpus include the secondary source in profile.sourceIds; this article source is therefore not wired to the profile source list. Add the existing secondary source ID and synchronize profile/evidence SHA, or document the schema rule if secondary sources are intentionally omitted from profile.sourceIds.",
+    "sourceIDs": [
+      "webp-2sa-jebusite_748-5-6"
+    ],
+    "declaredSecondarySourceIDs": [
+      "wiki-samuel-persons-extra-jebusite_748"
+    ],
+    "evidenceDraftSHA": "97273d53a05d9c818545a1efeb392f114a79b42adc632415aab87cb07a6b575b",
+    "evidenceProfileSHA": "829a9f76a1ce86c8b248a824a9c2540b4e138a9cd3ccfe689e6e85f640e13c4b",
+    "evidenceHashSynchronization": {
+      "currentDraftSHA256": "97273d53a05d9c818545a1efeb392f114a79b42adc632415aab87cb07a6b575b",
+      "currentProfileCanonicalSHA256": "829a9f76a1ce86c8b248a824a9c2540b4e138a9cd3ccfe689e6e85f640e13c4b",
+      "profileHashSerialization": "UTF-8 JSON, ensure_ascii=false, indent=2, trailing newline, insertion order",
+      "syncedAtUTC": "2026-10-16T01:53:31Z",
+      "reasonJa": "Added authorized 2SA collective use at 5:6/8; article link is gated to 5:7 because its introduction reveals David’s later conquest."
+    }
+  },
+  "notes": [
+    "Fixed WEB text for all reviewed refs is taken from the pinned samuel2-web-verses inventory.",
+    "Wikipedia body was independently opened and read at the cited introduction.",
+    "No draft/evidence edits made."
+  ]
+}

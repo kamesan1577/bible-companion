@@ -1,0 +1,430 @@
+{
+  "reportType": "independent-review-metadata-delta",
+  "scope": "Correct only the invalid book field in the 9 changed rows of the prior batch08 persons_3 reclosure. No content decisions are changed and no draft/evidence is edited.",
+  "capturedAtUTC": "2026-10-16T11:41:59Z",
+  "priorReport": {
+    "path": "reviews/reclosure-batch08-persons_3-current.json",
+    "sha256": "abf244117cea5c7a05f34581eb93762ef64df1f86f46ed3b7c2221830976cc73",
+    "preservedObject": "preservation/objects/abf244117cea5c7a05f34581eb93762ef64df1f86f46ed3b7c2221830976cc73",
+    "preservationVerified": true
+  },
+  "authorManifest": {
+    "path": "reviews/batch08-persons_3-author-current-after-hiram-root-repair.json",
+    "sha256": "d87d6bc212323ad18b84f93e971161a4a911f4f46446501c5c61c1d2602f5d9e",
+    "assignmentPath": "assignments/batch08/persons_3.json",
+    "assignmentSHA256": "5fb99915e4c053ec4da7228499312580e61ada3b1c42f2b30ea5a2b25b3f16f9"
+  },
+  "rule": "For each changed row, corrected book is taken from the assigned targetKey and BOOK_ID filename, then cross-checked against every primary coordinate and the corresponding fixed WEB witness. The invalid value “person” is a kind, not a book.",
+  "rows": [
+    {
+      "entityID": "person:zophah_3104",
+      "targetKey": "1CH:person:zophah_3104",
+      "draftPath": "drafts/persons_3/1CH_zophah_3104.json",
+      "evidencePath": "evidence/persons_3/1CH_zophah_3104.json",
+      "originalReportBook": "person",
+      "correctedBook": "1CH",
+      "bookDerivation": "assignment book + matching BOOK_ID filename + every cited fixed WEB coordinate book",
+      "assignmentSHA256": "5fb99915e4c053ec4da7228499312580e61ada3b1c42f2b30ea5a2b25b3f16f9",
+      "assignmentID": "person:zophah_3104",
+      "currentDraftSHA256": "fc94d2e388c4949a81c57d624a2f011b1d36b2d9924b22e36b2f526122296996",
+      "currentProfileSHA256": "04f9aaa82f7b0bf778abebc72dd0ba8b6259b61c6bbe96cf0aa8a2e6b5c104f9",
+      "currentEvidenceSHA256": "09888291e53624f05b989fd1d7c79876e5bc193d40ca865aad00b3656b2b245c",
+      "originalRowHashesMatchCurrent": true,
+      "originalDecision": "qualified",
+      "originalDecisionPreserved": true,
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 7:35",
+          "citationURL": "https://ebible.org/engwebp/1CH07.htm#V35",
+          "text": "The sons of Helem his brother: Zophah, Imna, Shelesh, and Amal.",
+          "textSHA256": "43500bc8231fe6ade41701f61c09537e434d135a2e45a76477ebd8b8281ab7f6",
+          "fixedWitnessPath": "inventory/targets/chronicles1-web-verses.json",
+          "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a"
+        },
+        {
+          "ref": "1CH 7:36",
+          "citationURL": "https://ebible.org/engwebp/1CH07.htm#V36",
+          "text": "The sons of Zophah: Suah, Harnepher, Shual, Beri, Imrah,",
+          "textSHA256": "c951845773d61db263365a046b100f09736a0b7e8792b9d6cea3b362b8a04e2a",
+          "fixedWitnessPath": "inventory/targets/chronicles1-web-verses.json",
+          "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a"
+        }
+      ],
+      "originalRowSHA256s": {
+        "draft": "fc94d2e388c4949a81c57d624a2f011b1d36b2d9924b22e36b2f526122296996",
+        "profile": "04f9aaa82f7b0bf778abebc72dd0ba8b6259b61c6bbe96cf0aa8a2e6b5c104f9",
+        "evidence": "09888291e53624f05b989fd1d7c79876e5bc193d40ca865aad00b3656b2b245c"
+      }
+    },
+    {
+      "entityID": "person:ahab_113",
+      "targetKey": "2CH:person:ahab_113",
+      "draftPath": "drafts/persons_3/2CH_ahab_113.json",
+      "evidencePath": "evidence/persons_3/2CH_ahab_113.json",
+      "originalReportBook": "person",
+      "correctedBook": "2CH",
+      "bookDerivation": "assignment book + matching BOOK_ID filename + every cited fixed WEB coordinate book",
+      "assignmentSHA256": "5fb99915e4c053ec4da7228499312580e61ada3b1c42f2b30ea5a2b25b3f16f9",
+      "assignmentID": "person:ahab_113",
+      "currentDraftSHA256": "d3d80edd39a91861abc868560161a563444f0a2b9c6f6d5a21530acfc7354192",
+      "currentProfileSHA256": "a58204e20ee89e95bb6dda3892391b434be641b46891a926ec44b43669dfa0e6",
+      "currentEvidenceSHA256": "2020234ce18ca58d547a1b7bf5d808f8b4fd916fea811c4804ad117decf679cb",
+      "originalRowHashesMatchCurrent": true,
+      "originalDecision": "pass",
+      "originalDecisionPreserved": true,
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 18:1",
+          "citationURL": "https://ebible.org/engwebp/2CH18.htm#V1",
+          "text": "Now Jehoshaphat had riches and honor in abundance; and he allied himself with Ahab.",
+          "textSHA256": "1075d5ac2a267140bdc56b40a6d7e8594ea8775a036818e838add8e50289cb1c",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        },
+        {
+          "ref": "2CH 18:2",
+          "citationURL": "https://ebible.org/engwebp/2CH18.htm#V2",
+          "text": "After some years, he went down to Ahab to Samaria. Ahab killed sheep and cattle for him in abundance, and for the people who were with him, and moved him to go up with him to Ramoth Gilead.",
+          "textSHA256": "d33187f9c9f0f7e3844715e7327f41942e56e30c7bf52a3f3d4be0dd899a9659",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        }
+      ],
+      "originalRowSHA256s": {
+        "draft": "d3d80edd39a91861abc868560161a563444f0a2b9c6f6d5a21530acfc7354192",
+        "profile": "a58204e20ee89e95bb6dda3892391b434be641b46891a926ec44b43669dfa0e6",
+        "evidence": "2020234ce18ca58d547a1b7bf5d808f8b4fd916fea811c4804ad117decf679cb"
+      }
+    },
+    {
+      "entityID": "person:amoz_240",
+      "targetKey": "2CH:person:amoz_240",
+      "draftPath": "drafts/persons_3/2CH_amoz_240.json",
+      "evidencePath": "evidence/persons_3/2CH_amoz_240.json",
+      "originalReportBook": "person",
+      "correctedBook": "2CH",
+      "bookDerivation": "assignment book + matching BOOK_ID filename + every cited fixed WEB coordinate book",
+      "assignmentSHA256": "5fb99915e4c053ec4da7228499312580e61ada3b1c42f2b30ea5a2b25b3f16f9",
+      "assignmentID": "person:amoz_240",
+      "currentDraftSHA256": "f004c5afa29f4c05043f1351598d9085b038a032786be4e43cbbf2efc11ad056",
+      "currentProfileSHA256": "3490b99547e4e7a889c3d7ba8c2e886d07529144b5e348954e88b634d2239686",
+      "currentEvidenceSHA256": "1c1afe3e7120b249c3280c9ec72c56d1a54a106bd1fdd271c814b06519d7862b",
+      "originalRowHashesMatchCurrent": true,
+      "originalDecision": "pass",
+      "originalDecisionPreserved": true,
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 26:22",
+          "citationURL": "https://ebible.org/engwebp/2CH26.htm#V22",
+          "text": "Now the rest of the acts of Uzziah, first and last, Isaiah the prophet, the son of Amoz, wrote.",
+          "textSHA256": "f797bf7b58bd8dac2aa77cf123f28486d3c70af0ef0f2fd3667b038fc413a2af",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        },
+        {
+          "ref": "2CH 32:32",
+          "citationURL": "https://ebible.org/engwebp/2CH32.htm#V32",
+          "text": "Now the rest of the acts of Hezekiah and his good deeds, behold, they are written in the vision of Isaiah the prophet, the son of Amoz, in the book of the kings of Judah and Israel.",
+          "textSHA256": "468499b31c3672ab1848de894dab450e76f3a5c5a59e7b2736abff4ef9b473d2",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        }
+      ],
+      "originalRowSHA256s": {
+        "draft": "f004c5afa29f4c05043f1351598d9085b038a032786be4e43cbbf2efc11ad056",
+        "profile": "3490b99547e4e7a889c3d7ba8c2e886d07529144b5e348954e88b634d2239686",
+        "evidence": "1c1afe3e7120b249c3280c9ec72c56d1a54a106bd1fdd271c814b06519d7862b"
+      }
+    },
+    {
+      "entityID": "person:asa_318",
+      "targetKey": "2CH:person:asa_318",
+      "draftPath": "drafts/persons_3/2CH_asa_318.json",
+      "evidencePath": "evidence/persons_3/2CH_asa_318.json",
+      "originalReportBook": "person",
+      "correctedBook": "2CH",
+      "bookDerivation": "assignment book + matching BOOK_ID filename + every cited fixed WEB coordinate book",
+      "assignmentSHA256": "5fb99915e4c053ec4da7228499312580e61ada3b1c42f2b30ea5a2b25b3f16f9",
+      "assignmentID": "person:asa_318",
+      "currentDraftSHA256": "765e8cdf17e02f70983fe2427122408373e522d970af6dcab705ebfaac825b5d",
+      "currentProfileSHA256": "4b856711a25773954e10795caf2372e21d6358b9659a10c47fa05b47aaed0f83",
+      "currentEvidenceSHA256": "eed5ec50e90c62b95f71539e3ee1041e08b0971793a5a0c29c56080b40b3f14e",
+      "originalRowHashesMatchCurrent": true,
+      "originalDecision": "pass",
+      "originalDecisionPreserved": true,
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 14:1",
+          "citationURL": "https://ebible.org/engwebp/2CH14.htm#V1",
+          "text": "So Abijah slept with his fathers, and they buried him in David’s city; and Asa his son reigned in his place. In his days, the land was quiet ten years.",
+          "textSHA256": "c8f65e73e6e514c60b671798924ee97d95dd90eabc2ccd3b90ffea22c26a75d4",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        },
+        {
+          "ref": "2CH 14:2",
+          "citationURL": "https://ebible.org/engwebp/2CH14.htm#V2",
+          "text": "Asa did that which was good and right in the LORD his God’s eyes,",
+          "textSHA256": "9e979aa95d974b4dd51f29b1943dc534019be01152fa18d578be7eb112034a5f",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        }
+      ],
+      "originalRowSHA256s": {
+        "draft": "765e8cdf17e02f70983fe2427122408373e522d970af6dcab705ebfaac825b5d",
+        "profile": "4b856711a25773954e10795caf2372e21d6358b9659a10c47fa05b47aaed0f83",
+        "evidence": "eed5ec50e90c62b95f71539e3ee1041e08b0971793a5a0c29c56080b40b3f14e"
+      }
+    },
+    {
+      "entityID": "person:ephraim_1206",
+      "targetKey": "2CH:person:ephraim_1206",
+      "draftPath": "drafts/persons_3/2CH_ephraim_1206.json",
+      "evidencePath": "evidence/persons_3/2CH_ephraim_1206.json",
+      "originalReportBook": "person",
+      "correctedBook": "2CH",
+      "bookDerivation": "assignment book + matching BOOK_ID filename + every cited fixed WEB coordinate book",
+      "assignmentSHA256": "5fb99915e4c053ec4da7228499312580e61ada3b1c42f2b30ea5a2b25b3f16f9",
+      "assignmentID": "person:ephraim_1206",
+      "currentDraftSHA256": "6d35a22a51907f72a9a62dd85bfdf030ffbdc40ff1d45cb49ae843a495b6a864",
+      "currentProfileSHA256": "14482b59c26b9d9b44b15f59de208a3b3bf9ffc86324f540020bba6ff96b8950",
+      "currentEvidenceSHA256": "91df6ddb2ebe1fdf41afa76b868b6e29b9ba2603360e5756cc2d6f0cb9d26715",
+      "originalRowHashesMatchCurrent": true,
+      "originalDecision": "qualified",
+      "originalDecisionPreserved": true,
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 15:8",
+          "citationURL": "https://ebible.org/engwebp/2CH15.htm#V8",
+          "text": "When Asa heard these words and the prophecy of Oded the prophet, he took courage, and put away the abominations out of all the land of Judah and Benjamin, and out of the cities which he had taken from the hill country of Ephraim; and he renewed the LORD’s altar that was before the LORD’s porch.",
+          "textSHA256": "1410d0a19a441871c4e2f370d4dcf487e4a3d3b3fd87f87df4d057c7e571f000",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        },
+        {
+          "ref": "2CH 15:9",
+          "citationURL": "https://ebible.org/engwebp/2CH15.htm#V9",
+          "text": "He gathered all Judah and Benjamin, and those who lived with them out of Ephraim, Manasseh, and Simeon; for they came to him out of Israel in abundance when they saw that the LORD his God was with him.",
+          "textSHA256": "9bf35230ddeef9b7c9150a0111c0f3445dac68c68b603bd870e6ba9d711f8089",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        },
+        {
+          "ref": "2CH 25:7",
+          "citationURL": "https://ebible.org/engwebp/2CH25.htm#V7",
+          "text": "A man of God came to him, saying, “O king, don’t let the army of Israel go with you, for the LORD is not with Israel, with all the children of Ephraim.",
+          "textSHA256": "3138f5a95c571535dd19cafeb77bb5b95593e65b05d01fd196169df33b30e4de",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        },
+        {
+          "ref": "2CH 28:12",
+          "citationURL": "https://ebible.org/engwebp/2CH28.htm#V12",
+          "text": "Then some of the heads of the children of Ephraim, Azariah the son of Johanan, Berechiah the son of Meshillemoth, Jehizkiah the son of Shallum, and Amasa the son of Hadlai, stood up against those who came from the war,",
+          "textSHA256": "283310366f62c5a76c9d0caba0bc23dbf6eb27c5d03f83ed39457bbaea0c19b9",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        }
+      ],
+      "originalRowSHA256s": {
+        "draft": "6d35a22a51907f72a9a62dd85bfdf030ffbdc40ff1d45cb49ae843a495b6a864",
+        "profile": "14482b59c26b9d9b44b15f59de208a3b3bf9ffc86324f540020bba6ff96b8950",
+        "evidence": "91df6ddb2ebe1fdf41afa76b868b6e29b9ba2603360e5756cc2d6f0cb9d26715"
+      }
+    },
+    {
+      "entityID": "person:hezekiah_1512",
+      "targetKey": "2CH:person:hezekiah_1512",
+      "draftPath": "drafts/persons_3/2CH_hezekiah_1512.json",
+      "evidencePath": "evidence/persons_3/2CH_hezekiah_1512.json",
+      "originalReportBook": "person",
+      "correctedBook": "2CH",
+      "bookDerivation": "assignment book + matching BOOK_ID filename + every cited fixed WEB coordinate book",
+      "assignmentSHA256": "5fb99915e4c053ec4da7228499312580e61ada3b1c42f2b30ea5a2b25b3f16f9",
+      "assignmentID": "person:hezekiah_1512",
+      "currentDraftSHA256": "07aaaf3d4a2ca74f21f11267c67937af444a9a03bb0c63a414cc6e609ab38c75",
+      "currentProfileSHA256": "b8d4f5a9c60ba3a2c07c1348041759391d223189f727b13e4f4ffe5e8c7c57b7",
+      "currentEvidenceSHA256": "338b13c978f389f21260a787136a18fe64a02eaf1432abeae1f54207aed897a9",
+      "originalRowHashesMatchCurrent": true,
+      "originalDecision": "pass",
+      "originalDecisionPreserved": true,
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 28:27",
+          "citationURL": "https://ebible.org/engwebp/2CH28.htm#V27",
+          "text": "Ahaz slept with his fathers, and they buried him in the city, even in Jerusalem, because they didn’t bring him into the tombs of the kings of Israel; and Hezekiah his son reigned in his place.",
+          "textSHA256": "204d569b5bddfc20d2c5bfe430151d2975e093633e9829e9c8a5b9f6c40934b2",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        },
+        {
+          "ref": "2CH 29:1",
+          "citationURL": "https://ebible.org/engwebp/2CH29.htm#V1",
+          "text": "Hezekiah began to reign when he was twenty-five years old, and he reigned twenty-nine years in Jerusalem. His mother’s name was Abijah, the daughter of Zechariah.",
+          "textSHA256": "d18ee365ef97cd577d18a1d05ef8670ee048b4d1a8b6083db5a659ea0ddb9304",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        }
+      ],
+      "originalRowSHA256s": {
+        "draft": "07aaaf3d4a2ca74f21f11267c67937af444a9a03bb0c63a414cc6e609ab38c75",
+        "profile": "b8d4f5a9c60ba3a2c07c1348041759391d223189f727b13e4f4ffe5e8c7c57b7",
+        "evidence": "338b13c978f389f21260a787136a18fe64a02eaf1432abeae1f54207aed897a9"
+      }
+    },
+    {
+      "entityID": "person:hilkiah_1524",
+      "targetKey": "2CH:person:hilkiah_1524",
+      "draftPath": "drafts/persons_3/2CH_hilkiah_1524.json",
+      "evidencePath": "evidence/persons_3/2CH_hilkiah_1524.json",
+      "originalReportBook": "person",
+      "correctedBook": "2CH",
+      "bookDerivation": "assignment book + matching BOOK_ID filename + every cited fixed WEB coordinate book",
+      "assignmentSHA256": "5fb99915e4c053ec4da7228499312580e61ada3b1c42f2b30ea5a2b25b3f16f9",
+      "assignmentID": "person:hilkiah_1524",
+      "currentDraftSHA256": "ded15e68cf3cf43f5da76c9e6b1c49f5debf11b62d38d6e9c128b8d69b3cecbe",
+      "currentProfileSHA256": "c67e7761ef20db61a946fe96dd5e42cc6e8a0193fc9087fb61c505ee8c3cc21f",
+      "currentEvidenceSHA256": "d02400dd7c5d62ce99bf68caa83caa18b06aae7b2c344be2a232087fa2e30421",
+      "originalRowHashesMatchCurrent": true,
+      "originalDecision": "pass",
+      "originalDecisionPreserved": true,
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 34:9",
+          "citationURL": "https://ebible.org/engwebp/2CH34.htm#V9",
+          "text": "They came to Hilkiah the high priest and delivered the money that was brought into God’s house, which the Levites, the keepers of the threshold, had gathered from the hands of Manasseh, Ephraim, of all the remnant of Israel, of all Judah and Benjamin, and of the inhabitants of Jerusalem.",
+          "textSHA256": "4aa03a8ec9bf5fd72f26e869464a3fe356cf0f678c46a2cf5b5a069e8a87ca56",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        },
+        {
+          "ref": "2CH 34:14",
+          "citationURL": "https://ebible.org/engwebp/2CH34.htm#V14",
+          "text": "When they brought out the money that was brought into the LORD’s house, Hilkiah the priest found the book of the LORD’s law given by Moses.",
+          "textSHA256": "a04a562f88d51a1a23f7e65082a7d1f8f45724c902023b0ee432d6ace60b829d",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        },
+        {
+          "ref": "2CH 34:15",
+          "citationURL": "https://ebible.org/engwebp/2CH34.htm#V15",
+          "text": "Hilkiah answered Shaphan the scribe, “I have found the book of the law in the LORD’s house.” So Hilkiah delivered the book to Shaphan.",
+          "textSHA256": "d9acea81c397bb94be7f2bb52c828d1d3488c9842c51015f9d65ae41f4c36154",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        }
+      ],
+      "originalRowSHA256s": {
+        "draft": "ded15e68cf3cf43f5da76c9e6b1c49f5debf11b62d38d6e9c128b8d69b3cecbe",
+        "profile": "c67e7761ef20db61a946fe96dd5e42cc6e8a0193fc9087fb61c505ee8c3cc21f",
+        "evidence": "d02400dd7c5d62ce99bf68caa83caa18b06aae7b2c344be2a232087fa2e30421"
+      }
+    },
+    {
+      "entityID": "person:hiram_1533",
+      "targetKey": "2CH:person:hiram_1533",
+      "draftPath": "drafts/persons_3/2CH_hiram_1533.json",
+      "evidencePath": "evidence/persons_3/2CH_hiram_1533.json",
+      "originalReportBook": "person",
+      "correctedBook": "2CH",
+      "bookDerivation": "assignment book + matching BOOK_ID filename + every cited fixed WEB coordinate book",
+      "assignmentSHA256": "5fb99915e4c053ec4da7228499312580e61ada3b1c42f2b30ea5a2b25b3f16f9",
+      "assignmentID": "person:hiram_1533",
+      "currentDraftSHA256": "db28f40f6bbf32d13fe32d2d16a7ba8a40cfb79add060e4e118f2617afb91d58",
+      "currentProfileSHA256": "bc24aabbeff7b19d2bbf7e065f1a933aaaab2c7c657ba2949c8249899b519c46",
+      "currentEvidenceSHA256": "60470cfb435b0b358e4cb5e16e66197dd038cb7b80e9c33f5a31ffcaa5b012b4",
+      "originalRowHashesMatchCurrent": false,
+      "originalDecision": "fail",
+      "originalDecisionPreserved": true,
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 4:11",
+          "citationURL": "https://ebible.org/engwebp/2CH04.htm#V11",
+          "text": "Huram made the pots, the shovels, and the basins. So Huram finished doing the work that he did for King Solomon in God’s house:",
+          "textSHA256": "ba7dafaaed0b257e9999f2bfecf2c39d7ec0aa7969555314d39c1a7ac4c2fe2b",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        },
+        {
+          "ref": "2CH 4:16",
+          "citationURL": "https://ebible.org/engwebp/2CH04.htm#V16",
+          "text": "Huram-abi also made the pots, the shovels, the forks, and all its vessels for King Solomon, for the LORD’s house, of bright bronze.",
+          "textSHA256": "9f327c5c61b6e810013aa4627c5601bc79e325a202311007df156bb26eba294e",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        }
+      ],
+      "originalRowSHA256s": {
+        "draft": "3926d7f7f3e47a47427442c6f6c6514c9495be9a13054be3fd5f957387dfdb8d",
+        "profile": "1cc4e8dc39fd05d649727fdc491146890e356f096e26acbd723bbce1c9ed5d3b",
+        "evidence": "cb6fdfc18a7e993bfdb772c4bae1b355e275cc330f6120c3c4056bc3899661d4"
+      },
+      "currentStatus": "old fail decision not cleared by this metadata-only correction; superseded for current Hiram content by reviews/reclosure-hiram1533-root-repair-delta.json"
+    },
+    {
+      "entityID": "person:holy_spirit_7400",
+      "targetKey": "2CH:person:holy_spirit_7400",
+      "draftPath": "drafts/persons_3/2CH_holy_spirit_7400.json",
+      "evidencePath": "evidence/persons_3/2CH_holy_spirit_7400.json",
+      "originalReportBook": "person",
+      "correctedBook": "2CH",
+      "bookDerivation": "assignment book + matching BOOK_ID filename + every cited fixed WEB coordinate book",
+      "assignmentSHA256": "5fb99915e4c053ec4da7228499312580e61ada3b1c42f2b30ea5a2b25b3f16f9",
+      "assignmentID": "person:holy_spirit_7400",
+      "currentDraftSHA256": "5cdac065fbaa2a0dbe342f0b6e5b2a37d1e7fac7eb56818b5254415f4a980d20",
+      "currentProfileSHA256": "f03a7438ed3f78a3db91f1b62100f7ae0ea31149c3646d3816b17840c43157c1",
+      "currentEvidenceSHA256": "984a8f54beb589c19b9c61f11fcad2d65d8c172cae0bf714c0d4d4413fc76e71",
+      "originalRowHashesMatchCurrent": true,
+      "originalDecision": "qualified",
+      "originalDecisionPreserved": true,
+      "primaryWitnesses": [
+        {
+          "ref": "2CH 15:1",
+          "citationURL": "https://ebible.org/engwebp/2CH15.htm#V1",
+          "text": "The Spirit of God came on Azariah the son of Oded.",
+          "textSHA256": "9f269f1b3c77f560a7b44c78be50c05800db6cfce23588720325d5b99a678353",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        },
+        {
+          "ref": "2CH 18:23",
+          "citationURL": "https://ebible.org/engwebp/2CH18.htm#V23",
+          "text": "Then Zedekiah the son of Chenaanah came near, and struck Micaiah on the cheek, and said, “Which way did the LORD’s Spirit go from me to speak to you?”",
+          "textSHA256": "47f32471b240ee58052682954d14049770ec11842a895e7e60f9da83f72d9838",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        },
+        {
+          "ref": "2CH 20:14",
+          "citationURL": "https://ebible.org/engwebp/2CH20.htm#V14",
+          "text": "Then the LORD’s Spirit came on Jahaziel the son of Zechariah, the son of Benaiah, the son of Jeiel, the son of Mattaniah, the Levite, of the sons of Asaph, in the middle of the assembly;",
+          "textSHA256": "757baa3b6b7e56a4e8c275b552e5589505da2904d11731b8e635b9dd164b1d81",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        },
+        {
+          "ref": "2CH 24:20",
+          "citationURL": "https://ebible.org/engwebp/2CH24.htm#V20",
+          "text": "The Spirit of God came on Zechariah the son of Jehoiada the priest; and he stood above the people, and said to them, “God says, ‘Why do you disobey the LORD’s commandments, so that you can’t prosper? Because you have forsaken the LORD, he has also forsaken you.’”",
+          "textSHA256": "457e04c964374aedf4797b3b70570d281b7410bddd4a024c85c3d4b15e2ed0f1",
+          "fixedWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "fixedWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+        }
+      ],
+      "originalRowSHA256s": {
+        "draft": "5cdac065fbaa2a0dbe342f0b6e5b2a37d1e7fac7eb56818b5254415f4a980d20",
+        "profile": "f03a7438ed3f78a3db91f1b62100f7ae0ea31149c3646d3816b17840c43157c1",
+        "evidence": "984a8f54beb589c19b9c61f11fcad2d65d8c172cae0bf714c0d4d4413fc76e71"
+      }
+    }
+  ],
+  "counts": {
+    "correctedBookMetadataRows": 9,
+    "1CH": 1,
+    "2CH": 8,
+    "decisionChanges": 0,
+    "draftOrEvidenceEdits": 0
+  },
+  "hiramHandling": "The old reclosure row is bound to pre-root-repair bytes and its prior fail is not promoted. The current Hiram content is covered by reviews/reclosure-hiram1533-root-repair-delta.json; this metadata delta only corrects its old row book to 2CH.",
+  "publicationApproved": false
+}

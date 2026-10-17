@@ -1,0 +1,69 @@
+{
+  "books": [
+    "1CH",
+    "2CH"
+  ],
+  "assignmentKinds": [
+    "persons",
+    "places"
+  ],
+  "method": "Greedy load balancing by raw candidate occurrence count within each kind; assignment key is book,id, so same ID in 1CH and 2CH remains two separate records.",
+  "assignmentSummary": {
+    "persons_1": {
+      "records": 527,
+      "books": {
+        "1CH": 443,
+        "2CH": 84
+      },
+      "candidateOccurrenceCount": 1233,
+      "uniqueBookIdKeys": true
+    },
+    "persons_2": {
+      "records": 533,
+      "books": {
+        "1CH": 442,
+        "2CH": 91
+      },
+      "candidateOccurrenceCount": 1233,
+      "uniqueBookIdKeys": true
+    },
+    "persons_3": {
+      "records": 534,
+      "books": {
+        "1CH": 442,
+        "2CH": 92
+      },
+      "candidateOccurrenceCount": 1233,
+      "uniqueBookIdKeys": true
+    },
+    "places_1": {
+      "records": 82,
+      "books": {
+        "1CH": 52,
+        "2CH": 30
+      },
+      "candidateOccurrenceCount": 203,
+      "uniqueBookIdKeys": true
+    },
+    "places_2": {
+      "records": 101,
+      "books": {
+        "1CH": 62,
+        "2CH": 39
+      },
+      "candidateOccurrenceCount": 203,
+      "uniqueBookIdKeys": true
+    },
+    "places_3": {
+      "records": 102,
+      "books": {
+        "1CH": 60,
+        "2CH": 42
+      },
+      "candidateOccurrenceCount": 203,
+      "uniqueBookIdKeys": true
+    }
+  },
+  "allTargetsAssignedExactlyOnce": true,
+  "reviewStatus": "initial assignment only; identity, text links, same-name, collective, title and occurrence semantics are unverified."
+}

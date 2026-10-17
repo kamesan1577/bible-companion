@@ -1,0 +1,75 @@
+{
+  "reportType": "independent-current-profile-reclosure",
+  "book": "2KI",
+  "scope": [
+    "person:israel_682",
+    "person:jehoram_803"
+  ],
+  "checkedAtUTC": "2026-10-16T03:45:11+00:00",
+  "records": [
+    {
+      "entityID": "person:israel_682",
+      "draftPath": "drafts/persons_1/2KI_person_israel_682.json",
+      "currentDraftSHA256": "26719a6180ceefb6c7f1338b156548e8822eb7214754f95749addfff97965f0a",
+      "profileSHA256": "2a1e0de4bbcd6b1bb7a47d916580ea001e48b9fbf7eff9f09b418238ec172526",
+      "evidencePath": "evidence/persons_1/2KI_person_israel_682-sources.json",
+      "currentEvidenceSHA256": "e42a5b088b0a909f9181d2e4749a5be70f5ffd4f6c03b79ac116cd4f23462ba6",
+      "evidenceBoundDraftSHA256": "26719a6180ceefb6c7f1338b156548e8822eb7214754f95749addfff97965f0a",
+      "evidenceBoundProfileSHA256": "2a1e0de4bbcd6b1bb7a47d916580ea001e48b9fbf7eff9f09b418238ec172526",
+      "verdict": "qualified",
+      "checks": [
+        {
+          "ref": "2KI 2:12",
+          "field": "summaryJa/identityType",
+          "verdict": "qualified",
+          "evidence": "Elisha addresses Elijah as “my father, my father” and calls him “the chariots of Israel and its horsemen”; this is a metaphorical expression. The link may refer to Israel’s collective military protection, but identifying it as a plain collective ethnonym is broader than the phrase alone."
+        },
+        {
+          "ref": "2KI 17:23",
+          "field": "fact/sourceIds",
+          "verdict": "pass",
+          "evidence": "Current fact at 2KI17:23 has primary WEB source webp-kings-2ki-israel_682-17-23 and evidence is synchronized."
+        },
+        {
+          "field": "Wikipedia",
+          "verdict": "qualified",
+          "evidence": "Current article is Israelites at the appropriate collective-level relation; note describes the article as related context and does not claim individual identity."
+        }
+      ]
+    },
+    {
+      "entityID": "person:jehoram_803",
+      "draftPath": "drafts/persons_1/2KI_person_jehoram_803.json",
+      "currentDraftSHA256": "816211c6966f1799d18a9de326b74b72cc0aac7f1329ed3cda38bc72ca46bc79",
+      "profileSHA256": "913f3d9ad90b5508f11a16e250a3708e52667ddba131c94cab8b4d3a304974d3",
+      "evidencePath": "evidence/persons_1/2KI_person_jehoram_803-sources.json",
+      "currentEvidenceSHA256": "0c6dc7bf00b9ed73b065cafc17cdea665b6034de2a33a035346f0925d42a71fd",
+      "evidenceBoundDraftSHA256": "816211c6966f1799d18a9de326b74b72cc0aac7f1329ed3cda38bc72ca46bc79",
+      "evidenceBoundProfileSHA256": "913f3d9ad90b5508f11a16e250a3708e52667ddba131c94cab8b4d3a304974d3",
+      "verdict": "pass",
+      "checks": [
+        {
+          "ref": "2KI 1:17",
+          "field": "subtitleJa/summaryJa/identityNoteJa",
+          "verdict": "pass",
+          "evidence": "Current summary is limited to 2KI1:17 and no longer imports the Israel king comparison. Fixed WEB 1:17 names Jehoram son of Jehoshaphat as Judah’s king."
+        },
+        {
+          "ref": "2KI 8:17",
+          "field": "facts[knownBy=8:17].sourceIds",
+          "verdict": "pass",
+          "evidence": "8:17 fact has a primary source object and sourceId; source gate is now satisfied."
+        },
+        {
+          "field": "Wikipedia",
+          "verdict": "qualified",
+          "evidence": "Current article note is limited to the Judah king and name form; identity/article locator evidence is preserved from the actual article read, but its profile knownBy is 8:16 even though primary identity is already explicit at 1:17. No false same-name comparison remains in the note."
+        }
+      ]
+    }
+  ],
+  "fixedWitnessPath": "inventory/targets/kings2-web-verses.json",
+  "fixedWitnessSHA256": "d620db07b9f9b003053bcc0fb38fee21e6d80aff1c1b51760717e03c0127a6dd",
+  "overall": "qualified",
+  "noteJa": "Jehoram 803の2件の前回failは現在SHAで閉鎖。Israel 682は2:12の比喩表現と集団IDの意味範囲に留保が残るためqualified。"
+}

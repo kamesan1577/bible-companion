@@ -1,0 +1,154 @@
+{
+  "reportType": "independent-evidence-only-reclosure-delta",
+  "capturedAtUTC": "2026-10-16T11:51:42Z",
+  "scope": "1CH person:ishi_626 evidence citation split only. Do not reinterpret identity, occurrence set, Wikipedia status, or raw/profile source catalog.",
+  "priorQualifiedReview": {
+    "path": "reviews/root-projected-primary-context-reclosure-batch04-persons_1.json",
+    "sha256": "bc2a05a14510fa2dfe1b7e23ef40e3fbc31f72ad07709799e556f4b5f97fc190",
+    "rowDecision": "qualified",
+    "priorCurrentDraftSHA256": "26ab1bcc481ca29cb7ddb5c1b21357a6d84cf86d865eb3e2a3794cb0a7fba205",
+    "priorCurrentEvidenceSHA256": "f5c266c860ed15ec22e288ebe854cc3d4e67addef6b6f5a453aac001d447847a",
+    "previousEvidenceObjectPreserved": true,
+    "previousEvidenceSHA256": "f5c266c860ed15ec22e288ebe854cc3d4e67addef6b6f5a453aac001d447847a"
+  },
+  "authorEvidenceSplitLog": {
+    "path": "evidence/persons_1/root-author-split-ishi-context-citations.json",
+    "sha256": "1e4fe75b3d590afaacb44c7d56ee42ecd639c37a95b5438ce0f45b2b7735b872",
+    "beforeEvidenceSHA256": "f5c266c860ed15ec22e288ebe854cc3d4e67addef6b6f5a453aac001d447847a",
+    "currentEvidenceSHA256": "3a1a64c65cc2dcace3fa32811f07610836b4b28ad9f2c87cdafaaa2efa274674",
+    "currentDraftSHA256": "26ab1bcc481ca29cb7ddb5c1b21357a6d84cf86d865eb3e2a3794cb0a7fba205"
+  },
+  "currentBindings": {
+    "draftPath": "drafts/persons_1/1CH_ishi_626.json",
+    "draftSHA256": "26ab1bcc481ca29cb7ddb5c1b21357a6d84cf86d865eb3e2a3794cb0a7fba205",
+    "profileSHA256": "42bf27f7e4038310194bfd25da8cf3bf1639e9be0ce9a7f2314b7e81f4241739",
+    "evidencePath": "evidence/persons_1/1CH_ishi_626-sources.json",
+    "evidenceSHA256": "3a1a64c65cc2dcace3fa32811f07610836b4b28ad9f2c87cdafaaa2efa274674",
+    "evidenceDraftSHA256": "26ab1bcc481ca29cb7ddb5c1b21357a6d84cf86d865eb3e2a3794cb0a7fba205",
+    "evidenceProfileSHA256": "42bf27f7e4038310194bfd25da8cf3bf1639e9be0ce9a7f2314b7e81f4241739",
+    "draftUnchanged": true,
+    "profileHashMatchesEvidence": true,
+    "evidenceDraftBindingMatches": true
+  },
+  "fixedWitness": {
+    "path": "inventory/targets/chronicles1-web-verses.json",
+    "sha256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+    "version": "webp-usfx-2026-10-13-35a6adf626e5",
+    "references": [
+      {
+        "ref": "1CH 4:20",
+        "sourceID": "context-1ch-ishi-name-scan",
+        "citationURL": "https://ebible.org/engwebp/1CH04.htm#V20",
+        "fixedText": "The sons of Shimon: Amnon, Rinnah, Ben Hanan, and Tilon. The sons of Ishi: Zoheth, and Ben Zoheth.",
+        "textSHA256": "4b2998168c804a4f2aafb56c4720e8a1816903b9e389456b0baff46af6d3f86e",
+        "exactInFixedWitness": true
+      },
+      {
+        "ref": "1CH 4:42",
+        "sourceID": "reader-context-person-ishi_626-1ch-4-42",
+        "citationURL": "https://ebible.org/engwebp/1CH04.htm#V42",
+        "fixedText": "Some of them, even of the sons of Simeon, five hundred men, went to Mount Seir, having for their captains Pelatiah, Neariah, Rephaiah, and Uzziel, the sons of Ishi.",
+        "textSHA256": "e107a3a7ac8f0711fdd7d5d6ba5590b6ae078c01379c4c52086b4b831a7aa0d6",
+        "exactInFixedWitness": true
+      },
+      {
+        "ref": "1CH 5:24",
+        "sourceID": "webp-1ch-ishi_626-5-24",
+        "citationURL": "https://ebible.org/engwebp/1CH05.htm#V24",
+        "fixedText": "These were the heads of their fathers’ houses: Epher, Ishi, Eliel, Azriel, Jeremiah, Hodaviah, and Jahdiel—mighty men of valor, famous men, heads of their fathers’ houses.",
+        "textSHA256": "aabb5c82c3e2a86bb036d8594cd88bee1afd02ac7e2596052a4c6c38644c7c67",
+        "exactInFixedWitness": true
+      }
+    ]
+  },
+  "assessment": {
+    "evidenceSplit": "PASS: former combined scan that embedded the 4:42 citation/text inside a 4:20 record is now two exact source records with matching verse-specific URLs and text hashes. Neither text is a fabricated paraphrase or mixed-verse payload.",
+    "4_20": "The sons of Ishi are named in a Shimon genealogy; this supports the distinct-name comparison only, not the Manasseh Ishi identity.",
+    "4_42": "The verse explicitly places Ishi among the sons of Simeon and names his sons as captains. This is a separate namesake/context, and the corrected evidence accurately quotes the complete verse.",
+    "5_24": "The profile subject Ishi appears among fathers’ house heads in the Manasseh half-tribe context; this remains the sole runtime occurrence for this ID.",
+    "runtimeV16": {
+      "path": "candidate/apps/ios/Sources/Core/Resources/entity-profiles-1CH.json",
+      "sha256": "500626f06222c2d7b2c20decec1b4970fd58a279a48a89c83eb9adda052422b7",
+      "profileId": "person:ishi_626",
+      "knownBy": {
+        "chapter": 5,
+        "verse": 24
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 5,
+            "verse": 24
+          },
+          "end": {
+            "chapter": 5,
+            "verse": 24
+          }
+        }
+      ],
+      "runtimeOccurrences": [
+        {
+          "entityID": "person:ishi_626",
+          "chapter": 5,
+          "verse": 24,
+          "directlyNamed": true
+        }
+      ],
+      "sourceIds": [
+        "1CH-person-ishi_626-webp-1ch-ishi_626-5-24",
+        "1CH-person-ishi_626-reader-context-person-ishi_626-1ch-4-42"
+      ],
+      "wikipedia": null,
+      "finding": "Runtime includes Ishi as the 1CH 5:24 person only; the 4:42 source is retained as support for the same-name reader note, not merged as an occurrence. The linked Wikipedia section is withheld in this runtime view."
+    },
+    "decision": "qualified",
+    "runtimeDisposition": "primary-only-display-supported",
+    "decisionChange": false,
+    "reasonJa": "証拠引用と座標の対応は修復されました。4:42はシメオン系譜の別のイシを示し、5:24のマナセ系譜の人物と同一視しません。修復はevidenceのみで、人物同定の新規承認ではないためqualifiedを維持します。",
+    "openIssue": "No content/identity issue was resolved by this evidence-only split; the preexisting identity qualification remains. No new occurrence is adopted.",
+    "draftOrProfileEditedByReviewer": false,
+    "runtimeOrResourceEdited": false,
+    "publicationApproved": false,
+    "runtimeDispositionRebind": {
+      "previousEvidenceSHA256": "f5c266c860ed15ec22e288ebe854cc3d4e67addef6b6f5a453aac001d447847a",
+      "currentEvidenceSHA256": "3a1a64c65cc2dcace3fa32811f07610836b4b28ad9f2c87cdafaaa2efa274674",
+      "draftSHA256Matches": true,
+      "profileSHA256Matches": true,
+      "retainedReviewDecision": "qualified",
+      "retainedPrimaryOnlyDisposition": "primary-only-display-supported",
+      "secondaryDisposition": "withhold-Wikipedia-and-other-secondary-links",
+      "newIdentityApproval": false
+    }
+  },
+  "priorRuntimeDisposition": {
+    "path": "reviews/runtime-disposition-primary-context-citations-delta.json",
+    "sha256": "9d73179eb4a9d25c739931c0b06fd97df815df7865f1ed1485be479d78153b06",
+    "row": {
+      "book": "1CH",
+      "entityID": "person:ishi_626",
+      "priorGroup": "batch04-persons_1",
+      "draftPath": "drafts/persons_1/1CH_ishi_626.json",
+      "draftSHA256": "26ab1bcc481ca29cb7ddb5c1b21357a6d84cf86d865eb3e2a3794cb0a7fba205",
+      "profileCanonicalSHA256": "42bf27f7e4038310194bfd25da8cf3bf1639e9be0ce9a7f2314b7e81f4241739",
+      "evidencePath": "evidence/persons_1/1CH_ishi_626-sources.json",
+      "evidenceSHA256": "f5c266c860ed15ec22e288ebe854cc3d4e67addef6b6f5a453aac001d447847a",
+      "retainedReviewDecision": "qualified",
+      "primaryOnlyDisposition": "primary-only-display-supported",
+      "allowReaderFieldsSupportedByPrimary": true,
+      "primaryCitationSourceIDs": [
+        "reader-context-person-ishi_626-1ch-4-42"
+      ],
+      "selectedEdgesToRecompute": 1,
+      "secondaryDisposition": "withhold-Wikipedia-and-other-secondary-links",
+      "publicationApproved": false,
+      "reviewBasisJa": "4:42 names Ishi as father of Simeonite captains; 5:24 lists Ishi among the heads of fathers’ houses in a different genealogical context. The source texts support the namesake distinction as phrased; retain qualified."
+    },
+    "bindingComparison": "The prior runtime disposition is bound to the same exact draft SHA and profile canonical SHA, with only its evidence SHA different. Current evidence rebind is exact at 3a1a64c65cc2dcace3fa32811f07610836b4b28ad9f2c87cdafaaa2efa274674. Retain its qualified / primary-only-display-supported status; do not infer an identity promotion."
+  },
+  "priorDeltaReportBytes": {
+    "sha256": "2a93121cb3d7bf62bfb493ef3467c97b6151f0166866635be51b2a7da6c404e1",
+    "preservedObject": "preservation/objects/2a93121cb3d7bf62bfb493ef3467c97b6151f0166866635be51b2a7da6c404e1",
+    "bytesPreserved": true
+  }
+}

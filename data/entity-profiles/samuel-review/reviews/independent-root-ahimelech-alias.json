@@ -1,0 +1,79 @@
+{
+  "reviewType": "independent-primary-identity-adjudication",
+  "scope": "Read-only independent check of the root proposal to map 1SA person:ahimelech_149 to the 1SA canonical person:ahimelech_126, while retaining separate 1SA person:ahimelech_148 (the Hittite) and not merging the 2SA person:ahimelech_149 record.",
+  "reviewedAtUTC": "2026-10-16T01:42:39Z",
+  "inputs": {
+    "canonical_1sa": {
+      "path": "drafts/persons_1/1SA_ahimelech_126.json",
+      "sha256": "a32972177c6738f1178a3bef5d26f9ed583f6bf5b4023e67cbc484ff9fb024d2",
+      "profileSHA256": "f7fc4399ec9dbfc06dc15695ce47ddf918d1e7ca13564e0d2cc5088bd0891c6b"
+    },
+    "duplicate_1sa": {
+      "path": "drafts/persons_3/1SA_ahimelech_149.json",
+      "sha256": "a9a2085ee1b8815b35a0b0df21df10402622c11fee6ec146e808180a6bcaa4d5",
+      "profileSHA256": "4ad8ab7f8a3227dbc58f2335ccb9f1d8d061bac419ef178ccc429921dd116030"
+    },
+    "hittite_1sa": {
+      "path": "drafts/persons_2/1SA_person_ahimelech_148.json",
+      "sha256": "40f05d66fdbb63ac8707a9a79e5ba002aee13fd8fd915a04ef422ed88608026f",
+      "profileSHA256": "386dbf29064000512939a92ba3b4796dbf94c36ebe487ae7edd8944b0ce1768f"
+    },
+    "sameid_2sa": {
+      "path": "drafts/persons_3/2SA_ahimelech_149.json",
+      "sha256": "ad634948e28779176f281df8516c97f9bc173fc97988745ee9f501bfa361dc44",
+      "profileSHA256": "e7d710d98994fe0718bcc61bd135cf1b233248e659c2516e3c65c1686fe668c0"
+    },
+    "root_decision": {
+      "path": "reviews/root-integration-decisions.json",
+      "sha256": "8f00a7bebc8526568598b7dbdade62ff046fb0f11b732408bc6d9c21788582a8"
+    },
+    "fixed_1sa": {
+      "path": "inventory/targets/samuel1-web-verses.json",
+      "sha256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab"
+    },
+    "fixed_2sa": {
+      "path": "inventory/targets/samuel2-web-verses.json",
+      "sha256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2"
+    }
+  },
+  "decisions": [
+    {
+      "book": "1SA",
+      "fromID": "person:ahimelech_149",
+      "toID": "person:ahimelech_126",
+      "decision": "accept",
+      "reasonJa": "1SA21:1はノブでダビデを迎える祭司アヒメレクを名指す。p1のID126とp3のID149は同一節・同一場面・同一のノブ祭司を別々に説明し、いずれも後続1SA22:20のアビヤタルの父である。重複カードを同一書内で統合する根拠がある。固定WEB 22:20も「アヒメレクの子アビヤタル」と記す。",
+      "supportingRefs": [
+        "1SA 21:1",
+        "1SA 22:20"
+      ],
+      "canonicalDraftSHA256": "a32972177c6738f1178a3bef5d26f9ed583f6bf5b4023e67cbc484ff9fb024d2",
+      "duplicateDraftSHA256": "a9a2085ee1b8815b35a0b0df21df10402622c11fee6ec146e808180a6bcaa4d5"
+    },
+    {
+      "book": "1SA",
+      "fromID": "person:ahimelech_148",
+      "toID": null,
+      "decision": "reject-alias",
+      "reasonJa": "1SA26:6はアヒメレクを「ヒッタイト人」と明示し、サウルの陣へ行く同行者を問う場面に置く。1SA21:1のノブ祭司とは出自と場面が異なり、同名だけでは同一人物にできない。現稿の分離は維持。",
+      "supportingRefs": [
+        "1SA 21:1",
+        "1SA 26:6"
+      ],
+      "draftSHA256": "40f05d66fdbb63ac8707a9a79e5ba002aee13fd8fd915a04ef422ed88608026f"
+    },
+    {
+      "book": "2SA",
+      "fromID": "person:ahimelech_149",
+      "toID": "person:ahimelech_126",
+      "decision": "reject-alias-across-book",
+      "reasonJa": "2SA8:17はアヒメレクをアビヤタルの子とし、1SAのノブ祭司はアビヤタルの父である。親子関係が逆向きで、2SA本文単独では同一人物・誤記・別人のどれかを決められない。2SA稿は別候補のまま残し、1SA内統合を2SAへ波及させない。",
+      "supportingRefs": [
+        "1SA 22:20",
+        "2SA 8:17"
+      ],
+      "draftSHA256": "ad634948e28779176f281df8516c97f9bc173fc97988745ee9f501bfa361dc44"
+    }
+  ],
+  "limitationsJa": "固定WEBの節本文と現行両稿を直接照合した。1SA内同一人物の統合は一次資料上明確だが、2SA8:17の逆向きの系譜に対する歴史的な説明までは確定しない。source/map/runtime統合そのものの実装検証は行っていない。"
+}

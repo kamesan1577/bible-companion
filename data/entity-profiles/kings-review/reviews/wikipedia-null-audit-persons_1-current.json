@@ -1,0 +1,455 @@
+{
+  "review": "wikipedia-null-audit-persons_1-current",
+  "reviewedAtUTC": "2026-10-16T03:54:03.620553Z",
+  "scope": "Current-SHA audit of the 14 candidate rows previously flagged as Wikipedia null/related/no-fit, integrating the independent current body-read deltas. The two excluded profiles are separated from active links; Wikipedia identity status is not a primary-text review.",
+  "inputs": {
+    "initialNullFollowup": {
+      "path": "reviews/independent-persons_1-wikipedia-null-followup.json",
+      "sha256": "98b404917b9595774be21a7e0fbb7568ed1e4da62e083a88b387fcc5ad11fb91"
+    },
+    "currentIndependentDelta": {
+      "path": "reviews/independent-persons_1-wikipedia-null-current-delta.json",
+      "sha256": "1748a7fdcede848dc73e91d71b4b25be42deb602c60487bf72091d41fa4053cf"
+    },
+    "shimeathAuthorRepair": {
+      "path": "evidence/persons_1/author-repair-shimeath-wikipedia-related-section.json",
+      "sha256": "88cc2f4df01c0706868bc189156d76be135ead8fca626b9ab32007e7f16a8f0b"
+    }
+  },
+  "populationSnapshot": {
+    "assignedDraftFiles": 108,
+    "activeProfiles": 106,
+    "activeWikipediaLinks": 105,
+    "activeWikipediaNulls": 1,
+    "activeNullExample": "person:holy_spirit_7400 (expression; no target-specific article)",
+    "excludedProfiles": 2
+  },
+  "counts": {
+    "pass": 6,
+    "qualified": 6,
+    "excludedNotApplicable": 2,
+    "unsearched": 0,
+    "total": 14
+  },
+  "rows": [
+    {
+      "book": "1KI",
+      "entityID": "person:amon_235",
+      "draftPath": "drafts/persons_1/1KI_amon_235.json",
+      "currentDraftSHA256": "4fa53f8afef386e7c7fc7a680a4b057216918cdbbd3a740710c8474ee4d5f75d",
+      "evidencePath": "evidence/persons_1/1KI_amon_235-sources.json",
+      "currentEvidenceSHA256": "ba4b08a51806f99103343e483cba6705e1f4a1848edfcdecad7d9bf57477a2b6",
+      "profileSHA256": "7e841ffc3ee613968d9e454d0f584d86e42381f854ba3479bcf48661802e4785",
+      "profileExcluded": false,
+      "currentWikipedia": {
+        "title": "List of minor Hebrew Bible figures, A–K",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Amon",
+        "kind": "shared-section",
+        "noteJa": "英語版の人物一覧は、アモンという名の人物の一人を、ヨシャファトとアハブの時代の町の長として区別しています。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": true,
+        "knownBy": {
+          "chapter": 22,
+          "verse": 26
+        }
+      },
+      "classification": "qualified",
+      "reasonJa": "該当節は三人のAmonを区別して町の長を示すが、対象となる町名は書かれていないため関係は限定的。",
+      "bodyRead": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Amon",
+        "retrievedAtUTC": "2026-10-16T03:50:00Z",
+        "locator": "A–K section “Amon”, lines 823–831",
+        "supportBasisJa": "The article distinguishes three people named Amon and identifies one as a city governor in the time of Jehoshaphat and Ahab. This matches the governor in 1KI22:26, but the source article does not name his city; the profile preserves that uncertainty."
+      },
+      "sourceStatus": "body-read-or-not-applicable"
+    },
+    {
+      "book": "2KI",
+      "entityID": "person:hamutal_1368",
+      "draftPath": "drafts/persons_1/2KI_person_hamutal_1368.json",
+      "currentDraftSHA256": "a74c7c2ce8d5972767afd3a46a304778bac6fefa015d5bcb23bd9052dcdc0ac7",
+      "evidencePath": "evidence/persons_1/2KI_person_hamutal_1368-sources.json",
+      "currentEvidenceSHA256": "9ad8b816e070490284868bffbda9c63efebe7f2da7201e46dc66b6ae47bd1cc1",
+      "profileSHA256": "8575e1ac6d5cb190174b8c08ce1de19a5fba5341a8f92fcb3a511da36085aaaf",
+      "profileExcluded": false,
+      "currentWikipedia": {
+        "title": "List of minor Hebrew Bible figures, A–K",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Hamutal",
+        "kind": "shared-section",
+        "noteJa": "英語版の人物一覧は、列王記下23:31に記されるハムタルを、リブナのエレミヤの娘として挙げています。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": true,
+        "knownBy": {
+          "chapter": 23,
+          "verse": 31
+        }
+      },
+      "classification": "pass",
+      "reasonJa": "The entry names Hamutal as daughter of Jeremiah of Libnah and lists 2 Kings 23:31 and 24:18. Exact target identity.",
+      "bodyRead": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Hamutal",
+        "retrievedAtUTC": "2026-10-16T03:50:00Z",
+        "locator": "A–K “Hamutal”, lines 2902–2906",
+        "supportBasisJa": "The entry names Hamutal as daughter of Jeremiah of Libnah and lists 2 Kings 23:31 and 24:18. Exact target identity."
+      },
+      "sourceStatus": "body-read-or-not-applicable"
+    },
+    {
+      "book": "2KI",
+      "entityID": "person:haruz_1425",
+      "draftPath": "drafts/persons_1/2KI_person_haruz_1425.json",
+      "currentDraftSHA256": "b8261e6e3b462c3775ff9e8d96c896c2309989d447aaaea2504eb36f527df57c",
+      "evidencePath": "evidence/persons_1/2KI_person_haruz_1425-sources.json",
+      "currentEvidenceSHA256": "a5a34d8db75d8b7d8e9d4b00b0ffcbc07e689e73c62e8b6e86febc83e105df05",
+      "profileSHA256": "ce908767197fd1fcc3f98c13dcee5f4e0f8901152edd1273b76cdc969769b077",
+      "profileExcluded": false,
+      "currentWikipedia": {
+        "title": "List of minor Hebrew Bible figures, A–K",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Haruz",
+        "kind": "shared-section",
+        "noteJa": "英語版の人物一覧はハルツをメシュレメトの父として挙げ、列王記下21:19を参照しています。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": true,
+        "knownBy": {
+          "chapter": 21,
+          "verse": 19
+        }
+      },
+      "classification": "pass",
+      "reasonJa": "The entry identifies Haruz as Meshullemeth’s father and cites 2 Kings 21:19, also calling him a Jotbah resident. Exact target.",
+      "bodyRead": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Haruz",
+        "retrievedAtUTC": "2026-10-16T03:50:00Z",
+        "locator": "A–K “Haruz”, lines 2996–3000",
+        "supportBasisJa": "The entry identifies Haruz as Meshullemeth’s father and cites 2 Kings 21:19, also calling him a Jotbah resident. Exact target."
+      },
+      "sourceStatus": "body-read-or-not-applicable"
+    },
+    {
+      "book": "2KI",
+      "entityID": "person:holy_spirit_7400",
+      "draftPath": "drafts/persons_1/2KI_person_holy_spirit_7400.json",
+      "currentDraftSHA256": "64a8139cfdaafbf5e90bb7e424ecf466c7574e2eb9ec86c6c32180fa200a594f",
+      "evidencePath": "evidence/persons_1/2KI_person_holy_spirit_7400-sources.json",
+      "currentEvidenceSHA256": "984a21ae7de102b11b42c06d6da1a9f9927b89bf9eb15817d3a3587214425d28",
+      "profileSHA256": "9aac1ee1c8b71e8080bab2a0f111104a1b9a54818f3fc3ac88f3da4502b07511",
+      "profileExcluded": false,
+      "currentWikipedia": null,
+      "classification": "qualified",
+      "reasonJa": "このIDは表現型。一般的なHoly Spirit記事は2KI2:16の特定表現との歴史的同一性を示さず、適合する対象記事は未確認。",
+      "bodyRead": {
+        "url": null,
+        "retrievedAtUTC": "2026-10-16T03:50:00Z",
+        "locator": "Wikipedia search and article-body search: no target-specific article found; “Holy Spirit” broad article not supported as exact identity",
+        "supportBasisJa": "2KI2:16 records the prophetic group’s conjecture, not a developed personal biography or doctrinal identity. Null is appropriate; do not link the broad theological article as exact identity."
+      },
+      "sourceStatus": "body-read-or-not-applicable"
+    },
+    {
+      "book": "2KI",
+      "entityID": "person:jeremiah_848",
+      "draftPath": "drafts/persons_1/2KI_person_jeremiah_848.json",
+      "currentDraftSHA256": "bdb1a93a05f72d47d2057f0416deadd56d9e5f478348e35436ec6aaecc74eecf",
+      "evidencePath": "evidence/persons_1/2KI_person_jeremiah_848-sources.json",
+      "currentEvidenceSHA256": "42c0a5d49ca2006cc1008fc062aaf303b2b02ef9d7b4b0721a6c486a09f8f8d5",
+      "profileSHA256": "842f0e1c9d7cebd167b914d129e4bd1ebe055d0b81fc08e391d2c36c51a32382",
+      "profileExcluded": false,
+      "currentWikipedia": {
+        "title": "List of minor Hebrew Bible figures, A–K",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Hamutal",
+        "kind": "related-section",
+        "noteJa": "英語版人物一覧のハムタル項は、リブナのエレミヤをハムタルの父として挙げています。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 23,
+          "verse": 31
+        }
+      },
+      "classification": "qualified",
+      "reasonJa": "ハムタル節はリブナのエレミヤを父として記すが、独立人物記事ではなく関係のみの資料。",
+      "bodyRead": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Hamutal",
+        "retrievedAtUTC": "2026-10-16T03:50:00Z",
+        "locator": "A–K “Hamutal”, lines 2902–2906",
+        "supportBasisJa": "The article’s Hamutal entry links Jeremiah of Libnah and identifies him as her father, but offers no independent biography. Related-section is correctly qualified; do not equate with the prophet Jeremiah."
+      },
+      "sourceStatus": "body-read-or-not-applicable"
+    },
+    {
+      "book": "2KI",
+      "entityID": "person:jezaniah_667",
+      "draftPath": "drafts/persons_1/2KI_person_jezaniah_667.json",
+      "currentDraftSHA256": "6f6d55891e7245dc55199992b0de2e04008c1bb749a63553db0c444797702eae",
+      "evidencePath": "evidence/persons_1/2KI_person_jezaniah_667-sources.json",
+      "currentEvidenceSHA256": "81368f5379e14f33476cccf281077c1d4beacb0915428d80ef4a2db216b3c293",
+      "profileSHA256": "f3b305189d90129a64104940caf76c3f9403b7165b26a67c14099c2ab88ed614",
+      "profileExcluded": false,
+      "currentWikipedia": {
+        "title": "Jaazaniah",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Jaazaniah#Biblical_references",
+        "kind": "related-section",
+        "noteJa": "英語版記事は「ヤアザンヤ／イェザンヤ」の名を複数人物に分け、列王記下25:23の役人を一人として記します。本文の父称とは表現が異なるため、関連情報として示します。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 25,
+          "verse": 23
+        }
+      },
+      "classification": "qualified",
+      "reasonJa": "記事のJaazaniah項は同節役人への関連を示す一方、父称表記がWEBと異なるため同一人物とは認定しない。",
+      "bodyRead": {
+        "url": "https://en.wikipedia.org/wiki/Jaazaniah#Biblical_references",
+        "retrievedAtUTC": "2026-10-16T03:50:00Z",
+        "locator": "Jaazaniah “Biblical references”, lines 107–116",
+        "supportBasisJa": "Article says Jaazaniah/Jezaniah is a name used for different people, then identifies a Gedaliah-era officer and cites 2 Kings 25:23 and Jeremiah 40:8. Since it reports son of Hoshaiah while 2KI25:23 says Maacathite, current related-only/identity-unverified framing and note warning about different father wording are necessary."
+      },
+      "sourceStatus": "body-read-or-not-applicable"
+    },
+    {
+      "book": "2KI",
+      "entityID": "person:joshua_1729",
+      "draftPath": "drafts/persons_1/2KI_person_joshua_1729.json",
+      "currentDraftSHA256": "904b478418a41498d3ffc62e62e6cdbeaf9e266220afa819dcfcc5e53a814f4f",
+      "evidencePath": "evidence/persons_1/2KI_person_joshua_1729-sources.json",
+      "currentEvidenceSHA256": "e64c55cf2a3b22d850da4a1df262c585f80a9f3ec307dd8a62a865b0b1cc8665",
+      "profileSHA256": "7f889178d15f1216688cf9ae6faf8144a889043a65439a6c7384e509ac6cdfdd",
+      "profileExcluded": false,
+      "currentWikipedia": {
+        "title": "List of minor Hebrew Bible figures, A–K",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Joshua_the_governor_of_the_city",
+        "kind": "shared-section",
+        "noteJa": "英語版の人物一覧は、ヨシヤ時代のエルサレムの町の長ヨシュアを挙げ、列王記下23:8を参照しています。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": true,
+        "knownBy": {
+          "chapter": 23,
+          "verse": 8
+        }
+      },
+      "classification": "pass",
+      "reasonJa": "The page gives a dedicated subsection: a city governor of Jerusalem under Josiah whose name was given to a city gate, and cites 2 Kings 23:8. Current profile has no Wikipedia link despite an exact suitable section.",
+      "bodyRead": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Joshua_the_governor_of_the_city",
+        "retrievedAtUTC": "2026-10-16T04:13:00Z",
+        "locator": "Joshua the governor of the city, lines 4372–4376",
+        "supportBasisJa": "The entry identifies Joshua as Jerusalem city governor in Josiah's time and explicitly cites 2 Kings 23:8. The current shared-section link and identityVerified=true match the target."
+      },
+      "sourceStatus": "body-read-or-not-applicable",
+      "currentIndependentDelta": "reviews/independent-persons_1-wikipedia-null-current-delta.json"
+    },
+    {
+      "book": "2KI",
+      "entityID": "person:naphtali_2149",
+      "draftPath": "drafts/persons_1/2KI_person_naphtali_2149.json",
+      "currentDraftSHA256": "832fcb9e289a7c2cfaa92b1db13f1b6b88b332ac8b5deb25faee8e79161ae5d5",
+      "evidencePath": "evidence/persons_1/2KI_person_naphtali_2149-sources.json",
+      "currentEvidenceSHA256": "91bd6025113e5f31c6964266d374e44db0f5059cbdad1c6f8d8729cc294ed781",
+      "profileSHA256": null,
+      "profileExcluded": true,
+      "currentWikipedia": null,
+      "classification": "excluded-not-applicable",
+      "reasonJa": "現プロフィールは除外。2KI15:29の用例は「ナフタリの地」であり、族祖個人ではない。",
+      "bodyRead": {
+        "url": null,
+        "retrievedAtUTC": "2026-10-16T03:50:00Z",
+        "locator": "Not an active profile; author exclusion entry, 2KI15:29",
+        "supportBasisJa": "The candidate is “all the land of Naphtali”, a territory, not the person/collective profile. Do not force the Naphtali ancestor/tribe Wikipedia article onto this geography occurrence."
+      },
+      "sourceStatus": "body-read-or-not-applicable"
+    },
+    {
+      "book": "2KI",
+      "entityID": "person:seraiah_2495",
+      "draftPath": "drafts/persons_1/2KI_person_seraiah_2495.json",
+      "currentDraftSHA256": "545eb21a54d99cce6acbcd10b6c3770e379d58480cb07bfbf90314aff4c70720",
+      "evidencePath": "evidence/persons_1/2KI_person_seraiah_2495-sources.json",
+      "currentEvidenceSHA256": "f010f6dcd6d0c76c179fede5e8d14ffa5bc687388c2c0ceca073ca717838b756",
+      "profileSHA256": "b779a52567a02a8f7830dda8387331519e6fde3c4349a80dfc02e5f071427b9a",
+      "profileExcluded": false,
+      "currentWikipedia": {
+        "title": "Seraiah",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Seraiah#Biblical_characters",
+        "kind": "shared-section",
+        "noteJa": "英語版記事はセラヤという名の複数人物を区別し、その一人をタンフメトの子として挙げています。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": true,
+        "knownBy": {
+          "chapter": 25,
+          "verse": 23
+        }
+      },
+      "classification": "pass",
+      "reasonJa": "Article says the name refers to several biblical people and specifically lists Seraiah son of Tanhumeth, matching 2KI25:23. Exact set-index entry.",
+      "bodyRead": {
+        "url": "https://en.wikipedia.org/wiki/Seraiah#Biblical_characters",
+        "retrievedAtUTC": "2026-10-16T03:50:00Z",
+        "locator": "Seraiah, Biblical characters, lines 109–117",
+        "supportBasisJa": "Article says the name refers to several biblical people and specifically lists Seraiah son of Tanhumeth, matching 2KI25:23. Exact set-index entry."
+      },
+      "sourceStatus": "body-read-or-not-applicable"
+    },
+    {
+      "book": "2KI",
+      "entityID": "person:shimeath_2683",
+      "draftPath": "drafts/persons_1/2KI_person_shimeath_2683.json",
+      "currentDraftSHA256": "41c011931018b47e1acb6ad2fe4200ca31d84ab61a51ba289afc120f47d2bdc8",
+      "evidencePath": "evidence/persons_1/2KI_person_shimeath_2683-sources.json",
+      "currentEvidenceSHA256": "5d8b3ba1cdb8ff2906c85446d8746f8824960ec1b784e41d98b6278d7d8de175",
+      "profileSHA256": "62201cff04375e7b17c134e187b72c42663bad6087b76c7f030c3e943adde5c5",
+      "profileExcluded": false,
+      "currentWikipedia": {
+        "title": "List of minor Hebrew Bible figures, A–K",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Jozachar",
+        "kind": "related-section",
+        "noteJa": "英語版の人物一覧は、列王記下12:21に記されるヨザカルを、シメアトの子として挙げています。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 12,
+          "verse": 21
+        }
+      },
+      "classification": "qualified-related-only",
+      "reasonJa": "Jozachar節はヨザカルをシメアトの子と記し2KI12:21を引用する。関係のみを支え、性別・別の同名人物との同一性は示さない。",
+      "bodyRead": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Jozachar",
+        "retrievedAtUTC": "2026-10-16T04:17:00Z",
+        "locator": "Jozachar section, lines 4402–4406",
+        "supportBasisJa": "The list describes Jozachar/Jozacar as son of Shimeath and one of Joash’s assassins, directly matching the relationship in 2KI12:21. This is a list entry, not a dedicated article, and the current related-section / identityVerified=false link appropriately states only that relation."
+      },
+      "sourceStatus": "body-read-or-not-applicable",
+      "currentIndependentDelta": "reviews/independent-persons_1-wikipedia-null-current-delta.json"
+    },
+    {
+      "book": "2KI",
+      "entityID": "person:tanhumeth_2824",
+      "draftPath": "drafts/persons_1/2KI_person_tanhumeth_2824.json",
+      "currentDraftSHA256": "f9cd0f30e6b3f6bf3bd62eb546f489c884925e630ecef9ccc1f5c7c3920395ca",
+      "evidencePath": "evidence/persons_1/2KI_person_tanhumeth_2824-sources.json",
+      "currentEvidenceSHA256": "5f33cefa27509d943bd31bb39401f890d50851242d59a7a061dd23b16f155c1c",
+      "profileSHA256": "eeb4f101410fd23672b3e209d5efac6bf2209bb0a214e12ada662dc082ddca7a",
+      "profileExcluded": false,
+      "currentWikipedia": {
+        "title": "Seraiah",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Seraiah#Biblical_characters",
+        "kind": "related-section",
+        "noteJa": "英語版のセラヤ記事は、セラヤをタンフメトの子として挙げています。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": false,
+        "relationVerified": true,
+        "knownBy": {
+          "chapter": 25,
+          "verse": 23
+        }
+      },
+      "classification": "qualified",
+      "reasonJa": "Seraiah節はタヌメトをセラヤの父として挙げる。人物関係のみを示す関連記事で独立記事ではない。",
+      "bodyRead": {
+        "url": "https://en.wikipedia.org/wiki/Seraiah#Biblical_characters",
+        "retrievedAtUTC": "2026-10-16T03:50:00Z",
+        "locator": "Seraiah, Biblical characters, lines 109–117",
+        "supportBasisJa": "The article’s Seraiah son of Tanhumeth line supports the named relationship only, not a separate biography for Tanhumeth. Related-only is appropriate."
+      },
+      "sourceStatus": "body-read-or-not-applicable"
+    },
+    {
+      "book": "2KI",
+      "entityID": "person:urijah_2903",
+      "draftPath": "drafts/persons_1/2KI_person_urijah_2903.json",
+      "currentDraftSHA256": "31c83df44095ddc05a3bbf211aff1802d398914f6aae005ab3acde051e7134ef",
+      "evidencePath": "evidence/persons_1/2KI_person_urijah_2903-sources.json",
+      "currentEvidenceSHA256": "b4ee9c3e150bc8d079a5a4c8be35c9dd19abe41f6cdc9e68046252e563e30564",
+      "profileSHA256": "d11e6699f573eece1178b4bb6deba27c911c88e8c071524ff51e16b225808d7b",
+      "profileExcluded": false,
+      "currentWikipedia": {
+        "title": "List of minor Hebrew Bible figures, L–Z",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Urijah",
+        "kind": "shared-section",
+        "noteJa": "英語版の人物一覧は、アハズ時代の祭司ウリヤを列王記下16:10–16に結び付けています。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": true,
+        "knownBy": {
+          "chapter": 16,
+          "verse": 10
+        }
+      },
+      "classification": "pass",
+      "reasonJa": "The list page has a Urijah (Book of Kings) entry, priest under Ahaz; the current profile link identifies that exact person. Dedicated live page also opened at https://en.wikipedia.org/wiki/Uriah_(Book_of_Kings), lines 107–109, calling Uriah the High Priest of Israel under Ahaz.",
+      "bodyRead": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Urijah",
+        "retrievedAtUTC": "2026-10-16T03:50:00Z",
+        "locator": "L–Z article “Urijah”, section/lines verified in current profile evidence",
+        "supportBasisJa": "The list page has a Urijah (Book of Kings) entry, priest under Ahaz; the current profile link identifies that exact person. Dedicated live page also opened at https://en.wikipedia.org/wiki/Uriah_(Book_of_Kings), lines 107–109, calling Uriah the High Priest of Israel under Ahaz."
+      },
+      "sourceStatus": "body-read-or-not-applicable"
+    },
+    {
+      "book": "2KI",
+      "entityID": "person:uzza_2912",
+      "draftPath": "drafts/persons_1/2KI_person_uzza_2912.json",
+      "currentDraftSHA256": "dccd746c9f0604a510c2f9408398c31a80467806a470078302e309c98348983c",
+      "evidencePath": "evidence/persons_1/2KI_person_uzza_2912-sources.json",
+      "currentEvidenceSHA256": "8724f2d869c6ef9caf705da134d32187a7214652ea5d73c6d52a025040a46e66",
+      "profileSHA256": null,
+      "profileExcluded": true,
+      "currentWikipedia": null,
+      "classification": "excluded-not-applicable",
+      "reasonJa": "現プロフィールは対象人物として採用されていない除外行。Wikipediaの活動リンクは適用外。",
+      "bodyRead": {
+        "url": null,
+        "retrievedAtUTC": "2026-10-16T03:50:00Z",
+        "locator": "Not an active profile; author exclusion entry, 2KI21:18,26",
+        "supportBasisJa": "The wording is “garden of Uzza”; the candidate is a place-name expression, not a person. Do not use a personal-figure page."
+      },
+      "sourceStatus": "body-read-or-not-applicable"
+    },
+    {
+      "book": "2KI",
+      "entityID": "person:zephaniah_3039",
+      "draftPath": "drafts/persons_1/2KI_person_zephaniah_3039.json",
+      "currentDraftSHA256": "5fc80650b5abf29d2222620c78bd2f9af089dd6b6ec67238351e913df60c19d9",
+      "evidencePath": "evidence/persons_1/2KI_person_zephaniah_3039-sources.json",
+      "currentEvidenceSHA256": "80a71f1d7aa9b422604eb19e46913c2f34612affcbb5623295353c9a2bab3082",
+      "profileSHA256": "bf998605b2638bf8626d46e23debb3b6dc592edf939a6b7d88769cd6c0b4e1ea",
+      "profileExcluded": false,
+      "currentWikipedia": {
+        "title": "Zephaniah",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Zephaniah#Other_Zephaniahs_in_the_Bible",
+        "kind": "shared-section",
+        "noteJa": "英語版記事は複数のゼファニヤを区別し、その一人をゼデキヤ時代の「第二の祭司」として挙げています。",
+        "checkedAt": "2026-10-16",
+        "identityVerified": true,
+        "knownBy": {
+          "chapter": 25,
+          "verse": 18
+        }
+      },
+      "classification": "pass",
+      "reasonJa": "実記事の「Other Zephaniahs」項はマアセヤの子をゼデキヤ期の第二祭司として示し、2KI25:21の並行記述を挙げる。2KI25:18の第二祭司と一致し、預言者とは区別される。",
+      "bodyRead": {
+        "url": "https://en.wikipedia.org/wiki/Zephaniah#Other_Zephaniahs_in_the_Bible",
+        "retrievedAtUTC": "2026-10-16T04:13:00Z",
+        "locator": "Other Zephaniahs in the Bible, lines 189–195",
+        "supportBasisJa": "The article separates other individuals of this name and identifies the son of Maaseiah as the second priest in Zedekiah's reign; it cites the parallel 2 Kings 25:21. That is the same named office-holder as the fixed 2KI 25:18 reference. The note correctly limits itself to the second-priest distinction and avoids identifying him with the prophet."
+      },
+      "sourceStatus": "body-read-or-not-applicable",
+      "currentIndependentDelta": "reviews/independent-persons_1-wikipedia-null-current-delta.json"
+    }
+  ]
+}

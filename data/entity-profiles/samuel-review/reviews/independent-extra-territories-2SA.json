@@ -1,0 +1,174 @@
+{
+  "status": "independent-review-findings-not-approval",
+  "title": "Independent review of supplemental 2 Samuel territorial profiles",
+  "createdAtUTC": "2026-10-16T01:54:48Z",
+  "reviewerRole": "independent reviewer; neither author nor editor of these supplemental drafts",
+  "scope": {
+    "profiles": 2,
+    "book": "2SA",
+    "primaryPassages": [
+      "2:9",
+      "20:21",
+      "21:14"
+    ]
+  },
+  "fixedWitness": {
+    "path": "inventory/targets/samuel2-web-verses.json",
+    "sha256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+    "version": "webp-usfx-2026-10-13-35a6adf626e5"
+  },
+  "readMethodJa": "各profile/evidenceの現物を再読し、固定WEBの初出・後続根拠を照合。Wikipediaは記事本文の該当節を開いて対象語・地理範囲を確認した。内容は座標や記事リンクの存在だけで承認せず、読者向け常時表示欄も評価した。",
+  "summary": {
+    "pass": 0,
+    "qualified": 0,
+    "fail": 2
+  },
+  "entries": [
+    {
+      "book": "2SA",
+      "id": "place:ephraim-territory_1292",
+      "draftPath": "drafts/places_extra/2SA_ephraim-territory_1292.json",
+      "draftSHA256": "a27fbc99fc2e12df4917397d5f52d126ffb60e136bf96a53b1b383e64d8875ec",
+      "profileSHA256": "9ab247d439ef6822619bd4ee18e22d52fce2b66cb5142b176f086ece24f25f0c",
+      "evidencePath": "evidence/places_extra/2SA_ephraim-territory_1292.json",
+      "evidenceSHA256": "7736537be34f5c4942f09efe556c859063ac893f65364b5b9a2557c5266c1236",
+      "profileSHA256MatchesEvidence": true,
+      "status": "fail",
+      "contentAssessment": "qualified",
+      "primaryWitnessChecks": [
+        {
+          "ref": "2SA 2:9",
+          "text": "He made him king over Gilead, over the Ashurites, over Jezreel, over Ephraim, over Benjamin, and over all Israel.",
+          "textSHA256": "1e11a555b65cb36da83567d8d4be0750e6ac76947f4a31ff1703500295aa282f",
+          "url": "https://ebible.org/engwebp/2SA02.htm#V9",
+          "decision": "opening/initial identity",
+          "basisJa": "2:9 enumerates the domain/regions over which Ish-bosheth was made king; it gives no boundaries and the term may also denote inhabitants."
+        },
+        {
+          "ref": "2SA 20:21",
+          "text": "The matter is not so. But a man of the hill country of Ephraim, Sheba the son of Bichri by name, has lifted up his hand against the king, even against David. Just deliver him, and I will depart from the city.” The woman said to Joab, “Behold, his head will be thrown to you over the wall.”",
+          "textSHA256": "305d31336b179f42dada4e2c921335326cc5ddf602f62299827f56c605cf1115",
+          "url": "https://ebible.org/engwebp/2SA20.htm#V21",
+          "decision": "later gated fact/occurrence",
+          "basisJa": "Later text explicitly says a man was from Ephraim’s hill country."
+        }
+      ],
+      "firstAppearanceJa": {
+        "knownBy": {
+          "chapter": 2,
+          "verse": 9
+        },
+        "summaryJa": "2サムエル記2:9では、イシュ・ボシェトの支配範囲を列挙する中に「エフライム」が現れます。この節だけでは、地理的な地域名とそこに住む人々のどちらを主に指すか、境界がどこかは確定できません。",
+        "subtitleJa": "イシュ・ボシェトの支配地域として挙げられる地名",
+        "identityNoteJa": "この節の列挙だけでは、「エフライム／ベニヤミン」が地理的範囲と住民集団のどちらを主に指すか判断できない。",
+        "historicalRoleJa": "2サムエル記2:9でイシュ・ボシェトの支配範囲の一つとして挙げられる地域名。",
+        "finding": "The text warrants a region/territory candidate but does not resolve whether the name denotes place or inhabitants, nor precise boundaries; carefully qualified summary and null coordinate are appropriate."
+      },
+      "laterFactsAssessment": {
+        "facts": [
+          {
+            "textJa": "シェバは「エフライムの丘陵地の人」と表現される。",
+            "knownBy": {
+              "chapter": 20,
+              "verse": 21
+            },
+            "sourceIds": [
+              "webp-2sa-ephraim-territory_1292-20-21"
+            ]
+          }
+        ],
+        "finding": "The later verse is correctly kept behind its own knownBy gate; no later fact was found in the summary or historical role."
+      },
+      "geographyAssessment": {
+        "coordinate": null,
+        "modernLocationJa": "本文だけでは境界や現代の地点を特定できません。地図上の一点で示す根拠もありません。",
+        "finding": "Null coordinate is appropriate for an uncertain territorial expression without a defensible point. Do not infer a modern boundary from the tribe article."
+      },
+      "wikipediaAssessment": {
+        "url": "https://en.wikipedia.org/wiki/Tribe_of_Ephraim#Tribal_territory",
+        "kind": "related-section",
+        "identityVerified": false,
+        "relationVerified": true,
+        "bodyLocator": "Article section “Tribal territory”, lines 159–165: the article describes a related tribal territory as a mountainous central-Canaan region; it does not establish the exact identity or boundary of the 2 Samuel expression.",
+        "independentRead": "Opened current en.wikipedia.org/wiki/Tribe_of_Ephraim, section “Tribal territory”, lines 158–166; it describes the tribal allotment as related territory and gives boundaries based on Joshua; it does not prove this 2SA phrase has identical boundaries.",
+        "finding": "related-section with identityVerified=false/relationVerified=true is appropriately restrained."
+      },
+      "issueJa": "locationNoteJa contains authoring/internal workflow language (“…区別できる箇所だけ採用…座標は設定しません”), not reader-facing geographic description.",
+      "recommendedRepairJa": "Replace the note with a reader-facing statement such as 「この名が指す地域の範囲は本文だけでは特定できません。」 Remove the editing choice and coordinate-setting explanation; preserve null coordinate and the later gated fact.",
+      "reviewedAtUTC": "2026-10-16T01:54:48Z"
+    },
+    {
+      "book": "2SA",
+      "id": "place:benjamin-territory_1293",
+      "draftPath": "drafts/places_extra/2SA_benjamin-territory_1293.json",
+      "draftSHA256": "1e3790f4763943fb9c0386aad97d99b2ce9fafa1a89a71ea61cd77c1ec1b6f72",
+      "profileSHA256": "dc5630331aa9ae271150e921db0d38a2fcf751e735c47b3f5c0486b7eca367b9",
+      "evidencePath": "evidence/places_extra/2SA_benjamin-territory_1293.json",
+      "evidenceSHA256": "97f4b4fed8854594e92e8458dec290b6147fa2d2b51d91a78f87b2483c486cd1",
+      "profileSHA256MatchesEvidence": true,
+      "status": "fail",
+      "contentAssessment": "qualified",
+      "primaryWitnessChecks": [
+        {
+          "ref": "2SA 2:9",
+          "text": "He made him king over Gilead, over the Ashurites, over Jezreel, over Ephraim, over Benjamin, and over all Israel.",
+          "textSHA256": "1e11a555b65cb36da83567d8d4be0750e6ac76947f4a31ff1703500295aa282f",
+          "url": "https://ebible.org/engwebp/2SA02.htm#V9",
+          "decision": "opening/initial identity",
+          "basisJa": "2:9 enumerates the domain/regions over which Ish-bosheth was made king; it gives no boundaries and the term may also denote inhabitants."
+        },
+        {
+          "ref": "2SA 21:14",
+          "text": "They buried the bones of Saul and Jonathan his son in the country of Benjamin in Zela, in the tomb of Kish his father; and they performed all that the king commanded. After that, God answered prayer for the land.",
+          "textSHA256": "6782d21e94d6d73feb4bea7d80f95534beb2ff0350b2a0d53fb5f197d51f23d5",
+          "url": "https://ebible.org/engwebp/2SA21.htm#V14",
+          "decision": "later gated fact/occurrence",
+          "basisJa": "Later text explicitly locates Saul and Jonathan’s burial at Zela in the country of Benjamin."
+        }
+      ],
+      "firstAppearanceJa": {
+        "knownBy": {
+          "chapter": 2,
+          "verse": 9
+        },
+        "summaryJa": "2サムエル記2:9では、イシュ・ボシェトの支配範囲を列挙する中に「ベニヤミン」が現れます。この節だけでは、地理的な地域名とそこに住む人々のどちらを主に指すか、境界がどこかは確定できません。",
+        "subtitleJa": "イシュ・ボシェトの支配地域として挙げられる地名",
+        "identityNoteJa": "この節の列挙だけでは、「エフライム／ベニヤミン」が地理的範囲と住民集団のどちらを主に指すか判断できない。",
+        "historicalRoleJa": "2サムエル記2:9でイシュ・ボシェトの支配範囲の一つとして挙げられる地域名。",
+        "finding": "The text warrants a region/territory candidate but does not resolve whether the name denotes place or inhabitants, nor precise boundaries; carefully qualified summary and null coordinate are appropriate."
+      },
+      "laterFactsAssessment": {
+        "facts": [
+          {
+            "textJa": "サウルとその子ヨナタンの骨は、ベニヤミンの地のツェラにある父キシュの墓に葬られたと記される。",
+            "knownBy": {
+              "chapter": 21,
+              "verse": 14
+            },
+            "sourceIds": [
+              "webp-2sa-benjamin-territory_1293-21-14"
+            ]
+          }
+        ],
+        "finding": "The later verse is correctly kept behind its own knownBy gate; no later fact was found in the summary or historical role."
+      },
+      "geographyAssessment": {
+        "coordinate": null,
+        "modernLocationJa": "本文だけでは境界や現代の地点を特定できません。地図上の一点で示す根拠もありません。",
+        "finding": "Null coordinate is appropriate for an uncertain territorial expression without a defensible point. Do not infer a modern boundary from the tribe article."
+      },
+      "wikipediaAssessment": {
+        "url": "https://ja.wikipedia.org/wiki/ベニヤミン族",
+        "kind": "related-section",
+        "identityVerified": false,
+        "relationVerified": true,
+        "bodyLocator": "記事本文143–152行、特に147行で部族の相続地の境界を概説し、ヨシュア記18:11–28を参照。対象は部族であり、本稿の地域表現とは関連のみ。",
+        "independentRead": "Opened current ja.wikipedia.org/wiki/ベニヤミン族, lines 138–152; section states tribe and later allotment boundaries, hence contextual relation only; it does not prove 2SA 2:9 has that exact territorial referent.",
+        "finding": "related-section with identityVerified=false/relationVerified=true is appropriately restrained."
+      },
+      "issueJa": "locationNoteJa contains authoring/internal workflow language (“…区別できる箇所だけ採用…座標は設定しません”), not reader-facing geographic description.",
+      "recommendedRepairJa": "Replace the note with a reader-facing statement such as 「この名が指す地域の範囲は本文だけでは特定できません。」 Remove the editing choice and coordinate-setting explanation; preserve null coordinate and the later gated fact.",
+      "reviewedAtUTC": "2026-10-16T01:54:48Z"
+    }
+  ]
+}

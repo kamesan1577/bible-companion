@@ -1,0 +1,107 @@
+{
+  "book": "2SA",
+  "entityID": "place:berothai_180",
+  "assignmentTargetKey": "2SA:place:berothai_180",
+  "draftFile": "drafts/places_1/2SA_berothai_180.json",
+  "draftSHA256": "ff847ebba6b965dd313b61ef190052ec6443e096d60814e5f8a808b27c515301",
+  "profileSHA256": "84f1d7603e2bf569f93988d07db0d71ed7a249e07a29e75a688acd72a9a0042a",
+  "pinnedWEB": {
+    "sourceId": "webp",
+    "version": "webp-usfx-2026-10-13-35a6adf626e5",
+    "file": "inventory/targets/samuel2-web-verses.json",
+    "fileSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2"
+  },
+  "candidateSource": {
+    "url": "https://github.com/robertrouse/theographic-bible-metadata/tree/52e049efb3b95e4f1da52d11a3303fbd2d648922",
+    "commit": "52e049efb3b95e4f1da52d11a3303fbd2d648922",
+    "license": "CC-BY-SA-4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": "Derived from Theographic Bible Metadata by Robert Rouse and contributors. Names and occurrence indexes only; prose removed, Japanese labels added, coordinates marked as candidates. Candidate coordinates are not independently verified."
+  },
+  "primaryContext": [
+    {
+      "chapter": 8,
+      "verse": 8,
+      "candidateText": "From Betah and from Berothai, cities of Hadadezer, King David took a great quantity of bronze.",
+      "fixedText": "From Betah and from Berothai, cities of Hadadezer, King David took a great quantity of bronze.",
+      "sourceTextSHA256": "b3dae94f0c773abcfd4a3ad2fe5f554b9c232f96c1ef90d1bf38719973e46f47",
+      "context": [
+        {
+          "chapter": 7,
+          "verse": 29,
+          "text": "Now therefore, let it please you to bless the house of your servant, that it may continue forever before you; for you, Lord GOD, have spoken it. Let the house of your servant be blessed forever with your blessing.”",
+          "citationURL": "https://ebible.org/engwebp/2SA07.htm#V29",
+          "sourceTextSHA256": "9b5988eec7c36aba7156b94c3350deedc57f20c494699b35f6f8a6cb6a194cea"
+        },
+        {
+          "chapter": 8,
+          "verse": 8,
+          "text": "From Betah and from Berothai, cities of Hadadezer, King David took a great quantity of bronze.",
+          "citationURL": "https://ebible.org/engwebp/2SA08.htm#V8",
+          "sourceTextSHA256": "b3dae94f0c773abcfd4a3ad2fe5f554b9c232f96c1ef90d1bf38719973e46f47"
+        },
+        {
+          "chapter": 9,
+          "verse": 1,
+          "text": "David said, “Is there yet any who is left of Saul’s house, that I may show him kindness for Jonathan’s sake?”",
+          "citationURL": "https://ebible.org/engwebp/2SA09.htm#V1",
+          "sourceTextSHA256": "fb565fc9ec1028daf23f05ca147ee1a3fe3da145e5c62ea0567098e598fcae45"
+        }
+      ]
+    }
+  ],
+  "occurrenceChecks": [
+    {
+      "chapter": 8,
+      "verse": 8,
+      "status": "direct",
+      "reasonJa": "固定WEB本文で場所名を名指す。"
+    }
+  ],
+  "wikipediaBodyRead": {
+    "url": "https://en.wikipedia.org/wiki/Berothah",
+    "status": "verified-related-article-body",
+    "identityBasisJa": "The article discusses Berothah from Ezekiel 47:16 and says it is probably to be identified with Berothai of 2 Samuel 8:8; the relation is explicitly probable, not certain.",
+    "fragmentVerified": false,
+    "readArticle": true,
+    "checkedAtUTC": "2026-10-16T01:45:50Z",
+    "locator": "opening paragraph, lines 104–105",
+    "relationVerified": true
+  },
+  "geography": {
+    "identityCheck": "サムエル記下8:8は、ダビデがハダドエゼル王の町ベタフとベロタイから大量の青銅を取ったと記します。本文は町の位置や現代比定を示しません。",
+    "uncertainty": "同定候補はありますが、本文だけでは現代遺跡に結び付けられません。",
+    "review": {
+      "category": "uncertain-site",
+      "coordinatePublished": false,
+      "legacyCandidateStatus": "suppressed",
+      "indexCandidateCoordinate": [
+        33.93148,
+        36.152049
+      ],
+      "indexCoordinateStatus": "unverified-candidate",
+      "independentOfficialGeographyCheck": "未実施。プロフィール座標はnull。",
+      "reasonJa": "現代位置の候補が確定せず地図表示に適さない。"
+    }
+  },
+  "profileTextSHA256Method": "SHA-256 of ensure_ascii=False, indent=2, insertion-order JSON serialization of profile plus trailing newline.",
+  "metadataHistory": [
+    {
+      "atUTC": "2026-10-16T01:10:28Z",
+      "change": "Added pinned assignment/source candidate metadata and exact immediate-verse context blocks for every assigned occurrence; no claims/draft fields changed."
+    },
+    {
+      "field": "wikipediaNegativeSearch",
+      "value": {
+        "checkedAtUTC": "2026-10-16T01:08:03Z",
+        "queries": [
+          "Berothai",
+          "\"Berothai\" biblical site Wikipedia"
+        ],
+        "excludedCandidates": []
+      },
+      "supersededAtUTC": "2026-10-16T01:44:59Z",
+      "reason": "An actual suitable article or section was subsequently read and linked."
+    }
+  ]
+}

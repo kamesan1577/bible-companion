@@ -1,0 +1,74 @@
+{
+  "reportType": "independent-context-profile-current-review",
+  "reviewedAtUTC": "2026-10-16T04:07:06Z",
+  "book": "2KI",
+  "entityID": "person:israel_682",
+  "inputs": {
+    "proposalPath": "context-edits/2KI/israel-jacob.json",
+    "proposalSHA256": "3795f7918dce1c37836b1fb170cd24f71c70b115ec49d61aa1702f79ed8cab2a",
+    "evidencePath": "context-edits/2KI/evidence/israel-jacob.json",
+    "evidenceSHA256": "2debc2be23c60b16c71c245fc776b8eefb20de379c1cd61ae23f9824ea7a4c0b",
+    "baseDraftPath": "drafts/persons_1/2KI_person_israel_682.json",
+    "currentBaseDraftSHA256": "26719a6180ceefb6c7f1338b156548e8822eb7214754f95749addfff97965f0a",
+    "fixedWitnessPath": "inventory/targets/kings2-web-verses.json",
+    "fixedWitnessSHA256": "d620db07b9f9b003053bcc0fb38fee21e6d80aff1c1b51760717e03c0127a6dd"
+  },
+  "hashChecks": {
+    "profileCanonicalSHA256": "ee1f057275bcf6dcda9b481a69560097f582855b67fc8c74be2d5f105e6f6a5c",
+    "sidecarProfileSHA256": "ee1f057275bcf6dcda9b481a69560097f582855b67fc8c74be2d5f105e6f6a5c",
+    "sidecarProposalSHA256": "3795f7918dce1c37836b1fb170cd24f71c70b115ec49d61aa1702f79ed8cab2a",
+    "sidecarBaseDraftSHA256": "26719a6180ceefb6c7f1338b156548e8822eb7214754f95749addfff97965f0a",
+    "actualBaseDraftSHA256": "26719a6180ceefb6c7f1338b156548e8822eb7214754f95749addfff97965f0a",
+    "profileAndProposalSynced": true,
+    "baseBindingSynced": true,
+    "sidecarSHA256": "2debc2be23c60b16c71c245fc776b8eefb20de379c1cd61ae23f9824ea7a4c0b",
+    "sidecarBaseProfileSHA256": "2a1e0de4bbcd6b1bb7a47d916580ea001e48b9fbf7eff9f09b418238ec172526"
+  },
+  "decision": "qualified",
+  "sourceChecks": [
+    {
+      "ref": "2KI 13:23",
+      "pinnedText": "But the LORD was gracious to them, and had compassion on them, and favored them because of his covenant with Abraham, Isaac, and Jacob, and would not destroy them and he didn’t cast them from his presence as yet.",
+      "citationURL": "https://ebible.org/engwebp/2KI13.htm#V23",
+      "pinnedTextSHA256": "43a9ee9285824dc26696e1ddf9c5bb29ece8c4e20fc06589e28b7881a187458c",
+      "proposalTextSource": true
+    },
+    {
+      "ref": "2KI 17:34",
+      "pinnedText": "To this day they do what they did before. They don’t fear the LORD, and they do not follow the statutes, or the ordinances, or the law, or the commandment which the LORD commanded the children of Jacob, whom he named Israel;",
+      "citationURL": "https://ebible.org/engwebp/2KI17.htm#V34",
+      "pinnedTextSHA256": "406ea5031dd3d0a031aacb7ef846e07a42eb3143639dd0a42c0e1c2c105b4055",
+      "proposalTextSource": true
+    }
+  ],
+  "findings": [
+    {
+      "severity": "closed",
+      "reasonJa": "固定WEB 2KI13:23は契約相手として「Abraham, Isaac, and Jacob」とヤコブを明示する。民の集団Israelと区別してヤコブ個人を既存person:israel_682のcontext variantとして扱うのは本文に適合する。常時欄はこの初出に限定されている。"
+    },
+    {
+      "severity": "closed",
+      "reasonJa": "2KI17:34は「children of Jacob, whom he named Israel」と記し、同一人物の子らと別名を明記する。名前登録・Wikipediaリンク・当該factを17:34にゲートする判断が適切で、後続名情報は13:23の初出欄へ先取りされていない。"
+    },
+    {
+      "severity": "closed",
+      "reasonJa": "Wikipedia Jacobの記事は見出しL228–230で族長ヤコブを対象にし、別名IsraelをL235、後にIsraelと名付けられたことをL266で明記する。本文上の個人同一性を支持する。"
+    },
+    {
+      "severity": "closed",
+      "reasonJa": "現行evidence sidecarのbaseDraftSHA256とbaseProfileSHA256が、実ファイルの現行ハッシュに同期していることを再計算で確認した。proposal/profile/evidenceの各SHAも一致する。2KI13:23でJacobを契約相手として名指し、17:34で「children of Jacob, whom he named Israel」と明示するため、既存person:israel_682への個人Jacob context variantは支持される。後の改名名と記事情報は17:34にゲートされ、13:23初出欄へ漏れていない。Wikipedia Jacob本文L228–230/235/266–267が個人と改名の対応を支える。未統合の提案であり、統合・公開判断は未完。"
+    }
+  ],
+  "wikipediaRead": {
+    "url": "https://en.wikipedia.org/wiki/Jacob",
+    "locator": "Heading lines 228–230; infobox “Other name Israel” line 235; lead lines 266–267.",
+    "supportJa": "記事は族長ヤコブ個人を対象とし、イスラエルという別名と改名を説明する。記事の情報はproposal上で2KI17:34にゲートされている。"
+  },
+  "passagesCovered": [
+    "2KI13:23",
+    "2KI17:34"
+  ],
+  "noNewCanonicalID": true,
+  "remainingBlockerJa": "意味とsource bindingは閉じた。提案を基幹profileへ統合するかは親統合担当の判断待ち。",
+  "proposalStatus": "independently-reviewed-qualified; author proposal not integrated"
+}

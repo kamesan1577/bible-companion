@@ -1,0 +1,102 @@
+{
+  "reviews/independent-public-projection-actual-audit.json": {
+    "status": "qualified",
+    "scope": "Read-only audit of the generated Chronicles public evidence projection against its immutable release-input manifest. This checks byte provenance, path redaction, scope, status preservation, and the stated privacy checks; it is not a semantic approval of the authored content or a complete legal review.",
+    "freeze": {
+      "path": "preservation/release-inputs-20261016T110553571268Z.json",
+      "sha256": "bbc6045f8df5c9bd314990383c3d67b1822a730a725d4e7890732897c966afdf",
+      "authoringSnapshot": "preservation/checkpoint-20261016T110553437033Z.json",
+      "authoringSnapshotSha256": "ecbe9c1a3bc8972c07198a306859ebb360a770c92727c2a20bae78a3b8be28e4",
+      "rows": 3997,
+      "unreadable": 0,
+      "publicationApproved": false
+    },
+    "projection": {
+      "path": "candidate/data/entity-profiles/chronicles-review",
+      "preservationManifestSha256": "bf0d76111986de154ce93c2db37a7c3bc238ba624f287125f7426907f331006b",
+      "inputRows": 3998,
+      "actualFilesIncludingManifest": 3999,
+      "missingOrExtraFiles": 0,
+      "duplicatePaths": 0,
+      "unsafePaths": 0,
+      "symlinks": 0,
+      "sourceObjectMissingOrHashMismatch": 0,
+      "outputHashOrTransformMismatch": 0,
+      "unredactedPersonalPathPrefixes": 0,
+      "namedCredentialOrTransferMarkerHits": 0,
+      "credentialLikePatternHits": 0,
+      "privateTransferStateSelected": false,
+      "heldStatusPromoted": false
+    },
+    "checks": [
+      {
+        "result": "pass",
+        "detail": "All 3,997 frozen input objects were present and matched their content hashes. Each projected file matched the independently recomputed output after applying the three documented exact-prefix replacements."
+      },
+      {
+        "result": "pass",
+        "detail": "The projection contains exactly the 3,997 frozen inputs plus the generated README and preservation manifest. No unlisted or missing files, duplicate destinations, unsafe paths, or symlinks were found."
+      },
+      {
+        "result": "pass",
+        "detail": "Source and evidence bytes were retained except for the documented path substitutions; the projection states that some drafts remain held and that runtime approval is separate. The freeze manifest remains publicationApproved=false."
+      },
+      {
+        "result": "pass_with_scope_limit",
+        "detail": "No residual /Users/ or /var/folders/ paths or configured credential/transfer markers were found. A broader lexical scan matched only the generic word 'secret' in two text records, not credential-shaped values. The assertion is limited to the declared checks and selected files; it does not prove the universal absence of every sensitive data type."
+      },
+      {
+        "result": "pass_with_scope_limit",
+        "detail": "The README now says only some helper scripts are included and that the projection script and its prior bytes are retained in the Library archive. The projector script itself is not among the frozen inputs or projected files, so its Library copy and the exact script hash used for this build could not be independently verified from this workspace."
+      },
+      {
+        "result": "pass_with_scope_limit",
+        "detail": "Rights and attribution data present in the frozen source files are preserved by the byte-verified projection, and the README distinguishes World English Bible, Wikipedia/CC BY-SA, and code licensing. This audit did not independently re-evaluate every third-party license or attribution decision."
+      }
+    ],
+    "currentProjectorSource": {
+      "path": "project-public-evidence.py",
+      "sha256": "38c63fbd4f74e6b4496a60d9f2ca71d79261af37b91932cb2bc36da8b506e986",
+      "bindingToBuild": "not present in the release-input or projection manifest"
+    },
+    "limitations": [
+      "The public bytes were compared to the frozen release-input objects, not to changing live authoring files.",
+      "The projection is a source/evidence archive; this audit does not approve its profiles, maps, runtime selection, or publication.",
+      "The exact projector source used for the build is not cryptographically bound in either manifest, and its referenced Library archive was outside this workspace audit."
+    ]
+  },
+  "reviews/independent-public-projection-provenance-delta.json": {
+    "status": "pass",
+    "scope": "Exact-delta recheck of the projection-manifest projectorProvenance addition. No source or projected evidence files were edited by this review.",
+    "beforeManifest": {
+      "sha256": "bf0d76111986de154ce93c2db37a7c3bc238ba624f287125f7426907f331006b",
+      "preservedObject": "preservation/objects/bf0d76111986de154ce93c2db37a7c3bc238ba624f287125f7426907f331006b",
+      "objectExistsAndHashMatches": true
+    },
+    "afterManifest": {
+      "path": "candidate/data/entity-profiles/chronicles-review/preservation-manifest.json",
+      "sha256": "5091c24c523c6db8d2b302528376e2a306a904b2368c7c13b89504b88f2ef804",
+      "onlyChangedField": "projectorProvenance",
+      "unchangedFieldsIncludingInputsAndTimestamp": true
+    },
+    "projectorProvenance": {
+      "originalLocalSHA256": "38c63fbd4f74e6b4496a60d9f2ca71d79261af37b91932cb2bc36da8b506e986",
+      "preservedObject": "preservation/objects/38c63fbd4f74e6b4496a60d9f2ca71d79261af37b91932cb2bc36da8b506e986",
+      "objectExistsHashAndBytesMatchCurrentSource": true,
+      "projectorIncludedInPublicProjection": false
+    },
+    "projectionIntegrity": {
+      "listedInputFiles": 3998,
+      "actualListedInputPathSetMatches": true,
+      "listedInputOutputHashMismatches": 0,
+      "actualFileCountIncludingManifest": 3999,
+      "extraOrMissingFiles": 0,
+      "statusAndRightsFieldsChanged": false,
+      "releaseInputSnapshotPathAndSHAUnchanged": true
+    },
+    "limitations": [
+      "This exact delta adds the projector hash and preserved-object reference to the public manifest. The Library copy is a separate future check and is not assessed here.",
+      "This report verifies the metadata delta and unchanged projected inputs; it does not provide semantic, runtime, legal, or publication approval."
+    ]
+  }
+}

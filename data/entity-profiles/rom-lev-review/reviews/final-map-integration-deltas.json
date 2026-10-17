@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "task": "final normalized map integration delta audit",
+  "inputs": {
+    "finalMapsBeforeEdit": {
+      "LEV01-13": {
+        "path": "reviews/final-verse-map-LEV-01-13.json",
+        "sha256": "b5227d1dfd103dce09d3d12bb43b7a6fb2f7204fb8b73621c115ad5cdc1d4bfc"
+      },
+      "LEV14-27": {
+        "path": "reviews/final-verse-map-LEV-14-27.json",
+        "sha256": "ecf49db9cbd125495ac09ef227a9b595a8a52ec5b1840b06b709a7957fa114f2"
+      },
+      "ROM01-08": {
+        "path": "reviews/final-verse-map-ROM-01-08.json",
+        "sha256": "7fe2b226b1b7e83a188e056b2285dc3368195f5e33a1e2ff6ec794dfeed541ef"
+      },
+      "ROM09-16": {
+        "path": "reviews/final-verse-map-ROM-09-16.json",
+        "sha256": "cb0f4525b7ec9355b8f59b74ea8b8b29db146515900114bf1fca553366839921"
+      }
+    },
+    "fixedLEVwitness": {
+      "path": "inventory/targets/lev-web-verses.json",
+      "sha256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+      "version": "webp-usfx-2026-10-13-35a6adf626e5"
+    },
+    "fixedROMwitness": {
+      "path": "inventory/targets/rom-canonical-witness.json",
+      "sha256": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+      "version": "webp-usfx-2026-10-13-35a6adf626e5"
+    },
+    "sourceProfiles": {
+      "mountSinaiProfileSHA256": "76803b19c878a0622ef8a1378f995e27d74e9119400c97d5413eea7f41d39ae6",
+      "sinaiWildernessProfileSHA256": "0e4f050b509ab42c27a25dad5f2c4ac441ce6183ee2c293a7453edcc94377eaa",
+      "danCollectiveProfileSHA256": "22b60a865018bc25330d03fd045855045bfa3db74b3b7062d1bff728cf159918",
+      "LEVJacobVariantSHA256": "a03e896e65fdd8e3adefedae4a8c54aeaf2ffd8dee2a1a058a2d192a356a5018",
+      "ROMJacobVariantSHA256": "e96384060fb8d62d3c0cffe99178e7bb4cd13819a95edb65ab532ad45969c5f5",
+      "doxologyAlignmentSHA256": "f430b79813cb9bf27af52947c96b4b453fce5d550f5d3d53b1ef17032a9660e4"
+    }
+  },
+  "edits": [
+    {
+      "file": "reviews/final-verse-map-LEV-01-13.json",
+      "ref": "LEV7:38",
+      "priorMapSHA256": "b5227d1dfd103dce09d3d12bb43b7a6fb2f7204fb8b73621c115ad5cdc1d4bfc",
+      "resultMapSHA256": "bf09b7da0954bd06ee284e7d38c90763961f6b9bb6a0e43d155a530cfa5351b7",
+      "priorEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:sinai_1098",
+          "relationship": "direct"
+        }
+      ],
+      "acceptedEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:mount_sinai_855",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:sinai_1098",
+          "relationship": "direct"
+        }
+      ],
+      "findingJa": "固定WEB7:38にMount Sinaiとwilderness of Sinaiが双方明記される。現行mount-sinaiプロフィールと修正済みsinai-wildernessプロフィールは別対象として同一座標を採用していない。既存place:mount_sinai_855をdirect追加し、荒野IDplace:sinai_1098もdirect維持。"
+    }
+  ],
+  "deltaAssessments": [
+    {
+      "ref": "LEV24:11",
+      "status": "accepted",
+      "currentEntities": [
+        "person:moses_2108",
+        "person:shelomith_2605",
+        "person:dibri_1010",
+        "person:god_1324",
+        "person:dan_973"
+      ],
+      "findingJa": "tribe of Danは集団。現行LEVダンプロフィールはkind=collective/identityType=collective。final mapは既存person:dan_973をdirect、無名の息子をDan個人として結び付けず採用済み。the Nameからperson:god_1324はrelatedで留保される。"
+    },
+    {
+      "ref": "LEV26:42",
+      "status": "qualified",
+      "currentEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "related"
+        }
+      ],
+      "findingJa": "本文はJacob個人。既存LEV context-variant reviewは同一IDをヤコブ個人用法として定義し、final reasonも集団Israelと区別。ただしLEV final rowにはROM9:13と異なり機械可読identityVariantがない。提案: 同じentity rowにidentityVariant=jacob-individualを付ける。今回の編集範囲外のためmapは未変更。"
+    },
+    {
+      "ref": "ROM9:13",
+      "status": "accepted",
+      "currentEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "identityVariant": "jacob-individual"
+        }
+      ],
+      "findingJa": "本文のJacobは個人。既存context-variant資料およびfinal rowのidentityVariant=jacob-individualと一致。"
+    },
+    {
+      "ref": "ROM11:26",
+      "status": "accepted-with-note",
+      "currentEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        }
+      ],
+      "findingJa": "「all Israel」は民の集団としてdirect。引用中のJacobを族長個人へ誤分解せず、この節のIsrael集団リンクと別個の個人variantを付けない。"
+    },
+    {
+      "ref": "ROM16:25-27",
+      "status": "accepted",
+      "sourceRefs": [
+        "ROM14:24",
+        "ROM14:25",
+        "ROM14:26"
+      ],
+      "findingJa": "固定canonical witnessは原文ROM14:24–26をそれぞれcanonical ROM16:25–27へ対応。公式WEB14:26脚注はverses 24–26 after ROM16:24 as 25–27と説明し、WEB16:25脚注も同じ対応を明記。final normalized mapは本文とsourceURLを原文ROM14:24–26に保持し、canonical座標16:25–27に配置している。KJV ROM16:25–27も同順の頌栄で整合。"
+    }
+  ],
+  "postEditMaps": {
+    "LEV01-13": {
+      "sha256": "bf09b7da0954bd06ee284e7d38c90763961f6b9bb6a0e43d155a530cfa5351b7",
+      "rows": 366,
+      "reviewSHA256": "c2c334642a4961b70f0b4b91b9e0a1a87ff511572ed0b711565ce5915b4d6a20",
+      "normalization": "Independent proposed/final entities applied; original drafts and review preserved"
+    },
+    "LEV14-27": {
+      "sha256": "ecf49db9cbd125495ac09ef227a9b595a8a52ec5b1840b06b709a7957fa114f2",
+      "rows": 493,
+      "reviewSHA256": "c8518425bb41fed74137bca7f0c636170a6db2d0628e221a8f2c03e457385d1e",
+      "normalization": "Independent proposed/final entities applied; original drafts and review preserved"
+    },
+    "ROM01-08": {
+      "sha256": "7fe2b226b1b7e83a188e056b2285dc3368195f5e33a1e2ff6ec794dfeed541ef",
+      "rows": 225,
+      "reviewSHA256": "19ddbbb73f5a4eee3131e17866ebf93f2718f40adbaa89c9f1b500a186d626a7",
+      "normalization": "Independent proposed entities applied; original drafts and review preserved"
+    },
+    "ROM09-16": {
+      "sha256": "cb0f4525b7ec9355b8f59b74ea8b8b29db146515900114bf1fca553366839921",
+      "rows": 208,
+      "reviewSHA256": "19ddbbb73f5a4eee3131e17866ebf93f2718f40adbaa89c9f1b500a186d626a7",
+      "normalization": "Independent proposed entities applied; original drafts and review preserved"
+    }
+  },
+  "reviewSHA256Preserved": {
+    "LEV01-13": "c2c334642a4961b70f0b4b91b9e0a1a87ff511572ed0b711565ce5915b4d6a20",
+    "LEV14-27": "c8518425bb41fed74137bca7f0c636170a6db2d0628e221a8f2c03e457385d1e",
+    "ROM01-08": "19ddbbb73f5a4eee3131e17866ebf93f2718f40adbaa89c9f1b500a186d626a7",
+    "ROM09-16": "19ddbbb73f5a4eee3131e17866ebf93f2718f40adbaa89c9f1b500a186d626a7"
+  },
+  "readOnlyScopeJa": "ROM maps, profiles, source catalogs and application files were not edited. Only final LEV01-13 verse map changed at LEV7:38; this report records all delta findings."
+}

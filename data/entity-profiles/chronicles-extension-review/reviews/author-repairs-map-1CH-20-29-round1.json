@@ -1,0 +1,142 @@
+{
+  "task": "author repair after independent review",
+  "mapPath": "reviews/verse-map-1CH-20-29.json",
+  "beforeMapSHA256": "e0e0018f1175c83f8f49bd426d4d4cc174b2703eb7c5ae2ba40cfd05d29ebada",
+  "preservedBeforeBytes": "preservation/objects/e0e0018f1175c83f8f49bd426d4d4cc174b2703eb7c5ae2ba40cfd05d29ebada",
+  "afterMapSHA256": "b833c5c695dc91cc6c88a07e9fce14e7af40969140a61c6303574e1262967000",
+  "inputSHA256": "83820955e98203124e8a34b34f1d74dbfd8780887927bde5daa425d8a6dc50f3",
+  "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+  "changes": [
+    {
+      "chapter": 20,
+      "verse": 7,
+      "action": "add",
+      "entityID": "person:israel_682",
+      "relationship": "direct",
+      "reasonJa": "固定WEB本文に「Israel」と明記され、挑戦を受けた民集団を指す。"
+    },
+    {
+      "chapter": 23,
+      "verse": 4,
+      "action": "add",
+      "entityID": "person:david_994",
+      "relationship": "direct",
+      "reasonJa": "節冒頭に「David said」と発話者が明記される。"
+    },
+    {
+      "chapter": 24,
+      "verse": 6,
+      "action": "add",
+      "entityID": "person:levi_1820",
+      "relationship": "context",
+      "reasonJa": "「who was of the Levites」はレビ人への所属を示す。書内の同じ部族用法に合わせてLevi祖先IDをcontextで結ぶ。"
+    },
+    {
+      "chapter": 24,
+      "verse": 20,
+      "action": "remove",
+      "entityID": "person:shubael_2579",
+      "previous": [
+        {
+          "entityID": "person:shubael_2579",
+          "relationship": "context",
+          "reasonJa": "本文の「Shubael」は部族・家系・出身を示す形で現れ、同名祖先/地名との関係を示す。個人の行為としては扱わない。"
+        }
+      ],
+      "reasonJa": "このIDは23:16のゲルショム系譜のShebuelに対応する。24:20はアムラム系譜のShubaelで、同一人物を示す本文根拠がないため除去し、未解決候補に残す。"
+    },
+    {
+      "chapter": 24,
+      "verse": 21,
+      "action": "remove",
+      "entityID": "person:jeshaiah_647",
+      "previous": [
+        {
+          "entityID": "person:jeshaiah_647",
+          "relationship": "direct",
+          "reasonJa": "WEB本文は「Isshiah」と表記し、索引はこのRehabiah系譜の候補Jeshaiahに対応させる。綴り・同一性はプロフィールレビュー待ち。"
+        }
+      ],
+      "reasonJa": "本文のIsshiahをJeshaiahと同一視する根拠がなく、別系譜の同名・類似名IDへ接続しない。"
+    },
+    {
+      "chapter": 25,
+      "verse": 3,
+      "action": "add",
+      "entityID": "person:shimei_2233",
+      "relationship": "direct",
+      "reasonJa": "音楽奉仕者の同じ名簿にShimeiと明記される。25:17もこの名簿のくじ順を続けるため、既存Shimei IDを用いる。"
+    },
+    {
+      "chapter": 26,
+      "verse": 31,
+      "action": "add",
+      "entityID": "person:hebron_1475",
+      "relationship": "context",
+      "reasonJa": "「Hebronites」はHebron系の集団を指す。直前26:30と同じ集団表現のため、同じ祖先IDをcontextで結ぶ。"
+    },
+    {
+      "chapter": 26,
+      "verse": 32,
+      "action": "add",
+      "entityID": "person:reuben_2429",
+      "relationship": "context",
+      "reasonJa": "「Reubenites」は族祖Reubenに由来する部族集団を指し、族祖個人の行為ではない。"
+    },
+    {
+      "chapter": 26,
+      "verse": 32,
+      "action": "add",
+      "entityID": "person:gad_1262",
+      "relationship": "context",
+      "reasonJa": "「Gadites」は族祖Gadに由来する部族集団を指す。預言者Gadの別IDではなく、族祖IDをcontextで結ぶ。"
+    },
+    {
+      "chapter": 24,
+      "verse": 20,
+      "action": "unresolved-add",
+      "term": "Shubael (son of Amram)",
+      "reasonJa": "固定WEB本文はこの系譜名を明記するが、既存Shubael/Shebuel候補は別のゲルショム系譜に結び付く。同一人物を示す根拠がないため既存IDへ結ばない。"
+    },
+    {
+      "chapter": 24,
+      "verse": 21,
+      "action": "unresolved-add",
+      "term": "Isshiah (son of Rehabiah)",
+      "reasonJa": "固定WEB本文の表記はIsshiah。Jeshaiahや24:25の別系譜のIsshiahとの同一性を確認できる既存ID根拠がないため保留。"
+    }
+  ],
+  "qualifiedReassessmentJa": [
+    {
+      "chapter": 27,
+      "verse": 4,
+      "decision": "qualified retained",
+      "reasonJa": "Dodai/Dodoの同一性は異綴りだけで確定しない。Ahohiteと書内の近接用例は手掛かりだが、明示的同一視は保留。"
+    },
+    {
+      "chapter": 26,
+      "verse": 14,
+      "decision": "qualified retained",
+      "reasonJa": "Shelemiah/Meshelemiahの差は当該本文だけでは解消しない。子Zechariahと門割当の近接文脈のみを根拠として留保する。"
+    },
+    {
+      "chapter": 29,
+      "verse": 18,
+      "decision": "qualified retained",
+      "reasonJa": "IsraelはAbraham/Isaacと並ぶ「our fathers」として父祖個人を指す。既存IDの個人/集団意味境界は別途プロフィール審査待ちで、新IDは作らない。"
+    },
+    {
+      "chapter": 29,
+      "verse": 25,
+      "decision": "qualified retained",
+      "reasonJa": "「all Israel」は民集団。「in Israel」は王権/政体を指す可能性があるが、当該行では集団IDのみを採り別用法は留保。"
+    }
+  ],
+  "validation": {
+    "verseCount": 268,
+    "coordinateCount": 268,
+    "duplicateCoordinates": 0,
+    "duplicateEntityRows": 0,
+    "adoptExcludeConflicts": 0
+  }
+}

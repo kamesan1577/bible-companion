@@ -1,0 +1,137 @@
+{
+  "reportType": "independent-delta-reclosure",
+  "scope": "Final independent reclosure of root repair removing the false Terah occurrence at 1CH 1:27; localized delta only, not batch07 approval.",
+  "checkedAtUTC": "2026-10-16T11:45:30Z",
+  "inputs": {
+    "draft": {
+      "path": "drafts/persons_2/1CH_person_terah_2841.json",
+      "sha256": "82a51ef29d77eacf8b7eac861f42893323e4d9cf4638172b6849fb077ddb444d"
+    },
+    "evidence": {
+      "path": "evidence/persons_2/1CH_person_terah_2841-sources.json",
+      "sha256": "0fd78fb5f6f53d9e9179b6fbfb2da2df3bac47a374e968ad457931307324a373"
+    },
+    "repair": {
+      "path": "evidence/persons_2/root-author-repair-terah-occurrence-evidence.json",
+      "sha256": "6b2a5bb4bd112257f794aa9e2042ba424d11940034f8fd512709606a4a6d612d"
+    },
+    "manifest": {
+      "path": "evidence/persons_2/batch07-current-manifest-after-root-occurrence-repair.json",
+      "sha256": "c3771499624012dd6941e2c610ef161f8e5e1f697f8031b360f1bdc1187518de"
+    },
+    "witness": {
+      "path": "inventory/targets/chronicles1-web-verses.json",
+      "sha256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a"
+    }
+  },
+  "profileSHA256": "5c39e8adcc56f6591d334c2fb376c2d7ab65e09fb98074828d7f2b2697c498da",
+  "currentBindingChecks": {
+    "profileHashMatchesSidecar": true,
+    "sidecarDraftHashMatches": true,
+    "manifestMatchesDraftEvidenceProfile": true,
+    "allProfileSourceIdsExist": true,
+    "genesisTextHashMatches": true,
+    "excludedOccurrence27HasNoTerahClaim": true,
+    "profilePassagesExclude27": true
+  },
+  "fixedPrimaryReview": [
+    {
+      "ref": "1CH 1:26",
+      "url": "https://ebible.org/engwebp/1CH01.htm#V26",
+      "witness": "webp-usfx-2026-10-13-35a6adf626e5",
+      "text": "Serug, Nahor, Terah,",
+      "findingJa": "「Serug, Nahor, Terah,」とテラを直接名指す。summary/knownBy 1:26とpassageは整合。"
+    },
+    {
+      "ref": "1CH 1:27",
+      "url": "https://ebible.org/engwebp/1CH01.htm#V27",
+      "witness": "webp-usfx-2026-10-13-35a6adf626e5",
+      "text": "Abram (also called Abraham).",
+      "findingJa": "「Abram (also called Abraham).」のみ。テラは出現しないため、occurrenceChecksはexcludedで妥当。current reasonとreview.primaryWitnessesはこの事実に一致する。"
+    }
+  ],
+  "factAndGate": {
+    "fact": {
+      "textJa": "アブラムはテラの子として記されています。",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 27
+      },
+      "sourceIds": [
+        "chronicles-person-terah_2841-webp-1ch-1-27",
+        "chronicles-person-terah_2841-web-gen-11-26"
+      ]
+    },
+    "directSupport": {
+      "ref": "GEN 11:26",
+      "url": "https://ebible.org/engwebp/GEN11.htm#V26",
+      "text": "Terah lived seventy years, and became the father of Abram, Nahor, and Haran.",
+      "textSHA256": "0425e522bd9e26e10e1fc99927076203426ed7f273e8ac7742ec0fca8f34e03b",
+      "edition": "Live updated World English Bible webpage at ebible.org; not part of the pinned local Chronicles witness."
+    },
+    "findingJa": "Genesis 11:26がテラはアブラムらの父となったと直接述べる。1CH 1:27はアブラムの名が出るため表示を遅らせる書内gateであり、テラが1:27に直接出るという意味ではない。profile passageから1:27を除き、父子factのみ同節gateに残した変更は整合する。",
+    "sourceIdsRoleJa": "factはGEN 11:26を直接根拠として含む。1CH 1:27は表示gate/書内のアブラム名出現として紐づいており、現reviewでもその役割を区別している。"
+  },
+  "currentReaderFields": {
+    "knownBy": {
+      "chapter": 1,
+      "verse": 26
+    },
+    "summaryJa": "1歴代誌1:26の系譜に、セリグ、ナホルに続いてテラの名が記されます。",
+    "subtitleJa": "系譜の列挙にセリグ、ナホルに続いて名が挙がります。",
+    "historicalRoleJa": "系譜の列挙に名が挙がる人物です。",
+    "identityNoteJa": "",
+    "fact": {
+      "textJa": "アブラムはテラの子として記されています。",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 27
+      },
+      "sourceIds": [
+        "chronicles-person-terah_2841-webp-1ch-1-27",
+        "chronicles-person-terah_2841-web-gen-11-26"
+      ]
+    },
+    "occurrenceChecks": [
+      {
+        "chapter": 1,
+        "verse": 26,
+        "status": "included",
+        "reasonJa": "固定WEB本文で割当名またはその妥当な綴りが明記される。"
+      },
+      {
+        "chapter": 1,
+        "verse": 27,
+        "status": "excluded",
+        "reasonJa": "1CH1:27はアブラムの名のみを記し、テラを名指ししません。父子関係は別出典GEN11:26が支えますが、この節をテラの直接出現としては採用しません。"
+      }
+    ],
+    "spoilerCheckJa": "常時欄は固定WEB1:26の名列挙に限定。GEN11:26に基づく父子factと記事リンクは、書内でアブラム名が現れる1:27まで遅らせます。このgateはテラの1:27直接出現を主張しません。",
+    "primaryWitnesses": [
+      {
+        "ref": "1CH 1:26",
+        "textualBasisJa": "本文は「セリグ、ナホル、テラ」と系譜の列に名を挙げます。"
+      },
+      {
+        "ref": "1CH 1:27",
+        "textualBasisJa": "固定WEBのこの節は「アブラム（アブラハムとも呼ばれる）」と名を記します。テラとの父子関係の直接出典は創世記11:26で、読者向けfactの表示開始は1CH1:27です。"
+      },
+      {
+        "ref": "GEN 11:26",
+        "textualBasisJa": "ライブWEBはテラがアブラム、ナホル、ハランの父となったと明記します。固定1CH本文とは別の出典です。"
+      }
+    ]
+  },
+  "wikipediaRecheck": {
+    "url": "https://en.wikipedia.org/wiki/Terah",
+    "revisionURL": "https://en.wikipedia.org/w/index.php?title=Terah&oldid=1375929871",
+    "currentEvidenceLocator": "Root actual live read: Terah article lead188 and Biblical narrative192–194; identifies fatherhood and distinguishes GEN genealogy from Chronicles name list.",
+    "independentLiveReReadAtUTC": "2026-10-16T11:44:52Z",
+    "bodyFindingJa": "改訂1375929871のlead 192はテラをアブラハムの父と記し、Genesis 11:26–32と1 Chronicles 1:17–27を別々に挙げる。Biblical narrative 196ではGenesis系譜で三人の息子を挙げ、198でChroniclesを別の系譜として説明する。現noteの要旨と1:27 gateは範囲に合う。",
+    "decision": "supported for this delta; prior article body read reused and revision was independently reopened."
+  },
+  "historyCheckJa": "以前のauthorRepairsにあった「1:27 explicitly names Terah as Abram’s father」は削除せず、invalidatedByRootRepair=trueとして履歴化されている。現在の occurrenceCheck と現稿根拠には使われていない。",
+  "decision": "pass",
+  "reasonJa": "今回のfalse-quote由来の不整合は解消。固定WEBの1:27はアブラム名だけで、現稿はテラをその節の出現から除外し、父子関係はGEN 11:26の別一次出典で支え、1CH 1:27を表示開始gateとしてのみ扱う。プロフィール各source ID、fact gate、manifestとsidecar hashesが一致し、Wikipediaの提示改訂も実読した。",
+  "limitationsJa": "このpassはTerah occurrence-evidence correctionの局所再closure。人物プロフィール全体・他 batch07行の独立承認は意味しない。"
+}

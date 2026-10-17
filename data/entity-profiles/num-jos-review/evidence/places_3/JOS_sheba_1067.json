@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "book": "JOS",
+  "entityID": "place:sheba_1067",
+  "profilePath": "drafts/places_3/JOS_sheba_1067.json",
+  "profileSHA256": "5da4cd9bc098871de71f3481807e024b84d0ae840fe0f15081d7f66e845d621f",
+  "assignment": {
+    "path": "assignments/places_3.json",
+    "sha256": "ec36241ee733ce0e8c7942b652b68c6540ed225fa01393cc9b7561602da2e08f"
+  },
+  "fixedWitness": {
+    "path": "inventory/targets/joshua-web-verses.json",
+    "sha256": "26ae82b805dee523bb852977ccf62ad38cc40ebe442b650cbd7862db833ea854",
+    "version": "webp-usfx-2026-10-13-35a6adf626e5"
+  },
+  "sourceIndex": {
+    "path": "candidate/apps/ios/Sources/Core/Resources/entity-index.json",
+    "workspace": "../romans-leviticus-entities-work",
+    "sha256": "dfe6fba1109f192548e28645cf085ddafe3baf7820d200e2e28da486dd98f11a",
+    "candidateCoordinate": [
+      9.022736,
+      38.746799
+    ],
+    "coordinateStatus": "unverified-candidate"
+  },
+  "primaryChecks": [
+    {
+      "ref": "JOS 19:2",
+      "sourceURL": "https://ebible.org/engwebp/JOS19.htm#V2",
+      "text": "They had for their inheritance Beersheba (or Sheba), Moladah,",
+      "contextRefs": [
+        "JOS 19:1 — The second lot came out for Simeon, even for the tribe of the children of Simeon according to their families. Their inheritance was in the middle of the inheritance of the children of Judah.",
+        "JOS 19:3 — Hazar Shual, Balah, Ezem,"
+      ],
+      "disposition": "excluded-reading-variant",
+      "reasonJa": "WEBPのJOS19:2は「Beersheba (or Sheba)」と明記し、ShebaをBeershebaの別読みに置きます。したがってこのIDを独立した別の町として表示・地図化せず、同節を持つ既存 place:beersheba_170 への別名／異読候補として保留します。共有町一覧にはSheba行もありますが、表はShemaとの関係に疑問符を付けるだけで、WEBP本文と異なる読みの関係を解決しません。旧座標[9.022736,38.746799]はユダ南部の文脈と明確に不整合です。"
+    }
+  ],
+  "excludedChecks": [
+    {
+      "ref": "JOS 19:2",
+      "sourceURL": "https://ebible.org/engwebp/JOS19.htm#V2",
+      "text": "They had for their inheritance Beersheba (or Sheba), Moladah,",
+      "contextRefs": [
+        "JOS 19:1 — The second lot came out for Simeon, even for the tribe of the children of Simeon according to their families. Their inheritance was in the middle of the inheritance of the children of Judah.",
+        "JOS 19:3 — Hazar Shual, Balah, Ezem,"
+      ],
+      "disposition": "excluded-reading-variant",
+      "reasonJa": "WEBPのJOS19:2は「Beersheba (or Sheba)」と明記し、ShebaをBeershebaの別読みに置きます。したがってこのIDを独立した別の町として表示・地図化せず、同節を持つ既存 place:beersheba_170 への別名／異読候補として保留します。共有町一覧にはSheba行もありますが、表はShemaとの関係に疑問符を付けるだけで、WEBP本文と異なる読みの関係を解決しません。旧座標[9.022736,38.746799]はユダ南部の文脈と明確に不整合です。"
+    }
+  ],
+  "wikipediaCheck": {
+    "status": "identity-unresolved-after-reading-shared-row",
+    "identityBasisJa": "共有町一覧の該当行を実読したが、固定WEBP訳の異読との関係を解決しないため適用記事なし。"
+  },
+  "geographyAssessment": {
+    "classification": "uncertain",
+    "candidateMapDisposition": "suppress-identified-mismatch",
+    "reasonJa": "WEBPのJOS19:2は「Beersheba (or Sheba)」と明記し、ShebaをBeershebaの別読みに置きます。したがってこのIDを独立した別の町として表示・地図化せず、同節を持つ既存 place:beersheba_170 への別名／異読候補として保留します。共有町一覧にはSheba行もありますが、表はShemaとの関係に疑問符を付けるだけで、WEBP本文と異なる読みの関係を解決しません。旧座標[9.022736,38.746799]はユダ南部の文脈と明確に不整合です。",
+    "profileCoordinate": null,
+    "independentCoordinateSourcesRead": []
+  },
+  "limitationsJa": "固定WEBP本文と周辺節、共有Wikipedia記事の該当行を確認。独立した固定地理座標資料は確認していない。",
+  "sourceReuse": {
+    "priorDraftReuse": false,
+    "existingCandidateIndexReused": true
+  },
+  "elapsedSeconds": 100,
+  "authorRepairAudit": [
+    {
+      "review": "reviews/independent-profiles-places_3.json",
+      "reviewedDraftSHA256": null,
+      "previousEvidenceSHA256": "dd60a7a26f0d8f82b83a437fee99a004914e5f002bb0a501ebaeae2d0e2e5ba5",
+      "newProfileSHA256": "5da4cd9bc098871de71f3481807e024b84d0ae840fe0f15081d7f66e845d621f",
+      "changes": [
+        {
+          "field": "profile",
+          "before": {
+            "id": "place:sheba_1067",
+            "kind": "place",
+            "nameJa": "シェバ（異読候補）",
+            "subtitleJa": "ベエル・シェバの異読として保留",
+            "summaryJa": "ヨシュア記19:2の固定WEBPは「Beersheba (or Sheba)」と記し、別の町ではなく同じ箇所の異読として示します。既存のベエル・シェバの項目と重複するため、この候補は独立した地名カードにしません。",
+            "identityNoteJa": "共有町一覧はShebaをシメオン領の町として別行にしますが、固定WEBP本文とは読みが異なり、記事の記述だけでは独立した地点か決められません。既存 place:beersheba_170 への別名／異読提案を保留します。",
+            "knownBy": {
+              "chapter": 19,
+              "verse": 2
+            },
+            "passages": [],
+            "sourceIds": [],
+            "facts": [],
+            "modernLocationJa": "独立地点としての現代位置は確定できません。",
+            "historicalRoleJa": "本文ではベエル・シェバの異読表記として現れるため、別の町としての役割を付しません。",
+            "coordinate": null,
+            "locationNoteJa": "現在の候補位置がこの地名に合わないため、地図には点を表示していません。",
+            "wikipedia": null,
+            "materialCardIDs": [],
+            "supplemental": false
+          },
+          "after": null,
+          "reasonJa": "JOS19:2のWEBPはBeersheba (or Sheba)と異読を明示し、独立した別地点として確認できないためプロフィール対象外。"
+        }
+      ]
+    }
+  ]
+}

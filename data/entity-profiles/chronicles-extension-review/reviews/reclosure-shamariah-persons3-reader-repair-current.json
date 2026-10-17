@@ -1,0 +1,148 @@
+{
+  "reportType": "independent-current-reclosure-delta",
+  "reviewedAtUTC": "2026-10-16T12:12:01Z",
+  "batch": "batch09/persons_3",
+  "authorRepairLogPath": "evidence/persons_3/author-repair-shamariah-reader-fields.json",
+  "authorRepairLogSHA256": "1be0e382c3f9c45d96e8c317c4d346346e70e467b67112bb84cc92decd672357",
+  "authorCurrentDeltaManifestPath": "reviews/final-input-batch09-persons_3-author-current-reader-repair-delta.json",
+  "authorCurrentDeltaManifestSHA256": "2b50bf712ccae61bf4360fdd4950c86db577af4a770884a3acca967c43f4110b",
+  "rows": [
+    {
+      "book": "2CH",
+      "entityID": "person:shamariah_2531",
+      "draftPath": "drafts/persons_3/2CH_shamariah_2531.json",
+      "evidencePath": "evidence/persons_3/2CH_shamariah_2531.json",
+      "currentDraftSHA256": "9cb7eb48baf7135de457e22d5ec296e389f3d0714617fa51dd4041346004d5dd",
+      "currentEvidenceSHA256": "a33ecc5a03b5074e395cb180e1fed47ceb53f16e026bc974a4cb72381a580ff2",
+      "currentProfileSHA256": "a19e1a05003aa981909a214a36ef10f5c40f9f72cec3c799e9b3a1dc89111e83",
+      "decision": "pass",
+      "runtimeDisposition": "active person profile; exact shared-list entry supports the 2CH 11:19 figure and the KJV spelling variant, with Wikipedia shown only at 11:19",
+      "readerFieldReview": {
+        "knownBy": {
+          "chapter": 11,
+          "verse": 19
+        },
+        "nameJa": "シェマリヤ",
+        "subtitleJa": "レハブアムの子として、イェウシュとザハムとともに名が記されています。",
+        "summaryJa": "レハブアムの子として、イェウシュとザハムとともに名が記されています。",
+        "identityNoteJa": "英訳によっては、シェマリヤの名が「Shamariah」と綴られます。",
+        "historicalRoleJa": null,
+        "wikipediaNoteJa": "共有一覧はレハブアムの子シェマリヤを2歴代誌11:19の人物として挙げ、Shamariahを欽定訳の異表記としています。",
+        "result": "pass",
+        "finding": "The author removed internal editorial wording and aligned the display name to WEB Shemariah. The base says he is listed among Rehoboam’s sons alongside Jeush and Zaham. No later assigned-book facts or future same-name comparisons are present in current reader fields.",
+        "contextCheck": "WEB 2CH 11:18 names Rehoboam taking Mahalath as wife; 11:19 then says she bore him sons and names Jeush, Shemariah, and Zaham. Thus Rehoboam is the immediate context for “him”; the profile knownBy remains at the named occurrence 11:19."
+      },
+      "wikipediaReview": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shemariah",
+        "title": "List of minor Hebrew Bible figures, L–Z",
+        "kind": "shared-section",
+        "identityVerified": true,
+        "knownBy": {
+          "chapter": 11,
+          "verse": 19
+        },
+        "sourceId": "shamariah_2531-wikipedia",
+        "liveBodyReadAtUTC": "2026-10-16T12:12:01Z",
+        "locator": "Shemariah section, lines 1524–1530, especially line 1528. The list says there are four biblical figures named Shemariah; its 2 Chronicles 11:19 entry is a son of Rehoboam and spells the name Shamariah in the KJV.",
+        "assessment": "The candidate label Shamariah corresponds to the same 2CH 11:19 entry, not a different person inferred from similar spelling. identityVerified=true is supported for this translation-variant mapping. The note accurately identifies the KJV as the named spelling source. Wikipedia is secondary evidence, not a claim made in WEB itself."
+      },
+      "sourceGateReview": {
+        "profileKnownBy": {
+          "chapter": 11,
+          "verse": 19
+        },
+        "passages": [
+          {
+            "book": "2CH",
+            "start": {
+              "chapter": 11,
+              "verse": 19
+            },
+            "end": {
+              "chapter": 11,
+              "verse": 19
+            }
+          }
+        ],
+        "profileSourceIds": [
+          "shamariah_2531-webp-2ch-11-19",
+          "shamariah_2531-wikipedia"
+        ],
+        "sources": [
+          {
+            "sourceId": "shamariah_2531-webp-2ch-11-19",
+            "resolves": true,
+            "knownBy": {
+              "chapter": 11,
+              "verse": 19
+            },
+            "url": "https://ebible.org/engwebp/2CH11.htm#V19",
+            "license": "Public domain",
+            "attribution": "World English Bible (WEB), public domain; fixed local witness webp-usfx-2026-10-13-35a6adf626e5."
+          },
+          {
+            "sourceId": "shamariah_2531-wikipedia",
+            "resolves": true,
+            "knownBy": {
+              "chapter": 11,
+              "verse": 19
+            },
+            "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shemariah",
+            "license": "Creative Commons Attribution-ShareAlike 4.0 International",
+            "attribution": "Wikipedia contributors."
+          }
+        ],
+        "factCount": 0,
+        "result": "pass",
+        "reason": "Both primary and Wikipedia source records resolve and have knownBy 2:11:19, matching the profile first-use gate. The primary WEB source URL is the exact 2CH 11:19 anchor; the immediate 11:18 WEB context was re-read and recorded in the repair evidence. The Wikipedia source is CC BY-SA 4.0 with contributors attribution. No later fact has been added."
+      },
+      "fixedWEBChecks": [
+        {
+          "coordinate": "2CH 11:18",
+          "text": "Rehoboam took a wife for himself, Mahalath the daughter of Jerimoth the son of David and of Abihail the daughter of Eliab the son of Jesse.",
+          "citationURL": "https://ebible.org/engwebp/2CH11.htm#V18",
+          "textSHA256": "45aeeb9c119b4b6166059057588b2c4083f8b64608c443ab46f9918b7ab9efad",
+          "witnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "witnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5"
+        },
+        {
+          "coordinate": "2CH 11:19",
+          "text": "She bore him sons: Jeush, Shemariah, and Zaham.",
+          "citationURL": "https://ebible.org/engwebp/2CH11.htm#V19",
+          "textSHA256": "dc679d26bc42aa79553855cc84d2763bfae31e3751b0730de556f0b218f1b90b",
+          "witnessPath": "inventory/targets/chronicles2-web-verses.json",
+          "witnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5"
+        }
+      ],
+      "authorDelta": {
+        "repairLogPath": "evidence/persons_3/author-repair-shamariah-reader-fields.json",
+        "repairLogSHA256": "1be0e382c3f9c45d96e8c317c4d346346e70e467b67112bb84cc92decd672357",
+        "manifestPath": "reviews/final-input-batch09-persons_3-author-current-reader-repair-delta.json",
+        "manifestSHA256": "2b50bf712ccae61bf4360fdd4950c86db577af4a770884a3acca967c43f4110b",
+        "priorDraftSHA256": "ae99a77fad39320eba73d3690b6c73e1611fda42f62599b68820ced62c1b8cc0",
+        "priorProfileSHA256": "df9d163c68023cd8d589aa89ff5db105d79f8a21cfdb4b4ce7848e573d417404",
+        "priorEvidenceSHA256": "c6712dee7d981742db3264f2bf924a626445bdc3795fb1e9c0c8dc6a3ac7652c",
+        "currentHashesMatchAuthorLog": true,
+        "changeSummary": "nameJa, subtitleJa, summaryJa, identityNoteJa, and evidence profile-decision text were corrected; occurrence, passages, facts, source URLs, knownBy, article kind and verification flag are unchanged."
+      },
+      "priorReports": {
+        "priorReclosurePath": "reviews/reclosure-batch09-persons_3-two-fail-repairs-current.json",
+        "priorReclosureSHA256": "9d37312894adaa7b4170862c12836a6d48a339775ee846cc93422e3b6dd26a96",
+        "originalIndependentPath": "reviews/independent-batch09-persons_3.json",
+        "originalIndependentSHA256": "4dc5271b06eec641136dd828df206e4707b30f83232271350479e02c2e3c34ac",
+        "note": "Earlier reviews bind pre-repair SHAs. This is an independent delta review of current bytes; earlier reports were not edited."
+      },
+      "unresolved": null,
+      "changesToDraftOrEvidenceByReviewer": false
+    }
+  ],
+  "summary": {
+    "pass": 1,
+    "qualified": 0,
+    "fail": 0,
+    "open": 0,
+    "publicationApproved": false
+  }
+}

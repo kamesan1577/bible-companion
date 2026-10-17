@@ -1,0 +1,974 @@
+{
+  "reportType": "author-repair-log",
+  "scope": "reviews/verse-map-2SA-01-08.json",
+  "sourceReview": "reviews/independent-source-map-2SA-01-08.json",
+  "sourceReviewSHA256": "9c2c2b59d3a06aa6d038bc8f8494f5d9bd06343bb1cf572272ae664970e021f7",
+  "beforeMapSHA256": "a0cb2df4aa71871e3180f156b05983eb9a1ca1b3c40e774c39ff7acf2e2ab9af",
+  "afterMapSHA256": "de09afaf97b9a1f7e907ea857d3c126bcc03daf39d0b4838bc6f39fc9b604cbf",
+  "fixedWitnessPath": "inventory/targets/samuel2-web-verses.json",
+  "fixedWitnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+  "changedVerses": [
+    {
+      "chapter": 1,
+      "verse": 18,
+      "sourceText": "(and he commanded them to teach the children of Judah the song of the bow; behold, it is written in the book of Jashar):",
+      "citationURL": "https://ebible.org/engwebp/2SA01.htm#V18",
+      "before": {
+        "book": "2SA",
+        "chapter": 1,
+        "verse": 18,
+        "sourceText": "(and he commanded them to teach the children of Judah the song of the bow; behold, it is written in the book of Jashar):",
+        "sourceTextSHA256": "02405cc8c6e7b075714a7b00e05142b84bcfd88a1aae156b37cbe41a8789031d",
+        "citationURL": "https://ebible.org/engwebp/2SA01.htm#V18",
+        "entities": [
+          {
+            "entityID": "person:judah_1751",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "person:jasher_737",
+            "name": "Jasher",
+            "reasonJa": "「book of Jashar」は書物名であり、人物・場所のリンク対象ではないため除外。"
+          }
+        ],
+        "reasonJa": "本文に明記される名前・地理語「Judah」をdirectで結んだ。 除外候補は節内の語形が示す対象とIDの対象が異なるか、本文に名・一意な照応がない。詳細はexcludedCandidatesへ記録。"
+      },
+      "after": {
+        "book": "2SA",
+        "chapter": 1,
+        "verse": 18,
+        "sourceText": "(and he commanded them to teach the children of Judah the song of the bow; behold, it is written in the book of Jashar):",
+        "sourceTextSHA256": "02405cc8c6e7b075714a7b00e05142b84bcfd88a1aae156b37cbe41a8789031d",
+        "citationURL": "https://ebible.org/engwebp/2SA01.htm#V18",
+        "entities": [
+          {
+            "entityID": "person:david_994",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:judah_1751",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "person:jasher_737",
+            "name": "Jasher",
+            "reasonJa": "「book of Jashar」は書物名であり、人物・場所のリンク対象ではないため除外。"
+          }
+        ],
+        "reasonJa": "「he commanded them」の主語は哀歌を始めたDavidを受けるため、Davidをcontextで加える。Judahは本文に明記。Jasharは書物名。"
+      }
+    },
+    {
+      "chapter": 3,
+      "verse": 3,
+      "sourceText": "and his second, Chileab, of Abigail the wife of Nabal the Carmelite; and the third, Absalom the son of Maacah the daughter of Talmai king of Geshur;",
+      "citationURL": "https://ebible.org/engwebp/2SA03.htm#V3",
+      "before": {
+        "book": "2SA",
+        "chapter": 3,
+        "verse": 3,
+        "sourceText": "and his second, Chileab, of Abigail the wife of Nabal the Carmelite; and the third, Absalom the son of Maacah the daughter of Talmai king of Geshur;",
+        "sourceTextSHA256": "ab55d0fec2d5e06f2931054899566dd5f92da7b28c2b58a3b4fca5759d37430a",
+        "citationURL": "https://ebible.org/engwebp/2SA03.htm#V3",
+        "entities": [
+          {
+            "entityID": "person:abigail_26",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:absalom_59",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:daniel_939",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:david_994",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:maacah_1839",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:nabal_2126",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:talmai_2819",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:carmel_278",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:carmel_278",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:geshur_461",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [],
+        "reasonJa": "Abigailをカルメル人とする地名由来語をCarmelへ対応。Davidは直前に挙がる子らの父として明確。"
+      },
+      "after": {
+        "book": "2SA",
+        "chapter": 3,
+        "verse": 3,
+        "sourceText": "and his second, Chileab, of Abigail the wife of Nabal the Carmelite; and the third, Absalom the son of Maacah the daughter of Talmai king of Geshur;",
+        "sourceTextSHA256": "ab55d0fec2d5e06f2931054899566dd5f92da7b28c2b58a3b4fca5759d37430a",
+        "citationURL": "https://ebible.org/engwebp/2SA03.htm#V3",
+        "entities": [
+          {
+            "entityID": "person:abigail_26",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:absalom_59",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:daniel_939",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:david_994",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:maacah_1839",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:nabal_2126",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:talmai_2819",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:carmel_278",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:geshur_461",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [],
+        "reasonJa": "Chileabは2SA本文の名。並行する1歴代誌3:1は同じ2番目の息子をDanielと呼ぶため、既存person:daniel_939へ対応させる。Carmelはアビガイルの出身地由来形容詞を示す地名として1件だけ結ぶ。"
+      }
+    },
+    {
+      "chapter": 3,
+      "verse": 7,
+      "sourceText": "Now Saul had a concubine, whose name was Rizpah, the daughter of Aiah; and Ishbosheth said to Abner, “Why have you gone in to my father’s concubine?”",
+      "citationURL": "https://ebible.org/engwebp/2SA03.htm#V7",
+      "before": {
+        "book": "2SA",
+        "chapter": 3,
+        "verse": 7,
+        "sourceText": "Now Saul had a concubine, whose name was Rizpah, the daughter of Aiah; and Ishbosheth said to Abner, “Why have you gone in to my father’s concubine?”",
+        "sourceTextSHA256": "99312aa4c2c59a699318f41cb9888a2ccda2437541e7a9a0a41f8c8118177901",
+        "citationURL": "https://ebible.org/engwebp/2SA03.htm#V7",
+        "entities": [
+          {
+            "entityID": "person:abner_57",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:aiah_177",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:ish-bosheth_622",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:rizpah_2444",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:saul_2478",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "person:ish-bosheth_622",
+            "name": "Ish-bosheth",
+            "reasonJa": "候補名は節本文に明記されず、前後からの一意な照応も確認できないため追加しない。"
+          }
+        ],
+        "reasonJa": "「彼」はIshbosheth、「Saulのそばめ」はSaulを指す。"
+      },
+      "after": {
+        "book": "2SA",
+        "chapter": 3,
+        "verse": 7,
+        "sourceText": "Now Saul had a concubine, whose name was Rizpah, the daughter of Aiah; and Ishbosheth said to Abner, “Why have you gone in to my father’s concubine?”",
+        "sourceTextSHA256": "99312aa4c2c59a699318f41cb9888a2ccda2437541e7a9a0a41f8c8118177901",
+        "citationURL": "https://ebible.org/engwebp/2SA03.htm#V7",
+        "entities": [
+          {
+            "entityID": "person:abner_57",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:aiah_177",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:ish-bosheth_622",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:rizpah_2444",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:saul_2478",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [],
+        "reasonJa": "本文がIshboshethをAbnerへの発話者として明記するためdirect。Rizpah、Aiah、Abner、Saulも明記される。"
+      }
+    },
+    {
+      "chapter": 7,
+      "verse": 11,
+      "sourceText": "and as from the day that I commanded judges to be over my people Israel. I will cause you to rest from all your enemies. Moreover the LORD tells you that the LORD will make you a house.",
+      "citationURL": "https://ebible.org/engwebp/2SA07.htm#V11",
+      "before": {
+        "book": "2SA",
+        "chapter": 7,
+        "verse": 11,
+        "sourceText": "and as from the day that I commanded judges to be over my people Israel. I will cause you to rest from all your enemies. Moreover the LORD tells you that the LORD will make you a house.",
+        "sourceTextSHA256": "fc1b6982cf31b468dfa1d260108bad44b3620ffec1c73969defae7e3074273ae",
+        "citationURL": "https://ebible.org/engwebp/2SA07.htm#V11",
+        "entities": [
+          {
+            "entityID": "person:david_994",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:god_1324",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:israel_682",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [],
+        "reasonJa": "一人称の約束は神の継続発話。Davidへの二人称も前段から明らか。"
+      },
+      "after": {
+        "book": "2SA",
+        "chapter": 7,
+        "verse": 11,
+        "sourceText": "and as from the day that I commanded judges to be over my people Israel. I will cause you to rest from all your enemies. Moreover the LORD tells you that the LORD will make you a house.",
+        "sourceTextSHA256": "fc1b6982cf31b468dfa1d260108bad44b3620ffec1c73969defae7e3074273ae",
+        "citationURL": "https://ebible.org/engwebp/2SA07.htm#V11",
+        "entities": [
+          {
+            "entityID": "person:david_994",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:god_1324",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:israel_682",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [],
+        "reasonJa": "本文は「the LORD tells you」「the LORD will make you a house」と主の名を明記する。Davidは二人称で語りかけられる相手としてcontext、Israelは本文に明記。"
+      }
+    },
+    {
+      "chapter": 7,
+      "verse": 15,
+      "sourceText": "but my loving kindness will not depart from him, as I took it from Saul, whom I put away before you.",
+      "citationURL": "https://ebible.org/engwebp/2SA07.htm#V15",
+      "before": {
+        "book": "2SA",
+        "chapter": 7,
+        "verse": 15,
+        "sourceText": "but my loving kindness will not depart from him, as I took it from Saul, whom I put away before you.",
+        "sourceTextSHA256": "a20f40c2bada9abe96238b43bc59c5ae4ed1e3d4abb526d7e5e0a5708ee176ce",
+        "citationURL": "https://ebible.org/engwebp/2SA07.htm#V15",
+        "entities": [
+          {
+            "entityID": "person:david_994",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:god_1324",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:saul_2478",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [],
+        "reasonJa": "本文に明記される名前・地理語「God」「Saul」をdirectで結んだ。 文脈照応は「David」に限った。"
+      },
+      "after": {
+        "book": "2SA",
+        "chapter": 7,
+        "verse": 15,
+        "sourceText": "but my loving kindness will not depart from him, as I took it from Saul, whom I put away before you.",
+        "sourceTextSHA256": "a20f40c2bada9abe96238b43bc59c5ae4ed1e3d4abb526d7e5e0a5708ee176ce",
+        "citationURL": "https://ebible.org/engwebp/2SA07.htm#V15",
+        "entities": [
+          {
+            "entityID": "person:david_994",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:god_1324",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:saul_2478",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [],
+        "reasonJa": "神の一人称発話が続くが、この節自体にGod/LORDの名はないためcontext。Saulは名指し、Davidは「you」の照応先。"
+      }
+    },
+    {
+      "chapter": 8,
+      "verse": 5,
+      "sourceText": "When the Syrians of Damascus came to help Hadadezer king of Zobah, David struck twenty two thousand men of the Syrians.",
+      "citationURL": "https://ebible.org/engwebp/2SA08.htm#V5",
+      "before": {
+        "book": "2SA",
+        "chapter": 8,
+        "verse": 5,
+        "sourceText": "When the Syrians of Damascus came to help Hadadezer king of Zobah, David struck twenty two thousand men of the Syrians.",
+        "sourceTextSHA256": "278c911a1fa9fc46f672cc5b3d8ed8ec811e811b6405fa37f51e2f72a910ca18",
+        "citationURL": "https://ebible.org/engwebp/2SA08.htm#V5",
+        "entities": [
+          {
+            "entityID": "person:david_994",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:hadarezer_1340",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:aram_82",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:damascus_322",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:zobah_1272",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [],
+        "reasonJa": "本文の「Syria of Damascus」はAramの地域名を直接示し、DamascusとZobahも明記。"
+      },
+      "after": {
+        "book": "2SA",
+        "chapter": 8,
+        "verse": 5,
+        "sourceText": "When the Syrians of Damascus came to help Hadadezer king of Zobah, David struck twenty two thousand men of the Syrians.",
+        "sourceTextSHA256": "278c911a1fa9fc46f672cc5b3d8ed8ec811e811b6405fa37f51e2f72a910ca18",
+        "citationURL": "https://ebible.org/engwebp/2SA08.htm#V5",
+        "entities": [
+          {
+            "entityID": "person:david_994",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:hadarezer_1340",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:damascus_322",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:zobah_1272",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "place:aram_82",
+            "name": "Aram",
+            "reasonJa": "本文の「Syrians of Damascus」は民族集団を指し、この節に地名Aram/Syriaは出ない。地域名Aramの直接言及としては扱わない。"
+          }
+        ],
+        "reasonJa": "本文はダマスカスのシリア人がツォバの王を助けに来たと述べる。「Syrians」は集団名であり地域カードAramへの直接地名リンクにはしない。DamascusとZobahは本文に明記。適合するシリア人集団IDは確認できない。"
+      }
+    },
+    {
+      "chapter": 2,
+      "verse": 9,
+      "sourceText": "He made him king over Gilead, over the Ashurites, over Jezreel, over Ephraim, over Benjamin, and over all Israel.",
+      "citationURL": "https://ebible.org/engwebp/2SA02.htm#V9",
+      "before": {
+        "book": "2SA",
+        "chapter": 2,
+        "verse": 9,
+        "sourceText": "He made him king over Gilead, over the Ashurites, over Jezreel, over Ephraim, over Benjamin, and over all Israel.",
+        "sourceTextSHA256": "1e11a555b65cb36da83567d8d4be0750e6ac76947f4a31ff1703500295aa282f",
+        "citationURL": "https://ebible.org/engwebp/2SA02.htm#V9",
+        "entities": [
+          {
+            "entityID": "person:abner_57",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:ish-bosheth_622",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:israel_682",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:benjamin-territory_1293",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:ephraim-territory_1292",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:gilead_475",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:jezreel_643",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "candidate": "person:ashurite",
+            "reasonJa": "集団/地域の適合既存IDを確定できない。"
+          }
+        ],
+        "reasonJa": "「Ephraim」「Benjamin」はIshboshethの支配範囲を列挙する本文の地理名として既存の2SA専用地域profileへ結ぶ。profileと地図方針は人々/地域や境界を確定しない。Israel・Gilead・Jezreelも本文に明記され、Ashuritesは適合ID未確定。"
+      },
+      "after": {
+        "book": "2SA",
+        "chapter": 2,
+        "verse": 9,
+        "sourceText": "He made him king over Gilead, over the Ashurites, over Jezreel, over Ephraim, over Benjamin, and over all Israel.",
+        "sourceTextSHA256": "1e11a555b65cb36da83567d8d4be0750e6ac76947f4a31ff1703500295aa282f",
+        "citationURL": "https://ebible.org/engwebp/2SA02.htm#V9",
+        "entities": [
+          {
+            "entityID": "person:abner_57",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:ish-bosheth_622",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:israel_682",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:benjamin-territory_1293",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:ephraim-territory_1292",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:gilead_475",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:jezreel_643",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "candidate": "person:ashurite",
+            "reasonJa": "集団/地域の適合既存IDを確定できない。"
+          },
+          {
+            "entityID": "person:benjamin_463",
+            "name": "Benjamin",
+            "reasonJa": "この句はBenjaminの地を示すため、集団IDではなく既存place:benjamin-territory_1293を採用。"
+          },
+          {
+            "entityID": "person:ephraim_1206",
+            "name": "Ephraim",
+            "reasonJa": "この句はEphraimの地を示すため、集団IDではなく既存place:ephraim-territory_1292を採用。"
+          }
+        ],
+        "reasonJa": "「Ephraim」「Benjamin」はIshboshethの支配範囲を列挙する本文の地理名として既存の2SA専用地域profileへ結ぶ。profileと地図方針は人々/地域や境界を確定しない。Israel・Gilead・Jezreelも本文に明記され、Ashuritesは適合ID未確定。"
+      }
+    },
+    {
+      "chapter": 5,
+      "verse": 3,
+      "sourceText": "So all the elders of Israel came to the king to Hebron, and King David made a covenant with them in Hebron before the LORD; and they anointed David king over Israel.",
+      "citationURL": "https://ebible.org/engwebp/2SA05.htm#V3",
+      "before": {
+        "book": "2SA",
+        "chapter": 5,
+        "verse": 3,
+        "sourceText": "So all the elders of Israel came to the king to Hebron, and King David made a covenant with them in Hebron before the LORD; and they anointed David king over Israel.",
+        "sourceTextSHA256": "54488ff6b58e466eb8200f2dd466022120e4d7873b486c9b6ff5166d37434eaa",
+        "citationURL": "https://ebible.org/engwebp/2SA05.htm#V3",
+        "entities": [
+          {
+            "entityID": "person:david_994",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:god_1324",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:israel_682",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:hebron_551",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [],
+        "reasonJa": "本文はIsraelを集団として明記するが、固有の政治国家カードを立てる根拠にはしない。"
+      },
+      "after": {
+        "book": "2SA",
+        "chapter": 5,
+        "verse": 3,
+        "sourceText": "So all the elders of Israel came to the king to Hebron, and King David made a covenant with them in Hebron before the LORD; and they anointed David king over Israel.",
+        "sourceTextSHA256": "54488ff6b58e466eb8200f2dd466022120e4d7873b486c9b6ff5166d37434eaa",
+        "citationURL": "https://ebible.org/engwebp/2SA05.htm#V3",
+        "entities": [
+          {
+            "entityID": "person:david_994",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:god_1324",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:israel_682",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:hebron_551",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "place:united-kingdom-of-israel_1301",
+            "name": "Israel",
+            "reasonJa": "本文のIsraelは長老たち/王権の対象となる民で、別個の「United Kingdom of Israel」地名候補として重ねない。"
+          }
+        ],
+        "reasonJa": "本文はIsraelを集団として明記するが、固有の政治国家カードを立てる根拠にはしない。"
+      }
+    },
+    {
+      "chapter": 6,
+      "verse": 2,
+      "sourceText": "David arose and went with all the people who were with him from Baale Judah, to bring up from there God’s ark, which is called by the Name, even the name of the LORD of Armies who sits above the cherubim.",
+      "citationURL": "https://ebible.org/engwebp/2SA06.htm#V2",
+      "before": {
+        "book": "2SA",
+        "chapter": 6,
+        "verse": 2,
+        "sourceText": "David arose and went with all the people who were with him from Baale Judah, to bring up from there God’s ark, which is called by the Name, even the name of the LORD of Armies who sits above the cherubim.",
+        "sourceTextSHA256": "76be80d324f3cee28e670de7209dbe172f7ad329268340314131b52ba4225fbb",
+        "citationURL": "https://ebible.org/engwebp/2SA06.htm#V2",
+        "entities": [
+          {
+            "entityID": "person:david_994",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:god_1324",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:baale-judah_139",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [],
+        "reasonJa": "複合地名Baale Judahを示す既存place IDを採用。語中のJudahを別の集団カードとして重ねてリンクしない。"
+      },
+      "after": {
+        "book": "2SA",
+        "chapter": 6,
+        "verse": 2,
+        "sourceText": "David arose and went with all the people who were with him from Baale Judah, to bring up from there God’s ark, which is called by the Name, even the name of the LORD of Armies who sits above the cherubim.",
+        "sourceTextSHA256": "76be80d324f3cee28e670de7209dbe172f7ad329268340314131b52ba4225fbb",
+        "citationURL": "https://ebible.org/engwebp/2SA06.htm#V2",
+        "entities": [
+          {
+            "entityID": "person:david_994",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:god_1324",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:baale-judah_139",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "person:judah_1751",
+            "name": "Judah",
+            "reasonJa": "Baale Judahは本文で場所として記されるため既存place:baale-judah_139を採用し、Judahの民IDを同じ場所へ流用しない。"
+          }
+        ],
+        "reasonJa": "複合地名Baale Judahを示す既存place IDを採用。語中のJudahを別の集団カードとして重ねてリンクしない。"
+      }
+    },
+    {
+      "chapter": 8,
+      "verse": 2,
+      "sourceText": "He defeated Moab, and measured them with the line, making them to lie down on the ground; and he measured two lines to put to death, and one full line to keep alive. The Moabites became servants to David, and brought tribute.",
+      "citationURL": "https://ebible.org/engwebp/2SA08.htm#V2",
+      "before": {
+        "book": "2SA",
+        "chapter": 8,
+        "verse": 2,
+        "sourceText": "He defeated Moab, and measured them with the line, making them to lie down on the ground; and he measured two lines to put to death, and one full line to keep alive. The Moabites became servants to David, and brought tribute.",
+        "sourceTextSHA256": "da6ef3b0229b6a04a834e13819d872b4f7ffed584fdf413daea404207bc51a12",
+        "citationURL": "https://ebible.org/engwebp/2SA08.htm#V2",
+        "entities": [
+          {
+            "entityID": "person:david_994",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:moab_2103",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [],
+        "reasonJa": "本文はMoab人を打ち負かし、従属させたと記す。ここで「Moab」を地域地名と集団の二重カードにせず、Moab集団IDで表す。"
+      },
+      "after": {
+        "book": "2SA",
+        "chapter": 8,
+        "verse": 2,
+        "sourceText": "He defeated Moab, and measured them with the line, making them to lie down on the ground; and he measured two lines to put to death, and one full line to keep alive. The Moabites became servants to David, and brought tribute.",
+        "sourceTextSHA256": "da6ef3b0229b6a04a834e13819d872b4f7ffed584fdf413daea404207bc51a12",
+        "citationURL": "https://ebible.org/engwebp/2SA08.htm#V2",
+        "entities": [
+          {
+            "entityID": "person:david_994",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:moab_2103",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "place:moab_815",
+            "name": "Moab",
+            "reasonJa": "この節は「Moabを打ち負かし、彼らを測った」「Moabitesは服属した」と征服された民・政体を述べるため、地域place IDを重ねずcollective person:moab_2103を採用。"
+          }
+        ],
+        "reasonJa": "本文はMoab人を打ち負かし、従属させたと記す。ここで「Moab」を地域地名と集団の二重カードにせず、Moab集団IDで表す。"
+      }
+    },
+    {
+      "chapter": 8,
+      "verse": 12,
+      "sourceText": "of Syria, of Moab, of the children of Ammon, of the Philistines, of Amalek, and of the plunder of Hadadezer, son of Rehob, king of Zobah.",
+      "citationURL": "https://ebible.org/engwebp/2SA08.htm#V12",
+      "before": {
+        "book": "2SA",
+        "chapter": 8,
+        "verse": 12,
+        "sourceText": "of Syria, of Moab, of the children of Ammon, of the Philistines, of Amalek, and of the plunder of Hadadezer, son of Rehob, king of Zobah.",
+        "sourceTextSHA256": "06f6635109ad8d74c49e0c0e69e274c3f7c76f7122fe5c91ae67fa7d0d531677",
+        "citationURL": "https://ebible.org/engwebp/2SA08.htm#V12",
+        "entities": [
+          {
+            "entityID": "person:amalek_197",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:hadarezer_1340",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:moab_2103",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:rehob_2410",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:aram_82",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:zobah_1272",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "place:amalek_53",
+            "name": "Amalek",
+            "reasonJa": "戦利品の由来としてのAmalekの民・勢力であり、1SAの「町」用法とは異なるため除外。"
+          },
+          {
+            "entityID": "place:edom_357",
+            "name": "Edom",
+            "reasonJa": "候補名は節本文に明記されず、前後からの一意な照応も確認できないため追加しない。"
+          }
+        ],
+        "reasonJa": "本文は献納品の由来となる征服民・勢力を列挙する。SyriaはAram地域名としてdirect、Moabは集団IDで表し同語を地域カードに重ねない。"
+      },
+      "after": {
+        "book": "2SA",
+        "chapter": 8,
+        "verse": 12,
+        "sourceText": "of Syria, of Moab, of the children of Ammon, of the Philistines, of Amalek, and of the plunder of Hadadezer, son of Rehob, king of Zobah.",
+        "sourceTextSHA256": "06f6635109ad8d74c49e0c0e69e274c3f7c76f7122fe5c91ae67fa7d0d531677",
+        "citationURL": "https://ebible.org/engwebp/2SA08.htm#V12",
+        "entities": [
+          {
+            "entityID": "person:amalek_197",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:hadarezer_1340",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:moab_2103",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:rehob_2410",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:aram_82",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:zobah_1272",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "place:amalek_53",
+            "name": "Amalek",
+            "reasonJa": "本文のAmalekは征服民・勢力として戦利品の由来に列挙される。地域place IDではなく既存collective person:amalek_197を採用。"
+          },
+          {
+            "entityID": "place:edom_357",
+            "name": "Edom",
+            "reasonJa": "候補名は節本文に明記されず、前後からの一意な照応も確認できないため追加しない。"
+          },
+          {
+            "entityID": "place:moab_815",
+            "name": "Moab",
+            "reasonJa": "列挙は戦利品の由来となった人々/勢力を示す。本文のMoabには既存collective person:moab_2103を結び、地域place IDを重ねない。"
+          }
+        ],
+        "reasonJa": "戦利品の由来としてSyria、Moab、Ammonites、Philistines、Amalekが人々/勢力の列挙で現れる。AramとZobahは地域/王権の地理名。Moab/Amalekは既存collective IDで表し地理カードを重ねない。適合する集団IDを確認できない語は未解決一覧に残す。"
+      }
+    }
+  ],
+  "unresolvedCanonicalCandidatesBefore": [
+    {
+      "name": "Philistines / Philistine lords",
+      "references": [
+        "1:20",
+        "2:17",
+        "5:17–25",
+        "8:1"
+      ],
+      "reasonJa": "民族・政治集団として明記されるが、適合する既存の集団IDは確認できない。sea-of-Philistines地理IDを民として流用しない。"
+    },
+    {
+      "name": "Amorites",
+      "references": [
+        "3:18",
+        "7:14"
+      ],
+      "reasonJa": "民族集団として本文に明記されるが、既存の適合集団IDは確認できない。"
+    },
+    {
+      "name": "Jashar (Book of Jashar)",
+      "references": [
+        "1:18"
+      ],
+      "reasonJa": "書物名であり、人物/場所のmap対象外。候補のperson:jasher_737は除外。"
+    },
+    {
+      "name": "Nacon",
+      "references": [
+        "6:6"
+      ],
+      "reasonJa": "打穀場の固有名として明記されるが、対応する既存canonical place IDが確認できない。"
+    },
+    {
+      "name": "Obed-Edom",
+      "references": [
+        "6:10–12"
+      ],
+      "reasonJa": "人物名・家の主として明記されるが、既存canonical person IDが確認できない。新IDは作らず未リンク。"
+    },
+    {
+      "name": "Cherethites / Pelethites",
+      "references": [
+        "8:18"
+      ],
+      "reasonJa": "集団として明記されるが適合する既存集団IDを確認できない。"
+    },
+    {
+      "name": "Seraiah (scribe)",
+      "references": [
+        "8:17"
+      ],
+      "reasonJa": "本文は書記Seraiahとするが、索引の同名Seraiah ID群に2SA8:17の適合出現がなく同定を確証できない。Shavsha等を推定同一視せず保留。"
+    },
+    {
+      "name": "Ashurites",
+      "references": [
+        "2:9"
+      ],
+      "reasonJa": "地域/民の呼称として列挙されるが、本文だけで既存canonical place/person IDへ結び付けられない。"
+    },
+    {
+      "name": "Bithron",
+      "references": [
+        "2:29"
+      ],
+      "reasonJa": "本文に名指される地理語だが、既存canonical place IDに適合するものを確認できない。新IDは作成しない。"
+    }
+  ],
+  "unresolvedCanonicalCandidatesAfter": [
+    {
+      "name": "Philistines / Philistine lords",
+      "references": [
+        "1:20",
+        "5:17–25",
+        "8:1",
+        "3:18",
+        "8:12"
+      ],
+      "reasonJa": "Philistinesは2SA 3:18および8:12等で集団として明記されるが、適合する既存の集団IDを確認できない。海域地名place:sea-of-philistines_1161を人々として流用しない。"
+    },
+    {
+      "name": "Jashar (Book of Jashar)",
+      "references": [
+        "1:18"
+      ],
+      "reasonJa": "書物名であり、人物/場所のmap対象外。候補のperson:jasher_737は除外。"
+    },
+    {
+      "name": "Nacon",
+      "references": [
+        "6:6"
+      ],
+      "reasonJa": "打穀場の固有名として明記されるが、対応する既存canonical place IDが確認できない。"
+    },
+    {
+      "name": "Obed-Edom",
+      "references": [
+        "6:10–12"
+      ],
+      "reasonJa": "人物名・家の主として明記されるが、既存canonical person IDが確認できない。新IDは作らず未リンク。"
+    },
+    {
+      "name": "Cherethites / Pelethites",
+      "references": [
+        "8:18"
+      ],
+      "reasonJa": "集団として明記されるが適合する既存集団IDを確認できない。"
+    },
+    {
+      "name": "Seraiah (scribe)",
+      "references": [
+        "8:17"
+      ],
+      "reasonJa": "本文は書記Seraiahとするが、索引の同名Seraiah ID群に2SA8:17の適合出現がなく同定を確証できない。Shavsha等を推定同一視せず保留。"
+    },
+    {
+      "name": "Ashurites",
+      "references": [
+        "2:9"
+      ],
+      "reasonJa": "地域/民の呼称として列挙されるが、本文だけで既存canonical place/person IDへ結び付けられない。"
+    },
+    {
+      "name": "Bithron",
+      "references": [
+        "2:29"
+      ],
+      "reasonJa": "本文に名指される地理語だが、既存canonical place IDに適合するものを確認できない。新IDは作成しない。"
+    },
+    {
+      "name": "Syrians / Arameans",
+      "references": [
+        "8:5",
+        "8:6",
+        "8:13"
+      ],
+      "reasonJa": "各節で「Syrians」と人々として明記されるが、適合する既存の集団IDを確認できない。場所名Aramは地域用例にのみ使用し、民族呼称へ代用しない。"
+    },
+    {
+      "name": "Ammonites / children of Ammon",
+      "references": [
+        "8:12"
+      ],
+      "reasonJa": "「children of Ammon」と人々として明記されるが、適合する既存集団IDを確認できない。"
+    },
+    {
+      "name": "Edomites",
+      "references": [
+        "8:14"
+      ],
+      "reasonJa": "「Edomites」と人々として明記されるが、適合する既存集団IDを確認できない。場所IDは地域用例に限る。"
+    }
+  ],
+  "changesSummaryJa": "独立レビューfail6件を原文に従って修正し、候補除外の節内理由を補充、誤ったunresolved参照を削除し、未解決の集団言及を追加した。"
+}

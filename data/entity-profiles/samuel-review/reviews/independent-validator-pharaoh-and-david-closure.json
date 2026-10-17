@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "createdAtUTC": "2026-10-16T02:21:34Z",
+  "reviewType": "independent-current-source-and-validator-reclosure",
+  "checks": [
+    {
+      "entityID": "person:pharaoh_2331",
+      "draftPath": "drafts/persons_1/1SA_pharaoh_2331.json",
+      "currentDraftSHA256": "21dae7bced6f2c1a434dd7827406aa39b388c1f56b088142597e7db7da26396e",
+      "currentProfileSHA256": "3ae96a8d58af06a5d7979cfc47d3cf8ee63ed95cd664fd080399823b504a0c5d",
+      "evidencePath": "evidence/persons_1/1SA_pharaoh_2331-sources.json",
+      "currentEvidenceSHA256": "63cf3ad33285715b31ed29c2e38934c9db9aaf9fcd60debb48d4bb2def65da7f",
+      "status": "qualified",
+      "decisionJa": "Wikipediaは特定の聖書中の王を同定せず、称号の説明だけを提供する。kind=related-section、relationVerified=true、noteJaあり、identityVerified=falseを保ち、validator条件を満たす。",
+      "primaryBasis": [
+        {
+          "ref": "1SA 2:27",
+          "basisJa": "「Pharaoh’s house」は王号への言及。特定の王名はない。"
+        },
+        {
+          "ref": "1SA 6:6",
+          "basisJa": "エジプトとPharaohを複数形の歴史叙述で挙げるが、2:27の王と同一人物とは記さない。"
+        }
+      ],
+      "secondaryBasis": {
+        "url": "https://ja.wikipedia.org/wiki/ファラオ",
+        "locator": "導入、行309",
+        "basisJa": "古代エジプト王を指す称号として定義。個人同定には不適。"
+      },
+      "remaining": "This validates the title relation only; no individual Pharaoh is identified."
+    },
+    {
+      "entityID": "person:david_994",
+      "draftPath": "drafts/persons_3/2SA_david_994.json",
+      "currentDraftSHA256": "52fddc41d0b04040fc8e13e9c809922592227d6bb072096f03c4cbf541f76907",
+      "currentProfileSHA256": "92f814b7ba026a341ce6a78ac918363cccfc5d7e34e979da441bc31b84798d3f",
+      "evidencePath": "evidence/persons_3/2SA_david_994.json",
+      "currentEvidenceSHA256": "5be9fce455ff45344f0cd723ef5016e460534ca1e60bfad0fd134e647f7085dc",
+      "metadataRepairLog": "evidence/persons_3/author-repair-david-wikipedia-checkedat.json",
+      "metadataRepairLogSHA256": "a1dc0dca7259482e2b69986d9ff2233f472ff07b1274188d9f2d3ff09a8f2e96",
+      "status": "pass",
+      "decisionJa": "profile.wikipedia.checkedAtは保存済み実読記録のUTC日付と一致する。draft/profile SHAはsidecarと一致。本文・同定・リンク先の意味フィールドは今回変更なし。実読locatorと節の記録はsidecarにあり、metadata-only closureとして合格。",
+      "articleBasis": "David, opening and §Biblical account—Family/Narrative, lines 289–305; evidence records that it identifies the biblical David and cites 2 Samuel family passages.",
+      "timestampBasisUTC": "2026-10-16T01:28:26.420078Z"
+    }
+  ],
+  "methodJa": "固定WEBの該当文、現行draft、evidence sidecar、Wikipedia実記事の該当箇所とネイティブsafeURL条件を照合。Davidは既存の実読記録と現在のハッシュ/日付を再照合。"
+}

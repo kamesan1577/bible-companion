@@ -1,0 +1,101 @@
+{
+  "book": "2SA",
+  "entityID": "place:united-kingdom-of-israel_1301",
+  "assignmentTargetKey": "2SA:place:united-kingdom-of-israel_1301",
+  "draftFile": "drafts/places_1/2SA_united-kingdom-of-israel_1301.json",
+  "draftSHA256": "23f09c5894085fd3c67e35f201cf32bff3a79df08cf99702dae3baa3bcb29347",
+  "profileSHA256": "7beca22e7b356ff9ee4ef26b17ead5e1165515d0b6eda20696ee5bf3c020e136",
+  "pinnedWEB": {
+    "sourceId": "webp",
+    "version": "webp-usfx-2026-10-13-35a6adf626e5",
+    "file": "inventory/targets/samuel2-web-verses.json",
+    "fileSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2"
+  },
+  "candidateSource": {
+    "url": "https://github.com/robertrouse/theographic-bible-metadata/tree/52e049efb3b95e4f1da52d11a3303fbd2d648922",
+    "commit": "52e049efb3b95e4f1da52d11a3303fbd2d648922",
+    "license": "CC-BY-SA-4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": "Derived from Theographic Bible Metadata by Robert Rouse and contributors. Names and occurrence indexes only; prose removed, Japanese labels added, coordinates marked as candidates. Candidate coordinates are not independently verified."
+  },
+  "primaryContext": [
+    {
+      "chapter": 5,
+      "verse": 3,
+      "candidateText": "So all the elders of Israel came to the king to Hebron, and King David made a covenant with them in Hebron before the LORD; and they anointed David king over Israel.",
+      "fixedText": "So all the elders of Israel came to the king to Hebron, and King David made a covenant with them in Hebron before the LORD; and they anointed David king over Israel.",
+      "sourceTextSHA256": "54488ff6b58e466eb8200f2dd466022120e4d7873b486c9b6ff5166d37434eaa",
+      "context": [
+        {
+          "chapter": 4,
+          "verse": 12,
+          "text": "David commanded his young men, and they killed them, cut off their hands and their feet, and hanged them up beside the pool in Hebron. But they took the head of Ishbosheth and buried it in Abner’s grave in Hebron.",
+          "citationURL": "https://ebible.org/engwebp/2SA04.htm#V12",
+          "sourceTextSHA256": "9a836b5562dd0d59a78028b7c6f2c25cb677ab5b8837c12010821299c6f89aa6"
+        },
+        {
+          "chapter": 5,
+          "verse": 3,
+          "text": "So all the elders of Israel came to the king to Hebron, and King David made a covenant with them in Hebron before the LORD; and they anointed David king over Israel.",
+          "citationURL": "https://ebible.org/engwebp/2SA05.htm#V3",
+          "sourceTextSHA256": "54488ff6b58e466eb8200f2dd466022120e4d7873b486c9b6ff5166d37434eaa"
+        },
+        {
+          "chapter": 6,
+          "verse": 1,
+          "text": "David again gathered together all the chosen men of Israel, thirty thousand.",
+          "citationURL": "https://ebible.org/engwebp/2SA06.htm#V1",
+          "sourceTextSHA256": "f08acda9ace37592efb29812bf318226e614de7eea5447ce20c43180b748fcee"
+        }
+      ]
+    }
+  ],
+  "occurrenceChecks": [
+    {
+      "chapter": 5,
+      "verse": 3,
+      "status": "direct",
+      "reasonJa": "固定WEB本文で場所名を名指す。"
+    }
+  ],
+  "wikipediaBodyRead": {
+    "title": "イスラエル王国",
+    "url": "https://ja.wikipedia.org/wiki/イスラエル王国",
+    "checkedAtUTC": "2026-10-16T01:47:05Z",
+    "locator": "冒頭および「ダビデ王の時代」, lines 274–277, 291–293",
+    "supportJa": "The Japanese article distinguishes the unified kingdom before division from the later northern kingdom, names David’s rule and Jerusalem, but also notes that the historical existence/scope of the united kingdom is debated; this is related political context, not evidence for exact borders in 2 Samuel 5:3."
+  },
+  "geography": {
+    "identityCheck": "1サムエル記側の候補出現は場所を示さず保留。2サムエル記5:3は王権の政治対象としてイスラエルを明示する。",
+    "uncertainty": "領域の境界・面積はこの節に示されません。",
+    "review": {
+      "category": "region",
+      "coordinatePublished": false,
+      "legacyCandidateStatus": "suppressed",
+      "indexCandidateCoordinate": null,
+      "indexCoordinateStatus": "no candidate",
+      "independentOfficialGeographyCheck": "未実施。プロフィール座標はnull。",
+      "reasonJa": "政治領域の範囲・境界が特定されず、点候補の地図表示は不適切。"
+    }
+  },
+  "profileTextSHA256Method": "SHA-256 of ensure_ascii=False, indent=2, insertion-order JSON serialization of profile plus trailing newline.",
+  "metadataHistory": [
+    {
+      "atUTC": "2026-10-16T01:10:28Z",
+      "change": "Added pinned assignment/source candidate metadata and exact immediate-verse context blocks for every assigned occurrence; no claims/draft fields changed."
+    },
+    {
+      "field": "wikipediaNegativeSearch",
+      "value": {
+        "checkedAtUTC": "2026-10-16T01:08:03Z",
+        "queries": [
+          "Israel",
+          "\"Israel\" biblical site Wikipedia"
+        ],
+        "excludedCandidates": []
+      },
+      "supersededAtUTC": "2026-10-16T01:47:05Z",
+      "reason": "An appropriate article or section was read and linked."
+    }
+  ]
+}

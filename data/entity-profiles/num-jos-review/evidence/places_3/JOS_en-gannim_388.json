@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "book": "JOS",
+  "entityID": "place:en-gannim_388",
+  "profilePath": "drafts/places_3/JOS_en-gannim_388.json",
+  "profileSHA256": "fda21e883cd02aa685a00dfd27718adade41e8128dcda50895765ffe9cd3aa42",
+  "assignment": {
+    "path": "assignments/places_3.json",
+    "sha256": "ec36241ee733ce0e8c7942b652b68c6540ed225fa01393cc9b7561602da2e08f"
+  },
+  "fixedWitness": {
+    "path": "inventory/targets/joshua-web-verses.json",
+    "sha256": "26ae82b805dee523bb852977ccf62ad38cc40ebe442b650cbd7862db833ea854",
+    "version": "webp-usfx-2026-10-13-35a6adf626e5"
+  },
+  "sourceIndex": {
+    "path": "candidate/apps/ios/Sources/Core/Resources/entity-index.json",
+    "workspace": "../romans-leviticus-entities-work",
+    "sha256": "dfe6fba1109f192548e28645cf085ddafe3baf7820d200e2e28da486dd98f11a",
+    "candidateCoordinate": [
+      32.46349906,
+      35.30368319
+    ],
+    "coordinateStatus": "unverified-candidate"
+  },
+  "primaryChecks": [
+    {
+      "ref": "JOS 19:21",
+      "sourceURL": "https://ebible.org/engwebp/JOS19.htm#V21",
+      "text": "Remeth, Engannim, En Haddah, and Beth Pazzez.",
+      "contextRefs": [
+        "JOS 19:20 — Rabbith, Kishion, Ebez,",
+        "JOS 19:22 — The border reached to Tabor, Shahazumah, and Beth Shemesh. Their border ended at the Jordan: sixteen cities with their villages."
+      ],
+      "disposition": "accepted-occurrence"
+    },
+    {
+      "ref": "JOS 21:29",
+      "sourceURL": "https://ebible.org/engwebp/JOS21.htm#V29",
+      "text": "Jarmuth with its pasture lands, En Gannim with its pasture lands: four cities.",
+      "contextRefs": [
+        "JOS 21:28 — Out of the tribe of Issachar, Kishion with its pasture lands, Daberath with its pasture lands,",
+        "JOS 21:30 — Out of the tribe of Asher, Mishal with its pasture lands, Abdon with its pasture lands,"
+      ],
+      "disposition": "accepted-occurrence"
+    }
+  ],
+  "wikipediaCheck": {
+    "title": "Cities in the Book of Joshua",
+    "language": "en",
+    "url": "https://en.wikipedia.org/wiki/Cities_in_the_Book_of_Joshua#The_list_of_cities_and_suggested_locations",
+    "status": "read-identity-verified; location proposals plural",
+    "identityBasisJa": "表でJOS19:21/21:29、Issachar、複数の候補地、JOS15:34 Judahを別行として確認。",
+    "fragmentVerified": true
+  },
+  "geographyAssessment": {
+    "classification": "city",
+    "candidateMapDisposition": "keep-legacy-candidate",
+    "reasonJa": "イッサカル領の町名に対応する旧候補点を、複数の別候補地があることを明示した未確認候補として維持。ユダの同名町の点は混ぜない。",
+    "profileCoordinate": null,
+    "independentCoordinateSourcesRead": []
+  },
+  "limitationsJa": "固定WEB本文・直前直後を確認。Wikipediaの該当記事/共有表節を実読。候補座標は未確認で、Pleiades/発掘機関の独立照合は未実施。",
+  "sourceReuse": {
+    "priorDraftReuse": false,
+    "existingCandidateIndexReused": true
+  },
+  "elapsedSeconds": 240,
+  "authorRepairAudit": [
+    {
+      "review": "reviews/independent-profiles-places_3.json",
+      "reviewedDraftSHA256": "cf39d2710c679433df4b3fd0a7b836a1f1b454b5b6fdded151690a46e8aec03e",
+      "previousEvidenceSHA256": "cf39d2710c679433df4b3fd0a7b836a1f1b454b5b6fdded151690a46e8aec03e",
+      "newProfileSHA256": "b0852343d082244f0ae1bce514b34e757cbce33dbd4febc53e5f3626cb977342",
+      "changes": [
+        {
+          "field": "profile.historicalRoleJa",
+          "before": "イッサカル領の町一覧に現れ、後にレビ人の町一覧にも含まれる都市名です。",
+          "after": "イッサカル領の町一覧に含まれる古代の地名です。"
+        }
+      ]
+    }
+  ]
+}

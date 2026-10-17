@@ -1,0 +1,189 @@
+{
+  "repairType": "author-repairs-places_1-reader-closure-round2",
+  "createdAtUTC": "2026-10-15T22:07:11.957749Z",
+  "sourceReview": {
+    "path": "reviews/closure-reader-revisions-places_1.json",
+    "sha256": "c62027c53f4121c0c7adee06c3fc6b09d38b3183afe1700535c6246cd16a04c4"
+  },
+  "fixedWitnesses": [
+    {
+      "path": "inventory/targets/joshua-web-verses.json",
+      "sha256": "26ae82b805dee523bb852977ccf62ad38cc40ebe442b650cbd7862db833ea854",
+      "rowCount": 658
+    },
+    {
+      "path": "inventory/targets/numbers-web-verses.json",
+      "sha256": "f50a3147ff698b614ece92c48f6630890c542218bb80d5568d2759144d4e7bb9",
+      "rowCount": 1288
+    }
+  ],
+  "wikipediaReads": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Adummim",
+      "title": "Adummim",
+      "section": "Location",
+      "lines": "120–126",
+      "retrievedAtUTC": "2026-10-15T22:07:11.957749Z",
+      "paraphraseJa": "記事はヨシュア記15:7・18:17のascentを扱い、Tal’at ed-Dumm等の旧説と位置不明という近年見解を併記。",
+      "bodySHA256": null
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Bethel#Book_of_Joshua",
+      "title": "Bethel",
+      "section": "Book of Joshua",
+      "lines": "199",
+      "retrievedAtUTC": "2026-10-15T22:07:11.957749Z",
+      "paraphraseJa": "記事は7:2・8:9でベテルがアイの西側にあることを説明し、16:1の境界/Luz説明も記載。",
+      "bodySHA256": null
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Azmon",
+      "title": "Azmon",
+      "section": "History",
+      "lines": "107–112",
+      "retrievedAtUTC": "2026-10-15T22:07:11.957749Z",
+      "paraphraseJa": "記事は南境界西部の地点、Numbers 34:4–5およびJoshua 15:4の用例を記し、Gusayma説を一つだけ紹介。",
+      "bodySHA256": null
+    }
+  ],
+  "records": [
+    {
+      "file": "drafts/places_1/JOS_place_adummim_32.json",
+      "id": "place:adummim_32",
+      "beforeDraftSHA256": "4344b7c2544ad38471cd8f28865e175a425a3a519a5725d68c7eefddaa5256a9",
+      "afterDraftSHA256": "2d42b12f1924687a1c2dcd866f124c322ba81e1767860df055abb2b3e34f4f74",
+      "beforeProfileSHA256": "cb7ce8230f3fa8191cbc92d6f3fd5cc7623404924d416a558d90b3e853f02b94",
+      "afterProfileSHA256": "a119076d131d4916887a7a39ee58e5ebd1c5b4a138e7ff17213baad1a573b2f5",
+      "changes": [
+        {
+          "field": "profile.sourceIds",
+          "before": "missing jos-place-adummim_32-web-18-17",
+          "after": [
+            "jos-place-adummim_32-web-15-7",
+            "wikipedia-adummim_32",
+            "jos-place-adummim_32-web-18-17"
+          ]
+        },
+        {
+          "field": "sources",
+          "before": "No JOS 18:17 source despite passage and primaryWitness",
+          "after": {
+            "id": "jos-place-adummim_32-web-18-17",
+            "title": "World English Bible (WEBP), Joshua 18:17, pinned witness webp-usfx-2026-10-13-35a6adf626e5",
+            "url": "https://ebible.org/engwebp/JOS18.htm#V17",
+            "license": "Public Domain",
+            "licenseURL": "https://ebible.org/engwebp/copyright.htm",
+            "attribution": "World English Bible (WEBP), public domain; fixed local witness webp-usfx-2026-10-13-35a6adf626e5; Japanese summary is an editorial paraphrase.",
+            "knownBy": {
+              "chapter": 18,
+              "verse": 17
+            },
+            "category": "primary-text"
+          }
+        },
+        {
+          "field": "profile.wikipedia.noteJa",
+          "before": "記事はアドミムの坂道を境界上の地形として扱うが、現代位置の同定には幅がある。",
+          "after": "<removed>"
+        }
+      ],
+      "followupCorrection": {
+        "repairedAtUTC": "2026-10-15T22:07:30.460331Z",
+        "noteJa": "入れ子のwikipedia.noteJaが一時削除されていたため、最終noteをwikipedia object内へ復元し、誤ったprofile内のliteral dotted keyを除去。",
+        "finalWikipediaNoteJa": "記事はヨシュア記15:7・18:17の坂道として扱い、Tal’at ed-Dumm説と位置不明という見解を併記します。"
+      }
+    },
+    {
+      "file": "drafts/places_1/JOS_place_bethel_202.json",
+      "id": "place:bethel_202",
+      "beforeDraftSHA256": "8eb2186aa46c5bc4f4478cb5ab60ea4e195cfaf2cad4124e9b21a097a590454b",
+      "afterDraftSHA256": "4a03034e3890876300f5b20956adc46ff723fec3bff1d348f5a07a1c45a080f5",
+      "beforeProfileSHA256": "0c50f9b13da080b06b6ea134915205fb6dedfcce0bddc4456bf313a7f347eceb",
+      "afterProfileSHA256": "9ea8372d96184d4c73aa4fd4c21b07ef065440b763b4ac1f24f1ba727f6b6735",
+      "changes": [
+        {
+          "field": "profile.summaryJa",
+          "before": "ヨシュア記7:2は、ベテルをアイの東側にある町として描き、ヨシュアがエリコから斥候を送った先を説明する。本文初出時点ではベテルのより古い歴史や後の部族境界上の位置をここへ混ぜない。",
+          "after": "ヨシュア記7:2は、アイがベテルの東側にあることを示し、ヨシュアがエリコから斥候を送った先として記します。"
+        },
+        {
+          "field": "profile.wikipedia.noteJa",
+          "before": "記事はヨシュア記のベテルを扱い、アイとの位置関係や古い地名との関連を説明する。",
+          "after": "記事のBook of Joshua節は、ヨシュア記7:2・8:9でベテルとアイの位置関係を説明します。現代の遺跡比定は確定事項として扱いません。"
+        },
+        {
+          "field": "profile.wikipedia.noteJa",
+          "before": "記事のBook of Joshua節は、ヨシュア記7:2・8:9でベテルとアイの位置関係を説明します。現代の遺跡比定は確定事項として扱いません。",
+          "after": "<removed>"
+        }
+      ],
+      "followupCorrection": {
+        "repairedAtUTC": "2026-10-15T22:07:30.460331Z",
+        "noteJa": "入れ子のwikipedia.noteJaが一時削除されていたため、最終noteをwikipedia object内へ復元し、誤ったprofile内のliteral dotted keyを除去。",
+        "finalWikipediaNoteJa": "記事のBook of Joshua節は、ヨシュア記7:2・8:9でベテルとアイの位置関係を説明します。現代の遺跡比定は確定事項として扱いません。"
+      }
+    },
+    {
+      "file": "drafts/places_1/JOS_place_bethel_203.json",
+      "id": "place:bethel_203",
+      "beforeDraftSHA256": "9649fd010df52f57dfbec88953a9d1e7cabeb222d65647dd0d678bec5832a132",
+      "afterDraftSHA256": "62703edb82619046b9543e51db346c6ce6c75358f10c6654c3b70ac244ebd50a",
+      "beforeProfileSHA256": "875ae9f79cd903e4a9b2e3a1a2d9ef4bf4afbe00d6dd9df92bdd05c6f457cb83",
+      "afterProfileSHA256": "e137a9841c644a54c2df68562fef8a889daaf4eca0337582f06f14c7a90cd33c",
+      "changes": [
+        {
+          "field": "profile.summaryJa",
+          "before": "ヨシュア記12:16は、征服された王たちの一覧にベテルの王を含める。12:9ではアイの王と並べてベテルの王を挙げるため、同じ古代都市を指す可能性が高いが、記事間の関係には不確かさが残る。",
+          "after": "ヨシュア記12:16は、征服された王たちの一覧にベテルの王を挙げます。"
+        },
+        {
+          "field": "profile.identityNoteJa",
+          "before": "ヨシュア記12:9のベテルと同じ古代都市を指す可能性が高い。地名項目が別に立てられているため、ここでは同一視を断定せず参照関係を示す。",
+          "after": ""
+        },
+        {
+          "field": "profile.wikipedia.noteJa",
+          "before": "記事はヨシュア記のベテルを扱い、アイ近郊およびルズとの関係を説明する。",
+          "after": "記事のBook of Joshua節は、ヨシュア記7:2・8:9でベテルとアイの位置関係を説明します。ヨシュア記12:16の王名一覧との対応や現代の遺跡比定を、記事だけで確定することはできません。"
+        },
+        {
+          "field": "profile.wikipedia.noteJa",
+          "before": "記事のBook of Joshua節は、ヨシュア記7:2・8:9でベテルとアイの位置関係を説明します。ヨシュア記12:16の王名一覧との対応や現代の遺跡比定を、記事だけで確定することはできません。",
+          "after": "<removed>"
+        }
+      ],
+      "followupCorrection": {
+        "repairedAtUTC": "2026-10-15T22:07:30.460331Z",
+        "noteJa": "入れ子のwikipedia.noteJaが一時削除されていたため、最終noteをwikipedia object内へ復元し、誤ったprofile内のliteral dotted keyを除去。",
+        "finalWikipediaNoteJa": "記事のBook of Joshua節は、ヨシュア記7:2・8:9でベテルとアイの位置関係を説明します。ヨシュア記12:16の王名一覧との対応や現代の遺跡比定を、記事だけで確定することはできません。"
+      }
+    },
+    {
+      "file": "drafts/places_1/NUM_place_azmon_130.json",
+      "id": "place:azmon_130",
+      "beforeDraftSHA256": "b204e43608fe93e94c88ba82fcbf55fe318e15ad19314f092114f56ac10bd5eb",
+      "afterDraftSHA256": "0742ea3c23ae39473c14797d47849d9c6e0f0234e53394a8c9c9a77c2d89c4ea",
+      "beforeProfileSHA256": "96318a4ae21737e780a4d75d101aa415fe9d91fa6e5dcce3f96b8c26924097d8",
+      "afterProfileSHA256": "1823f2b5728d8334bcbde4d6940752929fa9354c0dcefc06adfda7fb30b77d71",
+      "changes": [
+        {
+          "field": "profile.wikipedia.noteJa",
+          "before": "記事はAzmonを南境の地名として扱い、近代の候補地は提案として紹介する。",
+          "after": "記事はAzmonを南境西部の地名とし、Gusaymaのオアシスとの同定説を一つ紹介します。記事内の提案であり、所在地の確定を示しません。"
+        },
+        {
+          "field": "profile.wikipedia.noteJa",
+          "before": "記事はAzmonを南境西部の地名とし、Gusaymaのオアシスとの同定説を一つ紹介します。記事内の提案であり、所在地の確定を示しません。",
+          "after": "<removed>"
+        }
+      ],
+      "followupCorrection": {
+        "repairedAtUTC": "2026-10-15T22:07:30.460331Z",
+        "noteJa": "入れ子のwikipedia.noteJaが一時削除されていたため、最終noteをwikipedia object内へ復元し、誤ったprofile内のliteral dotted keyを除去。",
+        "finalWikipediaNoteJa": "記事はAzmonを南境西部の地名とし、Gusaymaのオアシスとの同定説を一つ紹介します。記事内の提案であり、所在地の確定を示しません。"
+      }
+    }
+  ],
+  "bodySHA256LimitationJa": "WebツールからHTML本文ダンプを得られなかったため、閲覧時刻・URL・見出し・行・要旨を保存し、本文SHA256はnullとした。",
+  "followupSchemaCorrectionAtUTC": "2026-10-15T22:07:30.460331Z"
+}

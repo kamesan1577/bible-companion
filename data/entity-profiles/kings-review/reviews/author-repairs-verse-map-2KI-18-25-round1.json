@@ -1,0 +1,4659 @@
+{
+  "task": "author source-map repairs after independent 2KI18–25 review",
+  "createdAtUTC": "2026-10-16T03:24:24Z",
+  "priorMapSHA256": "7627e6dd0879c36f4b4a393c2a3e4778493f798a0581e906f64a41dd395d19fb",
+  "currentMapSHA256": "6ddad085ef0e5d45c9089c3c5356abc1b8340b4d826082b27a17535a918584f0",
+  "independentReviewPath": "reviews/independent-verse-map-2KI-18-25.json",
+  "independentReviewSHA256": "0f4384e1eb68f162d90922e51b53d174ad2b40c5308abc80b38888171a8017cc",
+  "sourceWitnessPath": "inventory/targets/kings2-web-verses.json",
+  "sourceWitnessSHA256": "d620db07b9f9b003053bcc0fb38fee21e6d80aff1c1b51760717e03c0127a6dd",
+  "rowsReviewed": 228,
+  "proposalRowsChanged": 61,
+  "sourceParity": "All 228 sourceText values and citation URLs rechecked against pinned WEB and unchanged.",
+  "decisionSummaryJa": "people3の全節提案を原文と直前文脈で吟味。38節のentity差分と37節の除外理由差分を反映。24:2のplace:syria context案だけはSyriansという民族名を地名へ流用しない原則により除外。根の追加実読20:6,20:7,20:12,21:26を反映。Moabitesの既存collective IDを採用し、適合IDのないChaldeans/children of Ammon、地域IDへ流用しないSyriansは未リンク理由を残した。",
+  "changes": [
+    {
+      "chapter": 18,
+      "verse": 1,
+      "citationURL": "https://ebible.org/engwebp/2KI18.htm#V1",
+      "sourceTextSHA256": "72434ea05006fa835969c597655ceb99cbfad68c9d3a76d4f72da188fa2d4889",
+      "beforeEntities": [
+        {
+          "entityID": "person:ahaz_118",
+          "relationship": "direct",
+          "reasonJa": "本文に「Ahaz」が明記される。"
+        },
+        {
+          "entityID": "person:elah_1046",
+          "relationship": "direct",
+          "reasonJa": "本文に「Elah」が明記される。"
+        },
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hezekiah」が明記される。"
+        },
+        {
+          "entityID": "person:hoshea_1559",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hoshea」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "place:northern-kingdom-of-israel_1302",
+          "relationship": "direct",
+          "reasonJa": "18:1の「king of Israel」はホセアが統治する北王国を明示する。これはイスラエルの祖先個人ではなく政治体。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:ahaz_118",
+          "relationship": "direct",
+          "reasonJa": "本文に「Ahaz」が明記される。"
+        },
+        {
+          "entityID": "person:elah_1046",
+          "relationship": "direct",
+          "reasonJa": "本文に「Elah」が明記される。"
+        },
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hezekiah」が明記される。"
+        },
+        {
+          "entityID": "person:hoshea_1559",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hoshea」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "place:northern-kingdom-of-israel_1302",
+          "relationship": "direct",
+          "reasonJa": "18:1の「king of Israel」はホセアが統治する北王国を明示する。これはイスラエルの祖先個人ではなく政治体。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "Now in the third year of Hoshea son of Elah king of Israel, Hezekiah the son of Ahaz king of Judah began to reign."
+    },
+    {
+      "chapter": 18,
+      "verse": 5,
+      "citationURL": "https://ebible.org/engwebp/2KI18.htm#V5",
+      "sourceTextSHA256": "06af123f1b699912c110b13477cd656398a8ee0cb44a55e81b44e697a438cfc1",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "context",
+          "reasonJa": "18:5の「He」はヒゼキヤを指す。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "context",
+          "reasonJa": "18:5の「He」はヒゼキヤを指す。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context",
+          "reasonJa": "本文の「God of Israel」はイスラエルの民との関係を示す称号表現。民のcollective IDを文脈リンクし、北王国領域とは混同しない。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:israel_682",
+          "relationship": "context",
+          "reasonJa": "本文の「God of Israel」はイスラエルの民との関係を示す称号表現。民のcollective IDを文脈リンクし、北王国領域とは混同しない。"
+        },
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "He trusted in the LORD, the God of Israel, so that after him was no one like him among all the kings of Judah, nor among them that were before him."
+    },
+    {
+      "chapter": 18,
+      "verse": 13,
+      "citationURL": "https://ebible.org/engwebp/2KI18.htm#V13",
+      "sourceTextSHA256": "43fc8e8fa521e8ecc637b2d12ddcb2aa52230d9c1df45a3b9ba6c9e4cfddddd6",
+      "beforeEntities": [
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hezekiah」が明記される。"
+        },
+        {
+          "entityID": "person:sennacherib_2489",
+          "relationship": "direct",
+          "reasonJa": "本文に「Sennacherib」が明記される。"
+        },
+        {
+          "entityID": "place:assyria_111",
+          "relationship": "direct",
+          "reasonJa": "本文に「Assyria」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hezekiah」が明記される。"
+        },
+        {
+          "entityID": "person:sennacherib_2489",
+          "relationship": "direct",
+          "reasonJa": "本文に「Sennacherib」が明記される。"
+        },
+        {
+          "entityID": "place:assyria_111",
+          "relationship": "direct",
+          "reasonJa": "本文に「Assyria」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "Now in the fourteenth year of King Hezekiah, Sennacherib king of Assyria came up against all the fortified cities of Judah and took them."
+    },
+    {
+      "chapter": 18,
+      "verse": 14,
+      "citationURL": "https://ebible.org/engwebp/2KI18.htm#V14",
+      "sourceTextSHA256": "fa25d8e0e91da4825776ece0947794a04afd166b99bf2d00dc34a086df6edaf6",
+      "beforeEntities": [
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hezekiah」が明記される。"
+        },
+        {
+          "entityID": "place:assyria_111",
+          "relationship": "direct",
+          "reasonJa": "本文に「Assyria」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "place:lachish_711",
+          "relationship": "direct",
+          "reasonJa": "本文に「Lachish」が明記される。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hezekiah」が明記される。"
+        },
+        {
+          "entityID": "place:assyria_111",
+          "relationship": "direct",
+          "reasonJa": "本文に「Assyria」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "place:lachish_711",
+          "relationship": "direct",
+          "reasonJa": "本文に「Lachish」が明記される。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "Hezekiah king of Judah sent to the king of Assyria at Lachish, saying, “I have offended you. Withdraw from me. That which you put on me, I will bear.” The king of Assyria appointed to Hezekiah king of Judah three hundred talents of silver and thirty talents of gold."
+    },
+    {
+      "chapter": 18,
+      "verse": 16,
+      "citationURL": "https://ebible.org/engwebp/2KI18.htm#V16",
+      "sourceTextSHA256": "1ce540e6932ec1d2a974900d29c4910ed2b233ecb3fcb37a785dae5b606f55a5",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hezekiah」が明記される。"
+        },
+        {
+          "entityID": "place:assyria_111",
+          "relationship": "direct",
+          "reasonJa": "本文に「Assyria」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hezekiah」が明記される。"
+        },
+        {
+          "entityID": "place:assyria_111",
+          "relationship": "direct",
+          "reasonJa": "本文に「Assyria」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "At that time, Hezekiah cut off the gold from the doors of the LORD’s temple, and from the pillars which Hezekiah king of Judah had overlaid, and gave it to the king of Assyria."
+    },
+    {
+      "chapter": 18,
+      "verse": 18,
+      "citationURL": "https://ebible.org/engwebp/2KI18.htm#V18",
+      "sourceTextSHA256": "737dbb886aa19742df3bb45348d917a08310a7ebeaa2ace0d499362ee5d0d921",
+      "beforeEntities": [
+        {
+          "entityID": "person:asaph_329",
+          "relationship": "direct",
+          "reasonJa": "本文に「Asaph」が明記される。"
+        },
+        {
+          "entityID": "person:eliakim_1084",
+          "relationship": "direct",
+          "reasonJa": "本文に「Eliakim」が明記される。"
+        },
+        {
+          "entityID": "person:hilkiah_1523",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hilkiah」が明記される。"
+        },
+        {
+          "entityID": "person:joah_1621",
+          "relationship": "direct",
+          "reasonJa": "本文に「Joah」が明記される。"
+        },
+        {
+          "entityID": "person:shebna_2577",
+          "relationship": "direct",
+          "reasonJa": "本文は「Shebnah」と明記する。既存候補IDの表記はWEBと異なるが、同じ節に割り当てられた表記差の候補として扱う（WEB spelling with a final h; candidate normalization omits it.）。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:asaph_329",
+          "relationship": "direct",
+          "reasonJa": "本文に「Asaph」が明記される。"
+        },
+        {
+          "entityID": "person:eliakim_1084",
+          "relationship": "direct",
+          "reasonJa": "本文に「Eliakim」が明記される。"
+        },
+        {
+          "entityID": "person:hilkiah_1523",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hilkiah」が明記される。"
+        },
+        {
+          "entityID": "person:joah_1621",
+          "relationship": "direct",
+          "reasonJa": "本文に「Joah」が明記される。"
+        },
+        {
+          "entityID": "person:shebna_2577",
+          "relationship": "direct",
+          "reasonJa": "本文は「Shebnah」と明記する。既存候補IDの表記はWEBと異なるが、同じ節に割り当てられた表記差の候補として扱う（WEB spelling with a final h; candidate normalization omits it.）。"
+        },
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "context",
+          "reasonJa": "直前18:17の王、ヒゼキヤに呼び掛ける場面。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:hezekiah_1512",
+          "relationship": "context",
+          "reasonJa": "直前18:17の王、ヒゼキヤに呼び掛ける場面。"
+        }
+      ],
+      "sourceText": "When they had called to the king, Eliakim the son of Hilkiah, who was over the household, and Shebnah the scribe, and Joah the son of Asaph the recorder came out to them."
+    },
+    {
+      "chapter": 18,
+      "verse": 22,
+      "citationURL": "https://ebible.org/engwebp/2KI18.htm#V22",
+      "sourceTextSHA256": "44ead2e13e7765257189aa55becb40ebc6d5db4ebedb8d004111ecab11cfb133",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hezekiah」が明記される。"
+        },
+        {
+          "entityID": "person:rabshakeh_2384",
+          "relationship": "context",
+          "reasonJa": "18:19で名指されたラブ・シャケが同じ演説を続ける。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hezekiah」が明記される。"
+        },
+        {
+          "entityID": "person:rabshakeh_2384",
+          "relationship": "context",
+          "reasonJa": "18:19で名指されたラブ・シャケが同じ演説を続ける。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "sourceText": "But if you tell me, ‘We trust in the LORD our God,’ isn’t that he whose high places and whose altars Hezekiah has taken away, and has said to Judah and to Jerusalem, ‘You shall worship before this altar in Jerusalem’?"
+    },
+    {
+      "chapter": 18,
+      "verse": 27,
+      "citationURL": "https://ebible.org/engwebp/2KI18.htm#V27",
+      "sourceTextSHA256": "de3a2e42fe81da86bb4c1749dda63aa95d0f27a04d87b89d7708e2fbcac28e0a",
+      "beforeEntities": [
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "context",
+          "reasonJa": "ラブ・シャケの演説で「you/your」と呼び掛けられる相手は、直前に名指されたヒゼキヤ。"
+        },
+        {
+          "entityID": "person:rabshakeh_2384",
+          "relationship": "direct",
+          "reasonJa": "本文に「Rabshakeh」が明記される。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "context",
+          "reasonJa": "ラブ・シャケの演説で「you/your」と呼び掛けられる相手は、直前に名指されたヒゼキヤ。"
+        },
+        {
+          "entityID": "person:rabshakeh_2384",
+          "relationship": "direct",
+          "reasonJa": "本文に「Rabshakeh」が明記される。"
+        },
+        {
+          "entityID": "person:sennacherib_2489",
+          "relationship": "context",
+          "reasonJa": "「my master the king of Assyria」はこの場面の主君センナケリブを指す。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:sennacherib_2489",
+          "relationship": "context",
+          "reasonJa": "「my master the king of Assyria」はこの場面の主君センナケリブを指す。"
+        }
+      ],
+      "sourceText": "But Rabshakeh said to them, “Has my master sent me to your master and to you, to speak these words? Hasn’t he sent me to the men who sit on the wall, to eat their own dung, and to drink their own urine with you?”"
+    },
+    {
+      "chapter": 19,
+      "verse": 7,
+      "citationURL": "https://ebible.org/engwebp/2KI19.htm#V7",
+      "sourceTextSHA256": "929d818c039f781e26b1de35dd42dd4ab6ccd3d5c1f4dbe000a0661e4278578e",
+      "beforeEntities": [
+        {
+          "entityID": "person:sennacherib_2489",
+          "relationship": "context",
+          "reasonJa": "直前に述べられたアッシリア王について「彼」と指す。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:sennacherib_2489",
+          "relationship": "context",
+          "reasonJa": "直前に述べられたアッシリア王について「彼」と指す。"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context",
+          "reasonJa": "19:6で始まった主の直接話法が続き、一人称「I will put...」の話者は主。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:god_1324",
+          "relationship": "context",
+          "reasonJa": "19:6で始まった主の直接話法が続き、一人称「I will put...」の話者は主。"
+        }
+      ],
+      "sourceText": "Behold, I will put a spirit in him, and he will hear news, and will return to his own land. I will cause him to fall by the sword in his own land.”’”"
+    },
+    {
+      "chapter": 19,
+      "verse": 10,
+      "citationURL": "https://ebible.org/engwebp/2KI19.htm#V10",
+      "sourceTextSHA256": "77f3c143320d08d48a625047f3d7326b58729ffa079e1526396cf1e28b6a455b",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hezekiah」が明記される。"
+        },
+        {
+          "entityID": "place:assyria_111",
+          "relationship": "direct",
+          "reasonJa": "本文に「Assyria」が明記される。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hezekiah」が明記される。"
+        },
+        {
+          "entityID": "place:assyria_111",
+          "relationship": "direct",
+          "reasonJa": "本文に「Assyria」が明記される。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "person:sennacherib_2489",
+          "relationship": "context",
+          "reasonJa": "ヒゼキヤへ送った文中の「king of Assyria」は前節までのセンナケリブ。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:sennacherib_2489",
+          "relationship": "context",
+          "reasonJa": "ヒゼキヤへ送った文中の「king of Assyria」は前節までのセンナケリブ。"
+        },
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "“Tell Hezekiah king of Judah this: ‘Don’t let your God in whom you trust deceive you, saying, Jerusalem will not be given into the hand of the king of Assyria."
+    },
+    {
+      "chapter": 19,
+      "verse": 15,
+      "citationURL": "https://ebible.org/engwebp/2KI19.htm#V15",
+      "sourceTextSHA256": "e41322cd3bb4de738191994a4e27cb4b094783f357961ab3fc83bdf9283de99f",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hezekiah」が明記される。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hezekiah」が明記される。"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context",
+          "reasonJa": "本文の「God of Israel」はイスラエルの民との関係を示す称号表現。民のcollective IDを文脈リンクし、北王国領域とは混同しない。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:israel_682",
+          "relationship": "context",
+          "reasonJa": "本文の「God of Israel」はイスラエルの民との関係を示す称号表現。民のcollective IDを文脈リンクし、北王国領域とは混同しない。"
+        }
+      ],
+      "sourceText": "Hezekiah prayed before the LORD, and said, “LORD, the God of Israel, enthroned above the cherubim, you are the God, even you alone, of all the kingdoms of the earth. You have made heaven and earth."
+    },
+    {
+      "chapter": 19,
+      "verse": 20,
+      "citationURL": "https://ebible.org/engwebp/2KI19.htm#V20",
+      "sourceTextSHA256": "25d5ddd898b7c1ee3b5742edf03d388d81aff150e11fe2e0453985187f4ae061",
+      "beforeEntities": [
+        {
+          "entityID": "person:amoz_240",
+          "relationship": "direct",
+          "reasonJa": "本文に「Amoz」が明記される。"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hezekiah」が明記される。"
+        },
+        {
+          "entityID": "person:isaiah_617",
+          "relationship": "direct",
+          "reasonJa": "本文に「Isaiah」が明記される。"
+        },
+        {
+          "entityID": "person:sennacherib_2489",
+          "relationship": "direct",
+          "reasonJa": "本文に「Sennacherib」が明記される。"
+        },
+        {
+          "entityID": "place:assyria_111",
+          "relationship": "direct",
+          "reasonJa": "本文に「Assyria」が明記される。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:amoz_240",
+          "relationship": "direct",
+          "reasonJa": "本文に「Amoz」が明記される。"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hezekiah」が明記される。"
+        },
+        {
+          "entityID": "person:isaiah_617",
+          "relationship": "direct",
+          "reasonJa": "本文に「Isaiah」が明記される。"
+        },
+        {
+          "entityID": "person:sennacherib_2489",
+          "relationship": "direct",
+          "reasonJa": "本文に「Sennacherib」が明記される。"
+        },
+        {
+          "entityID": "place:assyria_111",
+          "relationship": "direct",
+          "reasonJa": "本文に「Assyria」が明記される。"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context",
+          "reasonJa": "本文の「God of Israel」はイスラエルの民との関係を示す称号表現。民のcollective IDを文脈リンクし、北王国領域とは混同しない。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:israel_682",
+          "relationship": "context",
+          "reasonJa": "本文の「God of Israel」はイスラエルの民との関係を示す称号表現。民のcollective IDを文脈リンクし、北王国領域とは混同しない。"
+        }
+      ],
+      "sourceText": "Then Isaiah the son of Amoz sent to Hezekiah, saying, “The LORD, the God of Israel, says ‘You have prayed to me against Sennacherib king of Assyria, and I have heard you."
+    },
+    {
+      "chapter": 19,
+      "verse": 22,
+      "citationURL": "https://ebible.org/engwebp/2KI19.htm#V22",
+      "sourceTextSHA256": "6d0d3baed9376d27bbfe992b7923e386ade5c459460b65c98d1786f6950c60a8",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context",
+          "reasonJa": "19:20から続く主の預言の発話主体。"
+        },
+        {
+          "entityID": "person:sennacherib_2489",
+          "relationship": "context",
+          "reasonJa": "主の預言中に二人称で呼び掛けられる相手はセンナケリブ。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context",
+          "reasonJa": "19:20から続く主の預言の発話主体。"
+        },
+        {
+          "entityID": "person:sennacherib_2489",
+          "relationship": "context",
+          "reasonJa": "主の預言中に二人称で呼び掛けられる相手はセンナケリブ。"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context",
+          "reasonJa": "本文の「Holy One of Israel」はイスラエルの民との関係を示す称号表現。民のcollective IDを文脈リンクし、北王国領域とは混同しない。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:israel_682",
+          "relationship": "context",
+          "reasonJa": "本文の「Holy One of Israel」はイスラエルの民との関係を示す称号表現。民のcollective IDを文脈リンクし、北王国領域とは混同しない。"
+        }
+      ],
+      "sourceText": "Whom have you defied and blasphemed? Against whom have you exalted your voice and lifted up your eyes on high? Against the Holy One of Israel!"
+    },
+    {
+      "chapter": 19,
+      "verse": 30,
+      "citationURL": "https://ebible.org/engwebp/2KI19.htm#V30",
+      "sourceTextSHA256": "c924a2d2cd1d9bead94da132af6fa9079c80408778448ff6565cdaaa8ef99cc6",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context",
+          "reasonJa": "19:20から続く主の預言の発話主体。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context",
+          "reasonJa": "19:20から続く主の預言の発話主体。"
+        },
+        {
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "sourceText": "The remnant that has escaped of the house of Judah will again take root downward, and bear fruit upward."
+    },
+    {
+      "chapter": 19,
+      "verse": 37,
+      "citationURL": "https://ebible.org/engwebp/2KI19.htm#V37",
+      "sourceTextSHA256": "756aab8f2cf656e01e8aeb8f6bdb872eef3dd1d4c94ad660fc5caaafbe470edc",
+      "beforeEntities": [
+        {
+          "entityID": "person:adrammelech_104",
+          "relationship": "direct",
+          "reasonJa": "本文に「Adrammelech」が明記される。"
+        },
+        {
+          "entityID": "person:esar-haddon_1215",
+          "relationship": "direct",
+          "reasonJa": "本文は「Esar Haddon」と明記する。既存候補IDの表記はWEBと異なるが、同じ節に割り当てられた表記差の候補として扱う（WEB writes the name without a hyphen.）。"
+        },
+        {
+          "entityID": "person:sharezer_2559",
+          "relationship": "direct",
+          "reasonJa": "本文に「Sharezer」が明記される。"
+        },
+        {
+          "entityID": "place:ararat_86",
+          "relationship": "direct",
+          "reasonJa": "本文に「land of Ararat」と地理範囲が明記される。既存の地名IDを用い、現代国家との範囲同一視はしない。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:adrammelech_104",
+          "relationship": "direct",
+          "reasonJa": "本文に「Adrammelech」が明記される。"
+        },
+        {
+          "entityID": "person:esar-haddon_1215",
+          "relationship": "direct",
+          "reasonJa": "本文は「Esar Haddon」と明記する。既存候補IDの表記はWEBと異なるが、同じ節に割り当てられた表記差の候補として扱う（WEB writes the name without a hyphen.）。"
+        },
+        {
+          "entityID": "person:sharezer_2559",
+          "relationship": "direct",
+          "reasonJa": "本文に「Sharezer」が明記される。"
+        },
+        {
+          "entityID": "place:ararat_86",
+          "relationship": "direct",
+          "reasonJa": "本文に「land of Ararat」と地理範囲が明記される。既存の地名IDを用い、現代国家との範囲同一視はしない。"
+        },
+        {
+          "entityID": "person:sennacherib_2489",
+          "relationship": "context",
+          "reasonJa": "19:36で名指されたセンナケリブが「his god」への礼拝中に殺された対象として続く。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:sennacherib_2489",
+          "relationship": "context",
+          "reasonJa": "19:36で名指されたセンナケリブが「his god」への礼拝中に殺された対象として続く。"
+        }
+      ],
+      "sourceText": "As he was worshiping in the house of Nisroch his god, Adrammelech and Sharezer struck him with the sword; and they escaped into the land of Ararat. Esar Haddon his son reigned in his place."
+    },
+    {
+      "chapter": 20,
+      "verse": 20,
+      "citationURL": "https://ebible.org/engwebp/2KI20.htm#V20",
+      "sourceTextSHA256": "7fa6fbd1f0b3102da0eeb893762de10d070bbf4156eb8b6a12d5add99b6e52a5",
+      "beforeEntities": [
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hezekiah」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hezekiah」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "Now the rest of the acts of Hezekiah, and all his might, and how he made the pool, and the conduit, and brought water into the city, aren’t they written in the book of the chronicles of the kings of Judah?"
+    },
+    {
+      "chapter": 21,
+      "verse": 11,
+      "citationURL": "https://ebible.org/engwebp/2KI21.htm#V11",
+      "sourceTextSHA256": "1b73435aa70fea6194417b34b7a858fa0a65958a0913354c48293262234cfcb6",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context",
+          "reasonJa": "21:10から続く主の預言の発話主体。"
+        },
+        {
+          "entityID": "person:manasseh_1930",
+          "relationship": "direct",
+          "reasonJa": "本文に「Manasseh」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context",
+          "reasonJa": "21:10から続く主の預言の発話主体。"
+        },
+        {
+          "entityID": "person:manasseh_1930",
+          "relationship": "direct",
+          "reasonJa": "本文に「Manasseh」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "sourceText": "“Because Manasseh king of Judah has done these abominations, and has done wickedly above all that the Amorites did, who were before him, and has also made Judah to sin with his idols;"
+    },
+    {
+      "chapter": 21,
+      "verse": 12,
+      "citationURL": "https://ebible.org/engwebp/2KI21.htm#V12",
+      "sourceTextSHA256": "69ce5181423525f1f548f377a192b345c53b1fb7533006364af7a3c1264a0b01",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context",
+          "reasonJa": "本文の「God of Israel」はイスラエルの民との関係を示す称号表現。民のcollective IDを文脈リンクし、北王国領域とは混同しない。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:israel_682",
+          "relationship": "context",
+          "reasonJa": "本文の「God of Israel」はイスラエルの民との関係を示す称号表現。民のcollective IDを文脈リンクし、北王国領域とは混同しない。"
+        },
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "therefore the LORD the God of Israel says, ‘Behold, I will bring such evil on Jerusalem and Judah that whoever hears of it, both his ears will tingle."
+    },
+    {
+      "chapter": 21,
+      "verse": 16,
+      "citationURL": "https://ebible.org/engwebp/2KI21.htm#V16",
+      "sourceTextSHA256": "c01e4c03860508a8076be92095688ffd4c409ecab4597f8d22c05ad9428c902e",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:manasseh_1930",
+          "relationship": "direct",
+          "reasonJa": "本文に「Manasseh」が明記される。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:manasseh_1930",
+          "relationship": "direct",
+          "reasonJa": "本文に「Manasseh」が明記される。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "sourceText": "Moreover Manasseh shed innocent blood very much, until he had filled Jerusalem from one end to another; in addition to his sin with which he made Judah to sin, in doing that which was evil in the LORD’s sight."
+    },
+    {
+      "chapter": 21,
+      "verse": 17,
+      "citationURL": "https://ebible.org/engwebp/2KI21.htm#V17",
+      "sourceTextSHA256": "15170c6f8b7ae278e98c9bcf3a060777fb192c7d636040557a2d15e4a3cea595",
+      "beforeEntities": [
+        {
+          "entityID": "person:manasseh_1930",
+          "relationship": "direct",
+          "reasonJa": "本文に「Manasseh」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:manasseh_1930",
+          "relationship": "direct",
+          "reasonJa": "本文に「Manasseh」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "Now the rest of the acts of Manasseh, and all that he did, and his sin that he sinned, aren’t they written in the book of the chronicles of the kings of Judah?"
+    },
+    {
+      "chapter": 21,
+      "verse": 21,
+      "citationURL": "https://ebible.org/engwebp/2KI21.htm#V21",
+      "sourceTextSHA256": "3120c77b77b7c671733cd5c113912d00ddc4645e8c9c3c37594ed294c9b9bd5d",
+      "beforeEntities": [
+        {
+          "entityID": "person:amon_236",
+          "relationship": "context",
+          "reasonJa": "21:19で名指されたアモンを主語として叙述が続く。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:amon_236",
+          "relationship": "context",
+          "reasonJa": "21:19で名指されたアモンを主語として叙述が続く。"
+        },
+        {
+          "entityID": "person:manasseh_1930",
+          "relationship": "context",
+          "reasonJa": "「his father」の直近の先行節21:20に明記されるマナセ。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:manasseh_1930",
+          "relationship": "context",
+          "reasonJa": "「his father」の直近の先行節21:20に明記されるマナセ。"
+        }
+      ],
+      "sourceText": "He walked in all the ways that his father walked in, and served the idols that his father served, and worshiped them;"
+    },
+    {
+      "chapter": 21,
+      "verse": 25,
+      "citationURL": "https://ebible.org/engwebp/2KI21.htm#V25",
+      "sourceTextSHA256": "dcfb95cb313e655e629ff4ce8f57ae7dd4cd34e8bbdb141df2bf56dfedefd2b3",
+      "beforeEntities": [
+        {
+          "entityID": "person:amon_236",
+          "relationship": "direct",
+          "reasonJa": "本文に「Amon」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:amon_236",
+          "relationship": "direct",
+          "reasonJa": "本文に「Amon」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "Now the rest of the acts of Amon which he did, aren’t they written in the book of the chronicles of the kings of Judah?"
+    },
+    {
+      "chapter": 22,
+      "verse": 13,
+      "citationURL": "https://ebible.org/engwebp/2KI22.htm#V13",
+      "sourceTextSHA256": "328fa9767a3f513664f9c7d53297abaaf487afeaf2fe788a13f142c2f820fdb0",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "sourceText": "“Go inquire of the LORD for me, and for the people, and for all Judah, concerning the words of this book that is found; for great is the LORD’s wrath that is kindled against us, because our fathers have not listened to the words of this book, to do according to all that which is written concerning us.”"
+    },
+    {
+      "chapter": 22,
+      "verse": 15,
+      "citationURL": "https://ebible.org/engwebp/2KI22.htm#V15",
+      "sourceTextSHA256": "31a0a6620a8b11f0193b7d31d5fba3ff83e973702e6c6a937a62d12040a26932",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:huldah_1567",
+          "relationship": "context",
+          "reasonJa": "22:14で訪問されたフルダが発話する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:huldah_1567",
+          "relationship": "context",
+          "reasonJa": "22:14で訪問されたフルダが発話する。"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context",
+          "reasonJa": "本文の「God of Israel」はイスラエルの民との関係を示す称号表現。民のcollective IDを文脈リンクし、北王国領域とは混同しない。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:israel_682",
+          "relationship": "context",
+          "reasonJa": "本文の「God of Israel」はイスラエルの民との関係を示す称号表現。民のcollective IDを文脈リンクし、北王国領域とは混同しない。"
+        }
+      ],
+      "sourceText": "She said to them, “The LORD the God of Israel says, ‘Tell the man who sent you to me,"
+    },
+    {
+      "chapter": 22,
+      "verse": 16,
+      "citationURL": "https://ebible.org/engwebp/2KI22.htm#V16",
+      "sourceTextSHA256": "d23043b44bddd164c8f9fdcee6aecb7fcdaf3e8bfe6ae1d7f75887f745fcd07c",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:huldah_1567",
+          "relationship": "context",
+          "reasonJa": "22:15からのフルダの預言・伝達が続く。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:huldah_1567",
+          "relationship": "context",
+          "reasonJa": "22:15からのフルダの預言・伝達が続く。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "「king of Judah who has read this book」は前文脈のヨシヤ王。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "「king of Judah who has read this book」は前文脈のヨシヤ王。"
+        },
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "“The LORD says, ‘Behold, I will bring evil on this place and on its inhabitants, even all the words of the book which the king of Judah has read."
+    },
+    {
+      "chapter": 22,
+      "verse": 18,
+      "citationURL": "https://ebible.org/engwebp/2KI22.htm#V18",
+      "sourceTextSHA256": "b125267bc13ebcd6fab8e64fd78de4b01e371ab32f20f169181dc20a1b813ed4",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:huldah_1567",
+          "relationship": "context",
+          "reasonJa": "22:15からのフルダの預言・伝達が続く。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "預言で「王」と呼ばれる受け手はヨシヤ。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:huldah_1567",
+          "relationship": "context",
+          "reasonJa": "22:15からのフルダの預言・伝達が続く。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "預言で「王」と呼ばれる受け手はヨシヤ。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context",
+          "reasonJa": "本文の「God of Israel」はイスラエルの民との関係を示す称号表現。民のcollective IDを文脈リンクし、北王国領域とは混同しない。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:israel_682",
+          "relationship": "context",
+          "reasonJa": "本文の「God of Israel」はイスラエルの民との関係を示す称号表現。民のcollective IDを文脈リンクし、北王国領域とは混同しない。"
+        },
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "But to the king of Judah, who sent you to inquire of the LORD, tell him, “The LORD the God of Israel says, ‘Concerning the words which you have heard,"
+    },
+    {
+      "chapter": 22,
+      "verse": 20,
+      "citationURL": "https://ebible.org/engwebp/2KI22.htm#V20",
+      "sourceTextSHA256": "7e958ecd36556cf5ca78f6f4a5110d386c832035e9c0788315ad6acbe1d623d8",
+      "beforeEntities": [
+        {
+          "entityID": "person:huldah_1567",
+          "relationship": "context",
+          "reasonJa": "22:15からのフルダの預言・伝達が続く。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "「あなた」と帰還先の王はヨシヤ。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:huldah_1567",
+          "relationship": "context",
+          "reasonJa": "22:15からのフルダの預言・伝達が続く。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "「あなた」と帰還先の王はヨシヤ。"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context",
+          "reasonJa": "22:16からの主の引用が「I will bring...」まで続く。ハルダは伝達者、発話主体は主。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:god_1324",
+          "relationship": "context",
+          "reasonJa": "22:16からの主の引用が「I will bring...」まで続く。ハルダは伝達者、発話主体は主。"
+        }
+      ],
+      "sourceText": "‘Therefore behold, I will gather you to your fathers, and you will be gathered to your grave in peace. Your eyes will not see all the evil which I will bring on this place.’”’” So they brought this message back to the king."
+    },
+    {
+      "chapter": 23,
+      "verse": 1,
+      "citationURL": "https://ebible.org/engwebp/2KI23.htm#V1",
+      "sourceTextSHA256": "fdc61e51732f36a03bdb44a863e50bfd8a46415e09af9a1da97febd3d812e95f",
+      "beforeEntities": [
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "ここで「the king」と呼ばれる王は直前までのヨシヤ。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "ここで「the king」と呼ばれる王は直前までのヨシヤ。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "sourceText": "The king sent, and they gathered to him all the elders of Judah and of Jerusalem."
+    },
+    {
+      "chapter": 23,
+      "verse": 2,
+      "citationURL": "https://ebible.org/engwebp/2KI23.htm#V2",
+      "sourceTextSHA256": "2a4e677ec997aeca00cdb76be4ab470d335df9dd32aaedf2b3b0a6089b3c1879",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "ここで「the king」と呼ばれる王は直前までのヨシヤ。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "context",
+          "reasonJa": "「all Judah／men of Judah／elders of Judah」は民の集団表現で、ここでは地域名を集団の地理的由来としてcontextにする。族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "ここで「the king」と呼ばれる王は直前までのヨシヤ。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "context",
+          "reasonJa": "「all Judah／men of Judah／elders of Judah」は民の集団表現で、ここでは地域名を集団の地理的由来としてcontextにする。族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "sourceText": "The king went up to the LORD’s house, and all the men of Judah and all the inhabitants of Jerusalem with him—with the priests, the prophets, and all the people, both small and great; and he read in their hearing all the words of the book of the covenant which was found in the LORD’s house."
+    },
+    {
+      "chapter": 23,
+      "verse": 5,
+      "citationURL": "https://ebible.org/engwebp/2KI23.htm#V5",
+      "sourceTextSHA256": "8d7749cf280a4b12553fbf66d8e1ae0a15b284ade00c36cf5dafe7b0e88c069e",
+      "beforeEntities": [
+        {
+          "entityID": "person:baal_573",
+          "relationship": "direct",
+          "reasonJa": "本文に「Baal」が明記される。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "23:1–2で名指された王ヨシヤが行う改革の連続場面。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:baal_573",
+          "relationship": "direct",
+          "reasonJa": "本文に「Baal」が明記される。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "23:1–2で名指された王ヨシヤが行う改革の連続場面。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "He got rid of the idolatrous priests whom the kings of Judah had ordained to burn incense in the high places in the cities of Judah and in the places around Jerusalem; those also who burned incense to Baal, to the sun, to the moon, to the planets, and to all the army of the sky."
+    },
+    {
+      "chapter": 23,
+      "verse": 8,
+      "citationURL": "https://ebible.org/engwebp/2KI23.htm#V8",
+      "sourceTextSHA256": "9a97f070c5cc27385a2c3460e12b9f1ab3867c9a4a1a2be1e9a59ad7cf1bd47c",
+      "beforeEntities": [
+        {
+          "entityID": "person:joshua_1729",
+          "relationship": "direct",
+          "reasonJa": "本文に「Joshua」が明記される。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "23:1–2で名指された王ヨシヤが行う改革の連続場面。"
+        },
+        {
+          "entityID": "place:beersheba_170",
+          "relationship": "direct",
+          "reasonJa": "本文に「Beersheba」が明記される。"
+        },
+        {
+          "entityID": "place:geba_447",
+          "relationship": "direct",
+          "reasonJa": "本文に「Geba」が明記される。"
+        },
+        {
+          "entityID": "place:judah_1280",
+          "relationship": "direct",
+          "reasonJa": "本文に「Judah」が明記される。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:joshua_1729",
+          "relationship": "direct",
+          "reasonJa": "本文に「Joshua」が明記される。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "23:1–2で名指された王ヨシヤが行う改革の連続場面。"
+        },
+        {
+          "entityID": "place:beersheba_170",
+          "relationship": "direct",
+          "reasonJa": "本文に「Beersheba」が明記される。"
+        },
+        {
+          "entityID": "place:geba_447",
+          "relationship": "direct",
+          "reasonJa": "本文に「Geba」が明記される。"
+        },
+        {
+          "entityID": "place:judah_1280",
+          "relationship": "direct",
+          "reasonJa": "本文に「Judah」が明記される。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "He brought all the priests out of the cities of Judah, and defiled the high places where the priests had burned incense, from Geba to Beersheba; and he broke down the high places of the gates that were at the entrance of the gate of Joshua the governor of the city, which were on a man’s left hand at the gate of the city."
+    },
+    {
+      "chapter": 23,
+      "verse": 11,
+      "citationURL": "https://ebible.org/engwebp/2KI23.htm#V11",
+      "sourceTextSHA256": "e4eb0f0f1998df17f4f7bb753fabb02a299088ae33522e1649823314132b16d3",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "23:1–2で名指された王ヨシヤが行う改革の連続場面。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "23:1–2で名指された王ヨシヤが行う改革の連続場面。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "person:nathan-melech_2159",
+          "relationship": "direct",
+          "reasonJa": "本文は宮廷役人Nathan Melechの部屋を明記する。現在のmapはこの候補を「名が明示されない」として誤除外している。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        },
+        {
+          "entityID": "person:nathan-melech_2159",
+          "reasonJa": "入力候補名「Nathan-melech」はこの節本文に明示されず、本文だけでは一意に指示対象を結べない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        },
+        {
+          "entityID": "person:nathan-melech_2159",
+          "reasonJa": "入力候補名「Nathan-melech」はこの節本文に明示されず、本文だけでは一意に指示対象を結べない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:nathan-melech_2159",
+          "relationship": "direct",
+          "reasonJa": "本文は宮廷役人Nathan Melechの部屋を明記する。現在のmapはこの候補を「名が明示されない」として誤除外している。"
+        },
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "He took away the horses that the kings of Judah had dedicated to the sun, at the entrance of the LORD’s house, by the room of Nathan Melech the officer who was in the court; and he burned the chariots of the sun with fire."
+    },
+    {
+      "chapter": 23,
+      "verse": 12,
+      "citationURL": "https://ebible.org/engwebp/2KI23.htm#V12",
+      "sourceTextSHA256": "217257dae2cd5387934cee4f81629441ee7add898ab5bf8280648d545aff98c5",
+      "beforeEntities": [
+        {
+          "entityID": "person:ahaz_118",
+          "relationship": "direct",
+          "reasonJa": "本文に「Ahaz」が明記される。"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "23:1–2で名指された王ヨシヤが行う改革の連続場面。"
+        },
+        {
+          "entityID": "person:manasseh_1930",
+          "relationship": "direct",
+          "reasonJa": "本文に「Manasseh」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "place:kidron_687",
+          "relationship": "direct",
+          "reasonJa": "本文に「Kidron」が明記される。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:ahaz_118",
+          "relationship": "direct",
+          "reasonJa": "本文に「Ahaz」が明記される。"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "23:1–2で名指された王ヨシヤが行う改革の連続場面。"
+        },
+        {
+          "entityID": "person:manasseh_1930",
+          "relationship": "direct",
+          "reasonJa": "本文に「Manasseh」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "place:kidron_687",
+          "relationship": "direct",
+          "reasonJa": "本文に「Kidron」が明記される。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "The king broke down the altars that were on the roof of the upper room of Ahaz, which the kings of Judah had made, and the altars which Manasseh had made in the two courts of the LORD’s house, and beat them down from there, and cast their dust into the brook Kidron."
+    },
+    {
+      "chapter": 23,
+      "verse": 13,
+      "citationURL": "https://ebible.org/engwebp/2KI23.htm#V13",
+      "sourceTextSHA256": "740872be15fe181eabcffefd651ea6450443756198de8a83bfdbbf496290d205",
+      "beforeEntities": [
+        {
+          "entityID": "person:ashtoreth_341",
+          "relationship": "direct",
+          "reasonJa": "本文に「Ashtoreth」が明記される。"
+        },
+        {
+          "entityID": "person:chemosh_931",
+          "relationship": "direct",
+          "reasonJa": "本文に「Chemosh」が明記される。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "23:1–2で名指された王ヨシヤが行う改革の連続場面。"
+        },
+        {
+          "entityID": "person:milcom_2084",
+          "relationship": "direct",
+          "reasonJa": "本文に「Milcom」が明記される。"
+        },
+        {
+          "entityID": "person:solomon_2762",
+          "relationship": "direct",
+          "reasonJa": "本文に「Solomon」が明記される。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:moab_815",
+          "relationship": "direct",
+          "reasonJa": "本文に「Moab」が明記される。"
+        },
+        {
+          "entityID": "place:united-kingdom-of-israel_1301",
+          "relationship": "direct",
+          "reasonJa": "23:13の「Solomon king of Israel」は分裂前のソロモンの王号を示す。後代の北王国ではないため、既存の統一王国IDを用いる。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:ashtoreth_341",
+          "relationship": "direct",
+          "reasonJa": "本文に「Ashtoreth」が明記される。"
+        },
+        {
+          "entityID": "person:chemosh_931",
+          "relationship": "direct",
+          "reasonJa": "本文に「Chemosh」が明記される。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "23:1–2で名指された王ヨシヤが行う改革の連続場面。"
+        },
+        {
+          "entityID": "person:milcom_2084",
+          "relationship": "direct",
+          "reasonJa": "本文に「Milcom」が明記される。"
+        },
+        {
+          "entityID": "person:solomon_2762",
+          "relationship": "direct",
+          "reasonJa": "本文に「Solomon」が明記される。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:moab_815",
+          "relationship": "direct",
+          "reasonJa": "本文に「Moab」が明記される。"
+        },
+        {
+          "entityID": "place:united-kingdom-of-israel_1301",
+          "relationship": "direct",
+          "reasonJa": "23:13の「Solomon king of Israel」は分裂前のソロモンの王号を示す。後代の北王国ではないため、既存の統一王国IDを用いる。"
+        },
+        {
+          "entityID": "place:sidon_1093",
+          "relationship": "context",
+          "reasonJa": "「Sidonians」は人々の呼称で、シドンの地との関係を示す。都市名そのものの直接登場とは扱わない。"
+        },
+        {
+          "entityID": "person:moab_2103",
+          "relationship": "context",
+          "reasonJa": "「of Moab」はモアブ民・国に結び付くケモシュの称号。既存collective IDへの文脈リンクを提案し、place:moabと別用法を保つ。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "place:northern-kingdom-of-israel_1302",
+          "reasonJa": "23:13のソロモンは王国分裂前の王であり、北王国のIDを当てない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "place:northern-kingdom-of-israel_1302",
+          "reasonJa": "23:13のソロモンは王国分裂前の王であり、北王国のIDを当てない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "place:sidon_1093",
+          "relationship": "context",
+          "reasonJa": "「Sidonians」は人々の呼称で、シドンの地との関係を示す。都市名そのものの直接登場とは扱わない。"
+        },
+        {
+          "action": "add",
+          "entityID": "person:moab_2103",
+          "relationship": "context",
+          "reasonJa": "「of Moab」はモアブ民・国に結び付くケモシュの称号。既存collective IDへの文脈リンクを提案し、place:moabと別用法を保つ。"
+        }
+      ],
+      "sourceText": "The king defiled the high places that were before Jerusalem, which were on the right hand of the mountain of corruption, which Solomon the king of Israel had built for Ashtoreth the abomination of the Sidonians, and for Chemosh the abomination of Moab, and for Milcom the abomination of the children of Ammon."
+    },
+    {
+      "chapter": 23,
+      "verse": 17,
+      "citationURL": "https://ebible.org/engwebp/2KI23.htm#V17",
+      "sourceTextSHA256": "02677a3bc9e0e31f78f4d557bd7fc45cb0bcc61c18587eb204eb702633a3b07c",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "23:1–2で名指された王ヨシヤが行う改革の連続場面。"
+        },
+        {
+          "entityID": "place:bethel_202",
+          "relationship": "direct",
+          "reasonJa": "本文に「Bethel」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "23:1–2で名指された王ヨシヤが行う改革の連続場面。"
+        },
+        {
+          "entityID": "place:bethel_202",
+          "relationship": "direct",
+          "reasonJa": "本文に「Bethel」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "Then he said, “What monument is that which I see?” The men of the city told him, “It is the tomb of the man of God who came from Judah and proclaimed these things that you have done against the altar of Bethel.”"
+    },
+    {
+      "chapter": 23,
+      "verse": 22,
+      "citationURL": "https://ebible.org/engwebp/2KI23.htm#V22",
+      "sourceTextSHA256": "188600ffa1ca1ac34dd4fb094f54fa31104240a5203f525181e69cb2dccf9c86",
+      "beforeEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "「judges who judged Israel」のIsraelは裁かれる民を指す。一方「kings of Israel」はJudahの王たちとの政治的対比で王国の王たちを指すと読めるが、この節は士師時代からの全期間を北王国史へ限定していない。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "place:northern-kingdom-of-israel_1302",
+          "relationship": "direct",
+          "reasonJa": "「kings of Israel」は同じ節の「kings of Judah」と対置された政治的用法なので北王国の王たちを指すと読める。ただし「judges」の時代を含む比較全体まで北王国へ限定しない。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "「judges who judged Israel」のIsraelは裁かれる民を指す。一方「kings of Israel」はJudahの王たちとの政治的対比で王国の王たちを指すと読めるが、この節は士師時代からの全期間を北王国史へ限定していない。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "place:northern-kingdom-of-israel_1302",
+          "relationship": "direct",
+          "reasonJa": "「kings of Israel」は同じ節の「kings of Judah」と対置された政治的用法なので北王国の王たちを指すと読める。ただし「judges」の時代を含む比較全体まで北王国へ限定しない。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "Surely there was not kept such a Passover from the days of the judges who judged Israel, nor in all the days of the kings of Israel, nor of the kings of Judah;"
+    },
+    {
+      "chapter": 23,
+      "verse": 24,
+      "citationURL": "https://ebible.org/engwebp/2KI23.htm#V24",
+      "sourceTextSHA256": "a4d1624d6dc9f400e5f6cbc1dfb14ebea59629f5612b305d04053e5b894d6ba8",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:hilkiah_1524",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hilkiah」が明記される。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "direct",
+          "reasonJa": "本文に「Josiah」が明記される。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:hilkiah_1524",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hilkiah」が明記される。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "direct",
+          "reasonJa": "本文に「Josiah」が明記される。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "本文の「Judah」は王国・領域または民を指し、族長ユダ個人の行為/発話ではないため個人IDを結ばない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "Moreover, Josiah removed those who had familiar spirits, the wizards, and the teraphim, and the idols, and all the abominations that were seen in the land of Judah and in Jerusalem, that he might confirm the words of the law which were written in the book that Hilkiah the priest found in the LORD’s house."
+    },
+    {
+      "chapter": 23,
+      "verse": 25,
+      "citationURL": "https://ebible.org/engwebp/2KI23.htm#V25",
+      "sourceTextSHA256": "0f278b6185147a663237d7859d679ce08ecc1f4b58da054c882664e788e9dff6",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct",
+          "reasonJa": "本文に「Moses」が明記される。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct",
+          "reasonJa": "本文に「Moses」が明記される。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "「him」は23:24まで改革を行っているヨシヤ王を指す。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:josiah_1730",
+          "relationship": "context",
+          "reasonJa": "「him」は23:24まで改革を行っているヨシヤ王を指す。"
+        }
+      ],
+      "sourceText": "There was no king like him before him, who turned to the LORD with all his heart, and with all his soul, and with all his might, according to all the law of Moses; and there was none like him who arose after him."
+    },
+    {
+      "chapter": 23,
+      "verse": 26,
+      "citationURL": "https://ebible.org/engwebp/2KI23.htm#V26",
+      "sourceTextSHA256": "d79b1974a1ae8dc317c0d542d1ccb21308ed94f5f9db6eabd0ab83a2c983e1db",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:manasseh_1930",
+          "relationship": "direct",
+          "reasonJa": "本文に「Manasseh」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:manasseh_1930",
+          "relationship": "direct",
+          "reasonJa": "本文に「Manasseh」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域または民の名称であり、族長ユダ個人の行為・発話ではない。集団用法には本範囲で確認できる個別の承認済みIDがないため、族長IDへ接続しない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "Notwithstanding, the LORD didn’t turn from the fierceness of his great wrath, with which his anger burned against Judah, because of all the provocation with which Manasseh had provoked him."
+    },
+    {
+      "chapter": 23,
+      "verse": 27,
+      "citationURL": "https://ebible.org/engwebp/2KI23.htm#V27",
+      "sourceTextSHA256": "9d4ed28e36933954854f44154962f55738d63a07b78d0a38212f4770b5ef2d5e",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "「removed Israel」は主の前から退けられたイスラエルの民を指す文脈で、地理的領域の移動を明記しない。祖先個人ではなく既存の民の集合IDを用いる。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct",
+          "reasonJa": "「removed Israel」は主の前から退けられたイスラエルの民を指す文脈で、地理的領域の移動を明記しない。祖先個人ではなく既存の民の集合IDを用いる。"
+        },
+        {
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域または民の名称であり、族長ユダ個人の行為・発話ではない。集団用法には本範囲で確認できる個別の承認済みIDがないため、族長IDへ接続しない。"
+        },
+        {
+          "entityID": "place:northern-kingdom-of-israel_1302",
+          "reasonJa": "「removed Israel」は民への裁き・追放を述べ、領域そのものの場所や移動を示すとは限らないため、政治領域IDへ結び付けない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "place:northern-kingdom-of-israel_1302",
+          "reasonJa": "「removed Israel」は民への裁き・追放を述べ、領域そのものの場所や移動を示すとは限らないため、政治領域IDへ結び付けない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "sourceText": "The LORD said, “I will also remove Judah out of my sight, as I have removed Israel; and I will cast off this city which I have chosen, even Jerusalem, and the house of which I said, ‘My name shall be there.’”"
+    },
+    {
+      "chapter": 23,
+      "verse": 28,
+      "citationURL": "https://ebible.org/engwebp/2KI23.htm#V28",
+      "sourceTextSHA256": "0b420624a5ed6c28916fa9f7f33df7cff6288f5ae5518f7369bbe20b2ede5e62",
+      "beforeEntities": [
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "direct",
+          "reasonJa": "本文に「Josiah」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "direct",
+          "reasonJa": "本文に「Josiah」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域または民の名称であり、族長ユダ個人の行為・発話ではない。集団用法には本範囲で確認できる個別の承認済みIDがないため、族長IDへ接続しない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "Now the rest of the acts of Josiah, and all that he did, aren’t they written in the book of the chronicles of the kings of Judah?"
+    },
+    {
+      "chapter": 23,
+      "verse": 32,
+      "citationURL": "https://ebible.org/engwebp/2KI23.htm#V32",
+      "sourceTextSHA256": "4d8aa09a0074432baba629ed89e3489a1784cde827403b2333f7e74599aaf627",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:jehoahaz_2516",
+          "relationship": "context",
+          "reasonJa": "23:31で王位年齢・在位を述べたヨアハズについて続ける。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:jehoahaz_2516",
+          "relationship": "context",
+          "reasonJa": "23:31で王位年齢・在位を述べたヨアハズについて続ける。"
+        }
+      ],
+      "sourceText": "He did that which was evil in the LORD’s sight, according to all that his fathers had done."
+    },
+    {
+      "chapter": 23,
+      "verse": 37,
+      "citationURL": "https://ebible.org/engwebp/2KI23.htm#V37",
+      "sourceTextSHA256": "4d8aa09a0074432baba629ed89e3489a1784cde827403b2333f7e74599aaf627",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:jehoiakim_1085",
+          "relationship": "context",
+          "reasonJa": "23:36で即位説明されたエホヤキムについて続ける。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:jehoiakim_1085",
+          "relationship": "context",
+          "reasonJa": "23:36で即位説明されたエホヤキムについて続ける。"
+        }
+      ],
+      "sourceText": "He did that which was evil in the LORD’s sight, according to all that his fathers had done."
+    },
+    {
+      "chapter": 24,
+      "verse": 2,
+      "citationURL": "https://ebible.org/engwebp/2KI24.htm#V2",
+      "sourceTextSHA256": "42bda299ee830d462ec4ddf3ad3999cd83fa17b3951e98175c1fb5384f0866fb",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "person:moab_2103",
+          "relationship": "direct",
+          "reasonJa": "「Moabites」は既存のモアブ民・国のcollective IDに対応する。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域または民の名称であり、族長ユダ個人の行為・発話ではない。集団用法には本範囲で確認できる個別の承認済みIDがないため、族長IDへ接続しない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        },
+        {
+          "entityID": "place:syria_1122",
+          "reasonJa": "本文の「Syrians」は人々の集団を表す語で、アラム地域そのものの地名を直接示さない。該当する既存の集団IDも確認できないため、地理IDへ置き換えない。"
+        }
+      ],
+      "independentProposalDecision": "accepted-with-specific-rejection",
+      "rejectedProposalItems": [
+        {
+          "entityID": "place:syria_1122",
+          "reasonJa": "「Syrians」という民族名だけから地域カードへ接続しない。"
+        }
+      ],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:moab_2103",
+          "relationship": "direct",
+          "reasonJa": "「Moabites」は既存のモアブ民・国のcollective IDに対応する。"
+        },
+        {
+          "action": "add",
+          "entityID": "place:syria_1122",
+          "relationship": "context",
+          "reasonJa": "「Syrians」はアラム地域に結び付く人々の名。地域そのものの直接名指しではないためcontextに限る。"
+        },
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "The LORD sent against him bands of the Chaldeans, bands of the Syrians, bands of the Moabites, and bands of the children of Ammon, and sent them against Judah to destroy it, according to the LORD’s word which he spoke by his servants the prophets."
+    },
+    {
+      "chapter": 24,
+      "verse": 3,
+      "citationURL": "https://ebible.org/engwebp/2KI24.htm#V3",
+      "sourceTextSHA256": "cdb928af75f6e2bf4f4cdec6805fc434ea7da311a6488ce57c841aad202c63b9",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:manasseh_1930",
+          "relationship": "direct",
+          "reasonJa": "本文に「Manasseh」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:manasseh_1930",
+          "relationship": "direct",
+          "reasonJa": "本文に「Manasseh」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域または民の名称であり、族長ユダ個人の行為・発話ではない。集団用法には本範囲で確認できる個別の承認済みIDがないため、族長IDへ接続しない。"
+        }
+      ],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "sourceText": "Surely at the commandment of the LORD this came on Judah, to remove them out of his sight for the sins of Manasseh, according to all that he did,"
+    },
+    {
+      "chapter": 24,
+      "verse": 5,
+      "citationURL": "https://ebible.org/engwebp/2KI24.htm#V5",
+      "sourceTextSHA256": "11b9bb62d2e39b76b9997154c4b087a46ea0f111af9f3eba3b1a0f22fa1cad7c",
+      "beforeEntities": [
+        {
+          "entityID": "person:jehoiakim_1085",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jehoiakim」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:jehoiakim_1085",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jehoiakim」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域または民の名称であり、族長ユダ個人の行為・発話ではない。集団用法には本範囲で確認できる個別の承認済みIDがないため、族長IDへ接続しない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "Now the rest of the acts of Jehoiakim, and all that he did, aren’t they written in the book of the chronicles of the kings of Judah?"
+    },
+    {
+      "chapter": 24,
+      "verse": 11,
+      "citationURL": "https://ebible.org/engwebp/2KI24.htm#V11",
+      "sourceTextSHA256": "ec16eed818ae3db4b4c6e726d2697636bbf84866f1a1da8dd411a347dc1d6922",
+      "beforeEntities": [
+        {
+          "entityID": "person:nebuchadnezzar_2167",
+          "relationship": "direct",
+          "reasonJa": "本文に「Nebuchadnezzar」が明記される。"
+        },
+        {
+          "entityID": "place:babylon_151",
+          "relationship": "direct",
+          "reasonJa": "本文に「Babylon」が明記される。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:nebuchadnezzar_2167",
+          "relationship": "direct",
+          "reasonJa": "本文に「Nebuchadnezzar」が明記される。"
+        },
+        {
+          "entityID": "place:babylon_151",
+          "relationship": "direct",
+          "reasonJa": "本文に「Babylon」が明記される。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "context",
+          "reasonJa": "24:10の包囲対象「Jerusalem / the city」を受ける。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "place:jerusalem_636",
+          "relationship": "context",
+          "reasonJa": "24:10の包囲対象「Jerusalem / the city」を受ける。"
+        }
+      ],
+      "sourceText": "Nebuchadnezzar king of Babylon came to the city while his servants were besieging it,"
+    },
+    {
+      "chapter": 24,
+      "verse": 12,
+      "citationURL": "https://ebible.org/engwebp/2KI24.htm#V12",
+      "sourceTextSHA256": "80de5a5bdb7c3e136af26349c11fb4a8ccbb9996b7dd5237b3401f292b382f74",
+      "beforeEntities": [
+        {
+          "entityID": "person:jehoiachin_791",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jehoiachin」が明記される。"
+        },
+        {
+          "entityID": "place:babylon_151",
+          "relationship": "direct",
+          "reasonJa": "本文に「Babylon」が明記される。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "context",
+          "reasonJa": "「city」は24:10–11に包囲されたエルサレム。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:jehoiachin_791",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jehoiachin」が明記される。"
+        },
+        {
+          "entityID": "place:babylon_151",
+          "relationship": "direct",
+          "reasonJa": "本文に「Babylon」が明記される。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "context",
+          "reasonJa": "「city」は24:10–11に包囲されたエルサレム。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域または民の名称であり、族長ユダ個人の行為・発話ではない。集団用法には本範囲で確認できる個別の承認済みIDがないため、族長IDへ接続しない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "and Jehoiachin the king of Judah went out to the king of Babylon—he, his mother, his servants, his princes, and his officers; and the king of Babylon captured him in the eighth year of his reign."
+    },
+    {
+      "chapter": 24,
+      "verse": 19,
+      "citationURL": "https://ebible.org/engwebp/2KI24.htm#V19",
+      "sourceTextSHA256": "31d2e3e754bf1729ede2a1d817b2d4ca23c4726142200670341690f8f5b2a2fa",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:jehoiakim_1085",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jehoiakim」が明記される。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:jehoiakim_1085",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jehoiakim」が明記される。"
+        },
+        {
+          "entityID": "person:zedekiah_1950",
+          "relationship": "context",
+          "reasonJa": "24:18で即位したゼデキヤが「He did evil」の主語。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:zedekiah_1950",
+          "relationship": "context",
+          "reasonJa": "24:18で即位したゼデキヤが「He did evil」の主語。"
+        }
+      ],
+      "sourceText": "He did that which was evil in the LORD’s sight, according to all that Jehoiakim had done."
+    },
+    {
+      "chapter": 24,
+      "verse": 20,
+      "citationURL": "https://ebible.org/engwebp/2KI24.htm#V20",
+      "sourceTextSHA256": "f0023ab7120db1ac0c84de9a4568f278b3bb5e854d27fa84230e9855be587509",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:zedekiah_1950",
+          "relationship": "direct",
+          "reasonJa": "本文に「Zedekiah」が明記される。"
+        },
+        {
+          "entityID": "place:babylon_151",
+          "relationship": "direct",
+          "reasonJa": "本文に「Babylon」が明記される。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct",
+          "reasonJa": "本文に「God」が明記される。"
+        },
+        {
+          "entityID": "person:zedekiah_1950",
+          "relationship": "direct",
+          "reasonJa": "本文に「Zedekiah」が明記される。"
+        },
+        {
+          "entityID": "place:babylon_151",
+          "relationship": "direct",
+          "reasonJa": "本文に「Babylon」が明記される。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jerusalem」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域または民の名称であり、族長ユダ個人の行為・発話ではない。集団用法には本範囲で確認できる個別の承認済みIDがないため、族長IDへ接続しない。"
+        }
+      ],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "sourceText": "For through the anger of the LORD, this happened in Jerusalem and Judah, until he had cast them out from his presence. Then Zedekiah rebelled against the king of Babylon."
+    },
+    {
+      "chapter": 25,
+      "verse": 11,
+      "citationURL": "https://ebible.org/engwebp/2KI25.htm#V11",
+      "sourceTextSHA256": "99a55e779f427f107229f8e842635dde489fd869e60c3a5e49291c8d46254c45",
+      "beforeEntities": [
+        {
+          "entityID": "person:nebuzar-adan_2169",
+          "relationship": "direct",
+          "reasonJa": "本文は「Nebuzaradan」と明記する。既存候補IDの表記はWEBと異なるが、同じ節に割り当てられた表記差の候補として扱う（WEB joins the compound name.）。"
+        },
+        {
+          "entityID": "place:babylon_151",
+          "relationship": "direct",
+          "reasonJa": "本文に「Babylon」が明記される。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:nebuzar-adan_2169",
+          "relationship": "direct",
+          "reasonJa": "本文は「Nebuzaradan」と明記する。既存候補IDの表記はWEBと異なるが、同じ節に割り当てられた表記差の候補として扱う（WEB joins the compound name.）。"
+        },
+        {
+          "entityID": "place:babylon_151",
+          "relationship": "direct",
+          "reasonJa": "本文に「Babylon」が明記される。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "context",
+          "reasonJa": "「the city」は25:8–10のエルサレムを受ける。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "place:jerusalem_636",
+          "relationship": "context",
+          "reasonJa": "「the city」は25:8–10のエルサレムを受ける。"
+        }
+      ],
+      "sourceText": "Nebuzaradan the captain of the guard carried away captive the rest of the people who were left in the city and those who had deserted to the king of Babylon—all the rest of the multitude."
+    },
+    {
+      "chapter": 25,
+      "verse": 12,
+      "citationURL": "https://ebible.org/engwebp/2KI25.htm#V12",
+      "sourceTextSHA256": "5a34d493584134cfddabe513849b42e06d92c4ba7b5f11d54f4527d625a3ac79",
+      "beforeEntities": [
+        {
+          "entityID": "person:nebuzar-adan_2169",
+          "relationship": "context",
+          "reasonJa": "「captain of the guard」はネブザルアダン。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:nebuzar-adan_2169",
+          "relationship": "context",
+          "reasonJa": "「captain of the guard」はネブザルアダン。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "context",
+          "reasonJa": "ここで残された「land」は直前までのユダの地を指す文脈。ただし人々の由来を含む言い換えは避ける。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "place:judah-southern_1281",
+          "relationship": "context",
+          "reasonJa": "ここで残された「land」は直前までのユダの地を指す文脈。ただし人々の由来を含む言い換えは避ける。"
+        }
+      ],
+      "sourceText": "But the captain of the guard left some of the poorest of the land to work the vineyards and fields."
+    },
+    {
+      "chapter": 25,
+      "verse": 18,
+      "citationURL": "https://ebible.org/engwebp/2KI25.htm#V18",
+      "sourceTextSHA256": "2d6d51d57555c84fd96635148875abcbe9596fc2435426b2c61fc64e652d2718",
+      "beforeEntities": [
+        {
+          "entityID": "person:seraiah_2494",
+          "relationship": "direct",
+          "reasonJa": "本文に「Seraiah」が明記される。"
+        },
+        {
+          "entityID": "person:zephaniah_3039",
+          "relationship": "direct",
+          "reasonJa": "本文に「Zephaniah」が明記される。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:seraiah_2494",
+          "relationship": "direct",
+          "reasonJa": "本文に「Seraiah」が明記される。"
+        },
+        {
+          "entityID": "person:zephaniah_3039",
+          "relationship": "direct",
+          "reasonJa": "本文に「Zephaniah」が明記される。"
+        },
+        {
+          "entityID": "person:nebuzar-adan_2169",
+          "relationship": "context",
+          "reasonJa": "「captain of the guard」は25:8から続くネブザルアダン。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:nebuzar-adan_2169",
+          "relationship": "context",
+          "reasonJa": "「captain of the guard」は25:8から続くネブザルアダン。"
+        }
+      ],
+      "sourceText": "The captain of the guard took Seraiah the chief priest, Zephaniah the second priest, and the three keepers of the threshold;"
+    },
+    {
+      "chapter": 25,
+      "verse": 19,
+      "citationURL": "https://ebible.org/engwebp/2KI25.htm#V19",
+      "sourceTextSHA256": "65ca2d0655c96f5fee83e5ce777660f06c18ad66f2142a197f285d6a63fa63db",
+      "beforeEntities": [
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "context",
+          "reasonJa": "「city」は続く占領の舞台エルサレム。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "context",
+          "reasonJa": "「city」は続く占領の舞台エルサレム。"
+        },
+        {
+          "entityID": "person:nebuzar-adan_2169",
+          "relationship": "context",
+          "reasonJa": "主体は25:18のネブザルアダン。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:nebuzar-adan_2169",
+          "relationship": "context",
+          "reasonJa": "主体は25:18のネブザルアダン。"
+        }
+      ],
+      "sourceText": "and out of the city he took an officer who was set over the men of war; and five men of those who saw the king’s face, who were found in the city; and the scribe, the captain of the army, who mustered the people of the land, and sixty men of the people of the land who were found in the city."
+    },
+    {
+      "chapter": 25,
+      "verse": 21,
+      "citationURL": "https://ebible.org/engwebp/2KI25.htm#V21",
+      "sourceTextSHA256": "75d4be91871f8bebd00305b9180da1b80e46951a5cba9054df64926e22f99daf",
+      "beforeEntities": [
+        {
+          "entityID": "place:babylon_151",
+          "relationship": "direct",
+          "reasonJa": "本文に「Babylon」が明記される。"
+        },
+        {
+          "entityID": "place:hamath_516",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hamath」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "place:riblah_1001",
+          "relationship": "direct",
+          "reasonJa": "本文に「Riblah」が明記される。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "place:babylon_151",
+          "relationship": "direct",
+          "reasonJa": "本文に「Babylon」が明記される。"
+        },
+        {
+          "entityID": "place:hamath_516",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hamath」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        },
+        {
+          "entityID": "place:riblah_1001",
+          "relationship": "direct",
+          "reasonJa": "本文に「Riblah」が明記される。"
+        },
+        {
+          "entityID": "person:nebuchadnezzar_2167",
+          "relationship": "context",
+          "reasonJa": "「king of Babylon」はこの章で名指されたネブカドネツァル。"
+        },
+        {
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域または民の名称であり、族長ユダ個人の行為・発話ではない。集団用法には本範囲で確認できる個別の承認済みIDがないため、族長IDへ接続しない。"
+        }
+      ],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "add",
+          "entityID": "person:nebuchadnezzar_2167",
+          "relationship": "context",
+          "reasonJa": "「king of Babylon」はこの章で名指されたネブカドネツァル。"
+        },
+        {
+          "action": "add",
+          "entityID": "person:judah_1751",
+          "relationship": "direct",
+          "reasonJa": "本文はユダの家・民・住民を人々の集合として明示する。既存profileはidentityType=collectiveであり、族祖ユダ個人ではない。地理的なplace用法が併記される場合は別に保持。"
+        }
+      ],
+      "sourceText": "The king of Babylon attacked them and put them to death at Riblah in the land of Hamath. So Judah was carried away captive out of his land."
+    },
+    {
+      "chapter": 25,
+      "verse": 22,
+      "citationURL": "https://ebible.org/engwebp/2KI25.htm#V22",
+      "sourceTextSHA256": "bf9fbb77d6c3c7e8aa739813e94896c08b4a6245e808e0de7fd6e71ed9492927",
+      "beforeEntities": [
+        {
+          "entityID": "person:ahikam_141",
+          "relationship": "direct",
+          "reasonJa": "本文に「Ahikam」が明記される。"
+        },
+        {
+          "entityID": "person:gedaliah_1287",
+          "relationship": "direct",
+          "reasonJa": "本文に「Gedaliah」が明記される。"
+        },
+        {
+          "entityID": "person:nebuchadnezzar_2167",
+          "relationship": "direct",
+          "reasonJa": "本文に「Nebuchadnezzar」が明記される。"
+        },
+        {
+          "entityID": "person:shaphan_2550",
+          "relationship": "direct",
+          "reasonJa": "本文に「Shaphan」が明記される。"
+        },
+        {
+          "entityID": "place:babylon_151",
+          "relationship": "direct",
+          "reasonJa": "本文に「Babylon」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:ahikam_141",
+          "relationship": "direct",
+          "reasonJa": "本文に「Ahikam」が明記される。"
+        },
+        {
+          "entityID": "person:gedaliah_1287",
+          "relationship": "direct",
+          "reasonJa": "本文に「Gedaliah」が明記される。"
+        },
+        {
+          "entityID": "person:nebuchadnezzar_2167",
+          "relationship": "direct",
+          "reasonJa": "本文に「Nebuchadnezzar」が明記される。"
+        },
+        {
+          "entityID": "person:shaphan_2550",
+          "relationship": "direct",
+          "reasonJa": "本文に「Shaphan」が明記される。"
+        },
+        {
+          "entityID": "place:babylon_151",
+          "relationship": "direct",
+          "reasonJa": "本文に「Babylon」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域または民の名称であり、族長ユダ個人の行為・発話ではない。集団用法には本範囲で確認できる個別の承認済みIDがないため、族長IDへ接続しない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "As for the people who were left in the land of Judah whom Nebuchadnezzar king of Babylon had left, even over them he made Gedaliah the son of Ahikam, the son of Shaphan, governor."
+    },
+    {
+      "chapter": 25,
+      "verse": 27,
+      "citationURL": "https://ebible.org/engwebp/2KI25.htm#V27",
+      "sourceTextSHA256": "163c4b95efc90cadaa2202f495453a6f4bd549d63d4fa69742a7e0cfcf06c30c",
+      "beforeEntities": [
+        {
+          "entityID": "person:evil-merodach_1233",
+          "relationship": "direct",
+          "reasonJa": "本文は「Evilmerodach」と明記する。既存候補IDの表記はWEBと異なるが、同じ節に割り当てられた表記差の候補として扱う（WEB joins the compound name.）。"
+        },
+        {
+          "entityID": "person:jehoiachin_791",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jehoiachin」が明記される。"
+        },
+        {
+          "entityID": "place:babylon_151",
+          "relationship": "direct",
+          "reasonJa": "本文に「Babylon」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:evil-merodach_1233",
+          "relationship": "direct",
+          "reasonJa": "本文は「Evilmerodach」と明記する。既存候補IDの表記はWEBと異なるが、同じ節に割り当てられた表記差の候補として扱う（WEB joins the compound name.）。"
+        },
+        {
+          "entityID": "person:jehoiachin_791",
+          "relationship": "direct",
+          "reasonJa": "本文に「Jehoiachin」が明記される。"
+        },
+        {
+          "entityID": "place:babylon_151",
+          "relationship": "direct",
+          "reasonJa": "本文に「Babylon」が明記される。"
+        },
+        {
+          "entityID": "place:judah-southern_1281",
+          "relationship": "direct",
+          "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域または民の名称であり、族長ユダ個人の行為・発話ではない。集団用法には本範囲で確認できる個別の承認済みIDがないため、族長IDへ接続しない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:judah_1751",
+          "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+        }
+      ],
+      "independentProposalDecision": "accepted",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        {
+          "action": "rewrite-exclusion-reason",
+          "entityID": "person:judah_1751",
+          "reasonJa": "王国・領域の用法と判断。person collectiveの自動重複を避けてplaceのみを採用する。元の「族祖個人」という理由は現在profileのidentityTypeと不一致。"
+        }
+      ],
+      "sourceText": "In the thirty-seventh year of the captivity of Jehoiachin king of Judah, in the twelfth month, on the twenty-seventh day of the month, Evilmerodach king of Babylon, in the year that he began to reign, released Jehoiachin king of Judah out of prison,"
+    },
+    {
+      "chapter": 20,
+      "verse": 6,
+      "citationURL": "https://ebible.org/engwebp/2KI20.htm#V6",
+      "sourceTextSHA256": "214decdbd408a8ef3d4ca66de9a909d849220efff959e517c0da74dd109661ec",
+      "beforeEntities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct",
+          "reasonJa": "本文に「David」が明記される。"
+        },
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "context",
+          "reasonJa": "20:6の「your」は病床のヒゼキヤに向けた神の言葉である。"
+        },
+        {
+          "entityID": "place:assyria_111",
+          "relationship": "direct",
+          "reasonJa": "本文に「Assyria」が明記される。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "context",
+          "reasonJa": "「この町」は20:2–3の場面のエルサレムを指す。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct",
+          "reasonJa": "本文に「David」が明記される。"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "context",
+          "reasonJa": "20:5の主の直接話法が続き、「I will add / deliver / defend」の話者は主。"
+        },
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "context",
+          "reasonJa": "20:6の「your」は病床のヒゼキヤに向けた神の言葉である。"
+        },
+        {
+          "entityID": "place:assyria_111",
+          "relationship": "direct",
+          "reasonJa": "本文に「Assyria」が明記される。"
+        },
+        {
+          "entityID": "place:jerusalem_636",
+          "relationship": "context",
+          "reasonJa": "「この町」は20:2–3の場面のエルサレムを指す。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "author-added-confirmed",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        "20:5–6の発話継続。"
+      ],
+      "sourceText": "I will add to your days fifteen years. I will deliver you and this city out of the hand of the king of Assyria. I will defend this city for my own sake, and for my servant David’s sake.”’”"
+    },
+    {
+      "chapter": 20,
+      "verse": 7,
+      "citationURL": "https://ebible.org/engwebp/2KI20.htm#V7",
+      "sourceTextSHA256": "93642982e72e490068773f5b4bbd146bf54bbe4fb8672ba19e61666d9154e7cb",
+      "beforeEntities": [
+        {
+          "entityID": "person:isaiah_617",
+          "relationship": "direct",
+          "reasonJa": "本文に「Isaiah」が明記される。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "context",
+          "reasonJa": "20:1–6で病床にいたヒゼキヤを指す「he recovered」。"
+        },
+        {
+          "entityID": "person:isaiah_617",
+          "relationship": "direct",
+          "reasonJa": "本文に「Isaiah」が明記される。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "author-added-confirmed",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        "20:1の病人・20:5の二人称受け手であるヒゼキヤの回復。"
+      ],
+      "sourceText": "Isaiah said, “Take a cake of figs.” They took and laid it on the boil, and he recovered."
+    },
+    {
+      "chapter": 20,
+      "verse": 12,
+      "citationURL": "https://ebible.org/engwebp/2KI20.htm#V12",
+      "sourceTextSHA256": "e83d78abab0e4eae30d18a094f2ca3efbe11e97a908e4a5238d0373e23322433",
+      "beforeEntities": [
+        {
+          "entityID": "person:baladan_594",
+          "relationship": "direct",
+          "reasonJa": "本文に「Baladan」が明記される。"
+        },
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hezekiah」が明記される。"
+        },
+        {
+          "entityID": "place:babylon_151",
+          "relationship": "direct",
+          "reasonJa": "本文に「Babylon」が明記される。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:baladan_594",
+          "relationship": "direct",
+          "reasonJa": "本文に「Baladan」が明記される。"
+        },
+        {
+          "entityID": "person:hezekiah_1512",
+          "relationship": "direct",
+          "reasonJa": "本文に「Hezekiah」が明記される。"
+        },
+        {
+          "entityID": "person:merodach-baladan_483",
+          "relationship": "direct",
+          "reasonJa": "本文の「Berodach Baladan」は既存のMerodach-baladan人物IDに対応する綴り形。Baladanは本文で父として別に明記されるため既存person:baladan_594も保持。"
+        },
+        {
+          "entityID": "place:babylon_151",
+          "relationship": "direct",
+          "reasonJa": "本文に「Babylon」が明記される。"
+        }
+      ],
+      "beforeExcludedCandidates": [],
+      "afterExcludedCandidates": [],
+      "independentProposalDecision": "author-added-confirmed",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        "WEB 2KI20:12の綴り形と並行WEB Isa39:1を照合。Wikipedia “Marduk-apla-iddina II”導入L151はMerodach-Baladan/Berodach-Baladanを名形として同一人物と明記し、L166は2 Kings 20:12とIsaiah 39:1の同一書簡事件を挙げる。Wikipedia “Isaiah 39” L152–154もMerodachbaladan son of Baladanを記しMarduk-apla-iddina IIと同定。"
+      ],
+      "sourceText": "At that time Berodach Baladan the son of Baladan, king of Babylon, sent letters and a present to Hezekiah, for he had heard that Hezekiah had been sick."
+    },
+    {
+      "chapter": 21,
+      "verse": 26,
+      "citationURL": "https://ebible.org/engwebp/2KI21.htm#V26",
+      "sourceTextSHA256": "2420bca6410d91bdca85fbe42228e346e8bcc9cc94f3ca8910f888754fa04cb2",
+      "beforeEntities": [
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "direct",
+          "reasonJa": "本文に「Josiah」が明記される。"
+        },
+        {
+          "entityID": "place:uzza_1192",
+          "relationship": "direct",
+          "reasonJa": "本文に「Uzza」が明記される。"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:amon_236",
+          "relationship": "context",
+          "reasonJa": "「He was buried」は直前21:25のアモンを受ける。"
+        },
+        {
+          "entityID": "person:josiah_1730",
+          "relationship": "direct",
+          "reasonJa": "本文に「Josiah」が明記される。"
+        },
+        {
+          "entityID": "place:uzza_1192",
+          "relationship": "direct",
+          "reasonJa": "本文に「Uzza」が明記される。"
+        }
+      ],
+      "beforeExcludedCandidates": [
+        {
+          "entityID": "person:uzza_2912",
+          "reasonJa": "「garden of Uzza」は地名化した庭園表現として地名IDを検討し、人名候補を場所カードへ重複接続しない。"
+        }
+      ],
+      "afterExcludedCandidates": [
+        {
+          "entityID": "person:uzza_2912",
+          "reasonJa": "「garden of Uzza」は地名化した庭園表現として地名IDを検討し、人名候補を場所カードへ重複接続しない。"
+        }
+      ],
+      "independentProposalDecision": "author-added-confirmed",
+      "rejectedProposalItems": [],
+      "basisJa": [
+        "21:25のアモンについて行為が続く。"
+      ],
+      "sourceText": "He was buried in his tomb in the garden of Uzza, and Josiah his son reigned in his place."
+    }
+  ],
+  "metadataReconciliation": {
+    "priorMapSHA256": "eff6bbbca385b6dabdef2391fcd8cf438f6725eca1bae3069897d3186429898a",
+    "removedResolvedGaps": [
+      "person:achbor_63",
+      "person:adaiah_70",
+      "person:ahaz_118",
+      "person:asaph_329",
+      "person:azaliah_367",
+      "person:elah_1046",
+      "person:elnathan_1177",
+      "person:hamutal_1368",
+      "person:haruz_1425",
+      "person:jehoiakim_1085",
+      "person:jeremiah_848",
+      "person:jezaniah_667",
+      "person:joshua_1729",
+      "person:manasseh_1930",
+      "person:michaiah_2069",
+      "person:pharaoh-nechoh_2337",
+      "person:pharaoh_2333",
+      "person:rabshakeh_2384",
+      "person:seraiah_2495",
+      "person:shaphan_2550",
+      "person:tanhumeth_2824",
+      "person:zephaniah_3039"
+    ],
+    "retainedUnresolvedGaps": [
+      "place:ararat_86",
+      "place:media_776"
+    ],
+    "reasonJa": "2KIの22件はcurrent persons_1/2/3 draftsにprofileを再確認。identityIDごとに現profileありのため、古いprofileAvailabilityGapsから除外。Ararat/Mediaのplace profileは本作業範囲のcurrent draftsで確認できず、gapを維持。",
+    "checkedDraftRoots": [
+      "drafts/persons_1",
+      "drafts/persons_2",
+      "drafts/persons_3",
+      "drafts/places_1",
+      "drafts/places_2",
+      "drafts/places_3",
+      "drafts/places_extra"
+    ],
+    "currentMapSHA256": "4ac42cedcb56e368f5884e755a85ffd5a53ffbcba37171e2adf789d7ec36c9f6",
+    "unprofiledExistingIDAdded": {
+      "entityID": "person:merodach-baladan_483",
+      "verse": "20:12",
+      "reasonJa": "既存ID・綴り同定はsource-verifiedだが、current profileは未作成。map inclusion remains explicit with availability gap."
+    }
+  },
+  "followupDeltas": [
+    {
+      "dateUTC": "2026-10-16",
+      "priorMapSHA256": "4ac42cedcb56e368f5884e755a85ffd5a53ffbcba37171e2adf789d7ec36c9f6",
+      "currentMapSHA256": "540176ed3cb2bcf7ab4a4b20abe632e123b8255a766799f888095120b204daa8",
+      "independentReviewersReconciliation": [
+        "people_three 2KI18–25 independent report SHA 95ac215a79b1ad2b3fad88afd6eb1c9f4a1cf4e9b5e54b328bce5f6bf683c750",
+        "root additional full-source checks 2KI23–25"
+      ],
+      "changedRows": [
+        {
+          "chapter": 23,
+          "verse": 8,
+          "citationURL": "https://ebible.org/engwebp/2KI23.htm#V8",
+          "sourceTextSHA256": "9a97f070c5cc27385a2c3460e12b9f1ab3867c9a4a1a2be1e9a59ad7cf1bd47c",
+          "beforeEntities": [
+            {
+              "entityID": "person:joshua_1729",
+              "relationship": "direct",
+              "reasonJa": "本文に「Joshua」が明記される。"
+            },
+            {
+              "entityID": "person:josiah_1730",
+              "relationship": "context",
+              "reasonJa": "23:1–2で名指された王ヨシヤが行う改革の連続場面。"
+            },
+            {
+              "entityID": "place:beersheba_170",
+              "relationship": "direct",
+              "reasonJa": "本文に「Beersheba」が明記される。"
+            },
+            {
+              "entityID": "place:geba_447",
+              "relationship": "direct",
+              "reasonJa": "本文に「Geba」が明記される。"
+            },
+            {
+              "entityID": "place:judah_1280",
+              "relationship": "direct",
+              "reasonJa": "本文に「Judah」が明記される。"
+            }
+          ],
+          "afterEntities": [
+            {
+              "entityID": "person:joshua_1729",
+              "relationship": "direct",
+              "reasonJa": "本文に「Joshua」が明記される。"
+            },
+            {
+              "entityID": "person:josiah_1730",
+              "relationship": "context",
+              "reasonJa": "23:1–2で名指された王ヨシヤが行う改革の連続場面。"
+            },
+            {
+              "entityID": "place:beersheba_170",
+              "relationship": "direct",
+              "reasonJa": "本文に「Beersheba」が明記される。"
+            },
+            {
+              "entityID": "place:geba_447",
+              "relationship": "direct",
+              "reasonJa": "本文に「Geba」が明記される。"
+            },
+            {
+              "entityID": "place:judah_1280",
+              "relationship": "direct",
+              "reasonJa": "「cities of Judah」という複数の町をまとめる地域用法。2KIの専用プロフィールplace:judah_1280はこの節の地域呼称を扱い、place:judah-southern_1281とは別の書別同定範囲。"
+            }
+          ],
+          "beforeExcludedCandidates": [
+            {
+              "entityID": "person:judah_1751",
+              "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+            }
+          ],
+          "afterExcludedCandidates": [
+            {
+              "entityID": "person:judah_1751",
+              "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+            }
+          ],
+          "decisionJa": "本文はユダの複数の町を地域として表す。書別プロフィールplace:judah_1280はこの節の「ユダの町々」に限定した地域IDであり、place:judah-southern_1281の別用法や祖先個人・民の集合へ機械的に重ねない。"
+        },
+        {
+          "chapter": 23,
+          "verse": 11,
+          "citationURL": "https://ebible.org/engwebp/2KI23.htm#V11",
+          "sourceTextSHA256": "e4eb0f0f1998df17f4f7bb753fabb02a299088ae33522e1649823314132b16d3",
+          "beforeEntities": [
+            {
+              "entityID": "person:god_1324",
+              "relationship": "direct",
+              "reasonJa": "本文に「God」が明記される。"
+            },
+            {
+              "entityID": "person:josiah_1730",
+              "relationship": "context",
+              "reasonJa": "23:1–2で名指された王ヨシヤが行う改革の連続場面。"
+            },
+            {
+              "entityID": "place:judah-southern_1281",
+              "relationship": "direct",
+              "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+            },
+            {
+              "entityID": "person:nathan-melech_2159",
+              "relationship": "direct",
+              "reasonJa": "本文は宮廷役人Nathan Melechの部屋を明記する。現在のmapはこの候補を「名が明示されない」として誤除外している。"
+            }
+          ],
+          "afterEntities": [
+            {
+              "entityID": "person:god_1324",
+              "relationship": "direct",
+              "reasonJa": "本文に「God」が明記される。"
+            },
+            {
+              "entityID": "person:josiah_1730",
+              "relationship": "context",
+              "reasonJa": "23:1–2で名指された王ヨシヤが行う改革の連続場面。"
+            },
+            {
+              "entityID": "place:judah-southern_1281",
+              "relationship": "direct",
+              "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+            },
+            {
+              "entityID": "person:nathan-melech_2159",
+              "relationship": "direct",
+              "reasonJa": "本文は宮廷役人Nathan Melechの部屋を明記する。現在のmapはこの候補を「名が明示されない」として誤除外している。"
+            }
+          ],
+          "beforeExcludedCandidates": [
+            {
+              "entityID": "person:judah_1751",
+              "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+            },
+            {
+              "entityID": "person:nathan-melech_2159",
+              "reasonJa": "入力候補名「Nathan-melech」はこの節本文に明示されず、本文だけでは一意に指示対象を結べない。"
+            }
+          ],
+          "afterExcludedCandidates": [
+            {
+              "entityID": "person:judah_1751",
+              "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+            }
+          ],
+          "decisionJa": "本文にNathan Melechの名と役職が明記され、既存人物IDへのdirectリンクが適切。除外側に残った旧誤理由を削除。"
+        },
+        {
+          "chapter": 23,
+          "verse": 13,
+          "citationURL": "https://ebible.org/engwebp/2KI23.htm#V13",
+          "sourceTextSHA256": "740872be15fe181eabcffefd651ea6450443756198de8a83bfdbbf496290d205",
+          "beforeEntities": [
+            {
+              "entityID": "person:ashtoreth_341",
+              "relationship": "direct",
+              "reasonJa": "本文に「Ashtoreth」が明記される。"
+            },
+            {
+              "entityID": "person:chemosh_931",
+              "relationship": "direct",
+              "reasonJa": "本文に「Chemosh」が明記される。"
+            },
+            {
+              "entityID": "person:josiah_1730",
+              "relationship": "context",
+              "reasonJa": "23:1–2で名指された王ヨシヤが行う改革の連続場面。"
+            },
+            {
+              "entityID": "person:milcom_2084",
+              "relationship": "direct",
+              "reasonJa": "本文に「Milcom」が明記される。"
+            },
+            {
+              "entityID": "person:solomon_2762",
+              "relationship": "direct",
+              "reasonJa": "本文に「Solomon」が明記される。"
+            },
+            {
+              "entityID": "place:jerusalem_636",
+              "relationship": "direct",
+              "reasonJa": "本文に「Jerusalem」が明記される。"
+            },
+            {
+              "entityID": "place:moab_815",
+              "relationship": "direct",
+              "reasonJa": "本文に「Moab」が明記される。"
+            },
+            {
+              "entityID": "place:united-kingdom-of-israel_1301",
+              "relationship": "direct",
+              "reasonJa": "23:13の「Solomon king of Israel」は分裂前のソロモンの王号を示す。後代の北王国ではないため、既存の統一王国IDを用いる。"
+            },
+            {
+              "entityID": "place:sidon_1093",
+              "relationship": "context",
+              "reasonJa": "「Sidonians」は人々の呼称で、シドンの地との関係を示す。都市名そのものの直接登場とは扱わない。"
+            },
+            {
+              "entityID": "person:moab_2103",
+              "relationship": "context",
+              "reasonJa": "「of Moab」はモアブ民・国に結び付くケモシュの称号。既存collective IDへの文脈リンクを提案し、place:moabと別用法を保つ。"
+            }
+          ],
+          "afterEntities": [
+            {
+              "entityID": "person:ashtoreth_341",
+              "relationship": "direct",
+              "reasonJa": "本文に「Ashtoreth」が明記される。"
+            },
+            {
+              "entityID": "person:chemosh_931",
+              "relationship": "direct",
+              "reasonJa": "本文に「Chemosh」が明記される。"
+            },
+            {
+              "entityID": "person:josiah_1730",
+              "relationship": "context",
+              "reasonJa": "23:1–2で名指された王ヨシヤが行う改革の連続場面。"
+            },
+            {
+              "entityID": "person:milcom_2084",
+              "relationship": "direct",
+              "reasonJa": "本文に「Milcom」が明記される。"
+            },
+            {
+              "entityID": "person:solomon_2762",
+              "relationship": "direct",
+              "reasonJa": "本文に「Solomon」が明記される。"
+            },
+            {
+              "entityID": "place:jerusalem_636",
+              "relationship": "direct",
+              "reasonJa": "本文に「Jerusalem」が明記される。"
+            },
+            {
+              "entityID": "place:moab_815",
+              "relationship": "direct",
+              "reasonJa": "本文に「Moab」が明記される。"
+            },
+            {
+              "entityID": "place:united-kingdom-of-israel_1301",
+              "relationship": "direct",
+              "reasonJa": "23:13の「Solomon king of Israel」は分裂前のソロモンの王号を示す。後代の北王国ではないため、既存の統一王国IDを用いる。"
+            },
+            {
+              "entityID": "person:moab_2103",
+              "relationship": "context",
+              "reasonJa": "「of Moab」はモアブ民・国に結び付くケモシュの称号。既存collective IDへの文脈リンクを提案し、place:moabと別用法を保つ。"
+            }
+          ],
+          "beforeExcludedCandidates": [
+            {
+              "entityID": "place:northern-kingdom-of-israel_1302",
+              "reasonJa": "23:13のソロモンは王国分裂前の王であり、北王国のIDを当てない。"
+            }
+          ],
+          "afterExcludedCandidates": [
+            {
+              "entityID": "place:northern-kingdom-of-israel_1302",
+              "reasonJa": "23:13のソロモンは王国分裂前の王であり、北王国のIDを当てない。"
+            },
+            {
+              "entityID": "place:sidon_1093",
+              "reasonJa": "「Sidonians」は人々の呼称であり、この節はシドンという都市・地域を地名として明記していない。適合する集団IDも確認できないため、都市IDへ置き換えない。"
+            }
+          ],
+          "decisionJa": "Sidoniansは民族名なのでplace:sidon_1093への地域推定リンクを除去。ソロモンは分裂前の王として既存統一王国IDのまま。"
+        },
+        {
+          "chapter": 23,
+          "verse": 26,
+          "citationURL": "https://ebible.org/engwebp/2KI23.htm#V26",
+          "sourceTextSHA256": "d79b1974a1ae8dc317c0d542d1ccb21308ed94f5f9db6eabd0ab83a2c983e1db",
+          "beforeEntities": [
+            {
+              "entityID": "person:god_1324",
+              "relationship": "direct",
+              "reasonJa": "本文に「God」が明記される。"
+            },
+            {
+              "entityID": "person:manasseh_1930",
+              "relationship": "direct",
+              "reasonJa": "本文に「Manasseh」が明記される。"
+            },
+            {
+              "entityID": "place:judah-southern_1281",
+              "relationship": "direct",
+              "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+            }
+          ],
+          "afterEntities": [
+            {
+              "entityID": "person:god_1324",
+              "relationship": "direct",
+              "reasonJa": "本文に「God」が明記される。"
+            },
+            {
+              "entityID": "person:judah_1751",
+              "relationship": "direct",
+              "reasonJa": "「anger burned against Judah」はマナセの挑発に対する裁きの対象としてのユダの民を指す。既存IDは王国・民のcollectiveで、place:judah-southern_1281の地理・政治領域用法と区別して併記する。"
+            },
+            {
+              "entityID": "person:manasseh_1930",
+              "relationship": "direct",
+              "reasonJa": "本文に「Manasseh」が明記される。"
+            },
+            {
+              "entityID": "place:judah-southern_1281",
+              "relationship": "direct",
+              "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+            }
+          ],
+          "beforeExcludedCandidates": [
+            {
+              "entityID": "person:judah_1751",
+              "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+            }
+          ],
+          "afterExcludedCandidates": [],
+          "decisionJa": "23:26の「Judah」は裁きの対象となる民の集合を含む。23:27と同じくcollective IDを採り、地域・政治体の地理的文脈は別IDで残す。"
+        },
+        {
+          "chapter": 24,
+          "verse": 7,
+          "citationURL": "https://ebible.org/engwebp/2KI24.htm#V7",
+          "sourceTextSHA256": "7885e293c030a9e7b55d6e421b072752ef4a13db0b8bdb69804466051b65d135",
+          "beforeEntities": [
+            {
+              "entityID": "place:babylon_151",
+              "relationship": "direct",
+              "reasonJa": "本文に「Babylon」が明記される。"
+            },
+            {
+              "entityID": "place:egypt_259",
+              "relationship": "direct",
+              "reasonJa": "本文に「Egypt」が明記される。"
+            },
+            {
+              "entityID": "place:euphrates_421",
+              "relationship": "direct",
+              "reasonJa": "本文に「Euphrates」が明記される。"
+            }
+          ],
+          "afterEntities": [
+            {
+              "entityID": "place:babylon_151",
+              "relationship": "direct",
+              "reasonJa": "本文に「Babylon」が明記される。"
+            },
+            {
+              "entityID": "place:egypt_259",
+              "relationship": "direct",
+              "reasonJa": "本文に「Egypt」が明記される。"
+            },
+            {
+              "entityID": "place:egypt_362",
+              "relationship": "direct",
+              "reasonJa": "「his land」直前の「king of Egypt」を受けるエジプトの国・地域。本文は境界河川も別に明記する。"
+            },
+            {
+              "entityID": "place:euphrates_421",
+              "relationship": "direct",
+              "reasonJa": "本文に「Euphrates」が明記される。"
+            }
+          ],
+          "beforeExcludedCandidates": [],
+          "afterExcludedCandidates": [],
+          "decisionJa": "本文は「エジプトの地」と「エジプトの川」を別々に述べる。既存place:egypt_362を国・地域として追加し、place:egypt_259は水系の地名として維持。"
+        },
+        {
+          "chapter": 24,
+          "verse": 12,
+          "citationURL": "https://ebible.org/engwebp/2KI24.htm#V12",
+          "sourceTextSHA256": "80de5a5bdb7c3e136af26349c11fb4a8ccbb9996b7dd5237b3401f292b382f74",
+          "beforeEntities": [
+            {
+              "entityID": "person:jehoiachin_791",
+              "relationship": "direct",
+              "reasonJa": "本文に「Jehoiachin」が明記される。"
+            },
+            {
+              "entityID": "place:babylon_151",
+              "relationship": "direct",
+              "reasonJa": "本文に「Babylon」が明記される。"
+            },
+            {
+              "entityID": "place:jerusalem_636",
+              "relationship": "context",
+              "reasonJa": "「city」は24:10–11に包囲されたエルサレム。"
+            },
+            {
+              "entityID": "place:judah-southern_1281",
+              "relationship": "direct",
+              "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+            }
+          ],
+          "afterEntities": [
+            {
+              "entityID": "person:jehoiachin_791",
+              "relationship": "direct",
+              "reasonJa": "本文に「Jehoiachin」が明記される。"
+            },
+            {
+              "entityID": "person:nebuchadnezzar_2167",
+              "relationship": "context",
+              "reasonJa": "「the king of Babylon」は文脈上ネブカドネツァルを指す。"
+            },
+            {
+              "entityID": "place:babylon_151",
+              "relationship": "direct",
+              "reasonJa": "本文に「Babylon」が明記される。"
+            },
+            {
+              "entityID": "place:jerusalem_636",
+              "relationship": "context",
+              "reasonJa": "「city」は24:10–11に包囲されたエルサレム。"
+            },
+            {
+              "entityID": "place:judah-southern_1281",
+              "relationship": "direct",
+              "reasonJa": "本文の「Judah」は王国・領域として明示され、族長ユダ個人とは区別する。"
+            }
+          ],
+          "beforeExcludedCandidates": [
+            {
+              "entityID": "person:judah_1751",
+              "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+            }
+          ],
+          "afterExcludedCandidates": [
+            {
+              "entityID": "person:judah_1751",
+              "reasonJa": "この節の「Judah」は王国・領域を示す用法。本文に人々の集団としての指示が明確でないため、place:judah-southernのみを採用し、祖先個人にもcollectiveにも機械的に重ねない。"
+            }
+          ],
+          "decisionJa": "「king of Babylon」は直前までの王として特定されるネブカドネツァルを指す。"
+        },
+        {
+          "chapter": 25,
+          "verse": 6,
+          "citationURL": "https://ebible.org/engwebp/2KI25.htm#V6",
+          "sourceTextSHA256": "5d0c98c9cd58364cbc7a98f31e049e9b490a75094d04936a1663b49219b795fa",
+          "beforeEntities": [
+            {
+              "entityID": "person:zedekiah_1950",
+              "relationship": "context",
+              "reasonJa": "捕らえられた王は直前にゼデキヤと特定される。"
+            },
+            {
+              "entityID": "place:babylon_151",
+              "relationship": "direct",
+              "reasonJa": "本文に「Babylon」が明記される。"
+            },
+            {
+              "entityID": "place:riblah_1001",
+              "relationship": "direct",
+              "reasonJa": "本文に「Riblah」が明記される。"
+            }
+          ],
+          "afterEntities": [
+            {
+              "entityID": "person:nebuchadnezzar_2167",
+              "relationship": "context",
+              "reasonJa": "25:1で名指されたネブカドネツァルがゼデキヤを審理のため連れて来させる文脈。"
+            },
+            {
+              "entityID": "person:zedekiah_1950",
+              "relationship": "context",
+              "reasonJa": "捕らえられた王は直前にゼデキヤと特定される。"
+            },
+            {
+              "entityID": "place:babylon_151",
+              "relationship": "direct",
+              "reasonJa": "本文に「Babylon」が明記される。"
+            },
+            {
+              "entityID": "place:riblah_1001",
+              "relationship": "direct",
+              "reasonJa": "本文に「Riblah」が明記される。"
+            }
+          ],
+          "beforeExcludedCandidates": [],
+          "afterExcludedCandidates": [],
+          "decisionJa": "捕らえられたゼデキヤをネブカドネツァルの前へ連れて行く文脈で、「king of Babylon」は同王を指す。"
+        },
+        {
+          "chapter": 25,
+          "verse": 25,
+          "citationURL": "https://ebible.org/engwebp/2KI25.htm#V25",
+          "sourceTextSHA256": "f3602a9fe9be7ab3692eba67db9b1e3eb77f03f26d4adea59e70087664d40f80",
+          "beforeEntities": [
+            {
+              "entityID": "person:elishama_1157",
+              "relationship": "direct",
+              "reasonJa": "本文に「Elishama」が明記される。"
+            },
+            {
+              "entityID": "person:gedaliah_1287",
+              "relationship": "direct",
+              "reasonJa": "本文に「Gedaliah」が明記される。"
+            },
+            {
+              "entityID": "person:ishmael_631",
+              "relationship": "direct",
+              "reasonJa": "本文に「Ishmael」が明記される。"
+            },
+            {
+              "entityID": "person:nethaniah_2198",
+              "relationship": "direct",
+              "reasonJa": "本文に「Nethaniah」が明記される。"
+            },
+            {
+              "entityID": "place:mizpah_811",
+              "relationship": "direct",
+              "reasonJa": "本文に「Mizpah」が明記される。"
+            }
+          ],
+          "afterEntities": [
+            {
+              "entityID": "person:elishama_1157",
+              "relationship": "direct",
+              "reasonJa": "本文に「Elishama」が明記される。"
+            },
+            {
+              "entityID": "person:gedaliah_1287",
+              "relationship": "direct",
+              "reasonJa": "本文に「Gedaliah」が明記される。"
+            },
+            {
+              "entityID": "person:ishmael_631",
+              "relationship": "direct",
+              "reasonJa": "本文に「Ishmael」が明記される。"
+            },
+            {
+              "entityID": "person:judah_1751",
+              "relationship": "direct",
+              "reasonJa": "「the Jews」はユダの民を指す明示的な集団名。既存のperson:judah_1751はcollective IDであり、族祖個人へのリンクではない。"
+            },
+            {
+              "entityID": "person:nethaniah_2198",
+              "relationship": "direct",
+              "reasonJa": "本文に「Nethaniah」が明記される。"
+            },
+            {
+              "entityID": "place:mizpah_811",
+              "relationship": "direct",
+              "reasonJa": "本文に「Mizpah」が明記される。"
+            }
+          ],
+          "beforeExcludedCandidates": [],
+          "afterExcludedCandidates": [],
+          "decisionJa": "本文の「the Jews」はミツパにいたユダの人々というcollectiveを明示する。チャルデア人の集団に対応する既存プロフィールはなく、新IDは作らない。"
+        },
+        {
+          "chapter": 25,
+          "verse": 28,
+          "citationURL": "https://ebible.org/engwebp/2KI25.htm#V28",
+          "sourceTextSHA256": "56c7fab79b4d7711de57a306fd0c1bf04968ed55a670bce06f576b95894cfcfb",
+          "beforeEntities": [
+            {
+              "entityID": "person:evil-merodach_1233",
+              "relationship": "context",
+              "reasonJa": "「he」は25:27に名指されたエビル・メロダク。"
+            },
+            {
+              "entityID": "place:babylon_151",
+              "relationship": "direct",
+              "reasonJa": "本文に「Babylon」が明記される。"
+            }
+          ],
+          "afterEntities": [
+            {
+              "entityID": "person:evil-merodach_1233",
+              "relationship": "context",
+              "reasonJa": "「he」は25:27に名指されたエビル・メロダク。"
+            },
+            {
+              "entityID": "person:jehoiachin_791",
+              "relationship": "context",
+              "reasonJa": "「spoke kindly to him」「set his throne above him」の受け手は25:27で解放・厚遇されたエホヤキン。"
+            },
+            {
+              "entityID": "place:babylon_151",
+              "relationship": "direct",
+              "reasonJa": "本文に「Babylon」が明記される。"
+            }
+          ],
+          "beforeExcludedCandidates": [],
+          "afterExcludedCandidates": [],
+          "decisionJa": "25:27で名指されるエホヤキンが、エビル・メロダクの厚遇を受ける対象として継続している。"
+        }
+      ],
+      "limitationsCorrectionJa": "古い北王国への誤った参照を削除し、ソロモン王号の用例を統一王国IDへ分け、Israelの民用法を地理的領域から区別した。"
+    },
+    {
+      "dateUTC": "2026-10-16",
+      "priorMapSHA256": "540176ed3cb2bcf7ab4a4b20abe632e123b8255a766799f888095120b204daa8",
+      "currentMapSHA256": "6ddad085ef0e5d45c9089c3c5356abc1b8340b4d826082b27a17535a918584f0",
+      "changedRows": [
+        {
+          "chapter": 18,
+          "verse": 11,
+          "citationURL": "https://ebible.org/engwebp/2KI18.htm#V11",
+          "sourceTextSHA256": "020d030f865818773b7b261cbc64288343e85ef5c17d8bf1797abd4d88072a59",
+          "beforeEntities": [
+            {
+              "entityID": "person:israel_682",
+              "relationship": "direct",
+              "reasonJa": "「Israel」を捕囚される民の集団として明記する。 祖先個人や土地とは区別する。"
+            },
+            {
+              "entityID": "place:assyria_111",
+              "relationship": "direct",
+              "reasonJa": "本文に「Assyria」が明記される。"
+            },
+            {
+              "entityID": "place:gozan_492",
+              "relationship": "direct",
+              "reasonJa": "本文に「Gozan」が明記される。"
+            },
+            {
+              "entityID": "place:habor_499",
+              "relationship": "direct",
+              "reasonJa": "本文に「Habor」が明記される。"
+            },
+            {
+              "entityID": "place:halah_508",
+              "relationship": "direct",
+              "reasonJa": "本文に「Halah」が明記される。"
+            },
+            {
+              "entityID": "place:media_776",
+              "relationship": "direct",
+              "reasonJa": "「cities of the Medes」は本文でメディアの都市群として地理的に明記される。"
+            }
+          ],
+          "afterEntities": [
+            {
+              "entityID": "person:israel_682",
+              "relationship": "direct",
+              "reasonJa": "「Israel」を捕囚される民の集団として明記する。 祖先個人や土地とは区別する。"
+            },
+            {
+              "entityID": "place:assyria_111",
+              "relationship": "direct",
+              "reasonJa": "本文に「Assyria」が明記される。"
+            },
+            {
+              "entityID": "place:gozan_492",
+              "relationship": "direct",
+              "reasonJa": "本文に「Gozan」が明記される。"
+            },
+            {
+              "entityID": "place:habor_499",
+              "relationship": "direct",
+              "reasonJa": "本文に「Habor」が明記される。"
+            },
+            {
+              "entityID": "place:halah_508",
+              "relationship": "direct",
+              "reasonJa": "本文に「Halah」が明記される。"
+            },
+            {
+              "entityID": "place:media_776",
+              "relationship": "context",
+              "reasonJa": "本文の「cities of the Medes」はメディア人の都市群を示す。Mediaという地名語ではないため、広域地域IDへの関連文脈として接続し、個別都市とは区別する。"
+            }
+          ],
+          "decisionJa": "本文は「メディア人の町々」と表現し、地名語Mediaそのものは用いない。該当する広域IDは地理的関連を示すcontextとして記録。"
+        }
+      ],
+      "decisionSummaryJa": "既存place:ararat_86とplace:media_776のプロフィール追加後、未解決プロフィール一覧から両者を除去。18:11の「cities of the Medes」は民族由来の都市群表現であり、地域IDはdirectでなくcontextとして限定。"
+    }
+  ]
+}

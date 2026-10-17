@@ -1,0 +1,86 @@
+{
+  "book": "JDG",
+  "entityID": "person:gilead_1318",
+  "candidateDisposition": "retained-person; duplicate-index-occurrence-reassigned",
+  "candidateSource": "assignments/persons_3.json",
+  "candidateAppearanceCount": 1,
+  "additionalRecoveredOccurrences": [
+    {
+      "chapter": 11,
+      "verse": 2,
+      "sourceCandidate": "assignments/persons_2.json person:gilead_1317",
+      "decision": "same father as JDG11:1; remove wrong candidate mapping and retain under person:gilead_1318"
+    }
+  ],
+  "fixedWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+  "checkedAtUTC": "2026-10-16T00:09:36+00:00",
+  "profileSHA256": "e9404b96a81e2ddf26e5660b9d552fe5361678dbfd39d31a9940e30e85d10216",
+  "draftSHA256": "025a418e1e640fbc3b5e17ffdcda19fff7f66dd1ea221c98573300c4c063fd26",
+  "sourceChecks": [
+    {
+      "sourceId": "webp-jdg-11-1",
+      "url": "https://ebible.org/engwebp/JDG11.htm#V1",
+      "knownBy": {
+        "chapter": 11,
+        "verse": 1
+      },
+      "license": "Public domain",
+      "licenseURL": "https://ebible.org/web/copyright.htm",
+      "attribution": "World English Bible (WEB), public domain.",
+      "text": "Now Jephthah the Gileadite was a mighty man of valor. He was the son of a prostitute. Gilead became the father of Jephthah."
+    },
+    {
+      "sourceId": "webp-jdg-11-2",
+      "url": "https://ebible.org/engwebp/JDG11.htm#V2",
+      "knownBy": {
+        "chapter": 11,
+        "verse": 2
+      },
+      "license": "Public domain",
+      "licenseURL": "https://ebible.org/web/copyright.htm",
+      "attribution": "World English Bible (WEB), public domain.",
+      "text": "Gilead’s wife bore him sons. When his wife’s sons grew up, they drove Jephthah out and said to him, “You will not inherit in our father’s house, for you are the son of another woman.”"
+    },
+    {
+      "sourceId": "wiki-en-jephthah-gilead-father",
+      "url": "https://en.wikipedia.org/wiki/Jephthah",
+      "knownBy": {
+        "chapter": 11,
+        "verse": 1
+      },
+      "license": "Creative Commons Attribution-ShareAlike 4.0 International",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Wikipedia contributors, “Jephthah”, https://en.wikipedia.org/wiki/Jephthah; CC BY-SA 4.0."
+    }
+  ],
+  "occurrenceAudit": [
+    {
+      "chapter": 11,
+      "verse": 1,
+      "status": "direct-person-name",
+      "relationship": "direct",
+      "candidate": true,
+      "reasonJa": "固定WEBが父を「ギレアデ」と名指しし、エフタの父であると明記。",
+      "sourceText": "Now Jephthah the Gileadite was a mighty man of valor. He was the son of a prostitute. Gilead became the father of Jephthah."
+    },
+    {
+      "chapter": 11,
+      "verse": 2,
+      "status": "direct-referent",
+      "relationship": "direct",
+      "candidate": false,
+      "reasonJa": "「ギレアデの妻」「彼の息子たち」は直前の節のエフタの父を受ける。割当person:gilead_1317は別の人物を示す用法ではなく、同一父への誤リンクとして本稿へ回収。",
+      "sourceText": "Gilead’s wife bore him sons. When his wife’s sons grew up, they drove Jephthah out and said to him, “You will not inherit in our father’s house, for you are the son of another woman.”"
+    }
+  ],
+  "wikipediaArticleRead": {
+    "url": "https://en.wikipedia.org/wiki/Jephthah",
+    "status": "related-section-read-identity-unverified",
+    "identityBasisJa": "記事冒頭は父の名もGileadとしつつ、その母親の記述から地域の誰かであった可能性に触れる。エフタとの関係は確認できるが、個人同定は記事も留保する。",
+    "locator": "L151–152",
+    "checkedAtUTC": "2026-10-16T00:09:36+00:00",
+    "fragmentVerified": true,
+    "note": "記事はエフタの父名を記す一方、父の個人同定を留保。"
+  },
+  "reviewNotesJa": "JDG11:1/2の父個人に既存ID person:gilead_1318を使用。person:gilead_1317のJDG11:2割当は誤リンクとして親の了承に従い回収。JDG5:17など地域・住民用法やNUM/JOSのGilead系譜者とは統合しない。"
+}

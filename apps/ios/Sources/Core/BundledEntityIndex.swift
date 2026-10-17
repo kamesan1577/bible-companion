@@ -16,6 +16,7 @@ public struct IndexedOccurrence: Sendable, Identifiable {
     public let directlyNamed: Bool
     public let sameBookVerses: [Passage]
     public let profile: ResolvedEntityProfile?
+    public var candidateMapNote: String? = nil
 }
 public struct EntityIndexResult: Sendable {
     public let occurrences: [IndexedOccurrence]
@@ -38,9 +39,9 @@ public actor BundledEntityIndex {
         var array: [Int] { if case .array(let values) = self { values } else { [] } }
     }
     private var index: Index?
-    private var profiles: EntityProfileCatalog?
-    private struct CandidateMapPolicy: Decodable { let id: String; let allowCandidateMap: Bool; let allowFrom: Verse? }
-    private var candidateMapPolicy: [CandidateMapPolicy] = []
+    private var catalogs: [String: EntityProfileCatalog] = [:]
+    private struct CandidateMapPolicy: Decodable { let id: String; let allowCandidateMap: Bool; let allowFrom: Verse?; let displayNoteJa: String? }
+    private var mapPolicies: [String: [CandidateMapPolicy]] = [:]
     public func lookup(_ passage: Passage, kind: String, includeFuture: Bool = false) throws -> EntityIndexResult {
         guard passage.isValid, ["person", "place"].contains(kind) else { throw Failure.invalid }
         if index == nil {
@@ -50,38 +51,51 @@ public actor BundledEntityIndex {
             index = decoded
         }
         guard let index, let bookIndex = index.books.firstIndex(of: passage.book) else { throw Failure.invalid }
-        if profiles == nil, let url = Bundle.module.url(forResource: "entity-profiles", withExtension: "json") {
-            profiles = try JSONDecoder().decode(EntityProfileCatalog.self, from: Data(contentsOf: url))
+        let profileResource = passage.book == "ACT" ? "entity-profiles" : ["ROM", "LEV", "NUM", "JOS", "JDG", "RUT", "1SA", "2SA", "1KI", "2KI", "1CH", "2CH"].contains(passage.book) ? "entity-profiles-" + passage.book : nil
+        if catalogs[passage.book] == nil, let profileResource,
+           let url = Bundle.module.url(forResource: profileResource, withExtension: "json") {
+            catalogs[passage.book] = try JSONDecoder().decode(EntityProfileCatalog.self, from: Data(contentsOf: url))
         }
-        if candidateMapPolicy.isEmpty, let url = Bundle.module.url(forResource: "acts-map-policy", withExtension: "json") {
-            let policy = try JSONDecoder().decode([CandidateMapPolicy].self, from: Data(contentsOf: url))
-            candidateMapPolicy = policy
+        let profiles = catalogs[passage.book]
+        let policyResource = passage.book == "ACT" ? "acts-map-policy" : passage.book.lowercased() + "-map-policy"
+        if mapPolicies[passage.book] == nil {
+            if ["ACT", "ROM", "LEV", "NUM", "JOS", "JDG", "RUT", "1SA", "2SA", "1KI", "2KI", "1CH", "2CH"].contains(passage.book), let url = Bundle.module.url(forResource: policyResource, withExtension: "json") {
+                mapPolicies[passage.book] = try JSONDecoder().decode([CandidateMapPolicy].self, from: Data(contentsOf: url))
+            } else { mapPolicies[passage.book] = [] }
         }
-        // An audited Acts occurrence table supersedes upstream candidate links for this book.
-        // Other books retain their existing index until their own review is completed.
-        if passage.book == "ACT", let reviewed = profiles?.occurrences {
+        let candidateMapPolicy = mapPolicies[passage.book] ?? []
+        // Each reviewed book has an independent catalog and occurrence table.
+        // Switching books must never replace or leak the fixed Acts catalog.
+        if ["ACT", "ROM", "LEV", "NUM", "JOS", "JDG", "RUT", "1SA", "2SA", "1KI", "2KI", "1CH", "2CH"].contains(passage.book), let reviewed = profiles?.occurrences {
             let selected = reviewed.filter {
                 let v = Verse(chapter: $0.chapter, verse: $0.verse)
                 return passage.start <= v && v <= passage.end
             }
             var result: [IndexedOccurrence] = []
+            let canonicalID: (String) -> String = { profiles?.canonicalID($0, at: passage.end, includeFuture: includeFuture) ?? $0 }
             for p in profiles?.profiles ?? [] where p.kind == kind {
-                let links = selected.filter { $0.entityID == p.id }
+                guard canonicalID(p.id) == p.id else { continue }
+                let links = selected.filter { canonicalID($0.entityID) == p.id }
                 guard !links.isEmpty || p.supplemental,
                       let resolved = profiles?.resolve(id: p.id, passage: passage, includeFuture: includeFuture) else { continue }
-                let references = reviewed.filter { $0.entityID == p.id }.compactMap { link -> Passage? in
+                var referencePositions = Set<Int>()
+                let references = reviewed.filter { canonicalID($0.entityID) == p.id }.compactMap { link -> Passage? in
+                    guard referencePositions.insert(link.chapter * 1000 + link.verse).inserted else { return nil }
                     let v = Verse(chapter: link.chapter, verse: link.verse)
-                    guard (includeFuture || v <= passage.end), v < passage.start || v > passage.end else { return nil }
-                    return Passage(book: "ACT", start: v, end: v)
+                    // A shared canonical ID may denote a collective or a
+                    // named ancestor. References follow the resolved context.
+                    guard resolved.profile.passages.contains(where: { $0.book == passage.book && $0.start <= v && v <= $0.end }),
+                          (includeFuture || v <= passage.end), v < passage.start || v > passage.end else { return nil }
+                    return Passage(book: passage.book, start: v, end: v)
                 }
                 let upstream = index.entities.first { $0.id == p.id }
-                let allowed = candidateMapPolicy.contains { $0.id == p.id && $0.allowCandidateMap && ($0.allowFrom == nil || $0.allowFrom! <= passage.end) }
-                let candidate = allowed ? upstream?.coordinate : nil
+                let policy = candidateMapPolicy.first { $0.id == p.id && $0.allowCandidateMap && ($0.allowFrom == nil || $0.allowFrom! <= passage.end) }
+                let candidate = policy != nil ? upstream?.coordinate : nil
                 let point = p.coordinate ?? candidate
                 let status = p.coordinate != nil ? "source-representative-point" : upstream?.coordinateStatus
                 let entity = IndexedEntity(id: p.id, kind: p.kind, name: resolved.nameJa, nameJa: resolved.nameJa,
                     appearances: [], coordinate: point, coordinateStatus: point == nil ? nil : status)
-                result.append(IndexedOccurrence(entity: entity, directlyNamed: links.contains { $0.directlyNamed }, sameBookVerses: references, profile: resolved))
+                result.append(IndexedOccurrence(entity: entity, directlyNamed: links.contains { $0.directlyNamed }, sameBookVerses: references, profile: resolved, candidateMapNote: policy?.displayNoteJa))
             }
             result.sort { $0.directlyNamed != $1.directlyNamed ? $0.directlyNamed : $0.entity.displayName < $1.entity.displayName }
             return EntityIndexResult(occurrences: result, sourceURL: URL(string: index.sourceURL), attribution: index.attribution)
@@ -122,8 +136,9 @@ public actor BundledEntityIndex {
     }
     public func profile(forMaterialCardID id: String, passage: Passage, includeFuture: Bool = false) throws -> ResolvedEntityProfile? {
         _ = try lookup(passage, kind: "person", includeFuture: includeFuture)
-        guard let profile = profiles?.profiles.first(where: { $0.materialCardIDs?.contains(id) == true }) else { return nil }
-        return profiles?.resolve(id: profile.id, passage: passage, includeFuture: includeFuture)
+        guard let catalog = catalogs[passage.book],
+              let profile = catalog.profiles.first(where: { $0.materialCardIDs?.contains(id) == true }) else { return nil }
+        return catalog.resolve(id: profile.id, passage: passage, includeFuture: includeFuture)
     }
     public enum Failure: Error { case unavailable, invalid }
 }

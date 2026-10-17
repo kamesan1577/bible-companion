@@ -1,0 +1,58 @@
+{
+  "reviewType": "independent-targeted-closure-and-explicit-alias",
+  "reviewedAtUTC": "2026-10-15T22:05:16Z",
+  "scopeJa": "places_2の前回failだったDan/Baalah二件を最新作者修正後のdraft/evidenceと固定WEBに照合し、Baalah（JOS15:9）とKiriath Jearimの同一地点明示を独立確認。全191再監査ではない。",
+  "inputs": {
+    "authorRepairsSHA256": "c402e3e75558b8e485308f4791ef9710de7c9777dd605fe8e345ecb08a125a17",
+    "fixedJoshuaWitnessSHA256": "26ae82b805dee523bb852977ccf62ad38cc40ebe442b650cbd7862db833ea854",
+    "rootExplicitAliasListSHA256": "8aa3b8b87005dfd88fe4c0a8c1349681f2fa2728fc818381458aaa2903fed8d4"
+  },
+  "summary": {
+    "reviewedPriorFailures": 2,
+    "closed": 2,
+    "unresolved": 0,
+    "fail": 0
+  },
+  "closures": [
+    {
+      "id": "place:dan_1283",
+      "currentSHA256": "78d43f18f90aa216002298ecc68ade2a210212dffb2adf09c040a148c884976b",
+      "previousSHA256": "89cb189547ac2d49cfca9ab33b8f2ff1336cfba8969720444f37c53f59205f51",
+      "priorJudgment": "fail",
+      "closureStatus": "closed",
+      "judgment": "pass",
+      "primaryRef": "JOS 19:40",
+      "fixedWEBText": "The seventh lot came out for the tribe of the children of Dan according to their families.",
+      "fieldsRechecked": "現行historicalRoleJa「ダン族に割り当てられた地域を示す名称。」は19:40の割当導入に限定。19:41以後の境界・町一覧を先取りしない。",
+      "evidencePath": "evidence/places_2/JOS_dan_1283.json",
+      "evidenceSHA256": "bf88bfb573a17380ba6a2b34b975536d8ea1d0f43f05e9eb98b6449eb5a4d394",
+      "reasonJa": "修正ログと現行草稿を固定WEB本文に照らして再確認。指摘対象の矛盾は解消。"
+    },
+    {
+      "id": "place:baalah_135",
+      "currentSHA256": "d04e137f8ac0ba3097b4fc847628ae59ad17feede32fd0a16b117c291dcc6abb",
+      "previousSHA256": "4b9c5a4f35d9cb8553f4e64abac1e7531ff38fa2c3e1e05db5cd0ad102211ab4",
+      "priorJudgment": "fail",
+      "closureStatus": "closed",
+      "judgment": "pass",
+      "primaryRef": "JOS 15:9",
+      "fixedWEBText": "The border extended from the top of the mountain to the spring of the waters of Nephtoah, and went out to the cities of Mount Ephron; and the border extended to Baalah (also called Kiriath Jearim);",
+      "fieldsRechecked": "現行identityNoteJaは本文の明示別名を反映。「それ以上の現代遺跡比定を示していない」と限定し、現代座標へ飛躍しない。",
+      "evidencePath": "evidence/places_2/JOS_baalah_135.json",
+      "evidenceSHA256": "e21debc3ad44d775d7a1e122aa88536f495281495acbc46e306c66e906e97ee5",
+      "reasonJa": "修正ログと現行草稿を固定WEB本文に照らして再確認。指摘対象の矛盾は解消。"
+    }
+  ],
+  "fifthExplicitAlias": {
+    "aliasID": "place:baalah_135",
+    "canonicalID": "place:kiriath-jearim_701",
+    "sameFeature": "explicit-primary-alias",
+    "sourceRef": "JOS 15:9",
+    "sourceText": "The border extended from the top of the mountain to the spring of the waters of Nephtoah, and went out to the cities of Mount Ephron; and the border extended to Baalah (also called Kiriath Jearim);",
+    "sourceURL": "https://ebible.org/engwebp/JOS15.htm#V9",
+    "sameFeatureBasisJa": "固定WEB 15:9は境界上のBaalahを括弧書きで“also called Kiriath Jearim”と明記するため、この用例に限って同じ地物の別名と判断。別途15:29の町一覧に現れるBaalahは別の候補カード（place:baalah_134）であり、この別名を適用しない。JOS15:9/10 profileの範囲と15:29 profileを固定本文で照合した。座標の同一性・妥当性は本レビューで承認しない。",
+    "existingIDsOnly": true,
+    "newIDCreated": false,
+    "displayRequirementJa": "既存ID provenanceを保持しつつ、JOS15:9で二重カード/ピンを出さない。別名を紹介する表示は15:9以前へ先取りしない。"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "author-map-profile-gate-mismatch-repair",
+  "book": "1CH",
+  "scope": "1CH 1:34–9:44 map repair only; no profile/gate edits.",
+  "before": {
+    "path": "reviews/verse-map-1CH-01-09.json",
+    "sha256": "0f99a4de7ac0eb44fc41a1e797483fe90e89f0170a8ad20f0f35ea613931b0a9",
+    "preservedObjectPath": "preservation/objects/0f99a4de7ac0eb44fc41a1e797483fe90e89f0170a8ad20f0f35ea613931b0a9",
+    "preservedBytesMatch": true
+  },
+  "after": {
+    "path": "reviews/verse-map-1CH-01-09.json",
+    "sha256": "527657a3bb1c7ecf107abc85ff6bea4ab5cdc83278252e0c241214090a762840",
+    "verseCount": 407
+  },
+  "inputs": {
+    "fixedWitnessPath": "inventory/targets/chronicles1-web-verses.json",
+    "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+    "targetIndexPath": "inventory/targets/chronicles1-targets.json",
+    "targetIndexSHA256": "4de60a18fe609d404dc2ef1f1ea9520a41264ba31ba0630633c45d57b901203e"
+  },
+  "changes": [
+    {
+      "coordinate": "1CH 2:24",
+      "removedEdge": {
+        "entityID": "person:hezron_1519",
+        "relationship": "direct",
+        "reasonJa": "固定WEB本文に「Hezron」がこの節で明記されるため、直接言及として記録する。"
+      },
+      "retainedEdge": "person:hezron_1520 direct",
+      "addedExclusion": {
+        "entityID": "person:hezron_1519",
+        "reasonJa": "同名の既存IDだが、現プロフィールは歴代誌上5:3のルベンの子ヘツロン。ここは2:5以降のペレツ系譜で、同節には適合する既存ID person:hezron_1520 が採用済みのため、1519は別人として除外する。"
+      },
+      "sourceText": "After Hezron died in Caleb Ephrathah, Abijah, Hezron’s wife, bore him Ashhur the father of Tekoa.",
+      "sourceTextSHA256": "b20a91f4973d19e9040ee00577516859d2f251d6ac76f3682ae4dc7015731eba",
+      "citationURL": "https://ebible.org/engwebp/1CH02.htm#V24"
+    },
+    {
+      "coordinate": "1CH 2:46",
+      "removedEdge": {
+        "entityID": "person:caleb_537",
+        "relationship": "direct",
+        "reasonJa": "固定WEB本文に「Caleb」がこの節で明記されるため、直接言及として記録する。"
+      },
+      "addedExclusion": {
+        "entityID": "person:caleb_537",
+        "reasonJa": "このIDの書内プロフィールは4:15のエフンネの子カレブであり、2:46のエフンネを示さないヘツロン系譜中のカレブとは別人物として除外する。"
+      },
+      "unresolvedCandidate": "Caleb（Hezron系譜、2:46）",
+      "sourceText": "Ephah, Caleb’s concubine, bore Haran, Moza, and Gazez; and Haran became the father of Gazez.",
+      "sourceTextSHA256": "c7ff9b70d59ce7d23038954b17d4f4773722299c4b828f34187120d064e25365",
+      "citationURL": "https://ebible.org/engwebp/1CH02.htm#V46"
+    },
+    {
+      "coordinate": "1CH 2:48",
+      "removedEdge": {
+        "entityID": "person:caleb_537",
+        "relationship": "direct",
+        "reasonJa": "固定WEB本文に「Caleb」がこの節で明記されるため、直接言及として記録する。"
+      },
+      "addedExclusion": {
+        "entityID": "person:caleb_537",
+        "reasonJa": "このIDの書内プロフィールは4:15のエフンネの子カレブであり、2:48のヘツロン系譜中の側妻マアカの夫をその人物と同定する根拠はないため除外する。"
+      },
+      "unresolvedCandidate": "Caleb（Hezron系譜、2:48）",
+      "sourceText": "Maacah, Caleb’s concubine, bore Sheber and Tirhanah.",
+      "sourceTextSHA256": "6295cbf52c5340e9e71630ca41af3264e2fd4e02ba32f9b86fd55a54ee050d7f",
+      "citationURL": "https://ebible.org/engwebp/1CH02.htm#V48"
+    },
+    {
+      "coordinate": "1CH 4:4",
+      "removedEdge": {
+        "entityID": "place:gedor_456",
+        "relationship": "context",
+        "reasonJa": "「father of Gedor」という系譜表現が地名を含む。人物/氏族/土地の役割を同一視しない文脈リンク。"
+      },
+      "addedExclusion": {
+        "entityID": "place:gedor_456",
+        "reasonJa": "4:4はPenuelがGedorの父とする系譜記述で、町を指す地理用例とは確認できない。place:gedor_456は4:39の「Gedorの入口」の地名用例であり、名前の一致だけでは同一視できないため除外する。"
+      },
+      "unresolvedCandidate": "Gedor（系譜の人名候補、4:4）",
+      "sourceText": "Penuel was the father of Gedor and Ezer the father of Hushah. These are the sons of Hur, the firstborn of Ephrathah, the father of Bethlehem.",
+      "sourceTextSHA256": "8751f7aaca74b9f6f97276d6adfdea02662eb34fe821135b85f3d556b8adceda",
+      "citationURL": "https://ebible.org/engwebp/1CH04.htm#V4"
+    }
+  ],
+  "unchangedByInstruction": [
+    "1CH 1:34 person:israel_682 remains unchanged; current base profile is collective and individual context proposal is not integrated/independently closed.",
+    "1CH 2:2 person:gad_1262 remains unchanged; current base profile is collective and personal context proposal is not integrated/independently closed.",
+    "No profile knownBy was moved earlier. No new canonical IDs were created. All other verse rows/source texts/URLs were preserved."
+  ],
+  "status": "author map correction; independent current-map review required."
+}

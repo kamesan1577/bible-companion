@@ -1,0 +1,1658 @@
+{
+  "book": "2CH",
+  "scope": {
+    "startChapter": 25,
+    "startVerse": 1,
+    "endChapter": 36,
+    "endVerse": 23,
+    "verseCount": 312
+  },
+  "status": "author-source-repair-complete-awaiting-independent-reclosure",
+  "beforeMapPath": "reviews/verse-map-2CH-25-36.json",
+  "beforeMapSHA256": "8b0936dbc726f4e9a21e804db5c4c891388498cb5950ed9367f0ee6bb4db5fcd",
+  "preservedBytesPath": "preservation/objects/8b0936dbc726f4e9a21e804db5c4c891388498cb5950ed9367f0ee6bb4db5fcd",
+  "independentReviewPath": "reviews/independent-verse-map-2CH-25-36.json",
+  "independentReviewSHA256": "65ca413e399d60ba1890a8e3e904d014d06a1aa47a9730bfc741e08646ac9a5c",
+  "sourceInputPath": "verse-review-inputs/2CH-25-36.json",
+  "sourceInputSHA256": "057f3269e267b806e0edf3f49b3717a65b7076e819cd08296fc4ac79c04a085c",
+  "afterMapSHA256": "fabfccee1d7834fd907fb6d3a5a8b27ac9646c3f9213bb43e69a91086b97ff13",
+  "changedCoordinateCount": 30,
+  "primitiveChangeCount": 120,
+  "sourceTextURLHashParityChecked": 312,
+  "changes": [
+    {
+      "chapter": 25,
+      "verse": 5,
+      "beforeRowSHA256": "462bb4ae38e8312bccbf3f5437cb9ff28f54cc09da455809429dca1f86ddfa10",
+      "afterRowSHA256": "d998fc4e5c4108dcf25ebe5081fa2ddb372a2a800181796b3c7293f5e177be20",
+      "changes": [
+        {
+          "chapter": 25,
+          "verse": 5,
+          "op": "add",
+          "after": {
+            "entityID": "person:judah_1751",
+            "relationship": "direct",
+            "reasonJa": "「gathered Judah together」「all Judah and Benjamin」は兵力として集められたユダの人々。地理のplace:judah_1280で代用しない。"
+          }
+        },
+        {
+          "chapter": 25,
+          "verse": 5,
+          "op": "add-unresolved",
+          "after": {
+            "term": "person:judah_1751",
+            "chapter": 25,
+            "verse": 5,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "person:judah_1751"
+          }
+        },
+        {
+          "chapter": 25,
+          "verse": 5,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "「all Judah and Benjamin」は兵役対象として集められた人々。地域名としてのJudahと区別する。"
+        }
+      ],
+      "sourceText": "Moreover Amaziah gathered Judah together and ordered them according to their fathers’ houses, under captains of thousands and captains of hundreds, even all Judah and Benjamin. He counted them from twenty years old and upward, and found that there were three hundred thousand chosen men, able to go out to war, who could handle spear and shield.",
+      "sourceTextSHA256": "6f20802d08bc449e63b49f0e4bf640cfe4ac99a9680136449b5268fe8a8add57",
+      "citationURL": "https://ebible.org/engwebp/2CH25.htm#V5",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 25,
+      "verse": 23,
+      "beforeRowSHA256": "fc73d96329fe47c4b98f0e580f95a79d7c80094faf4129b258bf418ccc055828",
+      "afterRowSHA256": "3504cebb1f916c85b8ed3e4efdbc3faf1aad8123b31976f41adb4a5c1c9ec36a",
+      "changes": [
+        {
+          "chapter": 25,
+          "verse": 23,
+          "op": "update",
+          "before": {
+            "entityID": "place:gate_of_ephraim_402",
+            "relationship": "direct",
+            "reasonJa": "固定WEB本文に「gate of Ephraim」が明記される。"
+          },
+          "after": {
+            "entityID": "place:gate_of_ephraim_402",
+            "relationship": "direct",
+            "reasonJa": "「gate of Ephraim」はエルサレム城壁の門。族祖Ephraim/エフライム族の出現ではない。"
+          }
+        },
+        {
+          "chapter": 25,
+          "verse": 23,
+          "op": "remove-to-excluded",
+          "before": {
+            "entityID": "person:ephraim_1206",
+            "relationship": "context",
+            "reasonJa": "「Ephraim」は部族・家系・地域を示す用法であり、族祖個人の行為ではないためcontextで結ぶ。"
+          },
+          "excluded": {
+            "entityID": "person:ephraim_1206",
+            "reasonJa": "「Ephraim」は門名の一部としてのみ現れ、部族祖先・人々への言及ではない。"
+          }
+        },
+        {
+          "chapter": 25,
+          "verse": 23,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "Ephraimはエルサレムの門名にのみ含まれ、部族・族祖への言及ではない。"
+        }
+      ],
+      "sourceText": "Joash king of Israel took Amaziah king of Judah, the son of Joash the son of Jehoahaz, at Beth Shemesh and brought him to Jerusalem, and broke down the wall of Jerusalem from the gate of Ephraim to the corner gate, four hundred cubits.",
+      "sourceTextSHA256": "60500a4b638bcbc96bcbc0f28256fba724e848fe4f1b68e3c4f205e4c20047f3",
+      "citationURL": "https://ebible.org/engwebp/2CH25.htm#V23",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 26,
+      "verse": 1,
+      "beforeRowSHA256": "f6dfd06b34afd398b6fd6b64c5cc3237886e0fece95ceda0c2fdc51c5a52f13c",
+      "afterRowSHA256": "f32ea0cbec47a6b3333c79f45dfc7a7b3516c6fe27ea25d731f1347f61c5da7a",
+      "changes": [
+        {
+          "chapter": 26,
+          "verse": 1,
+          "op": "add",
+          "after": {
+            "entityID": "person:judah_1751",
+            "relationship": "direct",
+            "reasonJa": "「All the people of Judah」がウジヤを王にしたと明記される。地域place:judah_1280と区別。"
+          }
+        },
+        {
+          "chapter": 26,
+          "verse": 1,
+          "op": "add-unresolved",
+          "after": {
+            "term": "person:judah_1751",
+            "chapter": 26,
+            "verse": 1,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "person:judah_1751"
+          }
+        },
+        {
+          "chapter": 26,
+          "verse": 1,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "ウジヤを王にした「all the people of Judah」は住民集団。"
+        }
+      ],
+      "sourceText": "All the people of Judah took Uzziah, who was sixteen years old, and made him king in the place of his father Amaziah.",
+      "sourceTextSHA256": "2dc659324eba2904df6823066d058dcb3772824233f05dd33e46d66e314ee581",
+      "citationURL": "https://ebible.org/engwebp/2CH26.htm#V1",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 28,
+      "verse": 6,
+      "beforeRowSHA256": "5892871c3242836259c09e15675bbd6329ccd2e002ad9eb09e9b01a6919692c1",
+      "afterRowSHA256": "213eba91b8b0011c56dad4f6c412b3f6cbcbc6870afffc2f6b253e97ea94da46",
+      "changes": [
+        {
+          "chapter": 28,
+          "verse": 6,
+          "op": "add",
+          "after": {
+            "entityID": "place:judah_1280",
+            "relationship": "direct",
+            "reasonJa": "「in Judah」は殺害が起きた領域を示す地理表現。"
+          }
+        },
+        {
+          "chapter": 28,
+          "verse": 6,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "「in Judah」は殺害場所としての領域名。"
+        }
+      ],
+      "sourceText": "For Pekah the son of Remaliah killed in Judah one hundred twenty thousand in one day, all of them valiant men, because they had forsaken the LORD, the God of their fathers.",
+      "sourceTextSHA256": "e33bf0da1cdc87c1f5ce7b02ced7b668c21faf282caf3164743375aa0ba45b3d",
+      "citationURL": "https://ebible.org/engwebp/2CH28.htm#V6",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 29,
+      "verse": 17,
+      "beforeRowSHA256": "2bf614e4f163c189c085c653ba5d05870c97586f305238426ee096d4ffccd923",
+      "afterRowSHA256": "1d0483f23d286d569ee0ac7fdfb15d1e698a17ac3a59b61b69c07ebb60ae6545",
+      "changes": [
+        {
+          "chapter": 29,
+          "verse": 17,
+          "op": "add",
+          "after": {
+            "entityID": "person:levi_1820",
+            "relationship": "context",
+            "reasonJa": "29:16のレビ人・祭司が始めた清めを続ける「they」。Levi本人の行為ではなくレビ系奉仕者との関係。"
+          }
+        },
+        {
+          "chapter": 29,
+          "verse": 17,
+          "op": "add-unresolved",
+          "after": {
+            "term": "person:levi_1820",
+            "chapter": 29,
+            "verse": 17,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "person:levi_1820"
+          }
+        },
+        {
+          "chapter": 29,
+          "verse": 17,
+          "op": "add-unresolved",
+          "after": {
+            "term": "priests / Levites (cleansing actors)",
+            "chapter": 29,
+            "verse": 17,
+            "status": "unresolved-canonical-candidate",
+            "reasonJa": "29:16–18の行為主体は祭司・レビ人の集団。既存Levi個人IDは系譜関係を示すcontextに限り、集団そのものの代用としない。"
+          }
+        },
+        {
+          "chapter": 29,
+          "verse": 17,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "清めを続ける主体は29:16の祭司・レビ人の文脈。Levi IDは系譜的関係に限り、祭司集団は未解決。"
+        }
+      ],
+      "sourceText": "Now they began on the first day of the first month to sanctify, and on the eighth day of the month they came to the LORD’s porch. They sanctified the LORD’s house in eight days, and on the sixteenth day of the first month they finished.",
+      "sourceTextSHA256": "d0515eec206c0a55b671a360c9a8521710e5f1b99cf8c93e35108bd819dc3be8",
+      "citationURL": "https://ebible.org/engwebp/2CH29.htm#V17",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 29,
+      "verse": 18,
+      "beforeRowSHA256": "3d8a3d15e367efae7fad4122069bd2101b04f6413cf812cf0ed3a5c165b26515",
+      "afterRowSHA256": "9cd97ed631f8365d3c461d07c6f8ae214ee02dcfc6fb18aa0d0e19a1f0b234a3",
+      "changes": [
+        {
+          "chapter": 29,
+          "verse": 18,
+          "op": "add",
+          "after": {
+            "entityID": "person:levi_1820",
+            "relationship": "context",
+            "reasonJa": "29:16–17の清めを終えてHezekiahへ報告するレビ系奉仕者の継続文脈。"
+          }
+        },
+        {
+          "chapter": 29,
+          "verse": 18,
+          "op": "add-unresolved",
+          "after": {
+            "term": "person:levi_1820",
+            "chapter": 29,
+            "verse": 18,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "person:levi_1820"
+          }
+        },
+        {
+          "chapter": 29,
+          "verse": 18,
+          "op": "add-unresolved",
+          "after": {
+            "term": "priests / Levites (reporting group)",
+            "chapter": 29,
+            "verse": 18,
+            "status": "unresolved-canonical-candidate",
+            "reasonJa": "「they went in ... and said」は直前の祭司・レビ人集団を指す。適合する独立集団IDはなく、Levi個人IDは系譜contextに限定。"
+          }
+        },
+        {
+          "chapter": 29,
+          "verse": 18,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "Hezekiahへ報告する「they」は直前の祭司・レビ人を受ける。"
+        }
+      ],
+      "sourceText": "Then they went in to Hezekiah the king within the palace and said, “We have cleansed all the LORD’s house, including the altar of burnt offering with all its vessels, and the table of show bread with all its vessels.",
+      "sourceTextSHA256": "5c76575fce420d2e9a6688b1fcf85a12f3b59cfd180c326162a54d94987829ea",
+      "citationURL": "https://ebible.org/engwebp/2CH29.htm#V18",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 29,
+      "verse": 21,
+      "beforeRowSHA256": "924a05313dbcbd8f7601ff9bd9d942364be02e0b8939ec09778384a9106b9112",
+      "afterRowSHA256": "df09e0f4b28a9e6dad1a7fa5f4d4de33a25310e60060bee0336484db349c6674",
+      "changes": [
+        {
+          "chapter": 29,
+          "verse": 21,
+          "op": "update",
+          "before": {
+            "entityID": "person:aaron_1",
+            "relationship": "context",
+            "reasonJa": "「Aaron」は部族・家系・地域を示す用法であり、族祖個人の行為ではないためcontextで結ぶ。"
+          },
+          "after": {
+            "entityID": "person:aaron_1",
+            "relationship": "context",
+            "reasonJa": "「priests, the sons of Aaron」は祭司の系譜的所属を示す。Aaron本人が供犠を執行した意味ではない。"
+          }
+        },
+        {
+          "chapter": 29,
+          "verse": 21,
+          "op": "add",
+          "after": {
+            "entityID": "place:judah_1280",
+            "relationship": "context",
+            "reasonJa": "「for Judah」は王国/領域を供犠の対象として挙げる表現で、ユダ人の行為主体を指すとは限らない。"
+          }
+        },
+        {
+          "chapter": 29,
+          "verse": 21,
+          "op": "add-unresolved",
+          "after": {
+            "term": "priests (officiants)",
+            "chapter": 29,
+            "verse": 21,
+            "status": "unresolved-canonical-candidate",
+            "reasonJa": "本文はAaronの子孫である祭司を示すが、個別の祭司集団IDはない。Aaron IDは系譜contextに限る。"
+          }
+        },
+        {
+          "chapter": 29,
+          "verse": 21,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "Judahは供犠が捧げられる王国/領域、Aaronは祭司たちの系譜的関係。"
+        }
+      ],
+      "sourceText": "They brought seven bulls, seven rams, seven lambs, and seven male goats, for a sin offering for the kingdom, for the sanctuary, and for Judah. He commanded the priests the sons of Aaron to offer them on the LORD’s altar.",
+      "sourceTextSHA256": "8e37d2ff2ad2dd48f9d2714134e1ab09014e80ff149f2a4c37ee6f724cee5937",
+      "citationURL": "https://ebible.org/engwebp/2CH29.htm#V21",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 29,
+      "verse": 22,
+      "beforeRowSHA256": "13e2427cf33f4e8839f6cfe2132687a1240edeb6e3c9c08615040dccd06708fd",
+      "afterRowSHA256": "ed88844f0989f7bf53c68fc42e325672efe0697980b7016873be109ecee09391",
+      "changes": [
+        {
+          "chapter": 29,
+          "verse": 22,
+          "op": "add",
+          "after": {
+            "entityID": "person:aaron_1",
+            "relationship": "context",
+            "reasonJa": "29:21で祭司を「sons of Aaron」と特定した直後に続く供犠執行。Aaron本人ではなく祭司の系譜関係。"
+          }
+        },
+        {
+          "chapter": 29,
+          "verse": 22,
+          "op": "add-unresolved",
+          "after": {
+            "term": "priests (officiants)",
+            "chapter": 29,
+            "verse": 22,
+            "status": "unresolved-canonical-candidate",
+            "reasonJa": "祭司が血を受けて注ぐ行為者と明記されるが、適格な祭司集団IDを確認できない。Aaronは系譜contextのみ。"
+          }
+        },
+        {
+          "chapter": 29,
+          "verse": 22,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "血を受けて祭壇に注ぐ祭司は直前の「sons of Aaron」の集団文脈。"
+        }
+      ],
+      "sourceText": "So they killed the bulls, and the priests received the blood and sprinkled it on the altar. They killed the rams and sprinkled the blood on the altar. They also killed the lambs and sprinkled the blood on the altar.",
+      "sourceTextSHA256": "f93cc53e4ba20b6293eb812040691b22a005726af1fcebf52167e63502bd91ea",
+      "citationURL": "https://ebible.org/engwebp/2CH29.htm#V22",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 29,
+      "verse": 23,
+      "beforeRowSHA256": "8a0fbf47856bfdd1783256d4daee8510d6fd2e9d95975f4cc6138a649b34ea48",
+      "afterRowSHA256": "a866750f5c2aec2473ed02b8ed5716862af393c54fea1ee8a95638a60f67f5e2",
+      "changes": [
+        {
+          "chapter": 29,
+          "verse": 23,
+          "op": "add",
+          "after": {
+            "entityID": "person:aaron_1",
+            "relationship": "context",
+            "reasonJa": "29:21–22で祭司が続ける供犠の場面で、山羊を進める奉仕者も祭司と読む文脈。Aaron本人ではなく系譜関係。"
+          }
+        },
+        {
+          "chapter": 29,
+          "verse": 23,
+          "op": "add-unresolved",
+          "after": {
+            "term": "priests (male-goat offering actors)",
+            "chapter": 29,
+            "verse": 23,
+            "status": "unresolved-canonical-candidate",
+            "reasonJa": "29:21–22の祭司供犠に続くが、29:23自体は行為者を再指名しない。祭司集団IDがないためcontext推定を留保。"
+          }
+        },
+        {
+          "chapter": 29,
+          "verse": 23,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "山羊を進める行為者は前節の祭司と読むが、本文は名指しを繰り返さず集団同定を留保。"
+        }
+      ],
+      "sourceText": "They brought near the male goats for the sin offering before the king and the assembly; and they laid their hands on them.",
+      "sourceTextSHA256": "368e18c87ebfdbe3c291511d71a9e180d2e538f75786b43dd6c46af298b74e8c",
+      "citationURL": "https://ebible.org/engwebp/2CH29.htm#V23",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 30,
+      "verse": 5,
+      "beforeRowSHA256": "295d8c35b3dc9b4cc94803820b42f7c29b733964743fc59b5e89782271828599",
+      "afterRowSHA256": "fa96f36d23a3b58e7d42640efb653978d2ec0cdad07a6161e9286efd1f295be2",
+      "changes": [
+        {
+          "chapter": 30,
+          "verse": 5,
+          "op": "update",
+          "before": {
+            "entityID": "place:dan_323",
+            "relationship": "direct",
+            "reasonJa": "固定WEB本文に「Dan」が明記される。"
+          },
+          "after": {
+            "entityID": "place:dan_323",
+            "relationship": "direct",
+            "reasonJa": "「from Beersheba even to Dan」は範囲の北端として町Danを明記する。"
+          }
+        },
+        {
+          "chapter": 30,
+          "verse": 5,
+          "op": "remove-to-excluded",
+          "before": {
+            "entityID": "person:dan_973",
+            "relationship": "direct",
+            "reasonJa": "固定WEB本文に「Dan」が明記される。"
+          },
+          "excluded": {
+            "entityID": "person:dan_973",
+            "reasonJa": "Danは地理的範囲の町名で、族祖Dan個人や部族集団の行為を述べない。"
+          }
+        },
+        {
+          "chapter": 30,
+          "verse": 5,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "BeershebaからDanまでという地理的範囲。Danは町名であり族祖個人ではない。"
+        }
+      ],
+      "sourceText": "So they established a decree to make proclamation throughout all Israel, from Beersheba even to Dan, that they should come to keep the Passover to the LORD, the God of Israel, at Jerusalem, for they had not kept it in great numbers in the way it is written.",
+      "sourceTextSHA256": "1f40763e5115aed7f9284f6b8e89a934f7bb352b493d49b8a66be3a89a21239e",
+      "citationURL": "https://ebible.org/engwebp/2CH30.htm#V5",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 30,
+      "verse": 6,
+      "beforeRowSHA256": "616278d789e7c58ccccd563ce06861b30865b0a427c6e381b2668e8da1aad2e5",
+      "afterRowSHA256": "ca9d3fec9e1df5d3b5dd7552b20d23135fdb1c411b0eab3ecc67cd184a6d1042",
+      "changes": [
+        {
+          "chapter": 30,
+          "verse": 6,
+          "op": "add",
+          "after": {
+            "entityID": "person:jacob_683",
+            "relationship": "direct",
+            "reasonJa": "「God of Abraham, Isaac, and Israel」のIsraelは族長Jacobの名。イスラエルの民集団person:israel_682とは別。"
+          }
+        },
+        {
+          "chapter": 30,
+          "verse": 6,
+          "op": "add-unresolved",
+          "after": {
+            "term": "person:jacob_683",
+            "chapter": 30,
+            "verse": 6,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "person:jacob_683"
+          }
+        },
+        {
+          "chapter": 30,
+          "verse": 6,
+          "op": "remove-to-excluded",
+          "before": {
+            "entityID": "person:israel_682",
+            "relationship": "direct",
+            "reasonJa": "固定WEB本文に「Israel」が明記される。"
+          },
+          "excluded": {
+            "entityID": "person:israel_682",
+            "reasonJa": "この称号の「Israel」は族長Jacobを指し、イスラエル民族集団ではない。"
+          }
+        },
+        {
+          "chapter": 30,
+          "verse": 6,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "「God of Abraham, Isaac, and Israel」は族長Jacobを指す。イスラエル民の集団とは別。"
+        }
+      ],
+      "sourceText": "So the couriers went with the letters from the king and his princes throughout all Israel and Judah, according to the commandment of the king, saying, “You children of Israel, turn again to the LORD, the God of Abraham, Isaac, and Israel, that he may return to the remnant of you that have escaped out of the hand of the kings of Assyria.",
+      "sourceTextSHA256": "8f2398af67bed4ee16a160aa9e75cab896beb28820a9ed44a2e9b81551da5bd8",
+      "citationURL": "https://ebible.org/engwebp/2CH30.htm#V6",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 30,
+      "verse": 10,
+      "beforeRowSHA256": "fe317874e8f42699b56443a4d52622efd0fc28580c698f0290b4b7f84f62cc30",
+      "afterRowSHA256": "ae23177610d11d3f6f65bd9e8185aea6e16af59aaa9704069d3d36137c3de506",
+      "changes": [
+        {
+          "chapter": 30,
+          "verse": 10,
+          "op": "remove-to-excluded",
+          "before": {
+            "entityID": "person:ephraim_1206",
+            "relationship": "context",
+            "reasonJa": "「Ephraim」は部族・家系・地域を示す用法であり、族祖個人の行為ではないためcontextで結ぶ。"
+          },
+          "excluded": {
+            "entityID": "person:ephraim_1206",
+            "reasonJa": "2CH30:10はcountry/territory namesを旅程の地理範囲として挙げ、族祖個人の行為を述べない。"
+          }
+        },
+        {
+          "chapter": 30,
+          "verse": 10,
+          "op": "remove-to-excluded",
+          "before": {
+            "entityID": "person:manasseh_1928",
+            "relationship": "direct",
+            "reasonJa": "固定WEB本文に「Manasseh」が明記される。"
+          },
+          "excluded": {
+            "entityID": "person:manasseh_1928",
+            "reasonJa": "2CH30:10はcountry/territory namesを旅程の地理範囲として挙げ、族祖個人の行為を述べない。"
+          }
+        },
+        {
+          "chapter": 30,
+          "verse": 10,
+          "op": "remove-to-excluded",
+          "before": {
+            "entityID": "person:zebulun_3002",
+            "relationship": "direct",
+            "reasonJa": "固定WEB本文に「Zebulun」が明記される。"
+          },
+          "excluded": {
+            "entityID": "person:zebulun_3002",
+            "reasonJa": "2CH30:10はcountry/territory namesを旅程の地理範囲として挙げ、族祖個人の行為を述べない。"
+          }
+        },
+        {
+          "chapter": 30,
+          "verse": 10,
+          "op": "add",
+          "after": {
+            "entityID": "place:ephraim-territory_1292",
+            "relationship": "direct",
+            "reasonJa": "「country of Ephraim」は使者が通過した地域。族祖person:ephraim_1206とは区別。"
+          }
+        },
+        {
+          "chapter": 30,
+          "verse": 10,
+          "op": "add-unresolved",
+          "after": {
+            "term": "place:ephraim-territory_1292",
+            "chapter": 30,
+            "verse": 10,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "place:ephraim-territory_1292"
+          }
+        },
+        {
+          "chapter": 30,
+          "verse": 10,
+          "op": "add",
+          "after": {
+            "entityID": "place:east-manasseh-half-tribe_1290",
+            "relationship": "direct",
+            "reasonJa": "「country of Manasseh」は部族領域の地理表現。既存の東側領域候補を地理として示す。"
+          }
+        },
+        {
+          "chapter": 30,
+          "verse": 10,
+          "op": "add",
+          "after": {
+            "entityID": "place:west-manasseh_1291",
+            "relationship": "direct",
+            "reasonJa": "「country of Manasseh」は部族領域の地理表現。既存の西側領域候補を地理として示す。"
+          }
+        },
+        {
+          "chapter": 30,
+          "verse": 10,
+          "op": "add-unresolved",
+          "after": {
+            "term": "place:west-manasseh_1291",
+            "chapter": 30,
+            "verse": 10,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "place:west-manasseh_1291"
+          }
+        },
+        {
+          "chapter": 30,
+          "verse": 10,
+          "op": "add",
+          "after": {
+            "entityID": "place:zebulun_1289",
+            "relationship": "direct",
+            "reasonJa": "「even to Zebulun」は使者が通った地理的範囲の終点としての地域。族祖person:zebulun_3002とは区別。"
+          }
+        },
+        {
+          "chapter": 30,
+          "verse": 10,
+          "op": "add-unresolved",
+          "after": {
+            "term": "place:zebulun_1289",
+            "chapter": 30,
+            "verse": 10,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "place:zebulun_1289"
+          }
+        },
+        {
+          "chapter": 30,
+          "verse": 10,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "Ephraim、Manasseh、Zebulunは使者の経路を示す地域名。Manassehの広がりは東西の既存地域候補で表し、族祖人物とは区別。"
+        }
+      ],
+      "sourceText": "So the couriers passed from city to city through the country of Ephraim and Manasseh, even to Zebulun, but people ridiculed them and mocked them.",
+      "sourceTextSHA256": "62d3976a0bed16314469729676f251f50ff7c16cc04396ee3568f541c7c2b189",
+      "citationURL": "https://ebible.org/engwebp/2CH30.htm#V10",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 31,
+      "verse": 1,
+      "beforeRowSHA256": "2d904e6fcfbb1ad44f50c4fa6f11f511b45bb7eab4465c609e8d4db7e2262718",
+      "afterRowSHA256": "26bcdf44174861eba6037caf27e00647de3bd51d8d6d4015ba1ba33bb66399e8",
+      "changes": [
+        {
+          "chapter": 31,
+          "verse": 1,
+          "op": "remove-to-excluded",
+          "before": {
+            "entityID": "person:ephraim_1206",
+            "relationship": "context",
+            "reasonJa": "「Ephraim」は部族・家系・地域を示す用法であり、族祖個人の行為ではないためcontextで結ぶ。"
+          },
+          "excluded": {
+            "entityID": "person:ephraim_1206",
+            "reasonJa": "Ephraim/Manassehは破壊対象となった高き所の地域名で、族祖個人の行為ではない。"
+          }
+        },
+        {
+          "chapter": 31,
+          "verse": 1,
+          "op": "remove-to-excluded",
+          "before": {
+            "entityID": "person:manasseh_1928",
+            "relationship": "direct",
+            "reasonJa": "固定WEB本文に「Manasseh」が明記される。"
+          },
+          "excluded": {
+            "entityID": "person:manasseh_1928",
+            "reasonJa": "Ephraim/Manassehは破壊対象となった高き所の地域名で、族祖個人の行為ではない。"
+          }
+        },
+        {
+          "chapter": 31,
+          "verse": 1,
+          "op": "add",
+          "after": {
+            "entityID": "place:ephraim-territory_1292",
+            "relationship": "direct",
+            "reasonJa": "「in Ephraim」は高き所を取り除いた地域を列挙する地理表現。"
+          }
+        },
+        {
+          "chapter": 31,
+          "verse": 1,
+          "op": "add-unresolved",
+          "after": {
+            "term": "place:ephraim-territory_1292",
+            "chapter": 31,
+            "verse": 1,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "place:ephraim-territory_1292"
+          }
+        },
+        {
+          "chapter": 31,
+          "verse": 1,
+          "op": "add",
+          "after": {
+            "entityID": "place:east-manasseh-half-tribe_1290",
+            "relationship": "direct",
+            "reasonJa": "Manassehは高き所を取り除いた領域として列挙される。現行索引の東側領域候補を地理として区別。"
+          }
+        },
+        {
+          "chapter": 31,
+          "verse": 1,
+          "op": "add",
+          "after": {
+            "entityID": "place:west-manasseh_1291",
+            "relationship": "direct",
+            "reasonJa": "Manassehは高き所を取り除いた領域として列挙される。現行索引の西側領域候補を地理として区別。"
+          }
+        },
+        {
+          "chapter": 31,
+          "verse": 1,
+          "op": "add-unresolved",
+          "after": {
+            "term": "place:west-manasseh_1291",
+            "chapter": 31,
+            "verse": 1,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "place:west-manasseh_1291"
+          }
+        },
+        {
+          "chapter": 31,
+          "verse": 1,
+          "op": "add",
+          "after": {
+            "entityID": "person:judah_1751",
+            "relationship": "context",
+            "reasonJa": "「all Judah」は対象地の列挙に重なる住民集団を示す。place:judah_1280は領域、person:judah_1751は人々として区別する。"
+          }
+        },
+        {
+          "chapter": 31,
+          "verse": 1,
+          "op": "add-unresolved",
+          "after": {
+            "term": "person:judah_1751",
+            "chapter": 31,
+            "verse": 1,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "person:judah_1751"
+          }
+        },
+        {
+          "chapter": 31,
+          "verse": 1,
+          "op": "add-unresolved",
+          "after": {
+            "term": "Manasseh territorial extent",
+            "chapter": 31,
+            "verse": 1,
+            "status": "unresolved-canonical-candidate",
+            "reasonJa": "本文はManassehの地域を列挙するが、既存索引は東西の半部族領域に分かれる。両候補を保持し、本文から細かな境界は確定しない。"
+          }
+        },
+        {
+          "chapter": 31,
+          "verse": 1,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "破壊対象となった祭祀施設の所在範囲と、移動したIsraelの人々を区別する。Ephraim/Manassehは地理、Judah集団は共同体を表す。"
+        }
+      ],
+      "sourceText": "Now when all this was finished, all Israel who were present went out to the cities of Judah and broke the pillars in pieces, cut down the Asherah poles, and broke down the high places and the altars out of all Judah and Benjamin, also in Ephraim and Manasseh, until they had destroyed them all. Then all the children of Israel returned, every man to his possession, into their own cities.",
+      "sourceTextSHA256": "e9c0ed04505a7514e68f83fcaf4539c3792c0eb00f3fad24dade43b8a48a3bfe",
+      "citationURL": "https://ebible.org/engwebp/2CH31.htm#V1",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 31,
+      "verse": 4,
+      "beforeRowSHA256": "67e5e268d60933e98ff6bc0b4cf387cfba5cc1038d7280e781b0fb9711d4ab83",
+      "afterRowSHA256": "5e6b52d9cb72f06b81ce1abf79eb4852f9b5c506861f33cac50f43dcf333a548",
+      "changes": [
+        {
+          "chapter": 31,
+          "verse": 4,
+          "op": "add",
+          "after": {
+            "entityID": "place:jerusalem_636",
+            "relationship": "direct",
+            "reasonJa": "「people who lived in Jerusalem」と居住地を明記する。"
+          }
+        },
+        {
+          "chapter": 31,
+          "verse": 4,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "Jerusalemの住民への命令と、祭司・レビ人への分配を区別する。"
+        }
+      ],
+      "sourceText": "Moreover he commanded the people who lived in Jerusalem to give the portion of the priests and the Levites, that they might give themselves to the LORD’s law.",
+      "sourceTextSHA256": "5a975083e7779817bd524593889a8398cfbc065afca7bfa1fac7cf9e686a89d0",
+      "citationURL": "https://ebible.org/engwebp/2CH31.htm#V4",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 32,
+      "verse": 9,
+      "beforeRowSHA256": "49636bc23d35bd7954274764685e11718b1b60c6d17538be56b508162f342076",
+      "afterRowSHA256": "a44fdf1cb9a88b2bdc3560d57e72b02157cb1ee11ee4d046f6e0d1bcad0b6080",
+      "changes": [
+        {
+          "chapter": 32,
+          "verse": 9,
+          "op": "add",
+          "after": {
+            "entityID": "place:jerusalem_636",
+            "relationship": "direct",
+            "reasonJa": "使者の宛先・行先として「Jerusalem」が明記される。"
+          }
+        },
+        {
+          "chapter": 32,
+          "verse": 9,
+          "op": "update",
+          "before": {
+            "entityID": "person:hezekiah_1512",
+            "relationship": "direct",
+            "reasonJa": "固定WEB本文に「Hezekiah」が明記される。"
+          },
+          "after": {
+            "entityID": "person:hezekiah_1512",
+            "relationship": "direct",
+            "reasonJa": "使者は「Hezekiah king of Judah」に宛てられる。"
+          }
+        },
+        {
+          "chapter": 32,
+          "verse": 9,
+          "op": "add",
+          "after": {
+            "entityID": "person:judah_1751",
+            "relationship": "direct",
+            "reasonJa": "「all Judah who were at Jerusalem」はその場にいたユダの人々を指す。"
+          }
+        },
+        {
+          "chapter": 32,
+          "verse": 9,
+          "op": "add-unresolved",
+          "after": {
+            "term": "person:judah_1751",
+            "chapter": 32,
+            "verse": 9,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "person:judah_1751"
+          }
+        },
+        {
+          "chapter": 32,
+          "verse": 9,
+          "op": "add",
+          "after": {
+            "entityID": "place:judah_1280",
+            "relationship": "context",
+            "reasonJa": "「king of Judah」はHezekiahの王位が属する政治領域。続く「all Judah」は人々の集団で別リンク。"
+          }
+        },
+        {
+          "chapter": 32,
+          "verse": 9,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "使者の行先はJerusalem、宛先はHezekiahとその地にいたユダの人々。"
+        }
+      ],
+      "sourceText": "After this, Sennacherib king of Assyria sent his servants to Jerusalem, (now he was attacking Lachish, and all his forces were with him), to Hezekiah king of Judah, and to all Judah who were at Jerusalem, saying,",
+      "sourceTextSHA256": "d40d7b8e8d42dd19a7294ecf894c4ebd85408806a2466fade190bf6cf3ca500d",
+      "citationURL": "https://ebible.org/engwebp/2CH32.htm#V9",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 32,
+      "verse": 10,
+      "beforeRowSHA256": "37801f184d5b92f86bd02746fda666dbf7c0921b72e1482ce35dceb35b3ae7c7",
+      "afterRowSHA256": "6c6ac7b5ad26047d8f5e44069eb51f5cf9ef76cfe68786e80a58293a1210c5b7",
+      "changes": [
+        {
+          "chapter": 32,
+          "verse": 10,
+          "op": "add",
+          "after": {
+            "entityID": "place:jerusalem_636",
+            "relationship": "direct",
+            "reasonJa": "包囲の場所として「Jerusalem」を明記する。"
+          }
+        },
+        {
+          "chapter": 32,
+          "verse": 10,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "包囲されている場所としてJerusalemを明記する。"
+        }
+      ],
+      "sourceText": "Sennacherib king of Assyria says, “In whom do you trust, that you remain under siege in Jerusalem?",
+      "sourceTextSHA256": "c4ca6c364d081d7e7ba5335b586e430f55b97761f45b3ecd14fa61c3a2b49f05",
+      "citationURL": "https://ebible.org/engwebp/2CH32.htm#V10",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 32,
+      "verse": 12,
+      "beforeRowSHA256": "5b3caaa526a016c6974092604e31f5f16cf1c996bf653ce584e137fb2b90bed6",
+      "afterRowSHA256": "33cfebd3556eedc5838ad38c2aad7d120b390e781b99035a73c3d3e98aabcada",
+      "changes": [
+        {
+          "chapter": 32,
+          "verse": 12,
+          "op": "add",
+          "after": {
+            "entityID": "place:jerusalem_636",
+            "relationship": "direct",
+            "reasonJa": "Sennacheribの発話はJerusalemを名指しする。"
+          }
+        },
+        {
+          "chapter": 32,
+          "verse": 12,
+          "op": "add",
+          "after": {
+            "entityID": "person:judah_1751",
+            "relationship": "direct",
+            "reasonJa": "「commanded Judah」は命令の受け手としてのユダの人々/共同体。"
+          }
+        },
+        {
+          "chapter": 32,
+          "verse": 12,
+          "op": "add-unresolved",
+          "after": {
+            "term": "person:judah_1751",
+            "chapter": 32,
+            "verse": 12,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "person:judah_1751"
+          }
+        },
+        {
+          "chapter": 32,
+          "verse": 12,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "Judahは命令の受け手としての共同体、Jerusalemは名指された都市。"
+        }
+      ],
+      "sourceText": "Hasn’t the same Hezekiah taken away his high places and his altars, and commanded Judah and Jerusalem, saying, ‘You shall worship before one altar, and you shall burn incense on it’?",
+      "sourceTextSHA256": "df2bdb72b51a0780c9c40905b09656380e033b68d8c1e2a2d307811f4842f7ff",
+      "citationURL": "https://ebible.org/engwebp/2CH32.htm#V12",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 32,
+      "verse": 18,
+      "beforeRowSHA256": "4c937923d4c907dcb6c0ad1f63db8e6ce6664a6dc1e75826e629f4f46611146f",
+      "afterRowSHA256": "36f927d0ed5b2cfc186e4a986c94719265919db38d4db62f1c2a9bc5909372ca",
+      "changes": [
+        {
+          "chapter": 32,
+          "verse": 18,
+          "op": "add",
+          "after": {
+            "entityID": "place:jerusalem_636",
+            "relationship": "direct",
+            "reasonJa": "「people of Jerusalem who were on the wall」と都市名が住民の所在地として明記される。"
+          }
+        },
+        {
+          "chapter": 32,
+          "verse": 18,
+          "op": "add-unresolved",
+          "after": {
+            "term": "inhabitants of Jerusalem",
+            "chapter": 32,
+            "verse": 18,
+            "status": "unresolved-canonical-candidate",
+            "reasonJa": "壁上の住民は明記されるが、適合する住民集団IDを特定できない。place:jerusalem_636は所在地としてのみ使用。"
+          }
+        },
+        {
+          "chapter": 32,
+          "verse": 18,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "城壁上のJerusalem住民が呼び掛けられる。住民集団IDは特定できない。"
+        }
+      ],
+      "sourceText": "They called out with a loud voice in the Jews’ language to the people of Jerusalem who were on the wall, to frighten them and to trouble them, that they might take the city.",
+      "sourceTextSHA256": "b3a53aeed4cbf4c2ceabc75fa7dfa8040d67adc598f0f343dd23361c4bc66d50",
+      "citationURL": "https://ebible.org/engwebp/2CH32.htm#V18",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 33,
+      "verse": 9,
+      "beforeRowSHA256": "a51ed607966b1c5c9300752656da2a851981f8c4e00b2e8b604df84d8ec11ece",
+      "afterRowSHA256": "f62e94f94f78eab30de712f693c2c4e551660e49a0deae7bbf683a6eedf17202",
+      "changes": [
+        {
+          "chapter": 33,
+          "verse": 9,
+          "op": "add",
+          "after": {
+            "entityID": "person:judah_1751",
+            "relationship": "direct",
+            "reasonJa": "「Judah and the inhabitants of Jerusalem」を誘惑したとあり、Judahは人々の集団として明記される。"
+          }
+        },
+        {
+          "chapter": 33,
+          "verse": 9,
+          "op": "add-unresolved",
+          "after": {
+            "term": "person:judah_1751",
+            "chapter": 33,
+            "verse": 9,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "person:judah_1751"
+          }
+        },
+        {
+          "chapter": 33,
+          "verse": 9,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "JudahとJerusalem住民はManassehが惑わせた人々。"
+        }
+      ],
+      "sourceText": "Manasseh seduced Judah and the inhabitants of Jerusalem, so that they did more evil than did the nations whom the LORD destroyed before the children of Israel.",
+      "sourceTextSHA256": "aa48424a5f2494164104c5210aff3a500dcd58f24acf8795a0e42d835ef641b1",
+      "citationURL": "https://ebible.org/engwebp/2CH33.htm#V9",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 33,
+      "verse": 16,
+      "beforeRowSHA256": "de93500f393f30df22c29b27bae01ec253e3f1e849fabc36dd0bc3fab6483c08",
+      "afterRowSHA256": "95a640eb0c091b82330780032befb8add53eb10fc5a469dc6efdb16d60190fea",
+      "changes": [
+        {
+          "chapter": 33,
+          "verse": 16,
+          "op": "add",
+          "after": {
+            "entityID": "person:judah_1751",
+            "relationship": "direct",
+            "reasonJa": "「commanded Judah」は礼拝を命じられる人々の集団を指す。"
+          }
+        },
+        {
+          "chapter": 33,
+          "verse": 16,
+          "op": "add-unresolved",
+          "after": {
+            "term": "person:judah_1751",
+            "chapter": 33,
+            "verse": 16,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "person:judah_1751"
+          }
+        },
+        {
+          "chapter": 33,
+          "verse": 16,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "Judahは主に仕えるよう命じられた人々。"
+        }
+      ],
+      "sourceText": "He built up the LORD’s altar, and offered sacrifices of peace offerings and of thanksgiving on it, and commanded Judah to serve the LORD, the God of Israel.",
+      "sourceTextSHA256": "ff57510cbd164c6d0e9874fce46be9d1d75db0d3e16be8b64c3aa8f2021b1b2d",
+      "citationURL": "https://ebible.org/engwebp/2CH33.htm#V16",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 34,
+      "verse": 6,
+      "beforeRowSHA256": "d13be8155a4dbe7d8e42877cf34b569a22e4d336bb52632584bb77ab2f3345bf",
+      "afterRowSHA256": "72068f0b5c56c21c8d9f0474c2351a6ab87fd036ca78c19c1d54f6070da1f8c0",
+      "changes": [
+        {
+          "chapter": 34,
+          "verse": 6,
+          "op": "remove-to-excluded",
+          "before": {
+            "entityID": "person:ephraim_1206",
+            "relationship": "direct",
+            "reasonJa": "固定WEB本文に「Ephraim」が明記される。"
+          },
+          "excluded": {
+            "entityID": "person:ephraim_1206",
+            "reasonJa": "「cities of [tribe]」は町の所在地を列挙し、族祖個人の行為ではない。"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 6,
+          "op": "remove-to-excluded",
+          "before": {
+            "entityID": "person:manasseh_1928",
+            "relationship": "context",
+            "reasonJa": "「Manasseh」は部族・家系・地域を示す用法であり、族祖個人の行為ではないためcontextで結ぶ。"
+          },
+          "excluded": {
+            "entityID": "person:manasseh_1928",
+            "reasonJa": "「cities of [tribe]」は町の所在地を列挙し、族祖個人の行為ではない。"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 6,
+          "op": "remove-to-excluded",
+          "before": {
+            "entityID": "person:naphtali_2149",
+            "relationship": "direct",
+            "reasonJa": "固定WEB本文に「Naphtali」が明記される。"
+          },
+          "excluded": {
+            "entityID": "person:naphtali_2149",
+            "reasonJa": "「cities of [tribe]」は町の所在地を列挙し、族祖個人の行為ではない。"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 6,
+          "op": "remove-to-excluded",
+          "before": {
+            "entityID": "person:simeon_2741",
+            "relationship": "direct",
+            "reasonJa": "固定WEB本文に「Simeon」が明記される。"
+          },
+          "excluded": {
+            "entityID": "person:simeon_2741",
+            "reasonJa": "「cities of [tribe]」は町の所在地を列挙し、族祖個人の行為ではない。"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 6,
+          "op": "add",
+          "after": {
+            "entityID": "place:ephraim-territory_1292",
+            "relationship": "direct",
+            "reasonJa": "「cities of Ephraim」は町々の地域範囲として記される。"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 6,
+          "op": "add-unresolved",
+          "after": {
+            "term": "place:ephraim-territory_1292",
+            "chapter": 34,
+            "verse": 6,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "place:ephraim-territory_1292"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 6,
+          "op": "add",
+          "after": {
+            "entityID": "place:east-manasseh-half-tribe_1290",
+            "relationship": "direct",
+            "reasonJa": "「cities of Manasseh」は地域範囲。東Manassehの既存地理IDを用いる。"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 6,
+          "op": "add",
+          "after": {
+            "entityID": "place:west-manasseh_1291",
+            "relationship": "direct",
+            "reasonJa": "「cities of Manasseh」は地域範囲。西Manassehの既存地理IDを用いる。"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 6,
+          "op": "add-unresolved",
+          "after": {
+            "term": "place:west-manasseh_1291",
+            "chapter": 34,
+            "verse": 6,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "place:west-manasseh_1291"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 6,
+          "op": "add",
+          "after": {
+            "entityID": "place:naphtali_1284",
+            "relationship": "direct",
+            "reasonJa": "「even to Naphtali」はヨシヤの行動範囲を示す地域名。"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 6,
+          "op": "add-unresolved",
+          "after": {
+            "term": "place:naphtali_1284",
+            "chapter": 34,
+            "verse": 6,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "place:naphtali_1284"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 6,
+          "op": "add-unresolved",
+          "after": {
+            "term": "Simeon territorial extent",
+            "chapter": 34,
+            "verse": 6,
+            "status": "unresolved-canonical-candidate",
+            "reasonJa": "「cities of Simeon」は地理的範囲として列挙されるが、索引に適合するSimeon領域IDは見当たらず、族祖person:simeon_2741で代用しない。"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 6,
+          "op": "add-unresolved",
+          "after": {
+            "term": "Manasseh territorial extent",
+            "chapter": 34,
+            "verse": 6,
+            "status": "unresolved-canonical-candidate",
+            "reasonJa": "本文はManassehの町々を示すが、索引の東西半部族領域との正確な範囲対応を本文だけで確定しない。"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 6,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "祭祀施設の所在地として各部族領域を列挙。族祖人物の行為ではなく、Simeon領域など適合IDのない範囲は未解決。"
+        }
+      ],
+      "sourceText": "He did this in the cities of Manasseh, Ephraim, and Simeon, even to Naphtali, around in their ruins.",
+      "sourceTextSHA256": "f87604db4e5b72398819b3f6649426f3b7e986044ede36b687177f225d034a96",
+      "citationURL": "https://ebible.org/engwebp/2CH34.htm#V6",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 34,
+      "verse": 9,
+      "beforeRowSHA256": "1860a7e6b78d6420905dc0cbe711be9915d372a9632e24a3ec7d224ea730c35b",
+      "afterRowSHA256": "ae6fae47048f9c2ae54dfb4c8f30c1c64e21a82622b264328af4dd884a798151",
+      "changes": [
+        {
+          "chapter": 34,
+          "verse": 9,
+          "op": "add",
+          "after": {
+            "entityID": "person:judah_1751",
+            "relationship": "direct",
+            "reasonJa": "「all Judah」は金銭を集めた人々の明示的集団。"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 9,
+          "op": "add-unresolved",
+          "after": {
+            "term": "person:judah_1751",
+            "chapter": 34,
+            "verse": 9,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "person:judah_1751"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 9,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "「all Judah」は集金した住民集団。Israel、Jerusalemの住民、他の部族名と区別する。"
+        }
+      ],
+      "sourceText": "They came to Hilkiah the high priest and delivered the money that was brought into God’s house, which the Levites, the keepers of the threshold, had gathered from the hands of Manasseh, Ephraim, of all the remnant of Israel, of all Judah and Benjamin, and of the inhabitants of Jerusalem.",
+      "sourceTextSHA256": "4aa03a8ec9bf5fd72f26e869464a3fe356cf0f678c46a2cf5b5a069e8a87ca56",
+      "citationURL": "https://ebible.org/engwebp/2CH34.htm#V9",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 34,
+      "verse": 21,
+      "beforeRowSHA256": "04cd68e7ffc8401c18b17905d30b421ba14532c764e103209e0de823dc508d11",
+      "afterRowSHA256": "ebaa052f3c43ec8081851332d59ebf16ccdcd16ac2bc1db1b8e0de206ea91380",
+      "changes": [
+        {
+          "chapter": 34,
+          "verse": 21,
+          "op": "add",
+          "after": {
+            "entityID": "person:judah_1751",
+            "relationship": "direct",
+            "reasonJa": "「those who are left in Israel and in Judah」は残存するユダの民を明記する。"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 21,
+          "op": "add-unresolved",
+          "after": {
+            "term": "person:judah_1751",
+            "chapter": 34,
+            "verse": 21,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "person:judah_1751"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 21,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "残存者としてIsraelとJudahの双方の民が明記される。"
+        }
+      ],
+      "sourceText": "“Go inquire of the LORD for me, and for those who are left in Israel and in Judah, concerning the words of the book that is found; for great is the LORD’s wrath that is poured out on us, because our fathers have not kept the LORD’s word, to do according to all that is written in this book.”",
+      "sourceTextSHA256": "eb240829896c8dfd744e591eefcd3ecab6d58b83addff5044b48b3d5fb4d7d32",
+      "citationURL": "https://ebible.org/engwebp/2CH34.htm#V21",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 34,
+      "verse": 23,
+      "beforeRowSHA256": "4e9fbb3402010cb1099db8bf998a1884b2f3338889662c6eb5cd78a1e8aa0b5f",
+      "afterRowSHA256": "2f077daec6f9055ec8295b65ccf070f9f333be45ab20dc1adce6b03e0dafd4e5",
+      "changes": [
+        {
+          "chapter": 34,
+          "verse": 23,
+          "op": "add",
+          "after": {
+            "entityID": "person:israel_682",
+            "relationship": "context",
+            "reasonJa": "「the LORD, the God of Israel」は神とIsraelの関係を表す称号。族長Israel/Jacobや地理領域ではなく集団関係のcontext。"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 23,
+          "op": "add-unresolved",
+          "after": {
+            "term": "person:israel_682",
+            "chapter": 34,
+            "verse": 23,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "person:israel_682"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 23,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "「God of Israel」のIsraelは神の関係先としての集団context。族長Israel/Jacobや地理名ではない。"
+        }
+      ],
+      "sourceText": "She said to them, “The LORD, the God of Israel says: ‘Tell the man who sent you to me,",
+      "sourceTextSHA256": "f21c4d6fca920d25f00ae676e559860f563cb45319bf8df1add568363c4f8787",
+      "citationURL": "https://ebible.org/engwebp/2CH34.htm#V23",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 34,
+      "verse": 26,
+      "beforeRowSHA256": "4f280b89297a6fd8ae1eecc0ecce87f46540e6fb3f276f157b6beb413e5405f7",
+      "afterRowSHA256": "803ecbc5fb8f51be101ba61e9a2386cb08325f5f58216a4214385b46d5136e9f",
+      "changes": [
+        {
+          "chapter": 34,
+          "verse": 26,
+          "op": "add",
+          "after": {
+            "entityID": "place:judah_1280",
+            "relationship": "context",
+            "reasonJa": "「the king of Judah」はJosiahの政治的統治領域を示す。人々への呼び掛けではない。"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 26,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "「king of Judah」はJosiahの統治領域を示す。"
+        }
+      ],
+      "sourceText": "But to the king of Judah, who sent you to inquire of the LORD, you shall tell him this, ‘The LORD, the God of Israel says: “About the words which you have heard,",
+      "sourceTextSHA256": "a3895533bbcc96a309c3d46ae036bd83e155e37276e0d8bf583d67cc74e80bfe",
+      "citationURL": "https://ebible.org/engwebp/2CH34.htm#V26",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 34,
+      "verse": 29,
+      "beforeRowSHA256": "77703237b234f94300333edec06783176e23b5c76f94ebd6563e96c3fccdf4a7",
+      "afterRowSHA256": "7c135ceb48fe8aa584ab9d293b1ef35c26d7ba0c1c3784de90e0bf9bb560f781",
+      "changes": [
+        {
+          "chapter": 34,
+          "verse": 29,
+          "op": "add",
+          "after": {
+            "entityID": "person:judah_1751",
+            "relationship": "context",
+            "reasonJa": "「elders of Judah」はユダの共同体に属する長老たち。地域place:judah_1280と区別する。"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 29,
+          "op": "add-unresolved",
+          "after": {
+            "term": "person:judah_1751",
+            "chapter": 34,
+            "verse": 29,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "person:judah_1751"
+          }
+        },
+        {
+          "chapter": 34,
+          "verse": 29,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "長老たちはJudah共同体に属し、Jerusalemとともに招集された。"
+        }
+      ],
+      "sourceText": "Then the king sent and gathered together all the elders of Judah and Jerusalem.",
+      "sourceTextSHA256": "2ac818af9865dbe6cf0b70fb034b42c5ecd74385cca863b79f4749895cfe4d50",
+      "citationURL": "https://ebible.org/engwebp/2CH34.htm#V29",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 35,
+      "verse": 18,
+      "beforeRowSHA256": "ff332ddc5dffeb45baf04f3e2c627c3c5a32ba2ae6e50c03e2550f92958bb579",
+      "afterRowSHA256": "0f9f000cf3bad22d7021608e0d4ac939aee9dc7d48aee06340571f692e918bf6",
+      "changes": [
+        {
+          "chapter": 35,
+          "verse": 18,
+          "op": "add",
+          "after": {
+            "entityID": "person:judah_1751",
+            "relationship": "direct",
+            "reasonJa": "「all Judah and Israel who were present」は過越祭に出席したユダの人々を明記する。"
+          }
+        },
+        {
+          "chapter": 35,
+          "verse": 18,
+          "op": "add-unresolved",
+          "after": {
+            "term": "person:judah_1751",
+            "chapter": 35,
+            "verse": 18,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "person:judah_1751"
+          }
+        },
+        {
+          "chapter": 35,
+          "verse": 18,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "過越祭に出席したJudahとIsraelの人々を指す。Judahは地域IDと区別する。"
+        }
+      ],
+      "sourceText": "There was no Passover like that kept in Israel from the days of Samuel the prophet, nor did any of the kings of Israel keep such a Passover as Josiah kept—with the priests, the Levites, and all Judah and Israel who were present, and the inhabitants of Jerusalem.",
+      "sourceTextSHA256": "abb74877ef24bf9519e3dc8df971d15b1987f933d748a769b469ea7c0bfeff48",
+      "citationURL": "https://ebible.org/engwebp/2CH35.htm#V18",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 36,
+      "verse": 4,
+      "beforeRowSHA256": "922d9c5da3892e78a6eeeaefa59093438f8f06952b1450a7f92d8f8c596902d2",
+      "afterRowSHA256": "50e7a1e0935ffdbdf8a72d260b9210b1864999ccd074f32387850cbc859bafa2",
+      "changes": [
+        {
+          "chapter": 36,
+          "verse": 4,
+          "op": "add",
+          "after": {
+            "entityID": "place:judah_1280",
+            "relationship": "direct",
+            "reasonJa": "Eliakimを「over Judah and Jerusalem」の王にしたとあり、Judahは統治領域。"
+          }
+        },
+        {
+          "chapter": 36,
+          "verse": 4,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "JudahとJerusalemを統治範囲として王位を与えたと記す。"
+        }
+      ],
+      "sourceText": "The king of Egypt made Eliakim his brother king over Judah and Jerusalem, and changed his name to Jehoiakim. Neco took Joahaz his brother, and carried him to Egypt.",
+      "sourceTextSHA256": "23ae16cdda6ed22a80a13473830f2f0c94b980d30e2f582955e9fa49a79002c5",
+      "citationURL": "https://ebible.org/engwebp/2CH36.htm#V4",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 36,
+      "verse": 10,
+      "beforeRowSHA256": "ba684853ead91e4729e4b86528a738534cd4114b5ed2cb1d9fd8c26945af95c0",
+      "afterRowSHA256": "844cb1d839d2666952a9d36733cc3f6dba539f9858ab9ed707cf07e1adbd0766",
+      "changes": [
+        {
+          "chapter": 36,
+          "verse": 10,
+          "op": "add",
+          "after": {
+            "entityID": "place:judah_1280",
+            "relationship": "direct",
+            "reasonJa": "Zedekiahを「over Judah and Jerusalem」の王にしたとあり、Judahは統治領域。"
+          }
+        },
+        {
+          "chapter": 36,
+          "verse": 10,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "JudahとJerusalemを統治範囲としてZedekiahを王にした。"
+        }
+      ],
+      "sourceText": "At the return of the year, King Nebuchadnezzar sent and brought him to Babylon, with the valuable vessels of the LORD’s house, and made Zedekiah his brother king over Judah and Jerusalem.",
+      "sourceTextSHA256": "f3e659af32924f0b524b6a0a9f6541c773f59dd4f1e55a32dda98cabfb0d3842",
+      "citationURL": "https://ebible.org/engwebp/2CH36.htm#V10",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    },
+    {
+      "chapter": 36,
+      "verse": 17,
+      "beforeRowSHA256": "f4972e89b89194469a726fcce09f5260ae64c7696ab749df1579586a03887d06",
+      "afterRowSHA256": "89533d3baf1febf608258e0201ff14366edb2c24d6326d86a9c14663cd8e0ecd",
+      "changes": [
+        {
+          "chapter": 36,
+          "verse": 17,
+          "op": "add",
+          "after": {
+            "entityID": "person:nebuchadnezzar_2167",
+            "relationship": "context",
+            "reasonJa": "36:10で名指されたNebuchadnezzarが「king of the Chaldeans」として攻撃を起こす文脈。ここでは名前が再記されないためcontextに限る。"
+          }
+        },
+        {
+          "chapter": 36,
+          "verse": 17,
+          "op": "add-unresolved",
+          "after": {
+            "term": "person:nebuchadnezzar_2167",
+            "chapter": 36,
+            "verse": 17,
+            "status": "profile-review-pending",
+            "reasonJa": "当該節の原典対応として既存IDを採るが、現時点で2 Chronicles書内プロフィール稿が確認できないため、表示/ランタイム適格性は未審査。",
+            "entityID": "person:nebuchadnezzar_2167"
+          }
+        },
+        {
+          "chapter": 36,
+          "verse": 17,
+          "op": "add-unresolved",
+          "after": {
+            "term": "Chaldean army / people",
+            "chapter": 36,
+            "verse": 17,
+            "status": "unresolved-canonical-candidate",
+            "reasonJa": "本文は「king of the Chaldeans」とその軍勢を指すが、該当するChaldean集団IDを確認できない。Babylonの地名は人々/軍勢の代用にしない。"
+          }
+        },
+        {
+          "chapter": 36,
+          "verse": 17,
+          "op": "update-reviewNoteJa",
+          "before": "本文と直前・直後の節を照合し、明記名・一意な照応・族祖名の集団用法を区別した。",
+          "after": "Chaldeansの王は前段で名指されたNebuchadnezzarを受ける文脈と読める。民族/軍勢の集団IDは未解決。"
+        }
+      ],
+      "sourceText": "Therefore he brought on them the king of the Chaldeans, who killed their young men with the sword in the house of their sanctuary, and had no compassion on young man or virgin, old man or infirm. He gave them all into his hand.",
+      "sourceTextSHA256": "77e07859d5a1f4854c113e30faf634c48d7509240ea155188c84af65557b108c",
+      "citationURL": "https://ebible.org/engwebp/2CH36.htm#V17",
+      "basisJa": "固定WEB本文と直前/直後文脈を再読。族祖・集団・領域・都市の意味を分け、適格IDなしはunresolvedへ記録。"
+    }
+  ],
+  "methodJa": "独立指摘の各座標を固定WEB原文と前後文脈で再確認し、誤リンク/欠落を最小修正。本文・引用URL・本文SHAは変更していない。人々の集団はperson ID、領域はplace ID、族祖の用例はindividual contextに分けた。適格な集団IDがない項目は既存の地名や祖先で代用せず、座標付きunresolvedへ残した。profile-review-pendingはruntime承認を意味しない。",
+  "createdAtUTC": "2026-10-16T06:21:33Z",
+  "preservationVerified": true,
+  "independentReviewReportNotEdited": true
+}

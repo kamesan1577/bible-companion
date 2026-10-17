@@ -1,0 +1,119 @@
+{
+  "reportType": "independent-current-draft-reclosure",
+  "book": "2SA",
+  "scope": "Current reader-facing first-mention fields and Wikipedia/source gates for Jonathan 1692 and Solomon 2762 only.",
+  "reviewedAtUTC": "2026-10-16T02:12:26Z",
+  "fixedWitnessPath": "inventory/targets/samuel2-web-verses.json",
+  "fixedWitnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+  "authorRepairPath": "evidence/persons_3/author-repairs-root-future-reference-reader-fields.json",
+  "authorRepairSHA256": "81bf659d128624291e33ba5930f4ef12ef98142ee6ffef9f868f0682bd7f9d27",
+  "methodJa": "現行profile/evidenceのSHA bindingを再計算し、固定WEBの初出・後続fact節、常時表示欄、Wikipedia記事の実本文locator、リンクとsecondary-source gateをそれぞれ再読して照合した。修正作者の記述をそのまま承認するのではなく、本文と実記事で独立確認。",
+  "decision": "pass",
+  "profiles": [
+    {
+      "entityID": "person:jonathan_1692",
+      "draftPath": "drafts/persons_3/2SA_jonathan_1692.json",
+      "evidencePath": "evidence/persons_3/2SA_jonathan_1692.json",
+      "initialRef": "2SA1:4",
+      "webRefs": [
+        "2SA1:4",
+        "2SA1:5",
+        "2SA21:14"
+      ],
+      "articleURL": "https://en.wikipedia.org/wiki/Jonathan_(1_Samuel)",
+      "articleLocator": "lead lines 154–155; Death section lines 165–170",
+      "decision": "pass",
+      "reasonJa": "固定WEB 1:4は「Saul and Jonathan his son are dead」とヨナタンをサウルの子と明記し、1:5も同じ関係を確認する。summaryは1:4の報告、subtitle/historicalRoleも「サウルの子」に限る。identityNoteは別名の人物を列挙せず一般的な区別だけで、後の15:27を先取りしない。Wikipedia実記事は導入でサウルの子・ダビデとの関係を示し、21:14の埋葬にも触れるためprofileとsecondary sourceの21:14 gateは妥当。",
+      "currentDraftSHA256": "dbbf91c66ddd0a3e2192a3588c2132fe3ca85c44a3a9a726a9bca2ec03719dff",
+      "currentProfileSHA256": "d48525c417489a641aedd2747c9637ac04cb267f5f0662f22f823aa8c67654fd",
+      "currentEvidenceSHA256": "8a1dcfbd42ec5463ac6ab28ba7e31236a3578813d9601f6de62338378838c5fe",
+      "evidenceHashBindingPass": true,
+      "knownBy": {
+        "chapter": 1,
+        "verse": 4
+      },
+      "wikipediaKnownBy": {
+        "chapter": 21,
+        "verse": 14
+      },
+      "wikipediaSourceGate": {
+        "chapter": 21,
+        "verse": 14
+      },
+      "sourceIDsResolved": true,
+      "primaryWitnesses": [
+        {
+          "ref": "2SA1:4",
+          "text": "David said to him, “How did it go? Please tell me.” He answered, “The people have fled from the battle, and many of the people also have fallen and are dead. Saul and Jonathan his son are dead also.”",
+          "sha256": "adbb26e2c8ad7fe824715b4c9a362999829a96c7dc4e94435792b2f3e98ea546",
+          "url": "https://ebible.org/engwebp/2SA01.htm#V4"
+        },
+        {
+          "ref": "2SA1:5",
+          "text": "David said to the young man who told him, “How do you know that Saul and Jonathan his son are dead?”",
+          "sha256": "394d251baf0eb99d28fe3815a58aac2cbe448efacacc501de98644d9144d1a15",
+          "url": "https://ebible.org/engwebp/2SA01.htm#V5"
+        },
+        {
+          "ref": "2SA21:14",
+          "text": "They buried the bones of Saul and Jonathan his son in the country of Benjamin in Zela, in the tomb of Kish his father; and they performed all that the king commanded. After that, God answered prayer for the land.",
+          "sha256": "6782d21e94d6d73feb4bea7d80f95534beb2ff0350b2a0d53fb5f197d51f23d5",
+          "url": "https://ebible.org/engwebp/2SA21.htm#V14"
+        }
+      ]
+    },
+    {
+      "entityID": "person:solomon_2762",
+      "draftPath": "drafts/persons_3/2SA_solomon_2762.json",
+      "evidencePath": "evidence/persons_3/2SA_solomon_2762.json",
+      "initialRef": "2SA5:14",
+      "webRefs": [
+        "2SA5:14",
+        "2SA12:24",
+        "2SA12:25"
+      ],
+      "articleURL": "https://en.wikipedia.org/wiki/Solomon",
+      "articleLocator": "infobox lines 263–287; Childhood section lines 301–305",
+      "decision": "pass",
+      "reasonJa": "固定WEB 5:14はエルサレムでダビデに生まれた子の名簿にソロモンを載せるが、母親は述べない。subtitle/summary/identityNote/historicalRoleはこの範囲に限り、母親の名と命名情報は12:24/25のfactへ分離。Wikipedia実記事のinfobox・導入はダビデとバテ・シェバを親とし、別名も記すためWikipedia/profile/source gate 12:24は初出5:14より遅く、母親が本文に現れる節と整合する。",
+      "currentDraftSHA256": "b8cabae0059165bab9c30769962d7090e2ddad5736dc57a9a5e832b09579d97b",
+      "currentProfileSHA256": "0099ce369a216feeb0e1618c2b6d94da36a487a0d5cd8878c5f8ee55f2cf4a68",
+      "currentEvidenceSHA256": "85f75d39d74edd555bbd2a99656a27d4881bf62893bd7dfb2c094f1011f73edb",
+      "evidenceHashBindingPass": true,
+      "knownBy": {
+        "chapter": 5,
+        "verse": 14
+      },
+      "wikipediaKnownBy": {
+        "chapter": 12,
+        "verse": 24
+      },
+      "wikipediaSourceGate": {
+        "chapter": 12,
+        "verse": 24
+      },
+      "sourceIDsResolved": true,
+      "primaryWitnesses": [
+        {
+          "ref": "2SA5:14",
+          "text": "These are the names of those who were born to him in Jerusalem: Shammua, Shobab, Nathan, Solomon,",
+          "sha256": "c139f059632da13894e287ba9f6af1986c9c828a70d20ad58e7bf1d33a2dbb8d",
+          "url": "https://ebible.org/engwebp/2SA05.htm#V14"
+        },
+        {
+          "ref": "2SA12:24",
+          "text": "David comforted Bathsheba his wife, and went in to her, and lay with her. She bore a son, and he called his name Solomon. The LORD loved him;",
+          "sha256": "302f97b1cc51035d7aa996597356eae1e8f33f25d7ccdf36e50a2cf30afc8fc0",
+          "url": "https://ebible.org/engwebp/2SA12.htm#V24"
+        },
+        {
+          "ref": "2SA12:25",
+          "text": "and he sent by the hand of Nathan the prophet, and he named him Jedidiah, for the LORD’s sake.",
+          "sha256": "9091a4a3ec1fb4befc4a43c4f54737daeef9bf0c2b3ea4549a6a1529b95ead17",
+          "url": "https://ebible.org/engwebp/2SA12.htm#V25"
+        }
+      ]
+    }
+  ],
+  "limitationsJa": "レビュー範囲はこの2稿の初出欄・facts・Wikipedia関連性と表示gateに限定し、書全体の人物網羅性や他のプロフィールの意味判定は含まない。"
+}

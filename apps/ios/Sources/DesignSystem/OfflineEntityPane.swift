@@ -12,6 +12,7 @@ struct OfflineEntityPane: View {
     @State private var result: EntityIndexResult?
     @State private var includeFuture = false
     @State private var message: String?
+    private var isPartialChronicles: Bool { ["1CH", "2CH"].contains(passage.book) }
     private var additions: [IndexedOccurrence] {
         result?.occurrences.filter { item in
             Set(item.profile?.profile.materialCardIDs ?? []).isDisjoint(with: coveredMaterialCardIDs)
@@ -20,11 +21,15 @@ struct OfflineEntityPane: View {
     var body: some View {
         VStack(alignment: .leading, spacing: BibleTheme.Space.section) {
             if let result {
+                if isPartialChronicles {
+                    Text("この書の人物・地名は、一部を原文と照合して収録しています。説明が出ない名前も、未収録の場合があります。")
+                        .bibleTextStyle(.caption).bibleForeground(.textSecondary)
+                }
                 if !additions.isEmpty {
                     BibleSectionHeader(title: coveredMaterialCardIDs.isEmpty ? (kind == "person" ? "この箇所に関係する人物・名前" : "この箇所に関係する場所") : (kind == "person" ? "ほかの人物・関連する名前" : "ほかの場所"))
                 }
                 if additions.isEmpty && coveredMaterialCardIDs.isEmpty {
-                    Text(kind == "person" ? "この箇所に対応する人物の説明はありません。名前のない人物に、推測で名前を付けてはいません。" : "この箇所に対応する地名の説明はありません。同定できない場所には地図の印を置いていません。").bibleTextStyle(.body)
+                    Text(isPartialChronicles ? "この箇所の説明は、まだ収録していません。人物や地名が登場しないという意味ではありません。" : kind == "person" ? "この箇所に対応する人物の説明はありません。名前のない人物に、推測で名前を付けてはいません。" : "この箇所に対応する地名の説明はありません。同定できない場所には地図の印を置いていません。").bibleTextStyle(.body)
                 }
                 ForEach(additions) { item in
                     BibleReadingSurface {
@@ -48,15 +53,15 @@ struct OfflineEntityPane: View {
                             } else {
                                 Text("この人物・場所の日本語の説明は、まだ収録していません。").bibleTextStyle(.body)
                                 if let point = item.entity.coordinate, point.count == 2 {
-                                    NavigationLink("現代の地図で候補地を見る") { UnreviewedIndexedPlaceMap(entity: item.entity, note: item.profile?.profile.locationNoteJa) }
+                                    NavigationLink("現代の地図で候補地を見る") { UnreviewedIndexedPlaceMap(entity: item.entity, note: item.candidateMapNote ?? item.profile?.profile.locationNoteJa) }
                                 }
                             }
                             if item.profile != nil, item.profile?.profile.coordinate == nil,
                                let point = item.entity.coordinate, point.count == 2 {
                                 if inlineDetails {
-                                    UnreviewedIndexedPlaceMap(entity: item.entity, inline: true, note: item.profile?.profile.locationNoteJa)
+                                    UnreviewedIndexedPlaceMap(entity: item.entity, inline: true, note: item.candidateMapNote ?? item.profile?.profile.locationNoteJa)
                                 } else {
-                                    NavigationLink("従来資料の候補位置を地図で見る") { UnreviewedIndexedPlaceMap(entity: item.entity, note: item.profile?.profile.locationNoteJa) }
+                                    NavigationLink("従来資料の候補位置を地図で見る") { UnreviewedIndexedPlaceMap(entity: item.entity, note: item.candidateMapNote ?? item.profile?.profile.locationNoteJa) }
                                         .accessibilityIdentifier("entity-candidate-map-" + item.id)
                                 }
                             }
@@ -74,7 +79,7 @@ struct OfflineEntityPane: View {
                 Toggle("先の登場箇所も見る", isOn: $includeFuture)
                 Text(includeFuture ? "この書の先の登場箇所と補足説明も表示しています。" : "選んだ箇所までの情報を表示しています。").bibleTextStyle(.caption).bibleForeground(.textSecondary)
                 DisclosureGroup("一覧の出典と利用条件") {
-                    Text(passage.book == "ACT" ? "使徒言行録はWEB本文と照合した人物・場所の対応を表示します。名前の明記と、文脈上の指示を区別しています。" : "KJVの節番号をもとにした人物・場所の参考一覧です。関連候補と本文に名前がある場合を区別しています。").bibleTextStyle(.caption)
+                    Text(["ACT", "ROM", "LEV", "NUM", "JOS", "JDG", "RUT", "1SA", "2SA", "1KI", "2KI", "1CH", "2CH"].contains(passage.book) ? "WEB本文と照合した人物・場所の対応を表示します。名前の明記と、文脈上の指示を区別しています。" : "KJVの節番号をもとにした人物・場所の参考一覧です。関連候補と本文に名前がある場合を区別しています。").bibleTextStyle(.caption)
                     Text(result.attribution).bibleTextStyle(.caption)
                     if let url = result.sourceURL { Link("Theographic Bible Metadata · CC BY-SA 4.0", destination: url) }
                 }
@@ -219,7 +224,8 @@ struct EntityProfileContent: View {
                 Text(resolved.profile.identityNoteJa).bibleTextStyle(.caption).bibleForeground(.textSecondary)
             }
             if let note = resolved.profile.locationNoteJa { Text(note).bibleTextStyle(.caption) }
-            if let wikipedia = resolved.profile.wikipedia, let url = wikipedia.safeURL {
+            ForEach(resolved.contextNotes, id: \.self) { note in Text(note).bibleTextStyle(.body) }
+            if let wikipedia = resolved.wikipedia, let url = wikipedia.safeURL {
                 Link(wikipedia.labelJa, destination: url).accessibilityIdentifier("wikipedia-" + resolved.profile.id)
                 Text(wikipedia.title).bibleTextStyle(.caption).bibleForeground(.textSecondary)
                 if !wikipedia.noteJa.isEmpty { Text(wikipedia.noteJa).bibleTextStyle(.caption).bibleForeground(.textSecondary) }
@@ -239,7 +245,6 @@ struct EntityProfileContent: View {
                     }
                 }
                 Text("出典の外部ページには、選んだ箇所より先の内容が含まれる場合があります。").bibleTextStyle(.caption)
-                Text("資料上の識別ID: " + resolved.profile.id).bibleTextStyle(.caption)
             }
         }
     }

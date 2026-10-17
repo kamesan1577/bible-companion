@@ -1,0 +1,587 @@
+{
+  "type": "independent-integrated-staging-closure",
+  "reviewedAtUTC": "2026-10-15T22:25:53Z",
+  "scope": "Read-only independent closure of one unpublished integrated-staging snapshot. It assesses data transformation and named edge cases, not semantic approval of all profiles or publication readiness.",
+  "snapshot": {
+    "stagingCreatedAtUTC": "2026-10-15T22:21:07.453726+00:00",
+    "stagingReportSHA256": "ddaf51e4d436e67942b5b5a2fda287efaed980885af862a09c49c4ac6b7dcbe9",
+    "NUMCatalogSHA256": "63996bd88f4baf23aaf91696a0db77de1073f724a168b523a8bf4f03420ebc30",
+    "JOSCatalogSHA256": "cf31d8ece7a07e622e670e357b49fab640a976671b5a06c74d94f06d454e8903",
+    "builderSHA256": "6c9cacbdc9de2ef5097fa7f6b087e14b2fcdb0acefceb7d4e2a8f8d548f74adc",
+    "fixedSourceVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+    "explicitAliasReviewSHA256": "8aa3b8b87005dfd88fe4c0a8c1349681f2fa2728fc818381458aaa2903fed8d4",
+    "sourceMapSHA256": {
+      "verse-map-NUM-01-12.json": "bbb4f366f44058361286d1fe6ab501a0591c57a3a76388ea49ea6026524e9eae",
+      "verse-map-NUM-13-24.json": "b5d4e39990e86e497e0f03f404d1442bbdc11102e1ce82ef1c0f1fa73652680f",
+      "root-verse-map-NUM-25-27.json": "498af50e680e2d21b6ae28944d472ab66049464301943e5619506172894fe064",
+      "root-verse-map-NUM-28-30.json": "398cff19863ad95851679e57e63d2d2c765a8ca75652a0cb53dc0596efc4fa9d",
+      "root-verse-map-NUM-31.json": "8397a9a866538b92a275a48cc05bf96072520ac0befbc0be6f103d0c0f2cab1c",
+      "root-verse-map-NUM-32.json": "13853fc055592ab0efa4a200da6c826ddf9a37d4943af9a82003d29d16da2e53",
+      "root-verse-map-NUM-33-36.json": "f4820f9858ba0954144b0047b3ddc15b3007ca11a1d92f933d6ff48597fea040",
+      "verse-map-JOS-01-08.json": "ecb4620cb7d71b5fb450b3c2f410d03c3c0fc957dd97f4206e3b77fb25015786",
+      "verse-map-JOS-09-16.json": "b518149532c5f08ade9cbeb587165bb7c7cab6e7e5b9f39d062247ff6be48bdc",
+      "verse-map-JOS-17-24.json": "6ccaab1ed700008140ed1e767444b2724dd571e06bde197a6ca4ce3575b3d111"
+    },
+    "proposalSHA256": {
+      "context-edits/NUM/NUM_joseph-1710-personal.json": "99fdf0819ca4e5c7932037cb655dd8ca791c01fced3fc658d189d309eedfe28f",
+      "context-edits/JOS/person_joseph_1710.json": "859a94e0771358dff57381b818fafd3eb54bb54a56b7e354cc7167bfba5ea580",
+      "context-edits/JOS/person_manasseh_1928.json": "acc051938b90a04333b2e3a92cc5faabd510d20524220241a5c3e0805db5ecab"
+    }
+  },
+  "overallStatus": "fail",
+  "unpublished": true,
+  "semanticApproval": false,
+  "findings": [
+    {
+      "case": "NUM Machir person and Machirites at 26:29; dual use again at 32:39",
+      "status": "pass",
+      "currentState": {
+        "baseKnownBy": "NUM 26:29",
+        "baseIsPerson": "true",
+        "collectiveContextKnownBy": "NUM 26:29",
+        "baseAndContextBothInclude": "NUM 26:29, NUM 32:39",
+        "basePersonalFacts": [
+          "NUM 32:39",
+          "NUM 32:40"
+        ],
+        "collectiveContextType": "collective",
+        "collectiveContextPassages": [
+          "NUM 26:29",
+          "NUM 32:39"
+        ]
+      },
+      "basis": [
+        {
+          "ref": "NUM 26:29",
+          "text": "The sons of Manasseh: of Machir, the family of the Machirites; and Machir became the father of Gilead; of Gilead, the family of the Gileadites.",
+          "url": "https://ebible.org/engwebp/NUM26.htm#V29"
+        },
+        {
+          "ref": "NUM 32:39",
+          "text": "The children of Machir the son of Manasseh went to Gilead, took it, and dispossessed the Amorites who were therein.",
+          "url": "https://ebible.org/engwebp/NUM32.htm#V39"
+        },
+        {
+          "ref": "NUM 32:40",
+          "text": "Moses gave Gilead to Machir the son of Manasseh; and he lived therein.",
+          "url": "https://ebible.org/engwebp/NUM32.htm#V40"
+        }
+      ],
+      "detailsJa": "個人マキル（「ギレアドの父となった」）をbaseに置き、マキル人の家族をcollective contextにした分離は原文に合います。32:39の個人・子孫集団の二つの関係もどちらのpassagesにも保存されています。JOS/NUM共通EntityProfileCatalog.resolveでは同じ節に完全一致するcontextがある場合そのcontextだけが選ばれ、base側をcontextNotesへ添えません。したがって単独節のlookupはマキル人カードだけとなり、同節の個人マキルも示すという意味での「dual」はruntime表示で未達です。 NUM/JOS候補の現EntityProfiles.resolveはbaseを優先し、overlapping contextをreader contextNotesへ出し、各contextのfactもknownBy gateで添えることを確認したため、旧QUALIFIED所見（別workspaceのruntimeを前提としたもの）を撤回。"
+    },
+    {
+      "case": "NUM Joseph collective with four personal-ancestor contexts",
+      "status": "pass",
+      "currentState": {
+        "baseCollectiveCoordinates": [
+          "NUM 26:28",
+          "NUM 27:1",
+          "NUM 32:33",
+          "NUM 36:1"
+        ],
+        "personalContextCoordinates": [
+          "NUM 26:28",
+          "NUM 27:1",
+          "NUM 32:33",
+          "NUM 36:1"
+        ],
+        "personalContextKnownBy": "NUM 26:28"
+      },
+      "basis": [
+        {
+          "ref": "NUM 26:28",
+          "text": "The sons of Joseph after their families: Manasseh and Ephraim.",
+          "url": "https://ebible.org/engwebp/NUM26.htm#V28"
+        },
+        {
+          "ref": "NUM 27:1",
+          "text": "Then the daughters of Zelophehad, the son of Hepher, the son of Gilead, the son of Machir, the son of Manasseh, of the families of Manasseh the son of Joseph came near. These are the names of his daughters: Mahlah, Noah, Hoglah, Milcah, and Tirzah.",
+          "url": "https://ebible.org/engwebp/NUM27.htm#V1"
+        },
+        {
+          "ref": "NUM 32:33",
+          "text": "Moses gave to them, even to the children of Gad, and to the children of Reuben, and to the half-tribe of Manasseh the son of Joseph, the kingdom of Sihon king of the Amorites, and the kingdom of Og king of Bashan; the land, according to its cities and borders, even the cities of the surrounding land.",
+          "url": "https://ebible.org/engwebp/NUM32.htm#V33"
+        },
+        {
+          "ref": "NUM 36:1",
+          "text": "The heads of the fathers’ households of the family of the children of Gilead, the son of Machir, the son of Manasseh, of the families of the sons of Joseph, came near and spoke before Moses and before the princes, the heads of the fathers’ households of the children of Israel.",
+          "url": "https://ebible.org/engwebp/NUM36.htm#V1"
+        }
+      ],
+      "proposalSHA256": "99fdf0819ca4e5c7932037cb655dd8ca791c01fced3fc658d189d309eedfe28f",
+      "detailsJa": "各節はヨセフの名を父祖として明記し、同時に「ヨセフの子ら」の集団を扱うため、同ID内の個人contextと集団baseを併存させる根拠があります。4座標すべてに両方が残っています。単独節resolveでは個人contextがbaseを置き換えて集団側summary/factが表示されないため、dual表示はruntime側で未解決です。 NUM/JOS候補の現EntityProfiles.resolveはbaseを優先し、overlapping contextをreader contextNotesへ出し、各contextのfactもknownBy gateで添えることを確認したため、旧QUALIFIED所見（別workspaceのruntimeを前提としたもの）を撤回。"
+    },
+    {
+      "case": "NUM Manasseh collective/person dual at 32:33; later ancestor-only trimming",
+      "status": "pass",
+      "currentState": {
+        "baseCollectiveRetains": "NUM 32:33",
+        "baseExcludesAncestorOnly": [
+          "NUM 32:39",
+          "NUM 32:40",
+          "NUM 32:41",
+          "NUM 36:1"
+        ],
+        "personalContextIncludes": [
+          "NUM 26:28",
+          "NUM 26:29",
+          "NUM 27:1",
+          "NUM 32:33",
+          "NUM 32:39",
+          "NUM 32:40",
+          "NUM 32:41",
+          "NUM 36:1"
+        ]
+      },
+      "basis": [
+        {
+          "ref": "NUM 26:28",
+          "text": "The sons of Joseph after their families: Manasseh and Ephraim.",
+          "url": "https://ebible.org/engwebp/NUM26.htm#V28"
+        },
+        {
+          "ref": "NUM 26:29",
+          "text": "The sons of Manasseh: of Machir, the family of the Machirites; and Machir became the father of Gilead; of Gilead, the family of the Gileadites.",
+          "url": "https://ebible.org/engwebp/NUM26.htm#V29"
+        },
+        {
+          "ref": "NUM 27:1",
+          "text": "Then the daughters of Zelophehad, the son of Hepher, the son of Gilead, the son of Machir, the son of Manasseh, of the families of Manasseh the son of Joseph came near. These are the names of his daughters: Mahlah, Noah, Hoglah, Milcah, and Tirzah.",
+          "url": "https://ebible.org/engwebp/NUM27.htm#V1"
+        },
+        {
+          "ref": "NUM 32:33",
+          "text": "Moses gave to them, even to the children of Gad, and to the children of Reuben, and to the half-tribe of Manasseh the son of Joseph, the kingdom of Sihon king of the Amorites, and the kingdom of Og king of Bashan; the land, according to its cities and borders, even the cities of the surrounding land.",
+          "url": "https://ebible.org/engwebp/NUM32.htm#V33"
+        },
+        {
+          "ref": "NUM 32:39",
+          "text": "The children of Machir the son of Manasseh went to Gilead, took it, and dispossessed the Amorites who were therein.",
+          "url": "https://ebible.org/engwebp/NUM32.htm#V39"
+        },
+        {
+          "ref": "NUM 32:40",
+          "text": "Moses gave Gilead to Machir the son of Manasseh; and he lived therein.",
+          "url": "https://ebible.org/engwebp/NUM32.htm#V40"
+        },
+        {
+          "ref": "NUM 32:41",
+          "text": "Jair the son of Manasseh went and took its villages, and called them Havvoth Jair.",
+          "url": "https://ebible.org/engwebp/NUM32.htm#V41"
+        },
+        {
+          "ref": "NUM 36:1",
+          "text": "The heads of the fathers’ households of the family of the children of Gilead, the son of Machir, the son of Manasseh, of the families of the sons of Joseph, came near and spoke before Moses and before the princes, the heads of the fathers’ households of the children of Israel.",
+          "url": "https://ebible.org/engwebp/NUM36.htm#V1"
+        }
+      ],
+      "detailsJa": "32:33は「ヨセフの子マナセの半部族」と集団を示し、同時にマナセ個人を父祖として示すので両用法を維持する判断は妥当です。32:39–41および36:1の父称・系譜用法をbase集団から外し、個人contextだけに残すtrimも原文に合います。同節32:33の単独lookupは個人contextが集団baseを隠すruntime制約が残ります。 NUM/JOS候補の現EntityProfiles.resolveはbaseを優先し、overlapping contextをreader contextNotesへ出し、各contextのfactもknownBy gateで添えることを確認したため、旧QUALIFIED所見（別workspaceのruntimeを前提としたもの）を撤回。"
+    },
+    {
+      "case": "NUM Israel/Jacob personal context at 32:11",
+      "status": "pass",
+      "currentState": {
+        "collectiveBaseDoesNotInclude": "NUM 32:11",
+        "personalContextKnownBy": "NUM 32:11",
+        "personalContextIncludes": "NUM 32:11",
+        "nameGate": "NUM 32:11",
+        "wikipediaGate": "NUM 32:11"
+      },
+      "basis": [
+        {
+          "ref": "NUM 32:11",
+          "text": "‘Surely none of the men who came up out of Egypt, from twenty years old and upward, shall see the land which I swore to Abraham, to Isaac, and to Jacob; because they have not wholly followed me,",
+          "url": "https://ebible.org/engwebp/NUM32.htm#V11"
+        }
+      ],
+      "detailsJa": "WEBはアブラハム、イサク、ヤコブを誓約相手として名指します。イスラエルの民baseから32:11を外し、同じ安定IDの個人用contextを32:11から始めるのは安全です。日本語名とWikipediaリンクもこのcontext gateから解禁されます。"
+    },
+    {
+      "case": "JOS Joseph collective/personal coordinates",
+      "status": "pass",
+      "currentState": {
+        "collectiveBaseIncludes": [
+          "JOS 14:4",
+          "JOS 16:1",
+          "JOS 16:4",
+          "JOS 17:14",
+          "JOS 17:16",
+          "JOS 17:17",
+          "JOS 17:18",
+          "JOS 18:5",
+          "JOS 18:11",
+          "JOS 24:32"
+        ],
+        "personalContextKnownBy": "JOS 17:1",
+        "personalContextIncludes": [
+          "JOS 17:1",
+          "JOS 17:2",
+          "JOS 24:32"
+        ]
+      },
+      "basis": [
+        {
+          "ref": "JOS 14:4",
+          "text": "For the children of Joseph were two tribes, Manasseh and Ephraim. They gave no portion to the Levites in the land, except cities to dwell in, with their pasture lands for their livestock and for their property.",
+          "url": "https://ebible.org/engwebp/JOS14.htm#V4"
+        },
+        {
+          "ref": "JOS 16:1",
+          "text": "The lot came out for the children of Joseph from the Jordan at Jericho, at the waters of Jericho on the east, even the wilderness, going up from Jericho through the hill country to Bethel.",
+          "url": "https://ebible.org/engwebp/JOS16.htm#V1"
+        },
+        {
+          "ref": "JOS 16:4",
+          "text": "The children of Joseph, Manasseh and Ephraim, took their inheritance.",
+          "url": "https://ebible.org/engwebp/JOS16.htm#V4"
+        },
+        {
+          "ref": "JOS 17:1",
+          "text": "This was the lot for the tribe of Manasseh, for he was the firstborn of Joseph. As for Machir the firstborn of Manasseh, the father of Gilead, because he was a man of war, therefore he had Gilead and Bashan.",
+          "url": "https://ebible.org/engwebp/JOS17.htm#V1"
+        },
+        {
+          "ref": "JOS 17:2",
+          "text": "So this was for the rest of the children of Manasseh according to their families: for the children of Abiezer, for the children of Helek, for the children of Asriel, for the children of Shechem, for the children of Hepher, and for the children of Shemida. These were the male children of Manasseh the son of Joseph according to their families.",
+          "url": "https://ebible.org/engwebp/JOS17.htm#V2"
+        },
+        {
+          "ref": "JOS 17:14",
+          "text": "The children of Joseph spoke to Joshua, saying, “Why have you given me just one lot and one part for an inheritance, since we are a numerous people, because the LORD has blessed us so far?”",
+          "url": "https://ebible.org/engwebp/JOS17.htm#V14"
+        },
+        {
+          "ref": "JOS 17:17",
+          "text": "Joshua spoke to the house of Joseph, that is, to Ephraim and to Manasseh, saying, “You are a numerous people, and have great power. You shall not have one lot only;",
+          "url": "https://ebible.org/engwebp/JOS17.htm#V17"
+        },
+        {
+          "ref": "JOS 18:5",
+          "text": "They shall divide it into seven portions. Judah shall live in his borders on the south, and the house of Joseph shall live in their borders on the north.",
+          "url": "https://ebible.org/engwebp/JOS18.htm#V5"
+        },
+        {
+          "ref": "JOS 18:11",
+          "text": "The lot of the tribe of the children of Benjamin came up according to their families. The border of their lot went out between the children of Judah and the children of Joseph.",
+          "url": "https://ebible.org/engwebp/JOS18.htm#V11"
+        },
+        {
+          "ref": "JOS 24:32",
+          "text": "They buried the bones of Joseph, which the children of Israel brought up out of Egypt, in Shechem, in the parcel of ground which Jacob bought from the sons of Hamor the father of Shechem for a hundred pieces of silver. They became the inheritance of the children of Joseph.",
+          "url": "https://ebible.org/engwebp/JOS24.htm#V32"
+        }
+      ],
+      "proposalSHA256": "859a94e0771358dff57381b818fafd3eb54bb54a56b7e354cc7167bfba5ea580",
+      "detailsJa": "14:4・16:1/4・18章ではヨセフの子ら/家が集団、17:1/2ではヨセフが父祖、24:32ではヨセフ本人の骨と相続する子らが同じ節に登場します。base/contextの座標仕分け自体は原文支持です。ただし単独24:32のresolveで個人contextが選ばれ、baseの集団的相続factが非表示になります。 NUM/JOS候補の現EntityProfiles.resolveはbaseを優先し、overlapping contextをreader contextNotesへ出し、各contextのfactもknownBy gateで添えることを確認したため、旧QUALIFIED所見（別workspaceのruntimeを前提としたもの）を撤回。"
+    },
+    {
+      "case": "JOS Manasseh dual and personal-only JOS 17:3",
+      "status": "pass",
+      "currentState": {
+        "collectiveBaseKeeps": [
+          "JOS 13:31",
+          "JOS 17:1",
+          "JOS 17:2"
+        ],
+        "personalContextKeeps": [
+          "JOS 13:31",
+          "JOS 17:1",
+          "JOS 17:2",
+          "JOS 17:3"
+        ],
+        "collectiveBaseRemoves": "JOS 17:3",
+        "personalContextKnownBy": "JOS 13:31"
+      },
+      "basis": [
+        {
+          "ref": "JOS 13:31",
+          "text": "Half Gilead, Ashtaroth, and Edrei, the cities of the kingdom of Og in Bashan, were for the children of Machir the son of Manasseh, even for the half of the children of Machir according to their families.",
+          "url": "https://ebible.org/engwebp/JOS13.htm#V31"
+        },
+        {
+          "ref": "JOS 17:1",
+          "text": "This was the lot for the tribe of Manasseh, for he was the firstborn of Joseph. As for Machir the firstborn of Manasseh, the father of Gilead, because he was a man of war, therefore he had Gilead and Bashan.",
+          "url": "https://ebible.org/engwebp/JOS17.htm#V1"
+        },
+        {
+          "ref": "JOS 17:2",
+          "text": "So this was for the rest of the children of Manasseh according to their families: for the children of Abiezer, for the children of Helek, for the children of Asriel, for the children of Shechem, for the children of Hepher, and for the children of Shemida. These were the male children of Manasseh the son of Joseph according to their families.",
+          "url": "https://ebible.org/engwebp/JOS17.htm#V2"
+        },
+        {
+          "ref": "JOS 17:3",
+          "text": "But Zelophehad, the son of Hepher, the son of Gilead, the son of Machir, the son of Manasseh, had no sons, but daughters. These are the names of his daughters: Mahlah, Noah, Hoglah, Milcah, and Tirzah.",
+          "url": "https://ebible.org/engwebp/JOS17.htm#V3"
+        }
+      ],
+      "proposalSHA256": "acc051938b90a04333b2e3a92cc5faabd510d20524220241a5c3e0805db5ecab",
+      "detailsJa": "13:31と17:1/2はマナセの子孫・部族の相続と、系譜上のマナセ本人を併せて示します。17:3はツェロフハドの父系系譜中のマナセで個人用法のみなので、baseから除く現在のstagingは適切です。同節のdual座標ではexact-context優先により他方の文脈がreader表示されないruntime注意は別途残ります。 NUM/JOS候補の現EntityProfiles.resolveはbaseを優先し、overlapping contextをreader contextNotesへ出し、各contextのfactもknownBy gateで添えることを確認したため、旧QUALIFIED所見（別workspaceのruntimeを前提としたもの）を撤回。"
+    },
+    {
+      "case": "JOS Reuben / Bohan boundary stones",
+      "status": "pass",
+      "currentState": {
+        "collectiveBaseExcludes": [
+          "JOS 15:6",
+          "JOS 18:17"
+        ],
+        "unidentifiedEponymContextIncludes": [
+          "JOS 15:6",
+          "JOS 18:17"
+        ],
+        "directlyNamed": false
+      },
+      "basis": [
+        {
+          "ref": "JOS 15:6",
+          "text": "The border went up to Beth Hoglah, and passed along by the north of Beth Arabah; and the border went up to the stone of Bohan the son of Reuben.",
+          "url": "https://ebible.org/engwebp/JOS15.htm#V6"
+        },
+        {
+          "ref": "JOS 18:17",
+          "text": "It extended northward, went out at En Shemesh, and went out to Geliloth, which is opposite the ascent of Adummim. It went down to the stone of Bohan the son of Reuben.",
+          "url": "https://ebible.org/engwebp/JOS18.htm#V17"
+        }
+      ],
+      "detailsJa": "本文が直接記すのは「ルベンの子ボハンの石」という境界標です。族祖ルベン本人だと断定せずunidentified-eponym contextに残した判断、base集団passagesとfactsから外した処理、map occurrenceをdirectlyNamed=falseとした処理は慎重で原文と整合します。"
+    },
+    {
+      "case": "JOS five explicit aliases, revelation gates, source merging and deduplication",
+      "status": "pass",
+      "currentState": {
+        "aliases": [
+          {
+            "aliasID": "place:leshem_727",
+            "canonicalID": "place:dan_323",
+            "knownBy": {
+              "chapter": 19,
+              "verse": 47
+            },
+            "sourceDraftPreserved": true,
+            "coordinatePromoted": false
+          },
+          {
+            "aliasID": "place:kiriath-sepher_703",
+            "canonicalID": "place:debir_325",
+            "knownBy": {
+              "chapter": 15,
+              "verse": 15
+            },
+            "sourceDraftPreserved": true,
+            "coordinatePromoted": false
+          },
+          {
+            "aliasID": "place:kiriath-sannah_702",
+            "canonicalID": "place:debir_325",
+            "knownBy": {
+              "chapter": 15,
+              "verse": 49
+            },
+            "sourceDraftPreserved": true,
+            "coordinatePromoted": false
+          },
+          {
+            "aliasID": "place:kiriath-baal_699",
+            "canonicalID": "place:kiriath-jearim_701",
+            "knownBy": {
+              "chapter": 15,
+              "verse": 60
+            },
+            "sourceDraftPreserved": true,
+            "coordinatePromoted": false
+          },
+          {
+            "aliasID": "place:baalah_135",
+            "canonicalID": "place:kiriath-jearim_701",
+            "knownBy": {
+              "chapter": 15,
+              "verse": 9
+            },
+            "sourceDraftPreserved": true,
+            "coordinatePromoted": false
+          }
+        ],
+        "duplicateAliasOccurrences": 0,
+        "coordinatePromoted": false
+      },
+      "basis": [
+        {
+          "book": "JOS",
+          "aliasID": "place:leshem_727",
+          "canonicalID": "place:dan_323",
+          "primaryExplicitSameFeature": true,
+          "newIDCreated": false,
+          "status": "root-primary-verified; independent closure and spoiler-safe presentation pending",
+          "citations": [
+            {
+              "ref": "JOS 19:47",
+              "text": "The border of the children of Dan went out beyond them; for the children of Dan went up and fought against Leshem, and took it, and struck it with the edge of the sword, and possessed it, and lived therein, and called Leshem, Dan, after the name of Dan their forefather.",
+              "url": "https://ebible.org/engwebp/JOS19.htm#V47"
+            }
+          ],
+          "integrationRequirements": [
+            "Preserve original IDs in index/source provenance; alias in book runtime only",
+            "Do not double-count or show two cards/map pins for same feature in one passage",
+            "Gate renamed/alternative-name note to its revealing verse",
+            "Do not promote legacy coordinates from identity equivalence alone"
+          ]
+        },
+        {
+          "book": "JOS",
+          "aliasID": "place:kiriath-sepher_703",
+          "canonicalID": "place:debir_325",
+          "primaryExplicitSameFeature": true,
+          "newIDCreated": false,
+          "status": "root-primary-verified; independent closure and spoiler-safe presentation pending",
+          "citations": [
+            {
+              "ref": "JOS 15:15",
+              "text": "He went up against the inhabitants of Debir: now the name of Debir before was Kiriath Sepher.",
+              "url": "https://ebible.org/engwebp/JOS15.htm#V15"
+            }
+          ],
+          "integrationRequirements": [
+            "Preserve original IDs in index/source provenance; alias in book runtime only",
+            "Do not double-count or show two cards/map pins for same feature in one passage",
+            "Gate renamed/alternative-name note to its revealing verse",
+            "Do not promote legacy coordinates from identity equivalence alone"
+          ]
+        },
+        {
+          "book": "JOS",
+          "aliasID": "place:kiriath-sannah_702",
+          "canonicalID": "place:debir_325",
+          "primaryExplicitSameFeature": true,
+          "newIDCreated": false,
+          "status": "root-primary-verified; independent closure and spoiler-safe presentation pending",
+          "citations": [
+            {
+              "ref": "JOS 15:49",
+              "text": "Dannah, Kiriath Sannah (which is Debir),",
+              "url": "https://ebible.org/engwebp/JOS15.htm#V49"
+            }
+          ],
+          "integrationRequirements": [
+            "Preserve original IDs in index/source provenance; alias in book runtime only",
+            "Do not double-count or show two cards/map pins for same feature in one passage",
+            "Gate renamed/alternative-name note to its revealing verse",
+            "Do not promote legacy coordinates from identity equivalence alone"
+          ]
+        },
+        {
+          "book": "JOS",
+          "aliasID": "place:kiriath-baal_699",
+          "canonicalID": "place:kiriath-jearim_701",
+          "primaryExplicitSameFeature": true,
+          "newIDCreated": false,
+          "status": "root-primary-verified; independent closure and spoiler-safe presentation pending",
+          "citations": [
+            {
+              "ref": "JOS 15:60",
+              "text": "Kiriath Baal (also called Kiriath Jearim), and Rabbah; two cities with their villages.",
+              "url": "https://ebible.org/engwebp/JOS15.htm#V60"
+            },
+            {
+              "ref": "JOS 18:14",
+              "text": "The border extended, and turned around on the west quarter southward, from the mountain that lies before Beth Horon southward; and ended at Kiriath Baal (also called Kiriath Jearim), a city of the children of Judah. This was the west quarter.",
+              "url": "https://ebible.org/engwebp/JOS18.htm#V14"
+            }
+          ],
+          "integrationRequirements": [
+            "Preserve original IDs in index/source provenance; alias in book runtime only",
+            "Do not double-count or show two cards/map pins for same feature in one passage",
+            "Gate renamed/alternative-name note to its revealing verse",
+            "Do not promote legacy coordinates from identity equivalence alone"
+          ]
+        },
+        {
+          "book": "JOS",
+          "aliasID": "place:baalah_135",
+          "canonicalID": "place:kiriath-jearim_701",
+          "primaryExplicitSameFeature": true,
+          "newIDCreated": false,
+          "status": "root-primary-verified; independent closure pending; Baalah134 retained separate",
+          "citations": [
+            {
+              "ref": "JOS 15:9",
+              "text": "The border extended from the top of the mountain to the spring of the waters of Nephtoah, and went out to the cities of Mount Ephron; and the border extended to Baalah (also called Kiriath Jearim);",
+              "url": "https://ebible.org/engwebp/JOS15.htm#V9"
+            }
+          ],
+          "integrationRequirements": [
+            "Preserve original IDs in index/source provenance; alias in book runtime only",
+            "Do not double-count or show two cards/map pins for same feature in one passage",
+            "Gate renamed/alternative-name note to its revealing verse",
+            "Do not promote legacy coordinates from identity equivalence alone"
+          ]
+        }
+      ],
+      "detailsJa": "固定WEBの別名節はLeshem→Dan (19:47)、Kiriath Sepher→Debir (15:15)、Kiriath Sannah→Debir (15:49)、Kiriath Baal→Kiriath Jearim (15:60)、Baalah→Kiriath Jearim (15:9)を明示します。5 alias IDは元profile/source履歴からのみ退けられ、stagingのoccurrencesに別alias pinはありません。すべてのalias由来source.knownByは対応revelation gate以前にならず、同節既存factへprimary sourceだけが併合されています。canonical coordinatesはいずれもnullで別名だけから座標を昇格していません。"
+    },
+    {
+      "case": "Five explicit territorial place profiles",
+      "status": "pass",
+      "currentState": {},
+      "detailsJa": "stagingでidentityType=territoryを持つ5件（NUM/JOS place:east-manasseh-half-tribe_1290、JOS place:benjamin-territory_1293、place:ephraim-territory_1292、place:gad_1286）はすべてkind=place、coordinate=nullです。地理的な相続地域をcollective/person扱いにしない分類です。固定WEBの対応はNUM32:39とJOS13:29,18:11,16:5,13:24です。NUM32:39の表示注記は「名称は本文の定型呼称ではない」として範囲を限定します。"
+    },
+    {
+      "case": "JOS Israel/Jacob at 24:32",
+      "status": "fail",
+      "currentState": {
+        "collectiveBasePassagePresent": false,
+        "collectiveFactPresentButShadowed": true,
+        "personalContextPassagePresent": true,
+        "personalContextKnownBy": "JOS 24:4"
+      },
+      "basis": [
+        {
+          "ref": "JOS 24:32",
+          "text": "They buried the bones of Joseph, which the children of Israel brought up out of Egypt, in Shechem, in the parcel of ground which Jacob bought from the sons of Hamor the father of Shechem for a hundred pieces of silver. They became the inheritance of the children of Joseph.",
+          "url": "https://ebible.org/engwebp/JOS24.htm#V32"
+        }
+      ],
+      "detailsJa": "固定WEB 24:32はイスラエルの人々がヨセフの骨を運んだことと、ヤコブがハモルの子らから土地を買ったことを同節に明記します。stagingはイスラエルbaseの24:32 passageをremove-context-onlyとして削除しましたが、同base factは残り、individual context Jacobは24:32を含みます。exactContext選択時にbaseは表示されず、集団主体「イスラエルの人々」という本文用例がruntime catalogから実質脱落します。base passageを保持するか別contextで集団用法も表現し、単独節lookupで両方の意味を読者へ示す対応が必要です。"
+    },
+    {
+      "case": "Source maps, alias name gates, Wikipedia gates/rights, and staging structure",
+      "status": "qualified",
+      "currentState": {
+        "reportErrors": [],
+        "aliasCounts": 5,
+        "territoryCount": 5,
+        "sourceIDsResolved": true,
+        "duplicateOccurrences": false,
+        "futureNameGateViolations": 0,
+        "futureWikipediaGateViolations": 0,
+        "secondarySourceRightsMissing": 0,
+        "coordinatesPromoted": 0
+      },
+      "detailsJa": "staging reportはerrors=0。両bookでsourceIDsのdanglingなし、occurrencesの(entityID,chapter,verse)重複なし。profile/contextのnames・Wikipedia knownBy gateはvariant自身のknownByより前にならず、secondary sourceのlicense/licenseURL/attribution欠落なし。resolverはsource/Wikipedia/nameをpassage.end時点でgateする。未解決なのは、exact contextの選択で同じ節に共存するbase/別contextの意味が表示から落ちること、JOS Israel24:32のbase passage除去による集団用例の欠落、及びplace:dan_323 identityNoteJaの「このIDは…」という読者向けでない編集語。 誤参照していた旧runtimeではなく現NJC runtimeでも再評価したが、base passageが除去されているため解決しない。"
+    }
+  ],
+  "runtimeNote": {
+    "file": "candidate/apps/ios/Sources/Core/EntityProfiles.swift",
+    "sha256": "33395ae38a954723419d50a83c8ed708171c2ece27b9c8156ba1d210b00ef1ee",
+    "detailsJa": "NUM/JOS実装はselectedContextを決める際、まずoverlaps(base)を確認し、baseが同じ選択節・範囲に有効ならbaseを選び、overlaps(contexts)をcontextNotesへ併記します。補足はcontext.nameJa+summaryJa+knownBy時点で表示可のfactsです。従ってbase個人とcollective context、base collectiveとindividual contextが同じ節にあるdual variantsは両方表示されます。baseのpassageを除去したときはoverlaps(base)=falseとなりvariant単独になるので、JOS Israel/Jacob 24:32は下記failのままです。"
+  },
+  "limitationsJa": "指定staging snapshotの意味分離・統合処理を、固定WEB、source maps、context proposals、builder、NUM/JOS runtimeで照合。全profileの意味校閲・Wikipedia全記事再取得・公開承認ではない。testsは既存ログの実績を確認し、このreviewでは新規実行していない。",
+  "runtimeCorrectionHistory": [
+    {
+      "supersededAtUTC": "2026-10-15T22:25:53Z",
+      "priorTarget": "../romans-leviticus-entities-work/candidate/apps/ios/Sources/Core/EntityProfiles.swift",
+      "priorTargetSHA256": "3a2d72cf63dc880bfd4f94be7f4aaf1cfe57212c8f4d32497c29b93c455d3a9d",
+      "priorReasonJa": "resolveはexactContextがあるとそれだけをprofileとして選び、selectedContext時のcontextNotesを空配列にする。同一節でbaseとcontext variantの双方に該当座標がある場合、単独節UIでは一方の説明とfactsが選ばれ、他方は補足されない。範囲選択でexactContextが成立せずbaseがoverlapするときのみ、overlaps(contexts)からcontextNotesを生成する。ここで新規runtime testは実行していない。",
+      "correctionJa": "誤ってROM/LEV候補のEntityProfiles.swiftを参照していた。この所見は無効として履歴に保存。NUM/JOS候補の実装を現物で確認した。"
+    }
+  ],
+  "runtimeVerification": {
+    "coreTestLog": "numbers-joshua-full-core-test.log",
+    "coreTestLogSHA256": "3a5adce5c72f4b400e8279f0be7c64f412463b6fe374c47a73bdf64b87b10147",
+    "coreTestResult": "197 tests, 0 failures",
+    "uiTestLog": "numbers-joshua-ui-test.log",
+    "uiTestLogSHA256": "7312f21dd1f9bf90f82062167c075055ab96b86725a50be5a5ac9b5565132b09",
+    "uiTestResult": "testGileadBothMeanings passed; 4 UI tests, 0 failures",
+    "provenanceJa": "親が指定した現NJC testログを読み取り確認。レビュー者による再実行ではない。"
+  }
+}

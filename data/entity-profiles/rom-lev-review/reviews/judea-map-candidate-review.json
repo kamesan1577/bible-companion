@@ -1,0 +1,69 @@
+{
+  "reviewType": "map-policy-candidate-review",
+  "generatedAt": "2026-10-15",
+  "scope": {
+    "book": "ROM",
+    "entityID": "place:judea_657",
+    "readOnly": true
+  },
+  "inputs": {
+    "mapPolicyPath": "reviews/map-policy-places_1.json",
+    "mapPolicySHA256": "8640f5049eba0a8f708f7f8d482b7ff3a5b6f250b784b243d683f0e944f4625c",
+    "profilePath": "drafts/places_1/ROM_place_judea_657.json",
+    "profileSHA256": "722ad88563a7139875579f55f73561178c98161624a2fc9bf971e784bd85a5c1",
+    "evidencePath": "evidence/places_1/ROM_place_judea_657.json",
+    "evidenceSHA256": "3341b2eb15d74c92eaa9903bfc4a27d682f410db56c59f361f48b84112d4ebb3",
+    "witness": "inventory/targets/rom-web-verses.json",
+    "witnessSHA256": "44ec6ff9d2d29957f88db70c55210e171d3422dbc8e005545d309d665db818ed",
+    "legacyCandidateSource": "candidate/apps/ios/Sources/Core/Resources/entity-index.json",
+    "legacyCandidateCoordinate": [
+      31.777444,
+      35.234935
+    ],
+    "geographySource": "https://raw.githubusercontent.com/isawnyu/pleiades.datasets/e0ad89cad8f55ab4b85138fb4f852d9ca07b1ebc/data/json/6/8/7/9/687934.json",
+    "geographySourceID": "pleiades-judea-687934"
+  },
+  "findingJa": "旧候補点(31.777444,35.234935)がエルサレム付近にあることだけを理由に、ユダヤ地域の地図候補から排除するのは過度に厳しい。地名が指す広域地域の参考位置として、由来と不確実性を表示した候補を保つ余地がある。一方、固定Pleiades記録687934のfeatureはlocation_precision=roughの「Undetermined location」で、矩形polygonの東端は経度35.0、旧候補点は経度35.234935でその粗いpolygonの外側にある。これは厳密な地域境界の反証にも包含の根拠にもならない。同記録は地域説明を与えるが代表点を確認していない。",
+  "proposedPolicy": {
+    "book": "ROM",
+    "id": "place:judea_657",
+    "category": "region",
+    "allowCandidateMap": true,
+    "allowFrom": [
+      {
+        "chapter": 15,
+        "verse": 31
+      }
+    ],
+    "suggestedMapLabelJa": "ユダヤ（地域／エルサレム付近の旧参考点）",
+    "suggestedDisclosureJa": "旧候補の参考位置です。Pleiades固定記録の粗い未確定範囲からも位置は裏付けられておらず、地域の中心・境界・聖句中の出来事の正確な地点を表しません。",
+    "reasonJa": "ローマ15:31はユダヤという地域名を明記する。エルサレム付近というだけで候補を抑止せず、候補由来と未確定性を表示した参考点として復元を提案する。Pleiades687934は地域の説明とrough/undeterminedの polygonを含むが、旧候補点を検証する点データではない。正確な範囲・中心・当該節の出来事地点と誤認させないラベルを地図UIが提供できる場合に限る。",
+    "verificationState": "legacy-candidate-only; profile.coordinate=null; not independently verified; do not present as centroid, boundary, site, or city pin"
+  },
+  "currentPolicyAssessmentJa": "現行allowCandidateMap=falseの理由「エルサレム市街付近で、広域地域の代表点でない」だけでは、地域候補の入口を閉じる根拠として足りない。ラベルを「ユダヤ（地域／エルサレム付近の旧参考点）」とし、候補由来・不確実性を併記できる場合はallowCandidateMap=true、allowFrom=[ROM15:31]が妥当。UI側に明確なラベル/注意表示の手段がない場合に限り、誤誘導防止のため表示留保は適切。",
+  "sourceBasis": [
+    {
+      "source": "固定WEB ROM15:31",
+      "url": "https://ebible.org/engwebp/ROM15.htm#V31",
+      "text": "that I may be delivered from those who are disobedient in Judea, and that my service which I have for Jerusalem may be acceptable to the saints,",
+      "supportsJa": "Judea is directly named as a region; allows map association from this verse."
+    },
+    {
+      "source": "Pleiades pinned record 687934",
+      "url": "https://raw.githubusercontent.com/isawnyu/pleiades.datasets/e0ad89cad8f55ab4b85138fb4f852d9ca07b1ebc/data/json/6/8/7/9/687934.json",
+      "supportsJa": "PleiadesはIudaeaを歴史的地域として説明する。固定featureはlocation_precision=rough、title=Undetermined locationの矩形polygonで、範囲精度が粗い。旧候補点はこの粗い矩形の外側だが、それを厳密な境界とは扱えず、含むとも除外するとも裏付けない。"
+    },
+    {
+      "source": "existing index candidate",
+      "path": "candidate/apps/ios/Sources/Core/Resources/entity-index.json",
+      "supportsJa": "Provides an existing candidate location near Jerusalem only; does not independently prove exact placement."
+    },
+    {
+      "source": "Pleiades pinned feature 687934/undetermined",
+      "url": "https://raw.githubusercontent.com/isawnyu/pleiades.datasets/e0ad89cad8f55ab4b85138fb4f852d9ca07b1ebc/data/json/6/8/7/9/687934.json",
+      "sourceLineEvidence": "lines 161–198 in fetched pinned JSON",
+      "supportsJa": "polygon corners: [34.5,31.5] to [35.0,32.0]; feature property location_precision=rough and title=Undetermined location. Candidate (lon 35.234935, lat 31.777444) lies outside this rough placeholder polygon, so the geometry cannot certify it."
+    }
+  ],
+  "mutationStatus": "No profile, policy, app, or coordinate file was changed. This is a proposal for review."
+}

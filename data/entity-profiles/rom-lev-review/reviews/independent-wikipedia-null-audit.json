@@ -1,0 +1,745 @@
+{
+  "audit": "Independent search/read audit of accepted ROM/LEV Wikipedia-null person profiles plus the two Israel/Jacob context variants.",
+  "auditDate": "2026-10-15",
+  "workspace": "<local-user>/Documents/Codex/2026-10-15/task-2/romans-leviticus-entities-work",
+  "scope": {
+    "eligibleNullDrafts": 25,
+    "contextVariantsIncluded": 2,
+    "total": 27,
+    "exclusions": "profile is null or profile.passages is empty; no draft/app edits made."
+  },
+  "methodJa": "現行profileのID・初出節を確認し、日本語記事を優先して名前検索、適切な英語記事も検索・実読。候補ページ本文と節見出しを読み、対象の直接本文記述、同名別人、集団/個人、後代伝承、記事の曖昧さ回避を確認した。読んでいない記事や検索結果だけの候補は採用せず、同一性未確定は保留、対象外/不適切な総説は不適合とした。Wikipediaは一次本文の代用にしていない。",
+  "items": [
+    {
+      "book": "LEV",
+      "id": "person:elizaphan_1189",
+      "draftPath": "drafts/persons_2/LEV_person_elizaphan_1189.json",
+      "draftSHA256": "47b7cbf64f03b2481273ebdf8743e6cbe09c479b13ba7bada1c10b6436f82d00",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Elizaphan Lev 10:4 Wikipedia",
+        "Elzaphan Lev 10:4 Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Nadab_and_Abihu",
+          "observedJa": "## Violation of God’s law and punishment; body-removal paragraph (WEB Lev 10:4 name spelling Elzaphan)."
+        }
+      ],
+      "status": "fit",
+      "identityBasisJa": "記事はMishaelとElzaphanをウジエルの子とし、レビ記10:4に結び付けている。profileのElizaphanと英語綴りの差を認識して照合。",
+      "recommendedWikipedia": {
+        "title": "Nadab and Abihu",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Nadab_and_Abihu",
+        "kind": "related-section",
+        "noteJa": "記事中でレビ記10:4のエルザファン（Elzaphan）を確認。ヘブライ語名の異綴りを含め、ウジエルの子で遺体搬出を命じられた人物として本文が一致する。記事の他の物語情報はこのプロフィールに移さない。",
+        "identityVerified": true
+      }
+    },
+    {
+      "book": "LEV",
+      "id": "person:mishael_2090",
+      "draftPath": "drafts/persons_2/LEV_person_mishael_2090.json",
+      "draftSHA256": "72fb2180b6ec82cabc15ac2280c79f3689c574636c847d54bad58f91bbe9e7be",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Mishael son of Uzziel Leviticus 10:4 Wikipedia",
+        "ミシャエル ウジエル レビ記10:4 Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Mishael",
+          "observedJa": "見出しMishaelの該当段落: Uzzielの子、Lev 10:4でNadab/Abihuの遺体搬出を命じられる人物。DanielのMishaelとは別人として併記。"
+        }
+      ],
+      "status": "fit",
+      "identityBasisJa": "対象節と親系統が記事記述で明示され、Danielの同名人物も明確に分離。",
+      "recommendedWikipedia": {
+        "title": "List of minor Hebrew Bible figures, L–Z § Mishael",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Mishael",
+        "kind": "shared-section",
+        "noteJa": "ミシャエルの項はウジエルの子としてレビ記10:4の人物を明記し、ダニエル書の同名人物と区別する。",
+        "identityVerified": true
+      }
+    },
+    {
+      "book": "LEV",
+      "id": "person:shelomith_2605",
+      "draftPath": "drafts/persons_2/LEV_person_shelomith_2605.json",
+      "draftSHA256": "3120e1512834b1325e65a4d5ef2ea716b7e15179e0cfcfc40c846c82575584aa",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Shelomith bat Dibri Leviticus 24:11 Wikipedia",
+        "シェロミト ディブリ レビ記24:11 Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Shelomith_bat_Dibri",
+          "observedJa": "導入とBiblical narrative冒頭: Lev 24:10–23の女性、Dibriの娘と明記。記事は息子の後の出来事も扱う。"
+        }
+      ],
+      "status": "fit",
+      "identityBasisJa": "記事冒頭がレビ記24章とDibriの娘を具体的に記載。",
+      "recommendedWikipedia": {
+        "title": "Shelomith bat Dibri",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Shelomith_bat_Dibri",
+        "kind": "article",
+        "noteJa": "レビ記24:11のディブリの娘シェロミトを扱う記事。息子についての後続叙述や記事内の解釈をプロフィールへ先取りしない。",
+        "identityVerified": true
+      }
+    },
+    {
+      "book": "ROM",
+      "id": "person:adam_78",
+      "draftPath": "drafts/persons_2/ROM_person_adam_78.json",
+      "draftSHA256": "51aed2514bf399e11813d5ce1b31c74d7c0b5d891c60300591bfc7b5bfc731bf",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Adam Romans 5:12 5:14 Wikipedia",
+        "アダム ローマの信徒への手紙5:12 5:14 ウィキペディア"
+      ],
+      "readPages": [
+        {
+          "url": "https://ja.wikipedia.org/wiki/アダム",
+          "observedJa": "冒頭は聖書諸宗教のAdamを扱う。記事内では名詞/固有名の用法区別と創世記由来を説明。"
+        }
+      ],
+      "status": "qualified",
+      "identityBasisJa": "日本語記事は聖書のAdamを扱う。ただし固定WEBでローマ5:12の名は「one man」、5:14でAdamと明記されるため profileのknownByより早くリンク/記事名を露出させない。",
+      "recommendedWikipedia": {
+        "title": "アダム",
+        "language": "ja",
+        "url": "https://ja.wikipedia.org/wiki/アダム",
+        "kind": "article",
+        "noteJa": "聖書のアダムに関する記事。ローマ5:12は「一人の人」で、固有名Adamは5:14で現れるため、記事タイトルやリンクを表示する場合は5:14以後に限定する。",
+        "identityVerified": true,
+        "availableFrom": {
+          "chapter": 5,
+          "verse": 14
+        }
+      }
+    },
+    {
+      "book": "ROM",
+      "id": "person:benjamin_463",
+      "draftPath": "drafts/persons_2/ROM_person_benjamin_463.json",
+      "draftSHA256": "1156eec69953edd12ea44393ee689719da2ef85a112e4cc2a36ff8d6c80949a2",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Tribe of Benjamin Romans 11:1 Wikipedia",
+        "ベニヤミン族 ローマ11:1 Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://ja.wikipedia.org/wiki/ベニヤミン族",
+          "observedJa": "本文冒頭: ベニヤミンを祖とする古代イスラエルの部族と説明。歴史節は創世記46:21も記載。"
+        }
+      ],
+      "status": "fit",
+      "identityBasisJa": "現在の草稿はcollective。日本語記事も個人Benjaminでなく部族を主題としており、対象分類に一致。",
+      "recommendedWikipedia": {
+        "title": "ベニヤミン族",
+        "language": "ja",
+        "url": "https://ja.wikipedia.org/wiki/ベニヤミン族",
+        "kind": "article",
+        "noteJa": "古代イスラエルの部族を扱う記事で、ベニヤミン個人ではなくローマ11:1の部族名に対応する。",
+        "identityVerified": true
+      }
+    },
+    {
+      "book": "ROM",
+      "id": "person:epaenetus_1194",
+      "draftPath": "drafts/persons_2/ROM_person_epaenetus_1194.json",
+      "draftSHA256": "9e6c03af88afdd55cf6181a9cf41365f3307e97808433854f331baa905ca1912",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Epaenetus Romans 16:5 Wikipedia",
+        "エパネト ローマ16:5 Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Epaenetus",
+          "observedJa": "曖昧さ回避ページ。Epenetus of Carthage等を列挙。"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Epenetus_of_Carthage",
+          "observedJa": "記事は“first convert in the Province of Asia”と記し、固定WEB Rom 16:5のAchaiaと不一致。"
+        }
+      ],
+      "status": "no-fit",
+      "identityBasisJa": "候補Epenetus of Carthageは同名候補だが、記事はAsiaの初穂、固定WEBはAchaiaの初穂。本文差と同一性が未解決なのでリンクしない。",
+      "recommendedWikipedia": null
+    },
+    {
+      "book": "ROM",
+      "id": "person:god_1324",
+      "draftPath": "drafts/persons_2/ROM_person_god_1324.json",
+      "draftSHA256": "985e1575f0b76327051a4b3975f02844f2bf89a89be48734cfa12c3c96a97080",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "God Romans 1:1 Wikipedia",
+        "神 ローマ1:1 ウィキペディア"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/God",
+          "observedJa": "比較宗教・神概念全般の総説。特定のローマ1:1文脈を同定する記事ではない。"
+        },
+        {
+          "url": "https://ja.wikipedia.org/wiki/神",
+          "observedJa": "神という一般語・宗教概念の総説。"
+        }
+      ],
+      "status": "no-fit",
+      "identityBasisJa": "英語・日本語のGod/神は複数宗教・概念を広く扱う総説で、ローマ書の個別表現を照合する記事として適切でない。",
+      "recommendedWikipedia": null
+    },
+    {
+      "book": "ROM",
+      "id": "person:hermas_1501",
+      "draftPath": "drafts/persons_2/ROM_person_hermas_1501.json",
+      "draftSHA256": "80c367647f07b805e0b382a790de6378aafce936ee72a7f54417c46be5db066b",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Hermas Romans 16:14 Wikipedia",
+        "ヘルマ ローマ16:14 Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Hermas",
+          "observedJa": "人名一覧。Hermas of Dalmatia, Hermas of Philippopolis, 2世紀のfreedman等を列挙。"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Hermas_(freedman)",
+          "observedJa": "2世紀の著者/解放奴隷の記事。ローマ16章人物ではない。"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Hermas_of_Dalmatia",
+          "observedJa": "別記事はHermas of Dalmatiaを扱い、通常Romans 16:14のHermesと同定するとの後代伝承。"
+        }
+      ],
+      "status": "no-fit",
+      "identityBasisJa": "同名候補ページは人名曖昧さ、2世紀の著者、またはHermesへの後代の同定。ローマ16:14のこの名前の人物を確実に特定できない。",
+      "recommendedWikipedia": null
+    },
+    {
+      "book": "ROM",
+      "id": "person:jason_742",
+      "draftPath": "drafts/persons_2/ROM_person_jason_742.json",
+      "draftSHA256": "fd090c9b870d7efac67ab0717e34584d535d042581d4e81e133b71fbe32f0f7b",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Jason Romans 16:21 Acts 17 Wikipedia",
+        "ヤソン ローマ16:21 ウィキペディア"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Jason_of_Thessalonica",
+          "observedJa": "導入はActs 17とRomans 16:21を併記。同一人物とすることは本文中で“very probably”と表現。"
+        }
+      ],
+      "status": "qualified",
+      "identityBasisJa": "記事はRomans16:21に明示的に言及する一方Actsとの人物同一視は“very probably”。ROMの記載対象としての記事リンクは可能だが、Acts側の同一人物性を事実にしない。",
+      "recommendedWikipedia": {
+        "title": "Jason of Thessalonica",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Jason_of_Thessalonica",
+        "kind": "article",
+        "noteJa": "記事はローマ16:21のヤソンに直接言及するが、使徒17章の人物との同一性は記事自身も蓋然的とする。ローマ書単独の人物紹介に同一視やテサロニケ出身を加えない。",
+        "identityVerified": true
+      }
+    },
+    {
+      "book": "ROM",
+      "id": "person:julia_1762",
+      "draftPath": "drafts/persons_2/ROM_person_julia_1762.json",
+      "draftSHA256": "54050a244b430b01c9d4c407b37c0b06bf3f9e412b94d60fc8224b3cf0cf2438",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Julia Romans 16:15 Wikipedia",
+        "ユリア ローマ16:15 Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_New_Testament_figures#Julia",
+          "observedJa": "Julia項: Romans16:15でPaulが挨拶する女性。Philologusの妻/姉妹という関係は推測形。"
+        }
+      ],
+      "status": "fit",
+      "identityBasisJa": "ローマ16:15人物として直接対応。家族関係は仮説であり不採用にすべき。",
+      "recommendedWikipedia": {
+        "title": "List of minor New Testament figures § Julia",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_New_Testament_figures#Julia",
+        "kind": "shared-section",
+        "noteJa": "ユリア本人はローマ16:15の挨拶対象として記載。フィロロゴとの家族関係は記事も推測としているためプロフィールへ加えない。",
+        "identityVerified": true
+      }
+    },
+    {
+      "book": "ROM",
+      "id": "person:lucius_1833",
+      "draftPath": "drafts/persons_2/ROM_person_lucius_1833.json",
+      "draftSHA256": "33a7f8f1a811fad4385ffbfe92367b73ccf5e6cdf617dc111b3db524e8f290ff",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Lucius Romans 16:21 Wikipedia",
+        "ルキオ ローマ16:21 Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Lucius_of_Cyrene",
+          "observedJa": "記事はCyreneのLuciusを扱い、Romans16:21のLuciusと同一か確定できないと明記。"
+        }
+      ],
+      "status": "qualified",
+      "identityBasisJa": "該当記事自身がRomans16:21のLuciusと同一か判断できないと明記し、OrigenのLuke同定も伝える。名前だけでCyreneのLuciusへつなぐのは不適切。保留。",
+      "recommendedWikipedia": null
+    },
+    {
+      "book": "ROM",
+      "id": "person:narcissus_2151",
+      "draftPath": "drafts/persons_2/ROM_person_narcissus_2151.json",
+      "draftSHA256": "706b5f2f876126e1c750e9ac131a75ddec917e2ffd5455cf36abe6ec308492ee",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Narcissus Romans 16:11 household Wikipedia",
+        "ナルキソ ローマ16:11 Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Narcissus_of_Athens",
+          "observedJa": "記事はNarcissus of Athensを七十弟子とし、Romans16:8–11の名前群へ結び付ける。記事由来表示はOrthodoxWiki。"
+        }
+      ],
+      "status": "no-fit",
+      "identityBasisJa": "Romans16:11の文言はナルキソ本人でなく「主にあるナルキソの家の人々」。記事は本人を七十弟子に含める聖人伝で、直接本文の同一性を保証しない。",
+      "recommendedWikipedia": null
+    },
+    {
+      "book": "ROM",
+      "id": "person:olympas_2241",
+      "draftPath": "drafts/persons_2/ROM_person_olympas_2241.json",
+      "draftSHA256": "213194dcc9d0a128ed35dd8ee187a3a16fe984e9884197406eeef11532b0f0d5",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Olympas Romans 16:15 Wikipedia",
+        "オリュンパス ローマ16:15 Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Olympas",
+          "observedJa": "本文はOlympasをPaulがRomans16:15で挨拶した人物と直接記載。"
+        }
+      ],
+      "status": "fit",
+      "identityBasisJa": "記事本文はRomans16:15に直接言及し、Olympasを対象として明示。",
+      "recommendedWikipedia": {
+        "title": "Olympas",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Olympas",
+        "kind": "article",
+        "noteJa": "本文にローマ16:15で挨拶される人物と明記。記事に記されない後代の伝記をプロフィールへ補わない。",
+        "identityVerified": true
+      }
+    },
+    {
+      "book": "ROM",
+      "id": "person:pharaoh_2331",
+      "draftPath": "drafts/persons_2/ROM_person_pharaoh_2331.json",
+      "draftSHA256": "73fa787c672c9f9fe0d0fda991f7ef6c6ea27ce0cfd199dd3b2200afc4ead7dd",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Pharaoh Romans 9:17 title Wikipedia",
+        "ファラオ 称号 ウィキペディア"
+      ],
+      "readPages": [
+        {
+          "url": "https://ja.wikipedia.org/wiki/ファラオ",
+          "observedJa": "日本語記事の主題は古代エジプト王権・ファラオ称号。"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Pharaoh",
+          "observedJa": "導入は古代エジプトの君主を指す称号と説明。"
+        }
+      ],
+      "status": "fit",
+      "identityBasisJa": "草稿は個人でなく称号と明記。日本語Wikipedia記事の主題も称号・王権で適合。",
+      "recommendedWikipedia": {
+        "title": "ファラオ",
+        "language": "ja",
+        "url": "https://ja.wikipedia.org/wiki/ファラオ",
+        "kind": "article",
+        "noteJa": "古代エジプト王の称号を扱う記事。ローマ9:17で引用されるファラオ個人の特定には使わない。",
+        "identityVerified": true
+      }
+    },
+    {
+      "book": "ROM",
+      "id": "person:philologus_2348",
+      "draftPath": "drafts/persons_2/ROM_person_philologus_2348.json",
+      "draftSHA256": "771f431c57c2755fd601c59a0fd3158a22bcd80281181e3183f2c07a3e45d282",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Philologus Romans 16:15 Wikipedia",
+        "フィロロゴ ローマ16:15 Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_New_Testament_figures#Julia",
+          "observedJa": "Julia項がPhilologusとの関係を推測するが、Philologus自身の人物節ではない。"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Philologus",
+          "observedJa": "記事を開けず、検索で適切な聖書人物の専用記事を確認できない。"
+        }
+      ],
+      "status": "no-fit",
+      "identityBasisJa": "Romans16:15のPhilologus本人に対応する記事/節を確認できなかった。Juliaの推定家族関係だけを根拠にリンクするのは誤り。",
+      "recommendedWikipedia": null
+    },
+    {
+      "book": "ROM",
+      "id": "person:rufus_2449",
+      "draftPath": "drafts/persons_2/ROM_person_rufus_2449.json",
+      "draftSHA256": "65174f545af97037376ebc12265e62d026eda4fb7af188fc39d16d8e5850eecf",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Rufus Romans 16:13 biblical figure Wikipedia",
+        "ルフォス ローマ16:13 Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Rufus_(biblical_figure)",
+          "observedJa": "記事はEaston Bible Dictionaryに基づきRomans16:13のRufusと同一“probably”とし、ThebesのRufus説も推測として記載。"
+        }
+      ],
+      "status": "qualified",
+      "identityBasisJa": "候補記事はRomans16:13を明示するが同一性は“probably”、Rufus of Thebes説も推測。確実性を上げる根拠にできないので保留。",
+      "recommendedWikipedia": null
+    },
+    {
+      "book": "ROM",
+      "id": "person:sopater_2770",
+      "draftPath": "drafts/persons_2/ROM_person_sopater_2770.json",
+      "draftSHA256": "9d141fee2515ed0c7871fc85107b7ece4aab3d2abf1e008131fd853d070275ba",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Sosipater Romans 16:21 Wikipedia",
+        "ソシパテル ローマ16:21 Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Sosipater",
+          "observedJa": "記事はRomans16:21のSosipaterを直接記載、Acts20:4のSopaterと「probably the same」とする。後続の伝承も含む。"
+        }
+      ],
+      "status": "qualified",
+      "identityBasisJa": "聖書の名前SosipaterとRomans16:21を記事が直接明記するため、当該章の人物記事として合う。Acts20:4同一視は確率的表現のまま保持。",
+      "recommendedWikipedia": {
+        "title": "Sosipater",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Sosipater",
+        "kind": "article",
+        "noteJa": "ローマ16:21の人物として直接対応する記事。使徒20:4のSopaterとの同一視および教会伝承は記事上の説・伝承としてのみ扱い、プロフィールに事実として加えない。",
+        "identityVerified": true
+      }
+    },
+    {
+      "book": "ROM",
+      "id": "person:urbane_2894",
+      "draftPath": "drafts/persons_2/ROM_person_urbane_2894.json",
+      "draftSHA256": "4d12ec85cec2d9a51929ceaa26b388c005107f7d43620f91cc1dc9681ba4689a",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Urbanus Romans 16:9 Wikipedia",
+        "ウルバノ ローマ16:9 Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Urban_of_Macedonia",
+          "observedJa": "記事はUrban of Macedoniaを七十弟子の一人としRomans16:8–11の人名群に直接関連付け、後代の聖人伝を載せる。"
+        }
+      ],
+      "status": "qualified",
+      "identityBasisJa": "記事がRomans16:9と明示的に結ぶが、個人伝記・マケドニア出身・司教叙任は教会伝承側。ユーザ指示の後代同一視を採用しないため候補保留。",
+      "recommendedWikipedia": null
+    },
+    {
+      "book": "LEV",
+      "id": "person:dibri_1010",
+      "draftPath": "drafts/persons_3/LEV_dibri_1010.json",
+      "draftSHA256": "65d8f4b36433790dfa2fb9499fb0e72c920c9a6e4834f2e0a16cf2a199c7e94d",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Dibri Leviticus 24:11 Wikipedia",
+        "ディブリ レビ記24:11 Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Dibri",
+          "observedJa": "Dibri項はDaniteでShelomithの父、Leviticus24:11に基づくと明記。息子の後の結末も同じ項にある。"
+        }
+      ],
+      "status": "fit",
+      "identityBasisJa": "同節に記された関係と記事項目が一致。記事は後続の息子の結末も含むが、推薦リンク注記では明確に分離。",
+      "recommendedWikipedia": {
+        "title": "List of minor Hebrew Bible figures, A–K § Dibri",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Dibri",
+        "kind": "shared-section",
+        "noteJa": "ディブリをシェロミトの父としてレビ記24:11に結び付ける。項目には息子の後の出来事もあるため、プロフィールの常時表示文へは持ち込まない。",
+        "identityVerified": true
+      }
+    },
+    {
+      "book": "ROM",
+      "id": "person:hermes_1502",
+      "draftPath": "drafts/persons_3/ROM_hermes_1502.json",
+      "draftSHA256": "40afec10ec03f299365d21e6766576e47e0534b3406fb4ecdb07bf8d764b8363",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Hermes Romans 16:14 Wikipedia",
+        "ヘルメ ローマ16:14 Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Hermas_of_Dalmatia",
+          "observedJa": "記事はHermas of Dalmatiaを対象にし、Romans16:14のHermesと「usually identified」と記す。OrthodoxWiki由来部分あり。"
+        }
+      ],
+      "status": "qualified",
+      "identityBasisJa": "記事自身のギリシア語表記はHermas、本文名Hermesへの接続は伝承上の通常同定。名の綴り・後代伝承を独立証明とせず保留。",
+      "recommendedWikipedia": null
+    },
+    {
+      "book": "ROM",
+      "id": "person:mary_1942",
+      "draftPath": "drafts/persons_3/ROM_mary_1942.json",
+      "draftSHA256": "76a125b77e582312e3b3196af34425883251128a094990af711ec088b53d36a5",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Mary of Rome Romans 16:6 Wikipedia",
+        "ローマ16:6 マリア Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Mary_of_Rome",
+          "observedJa": "導入はRomans16:6の1世紀の女性と明記。同じ人物をMary mother of John Mark/Mary Magdaleneとする説は未証明・伝承上の提案と区別。"
+        }
+      ],
+      "status": "fit",
+      "identityBasisJa": "記事はRomans16:6の人物と直接明記し、同名別人との同一視を不確実と明示。",
+      "recommendedWikipedia": {
+        "title": "Mary of Rome",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Mary_of_Rome",
+        "kind": "article",
+        "noteJa": "ローマ16:6のマリアに対応する記事。ヨハネ・マルコの母やマグダラのマリアとの同一視は記事も未証明/伝承上の提案としているためプロフィールへ混ぜない。",
+        "identityVerified": true
+      },
+      "auditedSHA256": "7fbd6f368bd6c0d7499d46d2ac03bda81f930fdc4939eeb71f9d02fdccf97f4b",
+      "currentWikipediaAfterConcurrentEdit": {
+        "title": "Mary of Rome",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Mary_of_Rome",
+        "kind": "article",
+        "noteJa": "記事はROM16:6でパウロが労苦をねぎらうマリアを明示的に扱う。記事中にある他のマリアとの同一視は推測として区別し、この人物紹介の根拠にしない。",
+        "checkedAt": "2026-10-15",
+        "identityVerified": true
+      },
+      "concurrentChangeNoteJa": "初期走査時にはwikipedia=nullだったが、監査中に共有ワークスペース上で別編集が入った。本文は変更せず、この記事の独立実読結果を維持し、監査開始時SHAと現行SHAの両方を記録。"
+    },
+    {
+      "book": "ROM",
+      "id": "person:nereus_2182",
+      "draftPath": "drafts/persons_3/ROM_nereus_2182.json",
+      "draftSHA256": "519973269aad7d4a6be82377f6b7671d090f2311495619720129b591c13fcea9",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Nereus Romans 16:15 Wikipedia",
+        "ネレウス ローマ16:15 Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_New_Testament_figures#Nereus",
+          "observedJa": "Nereus項がRomans16:15で無名の姉妹とともに言及された人物と記載。"
+        }
+      ],
+      "status": "fit",
+      "identityBasisJa": "該当節、無名の姉妹との併記が本文と一致。",
+      "recommendedWikipedia": {
+        "title": "List of minor New Testament figures § Nereus",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_New_Testament_figures#Nereus",
+        "kind": "shared-section",
+        "noteJa": "ネレウスをローマ16:15の挨拶対象として記載。ギリシア神Nereusや後代の殉教者伝とは区別する。",
+        "identityVerified": true
+      }
+    },
+    {
+      "book": "ROM",
+      "id": "person:patrobas_2289",
+      "draftPath": "drafts/persons_3/ROM_patrobas_2289.json",
+      "draftSHA256": "bf118ebd97dbec3e2b64eb3667c2ba7d54a0ab757766d9b275f82065e26d5311",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Patrobas Romans 16:14 Wikipedia",
+        "パトロバ ローマ16:14 Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Parrobus_of_Pottole",
+          "observedJa": "記事はPatrobas/Patrobos/Patrobusを挙げRomansでの挨拶と関連付けるが、七十弟子・司教・所在地などOrthodoxWiki由来の伝承を含む。"
+        }
+      ],
+      "status": "qualified",
+      "identityBasisJa": "候補ページは表記揺れとRomans挨拶を直接対応させるが、中心内容は後代の聖人伝である。厳格な個人同定リンクには採用せず保留。",
+      "recommendedWikipedia": null,
+      "auditedSHA256": "9727993e8c74135fe41c4bc4f10a1621219b1a4dc02fff9cdc3a88425cf7170d",
+      "currentWikipediaAfterConcurrentEdit": {
+        "title": "Parrobus of Pottole",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Parrobus_of_Pottole",
+        "kind": "related-section",
+        "noteJa": "関連記事はPatrobas/Patrobos等の異綴りとROM16:14への言及を扱う。司教・七十門徒等の説明は後代伝承であり、本文の人物の確定経歴とはしない。",
+        "checkedAt": "2026-10-15",
+        "identityVerified": false,
+        "relationVerified": true
+      },
+      "concurrentChangeNoteJa": "初期走査時にはwikipedia=nullだったが、監査中に共有ワークスペース上で別編集が入った。本文は変更せず、この記事の独立実読結果を維持し、監査開始時SHAと現行SHAの両方を記録。"
+    },
+    {
+      "book": "ROM",
+      "id": "person:persis_2317",
+      "draftPath": "drafts/persons_3/ROM_persis_2317.json",
+      "draftSHA256": "6a76f52c73f02f3ca2b4974ccb2078b2052375b0fe8bc7f983f5662122077a4e",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Persis Romans 16:12 Wikipedia",
+        "ペルシス ローマ16:12 Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_women_in_the_Bible#Persis",
+          "observedJa": "Persis項はPaulがRomans末尾で挨拶する1世紀のキリスト教徒女性と明記し、Romans16:12を参照。"
+        }
+      ],
+      "status": "fit",
+      "identityBasisJa": "該当節の名・挨拶・本文参照が一致。",
+      "recommendedWikipedia": {
+        "title": "List of women in the Bible § Persis",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/List_of_women_in_the_Bible#Persis",
+        "kind": "shared-section",
+        "noteJa": "ペルシスをローマ16:12の挨拶対象として扱う節。記事の説明を超える伝記は加えない。",
+        "identityVerified": true
+      }
+    },
+    {
+      "book": "ROM",
+      "id": "person:phlegon_2352",
+      "draftPath": "drafts/persons_3/ROM_phlegon_2352.json",
+      "draftSHA256": "648a24b18fe531b1cddcb53142d1ad7c39242aaee5a990b0ae7d7eba655a7d8e",
+      "originalWikipedia": null,
+      "searchQueries": [
+        "Phlegon Romans 16:14 Wikipedia",
+        "フレゴン ローマ16:14 Wikipedia"
+      ],
+      "readPages": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Phlegon_of_Marathon",
+          "observedJa": "記事はRomans16:14に言及する人物とし、七十弟子・マラトン司教・祝日などを記す。記事はOrthodoxWiki由来。"
+        }
+      ],
+      "status": "qualified",
+      "identityBasisJa": "Romans16:14に同名があることは明記するが、専用記事の伝記は後代の聖人伝ベースで、個人同定と出身地/司教職の確証に使わない。保留。",
+      "recommendedWikipedia": null,
+      "auditedSHA256": "f3a806cc4f027160b6c86c2ea67491cbf18e866373158b9b7498a7efd59564d9",
+      "currentWikipediaAfterConcurrentEdit": {
+        "title": "Phlegon of Marathon",
+        "language": "en",
+        "url": "https://en.wikipedia.org/wiki/Phlegon_of_Marathon",
+        "kind": "related-section",
+        "noteJa": "関連記事はROM16:14のフレゴンに触れるが、マラトンの司教・七十門徒等は後代伝承として扱い、同一人物の確定経歴とはしない。",
+        "checkedAt": "2026-10-15",
+        "identityVerified": false,
+        "relationVerified": true
+      },
+      "concurrentChangeNoteJa": "初期走査時にはwikipedia=nullだったが、監査中に共有ワークスペース上で別編集が入った。本文は変更せず、この記事の独立実読結果を維持し、監査開始時SHAと現行SHAの両方を記録。"
+    },
+    {
+      "book": "LEV",
+      "id": "person:israel_682",
+      "variantKey": "LEV 26:42 · Jacob individual use",
+      "variantPath": "reviews/LEV-israel-jacob-context-variant.json",
+      "variantSHA256": "a03e896e65fdd8e3adefedae4a8c54aeaf2ffd8dee2a1a058a2d192a356a5018",
+      "profileWikipediaPresent": {
+        "title": "ヤコブ (旧約聖書)",
+        "language": "ja",
+        "url": "https://ja.wikipedia.org/wiki/ヤコブ_(旧約聖書)",
+        "kind": "article",
+        "noteJa": "記事本文を確認し、族長ヤコブとして同一人物と照合。",
+        "checkedAt": "2026-10-15",
+        "identityVerified": true
+      },
+      "searchQueries": [
+        "ヤコブ 族長 日本語Wikipedia LEV LEV 26:42 · Jacob individual use"
+      ],
+      "readPages": [
+        {
+          "url": "https://ja.wikipedia.org/wiki/ヤコブ_(旧約聖書)",
+          "observedJa": "記事冒頭は旧約聖書の族長ヤコブを対象とし、別名イスラエルと説明。LEV26:42/ROM9:13の本文はヤコブ個人を明記。"
+        }
+      ],
+      "status": "fit",
+      "identityBasisJa": "記事の族長ヤコブと当該節で個人名として挙がるヤコブが一致。記事が「イスラエル」を別名としても扱うため、集団profileへ混ぜないvariantという区分を維持。",
+      "recommendedWikipedia": {
+        "title": "ヤコブ (旧約聖書)",
+        "language": "ja",
+        "url": "https://ja.wikipedia.org/wiki/ヤコブ_(旧約聖書)",
+        "kind": "article",
+        "noteJa": "旧約の族長ヤコブを扱う記事。各節はイスラエルの民でなくヤコブ個人を名指す。",
+        "identityVerified": true
+      }
+    },
+    {
+      "book": "ROM",
+      "id": "person:israel_682",
+      "variantKey": "ROM 9:13 · Jacob individual use",
+      "variantPath": "reviews/ROM-israel-jacob-context-variant.json",
+      "variantSHA256": "e96384060fb8d62d3c0cffe99178e7bb4cd13819a95edb65ab532ad45969c5f5",
+      "profileWikipediaPresent": {
+        "title": "ヤコブ (旧約聖書)",
+        "language": "ja",
+        "url": "https://ja.wikipedia.org/wiki/ヤコブ_(旧約聖書)",
+        "kind": "article",
+        "noteJa": "旧約聖書の族長ヤコブを扱う記事です。",
+        "checkedAt": "2026-10-15",
+        "identityVerified": true
+      },
+      "searchQueries": [
+        "ヤコブ 族長 日本語Wikipedia ROM ROM 9:13 · Jacob individual use"
+      ],
+      "readPages": [
+        {
+          "url": "https://ja.wikipedia.org/wiki/ヤコブ_(旧約聖書)",
+          "observedJa": "記事冒頭は旧約聖書の族長ヤコブを対象とし、別名イスラエルと説明。LEV26:42/ROM9:13の本文はヤコブ個人を明記。"
+        }
+      ],
+      "status": "fit",
+      "identityBasisJa": "記事の族長ヤコブと当該節で個人名として挙がるヤコブが一致。記事が「イスラエル」を別名としても扱うため、集団profileへ混ぜないvariantという区分を維持。",
+      "recommendedWikipedia": {
+        "title": "ヤコブ (旧約聖書)",
+        "language": "ja",
+        "url": "https://ja.wikipedia.org/wiki/ヤコブ_(旧約聖書)",
+        "kind": "article",
+        "noteJa": "旧約の族長ヤコブを扱う記事。各節はイスラエルの民でなくヤコブ個人を名指す。",
+        "identityVerified": true
+      }
+    }
+  ]
+}

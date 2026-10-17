@@ -1,0 +1,152 @@
+{
+  "reportType": "independent-metadata-adjudication-delta",
+  "createdAtUTC": "2026-10-16T12:07:45Z",
+  "entityID": "person:shobal_2719",
+  "scope": "Read-only adjudication of sourceGateAudit.gatesConsistent=false in the existing Shobal current reclosure. No source, draft, evidence, or prior report was changed.",
+  "inputs": {
+    "priorReviewPath": "reviews/reclosure-shobal-persons3-batch07-delta.json",
+    "priorReviewSHA256": "c7a3f83243f497d884f554a23a80b0522e17bfda6bde5d61d9aa8413e4d0d57f",
+    "currentDraftPath": "drafts/persons_3/1CH_shobal_2719.json",
+    "currentDraftSHA256": "dec6f7db50c2c19bcc959ff1a338c34ade8473cbcb446fcc96e646c323b47cfb",
+    "currentProfileSHA256": "327b2eacb7a99990cfd3b7747cd352af7f60162f57ccf75131d99264f88f80d0",
+    "currentEvidencePath": "evidence/persons_3/1CH_shobal_2719.json",
+    "currentEvidenceSHA256": "64a965e4e04d1d3388d9db8ddf8186fff162be9dcee4816037e837b423c042f4",
+    "fixedWEB1CH": "inventory/targets/chronicles1-web-verses.json",
+    "fixedWEB1CHSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a"
+  },
+  "currentGateAudit": {
+    "recordedValue": false,
+    "decision": "hold-real-reader-field-source-boundary-issue",
+    "sourceMappingChecks": [
+      {
+        "sourceId": "shobal_2719-webp-1ch-1-40",
+        "existsInDraftSources": true,
+        "knownBy": {
+          "chapter": 1,
+          "verse": 40
+        },
+        "url": "https://ebible.org/engwebp/1CH01.htm#V40",
+        "usedByFacts": [
+          {
+            "chapter": 1,
+            "verse": 40
+          }
+        ]
+      },
+      {
+        "sourceId": "shobal_2719-webp-1ch-1-38",
+        "existsInDraftSources": true,
+        "knownBy": {
+          "chapter": 1,
+          "verse": 38
+        },
+        "url": "https://ebible.org/engwebp/1CH01.htm#V38",
+        "usedByFacts": []
+      },
+      {
+        "sourceId": "shobal_2719-wikipedia-1-38",
+        "existsInDraftSources": true,
+        "knownBy": {
+          "chapter": 1,
+          "verse": 38
+        },
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z",
+        "usedByFacts": []
+      }
+    ],
+    "factSourceGateCheck": {
+      "factKnownBy": {
+        "chapter": 1,
+        "verse": 40
+      },
+      "sourceIds": [
+        "shobal_2719-webp-1ch-1-40"
+      ],
+      "eachSourceExists": true,
+      "sourceKnownBy": [
+        {
+          "chapter": 1,
+          "verse": 40
+        }
+      ],
+      "result": "The child list fact is gated at 1:40 and cites its 1:40 WEB source; this fact/source pair is consistent."
+    },
+    "baseSourceGateCheck": {
+      "profileKnownBy": {
+        "chapter": 1,
+        "verse": 38
+      },
+      "firstUseSourceId": "shobal_2719-webp-1ch-1-38",
+      "firstUseSourceKnownBy": {
+        "chapter": 1,
+        "verse": 38
+      },
+      "wikipediaKnownBy": {
+        "chapter": 1,
+        "verse": 38
+      },
+      "wikipediaSourceKnownBy": {
+        "chapter": 1,
+        "verse": 38
+      },
+      "result": "The 1:38 primary and Wikipedia source gates match the profile first-use gate."
+    }
+  },
+  "primaryChecks": [
+    {
+      "book": "1CH",
+      "chapter": 1,
+      "verse": 38,
+      "text": "The sons of Seir: Lotan, Shobal, Zibeon, Anah, Dishon, Ezer, and Dishan.",
+      "citationURL": "https://ebible.org/engwebp/1CH01.htm#V38",
+      "textSHA256": "5cffc77a26f8b77881338f6c840d2f060e795868a4f9d9e60f828a425b9c0afc",
+      "witnessPath": "inventory/targets/chronicles1-web-verses.json",
+      "witnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+      "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5"
+    },
+    {
+      "book": "1CH",
+      "chapter": 1,
+      "verse": 40,
+      "text": "The sons of Shobal: Alian, Manahath, Ebal, Shephi, and Onam. The sons of Zibeon: Aiah and Anah.",
+      "citationURL": "https://ebible.org/engwebp/1CH01.htm#V40",
+      "textSHA256": "49b50cb4abbfde82d50b2dcd7b1288458c1eaf78145b6570d34fc30ae679b8dd",
+      "witnessPath": "inventory/targets/chronicles1-web-verses.json",
+      "witnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+      "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5"
+    },
+    {
+      "book": "1CH",
+      "chapter": 2,
+      "verse": 50,
+      "text": "These were the sons of Caleb, the son of Hur, the firstborn of Ephrathah: Shobal the father of Kiriath Jearim,",
+      "citationURL": "https://ebible.org/engwebp/1CH02.htm#V50",
+      "textSHA256": "825968d198a9153ad4c8f44ebd283512e9fc2e9a72d9dd60f09387575299ed2e",
+      "witnessPath": "inventory/targets/chronicles1-web-verses.json",
+      "witnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+      "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5"
+    },
+    {
+      "book": "1CH",
+      "chapter": 2,
+      "verse": 52,
+      "text": "Shobal the father of Kiriath Jearim had sons: Haroeh, half of the Menuhoth.",
+      "citationURL": "https://ebible.org/engwebp/1CH02.htm#V52",
+      "textSHA256": "a25762dcc9014b8e6a184ec06583e5806bd086f8d87e917a913e6629b0dc82ac",
+      "witnessPath": "inventory/targets/chronicles1-web-verses.json",
+      "witnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+      "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5"
+    }
+  ],
+  "finding": {
+    "field": "profile.identityNoteJa",
+    "currentText": "同じ書にはユダ系の別のショバルもいます。ここではセイル系のホリ人です。",
+    "problem": "At knownBy 1:38, the note says another Judah-line Shobal exists in this book. The fixed WEB does not introduce that other Shobal until 1CH 2:50 (identified in Caleb/Hur/Ephrathah genealogy as father of Kiriath-jearim; 2:52 continues his line). The note therefore exposes later same-name information before its textual occurrence and has no source record/sourceId supporting that comparison. This is a real reader-field/source-boundary issue even though the listed fact/source pair and 1:38 Wikipedia gate align.",
+    "sourceGateBooleanAssessment": "Do not change false to true as a metadata-only correction. The existing audit appears to have missed the always-visible identityNoteJa comparison; false is defensible as a whole-profile gate/source audit result. The audit rationale should distinguish that issue from the otherwise-consistent 1:40 fact-source and 1:38 source gates.",
+    "safeRepairProposal": "For the 1:38 base, remove the Judah-line comparison and keep the note only to what 1:38 establishes (for example, identify him as one of Seir’s sons). If the comparison is useful, add a separate fact at 2:50 with a 2:50 WEB source and state explicitly that the later Judah genealogy names a different Shobal; do not alter 1:38 knownBy or passages merely to hide the spoiler.",
+    "sourceLineage": "The 1:40 child-list fact cites shobal_2719-webp-1ch-1-40, which exists and is gated 1:40. The base cites 1:38, and the Wikipedia source is gated 1:38. Neither source justifies the later Judah comparison at the current base gate."
+  },
+  "disposition": "hold",
+  "changesToFiles": [],
+  "unresolved": "Author repair and a fresh independent reclosure are needed before this record can be treated as pass. Existing prior report remains unchanged."
+}

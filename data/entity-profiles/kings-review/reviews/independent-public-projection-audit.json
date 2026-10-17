@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "auditType": "read-only independent authoring projection privacy/integrity audit",
+  "checkedAtUTC": "2026-10-16T04:14:50Z",
+  "projectionPath": "candidate/data/entity-profiles/kings-review",
+  "preservationManifestPath": "candidate/data/entity-profiles/kings-review/preservation-manifest.json",
+  "preservationManifestSHA256": "6c9bf241576f660c4c8f6d5c0fb183730b070d4e4a4e461789d7d28ae58151ad",
+  "manifestPreservedAtUTC": "2026-10-16T04:13:14.881417+00:00",
+  "manifestClaims": {
+    "status": "AI Japanese authoring drafts and independent-review evidence; runtime release approval is separate",
+    "privateStateIncluded": false,
+    "projectionNote": "Local authoring workspace paths replaced by authoring-workspace; both original and public file hashes recorded. Unredacted evidence remains local.",
+    "inputCount": 1235,
+    "redactedInputCount": 2
+  },
+  "integrity": {
+    "publicSHA256MatchesManifest": 1235,
+    "publicInputCount": 1235,
+    "originalSHA256MatchesCurrentSource": 1233,
+    "originalInputCount": 1235,
+    "manifestRelativePathEntries": true,
+    "duplicatePaths": 0,
+    "unsafeAbsoluteOrParentPaths": 0,
+    "unaccountedProjectionFiles": 0,
+    "missingProjectionFiles": 0,
+    "sourceDriftRows": {
+      "reviews/root-future-reference-reader-field-audit.json": {
+        "manifestOriginalSHA256": "1f26d6e6b672f0308248d33844c8d69674ff093f9923ebf5f2372458e5ab1562",
+        "manifestPublicSHA256": "1f26d6e6b672f0308248d33844c8d69674ff093f9923ebf5f2372458e5ab1562",
+        "currentSourceSHA256": "77669c945da585a472662d414df2124b6d8d3b7d5c6464f6cdfa8d2d62247ffa",
+        "projectedSHA256": "1f26d6e6b672f0308248d33844c8d69674ff093f9923ebf5f2372458e5ab1562",
+        "currentSourceModifiedAtUTC": "2026-10-16T04:14:19.251234+00:00",
+        "projectedModifiedAtUTC": "2026-10-16T04:13:14.832904+00:00"
+      },
+      "reviews/root-native-staging-preflight.json": {
+        "manifestOriginalSHA256": "f3d67a00aa3dd82e25483b573f65ba664070c80a61bf3a8a2b5cd663483da62c",
+        "manifestPublicSHA256": "f3d67a00aa3dd82e25483b573f65ba664070c80a61bf3a8a2b5cd663483da62c",
+        "currentSourceSHA256": "b39398607daebc5ac8e5ecc4253778ca96391513ef8da0f7b0ac5d59c7397875",
+        "projectedSHA256": "f3d67a00aa3dd82e25483b573f65ba664070c80a61bf3a8a2b5cd663483da62c",
+        "currentSourceModifiedAtUTC": "2026-10-16T04:14:50.035162+00:00",
+        "projectedModifiedAtUTC": "2026-10-16T04:13:14.834522+00:00"
+      }
+    }
+  },
+  "privacyScan": {
+    "absoluteUserHomePathsFound": 0,
+    "temporaryPathsFound": 0,
+    "privateKeyPatternsFound": 0,
+    "credentialTokenPatternsFound": 0,
+    "privateStateFilenamesFound": 0,
+    "secretValuesPrinted": false,
+    "findingPaths": []
+  },
+  "preserveScript": {
+    "sourcePath": "preserve-authoring.py",
+    "sourceSHA256": "fb161a4ca1f93b0a56207319ec1f2bde78864de1fafad28c876ee50071ede803",
+    "projectionCopyPath": "candidate/data/entity-profiles/kings-review/preserve-authoring.py",
+    "projectionCopySHA256": "b9961b7a05054adf074aa7a991cb8738d24bfc273c068bc9e58643337a040446",
+    "sourceBehavior": "Copies only JSON from drafts/evidence/reviews/context-edits/assignments/inventory/targets plus root Python scripts and AUTHOR-CONTRACT.md; skips progress.json; replaces workspace-specific absolute paths; asserts that personal-home and temporary-directory paths have been redacted.",
+    "projectionCopyBehavior": "The copied script computes output as N/candidate/data/entity-profiles/kings-review. If run inside the projection, it would create another nested projection. It was not executed."
+  },
+  "findings": [
+    {
+      "severity": "qualified",
+      "path": "reviews/root-future-reference-reader-field-audit.json",
+      "classification": "source updated after projection snapshot",
+      "details": "Its projected SHA matches the preservation manifest, while its source changed after manifest time. This is snapshot staleness, not evidence of disclosure or tampering. Re-run preservation before publication if the newest source version must be included."
+    },
+    {
+      "severity": "qualified",
+      "path": "reviews/root-native-staging-preflight.json",
+      "classification": "source updated after projection snapshot",
+      "details": "Its projected SHA matches the preservation manifest, while its source changed after manifest time. This is snapshot staleness, not evidence of disclosure or tampering. Re-run preservation before publication if the newest source version must be included."
+    },
+    {
+      "severity": "qualified",
+      "path": "candidate/data/entity-profiles/kings-review/preserve-authoring.py",
+      "classification": "rerun output nesting",
+      "details": "The projected copy targets the same relative projection path below its own root and should not be run in-place. The original workspace script targets the intended projection correctly."
+    }
+  ],
+  "notFindings": [
+    "Manifest intentionally contains both originalLocalEvidenceSHA256 and public sha256 values, as requested for provenance.",
+    "privateStateIncluded=false is consistent with the projection file inventory and scans.",
+    "publication approval remains separate; false is not a privacy or preservation defect.",
+    "Existing app source files outside this projection were not audited, per scope."
+  ],
+  "verdict": "qualified",
+  "verdictReasonJa": "秘密・個人ホームパス・一時パス・秘密ファイルは投影内で検出しなかった。manifestの全公開SHAは投影ファイルと一致し、pathは相対かつ重複なし。ただしmanifest生成後に原本2ファイルが更新されており、最新状態を含めるには再投影が必要。投影内コピーのpreserve-authoring.pyを再実行するとnested projectionを作るため、そのままの再実行は避ける。"
+}

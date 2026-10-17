@@ -1,0 +1,777 @@
+{
+  "review": "Independent primary-text closure of the current persons_3 visible-citation repairs. Re-read current draft fields at current SHA and compared the edited claims to pinned WEB. It does not approve unrelated profile fields or claim a new Wikipedia fetch.",
+  "reviewedAtUTC": "2026-10-15T21:58:57Z",
+  "authorRepairLogPath": "evidence/persons_3/author-repairs-visible-citation-warnings.json",
+  "authorRepairLogSHA256": "bd0166b38102e67b664fa696401e113f0f57b5d08b919e7f7c20b42e379e4d32",
+  "fixedWitnesses": {
+    "inventory/targets/joshua-web-verses.json": "26ae82b805dee523bb852977ccf62ad38cc40ebe442b650cbd7862db833ea854",
+    "inventory/targets/numbers-web-verses.json": "f50a3147ff698b614ece92c48f6630890c542218bb80d5568d2759144d4e7bb9"
+  },
+  "scope": "Eight changed drafts plus the Rekem warning disposition. Each edited profile current SHA is compared to the author log after SHA. No drafts or author review files edited.",
+  "statusCounts": {
+    "pass": 8,
+    "qualified": 1,
+    "fail": 0
+  },
+  "records": [
+    {
+      "book": "JOS",
+      "entityID": "person:isaac_616",
+      "draftPath": "drafts/persons_3/JOS_isaac_616.json",
+      "previousSHA256": "fdc2823235bedeb3ed160e105168e9391e53cc75a80f0928f851a3c6fdce8370",
+      "authorReportedAfterSHA256": "f5b4fd7e0b853874485fe92305299cfee5f140b0e83a1f5d11f025157b5d6fbf",
+      "currentSHA256": "f5b4fd7e0b853874485fe92305299cfee5f140b0e83a1f5d11f025157b5d6fbf",
+      "matchesAuthorReportedAfterSHA256": true,
+      "decision": "pass",
+      "basisJa": "wikipedia.noteJa now ties the article to JOS24:3 only. Fixed WEB24:3 explicitly says God gave Abraham Isaac; the text does not expose 24:4 in the note. The profile knownBy is 24:3 and the later Jacob/Esau fact is separately gated at 24:4.",
+      "currentReaderFields": {
+        "nameJa": "イサク",
+        "subtitleJa": "アブラハムに与えられた人物",
+        "summaryJa": "ヨシュアは、主がアブラハムにイサクを与えたと振り返ります。",
+        "identityNoteJa": "",
+        "knownBy": {
+          "chapter": 24,
+          "verse": 3
+        },
+        "historicalRoleJa": null,
+        "wikipedia": {
+          "title": "Isaac",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Isaac",
+          "kind": "article",
+          "noteJa": "記事はアブラハムの子イサクを扱い、ヨシュア記24:3の記述と対応します。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        }
+      },
+      "fieldDeltasIndependentlyChecked": [
+        {
+          "field": "profile.wikipedia.noteJa",
+          "priorValue": "記事はアブラハムの子イサクを扱い、ヨシュア記24:3–4の文脈と一致。",
+          "currentValue": "記事はアブラハムの子イサクを扱い、ヨシュア記24:3の記述と対応します。",
+          "authorReportedAfterSHA256": "f5b4fd7e0b853874485fe92305299cfee5f140b0e83a1f5d11f025157b5d6fbf"
+        }
+      ],
+      "primaryWitnesses": [
+        {
+          "ref": "JOS 24:3",
+          "url": "https://ebible.org/engwebp/JOS24.htm#V3",
+          "text": "I took your father Abraham from beyond the River, and led him throughout all the land of Canaan, and multiplied his offspring, and gave him Isaac.",
+          "textSHA256": "8436a0396963f6fe0dd4b6582f50dd541dc2b8aff6bb84aa3b7634f8240d1960"
+        },
+        {
+          "ref": "JOS 24:4",
+          "url": "https://ebible.org/engwebp/JOS24.htm#V4",
+          "text": "I gave to Isaac Jacob and Esau: and I gave to Esau Mount Seir, to possess it. Jacob and his children went down into Egypt.",
+          "textSHA256": "d7946ab8cb1ce4ca86954a209272498e8a1ab3525ed14e854ceef0ba9fbf1948"
+        }
+      ],
+      "reviewScope": "Current edited reader-visible fields and their first-appearance/fact gates; no new Wikipedia fetch in this closure."
+    },
+    {
+      "book": "JOS",
+      "entityID": "person:bohan_521",
+      "draftPath": "drafts/persons_3/JOS_bohan_521.json",
+      "previousSHA256": "be9fb0199694fa7606c3f606409f7397b9aa73f08d46b2b64acece3bc0d630d7",
+      "authorReportedAfterSHA256": "36ff26ccd9ffb5a1f6e6af20d72a8ce0f2c6b6eb28da9fd65ea74061513b6596",
+      "currentSHA256": "36ff26ccd9ffb5a1f6e6af20d72a8ce0f2c6b6eb28da9fd65ea74061513b6596",
+      "matchesAuthorReportedAfterSHA256": true,
+      "decision": "pass",
+      "basisJa": "identityNoteJa and wikipedia.noteJa now describe only JOS15:6, which explicitly calls this “the stone of Bohan the son of Reuben.” The note correctly avoids claiming Bohan installed the stone. JOS18:17 remains a passage but is not previewed in the first-appearance note.",
+      "currentReaderFields": {
+        "nameJa": "ボハン",
+        "subtitleJa": "ルベンの子。境界標識の石の名に残る",
+        "summaryJa": "ユダとベニヤミンの境界を示す記述に、「ルベンの子ボハンの石」が現れます。本文は境界標識の名として彼を挙げますが、ボハン自身が石を置いたとは記していません。",
+        "identityNoteJa": "ヨシュア記15:6は「ルベンの子ボハンの石」と記します。ボハン自身が石を設置したかは本文から分かりません。",
+        "knownBy": {
+          "chapter": 15,
+          "verse": 6
+        },
+        "historicalRoleJa": "境界標識の石の名として記される人物",
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Bohan",
+          "kind": "shared-section",
+          "noteJa": "記事は「ボハンの石」に名を残す人物を扱います。ヨシュア記15:6はこの名をユダの境界線上に挙げます。石の設置者は本文に記されません。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        }
+      },
+      "fieldDeltasIndependentlyChecked": [
+        {
+          "field": "profile.identityNoteJa",
+          "priorValue": "ヨシュア記15:6と18:17の「ボハンの石」は同じ境界標識を指す。石を誰が設置したかは本文から分からない。",
+          "currentValue": "ヨシュア記15:6は「ルベンの子ボハンの石」と記します。ボハン自身が石を設置したかは本文から分かりません。",
+          "authorReportedAfterSHA256": "36ff26ccd9ffb5a1f6e6af20d72a8ce0f2c6b6eb28da9fd65ea74061513b6596"
+        },
+        {
+          "field": "profile.wikipedia.noteJa",
+          "priorValue": "ヨシュア記15:6・18:17で境界標識「ボハンの石」に名が残る人物を扱う項。石を誰が設置したかは不確かとしている。",
+          "currentValue": "記事は「ボハンの石」に名を残す人物を扱います。ヨシュア記15:6はこの名をユダの境界線上に挙げます。石の設置者は本文に記されません。",
+          "authorReportedAfterSHA256": "36ff26ccd9ffb5a1f6e6af20d72a8ce0f2c6b6eb28da9fd65ea74061513b6596"
+        }
+      ],
+      "primaryWitnesses": [
+        {
+          "ref": "JOS 15:6",
+          "url": "https://ebible.org/engwebp/JOS15.htm#V6",
+          "text": "The border went up to Beth Hoglah, and passed along by the north of Beth Arabah; and the border went up to the stone of Bohan the son of Reuben.",
+          "textSHA256": "d729d9da8dcbf2b79d03e86f7d579f85f3022d60a029e5ea9c2c42202cb9cf02"
+        },
+        {
+          "ref": "JOS 18:17",
+          "url": "https://ebible.org/engwebp/JOS18.htm#V17",
+          "text": "It extended northward, went out at En Shemesh, and went out to Geliloth, which is opposite the ascent of Adummim. It went down to the stone of Bohan the son of Reuben.",
+          "textSHA256": "29aeb5cc0b24fe9c1c2ee06eebe8a229d587d55f53f4633fab33409824fe8d76"
+        }
+      ],
+      "reviewScope": "Current edited reader-visible fields and their first-appearance/fact gates; no new Wikipedia fetch in this closure."
+    },
+    {
+      "book": "JOS",
+      "entityID": "person:sihon_2739",
+      "draftPath": "drafts/persons_3/JOS_sihon_2739.json",
+      "previousSHA256": "63c9174ca41f653a2b1fa829e2cbbfd2379ebd0bbbac23ad79901e4812f50154",
+      "authorReportedAfterSHA256": "f00b940a9bac3918295ffc245f746bb05f6aab818f7b63b4397157a90979b162",
+      "currentSHA256": "f00b940a9bac3918295ffc245f746bb05f6aab818f7b63b4397157a90979b162",
+      "matchesAuthorReportedAfterSHA256": true,
+      "decision": "pass",
+      "basisJa": "wikipedia.noteJa now points to Rahab’s retrospective mention in JOS2:10, the earliest included occurrence. WEB2:10 explicitly names Sihon and Og as the two Amorite kings destroyed; the Japanese note does not bring in later conquest details.",
+      "currentReaderFields": {
+        "nameJa": "シホン",
+        "subtitleJa": "ヘシュボンを治めたアモリ人の王",
+        "summaryJa": "ラハブは、ヨルダン川の向こうにいたアモリ人の二人の王、シホンとオグを主が滅ぼしたと聞いた、と語ります。",
+        "identityNoteJa": "",
+        "knownBy": {
+          "chapter": 2,
+          "verse": 10
+        },
+        "historicalRoleJa": "ヘシュボンのアモリ人の王",
+        "wikipedia": {
+          "title": "Sihon",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Sihon",
+          "kind": "article",
+          "noteJa": "記事はヘシュボンを治めたアモリ人の王シホンを扱い、ヨシュア記2:10でラハブが回顧する王と対応します。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        }
+      },
+      "fieldDeltasIndependentlyChecked": [
+        {
+          "field": "profile.wikipedia.noteJa",
+          "priorValue": "記事はヘシュボンのアモリ人の王シホンを扱い、ヨシュア記12章等の記録を照合。",
+          "currentValue": "記事はヘシュボンを治めたアモリ人の王シホンを扱い、ヨシュア記2:10でラハブが回顧する王と対応します。",
+          "authorReportedAfterSHA256": "f00b940a9bac3918295ffc245f746bb05f6aab818f7b63b4397157a90979b162"
+        }
+      ],
+      "primaryWitnesses": [
+        {
+          "ref": "JOS 2:10",
+          "url": "https://ebible.org/engwebp/JOS02.htm#V10",
+          "text": "For we have heard how the LORD dried up the water of the Red Sea before you, when you came out of Egypt; and what you did to the two kings of the Amorites, who were beyond the Jordan, to Sihon and to Og, whom you utterly destroyed.",
+          "textSHA256": "5bfe91a724319a4b6aefc8bd4e171c3473b274a44533154eca61f9bd01c20282"
+        },
+        {
+          "ref": "JOS 9:10",
+          "url": "https://ebible.org/engwebp/JOS09.htm#V10",
+          "text": "and all that he did to the two kings of the Amorites who were beyond the Jordan, to Sihon king of Heshbon and to Og king of Bashan, who was at Ashtaroth.",
+          "textSHA256": "11228097cd61255bc3dad725a8c15ad8f26dd3c003bd02eb84082668b274cc60"
+        },
+        {
+          "ref": "JOS 12:2",
+          "url": "https://ebible.org/engwebp/JOS12.htm#V2",
+          "text": "Sihon king of the Amorites, who lived in Heshbon, and ruled from Aroer, which is on the edge of the valley of the Arnon, and the middle of the valley, and half Gilead, even to the river Jabbok, the border of the children of Ammon;",
+          "textSHA256": "e159474215d7b9e2a81add44783376191014f72bfa88eaaeffd481ec84a96612"
+        },
+        {
+          "ref": "JOS 12:5",
+          "url": "https://ebible.org/engwebp/JOS12.htm#V5",
+          "text": "and ruled in Mount Hermon, and in Salecah, and in all Bashan, to the border of the Geshurites and the Maacathites, and half Gilead, the border of Sihon king of Heshbon.",
+          "textSHA256": "6a5827f9dca3a84d19ea064141d31af1dac8ae72b3cf46cc576b047cf1fbcd1d"
+        },
+        {
+          "ref": "JOS 13:10",
+          "url": "https://ebible.org/engwebp/JOS13.htm#V10",
+          "text": "and all the cities of Sihon king of the Amorites, who reigned in Heshbon, to the border of the children of Ammon;",
+          "textSHA256": "cbfec283987b47de4759b2dced58820f8ce28f489a0248b546e498860efb6f2c"
+        },
+        {
+          "ref": "JOS 13:21",
+          "url": "https://ebible.org/engwebp/JOS13.htm#V21",
+          "text": "all the cities of the plain, and all the kingdom of Sihon king of the Amorites, who reigned in Heshbon, whom Moses struck with the chiefs of Midian, Evi, Rekem, Zur, Hur, and Reba, the princes of Sihon, who lived in the land.",
+          "textSHA256": "a3ef3ef8f69d4c2f0cf5eec804e47f92e0b40d886ddfae6dc81355f419c364c3"
+        },
+        {
+          "ref": "JOS 13:27",
+          "url": "https://ebible.org/engwebp/JOS13.htm#V27",
+          "text": "and in the valley, Beth Haram, Beth Nimrah, Succoth, and Zaphon, the rest of the kingdom of Sihon king of Heshbon, the Jordan’s bank, to the uttermost part of the sea of Chinnereth beyond the Jordan eastward.",
+          "textSHA256": "9438dfe25667f47ff0e5201fc3692299040c4c3fe02a9314405b7aa9fa79b4eb"
+        }
+      ],
+      "reviewScope": "Current edited reader-visible fields and their first-appearance/fact gates; no new Wikipedia fetch in this closure."
+    },
+    {
+      "book": "NUM",
+      "entityID": "person:hepher_1496",
+      "draftPath": "drafts/persons_3/NUM_hepher_1496.json",
+      "previousSHA256": "8755f117ebcb33f76bf47fcd65baf052c73a71c3ceaf14d75a47d2e7faf7f55c",
+      "authorReportedAfterSHA256": "37f095e899f13e6560939dcfab1fb9906aa939969046847bfb3dddb0b7a5978f",
+      "currentSHA256": "37f095e899f13e6560939dcfab1fb9906aa939969046847bfb3dddb0b7a5978f",
+      "matchesAuthorReportedAfterSHA256": true,
+      "decision": "pass",
+      "basisJa": "identityNoteJa is empty. The card is explicitly the clan name at NUM26:32, matching “Hepher, the family of the Hepherites.” The related Wikipedia note distinguishes the personal Hepher from the clan and marks identityVerified false.",
+      "currentReaderFields": {
+        "nameJa": "ヘフェル氏族",
+        "subtitleJa": "マナセ族の氏族名",
+        "summaryJa": "人口調査の系譜で、ヘフェルはマナセ族の氏族名として挙げられます。",
+        "identityNoteJa": "",
+        "knownBy": {
+          "chapter": 26,
+          "verse": 32
+        },
+        "historicalRoleJa": "マナセ族の氏族名",
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Hepher",
+          "kind": "related-section",
+          "noteJa": "記事はマナセの子ヘフェル個人を扱います。氏族名としてのヘフェルとの関連を示すだけで、両者を同一視しません。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": false,
+          "relationVerified": true
+        }
+      },
+      "fieldDeltasIndependentlyChecked": [
+        {
+          "field": "profile.identityNoteJa",
+          "priorValue": "民数記26:32のヘフェルは氏族を指します。26:33と27:1に出る系譜上の個人ヘフェルとは、用法を区別します。",
+          "currentValue": "",
+          "authorReportedAfterSHA256": "37f095e899f13e6560939dcfab1fb9906aa939969046847bfb3dddb0b7a5978f"
+        }
+      ],
+      "primaryWitnesses": [
+        {
+          "ref": "NUM 26:32",
+          "url": "https://ebible.org/engwebp/NUM26.htm#V32",
+          "text": "and Shemida, the family of the Shemidaites; and Hepher, the family of the Hepherites.",
+          "textSHA256": "cbcab62a52be473c15d98df5c86584a6e1d53c4d91b2952bc33f7a896517fa62"
+        }
+      ],
+      "reviewScope": "Current edited reader-visible fields and their first-appearance/fact gates; no new Wikipedia fetch in this closure."
+    },
+    {
+      "book": "NUM",
+      "entityID": "person:balak_387",
+      "draftPath": "drafts/persons_3/NUM_balak_387.json",
+      "previousSHA256": "b035c7d6495c759827072e2ab9f906bade29fc79cedfd6104cbce5e0b8fde61f",
+      "authorReportedAfterSHA256": "629ca9ae6c937a80c5b7f0d49ec8349af730a6d0e3ae0aaaa5c36bc58c6ae6ae",
+      "currentSHA256": "629ca9ae6c937a80c5b7f0d49ec8349af730a6d0e3ae0aaaa5c36bc58c6ae6ae",
+      "matchesAuthorReportedAfterSHA256": true,
+      "decision": "pass",
+      "basisJa": "wikipedia.noteJa now links Balak to NUM22:2, the direct first mention: the verse names Balak son of Zippor and says he saw what Israel had done to the Amorites. It does not preview the later Balaam episode.",
+      "currentReaderFields": {
+        "nameJa": "バラク",
+        "subtitleJa": "モアブの王",
+        "summaryJa": "モアブの王バラクは、イスラエルの民が近くに宿営したと知って恐れます。",
+        "identityNoteJa": "",
+        "knownBy": {
+          "chapter": 22,
+          "verse": 2
+        },
+        "historicalRoleJa": "モアブの王",
+        "wikipedia": {
+          "title": "Balak",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Balak",
+          "kind": "article",
+          "noteJa": "記事はモアブ王バラクを扱い、民数記22:2の人物と対応します。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        }
+      },
+      "fieldDeltasIndependentlyChecked": [
+        {
+          "field": "profile.wikipedia.noteJa",
+          "priorValue": "記事はモアブ王バラクを扱い民数記22–24章を含む。",
+          "currentValue": "記事はモアブ王バラクを扱い、民数記22:2の人物と対応します。",
+          "authorReportedAfterSHA256": "629ca9ae6c937a80c5b7f0d49ec8349af730a6d0e3ae0aaaa5c36bc58c6ae6ae"
+        }
+      ],
+      "primaryWitnesses": [
+        {
+          "ref": "NUM 22:2",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V2",
+          "text": "Balak the son of Zippor saw all that Israel had done to the Amorites.",
+          "textSHA256": "3d6967beaad795ba7884dc5c257e77a02fbd3a1e22f4db84ab85e100e3250978"
+        },
+        {
+          "ref": "NUM 22:4",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V4",
+          "text": "Moab said to the elders of Midian, “Now this multitude will lick up all that is around us, as the ox licks up the grass of the field.” Balak the son of Zippor was king of Moab at that time.",
+          "textSHA256": "e338787cb7b0d1f611ed1d7004e988e81e3d1e60ef3db7b4de8e601c89e85788"
+        },
+        {
+          "ref": "NUM 22:7",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V7",
+          "text": "The elders of Moab and the elders of Midian departed with the rewards of divination in their hand. They came to Balaam, and spoke to him the words of Balak.",
+          "textSHA256": "67d9df36d0f3a438a4b0bccab250e018b0789ba3776459f371abe0787fa97db5"
+        },
+        {
+          "ref": "NUM 22:10",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V10",
+          "text": "Balaam said to God, “Balak the son of Zippor, king of Moab, has said to me,",
+          "textSHA256": "8eb4cbc2d0f81c2468ba2beef66f9ea57b47a04fede9098961cc9dfcfd22b7b4"
+        },
+        {
+          "ref": "NUM 22:13",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V13",
+          "text": "Balaam rose up in the morning, and said to the princes of Balak, “Go to your land; for the LORD refuses to permit me to go with you.”",
+          "textSHA256": "7e775f6233582ebdd024f290e8bf988678161256a9da3a7d1fd29a3e8657c217"
+        },
+        {
+          "ref": "NUM 22:14",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V14",
+          "text": "The princes of Moab rose up, and they went to Balak, and said, “Balaam refuses to come with us.”",
+          "textSHA256": "57378457bdfe63fff527c259d91e0e3d4d2daa22a8b61a90a46172e5e79d9cc9"
+        },
+        {
+          "ref": "NUM 22:15",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V15",
+          "text": "Balak again sent princes, more, and more honorable than they.",
+          "textSHA256": "b6b39b059a55d0aca677356b697af3de4e7f970f195abf0fc9612f863ee83608"
+        },
+        {
+          "ref": "NUM 22:16",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V16",
+          "text": "They came to Balaam, and said to him, “Balak the son of Zippor says, ‘Please let nothing hinder you from coming to me,",
+          "textSHA256": "d48953a9bf39d26a2be45ab52647dcb83b42cf58de5d5b37edc7907555a57d15"
+        },
+        {
+          "ref": "NUM 22:18",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V18",
+          "text": "Balaam answered the servants of Balak, “If Balak would give me his house full of silver and gold, I can’t go beyond the word of the LORD my God, to do less or more.",
+          "textSHA256": "0a4ec46b0c525bbbb9f2d261e497ae9ab528ea168ec842bf9657c011ac5067f7"
+        },
+        {
+          "ref": "NUM 22:35",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V35",
+          "text": "The LORD’s angel said to Balaam, “Go with the men; but you shall only speak the word that I shall speak to you.” So Balaam went with the princes of Balak.",
+          "textSHA256": "bec7afc99d1292d8b06920e68ca86a568fc8847458aca93a378417d19e10546e"
+        },
+        {
+          "ref": "NUM 22:36",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V36",
+          "text": "When Balak heard that Balaam had come, he went out to meet him to the City of Moab, which is on the border of the Arnon, which is in the utmost part of the border.",
+          "textSHA256": "6cefbdc08dafd1deb78b4282c7dfb236dfd2292965f75bd7a0627d6f2be73d92"
+        },
+        {
+          "ref": "NUM 22:37",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V37",
+          "text": "Balak said to Balaam, “Didn’t I earnestly send for you to summon you? Why didn’t you come to me? Am I not able indeed to promote you to honor?”",
+          "textSHA256": "d8bd65acce0f08539038c7cceed22041cb269e07c7590211742e25bc8c494788"
+        },
+        {
+          "ref": "NUM 22:38",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V38",
+          "text": "Balaam said to Balak, “Behold, I have come to you. Have I now any power at all to speak anything? I will speak the word that God puts in my mouth.”",
+          "textSHA256": "4a8c0c7b5e9aed8a2dfde1dd1eade4aa94e677ffece7b35c572889266ec3b5c5"
+        },
+        {
+          "ref": "NUM 22:39",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V39",
+          "text": "Balaam went with Balak, and they came to Kiriath Huzoth.",
+          "textSHA256": "f0793f4e158e2e9f03597c527bcc7a5d8db7f13645f218fd05bdfd5bedcc0ecd"
+        },
+        {
+          "ref": "NUM 22:40",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V40",
+          "text": "Balak sacrificed cattle and sheep, and sent to Balaam, and to the princes who were with him.",
+          "textSHA256": "6103de04e40b6b54b18b2b7d50a3a3d72f3e00c4733d917b772e719c32c751e0"
+        },
+        {
+          "ref": "NUM 22:41",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V41",
+          "text": "In the morning, Balak took Balaam, and brought him up into the high places of Baal; and he saw from there part of the people.",
+          "textSHA256": "42c6f2d4d1d5baa9249bb7464ac63dd94cc9ba9c98cd1a39427cd280da802153"
+        },
+        {
+          "ref": "NUM 23:1",
+          "url": "https://ebible.org/engwebp/NUM23.htm#V1",
+          "text": "Balaam said to Balak, “Build here seven altars for me, and prepare here seven bulls and seven rams for me.”",
+          "textSHA256": "1e6b89c592c2531e1bb34973a3ffde26437ec9f9a8398295a85b8ceb2cedddb7"
+        },
+        {
+          "ref": "NUM 23:2",
+          "url": "https://ebible.org/engwebp/NUM23.htm#V2",
+          "text": "Balak did as Balaam had spoken; and Balak and Balaam offered on every altar a bull and a ram.",
+          "textSHA256": "ea1de3889ed20cd7d2707f6eb979623cfc78780b8da98a4bf7c1de59591300aa"
+        },
+        {
+          "ref": "NUM 23:3",
+          "url": "https://ebible.org/engwebp/NUM23.htm#V3",
+          "text": "Balaam said to Balak, “Stand by your burnt offering, and I will go. Perhaps the LORD will come to meet me. Whatever he shows me I will tell you.” He went to a bare height.",
+          "textSHA256": "1264830ce7b65616d6c59b09ff763d678f06af87376ecaf4d4a9422e83244733"
+        },
+        {
+          "ref": "NUM 23:5",
+          "url": "https://ebible.org/engwebp/NUM23.htm#V5",
+          "text": "The LORD put a word in Balaam’s mouth, and said, “Return to Balak, and thus you shall speak.”",
+          "textSHA256": "89a48d31d99ed0e2f922f3dd10c1584f1238a799ef2d2260300df25eff5c432f"
+        },
+        {
+          "ref": "NUM 23:7",
+          "url": "https://ebible.org/engwebp/NUM23.htm#V7",
+          "text": "He took up his parable, and said, “From Aram has Balak brought me, the king of Moab from the mountains of the East. Come, curse Jacob for me. Come, defy Israel.",
+          "textSHA256": "9343e66eca42312c146b3a048acada17becba9ecce0f017054ccb4f0d2fc17f1"
+        },
+        {
+          "ref": "NUM 23:11",
+          "url": "https://ebible.org/engwebp/NUM23.htm#V11",
+          "text": "Balak said to Balaam, “What have you done to me? I took you to curse my enemies, and behold, you have blessed them altogether.”",
+          "textSHA256": "75f459bff1d906fe810dbe6119f1105d87c4eb477074bae6422ae4571a4ca0ab"
+        },
+        {
+          "ref": "NUM 23:13",
+          "url": "https://ebible.org/engwebp/NUM23.htm#V13",
+          "text": "Balak said to him, “Please come with me to another place, where you may see them. You shall see just part of them, and shall not see them all. Curse them from there for me.”",
+          "textSHA256": "d80358705b6cceb5bd22166f56e1698584f32ed2e8493f63a49563b96dc11db5"
+        },
+        {
+          "ref": "NUM 23:15",
+          "url": "https://ebible.org/engwebp/NUM23.htm#V15",
+          "text": "He said to Balak, “Stand here by your burnt offering, while I meet God over there.”",
+          "textSHA256": "406320f8eab23a0b8ef8fd5b704d6399f01ff767c91fccfe5e8857692fea670a"
+        },
+        {
+          "ref": "NUM 23:16",
+          "url": "https://ebible.org/engwebp/NUM23.htm#V16",
+          "text": "The LORD met Balaam, and put a word in his mouth, and said, “Return to Balak, and say this.”",
+          "textSHA256": "fa7da7542e3cc26a71fa9378aff21c039361aa6d6f206a58e5734b0c1f2b4372"
+        },
+        {
+          "ref": "NUM 23:17",
+          "url": "https://ebible.org/engwebp/NUM23.htm#V17",
+          "text": "He came to him, and behold, he was standing by his burnt offering, and the princes of Moab with him. Balak said to him, “What has the LORD spoken?”",
+          "textSHA256": "320fcd8d97c0108f0865bc8a409dd23c08507bac812d5e727139c1d51b3380cd"
+        },
+        {
+          "ref": "NUM 23:18",
+          "url": "https://ebible.org/engwebp/NUM23.htm#V18",
+          "text": "He took up his parable, and said, “Rise up, Balak, and hear! Listen to me, you son of Zippor.",
+          "textSHA256": "48de23305b08d48e022b959bdb182314406173957e2ef4ccc6366cac17347529"
+        },
+        {
+          "ref": "NUM 23:25",
+          "url": "https://ebible.org/engwebp/NUM23.htm#V25",
+          "text": "Balak said to Balaam, “Neither curse them at all, nor bless them at all.”",
+          "textSHA256": "e0ad9e2ad1d97a722f65a832b8c64f775d77dabff4f616a0dbcc71129ec3000b"
+        },
+        {
+          "ref": "NUM 23:26",
+          "url": "https://ebible.org/engwebp/NUM23.htm#V26",
+          "text": "But Balaam answered Balak, “Didn’t I tell you, saying, ‘All that the LORD speaks, that I must do’?”",
+          "textSHA256": "308e146251550145b110f4528e6ac317b84d43f5e86ca42bb7de6a2d84a825f6"
+        },
+        {
+          "ref": "NUM 23:27",
+          "url": "https://ebible.org/engwebp/NUM23.htm#V27",
+          "text": "Balak said to Balaam, “Come now, I will take you to another place; perhaps it will please God that you may curse them for me from there.”",
+          "textSHA256": "5bad606c88e7995a6960f79d858881cb14e6d0066eba3329a83e6ef9b81a6214"
+        },
+        {
+          "ref": "NUM 23:28",
+          "url": "https://ebible.org/engwebp/NUM23.htm#V28",
+          "text": "Balak took Balaam to the top of Peor, that looks down on the desert.",
+          "textSHA256": "12a8e18370e93039624c5e2d2cc16f677f52e26c7e378cc172757206be4dcf22"
+        },
+        {
+          "ref": "NUM 23:29",
+          "url": "https://ebible.org/engwebp/NUM23.htm#V29",
+          "text": "Balaam said to Balak, “Build seven altars for me here, and prepare seven bulls and seven rams for me here.”",
+          "textSHA256": "bf722538f956efac16719dbf9f063848a7789ceeaef089b25fbbd2ca9a9027c2"
+        },
+        {
+          "ref": "NUM 23:30",
+          "url": "https://ebible.org/engwebp/NUM23.htm#V30",
+          "text": "Balak did as Balaam had said, and offered up a bull and a ram on every altar.",
+          "textSHA256": "acb33be4ed1de293ad98a176af128ef8dad86a596d8752a301ccd11952662b7e"
+        },
+        {
+          "ref": "NUM 24:10",
+          "url": "https://ebible.org/engwebp/NUM24.htm#V10",
+          "text": "Balak’s anger burned against Balaam, and he struck his hands together. Balak said to Balaam, “I called you to curse my enemies, and, behold, you have altogether blessed them these three times.",
+          "textSHA256": "fc57121fd80db5306943a26aa52a921c64a5f8a521ebd9ebbbc18aa3c726944d"
+        },
+        {
+          "ref": "NUM 24:12",
+          "url": "https://ebible.org/engwebp/NUM24.htm#V12",
+          "text": "Balaam said to Balak, “Didn’t I also tell your messengers whom you sent to me, saying,",
+          "textSHA256": "c46edf8019941a6609809ed79d60a9f6eeaa217fd81bf305eefdecb9c23d25fc"
+        },
+        {
+          "ref": "NUM 24:13",
+          "url": "https://ebible.org/engwebp/NUM24.htm#V13",
+          "text": "‘If Balak would give me his house full of silver and gold, I can’t go beyond the LORD’s word, to do either good or bad from my own mind. I will say what the LORD says’?",
+          "textSHA256": "97ce10077932056796dc8685a7a9efe6c338aafd3c3ebf03f737e9524a3555f7"
+        },
+        {
+          "ref": "NUM 24:25",
+          "url": "https://ebible.org/engwebp/NUM24.htm#V25",
+          "text": "Balaam rose up, and went and returned to his place; and Balak also went his way.",
+          "textSHA256": "695ee9490857b83d25a38b59611bd6d17d71b93a8f45431ff75e0ab5eec6f06d"
+        }
+      ],
+      "reviewScope": "Current edited reader-visible fields and their first-appearance/fact gates; no new Wikipedia fetch in this closure."
+    },
+    {
+      "book": "JOS",
+      "entityID": "person:arba_290",
+      "draftPath": "drafts/persons_3/JOS_arba_290.json",
+      "previousSHA256": "39483edd1e9225f720c2dcaa50e445e0aca8d6f3eb5c7ef012231cd0301e2277",
+      "authorReportedAfterSHA256": "59057adacdb57cdd86eb15389f88c8b4ebeed519f8ffff0fa1abb8e05affc41a",
+      "currentSHA256": "59057adacdb57cdd86eb15389f88c8b4ebeed519f8ffff0fa1abb8e05affc41a",
+      "matchesAuthorReportedAfterSHA256": true,
+      "decision": "qualified",
+      "basisJa": "The replacement note stays within JOS14:15 and accurately states that Kiriath Arba is named after the greatest man among the Anakim. However WEB14:15 does not itself give that man the personal name Arba; identity as a distinct named person remains inferential from the place-name/article tradition. The note repair is safe, but the profile-level person identification remains qualified.",
+      "currentReaderFields": {
+        "nameJa": "アルバ",
+        "subtitleJa": "ヘブロンの旧名の由来とされる人物",
+        "summaryJa": "ヨシュア記14:15は、ヘブロンの旧名をキルヤテ・アルバとし、その名がアナク人の中で最も偉大な人物にちなむと述べます。",
+        "identityNoteJa": "ヨシュア記14:15は、キルヤテ・アルバという旧名が「アナク人の中で最も偉大な人物」にちなむと述べます。この節はその人物の経歴を別に説明しません。",
+        "knownBy": {
+          "chapter": 14,
+          "verse": 15
+        },
+        "historicalRoleJa": null,
+        "wikipedia": {
+          "title": "Arba (biblical figure)",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Arba_(biblical_figure)",
+          "kind": "article",
+          "noteJa": "記事はヨシュア記14:15の記述に対応する人物アルバを扱います。同節ではヘブロンの旧名キルヤテ・アルバの由来として、アナク人の中で最も偉大な人物と記されます。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": true
+        }
+      },
+      "fieldDeltasIndependentlyChecked": [
+        {
+          "field": "profile.wikipedia.noteJa",
+          "priorValue": "記事はヨシュア記14:15のアナク人の中で最も偉大な人物アルバと、15:13のアナクの父アルバを扱います。本文ではヨシュア記の記述に限ります。",
+          "currentValue": "記事はヨシュア記14:15の記述に対応する人物アルバを扱います。同節ではヘブロンの旧名キルヤテ・アルバの由来として、アナク人の中で最も偉大な人物と記されます。",
+          "authorReportedAfterSHA256": "59057adacdb57cdd86eb15389f88c8b4ebeed519f8ffff0fa1abb8e05affc41a"
+        }
+      ],
+      "primaryWitnesses": [
+        {
+          "ref": "JOS 14:15",
+          "url": "https://ebible.org/engwebp/JOS14.htm#V15",
+          "text": "Now the name of Hebron before was Kiriath Arba, after the greatest man among the Anakim. Then the land had rest from war.",
+          "textSHA256": "34d7fc08652452650b895984513d8275438fb3d8a0859fcfc516f7fd6452448f"
+        },
+        {
+          "ref": "JOS 15:13",
+          "url": "https://ebible.org/engwebp/JOS15.htm#V13",
+          "text": "He gave to Caleb the son of Jephunneh a portion among the children of Judah, according to the commandment of the LORD to Joshua, even Kiriath Arba, named after the father of Anak (also called Hebron).",
+          "textSHA256": "172c745c1be8dc942e1e8de07566621c71159e66fea036588037835f8304b802"
+        },
+        {
+          "ref": "JOS 21:11",
+          "url": "https://ebible.org/engwebp/JOS21.htm#V11",
+          "text": "They gave them Kiriath Arba, named after the father of Anak (also called Hebron), in the hill country of Judah, with its pasture lands around it.",
+          "textSHA256": "d3fe5a4e46a870ac4851432ca6a31b3ca9a1e060caad54a05386ee3b546e6974"
+        }
+      ],
+      "reviewScope": "Current edited reader-visible fields and their first-appearance/fact gates; no new Wikipedia fetch in this closure."
+    },
+    {
+      "book": "JOS",
+      "entityID": "person:gilead_1317",
+      "draftPath": "drafts/persons_3/JOS_gilead_1317.json",
+      "previousSHA256": "921dc3f047877e598bb994051747e8a659bf20dbd6af5635ae499a53b589617d",
+      "authorReportedAfterSHA256": "234caa3d674950eaf2acb1006e89e13306784c091867094e729b381383fae35a",
+      "currentSHA256": "234caa3d674950eaf2acb1006e89e13306784c091867094e729b381383fae35a",
+      "matchesAuthorReportedAfterSHA256": true,
+      "decision": "pass",
+      "basisJa": "identityNoteJa now directly reports both referents that JOS17:1 places together: Machir’s son Gilead and the territory Gilead/Bashan assigned to Machir. It no longer previews JOS17:3 genealogy or later territorial usages. The displayed summary/historical role remain gated at 17:1; the 17:3 genealogy is a later fact.",
+      "currentReaderFields": {
+        "nameJa": "ギレアド",
+        "subtitleJa": "マキルの子として系譜に挙げられる人物",
+        "summaryJa": "ヨシュア記17:1は、マナセの子マキルの子としてギレアドを挙げます。",
+        "identityNoteJa": "ヨシュア記17:1は、マキルの子ギレアデと、マキルが得た領地ギレアデとバシャンを同じ節に記します。",
+        "knownBy": {
+          "chapter": 17,
+          "verse": 1
+        },
+        "historicalRoleJa": "マナセ族の系譜上の人物",
+        "wikipedia": {
+          "title": "Gilead (tribal group)",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Gilead_(tribal_group)",
+          "kind": "related-section",
+          "noteJa": "記事はギレアドという氏族集団と系譜上の同名人物を扱いますが、本文の個人との関係を示すにとどめます。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": false,
+          "relationVerified": true
+        }
+      },
+      "fieldDeltasIndependentlyChecked": [
+        {
+          "field": "profile.identityNoteJa",
+          "priorValue": "17:1の「ギレアドの父」と17:3の系譜は同じ家系を示しますが、後のギレアド地方名と混同しません。",
+          "currentValue": "ヨシュア記17:1は、マキルの子ギレアデと、マキルが得た領地ギレアデとバシャンを同じ節に記します。",
+          "authorReportedAfterSHA256": "234caa3d674950eaf2acb1006e89e13306784c091867094e729b381383fae35a"
+        }
+      ],
+      "primaryWitnesses": [
+        {
+          "ref": "JOS 17:1",
+          "url": "https://ebible.org/engwebp/JOS17.htm#V1",
+          "text": "This was the lot for the tribe of Manasseh, for he was the firstborn of Joseph. As for Machir the firstborn of Manasseh, the father of Gilead, because he was a man of war, therefore he had Gilead and Bashan.",
+          "textSHA256": "b49ff5730450d4133b2c2dcfe552c440ce8000a4b4eff10a3406dc41a6dc8d21"
+        },
+        {
+          "ref": "JOS 17:3",
+          "url": "https://ebible.org/engwebp/JOS17.htm#V3",
+          "text": "But Zelophehad, the son of Hepher, the son of Gilead, the son of Machir, the son of Manasseh, had no sons, but daughters. These are the names of his daughters: Mahlah, Noah, Hoglah, Milcah, and Tirzah.",
+          "textSHA256": "41a5fb0cf9355252f8a4975fb421165de6b3d190a756f0585b7432c02bc9cea2"
+        }
+      ],
+      "reviewScope": "Current edited reader-visible fields and their first-appearance/fact gates; no new Wikipedia fetch in this closure."
+    },
+    {
+      "book": "NUM",
+      "entityID": "person:moab_2103",
+      "draftPath": "drafts/persons_3/NUM_moab_2103.json",
+      "previousSHA256": "c6fd999eecebcd513d230f7f36d8b16657652a4c2f7f64afb30dea576f3416d0",
+      "authorReportedAfterSHA256": "c60382fc5504ed8890403ab93a43be12b8b69b86fd017abb55b8f14349357477",
+      "currentSHA256": "c60382fc5504ed8890403ab93a43be12b8b69b86fd017abb55b8f14349357477",
+      "matchesAuthorReportedAfterSHA256": true,
+      "decision": "pass",
+      "basisJa": "wikipedia.noteJa now distinguishes the article’s Moab kingdom/region from the collective use in NUM21:29, where the song addresses Moab and parallels it with “people of Chemosh.” It does not claim the geographic article is an individual or that each person has a verified identity.",
+      "currentReaderFields": {
+        "nameJa": "モアブの民",
+        "subtitleJa": "歌で「ケモシュの民」と呼びかけられる集団",
+        "summaryJa": "歌はモアブに呼びかけ、「ケモシュの民」とともにその子らと娘らが捕らわれたと述べます。",
+        "identityNoteJa": "民数記にはモアブの地と民の両方が登場します。ここでは民・政治集団への言及を示します。",
+        "knownBy": {
+          "chapter": 21,
+          "verse": 29
+        },
+        "historicalRoleJa": "民・政治集団の呼称",
+        "wikipedia": {
+          "title": "Moab",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Moab",
+          "kind": "related-section",
+          "noteJa": "記事は古代モアブの王国・地域を扱います。民数記21:29の「モアブ」はケモシュの民と並ぶ民の呼称であり、個々の住民との同一性を述べるものではありません。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": false,
+          "relationVerified": true
+        }
+      },
+      "fieldDeltasIndependentlyChecked": [
+        {
+          "field": "profile.wikipedia.noteJa",
+          "priorValue": "記事は古代モアブの王国・地域を中心に扱います。民数記21:29や22:3の民・政治集団との関連を示すにとどめ、個々の住民の同一性を主張しません。",
+          "currentValue": "記事は古代モアブの王国・地域を扱います。民数記21:29の「モアブ」はケモシュの民と並ぶ民の呼称であり、個々の住民との同一性を述べるものではありません。",
+          "authorReportedAfterSHA256": "c60382fc5504ed8890403ab93a43be12b8b69b86fd017abb55b8f14349357477"
+        }
+      ],
+      "primaryWitnesses": [
+        {
+          "ref": "NUM 21:29",
+          "url": "https://ebible.org/engwebp/NUM21.htm#V29",
+          "text": "Woe to you, Moab! You are undone, people of Chemosh! He has given his sons as fugitives, and his daughters into captivity, to Sihon king of the Amorites.",
+          "textSHA256": "c19bf1e95c04869bde7681e5f69cd5b24fd12619e4680994dbfc17ba1d803e73"
+        },
+        {
+          "ref": "NUM 22:3",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V3",
+          "text": "Moab was very afraid of the people, because they were many. Moab was distressed because of the children of Israel.",
+          "textSHA256": "210d185889b6971425d8ed518ff0afc528c751aa6e72fc5f606c63efbb9a1aa8"
+        },
+        {
+          "ref": "NUM 22:4",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V4",
+          "text": "Moab said to the elders of Midian, “Now this multitude will lick up all that is around us, as the ox licks up the grass of the field.” Balak the son of Zippor was king of Moab at that time.",
+          "textSHA256": "e338787cb7b0d1f611ed1d7004e988e81e3d1e60ef3db7b4de8e601c89e85788"
+        },
+        {
+          "ref": "NUM 22:7",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V7",
+          "text": "The elders of Moab and the elders of Midian departed with the rewards of divination in their hand. They came to Balaam, and spoke to him the words of Balak.",
+          "textSHA256": "67d9df36d0f3a438a4b0bccab250e018b0789ba3776459f371abe0787fa97db5"
+        },
+        {
+          "ref": "NUM 22:8",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V8",
+          "text": "He said to them, “Lodge here this night, and I will bring you word again, as the LORD shall speak to me.” The princes of Moab stayed with Balaam.",
+          "textSHA256": "20ab67d45ef3211ab3a00e256845a7207c87c952fbcb9f6832670a44a7a0e010"
+        },
+        {
+          "ref": "NUM 22:10",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V10",
+          "text": "Balaam said to God, “Balak the son of Zippor, king of Moab, has said to me,",
+          "textSHA256": "8eb4cbc2d0f81c2468ba2beef66f9ea57b47a04fede9098961cc9dfcfd22b7b4"
+        },
+        {
+          "ref": "NUM 22:14",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V14",
+          "text": "The princes of Moab rose up, and they went to Balak, and said, “Balaam refuses to come with us.”",
+          "textSHA256": "57378457bdfe63fff527c259d91e0e3d4d2daa22a8b61a90a46172e5e79d9cc9"
+        },
+        {
+          "ref": "NUM 22:21",
+          "url": "https://ebible.org/engwebp/NUM22.htm#V21",
+          "text": "Balaam rose up in the morning, and saddled his donkey, and went with the princes of Moab.",
+          "textSHA256": "2d68c89016bdd9d40d49864f356996e62257e53bfbf6fe9d8d221069fbc46f7b"
+        },
+        {
+          "ref": "NUM 23:6",
+          "url": "https://ebible.org/engwebp/NUM23.htm#V6",
+          "text": "He returned to him, and behold, he was standing by his burnt offering, he, and all the princes of Moab.",
+          "textSHA256": "a6566fb87047e4874a172600a205e7b5911f3badd20af8fd0b653381b97c0fdf"
+        },
+        {
+          "ref": "NUM 23:7",
+          "url": "https://ebible.org/engwebp/NUM23.htm#V7",
+          "text": "He took up his parable, and said, “From Aram has Balak brought me, the king of Moab from the mountains of the East. Come, curse Jacob for me. Come, defy Israel.",
+          "textSHA256": "9343e66eca42312c146b3a048acada17becba9ecce0f017054ccb4f0d2fc17f1"
+        },
+        {
+          "ref": "NUM 23:17",
+          "url": "https://ebible.org/engwebp/NUM23.htm#V17",
+          "text": "He came to him, and behold, he was standing by his burnt offering, and the princes of Moab with him. Balak said to him, “What has the LORD spoken?”",
+          "textSHA256": "320fcd8d97c0108f0865bc8a409dd23c08507bac812d5e727139c1d51b3380cd"
+        },
+        {
+          "ref": "NUM 25:1",
+          "url": "https://ebible.org/engwebp/NUM25.htm#V1",
+          "text": "Israel stayed in Shittim; and the people began to play the prostitute with the daughters of Moab;",
+          "textSHA256": "9b6ad12e51b4ce8c0f733c4348f998d9863e2f3d2869b70ef1badb6f17c810dc"
+        }
+      ],
+      "reviewScope": "Current edited reader-visible fields and their first-appearance/fact gates; no new Wikipedia fetch in this closure."
+    },
+    {
+      "book": "JOS",
+      "entityID": "person:rekem_2418",
+      "draftPath": "drafts/persons_3/JOS_rekem_2418.json",
+      "currentSHA256": "be83e9630f5e575e886f9040a59633b4b25d90c00eed5722f21ad3bab2e13a48",
+      "decision": "pass",
+      "basisJa": "The warning is a cross-book reference to NUM31:8, but the JOS profile has a direct same-book occurrence at JOS13:21. Therefore the note does not reveal a future event within Joshua; classifying the warning as cross-book false positive is correct. No draft change was made.",
+      "field": "profile.wikipedia.noteJa",
+      "currentValue": "記事は同名の人物と地名を区別し、民数記31:8・ヨシュア記13:21のミディアン王レケムを挙げます。",
+      "primaryWitnesses": [
+        {
+          "ref": "JOS 13:21",
+          "url": "https://ebible.org/engwebp/JOS13.htm#V21",
+          "text": "all the cities of the plain, and all the kingdom of Sihon king of the Amorites, who reigned in Heshbon, whom Moses struck with the chiefs of Midian, Evi, Rekem, Zur, Hur, and Reba, the princes of Sihon, who lived in the land.",
+          "textSHA256": "a3ef3ef8f69d4c2f0cf5eec804e47f92e0b40d886ddfae6dc81355f419c364c3"
+        }
+      ]
+    }
+  ]
+}

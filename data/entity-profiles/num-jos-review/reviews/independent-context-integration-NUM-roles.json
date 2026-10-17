@@ -1,0 +1,127 @@
+{
+  "review": "Independent source-based opinion on NUM person/collective context coordinates requested for staging integration. This is scoped to the listed family/tribe verses; no drafts, context proposals, maps, or builder files were edited.",
+  "reviewedAtUTC": "2026-10-15T22:04:26Z",
+  "fixedWitnessPath": "inventory/targets/numbers-web-verses.json",
+  "fixedWitnessSHA256": "f50a3147ff698b614ece92c48f6630890c542218bb80d5568d2759144d4e7bb9",
+  "sourceVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+  "currentFileHashes": {
+    "context-edits/NUM/NUM_machir-1877-personal-context.json": "f32ca0ff24432be0fdd992202fb3bc2a17f7317ced3dd49dec90c3305a9579c7",
+    "context-edits/NUM/NUM_machir-1877-collective.json": "cd61153d2d107f50afe40a89fe480f07b351fe065f45553d235bbd5412f55889",
+    "context-edits/NUM/NUM_manasseh-1928-personal.json": "55d07d5327e7e5a4ae5deebda602b781c16fedd840aa5fa9ba8af5e6841f849f",
+    "context-edits/NUM/NUM_joseph-1710-personal.json": "e5da28f8a6b2b4544cfa6988906513dfd7c5e9e890954cb3d62e0a0ea25e17b7",
+    "drafts/persons_2/NUM_person_machir_1877.json": "fe1808448c90d8c7b86fa61551e67dfb550e8a582d2970e8e8900d6c135b3836",
+    "drafts/persons_2/NUM_person_manasseh_1928.json": "39131d758c0ed1eaae6b89d48a1cf4b02e9593a036cbcbaeecfe88996a163d4f",
+    "drafts/persons_3/NUM_joseph_1710.json": "e62879135b98b792e8ba2781e353aa0dd55edb89124bd7da1e55967b8967a26a"
+  },
+  "stageInputFreshness": {
+    "stagingReportSHA256": "130518f51ddd8b7d76fd36dbd596ccd07d18e125b63af41b0f6ee5c1a1f4ac10",
+    "stagingBuildTimestamp": "2026-10-15T22:08:00.665428+00:00",
+    "stagedHashForNUM_machir_personal": "29751b2ad5be529cc98c1800e8d9633a465e7760453980a0aa3b500355a36b16",
+    "currentHashForNUM_machir_personal": "f32ca0ff24432be0fdd992202fb3bc2a17f7317ced3dd49dec90c3305a9579c7",
+    "staleForChangedProposal": true
+  },
+  "recommendations": [
+    {
+      "entityID": "person:machir_1877",
+      "decision": "dual-personal-base-with-collective-context",
+      "retainBothAt": [
+        "26:29",
+        "32:39"
+      ],
+      "personalOnly": [
+        "27:1",
+        "32:40",
+        "36:1"
+      ],
+      "collectiveOnlyAdditional": [
+        "32:39"
+      ],
+      "basisJa": "NUM26:29 explicitly says “Machir became the father of Gilead” (personal Machir) while also calling the descendants “the family of the Machirites” and “the family of the Gileadites” (collective). NUM32:39 likewise says “the children of Machir the son of Manasseh” went to Gilead: the group is acting and Machir is named as its personal ancestor. Therefore replacing the existing main individual profile with the new personal proposal avoids duplicate individual notes, but the personal base proposal should retain 32:39 as well as 26:29; the collective context should retain 26:29 and32:39. NUM27:1,32:40,36:1 are personal ancestry/action references to Machir, not a separate Machirite collective use."
+    },
+    {
+      "entityID": "person:manasseh_1928",
+      "decision": "retain-dual-base-and-person-context-at-32-33",
+      "retainBothAt": [
+        "26:28",
+        "26:29",
+        "27:1",
+        "32:33"
+      ],
+      "personalOnlyRemoveFromCollectiveBase": [
+        "32:39",
+        "32:40",
+        "32:41",
+        "36:1"
+      ],
+      "basisJa": "NUM32:33 names the “half-tribe of Manasseh” (collective) and immediately identifies it as “the son of Joseph” (personal eponym), so it belongs in the collective base and the individual context. NUM26:28–29 and27:1 similarly combine tribe/family language with eponym-person references. In NUM32:39 Manasseh is only Machir’s father while Machir’s children act; 32:40 names Manasseh only as Machir’s father; 32:41 names him only as Jair’s father; and36:1 places him in an ancestry chain. These do not name the Manasseh tribe/half-tribe and should be removed from the collective base while retained in the individual context."
+    },
+    {
+      "entityID": "person:joseph_1710",
+      "decision": "retain-dual-collective-and-person-context",
+      "retainBothAt": [
+        "26:28",
+        "27:1",
+        "32:33",
+        "36:1"
+      ],
+      "basisJa": "NUM26:28 says “the sons of Joseph after their families: Manasseh and Ephraim”—collective descendants and Joseph as their named father/eponym. NUM27:1 names Manasseh as “the son of Joseph” within the approach of the Manasseh families. NUM32:33 names the “half-tribe of Manasseh the son of Joseph.” NUM36:1 names both “the families of the sons of Joseph” and the ancestry chain ending in Joseph’s descendants. Each supports a collective use and the individual father/eponym context at the same coordinate; retain the collective base and add a gated personal context."
+    }
+  ],
+  "primaryWitnesses": [
+    {
+      "ref": "NUM 26:28",
+      "url": "https://ebible.org/engwebp/NUM26.htm#V28",
+      "text": "The sons of Joseph after their families: Manasseh and Ephraim.",
+      "textSHA256": "894cfea643e906bdebe7c6eb0804bbee08c5bb96f243dfdad7859ba027f2ae9d"
+    },
+    {
+      "ref": "NUM 26:29",
+      "url": "https://ebible.org/engwebp/NUM26.htm#V29",
+      "text": "The sons of Manasseh: of Machir, the family of the Machirites; and Machir became the father of Gilead; of Gilead, the family of the Gileadites.",
+      "textSHA256": "05094a44ccdd167e1ca45908e8c8a556d085a4e07ba78dfd6b01245be97a182b"
+    },
+    {
+      "ref": "NUM 26:30",
+      "url": "https://ebible.org/engwebp/NUM26.htm#V30",
+      "text": "These are the sons of Gilead: of Iezer, the family of the Iezerites; of Helek, the family of the Helekites;",
+      "textSHA256": "df71b08e377cc1f809c6c6a2615f603873825656e695aaed7b7f5f98678b5900"
+    },
+    {
+      "ref": "NUM 27:1",
+      "url": "https://ebible.org/engwebp/NUM27.htm#V1",
+      "text": "Then the daughters of Zelophehad, the son of Hepher, the son of Gilead, the son of Machir, the son of Manasseh, of the families of Manasseh the son of Joseph came near. These are the names of his daughters: Mahlah, Noah, Hoglah, Milcah, and Tirzah.",
+      "textSHA256": "3eaebf3cf3295aa41f7b939d1697254018259e516f9a793c896d266f5b99202e"
+    },
+    {
+      "ref": "NUM 32:33",
+      "url": "https://ebible.org/engwebp/NUM32.htm#V33",
+      "text": "Moses gave to them, even to the children of Gad, and to the children of Reuben, and to the half-tribe of Manasseh the son of Joseph, the kingdom of Sihon king of the Amorites, and the kingdom of Og king of Bashan; the land, according to its cities and borders, even the cities of the surrounding land.",
+      "textSHA256": "462d107b7229e1b9b3f207e84a1505905fc7b00f9bdc127c25d4c55ba62aeba2"
+    },
+    {
+      "ref": "NUM 32:39",
+      "url": "https://ebible.org/engwebp/NUM32.htm#V39",
+      "text": "The children of Machir the son of Manasseh went to Gilead, took it, and dispossessed the Amorites who were therein.",
+      "textSHA256": "37227dc5b18f6ce601ee11f4f6d1549fcbf089888704034235b63d74af0cde68"
+    },
+    {
+      "ref": "NUM 32:40",
+      "url": "https://ebible.org/engwebp/NUM32.htm#V40",
+      "text": "Moses gave Gilead to Machir the son of Manasseh; and he lived therein.",
+      "textSHA256": "0e47de8d56c9b13d687f34a4d0d36eba400502a1941b40c07d4dfa4dc4b89e22"
+    },
+    {
+      "ref": "NUM 32:41",
+      "url": "https://ebible.org/engwebp/NUM32.htm#V41",
+      "text": "Jair the son of Manasseh went and took its villages, and called them Havvoth Jair.",
+      "textSHA256": "75312b2c1f177603e43ce51e558c58101d09c795f6eab97eadcf1a4fd15f4c0e"
+    },
+    {
+      "ref": "NUM 36:1",
+      "url": "https://ebible.org/engwebp/NUM36.htm#V1",
+      "text": "The heads of the fathers’ households of the family of the children of Gilead, the son of Machir, the son of Manasseh, of the families of the sons of Joseph, came near and spoke before Moses and before the princes, the heads of the fathers’ households of the children of Israel.",
+      "textSHA256": "6ca56effd017532b81604a02177174e9cfc6900dce9e2238f608e6b182690502"
+    }
+  ],
+  "limitation": "This is an opinion on role/coordinate semantics from the pinned WEB. It is not full content approval of the changing NUM proposals, source/Wikipedia validation, or approval of the current NUM staging snapshot."
+}

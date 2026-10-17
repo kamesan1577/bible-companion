@@ -1,0 +1,535 @@
+{
+  "title": "Independent current-SHA reclosure: 6 Samuel places_1 reader-field repairs",
+  "reviewedAtUTC": "2026-10-16T02:12:12Z",
+  "reviewerRole": "independent current-source review, not author self-approval",
+  "readOnly": true,
+  "inputRepairLog": {
+    "path": "evidence/places_1/reader-field-repairs.json",
+    "sha256": "89e28333e784f25d9179c1135af0db8947ee709d9d605e1cba0179ca84334b72"
+  },
+  "inputAudit": {
+    "path": "reviews/root-future-reference-reader-field-audit.json",
+    "sha256": "30a518fdd22c7b7635b7ac008471f515350415d57f031bc8a904866805c125b9"
+  },
+  "mapPolicySHA256": "26faf179fdb41e06c0fe07ae77fa36f8f703d25cfd8250dfb3f99f94f9ab0e64",
+  "summary": {
+    "pass": 0,
+    "qualified": 3,
+    "fail": 3,
+    "total": 6,
+    "failIDs": [
+      "place:edom_357",
+      "place:benjamin-territory_1293",
+      "place:dan_323"
+    ],
+    "qualifiedIDs": [
+      "place:jezreel_642",
+      "place:bethel_202",
+      "place:rogelim_1012"
+    ]
+  },
+  "entries": [
+    {
+      "status": "fail",
+      "verses": [
+        {
+          "ref": "2SA 8:14",
+          "text": "He put garrisons in Edom. Throughout all Edom, he put garrisons, and all the Edomites became servants to David. The LORD gave victory to David wherever he went.",
+          "url": "https://ebible.org/engwebp/2SA08.htm#V14"
+        }
+      ],
+      "wiki": {
+        "url": "https://en.wikipedia.org/wiki/Edom",
+        "locator": "Opening, lines 193–198; Hebrew Bible lines 267–274",
+        "supportJa": "本文冒頭はEdomを古代王国/地域として、Jordan east/south of present-day Israel and Jordan等にまたがる歴史地域と説明。Idumeaは後代の別領域と区別する。",
+        "checkedAtUTC": "2026-10-16T02:12:12Z"
+      },
+      "assessmentJa": "profile初出8:14は「all Edom」と明記し、summaryを地域として扱うのは適切。現modernLocationJa/locationNoteJaも都市点や現代国境を断定しない。Wikiも歴史地域として適合。ところが reviews/map-policy-places_1.json の2SA place:edom_357はallowFrom 8:12のままで、8:12はエドムを名指さず、現プロフィールのknownByは8:14。地図候補を8:12から利用可能にする設定は初出より早く誤る。allowFromを8:14へ同期する必要がある。1SA Edom別稿のallowFrom14:47はこの指摘対象でない。",
+      "requestedChangeJa": "map-policyの2SA Edom allowFromを8:14へ更新し、根拠を8:14固定WEBと同期。",
+      "book": "2SA",
+      "entityID": "place:edom_357",
+      "draftPath": "drafts/places_1/2SA_edom_357.json",
+      "evidencePath": "evidence/places_1/2SA_edom_357.json",
+      "currentDraftSHA256": "f55992db4e78b829ced3eb5dcffc9a73f4a313e7bd852969dee4f2c76bb94792",
+      "currentEvidenceSHA256": "8290df33b39e14a934b29b42b26c9617a1a52b5ae72b3f60b9dc79a4227b691b",
+      "currentProfileSHA256": "bc4637e95da38039d33dcec4851b2ac74127e97611c6b4ba0568d00db75bba56",
+      "storedDraftSHA256": "f55992db4e78b829ced3eb5dcffc9a73f4a313e7bd852969dee4f2c76bb94792",
+      "storedProfileSHA256": "bc4637e95da38039d33dcec4851b2ac74127e97611c6b4ba0568d00db75bba56",
+      "hashSync": {
+        "draft": true,
+        "profile": true
+      },
+      "knownBy": {
+        "chapter": 8,
+        "verse": 14
+      },
+      "currentReaderFields": {
+        "subtitleJa": "ダビデが守備隊を置いた古代地域",
+        "summaryJa": "サムエル記下8:14は、ダビデがエドム全域に守備隊を置いたと記します。ここで指すのは一都市ではなく地域です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "古代地域の範囲は一様に確定せず、現代国家の国境と一致させません。",
+        "historicalRoleJa": "ダビデが全域に守備隊を置いた地域として記される。",
+        "locationNoteJa": "地域名であり、特定都市の点とは異なります。",
+        "wikipedia": {
+          "title": "Edom",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Edom",
+          "kind": "article",
+          "noteJa": "記事はエドムをヨルダン川東方の古代地域・王国として説明します。記事上の範囲は時代によって変わり、現代国境と一致するものではありません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true
+        }
+      },
+      "fixedWEBWitness": {
+        "path": "inventory/targets/samuel2-web-verses.json",
+        "sha256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+        "sourceQuotes": [
+          {
+            "ref": "2SA 8:14",
+            "text": "He put garrisons in Edom. Throughout all Edom, he put garrisons, and all the Edomites became servants to David. The LORD gave victory to David wherever he went.",
+            "url": "https://ebible.org/engwebp/2SA08.htm#V14"
+          }
+        ]
+      },
+      "articleSourceIds": [
+        {
+          "wiki-edom_357": "https://en.wikipedia.org/wiki/Edom"
+        }
+      ]
+    },
+    {
+      "status": "fail",
+      "verses": [
+        {
+          "ref": "1SA 9:4",
+          "text": "He passed through the hill country of Ephraim, and passed through the land of Shalishah, but they didn’t find them. Then they passed through the land of Shaalim, and they weren’t there. Then he passed through the land of the Benjamites, but they didn’t find them.",
+          "url": "https://ebible.org/engwebp/1SA09.htm#V4"
+        },
+        {
+          "ref": "1SA 10:2",
+          "text": "When you have departed from me today, then you will find two men by Rachel’s tomb, on the border of Benjamin at Zelzah.",
+          "url": "https://ebible.org/engwebp/1SA10.htm#V2"
+        }
+      ],
+      "wiki": {
+        "url": "https://ja.wikipedia.org/wiki/ベニヤミン族",
+        "locator": "本文 lines 138, 147–152",
+        "supportJa": "記事対象はベニヤミン族で、147行で相続地の境界を説明。1 Samuelの「land of the Benjamites」と関係するが同一の場所・境界線を確定しない。現プロフィールのrelated-section/identity falseは適切。",
+        "checkedAtUTC": "2026-10-16T02:12:12Z"
+      },
+      "assessmentJa": "knownBy9:4のsummaryは「地」を地域用法と説明し、初出に即している。Wikiの部族記事との関係もrelatedと適切に限定。現identityNoteJaは「『ベニヤミンの地』『ベニヤミンの境界』は地域を指す…」と書くが、9:4は土地の呼称だけで、境界表現は10:2で初めて出る。always-visible欄で後続の境界用例を先取りするため、9:4時点の区別だけに縮めるべき。地図policyもregion候補を未確認の参考位置として保持し、プロフィール座標nullで過剰な線/地点確定をしていない。",
+      "requestedChangeJa": "identityNoteJaから「・境界」を除き、9:4の「ベニヤミン人の地」を人・祖先と区別する説明だけ残す。10:2自体のsource/factは後続ゲートのまま。",
+      "book": "1SA",
+      "entityID": "place:benjamin-territory_1293",
+      "draftPath": "drafts/places_1/1SA_benjamin-territory_1293.json",
+      "evidencePath": "evidence/places_1/1SA_benjamin-territory_1293.json",
+      "currentDraftSHA256": "50b28b2b63670737f09c4d2d70e40ffdba37853ba82a828854565faa451ba7fb",
+      "currentEvidenceSHA256": "d9c901b120871c8151ce907c6ce02f1b0578830b104987946ce03b6feec23416",
+      "currentProfileSHA256": "af996f8c768a19643d4111bb78ccf8dab54339785016f87dd11354cc39b755a8",
+      "storedDraftSHA256": "50b28b2b63670737f09c4d2d70e40ffdba37853ba82a828854565faa451ba7fb",
+      "storedProfileSHA256": "af996f8c768a19643d4111bb78ccf8dab54339785016f87dd11354cc39b755a8",
+      "hashSync": {
+        "draft": true,
+        "profile": true
+      },
+      "knownBy": {
+        "chapter": 9,
+        "verse": 4
+      },
+      "currentReaderFields": {
+        "subtitleJa": "サウル捜索の範囲に現れる地域名",
+        "summaryJa": "1サムエル記9:4では、サウルが失われた雌ろばを捜す道中に「ベニヤミン人の地」を通ります。ここでの「ベニヤミン」は地域を指し、ベニヤミン族の人々や族祖本人とは区別されます。",
+        "identityNoteJa": "「ベニヤミンの地」「ベニヤミンの境界」は地域を指す表現で、ベニヤミン族の人々や族祖本人とは区別されます。",
+        "modernLocationJa": "本文の地域名は現代の行政境界や正確な境界線を示すものではありません。",
+        "historicalRoleJa": "サウルが捜索中に通る土地として9:4に初出する。",
+        "locationNoteJa": "地図上の参考点が表示される場合も、地域の代表位置であり境界線を表しません。",
+        "wikipedia": {
+          "title": "ベニヤミン族",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/ベニヤミン族",
+          "kind": "related-section",
+          "noteJa": "日本語記事はベニヤミン族を主題とし、相続地の概略を説明します。聖書本文の「ベニヤミンの地」と歴史上の部族領域との関係を示す参考記事で、同一記事対象ではありません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "relationVerified": true
+        }
+      },
+      "fixedWEBWitness": {
+        "path": "inventory/targets/samuel1-web-verses.json",
+        "sha256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab",
+        "sourceQuotes": [
+          {
+            "ref": "1SA 9:4",
+            "text": "He passed through the hill country of Ephraim, and passed through the land of Shalishah, but they didn’t find them. Then they passed through the land of Shaalim, and they weren’t there. Then he passed through the land of the Benjamites, but they didn’t find them.",
+            "url": "https://ebible.org/engwebp/1SA09.htm#V4"
+          },
+          {
+            "ref": "1SA 10:2",
+            "text": "When you have departed from me today, then you will find two men by Rachel’s tomb, on the border of Benjamin at Zelzah.",
+            "url": "https://ebible.org/engwebp/1SA10.htm#V2"
+          }
+        ]
+      },
+      "articleSourceIds": [
+        {
+          "wikipedia-benjamin-territory_1293": "https://ja.wikipedia.org/wiki/ベニヤミン族"
+        }
+      ]
+    },
+    {
+      "status": "qualified",
+      "verses": [
+        {
+          "ref": "2SA 2:2",
+          "text": "So David went up there with his two wives, Ahinoam the Jezreelitess, and Abigail the wife of Nabal the Carmelite.",
+          "url": "https://ebible.org/engwebp/2SA02.htm#V2"
+        },
+        {
+          "ref": "2SA 3:2",
+          "text": "Sons were born to David in Hebron. His firstborn was Amnon, of Ahinoam the Jezreelitess;",
+          "url": "https://ebible.org/engwebp/2SA03.htm#V2"
+        }
+      ],
+      "wiki": {
+        "url": "https://en.wikipedia.org/wiki/Jezreel_(city)",
+        "locator": "Lead lines 153–155; ancient city/site; current profile’s references are gentilic",
+        "supportJa": "記事はテル・イズレエルの遺跡と古代都市を扱い、アヒノアムの「イズレエル人」という形容詞から都市/谷のいずれかを確定する根拠にはならない。現在稿は関連記事として限定。",
+        "checkedAtUTC": "2026-10-16T02:12:12Z"
+      },
+      "assessmentJa": "summary knownBy2:2は地名を含む「Jezreelitess」という出身表現を正確に扱い、具体的都市・谷への比定を避ける。3:2はfactにゲート。profile passagesでは両方が形容詞用例として扱われ、座標null/map candidate suppressedも適切。明示的な留保があるためqualified（同定未確定）で、本文誤読は確認しなかった。",
+      "requestedChangeJa": null,
+      "book": "2SA",
+      "entityID": "place:jezreel_642",
+      "draftPath": "drafts/places_1/2SA_jezreel_642.json",
+      "evidencePath": "evidence/places_1/2SA_jezreel_642.json",
+      "currentDraftSHA256": "5742af363b2865f15b346d5e11e9d7cb486a0c7d8b32bdff085aedd519cb9391",
+      "currentEvidenceSHA256": "c89bff6d3dc6f46634b84d564fdd69b325c0c8559df32ebdee64addb914f95e5",
+      "currentProfileSHA256": "122c1c48320194b3257d0fdb737e84a7219bbfd9c62bf94351b91660f5e8acea",
+      "storedDraftSHA256": "5742af363b2865f15b346d5e11e9d7cb486a0c7d8b32bdff085aedd519cb9391",
+      "storedProfileSHA256": "122c1c48320194b3257d0fdb737e84a7219bbfd9c62bf94351b91660f5e8acea",
+      "hashSync": {
+        "draft": true,
+        "profile": true
+      },
+      "knownBy": {
+        "chapter": 2,
+        "verse": 2
+      },
+      "currentReaderFields": {
+        "subtitleJa": "「イズレエル人」という出身表現に残る地名",
+        "summaryJa": "サムエル記下2:2で、アヒノアムは「イズレエル人」と呼ばれます。地名を含む出身表現ですが、本文だけでは特定の都市・谷への比定はできません。",
+        "identityNoteJa": "",
+        "modernLocationJa": "記事はイズレエルの古代都市遺跡を扱いますが、人物の出身呼称だけで出身地の範囲を特定できません。",
+        "historicalRoleJa": "人物の出身を表す形容に含まれる地名。",
+        "locationNoteJa": "形容表現が特定の都市・谷のどちらを指すかは本文から決められません。",
+        "wikipedia": {
+          "title": "Tel Jezreel",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Jezreel_(city)",
+          "kind": "related-section",
+          "noteJa": "記事は古代都市イズレエルとテル・イズレエル遺跡を扱います。2サムエル記の用例は形容詞「イズレエル人」で、記事の都市同定を人物の具体的出身地へ直結させないため関連情報として示します。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "relationVerified": true
+        }
+      },
+      "fixedWEBWitness": {
+        "path": "inventory/targets/samuel2-web-verses.json",
+        "sha256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+        "sourceQuotes": [
+          {
+            "ref": "2SA 2:2",
+            "text": "So David went up there with his two wives, Ahinoam the Jezreelitess, and Abigail the wife of Nabal the Carmelite.",
+            "url": "https://ebible.org/engwebp/2SA02.htm#V2"
+          },
+          {
+            "ref": "2SA 3:2",
+            "text": "Sons were born to David in Hebron. His firstborn was Amnon, of Ahinoam the Jezreelitess;",
+            "url": "https://ebible.org/engwebp/2SA03.htm#V2"
+          }
+        ]
+      },
+      "articleSourceIds": [
+        {
+          "wiki-jezreel_642": "https://en.wikipedia.org/wiki/Jezreel_(city)"
+        }
+      ]
+    },
+    {
+      "status": "qualified",
+      "verses": [
+        {
+          "ref": "1SA 7:16",
+          "text": "He went from year to year in a circuit to Bethel, Gilgal, and Mizpah; and he judged Israel in all those places.",
+          "url": "https://ebible.org/engwebp/1SA07.htm#V16"
+        },
+        {
+          "ref": "1SA 10:3",
+          "text": "Then you will come to the oak of Tabor. Three men will meet you there going up to God to Bethel…",
+          "url": "https://ebible.org/engwebp/1SA10.htm#V3"
+        },
+        {
+          "ref": "1SA 13:2",
+          "text": "…two thousand were with Saul in Michmash and in the Mount of Bethel…",
+          "url": "https://ebible.org/engwebp/1SA13.htm#V2"
+        }
+      ],
+      "wiki": {
+        "url": "https://ja.wikipedia.org/wiki/ベテル",
+        "locator": "Article body lines 153–158",
+        "supportJa": "記事はベテルを旧約聖書の地名とし、現代のテル・ベイティン比定を「ではないか」と留保、エルサレム北方・アイ西方と説明。記事の比定はprofileの留保と合う。",
+        "checkedAtUTC": "2026-10-16T02:12:12Z"
+      },
+      "assessmentJa": "knownBy7:16 summaryは巡回先の町、first appearance only。10:3と13:2は後続factsに分け、13:2の「Mount of Bethel」と町を明示的に区別。modernLocationJaとwikipedia noteのテル・ベイティン説は断定せず、現地坐標null; candidate map unverified。qualified due unresolved ancient site identification and separate Mount of Bethel usage, not due unread evidence.",
+      "requestedChangeJa": null,
+      "book": "1SA",
+      "entityID": "place:bethel_202",
+      "draftPath": "drafts/places_1/1SA_bethel_202.json",
+      "evidencePath": "evidence/places_1/1SA_bethel_202.json",
+      "currentDraftSHA256": "8855c0b92ecb7887f8fb439317a2a18b3d282ab06f1100dbeebde48570a479a3",
+      "currentEvidenceSHA256": "a5c4db70dc01fca7a5d1139d4558311b5a77acc7da348be9b986bb07fc71f78e",
+      "currentProfileSHA256": "6d6d407b93927673d7623f1e5919cbbc9a4ed1dd1a30a6878f6b40bc573f9abb",
+      "storedDraftSHA256": "8855c0b92ecb7887f8fb439317a2a18b3d282ab06f1100dbeebde48570a479a3",
+      "storedProfileSHA256": "6d6d407b93927673d7623f1e5919cbbc9a4ed1dd1a30a6878f6b40bc573f9abb",
+      "hashSync": {
+        "draft": true,
+        "profile": true
+      },
+      "knownBy": {
+        "chapter": 7,
+        "verse": 16
+      },
+      "currentReaderFields": {
+        "subtitleJa": "サムエルが巡回した町",
+        "summaryJa": "1サムエル記7:16では、サムエルがベテル、ギルガル、ミツパを巡回し、各地でイスラエルを裁いたと記されます。本文は町の現在位置を示しません。",
+        "identityNoteJa": "",
+        "modernLocationJa": "聖書のベテルはエルサレム北方の古代地名で、テル・ベイティンとの比定が提案されていますが、同定には留保があります。",
+        "historicalRoleJa": "サムエルの巡回先の一つとして初出します。",
+        "locationNoteJa": "テル・ベイティンとの比定は推定の範囲にとどまり、正確な位置を断定できません。",
+        "wikipedia": {
+          "title": "ベテル",
+          "language": "ja",
+          "url": "https://ja.wikipedia.org/wiki/ベテル",
+          "kind": "article",
+          "noteJa": "記事はベテルを旧約聖書の地名とし、テル・ベイティンではないかと述べます。エルサレム北方・アイの西という説明はありますが、遺跡比定は断定されていません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true
+        }
+      },
+      "fixedWEBWitness": {
+        "path": "inventory/targets/samuel1-web-verses.json",
+        "sha256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab",
+        "sourceQuotes": [
+          {
+            "ref": "1SA 7:16",
+            "text": "He went from year to year in a circuit to Bethel, Gilgal, and Mizpah; and he judged Israel in all those places.",
+            "url": "https://ebible.org/engwebp/1SA07.htm#V16"
+          },
+          {
+            "ref": "1SA 10:3",
+            "text": "Then you will come to the oak of Tabor. Three men will meet you there going up to God to Bethel…",
+            "url": "https://ebible.org/engwebp/1SA10.htm#V3"
+          },
+          {
+            "ref": "1SA 13:2",
+            "text": "…two thousand were with Saul in Michmash and in the Mount of Bethel…",
+            "url": "https://ebible.org/engwebp/1SA13.htm#V2"
+          }
+        ]
+      },
+      "articleSourceIds": [
+        {
+          "wikipedia-bethel_202": "https://ja.wikipedia.org/wiki/ベテル"
+        }
+      ]
+    },
+    {
+      "status": "qualified",
+      "verses": [
+        {
+          "ref": "2SA 17:27",
+          "text": "When David had come to Mahanaim, Shobi the son of Nahash of Rabbah of the children of Ammon, and Machir the son of Ammiel of Lodebar, and Barzillai the Gileadite of Rogelim,",
+          "url": "https://ebible.org/engwebp/2SA17.htm#V27"
+        },
+        {
+          "ref": "2SA 19:31",
+          "text": "Barzillai the Gileadite came down from Rogelim; and he went over the Jordan with the king to conduct him over the Jordan.",
+          "url": "https://ebible.org/engwebp/2SA19.htm#V31"
+        }
+      ],
+      "wiki": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_biblical_places#Rogelim",
+        "locator": "§ Rogelim, lines 1260–1264",
+        "supportJa": "欄はRogelimを2 Samuelに2回現れる場所、Barzillaiの町とし、Gilead内だが正確な位置は特定されていないと説明。現Profile noteは17:27既出のBarzillaiの町/Gilead情報に限り19:31の出来事を先取りしない。",
+        "checkedAtUTC": "2026-10-16T02:12:12Z"
+      },
+      "assessmentJa": "knownBy17:27 summary/historicalRoleは同節でBarzillaiをGileadite of Rogelimと紹介する範囲。19:31の川渡河はfact knownBy19:31。Wikipedia §Rogelimは現行anchorと内容を確認。地点が特定できないため座標nullとcandidate map抑止も一貫。qualifiedは位置未同定という正当な留保。",
+      "requestedChangeJa": null,
+      "book": "2SA",
+      "entityID": "place:rogelim_1012",
+      "draftPath": "drafts/places_1/2SA_rogelim_1012.json",
+      "evidencePath": "evidence/places_1/2SA_rogelim_1012.json",
+      "currentDraftSHA256": "77b9b635b1e59df12c7e0b0b9b5f8e63f1a896815f6d67546c78d572971cd42c",
+      "currentEvidenceSHA256": "b1ce024b848abca2def303288a3384415416ce847aa2dd72d4109cc7b905753b",
+      "currentProfileSHA256": "195797b4942b244b0563f6650539981c3657272e1308424cfdb7a7d7bec38859",
+      "storedDraftSHA256": "77b9b635b1e59df12c7e0b0b9b5f8e63f1a896815f6d67546c78d572971cd42c",
+      "storedProfileSHA256": "195797b4942b244b0563f6650539981c3657272e1308424cfdb7a7d7bec38859",
+      "hashSync": {
+        "draft": true,
+        "profile": true
+      },
+      "knownBy": {
+        "chapter": 17,
+        "verse": 27
+      },
+      "currentReaderFields": {
+        "subtitleJa": "バルジライの町",
+        "summaryJa": "サムエル記下17:27で、バルジライはギレアデ人ロゲリム出身と紹介されます。",
+        "identityNoteJa": "",
+        "modernLocationJa": "記事はロゲリムをギレアデの町とし、正確な場所は特定されていないとします。",
+        "historicalRoleJa": "バルジライの出身地として、ダビデがマハナイムに来た場面で名が挙がる。",
+        "locationNoteJa": "町の存在は本文にあるが現代位置は不明。",
+        "wikipedia": {
+          "title": "List of minor biblical places",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_biblical_places#Rogelim",
+          "kind": "shared-section",
+          "noteJa": "記事はロゲリムをバルジライの町とし、ギレアデに位置すると説明しますが、正確な所在地は特定していません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true
+        }
+      },
+      "fixedWEBWitness": {
+        "path": "inventory/targets/samuel2-web-verses.json",
+        "sha256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+        "sourceQuotes": [
+          {
+            "ref": "2SA 17:27",
+            "text": "When David had come to Mahanaim, Shobi the son of Nahash of Rabbah of the children of Ammon, and Machir the son of Ammiel of Lodebar, and Barzillai the Gileadite of Rogelim,",
+            "url": "https://ebible.org/engwebp/2SA17.htm#V27"
+          },
+          {
+            "ref": "2SA 19:31",
+            "text": "Barzillai the Gileadite came down from Rogelim; and he went over the Jordan with the king to conduct him over the Jordan.",
+            "url": "https://ebible.org/engwebp/2SA19.htm#V31"
+          }
+        ]
+      },
+      "articleSourceIds": [
+        {
+          "wiki-rogelim_1012": "https://en.wikipedia.org/wiki/List_of_minor_biblical_places#Rogelim"
+        }
+      ]
+    },
+    {
+      "status": "fail",
+      "verses": [
+        {
+          "ref": "2SA 3:10",
+          "text": "to transfer the kingdom from Saul’s house, and to set up David’s throne over Israel and over Judah, from Dan even to Beersheba.”",
+          "url": "https://ebible.org/engwebp/2SA03.htm#V10"
+        },
+        {
+          "ref": "2SA 17:11",
+          "text": "But I counsel that all Israel be gathered together to you, from Dan even to Beersheba, as the sand that is by the sea for multitude…",
+          "url": "https://ebible.org/engwebp/2SA17.htm#V11"
+        },
+        {
+          "ref": "2SA 24:2",
+          "text": "Now go back and forth through all the tribes of Israel, from Dan even to Beersheba, and count the people…",
+          "url": "https://ebible.org/engwebp/2SA24.htm#V2"
+        },
+        {
+          "ref": "2SA 24:6",
+          "text": "then they came to Gilead and to the land of Tahtim Hodshi; and they came to Dan Jaan and around to Sidon,",
+          "url": "https://ebible.org/engwebp/2SA24.htm#V6"
+        },
+        {
+          "ref": "2SA 24:15",
+          "text": "…seventy thousand men died of the people from Dan even to Beersheba.",
+          "url": "https://ebible.org/engwebp/2SA24.htm#V15"
+        }
+      ],
+      "wiki": {
+        "url": "https://en.wikipedia.org/wiki/Dan_(ancient_city)",
+        "locator": "Opening and Identification and names, lines 166–172",
+        "supportJa": "記事はDanをLaishとも呼ぶ古代都市、テル・ダンと同定。profileは「from Dan to Beersheba」を領域範囲の端点として扱い、記事をその都市名に関する関連情報と限定している。",
+        "checkedAtUTC": "2026-10-16T02:12:12Z"
+      },
+      "assessmentJa": "3:10/17:11/24:2/24:15の北端公式としての地理用法は本文に直接ある。24:6は複合地名「Dan Jaan」であり、現在profileのpassages/sourceIdsでは除外され、occurrenceAuditもexcludedとする。一方、同じcurrent evidence sidecar occurrenceChecksには24:6がstatus directとして残り、current profile/auditと矛盾する。原稿本文はsafeだが、独立証拠の節判定が矛盾しているためclosure fail。",
+      "requestedChangeJa": "evidence occurrenceChecksの24:6行をexcludedへ同期し、24:6 Dan Jaanを単独Danと混同しない理由を明記する。",
+      "book": "2SA",
+      "entityID": "place:dan_323",
+      "draftPath": "drafts/places_1/2SA_dan_323.json",
+      "evidencePath": "evidence/places_1/2SA_dan_323.json",
+      "currentDraftSHA256": "57035d9d62222b40615a8ff127a7085dac5ab812e285b03515bfad0d1ffb4a44",
+      "currentEvidenceSHA256": "2fa8a7b918df707f2200a94170d414080cdc099fb321fb670340ecbb57b1f366",
+      "currentProfileSHA256": "480471fa1d38a1eb951d2c330f879c205c77cc3644f127432a387f4c0f7bc731",
+      "storedDraftSHA256": "57035d9d62222b40615a8ff127a7085dac5ab812e285b03515bfad0d1ffb4a44",
+      "storedProfileSHA256": "480471fa1d38a1eb951d2c330f879c205c77cc3644f127432a387f4c0f7bc731",
+      "hashSync": {
+        "draft": true,
+        "profile": true
+      },
+      "knownBy": {
+        "chapter": 3,
+        "verse": 10
+      },
+      "currentReaderFields": {
+        "subtitleJa": "「ダンからベエル・シェバまで」の北端",
+        "summaryJa": "サムエル記下3:10は、ダビデの王権の範囲を「ダンからベエル・シェバまで」と表現します。ここでは地名が国土の北端として現れます。",
+        "identityNoteJa": "",
+        "modernLocationJa": "記事のテル・ダンは古代都市の遺跡候補ですが、本書の用例は都市の滞在記事でなく国土範囲の端点です。",
+        "historicalRoleJa": "イスラエルの北端を示す地理表現の一端。",
+        "locationNoteJa": "地名ダンを古代都市の点位置へそのまま還元せず、領域表現の端点として扱います。",
+        "wikipedia": {
+          "title": "Dan (ancient city)",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Dan_(ancient_city)",
+          "kind": "related-section",
+          "noteJa": "記事は古代都市ダンを旧名ライシュ、テル・ダンと結び付けます。サムエル記下の用例は「ダンからベエル・シェバまで」という範囲表現なので、記事は北端の地名に関する関連情報として示し、領域境界の確定根拠とはしません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "relationVerified": true
+        }
+      },
+      "fixedWEBWitness": {
+        "path": "inventory/targets/samuel2-web-verses.json",
+        "sha256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+        "sourceQuotes": [
+          {
+            "ref": "2SA 3:10",
+            "text": "to transfer the kingdom from Saul’s house, and to set up David’s throne over Israel and over Judah, from Dan even to Beersheba.”",
+            "url": "https://ebible.org/engwebp/2SA03.htm#V10"
+          },
+          {
+            "ref": "2SA 17:11",
+            "text": "But I counsel that all Israel be gathered together to you, from Dan even to Beersheba, as the sand that is by the sea for multitude…",
+            "url": "https://ebible.org/engwebp/2SA17.htm#V11"
+          },
+          {
+            "ref": "2SA 24:2",
+            "text": "Now go back and forth through all the tribes of Israel, from Dan even to Beersheba, and count the people…",
+            "url": "https://ebible.org/engwebp/2SA24.htm#V2"
+          },
+          {
+            "ref": "2SA 24:6",
+            "text": "then they came to Gilead and to the land of Tahtim Hodshi; and they came to Dan Jaan and around to Sidon,",
+            "url": "https://ebible.org/engwebp/2SA24.htm#V6"
+          },
+          {
+            "ref": "2SA 24:15",
+            "text": "…seventy thousand men died of the people from Dan even to Beersheba.",
+            "url": "https://ebible.org/engwebp/2SA24.htm#V15"
+          }
+        ]
+      },
+      "articleSourceIds": [
+        {
+          "wiki-2sa-dan-323": "https://en.wikipedia.org/wiki/Dan_(ancient_city)"
+        }
+      ]
+    }
+  ],
+  "scopeNote": "All six current drafts and sidecars were freshly read and SHA-bound. All quoted primary passages and article bodies/locators were checked; fixed WEB witnesses are the pinned local WEBP files. Failures concern map start metadata or a remaining future-note/evidence contradiction, not generic source unavailability."
+}

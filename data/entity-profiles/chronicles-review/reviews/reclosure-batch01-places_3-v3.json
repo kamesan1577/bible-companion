@@ -1,0 +1,4430 @@
+{
+  "reviewer": "Independent semantic reviewer; not author of frozen places_3 batch",
+  "reviewedAtUTC": "2026-10-16T05:22:13Z",
+  "scope": "Current-SHA reclosure of all 35 Chronicles batch01 places_3 rows after author repairs. Not publication approval.",
+  "frozenInputPath": "reviews/batch01-places_3-frozen-input-v3.json",
+  "frozenInputSHA256": "11baeef3decb165a174f858b59f9dedbe4c23a5c01ebc47df332fb5980fde8fa",
+  "priorIndependentReportPath": "reviews/independent-batch01-places_3.json",
+  "priorIndependentReportSHA256": "49067172057f6de379684e41969c897a2ac37ff015e205571792711b1daf11dc",
+  "authorRepairLogPath": "evidence/places_3/author-repairs-batch01-independent-review.json",
+  "authorRepairLogSHA256": "91adbbb11dd7e4057f2046ea1d51eb78705df7bc3e353d7bd35065d1a090389b",
+  "fixedPrimaryWitness": "inventory/targets/chronicles1-web-verses.json",
+  "fixedPrimaryWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+  "methods": [
+    "全35件のdraft/evidence SHAとprofile canonical SHAを再計算し、v3固定入力の現行SHAと照合した。",
+    "7件の前回failを固定WEB本文、初出欄、fact gate、実記事locatorの記録と現行修正に照らして再確認した。",
+    "Beth-Biri、Beth-Marcaboth、Jorkoamの変化後フィールドも固定WEBの明記/曖昧さと照合し、所在地・同定上のqualificationを維持した。",
+    "未変更25件はdraft/evidence SHAが前回独立判定と完全一致する場合だけ判定を保持した。"
+  ],
+  "counts": {
+    "total": 35,
+    "pass": 14,
+    "qualified": 20,
+    "fail": 0,
+    "excluded": 1,
+    "open": 0,
+    "rowsIndependentlyRechecked": 10,
+    "unchangedRowsRetainedByExactSHA": 25
+  },
+  "publicationApproved": false,
+  "rows": [
+    {
+      "book": "1CH",
+      "entityID": "place:abdon_3",
+      "draftPath": "drafts/places_3/1CH_abdon_3.json",
+      "evidencePath": "evidence/places_3/1CH_abdon_3.json",
+      "frozenDraftSHA256": "14482b59afa931538b469da21128713cc6294f5a2781283c8afc69d24bda68dd",
+      "currentDraftSHA256": "14482b59afa931538b469da21128713cc6294f5a2781283c8afc69d24bda68dd",
+      "frozenEvidenceSHA256": "1eb8e835477249bf39c1b1142d3e5e187bf91afc08625b425b9e85f9598347ee",
+      "currentEvidenceSHA256": "1eb8e835477249bf39c1b1142d3e5e187bf91afc08625b425b9e85f9598347ee",
+      "currentProfileCanonicalSHA256": "266fa95bf6ced3a4251599e505dd6baf2d697ca4e16a99096d5ea1a6c55ca5f7",
+      "matchesFrozenDraft": true,
+      "verdict": "pass",
+      "primaryContentRead": "WEB 6:74 lists Abdon with pasturelands among Asher towns assigned to Levites. Current introduction matches. The Levitical-city table row explicitly lists Abdon under Asher and Gershonites; no modern location is asserted.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 6:74",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "and out of the tribe of Asher, Mashal with its pasture lands, Abdon with its pasture lands,",
+          "textSHA256": "f8a0eaeb7256f6818b3f5332ee45f023a7b5672d08ca7581d3638e1ee292c951",
+          "citationURL": "https://ebible.org/engwebp/1CH06.htm#V74"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Levitical_city",
+        "title": "Levitical city",
+        "kind": "shared-section",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "一覧記事はアブドンをアシェル族の領域にあるゲルショニ人のレビ人の町として挙げます。記事はヨシュア記の町一覧を主軸とし、現代の遺跡位置までは確定しません。",
+        "bodyLocator": "Locations of Cities table, Asher / Abdon row, lines 121–131; introductory line 125 links the list to 1 Chronicles 6:54–81.",
+        "bodySupport": "「Locations of Cities」の表にアシェルの町Abdonが記され、導入は列王記上6章のレビ人の町一覧を参照すると説明する。該当表の対象を確かめた。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia article body: https://en.wikipedia.org/wiki/Levitical_city, “Locations of Cities” table lines 125–131, especially line 128. Exact place and tribal/Levitical category match. Candidate coordinate remains null.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:abdon_3",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 6,
+          "verse": 74
+        },
+        "reasonJa": "対象はアシェルからレビ人に配分された古代の町です。既存の位置点は都市名に結び付く未確定の参考候補としてのみ表示でき、現代の遺跡所在地や確認済み座標とは扱いません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 6,
+          "verse": 74
+        },
+        "summaryJa": "アブドンは、アシェル族からレビ人に与えられる牧草地付きの町として列挙されます。ここでは都市名として記されています。",
+        "subtitleJa": "アシェル族の牧草地付きレビ人の町",
+        "historicalRoleJa": "アシェル族の領域からレビ人に割り当てられた町の一つです。",
+        "identityNoteJa": "",
+        "modernLocationJa": "古代のアシェル領に属した町ですが、現代の正確な遺跡比定は定まっていません。",
+        "locationNoteJa": "町の正確な現代所在地は確定できません。地図に示す場合も従来の位置候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 74
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 74
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-6-74",
+          "wikipedia-abdon_3"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:aijalon_40",
+      "draftPath": "drafts/places_3/1CH_aijalon_40.json",
+      "evidencePath": "evidence/places_3/1CH_aijalon_40.json",
+      "frozenDraftSHA256": "33c0e97940290af6ed8a2c51f403cc93a8dfd9fbb521104e74472a2ed8625363",
+      "currentDraftSHA256": "591a0b6497e9ae4b5b9ee024b38f928a3ceb45d2437b8240b43bcc3ae7e673e7",
+      "frozenEvidenceSHA256": "911c0f360412764ac8a282d0eea250d7f6285498aae20a888ae17005785a6a09",
+      "currentEvidenceSHA256": "bc8905b36a3ceb012d9208b7ff9e3a6790b014672bfff8f7c5ac9da63b5a0e01",
+      "currentProfileCanonicalSHA256": "e502103297426a81164500e32642c474fe26c1077f270c0d2a15cc9375dd807e",
+      "matchesFrozenDraft": true,
+      "verdict": "pass",
+      "primaryContentRead": "WEB 6:69 supports Aijalon as a Kohathite Levitical town; WEB 8:13 separately names residents. Current summary at knownBy 6:69 says “本文は後に…” and reveals the 8:13 event before its gate. Keep the 8:13 material only in the gated fact; the fact itself is supported.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 6:69",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "Aijalon with its pasture lands, Gath Rimmon with its pasture lands;",
+          "textSHA256": "6254d1577ad2c6b8151f9e43d0c87b2c81bc29ddd437f2eed8d9fa692c9de2ad",
+          "citationURL": "https://ebible.org/engwebp/1CH06.htm#V69"
+        },
+        {
+          "ref": "1CH 8:13",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "and Beriah and Shema, who were heads of fathers’ households of the inhabitants of Aijalon, who put to flight the inhabitants of Gath;",
+          "textSHA256": "a513409bd29882a5a28776b26bb7a57708518493ccc1b5f42740f7a04cdb28f2",
+          "citationURL": "https://ebible.org/engwebp/1CH08.htm#V13"
+        }
+      ],
+      "currentFactsAndGates": [
+        {
+          "knownBy": {
+            "chapter": 8,
+            "verse": 13
+          },
+          "textJa": "1 Chronicles 8:13は、ベリアとシェマをアヤロンの住民の父祖家の長として記します。",
+          "sourceIds": [
+            "webp-1ch-8-13"
+          ],
+          "gateText": "and Beriah and Shema, who were heads of fathers’ households of the inhabitants of Aijalon, who put to flight the inhabitants of Gath;",
+          "sourceGateResolution": true
+        }
+      ],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Aijalon",
+        "title": "Ayalon Valley",
+        "kind": "shared-section",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事は谷とアヤロンの町の双方を扱い、「Tribe of Dan」節で町をレビ人の町として1 Chronicles 6:69に結び付けます。ヤロへの比定は記事中の歴史的提案で、確定した現代所在地としては示しません。",
+        "bodyLocator": "“Tribe of Dan” and “Identification”, lines 168–177; 1 Chronicles 6:69 and 8:13 are cited at line 173.",
+        "bodySupport": "記事の「Tribe of Dan」節はアヤロンの町をレビ人の町として扱い、1 Chronicles 6:69と結び付ける。続く同節は1 Chronicles 8:13を住民の用例として挙げる。記事は町・谷・現在地候補を区別する。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia Aijalon redirect opens Ayalon Valley: lines 133–135 distinguish valley from city; lines 168–177 discuss city and cite 1CH 6:69/8:13. Article identity is useful but does not cure the early summary spoiler.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:aijalon_40",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 6,
+          "verse": 69
+        },
+        "reasonJa": "本文と参照記事はアヤロンを町として扱います。既存点は町の位置候補として不確かなまま表示可能ですが、ヤロへの比定や座標は独立確認していません。谷全体を表す点としては表示しません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 6,
+          "verse": 69
+        },
+        "summaryJa": "アヤロンは、コハト氏族へ与えられた町の一覧に、牧草地を伴う町として記されています。本文は後に、アヤロンの住民の一部を父祖の家の長として挙げます。",
+        "subtitleJa": "コハト氏族に与えられた牧草地付きの町",
+        "historicalRoleJa": "エフライム族からコハト氏族へ与えられた町の一つです。",
+        "identityNoteJa": "",
+        "modernLocationJa": "聖書地名アヤロンは現在のヤロに比定されることがありますが、記事が紹介する歴史的な同定説を確定地点とは扱いません。",
+        "locationNoteJa": "本文は町と牧草地を示しますが、現代の遺跡との一致はここから確定できません。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 69
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 69
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 8,
+              "verse": 13
+            },
+            "end": {
+              "chapter": 8,
+              "verse": 13
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-6-69",
+          "webp-1ch-8-13",
+          "wikipedia-aijalon_40"
+        ],
+        "facts": [
+          {
+            "textJa": "1 Chronicles 8:13は、ベリアとシェマをアヤロンの住民の父祖家の長として記します。",
+            "knownBy": {
+              "chapter": 8,
+              "verse": 13
+            },
+            "sourceIds": [
+              "webp-1ch-8-13"
+            ]
+          }
+        ],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "priorVerdict": "fail",
+      "reclosureStatus": "independently-reread-current-snapshot",
+      "currentReview": {
+        "verdict": "pass",
+        "recheckedAtUTC": "2026-10-16T05:22:13Z",
+        "findingJa": "6:69の初出欄をレビ人の町に限定し、8:13の住民・父祖家の長はfactのゲートに残す。",
+        "knownBy": {
+          "chapter": 6,
+          "verse": 69
+        },
+        "subtitleJa": "コハト氏族に与えられた牧草地付きの町",
+        "summaryJa": "アヤロンは、コハト氏族へ与えられた町の一覧に、牧草地を伴う町として記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "エフライム族からコハト氏族へ与えられた町の一つです。",
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 69
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 69
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 8,
+              "verse": 13
+            },
+            "end": {
+              "chapter": 8,
+              "verse": 13
+            }
+          }
+        ],
+        "facts": [
+          {
+            "textJa": "1 Chronicles 8:13は、ベリアとシェマをアヤロンの住民の父祖家の長として記します。",
+            "knownBy": {
+              "chapter": 8,
+              "verse": 13
+            },
+            "sourceIds": [
+              "webp-1ch-8-13"
+            ]
+          }
+        ],
+        "wikipedia": {
+          "title": "Ayalon Valley",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Aijalon",
+          "kind": "shared-section",
+          "noteJa": "記事はアヤロンの谷と町を区別し、「Tribe of Dan」節で町をレビ人の町として1 Chronicles 6:69に結び付けます。ヤロへの比定は提案の一つで、現代の所在地は確定しません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true
+        },
+        "sourceGateAndIdentityRechecked": true,
+        "authorRepairReasonJa": "1CH 6:69の初出要約から8:13の住民・父祖家の長を先取りする一文を除去。Wikipedia注記も初出時点で分かる町と6:69参照、位置比定の留保だけに限定。後の情報はknownBy 8:13のfactを維持。"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:alemeth_45",
+      "draftPath": "drafts/places_3/1CH_alemeth_45.json",
+      "evidencePath": "evidence/places_3/1CH_alemeth_45.json",
+      "frozenDraftSHA256": "96b0d97b1d0917357df949fc010f67ea8f8d64fc8e515104dd8f265972818f2e",
+      "currentDraftSHA256": "96b0d97b1d0917357df949fc010f67ea8f8d64fc8e515104dd8f265972818f2e",
+      "frozenEvidenceSHA256": "0dc078e9eae275a2a4e6c21ddf5956d786db250402a36ad608501afdc527f3f0",
+      "currentEvidenceSHA256": "0dc078e9eae275a2a4e6c21ddf5956d786db250402a36ad608501afdc527f3f0",
+      "currentProfileCanonicalSHA256": "4e347a7e1213103ad6f3bec4985dbe7428645715d8a835358ea19188649c7d81",
+      "matchesFrozenDraft": true,
+      "verdict": "pass",
+      "primaryContentRead": "WEB 6:60 lists Allemeth in Benjamin’s Levitical-city list. The current summary correctly distinguishes WEB spelling from article spelling and retains the proposed Almit location as an article claim, not a coordinate.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 6:60",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "and out of the tribe of Benjamin, Geba with its pasture lands, Allemeth with its pasture lands, and Anathoth with its pasture lands. All their cities throughout their families were thirteen cities.",
+          "textSHA256": "d04d79d6b476f1c41018745029f049a4f88a951900adddd140c5043cd861cf10",
+          "citationURL": "https://ebible.org/engwebp/1CH06.htm#V60"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Alemeth",
+        "title": "Alemeth",
+        "kind": "shared-section",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事はアレメトをベニヤミンの祭司の町として記し、Almonという別名を挙げます。現在のAlmitへの位置付けは記事中の説として扱います。",
+        "bodyLocator": "Article body, lines 102–107; the city entry cites 1 Chronicles 6:60 and Joshua 21:18.",
+        "bodySupport": "記事本文は「Hebrew Bible」の項目で同名を二つの人名とベニヤミンの都市に分け、都市をAlmonとも呼ぶ。現代のAlmit説は記事の記述としてのみ保持する。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia Alemeth article, body locator in evidence lines 102–107: separates the Benjamin city from same-name people, gives Almon as variant, and describes Almit as a proposed identification. Search/find did not find literal “Allemeth” in body, but the city entry explicitly cites 1CH 6:60/Joshua 21:18.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:alemeth_45",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 6,
+          "verse": 60
+        },
+        "reasonJa": "本文は町と牧草地を明記します。既存点はアレメトの不確かな位置候補としてのみ表示可能です。Almit比定は確定情報ではなく、座標は公開しません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 6,
+          "verse": 60
+        },
+        "summaryJa": "アレメト（この節の綴りはAllemeth）は、ベニヤミン族から与えられた町の一覧に挙げられます。牧草地を伴う都市として記されています。",
+        "subtitleJa": "ベニヤミン族の牧草地付きの町",
+        "historicalRoleJa": "ベニヤミン族の領域にあったレビ人の町です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "アレメトはベニヤミンの古代都市名です。記事はAlmonという別名と、現在のAlmitへの比定を紹介しますが、現代の遺跡同定は確定できません。",
+        "locationNoteJa": "記事が紹介する現代地名との関係は比定説であり、確定地点として扱いません。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 60
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 60
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-6-60",
+          "wikipedia-alemeth_45"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:anathoth_63",
+      "draftPath": "drafts/places_3/1CH_anathoth_63.json",
+      "evidencePath": "evidence/places_3/1CH_anathoth_63.json",
+      "frozenDraftSHA256": "749bf28673d826e9c0e4025daf0a5a22b8bee0b8a4bd4dd7a94597bfd93cd48f",
+      "currentDraftSHA256": "749bf28673d826e9c0e4025daf0a5a22b8bee0b8a4bd4dd7a94597bfd93cd48f",
+      "frozenEvidenceSHA256": "0eaa4592a42f93435089385f712741a81e10885b488aed55b2d6a7371118b76d",
+      "currentEvidenceSHA256": "0eaa4592a42f93435089385f712741a81e10885b488aed55b2d6a7371118b76d",
+      "currentProfileCanonicalSHA256": "44c32e838777e875d54a8e5d56a3dbe140b9d5ecb71d6a3d47b522716a5fcb53",
+      "matchesFrozenDraft": true,
+      "verdict": "pass",
+      "primaryContentRead": "WEB 6:60 and 11:28, 12:3, 27:12 use Anathoth as a town/demonym. All listed refs are consistent and each later demonym is fact-gated. Article lead lines 123–128 directly calls it a Benjamin Levitical city and cites 1CH 6:54–60; modern-identification lines 137–143 preserve competing locations.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 6:60",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "and out of the tribe of Benjamin, Geba with its pasture lands, Allemeth with its pasture lands, and Anathoth with its pasture lands. All their cities throughout their families were thirteen cities.",
+          "textSHA256": "d04d79d6b476f1c41018745029f049a4f88a951900adddd140c5043cd861cf10",
+          "citationURL": "https://ebible.org/engwebp/1CH06.htm#V60"
+        },
+        {
+          "ref": "1CH 11:28",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "Ira the son of Ikkesh the Tekoite, Abiezer the Anathothite,",
+          "textSHA256": "31807642667e3269b27eb7dd08a295a2ee364b9a3a04f463d5f7135d27e99d24",
+          "citationURL": "https://ebible.org/engwebp/1CH11.htm#V28"
+        },
+        {
+          "ref": "1CH 12:3",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "The chief was Ahiezer, then Joash, the sons of Shemaah the Gibeathite; Jeziel and Pelet, the sons of Azmaveth; Beracah; Jehu the Anathothite;",
+          "textSHA256": "334a933bb26ad927fb5023358e5d178cd21121a6425b748daf17b802578e12cd",
+          "citationURL": "https://ebible.org/engwebp/1CH12.htm#V3"
+        },
+        {
+          "ref": "1CH 27:12",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "The ninth captain for the ninth month was Abiezer the Anathothite, of the Benjamites. In his division were twenty-four thousand.",
+          "textSHA256": "697040a01d0b3fc1f48a58f6da2e4b6cfe8541b5357e4af3741fe8117820f43e",
+          "citationURL": "https://ebible.org/engwebp/1CH27.htm#V12"
+        }
+      ],
+      "currentFactsAndGates": [
+        {
+          "knownBy": {
+            "chapter": 11,
+            "verse": 28
+          },
+          "textJa": "1 Chronicles 11:28はアビエゼルをアナトト人と呼びます。",
+          "sourceIds": [
+            "webp-1ch-11-28"
+          ],
+          "gateText": "Ira the son of Ikkesh the Tekoite, Abiezer the Anathothite,",
+          "sourceGateResolution": true
+        },
+        {
+          "knownBy": {
+            "chapter": 12,
+            "verse": 3
+          },
+          "textJa": "1 Chronicles 12:3はエフをアナトト人と呼びます。",
+          "sourceIds": [
+            "webp-1ch-12-3"
+          ],
+          "gateText": "The chief was Ahiezer, then Joash, the sons of Shemaah the Gibeathite; Jeziel and Pelet, the sons of Azmaveth; Beracah; Jehu the Anathothite;",
+          "sourceGateResolution": true
+        },
+        {
+          "knownBy": {
+            "chapter": 27,
+            "verse": 12
+          },
+          "textJa": "1 Chronicles 27:12もアビエゼルをアナトト人と記します。",
+          "sourceIds": [
+            "webp-1ch-27-12"
+          ],
+          "gateText": "The ninth captain for the ninth month was Abiezer the Anathothite, of the Benjamites. In his division were twenty-four thousand.",
+          "sourceGateResolution": true
+        }
+      ],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Anathoth",
+        "title": "Anathoth",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事冒頭はアナトトをベニヤミンのレビ人の町として紹介します。近代の同定節はアナタへの比定とアブー・ゴーシュ説を併記しており、現代の位置は一つに確定していません。",
+        "bodyLocator": "Lead lines 122–128; “Modern identification” lines 137–143.",
+        "bodySupport": "記事導入はレビ人の町、ベニヤミン領、1 Chronicles 6:54–60を明示する。地名と同綴りの人名を別項目として説明する。Modern identification節はアナタとアブー・ゴーシュに関する異なる比定を記す。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Anathoth, lead lines 123–128; modern-identification lines 137–143. Exact match, no one-site certainty.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:anathoth_63",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 6,
+          "verse": 60
+        },
+        "reasonJa": "本文は町として明記します。既存点はアナトトの未確定な位置候補として表示できますが、記事が挙げる複数の比定の一つを確定位置としては扱いません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 6,
+          "verse": 60
+        },
+        "summaryJa": "アナトトは、ベニヤミン族からレビ人に与えられた町として列挙されます。本文はこの町を牧草地付きの都市の一つに数えています。",
+        "subtitleJa": "ベニヤミン族の牧草地付きレビ人の町",
+        "historicalRoleJa": "ベニヤミン族の領域に置かれたレビ人の町です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "記事はエルサレム北方のアナタを有力な歴史的比定として挙げる一方、アブー・ゴーシュにも関連説があると記します。現代の正確な位置は確定できません。",
+        "locationNoteJa": "アナトトの現代比定には複数の説があります。地図上の候補は確定地点とみなしません。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 60
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 60
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 11,
+              "verse": 28
+            },
+            "end": {
+              "chapter": 11,
+              "verse": 28
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 12,
+              "verse": 3
+            },
+            "end": {
+              "chapter": 12,
+              "verse": 3
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 27,
+              "verse": 12
+            },
+            "end": {
+              "chapter": 27,
+              "verse": 12
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-6-60",
+          "webp-1ch-11-28",
+          "webp-1ch-12-3",
+          "webp-1ch-27-12",
+          "wikipedia-anathoth_63"
+        ],
+        "facts": [
+          {
+            "textJa": "1 Chronicles 11:28はアビエゼルをアナトト人と呼びます。",
+            "knownBy": {
+              "chapter": 11,
+              "verse": 28
+            },
+            "sourceIds": [
+              "webp-1ch-11-28"
+            ]
+          },
+          {
+            "textJa": "1 Chronicles 12:3はエフをアナトト人と呼びます。",
+            "knownBy": {
+              "chapter": 12,
+              "verse": 3
+            },
+            "sourceIds": [
+              "webp-1ch-12-3"
+            ]
+          },
+          {
+            "textJa": "1 Chronicles 27:12もアビエゼルをアナトト人と記します。",
+            "knownBy": {
+              "chapter": 27,
+              "verse": 12
+            },
+            "sourceIds": [
+              "webp-1ch-27-12"
+            ]
+          }
+        ],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:aner_65",
+      "draftPath": "drafts/places_3/1CH_aner_65.json",
+      "evidencePath": "evidence/places_3/1CH_aner_65.json",
+      "frozenDraftSHA256": "f6ed0489c74e4ef205fee7c1a0edaab48cdeff782ca15bd45b5f4b4384232d3f",
+      "currentDraftSHA256": "f6ed0489c74e4ef205fee7c1a0edaab48cdeff782ca15bd45b5f4b4384232d3f",
+      "frozenEvidenceSHA256": "1fd8ff6006c98aad848694e68fa1ca65068c752e568f068fdded312fcc09bfd2",
+      "currentEvidenceSHA256": "1fd8ff6006c98aad848694e68fa1ca65068c752e568f068fdded312fcc09bfd2",
+      "currentProfileCanonicalSHA256": "ce06ed3b8c4ecacd70d750b9b14eca85ab48cd4fe27e741b8941ababfb26a907",
+      "matchesFrozenDraft": true,
+      "verdict": "qualified",
+      "primaryContentRead": "WEB 6:70 names Aner and Bileam as towns assigned to Kohathites from half-Manasseh. Current text accurately states those facts. The article itself says the city of Aner may be a scribal error for Taanach; the note preserves that as an unconfirmed theory. The article’s own verse citation differs (6:55) from fixed WEB 6:70, so retain chapter/verse caution.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 6:70",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "and out of the half-tribe of Manasseh, Aner with its pasture lands, and Bileam with its pasture lands, for the rest of the family of the sons of Kohath.",
+          "textSHA256": "1bcd2e2ce260edc50e9fbf9c08ec4230588f76dd27397a42859389c5f26d451c",
+          "citationURL": "https://ebible.org/engwebp/1CH06.htm#V70"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Aner",
+        "title": "Aner",
+        "kind": "shared-section",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事はアネルをマナセ領のコハト氏族に与えられた町として挙げ、創世記の人名Anerと区別します。町をタアナクと同一視する説にも触れますが、本文では確定比定としません。",
+        "bodyLocator": "Article body, lines 106–108; city entry says Manasseh and Kohath family, and notes a proposed Taanach identity.",
+        "bodySupport": "記事本文は同名の創世記の人物とマナセ領のコハト人の町を別項目にし、後者をタアナクと同じとする見方があると述べる。記事の引用箇所の番号づけは固定WEBの番号と異なるが、地理・役割の記述は1 Chronicles 6:70の文脈に合う。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Aner, lines 106–108: separates Genesis person Aner from Manasseh/Kohath town and states Taanach proposal. Relation matches; modern identity unresolved.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:aner_65",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 6,
+          "verse": 70
+        },
+        "reasonJa": "本文の都市名は明確です。既存点は「アネル／タアナク同定説に関わる未確定の参考候補」と明記する場合に限り表示可能です。地点同一性も座標も独立確認していません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 6,
+          "verse": 70
+        },
+        "summaryJa": "アネルは、マナセの半部族からコハト氏族へ牧草地とともに与えられた町として記されます。本文は同じ文でビレアムも挙げています。",
+        "subtitleJa": "マナセ領のコハト氏族の町",
+        "historicalRoleJa": "マナセの半部族の領域にあるレビ人の町です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "マナセ領の古代都市として記されていますが、正確な所在地は定まりません。タアナクとの同定説もありますが、同一地点とは確定できません。",
+        "locationNoteJa": "記事はアネルをタアナクと同一視する説を紹介します。地図候補の点がその説に依存する場合も、確定地点としては扱いません。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 70
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 70
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-6-70",
+          "wikipedia-aner_65"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:aroer_94",
+      "draftPath": "drafts/places_3/1CH_aroer_94.json",
+      "evidencePath": "evidence/places_3/1CH_aroer_94.json",
+      "frozenDraftSHA256": "122348bf4355fe226e5281e6898c57e262f52477cdad94566594a5672625e5a3",
+      "currentDraftSHA256": "122348bf4355fe226e5281e6898c57e262f52477cdad94566594a5672625e5a3",
+      "frozenEvidenceSHA256": "fed6d78d9db65991106a66ec7b297d3817a94f2b12ee3083ca893257100581b2",
+      "currentEvidenceSHA256": "fed6d78d9db65991106a66ec7b297d3817a94f2b12ee3083ca893257100581b2",
+      "currentProfileCanonicalSHA256": "b0873abf604dfd35bee17b37ebd05b5bc7958da44d92aa86845b42ac7899c291",
+      "matchesFrozenDraft": true,
+      "verdict": "qualified",
+      "primaryContentRead": "WEB 5:8 puts Aroer in a Reubenite settlement-range with Nebo and Baal-meon, but the verse does not disambiguate the biblical Aroers. Current note explicitly declines choosing one or assigning a certain modern site; map policy keeps any candidate as uncertain.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 5:8",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "and Bela the son of Azaz, the son of Shema, the son of Joel, who lived in Aroer, even to Nebo and Baal Meon;",
+          "textSHA256": "dc4716e1f46067861b908350b7b0c26b0edd0a5d2b18177f9a823feac177110c",
+          "citationURL": "https://ebible.org/engwebp/1CH05.htm#V8"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Aroer",
+        "title": "Aroer",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "本文はトランスヨルダンに同名の聖書都市が二つあると区別し、アルノン沿いの一方を現代アライールと同定する説を紹介します（導入・「Aroer on the Arnon」）。1CH5:8だけではどちらかを確定しません。",
+        "bodyLocator": "115–129",
+        "bodySupport": "Aroer導入は二都市を区別し、アルノン沿いの都市とアンモン境界の都市を別に説明する。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Aroer, lines 115–129 read; article distinguishes two Transjordanian biblical sites and discusses one by Arnon. This is relevant context, not a unique resolution of 1CH 5:8.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:aroer_94",
+        "category": "city",
+        "allowCandidateMap": false,
+        "allowFrom": null,
+        "reasonJa": "同名の聖書都市が複数あり、5:8本文だけでは既存点がどちらを指すか決められないため、誤った一点表示を避けます。",
+        "verificationState": "legacy candidate suppressed; profile.coordinate remains null; independent identification/location insufficient"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 5,
+          "verse": 8
+        },
+        "summaryJa": "アロエルは、ルベン人の系譜に続く居住地の範囲を述べる箇所に現れる町です。本文はネボとバアル・メオンまでの範囲を併記します。",
+        "subtitleJa": "ルベン人の居住地として挙げられる町",
+        "historicalRoleJa": "ルベン人の居住地の説明に登場します。",
+        "identityNoteJa": "",
+        "modernLocationJa": "古代トランスヨルダンの地名ですが、同名の町が複数あり、この箇所だけでは現代の地点を確定できません。",
+        "locationNoteJa": "古代トランスヨルダンの地名ですが、同名の町が複数あり、この箇所だけでは現代の地点を確定できません。 現代の位置を一点で示す根拠はありません。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 5,
+              "verse": 8
+            },
+            "end": {
+              "chapter": 5,
+              "verse": 8
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-5-8",
+          "webp-1ch-11-44",
+          "wikipedia-aroer_94"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:ayyah_125",
+      "draftPath": "drafts/places_3/1CH_ayyah_125.json",
+      "evidencePath": "evidence/places_3/1CH_ayyah_125.json",
+      "frozenDraftSHA256": "ef19b53e3bf1c0a0296b40d56d54b5d7f2e10dac37f6b79b8110a2079ce29635",
+      "currentDraftSHA256": "ef19b53e3bf1c0a0296b40d56d54b5d7f2e10dac37f6b79b8110a2079ce29635",
+      "frozenEvidenceSHA256": "fec6fa153c89feab9e0e876260423389998ecc12644bb832772880491d3f7779",
+      "currentEvidenceSHA256": "fec6fa153c89feab9e0e876260423389998ecc12644bb832772880491d3f7779",
+      "currentProfileCanonicalSHA256": null,
+      "matchesFrozenDraft": true,
+      "verdict": "excluded",
+      "primaryContentRead": "Profile null is correct: the only candidate verse WEB 7:28 reads “Azzah,” not assigned candidate Ayyah. This is a source-index mismatch, not a place profile awaiting Wikipedia.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 7:28",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "Their possessions and settlements were Bethel and its towns, and eastward Naaran, and westward Gezer with its towns; Shechem also and its towns, to Azzah and its towns;",
+          "textSHA256": "cdae38901be5043ea011509468c2b0d5987f97193ea947c66251e3f4afe18274",
+          "citationURL": "https://ebible.org/engwebp/1CH07.htm#V28"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "not-applicable-profile-null"
+      },
+      "secondaryArticleAssessment": "Wikipedia not applicable because fixed text does not contain the candidate name.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:ayyah_125",
+        "category": "uncertain",
+        "allowCandidateMap": false,
+        "allowFrom": null,
+        "reasonJa": "割当名は固定WEB本文に存在せず、本文のAzzahとは別綴りです。場所としての地図表示は抑止します。",
+        "verificationState": "legacy candidate suppressed; profile.coordinate remains null; independent identification/location insufficient"
+      },
+      "independentCurrentObservations": {
+        "knownBy": null,
+        "summaryJa": null,
+        "subtitleJa": null,
+        "historicalRoleJa": null,
+        "identityNoteJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "coordinate": null,
+        "passages": null,
+        "sourceIds": null,
+        "facts": null,
+        "reviewNullReason": "固定WEBは「Azzah」（アッザ）と記し、割当名Ayyah（アイヤ）ではない。誤索引候補として場所プロフィールを作らない。"
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:baal-perazim_146",
+      "draftPath": "drafts/places_3/1CH_baal-perazim_146.json",
+      "evidencePath": "evidence/places_3/1CH_baal-perazim_146.json",
+      "frozenDraftSHA256": "d8b964140e2a7be12d3ba1a824584716e586ddf7a19da7b34ec69f39de7ea513",
+      "currentDraftSHA256": "d8b964140e2a7be12d3ba1a824584716e586ddf7a19da7b34ec69f39de7ea513",
+      "frozenEvidenceSHA256": "63469f4f1bb2a957ab7e81a544a8991105802d2a79c1137b78266c5bf338c8a6",
+      "currentEvidenceSHA256": "63469f4f1bb2a957ab7e81a544a8991105802d2a79c1137b78266c5bf338c8a6",
+      "currentProfileCanonicalSHA256": "a4a67ac35fe30f546acfe52ba16f9dea71d33e55b439824c7a0b2a5457c2a4e8",
+      "matchesFrozenDraft": true,
+      "verdict": "qualified",
+      "primaryContentRead": "WEB 14:11 explicitly names Baal-perazim as the place where David says the LORD broke through the Philistines. Current summary is faithful. Article gives a proposed Sheikh Bodr location, not a confirmed one; the current profile keeps coordinate null and phrases it as a candidate.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 14:11",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "So they came up to Baal Perazim, and David defeated them there. David said, God has broken my enemies by my hand, like waters breaking out. Therefore they called the name of that place Baal Perazim.",
+          "textSHA256": "b2834379e1a5544f5f71996668d654fc3b8a3f239b962035e352e4efde0adde0",
+          "citationURL": "https://ebible.org/engwebp/1CH14.htm#V11"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Baal-perazim",
+        "title": "Baal-perazim",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事は古代の場所とダビデの戦闘を結び付け、シェイク・ボドルを候補地とする説を紹介しますが、記事自体がその比定を確定していません。",
+        "bodyLocator": "109–114",
+        "bodySupport": "導入は古代の場所と1 Chronicles 14:11を結び付け、現代候補を一説として示す。記事には出典不足の注意書きもある。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Baal-perazim, opening/body around lines 109–114 read: links place to David’s battle; site proposal remains uncertain. Location uncertainty is correctly retained.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:baal-perazim_146",
+        "category": "site",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 14,
+          "verse": 11
+        },
+        "reasonJa": "本文にある戦闘地名の従来候補としてのみ表示可能です。現代候補地の比定は一説にすぎず、確定位置とは扱いません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 14,
+          "verse": 11
+        },
+        "summaryJa": "バアル・ペラツィムは、ダビデがペリシテ人を破った場所として記されます。本文は勝利を「水が押し破る」ようなたとえで語り、その場所の名の由来を述べます。",
+        "subtitleJa": "戦場に付された地名",
+        "historicalRoleJa": "ダビデとペリシテ人の戦闘に関係する場所です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "エルサレム西方の谷に関連付けられますが、現代の正確な地点は定まりません。",
+        "locationNoteJa": "エルサレム西方の谷に関連付けられますが、現代の正確な地点は定まりません。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 14,
+              "verse": 11
+            },
+            "end": {
+              "chapter": 14,
+              "verse": 11
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-14-11",
+          "wikipedia-baal-perazim_146"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:babylon_151",
+      "draftPath": "drafts/places_3/1CH_babylon_151.json",
+      "evidencePath": "evidence/places_3/1CH_babylon_151.json",
+      "frozenDraftSHA256": "7af67772f27169703c5511cfdce89406f87c00112bf12e28ead17ccdedfc01fd",
+      "currentDraftSHA256": "7af67772f27169703c5511cfdce89406f87c00112bf12e28ead17ccdedfc01fd",
+      "frozenEvidenceSHA256": "c78407bd85b6928b0fbc23be155c7555788c733601af2b35703727681c427bbf",
+      "currentEvidenceSHA256": "c78407bd85b6928b0fbc23be155c7555788c733601af2b35703727681c427bbf",
+      "currentProfileCanonicalSHA256": "24ddbd434592ffe8fa2abb018a25597acf8af0a1430be49943b460d9ab4ec114",
+      "matchesFrozenDraft": true,
+      "verdict": "pass",
+      "primaryContentRead": "WEB 9:1 names Babylon as the destination of Judah’s captivity. Current description names the ancient city and explicitly avoids equating its archaeological remains with modern Hillah. Article lead describes the ancient lower-Euphrates city; the topical match is direct.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 9:1",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "So all Israel were listed by genealogies; and behold, they are written in the book of the kings of Israel. Judah was carried away captive to Babylon for their disobedience.",
+          "textSHA256": "25a8d36bfe053dd513dde05be4c3b13cc3f8c5a61f84c7f64e551c60d9521c9d",
+          "citationURL": "https://ebible.org/engwebp/1CH09.htm#V1"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Babylon",
+        "title": "Babylon",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事はユーフラテス川下流域の古代メソポタミア都市と遺跡を扱います。本文の捕囚先の地名には対応しますが、現在のヒッラ市と古代遺跡を同一視しない説明にしています。",
+        "bodyLocator": "lead and “History”",
+        "bodySupport": "記事導入はバビロンを古代メソポタミアの都市とし、考古遺跡を現在のイラクに位置付ける。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Babylon, lead and history section read; the article treats the ancient city/archaeological remains and modern Hillah separately. Current note does not turn modern geography into a biblical coordinate.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:babylon_151",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 9,
+          "verse": 1
+        },
+        "reasonJa": "古代都市の参考位置候補として表示可能ですが、現代のヒッラ市中心点を古代遺跡の確定座標とは扱いません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 9,
+          "verse": 1
+        },
+        "summaryJa": "バビロンは、ユダの人々が捕囚にされた先として記されています。この箇所は捕囚の理由にも触れますが、地名カードでは行き先の都市を示します。",
+        "subtitleJa": "ユダの捕囚先として記される古代都市",
+        "historicalRoleJa": "ユダの捕囚先として記される都市です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "古代メソポタミアの都市です。古代遺跡と現在のバービル周辺の町は区別し、現代都市を古代遺跡そのものとは扱いません。",
+        "locationNoteJa": "古代メソポタミアの都市です。古代遺跡と現在のバービル周辺の町は区別し、現代都市を古代遺跡そのものとは扱いません。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 9,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 9,
+              "verse": 1
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-9-1",
+          "wikipedia-babylon_151"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:beersheba_170",
+      "draftPath": "drafts/places_3/1CH_beersheba_170.json",
+      "evidencePath": "evidence/places_3/1CH_beersheba_170.json",
+      "frozenDraftSHA256": "874270522246287219284ed14202320d0f01e112243237f3e2f10706bd182f49",
+      "currentDraftSHA256": "874270522246287219284ed14202320d0f01e112243237f3e2f10706bd182f49",
+      "frozenEvidenceSHA256": "ca90c0a271efd4aa57c035620e8a076eaa94434acd94b7352906920780fbc524",
+      "currentEvidenceSHA256": "ca90c0a271efd4aa57c035620e8a076eaa94434acd94b7352906920780fbc524",
+      "currentProfileCanonicalSHA256": "ec9084156752ef4ab67a145ef143d1c9cd92bd899ea658d3529f7456c60ba462",
+      "matchesFrozenDraft": true,
+      "verdict": "pass",
+      "primaryContentRead": "WEB 4:28 lists Beersheba among Simeonite towns; 21:2 uses Beersheba-to-Dan as a survey range and that later use is gated. Current introduction is limited to the first occurrence. Article distinguishes the modern city from nearby Tel Be’er Sheva.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 4:28",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "They lived at Beersheba, Moladah, Hazarshual,",
+          "textSHA256": "801ea5cc00a8c795ae6a044a1b2cac4fb23fd9796ff5286321c247a9e173ece0",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V28"
+        },
+        {
+          "ref": "1CH 21:2",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "David said to Joab and to the princes of the people, “Go, count Israel from Beersheba even to Dan; and bring me word, that I may know how many there are.”",
+          "textSHA256": "96a1be733cb0cbf55364f624595d09bc25ae9191386219d997fa2bd7395de8b1",
+          "citationURL": "https://ebible.org/engwebp/1CH21.htm#V2"
+        }
+      ],
+      "currentFactsAndGates": [
+        {
+          "knownBy": {
+            "chapter": 21,
+            "verse": 2
+          },
+          "textJa": "南端から北端までの範囲表現に使われます。",
+          "sourceIds": [
+            "webp-1ch-21-2"
+          ],
+          "gateText": "David said to Joab and to the princes of the people, “Go, count Israel from Beersheba even to Dan; and bring me word, that I may know how many there are.”",
+          "sourceGateResolution": true
+        }
+      ],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Beersheba",
+        "title": "Beersheba",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事は現在の都市ベエルシェバと、近隣にある古代遺跡テル・ベエル・シェバを別々に記します。古代本文の地名との関係は示しますが、都市中心を遺跡の確定位置とはしません。",
+        "bodyLocator": "lead; “Hebrew Bible”; “Geography”",
+        "bodySupport": "記事は現代都市と南約4kmの遺跡を区別し、古代の地名に触れる。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Beersheba, “Hebrew Bible” and geography sections read; modern city and nearby archaeological site are distinguished. Current profile does not claim city-center coordinates as ancient site.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:beersheba_170",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 4,
+          "verse": 28
+        },
+        "reasonJa": "古代の町に関する従来候補として不確かなまま表示可能です。現代市街と近隣遺跡の位置を混同しない注記が必要です。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 4,
+          "verse": 28
+        },
+        "summaryJa": "ベエル・シェバは、シメオンの子孫が住んだ町の一つとして列挙されます。",
+        "subtitleJa": "シメオンの居住地一覧にある町",
+        "historicalRoleJa": "シメオンの居住地一覧に現れる町です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "ネゲブ地方の古代都市です。現在のベエルシェバ市と、近くの古代遺跡テル・ベエル・シェバは区別されます。",
+        "locationNoteJa": "ネゲブ地方の古代都市です。現在のベエルシェバ市と、近くの古代遺跡テル・ベエル・シェバは区別されます。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 28
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 28
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 21,
+              "verse": 2
+            },
+            "end": {
+              "chapter": 21,
+              "verse": 2
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-4-28",
+          "webp-1ch-21-2",
+          "wikipedia-beersheba_170"
+        ],
+        "facts": [
+          {
+            "textJa": "南端から北端までの範囲表現に使われます。",
+            "knownBy": {
+              "chapter": 21,
+              "verse": 2
+            },
+            "sourceIds": [
+              "webp-1ch-21-2"
+            ]
+          }
+        ],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:beth-biri_195",
+      "draftPath": "drafts/places_3/1CH_beth-biri_195.json",
+      "evidencePath": "evidence/places_3/1CH_beth-biri_195.json",
+      "frozenDraftSHA256": "cbfa4fb39e298740578a46f2e394395ba098e1f34ce3298e87e1af8b45d43cee",
+      "currentDraftSHA256": "36f03dbc3ffb7cc9830e10018645add0453a051e714901c4e27b16d3069538b0",
+      "frozenEvidenceSHA256": "b65508561877074100986be526fb36a775b02e6238cbdac6ced11600da892c48",
+      "currentEvidenceSHA256": "588a0d84514789e5e533a0711bb642598725eae87a331c970f6cea09fb071058",
+      "currentProfileCanonicalSHA256": "3c4df1d640bea3db1770acd469cba98f275eee0ce2c1fca86816f32f3072f34c",
+      "matchesFrozenDraft": true,
+      "verdict": "qualified",
+      "primaryContentRead": "WEB 4:31 directly lists Beth-biri among Simeonite towns. Profile prose is supported and candidate coordinate remains null. The search found a relevant shared Wikipedia list section “Beth-birei” (lines 318–323), but the section is only a heading/link with no explanatory body. Existing null is not a false “no article” claim only if evidence says the section was found; consider an honest shared-section link or document why the bare entry is insufficient.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 4:31",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "at Beth Marcaboth, Hazar Susim, at Beth Biri, and at Shaaraim. These were their cities until David’s reign.",
+          "textSHA256": "0096ccad5f4cdff14df7d36ebcc6d6362fb5e9215647972aa7df1b4eb96867d0",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V31"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "null-review",
+        "authorSearchStatus": "searched-no-fit",
+        "authorQueries": [
+          "Wikipedia Beth-biri biblical town",
+          "site:en.wikipedia.org/wiki Beth-biri 1 Chronicles 4:31"
+        ],
+        "independentLiveCheck": "see assessment; exact title candidates were searched/opened; bare shared-section discoveries are called out explicitly"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/List_of_minor_biblical_places#Beth-birei, lines 318–323; exact variant is linked as a place-list entry, but no details are given.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:beth-biri_195",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 4,
+          "verse": 31
+        },
+        "reasonJa": "本文上の町名に結び付く従来の位置候補としてのみ表示可能です。現代の所在地・遺跡比定は未確定です。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 4,
+          "verse": 31
+        },
+        "summaryJa": "ベト・ビリは、シメオンの町々を列挙する箇所に含まれます。本文はこれらをダビデの治世までの町として述べます。",
+        "subtitleJa": "シメオンの町として数えられる地名",
+        "historicalRoleJa": "シメオンの町の一覧に現れる地名です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "ネゲブのシメオン領に置かれたとする資料がありますが、現代の地点は特定されていません。",
+        "locationNoteJa": "ネゲブのシメオン領に置かれたとする資料がありますが、現代の地点は特定されていません。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 31
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 31
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-4-31"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "priorVerdict": "qualified",
+      "reclosureStatus": "independently-reread-current-snapshot",
+      "currentReview": {
+        "verdict": "qualified",
+        "recheckedAtUTC": "2026-10-16T05:22:13Z",
+        "findingJa": "4:31がシメオンの町として名を挙げる点は本文で支持。現代所在地・座標候補の精度は未確定として残る。",
+        "knownBy": {
+          "chapter": 4,
+          "verse": 31
+        },
+        "subtitleJa": "シメオンの町として数えられる地名",
+        "summaryJa": "ベト・ビリは、シメオンの町々を列挙する箇所に含まれます。本文はこれらをダビデの治世までの町として述べます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "シメオンの町の一覧に現れる地名です。",
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 31
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 31
+            }
+          }
+        ],
+        "facts": [],
+        "wikipedia": null,
+        "sourceGateAndIdentityRechecked": true,
+        "authorRepairReasonJa": null
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:beth-marcaboth_222",
+      "draftPath": "drafts/places_3/1CH_beth-marcaboth_222.json",
+      "evidencePath": "evidence/places_3/1CH_beth-marcaboth_222.json",
+      "frozenDraftSHA256": "3ef37b85325ba66fdf968876eb10ed1909620daf114d78d2f2d37191528cd451",
+      "currentDraftSHA256": "49a1fb342393f3ebc484a8d5aea0801aa3691bd1e82a3b9888fac9df205586d1",
+      "frozenEvidenceSHA256": "86bbe7202f145638090ae9c88630ac8d7ca86bbc09cbbef92efe62b21bcf1da9",
+      "currentEvidenceSHA256": "d379ac5637135e275d1e39df24d14cbee33179c1f273324bec9ce2edff9e18eb",
+      "currentProfileCanonicalSHA256": "66833398bb7af09582c7d8d96a4e82200b9100d77c5ce451df6e3914772c50c4",
+      "matchesFrozenDraft": true,
+      "verdict": "qualified",
+      "primaryContentRead": "WEB 4:31 directly lists Beth-marcaboth among Simeonite towns. Current profile text is supported and location remains unlocated. Wikipedia list search found an exact “Beth-marcaboth” heading/link (lines 378–382) but no explanatory prose; null should be recorded as a body-read bare shared entry, not as an unsearched name.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 4:31",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "at Beth Marcaboth, Hazar Susim, at Beth Biri, and at Shaaraim. These were their cities until David’s reign.",
+          "textSHA256": "0096ccad5f4cdff14df7d36ebcc6d6362fb5e9215647972aa7df1b4eb96867d0",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V31"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "null-review",
+        "authorSearchStatus": "searched-no-fit",
+        "authorQueries": [
+          "Wikipedia Beth-marcaboth biblical place",
+          "site:en.wikipedia.org/wiki Beth-marcaboth"
+        ],
+        "independentLiveCheck": "see assessment; exact title candidates were searched/opened; bare shared-section discoveries are called out explicitly"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/List_of_minor_biblical_places#Beth-marcaboth, lines 378–382; exact named heading/link only.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:beth-marcaboth_222",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 4,
+          "verse": 31
+        },
+        "reasonJa": "本文にある町名の従来候補としてのみ表示可能です。正確な現代所在地は確認できません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 4,
+          "verse": 31
+        },
+        "summaryJa": "ベト・マルカボテは、シメオンの町々を列挙する箇所に含まれます。本文はこの名をハツァル・スシム、ベト・ビリと並べています。",
+        "subtitleJa": "シメオンの町として数えられる地名",
+        "historicalRoleJa": "シメオンの町の一覧に現れる地名です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "ネゲブに置かれた町とされますが、現代の地点は同定されていません。",
+        "locationNoteJa": "ネゲブに置かれた町とされますが、現代の地点は同定されていません。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 31
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 31
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-4-31"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "priorVerdict": "qualified",
+      "reclosureStatus": "independently-reread-current-snapshot",
+      "currentReview": {
+        "verdict": "qualified",
+        "recheckedAtUTC": "2026-10-16T05:22:13Z",
+        "findingJa": "4:31がシメオンの町として名を挙げる点は本文で支持。現代所在地・座標候補の精度は未確定として残る。",
+        "knownBy": {
+          "chapter": 4,
+          "verse": 31
+        },
+        "subtitleJa": "シメオンの町として数えられる地名",
+        "summaryJa": "ベト・マルカボテは、シメオンの町々を列挙する箇所に含まれます。本文はこの名をハツァル・スシム、ベト・ビリと並べています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "シメオンの町の一覧に現れる地名です。",
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 31
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 31
+            }
+          }
+        ],
+        "facts": [],
+        "wikipedia": null,
+        "sourceGateAndIdentityRechecked": true,
+        "authorRepairReasonJa": null
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:bethel_202",
+      "draftPath": "drafts/places_3/1CH_bethel_202.json",
+      "evidencePath": "evidence/places_3/1CH_bethel_202.json",
+      "frozenDraftSHA256": "16b59e3f6ceb744defb583cbe7913495a85df058bfd5c3620ef8152b783ebaa0",
+      "currentDraftSHA256": "16b59e3f6ceb744defb583cbe7913495a85df058bfd5c3620ef8152b783ebaa0",
+      "frozenEvidenceSHA256": "d612231ad5f4f02213fffaee320965b04c5e6b222b4087c1904aa3bbe25fa588",
+      "currentEvidenceSHA256": "d612231ad5f4f02213fffaee320965b04c5e6b222b4087c1904aa3bbe25fa588",
+      "currentProfileCanonicalSHA256": "27be9e0c70ca551394aa72316ceb71a953c10b68c7d7b380a2794a5bd02a0a6e",
+      "matchesFrozenDraft": true,
+      "verdict": "qualified",
+      "primaryContentRead": "WEB 7:28 lists Bethel among settlements/possessions of Ephraim’s descendants. Current prose stays at that scope. Wikipedia describes an ancient city but the identification with Beitin is debated; current note reports the majority and minority proposals and leaves coordinate null.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 7:28",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "Their possessions and settlements were Bethel and its towns, and eastward Naaran, and westward Gezer with its towns; Shechem also and its towns, to Azzah and its towns;",
+          "textSHA256": "cdae38901be5043ea011509468c2b0d5987f97193ea947c66251e3f4afe18274",
+          "citationURL": "https://ebible.org/engwebp/1CH07.htm#V28"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Bethel",
+        "title": "Bethel",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事はベテルを古代イスラエルの都市として扱い、多数説のベイティン比定と少数説を区別しています。現代比定を確定事実にはしません。",
+        "bodyLocator": "166–180",
+        "bodySupport": "導入は古代都市、識別節は多数説のBeitin比定と別説を記す。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Bethel, relevant identification section lines 166–180 read; no point-level certainty is claimed.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:bethel_202",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 7,
+          "verse": 28
+        },
+        "reasonJa": "ベテルの未確定な位置候補として表示可能です。ベイティン比定は多数説ですが異説もあり、確定座標とは扱いません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 7,
+          "verse": 28
+        },
+        "summaryJa": "ベテルは、エフライムの子孫の居住地・所領の一覧に現れます。本文はその周辺の町々とともに記します。",
+        "subtitleJa": "エフライムの居住地一覧にある古代都市",
+        "historicalRoleJa": "エフライムの子孫の居住地・所領の説明に登場する都市です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "中央山地の古代都市で、現在のベイティンに比定する説が広く支持されていますが、別説もあります。",
+        "locationNoteJa": "中央山地の古代都市で、現在のベイティンに比定する説が広く支持されていますが、別説もあります。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 7,
+              "verse": 28
+            },
+            "end": {
+              "chapter": 7,
+              "verse": 28
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-7-28",
+          "wikipedia-bethel_202"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:bethlehem_218",
+      "draftPath": "drafts/places_3/1CH_bethlehem_218.json",
+      "evidencePath": "evidence/places_3/1CH_bethlehem_218.json",
+      "frozenDraftSHA256": "8c24525210765ba8c3034c9d73d40524ad67f7e797adf51755c386c9accad064",
+      "currentDraftSHA256": "b5fec37e5935dfe589f6178ec3297ae141b1ce048119da602e1e56bd22e63d0b",
+      "frozenEvidenceSHA256": "e0719de13952fc02d445fc8850b0a2fa4bd9be02bde5a411c78fcec33e8595e4",
+      "currentEvidenceSHA256": "5b0fe3619dfa6693561459fbeb4dfb275385e535ae6b92052c7ebf5bfda14b0d",
+      "currentProfileCanonicalSHA256": "b4ee74aea08e154afad60d844eedf136934ddc7fc5606ad60baff2ec0fb71988",
+      "matchesFrozenDraft": true,
+      "verdict": "qualified",
+      "primaryContentRead": "WEB 2:51 is an ambiguous “Salma father of Bethlehem” genealogical phrase; the current base introduction acknowledges this ambiguity. However historicalRoleJa (“後には町としても記される”), identityNoteJa (“後の町として…”) and the Wikipedia note’s David/1CH 11 references expose later material while knownBy is 2:51. Gate the later town / David references at 11:16/11:26, leaving the opening only with 2:51-supported ambiguity. Also 4:4 fact currently says Hur is father of Bethlehem, which WEB supports; do not repeat the old misidentification of Ezer as its father.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 2:51",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "Salma the father of Bethlehem, and Hareph the father of Beth Gader.",
+          "textSHA256": "e2ed2b4b5f2dbdaed807ec60a0a01ec2767c83e634fe3e76ce617c4387a7f66f",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V51"
+        },
+        {
+          "ref": "1CH 2:54",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "The sons of Salma: Bethlehem, the Netophathites, Atroth Beth Joab, and half of the Manahathites, the Zorites.",
+          "textSHA256": "b8f9512132c6a2d6c2a78227aca5c840146b343b95201df7f7d185a71dc30d81",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V54"
+        },
+        {
+          "ref": "1CH 4:4",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "Penuel was the father of Gedor and Ezer the father of Hushah. These are the sons of Hur, the firstborn of Ephrathah, the father of Bethlehem.",
+          "textSHA256": "8751f7aaca74b9f6f97276d6adfdea02662eb34fe821135b85f3d556b8adceda",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V4"
+        },
+        {
+          "ref": "1CH 11:16",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "David was then in the stronghold, and the garrison of the Philistines was in Bethlehem at that time.",
+          "textSHA256": "aa570ff5923520f06ab7ec85b4b6ea8115ed6f5d984d373e7dcb6414890a1981",
+          "citationURL": "https://ebible.org/engwebp/1CH11.htm#V16"
+        },
+        {
+          "ref": "1CH 11:17",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "David longed, and said, “Oh, that someone would give me water to drink from the well of Bethlehem, which is by the gate!”",
+          "textSHA256": "911ce83d34b60567d2ba3394bf66c0cc3cfce1b9915d7d0e710fe9c7068248b4",
+          "citationURL": "https://ebible.org/engwebp/1CH11.htm#V17"
+        },
+        {
+          "ref": "1CH 11:18",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "The three broke through the army of the Philistines, and drew water out of the well of Bethlehem that was by the gate, took it, and brought it to David; but David would not drink any of it, but poured it out to the LORD,",
+          "textSHA256": "729bbdb454a023f033773ab9cd3e30092beabab0b744051d2ce1d3d39f30b99d",
+          "citationURL": "https://ebible.org/engwebp/1CH11.htm#V18"
+        },
+        {
+          "ref": "1CH 11:26",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "The mighty men of the armies also include Asahel the brother of Joab, Elhanan the son of Dodo of Bethlehem,",
+          "textSHA256": "2059e3276f3506f4d494456e418d077dd6b594212f31ffe8a714e0d1aa2af58b",
+          "citationURL": "https://ebible.org/engwebp/1CH11.htm#V26"
+        }
+      ],
+      "currentFactsAndGates": [
+        {
+          "knownBy": {
+            "chapter": 2,
+            "verse": 54
+          },
+          "textJa": "系譜の別の列挙では、ベツレヘムがサルマの子孫に関わる名の一つとして挙げられますが、町・氏族のどちらを指すかは本文だけでは明確でありません。",
+          "sourceIds": [
+            "webp-1ch-2-54"
+          ],
+          "gateText": "The sons of Salma: Bethlehem, the Netophathites, Atroth Beth Joab, and half of the Manahathites, the Zorites.",
+          "sourceGateResolution": true
+        },
+        {
+          "knownBy": {
+            "chapter": 4,
+            "verse": 4
+          },
+          "textJa": "別の系譜箇所では、ベツレヘムは「フルの長子エフラタの父」とする文脈に現れます。",
+          "sourceIds": [
+            "webp-1ch-4-4"
+          ],
+          "gateText": "Penuel was the father of Gedor and Ezer the father of Hushah. These are the sons of Hur, the firstborn of Ephrathah, the father of Bethlehem.",
+          "sourceGateResolution": true
+        },
+        {
+          "knownBy": {
+            "chapter": 11,
+            "verse": 16
+          },
+          "textJa": "ダビデが要害にいた時、ペリシテ人の守備隊がベツレヘムに置かれていました。",
+          "sourceIds": [
+            "webp-1ch-11-16"
+          ],
+          "gateText": "David was then in the stronghold, and the garrison of the Philistines was in Bethlehem at that time.",
+          "sourceGateResolution": true
+        },
+        {
+          "knownBy": {
+            "chapter": 11,
+            "verse": 18
+          },
+          "textJa": "ダビデは城門近くの井戸水を望み、三人がその水を汲んで届けます。",
+          "sourceIds": [
+            "webp-1ch-11-17",
+            "webp-1ch-11-18"
+          ],
+          "gateText": "The three broke through the army of the Philistines, and drew water out of the well of Bethlehem that was by the gate, took it, and brought it to David; but David would not drink any of it, but poured it out to the LORD,",
+          "sourceGateResolution": true
+        },
+        {
+          "knownBy": {
+            "chapter": 11,
+            "verse": 26
+          },
+          "textJa": "勇士の一覧ではエルハナンがベツレヘム出身と記されます。",
+          "sourceIds": [
+            "webp-1ch-11-26"
+          ],
+          "gateText": "The mighty men of the armies also include Asahel the brother of Joab, Elhanan the son of Dodo of Bethlehem,",
+          "sourceGateResolution": true
+        }
+      ],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Bethlehem",
+        "title": "Bethlehem",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事は現在のベツレヘム市を説明し、聖書上の地名・ダビデとの関係も扱います。1CH11の町名に対応しますが、古代の町域と現代市街の完全な一致を主張しません。",
+        "bodyLocator": "lead; “Hebrew Bible”",
+        "bodySupport": "導入・聖書節は同名の古代地名とダビデとの関係に言及する一方、記事の主対象は現代都市。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Bethlehem, lead/Hebrew Bible section read. It discusses the city and David, but those points are not first-use-safe for this profile at 2:51.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:bethlehem_218",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 11,
+          "verse": 16
+        },
+        "reasonJa": "ベツレヘムの未確定な従来位置候補として表示できます。古代町域の一点や現代市庁舎座標を確定地点とは扱いません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 2,
+          "verse": 51
+        },
+        "summaryJa": "ベツレヘムは、サルマが「父」とされる名として系譜に現れます。この箇所だけでは、町名とその名を冠する氏族・祖先関係の境界は確定しません。",
+        "subtitleJa": "サルマの系譜に現れるベツレヘム",
+        "historicalRoleJa": "系譜の中で名が現れ、後には町としても記される場所です。",
+        "identityNoteJa": "この系譜では地名と「父」という系譜表現が重なります。後の町としての用例はありますが、ここでは同じ名の系譜上の表現との区別を保留します。",
+        "modernLocationJa": "ユダ山地の古代の町で、現在のベツレヘムは同名の現代都市です。古代の町域の細部は確定しません。",
+        "locationNoteJa": "ユダ山地の古代の町で、現在のベツレヘムは同名の現代都市です。古代の町域の細部は確定しません。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 2,
+              "verse": 51
+            },
+            "end": {
+              "chapter": 2,
+              "verse": 51
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 2,
+              "verse": 54
+            },
+            "end": {
+              "chapter": 2,
+              "verse": 54
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 4
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 4
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 11,
+              "verse": 16
+            },
+            "end": {
+              "chapter": 11,
+              "verse": 18
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 11,
+              "verse": 26
+            },
+            "end": {
+              "chapter": 11,
+              "verse": 26
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-11-16",
+          "webp-1ch-11-17",
+          "webp-1ch-11-18",
+          "webp-1ch-11-26",
+          "webp-1ch-2-51",
+          "webp-1ch-2-54",
+          "webp-1ch-4-4",
+          "wikipedia-bethlehem_218"
+        ],
+        "facts": [
+          {
+            "textJa": "系譜の別の列挙では、ベツレヘムがサルマの子孫に関わる名の一つとして挙げられますが、町・氏族のどちらを指すかは本文だけでは明確でありません。",
+            "knownBy": {
+              "chapter": 2,
+              "verse": 54
+            },
+            "sourceIds": [
+              "webp-1ch-2-54"
+            ]
+          },
+          {
+            "textJa": "別の系譜箇所では、ベツレヘムは「フルの長子エフラタの父」とする文脈に現れます。",
+            "knownBy": {
+              "chapter": 4,
+              "verse": 4
+            },
+            "sourceIds": [
+              "webp-1ch-4-4"
+            ]
+          },
+          {
+            "textJa": "ダビデが要害にいた時、ペリシテ人の守備隊がベツレヘムに置かれていました。",
+            "knownBy": {
+              "chapter": 11,
+              "verse": 16
+            },
+            "sourceIds": [
+              "webp-1ch-11-16"
+            ]
+          },
+          {
+            "textJa": "ダビデは城門近くの井戸水を望み、三人がその水を汲んで届けます。",
+            "knownBy": {
+              "chapter": 11,
+              "verse": 18
+            },
+            "sourceIds": [
+              "webp-1ch-11-17",
+              "webp-1ch-11-18"
+            ]
+          },
+          {
+            "textJa": "勇士の一覧ではエルハナンがベツレヘム出身と記されます。",
+            "knownBy": {
+              "chapter": 11,
+              "verse": 26
+            },
+            "sourceIds": [
+              "webp-1ch-11-26"
+            ]
+          }
+        ],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "priorVerdict": "fail",
+      "reclosureStatus": "independently-reread-current-snapshot",
+      "currentReview": {
+        "verdict": "qualified",
+        "recheckedAtUTC": "2026-10-16T05:22:13Z",
+        "findingJa": "2:51の「ベツレヘムの父」という系譜表現の曖昧さを保持し、後の町の用例はfactsとしてゲート。4:4では本文どおりHurをBethlehemの父とする。",
+        "knownBy": {
+          "chapter": 2,
+          "verse": 51
+        },
+        "subtitleJa": "サルマの系譜に現れるベツレヘム",
+        "summaryJa": "ベツレヘムは、サルマが「父」とされる名として系譜に現れます。この箇所だけでは、町名とその名を冠する氏族・祖先関係の境界は確定しません。",
+        "identityNoteJa": "1 Chronicles 2:51はサルマを「ベツレヘムの父」と呼びますが、この系譜表現だけでは町と氏族・祖先関係のどれを指すか確定しません。",
+        "historicalRoleJa": "系譜の中で「ベツレヘムの父」とする表現に現れますが、この箇所だけでは町との関係の意味を確定できません。",
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 2,
+              "verse": 51
+            },
+            "end": {
+              "chapter": 2,
+              "verse": 51
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 2,
+              "verse": 54
+            },
+            "end": {
+              "chapter": 2,
+              "verse": 54
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 4
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 4
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 11,
+              "verse": 16
+            },
+            "end": {
+              "chapter": 11,
+              "verse": 18
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 11,
+              "verse": 26
+            },
+            "end": {
+              "chapter": 11,
+              "verse": 26
+            }
+          }
+        ],
+        "facts": [
+          {
+            "textJa": "系譜の別の列挙では、ベツレヘムがサルマの子孫に関わる名の一つとして挙げられますが、町・氏族のどちらを指すかは本文だけでは明確でありません。",
+            "knownBy": {
+              "chapter": 2,
+              "verse": 54
+            },
+            "sourceIds": [
+              "webp-1ch-2-54"
+            ]
+          },
+          {
+            "textJa": "別の系譜箇所では、ベツレヘムは「フルの長子エフラタの父」とする文脈に現れます。",
+            "knownBy": {
+              "chapter": 4,
+              "verse": 4
+            },
+            "sourceIds": [
+              "webp-1ch-4-4"
+            ]
+          },
+          {
+            "textJa": "ダビデが要害にいた時、ペリシテ人の守備隊がベツレヘムに置かれていました。",
+            "knownBy": {
+              "chapter": 11,
+              "verse": 16
+            },
+            "sourceIds": [
+              "webp-1ch-11-16"
+            ]
+          },
+          {
+            "textJa": "ダビデは城門近くの井戸水を望み、三人がその水を汲んで届けます。",
+            "knownBy": {
+              "chapter": 11,
+              "verse": 18
+            },
+            "sourceIds": [
+              "webp-1ch-11-17",
+              "webp-1ch-11-18"
+            ]
+          },
+          {
+            "textJa": "勇士の一覧ではエルハナンがベツレヘム出身と記されます。",
+            "knownBy": {
+              "chapter": 11,
+              "verse": 26
+            },
+            "sourceIds": [
+              "webp-1ch-11-26"
+            ]
+          }
+        ],
+        "wikipedia": {
+          "title": "Bethlehem",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Bethlehem",
+          "kind": "article",
+          "noteJa": "記事は現代のベツレヘム市を扱い、聖書に現れる古代の同名地にも触れます。古代の町域と現在の市街が完全に一致するとは示していません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true
+        },
+        "sourceGateAndIdentityRechecked": true,
+        "authorRepairReasonJa": "1CH 2:51初出時のhistoricalRole/identityNote/Wikipedia noteから後の町・ダビデ/11章情報を除去。2:51/2:54/4:4は本文上の地名・系譜表現の曖昧さを保った関連用例として採用し、4:4の父はWEBどおりHur/Ephrathah文脈に保持。11章factsは既存のgateを維持。"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:bileam_248",
+      "draftPath": "drafts/places_3/1CH_bileam_248.json",
+      "evidencePath": "evidence/places_3/1CH_bileam_248.json",
+      "frozenDraftSHA256": "0b3b8a2a2c6a01085337bd1ef669acfa5c942dd3659f8713196130e0542cb712",
+      "currentDraftSHA256": "0b3b8a2a2c6a01085337bd1ef669acfa5c942dd3659f8713196130e0542cb712",
+      "frozenEvidenceSHA256": "26e14589cea358daf0a0d2ab94c5b035b9316deefb57b22ccfaccd7497e60a82",
+      "currentEvidenceSHA256": "26e14589cea358daf0a0d2ab94c5b035b9316deefb57b22ccfaccd7497e60a82",
+      "currentProfileCanonicalSHA256": "f4e04a61d8cfacffccf020421b5c3bf50cb15b8b4d6123edba2db4d13ee40bd6",
+      "matchesFrozenDraft": true,
+      "verdict": "qualified",
+      "primaryContentRead": "WEB 6:70 directly lists Bileam as a town with pasture assigned to Kohathites. Current prose is accurate. Wikipedia /Bileam redirects to Balaam (the prophet), which is a false identity and must not be attached. Exact “Bileam” did not appear in the minor-places list search; an unrelated “Gath-Rimmon” identification must not be forced. Search is complete for exact/title alternatives, but no fitting article was found.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 6:70",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "and out of the half-tribe of Manasseh, Aner with its pasture lands, and Bileam with its pasture lands, for the rest of the family of the sons of Kohath.",
+          "textSHA256": "1bcd2e2ce260edc50e9fbf9c08ec4230588f76dd27397a42859389c5f26d451c",
+          "citationURL": "https://ebible.org/engwebp/1CH06.htm#V70"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "null-review",
+        "authorSearchStatus": "searched-no-fit",
+        "authorQueries": [
+          "Wikipedia Bileam biblical place 1 Chronicles 6:70",
+          "site:en.wikipedia.org/wiki Bileam Levitical city"
+        ],
+        "independentLiveCheck": "see assessment; exact title candidates were searched/opened; bare shared-section discoveries are called out explicitly"
+      },
+      "secondaryArticleAssessment": "Wikipedia redirect checked: https://en.wikipedia.org/wiki/Bileam redirects to Balaam prophet, lines 150–158. It is not the 1CH 6:70 town; keep null and document no-fit, not the prophet link.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:bileam_248",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 6,
+          "verse": 70
+        },
+        "reasonJa": "町としての地名は明確です。既存点は未確定の位置候補としてのみ表示可能で、現代比定の確定には使いません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 6,
+          "verse": 70
+        },
+        "summaryJa": "ビレアムは、マナセの半部族の領域からコハテ族の残りの家族に与えられた町として列挙されます。本文は牧草地も付記します。",
+        "subtitleJa": "コハテ族のレビ人に与えられた町",
+        "historicalRoleJa": "レビ人に牧草地とともに与えられた町です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "古代マナセ領の町として記されますが、現代の比定は確定できません。",
+        "locationNoteJa": "古代マナセ領の町として記されますが、現代の比定は確定できません。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 70
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 70
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-6-70"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:caleb-ephratah_1298",
+      "draftPath": "drafts/places_3/1CH_caleb-ephratah_1298.json",
+      "evidencePath": "evidence/places_3/1CH_caleb-ephratah_1298.json",
+      "frozenDraftSHA256": "9f16f4c6fc2b3bcc2e15c303a14344d22ca92dc267f8c6e63d688ad232b72b77",
+      "currentDraftSHA256": "9f16f4c6fc2b3bcc2e15c303a14344d22ca92dc267f8c6e63d688ad232b72b77",
+      "frozenEvidenceSHA256": "dfa62054dda8e29d4459af2c7e4970f6b366b083c45d917f260f1a737aa816f0",
+      "currentEvidenceSHA256": "dfa62054dda8e29d4459af2c7e4970f6b366b083c45d917f260f1a737aa816f0",
+      "currentProfileCanonicalSHA256": "a63229be22fe822be343c06a494a9f540897c2bf9447b15eab9c55bd0aa61986",
+      "matchesFrozenDraft": true,
+      "verdict": "qualified",
+      "primaryContentRead": "WEB 2:24 says Hezron died at Caleb-ephrathah; current profile treats that as a place-expression while preserving uncertainty in parsing and refusing a modern point. Wikipedia minor-place section lines 438–442 calls it a place found only in 1CH 2:24. This supports the lexical/place reading, but no location.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 2:24",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "After Hezron died in Caleb Ephrathah, Abijah, Hezron’s wife, bore him Ashhur the father of Tekoa.",
+          "textSHA256": "b20a91f4973d19e9040ee00577516859d2f251d6ac76f3682ae4dc7015731eba",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V24"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_biblical_places#Caleb-ephrathah",
+        "title": "List of minor biblical places",
+        "kind": "shared-section",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "一覧の該当項はCaleb-ephrathahを1 Chronicles 2:24だけに出る地名として説明し、ヘツロンの死に結び付けます。これはWEBの読みを確認するだけで、現代位置を示しません。",
+        "bodyLocator": "438–442, heading Caleb-ephrathah",
+        "bodySupport": "該当項は1 Chronicles 2:24でヘツロンが死んだ場所として同名を挙げる。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/List_of_minor_biblical_places#Caleb-ephrathah, lines 438–442; precise verse and name variant given.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:caleb-ephratah_1298",
+        "category": "uncertain",
+        "allowCandidateMap": false,
+        "allowFrom": null,
+        "reasonJa": "語句の読みと現代位置の両方が不確かなため、特定地点の候補ピンは誤認を招きます。",
+        "verificationState": "legacy candidate suppressed; profile.coordinate remains null; independent identification/location insufficient"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 2,
+          "verse": 24
+        },
+        "summaryJa": "1 Chronicles 2:24のWEB本文は、ヘツロンが「カレブ・エフラタ」で死んだと記します。語句の区切りや別伝承の読みには議論があり、ここではWEBの地名表現をそのまま示します。",
+        "subtitleJa": "ヘツロンの死に関する地名表現",
+        "historicalRoleJa": "ヘツロンの死の場所としてWEB本文に一度現れる地名表現です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "現代の地点に結び付けられていません。語句の読み自体にも不確かさがあるため、位置は示せません。",
+        "locationNoteJa": "現代の地点に結び付けられていません。語句の読み自体にも不確かさがあるため、位置は示せません。 現代の位置を一点で示す根拠はありません。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 2,
+              "verse": 24
+            },
+            "end": {
+              "chapter": 2,
+              "verse": 24
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-2-24",
+          "wikipedia-caleb-ephratah_1298"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:cozeba_309",
+      "draftPath": "drafts/places_3/1CH_cozeba_309.json",
+      "evidencePath": "evidence/places_3/1CH_cozeba_309.json",
+      "frozenDraftSHA256": "b2a70b3276ac6b92d6744fb62882c61493f3b0bd749348a08a39b4a7fd270487",
+      "currentDraftSHA256": "b2a70b3276ac6b92d6744fb62882c61493f3b0bd749348a08a39b4a7fd270487",
+      "frozenEvidenceSHA256": "9f613b12714b154d8b7afd1ac0ff9074f1717ce4e71502409ace07b2343ee26d",
+      "currentEvidenceSHA256": "9f613b12714b154d8b7afd1ac0ff9074f1717ce4e71502409ace07b2343ee26d",
+      "currentProfileCanonicalSHA256": "ce24deca5266d55aeedc392d4566a024edd3f4ad633cadd81bc5a31d2752c66c",
+      "matchesFrozenDraft": true,
+      "verdict": "qualified",
+      "primaryContentRead": "WEB 4:22 says “men of Cozeba”; that phrase does not force whether the referent is town, clan, or person-derived group. Current text calls it a place candidate and explicitly retains competing interpretations. Wikipedia article identifies Chezib/Chozeba as a place, while also summarizing the Cozeba son-of-Shelah interpretation. The current note appropriately marks relation rather than asserting identity, although identityVerified=true should be checked against the actual schema’s intended “article’s place-name identity” vs this occurrence’s referent.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 4:22",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "and Jokim, and the men of Cozeba, and Joash, and Saraph, who had dominion in Moab, and Jashubilehem. These records are ancient.",
+          "textSHA256": "3b68bd692527ac9d5837506ef7db414faaf09d984c37c3ad6afaf233721fc650",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V22"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Chezib_of_Judah",
+        "title": "Chezib of Judah",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事は1 Chronicles 4:22のChozebaという形をChezib/Chozebaの町に結び付ける一方、Cozebaをシェラの子とみる説も紹介します。本文の「コゼバの人々」を都市そのものと断定せず関連に限定します。",
+        "bodyLocator": "lead; “Etymology”; “Identification”",
+        "bodySupport": "導入は1 Chronicles 4:22のChozebaを町名とし、語源節はシェラの子Cozeba説も提示。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Chezib_of_Judah, lines 131 and 137; 1CH 4:22 spelling and competing individual reading are both explicit.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:cozeba_309",
+        "category": "city",
+        "allowCandidateMap": false,
+        "allowFrom": null,
+        "reasonJa": "4:22は「コゼバの人々」という出身表現で、記事も同名の人物説を挙げます。地名同定が揺れるため一点表示は抑止します。",
+        "verificationState": "legacy candidate suppressed; profile.coordinate remains null; independent identification/location insufficient"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 4,
+          "verse": 22
+        },
+        "summaryJa": "本文は「コゼバの人々」と呼ばれる人々を記します。記事は1 Chronicles 4:22のChozebaを町名とし、この箇所の読みを紹介しますが、同名の人物・氏族説もあり、町との結び付きには留保が必要です。",
+        "subtitleJa": "ユダの町名としても読まれるコゼバ",
+        "historicalRoleJa": "「コゼバの人々」という出身・集団表現として現れる地名候補です。",
+        "identityNoteJa": "本文は「コゼバの人々」と記します。記事はこの箇所を町名Chozebaと結び付ける一方、シェラの子Cozebaという人名説も挙げるため、町への関連としてのみ扱います。",
+        "modernLocationJa": "ユダのシェフェラ地方の町Chezib/Chozebaと結び付ける説がありますが、現代遺跡候補は複数です。",
+        "locationNoteJa": "ユダのシェフェラ地方の町Chezib/Chozebaと結び付ける説がありますが、現代遺跡候補は複数です。 現代の位置を一点で示す根拠はありません。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 22
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 22
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-4-22",
+          "wikipedia-cozeba_309"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:dan_323",
+      "draftPath": "drafts/places_3/1CH_dan_323.json",
+      "evidencePath": "evidence/places_3/1CH_dan_323.json",
+      "frozenDraftSHA256": "9963fdc7eba4a559c52ff62e15229aa732a6619cc8bc88237b36fb8ae9d8ceca",
+      "currentDraftSHA256": "9963fdc7eba4a559c52ff62e15229aa732a6619cc8bc88237b36fb8ae9d8ceca",
+      "frozenEvidenceSHA256": "edab3321d438266c5214ba87ef76eb9037a5508292cc6e5dc8e608a21048664b",
+      "currentEvidenceSHA256": "edab3321d438266c5214ba87ef76eb9037a5508292cc6e5dc8e608a21048664b",
+      "currentProfileCanonicalSHA256": "b9ad8492f3a3dcc311a4ad4dbb8ec9ee8925a4811f436097c951ca6530dc27bb",
+      "matchesFrozenDraft": true,
+      "verdict": "pass",
+      "primaryContentRead": "WEB 21:2 uses Dan as the north endpoint in the “from Beersheba to Dan” survey formula. Current profile scopes this to the ancient town and distinguishes ancestor/tribe. Wikipedia article is specifically the ancient city and discusses Tel Dan; no collective/territory link is conflated.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 21:2",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "David said to Joab and to the princes of the people, “Go, count Israel from Beersheba even to Dan; and bring me word, that I may know how many there are.”",
+          "textSHA256": "96a1be733cb0cbf55364f624595d09bc25ae9191386219d997fa2bd7395de8b1",
+          "citationURL": "https://ebible.org/engwebp/1CH21.htm#V2"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Dan_(ancient_city)",
+        "title": "Dan (ancient city)",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事はダンを古代都市として扱い、テル・ダンと結び付けます。ここで扱うのは1CH21:2の町名であり、系譜上の祖先ダンや部族とは別です。",
+        "bodyLocator": "lead; “Identification”",
+        "bodySupport": "導入と識別節は古代都市とテル・ダン遺跡の関係を説明する。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Dan_(ancient_city), lead/identification read; ancient-city identity and archaeological site discussed.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:dan_323",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 21,
+          "verse": 2
+        },
+        "reasonJa": "古代都市ダンの未確定候補位置として表示可能です。部族領全体の代表点ではなく、遺跡比定も確定座標とは扱いません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 21,
+          "verse": 2
+        },
+        "summaryJa": "ダンは、人口調査の範囲を「ベエル・シェバからダンまで」と示す北端の地名です。部族名や系譜上のダンとは区別される町を指します。",
+        "subtitleJa": "人口調査の北端として示される町",
+        "historicalRoleJa": "人口調査の南北範囲を表す町名です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "イスラエル北部の古代都市で、テル・ダン遺跡に比定されます。古代の町域と遺跡の範囲は同一と断定しません。",
+        "locationNoteJa": "イスラエル北部の古代都市で、テル・ダン遺跡に比定されます。古代の町域と遺跡の範囲は同一と断定しません。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 21,
+              "verse": 2
+            },
+            "end": {
+              "chapter": 21,
+              "verse": 2
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-21-2",
+          "webp-1ch-2-2",
+          "webp-1ch-12-35",
+          "webp-1ch-27-22",
+          "wikipedia-dan_323"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:dor_341",
+      "draftPath": "drafts/places_3/1CH_dor_341.json",
+      "evidencePath": "evidence/places_3/1CH_dor_341.json",
+      "frozenDraftSHA256": "97b0456523a297299af7150d778fc5843f1935c7d53b869477cb351676c5cbd9",
+      "currentDraftSHA256": "97b0456523a297299af7150d778fc5843f1935c7d53b869477cb351676c5cbd9",
+      "frozenEvidenceSHA256": "8c78d3edbbe93de23f3b52490b781982547e81fdcf51d84dbd8455c926f01d7f",
+      "currentEvidenceSHA256": "8c78d3edbbe93de23f3b52490b781982547e81fdcf51d84dbd8455c926f01d7f",
+      "currentProfileCanonicalSHA256": "d25bd4de753c2fe2af5ba5178786c6e1f69c41684e46cd2b6338492a3388a286",
+      "matchesFrozenDraft": true,
+      "verdict": "qualified",
+      "primaryContentRead": "WEB 7:29 lists Dor as one of Manasseh’s boundary towns. The current profile maps the text to the place and keeps coordinate null. Wikipedia Tel Dor identifies an archaeological tell with biblical Dor while distinguishing the modern settlement; this secondary identification is specific but remains an article claim, not an app coordinate.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 7:29",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "and by the borders of the children of Manasseh, Beth Shean and its towns, Taanach and its towns, Megiddo and its towns, and Dor and its towns. The children of Joseph the son of Israel lived in these.",
+          "textSHA256": "ee2f224b69ad920cf9162f1949b72fbc8f46c1dac6a81aff48c2d03d32cfb28e",
+          "citationURL": "https://ebible.org/engwebp/1CH07.htm#V29"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Tel_Dor",
+        "title": "Tel Dor",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事はテル・ドル遺跡を聖書のドルと同定し、現在のドル集落とは別の場所にあると説明します。遺跡比定は記事の同定として紹介し、プロフィール座標は設定しません。",
+        "bodyLocator": "lead; “Hebrew Bible”",
+        "bodySupport": "導入はTel Dorを遺跡として説明し、聖書のDorと同定。末尾は近隣の現代moshav Dorと区別。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Tel_Dor, lead and Hebrew Bible section lines 177–183 read; ancient tell vs modern settlement distinct.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:dor_341",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 7,
+          "verse": 29
+        },
+        "reasonJa": "古代都市ドルの未確定な従来候補として表示可能です。現在のドル集落とテル・ドル遺跡を混同しないでください。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 7,
+          "verse": 29
+        },
+        "summaryJa": "ドルは、ベト・シェアン、タアナク、メギドとともにマナセの境界にある町として列挙されます。本文はヨセフの子孫がこれらの町々に住んだと続けます。",
+        "subtitleJa": "マナセの境界近くに列挙される町",
+        "historicalRoleJa": "マナセの境界近くの町として列挙されます。",
+        "identityNoteJa": "",
+        "modernLocationJa": "地中海沿岸の古代港町と同定される遺跡テル・ドルがあります。遺跡と現在のドル集落は別です。",
+        "locationNoteJa": "地中海沿岸の古代港町と同定される遺跡テル・ドルがあります。遺跡と現在のドル集落は別です。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 7,
+              "verse": 29
+            },
+            "end": {
+              "chapter": 7,
+              "verse": 29
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-7-29",
+          "webp-1ch-1-21",
+          "webp-1ch-18-10",
+          "wikipedia-dor_341"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:ezem_422",
+      "draftPath": "drafts/places_3/1CH_ezem_422.json",
+      "evidencePath": "evidence/places_3/1CH_ezem_422.json",
+      "frozenDraftSHA256": "b429fdbab82568aa54ef076f81b57ff19c22ed7579cb5777ea49d1b39ddfc254",
+      "currentDraftSHA256": "b429fdbab82568aa54ef076f81b57ff19c22ed7579cb5777ea49d1b39ddfc254",
+      "frozenEvidenceSHA256": "0f218fd943819fa427de011252f6d7432cc88414bfc8ab60b29058d83492f955",
+      "currentEvidenceSHA256": "0f218fd943819fa427de011252f6d7432cc88414bfc8ab60b29058d83492f955",
+      "currentProfileCanonicalSHA256": "47a1c208a1a98fb0c6a311580a0dc6108ef8a5aafe62871a2980f77ad690e352",
+      "matchesFrozenDraft": true,
+      "verdict": "qualified",
+      "primaryContentRead": "WEB 4:29 directly lists Ezem among Simeon’s towns. Wikipedia identifies an unknown Negev site and includes spelling variants; its location is expressly unidentified. Current profile correctly leaves modern position uncertain.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 4:29",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "at Bilhah, at Ezem, at Tolad,",
+          "textSHA256": "37c72a71ec9bac2f6722ca93e23d695c8ff89f66ec9cc31a1a7b0c835a97b2e7",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V29"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Ezem",
+        "title": "Ezem",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事はエゼムをネゲブの所在未確定の聖書地名とし、別綴りAzemも挙げます。町名の同定は支持しますが、現代地点は確定しません。",
+        "bodyLocator": "106–109",
+        "bodySupport": "導入はEzemをネゲブの未同定地点とし、1 Chronicles 4:29でシメオンの町として挙げる。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Ezem, lines 104–106: unidentified site in Negev toward Edomite border, variants given.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:ezem_422",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 4,
+          "verse": 29
+        },
+        "reasonJa": "町名としては本文に明記されています。既存点は未確定候補としてのみ保持し、記事の「未同定」と整合させます。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 4,
+          "verse": 29
+        },
+        "summaryJa": "エゼムは、シメオンの町々を並べる箇所に現れます。ここでは周囲の集落名の一つとして記されます。",
+        "subtitleJa": "シメオンの町一覧にある地名",
+        "historicalRoleJa": "シメオンの町の一覧に現れる地名です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "ネゲブの所在不明の古代遺跡とされ、現代の地点は確定していません。",
+        "locationNoteJa": "ネゲブの所在不明の古代遺跡とされ、現代の地点は確定していません。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 29
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 29
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-4-29",
+          "wikipedia-ezem_422"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:galilee_433",
+      "draftPath": "drafts/places_3/1CH_galilee_433.json",
+      "evidencePath": "evidence/places_3/1CH_galilee_433.json",
+      "frozenDraftSHA256": "8ac2eca9e10d22f74e58b455125bbe73cb1defbd087599ac4b23746b55abc2fb",
+      "currentDraftSHA256": "8ac2eca9e10d22f74e58b455125bbe73cb1defbd087599ac4b23746b55abc2fb",
+      "frozenEvidenceSHA256": "7da66b0c6af8f467d267ef7d4166e4895add6b5db63629c2460cb9bfd494d9dd",
+      "currentEvidenceSHA256": "7da66b0c6af8f467d267ef7d4166e4895add6b5db63629c2460cb9bfd494d9dd",
+      "currentProfileCanonicalSHA256": "27b00cd35bd058654cb526b99a3b9d71a73959b4958d0160bd0aebb651db844e",
+      "matchesFrozenDraft": true,
+      "verdict": "pass",
+      "primaryContentRead": "WEB 6:76 calls Kedesh a city “in Galilee”; current profile treats Galilee as a region, not a city or defined polygon. Wikipedia article describes the region and variable historical boundaries, supporting the careful note and null coordinate.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 6:76",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "and out of the tribe of Naphtali, Kedesh in Galilee with its pasture lands, Hammon with its pasture lands, and Kiriathaim with its pasture lands.",
+          "textSHA256": "acd2a1a3e5d7e0626b774dd614eabeda8b0467182d40bb5832a7eb70791d4192",
+          "citationURL": "https://ebible.org/engwebp/1CH06.htm#V76"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Galilee",
+        "title": "Galilee",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事はガリラヤを歴史的な地域として扱い、古代・現代の範囲が時代や記述者によって異なると説明します。現代国境との同一視はしません。",
+        "bodyLocator": "lead; “Boundaries”",
+        "bodySupport": "該当節は古代ガリラヤの範囲が時期・著者で変わる点と、現在の範囲を別に扱う。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Galilee, lead and Hebrew Bible history section read; boundaries vary by era/source.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:galilee_433",
+        "category": "region",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 6,
+          "verse": 76
+        },
+        "reasonJa": "地域の代表候補として表示する場合に限り、ガリラヤ全域の確定境界ではないと明示します。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 6,
+          "verse": 76
+        },
+        "summaryJa": "ガリラヤは、ナフタリからレビ人に与えられた町ケデシュの所在を示す地域名として現れます。本文はガリラヤ全域の境界を定義していません。",
+        "subtitleJa": "ナフタリの町ケデシュが属する地域",
+        "historicalRoleJa": "ケデシュの位置を限定する地域名として用いられます。",
+        "identityNoteJa": "",
+        "modernLocationJa": "古代の北部地域名です。時代によって範囲の説明が異なるため、現在の国境と同じ範囲とはみなしません。",
+        "locationNoteJa": "古代の北部地域名です。時代によって範囲の説明が異なるため、現在の国境と同じ範囲とはみなしません。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 76
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 76
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-6-76",
+          "wikipedia-galilee_433"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:gath_442",
+      "draftPath": "drafts/places_3/1CH_gath_442.json",
+      "evidencePath": "evidence/places_3/1CH_gath_442.json",
+      "frozenDraftSHA256": "efcbefaf6c2bcc57db3b0b33f15d03647ef0ca2f6816a45b404030afa7122a2a",
+      "currentDraftSHA256": "efcbefaf6c2bcc57db3b0b33f15d03647ef0ca2f6816a45b404030afa7122a2a",
+      "frozenEvidenceSHA256": "44e74fab78ef2b939d4a018d9310c2d91ddaebb0a5a3235479cae60089691f72",
+      "currentEvidenceSHA256": "44e74fab78ef2b939d4a018d9310c2d91ddaebb0a5a3235479cae60089691f72",
+      "currentProfileCanonicalSHA256": "07d158139df84ea8da636470a293e9565c15111ac70e942434dcc85d35cbc86a",
+      "matchesFrozenDraft": true,
+      "verdict": "qualified",
+      "primaryContentRead": "WEB 7:21 refers to “men of Gath”; later refs at 8:13, 18:1, 20:6, and 20:8 separately use the city and are gated by their fact citations. Article distinguishes Gath from other same-name places and discusses Tell es-Safi as a debated/proposed identification. Current no-coordinate policy is appropriate.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 7:21",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "Zabad his son, Shuthelah his son, Ezer, and Elead, whom the men of Gath who were born in the land killed, because they came down to take away their livestock.",
+          "textSHA256": "27f6c59e3e55488c2c06225df2d0026916020834346c39257536c898a2f7deab",
+          "citationURL": "https://ebible.org/engwebp/1CH07.htm#V21"
+        },
+        {
+          "ref": "1CH 8:13",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "and Beriah and Shema, who were heads of fathers’ households of the inhabitants of Aijalon, who put to flight the inhabitants of Gath;",
+          "textSHA256": "a513409bd29882a5a28776b26bb7a57708518493ccc1b5f42740f7a04cdb28f2",
+          "citationURL": "https://ebible.org/engwebp/1CH08.htm#V13"
+        },
+        {
+          "ref": "1CH 18:1",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "After this, David defeated the Philistines and subdued them, and took Gath and its towns out of the hand of the Philistines.",
+          "textSHA256": "f68a784e8797f36172ca32a970e8661957666199738a45fdf737ec342a9fed15",
+          "citationURL": "https://ebible.org/engwebp/1CH18.htm#V1"
+        },
+        {
+          "ref": "1CH 20:6",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "There was again war at Gath, where there was a man of great stature, who had twenty-four fingers and toes, six on each hand and six on each foot; and he also was born to the giant.",
+          "textSHA256": "559fd3e55b5ebaec2caced318cfb45f4c181dbf07f968ae03f8290f655564713",
+          "citationURL": "https://ebible.org/engwebp/1CH20.htm#V6"
+        },
+        {
+          "ref": "1CH 20:8",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "These were born to the giant in Gath; and they fell by the hand of David and by the hand of his servants.",
+          "textSHA256": "71ab29dd897515146fe78ba10ee69d92cf14ac86c8a8e80815d3d83c5b2157df",
+          "citationURL": "https://ebible.org/engwebp/1CH20.htm#V8"
+        }
+      ],
+      "currentFactsAndGates": [
+        {
+          "knownBy": {
+            "chapter": 18,
+            "verse": 1
+          },
+          "textJa": "ガトとその町々がペリシテ人の支配から取られたと記されます。",
+          "sourceIds": [
+            "webp-1ch-18-1"
+          ],
+          "gateText": "After this, David defeated the Philistines and subdued them, and took Gath and its towns out of the hand of the Philistines.",
+          "sourceGateResolution": true
+        },
+        {
+          "knownBy": {
+            "chapter": 20,
+            "verse": 6
+          },
+          "textJa": "ガトで再び戦争が起きます。",
+          "sourceIds": [
+            "webp-1ch-20-6"
+          ],
+          "gateText": "There was again war at Gath, where there was a man of great stature, who had twenty-four fingers and toes, six on each hand and six on each foot; and he also was born to the giant.",
+          "sourceGateResolution": true
+        },
+        {
+          "knownBy": {
+            "chapter": 20,
+            "verse": 8
+          },
+          "textJa": "巨人の子らがガトで生まれたと記されます。",
+          "sourceIds": [
+            "webp-1ch-20-8"
+          ],
+          "gateText": "These were born to the giant in Gath; and they fell by the hand of David and by the hand of his servants.",
+          "sourceGateResolution": true
+        }
+      ],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Gath_(city)",
+        "title": "Gath (city)",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事はペリシテ人の都市ガトを他の同名地から区別し、テル・エス・サフィを有力比定候補としつつ、決定的な銘文証拠は確認されていないと説明します。",
+        "bodyLocator": "149–158; “Other Gaths”",
+        "bodySupport": "本文は聖書都市を解説し、他のGathと区別。エフライム人を殺したガト出身者の記述も含む。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Gath_(city), lines 149–172; Tell es-Safi is widely proposed but competing archaeological proposals are recounted.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:gath_442",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 7,
+          "verse": 21
+        },
+        "reasonJa": "ペリシテ都市ガトの不確かな候補地として表示可能です。テル・エス・サフィ比定は有力説ですが確定ではなく、ガト・リモンには流用しません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 7,
+          "verse": 21
+        },
+        "summaryJa": "ガトは、ペリシテ人に関係する町として本文に現れます。最初の用例では、ガトの人々がエフライムの子孫を殺したと記されます。",
+        "subtitleJa": "ペリシテ人の町として記される古代都市",
+        "historicalRoleJa": "ペリシテ人に関係する都市として、系譜の記述に登場します。",
+        "identityNoteJa": "",
+        "modernLocationJa": "ペリシテ人の五都市の一つとされます。テル・エス・サフィを有力候補とする説がありますが、銘文による確証はなく、他の同名地とも区別が必要です。",
+        "locationNoteJa": "ペリシテ人の五都市の一つとされます。テル・エス・サフィを有力候補とする説がありますが、銘文による確証はなく、他の同名地とも区別が必要です。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 7,
+              "verse": 21
+            },
+            "end": {
+              "chapter": 7,
+              "verse": 21
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 8,
+              "verse": 13
+            },
+            "end": {
+              "chapter": 8,
+              "verse": 13
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 18,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 18,
+              "verse": 1
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 20,
+              "verse": 6
+            },
+            "end": {
+              "chapter": 20,
+              "verse": 6
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 20,
+              "verse": 8
+            },
+            "end": {
+              "chapter": 20,
+              "verse": 8
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-7-21",
+          "webp-1ch-8-13",
+          "webp-1ch-18-1",
+          "webp-1ch-20-6",
+          "webp-1ch-20-8",
+          "webp-1ch-6-69",
+          "wikipedia-gath_442"
+        ],
+        "facts": [
+          {
+            "textJa": "ガトとその町々がペリシテ人の支配から取られたと記されます。",
+            "knownBy": {
+              "chapter": 18,
+              "verse": 1
+            },
+            "sourceIds": [
+              "webp-1ch-18-1"
+            ]
+          },
+          {
+            "textJa": "ガトで再び戦争が起きます。",
+            "knownBy": {
+              "chapter": 20,
+              "verse": 6
+            },
+            "sourceIds": [
+              "webp-1ch-20-6"
+            ]
+          },
+          {
+            "textJa": "巨人の子らがガトで生まれたと記されます。",
+            "knownBy": {
+              "chapter": 20,
+              "verse": 8
+            },
+            "sourceIds": [
+              "webp-1ch-20-8"
+            ]
+          }
+        ],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:geba_447",
+      "draftPath": "drafts/places_3/1CH_geba_447.json",
+      "evidencePath": "evidence/places_3/1CH_geba_447.json",
+      "frozenDraftSHA256": "3bc91d07b427b10f56add6fe69746affc8420c2cbdec523b899dab8eb4527560",
+      "currentDraftSHA256": "3bc91d07b427b10f56add6fe69746affc8420c2cbdec523b899dab8eb4527560",
+      "frozenEvidenceSHA256": "b59604f368d8ba5fe96185130ca3e6e30c4c586e435a92664e666b3884566fc8",
+      "currentEvidenceSHA256": "b59604f368d8ba5fe96185130ca3e6e30c4c586e435a92664e666b3884566fc8",
+      "currentProfileCanonicalSHA256": "39aa59fc81e8d5d93630fea56bd89c342c943c940a65d7c80205bd2be167bbde",
+      "matchesFrozenDraft": true,
+      "verdict": "pass",
+      "primaryContentRead": "WEB 6:60 lists Geba as a Benjamin Levitical town; 8:6 separately says inhabitants. Current passages/facts retain the town and later inhabitants without confusing Geba with Gibeah/Gibeon. Wikipedia article identifies the ancient city and labels Jabaʿ as its identification.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 6:60",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "and out of the tribe of Benjamin, Geba with its pasture lands, Allemeth with its pasture lands, and Anathoth with its pasture lands. All their cities throughout their families were thirteen cities.",
+          "textSHA256": "d04d79d6b476f1c41018745029f049a4f88a951900adddd140c5043cd861cf10",
+          "citationURL": "https://ebible.org/engwebp/1CH06.htm#V60"
+        },
+        {
+          "ref": "1CH 8:6",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "These are the sons of Ehud. These are the heads of fathers’ households of the inhabitants of Geba, who were carried captive to Manahath:",
+          "textSHA256": "48bd6c7fa5a7df52346f6bcafef19dd290867750cb7fc00a6a88aeac06400571",
+          "citationURL": "https://ebible.org/engwebp/1CH08.htm#V6"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Geba_(city)",
+        "title": "Geba (city)",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事はゲバを聖書に登場する古代都市とし、ベニヤミンの地理的領域内、北境付近に位置付けます。ジェバ比定は記事上の同定として扱います。",
+        "bodyLocator": "lead; “Location”",
+        "bodySupport": "導入は古代都市、位置節は現在のJebaʿ比定を説明する。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Geba_(city), lead and “Location” lines 122–126 read; exact city distinguished from nearby similar names in article context.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:geba_447",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 6,
+          "verse": 60
+        },
+        "reasonJa": "ベニヤミン領の古代都市の候補として表示可能です。ジェバ比定は記事の説であり、プロフィール座標は確定しません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 6,
+          "verse": 60
+        },
+        "summaryJa": "ゲバは、ベニヤミン族からレビ人に牧草地付きで与えられた町として列挙されます。別の系譜箇所では、ゲバの住民の父祖家族について記されます。",
+        "subtitleJa": "ベニヤミン領の町",
+        "historicalRoleJa": "レビ人に与えられた町で、住民の家族の記述にも現れます。",
+        "identityNoteJa": "",
+        "modernLocationJa": "エルサレム北方の古代都市とされ、現代のジェバに比定する説があります。",
+        "locationNoteJa": "エルサレム北方の古代都市とされ、現代のジェバに比定する説があります。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 60
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 60
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 8,
+              "verse": 6
+            },
+            "end": {
+              "chapter": 8,
+              "verse": 6
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-6-60",
+          "webp-1ch-8-6",
+          "wikipedia-geba_447"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:gedor_456",
+      "draftPath": "drafts/places_3/1CH_gedor_456.json",
+      "evidencePath": "evidence/places_3/1CH_gedor_456.json",
+      "frozenDraftSHA256": "102e9f72bcb354fb336f452453a4f2e4ea27177624bc478d50d35a766edd3755",
+      "currentDraftSHA256": "256357c903056a3cc96ad21d5ae3718d302e069c1c1070ec1075df41dc696e9b",
+      "frozenEvidenceSHA256": "31965e05a0f3119a743d08ec451b83d61709c018ec86b4ed6a850cc0df23a018",
+      "currentEvidenceSHA256": "3c1a459abcd534391f4f38ba9e6cb031c3aea31d9865618de59a05038654092f",
+      "currentProfileCanonicalSHA256": "e1eb5eedfff76bc6db7a4628767f3c3f6b704de0f106284361a587433674edb1",
+      "matchesFrozenDraft": true,
+      "verdict": "qualified",
+      "primaryContentRead": "WEB 4:39 supports a place named Gedor; WEB 12:7 says “sons of Jeroham of Gedor,” a separate genealogical qualifier that may be a place, but current profile adopts 12:7 without a dedicated passage fact and its profile.sourceIds also contain 4:4, 4:18, 8:31, 9:37—the latter human-name contexts/uncertain spellings, not the 4:39 town. The evidence occurrence audit explicitly marks 12:7 context while prose and source mapping do not explain the referent. Remove unsubstantiated sourceIds and either leave 12:7 as unresolved/qualified context or add a clearly justified passage/fact; do not merge same-spelling genealogical people with the town.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 4:39",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "They went to the entrance of Gedor, even to the east side of the valley, to seek pasture for their flocks.",
+          "textSHA256": "eda73267e44d756d5dc608c0aa64630d309d7392cd4c4fc27f4eca91b8ffeb46",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V39"
+        },
+        {
+          "ref": "1CH 12:7",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "and Joelah and Zebadiah, the sons of Jeroham of Gedor.",
+          "textSHA256": "3d6244069256428d94bb225d2a14f1cb362780bb8d65ffc80a4aab1c671f5201",
+          "citationURL": "https://ebible.org/engwebp/1CH12.htm#V7"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "null-review",
+        "authorSearchStatus": "searched-no-fit",
+        "authorQueries": [
+          "Wikipedia Gedor biblical place 1 Chronicles 4:39",
+          "site:en.wikipedia.org/wiki Gedor Hebrew Bible place"
+        ],
+        "independentLiveCheck": "see assessment; exact title candidates were searched/opened; bare shared-section discoveries are called out explicitly"
+      },
+      "secondaryArticleAssessment": "Wikipedia searches: exact Gedor on the minor-places article returned no match; direct /wiki/Gedor was 404. This confirms no direct article at the tried title, not a comprehensive no-fit for every variant.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:gedor_456",
+        "category": "uncertain",
+        "allowCandidateMap": false,
+        "allowFrom": null,
+        "reasonJa": "4:39の「ゲドルの入口」は明確な地理用例ですが、現代位置は未確定。12:7の出身地との同一性や4:4・4:18の系譜表現も確定できないため、誤った点表示を避けます。",
+        "verificationState": "legacy candidate suppressed; profile.coordinate remains null; independent identification/location insufficient"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 4,
+          "verse": 39
+        },
+        "summaryJa": "ゲドルは、シメオンの子孫が羊のための牧草地を探しに行った「ゲドルの入口」として記されます。本文はその東側の谷にも言及します。",
+        "subtitleJa": "羊の放牧地を求めた先に記される地名",
+        "historicalRoleJa": "牧草地を求めた先の地名として現れます。",
+        "identityNoteJa": "",
+        "modernLocationJa": "現代の遺跡比定は確認できず、同名の人物名も系譜に現れるため、町の位置は未確定です。",
+        "locationNoteJa": "現代の遺跡比定は確認できず、同名の人物名も系譜に現れるため、町の位置は未確定です。 現代の位置を一点で示す根拠はありません。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 39
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 39
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 12,
+              "verse": 7
+            },
+            "end": {
+              "chapter": 12,
+              "verse": 7
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-4-39",
+          "webp-1ch-4-4",
+          "webp-1ch-4-18",
+          "webp-1ch-8-31",
+          "webp-1ch-9-37",
+          "webp-1ch-12-7"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "priorVerdict": "fail",
+      "reclosureStatus": "independently-reread-current-snapshot",
+      "currentReview": {
+        "verdict": "qualified",
+        "recheckedAtUTC": "2026-10-16T05:22:13Z",
+        "findingJa": "4:39の地名用例だけを採用し、12:7の人の出自を同一地点と断定せずactive sourceから除去。",
+        "knownBy": {
+          "chapter": 4,
+          "verse": 39
+        },
+        "subtitleJa": "羊の放牧地を求めた先に記される地名",
+        "summaryJa": "ゲドルは、シメオンの子孫が羊のための牧草地を探しに行った「ゲドルの入口」として記されます。本文はその東側の谷にも言及します。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "牧草地を求めた先の地名として現れます。",
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 39
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 39
+            }
+          }
+        ],
+        "facts": [],
+        "wikipedia": null,
+        "sourceGateAndIdentityRechecked": true,
+        "authorRepairReasonJa": "直接地名用例を4:39に限定。12:7の「of Gedor」は人の出自表示で4:39の地点との同一性が示されないため未解決としてカードのpassages/sourceIdsから外す。系譜4:4/4:18の曖昧性も未解決のまま保持。4:4/4:18/8:31/9:37/12:7の不要な一次source recordsをactive profile sourcesから削除し、occurrence auditには証拠として残す。"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:gezer_463",
+      "draftPath": "drafts/places_3/1CH_gezer_463.json",
+      "evidencePath": "evidence/places_3/1CH_gezer_463.json",
+      "frozenDraftSHA256": "72bf0d7eac5c0776c25af8db40229dd6cb40e0d9b8be55d35bec82d1bba6d2db",
+      "currentDraftSHA256": "72bf0d7eac5c0776c25af8db40229dd6cb40e0d9b8be55d35bec82d1bba6d2db",
+      "frozenEvidenceSHA256": "03334fe8f38f3c0ee7e42b648cfe93075e4d93cf709b55a68f7d1b0c7d1778c3",
+      "currentEvidenceSHA256": "03334fe8f38f3c0ee7e42b648cfe93075e4d93cf709b55a68f7d1b0c7d1778c3",
+      "currentProfileCanonicalSHA256": "5efd469a36302c9ad322adda03edc48a9510cc95fc66c79dd4263afdfbb55736",
+      "matchesFrozenDraft": true,
+      "verdict": "pass",
+      "primaryContentRead": "WEB 6:67 names Gezer as an Ephraimite refuge-town with pasture; 7:28 and 14:16/20:4 are separately fact-gated. Wikipedia explains the tell/biblical link and describes boundary inscriptions as identification evidence. Profile coordinate remains null, so it does not overstate modern pin verification.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 6:67",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "They gave to them the cities of refuge, Shechem in the hill country of Ephraim with its pasture lands and Gezer with its pasture lands,",
+          "textSHA256": "d4e4bdcaf845f5635399515182c3b5f6f334b7c9ce51c0319539c9383ef15d02",
+          "citationURL": "https://ebible.org/engwebp/1CH06.htm#V67"
+        },
+        {
+          "ref": "1CH 7:28",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "Their possessions and settlements were Bethel and its towns, and eastward Naaran, and westward Gezer with its towns; Shechem also and its towns, to Azzah and its towns;",
+          "textSHA256": "cdae38901be5043ea011509468c2b0d5987f97193ea947c66251e3f4afe18274",
+          "citationURL": "https://ebible.org/engwebp/1CH07.htm#V28"
+        },
+        {
+          "ref": "1CH 14:16",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "David did as God commanded him; and they attacked the army of the Philistines from Gibeon even to Gezer.",
+          "textSHA256": "4e15dd5123441e36d17174365ef440698e7c5d8ac7d553fb2630cae84ab76a54",
+          "citationURL": "https://ebible.org/engwebp/1CH14.htm#V16"
+        },
+        {
+          "ref": "1CH 20:4",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "After this, war arose at Gezer with the Philistines. Then Sibbecai the Hushathite killed Sippai, of the sons of the giant; and they were subdued.",
+          "textSHA256": "4847f2628d3cbafb49ef49cc838b86b2713d6f6f5b289dc37c740018fade2f23",
+          "citationURL": "https://ebible.org/engwebp/1CH20.htm#V4"
+        }
+      ],
+      "currentFactsAndGates": [
+        {
+          "knownBy": {
+            "chapter": 14,
+            "verse": 16
+          },
+          "textJa": "ギブオンからゲゼルまでの範囲でペリシテ軍を攻撃します。",
+          "sourceIds": [
+            "webp-1ch-14-16"
+          ],
+          "gateText": "David did as God commanded him; and they attacked the army of the Philistines from Gibeon even to Gezer.",
+          "sourceGateResolution": true
+        },
+        {
+          "knownBy": {
+            "chapter": 20,
+            "verse": 4
+          },
+          "textJa": "ゲゼルでペリシテ人との戦争が起きます。",
+          "sourceIds": [
+            "webp-1ch-20-4"
+          ],
+          "gateText": "After this, war arose at Gezer with the Philistines. Then Sibbecai the Hushathite killed Sippai, of the sons of the giant; and they were subdued.",
+          "sourceGateResolution": true
+        }
+      ],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Gezer",
+        "title": "Gezer",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事の識別節はテル・ゲゼル遺跡と聖書のゲゼルとの関係を扱います。記事中で遺跡比定が支持されていることは記しますが、候補座標を独立測量済みとはしません。",
+        "bodyLocator": "“Location” and “Identification”",
+        "bodySupport": "該当箇所は古代都市とテル・ゲゼルの遺跡を説明し、位置を記す。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Gezer, identification section lines 230 and location section read; biblical town / tell connection directly treated.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:gezer_463",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 6,
+          "verse": 67
+        },
+        "reasonJa": "古代都市ゲゼルに結び付く従来候補として表示可能です。遺跡比定を確定座標の独立測地とは扱いません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 6,
+          "verse": 67
+        },
+        "summaryJa": "ゲゼルは、エフライム山地の避難都市の列挙で、牧草地付きの町として記されます。",
+        "subtitleJa": "レビ人の町としても記される古代都市",
+        "historicalRoleJa": "エフライム山地の避難都市に続く町として、牧草地付きで列挙されます。",
+        "identityNoteJa": "",
+        "modernLocationJa": "エルサレム西方のテル・ゲゼル遺跡が古代ゲゼルと同定されています。",
+        "locationNoteJa": "エルサレム西方のテル・ゲゼル遺跡が古代ゲゼルと同定されています。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 67
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 67
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 7,
+              "verse": 28
+            },
+            "end": {
+              "chapter": 7,
+              "verse": 28
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 14,
+              "verse": 16
+            },
+            "end": {
+              "chapter": 14,
+              "verse": 16
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 20,
+              "verse": 4
+            },
+            "end": {
+              "chapter": 20,
+              "verse": 4
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-6-67",
+          "webp-1ch-7-28",
+          "webp-1ch-14-16",
+          "webp-1ch-20-4",
+          "wikipedia-gezer_463"
+        ],
+        "facts": [
+          {
+            "textJa": "ギブオンからゲゼルまでの範囲でペリシテ軍を攻撃します。",
+            "knownBy": {
+              "chapter": 14,
+              "verse": 16
+            },
+            "sourceIds": [
+              "webp-1ch-14-16"
+            ]
+          },
+          {
+            "textJa": "ゲゼルでペリシテ人との戦争が起きます。",
+            "knownBy": {
+              "chapter": 20,
+              "verse": 4
+            },
+            "sourceIds": [
+              "webp-1ch-20-4"
+            ]
+          }
+        ],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:gibeon_470",
+      "draftPath": "drafts/places_3/1CH_gibeon_470.json",
+      "evidencePath": "evidence/places_3/1CH_gibeon_470.json",
+      "frozenDraftSHA256": "114ea1e67e217d696ba6fd441ca4bccbcc6c9d040603ea88a2632e5ff8f1c584",
+      "currentDraftSHA256": "e446056621a6c85f90907d00d53c4859f9734ab44b3db3d9586e075587da51ab",
+      "frozenEvidenceSHA256": "c03e9b544b31bebcbdbe3140bbd45be54723fd0c994a1acdd2353a9486a0ac7f",
+      "currentEvidenceSHA256": "f70c66ba289cd4e978d5554bd6cb587f65e6bc7ca6dde5bc5fb70e75fd348e2d",
+      "currentProfileCanonicalSHA256": "9fc5ccb2bcf53fa79c5274db7f31ebe11f31b785f89dff3ffa07e64a44cf50a2",
+      "matchesFrozenDraft": true,
+      "verdict": "pass",
+      "primaryContentRead": "WEB 8:29 and 9:35 place the ancestor “father of Gibeon” in Gibeon; later WEB 14:16, 16:39, 21:29 provide battle/sanctuary details. Current profile has those later passages and facts gated, but its Wikipedia note says “本文の住民・戦闘・聖所の地名と対応します” at knownBy 8:29, previewing 14:16/16:39/21:29. Remove/gate that later-use list. Current profile still properly treats the site as a city, not the genealogical father.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 8:29",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "The father of Gibeon, whose wife’s name was Maacah, lived in Gibeon",
+          "textSHA256": "3cf5bcc37a0d6485c231c45c27a01c549080a89c40402fff73aa8d12d65d0e11",
+          "citationURL": "https://ebible.org/engwebp/1CH08.htm#V29"
+        },
+        {
+          "ref": "1CH 9:35",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "Jeiel the father of Gibeon, whose wife’s name was Maacah, lived in Gibeon.",
+          "textSHA256": "87bb0197ab195e7bd2d1574abe7e9391de7a8077babe1a99388bb536ba70af9c",
+          "citationURL": "https://ebible.org/engwebp/1CH09.htm#V35"
+        },
+        {
+          "ref": "1CH 14:16",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "David did as God commanded him; and they attacked the army of the Philistines from Gibeon even to Gezer.",
+          "textSHA256": "4e15dd5123441e36d17174365ef440698e7c5d8ac7d553fb2630cae84ab76a54",
+          "citationURL": "https://ebible.org/engwebp/1CH14.htm#V16"
+        },
+        {
+          "ref": "1CH 16:39",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "and Zadok the priest and his brothers the priests, before the LORD’s tabernacle in the high place that was at Gibeon,",
+          "textSHA256": "cf57b8a6e05b5fbd14c1fc09e6f6aeeb403b46f220158f43d7e34c5b1d20c619",
+          "citationURL": "https://ebible.org/engwebp/1CH16.htm#V39"
+        },
+        {
+          "ref": "1CH 21:29",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "For the LORD’s tabernacle, which Moses made in the wilderness, and the altar of burnt offering, were at that time in the high place at Gibeon.",
+          "textSHA256": "d4dc17d9b712aedfb6d870df71f45887eb1babc3d964abe2ae3a8ea2fe77a397",
+          "citationURL": "https://ebible.org/engwebp/1CH21.htm#V29"
+        }
+      ],
+      "currentFactsAndGates": [
+        {
+          "knownBy": {
+            "chapter": 14,
+            "verse": 16
+          },
+          "textJa": "ペリシテ軍への攻撃の起点として記されます。",
+          "sourceIds": [
+            "webp-1ch-14-16"
+          ],
+          "gateText": "David did as God commanded him; and they attacked the army of the Philistines from Gibeon even to Gezer.",
+          "sourceGateResolution": true
+        },
+        {
+          "knownBy": {
+            "chapter": 16,
+            "verse": 39
+          },
+          "textJa": "幕屋がギブオンの高き所に置かれていたと記されます。",
+          "sourceIds": [
+            "webp-1ch-16-39"
+          ],
+          "gateText": "and Zadok the priest and his brothers the priests, before the LORD’s tabernacle in the high place that was at Gibeon,",
+          "sourceGateResolution": true
+        },
+        {
+          "knownBy": {
+            "chapter": 21,
+            "verse": 29
+          },
+          "textJa": "当時、幕屋と祭壇がギブオンにあったと記されます。",
+          "sourceIds": [
+            "webp-1ch-21-29"
+          ],
+          "gateText": "For the LORD’s tabernacle, which Moses made in the wilderness, and the altar of burnt offering, were at that time in the high place at Gibeon.",
+          "sourceGateResolution": true
+        }
+      ],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Gibeon_(ancient_city)",
+        "title": "Gibeon (ancient city)",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事はギブオンをエルサレム北方のカナン人・後のイスラエル人の古代都市として記します。本文の住民・戦闘・聖所の地名と対応します。",
+        "bodyLocator": "lead; “Archaeology”",
+        "bodySupport": "導入は古代都市と位置を述べる。考古節はアル・ジーブ遺跡との関係を扱う。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Gibeon_(ancient_city), lead and archaeological discussion read; article fits ancient city, but later-use summary is not first-view-safe.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:gibeon_470",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 8,
+          "verse": 29
+        },
+        "reasonJa": "ギブオンの未確定候補として表示可能です。町と高き所・幕屋の地点を厳密に別々の確定座標とは扱いません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 8,
+          "verse": 29
+        },
+        "summaryJa": "ギブオンは、ベニヤミンの系譜の記述で「ギブオンの父」と呼ばれる人物が住んだ町として記されます。",
+        "subtitleJa": "ベニヤミン領の古代都市",
+        "historicalRoleJa": "系譜に記される人物の居住地です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "エルサレム北方の古代都市で、現在のアル・ジーブに遺跡があります。",
+        "locationNoteJa": "エルサレム北方の古代都市で、現在のアル・ジーブに遺跡があります。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 8,
+              "verse": 29
+            },
+            "end": {
+              "chapter": 8,
+              "verse": 29
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 9,
+              "verse": 35
+            },
+            "end": {
+              "chapter": 9,
+              "verse": 35
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 14,
+              "verse": 16
+            },
+            "end": {
+              "chapter": 14,
+              "verse": 16
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 16,
+              "verse": 39
+            },
+            "end": {
+              "chapter": 16,
+              "verse": 39
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 21,
+              "verse": 29
+            },
+            "end": {
+              "chapter": 21,
+              "verse": 29
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-8-29",
+          "webp-1ch-9-35",
+          "webp-1ch-14-16",
+          "webp-1ch-16-39",
+          "webp-1ch-21-29",
+          "webp-1ch-12-4",
+          "wikipedia-gibeon_470"
+        ],
+        "facts": [
+          {
+            "textJa": "ペリシテ軍への攻撃の起点として記されます。",
+            "knownBy": {
+              "chapter": 14,
+              "verse": 16
+            },
+            "sourceIds": [
+              "webp-1ch-14-16"
+            ]
+          },
+          {
+            "textJa": "幕屋がギブオンの高き所に置かれていたと記されます。",
+            "knownBy": {
+              "chapter": 16,
+              "verse": 39
+            },
+            "sourceIds": [
+              "webp-1ch-16-39"
+            ]
+          },
+          {
+            "textJa": "当時、幕屋と祭壇がギブオンにあったと記されます。",
+            "knownBy": {
+              "chapter": 21,
+              "verse": 29
+            },
+            "sourceIds": [
+              "webp-1ch-21-29"
+            ]
+          }
+        ],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "priorVerdict": "fail",
+      "reclosureStatus": "independently-reread-current-snapshot",
+      "currentReview": {
+        "verdict": "pass",
+        "recheckedAtUTC": "2026-10-16T05:22:13Z",
+        "findingJa": "8:29の初出欄を安全化し、12:4のGibeonite集団用法を地名profileから外す。後続地名factsは各ゲート。",
+        "knownBy": {
+          "chapter": 8,
+          "verse": 29
+        },
+        "subtitleJa": "ベニヤミン領の古代都市",
+        "summaryJa": "ギブオンは、ベニヤミンの系譜の記述で「ギブオンの父」と呼ばれる人物が住んだ町として記されます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "系譜に記される人物の居住地です。",
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 8,
+              "verse": 29
+            },
+            "end": {
+              "chapter": 8,
+              "verse": 29
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 9,
+              "verse": 35
+            },
+            "end": {
+              "chapter": 9,
+              "verse": 35
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 14,
+              "verse": 16
+            },
+            "end": {
+              "chapter": 14,
+              "verse": 16
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 16,
+              "verse": 39
+            },
+            "end": {
+              "chapter": 16,
+              "verse": 39
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 21,
+              "verse": 29
+            },
+            "end": {
+              "chapter": 21,
+              "verse": 29
+            }
+          }
+        ],
+        "facts": [
+          {
+            "textJa": "ペリシテ軍への攻撃の起点として記されます。",
+            "knownBy": {
+              "chapter": 14,
+              "verse": 16
+            },
+            "sourceIds": [
+              "webp-1ch-14-16"
+            ]
+          },
+          {
+            "textJa": "幕屋がギブオンの高き所に置かれていたと記されます。",
+            "knownBy": {
+              "chapter": 16,
+              "verse": 39
+            },
+            "sourceIds": [
+              "webp-1ch-16-39"
+            ]
+          },
+          {
+            "textJa": "当時、幕屋と祭壇がギブオンにあったと記されます。",
+            "knownBy": {
+              "chapter": 21,
+              "verse": 29
+            },
+            "sourceIds": [
+              "webp-1ch-21-29"
+            ]
+          }
+        ],
+        "wikipedia": {
+          "title": "Gibeon (ancient city)",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Gibeon_(ancient_city)",
+          "kind": "article",
+          "noteJa": "記事はギブオンをエルサレム北方の古代都市として扱い、現在のアル・ジーブ遺跡との関係を説明します。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true
+        },
+        "sourceGateAndIdentityRechecked": true,
+        "authorRepairReasonJa": "Wikipedia noteをknownBy 8:29時点に安全化し、後続章の住民/戦闘/聖所を列挙する表現を除去。12:4は「Gibeonite」という集団・出自形で町の用例ではないため、active place sourceIds/sourcesから削除し、occurrence auditで除外理由を明記。"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:gozan_492",
+      "draftPath": "drafts/places_3/1CH_gozan_492.json",
+      "evidencePath": "evidence/places_3/1CH_gozan_492.json",
+      "frozenDraftSHA256": "a0bb0db522c4c91e6749b914c753108a5fcd7e793cbcc69a668ab73277e13da4",
+      "currentDraftSHA256": "a0bb0db522c4c91e6749b914c753108a5fcd7e793cbcc69a668ab73277e13da4",
+      "frozenEvidenceSHA256": "409cc3e7820349b916434f20b42b5bcbfcacf7039d08ae5c0656192d84a24b33",
+      "currentEvidenceSHA256": "409cc3e7820349b916434f20b42b5bcbfcacf7039d08ae5c0656192d84a24b33",
+      "currentProfileCanonicalSHA256": "4984ded783a72e3033f9d9255f5d3c57125cc266c94b087114d43ef60a568668",
+      "matchesFrozenDraft": true,
+      "verdict": "qualified",
+      "primaryContentRead": "WEB 5:26 literally says “river of Gozan,” so the profile correctly distinguishes a watercourse/region rather than a city. Wikipedia Gozan is a disambiguation page whose ancient River Gozan bullet equates it with the Amu Darya; that identity is not clearly the WEB passage’s region/rivernaming and should not be linked as verified. Current null is defensible; record the disambiguation page read and unresolved geographic association.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 5:26",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "So the God of Israel stirred up the spirit of Pul king of Assyria, and the spirit of Tilgath Pilneser king of Assyria, and he carried away the Reubenites, the Gadites, and the half-tribe of Manasseh, and brought them to Halah, Habor, Hara, and to the river of Gozan, to this day.",
+          "textSHA256": "a33fa7b379d0d0724b9ff1822fa0caa8c947f25c9e5550893ec68f9c1debf564",
+          "citationURL": "https://ebible.org/engwebp/1CH05.htm#V26"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "null-review",
+        "authorSearchStatus": "searched-no-fit",
+        "authorQueries": [
+          "Wikipedia River of Gozan biblical river",
+          "Wikipedia Gozan ancient river 1 Chronicles 5:26",
+          "site:en.wikipedia.org/wiki Gozan river"
+        ],
+        "independentLiveCheck": "see assessment; exact title candidates were searched/opened; bare shared-section discoveries are called out explicitly"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Gozan, lines 99–105; page lists an ancient River Gozan/Amu Darya and Tell Halaf/Guzana homonym. It does not independently establish the WEB 1CH referent.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:gozan_492",
+        "category": "watercourse",
+        "allowCandidateMap": false,
+        "allowFrom": null,
+        "reasonJa": "本文はゴザンの川を示し、地理的同定にも諸説があります。都市の点として表示するのは対象種別を誤るため抑止します。",
+        "verificationState": "legacy candidate suppressed; profile.coordinate remains null; independent identification/location insufficient"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 5,
+          "verse": 26
+        },
+        "summaryJa": "ゴザンは、ルベン人、ガド人、マナセの半部族の捕囚先を列挙する中で「ゴザンの川」として現れます。都市名ではなく、水系またはその周辺地域を示す表現です。",
+        "subtitleJa": "捕囚先一覧にある川・地域名",
+        "historicalRoleJa": "アッシリアによる捕囚先を記す地理表現です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "古代のゴザン川・地域がどの河川・地域に当たるかは議論があり、現代の国境や一点に置き換えられません。",
+        "locationNoteJa": "古代のゴザン川・地域がどの河川・地域に当たるかは議論があり、現代の国境や一点に置き換えられません。 現代の位置を一点で示す根拠はありません。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 5,
+              "verse": 26
+            },
+            "end": {
+              "chapter": 5,
+              "verse": 26
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-5-26"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:hamath_516",
+      "draftPath": "drafts/places_3/1CH_hamath_516.json",
+      "evidencePath": "evidence/places_3/1CH_hamath_516.json",
+      "frozenDraftSHA256": "8f6f3e266c54488f5cd219486d19a1108ed1a44e4a3882ed784c0714833d218c",
+      "currentDraftSHA256": "8f6f3e266c54488f5cd219486d19a1108ed1a44e4a3882ed784c0714833d218c",
+      "frozenEvidenceSHA256": "520108a1c4d4eee260a544d9cb044ce239cca41e7a7578071044b8bdd18fa113",
+      "currentEvidenceSHA256": "520108a1c4d4eee260a544d9cb044ce239cca41e7a7578071044b8bdd18fa113",
+      "currentProfileCanonicalSHA256": "e6aed45ffe5a00ed28b374dee9d3058fae8b1fa5f1d23a5d04cd454da9b2cc53",
+      "matchesFrozenDraft": true,
+      "verdict": "qualified",
+      "primaryContentRead": "WEB 18:9 calls Tou king of Hamath; present summary treats this as a ruled region. The selected Hama article has a “Hamath in the Bible” section and discusses the historical relation, but modern Hama city and ancient territory are not identical. The note properly marks relation only.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 18:9",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "When Tou king of Hamath heard that David had struck all the army of Hadadezer king of Zobah,",
+          "textSHA256": "0487476dfc7243a032e3987c22815f067ccf79186e26dd2c4550e41ea0dd8c40",
+          "citationURL": "https://ebible.org/engwebp/1CH18.htm#V9"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Hama",
+        "title": "Hama",
+        "kind": "related-section",
+        "identityVerified": false,
+        "relationVerified": true,
+        "currentNoteJa": "記事は現代ハマ市と古代ハマトの歴史的関係を扱います。1 Chroniclesの王国・地域名との関連資料として示しますが、現代都市と古代の領域範囲を同一とはしません。",
+        "bodyLocator": "“Iron Age”; “Hamath in the Bible”",
+        "bodySupport": "記事の古代史節はハマトという鉄器時代の王国・都市に触れる。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Hama, “Hamath in the Bible” heading at line 317 and section read; relation only, not territorial equivalence.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:hamath_516",
+        "category": "region",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 18,
+          "verse": 9
+        },
+        "reasonJa": "古代ハマト地域の従来候補としてのみ表示できます。現在のハマ市一点を古代王国全域と誤認させない説明が必要です。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 18,
+          "verse": 9
+        },
+        "summaryJa": "ハマトは、ダビデがユーフラテス川方面へ勢力を広げた記述の中で、トウ王が治める地域として現れます。本文は地名ハマトとその王を結び付けます。",
+        "subtitleJa": "北方の王国・都市名",
+        "historicalRoleJa": "トウ王の支配地として、ダビデの北方遠征の記事に登場します。",
+        "identityNoteJa": "",
+        "modernLocationJa": "オロンテス川流域の古代都市国家名で、現代のシリア国境と単純に同一視できません。",
+        "locationNoteJa": "オロンテス川流域の古代都市国家名で、現代のシリア国境と単純に同一視できません。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 18,
+              "verse": 9
+            },
+            "end": {
+              "chapter": 18,
+              "verse": 9
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-18-9",
+          "webp-1ch-1-16",
+          "webp-1ch-13-5",
+          "webp-1ch-18-3",
+          "wikipedia-hamath_516"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:hara_525",
+      "draftPath": "drafts/places_3/1CH_hara_525.json",
+      "evidencePath": "evidence/places_3/1CH_hara_525.json",
+      "frozenDraftSHA256": "6201345b942ebc8b4871df3c0b113aa20451884af82c076abdc5627a14a7aaf6",
+      "currentDraftSHA256": "6201345b942ebc8b4871df3c0b113aa20451884af82c076abdc5627a14a7aaf6",
+      "frozenEvidenceSHA256": "0b43d8265cb8ac6480602fbd0da334bdfc64eca3fcdf7915f34d5a598d075471",
+      "currentEvidenceSHA256": "0b43d8265cb8ac6480602fbd0da334bdfc64eca3fcdf7915f34d5a598d075471",
+      "currentProfileCanonicalSHA256": "2e61de2f77d245eb022534259b4c80735d9f2723af3b639430c3806411e9959b",
+      "matchesFrozenDraft": true,
+      "verdict": "pass",
+      "primaryContentRead": "WEB 5:26 lists Hara among the Assyrian captivity destinations. The exact Hara (Bible) page treats it as a biblical toponym; article is short and does not offer a location, consistent with current text.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 5:26",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "So the God of Israel stirred up the spirit of Pul king of Assyria, and the spirit of Tilgath Pilneser king of Assyria, and he carried away the Reubenites, the Gadites, and the half-tribe of Manasseh, and brought them to Halah, Habor, Hara, and to the river of Gozan, to this day.",
+          "textSHA256": "a33fa7b379d0d0724b9ff1822fa0caa8c947f25c9e5550893ec68f9c1debf564",
+          "citationURL": "https://ebible.org/engwebp/1CH05.htm#V26"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Hara_(Bible)",
+        "title": "Hara (Bible)",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事はハラをアッシリアに関係する聖書の捕囚先として説明しますが、記事自体は短いスタブで具体的位置を示しません。",
+        "bodyLocator": "102–111",
+        "bodySupport": "導入は1 Chronicles 5:26の捕囚先と説明。位置情報なし。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Hara_(Bible), article body lines 102–111 read; matches captivity place but leaves location unspecified.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:hara_525",
+        "category": "uncertain",
+        "allowCandidateMap": false,
+        "allowFrom": null,
+        "reasonJa": "記事も現代の位置を示さず、本文も列挙だけです。根拠のない一点ピンを避けるため候補点は抑止します。",
+        "verificationState": "legacy candidate suppressed; profile.coordinate remains null; independent identification/location insufficient"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 5,
+          "verse": 26
+        },
+        "summaryJa": "ハラは、アッシリア王たちによる捕囚先の一覧に現れる場所です。本文はハラをハラハ、ハボル、ゴザン川と並べます。",
+        "subtitleJa": "捕囚先として挙げられる場所",
+        "historicalRoleJa": "捕囚先の一つとして記されています。",
+        "identityNoteJa": "",
+        "modernLocationJa": "聖書本文に出る場所ですが、現代の正確な地点や地域範囲は特定できません。",
+        "locationNoteJa": "聖書本文に出る場所ですが、現代の正確な地点や地域範囲は特定できません。 現代の位置を一点で示す根拠はありません。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 5,
+              "verse": 26
+            },
+            "end": {
+              "chapter": 5,
+              "verse": 26
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-5-26",
+          "webp-1ch-2-46",
+          "webp-1ch-4-14",
+          "webp-1ch-4-18",
+          "wikipedia-hara_525"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:hazar-susim_541",
+      "draftPath": "drafts/places_3/1CH_hazar-susim_541.json",
+      "evidencePath": "evidence/places_3/1CH_hazar-susim_541.json",
+      "frozenDraftSHA256": "c2f7bc4f5613a98d3bd824954b91ce4b8597a90149dfc0f23d2551e076876d1b",
+      "currentDraftSHA256": "d8b736109d90fd8ab5261736ea8eaae25b6bccfe12dd3a834196421a36983181",
+      "frozenEvidenceSHA256": "7a4353ed68ba293a60e5fcfcf93432be5d967f1c3098c63f3b4eb01a042d4a1e",
+      "currentEvidenceSHA256": "06523558bf5e214cc670f0f8aeeba56d711b469e9fc1d399d46ccebdc9225be4",
+      "currentProfileCanonicalSHA256": "52221987957cdf9f6cdd376a59a2f81402c69f08f373cb2c4d5c145a6e758737",
+      "matchesFrozenDraft": true,
+      "verdict": "qualified",
+      "primaryContentRead": "WEB 4:31 directly lists Hazar-susim among Simeonite towns. Current note says a similar name “Hazar-susah” occurs elsewhere but identity is not established; however Wikipedia’s Hazar-susah article/list section explicitly states “Hazar-susah, also called Hazar-susim” and cites Joshua/Chronicles. This is an appropriate shared-section candidate that the current null misses. The external claim can be attributed and the article’s cite mismatch must be noted; do not silently overstate archaeological identity.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 4:31",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "at Beth Marcaboth, Hazar Susim, at Beth Biri, and at Shaaraim. These were their cities until David’s reign.",
+          "textSHA256": "0096ccad5f4cdff14df7d36ebcc6d6362fb5e9215647972aa7df1b4eb96867d0",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V31"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "null-review",
+        "authorSearchStatus": "searched-no-fit",
+        "authorQueries": [
+          "Wikipedia Hazar-susim biblical town",
+          "site:en.wikipedia.org/wiki Hazar-susim",
+          "site:en.wikipedia.org/wiki Hazar-susah"
+        ],
+        "independentLiveCheck": "see assessment; exact title candidates were searched/opened; bare shared-section discoveries are called out explicitly"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Hazar-susah redirects to List of minor biblical places, section lines 772–776; article explicitly identifies Hazar-susah/Hazar-susim as names for the Simeonite city, while its stated Chronicles citation appears suspect.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:hazar-susim_541",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 4,
+          "verse": 31
+        },
+        "reasonJa": "町としての地名は本文にあります。既存候補点は未確定のまま表示でき、似た綴りのハツァル・スサとの同一視は示しません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 4,
+          "verse": 31
+        },
+        "summaryJa": "ハツァル・スシムは、シメオンの町々の一覧でベト・マルカボテとベト・ビリの間に記されます。別の聖書一覧には似た形のハツァル・スサが現れますが、同一地点とは確定しません。",
+        "subtitleJa": "シメオンの町として列挙される地名",
+        "historicalRoleJa": "シメオンの町の一覧に現れる地名です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "ネゲブ地域の町と考えられますが、正確な位置とハツァル・スサとの関係は確定できません。",
+        "locationNoteJa": "ネゲブ地域の町と考えられますが、正確な位置とハツァル・スサとの関係は確定できません。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 31
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 31
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-4-31"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "priorVerdict": "fail",
+      "reclosureStatus": "independently-reread-current-snapshot",
+      "currentReview": {
+        "verdict": "qualified",
+        "recheckedAtUTC": "2026-10-16T05:22:13Z",
+        "findingJa": "共有節はHazar-susah/Hazar-susimの呼称関係を述べるが、記事の聖書引用番号に差があるため留保を残し、現代遺跡同定をしない。",
+        "knownBy": {
+          "chapter": 4,
+          "verse": 31
+        },
+        "subtitleJa": "シメオンの町として列挙される地名",
+        "summaryJa": "ハツァル・スシムは、シメオンの町々の一覧にベト・マルカボテやベト・ビリとともに記されています。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "シメオンの町の一覧に現れる地名です。",
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 31
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 31
+            }
+          }
+        ],
+        "facts": [],
+        "wikipedia": {
+          "title": "List of minor biblical places — Hazar-susah",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_biblical_places#Hazar-susah",
+          "kind": "shared-section",
+          "noteJa": "共有一覧記事はHazar-susahをHazar-susimとも呼び、シメオンの町として挙げます。ただし記事の出典表示は1 Chronicles 4:13で、固定本文の4:31とは番号が一致しません。現代の位置や遺跡の同定は示されていません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true
+        },
+        "sourceGateAndIdentityRechecked": true,
+        "authorRepairReasonJa": "Wikipediaの共有一覧本文772–778行を実読。項目はHazar-susahをHazar-susimとも呼ぶと明記し、シメオンの町として扱うため共有節リンクを追加。ただし記事の参照番号は1CH 4:13とする一方、固定WEB 4:31が直接のHazar Susim表記で、引用対応に不一致がある。note/evidenceでその留保を明示し、現代遺跡同定は主張しない。"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:hormah_580",
+      "draftPath": "drafts/places_3/1CH_hormah_580.json",
+      "evidencePath": "evidence/places_3/1CH_hormah_580.json",
+      "frozenDraftSHA256": "70353bee44d03a5b9405e9632d2605e2926b5fb781728cf8a2b7352512912450",
+      "currentDraftSHA256": "70353bee44d03a5b9405e9632d2605e2926b5fb781728cf8a2b7352512912450",
+      "frozenEvidenceSHA256": "2cbc74252f7405b96f7ded3456af94a85dee6f68445869498c858e0626253c8b",
+      "currentEvidenceSHA256": "2cbc74252f7405b96f7ded3456af94a85dee6f68445869498c858e0626253c8b",
+      "currentProfileCanonicalSHA256": "19cf65e15b30f484b3f5889fc6a0020dfdc9ebb2e485161ec34002acef676235",
+      "matchesFrozenDraft": true,
+      "verdict": "qualified",
+      "primaryContentRead": "WEB 4:30 lists Hormah among Simeonite towns. Article treats it as a biblical place but acknowledges multiple proposed sites / uncertain location; current coordinate stays null and note does not force identification.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 4:30",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "at Bethuel, at Hormah, at Ziklag,",
+          "textSHA256": "062b6b55d59fba0353596efc022ed2d5f767e50e084c15ff40a1e701297fad54",
+          "citationURL": "https://ebible.org/engwebp/1CH04.htm#V30"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Hormah",
+        "title": "Hormah",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事はホルマを同定地不明の聖書の町とし、複数の候補地や地区とみる説を紹介します。座標・候補地を確定しません。",
+        "bodyLocator": "110–131",
+        "bodySupport": "導入は不明の町、識別節は候補複数と地区説を述べる。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Hormah, body sections lines 110–154 read; location undetermined / several proposals.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:hormah_580",
+        "category": "city",
+        "allowCandidateMap": false,
+        "allowFrom": null,
+        "reasonJa": "同定地不明で候補が複数あり、町か地区かにも異説があります。一点表示は誤認を招くため抑止します。",
+        "verificationState": "legacy candidate suppressed; profile.coordinate remains null; independent identification/location insufficient"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 4,
+          "verse": 30
+        },
+        "summaryJa": "ホルマは、シメオンの町々を列挙する箇所でベトエル、ツィクラグとともに記されます。",
+        "subtitleJa": "シメオンの町一覧に現れる地名",
+        "historicalRoleJa": "シメオンの町の一覧に現れる地名です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "所在が特定されていない古代の町です。資料には複数の候補地と、町ではなく地区とする見解があります。",
+        "locationNoteJa": "所在が特定されていない古代の町です。資料には複数の候補地と、町ではなく地区とする見解があります。 現代の位置を一点で示す根拠はありません。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 4,
+              "verse": 30
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 30
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-4-30",
+          "wikipedia-hormah_580"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:jabesh_610",
+      "draftPath": "drafts/places_3/1CH_jabesh_610.json",
+      "evidencePath": "evidence/places_3/1CH_jabesh_610.json",
+      "frozenDraftSHA256": "ea8e862be2690a5ca5101bb0795af6dfb161f6118aef6dc660a0d2cb5aee920e",
+      "currentDraftSHA256": "d3ecf5caf7a9fbe586d6fa5b6501b215e6068d1db91df57ef328038f41f42ea5",
+      "frozenEvidenceSHA256": "b8b901ca61954af6e9fdf4f103a56dac3cf0563556c8d115b0aa595ec8089449",
+      "currentEvidenceSHA256": "a40ab3c3a65be3f96c41818f8ec29b7d5634670d9a69944e07e1f51eada6caa4",
+      "currentProfileCanonicalSHA256": "18a0bb7aa13fd63c250dfe04b7af53850ceeb50f042fa06208b2bb382df5ff92",
+      "matchesFrozenDraft": true,
+      "verdict": "qualified",
+      "primaryContentRead": "WEB 10:11 says “Jabesh Gilead”; 10:12 shortens to “Jabesh.” Current knownBy=10:11, but profile nameJa is only “ヤベシュ” and subtitle/wiki note advertises the short form as already established, before 10:12. Keep the displayed name/full introduction at “ヤベシュ・ギレアデ” until its short form is first explicit, or gate the alias/link explanation at 10:12. Also Jabesh-Gilead 611 is a separate current profile covering the same references; root’s alias proposal is a valid integration candidate but remains unadopted and duplicate-card risk must be resolved there.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 10:11",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "When all Jabesh Gilead heard all that the Philistines had done to Saul,",
+          "textSHA256": "2381973d7322576ed5808e2ebbc54a39a5ae50aefc7f09566748f1d3102710a3",
+          "citationURL": "https://ebible.org/engwebp/1CH10.htm#V11"
+        },
+        {
+          "ref": "1CH 10:12",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "all the valiant men arose and took away the body of Saul and the bodies of his sons, and brought them to Jabesh, and buried their bones under the oak in Jabesh, and fasted seven days.",
+          "textSHA256": "9f54e82719a35765eb39b1166fc15e2e1a191fd2e58dfee36bbd57025df570d8",
+          "citationURL": "https://ebible.org/engwebp/1CH10.htm#V12"
+        }
+      ],
+      "currentFactsAndGates": [
+        {
+          "knownBy": {
+            "chapter": 10,
+            "verse": 12
+          },
+          "textJa": "サウルと息子たちの骨がヤベシュで葬られます。",
+          "sourceIds": [
+            "webp-1ch-10-12"
+          ],
+          "gateText": "all the valiant men arose and took away the body of Saul and the bodies of his sons, and brought them to Jabesh, and buried their bones under the oak in Jabesh, and fasted seven days.",
+          "sourceGateResolution": true
+        }
+      ],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Jabesh-Gilead",
+        "title": "Jabesh-Gilead",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事はヤベシュ・ギレアデをギレアデの古代町とし、「ヤベシュ」を短縮形と説明します。現代の位置にはテル・エル・マクルブなど複数の候補説があります。",
+        "bodyLocator": "122–125; 147–169",
+        "bodySupport": "導入はJabeshへの短縮形を明記。サウルの遺体の埋葬と複数の候補地を説明。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Jabesh-Gilead, lines 123–125 defines Jabesh-of-Gilead; lines 150–153 connect 1CH 10:12 to burial at Jabesh. This confirms short-name gate and same place, but does not authorize unreviewed alias integration.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:jabesh_610",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 10,
+          "verse": 11
+        },
+        "reasonJa": "ヤベシュ・ギレアデの従来候補として表示可能です。複数の遺跡候補があり、いずれも確定地点ではありません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 10,
+          "verse": 11
+        },
+        "summaryJa": "ヤベシュ・ギレアデの人々が、サウルに対するペリシテ人の行為を聞いた町として記されます。",
+        "subtitleJa": "ギレアデのヤベシュ",
+        "historicalRoleJa": "サウルに関する記事に登場するギレアデの町です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "ヨルダン川東岸のギレアデ地方に置かれる古代の町ですが、テル・エル・マクルブなど複数の遺跡候補があります。",
+        "locationNoteJa": "ヨルダン川東岸のギレアデ地方に置かれる古代の町ですが、テル・エル・マクルブなど複数の遺跡候補があります。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 10,
+              "verse": 11
+            },
+            "end": {
+              "chapter": 10,
+              "verse": 11
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 10,
+              "verse": 12
+            },
+            "end": {
+              "chapter": 10,
+              "verse": 12
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-10-11",
+          "webp-1ch-10-12",
+          "wikipedia-jabesh_610"
+        ],
+        "facts": [
+          {
+            "textJa": "サウルと息子たちの骨がヤベシュで葬られます。",
+            "knownBy": {
+              "chapter": 10,
+              "verse": 12
+            },
+            "sourceIds": [
+              "webp-1ch-10-12"
+            ]
+          }
+        ],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "priorVerdict": "fail",
+      "reclosureStatus": "independently-reread-current-snapshot",
+      "currentReview": {
+        "verdict": "qualified",
+        "recheckedAtUTC": "2026-10-16T05:22:13Z",
+        "findingJa": "10:11の完全形「ヤベシュ・ギレアデ」を初出名にし、10:12の短縮形説明をfactへゲート。並行IDとの統合は未採用。",
+        "knownBy": {
+          "chapter": 10,
+          "verse": 11
+        },
+        "subtitleJa": "ギレアデのヤベシュ",
+        "summaryJa": "ヤベシュ・ギレアデの人々が、サウルに対するペリシテ人の行為を聞いた町として記されます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "サウルに関する記事に登場するギレアデの町です。",
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 10,
+              "verse": 11
+            },
+            "end": {
+              "chapter": 10,
+              "verse": 11
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 10,
+              "verse": 12
+            },
+            "end": {
+              "chapter": 10,
+              "verse": 12
+            }
+          }
+        ],
+        "facts": [
+          {
+            "textJa": "サウルと息子たちの骨がヤベシュで葬られます。",
+            "knownBy": {
+              "chapter": 10,
+              "verse": 12
+            },
+            "sourceIds": [
+              "webp-1ch-10-12"
+            ]
+          }
+        ],
+        "wikipedia": {
+          "title": "Jabesh-Gilead",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Jabesh-Gilead",
+          "kind": "article",
+          "noteJa": "記事はヤベシュ・ギレアデをギレアデの古代町として扱い、現代の位置には複数の候補説を挙げます。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true
+        },
+        "sourceGateAndIdentityRechecked": true,
+        "authorRepairReasonJa": "固定WEB 10:11はJabesh Gilead、10:12で初めてJabeshへ短縮。初出のnameJaを「ヤベシュ・ギレアデ」、Wiki noteから短縮形の説明を外し、10:12の既存factに短名初出を保持。jabesh-gilead_611とは本文上同一地名の重複候補だが、統合/alias未承認のため原ID・カードは変更しない。"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:jattir_626",
+      "draftPath": "drafts/places_3/1CH_jattir_626.json",
+      "evidencePath": "evidence/places_3/1CH_jattir_626.json",
+      "frozenDraftSHA256": "71476d7b121c27f7f5c93515042eced8087213efa26c681907538aa21695732c",
+      "currentDraftSHA256": "71476d7b121c27f7f5c93515042eced8087213efa26c681907538aa21695732c",
+      "frozenEvidenceSHA256": "e22cfb9eaa6c4550cb3d69cc31cc28ba88cf04b7b808431eac303f867d6965da",
+      "currentEvidenceSHA256": "e22cfb9eaa6c4550cb3d69cc31cc28ba88cf04b7b808431eac303f867d6965da",
+      "currentProfileCanonicalSHA256": "e4e58f9be3153c01afed81bf547c00bb7090aa571210b6350973627698f9a778",
+      "matchesFrozenDraft": true,
+      "verdict": "pass",
+      "primaryContentRead": "WEB 6:57 lists Jattir as an Aaronite town. Article calls it a Judah town and describes alternate archaeological identifications. Current note preserves the candidate status and coordinate null.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 6:57",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "To the sons of Aaron they gave the cities of refuge, Hebron, Libnah also with its pasture lands, Jattir, Eshtemoa with its pasture lands,",
+          "textSHA256": "e4a46cb299d4dd8bd3634b8da0b8bc34499137590d93c359ded4fd3d72d1df3d",
+          "citationURL": "https://ebible.org/engwebp/1CH06.htm#V57"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Jattir",
+        "title": "Jattir",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事はヤティルをユダの町とし、ホルヴァト・ヤティル／ヒルベト・アッティールへの比定を述べます。別の候補説もあるため現代比定は確定とはしません。",
+        "bodyLocator": "lead; “Archeological site”; “Other identifications”",
+        "bodySupport": "導入は町と遺跡比定、末尾はレバノンのYaterとする異説を紹介。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Jattir, lead and archaeological-site / alternate-identification sections read; one historical town, modern site candidates remain qualified.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:jattir_626",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 6,
+          "verse": 57
+        },
+        "reasonJa": "町の従来候補位置として表示可能ですが、ホルヴァト・ヤティルへの同定は一説であり、確定座標とは扱いません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 6,
+          "verse": 57
+        },
+        "summaryJa": "ヤティルは、ヘブロン、リブナなどとともにアロンの子らへ与えられた町として列挙されます。本文はこれらの町々と牧草地の配分を述べます。",
+        "subtitleJa": "レビ人に与えられたユダ山地の町",
+        "historicalRoleJa": "アロンの子らに与えられた町の一つです。",
+        "identityNoteJa": "",
+        "modernLocationJa": "南部ヘブロン山地の古代町とされ、ホルヴァト・ヤティル遺跡に比定する説があります。",
+        "locationNoteJa": "南部ヘブロン山地の古代町とされ、ホルヴァト・ヤティル遺跡に比定する説があります。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 57
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 57
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-6-57",
+          "wikipedia-jattir_626"
+        ],
+        "facts": [],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "reclosureStatus": "prior-independent-verdict-retained-exact-current-snapshot"
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:jazer_628",
+      "draftPath": "drafts/places_3/1CH_jazer_628.json",
+      "evidencePath": "evidence/places_3/1CH_jazer_628.json",
+      "frozenDraftSHA256": "dfc6da88e4b885be13b2eee1ba5d5bb887ffb9864f3673fe125a1a581c9d7898",
+      "currentDraftSHA256": "317b416c7206b75fa1fc51466fd2398d6a0df0b378ee0397c8b2a6a657e4373d",
+      "frozenEvidenceSHA256": "b86e4332cdb6d184d34409930a4ac92ed7d82fb057b9729cebed741809203862",
+      "currentEvidenceSHA256": "82db19a6a5be2766b6e2cb6f6df362d61c7e3ac9907e0368ce7a51528dbd0d75",
+      "currentProfileCanonicalSHA256": "7f78b891551f323f791bbe46bcf6de34f3ce4618e822800c002833459027cd3b",
+      "matchesFrozenDraft": true,
+      "verdict": "pass",
+      "primaryContentRead": "WEB 6:81 first lists Jazer as a Levitical town; “Jazer of Gilead” is not named until WEB 26:31. Current always-visible subtitle (“ヨルダン川東方”), modernLocationJa, Wikipedia note (“本文の『ギレアデのヤゼル』”) and evidence/secondary relation add later geographic specificity at knownBy 6:81. Restrict first-view fields to the town in 6:81; retain the Gilead-specific fact and article note only at 26:31. Coordinate remains null.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 6:81",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "Heshbon with its pasture lands, and Jazer with its pasture lands.",
+          "textSHA256": "f968f3a224506a7e084c7e02304dbe0528effe79bbb99af807752470eec4cf5e",
+          "citationURL": "https://ebible.org/engwebp/1CH06.htm#V81"
+        },
+        {
+          "ref": "1CH 26:31",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "Of the Hebronites, Jerijah was the chief of the Hebronites, according to their generations by fathers’ households. They were sought for in the fortieth year of the reign of David, and mighty men of valor were found among them at Jazer of Gilead.",
+          "textSHA256": "0e6e8d473e71de16d21726098f2bd2f58acc8c8d68a6c112ba38592367f9d1f0",
+          "citationURL": "https://ebible.org/engwebp/1CH26.htm#V31"
+        }
+      ],
+      "currentFactsAndGates": [
+        {
+          "knownBy": {
+            "chapter": 26,
+            "verse": 31
+          },
+          "textJa": "ダビデの治世40年にギレアデのヤゼルで勇士が見つかったと記されます。",
+          "sourceIds": [
+            "webp-1ch-26-31"
+          ],
+          "gateText": "Of the Hebronites, Jerijah was the chief of the Hebronites, according to their generations by fathers’ households. They were sought for in the fortieth year of the reign of David, and mighty men of valor were found among them at Jazer of Gilead.",
+          "sourceGateResolution": true
+        }
+      ],
+      "wikipediaReview": {
+        "status": "body-read-linked",
+        "url": "https://en.wikipedia.org/wiki/Jazer",
+        "title": "Jazer",
+        "kind": "article",
+        "identityVerified": true,
+        "relationVerified": null,
+        "currentNoteJa": "記事はヤゼルを古代ギレアデの都市として説明しますが、現在の特定地点との同定には留保があります。本文の「ギレアデのヤゼル」と同じ歴史地名の参照に限定します。",
+        "bodyLocator": "109–125",
+        "bodySupport": "導入は古代ギレアデの都市。識別・地理記述は複数候補と時代差を扱う。",
+        "reviewerIndependentLiveRead": "yes; article opened/find evidence inspected in current turn; see liveArticleChecks in report"
+      },
+      "secondaryArticleAssessment": "Wikipedia: https://en.wikipedia.org/wiki/Jazer, lines 109–111 describe a city east of Jordan/in or near Gilead and its Levitical role. The current Wikipedia note expressly references 1CH 26:31, later than first use.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:jazer_628",
+        "category": "city",
+        "allowCandidateMap": true,
+        "allowFrom": {
+          "chapter": 6,
+          "verse": 81
+        },
+        "reasonJa": "古代ヤゼルの候補位置としてのみ表示可能です。位置・遺跡同定は未確定で、座標は公開しません。",
+        "verificationState": "legacy candidate only; profile.coordinate remains null; no independent geography verification"
+      },
+      "independentCurrentObservations": {
+        "knownBy": {
+          "chapter": 6,
+          "verse": 81
+        },
+        "summaryJa": "ヤゼルは、コハテ族のレビ人に牧草地付きで与えられた町の一覧に現れます。",
+        "subtitleJa": "ヨルダン川東方のレビ人の町",
+        "historicalRoleJa": "コハテ族のレビ人に与えられた町です。",
+        "identityNoteJa": "",
+        "modernLocationJa": "ギレアデ地方の古代都市で、ヨルダン川東方に置かれますが、現代の正確な遺跡比定は確定しません。",
+        "locationNoteJa": "ギレアデ地方の古代都市で、ヨルダン川東方に置かれますが、現代の正確な遺跡比定は確定しません。 既存の地図位置がある場合も未確定の参考候補として扱います。",
+        "coordinate": null,
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 81
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 81
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 26,
+              "verse": 31
+            },
+            "end": {
+              "chapter": 26,
+              "verse": 31
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-6-81",
+          "webp-1ch-26-31",
+          "wikipedia-jazer_628"
+        ],
+        "facts": [
+          {
+            "textJa": "ダビデの治世40年にギレアデのヤゼルで勇士が見つかったと記されます。",
+            "knownBy": {
+              "chapter": 26,
+              "verse": 31
+            },
+            "sourceIds": [
+              "webp-1ch-26-31"
+            ]
+          }
+        ],
+        "reviewNullReason": null
+      },
+      "matchesFrozenEvidence": true,
+      "priorVerdict": "fail",
+      "reclosureStatus": "independently-reread-current-snapshot",
+      "currentReview": {
+        "verdict": "pass",
+        "recheckedAtUTC": "2026-10-16T05:22:13Z",
+        "findingJa": "6:81の初出説明から26:31のギレアデ/東側という後出情報を除き、町と位置の留保を維持。",
+        "knownBy": {
+          "chapter": 6,
+          "verse": 81
+        },
+        "subtitleJa": "コハテ族のレビ人に与えられた町",
+        "summaryJa": "ヤゼルは、コハテ族のレビ人に牧草地付きで与えられた町の一覧に現れます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": "コハテ族のレビ人に与えられた町です。",
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 81
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 81
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 26,
+              "verse": 31
+            },
+            "end": {
+              "chapter": 26,
+              "verse": 31
+            }
+          }
+        ],
+        "facts": [
+          {
+            "textJa": "ダビデの治世40年にギレアデのヤゼルで勇士が見つかったと記されます。",
+            "knownBy": {
+              "chapter": 26,
+              "verse": 31
+            },
+            "sourceIds": [
+              "webp-1ch-26-31"
+            ]
+          }
+        ],
+        "wikipedia": {
+          "title": "Jazer",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Jazer",
+          "kind": "article",
+          "noteJa": "記事はヤゼルを古代都市として扱い、複数の現代比定候補を挙げます。正確な現在地は確定していません。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true
+        },
+        "sourceGateAndIdentityRechecked": true,
+        "authorRepairReasonJa": "固定WEB 6:81の初出欄から26:31で初めて明示されるギレアデ/ヨルダン川東方を除去。レビ人の町という初出事実のみをreader fieldsに残す。26:31 factは維持。Wikipedia noteも初出時点の古代町と現在地の不確実性だけに限定。"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "place:jorkoam_1300",
+      "draftPath": "drafts/places_3/1CH_jorkoam_1300.json",
+      "evidencePath": "evidence/places_3/1CH_jorkoam_1300.json",
+      "frozenDraftSHA256": "0f43f23829c7a769ca832c18127d5594a6e63c695121e934a651ce25990be325",
+      "currentDraftSHA256": "75bc966b253e3dc2627614d49f03f01c1294fa21704ababcd9e1599f1be73d5f",
+      "frozenEvidenceSHA256": "fcd9d4323ed5d28c841cfeb5a3ab336cb4f96b94dd7291c0a21c810ec934b339",
+      "currentEvidenceSHA256": "f7114183092c38bd61b4a24f4f4091a1589f05afbe03f16cc44db84a9b9ffc5a",
+      "currentProfileCanonicalSHA256": null,
+      "matchesFrozenDraft": true,
+      "verdict": "qualified",
+      "primaryContentRead": "WEB 2:44 states “Raham, the father of Jorkeam.” Current null/held avoids asserting a place or inventing a person. Its rationale correctly says the text permits a genealogical “father” relation but does not determine person vs place; this is preferable to a forced place card. Existing author evidence has `wikipediaCheck` marked searched-no-fit but `wikipediaRead=false`; do not describe this as an article-body review or a confirmed no-fit absent actual alternative search.",
+      "primaryWitnesses": [
+        {
+          "ref": "1CH 2:44",
+          "sourceId": "webp",
+          "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+          "text": "Shema became the father of Raham, the father of Jorkeam; and Rekem became the father of Shammai.",
+          "textSHA256": "8d87b5e1c381e132a95e2f157da486e55e7850f94bdc9f0349ed02f38f049830",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V44"
+        }
+      ],
+      "currentFactsAndGates": [],
+      "wikipediaReview": {
+        "status": "not-applicable-profile-null"
+      },
+      "secondaryArticleAssessment": "Wikipedia article-body review pending: searches did not identify an exact article. Commentary sources disagree whether “father of Jorkeam” names a place/founder or a literal descendant; keep the profile held and classification uncertain.",
+      "geographyPolicy": {
+        "book": "1CH",
+        "id": "place:jorkoam_1300",
+        "category": "uncertain",
+        "allowCandidateMap": false,
+        "allowFrom": null,
+        "reasonJa": "2:44は「ラハムがヨルケアムの父」とする系譜表現で、人名か地名由来かを本文だけで確定できません。地名と確認できるまでは候補点を表示しません。",
+        "verificationState": "legacy candidate suppressed; profile.coordinate remains null; independent identification/location insufficient"
+      },
+      "independentCurrentObservations": {
+        "knownBy": null,
+        "summaryJa": null,
+        "subtitleJa": null,
+        "historicalRoleJa": null,
+        "identityNoteJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "coordinate": null,
+        "passages": null,
+        "sourceIds": null,
+        "facts": null,
+        "reviewNullReason": "2:44は系譜文脈ですが、父子表現だけではヨルケアムが人物名か地名の由来表現かを決められません。場所としてのプロフィールは保留します。"
+      },
+      "matchesFrozenEvidence": true,
+      "priorVerdict": "qualified",
+      "reclosureStatus": "independently-reread-current-snapshot",
+      "currentReview": {
+        "verdict": "qualified",
+        "recheckedAtUTC": "2026-10-16T05:22:13Z",
+        "findingJa": "2:44の父子系譜表現だけでは人名か場所由来表現か決められず、profile:nullの保留を維持。人と断定する情報は削除済み。",
+        "knownBy": null,
+        "subtitleJa": null,
+        "summaryJa": null,
+        "identityNoteJa": null,
+        "historicalRoleJa": null,
+        "passages": null,
+        "facts": null,
+        "wikipedia": null,
+        "sourceGateAndIdentityRechecked": true,
+        "authorRepairReasonJa": null
+      }
+    }
+  ],
+  "notes": [
+    "Jabesh/Jabesh-Gilead alias remains an unadopted integration proposal.",
+    "Jorkoam remains held/null; ambiguous person/place readings are not forced.",
+    "Coordinates/modern identifications are not promoted by article links alone."
+  ]
+}

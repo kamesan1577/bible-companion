@@ -1,0 +1,109 @@
+{
+  "reportType": "independent-delta-reclosure",
+  "scope": "Terah (person:terah_2841), root fixed-quote correction only; not a full batch07 approval",
+  "checkedAtUTC": "2026-10-16T11:42:46Z",
+  "inputs": {
+    "repairLogPath": "evidence/persons_2/root-author-repair-terah-fixed-quote.json",
+    "repairLogSHA256": "e9c7041fc1b80f25dc42738346e312492c7138c902680388da398ec21ced13ba",
+    "draftPath": "drafts/persons_2/1CH_person_terah_2841.json",
+    "draftSHA256": "af189930bd72fbca0c5e94eef917b61cec77e06933dc4722a8cc583ebd6278b5",
+    "evidencePath": "evidence/persons_2/1CH_person_terah_2841-sources.json",
+    "evidenceSHA256": "03006de4d778e1be797c6a7d57714de234a1673996454ca399e85f9ac2cfcdbd",
+    "manifestPath": "evidence/persons_2/batch07-current-manifest-after-root-fixed-quote.json",
+    "manifestSHA256": "7572b920c26f2a97fe3e8d0285606944129b569d3e8910c1ffaaf12a154676d7",
+    "fixedWitnessPath": "inventory/targets/chronicles1-web-verses.json",
+    "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+    "manifestRowMatchesCurrent": true
+  },
+  "fixedPrimaryChecks": [
+    {
+      "ref": "1CH 1:26",
+      "url": "https://ebible.org/engwebp/1CH01.htm#V26",
+      "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "sourceText": "Serug, Nahor, Terah,",
+      "interpretationJa": "セリグ、ナホルに続いてテラが系譜に名指される。現在のsummary/knownBy 1:26は支持される。"
+    },
+    {
+      "ref": "1CH 1:27",
+      "url": "https://ebible.org/engwebp/1CH01.htm#V27",
+      "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "sourceText": "Abram (also called Abraham).",
+      "interpretationJa": "この節はアブラム（アブラハムとも呼ばれる）の名のみを示す。テラを父と呼んでいない。修正後のdraft.review.primaryWitnessesはこの点を正しく説明する。"
+    }
+  ],
+  "genesisAdditionalPrimary": {
+    "ref": "GEN 11:26",
+    "url": "https://ebible.org/engwebp/GEN11.htm#V26",
+    "text": "Terah lived seventy years, and became the father of Abram, Nahor, and Haran.",
+    "textSHA256": "0425e522bd9e26e10e1fc99927076203426ed7f273e8ac7742ec0fca8f34e03b",
+    "editionNote": "当該sidecar記載のとおり、固定された1CH証人ではなく別途読まれたlive WEBページ。",
+    "decision": "supports the father-child fact; display gate 1CH 1:27 is a Chronicles-local introduction/gate, not the evidence that 1CH 1:27 states the relationship."
+  },
+  "currentFieldChecks": {
+    "knownBy": "1:26",
+    "summaryJa": "1歴代誌1:26の系譜に、セリグ、ナホルに続いてテラの名が記されます。",
+    "subtitleJa": "系譜の列挙にセリグ、ナホルに続いて名が挙がります。",
+    "identityNoteJa": "",
+    "historicalRoleJa": "系譜の列挙に名が挙がる人物です。",
+    "fact": {
+      "textJa": "アブラムはテラの子として記されています。",
+      "knownBy": {
+        "chapter": 1,
+        "verse": 27
+      },
+      "sourceIds": [
+        "chronicles-person-terah_2841-webp-1ch-1-27",
+        "chronicles-person-terah_2841-web-gen-11-26"
+      ]
+    },
+    "wikipedia": {
+      "title": "Terah",
+      "language": "en",
+      "url": "https://en.wikipedia.org/wiki/Terah",
+      "kind": "article",
+      "noteJa": "記事本文はテラとアブラムの系譜を扱い、創世記11:26はテラがアブラムらの父となったと記しています。",
+      "checkedAt": "2026-10-16",
+      "identityVerified": true,
+      "relationVerified": true,
+      "knownBy": {
+        "chapter": 1,
+        "verse": 27
+      }
+    },
+    "wikipediaBodyEvidence": {
+      "url": "https://en.wikipedia.org/wiki/Terah",
+      "title": "Terah",
+      "locator": "Lead lines 188–192 identifies Terah as Abram’s father and lists 1 Chronicles 1:17–27; “Biblical narrative” lines 192–194 discusses the Genesis 11 genealogy and separately notes the Chronicles genealogy.",
+      "checkedAtUTC": "2026-10-16T11:35:22Z",
+      "currentDraftSHA256": "2e30d0db011dba836ba5a946d281d1313be2d4b9d8a069d8d1a993cd4051eff2",
+      "profileSHA256": "9bf142c95da71b276c7bf461226604642fc5ef8508814026f8ac0373473b7da4",
+      "findingJa": "記事本文はテラとアブラムの系譜を扱い、創世記11:26はテラがアブラムらの父となったと記しています。",
+      "identityVerified": true,
+      "relationVerified": true,
+      "articleBodyRead": true
+    },
+    "sourceIdsAndFactGate": "The reader-facing relation fact is gated to 1:27 and cites the distinct GEN 11:26 primary source. The 1CH 1:27 citation functions as the local display trigger; it does not independently prove the kinship."
+  },
+  "findings": [
+    {
+      "decision": "fail",
+      "field": "evidence.occurrenceChecks[chapter=1,verse=27].reasonJa",
+      "currentText": "固定WEBは「the son of Terah」とテラを名指す。",
+      "whyJa": "この説明は訂正前の誤引用（“The son of Terah: Abram, Nahor, and Haran.”）を依然として原典1CH 1:27へ帰属させている。固定証人は “Abram (also called Abraham).” のみで、テラへの言及も父子関係もない。sourceChecksとdraft.review.primaryWitnessesは修正済みだが、occurrenceChecksが矛盾する。",
+      "recommendedCorrectionJa": "1CH 1:27の理由を「固定WEBはアブラム（アブラハムとも呼ばれる）の名を記す。テラとの父子関係はGEN 11:26に基づく別出典のfactとして表示する。」など、節の実文に合わせて修正する。"
+    },
+    {
+      "decision": "qualified",
+      "field": "profile.facts[0].sourceIds",
+      "whyJa": "父子関係はGEN 11:26に明記される。1CH 1:27はprofile内のChronicles-local display gateとして合理的だが、factのsourceIdsに混在すると読者/validatorが同節を関係の証拠と誤読し得る。現在のreview.primaryWitnessesでは役割分担を説明済み。schemaに別のgate/source区別がなければこの説明を維持する。"
+    },
+    {
+      "decision": "qualified",
+      "field": "wikipedia",
+      "whyJa": "既存evidenceはTerah記事本文のlocator（Lead 188–192、Biblical narrative 192–194）と1CH/Genesis記載の範囲を示す。今回そのURL/本文を再取得していないため、前回のbody-read記録に基づく継承として扱い、新規実読closureとはしない。"
+    }
+  ],
+  "overallDecision": "fail",
+  "overallReasonJa": "誤った1CH 1:27引用そのものは修正され、reader primary witnessも訂正された。一方で現evidence.occurrenceChecksが旧誤読を保持しており、current sidecarを固定本文と整合した状態で閉じられない。プロフィール本文の内容判断とこの局所Delta closureを分け、修正後に再確認が必要。",
+  "notCheckedOrNotClaimedJa": "新規Wikipedia再取得、プロフィール全体の独立認証、batch07全体の承認はこの局所再closureでは主張しない。"
+}

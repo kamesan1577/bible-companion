@@ -1,0 +1,230 @@
+{
+  "recordedAtUTC": "2026-10-16T03:42:23Z",
+  "task": "Integrated-staging 1KI map corrections",
+  "mapPath": "reviews/verse-map-1KI-01-07.json",
+  "beforeSHA256": "82db71a0f384b496ee304ab41c52bc199fe2011943534f2a48d200c7e1903da6",
+  "afterSHA256": "879e0699bf092a769205dcd235f8608cfc8de222ab55d001c7441bd45cb821c7",
+  "changes": [
+    {
+      "chapter": 1,
+      "verse": 3,
+      "before": {
+        "book": "1KI",
+        "chapter": 1,
+        "verse": 3,
+        "sourceText": "So they sought for a beautiful young lady throughout all the borders of Israel, and found Abishag the Shunammite, and brought her to the king.",
+        "sourceTextSHA256": "043cdd55d258c32daf4fe66824e04c279183c407c3f9fd59c71de278464e3b96",
+        "citationURL": "https://ebible.org/engwebp/1KI01.htm#V3",
+        "entities": [
+          {
+            "entityID": "person:abishag_49",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:david_994",
+            "relationship": "context"
+          },
+          {
+            "entityID": "person:israel_682",
+            "relationship": "context"
+          },
+          {
+            "entityID": "place:united-kingdom-of-israel_1301",
+            "relationship": "context"
+          }
+        ],
+        "excludedCandidates": [],
+        "reasonJa": "本文で名指される「アビシャグ」をdirectとして採用。前後文脈から一意に分かる「ダビデ」「イスラエル（民）」「イスラエル王権（ソロモン即位命令）」への照応をcontextとして採用。"
+      },
+      "after": {
+        "book": "1KI",
+        "chapter": 1,
+        "verse": 3,
+        "sourceText": "So they sought for a beautiful young lady throughout all the borders of Israel, and found Abishag the Shunammite, and brought her to the king.",
+        "sourceTextSHA256": "043cdd55d258c32daf4fe66824e04c279183c407c3f9fd59c71de278464e3b96",
+        "citationURL": "https://ebible.org/engwebp/1KI01.htm#V3",
+        "entities": [
+          {
+            "entityID": "person:abishag_49",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:david_994",
+            "relationship": "context"
+          },
+          {
+            "entityID": "place:united-kingdom-of-israel_1301",
+            "relationship": "context"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "person:israel_682",
+            "name": "Israel",
+            "reasonJa": "「all the borders of Israel」は王国内の領域を指す表現で、イスラエルの民や祖先個人ではない。地理用法はplace:united-kingdom-of-israel_1301が表す。"
+          }
+        ],
+        "reasonJa": "本文はアビシャグを名指しし、前後文脈からダビデを指す。イスラエルは「全境」という領域表現なので人物・集団IDを採らず、承認済み政治領域place:united-kingdom-of-israel_1301をcontextで採る。"
+      }
+    },
+    {
+      "chapter": 4,
+      "verse": 3,
+      "before": {
+        "book": "1KI",
+        "chapter": 4,
+        "verse": 3,
+        "sourceText": "Elihoreph and Ahijah, the sons of Shisha, scribes; Jehoshaphat the son of Ahilud, the recorder;",
+        "sourceTextSHA256": "cbaf052897c1e0eb34146cf5e77c25acaa56b4bfd32b2c23b8bfdff21bc9b947",
+        "citationURL": "https://ebible.org/engwebp/1KI04.htm#V3",
+        "entities": [
+          {
+            "entityID": "person:ahijah_136",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:ahilud_142",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:elihoreph_1125",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:jehoshaphat_806",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:jehoshaphat_807",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "person:ahiah_127",
+            "name": "Ahiah",
+            "reasonJa": "本文表記はAhijahであり、候補ID Ahiahとの同一性をこの節だけで確定できない。"
+          },
+          {
+            "entityID": "person:shavsha_2493",
+            "name": "Shavsha",
+            "reasonJa": "固定WEB本文に候補名がなく、このIDへの明示言及を確認できない。"
+          }
+        ],
+        "reasonJa": "本文で名指される「アヒヤ」「アヒルデ」「エリホレフ」「ヨシャファト」「ヨシャファト」をdirectとして採用。候補の別人・地理語・未確定リンクは個別理由とともに除外。"
+      },
+      "after": {
+        "book": "1KI",
+        "chapter": 4,
+        "verse": 3,
+        "sourceText": "Elihoreph and Ahijah, the sons of Shisha, scribes; Jehoshaphat the son of Ahilud, the recorder;",
+        "sourceTextSHA256": "cbaf052897c1e0eb34146cf5e77c25acaa56b4bfd32b2c23b8bfdff21bc9b947",
+        "citationURL": "https://ebible.org/engwebp/1KI04.htm#V3",
+        "entities": [
+          {
+            "entityID": "person:ahilud_142",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:elihoreph_1125",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:jehoshaphat_806",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:ahiah_127",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "person:ahiah_127",
+            "name": "Ahiah",
+            "reasonJa": "本文表記はAhijahであり、候補ID Ahiahとの同一性をこの節だけで確定できない。"
+          },
+          {
+            "entityID": "person:shavsha_2493",
+            "name": "Shavsha",
+            "reasonJa": "固定WEB本文に候補名がなく、このIDへの明示言及を確認できない。"
+          },
+          {
+            "entityID": "person:ahijah_136",
+            "name": "Ahijah",
+            "reasonJa": "候補IDはバアシャの父アヒヤ（2KI9:9）で、この節のシシャの子の書記官とは別人。既存person:ahiah_127のプロフィールがこの節の書記官アヒヤを対応づける。"
+          },
+          {
+            "entityID": "person:jehoshaphat_807",
+            "name": "Jehoshaphat",
+            "reasonJa": "この節の記録官はアヒルデの子ヨシャファト（既存ID806）。ID807は別の行政官で、4:17のパルアの子。"
+          }
+        ],
+        "reasonJa": "本文はエリホレフとシシャの子アヒヤを「書記官」、アヒルデの子ヨシャファトを「記録官」として名指す。既存プロフィールがこの節の書記官を直接対応させるperson:ahiah_127と、記録官person:jehoshaphat_806を採用。"
+      }
+    },
+    {
+      "chapter": 4,
+      "verse": 18,
+      "before": {
+        "book": "1KI",
+        "chapter": 4,
+        "verse": 18,
+        "sourceText": "Shimei the son of Ela, in Benjamin;",
+        "sourceTextSHA256": "dc52d8c3b3947020f58c4381231fa5fd95bf2c9d3aad07d8b864f857bb3c1b79",
+        "citationURL": "https://ebible.org/engwebp/1KI04.htm#V18",
+        "entities": [
+          {
+            "entityID": "person:benjamin_463",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:elah_1044",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:shimei_2685",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [],
+        "reasonJa": "本文で名指される「ベニヤミン族」「エラ」「シムイ」をdirectとして採用。"
+      },
+      "after": {
+        "book": "1KI",
+        "chapter": 4,
+        "verse": 18,
+        "sourceText": "Shimei the son of Ela, in Benjamin;",
+        "sourceTextSHA256": "dc52d8c3b3947020f58c4381231fa5fd95bf2c9d3aad07d8b864f857bb3c1b79",
+        "citationURL": "https://ebible.org/engwebp/1KI04.htm#V18",
+        "entities": [
+          {
+            "entityID": "person:elah_1044",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "person:shimei_2685",
+            "relationship": "direct"
+          },
+          {
+            "entityID": "place:benjamin-territory_1293",
+            "relationship": "direct"
+          }
+        ],
+        "excludedCandidates": [
+          {
+            "entityID": "person:benjamin_463",
+            "name": "Benjamin",
+            "reasonJa": "「in Benjamin」はエラの子シメイの配置先を表す地理用法で、族祖ベニヤミン個人を指さない。承認済みplace:benjamin-territory_1293を採用。"
+          }
+        ],
+        "reasonJa": "本文はエラの子シメイを「ベニヤミンに」置く。人名・族祖ではなく地理区分なので、既存領域IDplace:benjamin-territory_1293をdirectで採用する。"
+      }
+    }
+  ],
+  "verification": {
+    "rowCount": 268,
+    "fixedWEBTextURLsAndSHAUnchanged": true,
+    "reasonJa": "Three rows corrected after checking fixed WEB text and existing canonical profiles; no source strings/hashes/URLs edited."
+  }
+}

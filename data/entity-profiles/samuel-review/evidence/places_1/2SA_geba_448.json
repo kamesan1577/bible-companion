@@ -1,0 +1,114 @@
+{
+  "book": "2SA",
+  "entityID": "place:geba_448",
+  "assignmentTargetKey": "2SA:place:geba_448",
+  "draftFile": "drafts/places_1/2SA_geba_448.json",
+  "draftSHA256": "30764d559dfca9001ee4014b4cfe4ee417f12f20e6fc4f04f489c8f6a53f596e",
+  "profileSHA256": "5feeb52a130635b87a7e3886590b12ebe7a87432dfedcad8ed5327fa3d2aa223",
+  "pinnedWEB": {
+    "sourceId": "webp",
+    "version": "webp-usfx-2026-10-13-35a6adf626e5",
+    "file": "inventory/targets/samuel2-web-verses.json",
+    "fileSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2"
+  },
+  "candidateSource": {
+    "url": "https://github.com/robertrouse/theographic-bible-metadata/tree/52e049efb3b95e4f1da52d11a3303fbd2d648922",
+    "commit": "52e049efb3b95e4f1da52d11a3303fbd2d648922",
+    "license": "CC-BY-SA-4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": "Derived from Theographic Bible Metadata by Robert Rouse and contributors. Names and occurrence indexes only; prose removed, Japanese labels added, coordinates marked as candidates. Candidate coordinates are not independently verified."
+  },
+  "primaryContext": [
+    {
+      "chapter": 5,
+      "verse": 25,
+      "candidateText": "David did so, as the LORD commanded him, and struck the Philistines all the way from Geba to Gezer.",
+      "fixedText": "David did so, as the LORD commanded him, and struck the Philistines all the way from Geba to Gezer.",
+      "sourceTextSHA256": "2952d369833393e6ae5d1a97b5ee3374f156a5dc62239db43692d15a673973ce",
+      "context": [
+        {
+          "chapter": 4,
+          "verse": 12,
+          "text": "David commanded his young men, and they killed them, cut off their hands and their feet, and hanged them up beside the pool in Hebron. But they took the head of Ishbosheth and buried it in Abner’s grave in Hebron.",
+          "citationURL": "https://ebible.org/engwebp/2SA04.htm#V12",
+          "sourceTextSHA256": "9a836b5562dd0d59a78028b7c6f2c25cb677ab5b8837c12010821299c6f89aa6"
+        },
+        {
+          "chapter": 5,
+          "verse": 25,
+          "text": "David did so, as the LORD commanded him, and struck the Philistines all the way from Geba to Gezer.",
+          "citationURL": "https://ebible.org/engwebp/2SA05.htm#V25",
+          "sourceTextSHA256": "2952d369833393e6ae5d1a97b5ee3374f156a5dc62239db43692d15a673973ce"
+        },
+        {
+          "chapter": 6,
+          "verse": 1,
+          "text": "David again gathered together all the chosen men of Israel, thirty thousand.",
+          "citationURL": "https://ebible.org/engwebp/2SA06.htm#V1",
+          "sourceTextSHA256": "f08acda9ace37592efb29812bf318226e614de7eea5447ce20c43180b748fcee"
+        }
+      ]
+    }
+  ],
+  "occurrenceChecks": [
+    {
+      "chapter": 5,
+      "verse": 25,
+      "status": "direct",
+      "reasonJa": "固定WEB本文で場所名を名指す。"
+    }
+  ],
+  "wikipediaBodyRead": {
+    "url": "https://ja.wikipedia.org/wiki/ゲバ_(聖書の地名)",
+    "status": "verified-article-body-identity",
+    "identityBasisJa": "Japanese article identifies Geba as a city in the Hebrew Bible, distinguishes it from Gibeah and Gibeon, describes Benjamin geography, and gives Jaba’ as a proposed identification.",
+    "fragmentVerified": false,
+    "readArticle": true,
+    "checkedAtUTC": "2026-10-16T01:45:50Z",
+    "locator": "「聖書における言及」および「位置の比定」, lines 115–128"
+  },
+  "geography": {
+    "identityCheck": "サムエル記下5:25では、ダビデが主の命令どおりペリシテ人をゲバからゲゼルまで打ち破ったと記されます。本文は戦闘経路を示しますが、ゲバの現代位置を説明しません。",
+    "uncertainty": "ゲバとギベオン等の似た地名を混同せず、本文の綴りに沿って扱います。",
+    "review": {
+      "category": "ancient-city-site",
+      "coordinatePublished": false,
+      "legacyCandidateStatus": "suppressed",
+      "indexCandidateCoordinate": [
+        31.84684773,
+        35.18491238
+      ],
+      "indexCoordinateStatus": "unverified-candidate",
+      "independentOfficialGeographyCheck": "未実施。プロフィール座標はnull。",
+      "reasonJa": "候補点は同名の複数地点を含む可能性があり、固定WEBの行軍経路だけでは特定できない。"
+    }
+  },
+  "profileTextSHA256Method": "SHA-256 of ensure_ascii=False, indent=2, insertion-order JSON serialization of profile plus trailing newline.",
+  "metadataHistory": [
+    {
+      "atUTC": "2026-10-16T01:10:28Z",
+      "change": "Added pinned assignment/source candidate metadata and exact immediate-verse context blocks for every assigned occurrence; no claims/draft fields changed."
+    },
+    {
+      "field": "wikipediaNegativeSearch",
+      "value": {
+        "checkedAtUTC": "2026-10-16T01:08:03Z",
+        "queries": [
+          "Geba 2 Samuel 5:25 Wikipedia",
+          "Geba biblical town Wikipedia"
+        ],
+        "excludedCandidates": []
+      },
+      "supersededAtUTC": "2026-10-16T01:44:59Z",
+      "reason": "An actual suitable article or section was subsequently read and linked."
+    },
+    {
+      "atUTC": "2026-10-16T01:53:44Z",
+      "change": "Replaced workflow-facing Wikipedia note wording with a source-grounded reader-facing summary; identity and location claims unchanged.",
+      "field": "profile.wikipedia.noteJa",
+      "before": "日本語記事はゲバを聖書中の都市とし、ギブア・ギベオンと区別します。ヤバへの比定を紹介しますが、プロフィール座標は独立確認されていません。",
+      "after": "日本語記事は聖書中のゲバをギブア・ギベオンと区別し、ヤバへの比定説を紹介しています。現代位置の同定は確定していません。",
+      "trigger": "Independent Wikipedia article-body closure flagged internal coordinate-verification wording."
+    }
+  ]
+}

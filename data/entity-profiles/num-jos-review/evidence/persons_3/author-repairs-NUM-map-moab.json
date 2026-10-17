@@ -1,0 +1,68 @@
+{
+  "task": "Author correction to NUM 21:26 and 21:28 Moab geography-vs-people classification",
+  "createdAtUTC": "2026-10-15T21:57:37.854186+00:00",
+  "path": "reviews/verse-map-NUM-13-24.json",
+  "beforeSHA256": "3fe41bc88e9688657bc33b3a50d832e0a7d5e3ba1b72c864cd563a932752d6a4",
+  "afterSHA256": "31259f2925a5a660179423b37818d13e6a02717443a12b2b97c43ff1aaf4ebb2",
+  "sourceWitnessPath": "reviews/NUM-moab-21-26-28-map-proposal.json",
+  "sourceWitnessSHA256": "7b509a28de1adfdc2ce94dc0264fe75b830941b595373c361db24c84401fec55",
+  "changes": [
+    {
+      "coordinate": {
+        "chapter": 21,
+        "verse": 26
+      },
+      "sourceText": "For Heshbon was the city of Sihon the king of the Amorites, who had fought against the former king of Moab, and taken all his land out of his hand, even to the Arnon.",
+      "sourceTextSHA256": "8b5a3212f6b577581da015c7e8dd3850e0fea4a435e1d087c262b995f1a603b5",
+      "citationURL": "https://ebible.org/engwebp/NUM21.htm#V26",
+      "removed": [
+        {
+          "entityID": "person:moab_2103",
+          "relationship": "direct",
+          "reasonJa": "「モアブ」はここでは民・政治集団を指す。地理用法とは区別する。"
+        }
+      ],
+      "retained": {
+        "entityID": "place:moab_815",
+        "relationship": "direct",
+        "reasonJa": "本文はモアブの地理・政治領域を直接記す。"
+      }
+    },
+    {
+      "coordinate": {
+        "chapter": 21,
+        "verse": 28
+      },
+      "sourceText": "for a fire has gone out of Heshbon, a flame from the city of Sihon. It has devoured Ar of Moab, The lords of the high places of the Arnon.",
+      "sourceTextSHA256": "e98ab20c8d7530c8288ae704b6a5b9ad0427a53768de9e4ed7f393825dc454bf",
+      "citationURL": "https://ebible.org/engwebp/NUM21.htm#V28",
+      "removed": [
+        {
+          "entityID": "person:moab_2103",
+          "relationship": "direct",
+          "reasonJa": "「モアブ」はここでは民・政治集団を指す。地理用法とは区別する。"
+        }
+      ],
+      "retained": {
+        "entityID": "place:moab_815",
+        "relationship": "direct",
+        "reasonJa": "本文はモアブの地理・政治領域を直接記す。"
+      }
+    }
+  ],
+  "countsBefore": {
+    "directEntityLinks": 707,
+    "verseCount": 396,
+    "uniqueEntityIDs": 118
+  },
+  "countsAfter": {
+    "verseCount": 396,
+    "nonempty": 393,
+    "empty": 3,
+    "uniqueEntityIDs": 118,
+    "pendingVerseCount": 6,
+    "directEntityLinks": 705,
+    "relatedEntityLinks": 232
+  },
+  "noteJa": "NUM21:26「former king of Moab」は王が支配した土地・政治域を指し、21:28「Ar of Moab」はArの地理的所属を示す。両節のperson:moab_2103を除き、既存place:moab_815は保持。新ID追加なし。"
+}

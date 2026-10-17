@@ -1,0 +1,86 @@
+{
+  "reportType": "independent-map-delta-closure",
+  "book": "2SA",
+  "scope": "2SA 10:2 Nahash adoption/exclusion delta",
+  "reviewer": "acts_places_three",
+  "reviewedAtUTC": "2026-10-16T02:24:28Z",
+  "currentMapPath": "reviews/verse-map-2SA-09-16.json",
+  "currentMapSHA256": "5a44014fdbc52275679350696803e6e77e000ddee68f41d9c4be523b31cd05f7",
+  "deltaLogPath": "reviews/verse-map-2SA-09-16-nahash-delta.json",
+  "deltaLogSHA256": "7e1b5c916e1fa5cbbf279e944a025e7009c2c3c43d27325c43b246d9b73a26b2",
+  "sourceInputPath": "verse-review-inputs/2SA-09-16.json",
+  "sourceInputSHA256": "60ff891e03a4aa9f6409c2a38d5d23abed3cb158c3d347d2cc58fa31e210eafc",
+  "fixedWitnessPath": "inventory/targets/samuel2-web-verses.json",
+  "fixedWitnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+  "fixedWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+  "profilePath": "drafts/persons_1/2SA_nahash_2137.json",
+  "profileSHA256": "39cfa001dbe68e6acd9c7a72940b80b70fe12beaddb08708d87399711e5ace03",
+  "profileObjectSHA256": "4d66197f832f38b6117ee1c9f68de82dff29ddd4823f71a3d5431fe7e04777f1",
+  "profileEvidencePath": "evidence/persons_1/2SA_nahash_2137-sources.json",
+  "profileEvidenceSHA256": "212cea4a8220f5ba02cf4aa6b039ac7e93833b3dca100a727d6b44b177372613",
+  "sourceComparison": {
+    "mapText": "David said, “I will show kindness to Hanun the son of Nahash, as his father showed kindness to me.” So David sent by his servants to comfort him concerning his father. David’s servants came into the land of the children of Ammon.",
+    "inputText": "David said, “I will show kindness to Hanun the son of Nahash, as his father showed kindness to me.” So David sent by his servants to comfort him concerning his father. David’s servants came into the land of the children of Ammon.",
+    "fixedText": "David said, “I will show kindness to Hanun the son of Nahash, as his father showed kindness to me.” So David sent by his servants to comfort him concerning his father. David’s servants came into the land of the children of Ammon.",
+    "allExactMatch": true,
+    "mapCitationURL": "https://ebible.org/engwebp/2SA10.htm#V2",
+    "inputCitationURL": "https://ebible.org/engwebp/2SA10.htm#V2",
+    "fixedCitationURL": "https://ebible.org/engwebp/2SA10.htm#V2",
+    "allURLExactMatch": true,
+    "mapSourceTextSHA256": "8f9e4311b7b86e79bc1cc6695eee688384cd308fdd2593eab7bb616e2233311e",
+    "recomputedSourceTextSHA256": "8f9e4311b7b86e79bc1cc6695eee688384cd308fdd2593eab7bb616e2233311e",
+    "textSHAValid": true
+  },
+  "mapRowEntities": [
+    {
+      "entityID": "person:david_994",
+      "relationship": "direct"
+    },
+    {
+      "entityID": "person:hanun_1404",
+      "relationship": "direct"
+    },
+    {
+      "entityID": "person:nahash_2137",
+      "relationship": "direct"
+    }
+  ],
+  "mapRowExcludedCandidates": [],
+  "mapRowReasonJa": "固定WEB 2SA10:2は「Hanun the son of Nahash」と明記するため、書内プロフィール person:nahash_2137 をdirectで採用する。この採用は2SA10:2の父Nahashを指す。1SA11のアンモン王Nahashや2SA17:25のNahashとの人物同一性は本文から確定せず、ここでは結び付けない。",
+  "canonicalIdentityCheck": {
+    "candidateID": "person:nahash_2137",
+    "draftKnownBy": {
+      "chapter": 10,
+      "verse": 2
+    },
+    "draftPassages": [
+      {
+        "book": "2SA",
+        "start": {
+          "chapter": 10,
+          "verse": 2
+        },
+        "end": {
+          "chapter": 10,
+          "verse": 2
+        }
+      }
+    ],
+    "draftIdentityNoteJa": "1 Samuel 11のナハシュと同一かどうかは本文に明記されないため、ここではサムエル記下10:2の人物に限る。",
+    "personDraftOccurrence": [
+      {
+        "chapter": 10,
+        "verse": 2,
+        "status": "direct",
+        "reasonJa": "固定WEB本文で名前または関係を確認。"
+      }
+    ],
+    "comparisonIDs": {
+      "1SA11AmmoniteKing": "person:nahash_2136",
+      "2SA17:25AbigailFather": "person:nahash_2139"
+    },
+    "assessmentJa": "2SA10:2 names Nahash as Hanun’s father. Existing ID 2137 is a dedicated 2SA10:2 profile. The map links it direct; separate indexed IDs/profile contexts for 1SA11:1 and 2SA17:25 remain distinct, with no conflation."
+  },
+  "deltaAssessmentJa": "The stale exclusion for the same ID adopted as direct was removed. The explicit phrase “Hanun the son of Nahash” supports direct linkage. Map and source witness citation/text/hash match; no identical candidate remains in excludedCandidates.",
+  "verdict": "pass"
+}

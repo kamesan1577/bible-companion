@@ -1,0 +1,265 @@
+{
+  "atUTC": "2026-10-16T10:26:48.544034+00:00",
+  "reviewer": "root independent source/context read",
+  "inputPath": "reviews/context-edits/1CH/canonical-alias-runtime-profiles.json",
+  "inputSHA256": "98c262a7d4fe3134b92e5dc311eb43a73986126223b156d398de018feb701304",
+  "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+  "method": "Read all four exact fixed WEB verses plus local chapter context, current candidate prose and source gates. Reopened two actual Wikipedia article bodies. No inference of a unique archaeological coordinate. Label-only edit by root separately recorded; factual candidate authored by places1.",
+  "semanticFindingsJa": [
+    "10:11の町名と10:12の短名は同じ住民がサウルの遺体を運び埋葬する連続場面。短名への表示名変更は10:12からだけ。",
+    "13:5は箱の搬出元キルヤテ・エアリム。13:6の同節言い換えからバアラと同じ町と確認し、別名とユダ所属factは13:6からだけ。",
+    "701の2:50系譜rawを無条件に13章へ拡張しない。今回選択は13:5/6の独立narrative contextのみ。",
+    "旧610と135は原稿保全しruntimeカード/座標には出さず、既存611/701 canonical IDsへ限定。"
+  ],
+  "articleBodyReads": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Jabesh-Gilead",
+      "permanentURL": "https://en.wikipedia.org/w/index.php?title=Jabesh-Gilead&oldid=1364188648",
+      "locators": "lead 122–123; Saul death 150–153; Identification169",
+      "support": "Short name and same ancient Gilead town; two alternative site identifications. WEB oak burial fact follows primary text, not secondary tamarisk conflation.",
+      "bodyHashPreserved": false
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kiriath-Jearim",
+      "permanentURL": "https://en.wikipedia.org/w/index.php?title=Kiriath-Jearim&oldid=1350176698",
+      "locators": "lead123; Etymology128; sites135; genealogy141",
+      "support": "Baalah alternate name and 1CH13:6 reference; alternative archaeological identifications. No modern point inferred.",
+      "bodyHashPreserved": false
+    }
+  ],
+  "records": [
+    {
+      "entityID": "place:jabesh-gilead_611",
+      "decision": "pass-limited-canonical-alias-context",
+      "candidateProfileSHA256": "ac82f9750fb14f9131ea46123019e44face5c86728980d018d7b0f91fbbe8744",
+      "authorCandidateProfileSHA256": "ac82f9750fb14f9131ea46123019e44face5c86728980d018d7b0f91fbbe8744",
+      "reviewedFields": {
+        "id": "place:jabesh-gilead_611",
+        "kind": "place",
+        "identityType": null,
+        "names": null,
+        "nameJa": "ヤベシュ・ギレアデ",
+        "subtitleJa": "サウルの知らせを聞いた住民の町名として記されます。",
+        "summaryJa": "歴代誌上10:11では、サウルに起きたことを住民が聞いた町として名が挙がります。",
+        "identityNoteJa": "",
+        "knownBy": {
+          "chapter": 10,
+          "verse": 11
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 10,
+              "verse": 11
+            },
+            "end": {
+              "chapter": 10,
+              "verse": 12
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-jabesh-gilead_611-10-11",
+          "webp-1ch-jabesh-gilead_611-10-12",
+          "wikipedia-jabesh-gilead_611-chronicles"
+        ],
+        "facts": [
+          {
+            "textJa": "10:12では、勇士たちがサウルと息子たちの遺体をヤベシュへ運び、樫の木の下に葬って七日間断食したと記されます。",
+            "knownBy": {
+              "chapter": 10,
+              "verse": 12
+            },
+            "sourceIds": [
+              "webp-1ch-jabesh-gilead_611-10-12"
+            ]
+          }
+        ],
+        "modernLocationJa": null,
+        "historicalRoleJa": null,
+        "coordinate": null,
+        "locationNoteJa": "ヨルダン川東方のギレアデ地方に置かれる古代町です。記事はテル・エル・マクルブとテル・アブ・アル＝ハラズを候補に挙げ、正確な場所は定まっていません。",
+        "wikipedia": {
+          "title": "Jabesh-Gilead",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Jabesh-Gilead",
+          "kind": "article",
+          "noteJa": "記事はギレアデの古代町として紹介し、現在地について複数の考古学的候補を挙げています。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "knownBy": {
+            "chapter": 10,
+            "verse": 11
+          },
+          "sourceId": "wikipedia-jabesh-gilead_611-chronicles"
+        },
+        "materialCardIDs": null,
+        "supplemental": false
+      },
+      "selectedEdges": [
+        {
+          "book": "1CH",
+          "chapter": 10,
+          "verse": 11,
+          "entityID": "place:jabesh-gilead_611",
+          "relationship": "context",
+          "sourceId": "webp-1ch-jabesh-gilead_611-10-11",
+          "sourceText": "When all Jabesh Gilead heard all that the Philistines had done to Saul,",
+          "sourceTextSHA256": "2381973d7322576ed5808e2ebbc54a39a5ae50aefc7f09566748f1d3102710a3",
+          "citationURL": "https://ebible.org/engwebp/1CH10.htm#V11",
+          "reasonJa": "本文に地名が明記される。Jabesh Gileadは10:11に住民を指す換喩として用いられるためcontext edge、その他の地名は本文の行先/場所としてdirect edge。"
+        },
+        {
+          "book": "1CH",
+          "chapter": 10,
+          "verse": 12,
+          "entityID": "place:jabesh-gilead_611",
+          "relationship": "direct",
+          "sourceId": "webp-1ch-jabesh-gilead_611-10-12",
+          "sourceText": "all the valiant men arose and took away the body of Saul and the bodies of his sons, and brought them to Jabesh, and buried their bones under the oak in Jabesh, and fasted seven days.",
+          "sourceTextSHA256": "9f54e82719a35765eb39b1166fc15e2e1a191fd2e58dfee36bbd57025df570d8",
+          "citationURL": "https://ebible.org/engwebp/1CH10.htm#V12",
+          "reasonJa": "本文に地名が明記される。Jabesh Gileadは10:11に住民を指す換喩として用いられるためcontext edge、その他の地名は本文の行先/場所としてdirect edge。"
+        }
+      ],
+      "sourceChecks": [
+        {
+          "chapter": 10,
+          "verse": 11,
+          "sourceText": "When all Jabesh Gilead heard all that the Philistines had done to Saul,",
+          "sourceTextSHA256": "2381973d7322576ed5808e2ebbc54a39a5ae50aefc7f09566748f1d3102710a3",
+          "citationURL": "https://ebible.org/engwebp/1CH10.htm#V11"
+        },
+        {
+          "chapter": 10,
+          "verse": 12,
+          "sourceText": "all the valiant men arose and took away the body of Saul and the bodies of his sons, and brought them to Jabesh, and buried their bones under the oak in Jabesh, and fasted seven days.",
+          "sourceTextSHA256": "9f54e82719a35765eb39b1166fc15e2e1a191fd2e58dfee36bbd57025df570d8",
+          "citationURL": "https://ebible.org/engwebp/1CH10.htm#V12"
+        }
+      ]
+    },
+    {
+      "entityID": "place:kiriath-jearim_701",
+      "decision": "pass-limited-canonical-alias-context",
+      "candidateProfileSHA256": "576aeb7f7db6db07ca34c29eb611f9d4c49e6e3aff8d240b79b622da3bd730db",
+      "authorCandidateProfileSHA256": "576aeb7f7db6db07ca34c29eb611f9d4c49e6e3aff8d240b79b622da3bd730db",
+      "reviewedFields": {
+        "id": "place:kiriath-jearim_701",
+        "kind": "place",
+        "identityType": null,
+        "names": null,
+        "nameJa": "キルヤテ・エアリム",
+        "subtitleJa": "契約の箱の搬出元として名が挙がる町です。",
+        "summaryJa": "歴代誌上13:5では、ダビデが全イスラエルを集め、契約の箱をキルヤテ・エアリムから運び出そうとする場面で名が挙がります。",
+        "identityNoteJa": "",
+        "knownBy": {
+          "chapter": 13,
+          "verse": 5
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 13,
+              "verse": 5
+            },
+            "end": {
+              "chapter": 13,
+              "verse": 6
+            }
+          }
+        ],
+        "sourceIds": [
+          "webp-1ch-13-5",
+          "webp-1ch-13-6",
+          "wikipedia-kiriath-jearim_701"
+        ],
+        "facts": [
+          {
+            "textJa": "13:6は目的地を「バアラ、すなわちキルヤテ・エアリム」と言い換え、この町がユダに属すると記します。",
+            "knownBy": {
+              "chapter": 13,
+              "verse": 6
+            },
+            "sourceIds": [
+              "webp-1ch-13-6"
+            ]
+          }
+        ],
+        "modernLocationJa": null,
+        "historicalRoleJa": null,
+        "coordinate": null,
+        "locationNoteJa": "この記事はアブー・ゴーシュ近郊の遺跡など複数候補を紹介しており、現代の所在地は一つに定まっていません。",
+        "wikipedia": {
+          "title": "Kiriath-Jearim",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Kiriath-Jearim",
+          "kind": "article",
+          "noteJa": "記事は古代町と複数の現代遺跡候補を紹介し、所在地の比定には幅があります。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "knownBy": {
+            "chapter": 13,
+            "verse": 5
+          },
+          "sourceId": "wikipedia-kiriath-jearim_701"
+        },
+        "materialCardIDs": null,
+        "supplemental": false
+      },
+      "selectedEdges": [
+        {
+          "book": "1CH",
+          "chapter": 13,
+          "verse": 5,
+          "entityID": "place:kiriath-jearim_701",
+          "relationship": "direct",
+          "sourceId": "webp-1ch-13-5",
+          "sourceText": "So David assembled all Israel together, from the Shihor River of Egypt even to the entrance of Hamath, to bring God’s ark from Kiriath Jearim.",
+          "sourceTextSHA256": "e79af9c13b724eafb01aa26a490a4ff749cda0150154ca1da28ab211e7e0b6ad",
+          "citationURL": "https://ebible.org/engwebp/1CH13.htm#V5",
+          "reasonJa": "固定WEBに地名が明記され、場面の場所/行先として用いられる。"
+        },
+        {
+          "book": "1CH",
+          "chapter": 13,
+          "verse": 6,
+          "entityID": "place:kiriath-jearim_701",
+          "relationship": "direct",
+          "sourceId": "webp-1ch-13-6",
+          "sourceText": "David went up with all Israel to Baalah, that is, to Kiriath Jearim, which belonged to Judah, to bring up from there God the LORD’s ark that sits above the cherubim, that is called by the Name.",
+          "sourceTextSHA256": "a0446c6b41106434a83d141924b0f27d104ba51bf5a08ef9c0d4710ddec441e5",
+          "citationURL": "https://ebible.org/engwebp/1CH13.htm#V6",
+          "reasonJa": "固定WEBに地名が明記され、場面の場所/行先として用いられる。"
+        }
+      ],
+      "sourceChecks": [
+        {
+          "chapter": 13,
+          "verse": 5,
+          "sourceText": "So David assembled all Israel together, from the Shihor River of Egypt even to the entrance of Hamath, to bring God’s ark from Kiriath Jearim.",
+          "sourceTextSHA256": "e79af9c13b724eafb01aa26a490a4ff749cda0150154ca1da28ab211e7e0b6ad",
+          "citationURL": "https://ebible.org/engwebp/1CH13.htm#V5"
+        },
+        {
+          "chapter": 13,
+          "verse": 6,
+          "sourceText": "David went up with all Israel to Baalah, that is, to Kiriath Jearim, which belonged to Judah, to bring up from there God the LORD’s ark that sits above the cherubim, that is called by the Name.",
+          "sourceTextSHA256": "a0446c6b41106434a83d141924b0f27d104ba51bf5a08ef9c0d4710ddec441e5",
+          "citationURL": "https://ebible.org/engwebp/1CH13.htm#V6"
+        }
+      ]
+    }
+  ],
+  "acceptedEdgeCount": 4,
+  "coordinatesApproved": 0,
+  "suppressedDuplicateIDs": [
+    "place:jabesh_610",
+    "place:baalah_135"
+  ],
+  "genealogicalBase701Approved": false,
+  "allNamedEntitiesComplete": false,
+  "publicationApproved": false
+}
