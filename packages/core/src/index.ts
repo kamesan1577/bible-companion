@@ -356,13 +356,13 @@ export function questionContextWindow(
   if (earlierBackground) {
     // Earlier text is background, never a claim that the selected translation was verified.
     // The upper spoiler boundary remains fixed. Keep the selected passage first in retrieval.
-    for (let i = 0; i < 24 && size < 32; i++) {
+    for (let i = 0; i < 63 && size < 64; i++) {
       const before = advance(start, -1);
       if (compareVerse(before, start) === 0) break;
       start = before;
       size++;
     }
-    for (let i = 0; i < 8 && size < 32; i++) {
+    for (let i = 0; i < 8 && size < 64; i++) {
       const after = advance(end, 1);
       if (compareVerse(after, boundary.end) > 0 || compareVerse(after, end) === 0) break;
       end = after;

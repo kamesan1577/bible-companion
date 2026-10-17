@@ -2,6 +2,21 @@ import XCTest
 @testable import CompanionCore
 
 final class AnswerStreamTests: XCTestCase, @unchecked Sendable {
+    func testPersistedTranscriptKeepsOrderAndRecoveryDeduplication() throws {
+        let answer = try JSONDecoder().decode(AnswerResult.self, from: Data(#"{"answer":"理由のある見立てです。","status":"answered","citations":[],"modelId":"fixture","modelInvoked":false,"mode":"grounded-generation","warnings":[],"usage":{},"timing":{}}"#.utf8))
+        var original = ChatTranscript()
+        original.submit(id: "one", question: "上訴しなければよかった？", standard: false)
+        original.complete(id: "one", answer: answer, standard: false)
+        original.submit(id: "two", question: "結局なんで？", standard: false)
+        var restored = try JSONDecoder().decode(ChatTranscript.self, from: JSONEncoder().encode(original))
+        restored.complete(id: "one", answer: answer, standard: false)
+        XCTAssertEqual(restored.entries.map(\.role), ["user", "assistant", "user"])
+        XCTAssertEqual(restored.entries.last?.text, "結局なんで？")
+        restored.discardUnanswered(id: "two")
+        restored.submit(id: "retry", question: "結局なんで？", standard: false)
+        XCTAssertEqual(restored.entries.count, 3)
+        XCTAssertEqual(original.entries.last?.id, "two:user")
+    }
     func testSplitUTF8CRLFAndTerminal() throws {
         let wire = ": heartbeat\r\n\r\nevent: preview\r\ndata: {\"text\":\"フェリクスは総督です。\"}\r\n\r\nevent: complete\r\ndata: {}\r\n\r\n"
         var parser = AnswerEventParser(); var events: [(String, Data)] = []

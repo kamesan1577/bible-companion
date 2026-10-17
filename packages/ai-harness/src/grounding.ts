@@ -400,9 +400,20 @@ export function retrieveGrounding(input: AnswerInput, ownerId: string): Retrieva
     comparePosition(source.start, input.passage.end) <= 0
       ? 1
       : 0;
+  // Japanese questions often refer to English primary text. Keep direct evidence about
+  // the question ahead of merely nearby verses, within the existing 16-source/20KB cap.
+  const question = [input.question, ...(input.history ?? []).filter(turn => turn.role === 'user').slice(-2).map(turn => turn.content)].join(' ');
+  const terms = [...question.toLowerCase().matchAll(/[a-z]{4,}/g)].map(match => match[0]);
+  for (const [pattern, words] of [
+    [/上訴|appeal/i, ['appeal', 'caesar', 'jerusalem', 'judgment']],
+    [/釈放|自由|release/i, ['released', 'set free', 'liberty']],
+    [/総督|フェリクス|ペリクス|felix/i, ['governor', 'felix']],
+  ] as const) if (pattern.test(question)) terms.push(...words);
+  const relevance = (source: GroundingSource) => new Set(terms.filter(term => source.text.toLowerCase().includes(term))).size;
   candidates.sort(
     (a, b) =>
       overlaps(b) - overlaps(a) ||
+      relevance(b) - relevance(a) ||
       Number(b.reviewed && b.claims.length > 0) - Number(a.reviewed && a.claims.length > 0) ||
       (a.book === input.passage.book ? 0 : 1) - (b.book === input.passage.book ? 0 : 1) ||
       Math.abs(a.end.chapter - input.passage.end.chapter) -

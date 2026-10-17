@@ -639,11 +639,14 @@ export async function getSources(
       /* Invalid ingestion metadata fails closed and cannot leak through the direct source API. */
     }
   }
-  const primary = await getScriptureSources(
-    env,
-    questionContextWindow(passage, target, earlierBackground),
-    snapshotPolicy,
-  );
+  const window = questionContextWindow(passage, target, earlierBackground);
+  // Fetch the selected verses independently: the older-window storage page is capped at 48.
+  // Preserve selection first, then add earlier evidence for why/intent questions.
+  const [selected, background] = earlierBackground ? await Promise.all([
+    getScriptureSources(env, target, snapshotPolicy),
+    getScriptureSources(env, window, snapshotPolicy),
+  ]) : [[], await getScriptureSources(env, window, snapshotPolicy)];
+  const primary = [...new Map([...selected, ...background].map(source => [source.id, source])).values()];
   return primary.length
     ? [...sources.slice(0, 16 - materialSources.length), ...materialSources, ...primary].slice(
         0,

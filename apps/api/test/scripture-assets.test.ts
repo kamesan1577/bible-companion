@@ -124,3 +124,18 @@ it('never returns future verses in a narrow reference even though the asset cont
   expect(sources[0].end.verse).toBe(1);
   expect(sources[0].text).not.toContain('Let there be light');
 });
+
+it('keeps Acts28:15/26:32 selection and the earlier appeal evidence under existing limits', async () => {
+  const {retrieveGrounding} = await import('../../../packages/ai-harness/src/grounding');
+  const db = new TestDatabase(), env = testEnv(db);
+  seedAssetCorpus(db); env.SCRIPTURE_ASSETS = realAssetBinding([]);
+  const target={book:'ACT',start:{chapter:26,verse:32},end:{chapter:26,verse:32}};
+  const sources=await getSources(env,target,false,target,undefined,false,true);
+  expect(sources.some(source=>source.start.chapter===26 && source.start.verse===32)).toBe(true);
+  expect(sources.some(source=>source.start.chapter===25 && source.start.verse===11)).toBe(true);
+  const retrieved=retrieveGrounding({passage:target,question:'結局なんで上訴したの？',spoilerAllowed:false,sources},'alice');
+  expect(retrieved.sources.some(source=>source.start.chapter===26 && source.start.verse===32)).toBe(true);
+  expect(retrieved.sources.some(source=>source.start.chapter===25 && source.start.verse===11)).toBe(true);
+  expect(retrieved.sources.length).toBeLessThanOrEqual(16);
+  expect(retrieved.sources.every(source=>source.end.chapter<=26 && (source.end.chapter<26 || source.end.verse<=32))).toBe(true);
+});

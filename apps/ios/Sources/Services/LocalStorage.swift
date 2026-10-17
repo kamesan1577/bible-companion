@@ -130,6 +130,8 @@ enum ShareInbox {
             throw storageError(error)
         }
     }
+    /// Local identity marker only; reading it does not grant AI access.
+    static func localDraftOwner() throws -> String? { try withLock { try readOwner(at: $0) } }
     static func setOwner(_ owner: String?) throws {
         guard owner == nil || UUID(uuidString: owner ?? "") != nil else { throw NetworkFailure.invalidResponse }
         try withLock { root in

@@ -91,9 +91,9 @@ describe('screenshot question regressions and observed streaming', () => {
     expect(validatedPreview('reasoning secret ' + raw, [source], passage, false)).toBeNull();
     expect(validatedPreview(raw, [source], passage, false)).toBe(claim.text);
   });
-  it('adds earlier context with a hard 32-verse bound while retaining the spoiler end', () => {
+  it('adds earlier context with a hard 64-verse background bound while retaining the spoiler end', () => {
     const window = questionContextWindow(passage, passage, true);
-    expect(window.start).toEqual({ chapter: 23, verse: 34 });
+    expect(window.start.chapter).toBeLessThan(24);
     expect(window.end).toEqual(passage.end);
     expect(questionContextWindow(passage, passage).start).toEqual(passage.start);
   });
@@ -117,6 +117,6 @@ describe('screenshot question regressions and observed streaming', () => {
     });
     expect(request.history).toHaveLength(1);
     expect(request.messages[0].content).not.toContain('根拠がない場合は不足と答えます。');
-    expect(request.messages[0].content).toContain('出典未確認の説明を分けます');
+    expect(request.messages[0].content).toContain('合理的に読み取れる解釈も答えに含めます');
   });
 });

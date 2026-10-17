@@ -40,7 +40,7 @@ struct ChatWaitingView: View {
                 Text("受信中の回答です。全体の確認が終わるまで確定しません。").bibleTextStyle(.caption).foregroundStyle(.secondary)
             }
             ProgressView(status.isEmpty ? "回答を準備しています" : status).bibleTextStyle(.caption)
-            Text("確認できた主張から表示します。出典の確認が必要なため、しばらく表示が止まる場合があります。").bibleTextStyle(.caption).foregroundStyle(.secondary)
+            Text("回答が届くまで、そのまま次の質問を入力できます。").bibleTextStyle(.caption).foregroundStyle(.secondary)
         }.accessibilityElement(children: .contain)
     }
 }

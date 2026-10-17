@@ -1,6 +1,6 @@
 # Question answering and native conversation streaming
 
-The Share Extension and app now keep the initial explanation and append subsequent user/assistant turns. The shared SwiftUI screen is compiled into both targets, so the simulator fixture exercises the same view and model used by the extension. The extension controller still handles its existing share-item parsing and hosting.
+The Share Extension opens locally, with a persistent question composer and no automatic AI generation. Explicit questions append chronological user/assistant turns. The app keeps its existing initial explanation. The shared SwiftUI screen is compiled into both targets, so the simulator fixture exercises the same view and model used by the extension. The extension controller still handles its existing share-item parsing and hosting.
 
 ## Findings
 
@@ -14,9 +14,9 @@ The old prompt required at most three citation-backed claims but did not spell o
 
 ## Changes
 
-- The prompt prioritizes the latest question. Identity questions ask for identity/office/role first; unrelated verse summaries must not replace an answer. Missing evidence remains an explicit limitation.
-- Personal questions may retrieve up to 24 preceding verses, with a total primary-text context limit of 32 verses for short selections and the same upper spoiler boundary. The original selection is retained. Initial explanations retain their original retrieval policy.
-- History remains owner-scoped and bounded. Source-free general-knowledge replies enter history only when the server explicitly permits that mode. General knowledge remains labeled and never gains fabricated citations. When that policy is enabled, the prompt removes the contradictory blanket instruction to refuse whenever cited evidence is absent; strict mode retains its evidence requirement.
+- The prompt prioritizes the latest question. Identity questions ask for identity/office/role first; unrelated verse summaries must not replace an answer. Reasoned interpretations are encouraged; uncertainty is limited to the specific unknown rather than repeated as a generic disclaimer.
+- Personal questions may retrieve up to 63 preceding verses, with a total background window limit of 64 verses for short selections and the same upper spoiler boundary. The original selection is retained. Initial explanations retain their original retrieval policy.
+- History remains owner-scoped and bounded. Source-free general-knowledge replies enter history only when the server explicitly permits that mode. Narrative interpretation is no longer prefixed with a fixed “一般的な説明（出典未確認）” heading. Source-backed supporting claims retain citations and exact quotation checks; uncited narrative does not gain fabricated provenance. When that policy is enabled, the prompt removes the contradictory blanket instruction to refuse whenever cited evidence is absent; strict mode retains its evidence requirement.
 - Initial explanations and private chat remain separate. Transport negotiation is excluded from the fixed explanation cache key. Personal chat is not published to the shared cache.
 - Native clients explicitly request SSE. JSON clients and old JSON responses remain compatible. No automatic generation retries are introduced.
 - Both native views use chronological chat rows, a keyboard-safe composer, a visible stop control, and a latest-message button. Returning to a conversation reloads saved messages; older pages are available. Developer warnings and budget details are behind the existing developer disclosure.
@@ -48,3 +48,21 @@ No live AI request, production deployment, distribution update, new credentials,
 - Native simulator UI evidence: initial explanation retained, two conversational turns, keyboard-visible send, explicit keyboard dismissal, latest-message navigation, actual SSE preview, interrupted response recovery, shared-screen cancel/retry. Screenshots use deterministic fixtures, not generated live answers.
 
 The screenshots under `verification/conversation/` are actual simulator captures of these fixture-driven views. They contain no real account, credential, or private user conversation.
+
+
+## Follow-up: share-first questions (October 17)
+
+The supplied IMG_4372 shows startup explanation generation hiding the composer. IMG_4373 shows a code-added general-knowledge heading and evasive wording about whether “Paul was stupid.” These are separate problems: automatic inference and input gating in the share screen; strict claim-centered instructions, fixed rendering labels, and missing earlier appeal context in the answer path.
+
+- Share-item parsing, passage display and local people/place lookup do not call `/share/start` or any AI endpoint. Opening, switching tabs and selecting a passage never generate an explanation.
+- The composer stays in a keyboard-safe bottom inset, including during setup failures and a running request. Sending captures the exact draft synchronously. Up to ten follow-ups queue and run serially after the previous response commits, preserving server history order. Failure/interruption pauses the queue; an uncertain request must be checked or cancelled before another dispatch. Nothing silently retries on reopening.
+- The extension keeps a bounded, protected, backup-excluded local snapshot for 24 hours in its private container. Authenticated snapshots are keyed by owner, share-capability token and shared content. Signed-out/draft-only snapshots use a separate local-identity scope and cannot restore authenticated answers. Revocation/account changes clear the visible private state; old transport completions remain rejected.
+- Prompt v7 asks for a direct answer, a short reason and useful preceding context. Casual questions are interpreted by intent. Facts, interpretations and genuinely unknown inner motives remain distinguished in natural language. Exact quotation, URL/citation allowlists, spoiler checks, consent and budget reservation remain enforced.
+- The narrative (`generalText`) is the displayed answer when present; validated supporting claims remain available through source disclosure. It is not relabeled as source-verified. Streaming previews still only contain complete validated supporting claims, while narrative arrives in the terminal response.
+- The older 24-verse retrieval window excluded Acts25:9–12 from Acts26:32. Personal questions now fetch selection separately from bounded earlier background, then prioritize evidence relevant to the question within the existing 16-source/20KB model-input cap. The selected range and upper spoiler end remain fixed.
+
+### Quality evaluation limits
+
+Offline regression cases include the consecutive questions “じゃあパウロは上訴しなければよかったの？”, “パウロってバカだったってこと？”, “結局なんで上訴したの？”, the short question “上訴って？”, and a genuinely unknown inner-motive question. Contract tests separately check question/history forwarding, instructions for natural direct answers and reasoned interpretation, retained factual provenance, rejection of invented quotations, and preceding appeal retrieval. They do not measure real Gemma answer quality.
+
+A live evaluation must separately score: (1) directness—does the first sentence answer the question; (2) naturalness—no generic provenance preamble or repeated disclaimer; (3) factuality—facts match evidence, interpretation has reasons, uncertain motives are not invented. Existing application-session/budget-verification limitations still prevent a consent-preserving live Gemma run. No substitute fixture is presented as real inference.

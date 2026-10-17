@@ -1,6 +1,6 @@
 import Foundation
 
-public struct ChatEntry: Identifiable, Sendable {
+public struct ChatEntry: Identifiable, Codable, Sendable {
     public let id: String
     public let role: String
     public let text: String
@@ -15,7 +15,7 @@ public struct ChatEntry: Identifiable, Sendable {
                   answer: message.visibleAnswer, standard: message.content["standardExplanation"].bool == true)
     }
 }
-public struct ChatTranscript: Sendable {
+public struct ChatTranscript: Codable, Sendable {
     public private(set) var entries: [ChatEntry] = []
     public init() {}
     public mutating func restore(_ messages: [ConversationMessage]) { entries = messages.filter { !($0.role == "user" && $0.content["standardExplanation"].bool == true) }.map(ChatEntry.saved) }

@@ -1,10 +1,11 @@
 import SwiftUI
 import CompanionCore
+import CryptoKit
 
 @MainActor final class SharedPreviewModel: ObservableObject {
     struct Started: Decodable, Sendable { let ownerId: String; let importId: String; let items: [Item] }
-    struct Item: Decodable, Sendable, Identifiable { let conversationId: String; let passage: Passage; var id: String { conversationId } }
-    @Published var loading = true
+    struct Item: Codable, Sendable, Identifiable { let conversationId: String; let passage: Passage; var id: String { conversationId } }
+    @Published var loading = false
     @Published var error: String?
     @Published var labels: [String] = []
     @Published var storageNotice: String?
@@ -28,19 +29,26 @@ import CompanionCore
     private var accessOwner: String?
     private var accessToken: String?
     var entries: [ChatEntry] { current.flatMap { transcripts[$0.id]?.entries } ?? [] }
-    var canSend: Bool { canAsk && !needsSetup && !loading && pendingRequest == nil && !draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && draft.utf16.count <= 2000 }
+    var canSend: Bool { !shareParseFailed && current != nil && !draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && draft.utf16.count <= 2000 && queued.count < 10 }
     @Published var selectedIndex = 0
-    @Published var draft = ""
+    @Published var draft = "" { didSet { persist() } }
+    struct Queued: Codable, Identifiable { let id: String; let question: String; let index: Int }
+    @Published private(set) var queued: [Queued] = []
+    @Published private(set) var aiRequests = 0
+    private var draining = false
+    private var snapshotURL: URL?
+    private struct Snapshot: Codable { let saved: Date; let selectedIndex: Int; let start: String; let draft: String; let items: [Item]; let transcripts: [String: ChatTranscript]; let answers: [String: AnswerResult]; let queued: [Queued]; let pending: String?; let pendingItem: String?; let question: String; let standard: Bool; let lastSubmission: String? }
     @Published var pendingRequest: String?
     @Published var shareParseFailed = false
     @Published var shareTextWasTruncated = false
     var sharedText = ""
-    private let startRequest = UUID().uuidString
+    private var startRequest = UUID().uuidString
     private var client: APIClient?
     var current: Item? { items.indices.contains(selectedIndex) ? items[selectedIndex] : nil }
     var answer: AnswerResult? { current.flatMap { answers[$0.id] } }
     func refresh() async {
         guard !sharedText.isEmpty, client == nil else { return }
+        if accessOwner != nil && !checkOwner() { return }
         let active = UUID(); generation = active
         loading = true; error = nil; canRetryStart = false
         defer { if generation == active { loading = false } }
@@ -76,22 +84,85 @@ import CompanionCore
             guard generation == active else { return }
             guard started.ownerId == access.ownerID, !started.items.isEmpty else { throw NetworkFailure.invalidResponse }
             accessOwner = access.ownerID; accessToken = access.token
-            client = transport; items = started.items; needsSetup = false; shareParseFailed = false; canAsk = true
+            client = transport; items = started.items;
+            if let directory = snapshotURL?.deletingLastPathComponent().deletingLastPathComponent() {
+                let key = SHA256.hash(data: Data((access.ownerID + access.token + sharedText).utf8)).map { String(format: "%02x", $0) }.joined()
+                let destination = directory.appendingPathComponent("ShareChats").appendingPathComponent(key + ".json")
+                if let previous = snapshotURL, previous != destination { try? FileManager.default.removeItem(at: previous) }
+                snapshotURL = destination
+            }
+            needsSetup = false; shareParseFailed = false; canAsk = true
             loading = false
-            await explain()
+            persist()
         } catch { show(error) }
     }
     func explain() async {
         guard answer == nil else { return }
         await send("この箇所の出来事と意味を、初めて読む人にも分かる日本語で短く説明してください。", standard: true)
     }
+    /// Called after local parsing. No network or inference on opening, selection or tab changes.
+    func prepare() {
+        loading = false
+        canAsk = !shareParseFailed
+        guard let directory = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else { return }
+        if let access = try? ShareInbox.verifiedAIAccess() {
+            accessOwner = access.ownerID; accessToken = access.token
+            restoreSnapshot(directory: directory, owner: access.ownerID, token: access.token)
+        } else {
+            // Signed-out drafts are never restored into an authenticated account's conversation.
+            do { let owner = try ShareInbox.localDraftOwner(); restoreSnapshot(directory: directory, owner: owner ?? "signed-out", token: "draft-only") }
+            catch { storageNotice = "下書きの保存先を確認できません。入力はこの画面に残します。" }
+        }
+    }
+    private func restoreSnapshot(directory: URL, owner: String, token: String) {
+        let key = SHA256.hash(data: Data((owner + token + sharedText).utf8)).map { String(format: "%02x", $0) }.joined()
+        let folder = directory.appendingPathComponent("ShareChats", isDirectory: true)
+        do {
+            try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
+            var values = URLResourceValues(); values.isExcludedFromBackup = true
+            var writable = folder; try writable.setResourceValues(values)
+            snapshotURL = folder.appendingPathComponent(key + ".json")
+            if let data = try? Data(contentsOf: snapshotURL!), data.count <= 1_000_000,
+               let saved = try? JSONDecoder().decode(Snapshot.self, from: data), Date().timeIntervalSince(saved.saved) < 86400 {
+                startRequest = saved.start; selectedIndex = saved.selectedIndex; items = saved.items; transcripts = saved.transcripts; answers = saved.answers
+                queued = saved.queued; pendingRequest = saved.pending; pendingItemID = saved.pendingItem
+                pendingQuestion = saved.question; pendingStandard = saved.standard; lastSubmissionID = saved.lastSubmission; draft = saved.draft
+            }
+            // Expired, revoked and unrelated sessions never become visible in this share.
+            for file in try FileManager.default.contentsOfDirectory(at: folder, includingPropertiesForKeys: [.contentModificationDateKey]) {
+                if let date = try file.resourceValues(forKeys: [.contentModificationDateKey]).contentModificationDate, Date().timeIntervalSince(date) >= 86400 { try? FileManager.default.removeItem(at: file) }
+            }
+        } catch { storageNotice = "会話を端末に保存できません。この画面を閉じると履歴や下書きが失われる場合があります。" }
+    }
+    private func persist() {
+        guard let snapshotURL else { return }
+        let value = Snapshot(saved: Date(), selectedIndex: selectedIndex, start: startRequest, draft: draft, items: items, transcripts: transcripts, answers: answers, queued: queued, pending: pendingRequest, pendingItem: pendingItemID, question: pendingQuestion, standard: pendingStandard, lastSubmission: lastSubmissionID)
+        do { let data = try JSONEncoder().encode(value); guard data.count <= 1_000_000 else { return }; try data.write(to: snapshotURL, options: [.atomic, .completeFileProtection]) }
+        catch { storageNotice = "下書きと会話を保存できませんでした。入力はこの画面に残しています。" }
+    }
     func sendQuestion() async {
         guard canSend else { return }
         let question = draft.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !question.isEmpty, question.utf16.count <= 2000 else { return }
-        await send(question)
-        if error == nil { draft = "" }
+        queued.append(Queued(id: UUID().uuidString, question: question, index: selectedIndex))
+        draft = ""; persist()
+        await drain()
     }
+    private func drain() async {
+        guard !draining else { return }
+        draining = true
+        defer { draining = false; persist() }
+        if client == nil { await refresh() }
+        guard client != nil, !needsSetup, pendingRequest == nil else { return }
+        while let next = queued.first, !Task.isCancelled {
+            guard items.indices.contains(next.index) else { error = "質問する箇所を確認できません。送信待ちの質問は残しています。"; break }
+            selectedIndex = next.index
+            if pendingQuestion == next.question, let itemID = pendingItemID, let lastSubmissionID { transcripts[itemID]?.discardUnanswered(id: lastSubmissionID) }
+            await send(next.question)
+            if pendingRequest != nil || error != nil || needsSetup { break }
+            queued.removeFirst(); persist()
+        }
+    }
+    func removeQueued(_ id: String) { queued.removeAll { $0.id == id }; persist() }
     private func send(_ question: String, standard: Bool = false) async {
         guard checkOwner(), let client, let item = current, !loading, pendingRequest == nil else { return }
         loading = true; error = nil; canRetryExplanation = false; preview = ""; status = AnswerProgress.preparing.label
@@ -100,7 +171,8 @@ import CompanionCore
         let request = UUID().uuidString; pendingRequest = request; lastSubmissionID = request
         pendingItemID = item.id; pendingStandard = standard; pendingQuestion = question
         transcripts[item.id, default: ChatTranscript()].submit(id: request, question: question, standard: standard)
-        if !standard { draft = "" }
+        aiRequests += 1
+        persist()
         struct Input: Encodable, Sendable { let requestId: String; let question: String; let answerMode = "grounded-generation" }
         do {
             let update: @Sendable (AnswerUpdate) -> Void = { [weak self] update in
@@ -117,9 +189,11 @@ import CompanionCore
             if standard { answers[item.id] = answer }
             transcripts[item.id, default: ChatTranscript()].complete(id: request, answer: answer, standard: standard)
             pendingRequest = nil
-        } catch { if generation == active { show(error) } }
+            persist()
+        } catch { if generation == active { show(error); persist() } }
     }
     func checkStatus() async {
+        if client == nil { await refresh() }
         guard checkOwner(), let client, let request = pendingRequest, let itemID = pendingItemID, !loading else { return }
         loading = true; error = nil; defer { loading = false }
         do {
@@ -127,28 +201,37 @@ import CompanionCore
             guard checkOwner() else { return }
             if result.status == "complete", let answer = result.result {
                 if pendingStandard { answers[itemID] = answer }
-                transcripts[itemID, default: ChatTranscript()].complete(id: request, answer: answer, standard: pendingStandard); pendingRequest = nil
+                transcripts[itemID, default: ChatTranscript()].complete(id: request, answer: answer, standard: pendingStandard); pendingRequest = nil; if queued.first?.question == pendingQuestion { queued.removeFirst() }; persist()
             }
             else if ["failed", "cancelled"].contains(result.status) { pendingRequest = nil; error = "前の処理は終了しました。もう一度質問できます。" }
             else { error = "回答を準備しています。少ししてから確認してください。" }
         } catch { show(error) }
     }
-    func startQuestion() { guard canSend else { return }; task = Task { await sendQuestion() } }
+    func startQuestion() { guard canSend else { return }; let question = draft.trimmingCharacters(in: .whitespacesAndNewlines); queued.append(Queued(id: UUID().uuidString, question: question, index: selectedIndex)); draft = ""; persist(); if !draining { task = Task { await drain() } } }
+    func resumeQueue() { guard !loading, !draining else { return }; task = Task { await drain() } }
     func cancel() {
         generation = UUID(); task?.cancel(); task = nil; loading = false; preview = ""
         guard let client, let pendingRequest else { return }
         task = Task {
-            do { let _: JSONValue = try await client.delete("/share/requests/\(pendingRequest)"); if self.pendingRequest == pendingRequest { self.pendingRequest = nil; error = "中止しました。利用量が発生している場合があります。" } }
+            do { let _: JSONValue = try await client.delete("/share/requests/\(pendingRequest)"); if self.pendingRequest == pendingRequest { self.pendingRequest = nil; persist(); error = "中止しました。利用量が発生している場合があります。" } }
             catch { self.error = "待つのをやめました。再送前に送信した回答の状態を確認してください。" }
         }
     }
-    func retry() { guard pendingRequest == nil, !loading, !pendingQuestion.isEmpty else { return }; if let item = current, let lastSubmissionID { transcripts[item.id]?.discardUnanswered(id: lastSubmissionID) }; let question = pendingQuestion; let standard = pendingStandard; task = Task { await send(question, standard: standard) } }
+    func retry() {
+        guard pendingRequest == nil, !loading, !pendingQuestion.isEmpty else { return }
+        if let itemID = pendingItemID, let lastSubmissionID { transcripts[itemID]?.discardUnanswered(id: lastSubmissionID) }
+        error = nil
+        if !queued.isEmpty { resumeQueue() }
+        else { let question = pendingQuestion; let standard = pendingStandard; task = Task { await send(question, standard: standard) } }
+    }
+
 #if DEBUG
     private var isQA = false
-    func configureQA(client: APIClient, initial: AnswerResult) {
-        self.client = client; isQA = true; loading = false; canAsk = true
-        items = [Item(conversationId: "00000000-0000-4000-8000-000000000123", passage: Passage(book: "ACT", start: Verse(chapter: 24, verse: 23), end: Verse(chapter: 24, verse: 24)))]
-        answers[items[0].id] = initial
+    func configureQA(client: APIClient, initial: AnswerResult? = nil, restore: Bool = false) {
+        self.client = client; isQA = true; loading = false; canAsk = true; storageNotice = nil
+        if items.isEmpty { items = [Item(conversationId: "00000000-0000-4000-8000-000000000123", passage: Passage(book: "ACT", start: Verse(chapter: 24, verse: 23), end: Verse(chapter: 24, verse: 24)))] }
+        if let initial { answers[items[0].id] = initial }
+        if restore, let directory = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first { restoreSnapshot(directory: directory, owner: "fixture-owner", token: "fixture-session") }
     }
 #endif
     private func checkOwner() -> Bool {
@@ -156,13 +239,13 @@ import CompanionCore
         if isQA { return true }
 #endif
         guard let access = try? ShareInbox.verifiedAIAccess(), access.ownerID == accessOwner, access.token == accessToken else {
-            generation = UUID(); task?.cancel(); answers = [:]; transcripts = [:]; preview = ""; draft = ""; loading = false; canAsk = false; needsSetup = true
+            generation = UUID(); task?.cancel(); snapshotURL = nil; answers = [:]; transcripts = [:]; queued = []; preview = ""; draft = ""; client = nil; loading = false; canAsk = false; needsSetup = true
             setupMessage = "ログイン状態または共有設定が変わりました。画面を閉じて共有し直してください。"; return false
         }
         return true
     }
-    func revalidateAccess() { if client != nil { _ = checkOwner() } }
-    func close() { generation = UUID(); task?.cancel(); task = nil; preview = ""; answers = [:]; transcripts = [:]; draft = "" }
+    func revalidateAccess() { if accessOwner != nil { _ = checkOwner() } }
+    func close() { persist(); generation = UUID(); task?.cancel(); task = nil; preview = "" }
     private func show(_ failure: Error) {
         if case NetworkFailure.unauthenticated = failure {
             let recovery = ShareAuthRecoveryState.unauthenticated(pendingRequest: pendingRequest)
@@ -247,6 +330,9 @@ struct SharedPreviewView: View {
             ScrollViewReader { proxy in
             ScrollView {
                 VStack(alignment: .leading, spacing: BibleTheme.Space.page) {
+#if DEBUG
+                    Text("AI requests: \(model.aiRequests)").bibleTextStyle(.caption).accessibilityIdentifier("share-ai-request-count")
+#endif
                     if model.items.count > 1 {
                         Picker("表示する箇所", selection: $model.selectedIndex) { ForEach(Array(model.items.enumerated()), id: \.offset) { index, item in Text(item.passage.label).tag(index) } }.pickerStyle(.menu).disabled(model.loading || model.pendingRequest != nil)
                     }
@@ -256,7 +342,7 @@ struct SharedPreviewView: View {
                         if pane != "explanation" { OfflineEntityPane(passage: passage, kind: pane, inlineDetails: true) }
                     }
                     if model.needsSetup {
-                        Text("この画面で解説を開けません").bibleTextStyle(.heading)
+                        Text("質問を送るには準備が必要です").bibleTextStyle(.heading)
                         Text(model.setupMessage).bibleTextStyle(.body)
                         Text("選んだ箇所はこの画面に残しています。必要なときは、下の手順でアプリの設定を確認できます。").bibleTextStyle(.body)
                         Button("準備の手順を見る") { showSetupSteps = true }.buttonStyle(.bordered)
@@ -283,13 +369,19 @@ struct SharedPreviewView: View {
                     if pane == "explanation", let answer = model.answer {
                         Text("最初の解説").bibleTextStyle(.heading)
                         Text(answer.answer).bibleTextStyle(.body).textSelection(.enabled)
-                        Text("AIによる解説 · 本文と出典を確かめてください").bibleTextStyle(.caption).foregroundStyle(.secondary)
                         DisclosureGroup("出典") { ForEach(Array(answer.citations.enumerated()), id: \.offset) { _, citation in Text(citation.title).bibleTextStyle(.caption) } }
                     }
                     if pane == "explanation" {
+                        if model.entries.isEmpty && !model.loading { Text("気になったことを、そのまま質問できます。").bibleTextStyle(.body) }
                         ChatMessagesView(entries: model.entries.filter { !$0.standard })
                         if model.loading { ChatWaitingView(status: model.status, preview: model.preview) }
                     }
+                    if model.draft.utf16.count > 2000 { Text("質問は2000文字以内にしてください。下書きは残しています。").bibleTextStyle(.caption) }
+                    if model.queued.count >= 10 { Text("順番待ちは10件までです。回答を待つか、不要な質問を取り消してください。").bibleTextStyle(.caption) }
+                    ForEach(model.queued) { question in
+                        HStack { Text("送信待ち: " + question.question).bibleTextStyle(.caption); Button("取り消す") { model.removeQueued(question.id) }.disabled(model.loading && model.queued.first?.id == question.id) }
+                    }
+                    if !model.queued.isEmpty && !model.loading && model.pendingRequest == nil { Button("待っている質問を送る") { model.resumeQueue() } }
                     if let error = model.error { Text(error).bibleTextStyle(.body) }
                     if model.canRetryExplanation && model.answer == nil && model.pendingRequest == nil {
                         Button("解説をもう一度確認") { Task { await model.explain() } }.buttonStyle(.borderedProminent).disabled(model.loading)
@@ -304,18 +396,18 @@ struct SharedPreviewView: View {
                 .onChange(of: composerFocused) { _, focused in if focused { withAnimation { proxy.scrollTo("chat-bottom", anchor: .bottom) } } }
                 .overlay(alignment: .bottomTrailing) { if !model.entries.isEmpty { Button { withAnimation { proxy.scrollTo("chat-bottom", anchor: .bottom) } } label: { Image(systemName: "arrow.down.circle.fill").bibleTextStyle(.heading).padding() }.accessibilityLabel("最新のメッセージへ") } }
             }.safeAreaInset(edge: .bottom) {
-                if pane == "explanation", model.canAsk, !model.needsSetup {
+                if !model.shareParseFailed {
                     HStack(alignment: .bottom) {
-                        TextField("気になったことを質問", text: $model.draft, axis: .vertical).accessibilityIdentifier("share-question-draft").lineLimit(1...4).focused($composerFocused).bibleTextStyle(.body).disabled(model.loading || model.pendingRequest != nil).submitLabel(.send).onSubmit { model.startQuestion() }
+                        TextField("気になったことを質問", text: $model.draft, axis: .vertical).accessibilityIdentifier("share-question-draft").lineLimit(1...4).focused($composerFocused).bibleTextStyle(.body).submitLabel(.send).onSubmit { model.startQuestion() }
                         if model.loading { Button { model.cancel() } label: { Image(systemName: "stop.circle").bibleTextStyle(.title).frame(minWidth: 44, minHeight: 44) }.accessibilityLabel("回答の準備をやめる") }
-                        Button { model.startQuestion() } label: { Image(systemName: "arrow.up.circle.fill").bibleTextStyle(.title).frame(minWidth: 44, minHeight: 44) }.accessibilityLabel("質問を送る").disabled(!model.canSend)
+                        Button { pane = "explanation"; model.startQuestion() } label: { Image(systemName: "arrow.up.circle.fill").bibleTextStyle(.title).frame(minWidth: 44, minHeight: 44) }.accessibilityLabel("質問を送る").disabled(!model.canSend)
                     }.padding(BibleTheme.Space.md).bibleCanvas()
                 }
             }.safeAreaInset(edge: .top) { if let passage = model.current?.passage { SharedScriptureHeader(passage: passage, translation: model.translation, text: model.sharedText, compact: composerFocused) } }.bibleCanvas().navigationTitle("聖書コンパニオン").navigationBarTitleDisplayMode(.inline)
                 .toolbar { ToolbarItem(placement: .topBarLeading) { if composerFocused { Button { composerFocused = false } label: { Image(systemName: "keyboard.chevron.compact.down") }.accessibilityLabel("キーボードを閉じる") } }; ToolbarItem(placement: .topBarTrailing) { Button("閉じる", action: close) } }
                 .onDisappear { model.close() }
                 .onChange(of: scenePhase) { _, phase in if phase == .active { model.revalidateAccess() } }
-                .onChange(of: model.selectedIndex) { _, _ in Task { await model.explain() } }
+
         }
     }
 }
