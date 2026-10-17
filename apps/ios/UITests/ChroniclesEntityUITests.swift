@@ -80,4 +80,19 @@ final class ChroniclesEntityUITests: XCTestCase {
     @MainActor private func attach(_ app: XCUIApplication, _ name: String) {
         let item = XCTAttachment(screenshot: app.screenshot()); item.name = name; item.lifetime = .keepAlways; add(item)
     }
+    @MainActor func testAzaziahFirstAppearanceShowsPrimaryCitationWithoutWikipedia() {
+        let app = launch("entity-1ch-azaziah")
+        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
+        let detail = app.buttons["entity-detail-person:azaziah_547"]
+        scrollTo(detail, in: app); XCTAssertTrue(detail.exists); detail.tap()
+        XCTAssertFalse(app.descendants(matching: .any).matching(identifier: "wikipedia-person:azaziah_547").firstMatch.exists)
+
+        let source = app.buttons["この説明の出典"]
+        scrollTo(source, in: app); XCTAssertTrue(source.exists); source.tap()
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "聖書本文の出典")).firstMatch.waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons.matching(NSPredicate(format: "label CONTAINS %@ AND label CONTAINS %@", "World English Bible", "1CH 15:21")).firstMatch.waitForExistence(timeout: 5))
+        XCTAssertFalse(app.descendants(matching: .any).matching(identifier: "wikipedia-person:azaziah_547").firstMatch.exists)
+        attach(app, "chronicles-azaziah-first-primary-only")
+    }
+
 }

@@ -20,7 +20,7 @@ struct OfflineEntityPane: View {
         Logger(subsystem: "org.example.BibleCompanion", category: "ShareMap").notice("Map selection changed: \(id, privacy: .public)")
 #endif
     }
-    private var isPartialChronicles: Bool { ["1CH", "2CH"].contains(passage.book) }
+    private var hasPartialEntityCoverage: Bool { ["1CH", "2CH", "EZR", "NEH"].contains(passage.book) }
     private var additions: [IndexedOccurrence] {
         result?.occurrences.filter { item in
             Set(item.profile?.profile.materialCardIDs ?? []).isDisjoint(with: coveredMaterialCardIDs)
@@ -30,15 +30,15 @@ struct OfflineEntityPane: View {
         VStack(alignment: .leading, spacing: BibleTheme.Space.section) {
             if let message, result != nil { Text(message).bibleTextStyle(.caption) }
             if let result {
-                if isPartialChronicles {
-                    Text("この書の人物・地名は、一部を原文と照合して収録しています。説明が出ない名前も、未収録の場合があります。")
+                if hasPartialEntityCoverage {
+                    Text(["EZR", "NEH"].contains(passage.book) ? "この書の人物・地名は、原文と照合したものから順に収録を進めています。説明が出ない名前も、未収録の場合があります。" : "この書の人物・地名は、一部を原文と照合して収録しています。説明が出ない名前も、未収録の場合があります。")
                         .bibleTextStyle(.caption).bibleForeground(.textSecondary)
                 }
                 if !additions.isEmpty {
                     BibleSectionHeader(title: coveredMaterialCardIDs.isEmpty ? (kind == "person" ? "この箇所に関係する人物・名前" : "この箇所に関係する場所") : (kind == "person" ? "ほかの人物・関連する名前" : "ほかの場所"))
                 }
                 if additions.isEmpty && coveredMaterialCardIDs.isEmpty {
-                    Text(isPartialChronicles ? "この箇所の説明は、まだ収録していません。人物や地名が登場しないという意味ではありません。" : kind == "person" ? "この箇所に対応する人物の説明はありません。名前のない人物に、推測で名前を付けてはいません。" : "この箇所に対応する地名の説明はありません。同定できない場所には地図の印を置いていません。").bibleTextStyle(.body)
+                    Text(hasPartialEntityCoverage ? "この箇所の説明は、まだ収録していません。人物や地名が登場しないという意味ではありません。" : kind == "person" ? "この箇所に対応する人物の説明はありません。名前のない人物に、推測で名前を付けてはいません。" : "この箇所に対応する地名の説明はありません。同定できない場所には地図の印を置いていません。").bibleTextStyle(.body)
                 }
                 ForEach(additions) { item in
                     BibleReadingSurface {
@@ -94,7 +94,7 @@ struct OfflineEntityPane: View {
                 Toggle("先の登場箇所も見る", isOn: $includeFuture)
                 Text(includeFuture ? "この書の先の登場箇所と補足説明も表示しています。" : "選んだ箇所までの情報を表示しています。").bibleTextStyle(.caption).bibleForeground(.textSecondary)
                 DisclosureGroup("一覧の出典と利用条件") {
-                    Text(["ACT", "ROM", "LEV", "NUM", "JOS", "JDG", "RUT", "1SA", "2SA", "1KI", "2KI", "1CH", "2CH"].contains(passage.book) ? "WEB本文と照合した人物・場所の対応を表示します。名前の明記と、文脈上の指示を区別しています。" : "KJVの節番号をもとにした人物・場所の参考一覧です。関連候補と本文に名前がある場合を区別しています。").bibleTextStyle(.caption)
+                    Text(["ACT", "ROM", "LEV", "NUM", "JOS", "JDG", "RUT", "1SA", "2SA", "1KI", "2KI", "1CH", "2CH", "EZR", "NEH"].contains(passage.book) ? "WEB本文と照合した人物・場所の対応を表示します。名前の明記と、文脈上の指示を区別しています。" : "KJVの節番号をもとにした人物・場所の参考一覧です。関連候補と本文に名前がある場合を区別しています。").bibleTextStyle(.caption)
                     Text(result.attribution).bibleTextStyle(.caption)
                     if let url = result.sourceURL { Link("Theographic Bible Metadata · CC BY-SA 4.0", destination: url) }
                 }
@@ -161,8 +161,8 @@ struct EntityProfileMap: View {
                 Text("地図の背景には通信が必要な場合があります。現在地は取得していません。").bibleTextStyle(.caption).bibleForeground(.textSecondary)
                 BibleSectionHeader(title: "位置情報の出典と権利")
                 ForEach(resolved.sources) { source in
-                    if let url = source.safeURL { Link(source.title, destination: url) }
-                    Text(source.license + " · " + source.attribution).bibleTextStyle(.caption)
+                    if let url = source.safeURL { Link(source.readerTitle, destination: url) }
+                    Text(source.license + " · " + source.readerAttribution).bibleTextStyle(.caption)
                     if let url = URL(string: source.licenseURL), url.scheme == "https" { Link("利用条件", destination: url) }
                 }
             }
@@ -259,8 +259,8 @@ struct EntityProfileContent: View {
                     if !items.isEmpty {
                         Text(category == "primary-text" ? "聖書本文の出典" : category == "geographic-reference" ? "地理資料" : "補助資料").bibleTextStyle(.heading)
                         ForEach(items) { source in
-                            if let url = source.safeURL { Link(source.title, destination: url) }
-                            Text(source.license + " · " + source.attribution).bibleTextStyle(.caption)
+                            if let url = source.safeURL { Link(source.readerTitle, destination: url) }
+                            Text(source.license + " · " + source.readerAttribution).bibleTextStyle(.caption)
                             if let url = URL(string: source.licenseURL), url.scheme == "https" { Link("利用条件", destination: url) }
                         }
                     }
@@ -268,5 +268,18 @@ struct EntityProfileContent: View {
                 Text("出典の外部ページには、選んだ箇所より先の内容が含まれる場合があります。").bibleTextStyle(.caption)
             }
         }
+    }
+}
+
+// Snapshot identifiers remain in the bundled provenance; readers see the
+// Bible edition, passage, attribution and license without internal build IDs.
+private extension EntityProfileSource {
+    var readerTitle: String { readerCitationText(title) }
+    var readerAttribution: String { readerCitationText(attribution) }
+    func readerCitationText(_ value: String) -> String {
+        guard url.hasPrefix("https://ebible.org/engwebp/") else { return value }
+        return value.replacingOccurrences(
+            of: #"[,;]?\s*fixed witness\s+webp-usfx-[A-Za-z0-9-]+"#,
+            with: "", options: .regularExpression)
     }
 }

@@ -108,4 +108,37 @@ import XCTest
         XCTAssertTrue(text(next).contains("アリアン"))
     }
 
+    func testAzaziahAppearsAtFirstVerseWithPrimaryOnlySource() async throws {
+        let before = try await lookup(15, 20)
+        XCTAssertFalse(before.occurrences.contains { $0.id == "person:azaziah_547" })
+
+        let first = try await lookup(15, 21)
+        let azaziah = try XCTUnwrap(first.occurrences.first { $0.id == "person:azaziah_547" }?.profile)
+        XCTAssertTrue(first.occurrences.first { $0.id == "person:azaziah_547" }?.directlyNamed == true)
+        XCTAssertEqual(azaziah.profile.knownBy, Verse(chapter: 15, verse: 21))
+        XCTAssertFalse(azaziah.profile.summaryJa.isEmpty)
+        XCTAssertNil(azaziah.wikipedia)
+        XCTAssertFalse(azaziah.sources.isEmpty)
+        XCTAssertTrue(azaziah.sources.allSatisfy { ($0.category ?? "primary-text") == "primary-text" })
+        XCTAssertTrue(azaziah.sources.contains { $0.url.contains("/1CH15.htm#V21") })
+    }
+
+    func testPelet2310StaysWithAzmavethAndDoesNotLinkJahdaisVerse() async throws {
+        let azmavethBranch = try await lookup(12, 3)
+        let pelet2310 = try XCTUnwrap(azmavethBranch.occurrences.first { $0.id == "person:pelet_2310" }?.profile)
+        XCTAssertTrue(text(pelet2310).contains("アズマウェト"))
+        XCTAssertFalse(pelet2310.profile.summaryJa.contains("ヤハダイ"))
+        XCTAssertFalse(azmavethBranch.occurrences.contains { $0.id == "person:pelet_2309" })
+
+        let jahdaiBranch = try await lookup(2, 47)
+        // The other namesake is not required to be included in this partial catalog.
+        if let pelet2309 = jahdaiBranch.occurrences.first(where: { $0.id == "person:pelet_2309" })?.profile {
+            XCTAssertTrue(text(pelet2309).contains("ヤハダイ"))
+            XCTAssertFalse(pelet2309.profile.summaryJa.contains("アズマウェト"))
+        }
+        let beforeNaming = try await lookup(12, 1)
+        XCTAssertFalse(beforeNaming.occurrences.contains { $0.id == "person:pelet_2310" })
+        XCTAssertFalse(jahdaiBranch.occurrences.contains { $0.id == "person:pelet_2310" })
+    }
+
 }
