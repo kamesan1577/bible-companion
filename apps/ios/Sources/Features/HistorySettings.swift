@@ -66,7 +66,7 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Section("YouVersionから解説を読む") {
-                Button("YouVersionから解説を読む準備") { store.showAISetup = true }
+                Button("共有AIの設定を確認") { store.showAISetup = true }
                 Text("初回のログインとAI利用の確認をここで行えます。読書の途中でも開けます。").bibleTextStyle(.caption)
                 Button("共有の手順を見る", systemImage: "questionmark.circle") { showGuide = true }
             }

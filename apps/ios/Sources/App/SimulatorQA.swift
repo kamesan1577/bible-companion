@@ -18,7 +18,7 @@ struct SimulatorQA: View {
     }
     @ViewBuilder private func snapshot(_ screen: String) -> some View {
         switch screen {
-        case "initial", "reading", "entity-pilot-reading", "entity-acts-early", "entity-acts-late", "entity-existing-map", "entity-rom-early", "entity-rom-jacob", "entity-rom-late", "entity-lev-early", "entity-lev-sinai", "entity-lev-jacob", "entity-num-hoshea", "entity-num-gilead", "entity-jos-bohan", "entity-jos-alias", "entity-jos-burial", "entity-jdg-dan", "entity-jdg-luz", "entity-rut-early", "entity-1sa-jacob", "entity-1sa-ahimelech", "entity-2sa-dual", "entity-2ki-jacob", "entity-2ki-adrammelech", "entity-1ch-israel", "entity-1ch-israel-six", "entity-1ch-ephraim", "entity-1ch-jabesh", "entity-1ch-baalah", "entity-2ch-uncovered", "entity-2ch-joash": ReadingView()
+        case "home", "initial", "reading", "entity-pilot-reading", "entity-acts-early", "entity-acts-late", "entity-existing-map", "entity-rom-early", "entity-rom-jacob", "entity-rom-late", "entity-lev-early", "entity-lev-sinai", "entity-lev-jacob", "entity-num-hoshea", "entity-num-gilead", "entity-jos-bohan", "entity-jos-alias", "entity-jos-burial", "entity-jdg-dan", "entity-jdg-luz", "entity-rut-early", "entity-1sa-jacob", "entity-1sa-ahimelech", "entity-2sa-dual", "entity-2ki-jacob", "entity-2ki-adrammelech", "entity-1ch-israel", "entity-1ch-israel-six", "entity-1ch-ephraim", "entity-1ch-jabesh", "entity-1ch-baalah", "entity-2ch-uncovered", "entity-2ch-joash": ReadingView()
         case "entity-ui-baseline": Baseline018ReadingView()
         case "romans-opening", "romans-doxology":
             let passage = screen == "romans-opening" ? Passage(book: "ROM", start: Verse(chapter: 1, verse: 1), end: Verse(chapter: 1, verse: 1)) : Passage(book: "ROM", start: Verse(chapter: 16, verse: 25), end: Verse(chapter: 16, verse: 27))
@@ -74,7 +74,13 @@ struct SimulatorQA: View {
             }
         }
         .sheet(isPresented: $store.showAISetup) { AISetupView().environmentObject(store) }
-        .task { await client.setToken("simulator-fixture-only"); store.configureSimulatorQA(client: client); await store.loadAIPolicy(); ready = true }
+        .task { await client.setToken("simulator-fixture-only"); store.configureSimulatorQA(client: client); await store.loadAIPolicy()
+            if ProcessInfo.processInfo.arguments.contains("--qa-clear-access") { try? ShareInbox.clearAIAccess() }
+            if ProcessInfo.processInfo.arguments.contains("--qa-expiring-access"), let owner = store.account?.id {
+                try? ShareInbox.setOwner(owner)
+                try? ShareInbox.saveAIAccess(ShareAIAccess(token: "bcs1_" + String(repeating: "a", count: 64), ownerID: owner, expiresAt: Date().addingTimeInterval(3).timeIntervalSince1970))
+            }
+            ready = true }
     }
 }
 private final class SimulatorQAProtocol: URLProtocol, @unchecked Sendable {
@@ -83,12 +89,13 @@ private final class SimulatorQAProtocol: URLProtocol, @unchecked Sendable {
         func next() -> Int { lock.lock(); defer { lock.unlock() }; value += 1; return value }
     }
     private static let standardCounter = Counter()
+    private var delayedResponse: DispatchWorkItem?
     override class func canInit(with request: URLRequest) -> Bool { true }
     override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
     override func startLoading() {
         guard let url = request.url, url.host == "fixture.example.org" else { client?.urlProtocol(self, didFailWithError: URLError(.unsupportedURL)); return }
         var policy = #"{"allowedAnswerModes":["grounded-generation"],"defaultAnswerMode":"grounded-generation","groundedPolicyVersion":"fixture-v1","groundedNoticeJa":"固定データ","workersAiConsent":true,"shareAiEnabled":false,"shareAiConsent":false,"groundedConsent":{"accepted":true,"policyVersion":"fixture-v1"}}"#
-        if ProcessInfo.processInfo.arguments.contains("--qa-share-enabled") { policy = policy.replacingOccurrences(of: "\"shareAiEnabled\":false", with: "\"shareAiEnabled\":true") }
+        if ProcessInfo.processInfo.arguments.contains("--qa-share-enabled") { policy = policy.replacingOccurrences(of: "\"shareAiEnabled\":false", with: "\"shareAiEnabled\":true").replacingOccurrences(of: "\"shareAiConsent\":false", with: "\"shareAiConsent\":true") }
         var bodyData = request.httpBody ?? Data()
         if bodyData.isEmpty, let stream = request.httpBodyStream {
             stream.open(); defer { stream.close() }; var bytes = [UInt8](repeating: 0, count: 1024)
@@ -98,7 +105,17 @@ private final class SimulatorQAProtocol: URLProtocol, @unchecked Sendable {
         let passage: [String: Any] = ["book":"ACT","start":["chapter":23,"verse":1],"end":["chapter":23,"verse":1]]
         var ok = url.path == "/v1/me/ai-policy"
         var data = Data((ok ? policy : #"{"error":{"code":"fixture_no_mutation","message":"描画確認では外部に送信しません"}}"#).utf8)
-        if request.httpMethod == "POST", url.path == "/v1/conversations" {
+        if request.httpMethod == "POST", url.path == "/v1/me/share-access", ProcessInfo.processInfo.arguments.contains("--qa-share-success") {
+            ok = true
+            data = try! JSONEncoder().encode(ShareAIAccess(token: "bcs1_" + String(repeating: "a", count: 64), ownerID: "00000000-0000-4000-8000-000000000123", expiresAt: Date().addingTimeInterval(3600).timeIntervalSince1970))
+            if ProcessInfo.processInfo.arguments.contains("--qa-share-slow") {
+                let responseData = data
+                let work = DispatchWorkItem { [weak self] in self?.complete(data: responseData, url: url, ok: true) }
+                delayedResponse = work
+                DispatchQueue.global().asyncAfter(deadline: .now() + 15, execute: work)
+                return
+            }
+        } else if request.httpMethod == "POST", url.path == "/v1/conversations" {
             ok = true
             data = try! JSONSerialization.data(withJSONObject: ["id":"00000000-0000-4000-8000-000000000123","importId":"00000000-0000-4000-8000-000000000123","passage":passage,"readingBoundary":passage,"spoilerAllowed":false,"createdAt":0])
         } else if request.httpMethod == "POST", (url.path.hasSuffix("/questions") || url.path.hasSuffix("/explanation")) {
@@ -106,9 +123,12 @@ private final class SimulatorQAProtocol: URLProtocol, @unchecked Sendable {
             let answer = url.path.hasSuffix("/explanation") ? "固定標準解説\(Self.standardCounter.next())" : "固定データ: " + (fields["question"] as? String ?? "送信")
             data = try! JSONSerialization.data(withJSONObject: ["requestId":fields["requestId"] ?? "00000000-0000-4000-8000-000000000123","status":"complete","result":["answer":answer,"status":"answered","citations":[],"modelId":"fixture-no-provider","modelInvoked":false,"mode":"grounded-generation","warnings":[],"usage":[:],"timing":[:]]])
         }
+        complete(data: data, url: url, ok: ok)
+    }
+    private func complete(data: Data, url: URL, ok: Bool) {
         client?.urlProtocol(self, didReceive: HTTPURLResponse(url: url, statusCode: ok ? 200 : 409, httpVersion: "HTTP/1.1", headerFields: ["Content-Type":"application/json"])!, cacheStoragePolicy: .notAllowed)
         client?.urlProtocol(self, didLoad: data); client?.urlProtocolDidFinishLoading(self)
     }
-    override func stopLoading() {}
+    override func stopLoading() { delayedResponse?.cancel(); delayedResponse = nil }
 }
 #endif

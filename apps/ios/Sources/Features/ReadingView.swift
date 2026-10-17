@@ -58,15 +58,23 @@ struct ReadingView: View {
                 .accessibilityAdjustableAction { direction in changeSection(direction == .increment ? 1 : -1) }
             } else {
                 ScrollView { BibleReadingColumn {
-                    BibleStateView(title: "読みたい箇所を選びましょう", message: "YouVersionの共有メニューから「聖書コンパニオン」を選んでください。", systemImage: BibleTheme.Symbol.reading)
-                    NavigationLink("聖書の説明を章から探す") { StaticCommentaryBrowser() }
-                    NavigationLink("まずはサンプルを読む") { SampleReadingPreview() }
-                    Button("共有の手順を図で見る") { showGuide = true }
-                    if store.account == nil { Button("YouVersionから解説を読む準備") { store.showAISetup = true }.buttonStyle(.borderedProminent); signInStatus }
-                    else {
-                        Button("YouVersionから解説を読む準備") { store.showAISetup = true }.buttonStyle(.borderedProminent)
-                        Button("書名・章・節を入力する") { store.showImport = true }
+                    BibleSectionHeader(title: "聖書の人物と場所", subtitle: "気になる内容から、説明を開いてみましょう。")
+                    ReadingDiscoveryCard()
+                    NavigationLink { StaticCommentaryBrowser() } label: {
+                        BibleActionLabel(title: "書名・章から説明を探す", systemImage: "books.vertical")
+                    }.buttonStyle(.glass).accessibilityIdentifier("browse-chapters")
+                    BibleReadingSurface {
+                        VStack(alignment: .leading, spacing: BibleTheme.Space.lg) {
+                            TimelineView(.periodic(from: .now, by: 1)) { timeline in
+                                ShareAIStatusLabel(status: ShareAIStatus.read(store: store, at: timeline.date))
+                            }
+                            Button("共有AIの設定を確認", systemImage: "square.and.arrow.up") { store.showAISetup = true }
+                                .buttonStyle(.glass).accessibilityIdentifier("share-ai-settings")
+                            Button("YouVersionから共有する手順") { showGuide = true }
+                        }
                     }
+                    if store.account == nil { signInStatus }
+                    else { Button("書名・章・節を入力する") { store.showImport = true } }
                     if !store.pendingShares.isEmpty { Button("YouVersionから受け取った箇所を開く") { store.showImport = true } }
                 } }
             }
@@ -78,7 +86,7 @@ struct ReadingView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Menu {
-                    Button("YouVersionから解説を読む準備", systemImage: "checklist") { store.showAISetup = true }
+                    Button("共有AIの設定を確認", systemImage: "checklist") { store.showAISetup = true }
                     Button("箇所を追加", systemImage: "plus") { store.showImport = true }
                     Button("再読み込み", systemImage: "arrow.clockwise") { store.loadReading() }.disabled(store.selected == nil)
                     if let selected = store.selected { Label("履歴に保存済み", systemImage: "bookmark.fill"); Text(selected.translation ?? "訳名なし") }
@@ -99,7 +107,7 @@ struct ReadingView: View {
                         if store.account == nil { store.showAISetup = true }
                         else { store.ask() }
                     }
-                    Button("YouVersionから解説を読む準備") { store.showAISetup = true }
+                    Button("共有AIの設定を確認") { store.showAISetup = true }
                 } label: { BibleActionLabel(title: "AIで解説・質問", systemImage: BibleTheme.Symbol.question).frame(maxWidth: .infinity) }
                 .buttonStyle(.glass).padding(.horizontal, BibleTheme.Space.page).padding(.vertical, BibleTheme.Space.sm)
             }

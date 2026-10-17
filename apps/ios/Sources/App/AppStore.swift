@@ -412,6 +412,7 @@ import CompanionCore
         guard sessionEpoch == expectedEpoch, account?.id == owner, shareAccessRevision == revision,
               !isConsentUpdating, aiPolicy?.shareAiEnabled == true, aiPolicy?.permits(.groundedGeneration) == true,
               value.isValid(owner: owner) else { throw NetworkFailure.cancelled }
+        try Task.checkCancellation()
         try ShareInbox.saveAIAccess(value)
         _ = try ShareInbox.verifiedAIAccess(expectedOwner: owner)
         await loadAIPolicy()
@@ -469,6 +470,7 @@ extension AppStore {
             reading = nil
             sourceExcerpt = nil
         }
+        if ProcessInfo.processInfo.arguments.contains("--qa-screen=home") { selected = nil; reading = nil; sourceExcerpt = nil }
         if ProcessInfo.processInfo.arguments.contains("--qa-screen=initial") { selected = nil; reading = nil; sourceExcerpt = nil; account = nil }
 
     }
