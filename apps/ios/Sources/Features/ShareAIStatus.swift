@@ -20,9 +20,12 @@ import CompanionCore
             return Self(title: "共有画面では現在質問できません", detail: "章や人物の収録済みの説明は、そのまま読めます。", ready: false)
         }
         do {
-            let access = try ShareInbox.verifiedAIAccess(expectedOwner: owner)
+            let access = try ShareInbox.renewableAIAccess(expectedOwner: owner)
             guard SharePreparationReadiness.isSaved(policy: policy, owner: owner, access: access, at: date) else {
                 return Self(title: "質問するための設定が必要です", detail: "現在の利用条件を確認してください。", ready: false)
+            }
+            if access.canRenew(at: date) {
+                return Self(title: "質問する設定を保存しました", detail: "設定は共有画面でも自動更新されます。毎日保存し直す必要はありません。元のログインが切れた場合は、アプリでログインし直してください。", ready: true)
             }
             return Self(title: "質問する設定を保存しました", detail: "YouVersionで節を選び、共有から「聖書コンパニオン」を開くと質問できます。質問を送信するとAIが回答します。通信が必要です。", ready: true, expiresAt: Date(timeIntervalSince1970: access.expiresAt))
         } catch ShareAIAccessReadError.missing {

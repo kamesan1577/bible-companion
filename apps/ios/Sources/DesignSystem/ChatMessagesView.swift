@@ -10,6 +10,10 @@ struct ChatMessagesView: View {
                     Text(entry.role == "user" ? "あなた" : entry.standard ? "最初の解説" : "聖書コンパニオン")
                         .bibleTextStyle(.caption).foregroundStyle(.secondary)
                     Text(entry.text).bibleTextStyle(.body).textSelection(.enabled)
+                    if entry.incomplete == true {
+                        Label("未完了の部分回答です。全体の確認と保存は完了していません。", systemImage: "exclamationmark.circle").bibleTextStyle(.caption)
+                        if let reason = entry.failureReason { Text(reason).bibleTextStyle(.caption) }
+                    }
                     if let answer = entry.answer, !answer.citations.isEmpty {
                         DisclosureGroup("出典を確かめる") {
                             ForEach(answer.citations) { citation in
@@ -55,10 +59,12 @@ struct ChatComposerIcon: View {
     }
 }
 
-/// Plain service-name reference, not an imitation of the OpenAI logo.
+/// Unmodified official OpenAI asset; the separate symbol indicates the external destination.
 struct ChatGPTCopyComposerLabel: View {
     var body: some View {
-        Text("ChatGPT").font(.system(size: 10, weight: .semibold))
-            .dynamicTypeSize(.large).frame(width: 52, height: 44)
+        HStack(spacing: 8) {
+            Image("OpenAIBlossom").renderingMode(.original).resizable().scaledToFit().frame(width: 24, height: 24)
+            Image(systemName: "arrow.up.right.square").font(.system(size: 14)).foregroundStyle(.primary)
+        }.padding(.horizontal, 8).dynamicTypeSize(.large).frame(width: 64, height: 44).accessibilityHidden(true)
     }
 }

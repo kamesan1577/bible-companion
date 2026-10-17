@@ -20,10 +20,8 @@ final class ShareComposeUITests: XCTestCase {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa", "--qa-handoff-owner"]; app.launch(); open(app)
         let field = app.descendants(matching: .any).matching(identifier: "share-question-draft").firstMatch
         field.tap(); field.typeText("URL direct? & # + %")
-        app.buttons["chatgpt-copy-preview"].tap()
-        let urlButton = app.buttons["chatgpt-open-url"]
-        for _ in 0..<8 { if urlButton.exists && urlButton.isHittable { break }; app.swipeUp() }
-        XCTAssertTrue(urlButton.exists); attach(app, "q-share-review-before-open"); urlButton.tap()
+        app.buttons["chatgpt-open-external"].tap()
+        XCTAssertFalse(app.navigationBars["ChatGPTへ渡す"].exists)
         let safari = XCUIApplication(bundleIdentifier: "com.apple.mobilesafari")
         XCTAssertTrue(safari.wait(for: .runningForeground, timeout: 15))
         let wait = expectation(description: "Safari q render"); DispatchQueue.main.asyncAfter(deadline: .now()+5) { wait.fulfill() }; waitForExpectations(timeout: 7)
@@ -31,25 +29,26 @@ final class ShareComposeUITests: XCTestCase {
         app.activate()
     }
     @MainActor func testQuestionURLManualMainAppHandoff() {
-        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa", "--qa-handoff-owner"]; app.launch(); open(app)
+        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa", "--qa-handoff-owner", "--qa-chatgpt-long"]; app.launch(); open(app)
         let field = app.descendants(matching: .any).matching(identifier: "share-question-draft").firstMatch
         field.tap(); field.typeText("URL main? & # + %")
-        app.buttons["chatgpt-copy-preview"].tap()
+        app.buttons["chatgpt-open-external"].tap()
         let stage = app.buttons["chatgpt-stage-main"]
         for _ in 0..<8 { if stage.exists && stage.isHittable { break }; app.swipeUp() }
         stage.tap()
         let notice = app.staticTexts["chatgpt-handoff-notice"]
         expectation(for: NSPredicate(format: "label CONTAINS %@", "10分間"), evaluatedWith: notice); waitForExpectations(timeout: 5)
         attach(app, "q-link-staged-for-main")
-        app.navigationBars["ChatGPTへ渡す"].buttons["閉じる"].tap()
+        app.buttons["chatgpt-fallback-close"].tap()
         XCTAssertEqual(field.value as? String, "URL main? & # + %")
         app.buttons["閉じる"].tap()
         app.terminate(); app.launchArguments = ["--simulator-qa", "--qa-screen=settings", "--qa-handoff-owner"]; app.launch()
-        let main = app.buttons["chatgpt-main-open"]
+        let main = app.buttons["chatgpt-main-copy"]
         for _ in 0..<8 { if main.exists && main.isHittable { break }; app.swipeUp() }
-        XCTAssertTrue(main.waitForExistence(timeout: 10)); attach(app, "q-link-main-review")
-        main.tap(); let safari = XCUIApplication(bundleIdentifier: "com.apple.mobilesafari"); XCTAssertTrue(safari.wait(for: .runningForeground, timeout: 15))
-        attach(safari, "q-link-main-safari-result"); app.activate()
+        XCTAssertTrue(main.waitForExistence(timeout: 10)); XCTAssertFalse(app.buttons["chatgpt-main-open"].exists)
+        attach(app, "q-link-main-long-body-fallback")
+        main.tap(); XCTAssertTrue(app.staticTexts["コピーしました。"].waitForExistence(timeout: 5))
+
     }
     @MainActor func testShareExtensionOfficialOpenAPIProbe() {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch(); open(app)
@@ -86,14 +85,14 @@ final class ShareComposeUITests: XCTestCase {
             XCTAssertEqual(toggle.value as? String, visible ? "1" : "0")
         }
         settings(false)
-        app.terminate(); app.launchArguments = ["--simulator-qa"]; app.launch(); open(app)
-        XCTAssertFalse(app.buttons["chatgpt-copy-preview"].exists)
+        app.terminate(); app.launchArguments = ["--simulator-qa", "--qa-chatgpt-long"]; app.launch(); open(app)
+        XCTAssertFalse(app.buttons["chatgpt-open-external"].exists)
         app.buttons["閉じる"].tap()
         settings(true)
-        app.terminate(); app.launchArguments = ["--simulator-qa"]; app.launch(); open(app)
+        app.terminate(); app.launchArguments = ["--simulator-qa", "--qa-chatgpt-long"]; app.launch(); open(app)
         let field = app.descendants(matching: .any).matching(identifier: "share-question-draft").firstMatch
         field.tap(); field.typeText("ChatGPT draft preserved?")
-        let alternative = app.buttons["chatgpt-copy-preview"]
+        let alternative = app.buttons["chatgpt-open-external"]
         XCTAssertTrue(alternative.isHittable)
         XCTAssertLessThanOrEqual(alternative.frame.maxY, app.buttons["質問を送る"].frame.maxY + 2)
         attach(app, "chatgpt-alternative-keyboard")
@@ -103,6 +102,7 @@ final class ShareComposeUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["chatgpt-copy-content"].label.contains("ChatGPT draft preserved?"))
         attach(app, "chatgpt-explicit-copy-preview")
         app.buttons["chatgpt-copy-confirm"].tap()
+        XCTAssertTrue(field.waitForExistence(timeout: 5))
         XCTAssertEqual(field.value as? String, "ChatGPT draft preserved?")
         XCTAssertTrue(app.staticTexts["AI requests: 0"].exists)
         app.buttons["閉じる"].tap()
@@ -166,6 +166,10 @@ final class ShareComposeUITests: XCTestCase {
         field.tap(); field.typeText(draft)
         XCTAssertTrue(app.buttons["送信した回答を確認"].waitForExistence(timeout:10))
         XCTAssertEqual(field.value as? String,draft)
+        XCTAssertTrue(app.staticTexts["主がモーセを通して人々へ語りかけています。"].exists)
+        XCTAssertTrue(app.staticTexts["未完了の部分回答です。全体の確認と保存は完了していません。"].exists)
+        XCTAssertFalse(app.staticTexts["送信待ち: fail"].exists)
+        XCTAssertTrue(app.staticTexts["送信済み・結果確認中: fail"].exists)
         XCTAssertTrue(app.buttons["質問を送る"].isEnabled)
         XCTAssertGreaterThanOrEqual(app.buttons["質問を送る"].frame.height,44)
         XCTAssertLessThanOrEqual(app.buttons["質問を送る"].frame.maxY,app.keyboards.firstMatch.frame.minY)

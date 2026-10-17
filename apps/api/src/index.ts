@@ -13,7 +13,7 @@ import { exportsApi } from './export';
 import { fail, now, canDebug } from './http';
 import { rateLimit } from './budget';
 import { sharedPreview } from './shared-preview';
-import {shareAccess,shareAi} from './share-ai';
+import { shareAccess, shareAi, shareRenewal } from './share-ai';
 const app = new Hono<AppEnv>();
 app.use('*', async (c, next) => {
   c.set('requestId', crypto.randomUUID());
@@ -53,6 +53,7 @@ app.use('/auth/*', async (c, next) => {
 });
 app.route('/auth', auth);
 app.route('/public', sharedPreview);
+app.route('/share', shareRenewal);
 app.route('/share', shareAi);
 app.use('/v1/*', async (c, next) => {
   const header = c.req.header('Authorization');
@@ -72,7 +73,9 @@ app.use('/v1/*', async (c, next) => {
   await rateLimit(c.env, 'user:' + user.id, 120);
   await next();
 });
-app.get('/v1/me', (c) => c.json({ user: { ...c.get('user'), canDebug: canDebug(c.env, c.get('user')) } }));
+app.get('/v1/me', (c) =>
+  c.json({ user: { ...c.get('user'), canDebug: canDebug(c.env, c.get('user')) } }),
+);
 app.post('/v1/logout', async (c) => {
   await c.env.DB.prepare('DELETE FROM sessions WHERE token_hash=?').bind(c.get('tokenHash')).run();
   return c.body(null, 204);

@@ -41,3 +41,13 @@ final class ChatGPTCopyPromptTests: XCTestCase {
         XCTAssertFalse(handoff.isUsable(ownerID: "A", now: now.addingTimeInterval(-1)))
     }
 }
+
+extension ChatGPTCopyPromptTests {
+    func testLeviticusDuplicateShareRepresentationsAppearOnce() throws {
+        let block = "主はモーセに、次のことを人々に教えるように言いました。\nレビ記 18:1-2 JCB"
+        XCTAssertEqual(SharedTextContent.combine([block, block + "\nhttps://www.bible.com/LEV.18"]), block)
+        let prompt = try ChatGPTCopyPrompt.make(question: "どゆこと", passage: Passage(book: "LEV", start: Verse(chapter: 18, verse: 1), end: Verse(chapter: 18, verse: 2)), translation: "JCB", sharedText: block + "\n" + block)
+        XCTAssertEqual(prompt.components(separatedBy: "主はモーセに").count - 1, 1)
+        XCTAssertTrue(prompt.contains("どゆこと"))
+    }
+}

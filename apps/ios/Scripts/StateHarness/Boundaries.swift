@@ -64,6 +64,14 @@ enum SecurityError: Error { case cancelled }
         guard expectedOwner == nil || expectedOwner == owner else { throw ShareAIAccessReadError.ownerMismatch }
         return try ShareAIAccess.validated(from: JSONEncoder().encode(capability), owner: owner)
     }
+    static func renewableAIAccess(expectedOwner: String? = nil) throws -> ShareAIAccess {
+        if unavailable { throw ShareAIAccessReadError.appGroupUnavailable }
+        guard let capability else { throw ShareAIAccessReadError.missing }
+        return try ShareAIAccess.validated(from: JSONEncoder().encode(capability), owner: expectedOwner ?? owner, allowingRenewal: true)
+    }
+    static func currentAIAccess(baseURL: URL, expectedOwner: String? = nil) async throws -> ShareAIAccess {
+        try verifiedAIAccess(expectedOwner: expectedOwner)
+    }
     static func clearAIAccess() throws {
         if unavailable { throw ShareAIAccessReadError.appGroupUnavailable }
         accessClears += 1; capability = nil

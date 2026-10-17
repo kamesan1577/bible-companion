@@ -702,16 +702,108 @@
                         "expiresAt": {
                           "type": "integer",
                           "description": "Unix timestamp in seconds"
+                        },
+                        "scopeId": {
+                          "type": "string"
+                        },
+                        "refreshToken": {
+                          "type": "string"
+                        },
+                        "refreshExpiresAt": {
+                          "type": "integer",
+                          "description": "Unix timestamp in seconds"
                         }
                       },
                       "required": [
                         "token",
                         "ownerId",
-                        "expiresAt"
+                        "expiresAt",
+                        "scopeId",
+                        "refreshToken",
+                        "refreshExpiresAt"
                       ],
                       "additionalProperties": false
                     }
                   ]
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/share/renew": {
+      "post": {
+        "summary": "Renew short-lived access in the same share conversation scope",
+        "description": "No inference or new consent. Refresh credential is bounded by the parent login; live logout, consent, policy and account epoch are checked. Renewal preserves the original share scope. General API sessions and other scopes remain inaccessible.",
+        "security": [
+          {
+            "shareRefreshBearer": []
+          }
+        ],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "token": {
+                      "type": "string"
+                    },
+                    "ownerId": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "expiresAt": {
+                      "type": "integer",
+                      "description": "Unix timestamp in seconds"
+                    },
+                    "scopeId": {
+                      "type": "string"
+                    },
+                    "refreshToken": {
+                      "type": "string"
+                    },
+                    "refreshExpiresAt": {
+                      "type": "integer",
+                      "description": "Unix timestamp in seconds"
+                    }
+                  },
+                  "required": [
+                    "token",
+                    "ownerId",
+                    "expiresAt",
+                    "scopeId",
+                    "refreshToken",
+                    "refreshExpiresAt"
+                  ],
+                  "additionalProperties": false
                 }
               }
             }
@@ -2833,6 +2925,11 @@
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer"
+      },
+      "shareRefreshBearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Share-only renewal credential, bounded by the parent session. Not a general account session."
       },
       "shareBearer": {
         "type": "http",

@@ -535,8 +535,12 @@ op('get', '/v1/me/ai-policy', 'Read allowed answer modes and current experimenta
   }),
 });
 op('post', '/v1/me/share-access', 'Enable or disable limited Share Extension AI access', {
-  input: object({enabled:bool}), output:{oneOf:[object({enabled:{const:false}}),object({token:text,ownerId:uuid,expiresAt:time})]},
+  input: object({enabled:bool}), output:{oneOf:[object({enabled:{const:false}}),object({token:text,ownerId:uuid,expiresAt:time,scopeId:text,refreshToken:text,refreshExpiresAt:time})]},
   description:'Requires current AI consent. Issues a share-only capability for at most24hours, bounded by the parent session expiry. It cannot authorize general API calls, developer operations, or existing unrelated conversations. Disabling, logout, consent withdrawal and data-epoch change stop access.',
+});
+op('post', '/share/renew', 'Renew short-lived access in the same share conversation scope', {
+  authScheme:'shareRefreshBearer',input:object({}),output:object({token:text,ownerId:uuid,expiresAt:time,scopeId:text,refreshToken:text,refreshExpiresAt:time}),
+  description:'No inference or new consent. Refresh credential is bounded by the parent login; live logout, consent, policy and account epoch are checked. Renewal preserves the original share scope. General API sessions and other scopes remain inaccessible.',
 });
 op('post', '/share/start', 'Create canonical reading references for this share capability', {
   authScheme:'shareBearer', input:object({requestId:uuid,sharedText:{type:'string',minLength:1,maxLength:20000}}),
@@ -745,7 +749,8 @@ const spec = {
   },
   servers: [{ url: 'http://localhost:8787', description: 'Local development only' }],
   paths,
-  components: { securitySchemes: { bearerAuth: { type: 'http', scheme: 'bearer' }, shareBearer: {type:'http',scheme:'bearer',description:'Expiring Share Extension-only capability; never a general API session'} }, schemas },
+  components: { securitySchemes: { bearerAuth: { type: 'http', scheme: 'bearer' }, shareRefreshBearer: {type:'http',scheme:'bearer',description:'Share-only renewal credential, bounded by the parent session. Not a general account session.'},
+      shareBearer: {type:'http',scheme:'bearer',description:'Expiring Share Extension-only capability; never a general API session'} }, schemas },
 };
 writeFileSync(
   new URL('../docs/openapi.json', import.meta.url),

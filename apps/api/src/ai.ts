@@ -172,6 +172,8 @@ aiRoutes.post('/me/consents', async (c) => {
       ['groundedGenerationPolicyVersion', v.groundedGeneration?.policyVersion ?? null],
     );
   }
+  const revoking = v.workersAi === false || v.groundedGeneration?.accepted === false;
+  if (revoking) changes.push(['shareAiConsent', false]);
   const result = await c.env.DB.prepare(
     'UPDATE users SET settings_json=json_set(settings_json,' +
       changes.map(([key]) => "'$." + key + "',json(?)").join(',') +
@@ -180,6 +182,12 @@ aiRoutes.post('/me/consents', async (c) => {
     .bind(...changes.map(([, value]) => JSON.stringify(value)), c.get('user').id)
     .first<{ settings_json: string }>();
   if (!result) fail(404, 'not_found', 'Account not found');
+  if (revoking)
+    await c.env.DB.prepare(
+      'UPDATE share_ai_access SET expires_at=0,refresh_hash=NULL,refresh_expires_at=0 WHERE user_id=?',
+    )
+      .bind(c.get('user').id)
+      .run();
   const settings = JSON.parse(result.settings_json);
   return c.json({ workersAi: settings.workersAiConsent === true });
 });

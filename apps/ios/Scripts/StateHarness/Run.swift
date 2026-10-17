@@ -204,6 +204,21 @@ import CompanionCore
     precondition(grantedThenSaveFails.aiPolicy?.shareAiConsent == false)
     print("PASS successful grounded-consent update does not mask capability save failure")
 
+    // Foreground refresh and a manual save share one issuance instead of cancelling each other.
+    RunStateChecks.reset()
+    ShareIssueProtocol.state.configure(holdShareIssue: true)
+    let concurrent = try await makeStore(); let concurrentEpoch = concurrent.sessionEpoch
+    let firstSave = Task { try await concurrent.enableShareAI(expectedEpoch: concurrentEpoch) }
+    try await RunStateChecks.waitForHarness { ShareIssueProtocol.state.shareIssueCount == 1 }
+    let secondSave = Task { try await concurrent.enableShareAI(expectedEpoch: concurrentEpoch) }
+    for _ in 0..<10 { await Task.yield() }
+    precondition(ShareIssueProtocol.state.shareIssueCount == 1)
+    ShareIssueProtocol.state.releaseShareIssue.signal()
+    try await firstSave.value; try await secondSave.value
+    precondition(ShareIssueProtocol.state.shareIssueCount == 1)
+    _ = try ShareInbox.verifiedAIAccess(expectedOwner: account.id)
+    print("PASS simultaneous share saves coalesce and both read back successfully")
+
     // An expired saved token is replaced when policy still allows sharing.
     RunStateChecks.reset()
     ShareIssueProtocol.state.configure(holdShareIssue: false)

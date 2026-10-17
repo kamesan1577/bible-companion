@@ -105,7 +105,7 @@ extension AnswerStreamTests {
     }
     func testAccountSwitchRejectsLateStreamResult() async throws {
         let handle=StreamHandle(), received=expectation(description:"old owner response started")
-        StreamingProtocol.started={ transport in handle.store(transport);received.fulfill() }
+        StreamingProtocol.started={ transport in handle.store(transport); transport.emit("event: preview\ndata: {\"text\":\"別アカウントへ渡してはいけない途中回答\"}\n\n"); received.fulfill() }
         let api=try streamingAPI();await api.setToken("alice")
         let task=Task { try await api.postAnswer("/v1/conversations/id/questions",body:["question":"private"],requestID:"request",update:{_ in}) }
         await fulfillment(of:[received],timeout:3);await api.setToken("bob");handle.emit(completedWire)
@@ -121,5 +121,37 @@ extension AnswerStreamTests {
         let wire=completedWire
         StreamingProtocol.started={ $0.emit(wire,finish:true) }
         do { _=try await api.postAnswer("/v1/conversations/id/questions",body:["question":"private"],requestID:"different",update:{_ in});XCTFail("wrong request accepted") } catch { XCTAssertEqual(error as? NetworkFailure,.invalidResponse) }
+    }
+}
+
+extension AnswerStreamTests {
+    func testInterruptedAnswerSurvivesCodingAndCompletesInPlace() throws {
+        var t = ChatTranscript(); t.submit(id: "r", question: "解説して", standard: false)
+        t.interrupt(id: "r", text: "主がモーセに語っています。", standard: false, failure: .server(status: 503, code: "timeout"))
+        let restored = try JSONDecoder().decode(ChatTranscript.self, from: JSONEncoder().encode(t))
+        XCTAssertEqual(restored.entries.last?.incomplete, true); XCTAssertEqual(restored.entries.last?.text, "主がモーセに語っています。")
+        XCTAssertTrue(restored.entries.last?.failureReason?.contains("timeout") == true)
+        t.discardUnanswered(id: "r"); XCTAssertEqual(t.entries.count, 2)
+        let complete = try JSONDecoder().decode(AnswerResult.self, from: Data(#"{"answer":"完了した回答","status":"answered","citations":[],"modelId":"fixture","modelInvoked":false,"mode":"grounded-generation","warnings":[],"usage":{},"timing":{}}"#.utf8))
+        t.complete(id: "r", answer: complete, standard: false)
+        XCTAssertEqual(t.entries.count, 2); XCTAssertNil(t.entries.last?.incomplete); XCTAssertEqual(t.entries.last?.text, "完了した回答")
+    }
+    func testReceiverRetainsOnlyValidatedPreviewOnFailureAndRejectsAuthRetention() throws {
+        let receiver = AnswerStreamReceiver(update: { _ in })
+        try receiver.receive(Data("event: preview\ndata: {\"text\":\"モーセへの言葉\"}\n\nevent: failure\ndata: {\"status\":503,\"code\":\"provider_error\"}\n\n".utf8))
+        XCTAssertEqual(receiver.latestPreview, "モーセへの言葉"); XCTAssertEqual(receiver.failure, .server(status: 503, code: "provider_error"))
+        XCTAssertFalse(PartialAnswerFailure.mayRetain(.unauthenticated)); XCTAssertFalse(PartialAnswerFailure.mayRetain(.server(status: 409, code: "source_policy_changed")))
+    }
+}
+
+extension AnswerStreamTests {
+    func testRealTransportCarriesPartialTextAcrossFailureAndMissingTerminal() async throws {
+        for ending in ["event: failure\ndata: {\"status\":503,\"code\":\"timeout\"}\n\n", ""] {
+            let wire = "event: preview\ndata: {\"text\":\"モーセへの言葉\"}\n\n" + ending
+            StreamingProtocol.started = { $0.emit(wire, finish: true) }
+            let api = try streamingAPI(); await api.setToken("alice")
+            do { _ = try await api.postAnswer("/share/conversations/id/questions", body: ["question":"解説して"], requestID: "request", update: {_ in}); XCTFail("incomplete accepted") }
+            catch let failure as PartialAnswerFailure { XCTAssertEqual(failure.text, "モーセへの言葉") }
+        }
     }
 }

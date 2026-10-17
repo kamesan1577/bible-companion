@@ -60,6 +60,7 @@ public struct AnswerEventParser: Sendable {
 /// URLSession's serialized delegate queue owns this receiver until transfer completion.
 final class AnswerStreamReceiver: @unchecked Sendable {
     var parser = AnswerEventParser()
+    var latestPreview = ""
     var result: RequestResult?
     var failure: NetworkFailure?
     private var detected: Bool?
@@ -84,6 +85,7 @@ final class AnswerStreamReceiver: @unchecked Sendable {
                 struct Preview: Decodable { let text: String }
                 let value = try JSONDecoder().decode(Preview.self, from: payload)
                 guard value.text.utf16.count <= 2000 else { throw NetworkFailure.invalidResponse }
+                latestPreview = value.text
                 update(.preview(value.text))
             case "complete": result = try JSONDecoder().decode(RequestResult.self, from: payload)
             case "failure":
@@ -92,6 +94,25 @@ final class AnswerStreamReceiver: @unchecked Sendable {
                 failure = value.status == 401 ? .unauthenticated : .server(status: value.status, code: value.code)
             default: throw NetworkFailure.invalidResponse
             }
+        }
+    }
+}
+
+public struct PartialAnswerFailure: Error, Sendable {
+    public let underlying: NetworkFailure
+    public let text: String
+    public static func mayRetain(_ failure: NetworkFailure) -> Bool {
+        if failure == .unauthenticated { return false }
+        if case .server(_, let code) = failure, ["source_policy_changed", "conversation_policy_changed", "conversation_changed", "grounded_consent_required", "ai_consent_required", "invalid_consent_policy"].contains(code) { return false }
+        return true
+    }
+    public static func diagnostic(_ failure: NetworkFailure) -> String {
+        switch failure {
+        case .server(let status, let code): return "サーバーエラー（\(status) / \(code)）"
+        case .invalidResponse: return "回答の形式または完了通知を確認できませんでした。"
+        case .offline: return "通信が途中で切れたか、応答が時間内に届きませんでした。"
+        case .cancelled: return "受信を中止しました。"
+        default: return failure.userMessage
         }
     }
 }

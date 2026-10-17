@@ -29,6 +29,7 @@ public actor APIClient {
     public func postAnswer<B: Encodable & Sendable>(_ path: String, body: B, requestID: String, update: @escaping @Sendable (AnswerUpdate) -> Void) async throws -> RequestResult {
         let epoch = sessionEpoch
         let receiver = AnswerStreamReceiver(update: update)
+        do {
         let data = try await request(path, method: "POST", body: JSONEncoder().encode(body), receiver: receiver)
         guard sessionEpoch == epoch else { throw NetworkFailure.unauthenticated }
         let result: RequestResult
@@ -40,7 +41,15 @@ public actor APIClient {
         }
         guard result.requestId == requestID else { throw NetworkFailure.invalidResponse }
         return result
+        } catch {
+            let failure = (error as? NetworkFailure) ?? .invalidResponse
+            if sessionEpoch == epoch, !receiver.latestPreview.isEmpty, PartialAnswerFailure.mayRetain(failure) {
+                throw PartialAnswerFailure(underlying: failure, text: receiver.latestPreview)
+            }
+            throw failure
+        }
     }
+
     public func put<B: Encodable & Sendable, T: Decodable & Sendable>(_ path: String, body: B) async throws -> T {
         try await decode(path, method: "PUT", body: JSONEncoder().encode(body))
     }
