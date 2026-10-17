@@ -7,8 +7,8 @@ struct FirstRunGuide: View {
     @State private var step = 0
     @State private var showPreparation = false
     var onPrepare: (() -> Void)? = nil
-    private let titles = ["① 最初に準備する", "② YouVersionで節を選んで共有", "③ 解説を読んで質問する"]
-    private let instructions = ["共有を始める前に、アプリで解説を使う準備をします。ログインし、送る情報と利用条件を確認してください。", "YouVersionで読みたい節を選び、共有ボタンを押します。共有先から「聖書コンパニオン」を選んでください。", "共有画面に選んだ箇所の解説が表示されます。気になったことは、その画面から質問できます。"]
+    private let titles = ["① 最初に準備する", "② YouVersionで節を選んで共有", "③ 質問を入力して送信する"]
+    private let instructions = ["共有を始める前に、アプリで共有画面から質問する準備をします。ログインし、送る情報と利用条件を確認してください。", "YouVersionで読みたい節を選び、共有ボタンを押します。共有先から「聖書コンパニオン」を選んでください。", "共有画面ですぐに質問を入力できます。送信すると、選んだ箇所についてAIが回答します。画面を開くだけではAIへ送信しません。"]
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -47,8 +47,8 @@ struct FirstRunGuide: View {
                     Label("節を選んで共有", systemImage: "square.and.arrow.up").foregroundStyle(Color.accentColor)
                 } else {
                     Label("聖書コンパニオン", systemImage: "book.closed.fill").padding().frame(maxWidth: .infinity).background(Color.accentColor.opacity(0.15), in: RoundedRectangle(cornerRadius: BibleTheme.Radius.inset))
-                    Label("解説を自動で表示", systemImage: "text.book.closed").foregroundStyle(Color.accentColor)
-                    Text("気になったことを質問").padding().frame(maxWidth: .infinity, alignment: .leading).background(Color.secondary.opacity(0.08), in: RoundedRectangle(cornerRadius: BibleTheme.Radius.inset))
+                    Label("質問を入力", systemImage: "text.bubble").foregroundStyle(Color.accentColor)
+                    Text("質問を送信するとAIが回答").padding().frame(maxWidth: .infinity, alignment: .leading).background(Color.secondary.opacity(0.08), in: RoundedRectangle(cornerRadius: BibleTheme.Radius.inset))
                 }
             }.padding(BibleTheme.Space.md)
         }
