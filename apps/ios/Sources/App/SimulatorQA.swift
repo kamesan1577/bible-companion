@@ -64,6 +64,7 @@ struct SimulatorQA: View {
             } else {
             List {
                 Text("Simulator固定データ · 通信・実認証なし").bibleTextStyle(.caption)
+                ShareLink("質問する共有拡張を開く", item: URL(string: "https://www.bible.com/bible/83/ACT.26.32.JCB?bible-compose-fixture=1&session=\(composeSession)")!)
                 ShareLink("Crash Acts28:15", item: URL(string: "https://bible.com/bible/83/act.28.15.JCB")!)
                 ShareLink("Crash Acts27:2", item: URL(string: "https://bible.com/bible/83/act.27.2.JCB")!)
                 if ready {
@@ -84,7 +85,6 @@ struct SimulatorQA: View {
                 ShareLink("サムエル記上1章を共有する", item: URL(string: "https://www.bible.com/bible/83/1SA.1.1-2.JCB")!)
                 ShareLink("列王記上1章を共有する", item: URL(string: "https://www.bible.com/bible/83/1KI.1.3-5.JCB")!)
                 ShareLink("歴代誌上1章を共有する", item: URL(string: "https://www.bible.com/bible/83/1CH.1.34.JCB")!)
-                ShareLink("質問する共有拡張を開く", item: URL(string: "https://www.bible.com/bible/83/ACT.26.32.JCB?bible-compose-fixture=1&session=\(composeSession)")!)
                 ShareLink("実際の共有拡張を開く", item: URL(string: "https://www.bible.com/bible/83/ACT.23.1.JCB")!)
             }.navigationTitle("描画確認").bibleCanvas()
             }

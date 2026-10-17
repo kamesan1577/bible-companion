@@ -66,3 +66,13 @@ The supplied IMG_4372 shows startup explanation generation hiding the composer. 
 Offline regression cases include the consecutive questions “じゃあパウロは上訴しなければよかったの？”, “パウロってバカだったってこと？”, “結局なんで上訴したの？”, the short question “上訴って？”, and a genuinely unknown inner-motive question. Contract tests separately check question/history forwarding, instructions for natural direct answers and reasoned interpretation, retained factual provenance, rejection of invented quotations, and preceding appeal retrieval. They do not measure real Gemma answer quality.
 
 A live evaluation must separately score: (1) directness—does the first sentence answer the question; (2) naturalness—no generic provenance preamble or repeated disclaimer; (3) factuality—facts match evidence, interpretation has reasons, uncertain motives are not invented. Existing application-session/budget-verification limitations still prevent a consent-preserving live Gemma run. No substitute fixture is presented as real inference.
+
+### Final native verification
+
+Native runs passed individually for immediate composition/queued conversation/reopen (`09-35-21`), unavailable setup (`09-40-54`), the three place-map scenarios (`09-52-49`), and maximum accessibility text size with an interrupted response (`09-57-51`). All are actual Share Extension runs, with synthetic transport only. The final large-text check also asserts the full send target is at least 44 points tall and wholly above the keyboard. The input scrolls within a 120-point maximum height; icon controls keep a stable 44-point target, and the shared-text header collapses to the reference while editing.
+
+![Immediate share opening, zero AI dispatches](verification/conversation/share-immediate-open.png)
+
+![Two chronological turns and a preserved draft; synthetic answers](verification/conversation/share-immediate-conversation.png)
+
+![Maximum accessibility text size, bounded composer and full send target](verification/conversation/share-large-text-keyboard-send.png)

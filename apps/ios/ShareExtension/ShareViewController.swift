@@ -8,7 +8,7 @@ import CompanionCore
     private let model = SharedPreviewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        let host = UIHostingController(rootView: SharedPreviewView(model: model, close: { [weak self] in self?.extensionContext?.completeRequest(returningItems: nil) }))
+        let host = UIHostingController(rootView: SharedPreviewView(model: model, close: { [weak self] in self?.view.endEditing(true); self?.extensionContext?.completeRequest(returningItems: nil) }))
         addChild(host); view.addSubview(host.view); host.view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([host.view.leadingAnchor.constraint(equalTo: view.leadingAnchor), host.view.trailingAnchor.constraint(equalTo: view.trailingAnchor), host.view.topAnchor.constraint(equalTo: view.topAnchor), host.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
         host.didMove(toParent: self)
@@ -39,7 +39,7 @@ import CompanionCore
                 do { try ShareInbox.enqueue(text) }
                 catch let accessError as ShareAIAccessReadError { model.storageNotice = SharedPreviewModel.accessMessage(for: accessError) }
                 catch { model.storageNotice = "共有内容をアプリへ安全に引き継いだことを確認できません。ここに表示される範囲だけを確認し、続ける場合はこの画面を閉じてYouVersionから共有し直してください。" }
-#if DEBUG
+#if DEBUG && targetEnvironment(simulator)
                 if text.contains("bible-compose-fixture=1") { await configureShareComposeFixture(model) }
                 else { model.prepare() }
 #else

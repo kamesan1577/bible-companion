@@ -19,17 +19,19 @@ struct SharedScriptureHeader: View {
     var body: some View {
         VStack(alignment: .leading, spacing: BibleTheme.Space.xs) {
             HStack {
-                Text("\(passage.label) · \(translation ?? "訳名なし")").bibleTextStyle(.caption)
+                Text("\(passage.label) · \(translation ?? "訳名なし")").bibleTextStyle(.caption).lineLimit(compact ? 1 : 2).minimumScaleFactor(compact ? 0.5 : 1)
                 Spacer()
                 if !compact, bodyText != nil {
                     Button { expanded.toggle() } label: { Text("本文").bibleTextStyle(.caption) }.accessibilityLabel(expanded ? "折り畳む" : "本文を展開").frame(minWidth: BibleTheme.Layout.minimumTouchTarget, minHeight: BibleTheme.Layout.minimumTouchTarget)
                 }
             }
-            if let bodyText {
-                if expanded && !compact {
-                    ScrollView { Text(bodyText).bibleTextStyle(.body).textSelection(.enabled).frame(maxWidth: .infinity, alignment: .leading) }.frame(maxHeight: BibleTheme.Layout.minimumTouchTarget * 3)
-                } else { Text(bodyText).bibleTextStyle(.caption).lineLimit(compact ? 1 : 2).accessibilityLabel("共有本文：\(bodyText)") }
-            } else { Text("共有に本文が含まれていません。本文付きで共有すると、ここに表示します。").bibleTextStyle(.caption).lineLimit(compact ? 1 : 2).bibleForeground(.textSecondary) }
+            if !compact {
+                if let bodyText {
+                    if expanded && !compact {
+                        ScrollView { Text(bodyText).bibleTextStyle(.body).textSelection(.enabled).frame(maxWidth: .infinity, alignment: .leading) }.frame(maxHeight: BibleTheme.Layout.minimumTouchTarget * 3)
+                    } else { Text(bodyText).bibleTextStyle(.caption).lineLimit(compact ? 1 : 2).accessibilityLabel("共有本文：\(bodyText)") }
+                } else { Text("共有に本文が含まれていません。本文付きで共有すると、ここに表示します。").bibleTextStyle(.caption).lineLimit(compact ? 1 : 2).bibleForeground(.textSecondary) }
+            }
         }.padding(.horizontal, BibleTheme.Space.page).padding(.vertical, BibleTheme.Space.sm).bibleCanvas().accessibilityIdentifier("shared-scripture-header")
     }
 }

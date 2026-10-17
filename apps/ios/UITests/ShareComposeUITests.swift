@@ -9,7 +9,12 @@ final class ShareComposeUITests: XCTestCase {
         let candidates = app.cells.matching(identifier: "聖書コンパニオン")
         XCTAssertTrue(candidates.firstMatch.waitForExistence(timeout: 6))
         candidates.element(boundBy: candidates.count - 1).tap()
-        XCTAssertTrue(app.descendants(matching:.any).matching(identifier:"share-question-draft").firstMatch.waitForExistence(timeout: 15))
+        let field = app.descendants(matching:.any).matching(identifier:"share-question-draft").firstMatch
+        if !field.waitForExistence(timeout:2), candidates.count > 0 {
+            let active = candidates.element(boundBy:candidates.count-1)
+            if active.exists && active.isHittable { active.tap() }
+        }
+        XCTAssertTrue(field.waitForExistence(timeout:15))
     }
     @MainActor func testActualExtensionImmediateComposerKeyboardQueueAndReopen() {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
@@ -71,11 +76,12 @@ final class ShareComposeUITests: XCTestCase {
         XCTAssertTrue(app.buttons["送信した回答を確認"].waitForExistence(timeout:10))
         XCTAssertEqual(field.value as? String,draft)
         XCTAssertTrue(app.buttons["質問を送る"].isEnabled)
-        XCTAssertLessThanOrEqual(app.buttons["質問を送る"].frame.maxY,app.keyboards.firstMatch.frame.minY+2)
+        XCTAssertGreaterThanOrEqual(app.buttons["質問を送る"].frame.height,44)
+        XCTAssertLessThanOrEqual(app.buttons["質問を送る"].frame.maxY,app.keyboards.firstMatch.frame.minY)
         attach(app,"share-long-draft-interrupted")
         app.buttons["質問を送る"].tap()
         XCTAssertTrue(app.staticTexts["AI requests: 1"].exists)
-        XCTAssertTrue(app.staticTexts["送信待ち: " + draft.trimmingCharacters(in:.whitespacesAndNewlines)].exists)
+        XCTAssertTrue(app.staticTexts.matching(NSPredicate(format:"label == %@", "送信待ち: " + draft.trimmingCharacters(in:.whitespacesAndNewlines))).firstMatch.exists)
         app.buttons["キーボードを閉じる"].tap()
         app.buttons["閉じる"].tap()
     }

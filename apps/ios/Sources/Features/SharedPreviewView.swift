@@ -398,9 +398,9 @@ struct SharedPreviewView: View {
             }.safeAreaInset(edge: .bottom) {
                 if !model.shareParseFailed {
                     HStack(alignment: .bottom) {
-                        TextField("気になったことを質問", text: $model.draft, axis: .vertical).accessibilityIdentifier("share-question-draft").lineLimit(1...4).focused($composerFocused).bibleTextStyle(.body).submitLabel(.send).onSubmit { model.startQuestion() }
-                        if model.loading { Button { model.cancel() } label: { Image(systemName: "stop.circle").bibleTextStyle(.title).frame(minWidth: 44, minHeight: 44) }.accessibilityLabel("回答の準備をやめる") }
-                        Button { pane = "explanation"; model.startQuestion() } label: { Image(systemName: "arrow.up.circle.fill").bibleTextStyle(.title).frame(minWidth: 44, minHeight: 44) }.accessibilityLabel("質問を送る").disabled(!model.canSend)
+                        TextField("気になったことを質問", text: $model.draft, axis: .vertical).accessibilityIdentifier("share-question-draft").lineLimit(1...4).focused($composerFocused).bibleTextStyle(.body).frame(maxWidth: .infinity, maxHeight: 120).clipped().submitLabel(.send).onSubmit { model.startQuestion() }
+                        if model.loading { Button { model.cancel() } label: { Image(systemName: "stop.circle").bibleTextStyle(.title).dynamicTypeSize(.large).frame(width: 44, height: 44) }.accessibilityLabel("回答の準備をやめる") }
+                        Button { pane = "explanation"; model.startQuestion() } label: { Image(systemName: "arrow.up.circle.fill").bibleTextStyle(.title).dynamicTypeSize(.large).frame(width: 44, height: 44) }.accessibilityLabel("質問を送る").disabled(!model.canSend)
                     }.padding(BibleTheme.Space.md).bibleCanvas()
                 }
             }.safeAreaInset(edge: .top) { if let passage = model.current?.passage { SharedScriptureHeader(passage: passage, translation: model.translation, text: model.sharedText, compact: composerFocused) } }.bibleCanvas().navigationTitle("聖書コンパニオン").navigationBarTitleDisplayMode(.inline)
