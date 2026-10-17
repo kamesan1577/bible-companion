@@ -82,6 +82,7 @@ struct AISetupView: View {
     private func updateReady() {
         guard store.aiPolicyError == nil, let owner = store.account?.id, store.aiPolicy?.shareAiEnabled == true, store.aiPolicy?.shareAiConsent == true, store.aiPolicy?.permits(.groundedGeneration) == true else { accessReady = false; extensionReadConfirmed = false; return }
         do { let access = try ShareInbox.verifiedAIAccess(expectedOwner: owner); accessReady = SharePreparationReadiness.isSaved(policy: store.aiPolicy, owner: owner, access: access); extensionReadConfirmed = (try? ShareInbox.extensionHasReadCurrentAccess(expectedOwner: owner)) == true }
+        catch ShareAIAccessReadError.missing, ShareAIAccessReadError.expired { accessReady = false; extensionReadConfirmed = false; message = nil }
         catch { accessReady = false; extensionReadConfirmed = false; message = SharePreparationFailure.message(for: error) }
     }
     private func refresh() async {
