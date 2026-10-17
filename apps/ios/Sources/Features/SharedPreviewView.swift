@@ -8,6 +8,7 @@ import UIKit
     struct Item: Codable, Sendable, Identifiable { let conversationId: String; let passage: Passage; var id: String { conversationId } }
 #if DEBUG && targetEnvironment(simulator)
     var probeChatGPTOpen: (() -> Void)?
+    var probeBrowserOpen: (() -> Void)?
     @Published var chatGPTOpenProbeResult = ""
 #endif
     @Published var loading = false
@@ -341,7 +342,9 @@ struct SharedPreviewView: View {
 #if DEBUG
                     Text("AI requests: \(model.aiRequests)").bibleTextStyle(.caption).accessibilityIdentifier("share-ai-request-count")
 #if targetEnvironment(simulator)
-                    if let probe = model.probeChatGPTOpen { Button("QA: ChatGPT open probe", action: probe); Text(model.chatGPTOpenProbeResult).accessibilityIdentifier("chatgpt-open-probe-result") }
+                    if let probe = model.probeChatGPTOpen { Button("QA: ChatGPT open probe", action: probe) }
+                    if let probe = model.probeBrowserOpen { Button("QA: browser control probe", action: probe) }
+                    Text(model.chatGPTOpenProbeResult).accessibilityIdentifier("chatgpt-open-probe-result")
 #endif
 #endif
                     if model.items.count > 1 {

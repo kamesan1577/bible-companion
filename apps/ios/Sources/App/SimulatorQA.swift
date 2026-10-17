@@ -6,6 +6,7 @@ import CompanionCore
 struct SimulatorQA: View {
     @EnvironmentObject private var store: AppStore
     @State private var ready = false
+    @State private var externalOpenResult = ""
     @State private var composeSession = UUID().uuidString
     @State private var client: APIClient
     private let item: ImportRecord
@@ -63,6 +64,12 @@ struct SimulatorQA: View {
                 else { ProgressView("固定データを読み込んでいます") }
             } else {
             List {
+                Button("QA: main ChatGPT HTTPS") {
+                    UIApplication.shared.open(URL(string: "https://chatgpt.com/")!, options: [:]) { success in
+                        externalOpenResult = success ? "main-open=true" : "main-open=false"
+                    }
+                }
+                Text(externalOpenResult).accessibilityIdentifier("main-external-open-result")
                 Text("Simulator固定データ · 通信・実認証なし").bibleTextStyle(.caption)
                 ShareLink("質問する共有拡張を開く", item: "検証用の共有本文：上訴についての質問を試します。\nhttps://www.bible.com/bible/83/ACT.26.32.JCB?bible-compose-fixture=1&session=\(composeSession)")
                 ShareLink("Crash Acts28:15", item: URL(string: "https://bible.com/bible/83/act.28.15.JCB")!)

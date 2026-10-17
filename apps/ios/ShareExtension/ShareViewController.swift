@@ -46,6 +46,11 @@ import CompanionCore
                             Task { @MainActor in self?.model.chatGPTOpenProbeResult = success ? "open=true" : "open=false" }
                         }
                     }
+                    model.probeBrowserOpen = { [weak self] in
+                        self?.extensionContext?.open(URL(string: "https://developer.apple.com/")!) { [weak self] success in
+                            Task { @MainActor in self?.model.chatGPTOpenProbeResult = success ? "browser-open=true" : "browser-open=false" }
+                        }
+                    }
                     await configureShareComposeFixture(model)
                 }
                 else { model.prepare() }

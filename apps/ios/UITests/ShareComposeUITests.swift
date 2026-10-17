@@ -25,6 +25,17 @@ final class ShareComposeUITests: XCTestCase {
         expectation(for: completed, evaluatedWith: result); waitForExpectations(timeout: 15)
         attach(app, "chatgpt-official-extension-open-result")
         XCTAssertEqual(result.label, "open=false", "Record host result; if true, revisit the supported-route limitation before shipping")
+        app.buttons["QA: browser control probe"].tap()
+        expectation(for: NSPredicate(format: "label == 'browser-open=false'"), evaluatedWith: result); waitForExpectations(timeout: 10)
+        attach(app, "share-browser-control-denied")
+        app.buttons["閉じる"].tap()
+        let dismiss = app.otherElements["PopoverDismissRegion"]; if dismiss.waitForExistence(timeout: 2) { dismiss.tap() }
+        app.buttons["QA: main ChatGPT HTTPS"].tap()
+        let safari = XCUIApplication(bundleIdentifier: "com.apple.mobilesafari")
+        XCTAssertTrue(safari.wait(for: .runningForeground, timeout: 15))
+        app.activate()
+        XCTAssertEqual(app.staticTexts["main-external-open-result"].label, "main-open=true")
+        attach(app, "main-chatgpt-https-opens-without-chatgpt-app")
     }
     @MainActor func testChatGPTCopyAndPresentationPreferenceAcrossProcesses() {
         let app = XCUIApplication()
