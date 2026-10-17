@@ -44,3 +44,13 @@ struct ChatWaitingView: View {
         }.accessibilityElement(children: .contain)
     }
 }
+
+/// Keep icon-only composer controls fully visible above the keyboard at every text size.
+/// Input and message text continue to use the user's Dynamic Type setting.
+struct ChatComposerIcon: View {
+    let systemName: String
+    var body: some View {
+        Image(systemName: systemName).bibleTextStyle(.title)
+            .dynamicTypeSize(.large).frame(width: 44, height: 44)
+    }
+}
