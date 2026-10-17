@@ -6,25 +6,16 @@ struct ReadingDiscoveryCard: View {
         NavigationLink {
             ReadingDiscoveryDetail()
         } label: {
-            BibleReadingSurface {
-                VStack(alignment: .leading, spacing: BibleTheme.Space.xl) {
-                    HStack {
-                        BibleRangeBadge(text: "人物と場所から読む")
-                        Spacer()
-                        Image(systemName: "arrow.up.right").bibleForeground(.accent)
-                    }
-                    Image(systemName: "building.columns")
-                        .bibleTextStyle(.title).bibleForeground(.accent)
-                        .padding(.vertical, BibleTheme.Space.lg).accessibilityHidden(true)
-                    Text("アポロと\nエペソの人々").bibleTextStyle(.title).bibleForeground(.textPrimary)
-                    Text("聖書に詳しいアポロ。プリスキラとアキラとの出会いを、人物の説明から確かめる。")
-                        .bibleTextStyle(.body).bibleForeground(.textSecondary)
-                    Divider()
+            DiscoveryHero {
+                VStack(alignment: .leading, spacing: BibleTheme.Space.sm) {
+                    Spacer(minLength: BibleTheme.Space.section * 3)
+                    Text("人物と場所から読む").bibleTextStyle(.caption)
+                    Text("アポロとエペソの人々").bibleTextStyle(.heading)
                     HStack {
                         Text("使徒の働き 18:24–28").bibleTextStyle(.caption)
                         Spacer()
-                        Label("開く", systemImage: "chevron.right").bibleTextStyle(.body)
-                    }.bibleForeground(.accent)
+                        Label("開く", systemImage: "arrow.right").bibleTextStyle(.body)
+                    }
                 }
             }
         }.buttonStyle(.plain).accessibilityIdentifier("discovery-card")

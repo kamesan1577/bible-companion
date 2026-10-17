@@ -20,9 +20,9 @@ struct AISetupView: View {
                     if busy || checking {
                         HStack(spacing: BibleTheme.Space.md) {
                             ProgressView().progressViewStyle(.circular)
-                            Text(busy ? "共有AIの設定を保存しています" : "利用状態を確認しています").bibleTextStyle(.body)
+                            Text(busy ? "質問する設定を保存しています" : "利用状態を確認しています").bibleTextStyle(.body)
                         }
-                        Text("完了するまでお待ちください。解説や質問はまだ送信しません。").bibleTextStyle(.caption)
+                        Text("共有画面で質問するための設定を確認・保存しています。AIへの質問や回答生成は行っていません。").bibleTextStyle(.caption)
                     } else {
                         TimelineView(.periodic(from: .now, by: 1)) { timeline in
                             ShareAIStatusLabel(status: ShareAIStatus.read(store: store, at: timeline.date))
@@ -46,15 +46,15 @@ struct AISetupView: View {
                         if extensionReadConfirmed {
                             Text("共有画面で、この設定を受け取れたことも確認できました。").bibleTextStyle(.caption)
                         } else {
-                            Text("共有画面が設定を受け取れたかは、次に共有したときに確認できます。").bibleTextStyle(.caption)
+                            Text("このアプリでの保存は完了しました。共有先で使えるかは、次に「聖書コンパニオン」へ共有したときに確認してください。").bibleTextStyle(.caption)
                         }
-                        Button("閉じてYouVersionで節を選ぶ") { dismiss() }.buttonStyle(.borderedProminent)
+                        Button("閉じる") { dismiss() }.buttonStyle(.borderedProminent)
                     }
                 } else {
                     Section("AIの使い方を確認する") {
-                        Text(store.aiPolicy?.permits(.groundedGeneration) == true ? "この端末の共有画面で使う設定を保存します。有効期限は最長24時間です。この操作では解説や質問を送信しません。" : "送る情報・保存先・AIの注意点を確認する画面が開きます。同意するかは、その画面で選べます。").bibleTextStyle(.body)
+                        Text(store.aiPolicy?.permits(.groundedGeneration) == true ? "共有画面で質問するための設定を、この端末に保存します。有効期限は最長24時間です。AIは質問を送信したときに回答します。" : "送る情報・保存先・AIの注意点を確認する画面が開きます。同意するかは、その画面で選べます。").bibleTextStyle(.body)
                         if let policy = store.aiPolicy, policy.shareAiEnabled != true {
-                            Text("現在、YouVersionの共有画面ではAI解説を使えません。このアプリで読書を続けられます。しばらくしてから、下のボタンで再確認してください。").bibleTextStyle(.body)
+                            Text("現在、YouVersionの共有画面ではAIへの質問を使えません。このアプリで読書を続けられます。しばらくしてから、下のボタンで再確認してください。").bibleTextStyle(.body)
                             if policy.permits(.groundedGeneration) {
                                 Button("このアプリの読書へ戻る") { dismiss() }
                             } else if policy.allowedAnswerModes.contains(.groundedGeneration), let owner = store.account {
@@ -62,14 +62,14 @@ struct AISetupView: View {
                             }
                             Button("使えるか再確認する") { Task { await refresh() } }.disabled(busy)
                         } else {
-                            Button(store.aiPolicy?.permits(.groundedGeneration) == true ? (ShareAIStatus.read(store: store).needsRenewal ? "共有AIの設定を更新する" : "共有AIを有効にする") : "AIの利用条件を確認する") { preparationTask = Task { await prepare() } }.buttonStyle(.borderedProminent).disabled(busy || checking || store.isTransitioning || store.isConsentUpdating)
+                            Button(store.aiPolicy?.permits(.groundedGeneration) == true ? (ShareAIStatus.read(store: store).needsRenewal ? "質問する設定を更新する" : "質問する設定を保存する") : "AIの利用条件を確認する") { preparationTask = Task { await prepare() } }.buttonStyle(.borderedProminent).disabled(busy || checking || store.isTransitioning || store.isConsentUpdating)
                         }
                         if let message, message != ShareAIStatus.read(store: store).detail { Text(message).bibleTextStyle(.body) }
                         if let error = store.aiPolicyError { Text(error).bibleTextStyle(.body) }
                     }
                 }
             }
-            .navigationTitle("共有AIの設定").navigationBarTitleDisplayMode(.inline).bibleCanvas()
+            .navigationTitle("共有画面から質問する").navigationBarTitleDisplayMode(.inline).bibleCanvas()
             .toolbar { ToolbarItem(placement: .cancellationAction) { Button("閉じる") { preparationTask?.cancel(); dismiss() } } }
             .sheet(item: $intent, onDismiss: { updateReady() }) { GroundedConsentView(intent: $0).environmentObject(store) }
             .task(id: store.account?.id) { await refresh() }

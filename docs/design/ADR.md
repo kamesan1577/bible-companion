@@ -66,3 +66,7 @@ Reduce Motion では独自の状態アニメーションを止めます。
 5. 機能差分と同時にレビューします。ルール全体を無効化しません。
 
 現在、許可した例外はありません。
+
+## 2026-10-17: Illustrated discovery entrance
+
+The user requested an image-led, inviting home with both featured content and share readiness visible on first appearance. DiscoveryArtwork is an original proportional vector drawing of stone columns and receding city silhouettes. It is an architectural motif, not a reconstruction of Ephesus, a photograph, or a historical map. No third-party visual is copied. Warm bronze/stone illustration colors are encapsulated in DesignSystem; the canvas, reading surfaces and native navigation materials retain their existing tokens. A dark gradient within the artwork supports warm-white overlay text. The card has a minimum height but no text height cap; Dynamic Type grows vertically. The share readiness card follows immediately, with chapter browsing and the guide below. Only native buttons use glass. Setup copy describes preparing an authenticated share session, not AI inference. Shared conversation execution remains separate PR 2 work.
