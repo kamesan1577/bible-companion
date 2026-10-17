@@ -1,10 +1,15 @@
 import SwiftUI
 import CompanionCore
 import CryptoKit
+import UIKit
 
 @MainActor final class SharedPreviewModel: ObservableObject {
     struct Started: Decodable, Sendable { let ownerId: String; let importId: String; let items: [Item] }
     struct Item: Codable, Sendable, Identifiable { let conversationId: String; let passage: Passage; var id: String { conversationId } }
+#if DEBUG && targetEnvironment(simulator)
+    var probeChatGPTOpen: (() -> Void)?
+    @Published var chatGPTOpenProbeResult = ""
+#endif
     @Published var loading = false
     @Published var error: String?
     @Published var labels: [String] = []
@@ -324,6 +329,9 @@ struct SharedPreviewView: View {
     let close: () -> Void
     @State private var pane = "explanation"
     @State private var showSetupSteps = false
+    @State private var showChatGPT = (try? SharePresentationPreferences.isChatGPTVisible()) ?? true
+    private struct ChatGPTPreview: Identifiable { let id = UUID(); let prompt: String?; let error: String? }
+    @State private var chatGPTPreview: ChatGPTPreview?
     @FocusState private var composerFocused: Bool
     var body: some View {
         NavigationStack {
@@ -332,6 +340,9 @@ struct SharedPreviewView: View {
                 VStack(alignment: .leading, spacing: BibleTheme.Space.page) {
 #if DEBUG
                     Text("AI requests: \(model.aiRequests)").bibleTextStyle(.caption).accessibilityIdentifier("share-ai-request-count")
+#if targetEnvironment(simulator)
+                    if let probe = model.probeChatGPTOpen { Button("QA: ChatGPT open probe", action: probe); Text(model.chatGPTOpenProbeResult).accessibilityIdentifier("chatgpt-open-probe-result") }
+#endif
 #endif
                     if model.items.count > 1 {
                         Picker("表示する箇所", selection: $model.selectedIndex) { ForEach(Array(model.items.enumerated()), id: \.offset) { index, item in Text(item.passage.label).tag(index) } }.pickerStyle(.menu).disabled(model.loading || model.pendingRequest != nil)
@@ -400,13 +411,41 @@ struct SharedPreviewView: View {
                     HStack(alignment: .bottom) {
                         TextField("気になったことを質問", text: $model.draft, axis: .vertical).accessibilityIdentifier("share-question-draft").lineLimit(1...4).focused($composerFocused).bibleTextStyle(.body).frame(maxWidth: .infinity, maxHeight: 120).clipped().submitLabel(.send).onSubmit { model.startQuestion() }
                         if model.loading { Button { model.cancel() } label: { ChatComposerIcon(systemName: "stop.circle") }.accessibilityLabel("回答の準備をやめる") }
+                        if showChatGPT {
+                            Button {
+                                do {
+                                    guard let passage = model.current?.passage else { return }
+                                    let prompt = try ChatGPTCopyPrompt.make(question: model.draft, passage: passage, translation: model.translation, sharedText: model.sharedText)
+                                    chatGPTPreview = ChatGPTPreview(prompt: prompt, error: nil)
+                                } catch { chatGPTPreview = ChatGPTPreview(prompt: nil, error: "質問と共有本文を確認してください。質問は2,000文字、共有文は20,000文字までです。") }
+                            } label: { ChatGPTCopyComposerLabel() }
+                            .accessibilityLabel("ChatGPT用の本文と質問を確認").accessibilityIdentifier("chatgpt-copy-preview")
+                            .disabled(model.draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || model.current == nil)
+                        }
                         Button { pane = "explanation"; model.startQuestion() } label: { ChatComposerIcon(systemName: "arrow.up.circle.fill") }.accessibilityLabel("質問を送る").disabled(!model.canSend)
                     }.padding(BibleTheme.Space.md).bibleCanvas()
                 }
             }.safeAreaInset(edge: .top) { if let passage = model.current?.passage { SharedScriptureHeader(passage: passage, translation: model.translation, text: model.sharedText, compact: composerFocused) } }.bibleCanvas().navigationTitle("聖書コンパニオン").navigationBarTitleDisplayMode(.inline)
                 .toolbar { ToolbarItem(placement: .topBarLeading) { if composerFocused { Button { composerFocused = false } label: { Image(systemName: "keyboard.chevron.compact.down") }.accessibilityLabel("キーボードを閉じる") } }; ToolbarItem(placement: .topBarTrailing) { Button("閉じる", action: close) } }
+                .sheet(item: $chatGPTPreview) { preview in
+                    NavigationStack {
+                        ScrollView { VStack(alignment: .leading, spacing: BibleTheme.Space.page) {
+                            Text("コピー後、ChatGPTを開いて貼り付けてください。質問付きで直接開く機能には対応していません。")
+                            Text("コピーする内容は以下だけです。会話履歴やアカウント情報は含みません。")
+                            if let error = preview.error { Text(error) }
+                            else if let chatGPTPrompt = preview.prompt {
+                                Text(chatGPTPrompt).textSelection(.enabled).accessibilityIdentifier("chatgpt-copy-content")
+                                Button("本文と質問をコピー") {
+                                    UIPasteboard.general.setItems([[UIPasteboard.typeAutomatic: chatGPTPrompt]], options: [.localOnly: true, .expirationDate: Date().addingTimeInterval(600)])
+                                    chatGPTPreview = nil
+                                }.accessibilityIdentifier("chatgpt-copy-confirm")
+                            }
+                        }.padding() }.navigationTitle("ChatGPT用にコピー")
+                        .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("閉じる") { chatGPTPreview = nil } } }
+                    }
+                }
                 .onDisappear { model.close() }
-                .onChange(of: scenePhase) { _, phase in if phase == .active { model.revalidateAccess() } }
+                .onChange(of: scenePhase) { _, phase in if phase == .active { model.revalidateAccess(); showChatGPT = (try? SharePresentationPreferences.isChatGPTVisible()) ?? showChatGPT } }
 
         }
     }

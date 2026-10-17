@@ -36,7 +36,14 @@ final class ShareCrashUITests: XCTestCase {
        XCTAssertTrue((field.value as? String ?? "").contains("map question"))
    }
    app.buttons["キーボードを閉じる"].tap()
-   for _ in 0..<6 { if app.buttons["解説"].isHittable { break };app.swipeDown() }
+   // Remote extension AX may throw for an offscreen segmented button.
+   // Inspect its frame before asking XCTest to activate it.
+   for _ in 0..<10 {
+       let tab = app.buttons["解説"]
+       let frame = tab.frame
+       if tab.exists, frame.width > 0, frame.height > 0, frame.minY > 80, frame.maxY < app.frame.maxY - 120 { break }
+       app.swipeDown()
+   }
    app.buttons["解説"].tap();app.buttons["地名"].tap()
    XCTAssertTrue(app.buttons["閉じる"].exists);app.buttons["閉じる"].tap()
    expectation(for:NSPredicate(format:"exists == false"),evaluatedWith:field);waitForExpectations(timeout:5)

@@ -64,7 +64,7 @@ struct SimulatorQA: View {
             } else {
             List {
                 Text("Simulator固定データ · 通信・実認証なし").bibleTextStyle(.caption)
-                ShareLink("質問する共有拡張を開く", item: URL(string: "https://www.bible.com/bible/83/ACT.26.32.JCB?bible-compose-fixture=1&session=\(composeSession)")!)
+                ShareLink("質問する共有拡張を開く", item: "検証用の共有本文：上訴についての質問を試します。\nhttps://www.bible.com/bible/83/ACT.26.32.JCB?bible-compose-fixture=1&session=\(composeSession)")
                 ShareLink("Crash Acts28:15", item: URL(string: "https://bible.com/bible/83/act.28.15.JCB")!)
                 ShareLink("Crash Acts27:2", item: URL(string: "https://bible.com/bible/83/act.27.2.JCB")!)
                 if ready {

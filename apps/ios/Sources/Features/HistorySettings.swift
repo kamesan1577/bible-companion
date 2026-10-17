@@ -63,12 +63,22 @@ struct SettingsView: View {
     @State private var prepareAfterGuide = false
     @State private var showSignOut = false
     @State private var notice: String?
+    @State private var showChatGPT = (try? SharePresentationPreferences.isChatGPTVisible()) ?? true
+    @State private var presentationError: String?
     var body: some View {
         Form {
             Section("YouVersionから解説を読む") {
                 Button("質問する準備を確認") { store.showAISetup = true }
                 Text("初回のログインとAI利用の確認をここで行えます。読書の途中でも開けます。").bibleTextStyle(.caption)
                 Button("共有の手順を見る", systemImage: "questionmark.circle") { showGuide = true }
+            }
+            Section("共有画面の表示") {
+                Toggle("ChatGPTボタンを表示", isOn: Binding(get: { showChatGPT }, set: { value in
+                    do { try SharePresentationPreferences.setChatGPTVisible(value); showChatGPT = value; presentationError = nil }
+                    catch { presentationError = "表示設定を保存できませんでした。もう一度お試しください。" }
+                })).accessibilityIdentifier("chatgpt-visibility")
+                Text("共有した本文と質問を確認してコピーするボタンです。ChatGPTを開いて貼り付けてください。自動送信はしません。").bibleTextStyle(.caption)
+                if let presentationError { Text(presentationError) }
             }
             Section("アカウント") {
                 if let account = store.account {

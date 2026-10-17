@@ -16,6 +16,49 @@ final class ShareComposeUITests: XCTestCase {
         }
         XCTAssertTrue(field.waitForExistence(timeout:15))
     }
+    @MainActor func testShareExtensionOfficialOpenAPIProbe() {
+        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch(); open(app)
+        let probe = app.buttons["QA: ChatGPT open probe"]
+        XCTAssertTrue(probe.waitForExistence(timeout: 5)); probe.tap()
+        let result = app.staticTexts["chatgpt-open-probe-result"]
+        let completed = NSPredicate(format: "label == 'open=false' OR label == 'open=true'")
+        expectation(for: completed, evaluatedWith: result); waitForExpectations(timeout: 15)
+        attach(app, "chatgpt-official-extension-open-result")
+        XCTAssertEqual(result.label, "open=false", "Record host result; if true, revisit the supported-route limitation before shipping")
+    }
+    @MainActor func testChatGPTCopyAndPresentationPreferenceAcrossProcesses() {
+        let app = XCUIApplication()
+        func settings(_ visible: Bool) {
+            app.terminate(); app.launchArguments = ["--simulator-qa", "--qa-screen=settings"]; app.launch()
+            let toggle = app.switches["chatgpt-visibility"]
+            XCTAssertTrue(toggle.waitForExistence(timeout: 15))
+            if (toggle.value as? String == "1") != visible {
+                toggle.coordinate(withNormalizedOffset: CGVector(dx: 0.94, dy: 0.5)).tap()
+            }
+            attach(app, visible ? "chatgpt-setting-on" : "chatgpt-setting-off")
+            XCTAssertEqual(toggle.value as? String, visible ? "1" : "0")
+        }
+        settings(false)
+        app.terminate(); app.launchArguments = ["--simulator-qa"]; app.launch(); open(app)
+        XCTAssertFalse(app.buttons["chatgpt-copy-preview"].exists)
+        app.buttons["閉じる"].tap()
+        settings(true)
+        app.terminate(); app.launchArguments = ["--simulator-qa"]; app.launch(); open(app)
+        let field = app.descendants(matching: .any).matching(identifier: "share-question-draft").firstMatch
+        field.tap(); field.typeText("ChatGPT draft preserved?")
+        let alternative = app.buttons["chatgpt-copy-preview"]
+        XCTAssertTrue(alternative.isHittable)
+        XCTAssertLessThanOrEqual(alternative.frame.maxY, app.buttons["質問を送る"].frame.maxY + 2)
+        attach(app, "chatgpt-alternative-keyboard")
+        alternative.tap()
+        XCTAssertTrue(app.buttons["chatgpt-copy-confirm"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["chatgpt-copy-content"].label.contains("ChatGPT draft preserved?"))
+        attach(app, "chatgpt-explicit-copy-preview")
+        app.buttons["chatgpt-copy-confirm"].tap()
+        XCTAssertEqual(field.value as? String, "ChatGPT draft preserved?")
+        XCTAssertTrue(app.staticTexts["AI requests: 0"].exists)
+        app.buttons["閉じる"].tap()
+    }
     @MainActor func testActualExtensionImmediateComposerKeyboardQueueAndReopen() {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
         open(app)

@@ -40,7 +40,14 @@ import CompanionCore
                 catch let accessError as ShareAIAccessReadError { model.storageNotice = SharedPreviewModel.accessMessage(for: accessError) }
                 catch { model.storageNotice = "共有内容をアプリへ安全に引き継いだことを確認できません。ここに表示される範囲だけを確認し、続ける場合はこの画面を閉じてYouVersionから共有し直してください。" }
 #if DEBUG && targetEnvironment(simulator)
-                if text.contains("bible-compose-fixture=1") { await configureShareComposeFixture(model) }
+                if text.contains("bible-compose-fixture=1") {
+                    model.probeChatGPTOpen = { [weak self] in
+                        self?.extensionContext?.open(URL(string: "https://chatgpt.com/")!) { [weak self] success in
+                            Task { @MainActor in self?.model.chatGPTOpenProbeResult = success ? "open=true" : "open=false" }
+                        }
+                    }
+                    await configureShareComposeFixture(model)
+                }
                 else { model.prepare() }
 #else
                 model.prepare()

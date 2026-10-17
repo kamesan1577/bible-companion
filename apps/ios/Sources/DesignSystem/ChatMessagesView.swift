@@ -54,3 +54,11 @@ struct ChatComposerIcon: View {
             .dynamicTypeSize(.large).frame(width: 44, height: 44)
     }
 }
+
+/// Plain service-name reference, not an imitation of the OpenAI logo.
+struct ChatGPTCopyComposerLabel: View {
+    var body: some View {
+        Text("ChatGPT").font(.system(size: 10, weight: .semibold))
+            .dynamicTypeSize(.large).frame(width: 52, height: 44)
+    }
+}

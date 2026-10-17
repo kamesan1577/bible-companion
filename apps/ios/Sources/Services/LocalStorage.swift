@@ -288,3 +288,23 @@ enum PendingQuestionStore {
     }
     static func clear() throws { for url in try FileManager.default.contentsOfDirectory(at: root(), includingPropertiesForKeys: nil) { try FileManager.default.removeItem(at: url) } }
 }
+
+/// Device presentation only; outside the account-owned inbox and AI consent.
+enum SharePresentationPreferences {
+    private static func file() throws -> URL {
+        guard let root = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: ShareInbox.groupID) else { throw ShareInbox.InboxError.unavailable }
+        let folder = root.appendingPathComponent("Presentation", isDirectory: true)
+        try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
+        var values = URLResourceValues(); values.isExcludedFromBackup = true
+        var writable = folder; try writable.setResourceValues(values)
+        return folder.appendingPathComponent("chatgpt-button.json")
+    }
+    static func isChatGPTVisible() throws -> Bool {
+        let url = try file()
+        guard FileManager.default.fileExists(atPath: url.path) else { return true }
+        return try JSONDecoder().decode(Bool.self, from: Data(contentsOf: url))
+    }
+    static func setChatGPTVisible(_ value: Bool) throws {
+        try JSONEncoder().encode(value).write(to: file(), options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
+    }
+}
