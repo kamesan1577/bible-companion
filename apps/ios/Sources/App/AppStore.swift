@@ -471,7 +471,7 @@ extension AppStore {
             sourceExcerpt = nil
         }
         if ProcessInfo.processInfo.arguments.contains("--qa-screen=home") { selected = nil; reading = nil; sourceExcerpt = nil }
-        if ProcessInfo.processInfo.arguments.contains("--qa-screen=initial") { selected = nil; reading = nil; sourceExcerpt = nil; account = nil }
+        if ProcessInfo.processInfo.arguments.contains("--qa-screen=initial") || ProcessInfo.processInfo.arguments.contains("--qa-screen=configured-home") { selected = nil; reading = nil; sourceExcerpt = nil; account = nil }
 
     }
 }

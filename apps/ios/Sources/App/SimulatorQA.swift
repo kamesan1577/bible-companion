@@ -43,7 +43,7 @@ struct SimulatorQA: View {
         default: Text("未定義の検証画面です").bibleTextStyle(.body)
         }
     }
-    var body: some View {
+    private var navigationContent: some View {
         NavigationStack {
             if let snapshotScreen {
                 if ready { snapshot(snapshotScreen) }
@@ -73,7 +73,13 @@ struct SimulatorQA: View {
             }.navigationTitle("描画確認").bibleCanvas()
             }
         }
-        .sheet(isPresented: $store.showAISetup) { AISetupView().environmentObject(store) }
+    }
+    var body: some View {
+        Group {
+            if snapshotScreen == "configured-home", ready { RootView() }
+            else { navigationContent }
+        }
+        .sheet(isPresented: Binding(get: { snapshotScreen != "configured-home" && store.showAISetup }, set: { store.showAISetup = $0 })) { AISetupView().environmentObject(store) }
         .task { await client.setToken("simulator-fixture-only"); store.configureSimulatorQA(client: client); await store.loadAIPolicy()
             if ProcessInfo.processInfo.arguments.contains("--qa-clear-access") { try? ShareInbox.clearAIAccess() }
             if ProcessInfo.processInfo.arguments.contains("--qa-expiring-access"), let owner = store.account?.id {

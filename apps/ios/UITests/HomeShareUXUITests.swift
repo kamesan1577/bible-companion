@@ -68,9 +68,10 @@ final class HomeShareUXUITests: XCTestCase {
     }
     @MainActor func testRootHomeWithNativeTabs() {
         let app = XCUIApplication()
-        app.launchArguments = ["-hasSeenVisualShareGuideV2", "YES"]
+        app.launchArguments = ["--simulator-qa", "--qa-screen=configured-home", "-hasSeenVisualShareGuideV2", "YES"]
         app.launch()
         XCTAssertTrue(app.buttons["discovery-card"].waitForExistence(timeout: 10))
+        XCTAssertFalse(app.staticTexts["アプリの接続設定に問題があります。最新版へ更新して、もう一度お試しください。"].exists)
         let prepare = app.buttons["share-ai-settings"]
         XCTAssertTrue(prepare.isHittable)
         XCTAssertTrue(app.tabBars.firstMatch.exists)
@@ -84,6 +85,14 @@ final class HomeShareUXUITests: XCTestCase {
         XCTAssertTrue(app.buttons["ログインして準備を始める"].waitForExistence(timeout: 5))
         app.buttons["閉じる"].tap()
         XCTAssertTrue(prepare.waitForExistence(timeout: 5))
+    }
+    @MainActor func testUnconfiguredHomeShowsWarning() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-hasSeenVisualShareGuideV2", "YES"]
+        app.launch()
+        XCTAssertTrue(app.buttons["discovery-card"].waitForExistence(timeout: 10))
+        XCTAssertTrue(app.staticTexts["アプリの接続設定に問題があります。最新版へ更新して、もう一度お試しください。"].exists)
+        capture(app, "home-unconfigured-error")
     }
     @MainActor func testAccessibilityType() {
         let app = XCUIApplication()
