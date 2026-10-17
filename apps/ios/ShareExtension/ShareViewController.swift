@@ -23,8 +23,7 @@ import CompanionCore
                         if provider.hasItemConformingToTypeIdentifier(type), let value = try await load(provider, type: type) { parts.append(value) }
                     }
                 }
-                var seen = Set<String>()
-                let text = parts.filter { seen.insert($0).inserted }.joined(separator: "\n")
+                let text = SharedTextContent.combine(parts)
                 guard !text.isEmpty, text.utf16.count <= 20_000 else {
                     model.sharedText = String(text.prefix(20_000))
                     model.shareTextWasTruncated = !text.isEmpty

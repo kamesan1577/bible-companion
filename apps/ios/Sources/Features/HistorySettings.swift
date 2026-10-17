@@ -80,7 +80,8 @@ struct SettingsView: View {
                     do { try SharePresentationPreferences.setChatGPTVisible(value); showChatGPT = value; presentationError = nil }
                     catch { presentationError = "表示設定を保存できませんでした。もう一度お試しください。" }
                 })).accessibilityIdentifier("chatgpt-visibility")
-                Text("共有した本文と質問を確認して、URLまたはコピーでChatGPTへ渡します。URLを開くと回答が始まる場合があります。").bibleTextStyle(.caption)
+                Text("ボタンを押すと、共有した本文と質問をURLでChatGPTへ渡して外部で開きます。回答が始まる場合があり、URLはブラウザ履歴に残る場合があります。").bibleTextStyle(.caption)
+                Text("OpenAIとChatGPTの名称・ロゴはOpenAIに帰属します。").bibleTextStyle(.caption)
                 if let presentationError { Text(presentationError) }
             }
             ChatGPTHandoffSection(pending: $pendingChatGPT)
@@ -188,7 +189,7 @@ private struct ChatGPTHandoffSection: View {
                         guard let current = try? ShareInbox.chatGPTHandoff(expectedOwner: store.account?.id), current == pending else { self.pending = nil; return }
                         UIPasteboard.general.setItems([[UIPasteboard.typeAutomatic: pending.prompt]], options: [.localOnly: true, .expirationDate: Date().addingTimeInterval(600)])
                         notice = "コピーしました。"
-                    }
+                    }.accessibilityIdentifier("chatgpt-main-copy")
                     Button("引き継いだ内容を消す", role: .destructive) { do { try ShareInbox.removeChatGPTHandoff(expected: pending); self.pending = nil } catch { notice = "消去できませんでした。" } }
                     if let notice { Text(notice) }
                 }

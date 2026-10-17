@@ -1,3 +1,5 @@
+> Follow-up: [renewable share access and partial answers](share-renewal-and-partial-answers.md) changes interrupted-preview retention and binds new snapshots to the stable share scope across token renewal. The historical cancellation/preview description below refers to 0.1.18.
+
 # Question answering and native conversation streaming
 
 The Share Extension opens locally, with a persistent question composer and no automatic AI generation. Explicit questions append chronological user/assistant turns. The app keeps its existing initial explanation. The shared SwiftUI screen is compiled into both targets, so the simulator fixture exercises the same view and model used by the extension. The extension controller still handles its existing share-item parsing and hosting.

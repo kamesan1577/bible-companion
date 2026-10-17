@@ -68,3 +68,25 @@ final class ShareAIAccessTests: XCTestCase {
         }
     }
 }
+
+extension ShareAIAccessTests {
+    func testExpiredAccessCanOnlyBeReadForOwnerBoundRenewal() throws {
+        let date = Date(); let owner = "00000000-0000-4000-8000-000000000123"
+        let access = ShareAIAccess(token: "bcs1_" + String(repeating: "a", count: 64), ownerID: owner, expiresAt: date.addingTimeInterval(-1).timeIntervalSince1970, scopeID: String(repeating: "b", count: 64), refreshToken: "bcr1_" + String(repeating: "c", count: 64), refreshExpiresAt: date.addingTimeInterval(86400).timeIntervalSince1970)
+        let bytes = try JSONEncoder().encode(access)
+        XCTAssertThrowsError(try ShareAIAccess.validated(from: bytes, owner: owner, at: date))
+        XCTAssertEqual(try ShareAIAccess.validated(from: bytes, owner: owner, at: date, allowingRenewal: true).conversationScope, String(repeating: "b", count: 64))
+        XCTAssertThrowsError(try ShareAIAccess.validated(from: bytes, owner: "00000000-0000-4000-8000-000000000124", at: date, allowingRenewal: true))
+        XCTAssertFalse(access.isValid(owner: owner, at: date))
+    }
+}
+
+extension ShareAIAccessTests {
+    func testRenewableSavedConfigurationDoesNotBecomeUnpreparedAtAccessExpiry() throws {
+        let now = Date(); let owner = "00000000-0000-4000-8000-000000000123"
+        let access = ShareAIAccess(token: "bcs1_" + String(repeating:"a",count:64), ownerID: owner, expiresAt: now.addingTimeInterval(-1).timeIntervalSince1970, scopeID: String(repeating:"b",count:64), refreshToken:"bcr1_"+String(repeating:"c",count:64), refreshExpiresAt:now.addingTimeInterval(86400).timeIntervalSince1970)
+        XCTAssertFalse(access.isValid(owner:owner,at:now)); XCTAssertTrue(access.canRenew(at:now))
+        let data = try JSONEncoder().encode(access)
+        XCTAssertNoThrow(try ShareAIAccess.validated(from:data,owner:owner,at:now,allowingRenewal:true))
+    }
+}

@@ -34,14 +34,19 @@ import UIKit
     private var lastSubmissionID: String?
     private var accessOwner: String?
     private var accessToken: String?
+    private var accessScope: String?
+    private var draftOwner: String?
+    private var draftOwnerKnown = false
+    private var ownerInvalidated = false
     var entries: [ChatEntry] { current.flatMap { transcripts[$0.id]?.entries } ?? [] }
-    var canSend: Bool { !shareParseFailed && current != nil && !draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && draft.utf16.count <= 2000 && queued.count < 10 }
+    var canSend: Bool { draftOwnerKnown && !ownerInvalidated && !shareParseFailed && current != nil && !draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && draft.utf16.count <= 2000 && queued.count < 10 }
     @Published var selectedIndex = 0
     @Published var draft = "" { didSet { persist() } }
     struct Queued: Codable, Identifiable { let id: String; let question: String; let index: Int }
     @Published private(set) var queued: [Queued] = []
     @Published private(set) var aiRequests = 0
     private var draining = false
+    private var preparingSend = false
     private var snapshotURL: URL?
     private struct Snapshot: Codable { let saved: Date; let selectedIndex: Int; let start: String; let draft: String; let items: [Item]; let transcripts: [String: ChatTranscript]; let answers: [String: AnswerResult]; let queued: [Queued]; let pending: String?; let pendingItem: String?; let question: String; let standard: Bool; let lastSubmission: String? }
     @Published var pendingRequest: String?
@@ -53,14 +58,15 @@ import UIKit
     var current: Item? { items.indices.contains(selectedIndex) ? items[selectedIndex] : nil }
     var answer: AnswerResult? { current.flatMap { answers[$0.id] } }
     func refresh() async {
-        guard !sharedText.isEmpty, client == nil else { return }
+        guard ensureDraftOwner(), !sharedText.isEmpty, client == nil else { return }
         if accessOwner != nil && !checkOwner() { return }
         let active = UUID(); generation = active
         loading = true; error = nil; canRetryStart = false
         defer { if generation == active { loading = false } }
         do {
             let access: ShareAIAccess
-            do { access = try ShareInbox.verifiedAIAccess() }
+            do { guard let raw = Bundle.main.object(forInfoDictionaryKey: "APIBaseURL") as? String, let base = URL(string: raw) else { throw NetworkFailure.unconfigured }
+                access = try await ShareInbox.currentAIAccess(baseURL: base, expectedOwner: accessOwner) }
             catch let accessError as ShareAIAccessReadError {
                 needsSetup = true
                 setupMessage = Self.accessMessage(for: accessError)
@@ -89,10 +95,10 @@ import UIKit
             }
             guard generation == active else { return }
             guard started.ownerId == access.ownerID, !started.items.isEmpty else { throw NetworkFailure.invalidResponse }
-            accessOwner = access.ownerID; accessToken = access.token
+            accessOwner = access.ownerID; accessToken = access.token; accessScope = access.conversationScope
             client = transport; items = started.items;
             if let directory = snapshotURL?.deletingLastPathComponent().deletingLastPathComponent() {
-                let key = SHA256.hash(data: Data((access.ownerID + access.token + sharedText).utf8)).map { String(format: "%02x", $0) }.joined()
+                let key = SHA256.hash(data: Data((access.ownerID + access.conversationScope + sharedText).utf8)).map { String(format: "%02x", $0) }.joined()
                 let destination = directory.appendingPathComponent("ShareChats").appendingPathComponent(key + ".json")
                 if let previous = snapshotURL, previous != destination { try? FileManager.default.removeItem(at: previous) }
                 snapshotURL = destination
@@ -108,12 +114,14 @@ import UIKit
     }
     /// Called after local parsing. No network or inference on opening, selection or tab changes.
     func prepare() {
+        do { draftOwner = try ShareInbox.localDraftOwner(); draftOwnerKnown = true }
+        catch { storageNotice = "ログイン状態を読み取れません。質問の送信前に共有し直してください。"; canAsk = false; return }
         loading = false
         canAsk = !shareParseFailed
         guard let directory = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else { return }
-        if let access = try? ShareInbox.verifiedAIAccess() {
-            accessOwner = access.ownerID; accessToken = access.token
-            restoreSnapshot(directory: directory, owner: access.ownerID, token: access.token)
+        if let access = try? ShareInbox.renewableAIAccess() {
+            accessOwner = access.ownerID; accessToken = access.token; accessScope = access.conversationScope
+            restoreSnapshot(directory: directory, owner: access.ownerID, token: access.conversationScope)
         } else {
             // Signed-out drafts are never restored into an authenticated account's conversation.
             do { let owner = try ShareInbox.localDraftOwner(); restoreSnapshot(directory: directory, owner: owner ?? "signed-out", token: "draft-only") }
@@ -147,14 +155,14 @@ import UIKit
         catch { storageNotice = "下書きと会話を保存できませんでした。入力はこの画面に残しています。" }
     }
     func sendQuestion() async {
-        guard canSend else { return }
+        guard ensureDraftOwner(), canSend else { return }
         let question = draft.trimmingCharacters(in: .whitespacesAndNewlines)
         queued.append(Queued(id: UUID().uuidString, question: question, index: selectedIndex))
         draft = ""; persist()
         await drain()
     }
     private func drain() async {
-        guard !draining else { return }
+        guard ensureDraftOwner(), !draining else { return }
         draining = true
         defer { draining = false; persist() }
         if client == nil { await refresh() }
@@ -170,7 +178,15 @@ import UIKit
     }
     func removeQueued(_ id: String) { queued.removeAll { $0.id == id }; persist() }
     private func send(_ question: String, standard: Bool = false) async {
-        guard checkOwner(), let client, let item = current, !loading, pendingRequest == nil else { return }
+        guard checkOwner(), let client, let item = current, !loading, !preparingSend, pendingRequest == nil else { return }
+        preparingSend = true; defer { preparingSend = false }
+        do {
+            if let current = try? ShareInbox.renewableAIAccess(expectedOwner: accessOwner), current.canRenew() {
+                let renewed = try await ShareInbox.currentAIAccess(baseURL: client.baseURL, expectedOwner: accessOwner)
+                guard renewed.conversationScope == accessScope, checkOwner() else { return }
+                accessToken = renewed.token; await client.setToken(renewed.token)
+            }
+        } catch { show(error); return }
         loading = true; error = nil; canRetryExplanation = false; preview = ""; status = AnswerProgress.preparing.label
         let active = UUID(); generation = active
         defer { if generation == active { loading = false; preview = "" } }
@@ -196,13 +212,29 @@ import UIKit
             transcripts[item.id, default: ChatTranscript()].complete(id: request, answer: answer, standard: standard)
             pendingRequest = nil
             persist()
-        } catch { if generation == active { show(error); persist() } }
+        } catch {
+            if generation == active, checkOwner() {
+                let failure = (error as? PartialAnswerFailure)?.underlying ?? (error as? NetworkFailure) ?? .invalidResponse
+                let partial = (error as? PartialAnswerFailure)?.text ?? preview
+                if PartialAnswerFailure.mayRetain(failure) { transcripts[item.id, default: ChatTranscript()].interrupt(id: request, text: partial, standard: standard, failure: failure) }
+                show(failure)
+                if !partial.isEmpty, PartialAnswerFailure.mayRetain(failure) { self.error = "受信が途中で止まりました。部分回答を残しています。" + PartialAnswerFailure.diagnostic(failure) }
+                persist()
+            }
+        }
+    }
+    private func renewClientAccess() async throws {
+        guard let client, let old = try? ShareInbox.renewableAIAccess(expectedOwner: accessOwner), old.canRenew() else { return }
+        let access = try await ShareInbox.currentAIAccess(baseURL: client.baseURL, expectedOwner: accessOwner)
+        guard checkOwner(), access.conversationScope == accessScope else { throw NetworkFailure.unauthenticated }
+        accessToken = access.token; await client.setToken(access.token)
     }
     func checkStatus() async {
         if client == nil { await refresh() }
         guard checkOwner(), let client, let request = pendingRequest, let itemID = pendingItemID, !loading else { return }
         loading = true; error = nil; defer { loading = false }
         do {
+            try await renewClientAccess()
             let result: RequestResult = try await client.get("/share/requests/\(request)")
             guard checkOwner() else { return }
             if result.status == "complete", let answer = result.result {
@@ -213,13 +245,14 @@ import UIKit
             else { error = "回答を準備しています。少ししてから確認してください。" }
         } catch { show(error) }
     }
-    func startQuestion() { guard canSend else { return }; let question = draft.trimmingCharacters(in: .whitespacesAndNewlines); queued.append(Queued(id: UUID().uuidString, question: question, index: selectedIndex)); draft = ""; persist(); if !draining { task = Task { await drain() } } }
+    func startQuestion() { guard ensureDraftOwner(), canSend else { return }; let question = draft.trimmingCharacters(in: .whitespacesAndNewlines); queued.append(Queued(id: UUID().uuidString, question: question, index: selectedIndex)); draft = ""; persist(); if !draining { task = Task { await drain() } } }
     func resumeQueue() { guard !loading, !draining else { return }; task = Task { await drain() } }
     func cancel() {
+        if let itemID = pendingItemID, let pendingRequest { transcripts[itemID, default: ChatTranscript()].interrupt(id: pendingRequest, text: preview, standard: pendingStandard, failure: .cancelled) }
         generation = UUID(); task?.cancel(); task = nil; loading = false; preview = ""
         guard let client, let pendingRequest else { return }
         task = Task {
-            do { let _: JSONValue = try await client.delete("/share/requests/\(pendingRequest)"); if self.pendingRequest == pendingRequest { self.pendingRequest = nil; persist(); error = "中止しました。利用量が発生している場合があります。" } }
+            do { try await renewClientAccess(); let _: JSONValue = try await client.delete("/share/requests/\(pendingRequest)"); if self.pendingRequest == pendingRequest { self.pendingRequest = nil; persist(); error = "中止しました。利用量が発生している場合があります。" } }
             catch { self.error = "待つのをやめました。再送前に送信した回答の状態を確認してください。" }
         }
     }
@@ -234,26 +267,44 @@ import UIKit
 #if DEBUG
     private var isQA = false
     func configureQA(client: APIClient, initial: AnswerResult? = nil, restore: Bool = false) {
-        self.client = client; isQA = true; loading = false; canAsk = true; storageNotice = nil
+        self.client = client; isQA = true; draftOwner = try? ShareInbox.localDraftOwner(); draftOwnerKnown = true; loading = false; canAsk = true; storageNotice = nil
         if items.isEmpty { items = [Item(conversationId: "00000000-0000-4000-8000-000000000123", passage: Passage(book: "ACT", start: Verse(chapter: 24, verse: 23), end: Verse(chapter: 24, verse: 24)))] }
         if let initial { answers[items[0].id] = initial }
         if restore, let directory = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first { restoreSnapshot(directory: directory, owner: "fixture-owner", token: "fixture-session") }
     }
 #endif
+    /// Local identity is checked even without a valid AI capability. A draft must never
+    /// be silently rebound to an account that signed in while the extension was open.
+    private func ensureDraftOwner() -> Bool {
+        guard !ownerInvalidated, draftOwnerKnown else { return false }
+        do { if try ShareInbox.localDraftOwner() == draftOwner { return true } } catch {}
+        ownerInvalidated = true; generation = UUID(); task?.cancel(); snapshotURL = nil
+        answers = [:]; transcripts = [:]; queued = []; preview = ""; draft = ""; client = nil; loading = false
+        pendingRequest = nil; pendingQuestion = ""; pendingItemID = nil; lastSubmissionID = nil
+        canAsk = false; needsSetup = true
+        setupMessage = "ログイン状態が変わったか、確認できません。画面を閉じて共有し直してください。別のアカウントへは送信しません。"
+        return false
+    }
+    func chatGPTHandoffOwner() throws -> String? {
+        guard ensureDraftOwner() else { throw ShareAIAccessReadError.ownerMismatch }
+        return draftOwner
+    }
     private func checkOwner() -> Bool {
+        guard ensureDraftOwner() else { return false }
 #if DEBUG
         if isQA { return true }
 #endif
-        guard let access = try? ShareInbox.verifiedAIAccess(), access.ownerID == accessOwner, access.token == accessToken else {
+        guard let access = try? ShareInbox.renewableAIAccess(), access.ownerID == accessOwner, access.conversationScope == accessScope else {
             generation = UUID(); task?.cancel(); snapshotURL = nil; answers = [:]; transcripts = [:]; queued = []; preview = ""; draft = ""; client = nil; loading = false; canAsk = false; needsSetup = true
             setupMessage = "ログイン状態または共有設定が変わりました。画面を閉じて共有し直してください。"; return false
         }
         return true
     }
-    func revalidateAccess() { if accessOwner != nil { _ = checkOwner() } }
+    func revalidateAccess() { guard ensureDraftOwner() else { return }; if accessOwner != nil { _ = checkOwner() } }
     func close() { persist(); generation = UUID(); task?.cancel(); task = nil; preview = "" }
     private func show(_ failure: Error) {
         if case NetworkFailure.unauthenticated = failure {
+            transcripts = [:]; answers = [:]; preview = ""
             let recovery = ShareAuthRecoveryState.unauthenticated(pendingRequest: pendingRequest)
             needsSetup = recovery.requiresAppRecheck
             canRetryStart = recovery.canRetryShareStart
@@ -289,7 +340,10 @@ import UIKit
             return
         }
         if case NetworkFailure.server(_, let code) = failure, ["standard_explanation_pending", "standard_explanation_unavailable"].contains(code) { pendingRequest = nil; canRetryExplanation = true }
-        error = (failure as? NetworkFailure)?.userMessage ?? "接続できませんでした。共有した箇所は保持しています。"
+        if let network = failure as? NetworkFailure {
+            error = pendingRequest != nil && network == .offline ? "通信が途切れました。送信済みか確認できないため、再送前に回答の状態を確認してください。" : network.userMessage
+            if case .server = network { error = (error ?? "") + " " + PartialAnswerFailure.diagnostic(network) }
+        } else { error = "接続できませんでした。共有した箇所は保持しています。" }
     }
     static func accessMessage(for failure: ShareAIAccessReadError) -> String {
         switch failure {
@@ -325,6 +379,7 @@ import UIKit
     }
 }
 struct SharedPreviewView: View {
+    @Environment(\.openURL) private var openURL
     @Environment(\.scenePhase) private var scenePhase
     @ObservedObject var model: SharedPreviewModel
     let close: () -> Void
@@ -387,13 +442,13 @@ struct SharedPreviewView: View {
                     }
                     if pane == "explanation" {
                         if model.entries.isEmpty && !model.loading { Text("気になったことを、そのまま質問できます。").bibleTextStyle(.body) }
-                        ChatMessagesView(entries: model.entries.filter { !$0.standard })
+                        ChatMessagesView(entries: model.entries.filter { !$0.standard || $0.incomplete == true })
                         if model.loading { ChatWaitingView(status: model.status, preview: model.preview) }
                     }
                     if model.draft.utf16.count > 2000 { Text("質問は2000文字以内にしてください。下書きは残しています。").bibleTextStyle(.caption) }
                     if model.queued.count >= 10 { Text("順番待ちは10件までです。回答を待つか、不要な質問を取り消してください。").bibleTextStyle(.caption) }
                     ForEach(model.queued) { question in
-                        HStack { Text("送信待ち: " + question.question).bibleTextStyle(.caption); Button("取り消す") { model.removeQueued(question.id) }.disabled(model.loading && model.queued.first?.id == question.id) }
+                        HStack { Text((model.pendingRequest != nil && model.queued.first?.id == question.id ? "送信済み・結果確認中: " : "送信待ち: ") + question.question).bibleTextStyle(.caption); Button("取り消す") { model.removeQueued(question.id) }.disabled(model.pendingRequest != nil && model.queued.first?.id == question.id) }
                     }
                     if !model.queued.isEmpty && !model.loading && model.pendingRequest == nil { Button("待っている質問を送る") { model.resumeQueue() } }
                     if let error = model.error { Text(error).bibleTextStyle(.body) }
@@ -415,16 +470,8 @@ struct SharedPreviewView: View {
                         TextField("気になったことを質問", text: $model.draft, axis: .vertical).accessibilityIdentifier("share-question-draft").lineLimit(1...4).focused($composerFocused).bibleTextStyle(.body).frame(maxWidth: .infinity, maxHeight: 120).clipped().submitLabel(.send).onSubmit { model.startQuestion() }
                         if model.loading { Button { model.cancel() } label: { ChatComposerIcon(systemName: "stop.circle") }.accessibilityLabel("回答の準備をやめる") }
                         if showChatGPT {
-                            Button {
-                                do {
-                                    guard let passage = model.current?.passage else { return }
-                                    model.revalidateAccess()
-                                    let owner = try ShareInbox.localDraftOwner()
-                                    let prompt = try ChatGPTCopyPrompt.make(question: model.draft, passage: passage, translation: model.translation, sharedText: model.sharedText)
-                                    chatGPTPreview = ChatGPTPreview(prompt: prompt, error: nil, ownerID: owner)
-                                } catch { chatGPTPreview = ChatGPTPreview(prompt: nil, error: "質問と共有本文を確認してください。質問は2,000文字、共有文は20,000文字までです。") }
-                            } label: { ChatGPTCopyComposerLabel() }
-                            .accessibilityLabel("ChatGPT用の本文と質問を確認").accessibilityIdentifier("chatgpt-copy-preview")
+                            Button(action: openChatGPT) { ChatGPTCopyComposerLabel() }
+                            .accessibilityLabel("ChatGPTを外部で開き、本文と質問を渡す").accessibilityHint("ChatGPTで回答が始まる場合があります").accessibilityIdentifier("chatgpt-open-external")
                             .disabled(model.draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || model.current == nil)
                         }
                         Button { pane = "explanation"; model.startQuestion() } label: { ChatComposerIcon(systemName: "arrow.up.circle.fill") }.accessibilityLabel("質問を送る").disabled(!model.canSend)
@@ -446,6 +493,21 @@ struct SharedPreviewView: View {
 
         }
     }
+    private func openChatGPT() {
+        do {
+            guard let passage = model.current?.passage else { return }
+            let owner = try model.chatGPTHandoffOwner()
+            let prompt = try ChatGPTCopyPrompt.make(question: model.draft, passage: passage, translation: model.translation, sharedText: model.sharedText)
+            guard try ShareInbox.localDraftOwner() == owner else { throw ShareAIAccessReadError.ownerMismatch }
+            do {
+                let url = try ChatGPTQuestionLink.make(prompt: prompt)
+                openURL(url) { accepted in
+                    if !accepted { chatGPTPreview = ChatGPTPreview(prompt: prompt, error: "ChatGPTを開けませんでした。本文と質問をコピーして貼り付けられます。", ownerID: owner) }
+                }
+            } catch { chatGPTPreview = ChatGPTPreview(prompt: prompt, error: "本文がURLの長さ上限を超えています。本文と質問をコピーしてChatGPTへ貼り付けてください。内容は切り詰めません。", ownerID: owner) }
+        } catch { chatGPTPreview = ChatGPTPreview(prompt: nil, error: "質問と共有本文を確認してください。質問は2,000文字、共有文は20,000文字までです。") }
+    }
+
 }
 
 private struct ChatGPTPreviewSheet: View {
@@ -461,8 +523,9 @@ private struct ChatGPTPreviewSheet: View {
                 Text("本文と質問をURLでChatGPTへ渡せます。開くと回答が始まる場合があります。入力欄に入るだけの場合は、内容を確認して送信してください。URLはブラウザ履歴などに残る可能性があります。")
                 Text("コピーする内容は以下だけです。会話履歴やアカウント情報は含みません。")
                 if let error = error { Text(error) }
-                else if let chatGPTPrompt = prompt {
-                    Text(chatGPTPrompt).textSelection(.enabled).accessibilityIdentifier("chatgpt-copy-content")
+                if let chatGPTPrompt = prompt {
+                    Text(chatGPTPrompt).lineLimit(3).textSelection(.enabled).accessibilityIdentifier("chatgpt-copy-content")
+                    DisclosureGroup("本文と質問を全文で確認") { Text(chatGPTPrompt).textSelection(.enabled) }
                     if let url = try? ChatGPTQuestionLink.make(prompt: chatGPTPrompt) {
                         Button("ChatGPTで開く") {
                             do { guard try ShareInbox.localDraftOwner() == ownerID else { chatGPTNotice = "ログイン状態が変わりました。共有し直してください。"; return } }
@@ -490,8 +553,8 @@ private struct ChatGPTPreviewSheet: View {
                         dismiss()
                     }.accessibilityIdentifier("chatgpt-copy-confirm")
                 }
-            }.padding() }.navigationTitle("ChatGPTへ渡す")
-            .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("閉じる") { dismiss() } } }
+            }.padding() }.navigationTitle("ChatGPTを開けませんでした").navigationBarTitleDisplayMode(.inline)
+            .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("閉じる") { dismiss() }.accessibilityIdentifier("chatgpt-fallback-close") } }
         }
     }
 }

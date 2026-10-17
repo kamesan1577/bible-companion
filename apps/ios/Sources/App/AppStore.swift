@@ -54,6 +54,8 @@ import CompanionCore
     private let publicCache: PublicReadingCache
     private var gate = RequestGate()
     private var aiPolicyGate = RequestGate()
+    private struct ShareIssuance { let id: UUID; let owner: String; let epoch: UUID; let fetch: Task<ShareAIAccess, Error> }
+    private var shareIssuance: ShareIssuance?
     private var readingTask: Task<Void, Never>?
     private var cacheExpiryTask: Task<Void, Never>?
     private var authTask: Task<Void, Never>?
@@ -403,15 +405,30 @@ import CompanionCore
         await loadAIPolicy()
     }
     func enableShareAI(expectedEpoch: UUID) async throws {
-        guard aiPolicy?.shareAiEnabled == true, aiPolicy?.permits(.groundedGeneration) == true,
-              !isConsentUpdating, sessionEpoch == expectedEpoch, let owner = account?.id else { throw NetworkFailure.cancelled }
-        let revision = UUID(); shareAccessRevision = revision
-        do { try ShareInbox.setOwner(owner) }
-        catch ShareInbox.InboxError.unavailable { throw ShareAIAccessReadError.appGroupUnavailable }
-        let value: ShareAIAccess = try await client.post("/v1/me/share-access", body: ["enabled": true])
-        guard sessionEpoch == expectedEpoch, account?.id == owner, shareAccessRevision == revision,
-              !isConsentUpdating, aiPolicy?.shareAiEnabled == true, aiPolicy?.permits(.groundedGeneration) == true,
-              value.isValid(owner: owner) else { throw NetworkFailure.cancelled }
+        guard !isConsentUpdating, sessionEpoch == expectedEpoch, let owner = account?.id else { throw NetworkFailure.cancelled }
+        let issuance: ShareIssuance
+        if let pending = shareIssuance, pending.owner == owner, pending.epoch == expectedEpoch, shareAccessRevision == pending.id {
+            issuance = pending
+        } else {
+            guard aiPolicy?.shareAiEnabled == true, aiPolicy?.permits(.groundedGeneration) == true else { throw NetworkFailure.cancelled }
+            do { try ShareInbox.setOwner(owner) }
+            catch ShareInbox.InboxError.unavailable { throw ShareAIAccessReadError.appGroupUnavailable }
+            let revision = UUID(); shareAccessRevision = revision
+            let requestClient = client; let mayRenew = aiPolicy?.shareAiConsent == true
+            let fetch = Task<ShareAIAccess, Error> {
+                if mayRenew, let old = try? ShareInbox.renewableAIAccess(expectedOwner: owner), old.canRenew() {
+                    return try await ShareInbox.currentAIAccess(baseURL: requestClient.baseURL, expectedOwner: owner)
+                }
+                return try await requestClient.post("/v1/me/share-access", body: ["enabled": true])
+            }
+            issuance = ShareIssuance(id: revision, owner: owner, epoch: expectedEpoch, fetch: fetch)
+            shareIssuance = issuance
+        }
+        defer { if shareIssuance?.id == issuance.id { shareIssuance = nil } }
+        let value = try await issuance.fetch.value
+        guard sessionEpoch == expectedEpoch, account?.id == owner, shareAccessRevision == issuance.id,
+              !isConsentUpdating, value.isValid(owner: owner) else { throw NetworkFailure.cancelled }
+        if let policy = aiPolicy, policy.shareAiEnabled != true || !policy.permits(.groundedGeneration) { throw NetworkFailure.cancelled }
         try Task.checkCancellation()
         try ShareInbox.saveAIAccess(value)
         _ = try ShareInbox.verifiedAIAccess(expectedOwner: owner)

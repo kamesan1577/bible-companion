@@ -23,7 +23,7 @@ struct GroundedConsentView: View {
                 Section("AIで解説を読む") {
                     Text("AIは間違えることがあります。解説は本文と出典を確かめながら読んでください。").bibleTextStyle(.body)
                     Text("選んだ聖書の箇所、質問、関連する会話をCloudflare Workers AIへ送り、解説を作ります。出典があっても間違いや未読の出来事を含むことがあります。").bibleTextStyle(.body)
-                    if intent.policy.shareAiEnabled == true { Text("YouVersionから開く画面でも解説と質問を使えるよう、専用のログイン情報を端末内で最長24時間保存します。通常のログイン情報はその画面へ渡しません。設定でAIへの送信をやめることもできます。").bibleTextStyle(.caption) }
+                    if intent.policy.shareAiEnabled == true { Text("YouVersionから開く画面でも解説と質問を使えるよう、共有専用のログイン情報と自動更新用の情報を端末内に保存します。短期の情報は最長24時間で更新し、更新できる期間も元のログイン期限までです。通常のログイン情報はその画面へ渡しません。設定でAIへの送信をやめることもできます。").bibleTextStyle(.caption) }
                     DisclosureGroup("詳しい注意事項") { Text(intent.policy.groundedNoticeJa).bibleTextStyle(.caption) }
                 }
                 Section {

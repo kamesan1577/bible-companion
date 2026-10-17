@@ -116,7 +116,11 @@ import CompanionCore
                         catch { needsStatusCheck = true }
                         if ["grounded_consent_required", "answer_mode_disabled"].contains(code) { aiPolicy = nil; policyGate.invalidate() }
                     }
-                    errorMessage = (error as? NetworkFailure)?.userMessage ?? "回答を確認できませんでした。再送前に状態を確認してください。"
+                    let failure = (error as? PartialAnswerFailure)?.underlying ?? (error as? NetworkFailure) ?? .invalidResponse
+                    let partial = (error as? PartialAnswerFailure)?.text ?? preview
+                    if !PartialAnswerFailure.mayRetain(failure) { transcript.clear(); answer = nil }
+                    transcript.interrupt(id: request, text: partial, standard: standard, failure: failure)
+                    errorMessage = PartialAnswerFailure.diagnostic(failure) + " 再送前に届いた回答を確認してください。"
                     status = needsStatusCheck ? "状態の確認が必要です" : "内容を保持しています。設定や送信方法を確認して再試行できます。"
                 }
             }
@@ -138,6 +142,7 @@ import CompanionCore
         }
     }
     func cancel() {
+        if let requestID { transcript.interrupt(id: requestID, text: preview, standard: submittedStandard, failure: .cancelled) }
         gate.invalidate(); task?.cancel(); task = nil; isRunning = false; preview = ""
         status = "中止しました。処理や利用量が発生している場合があります。"
         guard let requestID else { return }

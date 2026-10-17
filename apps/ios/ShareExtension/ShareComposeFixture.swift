@@ -38,6 +38,7 @@ private final class ShareComposeFixtureProtocol: URLProtocol, @unchecked Sendabl
         client?.urlProtocol(self, didLoad: Data("event: progress\ndata: {\"stage\":\"generating\"}\n\n".utf8))
         DispatchQueue.global().asyncAfter(deadline:.now()+3) { [self] in
             guard active else { return }
+            if question.contains("fail") { client?.urlProtocol(self,didLoad:Data("event: preview\ndata: {\"text\":\"主がモーセを通して人々へ語りかけています。\"}\n\nevent: failure\ndata: {\"status\":503,\"code\":\"timeout\"}\n\n".utf8)) }
             if !question.contains("fail") { client?.urlProtocol(self,didLoad:Data(("event: complete\ndata: " + json + "\n\n").utf8)) }
             client?.urlProtocolDidFinishLoading(self)
         }

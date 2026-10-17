@@ -27,3 +27,13 @@ final class SharePreparationReadinessTests: XCTestCase {
         XCTAssertFalse(try ready(policy(), expired))
     }
 }
+
+extension SharePreparationReadinessTests {
+    func testSavedRenewalConfigurationRemainsPreparedWithoutGrantingExpiredAccess() throws {
+        let access = ShareAIAccess(token: "bcs1_" + String(repeating:"a",count:64), ownerID: owner, expiresAt: date.timeIntervalSince1970 - 1, scopeID: String(repeating:"b",count:64), refreshToken:"bcr1_" + String(repeating:"c",count:64), refreshExpiresAt:date.timeIntervalSince1970 + 86400)
+        XCTAssertTrue(SharePreparationReadiness.isSaved(policy:try policy(),owner:owner,access:access,at:date))
+        XCTAssertFalse(access.isValid(owner:owner,at:date))
+        XCTAssertFalse(SharePreparationReadiness.isSaved(policy:try policy(consent:false),owner:owner,access:access,at:date))
+        XCTAssertFalse(SharePreparationReadiness.isSaved(policy:try policy(),owner:"22222222-2222-4222-8222-222222222222",access:access,at:date))
+    }
+}

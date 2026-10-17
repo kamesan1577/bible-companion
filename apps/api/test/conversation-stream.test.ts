@@ -278,3 +278,132 @@ describe('private conversation SSE transport', () => {
     expect(wire).toContain('event: complete');
   });
 });
+
+describe('renewable share credentials', () => {
+  it('renews expired access without new consent or inference and preserves conversation scope', async () => {
+    const f = await setup();
+    const access = (await f.issue()) as Awaited<ReturnType<typeof f.issue>> & {
+      refreshToken: string;
+      scopeId: string;
+      refreshExpiresAt: number;
+    };
+    const started = await f.start(access.headers);
+    const id = started.items[0].conversationId;
+    await f.env.DB.prepare('UPDATE share_ai_tokens SET expires_at=0 WHERE access_hash=?')
+      .bind(access.scopeId)
+      .run();
+    await f.env.DB.prepare('UPDATE share_ai_access SET expires_at=0 WHERE token_hash=?')
+      .bind(access.scopeId)
+      .run();
+    const expired = await f.request(
+      '/share/conversations/' + id + '/questions',
+      { requestId: crypto.randomUUID(), question: '解説して' },
+      access.headers,
+    );
+    expect(expired.status).toBe(401);
+    const r = await f.request(
+      '/share/renew',
+      {},
+      { Authorization: 'Bearer ' + access.refreshToken, 'Content-Type': 'application/json' },
+    );
+    expect(r.status).toBe(200);
+    const renewed = (await r.json()) as typeof access;
+    expect(renewed.scopeId).toBe(access.scopeId);
+    expect(renewed.token).not.toBe(access.token);
+    expect(renewed.refreshToken).toBe(access.refreshToken);
+    expect(f.calls()).toBe(0);
+    const oldAfterRenewal = await f.request(
+      '/share/conversations/' + id + '/questions',
+      { requestId: crypto.randomUUID(), question: '解説して' },
+      access.headers,
+    );
+    expect(oldAfterRenewal.status).toBe(401);
+    const continued = await f.request(
+      '/share/conversations/' + id + '/questions',
+      {
+        requestId: crypto.randomUUID(),
+        question: '何を教えた？',
+        answerMode: 'grounded-generation',
+      },
+      { Authorization: 'Bearer ' + renewed.token, 'Content-Type': 'application/json' },
+    );
+    expect(continued.status).toBe(200);
+    expect(f.calls()).toBe(1);
+    const general = await app.request(
+      '/v1/me',
+      { headers: { Authorization: 'Bearer ' + renewed.token } },
+      f.env,
+    );
+    expect(general.status).toBe(401);
+  });
+  it.each(['logout', 'withdraw', 'epoch', 'parent-expiry', 'refresh-expiry'] as const)(
+    'rejects renewal after %s',
+    async (reason) => {
+      const f = await setup();
+      const a = (await f.issue()) as Awaited<ReturnType<typeof f.issue>> & {
+        refreshToken: string;
+        scopeId: string;
+      };
+      if (reason === 'logout')
+        await f.env.DB.prepare('DELETE FROM sessions WHERE user_id=?').bind(f.user.id).run();
+      if (reason === 'withdraw') await f.request('/v1/me/consents', { workersAi: false });
+      if (reason === 'epoch')
+        await f.env.DB.prepare('UPDATE users SET data_epoch=data_epoch+1 WHERE id=?')
+          .bind(f.user.id)
+          .run();
+      if (reason === 'parent-expiry')
+        await f.env.DB.prepare('UPDATE sessions SET expires_at=0 WHERE user_id=?')
+          .bind(f.user.id)
+          .run();
+      if (reason === 'refresh-expiry')
+        await f.env.DB.prepare('UPDATE share_ai_access SET refresh_expires_at=0 WHERE token_hash=?')
+          .bind(a.scopeId)
+          .run();
+      const r = await f.request(
+        '/share/renew',
+        {},
+        { Authorization: 'Bearer ' + a.refreshToken, 'Content-Type': 'application/json' },
+      );
+      expect(r.status).toBe(401);
+      expect(f.calls()).toBe(0);
+    },
+  );
+  it('does not resurrect old refresh credentials after consent is granted again', async () => {
+    const f = await setup();
+    const a = (await f.issue()) as Awaited<ReturnType<typeof f.issue>> & { refreshToken: string };
+    await f.request('/v1/me/consents', { workersAi: false });
+    await f.consent();
+    const r = await f.request(
+      '/share/renew',
+      {},
+      { Authorization: 'Bearer ' + a.refreshToken, 'Content-Type': 'application/json' },
+    );
+    expect(r.status).toBe(401);
+    expect(f.calls()).toBe(0);
+  });
+  it('keeps different scopes isolated and retries renewal safely after a lost response', async () => {
+    const f = await setup();
+    const a = (await f.issue()) as Awaited<ReturnType<typeof f.issue>> & {
+      refreshToken: string;
+      scopeId: string;
+    };
+    const b = await f.issue();
+    const started = await f.start(b.headers);
+    const headers = {
+      Authorization: 'Bearer ' + a.refreshToken,
+      'Content-Type': 'application/json',
+    };
+    const x = await f.request('/share/renew', {}, headers);
+    expect(x.status).toBe(200);
+    const y = await f.request('/share/renew', {}, headers);
+    expect(y.status).toBe(200);
+    const fresh = (await y.json()) as typeof a;
+    const cross = await f.request(
+      '/share/conversations/' + started.items[0].conversationId + '/questions',
+      { requestId: crypto.randomUUID(), question: '解説して' },
+      { Authorization: 'Bearer ' + fresh.token, 'Content-Type': 'application/json' },
+    );
+    expect(cross.status).toBe(404);
+    expect(f.calls()).toBe(0);
+  });
+});

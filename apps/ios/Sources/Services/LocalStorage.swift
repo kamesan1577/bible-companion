@@ -68,7 +68,7 @@ enum ShareInbox {
         }
     }
 
-    private static func validatedAccess(at root: URL, expectedOwner: String? = nil) throws -> ShareAIAccess {
+    private static func validatedAccess(at root: URL, expectedOwner: String? = nil, allowingRenewal: Bool = false) throws -> ShareAIAccess {
         let capability = root.appendingPathComponent("ai-access.capability")
         let data: Data
         do {
@@ -87,7 +87,7 @@ enum ShareInbox {
         catch { throw ShareAIAccessReadError.corrupted }
         guard let owner = decodedOwner else { throw ShareAIAccessReadError.ownerMismatch }
         if let expectedOwner, expectedOwner != owner { throw ShareAIAccessReadError.ownerMismatch }
-        return try ShareAIAccess.validated(from: data, owner: owner)
+        return try ShareAIAccess.validated(from: data, owner: owner, allowingRenewal: allowingRenewal)
     }
 
     /// Reads and validates the share-only capability while preserving a safe reason
@@ -98,6 +98,40 @@ enum ShareInbox {
         } catch {
             throw storageError(error)
         }
+    }
+    static func renewableAIAccess(expectedOwner: String? = nil) throws -> ShareAIAccess {
+        do { return try withLock { try validatedAccess(at: $0, expectedOwner: expectedOwner, allowingRenewal: true) } }
+        catch { throw storageError(error) }
+    }
+    /// Compare-and-save rejects a late renewal after logout, account change or another refresh.
+    static func saveRenewedAIAccess(_ value: ShareAIAccess, replacing previous: ShareAIAccess) throws {
+        try withLock { root in
+            let current = try validatedAccess(at: root, expectedOwner: previous.ownerID, allowingRenewal: true)
+            guard current.token == previous.token, current.conversationScope == previous.conversationScope,
+                  current.refreshToken == previous.refreshToken, value.ownerID == current.ownerID,
+                  value.conversationScope == current.conversationScope, value.refreshToken == current.refreshToken else { throw ShareAIAccessReadError.ownerMismatch }
+            let bytes = try JSONEncoder().encode(value)
+            _ = try ShareAIAccess.validated(from: bytes, owner: current.ownerID)
+            let path = root.appendingPathComponent("ai-access.capability")
+            try bytes.write(to: path, options: [.atomic, .completeFileProtection])
+            guard let saved = try readBytes(path, limit: 4096), saved == bytes else { throw ShareAIAccessReadError.writeFailed }
+        }
+    }
+    /// At most one network renewal per caller; no question or inference is sent.
+    static func currentAIAccess(baseURL: URL, expectedOwner: String? = nil) async throws -> ShareAIAccess {
+        let old = try renewableAIAccess(expectedOwner: expectedOwner)
+        guard old.expiresAt <= Date().addingTimeInterval(3600).timeIntervalSince1970, old.canRenew(), let refreshToken = old.refreshToken else { return try verifiedAIAccess(expectedOwner: expectedOwner) }
+        let renewalClient = try APIClient(baseURL: baseURL); await renewalClient.setToken(refreshToken)
+        let value: ShareAIAccess = try await renewalClient.post("/share/renew", body: [String: String]())
+        try Task.checkCancellation()
+        do { try saveRenewedAIAccess(value, replacing: old) }
+        catch ShareAIAccessReadError.ownerMismatch {
+            // Another process may have renewed the same scope while this call was in flight.
+            let current = try verifiedAIAccess(expectedOwner: old.ownerID)
+            guard current.conversationScope == old.conversationScope, current.refreshToken == old.refreshToken else { throw ShareAIAccessReadError.ownerMismatch }
+            return current
+        }
+        return try verifiedAIAccess(expectedOwner: old.ownerID)
     }
     /// Records that the extension has opened this exact current capability.
     /// The receipt is diagnostic only and does not authorize access.
