@@ -35,8 +35,11 @@ import UIKit
     private var accessOwner: String?
     private var accessToken: String?
     private var accessScope: String?
+    private var draftOwner: String?
+    private var draftOwnerKnown = false
+    private var ownerInvalidated = false
     var entries: [ChatEntry] { current.flatMap { transcripts[$0.id]?.entries } ?? [] }
-    var canSend: Bool { !shareParseFailed && current != nil && !draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && draft.utf16.count <= 2000 && queued.count < 10 }
+    var canSend: Bool { draftOwnerKnown && !ownerInvalidated && !shareParseFailed && current != nil && !draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && draft.utf16.count <= 2000 && queued.count < 10 }
     @Published var selectedIndex = 0
     @Published var draft = "" { didSet { persist() } }
     struct Queued: Codable, Identifiable { let id: String; let question: String; let index: Int }
@@ -55,7 +58,7 @@ import UIKit
     var current: Item? { items.indices.contains(selectedIndex) ? items[selectedIndex] : nil }
     var answer: AnswerResult? { current.flatMap { answers[$0.id] } }
     func refresh() async {
-        guard !sharedText.isEmpty, client == nil else { return }
+        guard ensureDraftOwner(), !sharedText.isEmpty, client == nil else { return }
         if accessOwner != nil && !checkOwner() { return }
         let active = UUID(); generation = active
         loading = true; error = nil; canRetryStart = false
@@ -111,6 +114,8 @@ import UIKit
     }
     /// Called after local parsing. No network or inference on opening, selection or tab changes.
     func prepare() {
+        do { draftOwner = try ShareInbox.localDraftOwner(); draftOwnerKnown = true }
+        catch { storageNotice = "ログイン状態を読み取れません。質問の送信前に共有し直してください。"; canAsk = false; return }
         loading = false
         canAsk = !shareParseFailed
         guard let directory = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else { return }
@@ -150,14 +155,14 @@ import UIKit
         catch { storageNotice = "下書きと会話を保存できませんでした。入力はこの画面に残しています。" }
     }
     func sendQuestion() async {
-        guard canSend else { return }
+        guard ensureDraftOwner(), canSend else { return }
         let question = draft.trimmingCharacters(in: .whitespacesAndNewlines)
         queued.append(Queued(id: UUID().uuidString, question: question, index: selectedIndex))
         draft = ""; persist()
         await drain()
     }
     private func drain() async {
-        guard !draining else { return }
+        guard ensureDraftOwner(), !draining else { return }
         draining = true
         defer { draining = false; persist() }
         if client == nil { await refresh() }
@@ -240,7 +245,7 @@ import UIKit
             else { error = "回答を準備しています。少ししてから確認してください。" }
         } catch { show(error) }
     }
-    func startQuestion() { guard canSend else { return }; let question = draft.trimmingCharacters(in: .whitespacesAndNewlines); queued.append(Queued(id: UUID().uuidString, question: question, index: selectedIndex)); draft = ""; persist(); if !draining { task = Task { await drain() } } }
+    func startQuestion() { guard ensureDraftOwner(), canSend else { return }; let question = draft.trimmingCharacters(in: .whitespacesAndNewlines); queued.append(Queued(id: UUID().uuidString, question: question, index: selectedIndex)); draft = ""; persist(); if !draining { task = Task { await drain() } } }
     func resumeQueue() { guard !loading, !draining else { return }; task = Task { await drain() } }
     func cancel() {
         if let itemID = pendingItemID, let pendingRequest { transcripts[itemID, default: ChatTranscript()].interrupt(id: pendingRequest, text: preview, standard: pendingStandard, failure: .cancelled) }
@@ -262,13 +267,30 @@ import UIKit
 #if DEBUG
     private var isQA = false
     func configureQA(client: APIClient, initial: AnswerResult? = nil, restore: Bool = false) {
-        self.client = client; isQA = true; loading = false; canAsk = true; storageNotice = nil
+        self.client = client; isQA = true; draftOwner = try? ShareInbox.localDraftOwner(); draftOwnerKnown = true; loading = false; canAsk = true; storageNotice = nil
         if items.isEmpty { items = [Item(conversationId: "00000000-0000-4000-8000-000000000123", passage: Passage(book: "ACT", start: Verse(chapter: 24, verse: 23), end: Verse(chapter: 24, verse: 24)))] }
         if let initial { answers[items[0].id] = initial }
         if restore, let directory = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first { restoreSnapshot(directory: directory, owner: "fixture-owner", token: "fixture-session") }
     }
 #endif
+    /// Local identity is checked even without a valid AI capability. A draft must never
+    /// be silently rebound to an account that signed in while the extension was open.
+    private func ensureDraftOwner() -> Bool {
+        guard !ownerInvalidated, draftOwnerKnown else { return false }
+        do { if try ShareInbox.localDraftOwner() == draftOwner { return true } } catch {}
+        ownerInvalidated = true; generation = UUID(); task?.cancel(); snapshotURL = nil
+        answers = [:]; transcripts = [:]; queued = []; preview = ""; draft = ""; client = nil; loading = false
+        pendingRequest = nil; pendingQuestion = ""; pendingItemID = nil; lastSubmissionID = nil
+        canAsk = false; needsSetup = true
+        setupMessage = "ログイン状態が変わったか、確認できません。画面を閉じて共有し直してください。別のアカウントへは送信しません。"
+        return false
+    }
+    func chatGPTHandoffOwner() throws -> String? {
+        guard ensureDraftOwner() else { throw ShareAIAccessReadError.ownerMismatch }
+        return draftOwner
+    }
     private func checkOwner() -> Bool {
+        guard ensureDraftOwner() else { return false }
 #if DEBUG
         if isQA { return true }
 #endif
@@ -278,7 +300,7 @@ import UIKit
         }
         return true
     }
-    func revalidateAccess() { if accessOwner != nil { _ = checkOwner() } }
+    func revalidateAccess() { guard ensureDraftOwner() else { return }; if accessOwner != nil { _ = checkOwner() } }
     func close() { persist(); generation = UUID(); task?.cancel(); task = nil; preview = "" }
     private func show(_ failure: Error) {
         if case NetworkFailure.unauthenticated = failure {
@@ -474,8 +496,7 @@ struct SharedPreviewView: View {
     private func openChatGPT() {
         do {
             guard let passage = model.current?.passage else { return }
-            model.revalidateAccess()
-            let owner = try ShareInbox.localDraftOwner()
+            let owner = try model.chatGPTHandoffOwner()
             let prompt = try ChatGPTCopyPrompt.make(question: model.draft, passage: passage, translation: model.translation, sharedText: model.sharedText)
             guard try ShareInbox.localDraftOwner() == owner else { throw ShareAIAccessReadError.ownerMismatch }
             do {
