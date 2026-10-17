@@ -1,5 +1,6 @@
 import SwiftUI
 import MapKit
+import os
 import CompanionCore
 
 /// Supplements the reviewed material cards; it does not replace their cards or maps.
@@ -12,6 +13,13 @@ struct OfflineEntityPane: View {
     @State private var result: EntityIndexResult?
     @State private var includeFuture = false
     @State private var message: String?
+    @State private var selectedMapID: String?
+    private func toggleMap(_ id: String) {
+        selectedMapID = selectedMapID == id ? nil : id
+#if DEBUG
+        Logger(subsystem: "org.example.BibleCompanion", category: "ShareMap").notice("Map selection changed: \(id, privacy: .public)")
+#endif
+    }
     private var isPartialChronicles: Bool { ["1CH", "2CH"].contains(passage.book) }
     private var additions: [IndexedOccurrence] {
         result?.occurrences.filter { item in
@@ -20,6 +28,7 @@ struct OfflineEntityPane: View {
     }
     var body: some View {
         VStack(alignment: .leading, spacing: BibleTheme.Space.section) {
+            if let message, result != nil { Text(message).bibleTextStyle(.caption) }
             if let result {
                 if isPartialChronicles {
                     Text("この書の人物・地名は、一部を原文と照合して収録しています。説明が出ない名前も、未収録の場合があります。")
@@ -39,7 +48,10 @@ struct OfflineEntityPane: View {
                                 if inlineDetails {
                                     EntityProfileContent(resolved: profile).accessibilityIdentifier("entity-inline-detail-" + item.id)
                                     if profile.profile.coordinate?.count == 2 {
-                                        EntityProfileInlineMap(resolved: profile)
+                                        Button(selectedMapID == item.id ? "地図を閉じる" : "地図で概略位置を確認") { toggleMap(item.id) }
+                                            .buttonStyle(.bordered).frame(minHeight: BibleTheme.Layout.minimumTouchTarget)
+                                        .accessibilityIdentifier("share-place-map-" + item.id)
+                                        if selectedMapID == item.id { EntityProfileInlineMap(resolved: profile) }
                                     }
                                 } else {
                                 Text(profile.profile.summaryJa).bibleTextStyle(.body)
@@ -59,7 +71,10 @@ struct OfflineEntityPane: View {
                             if item.profile != nil, item.profile?.profile.coordinate == nil,
                                let point = item.entity.coordinate, point.count == 2 {
                                 if inlineDetails {
-                                    UnreviewedIndexedPlaceMap(entity: item.entity, inline: true, note: item.candidateMapNote ?? item.profile?.profile.locationNoteJa)
+                                    Button(selectedMapID == item.id ? "地図を閉じる" : "従来資料の候補位置を地図で見る") { toggleMap(item.id) }
+                                        .buttonStyle(.bordered).frame(minHeight: BibleTheme.Layout.minimumTouchTarget)
+                                        .accessibilityIdentifier("share-place-map-" + item.id)
+                                    if selectedMapID == item.id { UnreviewedIndexedPlaceMap(entity: item.entity, inline: true, note: item.candidateMapNote ?? item.profile?.profile.locationNoteJa) }
                                 } else {
                                     NavigationLink("従来資料の候補位置を地図で見る") { UnreviewedIndexedPlaceMap(entity: item.entity, note: item.candidateMapNote ?? item.profile?.profile.locationNoteJa) }
                                         .accessibilityIdentifier("entity-candidate-map-" + item.id)
@@ -85,7 +100,13 @@ struct OfflineEntityPane: View {
                 }
             } else if let message { Text(message).bibleTextStyle(.body) }
             else { ProgressView("人物・場所の情報を準備しています") }
-        }.task(id: passage.label + kind + String(includeFuture)) {
+        }
+        // Share extensions have a smaller memory budget than the containing app.
+        // Mount one interactive MapKit map only after an explicit selection, never a map per card.
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didReceiveMemoryWarningNotification)) { _ in
+            if selectedMapID != nil { selectedMapID = nil; message = "端末の空きメモリが少ないため地図を閉じました。場所の説明は引き続き読めます。" }
+        }
+        .task(id: passage.label + kind + String(includeFuture)) {
             do { result = try await BundledEntityIndex.shared.lookup(passage, kind: kind, includeFuture: includeFuture) }
             catch { message = "人物・場所の情報を表示できませんでした。" }
         }
