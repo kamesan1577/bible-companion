@@ -51,3 +51,33 @@ extension ChatGPTCopyPromptTests {
         XCTAssertTrue(prompt.contains("どゆこと"))
     }
 }
+
+extension ChatGPTCopyPromptTests {
+    func testActualLeviticus19ShareWithDirectionalReferenceDoesNotRepeat() throws {
+        let body = "「さらに主はモーセに、次のことを人々に教えるように告げました。「あなたがたの神、主であるわたしは聖なる者であるから、あなたがたも聖なる者となりなさい。」"
+        let raw = body + "\nレビ記 19:1-2 JCB\n" + body + "\n‭‭レビ記‬ ‭19‬:‭1‬-‭2‬ ‭JCB‬‬"
+        let passage = Passage(book: "LEV", start: Verse(chapter: 19, verse: 1), end: Verse(chapter: 19, verse: 2))
+        let prompt = try ChatGPTCopyPrompt.make(question: "何？これ", passage: passage, translation: "JCB", sharedText: raw)
+        XCTAssertEqual(prompt.components(separatedBy: body).count - 1, 1)
+        XCTAssertTrue(prompt.contains(body + "\nレビ記 19:1-2 JCB"))
+        XCTAssertTrue(prompt.hasSuffix("質問：\n何？これ"))
+        XCTAssertEqual(try URLComponents(url: ChatGPTQuestionLink.make(prompt: prompt), resolvingAgainstBaseURL: false)?.queryItems?.first?.value, prompt)
+    }
+    func testComparisonOnlyNormalizesWrappersBlankLinesAndReferencePresentation() {
+        let first = "「神は聖なる方です。」\r\nレビ記 19:1-2 JCB"
+        let second = "\n“神は聖なる方です。”\n\n‭レビ記‬ １９：１–２ （ＪＣＢ）"
+        XCTAssertEqual(SharedTextContent.removeRepeatedWholeBlock(first + "\n" + second), first.replacingOccurrences(of: "\r\n", with: "\n"))
+    }
+    func testDifferentPassagesTranslationsWordingAndNotesRemain() {
+        let a = "同じ言葉\nレビ記 19:1-2 JCB"
+        let differentPassage = "同じ言葉\nレビ記 19:3-4 JCB"
+        let differentTranslation = "同じ言葉\nレビ記 19:1-2 NIV"
+        let differentWords = "違う言葉\nレビ記 19:1-2 JCB"
+        let raw = [a, differentPassage, differentTranslation, differentWords, "自分のメモ：省かない"].joined(separator: "\n")
+        XCTAssertEqual(SharedTextContent.removeRepeatedWholeBlock(raw), raw)
+        let spaced = "ここで はきもの\nレビ記 19:1-2 JCB\nここでは きもの\nレビ記 19:1-2 JCB"
+        XCTAssertEqual(SharedTextContent.removeRepeatedWholeBlock(spaced), spaced)
+        let unknown = "同じ言葉\n不明な参照\n同じ言葉\n不明な参照"
+        XCTAssertEqual(SharedTextContent.removeRepeatedWholeBlock(unknown), unknown)
+    }
+}

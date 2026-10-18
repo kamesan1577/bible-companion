@@ -27,6 +27,33 @@ final class HomeShareUXUITests: XCTestCase {
         app.buttons["閉じる"].tap()
         XCTAssertTrue(app.buttons["share-ai-settings"].waitForExistence(timeout: 5))
     }
+    @MainActor func testMissingSettingsAndReadOnlyDiagnostics() {
+        let app = launch("setup", ["--qa-share-enabled", "--qa-clear-access"])
+        XCTAssertTrue(app.staticTexts["共有画面で質問するには準備が必要です"].waitForExistence(timeout: 15))
+        XCTAssertFalse(app.staticTexts["質問する設定を確認できません"].exists)
+        app.buttons["share-storage-diagnostics"].tap()
+        let report = app.staticTexts["share-storage-diagnostic-result"]
+        XCTAssertTrue(report.waitForExistence(timeout: 5))
+        XCTAssertTrue(report.label.contains("missing"))
+        XCTAssertTrue(report.label.contains("読み取りのみ"))
+        XCTAssertFalse(report.label.contains("bcs1_"))
+        capture(app, "missing-settings-diagnostic")
+    }
+    @MainActor func testDiagnosticsPreserveVerifiedSavedSettings() {
+        let app = launch("setup", ["--qa-share-enabled", "--qa-clear-access", "--qa-share-success"])
+        XCTAssertTrue(app.buttons["質問する設定を保存する"].waitForExistence(timeout: 15))
+        app.buttons["質問する設定を保存する"].tap()
+        XCTAssertTrue(app.staticTexts["質問する設定を保存しました"].waitForExistence(timeout: 10))
+        app.buttons["share-storage-diagnostics"].tap()
+        let report = app.staticTexts["share-storage-diagnostic-result"]
+        XCTAssertTrue(report.waitForExistence(timeout: 5))
+        XCTAssertTrue(report.label.contains("共有設定の読み取り：成功"))
+        XCTAssertFalse(report.label.contains("bcs1_"))
+        capture(app, "saved-settings-diagnostic")
+        app.terminate()
+        let restored = launch("setup", ["--qa-share-enabled"])
+        XCTAssertTrue(restored.staticTexts["質問する設定を保存しました"].waitForExistence(timeout: 10))
+    }
     @MainActor func testFailureDoesNotClaimReady() {
         let app = launch("setup", ["--qa-share-enabled", "--qa-clear-access"])
         XCTAssertTrue(app.buttons["質問する設定を保存する"].waitForExistence(timeout: 10))

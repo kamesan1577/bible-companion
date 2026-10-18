@@ -67,6 +67,11 @@ import UIKit
             let access: ShareAIAccess
             do { guard let raw = Bundle.main.object(forInfoDictionaryKey: "APIBaseURL") as? String, let base = URL(string: raw) else { throw NetworkFailure.unconfigured }
                 access = try await ShareInbox.currentAIAccess(baseURL: base, expectedOwner: accessOwner) }
+            catch let failure as ShareStorageFailure {
+                needsSetup = true
+                setupMessage = Self.accessMessage(for: failure.reason) + " 診断コード：" + failure.diagnosticCode
+                return
+            }
             catch let accessError as ShareAIAccessReadError {
                 needsSetup = true
                 setupMessage = Self.accessMessage(for: accessError)
@@ -303,6 +308,12 @@ import UIKit
     func revalidateAccess() { guard ensureDraftOwner() else { return }; if accessOwner != nil { _ = checkOwner() } }
     func close() { persist(); generation = UUID(); task?.cancel(); task = nil; preview = "" }
     private func show(_ failure: Error) {
+        if let issue = ShareStorageFailure.reason(for: failure) {
+            needsSetup = true; canRetryStart = false
+            setupMessage = Self.accessMessage(for: issue)
+            if let detail = failure as? ShareStorageFailure { setupMessage += " 診断コード：" + detail.diagnosticCode }
+            error = nil; return
+        }
         if case NetworkFailure.unauthenticated = failure {
             transcripts = [:]; answers = [:]; preview = ""
             let recovery = ShareAuthRecoveryState.unauthenticated(pendingRequest: pendingRequest)
@@ -351,6 +362,8 @@ import UIKit
             return "アプリとこの共有画面の間で、設定を受け取れませんでした。同意を繰り返す必要はありません。アプリを開き、準備画面に問題が出ていないか確認してください。"
         case .protectedDataUnavailable:
             return "端末の保護データまたは共有用保存領域へのアクセスが拒否されました。端末のロックを解除して再試行してください。ロック以外の権限・一時的な問題の可能性もあるため、解決しない場合はアプリの共有機能を確認してください。"
+        case .accessDenied, .storageFull, .coordinationFailed:
+            return SharePreparationFailure.message(for: failure)
         case .readFailed:
             return "共有AIの保存状態を読み取れませんでした。アプリ内の準備画面で状態を確認し、画面を閉じてから共有し直してください。"
         case .missing:

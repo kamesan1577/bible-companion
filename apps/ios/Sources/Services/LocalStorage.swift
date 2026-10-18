@@ -17,6 +17,44 @@ enum ShareInbox {
         } else { groups = nil }
         return ProvisionedAppGroup.resolve(configured: configured, groups: groups) ?? "group.invalid.biblecompanion"
     }
+    /// Read-only diagnostics: never include paths, group/team IDs, owners or tokens.
+    /// Profile metadata is not proof that the extension has opened its container.
+    static func diagnosticReport() -> String {
+        let bundle = Bundle.main
+        let version = bundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "?"
+        let build = bundle.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "?"
+        var lines = ["共有設定の診断 / \(version) (\(build))"]
+        let profile = bundle.bundleURL.appendingPathComponent("embedded.mobileprovision")
+        lines.append("本体の署名プロファイル：" + (FileManager.default.fileExists(atPath: profile.path) ? "あり" : "なし（Simulator・未再署名の可能性）"))
+        let resolved = groupID
+        lines.append("本体の共有グループ選択：" + (resolved == "group.invalid.biblecompanion" ? "確認できない" : "候補を選択済み"))
+        let container = resolved == "group.invalid.biblecompanion" ? nil : FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: resolved)
+        lines.append("本体の共有保存先：" + (container == nil ? "OSから取得できない" : "OSから取得できた"))
+        if let plugins = bundle.builtInPlugInsURL,
+           let urls = try? FileManager.default.contentsOfDirectory(at: plugins, includingPropertiesForKeys: nil),
+           let extensionBundle = urls.filter({ $0.pathExtension == "appex" }).compactMap({ Bundle(url: $0) }).first {
+            let configured = extensionBundle.object(forInfoDictionaryKey: "AppGroupIdentifier") as? String ?? ""
+            let url = extensionBundle.bundleURL.appendingPathComponent("embedded.mobileprovision")
+            let exists = FileManager.default.fileExists(atPath: url.path)
+            let groups = exists ? (try? Data(contentsOf: url)).map(ProvisionedAppGroup.groups(inProfile:)) ?? [] : nil
+            let extensionGroup = ProvisionedAppGroup.resolve(configured: configured, groups: groups)
+            lines.append("同梱共有拡張のグループ候補：" + (extensionGroup == resolved ? "本体と一致" : "本体との一致を確認できない"))
+            lines.append("共有拡張の実際の読み取り：この診断だけでは未確認")
+        } else { lines.append("同梱共有拡張：確認できない") }
+        do {
+            guard let container else { throw ShareAIAccessReadError.appGroupUnavailable }
+            // Diagnostics inspect existing bytes only; no directory creation, lock or writes.
+            _ = try validatedAccess(at: container.appendingPathComponent("PendingShares", isDirectory: true), allowingRenewal: true)
+            lines.append("共有設定の読み取り：成功（診断のみ・送信許可ではありません）")
+        }
+        catch {
+            if let failure = error as? ShareStorageFailure { lines.append("共有設定の読み取り：" + String(describing: failure.reason) + " (" + failure.diagnosticCode + ")") }
+            else if let reason = ShareStorageFailure.reason(for: error) { lines.append("共有設定の読み取り：" + String(describing: reason)) }
+            else { lines.append("共有設定の読み取り：原因未特定") }
+        }
+        lines.append("読み取りのみ。設定・ログイン・読書の記録は変更していません。署名権限はこの画面から変更できません。")
+        return lines.joined(separator: "\n")
+    }
     private static func directory() throws -> URL {
         guard let root = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupID) else { throw InboxError.unavailable }
         let url = root.appendingPathComponent("PendingShares", isDirectory: true)
@@ -26,37 +64,35 @@ enum ShareInbox {
         return url
     }
     private static func withLock<T>(_ action: (URL) throws -> T) throws -> T {
-        let root = try directory()
+        let root: URL
+        do { root = try directory() } catch { throw storageError(error, stage: .directory) }
         let coordinator = NSFileCoordinator(filePresenter: nil)
         var coordinatorError: NSError?
         var outcome: Result<T, Error>?
         coordinator.coordinate(writingItemAt: root, options: [], error: &coordinatorError) { location in
             outcome = Result { try action(location) }
         }
-        if let coordinatorError { throw coordinatorError }
-        guard let outcome else { throw InboxError.coordinationFailed }
+        if let coordinatorError { throw storageError(coordinatorError, stage: .coordination) }
+        guard let outcome else { throw ShareStorageFailure(ShareAIAccessReadError.coordinationFailed, stage: .coordination) }
         return try outcome.get()
     }
     private static func readOwner(at root: URL) throws -> String? {
         let file = root.appendingPathComponent("owner.marker")
         guard FileManager.default.fileExists(atPath: file.path) else { return nil }
-        let handle = try FileHandle(forReadingFrom: file); defer { try? handle.close() }
-        return try ShareOwnerMarker.decode(handle.read(upToCount: ShareOwnerMarker.maximumBytes + 1) ?? Data())
+        do {
+            let handle = try FileHandle(forReadingFrom: file); defer { try? handle.close() }
+            let data = try handle.read(upToCount: ShareOwnerMarker.maximumBytes + 1) ?? Data()
+            do { return try ShareOwnerMarker.decode(data) }
+            catch { throw ShareStorageFailure(ShareAIAccessReadError.corrupted, stage: .ownerRead) }
+        } catch { throw storageError(error, stage: .ownerRead) }
     }
-    private static func isMissing(_ error: Error) -> Bool {
-        let value = error as NSError
-        return (value.domain == NSCocoaErrorDomain && value.code == CocoaError.fileReadNoSuchFile.rawValue)
-            || (value.domain == NSPOSIXErrorDomain && value.code == Int(ENOENT))
+    private static func isMissing(_ error: Error) -> Bool { ShareStorageFailure.isMissing(error) }
+    private static func storageError(_ error: Error, writing: Bool = false, stage: ShareStorageFailure.Stage = .operation) -> Error {
+        if error is ShareStorageFailure || error is ShareAIAccessReadError { return error }
+        if let inbox = error as? InboxError, case .unavailable = inbox { return ShareAIAccessReadError.appGroupUnavailable }
+        return ShareStorageFailure(error, stage: stage, writing: writing)
     }
-    private static func storageError(_ error: Error, writing: Bool = false) -> ShareAIAccessReadError {
-        if let typed = error as? ShareAIAccessReadError { return typed }
-        if let inbox = error as? InboxError, case .unavailable = inbox { return .appGroupUnavailable }
-        let value = error as NSError
-        if value.domain == NSPOSIXErrorDomain && [Int(EACCES), Int(EPERM)].contains(value.code) { return .protectedDataUnavailable }
-        if value.domain == NSCocoaErrorDomain && [CocoaError.fileReadNoPermission.rawValue, CocoaError.fileWriteNoPermission.rawValue].contains(value.code) { return .protectedDataUnavailable }
-        return writing ? .writeFailed : .readFailed
-    }
-    private static func readBytes(_ file: URL, limit: Int, missingAllowed: Bool = false) throws -> Data? {
+    private static func readBytes(_ file: URL, limit: Int, missingAllowed: Bool = false, stage: ShareStorageFailure.Stage = .operation) throws -> Data? {
         do {
             let handle = try FileHandle(forReadingFrom: file); defer { try? handle.close() }
             let data = try handle.read(upToCount: limit + 1) ?? Data()
@@ -64,7 +100,7 @@ enum ShareInbox {
             return data
         } catch {
             if missingAllowed && isMissing(error) { return nil }
-            throw error
+            throw storageError(error, stage: stage)
         }
     }
 
@@ -72,14 +108,14 @@ enum ShareInbox {
         let capability = root.appendingPathComponent("ai-access.capability")
         let data: Data
         do {
-            guard let bytes = try readBytes(capability, limit: 4096) else { throw ShareAIAccessReadError.missing }
+            guard let bytes = try readBytes(capability, limit: 4096, stage: .capabilityRead) else { throw ShareAIAccessReadError.missing }
             data = bytes
         } catch {
             if isMissing(error) { throw ShareAIAccessReadError.missing }
             throw error
         }
         let ownerFile = root.appendingPathComponent("owner.marker")
-        guard let ownerData = try readBytes(ownerFile, limit: ShareOwnerMarker.maximumBytes, missingAllowed: true) else {
+        guard let ownerData = try readBytes(ownerFile, limit: ShareOwnerMarker.maximumBytes, missingAllowed: true, stage: .ownerRead) else {
             throw ShareAIAccessReadError.ownerMismatch
         }
         let decodedOwner: String?
@@ -96,12 +132,16 @@ enum ShareInbox {
         do {
             return try withLock { try validatedAccess(at: $0, expectedOwner: expectedOwner) }
         } catch {
+            if ShareStorageFailure.reason(for: error) == .missing { throw ShareAIAccessReadError.missing }
             throw storageError(error)
         }
     }
     static func renewableAIAccess(expectedOwner: String? = nil) throws -> ShareAIAccess {
         do { return try withLock { try validatedAccess(at: $0, expectedOwner: expectedOwner, allowingRenewal: true) } }
-        catch { throw storageError(error) }
+        catch {
+            if ShareStorageFailure.reason(for: error) == .missing { throw ShareAIAccessReadError.missing }
+            throw storageError(error)
+        }
     }
     /// Compare-and-save rejects a late renewal after logout, account change or another refresh.
     static func saveRenewedAIAccess(_ value: ShareAIAccess, replacing previous: ShareAIAccess) throws {
@@ -113,8 +153,9 @@ enum ShareInbox {
             let bytes = try JSONEncoder().encode(value)
             _ = try ShareAIAccess.validated(from: bytes, owner: current.ownerID)
             let path = root.appendingPathComponent("ai-access.capability")
-            try bytes.write(to: path, options: [.atomic, .completeFileProtection])
-            guard let saved = try readBytes(path, limit: 4096), saved == bytes else { throw ShareAIAccessReadError.writeFailed }
+            do { try bytes.write(to: path, options: [.atomic, .completeFileProtection]) }
+            catch { throw storageError(error, writing: true, stage: .capabilityWrite) }
+            guard let saved = try readBytes(path, limit: 4096, stage: .readback), saved == bytes else { throw ShareStorageFailure(ShareAIAccessReadError.writeFailed, stage: .readback) }
         }
     }
     /// At most one network renewal per caller; no question or inference is sent.
@@ -205,7 +246,8 @@ enum ShareInbox {
                 let receipt = root.appendingPathComponent("extension-read.receipt")
                 if FileManager.default.fileExists(atPath: receipt.path) { try FileManager.default.removeItem(at: receipt) }
             }
-            try Data((owner ?? "").utf8).write(to: root.appendingPathComponent("owner.marker"), options: [.atomic, .completeFileProtection])
+            do { try Data((owner ?? "").utf8).write(to: root.appendingPathComponent("owner.marker"), options: [.atomic, .completeFileProtection]) }
+            catch { throw storageError(error, writing: true, stage: .ownerWrite) }
         }
     }
     static func saveAIAccess(_ value: ShareAIAccess) throws {
@@ -213,14 +255,16 @@ enum ShareInbox {
             try withLock { root in
                 let owner = try readOwner(at: root)
                 let data = try JSONEncoder().encode(value)
-                _ = try ShareAIAccess.validated(from: data, owner: owner)
+                do { _ = try ShareAIAccess.validated(from: data, owner: owner) }
+                catch { throw ShareStorageFailure(error, stage: .validation) }
                 let file = root.appendingPathComponent("ai-access.capability")
-                try data.write(to: file, options: [.atomic, .completeFileProtection])
-                guard let saved = try readBytes(file, limit: 4096),
+                do { try data.write(to: file, options: [.atomic, .completeFileProtection]) }
+                catch { throw storageError(error, writing: true, stage: .capabilityWrite) }
+                guard let saved = try readBytes(file, limit: 4096, stage: .readback),
                       let verified = try? ShareAIAccess.validated(from: saved, owner: owner),
                       verified.token == value.token, verified.ownerID == value.ownerID,
                       verified.expiresAt == value.expiresAt else {
-                    throw ShareAIAccessReadError.writeFailed
+                    throw ShareStorageFailure(ShareAIAccessReadError.writeFailed, stage: .readback)
                 }
                 let receipt = root.appendingPathComponent("extension-read.receipt")
                 if FileManager.default.fileExists(atPath: receipt.path) { try FileManager.default.removeItem(at: receipt) }

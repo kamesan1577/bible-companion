@@ -14,6 +14,7 @@ struct AISetupView: View {
     @State private var extensionReadConfirmed = false
     @State private var checking = false
     @State private var preparationTask: Task<Void, Never>?
+    @State private var diagnostic: String?
     var body: some View {
         NavigationStack {
             Form {
@@ -37,6 +38,14 @@ struct AISetupView: View {
                 }
                 if let message {
                     Section { Label(message, systemImage: savedExpiry == nil ? "exclamationmark.circle" : "checkmark.circle.fill").bibleTextStyle(.body).accessibilityIdentifier("share-save-result") }
+                }
+                Section {
+                    Button("保存先の診断情報を確認") { diagnostic = ShareInbox.diagnosticReport() }
+                        .accessibilityIdentifier("share-storage-diagnostics")
+                    if let diagnostic {
+                        Text(diagnostic).bibleTextStyle(.caption).textSelection(.enabled)
+                            .accessibilityIdentifier("share-storage-diagnostic-result")
+                    }
                 }
                 if store.account == nil {
                     Section("ログインする") {

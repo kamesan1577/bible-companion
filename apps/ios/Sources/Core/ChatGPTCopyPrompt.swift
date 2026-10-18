@@ -7,7 +7,7 @@ public enum ChatGPTCopyPrompt {
         let question = question.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !question.isEmpty else { throw Failure.emptyQuestion }
         guard question.utf16.count <= 2000, sharedText.utf16.count <= 20000 else { throw Failure.oversized }
-        let body = SharedTextContent.removeRepeatedWholeBlock(sharedText.components(separatedBy: .newlines).filter {
+        let body = SharedTextContent.removeRepeatedWholeBlock(sharedText.replacingOccurrences(of: "\r\n", with: "\n").components(separatedBy: .newlines).filter {
             let line = $0.trimmingCharacters(in: .whitespacesAndNewlines)
             return !line.hasPrefix("https://") && !line.hasPrefix("http://")
         }.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines))
@@ -53,14 +53,61 @@ public struct ChatGPTHandoff: Codable, Equatable, Sendable {
 
 /// Deduplicate representations of the same share, not repeated phrases inside scripture.
 public enum SharedTextContent {
+    /// Remove only repeated complete body+reference+translation representations.
+    /// Comparison normalization never rewrites the retained original block.
     public static func removeRepeatedWholeBlock(_ text: String) -> String {
-        let lines = text.components(separatedBy: .newlines).map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty }
-        guard lines.count >= 4 else { return text.trimmingCharacters(in: .whitespacesAndNewlines) }
-        for size in 2...(lines.count / 2) where lines.count % size == 0 {
-            let first = Array(lines.prefix(size))
-            if stride(from: 0, to: lines.count, by: size).allSatisfy({ Array(lines[$0..<($0 + size)]) == first }) { return first.joined(separator: "\n") }
+        let lines = text.replacingOccurrences(of: "\r\n", with: "\n").components(separatedBy: .newlines)
+        var result: [String] = [], pending: [String] = [], seen = Set<String>()
+        var index = 0
+        while index < lines.count {
+            let line = lines[index]
+            let reference = withoutDirections(line).precomposedStringWithCompatibilityMapping.trimmingCharacters(in: .whitespacesAndNewlines)
+            if let parsed = try? SharedImportParser.parse(reference), parsed.sourceUrl == nil {
+                let body = pending.joined(separator: "\n")
+                let normalizedBody = comparisonBody(body)
+                let key = parsed.ranges.map { $0.book + " " + $0.reference }.joined(separator: ";")
+                    + "|" + (parsed.translation?.uppercased() ?? "") + "|" + normalizedBody
+                if normalizedBody.isEmpty || seen.insert(key).inserted {
+                    result.append(contentsOf: pending); result.append(line)
+                }
+                pending = []
+            } else { pending.append(line) }
+            index += 1
         }
-        return text.trimmingCharacters(in: .whitespacesAndNewlines)
+        // Unrecognised references, prose and trailing notes are never discarded.
+        result.append(contentsOf: pending)
+        return result.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    private static func withoutDirections(_ value: String) -> String {
+        String(value.unicodeScalars.filter { scalar in
+            let v = scalar.value
+            return v != 0x061C && v != 0x200E && v != 0x200F && !(0x202A...0x202E).contains(v) && !(0x2066...0x2069).contains(v)
+        })
+    }
+    private static func comparisonBody(_ value: String) -> String {
+        var body = withoutDirections(value).precomposedStringWithCanonicalMapping
+            .components(separatedBy: .newlines).map { $0.trimmingCharacters(in: .whitespaces) }
+            .filter { !$0.isEmpty }.joined(separator: "\n")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        // Ignore a balanced outer quote wrapper only. Internal quotation, wording,
+        // spacing, punctuation and separate verse references remain significant.
+        for (open, close): (Character, Character) in [("「", "」"), ("『", "』"), ("“", "”"), ("‘", "’"), ("\"", "\"")] {
+            guard body.first == open, body.last == close, body.count > 2 else { continue }
+            let chars = Array(body)
+            var depth = 0, valid = true
+            if open == close { valid = chars.filter { $0 == open }.count == 2 }
+            else {
+                for i in chars.indices {
+                    if chars[i] == open { depth += 1 }
+                    if chars[i] == close { depth -= 1 }
+                    if depth < 0 || (depth == 0 && i != chars.count - 1) { valid = false; break }
+                }
+                valid = valid && depth == 0
+            }
+            if valid { body = String(chars.dropFirst().dropLast()).trimmingCharacters(in: .whitespacesAndNewlines) }
+            break
+        }
+        return body
     }
     public static func combine(_ parts: [String]) -> String {
         var known = Set<String>(); var result: [String] = []

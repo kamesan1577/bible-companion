@@ -6,6 +6,9 @@ import CryptoKit
 public enum ShareAIAccessReadError: Error, Equatable, Sendable {
     case appGroupUnavailable
     case protectedDataUnavailable
+    case accessDenied
+    case storageFull
+    case coordinationFailed
     case readFailed
     case missing
     case expired
