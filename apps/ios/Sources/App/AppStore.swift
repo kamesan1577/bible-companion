@@ -78,7 +78,7 @@ import CompanionCore
         catch { exportCleanupRequired = true; errorMessage = "書き出しの一時ファイルを削除できません。ロック解除後に再試行してください。" }
     }
     private func configureShareOwner(_ owner: String?) throws {
-        do { try ShareInbox.setOwner(owner); shareNotice = nil }
+        do { try ShareInbox.setReadingOwner(owner); try ShareInbox.setOwner(owner, preserveLegacyFiles: true); shareNotice = nil }
         catch ShareInbox.InboxError.unavailable { shareNotice = "共有した箇所をこの端末に保存できません。アプリを更新してもう一度共有するか、書名・章・節を入力して開いてください。" }
     }
     func restore() async {
@@ -92,13 +92,15 @@ import CompanionCore
             guard let session = try SessionVault.read() else {
                 // A first launch can already have an unbound share from the extension.
                 // No authenticated session is not an explicit logout: preserve that queue.
-                try SessionVault.clear(); try PrivateHistoryStore.clear(); try configureShareOwner(nil)
+                // Opening the app is not authority to erase old account records.
+                try configureShareOwner(nil)
                 refreshInbox(); return
             }
             guard session.expiresAt > Date().timeIntervalSince1970 else {
-                let previous = invalidateLocalSession(); await previous.setToken(nil); refreshInbox()
-                errorMessage = localCleanupRequired ? "ログインの有効期限が切れ、端末内の消去が未完了です。ロック解除後に設定から再試行してください。" : "ログインの有効期限が切れたため、端末内の個人データと待機中の共有を消去しました。アカウントに保存した履歴は、ログインし直すと確認できます。"
-                return
+                await client.setToken(nil)
+                try configureShareOwner(nil)
+                errorMessage = "ログインの有効期限が切れています。以前の記録は端末とアカウントに保持しています。外部サービスへの質問と収録資料の読書は続けられます。"
+                refreshInbox(); return
             }
             // Do not expose a signed-in UI until protected local storage is readable.
             let restoredHistory = try PrivateHistoryStore.read(owner: session.user.id)
@@ -133,7 +135,6 @@ import CompanionCore
                 guard sessionEpoch == epoch, !Task.isCancelled else { return }
                 guard response.tokenType == "Bearer", response.expiresAt > Date().timeIntervalSince1970 else { throw NetworkFailure.invalidResponse }
                 installingSession = true
-                try PrivateHistoryStore.clear()
                 try configureShareOwner(response.user.id)
                 try SessionVault.save(StoredSession(token: response.accessToken, expiresAt: response.expiresAt, user: response.user))
                 await requestClient.setToken(response.accessToken)
@@ -162,12 +163,13 @@ import CompanionCore
     func cancelSignIn() { authTask?.cancel(); loginFlow.cancel() }
     /// Synchronous local invalidation is shared by explicit logout and server 401.
     /// No later cleanup task may erase a newly authenticated account.
-    private func invalidateLocalSession() -> APIClient {
+    private func invalidateLocalSession(cleanup: Bool = true) -> APIClient {
         standardModels.values.forEach { $0.close() }; standardModels.removeAll()
         sessionEpoch = UUID(); shareAccessRevision = UUID(); isAuthenticating = false; restoreNeedsRetry = false; consentMutationID = nil; aiPolicyGate.invalidate()
         gate.invalidate(); cancelSignIn(); cancelReading(); showQuestion = false; showImport = false
         account = nil; selected = nil; reading = nil; sourceExcerpt = nil; cachedSnapshot = nil; history = []; historyLoading = false; historyChecked = false; historyError = nil; usage = nil; aiPolicy = nil; aiPolicyError = nil; pendingShares = []; nextCursor = nil
-        performLocalCleanup()
+        if cleanup { try? ShareInbox.setReadingOwner(nil); performLocalCleanup() }
+        else { try? ShareInbox.setReadingOwner(nil); try? ShareInbox.setOwner(nil, preserveLegacyFiles: true) }
         let previous = client
         client = try! APIClient(baseURL: previous.baseURL)
         return previous
@@ -326,7 +328,6 @@ import CompanionCore
     }
     func cancelReading() { if cachedSnapshot != nil { cachedSnapshot = nil; reading = nil }; readingTask?.cancel(); readingTask = nil; cacheExpiryTask?.cancel(); cacheExpiryTask = nil; gate.invalidate(); isLoading = false; isRevalidatingSource = false }
     func enteredForeground() {
-        Task { await refreshShareAI() }
         refreshInbox()
         if account != nil, selected != nil, !isTransitioning, !isAuthenticating { loadReading() }
     }
@@ -456,10 +457,9 @@ import CompanionCore
             if failure == .cancelled { return }
             errorMessage = failure.userMessage
             if failure == .unauthenticated {
-                let expiredClient = invalidateLocalSession()
+                let expiredClient = invalidateLocalSession(cleanup: false)
                 Task { await expiredClient.setToken(nil) }
-                if localCleanupRequired { errorMessage = "ログインが失効しました。端末内の消去が未完了です。ロック解除後に設定から再試行してください。" }
-                else { errorMessage = "ログインが失効したため、端末内の個人データと待機中の共有を消去しました。アカウントに保存した履歴は、ログインし直すと確認できます。" }
+                errorMessage = "ログインが失効しています。以前の記録は保持し、別のアカウントでは表示しません。ログインし直して確認してください。"
             }
         } else { errorMessage = "処理を完了できませんでした。端末のロックと接続を確認して再試行してください。" }
     }
@@ -487,7 +487,7 @@ extension AppStore {
             reading = nil
             sourceExcerpt = nil
         }
-        if ProcessInfo.processInfo.arguments.contains("--qa-screen=home") { selected = nil; reading = nil; sourceExcerpt = nil }
+        if ProcessInfo.processInfo.arguments.contains("--qa-screen=home") || ProcessInfo.processInfo.arguments.contains("--qa-screen=unified-home") { selected = nil; reading = nil; sourceExcerpt = nil }
         if ProcessInfo.processInfo.arguments.contains("--qa-screen=initial") || ProcessInfo.processInfo.arguments.contains("--qa-screen=configured-home") { selected = nil; reading = nil; sourceExcerpt = nil; account = nil }
 
     }

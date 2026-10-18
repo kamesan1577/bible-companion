@@ -55,6 +55,83 @@ enum ShareInbox {
         lines.append("読み取りのみ。設定・ログイン・読書の記録は変更していません。署名権限はこの画面から変更できません。")
         return lines.joined(separator: "\n")
     }
+    // New external-question preferences/activity are independent of legacy AI capabilities.
+    // Existing cloud/private history and legacy share files are never removed here.
+    static func externalProvider() throws -> ExternalQuestionProvider {
+        try withLock { root in
+            guard let data = try readBytes(root.appendingPathComponent("external-provider.preference"), limit: 128, missingAllowed: true) else { return .chatGPT }
+            return try JSONDecoder().decode(ExternalQuestionProvider.self, from: data)
+        }
+    }
+    static func setExternalProvider(_ provider: ExternalQuestionProvider) throws {
+        try withLock { root in
+            let path = root.appendingPathComponent("external-provider.preference")
+            let bytes = try JSONEncoder().encode(provider)
+            try bytes.write(to: path, options: [.atomic, .completeFileProtection])
+            guard try readBytes(path, limit: 128) == bytes else { throw ShareAIAccessReadError.writeFailed }
+        }
+    }
+    private static func readingOwner(at root: URL) throws -> String? {
+        guard let bytes = try readBytes(root.appendingPathComponent("reading-owner.marker"), limit: 64, missingAllowed: true) else { return nil }
+        return try ShareOwnerMarker.decode(bytes)
+    }
+    static func activeReadingOwner() throws -> String? { try withLock { try readingOwner(at: $0) } }
+    static func setReadingOwner(_ owner: String?) throws {
+        guard owner == nil || UUID(uuidString: owner ?? "") != nil else { throw ShareAIAccessReadError.ownerMismatch }
+        try withLock { root in
+            try Data((owner ?? "").utf8).write(to: root.appendingPathComponent("reading-owner.marker"), options: [.atomic, .completeFileProtection])
+        }
+    }
+    private static func activityScope(_ owner: String?) -> String {
+        SHA256.hash(data: Data((owner ?? "signed-out").utf8)).map { String(format: "%02x", $0) }.joined()
+    }
+    private static func visitKey(_ value: LocalReadingVisit) -> String {
+        struct Identity: Encodable { let passage: Passage; let translation: String?; let sharedText: String }
+        let encoder = JSONEncoder(); encoder.outputFormatting = [.sortedKeys]
+        let data = try! encoder.encode(Identity(passage: value.passage, translation: value.translation, sharedText: value.sharedText))
+        return SHA256.hash(data: data).map { String(format: "%02x", $0) }.joined()
+    }
+    static func saveReadingVisit(_ visit: LocalReadingVisit) throws {
+        try withLock { root in
+            guard try readingOwner(at: root) == visit.ownerID, visit.isValid(for: visit.ownerID) else { throw ShareAIAccessReadError.ownerMismatch }
+            let folder = root.appendingPathComponent("ReadingVisits").appendingPathComponent(activityScope(visit.ownerID), isDirectory: true)
+            try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
+            let bytes = try JSONEncoder().encode(visit)
+            guard bytes.count <= 100_000 else { throw InboxError.oversized }
+            try bytes.write(to: folder.appendingPathComponent(visitKey(visit) + ".visit"), options: [.atomic, .completeFileProtection])
+        }
+    }
+    static func readingVisits(owner: String?) throws -> [LocalReadingVisit] {
+        try withLock { root in
+            guard try readingOwner(at: root) == owner else { throw ShareAIAccessReadError.ownerMismatch }
+            let folder = root.appendingPathComponent("ReadingVisits").appendingPathComponent(activityScope(owner), isDirectory: true)
+            guard FileManager.default.fileExists(atPath: folder.path) else { return [] }
+            let files = try FileManager.default.contentsOfDirectory(at: folder, includingPropertiesForKeys: [.contentModificationDateKey])
+                .filter { $0.pathExtension == "visit" }.sorted { ((try? $0.resourceValues(forKeys: [.contentModificationDateKey]).contentModificationDate) ?? .distantPast) > ((try? $1.resourceValues(forKeys: [.contentModificationDateKey]).contentModificationDate) ?? .distantPast) }
+            return try files.prefix(100).compactMap { url in
+                guard let data = try readBytes(url, limit: 100_000) else { return nil }
+                let value = try JSONDecoder().decode(LocalReadingVisit.self, from: data)
+                return value.isValid(for: owner) ? value : nil
+            }.sorted { $0.openedAt > $1.openedAt }
+        }
+    }
+    static func externalDraft(for visit: LocalReadingVisit) throws -> String {
+        try withLock { root in
+            guard try readingOwner(at: root) == visit.ownerID else { throw ShareAIAccessReadError.ownerMismatch }
+            let path = root.appendingPathComponent("ExternalDrafts").appendingPathComponent(activityScope(visit.ownerID)).appendingPathComponent(visitKey(visit) + ".draft")
+            guard let data = try readBytes(path, limit: 100_000, missingAllowed: true), let value = String(data: data, encoding: .utf8) else { return "" }
+            return value
+        }
+    }
+    static func saveExternalDraft(_ text: String, for visit: LocalReadingVisit) throws {
+        guard text.utf16.count <= 20_000 else { throw InboxError.oversized }
+        try withLock { root in
+            guard try readingOwner(at: root) == visit.ownerID else { throw ShareAIAccessReadError.ownerMismatch }
+            let folder = root.appendingPathComponent("ExternalDrafts").appendingPathComponent(activityScope(visit.ownerID), isDirectory: true)
+            try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
+            try Data(text.utf8).write(to: folder.appendingPathComponent(visitKey(visit) + ".draft"), options: [.atomic, .completeFileProtection])
+        }
+    }
     private static func directory() throws -> URL {
         guard let root = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupID) else { throw InboxError.unavailable }
         let url = root.appendingPathComponent("PendingShares", isDirectory: true)
@@ -235,10 +312,10 @@ enum ShareInbox {
         }
     }
 
-    static func setOwner(_ owner: String?) throws {
+    static func setOwner(_ owner: String?, preserveLegacyFiles: Bool = false) throws {
         guard owner == nil || UUID(uuidString: owner ?? "") != nil else { throw NetworkFailure.invalidResponse }
         try withLock { root in
-            if try readOwner(at: root) != owner {
+            if !preserveLegacyFiles, try readOwner(at: root) != owner {
                 let handoff = root.appendingPathComponent("chatgpt.handoff")
                 if FileManager.default.fileExists(atPath: handoff.path) { try FileManager.default.removeItem(at: handoff) }
                 let file = root.appendingPathComponent("ai-access.capability")

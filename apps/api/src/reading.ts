@@ -1,4 +1,4 @@
-import { Hono } from 'hono';
+import { Hono, type Context } from 'hono';
 import { cacheKey, sha256, stableJSON, type Passage } from '@bible/core';
 import { createSourceOnlyAnswer, PROMPT_VERSION, REGISTRY_VERSION } from '@bible/ai-harness';
 import { getSources, sourcePolicyVersion } from './data';
@@ -93,6 +93,12 @@ reading.get('/imports/:id/reading', async (c) => {
   const passage = (JSON.parse(row.ranges_json) as Passage[])[rangeIndex];
   if (!passage) fail(400, 'invalid_range', 'Selected range does not exist');
   const spoilers = c.req.query('spoilers') === 'true';
+  return publicReading(c, passage, row.translation, spoilers);
+});
+
+// Only existing public sources/materials; no imports, account fields, user text or inference.
+// Main app and extension share this exact builder and immutable-policy cache.
+export async function publicReading(c: Context<AppEnv>, passage: Passage, translation: string | null, spoilers = false): Promise<Response> {
   const policyVersion = await sourcePolicyVersion(c.env);
   // Check the shared immutable-policy cache before loading/validating large public bodies.
   // The owned import lookup above and the epoch recheck below remain mandatory on every hit.
@@ -100,7 +106,7 @@ reading.get('/imports/:id/reading', async (c) => {
   // A fixed public-data summary, no user text/history, no user model preference and no provider call.
   const key = await cacheKey({
     passage,
-    translation: row.translation,
+    translation: translation,
     language: 'ja',
     spoilerAllowed: spoilers,
     provider: 'source-only',
@@ -127,7 +133,7 @@ reading.get('/imports/:id/reading', async (c) => {
   const overview = createSourceOnlyAnswer(
     {
       passage,
-      translation: row.translation ?? undefined,
+      translation: translation ?? undefined,
       question: '選択箇所の確認済み資料を示してください。',
       spoilerAllowed: spoilers,
       sources,
@@ -161,7 +167,7 @@ reading.get('/imports/:id/reading', async (c) => {
       policyVersion: 1,
     },
     passage,
-    translation: row.translation,
+    translation: translation,
     spoilerAllowed: spoilers,
     sourceVersion,
     overview: {
@@ -201,4 +207,4 @@ reading.get('/imports/:id/reading', async (c) => {
   if (policyVersion !== (await sourcePolicyVersion(c.env)))
     fail(409, 'source_policy_changed', 'Content changed. Retry.');
   return c.json({ ...result, checkedAt: now(), cache: 'public-miss' });
-});
+}

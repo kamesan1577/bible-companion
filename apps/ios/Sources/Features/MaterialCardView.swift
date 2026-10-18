@@ -11,7 +11,7 @@ struct MaterialCardView: View {
             VStack(alignment: .leading, spacing: BibleTheme.Space.lg) {
                 BibleSectionHeader(title: card.title, subtitle: card.relationship == "direct" ? "本文に直接関係する資料" : "関連する背景資料")
                 if let url = card.publicDomainImageURL { PublicArtworkImage(url: url, title: card.title) }
-                if card.mapLocation(reading: reading) != nil { NavigationLink("地図で概略位置を確認") { PlaceMapView(cardID: card.id, reading: reading) } }
+                if card.mapLocation(reading: reading) != nil { NavigationLink("地図で概略位置を確認") { PlaceMapView(card: card, reading: reading) } }
                 Text(card.summary).bibleTextStyle(.body).textSelection(.enabled)
                 if let note = card.details["identityNote"].string { Text(note).bibleTextStyle(.caption).bibleForeground(.textSecondary) }
                 if let name = card.details["modernName"].string { Text("現在の地名: \(name)").bibleTextStyle(.caption) }

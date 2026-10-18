@@ -42,6 +42,9 @@ struct SimulatorQA: View {
             if let passage = choices[screen] {
                 ScrollView { BibleReadingColumn { StaticCommentaryView(passage: passage) } }.navigationTitle(passage.label).bibleCanvas()
             }
+        case "unified": UnifiedReadingView(passage: Passage(book: "LEV", start: Verse(chapter: 19, verse: 1), end: Verse(chapter: 19, verse: 2)), translation: "JCB", sharedText: "検証用の共有原文。\nレビ記 19:1-2 JCB")
+        case "unified-home": ReadingView()
+        case "unified-history": HistoryView()
         case "settings": SettingsView()
         case "setup": AISetupView()
         case "guide": FirstRunGuide()
@@ -103,8 +106,14 @@ struct SimulatorQA: View {
             else { navigationContent }
         }
         .sheet(isPresented: Binding(get: { snapshotScreen != "configured-home" && store.showAISetup }, set: { store.showAISetup = $0 })) { AISetupView().environmentObject(store) }
-        .task { try? PendingQuestionStore.clear(); await client.setToken("simulator-fixture-only"); store.configureSimulatorQA(client: client); await store.loadAIPolicy()
-            if ProcessInfo.processInfo.arguments.contains("--qa-handoff-owner") { try? ShareInbox.setOwner(store.account?.id) }
+        .task { PublicReadingModel.fixtureClient = client; try? ShareInbox.setReadingOwner(nil); try? PendingQuestionStore.clear(); await client.setToken("simulator-fixture-only"); store.configureSimulatorQA(client: client)
+            if snapshotScreen?.hasPrefix("unified") == true {
+                let owner = ProcessInfo.processInfo.arguments.contains("--qa-second-owner") ? "00000000-0000-4000-8000-000000000999" : store.account?.id
+                try? ShareInbox.setReadingOwner(owner)
+                if ProcessInfo.processInfo.arguments.contains("--qa-reset-provider") { try? ShareInbox.setExternalProvider(.chatGPT) }
+            }
+            await store.loadAIPolicy()
+            if ProcessInfo.processInfo.arguments.contains("--qa-handoff-owner") { try? ShareInbox.setOwner(store.account?.id); try? ShareInbox.setReadingOwner(store.account?.id) }
             if ProcessInfo.processInfo.arguments.contains("--qa-clear-access") { try? ShareInbox.clearAIAccess() }
             if ProcessInfo.processInfo.arguments.contains("--qa-expiring-access"), let owner = store.account?.id {
                 try? ShareInbox.setOwner(owner)
@@ -144,7 +153,10 @@ final class SimulatorQAProtocol: URLProtocol, @unchecked Sendable {
         let passage: [String: Any] = ["book":"ACT","start":["chapter":23,"verse":1],"end":["chapter":23,"verse":1]]
         var ok = url.path == "/v1/me/ai-policy"
         var data = Data((ok ? policy : #"{"error":{"code":"fixture_no_mutation","message":"描画確認では外部に送信しません"}}"#).utf8)
-        if request.httpMethod == "POST", url.path == "/v1/me/share-access", ProcessInfo.processInfo.arguments.contains("--qa-share-success") {
+        if request.httpMethod == "POST", url.path == "/public/reading" {
+            ok = !ProcessInfo.processInfo.arguments.contains("--qa-public-error")
+            if ok { data = try! JSONSerialization.data(withJSONObject: ["passage":fields["passage"] ?? passage,"translation":fields["translation"] ?? NSNull(),"spoilerAllowed":false,"sourceVersion":"unified-fixture-v1","overview":["contentKind":"curated-reference","text":"公開資料の固定データ。独自AIは呼び出していません。","citations":[],"mode":"source-only","modelInvoked":false],"materialNotice":"固定された公開資料","cache":"fixture","people":[],"places":[],"artworks":[]]) }
+        } else if request.httpMethod == "POST", url.path == "/v1/me/share-access", ProcessInfo.processInfo.arguments.contains("--qa-share-success") {
             ok = true
             data = try! JSONEncoder().encode(ShareAIAccess(token: "bcs1_" + String(repeating: "a", count: 64), ownerID: "00000000-0000-4000-8000-000000000123", expiresAt: Date().addingTimeInterval(3600).timeIntervalSince1970))
             if ProcessInfo.processInfo.arguments.contains("--qa-share-slow") {

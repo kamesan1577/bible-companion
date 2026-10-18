@@ -43,10 +43,16 @@ enum SecurityError: Error { case cancelled }
     static var accessVerifyCount = 0
     static var failAccessSave = false
     static var failAccessReadback = false
-    static func setOwner(_ value: String?) throws {
+    static var readingOwner: String?
+    static func setReadingOwner(_ value: String?) throws {
         if unavailable { throw InboxError.unavailable }
         if failOwner { throw InjectedFailure.locked }
-        if owner != value { capability = nil }
+        readingOwner = value
+    }
+    static func setOwner(_ value: String?, preserveLegacyFiles: Bool = false) throws {
+        if unavailable { throw InboxError.unavailable }
+        if failOwner { throw InjectedFailure.locked }
+        if !preserveLegacyFiles, owner != value { capability = nil }
         owner = value
     }
     static func saveAIAccess(_ value: ShareAIAccess) throws {

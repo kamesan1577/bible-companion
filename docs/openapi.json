@@ -1146,6 +1146,63 @@
         }
       }
     },
+    "/public/reading": {
+      "post": {
+        "summary": "Read the same public reference projection in app and Share Extension",
+        "description": "Only canonical passage and translation metadata. Original text, questions, chat history and account fields are rejected. No model invocation or private history writes. Source policy and rights are rechecked for public cache hits.",
+        "security": [],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "passage": {
+                    "$ref": "#/components/schemas/Passage"
+                  },
+                  "translation": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "minLength": 1,
+                    "maxLength": 30
+                  }
+                },
+                "required": [
+                  "passage"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Reading"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/public/reading-preview": {
       "post": {
         "summary": "Read public reference excerpts without AI or account history",

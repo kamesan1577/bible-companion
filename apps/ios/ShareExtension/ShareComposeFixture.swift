@@ -8,7 +8,8 @@ import CompanionCore
     configuration.protocolClasses = [ShareComposeFixtureProtocol.self]
     let client = try! APIClient(baseURL: URL(string: "https://fixture.example.org")!, configuration: configuration)
     await client.setToken("fixture-only")
-    model.configureQA(client: client, restore: true)
+    PublicReadingModel.fixtureClient = client
+    model.loading = false
 }
 private final class ShareComposeFixtureProtocol: URLProtocol, @unchecked Sendable {
     private let lock = NSLock()
@@ -30,18 +31,14 @@ private final class ShareComposeFixtureProtocol: URLProtocol, @unchecked Sendabl
             while body.count < 20000 { let count = stream.read(&bytes, maxLength: bytes.count); if count <= 0 { break }; body.append(contentsOf: bytes.prefix(count)) }
         }
         let fields = (try? JSONSerialization.jsonObject(with: body)) as? [String: Any] ?? [:]
-        let question = fields["question"] as? String ?? ""
-        let answer = question.contains("why") ? "エルサレムで裁かれる危険を避けるため、上訴したと考えられます。これは状況からの見立てです。" : "結果だけなら上訴が釈放の妨げに見えます。ただ、その時点では安全な裁判を求める判断だったと考えられます。"
-        let result: [String: Any] = ["requestId": fields["requestId"] ?? "fixture", "status":"complete", "result":["answer":answer,"status":"answered","citations":[],"modelId":"fixture-no-provider","modelInvoked":false,"mode":"grounded-generation","warnings":[],"usage":[:],"timing":[:]]]
-        let json = String(data: try! JSONSerialization.data(withJSONObject: result), encoding: .utf8)!
-        client?.urlProtocol(self, didReceive: HTTPURLResponse(url:url,statusCode:200,httpVersion:"HTTP/1.1",headerFields:["Content-Type":"text/event-stream"])!,cacheStoragePolicy:.notAllowed)
-        client?.urlProtocol(self, didLoad: Data("event: progress\ndata: {\"stage\":\"generating\"}\n\n".utf8))
-        DispatchQueue.global().asyncAfter(deadline:.now()+3) { [self] in
-            guard active else { return }
-            if question.contains("fail") { client?.urlProtocol(self,didLoad:Data("event: preview\ndata: {\"text\":\"主がモーセを通して人々へ語りかけています。\"}\n\nevent: failure\ndata: {\"status\":503,\"code\":\"timeout\"}\n\n".utf8)) }
-            if !question.contains("fail") { client?.urlProtocol(self,didLoad:Data(("event: complete\ndata: " + json + "\n\n").utf8)) }
-            client?.urlProtocolDidFinishLoading(self)
+        guard url.path == "/public/reading", request.httpMethod == "POST", let passage = fields["passage"] else {
+            client?.urlProtocol(self, didFailWithError: URLError(.unsupportedURL)); return
         }
+        let result: [String: Any] = ["passage":passage,"translation":fields["translation"] ?? NSNull(),"spoilerAllowed":false,"sourceVersion":"unified-share-fixture-v1","overview":["contentKind":"curated-reference","text":"公開資料の固定データ。独自AIは呼び出していません。","citations":[],"mode":"source-only","modelInvoked":false],"materialNotice":"固定された公開資料","cache":"fixture","people":[],"places":[],"artworks":[]]
+        let data = try! JSONSerialization.data(withJSONObject: result)
+        client?.urlProtocol(self, didReceive: HTTPURLResponse(url:url,statusCode:200,httpVersion:"HTTP/1.1",headerFields:["Content-Type":"application/json"])!,cacheStoragePolicy:.notAllowed)
+        client?.urlProtocol(self, didLoad: data)
+        client?.urlProtocolDidFinishLoading(self)
     }
     override func stopLoading() { lock.lock(); stopped = true; lock.unlock() }
 }

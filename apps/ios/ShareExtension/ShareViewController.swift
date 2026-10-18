@@ -33,29 +33,19 @@ import CompanionCore
                     return
                 }
                 model.sharedText = text
+#if DEBUG && targetEnvironment(simulator)
+                if text.contains("bible-compose-fixture=1") { await configureShareComposeFixture(model) }
+#endif
                 if let parsed = try? SharedImportParser.parse(text) { model.translation = parsed.translation; model.labels = parsed.ranges.map(\.label); model.items = parsed.ranges.enumerated().map { .init(conversationId: "local-\($0.offset)", passage: $0.element) } }
                 else { model.shareParseFailed = true }
-                do { try ShareInbox.enqueue(text) }
-                catch let failure as ShareStorageFailure { model.storageNotice = SharedPreviewModel.accessMessage(for: failure.reason) + " 診断コード：" + failure.diagnosticCode }
-                catch let accessError as ShareAIAccessReadError { model.storageNotice = SharedPreviewModel.accessMessage(for: accessError) }
-                catch { model.storageNotice = "共有内容をアプリへ安全に引き継いだことを確認できません。ここに表示される範囲だけを確認し、続ける場合はこの画面を閉じてYouVersionから共有し直してください。" }
+
 #if DEBUG && targetEnvironment(simulator)
                 if text.contains("bible-compose-fixture=1") {
-                    model.probeChatGPTOpen = { [weak self] in
-                        self?.extensionContext?.open(URL(string: "https://chatgpt.com/")!) { [weak self] success in
-                            Task { @MainActor in self?.model.chatGPTOpenProbeResult = success ? "open=true" : "open=false" }
-                        }
-                    }
-                    model.probeBrowserOpen = { [weak self] in
-                        self?.extensionContext?.open(URL(string: "https://developer.apple.com/")!) { [weak self] success in
-                            Task { @MainActor in self?.model.chatGPTOpenProbeResult = success ? "browser-open=true" : "browser-open=false" }
-                        }
-                    }
-                    await configureShareComposeFixture(model)
+                    model.loading = false
                 }
-                else { model.prepare() }
+                else { model.loading = false }
 #else
-                model.prepare()
+                model.loading = false
 #endif
             } catch {
                 let partial = parts.joined(separator: "\n")

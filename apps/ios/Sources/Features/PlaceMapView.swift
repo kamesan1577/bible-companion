@@ -3,15 +3,11 @@ import MapKit
 import CompanionCore
 
 struct PlaceMapView: View {
-    @EnvironmentObject private var store: AppStore
     @Environment(\.colorScheme) private var colorScheme
-    let cardID: String
+    let card: MaterialCard
     let reading: Passage
     @State private var entityProfile: ResolvedEntityProfile?
-    private var currentCard: MaterialCard? {
-        guard store.selectedPassage == reading, store.cachedSnapshot == nil else { return nil }
-        return store.reading?.places.first { $0.id == cardID && $0.isDisplayable(reading: reading) }
-    }
+    private var currentCard: MaterialCard? { card.isDisplayable(reading: reading) ? card : nil }
     var body: some View {
         ScrollView {
             BibleReadingColumn {
@@ -49,6 +45,6 @@ struct PlaceMapView: View {
             }
         }
         .bibleCanvas().navigationTitle("地図").navigationBarTitleDisplayMode(.inline)
-        .task(id: cardID + reading.label) { entityProfile = try? await BundledEntityIndex.shared.profile(forMaterialCardID: cardID, passage: reading) }
+        .task(id: card.id + reading.label) { entityProfile = try? await BundledEntityIndex.shared.profile(forMaterialCardID: card.id, passage: reading) }
     }
 }

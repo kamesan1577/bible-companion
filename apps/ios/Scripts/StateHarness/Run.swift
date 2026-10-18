@@ -48,14 +48,17 @@ import CompanionCore
         print("PASS explicit restore recovery retains failure flag until cleanup succeeds")
 
         reset()
+        SessionVault.session = StoredSession(token: "expired-synthetic", expiresAt: Date().addingTimeInterval(-60).timeIntervalSince1970, user: account)
+        ShareInbox.shares = [queued]
         let expired = AppStore(apiBaseURL: URL(string: "https://example.test")!); ShareInbox.failClear = true
         expired.handle(NetworkFailure.unauthenticated)
-        precondition(expired.account == nil && expired.localCleanupRequired && SessionVault.cleanupPending)
-        precondition(PrivateHistoryStore.clears == 1 && PendingQuestionStore.clears == 1 && ComparisonStore.clears == 1)
-        precondition(ExportFiles.clears == 2) // Startup cleanup plus synchronous401 cleanup.
+        precondition(expired.account == nil && !expired.localCleanupRequired && !SessionVault.cleanupPending)
+        precondition(PrivateHistoryStore.clears == 0 && PendingQuestionStore.clears == 0 && ComparisonStore.clears == 0)
+        precondition(ShareInbox.clears == 0 && ShareInbox.shares.count == 1 && SessionVault.session != nil)
         let restarted = AppStore(apiBaseURL: URL(string: "https://example.test")!); await restarted.restore()
-        precondition(restarted.localCleanupRequired && restarted.account == nil)
-        print("PASS401 cleanup failure remains blocked across a new store instance")
+        precondition(!restarted.localCleanupRequired && restarted.account == nil && SessionVault.session != nil)
+        precondition(PrivateHistoryStore.clears == 0 && ShareInbox.shares.count == 1)
+        print("PASS401 and expired-session restore preserve prior records while isolating signed-out UI")
 
         reset()
         ShareInbox.shares = [queued]; ShareInbox.failOwner = true

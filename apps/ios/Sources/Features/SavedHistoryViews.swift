@@ -47,7 +47,7 @@ struct ConversationHistoryView: View {
                     LazyVStack(alignment: .leading, spacing: BibleTheme.Space.section) {
                         ForEach(model.window.messages.filter { !($0.role == "user" && $0.content["standardExplanation"].bool == true) }) { message in SavedMessageView(message: message) }
                     }
-                    if model.window.messages.isEmpty { BibleStateView(title: "メッセージはまだありません", message: "この会話で質問を続けられます。") }
+                    if model.window.messages.isEmpty { BibleStateView(title: "メッセージはまだありません", message: "以前の会話を読む画面です。新しい質問は読書画面から外部サービスへ送れます。") }
                 }
                 if model.loading { BibleLoadingView(title: "会話を確認しています", message: "資料の利用条件を確認しています。") }
                 if let error = model.errorMessage { BibleStateView(title: "会話を確認できません", message: error, systemImage: BibleTheme.Symbol.error) }
@@ -55,17 +55,8 @@ struct ConversationHistoryView: View {
         }
         .bibleCanvas().navigationTitle("会話").navigationBarTitleDisplayMode(.inline)
         .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("再読み込み", systemImage: "arrow.clockwise") { Task { await model.load() } }.disabled(model.loading) } }
-        .safeAreaInset(edge: .bottom) {
-            if let conversation = model.window.conversation, let item = model.item, let index = conversation.resumeRangeIndex(in: item) {
-                Button("この会話で質問を続ける") { resume = ResumeContext(conversation: conversation, item: item, index: index) }.buttonStyle(.glass).disabled(model.loading)
-                    .padding(.horizontal, BibleTheme.Space.page).padding(.vertical, BibleTheme.Space.sm)
-            }
-        }
-        .task { await model.load() }.onDisappear { if resume == nil { model.clear() } }
-        .onChange(of: scenePhase) { _, phase in if phase == .background { model.clear() } else if phase == .active && resume == nil { Task { await model.load() } } }
-        .sheet(item: $resume, onDismiss: { Task { await model.load() } }) { context in
-            QuestionView(ownerID: ownerID, client: client, item: context.item, rangeIndex: context.index, target: context.conversation.passage, conversation: context.conversation)
-        }
+        .task { await model.load() }.onDisappear { model.clear() }
+        .onChange(of: scenePhase) { _, phase in if phase == .background { model.clear() } else if phase == .active { Task { await model.load() } } }
     }
 }
 private struct SavedMessageView: View {

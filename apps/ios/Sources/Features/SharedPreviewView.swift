@@ -392,182 +392,31 @@ import UIKit
     }
 }
 struct SharedPreviewView: View {
-    @Environment(\.openURL) private var openURL
-    @Environment(\.scenePhase) private var scenePhase
     @ObservedObject var model: SharedPreviewModel
     let close: () -> Void
-    @State private var pane = "explanation"
-    @State private var showSetupSteps = false
-    @State private var showChatGPT = (try? SharePresentationPreferences.isChatGPTVisible()) ?? true
-    private struct ChatGPTPreview: Identifiable { let id = UUID(); let prompt: String?; let error: String?; var ownerID: String? = nil }
-    @State private var chatGPTPreview: ChatGPTPreview?
-    @FocusState private var composerFocused: Bool
     var body: some View {
         NavigationStack {
-            ScrollViewReader { proxy in
-            ScrollView {
-                VStack(alignment: .leading, spacing: BibleTheme.Space.page) {
-#if DEBUG
-                    Text("AI requests: \(model.aiRequests)").bibleTextStyle(.caption).accessibilityIdentifier("share-ai-request-count")
-#if targetEnvironment(simulator)
-                    if let probe = model.probeChatGPTOpen { Button("QA: ChatGPT open probe", action: probe) }
-                    if let probe = model.probeBrowserOpen { Button("QA: browser control probe", action: probe) }
-                    Text(model.chatGPTOpenProbeResult).accessibilityIdentifier("chatgpt-open-probe-result")
-#endif
-#endif
-                    if model.items.count > 1 {
-                        Picker("表示する箇所", selection: $model.selectedIndex) { ForEach(Array(model.items.enumerated()), id: \.offset) { index, item in Text(item.passage.label).tag(index) } }.pickerStyle(.menu).disabled(model.loading || model.pendingRequest != nil)
-                    }
-                    Text(model.current?.passage.label ?? model.labels.first ?? "共有した箇所").bibleTextStyle(.heading)
-                    if let passage = model.current?.passage {
-                        Picker("表示", selection: $pane) { Text("解説").tag("explanation"); Text("人物").tag("person"); Text("地名").tag("place") }.pickerStyle(.segmented)
-                        if pane != "explanation" { OfflineEntityPane(passage: passage, kind: pane, inlineDetails: true) }
-                    }
-                    if model.needsSetup {
-                        Text("質問を送るには準備が必要です").bibleTextStyle(.heading)
-                        Text(model.setupMessage).bibleTextStyle(.body)
-                        Text("選んだ箇所はこの画面に残しています。必要なときは、下の手順でアプリの設定を確認できます。").bibleTextStyle(.body)
-                        Button("準備の手順を見る") { showSetupSteps = true }.buttonStyle(.bordered)
-                        if showSetupSteps {
-                            Label("共有画面を閉じる", systemImage: "1.circle.fill")
-                            Label("聖書コンパニオンの「YouVersionから解説を読む準備」を開く", systemImage: "2.circle.fill")
-                            Label("問題が表示された項目だけ確認し、設定を保存する", systemImage: "3.circle.fill")
-                            Label("YouVersionで同じ箇所を選び、もう一度共有する", systemImage: "4.circle.fill")
-                            Button("共有画面を閉じる", action: close).buttonStyle(.borderedProminent)
-                        }
-                        if model.current?.passage != nil { Text("人物・地名の索引はこの画面でも確認できます。").bibleTextStyle(.caption) }
-                    }
-                    if model.shareParseFailed {
-                        Text("共有から章節を読み取れませんでした。YouVersionで節と本文を選択し直し、共有し直してください。").bibleTextStyle(.body)
-                        Button("共有画面を閉じる", action: close).buttonStyle(.borderedProminent)
-                        DisclosureGroup("受け取った共有内容を端末内で確認") {
-                            Text(model.sharedText.isEmpty ? "共有内容は受け取れませんでした。" : model.sharedText)
-                                .bibleTextStyle(.caption)
-                                .textSelection(.enabled)
-                            if model.shareTextWasTruncated { Text("長さ制限のため末尾を省略しています。").bibleTextStyle(.caption) }
-                        }
-                    }
-                    if let notice = model.storageNotice { Text(notice).bibleTextStyle(.caption).foregroundStyle(.secondary) }
-                    if pane == "explanation", let answer = model.answer {
-                        Text("最初の解説").bibleTextStyle(.heading)
-                        Text(answer.answer).bibleTextStyle(.body).textSelection(.enabled)
-                        DisclosureGroup("出典") { ForEach(Array(answer.citations.enumerated()), id: \.offset) { _, citation in Text(citation.title).bibleTextStyle(.caption) } }
-                    }
-                    if pane == "explanation" {
-                        if model.entries.isEmpty && !model.loading { Text("気になったことを、そのまま質問できます。").bibleTextStyle(.body) }
-                        ChatMessagesView(entries: model.entries.filter { !$0.standard || $0.incomplete == true })
-                        if model.loading { ChatWaitingView(status: model.status, preview: model.preview) }
-                    }
-                    if model.draft.utf16.count > 2000 { Text("質問は2000文字以内にしてください。下書きは残しています。").bibleTextStyle(.caption) }
-                    if model.queued.count >= 10 { Text("順番待ちは10件までです。回答を待つか、不要な質問を取り消してください。").bibleTextStyle(.caption) }
-                    ForEach(model.queued) { question in
-                        HStack { Text((model.pendingRequest != nil && model.queued.first?.id == question.id ? "送信済み・結果確認中: " : "送信待ち: ") + question.question).bibleTextStyle(.caption); Button("取り消す") { model.removeQueued(question.id) }.disabled(model.pendingRequest != nil && model.queued.first?.id == question.id) }
-                    }
-                    if !model.queued.isEmpty && !model.loading && model.pendingRequest == nil { Button("待っている質問を送る") { model.resumeQueue() } }
-                    if let error = model.error { Text(error).bibleTextStyle(.body) }
-                    if model.canRetryExplanation && model.answer == nil && model.pendingRequest == nil {
-                        Button("解説をもう一度確認") { Task { await model.explain() } }.buttonStyle(.borderedProminent).disabled(model.loading)
-                    }
-                    if model.pendingRequest != nil && !model.loading { Button("送信した回答を確認") { Task { await model.checkStatus() } }.buttonStyle(.borderedProminent) }
-                    if model.error != nil && model.pendingRequest == nil && !model.loading && !model.canRetryExplanation { Button("同じ質問をもう一度送る") { model.retry() } }
-                    Color.clear.frame(height: 1).id("chat-bottom")
-                    if model.canRetryStart && !model.needsSetup && !model.loading { Button("共有した箇所をもう一度確認") { Task { await model.refresh() } }.buttonStyle(.borderedProminent) }
-                }.padding(BibleTheme.Space.page).frame(maxWidth: .infinity, alignment: .leading)
-            }.scrollDismissesKeyboard(.interactively)
-                .onChange(of: model.pendingRequest) { _, value in if value != nil { withAnimation { proxy.scrollTo("chat-bottom", anchor: .bottom) } } }
-                .onChange(of: composerFocused) { _, focused in if focused { withAnimation { proxy.scrollTo("chat-bottom", anchor: .bottom) } } }
-                .overlay(alignment: .bottomTrailing) { if !model.entries.isEmpty { Button { withAnimation { proxy.scrollTo("chat-bottom", anchor: .bottom) } } label: { Image(systemName: "arrow.down.circle.fill").bibleTextStyle(.heading).padding() }.accessibilityLabel("最新のメッセージへ") } }
-            }.safeAreaInset(edge: .bottom) {
-                if !model.shareParseFailed {
-                    HStack(alignment: .bottom) {
-                        TextField("気になったことを質問", text: $model.draft, axis: .vertical).accessibilityIdentifier("share-question-draft").lineLimit(1...4).focused($composerFocused).bibleTextStyle(.body).frame(maxWidth: .infinity, maxHeight: 120).clipped().submitLabel(.send).onSubmit { model.startQuestion() }
-                        if model.loading { Button { model.cancel() } label: { ChatComposerIcon(systemName: "stop.circle") }.accessibilityLabel("回答の準備をやめる") }
-                        if showChatGPT {
-                            Button(action: openChatGPT) { ChatGPTCopyComposerLabel() }
-                            .accessibilityLabel("ChatGPTを外部で開き、本文と質問を渡す").accessibilityHint("ChatGPTで回答が始まる場合があります").accessibilityIdentifier("chatgpt-open-external")
-                            .disabled(model.draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || model.current == nil)
-                        }
-                        Button { pane = "explanation"; model.startQuestion() } label: { ChatComposerIcon(systemName: "arrow.up.circle.fill") }.accessibilityLabel("質問を送る").disabled(!model.canSend)
-                    }.padding(BibleTheme.Space.md).bibleCanvas()
+            Group {
+                if model.loading { ProgressView("共有した箇所を読み取っています") }
+                else if let item = model.current {
+                    UnifiedReadingView(passage: item.passage, translation: model.translation, sharedText: model.sharedText)
+                        .id(item.passage.label)
+                } else {
+                    ScrollView { BibleReadingColumn {
+                        Text("共有文から章節を確認できませんでした。YouVersionで節と本文を選んで共有し直してください。").bibleTextStyle(.body)
+                        if !model.sharedText.isEmpty { Text(model.sharedText).bibleTextStyle(.body).textSelection(.enabled) }
+                    } }
+                    .safeAreaInset(edge: .bottom) { ExternalQuestionComposer(passage: nil, translation: model.translation, sharedText: model.sharedText) }
                 }
-            }.safeAreaInset(edge: .top) { if let passage = model.current?.passage { SharedScriptureHeader(passage: passage, translation: model.translation, text: model.sharedText, compact: composerFocused) } }.bibleCanvas().navigationTitle("聖書コンパニオン").navigationBarTitleDisplayMode(.inline)
-                .toolbar { ToolbarItem(placement: .topBarLeading) { if composerFocused { Button { composerFocused = false } label: { Image(systemName: "keyboard.chevron.compact.down") }.accessibilityLabel("キーボードを閉じる") } }; ToolbarItem(placement: .topBarTrailing) { Button("閉じる", action: close) } }
-                .sheet(item: $chatGPTPreview) { preview in
-                    ChatGPTPreviewSheet(prompt: preview.prompt, error: preview.error, ownerID: preview.ownerID)
-                }
-                .onDisappear { model.close() }
-                .onChange(of: scenePhase) { _, phase in if phase == .active {
-                    model.revalidateAccess(); showChatGPT = (try? SharePresentationPreferences.isChatGPTVisible()) ?? showChatGPT
-                    if let preview = chatGPTPreview {
-                        do { if try ShareInbox.localDraftOwner() != preview.ownerID { chatGPTPreview = nil } }
-                        catch { chatGPTPreview = nil }
+            }
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) { Button("閉じる", action: close) }
+                if model.items.count > 1 {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Menu("箇所を選ぶ") { ForEach(Array(model.items.enumerated()), id: \.offset) { index, item in Button(item.passage.label) { model.selectedIndex = index } } }
                     }
-                } }
-
-        }
-    }
-    private func openChatGPT() {
-        do {
-            guard let passage = model.current?.passage else { return }
-            let owner = try model.chatGPTHandoffOwner()
-            let prompt = try ChatGPTCopyPrompt.make(question: model.draft, passage: passage, translation: model.translation, sharedText: model.sharedText)
-            guard try ShareInbox.localDraftOwner() == owner else { throw ShareAIAccessReadError.ownerMismatch }
-            do {
-                let url = try ChatGPTQuestionLink.make(prompt: prompt)
-                openURL(url) { accepted in
-                    if !accepted { chatGPTPreview = ChatGPTPreview(prompt: prompt, error: "ChatGPTを開けませんでした。本文と質問をコピーして貼り付けられます。", ownerID: owner) }
                 }
-            } catch { chatGPTPreview = ChatGPTPreview(prompt: prompt, error: "本文がURLの長さ上限を超えています。本文と質問をコピーしてChatGPTへ貼り付けてください。内容は切り詰めません。", ownerID: owner) }
-        } catch { chatGPTPreview = ChatGPTPreview(prompt: nil, error: "質問と共有本文を確認してください。質問は2,000文字、共有文は20,000文字までです。") }
-    }
-
-}
-
-private struct ChatGPTPreviewSheet: View {
-    let prompt: String?
-    let error: String?
-    let ownerID: String?
-    @Environment(\.openURL) private var openURL
-    @Environment(\.dismiss) private var dismiss
-    @State private var chatGPTNotice: String?
-    var body: some View {
-        NavigationStack {
-            ScrollView { VStack(alignment: .leading, spacing: BibleTheme.Space.page) {
-                Text("本文と質問をURLでChatGPTへ渡せます。開くと回答が始まる場合があります。入力欄に入るだけの場合は、内容を確認して送信してください。URLはブラウザ履歴などに残る可能性があります。")
-                Text("コピーする内容は以下だけです。会話履歴やアカウント情報は含みません。")
-                if let error = error { Text(error) }
-                if let chatGPTPrompt = prompt {
-                    Text(chatGPTPrompt).lineLimit(3).textSelection(.enabled).accessibilityIdentifier("chatgpt-copy-content")
-                    DisclosureGroup("本文と質問を全文で確認") { Text(chatGPTPrompt).textSelection(.enabled) }
-                    if let url = try? ChatGPTQuestionLink.make(prompt: chatGPTPrompt) {
-                        Button("ChatGPTで開く") {
-                            do { guard try ShareInbox.localDraftOwner() == ownerID else { chatGPTNotice = "ログイン状態が変わりました。共有し直してください。"; return } }
-                            catch { chatGPTNotice = "ログイン状態を確認できませんでした。共有し直してください。"; return }
-                            openURL(url) { accepted in
-                                if !accepted { chatGPTNotice = "この共有画面からは開けませんでした。URLをコピーしてブラウザで開くか、本体の設定へ引き継いでください。" }
-                            }
-                        }.accessibilityIdentifier("chatgpt-open-url")
-        #if DEBUG && targetEnvironment(simulator)
-                        Link("QA: system link", destination: url).accessibilityIdentifier("chatgpt-system-link")
-        #endif
-                        Button("ChatGPTのURLをコピー") {
-                            UIPasteboard.general.setItems([[UIPasteboard.typeAutomatic: url.absoluteString]], options: [.localOnly: true, .expirationDate: Date().addingTimeInterval(600)])
-                            chatGPTNotice = "URLをコピーしました。ブラウザのアドレス欄へ貼り付けると、本文と質問を渡せます。"
-                        }.accessibilityIdentifier("chatgpt-copy-url")
-                    } else { Text("URLにするには本文が長すぎます。本文と質問をコピーしてChatGPTへ貼り付けてください。内容は切り詰めません。") }
-                    Button("本体の設定へ引き継ぐ") {
-                        do { try ShareInbox.saveChatGPTHandoff(prompt: chatGPTPrompt, expectedOwner: ownerID); chatGPTNotice = "10分間、同じログイン状態の本体へ引き継ぎました。共有画面を閉じ、聖書コンパニオンの設定からChatGPTで開いてください。" }
-                        catch { chatGPTNotice = "本体へ引き継げませんでした。ログイン状態を確認するか、コピーを使ってください。" }
-                    }.accessibilityIdentifier("chatgpt-stage-main")
-                    if let chatGPTNotice { Text(chatGPTNotice).accessibilityIdentifier("chatgpt-handoff-notice") }
-
-                    Button("本文と質問をコピー") {
-                        UIPasteboard.general.setItems([[UIPasteboard.typeAutomatic: chatGPTPrompt]], options: [.localOnly: true, .expirationDate: Date().addingTimeInterval(600)])
-                        dismiss()
-                    }.accessibilityIdentifier("chatgpt-copy-confirm")
-                }
-            }.padding() }.navigationTitle("ChatGPTを開けませんでした").navigationBarTitleDisplayMode(.inline)
-            .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("閉じる") { dismiss() }.accessibilityIdentifier("chatgpt-fallback-close") } }
+            }
         }
     }
 }
