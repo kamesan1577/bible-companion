@@ -23,9 +23,10 @@ final class ArtworkCatalogUITests: XCTestCase {
             XCTAssertTrue(app.buttons["閉じる"].waitForExistence(timeout: 15))
             capture(app,"catalog-share-before-select")
             let tree = XCTAttachment(string: app.debugDescription); tree.name = "catalog-share-tree"; tree.lifetime = .keepAlways; add(tree)
-            // The extension is a remote accessibility subtree; its button frame
-            // is stable in the captured default-size Simulator presentation.
-            app.buttons["絵画"].tap()
+            // The extension is a remote subtree; target its native control,
+            // not the still-present underlying main reader.
+            let shareArt = app.buttons.matching(identifier: "絵画")
+            shareArt.element(boundBy: shareArt.count - 1).tap()
             XCTAssertTrue(app.images["artwork-image-share-" + id].waitForExistence(timeout: 30), title)
             capture(app,"catalog-real-share-" + object.replacingOccurrences(of: "/", with: "-"))
             app.buttons["閉じる"].tap()
