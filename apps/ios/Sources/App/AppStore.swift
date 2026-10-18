@@ -150,7 +150,7 @@ import CompanionCore
             } catch {
                 guard sessionEpoch == epoch else { return }
                 if installingSession {
-                    let previous = invalidateLocalSession()
+                    let previous = invalidateLocalSession(cleanup: false)
                     Task { await previous.setToken(nil) }
                 }
                 if error is CancellationError { return }
