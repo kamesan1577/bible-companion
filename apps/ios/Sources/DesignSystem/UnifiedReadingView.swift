@@ -167,6 +167,7 @@ struct ExternalQuestionComposer: View {
     let translation: String?
     let sharedText: String
     @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.colorScheme) private var scheme
     @State private var provider = ExternalQuestionProvider.chatGPT
     @State private var draft = ""
     @State private var visit: LocalReadingVisit?
@@ -185,6 +186,7 @@ struct ExternalQuestionComposer: View {
             HStack {
                 Text("質問先：\(provider.title)").bibleTextStyle(.caption)
                 Spacer()
+                if focused { Button { focused = false } label: { Image(systemName: "keyboard.chevron.compact.down") }.accessibilityLabel("キーボードを閉じる").frame(minWidth: 44, minHeight: 44) }
                 Button { focused = false; showSettings = true } label: { Label("送信先の設定", systemImage: "slider.horizontal.3") }.labelStyle(.iconOnly).accessibilityIdentifier("external-provider-settings")
             }
             TextField(passage == nil ? "箇所を開くと質問できます" : "この箇所について質問", text: $draft, axis: .vertical)
@@ -207,13 +209,13 @@ struct ExternalQuestionComposer: View {
             } else { Label("\(provider.title)へ質問", systemImage: "arrow.up.right.square").frame(maxWidth: .infinity).foregroundStyle(.secondary).padding(.vertical, BibleTheme.Space.sm) }
             if !focused { Text(provider.deliveryNotice).bibleTextStyle(.caption) }
         }.padding(.horizontal, BibleTheme.Space.page).padding(.vertical, BibleTheme.Space.sm).background(.regularMaterial)
+        .tint(BibleTheme.color(.accent, scheme: scheme))
         .task(id: ReadingContextKey(passage: passage, translation: translation, sharedText: sharedText)) { prepareLocalState() }
         .onChange(of: draft) { _, text in
             guard let visit, !revoked else { return }
             do { try ShareInbox.saveExternalDraft(text, for: visit) } catch { notice = "下書きを端末に保存できません。この画面の入力は残しています。" }
         }
         .onChange(of: scenePhase) { _, phase in if phase == .active { checkOwner(); provider = (try? ShareInbox.externalProvider()) ?? provider } }
-        .toolbar { ToolbarItemGroup(placement: .keyboard) { Spacer(); Button("キーボードを閉じる") { focused = false } } }
         .sheet(isPresented: $showSettings) { ExternalQuestionSettings(provider: $provider) }
     }
     private func prepareLocalState() {
