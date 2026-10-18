@@ -4,6 +4,9 @@ import CompanionCore
 struct StaticCommentaryView: View {
     var developerDetails = false
     let passage: Passage
+    var usesPreparedEdits = false
+    var preparedEdits: [CommentaryEdit]? = nil
+    var preparedFailure: String? = nil
     @State private var edits: [CommentaryEdit] = []
     @State private var failure: String?
     @State private var progress: CommentaryProgress?
@@ -11,9 +14,10 @@ struct StaticCommentaryView: View {
         VStack(alignment: .leading, spacing: BibleTheme.Space.md) {
             BibleSectionHeader(title: "この箇所の説明")
             Text("AIで編集。専門家の校閲なし。").bibleTextStyle(.caption)
-            if let failure { Text(failure).bibleTextStyle(.caption) }
-            else if edits.isEmpty { Text("この箇所の日本語の説明は、まだありません。下の「英語の注解を読む」から参考にした注解を読めます。先の出来事を含むことがあるため、開く前にお知らせします。").bibleTextStyle(.body) }
-            ForEach(edits) { edit in
+            if let failure = usesPreparedEdits ? preparedFailure : failure { Text(failure).bibleTextStyle(.caption) }
+            else if usesPreparedEdits && preparedEdits == nil { ProgressView("解説の件数を確認しています") }
+            else if (usesPreparedEdits ? preparedEdits ?? [] : edits).isEmpty { Text("この箇所の日本語の説明は、まだありません。下の「英語の注解を読む」から参考にした注解を読めます。先の出来事を含むことがあるため、開く前にお知らせします。").bibleTextStyle(.body) }
+            ForEach(usesPreparedEdits ? preparedEdits ?? [] : edits) { edit in
                 VStack(alignment: .leading, spacing: BibleTheme.Space.sm) {
                     Text(edit.titleJa).bibleTextStyle(.heading)
                     Text(edit.passage.label).bibleTextStyle(.caption)
@@ -45,7 +49,7 @@ struct StaticCommentaryView: View {
                 }
             }
         }.task(id: passage) {
-            do { edits = try await StaticCommentary.shared.edits(for: passage); progress = try await StaticCommentary.shared.progress(); failure = nil }
+            do { if !usesPreparedEdits { edits = try await StaticCommentary.shared.edits(for: passage) }; progress = try await StaticCommentary.shared.progress(); failure = nil }
             catch { edits = []; failure = "説明を開けませんでした。いったん戻って、もう一度お試しください。" }
         }
     }

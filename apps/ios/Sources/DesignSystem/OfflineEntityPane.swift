@@ -10,8 +10,16 @@ struct OfflineEntityPane: View {
     var ask: ((String) -> Void)? = nil
     var coveredMaterialCardIDs: [String] = []
     var inlineDetails = false
-    @State private var result: EntityIndexResult?
-    @State private var includeFuture = false
+    var usesPreparedResult = false
+    var preparedResult: EntityIndexResult? = nil
+    var preparedFailure: String? = nil
+    var futureSelection: Binding<Bool>? = nil
+    @State private var loadedResult: EntityIndexResult?
+    private var result: EntityIndexResult? { usesPreparedResult ? preparedResult : loadedResult }
+    private var visibleMessage: String? { usesPreparedResult ? preparedFailure : message }
+    @State private var localFuture = false
+    private var includeFuture: Bool { futureSelection?.wrappedValue ?? localFuture }
+    private var futureBinding: Binding<Bool> { futureSelection ?? Binding(get: { localFuture }, set: { localFuture = $0 }) }
     @State private var message: String?
     @State private var selectedMapID: String?
     private func toggleMap(_ id: String) {
@@ -22,13 +30,11 @@ struct OfflineEntityPane: View {
     }
     private var hasPartialEntityCoverage: Bool { ["1CH", "2CH", "EZR", "NEH"].contains(passage.book) }
     private var additions: [IndexedOccurrence] {
-        result?.occurrences.filter { item in
-            Set(item.profile?.profile.materialCardIDs ?? []).isDisjoint(with: coveredMaterialCardIDs)
-        } ?? []
+        ReadingContentProjection.additions(result, covered: coveredMaterialCardIDs)
     }
     var body: some View {
         VStack(alignment: .leading, spacing: BibleTheme.Space.section) {
-            if let message, result != nil { Text(message).bibleTextStyle(.caption) }
+            if let message = visibleMessage, result != nil { Text(message).bibleTextStyle(.caption) }
             if let result {
                 if hasPartialEntityCoverage {
                     Text(["EZR", "NEH"].contains(passage.book) ? "この書の人物・地名は、原文と照合したものから順に収録を進めています。説明が出ない名前も、未収録の場合があります。" : "この書の人物・地名は、一部を原文と照合して収録しています。説明が出ない名前も、未収録の場合があります。")
@@ -91,14 +97,14 @@ struct OfflineEntityPane: View {
                         }
                     }
                 }
-                Toggle("先の登場箇所も見る", isOn: $includeFuture)
+                Toggle("先の登場箇所も見る", isOn: futureBinding)
                 Text(includeFuture ? "この書の先の登場箇所と補足説明も表示しています。" : "選んだ箇所までの情報を表示しています。").bibleTextStyle(.caption).bibleForeground(.textSecondary)
                 DisclosureGroup("一覧の出典と利用条件") {
                     Text(["ACT", "ROM", "LEV", "NUM", "JOS", "JDG", "RUT", "1SA", "2SA", "1KI", "2KI", "1CH", "2CH", "EZR", "NEH"].contains(passage.book) ? "WEB本文と照合した人物・場所の対応を表示します。名前の明記と、文脈上の指示を区別しています。" : "KJVの節番号をもとにした人物・場所の参考一覧です。関連候補と本文に名前がある場合を区別しています。").bibleTextStyle(.caption)
                     Text(result.attribution).bibleTextStyle(.caption)
                     if let url = result.sourceURL { Link("Theographic Bible Metadata · CC BY-SA 4.0", destination: url) }
                 }
-            } else if let message { Text(message).bibleTextStyle(.body) }
+            } else if let message = visibleMessage { Text(message).bibleTextStyle(.body) }
             else { ProgressView("人物・場所の情報を準備しています") }
         }
         // Share extensions have a smaller memory budget than the containing app.
@@ -107,7 +113,9 @@ struct OfflineEntityPane: View {
             if selectedMapID != nil { selectedMapID = nil; message = "端末の空きメモリが少ないため地図を閉じました。場所の説明は引き続き読めます。" }
         }
         .task(id: passage.label + kind + String(includeFuture)) {
-            do { result = try await BundledEntityIndex.shared.lookup(passage, kind: kind, includeFuture: includeFuture) }
+            guard !usesPreparedResult else { return }
+            loadedResult = nil; message = nil
+            do { loadedResult = try await BundledEntityIndex.shared.lookup(passage, kind: kind, includeFuture: includeFuture) }
             catch { message = "人物・場所の情報を表示できませんでした。" }
         }
     }

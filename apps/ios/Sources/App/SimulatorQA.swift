@@ -5,6 +5,7 @@ import CompanionCore
 /// Fixture rendering only. This entire entry point is absent from Release builds.
 struct SimulatorQA: View {
     @EnvironmentObject private var store: AppStore
+    @Environment(\.dynamicTypeSize) private var systemTextSize
     @State private var ready = false
     @State private var externalOpenResult = ""
     @State private var composeSession = UUID().uuidString
@@ -42,6 +43,7 @@ struct SimulatorQA: View {
             if let passage = choices[screen] {
                 ScrollView { BibleReadingColumn { StaticCommentaryView(passage: passage) } }.navigationTitle(passage.label).bibleCanvas()
             }
+        case "badges": ReadingBadgeQA()
         case "unified": UnifiedReadingView(passage: Passage(book: "LEV", start: Verse(chapter: 19, verse: 1), end: Verse(chapter: 19, verse: 2)), translation: "JCB", sharedText: "検証用の共有原文。\nレビ記 19:1-2 JCB")
         case "unified-home": ReadingView()
         case "unified-history": HistoryView()
@@ -105,6 +107,8 @@ struct SimulatorQA: View {
             if snapshotScreen == "configured-home", ready { RootView() }
             else { navigationContent }
         }
+        .preferredColorScheme(ProcessInfo.processInfo.arguments.contains("--qa-dark") ? .dark : nil)
+        .environment(\.dynamicTypeSize, ProcessInfo.processInfo.arguments.contains("--qa-accessibility-text") ? .accessibility3 : systemTextSize)
         .sheet(isPresented: Binding(get: { snapshotScreen != "configured-home" && store.showAISetup }, set: { store.showAISetup = $0 })) { AISetupView().environmentObject(store) }
         .task { PublicReadingModel.fixtureClient = client; try? ShareInbox.setReadingOwner(nil); try? PendingQuestionStore.clear(); await client.setToken("simulator-fixture-only"); store.configureSimulatorQA(client: client)
             if snapshotScreen?.hasPrefix("unified") == true {
@@ -140,6 +144,7 @@ final class SimulatorQAProtocol: URLProtocol, @unchecked Sendable {
     private var delayedResponse: DispatchWorkItem?
     override class func canInit(with request: URLRequest) -> Bool { true }
     override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
+    static var artworkFixture: [[String: Any]] { try! JSONSerialization.jsonObject(with: Data(#"[{"id":"art-tintoretto-conversion-paul","kind":"artwork","title":"ティントレット《聖パウロの回心》","summary":"ダマスコへ向かう途中で光を受け、地に倒れる場面を描いた16世紀の宗教画です。所蔵館は使徒9:3–7との関係を示しています。馬や多数の人物による劇的な構図は絵画表現として読み、本文の出来事と区別して見ます。","passages":[{"book":"ACT","start":{"chapter":9,"verse":3},"end":{"chapter":9,"verse":7}}],"spoilerEnd":{"book":"ACT","chapter":9,"verse":7},"version":"primary-reviewed-2026-10-13.1","reviewed":true,"rightsStatus":"approved","relationship":"direct","provenance":[{"id":"nga-46142","title":"The Conversion of Saint Paul","url":"https://www.nga.gov/artworks/46142-conversion-saint-paul","publisher":"National Gallery of Art","checkedAt":"2026-10-13","license":"citation-only"},{"id":"nga-open-access","title":"Open Access Policy for Images of Works of Art Presumed in the Public Domain","url":"https://www.nga.gov/terms-and-notices","publisher":"National Gallery of Art","checkedAt":"2026-10-13","license":"citation-only"},{"id":"web-act-9-3","title":"World English Bible · Acts 9:3","url":"https://ebible.org/engwebp/ACT09.htm#V3","publisher":"eBible.org","checkedAt":"2026-10-13","license":"public-domain"}],"details":{"artist":"Jacopo Tintoretto（ヤコポ・ティントレット）","yearLabel":"1544年頃","collection":"National Gallery of Art, Washington · Samuel H. Kress Collection · 1961.9.43","objectUrl":"https://www.nga.gov/artworks/46142-conversion-saint-paul","rightsStatement":"作品ページは、この作品の画像をパブリックドメインと明示しています。所蔵館の対象画像はCC0で提供されています。解説文全体の転載許可とは別です。","media":{"url":"https://api.nga.gov/iiif/50a2866d-de51-4824-a6b6-6c8643d94335/full/%21800%2C800/0/default.jpg","rights":"public-domain","rightsUrl":"https://www.nga.gov/terms-and-notices","attribution":"Jacopo Tintoretto, The Conversion of Saint Paul, c. 1544. Samuel H. Kress Collection, 1961.9.43. Courtesy National Gallery of Art, Washington.","checkedAt":"2026-10-13"}}}]"#.utf8)) as! [[String: Any]] }
     override func startLoading() {
         guard let url = request.url, url.host == "fixture.example.org" else { client?.urlProtocol(self, didFailWithError: URLError(.unsupportedURL)); return }
         var policy = #"{"allowedAnswerModes":["grounded-generation"],"defaultAnswerMode":"grounded-generation","groundedPolicyVersion":"fixture-v1","groundedNoticeJa":"固定データ","workersAiConsent":true,"shareAiEnabled":false,"shareAiConsent":false,"groundedConsent":{"accepted":true,"policyVersion":"fixture-v1"}}"#
@@ -155,7 +160,12 @@ final class SimulatorQAProtocol: URLProtocol, @unchecked Sendable {
         var data = Data((ok ? policy : #"{"error":{"code":"fixture_no_mutation","message":"描画確認では外部に送信しません"}}"#).utf8)
         if request.httpMethod == "POST", url.path == "/public/reading" {
             ok = !ProcessInfo.processInfo.arguments.contains("--qa-public-error")
-            if ok { data = try! JSONSerialization.data(withJSONObject: ["passage":fields["passage"] ?? passage,"translation":fields["translation"] ?? NSNull(),"spoilerAllowed":false,"sourceVersion":"unified-fixture-v1","overview":["contentKind":"curated-reference","text":"公開資料の固定データ。独自AIは呼び出していません。","citations":[],"mode":"source-only","modelInvoked":false],"materialNotice":"固定された公開資料","cache":"fixture","people":[],"places":[],"artworks":[]]) }
+            if ok { data = try! JSONSerialization.data(withJSONObject: ["passage":fields["passage"] ?? passage,"translation":fields["translation"] ?? NSNull(),"spoilerAllowed":false,"sourceVersion":"unified-fixture-v1","overview":["contentKind":"curated-reference","text":"公開資料の固定データ。独自AIは呼び出していません。","citations":[],"mode":"source-only","modelInvoked":false],"materialNotice":"固定された公開資料","cache":"fixture","people":[],"places":[],"artworks": ((fields["passage"] as? [String: Any])?["book"] as? String == "ACT" && ((fields["passage"] as? [String: Any])?["start"] as? [String: Any])?["chapter"] as? Int == 9) ? Self.artworkFixture : []]) }
+            if ProcessInfo.processInfo.arguments.contains("--qa-public-slow") {
+                let responseData = data, responseOK = ok
+                let work = DispatchWorkItem { [weak self] in self?.complete(data: responseData, url: url, ok: responseOK) }
+                delayedResponse = work; DispatchQueue.global().asyncAfter(deadline: .now() + 3, execute: work); return
+            }
         } else if request.httpMethod == "POST", url.path == "/v1/me/share-access", ProcessInfo.processInfo.arguments.contains("--qa-share-success") {
             ok = true
             data = try! JSONEncoder().encode(ShareAIAccess(token: "bcs1_" + String(repeating: "a", count: 64), ownerID: "00000000-0000-4000-8000-000000000123", expiresAt: Date().addingTimeInterval(3600).timeIntervalSince1970))
@@ -218,4 +228,14 @@ private struct SharedConversationQA: View {
             }
     }
 }
+private struct ReadingBadgeQA: View {
+    @State private var passage = Passage(book: "ACT", start: Verse(chapter: 9, verse: 3), end: Verse(chapter: 9, verse: 7))
+    @ObservedObject private var probe = ArtworkLoadProbe.shared
+    var body: some View {
+        UnifiedReadingView(passage: passage, translation: "JCB", sharedText: "")
+            .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("QAレビ記へ") { passage = Passage(book: "LEV", start: Verse(chapter: 19, verse: 1), end: Verse(chapter: 19, verse: 2)) } } }
+            .overlay(alignment: .bottomLeading) { Text("画像取得 \(probe.started)").bibleTextStyle(.caption).accessibilityIdentifier("qa-artwork-load-count").allowsHitTesting(false) }
+    }
+}
+
 #endif

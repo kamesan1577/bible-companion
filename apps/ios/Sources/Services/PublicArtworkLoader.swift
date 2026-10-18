@@ -8,6 +8,9 @@ enum PublicArtworkLoader {
     static let allowedHosts: Set<String> = ["api.nga.gov"]
     static let maximumBytes = 8_000_000
     static func load(_ url: URL) async throws -> Data {
+#if DEBUG
+        await MainActor.run { ArtworkLoadProbe.shared.started += 1 }
+#endif
         guard url.scheme == "https", let host = url.host?.lowercased(), allowedHosts.contains(host),
               url.user == nil, url.password == nil, url.fragment == nil, url.port == nil || url.port == 443 else { throw URLError(.unsupportedURL) }
         let cacheURL = try? cacheFile(for: url)
@@ -48,3 +51,11 @@ enum PublicArtworkLoader {
 private final class RejectArtworkRedirects: NSObject, URLSessionTaskDelegate, @unchecked Sendable {
     func urlSession(_ session: URLSession, task: URLSessionTask, willPerformHTTPRedirection response: HTTPURLResponse, newRequest request: URLRequest, completionHandler: @escaping @Sendable (URLRequest?) -> Void) { completionHandler(nil) }
 }
+
+#if DEBUG
+import Combine
+@MainActor final class ArtworkLoadProbe: ObservableObject {
+    static let shared = ArtworkLoadProbe()
+    @Published var started = 0
+}
+#endif
