@@ -6,14 +6,14 @@ final class ReadingBadgeUITests: XCTestCase {
     }
     @MainActor private func waitValue(_ element: XCUIElement, _ value: String, timeout: TimeInterval = 15) {
         XCTAssertTrue(element.waitForExistence(timeout: timeout))
-        expectation(for: NSPredicate(format: "value == %@", value), evaluatedWith: element); waitForExpectations(timeout: timeout)
+        expectation(for: NSPredicate(format: "label ENDSWITH %@", value), evaluatedWith: element); waitForExpectations(timeout: timeout)
     }
     @MainActor private func capture(_ app: XCUIApplication, _ name: String) { let a = XCTAttachment(screenshot: app.screenshot()); a.name = name; a.lifetime = .keepAlways; add(a) }
     @MainActor func testAllCountsArriveBeforeOpeningArtworkAndImageStartsOnlyOnSelection() {
         let app = launch()
         waitValue(app.buttons["絵画"], "1件")
         XCTAssertEqual(app.staticTexts["qa-artwork-load-count"].label, "画像取得 0")
-        for name in ["解説", "地図", "人物"] { XCTAssertTrue((app.buttons[name].value as? String ?? "").hasSuffix("件")) }
+        for name in ["解説", "地図", "人物"] { XCTAssertTrue((app.buttons[name].label).hasSuffix("件")) }
         capture(app, "badges-art-available-before-opening")
         app.buttons["絵画"].tap()
         XCTAssertTrue(app.staticTexts["ティントレット《聖パウロの回心》"].waitForExistence(timeout: 10))
@@ -28,7 +28,7 @@ final class ReadingBadgeUITests: XCTestCase {
         waitValue(app.buttons["絵画"], "1件")
         app.terminate(); app = launch(["--qa-public-error"])
         waitValue(app.buttons["絵画"], "件数を確認できません")
-        XCTAssertNotEqual(app.buttons["絵画"].value as? String, "0件")
+        XCTAssertFalse(app.buttons["絵画"].label.hasSuffix("0件"))
         capture(app, "badges-failure-not-zero")
     }
     @MainActor func testPassageSwitchRejectsOldArtworkCount() {
@@ -46,7 +46,7 @@ final class ReadingBadgeUITests: XCTestCase {
         XCTAssertTrue(app.buttons["質問する共有拡張を開く"].waitForExistence(timeout: 15)); app.buttons["質問する共有拡張を開く"].tap()
         let choices = app.cells.matching(identifier: "聖書コンパニオン"); XCTAssertTrue(choices.firstMatch.waitForExistence(timeout: 10)); choices.element(boundBy: choices.count-1).tap()
         waitValue(app.buttons["絵画"], "0件")
-        for name in ["解説", "地図", "人物"] { XCTAssertTrue((app.buttons[name].value as? String ?? "").hasSuffix("件")) }
+        for name in ["解説", "地図", "人物"] { XCTAssertTrue((app.buttons[name].label).hasSuffix("件")) }
         capture(app, "badges-real-share-counts")
         app.buttons["閉じる"].tap()
     }
@@ -76,7 +76,7 @@ final class ReadingBadgeUITests: XCTestCase {
         app.buttons["地図"].tap(); app.buttons["人物"].tap()
         for _ in 0..<12 { if future.exists && future.isHittable { break }; app.swipeUp() }
         XCTAssertEqual(future.value as? String, "1")
-        XCTAssertTrue((app.buttons["人物"].value as? String ?? "").hasSuffix("件"))
+        XCTAssertTrue((app.buttons["人物"].label).hasSuffix("件"))
         app.buttons["QAレビ記へ"].tap(); waitValue(app.buttons["絵画"], "0件")
         app.buttons["人物"].tap()
         for _ in 0..<12 { if future.exists && future.isHittable { break }; app.swipeUp() }

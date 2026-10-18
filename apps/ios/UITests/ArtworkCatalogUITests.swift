@@ -11,9 +11,9 @@ final class ArtworkCatalogUITests: XCTestCase {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa", "--qa-screen=artwork-catalog", "--qa-handoff-owner"]
         app.launchEnvironment["BIBLE_QA_ARTWORK"] = try JSONSerialization.data(withJSONObject: card).base64EncodedString(); app.launch()
         defer { if app.buttons["閉じる"].exists { app.buttons["閉じる"].tap() }; app.terminate() }
-        let art = app.buttons.matching(NSPredicate(format: "label == %@", "絵画")).firstMatch
+        let art = app.buttons["絵画"]
         XCTAssertTrue(art.waitForExistence(timeout: 15))
-        XCTAssertTrue(art.staticTexts["1"].waitForExistence(timeout: 15))
+        expectation(for: NSPredicate(format: "label CONTAINS %@", "1件"), evaluatedWith: art); waitForExpectations(timeout: 15)
         art.tap()
         XCTAssertTrue(app.images["artwork-image-main-" + id].waitForExistence(timeout: 30), title)
         capture(app,"catalog-main-" + object.replacingOccurrences(of: "/", with: "-"))
@@ -25,7 +25,7 @@ final class ArtworkCatalogUITests: XCTestCase {
             let tree = XCTAttachment(string: app.debugDescription); tree.name = "catalog-share-tree"; tree.lifetime = .keepAlways; add(tree)
             // The extension is a remote accessibility subtree; its button frame
             // is stable in the captured default-size Simulator presentation.
-            app.coordinate(withNormalizedOffset: CGVector(dx: 0.85, dy: 0.29)).tap()
+            app.buttons["絵画"].tap()
             XCTAssertTrue(app.images["artwork-image-share-" + id].waitForExistence(timeout: 30), title)
             capture(app,"catalog-real-share-" + object.replacingOccurrences(of: "/", with: "-"))
             app.buttons["閉じる"].tap()

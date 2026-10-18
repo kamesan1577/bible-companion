@@ -121,7 +121,6 @@ private struct EntitySelection: Hashable {
 
 private enum ReadingBadgeState {
     case loading, unavailable, count(Int)
-    var text: String { switch self { case .loading: "…"; case .unavailable: "—"; case .count(let n): ReadingContentProjection.badgeText(n) } }
     var spoken: String { switch self { case .loading: "件数を確認中"; case .unavailable: "件数を確認できません"; case .count(let n): "\(n)件" } }
     var isPositive: Bool { if case .count(let n) = self { n > 0 } else { false } }
 }
@@ -138,7 +137,6 @@ struct UnifiedReadingView: View {
     @State private var peopleFuture = false
     @State private var placesFuture = false
     @State private var futureScope: Passage?
-    @Environment(\.colorScheme) private var scheme
     private var reading: ReadingResponse? { model.requestedPassage == passage && model.requestedTranslation == translation ? model.reading : nil }
     private var personKey: EntitySelection { EntitySelection(passage: passage, kind: "person", includeFuture: futureScope == passage && peopleFuture, revision: retry) }
     private var placeKey: EntitySelection { EntitySelection(passage: passage, kind: "place", includeFuture: futureScope == passage && placesFuture, revision: retry) }
@@ -230,35 +228,24 @@ struct UnifiedReadingView: View {
             if page == .maps { placesFuture = value } else { peopleFuture = value }
         })
     }
+    // Keep the platform segmented control: it owns Liquid Glass, sizing, selection,
+    // scrubbing, focus and reduced-transparency behavior. Never paint a replacement.
     private var sectionPicker: some View {
         Group {
-            if typeSize.isAccessibilitySize {
-                Picker("表示内容", selection: $section) {
-                    ForEach(UnifiedReadingSection.allCases) { page in Text("\(page.rawValue) · \(badge(page).spoken)").tag(page) }
-                }.pickerStyle(.menu)
-            } else {
-                HStack(spacing: 2) {
-                    ForEach(UnifiedReadingSection.allCases) { page in
-                        let value = badge(page)
-                        Button { section = page } label: {
-                            Text(page.rawValue).font(.subheadline.weight(.semibold)).lineLimit(1).offset(y: 4)
-                                .frame(maxWidth: .infinity).frame(minHeight: 48)
-                                .background(section == page ? (scheme == .dark ? BibleTheme.color(.textPrimary, scheme: scheme).opacity(0.24) : BibleTheme.color(.surface, scheme: scheme)) : .clear, in: Capsule())
-                                .overlay(alignment: .topTrailing) {
-                                    Text(value.text).font(.system(size: 10, weight: value.isPositive ? .bold : .medium, design: .rounded))
-                                        .monospacedDigit().fixedSize().padding(.horizontal, 4).frame(minWidth: 17, minHeight: 16)
-                                        .foregroundStyle(value.isPositive ? BibleTheme.color(.canvas, scheme: scheme) : BibleTheme.color(.textSecondary, scheme: scheme))
-                                        .background(value.isPositive ? BibleTheme.color(.accent, scheme: scheme) : .clear, in: Capsule())
-                                        .padding(.trailing, 3).padding(.top, 1).accessibilityHidden(true)
-                                }
-                        }.buttonStyle(.plain).bibleForeground(.textPrimary)
-                            .accessibilityLabel(page.rawValue).accessibilityValue(value.spoken)
-                            .accessibilityAddTraits(section == page ? [.isSelected] : [])
-                            .accessibilityHint(page == .explanation ? "日本語解説カードと公開本文資料の件数。英語注解と辞典の検索は含みません。" : page == .maps ? "地図タブの場所の資料・名前の件数。地図座標の数ではありません。" : page == .people ? "人物タブの資料・名前の件数。重複は除いています。" : "この箇所で閲覧できる作品数。画像の取得はタブを開いた後です。")
-                    }
-                }.padding(3).background(Color.secondary.opacity(0.12), in: Capsule())
-            }
+            if typeSize.isAccessibilitySize { nativeSectionPicker.pickerStyle(.menu) }
+            else { nativeSectionPicker.pickerStyle(.segmented) }
         }.accessibilityIdentifier("reading-section-tabs")
+    }
+    private var nativeSectionPicker: some View {
+        Picker("表示内容", selection: $section) {
+            ForEach(UnifiedReadingSection.allCases) { page in
+                let value = badge(page)
+                Text(typeSize.isAccessibilitySize ? "\(page.rawValue) · \(value.spoken)" : page.rawValue + (value.isPositive ? " •" : ""))
+                    .tag(page)
+                    .accessibilityLabel("\(page.rawValue)、\(value.spoken)")
+                    .accessibilityIdentifier(page.rawValue)
+            }
+        }.accessibilityValue("\(section.rawValue)、\(badge(section).spoken)")
     }
     private func changeSection(_ delta: Int) {
         guard let index = UnifiedReadingSection.allCases.firstIndex(of: section) else { return }
@@ -301,33 +288,30 @@ struct ExternalQuestionComposer: View {
         return try? ExternalQuestionHandoff(provider: provider, question: draft, passage: passage, translation: translation, sharedText: sharedText)
     }
     var body: some View {
-        VStack(alignment: .leading, spacing: BibleTheme.Space.sm) {
-            HStack {
-                Text("質問先：\(provider.title)").bibleTextStyle(.caption)
-                Spacer()
-                if focused { Button { focused = false } label: { Image(systemName: "keyboard.chevron.compact.down") }.accessibilityLabel("キーボードを閉じる").frame(minWidth: 44, minHeight: 44) }
-                Button { focused = false; showSettings = true } label: { Label("送信先の設定", systemImage: "slider.horizontal.3") }.labelStyle(.iconOnly).accessibilityIdentifier("external-provider-settings")
+        VStack(alignment: .leading, spacing: 6) {
+            VStack(alignment: .leading, spacing: 6) {
+                HStack(alignment: .bottom, spacing: 10) {
+                    TextField(passage == nil ? "箇所を開くと質問できます" : "この箇所について質問", text: $draft, axis: .vertical)
+                        .lineLimit(1...5).textFieldStyle(.plain).focused($focused)
+                        .padding(.leading, 8).padding(.vertical, 10)
+                        .accessibilityIdentifier("external-question-input").disabled(passage == nil || revoked)
+                    sendControl
+                }
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: 8) { providerControl; scopeLabel; Spacer(minLength: 0); keyboardControl }
+                    VStack(alignment: .leading, spacing: 4) {
+                        HStack { providerControl; Spacer(); keyboardControl }
+                        scopeLabel
+                    }
+                }
             }
-            TextField(passage == nil ? "箇所を開くと質問できます" : "この箇所について質問", text: $draft, axis: .vertical)
-                .lineLimit(1...4).textFieldStyle(.plain).padding(BibleTheme.Space.md)
-                .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 16)).focused($focused)
-                .accessibilityIdentifier("external-question-input").disabled(passage == nil || revoked)
-            if draft.utf16.count > 2000 { Text("質問は2000文字以内にしてください。入力は切り詰めず残しています。").bibleTextStyle(.caption) }
-            if let notice { Text(notice).bibleTextStyle(.caption).accessibilityIdentifier("external-handoff-status") }
-            if let request {
-                Link(destination: request.url) { Label(request.buttonTitle, systemImage: "arrow.up.right.square").frame(maxWidth: .infinity) }
-                    .buttonStyle(.borderedProminent).accessibilityIdentifier("external-question-send")
-                    .environment(\.openURL, OpenURLAction { url in
-                        guard !revoked, Date().timeIntervalSince(lastOpen) > 1 else { return .discarded }
-                        checkOwner(); guard !revoked else { return .discarded }
-                        lastOpen = Date()
-                        UIPasteboard.general.setItems([[UIPasteboard.typeAutomatic: request.prompt]], options: [.localOnly: true, .expirationDate: Date().addingTimeInterval(600)])
-                        notice = request.requiresPaste ? "全文をコピーしました。\(provider.title)の入力欄に貼り付けて送信してください。ログインが必要な場合があります。" : "\(provider.title)へ渡します。開いた先で内容を確認してください。回答が始まる場合があります。"
-                        return .systemAction(url)
-                    })
-            } else { Label("\(provider.title)へ質問", systemImage: "arrow.up.right.square").frame(maxWidth: .infinity).foregroundStyle(.secondary).padding(.vertical, BibleTheme.Space.sm) }
-            if !focused { Text(provider.deliveryNotice).bibleTextStyle(.caption) }
-        }.padding(.horizontal, BibleTheme.Space.page).padding(.vertical, BibleTheme.Space.sm).background(.regularMaterial)
+            .padding(10)
+            .glassEffect(.regular, in: RoundedRectangle(cornerRadius: 26, style: .continuous))
+            .accessibilityElement(children: .contain)
+            if draft.utf16.count > 2000 { Text("質問は2000文字以内にしてください。入力は切り詰めず残しています。").font(.caption) }
+            if let notice { Text(notice).font(.caption).accessibilityIdentifier("external-handoff-status") }
+        }
+        .padding(.horizontal, BibleTheme.Space.page).padding(.vertical, 6)
         .tint(BibleTheme.color(.accent, scheme: scheme))
         .task(id: ReadingContextKey(passage: passage, translation: translation, sharedText: sharedText)) { prepareLocalState() }
         .onChange(of: draft) { _, text in
@@ -336,6 +320,48 @@ struct ExternalQuestionComposer: View {
         }
         .onChange(of: scenePhase) { _, phase in if phase == .active { checkOwner(); provider = (try? ShareInbox.externalProvider()) ?? provider } }
         .sheet(isPresented: $showSettings) { ExternalQuestionSettings(provider: $provider) }
+    }
+    private var scopeLabel: some View {
+        Text("聖句・原文・質問を外部へ").font(.caption).foregroundStyle(.secondary)
+    }
+    private var providerControl: some View {
+        Button { focused = false; showSettings = true } label: {
+            HStack(spacing: 3) { Text(provider.title); Image(systemName: "chevron.down").font(.caption2) }
+                .font(.caption.weight(.medium)).padding(.horizontal, 8).frame(minHeight: 32).contentShape(Rectangle())
+        }
+        .buttonStyle(.plain).accessibilityLabel("送信先：\(provider.title)")
+        .accessibilityIdentifier("external-provider-settings")
+    }
+    @ViewBuilder private var keyboardControl: some View {
+        if focused {
+            Button { focused = false } label: { Image(systemName: "keyboard.chevron.compact.down").frame(width: 36, height: 32).contentShape(Rectangle()) }
+                .buttonStyle(.plain).accessibilityLabel("キーボードを閉じる")
+        }
+    }
+    @ViewBuilder private var sendControl: some View {
+        if let request {
+            Link(destination: request.url) { sendSymbol }
+                .buttonStyle(.glassProminent).buttonBorderShape(.circle).controlSize(.regular)
+                .accessibilityLabel(request.buttonTitle)
+                .accessibilityHint(request.requiresPaste ? "全文をコピーして開きます。開いた先の入力欄に貼り付けてください。" : "聖句・共有原文・質問を外部サービスへ渡します。")
+                .accessibilityIdentifier("external-question-send")
+                .environment(\.openURL, OpenURLAction { url in
+                    guard !revoked, Date().timeIntervalSince(lastOpen) > 1 else { return .discarded }
+                    checkOwner(); guard !revoked else { return .discarded }
+                    lastOpen = Date()
+                    UIPasteboard.general.setItems([[UIPasteboard.typeAutomatic: request.prompt]], options: [.localOnly: true, .expirationDate: Date().addingTimeInterval(600)])
+                    notice = request.requiresPaste ? "全文をコピーしました。\(provider.title)に貼り付けて送信してください。" : "\(provider.title)へ渡しました。"
+                    return .systemAction(url)
+                })
+        } else {
+            Button {} label: { sendSymbol }
+                .buttonStyle(.glassProminent).buttonBorderShape(.circle).controlSize(.regular).disabled(true).accessibilityLabel("\(provider.title)へ質問")
+                .accessibilityIdentifier("external-question-send")
+        }
+    }
+    private var sendSymbol: some View {
+        Image(systemName: "arrow.up").font(.system(size: 19, weight: .semibold))
+            .frame(width: 30, height: 30)
     }
     private func prepareLocalState() {
         visit = nil; draft = ""; ownerKnown = false; revoked = false

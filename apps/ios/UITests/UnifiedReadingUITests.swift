@@ -82,7 +82,9 @@ final class UnifiedReadingUITests: XCTestCase {
         input(app).tap(); input(app).typeText(" keyboard-layout-check")
         let send = app.buttons["external-question-send"], close = app.buttons["キーボードを閉じる"]
         XCTAssertTrue(send.isHittable); XCTAssertTrue(close.isHittable)
-        XCTAssertLessThanOrEqual(close.frame.maxY, send.frame.minY)
+        XCTAssertLessThanOrEqual(close.frame.maxY, app.keyboards.firstMatch.frame.minY)
+        XCTAssertLessThanOrEqual(send.frame.width, 52)
+        XCTAssertLessThanOrEqual(abs(send.frame.width - send.frame.height), 2)
         XCTAssertLessThanOrEqual(send.frame.maxY, app.keyboards.firstMatch.frame.minY)
         capture(app, "unified-keyboard-dismissal-no-overlap")
         close.tap()
