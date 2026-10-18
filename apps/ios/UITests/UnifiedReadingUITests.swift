@@ -73,4 +73,22 @@ final class UnifiedReadingUITests: XCTestCase {
         capture(app, "unified-provider-open-return-keeps-input")
     }
 
+    @MainActor func testHorizontalSwipeAndKeyboardDismissalStayClearOfSend() {
+        let app = launch()
+        XCTAssertTrue(input(app).waitForExistence(timeout: 15))
+        app.buttons["地図"].tap(); app.swipeLeft()
+        XCTAssertTrue(app.buttons["人物"].isSelected)
+        app.swipeRight(); XCTAssertTrue(app.buttons["地図"].isSelected)
+        input(app).tap(); input(app).typeText(" keyboard-layout-check")
+        let send = app.buttons["external-question-send"], close = app.buttons["キーボードを閉じる"]
+        XCTAssertTrue(send.isHittable); XCTAssertTrue(close.isHittable)
+        XCTAssertLessThanOrEqual(close.frame.maxY, send.frame.minY)
+        XCTAssertLessThanOrEqual(send.frame.maxY, app.keyboards.firstMatch.frame.minY)
+        capture(app, "unified-keyboard-dismissal-no-overlap")
+        close.tap()
+        expectation(for: NSPredicate(format: "exists == false"), evaluatedWith: app.keyboards.firstMatch)
+        waitForExpectations(timeout: 5)
+        XCTAssertTrue((input(app).value as? String ?? "").contains("keyboard-layout-check"))
+    }
+
 }
