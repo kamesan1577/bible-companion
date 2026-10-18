@@ -15,10 +15,55 @@ const safeUrl = z
       !/\.(?:localhost|local|internal|test|invalid|example)$/i.test(url.hostname)
     );
   }, 'Only public HTTPS source URLs are allowed');
-const imageUrl = safeUrl.refine(
-  (value) => new URL(value).hostname === 'api.nga.gov',
-  'Only reviewed museum image hosts are allowed',
-);
+const reviewedArtworkImageHosts = new Set([
+  'api.nga.gov',
+  'images.metmuseum.org',
+  'openaccess-cdn.clevelandart.org',
+]);
+const imageUrl = safeUrl.refine((value) => {
+  const url = new URL(value);
+  if (url.hash) return false;
+  if (reviewedArtworkImageHosts.has(url.hostname)) return !url.search;
+  if (url.hostname !== 'www.clevelandart.org' || url.pathname !== '/_next/image') return false;
+  const params = url.searchParams;
+  if (
+    params.size !== 3 ||
+    params.get('w') !== '1920' ||
+    params.get('q') !== '75' ||
+    !params.has('url')
+  )
+    return false;
+  try {
+    const source = new URL(params.get('url')!);
+    if (
+      source.protocol !== 'https:' ||
+      source.hostname !== 'piction.clevelandart.org' ||
+      source.pathname !== '/cma/ump.di' ||
+      source.username ||
+      source.password ||
+      source.port ||
+      source.hash
+    )
+      return false;
+    const patterns: Record<string, RegExp> = {
+      e: /^[A-Fa-f0-9]{64}$/,
+      s: /^[0-9]{1,12}$/,
+      se: /^[0-9]{1,12}$/,
+      v: /^[0-9]{1,3}$/,
+      f: /^[A-Za-z0-9._\\-]+[.]jpg$/,
+    };
+    return (
+      source.searchParams.size === 5 &&
+      Object.entries(patterns).every(
+        ([key, pattern]) =>
+          source.searchParams.getAll(key).length === 1 &&
+          pattern.test(source.searchParams.get(key)!),
+      )
+    );
+  } catch {
+    return false;
+  }
+}, 'Only reviewed museum image hosts are allowed');
 const shortText = z.string().trim().min(1).max(1000);
 const date = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
 const provenance = z
@@ -38,8 +83,16 @@ const provenance = z
     licenseUrl: safeUrl.optional(),
     attribution: shortText.optional(),
   })
-  .strict().superRefine((value,context)=>{
-    if(['cc-by-3.0','odbl-1.0'].includes(value.license) && (!value.attribution || !value.licenseUrl)) context.addIssue({code:'custom',message:'Attribution licenses require attribution and a license URL'});
+  .strict()
+  .superRefine((value, context) => {
+    if (
+      ['cc-by-3.0', 'odbl-1.0'].includes(value.license) &&
+      (!value.attribution || !value.licenseUrl)
+    )
+      context.addIssue({
+        code: 'custom',
+        message: 'Attribution licenses require attribution and a license URL',
+      });
   });
 const coordinates = z
   .object({

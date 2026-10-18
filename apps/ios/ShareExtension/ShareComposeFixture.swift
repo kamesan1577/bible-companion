@@ -3,9 +3,10 @@ import Foundation
 import CompanionCore
 
 /// Simulator-only transport selected by an explicit QA share link. Never calls an AI service.
-@MainActor func configureShareComposeFixture(_ model: SharedPreviewModel) async {
+@MainActor func configureShareComposeFixture(_ model: SharedPreviewModel, artwork: String? = nil) async {
     let configuration = URLSessionConfiguration.ephemeral
     configuration.protocolClasses = [ShareComposeFixtureProtocol.self]
+    if let artwork, artwork.utf8.count <= 12000 { configuration.httpAdditionalHeaders = ["X-Bible-QA-Artwork": artwork] }
     let client = try! APIClient(baseURL: URL(string: "https://fixture.example.org")!, configuration: configuration)
     await client.setToken("fixture-only")
     PublicReadingModel.fixtureClient = client
@@ -34,7 +35,7 @@ private final class ShareComposeFixtureProtocol: URLProtocol, @unchecked Sendabl
         guard url.path == "/public/reading", request.httpMethod == "POST", let passage = fields["passage"] else {
             client?.urlProtocol(self, didFailWithError: URLError(.unsupportedURL)); return
         }
-        let result: [String: Any] = ["passage":passage,"translation":fields["translation"] ?? NSNull(),"spoilerAllowed":false,"sourceVersion":"unified-share-fixture-v1","overview":["contentKind":"curated-reference","text":"公開資料の固定データ。独自AIは呼び出していません。","citations":[],"mode":"source-only","modelInvoked":false],"materialNotice":"固定された公開資料","cache":"fixture","people":[],"places":[],"artworks":[]]
+        let result: [String: Any] = ["passage":passage,"translation":fields["translation"] ?? NSNull(),"spoilerAllowed":false,"sourceVersion":"unified-share-fixture-v1","overview":["contentKind":"curated-reference","text":"公開資料の固定データ。独自AIは呼び出していません。","citations":[],"mode":"source-only","modelInvoked":false],"materialNotice":"固定された公開資料","cache":"fixture","people":[],"places":[],"artworks":ArtworkCatalogQA.projected(passage, encodedCard: request.value(forHTTPHeaderField: "X-Bible-QA-Artwork"))]
         let data = try! JSONSerialization.data(withJSONObject: result)
         client?.urlProtocol(self, didReceive: HTTPURLResponse(url:url,statusCode:200,httpVersion:"HTTP/1.1",headerFields:["Content-Type":"application/json"])!,cacheStoragePolicy:.notAllowed)
         client?.urlProtocol(self, didLoad: data)

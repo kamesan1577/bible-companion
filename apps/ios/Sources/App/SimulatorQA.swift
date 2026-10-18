@@ -44,6 +44,13 @@ struct SimulatorQA: View {
                 ScrollView { BibleReadingColumn { StaticCommentaryView(passage: passage) } }.navigationTitle(passage.label).bibleCanvas()
             }
         case "badges": ReadingBadgeQA()
+        case "artwork-catalog":
+            if let card = ArtworkCatalogQA.selected, let passage = card.passages.last, let shareURL = ArtworkCatalogQA.shareURL {
+                VStack(spacing: BibleTheme.Space.xs) {
+                    ShareLink("この作品の箇所を共有", item: shareURL).accessibilityIdentifier("qa-artwork-share")
+                    UnifiedReadingView(passage: passage, translation: "JCB", sharedText: "作品カタログの実画像検証")
+                }
+            }
         case "unified": UnifiedReadingView(passage: Passage(book: "LEV", start: Verse(chapter: 19, verse: 1), end: Verse(chapter: 19, verse: 2)), translation: "JCB", sharedText: "検証用の共有原文。\nレビ記 19:1-2 JCB")
         case "unified-home": ReadingView()
         case "unified-history": HistoryView()
@@ -160,7 +167,7 @@ final class SimulatorQAProtocol: URLProtocol, @unchecked Sendable {
         var data = Data((ok ? policy : #"{"error":{"code":"fixture_no_mutation","message":"描画確認では外部に送信しません"}}"#).utf8)
         if request.httpMethod == "POST", url.path == "/public/reading" {
             ok = !ProcessInfo.processInfo.arguments.contains("--qa-public-error")
-            if ok { data = try! JSONSerialization.data(withJSONObject: ["passage":fields["passage"] ?? passage,"translation":fields["translation"] ?? NSNull(),"spoilerAllowed":false,"sourceVersion":"unified-fixture-v1","overview":["contentKind":"curated-reference","text":"公開資料の固定データ。独自AIは呼び出していません。","citations":[],"mode":"source-only","modelInvoked":false],"materialNotice":"固定された公開資料","cache":"fixture","people":[],"places":[],"artworks": ((fields["passage"] as? [String: Any])?["book"] as? String == "ACT" && ((fields["passage"] as? [String: Any])?["start"] as? [String: Any])?["chapter"] as? Int == 9) ? Self.artworkFixture : []]) }
+            if ok { data = try! JSONSerialization.data(withJSONObject: ["passage":fields["passage"] ?? passage,"translation":fields["translation"] ?? NSNull(),"spoilerAllowed":false,"sourceVersion":"unified-fixture-v1","overview":["contentKind":"curated-reference","text":"公開資料の固定データ。独自AIは呼び出していません。","citations":[],"mode":"source-only","modelInvoked":false],"materialNotice":"固定された公開資料","cache":"fixture","people":[],"places":[],"artworks": ArtworkCatalogQA.selected != nil ? ArtworkCatalogQA.projected(fields["passage"]) : (((fields["passage"] as? [String: Any])?["book"] as? String == "ACT" && ((fields["passage"] as? [String: Any])?["start"] as? [String: Any])?["chapter"] as? Int == 9) ? Self.artworkFixture : [])]) }
             if ProcessInfo.processInfo.arguments.contains("--qa-public-slow") {
                 let responseData = data, responseOK = ok
                 let work = DispatchWorkItem { [weak self] in self?.complete(data: responseData, url: url, ok: responseOK) }

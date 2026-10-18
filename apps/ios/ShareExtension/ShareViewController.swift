@@ -34,7 +34,10 @@ import CompanionCore
                 }
                 model.sharedText = text
 #if DEBUG && targetEnvironment(simulator)
-                if text.contains("bible-compose-fixture=1") { await configureShareComposeFixture(model) }
+                if text.contains("bible-compose-fixture=1") {
+                    let artwork = text.components(separatedBy: .whitespacesAndNewlines).compactMap { URLComponents(string: $0)?.queryItems?.first(where: { $0.name == "bible-artwork-data" })?.value }.first
+                    await configureShareComposeFixture(model, artwork: artwork)
+                }
 #endif
                 if let parsed = try? SharedImportParser.parse(text) { model.translation = parsed.translation; model.labels = parsed.ranges.map(\.label); model.items = parsed.ranges.enumerated().map { .init(conversationId: "local-\($0.offset)", passage: $0.element) } }
                 else { model.shareParseFailed = true }
