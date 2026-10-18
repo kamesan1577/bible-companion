@@ -2,6 +2,15 @@
 import SwiftUI
 import CompanionCore
 
+#if !targetEnvironment(simulator)
+// The catalog transport fixture is intentionally unavailable on physical devices.
+private enum ArtworkCatalogQA {
+    static var selected: MaterialCard? { nil }
+    static var shareURL: URL? { nil }
+    static func projected(_ input: Any?) -> [[String: Any]] { [] }
+}
+#endif
+
 /// Fixture rendering only. This entire entry point is absent from Release builds.
 struct SimulatorQA: View {
     @EnvironmentObject private var store: AppStore
