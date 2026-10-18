@@ -2,7 +2,15 @@ import XCTest
 @testable import CompanionCore
 
 final class ReadingContentProjectionTests: XCTestCase {
-    private func cards() throws -> [MaterialCard] { try JSONDecoder().decode([MaterialCard].self, from: Data(contentsOf: Bundle.module.url(forResource: "materials", withExtension: "json")!)) }
+    private func cards() throws -> [MaterialCard] {
+#if SWIFT_PACKAGE
+        let bundle = Bundle.module
+#else
+        let bundle = Bundle(for: Self.self)
+#endif
+        let url = try XCTUnwrap(bundle.url(forResource: "materials", withExtension: "json"))
+        return try JSONDecoder().decode([MaterialCard].self, from: Data(contentsOf: url))
+    }
     func testArtworkCountUsesVisibleUniqueCardsAndCompleteSceneBoundary() throws {
         let art = try XCTUnwrap(try cards().first { $0.kind == "artwork" })
         let before = Passage(book: "ACT", start: Verse(chapter: 9, verse: 3), end: Verse(chapter: 9, verse: 6))
