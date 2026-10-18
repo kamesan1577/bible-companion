@@ -17,6 +17,7 @@ final class GlassRefinementUITests: XCTestCase {
     @MainActor private func assertRoundSend(_ app: XCUIApplication) {
         let send = app.buttons["external-question-send"]
         XCTAssertTrue(send.isHittable)
+        XCTAssertTrue(send.isEnabled)
         XCTAssertGreaterThanOrEqual(send.frame.width, 44)
         XCTAssertLessThanOrEqual(send.frame.width, 48)
         XCTAssertLessThanOrEqual(abs(send.frame.width-send.frame.height), 2)

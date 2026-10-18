@@ -23,10 +23,11 @@ final class ArtworkCatalogUITests: XCTestCase {
             XCTAssertTrue(app.buttons["閉じる"].waitForExistence(timeout: 15))
             capture(app,"catalog-share-before-select")
             let tree = XCTAttachment(string: app.debugDescription); tree.name = "catalog-share-tree"; tree.lifetime = .keepAlways; add(tree)
-            // The extension is a remote subtree; target its native control,
-            // not the still-present underlying main reader.
-            let shareArt = app.buttons.matching(identifier: "絵画")
-            shareArt.element(boundBy: shareArt.count - 1).tap()
+            // Remote extension AX snapshots intermittently retain the underlying
+            // reader. Use the native segment's center measured in the actual
+            // default-size share screenshot; the share-only image ID below
+            // prevents an underlying main image from satisfying this test.
+            app.coordinate(withNormalizedOffset: CGVector(dx: 0.85, dy: 0.2765)).tap()
             XCTAssertTrue(app.images["artwork-image-share-" + id].waitForExistence(timeout: 30), title)
             capture(app,"catalog-real-share-" + object.replacingOccurrences(of: "/", with: "-"))
             app.buttons["閉じる"].tap()

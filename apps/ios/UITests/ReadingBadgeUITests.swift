@@ -70,16 +70,20 @@ final class ReadingBadgeUITests: XCTestCase {
         waitValue(app.buttons["絵画"], "1件")
         app.buttons["人物"].tap()
         let future = app.switches["先の登場箇所も見る"]
-        for _ in 0..<12 { if future.exists && future.isHittable { break }; app.swipeUp() }
-        XCTAssertTrue(future.waitForExistence(timeout: 10)); future.tap()
+        for _ in 0..<12 { if future.exists && future.isHittable && future.frame.maxY < app.descendants(matching: .any).matching(identifier: "external-question-input").firstMatch.frame.minY - 60 { break }; app.swipeUp() }
+        XCTAssertTrue(future.waitForExistence(timeout: 10))
+        capture(app, "glass-future-native-switch-before")
+        future.coordinate(withNormalizedOffset: CGVector(dx: 0.92, dy: 0.5)).tap()
+        expectation(for: NSPredicate(format: "value == %@", "1"), evaluatedWith: future); waitForExpectations(timeout: 5)
         XCTAssertEqual(future.value as? String, "1")
+        capture(app, "glass-future-native-switch-on")
         app.buttons["地図"].tap(); app.buttons["人物"].tap()
-        for _ in 0..<12 { if future.exists && future.isHittable { break }; app.swipeUp() }
+        for _ in 0..<12 { if future.exists && future.isHittable && future.frame.maxY < app.descendants(matching: .any).matching(identifier: "external-question-input").firstMatch.frame.minY - 60 { break }; app.swipeUp() }
         XCTAssertEqual(future.value as? String, "1")
         XCTAssertTrue((app.buttons["人物"].label).hasSuffix("件"))
         app.buttons["QAレビ記へ"].tap(); waitValue(app.buttons["絵画"], "0件")
         app.buttons["人物"].tap()
-        for _ in 0..<12 { if future.exists && future.isHittable { break }; app.swipeUp() }
+        for _ in 0..<12 { if future.exists && future.isHittable && future.frame.maxY < app.descendants(matching: .any).matching(identifier: "external-question-input").firstMatch.frame.minY - 60 { break }; app.swipeUp() }
         XCTAssertEqual(future.value as? String, "0")
         capture(app, "badges-future-reset-on-passage-change")
     }
