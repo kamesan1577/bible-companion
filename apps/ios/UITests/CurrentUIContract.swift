@@ -13,7 +13,10 @@ import XCTest
         }
         let sharedRoot = app.descendants(matching: .any).matching(identifier: "qa-reading-share").firstMatch
         let isShared = shared ?? sharedRoot.exists
-        let root = isShared ? sharedRoot : app.descendants(matching: .any).matching(identifier: "qa-reading-main").firstMatch
+        // Bind actions to the process that owns the native control. Host-proxy
+        // queries can read remote AX, but host quiescence is not extension quiescence.
+        let surface = isShared ? XCUIApplication(bundleIdentifier: "org.example.BibleCompanion.Share") : app
+        let root = surface.descendants(matching: .any).matching(identifier: isShared ? "qa-reading-share" : "qa-reading-main").firstMatch
         guard root.waitForExistence(timeout: 15) else { return failed("Expected reading surface unavailable") }
         let control = root.segmentedControls["reading-section-tabs"]
         guard control.waitForExistence(timeout: 5) else { return failed("Native reading segmented control unavailable") }
@@ -23,10 +26,7 @@ import XCTest
         guard XCTWaiter.wait(for: ready, timeout: 15) == .completed else { return failed("Reading inventory labels have not settled") }
         let tab = control.buttons[title]
         guard tab.exists, tab.isHittable else { return failed("Native section target is not hittable: \(title)") }
-        let frame = tab.frame
-        let origin = app.coordinate(withNormalizedOffset: .zero)
-        let anchor = origin.screenPoint
-        origin.withOffset(CGVector(dx: frame.midX - anchor.x, dy: frame.midY - anchor.y)).press(forDuration: 0.12)
+        tab.tap()
         guard root.scrollViews["reading-page-" + title].waitForExistence(timeout: 5), tab.isSelected else {
             return failed("Native section selection did not reach its page: \(title)")
         }

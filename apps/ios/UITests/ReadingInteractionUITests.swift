@@ -119,8 +119,12 @@ final class ReadingInteractionUITests: XCTestCase {
     }
     @MainActor func testKeyboardSendAndFollowupReachOnlyLocalFixture() {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
-        XCTAssertTrue(app.buttons["質問画面"].waitForExistence(timeout: 10)); app.buttons["質問画面"].tap()
-        let field = app.descendants(matching: .any).matching(identifier: "question-draft").firstMatch; XCTAssertTrue(field.waitForExistence(timeout: 5)); field.tap(); field.typeText("background")
+        let entry = CurrentUI.menu("質問画面", in: app).staticTexts["質問画面"]
+        guard entry.exists, entry.isHittable else { attach(app, "question-menu-label-unavailable"); XCTFail("Question navigation label is not visible"); return }
+        entry.tap()
+        let field = app.descendants(matching: .any).matching(identifier: "question-draft").firstMatch
+        guard field.waitForExistence(timeout: 5) else { attach(app, "question-destination-not-reached"); XCTFail("Question navigation destination was not reached"); return }
+        field.tap(); field.typeText("background")
         let send = app.buttons["質問を送る"]; expectation(for: NSPredicate(format: "enabled == true"), evaluatedWith: send); waitForExpectations(timeout: 5); send.tap()
         XCTAssertTrue(app.staticTexts["固定データ: background"].waitForExistence(timeout: 5))
         field.tap(); field.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: 10) + "followup")
@@ -235,14 +239,16 @@ final class ReadingInteractionUITests: XCTestCase {
         attach(app,"existing-explanation-and-source-before-external-handoff")
     }
     @MainActor func testActualShareReadsProfilesAndMapWithoutGeneratedAnswer() {
-        let app=XCUIApplication();app.launchArguments=["--simulator-qa"];app.launch()
-        CurrentUI.openShare(app,title:"使徒18章を共有する")
+        let hostApp=XCUIApplication();hostApp.launchArguments=["--simulator-qa"];hostApp.launch()
+        CurrentUI.openShare(hostApp,title:"使徒18章を共有する")
+        let app=XCUIApplication(bundleIdentifier:"org.example.BibleCompanion.Share")
+        XCTAssertTrue(app.descendants(matching:.any).matching(identifier:"qa-reading-share").firstMatch.waitForExistence(timeout:15))
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format:"label CONTAINS %@","使徒の働き 18:24–28")).firstMatch.exists)
         let people=app.buttons["人物"]
         expectation(for:NSPredicate(format:"label CONTAINS %@","件"),evaluatedWith:people);waitForExpectations(timeout:15)
         guard CurrentUI.selectSection("人物", in: app, shared: true) else { return }
         let detail=app.buttons["entity-detail-person:apollos_276"]
-        CurrentUI.reveal(detail,in:app);XCTAssertTrue(detail.isHittable);tapScreenFrame(detail, app: app)
+        CurrentUI.reveal(detail,in:app);XCTAssertTrue(detail.isHittable);detail.tap()
         guard app.navigationBars["アポロ"].waitForExistence(timeout:8) else { attach(app,"share-profile-navigation-failed");XCTFail("Apollos profile destination not reached");return }
         let description=app.staticTexts.containing(NSPredicate(format:"label CONTAINS %@","正確")).firstMatch
         CurrentUI.reveal(description,in:app);XCTAssertTrue(description.exists)
@@ -252,7 +258,7 @@ final class ReadingInteractionUITests: XCTestCase {
         expectation(for:NSPredicate(format:"label CONTAINS %@","件"),evaluatedWith:maps);waitForExpectations(timeout:15)
         guard CurrentUI.selectSection("地図", in: app, shared: true) else { return }
         let map=app.buttons["entity-map-place:alexandria_46"]
-        CurrentUI.reveal(map,in:app);XCTAssertTrue(map.isHittable);tapScreenFrame(map, app: app)
+        CurrentUI.reveal(map,in:app);XCTAssertTrue(map.isHittable);map.tap()
         guard app.navigationBars["地図"].waitForExistence(timeout:8) else { attach(app,"share-map-navigation-failed");XCTFail("Alexandria map destination not reached");return }
         assertReviewedMap("アレクサンドリア", app:app)
         attach(app,"actual-share-alexandria-map-with-provenance")
@@ -357,14 +363,6 @@ final class ReadingInteractionUITests: XCTestCase {
         XCTAssertTrue(map.waitForExistence(timeout:8))
         let sources=app.staticTexts["位置情報の出典と権利"];scrollTo(sources,app:app);XCTAssertTrue(sources.exists)
         XCTAssertTrue(app.staticTexts["地図の背景には通信が必要な場合があります。現在地は取得していません。"].exists)
-    }
-    @MainActor private func tapScreenFrame(_ element: XCUIElement, app: XCUIApplication) {
-        let point = element.frame
-        let origin = app.coordinate(withNormalizedOffset: .zero)
-        let anchor = origin.screenPoint
-        let target = origin.withOffset(CGVector(dx: point.midX - anchor.x, dy: point.midY - anchor.y))
-        print("Remote element frame=\(point), app=\(app.frame), origin=\(anchor), tap=\(target.screenPoint)")
-        target.press(forDuration: 0.12)
     }
     @MainActor private func scrollToTop(_ element: XCUIElement, app: XCUIApplication) {
         for _ in 0..<12 {

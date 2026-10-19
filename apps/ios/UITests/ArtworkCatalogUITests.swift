@@ -23,10 +23,11 @@ final class ArtworkCatalogUITests: XCTestCase {
             XCTAssertTrue(app.buttons["閉じる"].waitForExistence(timeout: 15))
             capture(app,"catalog-share-before-select")
             let tree = XCTAttachment(string: app.debugDescription); tree.name = "catalog-share-tree"; tree.lifetime = .keepAlways; add(tree)
-            guard CurrentUI.selectSection("絵画",in:app,shared:true) else { return }
-            XCTAssertTrue(app.images["artwork-image-share-" + id].waitForExistence(timeout: 30), title)
+            let extensionApp = XCUIApplication(bundleIdentifier: "org.example.BibleCompanion.Share")
+            guard CurrentUI.selectSection("絵画",in:extensionApp,shared:true) else { return }
+            XCTAssertTrue(extensionApp.images["artwork-image-share-" + id].waitForExistence(timeout: 30), title)
             capture(app,"catalog-real-share-" + object.replacingOccurrences(of: "/", with: "-"))
-            app.buttons["閉じる"].tap()
+            extensionApp.buttons["閉じる"].tap()
         }
         app.terminate()
     }
