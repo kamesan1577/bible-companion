@@ -104,7 +104,7 @@ final class ReadingInteractionUITests: XCTestCase {
             guard candidates.firstMatch.waitForExistence(timeout: 5), candidates.count > 0 else { XCTFail("Share destination did not appear: \(app.debugDescription)"); return }
             let companion = candidates.element(boundBy: candidates.count - 1)
             XCTAssertTrue(companion.waitForExistence(timeout: 5)); companion.tap()
-            XCTAssertTrue(app.staticTexts["使徒の働き 23:1"].waitForExistence(timeout: 5))
+            XCTAssertTrue(app.staticTexts.containing(NSPredicate(format:"label CONTAINS %@","使徒の働き 23:1")).firstMatch.waitForExistence(timeout:5))
             let people = app.buttons["人物"]
             XCTAssertTrue(people.exists); people.tap()
             XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "パウロ")).firstMatch.waitForExistence(timeout: 5))
@@ -237,6 +237,7 @@ final class ReadingInteractionUITests: XCTestCase {
     @MainActor func testActualShareReadsProfilesAndMapWithoutGeneratedAnswer() {
         let app=XCUIApplication();app.launchArguments=["--simulator-qa"];app.launch()
         CurrentUI.openShare(app,title:"使徒18章を共有する")
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format:"label CONTAINS %@","使徒の働き 18:24–28")).firstMatch.exists)
         app.buttons["人物"].tap()
         let detail=app.buttons["entity-detail-person:apollos_276"]
         CurrentUI.reveal(detail,in:app);XCTAssertTrue(detail.exists);detail.tap()
@@ -301,15 +302,17 @@ final class ReadingInteractionUITests: XCTestCase {
         attach(app, "candidate-apollos-description-from-card")
         app.navigationBars.buttons.element(boundBy: 0).tap()
         app.buttons["地図"].tap()
-        let corinth = app.buttons["entity-detail-place:corinth_306"]
-        scrollTo(corinth, app: app); XCTAssertTrue(corinth.exists); corinth.tap()
-        XCTAssertTrue(app.staticTexts["現在の場所"].waitForExistence(timeout: 5))
-        attach(app, "candidate-corinth-description-and-map")
-        app.navigationBars.buttons.firstMatch.tap()
+        XCTAssertFalse(app.buttons["entity-detail-place:corinth_306"].exists)
         let alexDetail = app.buttons["entity-detail-place:alexandria_46"]
         scrollTo(alexDetail, app: app); alexDetail.tap()
-        XCTAssertTrue(app.staticTexts["現在の場所"].waitForExistence(timeout: 5))
-        attach(app, "candidate-alexandria-description-from-card")
+        XCTAssertTrue(app.staticTexts["現在の場所"].waitForExistence(timeout:5))
+        attach(app,"candidate-alexandria-description-in-selected-range")
+        guard openActs18Chapter(app) else { return }
+        app.buttons["地図"].tap()
+        let corinth=app.buttons["entity-map-place:corinth_306"]
+        scrollTo(corinth,app:app);XCTAssertTrue(corinth.exists);corinth.tap()
+        XCTAssertTrue(app.staticTexts["現在の場所"].waitForExistence(timeout:5))
+        attach(app,"current-corinth-map-after-explicit-chapter-selection")
     }
     @MainActor func testWikipediaReadingLinksKeepSourcesAndMaps() {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa", "--qa-screen=entity-pilot-reading"]; app.launch()
@@ -325,18 +328,33 @@ final class ReadingInteractionUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "World English Bible")).firstMatch.waitForExistence(timeout: 5))
         attach(app, "wikipedia-primary-sources-preserved")
         app.navigationBars.buttons.element(boundBy: 0).tap(); app.buttons["地図"].tap()
-        let corinth=app.buttons["entity-detail-place:corinth_306"]
-        scrollTo(corinth,app:app);corinth.tap()
-        let corinthWiki=app.descendants(matching:.any).matching(identifier:"wikipedia-place:corinth_306").firstMatch
-        scrollTo(corinthWiki,app:app);XCTAssertTrue(corinthWiki.exists)
-        XCTAssertTrue(app.staticTexts["古代コリントス"].exists)
-        attach(app,"wikipedia-ancient-corinth-profile")
-        app.navigationBars.buttons.firstMatch.tap()
+        XCTAssertFalse(app.buttons["entity-detail-place:corinth_306"].exists)
         let alex=app.buttons["entity-detail-place:alexandria_46"]
         scrollTo(alex,app:app);alex.tap()
         let alexWiki=app.descendants(matching:.any).matching(identifier:"wikipedia-place:alexandria_46").firstMatch
         scrollTo(alexWiki,app:app);XCTAssertTrue(alexWiki.exists)
-        attach(app,"wikipedia-alexandria-profile")
+        attach(app,"wikipedia-alexandria-in-selected-range")
+        guard openActs18Chapter(app) else { return }
+        app.buttons["地図"].tap()
+        let corinth=app.buttons["entity-map-place:corinth_306"]
+        scrollTo(corinth,app:app);corinth.tap()
+        let corinthWiki=app.descendants(matching:.any).matching(identifier:"wikipedia-place:corinth_306").firstMatch
+        scrollTo(corinthWiki,app:app);XCTAssertTrue(corinthWiki.exists)
+        XCTAssertTrue(app.staticTexts["古代コリントス"].exists)
+        XCTAssertTrue(app.staticTexts["現在の場所"].exists)
+        attach(app,"wikipedia-ancient-corinth-from-current-map")
+    }
+    @MainActor private func openActs18Chapter(_ app:XCUIApplication) -> Bool {
+        app.terminate();app.launchArguments=["--simulator-qa","--qa-screen=unified-home"];app.launch()
+        let browse=app.buttons["browse-chapters"];XCTAssertTrue(browse.waitForExistence(timeout:15))
+        CurrentUI.reveal(browse,in:app);browse.tap()
+        let stepper=app.steppers.firstMatch;XCTAssertTrue(stepper.waitForExistence(timeout:5))
+        let increment=stepper.buttons.matching(NSPredicate(format:"label == %@ OR label == %@ OR label == %@ OR identifier == %@","Increment","増やす","値を増やす","Increment")).firstMatch
+        guard increment.exists else { XCTFail("Chapter increment missing: \(stepper.debugDescription)"); return false }
+        for _ in 0..<17 { increment.tap() }
+        let open=app.buttons.matching(NSPredicate(format:"label CONTAINS %@ AND label CONTAINS %@","18:1","の注解を開く")).firstMatch
+        XCTAssertTrue(open.waitForExistence(timeout:5));open.tap()
+        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout:10));return true
     }
     @MainActor private func tapScreenFrame(_ element: XCUIElement, app: XCUIApplication) {
         let point = element.frame

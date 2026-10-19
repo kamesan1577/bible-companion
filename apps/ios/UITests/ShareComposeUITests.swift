@@ -48,10 +48,20 @@ final class ShareComposeUITests: XCTestCase {
         app.launchArguments=["--simulator-qa","--qa-screen=settings","--qa-handoff-owner"];app.launch()
         XCTAssertTrue(app.buttons["external-provider-picker"].waitForExistence(timeout:15))
         XCTAssertTrue(app.buttons["external-provider-picker"].label.contains("Claude") || (app.buttons["external-provider-picker"].value as? String ?? "").contains("Claude"))
+        app.terminate();app.launchArguments=["--simulator-qa","--qa-screen=unified-home","--qa-handoff-owner"];app.launch()
+        let recent=app.buttons["recent-reading"];XCTAssertTrue(recent.waitForExistence(timeout:15));recent.tap()
+        let restored=CurrentUI.input(app);XCTAssertTrue(restored.waitForExistence(timeout:10))
+        expectation(for:NSPredicate(format:"value == %@",draft ?? ""),evaluatedWith:restored);waitForExpectations(timeout:5)
+        XCTAssertTrue(app.buttons["external-question-send"].label.contains("Claude"))
+        CurrentUI.capture(app,"same-context-draft-restored-in-main",test:self)
         app.terminate();app.launchArguments=["--simulator-qa","--qa-handoff-owner"];app.launch();CurrentUI.openShare(app)
         XCTAssertTrue(app.buttons["external-question-send"].label.contains("Claude"))
-        XCTAssertEqual(CurrentUI.input(app).value as? String,draft)
-        CurrentUI.capture(app,"provider-shared-across-processes",test:self);app.buttons["閉じる"].tap()
+        // A new QA session URL is a different shared-original identity, even
+        // when its passage matches. Do not leak the previous context's draft.
+        let newDraft=CurrentUI.input(app).value as? String
+        XCTAssertTrue(newDraft == nil || newDraft == "" || newDraft == "この箇所について質問")
+        XCTAssertFalse((newDraft ?? "").contains("saved-provider-draft"))
+        CurrentUI.capture(app,"new-original-does-not-inherit-old-draft",test:self);app.buttons["閉じる"].tap()
     }
     @MainActor func testActualExtensionImmediateComposerKeyboardDraftAndReopen() {
         let app=open();let field=CurrentUI.input(app)
@@ -67,7 +77,7 @@ final class ShareComposeUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["最初の解説"].exists);app.buttons["閉じる"].tap()
     }
     @MainActor func testActualExtensionNeedsNoFirstPartyAISetup() {
-        let app=open(title:"Crash Acts28:15");let field=CurrentUI.input(app)
+        let app=open(flags:["--qa-clear-access"],title:"Crash Acts28:15");let field=CurrentUI.input(app)
         field.tap();field.typeText(" question-without-AI-setup")
         CurrentUI.keyboardSend(app)
         XCTAssertFalse(app.staticTexts["質問を送るには準備が必要です"].exists)

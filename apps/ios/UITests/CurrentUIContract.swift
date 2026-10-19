@@ -3,13 +3,31 @@ import XCTest
 /// Shared interaction mechanics, never an alternative success condition.
 @MainActor enum CurrentUI {
     static func input(_ app: XCUIApplication) -> XCUIElement { app.descendants(matching: .any).matching(identifier: "external-question-input").firstMatch }
+    private static func composerCeiling(_ app: XCUIApplication) -> CGFloat {
+        guard let root = try? app.snapshot() else { return app.frame.maxY - 45 }
+        func find(_ node: any XCUIElementSnapshot) -> CGFloat? {
+            if node.identifier == "external-question-input", !node.frame.isEmpty { return node.frame.minY - 14 }
+            for child in node.children { if let value = find(child) { return value } }
+            return nil
+        }
+        return find(root) ?? app.frame.maxY - 45
+    }
     static func reveal(_ element: XCUIElement, in app: XCUIApplication, up: Bool = true) {
-        for _ in 0..<18 {
-            let ceiling = input(app).exists ? input(app).frame.minY - 12 : app.frame.maxY - 45
-            if element.exists && element.isHittable && element.frame.minY > 70 && element.frame.maxY < ceiling { return }
-            if up { app.swipeUp() } else { app.swipeDown() }
+        for _ in 0..<24 {
+            var down = !up
+            if element.exists {
+                let frame=element.frame
+                if element.isHittable && frame.minY > 75 && frame.maxY < composerCeiling(app) { return }
+                if frame.maxY < 75 { down = true }
+            }
+            // A single immutable AX snapshot supplies composer bounds after navigation. A bounded
+            // short drag in the page margin also avoids panning an embedded map.
+            let start=app.coordinate(withNormalizedOffset:CGVector(dx:0.95,dy:down ? 0.40 : 0.70))
+            let end=app.coordinate(withNormalizedOffset:CGVector(dx:0.95,dy:down ? 0.70 : 0.40))
+            start.press(forDuration:0.05,thenDragTo:end)
         }
     }
+
     static func menu(_ title: String, in app: XCUIApplication) -> XCUIElement {
         let button = app.buttons[title]
         // The QA menu is a lazy List; existence alone does not bring rows on screen.
@@ -39,7 +57,13 @@ import XCTest
     }
     static func provider(_ name: String, in app: XCUIApplication) {
         app.buttons["external-provider-settings"].tap()
-        app.buttons["external-provider-picker"].tap(); app.buttons[name].tap(); app.buttons["完了"].tap()
+        let value=app.buttons["external-provider-picker"].staticTexts.firstMatch
+        XCTAssertTrue(value.waitForExistence(timeout:5)); value.tap()
+        XCTContext.runActivity(named:"provider-options-"+name) { activity in
+            let shot=XCTAttachment(screenshot:app.screenshot());shot.lifetime = .keepAlways;activity.add(shot)
+            let tree=XCTAttachment(string:app.debugDescription);tree.lifetime = .keepAlways;activity.add(tree)
+        }
+        app.buttons[name].tap(); app.buttons["完了"].tap()
         XCTAssertTrue(app.buttons["external-question-send"].label.contains(name))
     }
     static func keyboardSend(_ app: XCUIApplication) {

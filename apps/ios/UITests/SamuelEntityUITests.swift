@@ -26,6 +26,6 @@ final class SamuelEntityUITests: XCTestCase {
         scrollTo(detail,in:app);XCTAssertTrue(detail.exists);detail.tap(); CurrentUI.reveal(app.buttons["この説明の出典"],in:app); XCTAssertTrue(app.buttons["この説明の出典"].exists); attach(app,"actual-share-samuel-first-places")
     }
     @MainActor private func launch(_ screen:String)->XCUIApplication {let app=XCUIApplication();app.launchArguments=["--simulator-qa","--qa-screen="+screen];app.launch();return app}
-    @MainActor private func scrollTo(_ element:XCUIElement,in app:XCUIApplication) {for _ in 0..<14 {if element.exists && element.isHittable && element.frame.minY < app.frame.height*0.78{return};app.swipeUp()}}
+    @MainActor private func scrollTo(_ element:XCUIElement,in app:XCUIApplication) { CurrentUI.reveal(element, in: app) }
     @MainActor private func attach(_ app:XCUIApplication,_ name:String) {let a=XCTAttachment(screenshot:app.screenshot());a.name=name;a.lifetime = .keepAlways;add(a)}
 }

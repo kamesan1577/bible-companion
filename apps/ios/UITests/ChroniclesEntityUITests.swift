@@ -74,9 +74,7 @@ final class ChroniclesEntityUITests: XCTestCase {
     @MainActor private func launch(_ screen: String) -> XCUIApplication {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa", "--qa-screen=" + screen]; app.launch(); return app
     }
-    @MainActor private func scrollTo(_ element: XCUIElement, in app: XCUIApplication) {
-        for _ in 0..<16 { if element.exists && element.isHittable && element.frame.minY < app.frame.height * 0.78 { return }; app.swipeUp() }
-    }
+    @MainActor private func scrollTo(_ element: XCUIElement, in app: XCUIApplication) { CurrentUI.reveal(element, in: app) }
     @MainActor private func attach(_ app: XCUIApplication, _ name: String) {
         let item = XCTAttachment(screenshot: app.screenshot()); item.name = name; item.lifetime = .keepAlways; add(item)
     }

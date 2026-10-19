@@ -51,10 +51,13 @@ final class RomLeviticusEntityUITests: XCTestCase {
     @MainActor func testLeviticusOpeningShowsStoredProfileSourceAndWikipedia() {
         let app = launch("entity-lev-early")
         XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15))
-        app.buttons["人物"].tap()
+        let people=app.buttons["人物"]
+        expectation(for:NSPredicate(format:"label ENDSWITH %@","件"),evaluatedWith:people);waitForExpectations(timeout:15)
+        people.tap();XCTAssertTrue(people.isSelected)
 
         let moses = app.buttons["entity-detail-person:moses_2108"]
         CurrentUI.reveal(moses, in: app)
+        XCTAssertTrue(people.isSelected, "Vertical scrolling must not change the reading tab")
         XCTAssertTrue(moses.waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "会見の天幕")).firstMatch.exists)
         attach(app, "lev-early-people-stored-profile")
@@ -102,12 +105,7 @@ final class RomLeviticusEntityUITests: XCTestCase {
         return app
     }
 
-    @MainActor private func scrollTo(_ element: XCUIElement, in app: XCUIApplication) {
-        for _ in 0..<14 {
-            if element.exists && element.isHittable && element.frame.minY < app.frame.height * 0.78 { return }
-            app.swipeUp()
-        }
-    }
+    @MainActor private func scrollTo(_ element: XCUIElement, in app: XCUIApplication) { CurrentUI.reveal(element, in: app) }
 
     @MainActor private func attach(_ app: XCUIApplication, _ name: String) {
         Thread.sleep(forTimeInterval: 1)

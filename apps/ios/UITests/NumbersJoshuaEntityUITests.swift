@@ -68,12 +68,7 @@ final class NumbersJoshuaEntityUITests: XCTestCase {
         return app
     }
 
-    @MainActor private func scrollTo(_ element: XCUIElement, in app: XCUIApplication) {
-        for _ in 0..<14 {
-            if element.exists && element.isHittable && element.frame.minY < app.frame.height * 0.78 { return }
-            app.swipeUp()
-        }
-    }
+    @MainActor private func scrollTo(_ element: XCUIElement, in app: XCUIApplication) { CurrentUI.reveal(element, in: app) }
 
     @MainActor private func attach(_ app: XCUIApplication, _ name: String) {
         Thread.sleep(forTimeInterval: 1)

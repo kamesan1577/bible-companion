@@ -38,3 +38,15 @@ Baseline: `47114f4`, full CI 39190469573, 98 cases (66 passed, 32 failed). This 
 | `ShareCrashUITests.testRepeatedActs2815AndOtherPlaceMapsWithKeyboard` | Same repeated Acts 28:15/27:2 map/keyboard exercise; current navigation and explicit reviewed-versus-candidate provenance. |
 
 `make ios-ui` and the workflow default still run the complete scheme. The optional artwork-only workflow selection is labelled DIAGNOSTIC, runs the real shared images, and is never merge acceptance. The final exact-head gate must report all cases. Screenshots remain evidence rather than replacement success assertions.
+
+## Follow-up evidence
+
+On executable head `40252b0`, Linux [39197328306](https://github.com/kamesan1577/bible-companion/actions/runs/39197328306) passed. Artwork-only CI [39197330598](https://github.com/kamesan1577/bible-companion/actions/runs/39197330598) passed all three unchanged share-only image assertions on the logged iPhone 17 Pro / iOS 26.2 profile. This is diagnostic evidence, not the full merge gate. The original failing run did not record its hardware profile, so do not invent an exact former device.
+
+Local diagnostics verified current shared profile/source navigation, Moses Wikipedia/primary source, browser handoff/return, full long-body copy route, immediate composer/reopen and over-limit retention. Native provider selection must tap the current value element inside the Picker, not its label-area center. Scroll bounds come from one immutable AX snapshot, avoiding references to a composer disappearing during navigation. Gestures avoid the native left-edge back region.
+
+Fixture session URLs change after restarting the host app. The draft key correctly includes the exact shared original: verify same-context cross-process restoration through the saved recent visit, then require a new shared-original context to start empty. Do not remove context isolation to make a synthetic-session assertion pass.
+
+With the current empty-public-material fixture, Corinth is not a local occurrence in Acts 18:24–28. The preservation tests retain the old baseline map, verify the selected range's Alexandria, then explicitly choose Acts chapter 18 through the browser to verify Corinth's current map, Wikipedia and source context. They do not silently widen the selected passage or fabricate a public card.
+
+A separate **product blocker** was reproduced: URL-only shared originals are nonempty at ExternalQuestionHandoff, then ChatGPTCopyPrompt removes URL lines and throws missingBody; the send control remains disabled. An empty original already has an honest no-original notice. The new Core regression requires URL-only shares to use that same honest absence path without guessing a verse, losing the question or relaxing validation. Product source is unchanged while this scope expansion is awaiting confirmation. Full acceptance must not skip this regression or the corresponding share UI failure.
