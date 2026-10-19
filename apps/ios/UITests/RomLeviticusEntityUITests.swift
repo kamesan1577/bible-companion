@@ -14,7 +14,7 @@ final class RomLeviticusEntityUITests: XCTestCase {
 
         paul.tap()
         XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "wikipedia-person:paul_2479").firstMatch.waitForExistence(timeout: 5))
-        app.buttons["この説明の出典"].tap()
+        CurrentUI.reveal(app.buttons["この説明の出典"], in: app); app.buttons["この説明の出典"].tap()
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "World English Bible")).firstMatch.waitForExistence(timeout: 5))
         attach(app, "rom-early-profile-source-and-wikipedia")
     }
@@ -54,14 +54,15 @@ final class RomLeviticusEntityUITests: XCTestCase {
         app.buttons["人物"].tap()
 
         let moses = app.buttons["entity-detail-person:moses_2108"]
-        scrollTo(moses, in: app)
+        CurrentUI.reveal(moses, in: app)
         XCTAssertTrue(moses.waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "会見の天幕")).firstMatch.exists)
         attach(app, "lev-early-people-stored-profile")
 
         moses.tap()
-        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "wikipedia-person:moses_2108").firstMatch.waitForExistence(timeout: 5))
-        app.buttons["この説明の出典"].tap()
+        let wiki = app.descendants(matching: .any).matching(identifier: "wikipedia-person:moses_2108").firstMatch
+        CurrentUI.reveal(wiki, in: app); XCTAssertTrue(wiki.exists)
+        CurrentUI.reveal(app.buttons["この説明の出典"], in: app); app.buttons["この説明の出典"].tap()
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "World English Bible")).firstMatch.waitForExistence(timeout: 5))
         attach(app, "lev-early-profile-source-and-wikipedia")
     }

@@ -13,19 +13,15 @@ final class HomeShareUXUITests: XCTestCase {
     }
     @MainActor func testHomeDiscoveryAndSetup() {
         let app = launch("initial")
-        XCTAssertTrue(app.buttons["discovery-card"].waitForExistence(timeout: 15))
-        capture(app, "home-dark")
+        XCTAssertTrue(app.buttons["discovery-card"].waitForExistence(timeout: 15)); capture(app, "home-current")
         app.buttons["discovery-card"].tap()
-        XCTAssertTrue(app.staticTexts["アポロとエペソの人々"].waitForExistence(timeout: 10))
-        XCTAssertTrue(app.staticTexts["アポロ"].firstMatch.waitForExistence(timeout: 10))
-        capture(app, "discovery-open")
-        app.navigationBars.buttons.firstMatch.tap()
-        app.swipeUp()
-        app.buttons["share-ai-settings"].tap()
-        XCTAssertTrue(app.buttons["ログインして準備を始める"].waitForExistence(timeout: 10))
-        capture(app, "setup-signed-out")
-        app.buttons["閉じる"].tap()
-        XCTAssertTrue(app.buttons["share-ai-settings"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["アポロと夫妻の個別指導"].waitForExistence(timeout: 10))
+        for title in ["解説", "地図", "人物", "絵画"] { XCTAssertTrue(app.buttons[title].exists) }
+        XCTAssertTrue(CurrentUI.input(app).exists); capture(app, "discovery-current-reader")
+        app.buttons["external-provider-settings"].tap()
+        XCTAssertTrue(app.buttons["external-provider-picker"].waitForExistence(timeout: 5))
+        XCTAssertFalse(app.buttons["ログインして準備を始める"].exists)
+        app.buttons["完了"].tap(); XCTAssertTrue(CurrentUI.input(app).exists)
     }
     @MainActor func testMissingSettingsAndReadOnlyDiagnostics() {
         let app = launch("setup", ["--qa-share-enabled", "--qa-clear-access"])
@@ -78,64 +74,46 @@ final class HomeShareUXUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["質問する設定を保存しました"].exists)
         capture(app, "setup-expired")
     }
-    @MainActor func testCancelWhileSaving() {
-        let app = launch("home", ["--qa-share-enabled", "--qa-clear-access", "--qa-share-success", "--qa-share-slow"])
-        XCTAssertTrue(app.buttons["discovery-card"].waitForExistence(timeout: 10))
-        app.swipeUp(); app.buttons["share-ai-settings"].tap()
-        XCTAssertTrue(app.buttons["質問する設定を保存する"].waitForExistence(timeout: 10))
-        app.buttons["質問する設定を保存する"].tap()
-        XCTAssertTrue(app.staticTexts["質問する設定を保存しています"].waitForExistence(timeout: 3))
-        capture(app, "setup-saving")
-        app.buttons["閉じる"].tap()
-        XCTAssertTrue(app.buttons["share-ai-settings"].waitForExistence(timeout: 5))
-        app.buttons["share-ai-settings"].tap()
-        XCTAssertTrue(app.buttons["質問する設定を保存する"].waitForExistence(timeout: 10))
-        XCTAssertFalse(app.staticTexts["質問する設定を保存しました"].exists)
-        capture(app, "setup-cancelled")
+    @MainActor func testProviderSheetDismissAndChangePreserveDraft() {
+        let app = launch("unified", ["--qa-reset-provider"])
+        let field = CurrentUI.input(app); XCTAssertTrue(field.waitForExistence(timeout: 15))
+        field.tap(); field.typeText(" provider-sheet-dismiss-keeps-draft")
+        let draft = field.value as? String
+        app.buttons["external-provider-settings"].tap()
+        XCTAssertTrue(app.buttons["external-provider-picker"].exists)
+        XCTAssertFalse(app.staticTexts["質問する設定を保存しています"].exists)
+        app.buttons["完了"].tap(); XCTAssertEqual(field.value as? String, draft)
+        CurrentUI.provider("Claude", in: app)
+        XCTAssertEqual(field.value as? String, draft); capture(app, "provider-sheet-dismiss-keeps-draft")
     }
     @MainActor func testRootHomeWithNativeTabs() {
-        let app = XCUIApplication()
-        app.launchArguments = ["--simulator-qa", "--qa-screen=configured-home", "-hasSeenVisualShareGuideV2", "YES"]
-        app.launch()
-        XCTAssertTrue(app.buttons["discovery-card"].waitForExistence(timeout: 10))
-        XCTAssertFalse(app.staticTexts["アプリの接続設定に問題があります。最新版へ更新して、もう一度お試しください。"].exists)
-        let prepare = app.buttons["share-ai-settings"]
-        XCTAssertTrue(prepare.isHittable)
+        let app = launch("configured-home", ["-hasSeenVisualShareGuideV2", "YES"])
+        XCTAssertTrue(app.buttons["discovery-card"].waitForExistence(timeout: 15))
         XCTAssertTrue(app.tabBars.firstMatch.exists)
-        XCTAssertLessThan(prepare.frame.maxY, app.tabBars.firstMatch.frame.minY)
-        capture(app, "home-root-dark")
-        app.swipeUp()
-        app.buttons["browse-chapters"].tap()
+        XCTAssertTrue(CurrentUI.input(app).exists); capture(app, "home-current-native-tabs")
+        CurrentUI.reveal(app.buttons["browse-chapters"], in: app); app.buttons["browse-chapters"].tap()
         XCTAssertTrue(app.navigationBars["章から説明を探す"].waitForExistence(timeout: 5))
         app.navigationBars.buttons.firstMatch.tap()
-        prepare.tap()
-        XCTAssertTrue(app.buttons["ログインして準備を始める"].waitForExistence(timeout: 5))
-        app.buttons["閉じる"].tap()
-        XCTAssertTrue(prepare.waitForExistence(timeout: 5))
+        app.tabBars.buttons["設定"].tap()
+        XCTAssertTrue(app.buttons["external-provider-picker"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["質問の送信先"].exists)
     }
-    @MainActor func testUnconfiguredHomeShowsWarning() {
-        let app = XCUIApplication()
-        app.launchArguments = ["-hasSeenVisualShareGuideV2", "YES"]
-        app.launch()
-        XCTAssertTrue(app.buttons["discovery-card"].waitForExistence(timeout: 10))
-        XCTAssertTrue(app.staticTexts["アプリの接続設定に問題があります。最新版へ更新して、もう一度お試しください。"].exists)
-        capture(app, "home-unconfigured-error")
+    @MainActor func testUnconfiguredHomeRetainsOfflineReaderWithoutBlockingWarning() {
+        let app = XCUIApplication(); app.launchArguments = ["-hasSeenVisualShareGuideV2", "YES"]; app.launch()
+        XCTAssertTrue(app.buttons["discovery-card"].waitForExistence(timeout: 15))
+        app.buttons["discovery-card"].tap()
+        XCTAssertTrue(app.staticTexts["アポロと夫妻の個別指導"].waitForExistence(timeout: 10))
+        XCTAssertTrue(CurrentUI.input(app).exists)
+        XCTAssertFalse(app.staticTexts["アプリの接続設定に問題があります。最新版へ更新して、もう一度お試しください。"].exists)
+        capture(app, "unconfigured-offline-reader-available")
     }
     @MainActor func testAccessibilityType() {
-        let app = XCUIApplication()
-        app.launchArguments = ["--simulator-qa", "--qa-screen=initial", "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
-        app.launch()
-        XCTAssertTrue(app.buttons["discovery-card"].waitForExistence(timeout: 10))
-        capture(app, "home-accessibility-xxxl")
-        app.swipeUp(); app.swipeUp()
-        XCTAssertTrue(app.buttons["share-ai-settings"].waitForExistence(timeout: 5))
-        app.buttons["share-ai-settings"].tap()
-        capture(app, "setup-accessibility-xxxl-top")
-        for _ in 0..<12 {
-            if app.buttons["ログインして準備を始める"].isHittable { break }
-            app.swipeUp()
-        }
-        XCTAssertTrue(app.buttons["ログインして準備を始める"].isHittable)
-        capture(app, "setup-accessibility-xxxl-action")
+        let app = launch("initial", ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"])
+        XCTAssertTrue(app.buttons["discovery-card"].waitForExistence(timeout: 15)); capture(app,"home-accessibility-xxxl")
+        let settings = app.buttons["external-provider-settings"]
+        XCTAssertTrue(settings.isHittable); settings.tap()
+        XCTAssertTrue(app.buttons["external-provider-picker"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["完了"].isHittable); capture(app,"provider-accessibility-xxxl")
+        app.buttons["完了"].tap(); XCTAssertTrue(CurrentUI.input(app).exists)
     }
 }

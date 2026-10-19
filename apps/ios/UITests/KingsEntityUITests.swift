@@ -22,13 +22,13 @@ final class KingsEntityUITests: XCTestCase {
     }
     @MainActor func testActualShareKingsBeginningShowsIsraelRegion() {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
-        let share = app.buttons["列王記上1章を共有する"]
+        let share = CurrentUI.menu("列王記上1章を共有する", in: app)
         scrollTo(share, in: app); XCTAssertTrue(share.waitForExistence(timeout: 10)); share.tap()
-        let destination = app.staticTexts.matching(NSPredicate(format: "label == %@", "聖書コンパニオン")).firstMatch
+        let destination = app.cells.matching(identifier: "聖書コンパニオン").firstMatch
         XCTAssertTrue(destination.waitForExistence(timeout: 10)); destination.tap()
-        XCTAssertTrue(app.buttons["地名"].waitForExistence(timeout: 10)); app.buttons["地名"].tap()
-        let detail = app.descendants(matching: .any).matching(identifier: "entity-inline-detail-place:united-kingdom-of-israel_1301").firstMatch
-        scrollTo(detail, in: app); XCTAssertTrue(detail.exists); attach(app, "actual-share-kings-first-region")
+        XCTAssertTrue(app.buttons["地図"].waitForExistence(timeout: 10)); app.buttons["地図"].tap()
+        let detail = app.descendants(matching: .any).matching(identifier: "entity-detail-place:united-kingdom-of-israel_1301").firstMatch
+        scrollTo(detail, in: app); XCTAssertTrue(detail.exists); detail.tap(); CurrentUI.reveal(app.buttons["この説明の出典"],in:app); XCTAssertTrue(app.buttons["この説明の出典"].exists); attach(app, "actual-share-kings-first-region")
     }
     @MainActor private func launch(_ screen: String) -> XCUIApplication {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa", "--qa-screen=" + screen]; app.launch(); return app

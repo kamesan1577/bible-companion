@@ -23,6 +23,15 @@ class OwnedDeviceTests(unittest.TestCase):
         self.assertNotIn('11111111-1111-4111-8111-111111111111', args)
         self.assertEqual(args[-2:], ['com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro', 'com.apple.CoreSimulator.SimRuntime.iOS-26-0'])
 
+    def test_booted_other_model_does_not_change_screenshot_profile(self):
+        document = self.document()
+        document['devices']['com.apple.CoreSimulator.SimRuntime.iOS-26-0'][0]['state'] = 'Shutdown'
+        document['devices']['com.apple.CoreSimulator.SimRuntime.iOS-26-0'].append({
+            'name':'iPhone SE (3rd generation)', 'isAvailable':True, 'state':'Booted',
+            'udid':'33333333-3333-4333-8333-333333333333',
+            'deviceTypeIdentifier':'com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation'})
+        self.assertEqual(owned.template(document)[0], 'com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro')
+
     def test_missing_type_fails_without_mutating_any_device(self):
         document = self.document(); document['devices']['com.apple.CoreSimulator.SimRuntime.iOS-26-0'][0].pop('deviceTypeIdentifier')
         with patch.object(owned.subprocess, 'check_output') as command:

@@ -4,6 +4,11 @@ name: Build iOS Simulator app
 on:
   workflow_dispatch:
     inputs:
+      ui_suite:
+        description: Full merge gate or artwork-only diagnostic (never merge acceptance)
+        type: choice
+        options: [all, artwork]
+        default: all
       upload_artifacts:
         description: Upload app, screenshots, and Xcode results (may incur storage charges)
         type: boolean
@@ -52,7 +57,11 @@ jobs:
           # Own device, boot completion, jobs=2, explicit install, all current core/UI tests.
           # UI uses local ad-hoc Simulator signatures, never a developer identity.
           # Per-command limits remain boot 5m, build 12m, core 10m and UI 60m (98 UI methods at integration).
-          make ios-ui 2>&1 | tee "$RUNNER_TEMP/ios-results/harness.log"
+          if [[ "${{ inputs.ui_suite }}" == "artwork" ]]; then
+            make ios-ui UI_CLASS=ArtworkCatalogUITests 2>&1
+          else
+            make ios-ui 2>&1
+          fi | tee "$RUNNER_TEMP/ios-results/harness.log"
       - name: Package simulator app without changing executable modes
         run: |
           tar -czf "$RUNNER_TEMP/ios-results/BibleCompanion-simulator.tar.gz" \
@@ -74,6 +83,7 @@ jobs:
           {
             echo '## iOS Simulator validation'
             echo 'The shared make ios-ui command owns and removes its dedicated device; no peer simulator is targeted.'
+            echo 'UI suite: ${{ inputs.ui_suite }}. Artwork-only runs are diagnostic and cannot establish merge acceptance.'
             echo 'Build/resource verification, core tests and all native UI assertions must pass. No automatic test retries.'
             echo 'Artifacts are uploaded only with upload_artifacts. Otherwise only run logs are retained.'
             echo 'The checked-in endpoint is unconfigured; no backend or AI provider is enabled.'

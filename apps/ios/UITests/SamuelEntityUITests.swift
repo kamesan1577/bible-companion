@@ -18,12 +18,12 @@ final class SamuelEntityUITests: XCTestCase {
     }
     @MainActor func testActualShareSamuelBeginningShowsReviewedPlaces() {
         let app=XCUIApplication();app.launchArguments=["--simulator-qa"];app.launch()
-        let share=app.buttons["サムエル記上1章を共有する"];scrollTo(share,in:app);XCTAssertTrue(share.waitForExistence(timeout:10));share.tap()
-        let destination=app.staticTexts.matching(NSPredicate(format:"label == %@","聖書コンパニオン")).firstMatch
+        let share = CurrentUI.menu("サムエル記上1章を共有する", in: app);scrollTo(share,in:app);XCTAssertTrue(share.waitForExistence(timeout:10));share.tap()
+        let destination = app.cells.matching(identifier: "聖書コンパニオン").firstMatch
         XCTAssertTrue(destination.waitForExistence(timeout:10));destination.tap()
-        XCTAssertTrue(app.buttons["地名"].waitForExistence(timeout:10));app.buttons["地名"].tap()
-        let detail=app.descendants(matching:.any).matching(identifier:"entity-inline-detail-place:ephraim-territory_1292").firstMatch
-        scrollTo(detail,in:app);XCTAssertTrue(detail.exists);attach(app,"actual-share-samuel-first-places")
+        XCTAssertTrue(app.buttons["地図"].waitForExistence(timeout:10));app.buttons["地図"].tap()
+        let detail=app.descendants(matching:.any).matching(identifier:"entity-detail-place:ephraim-territory_1292").firstMatch
+        scrollTo(detail,in:app);XCTAssertTrue(detail.exists);detail.tap(); CurrentUI.reveal(app.buttons["この説明の出典"],in:app); XCTAssertTrue(app.buttons["この説明の出典"].exists); attach(app,"actual-share-samuel-first-places")
     }
     @MainActor private func launch(_ screen:String)->XCUIApplication {let app=XCUIApplication();app.launchArguments=["--simulator-qa","--qa-screen="+screen];app.launch();return app}
     @MainActor private func scrollTo(_ element:XCUIElement,in app:XCUIApplication) {for _ in 0..<14 {if element.exists && element.isHittable && element.frame.minY < app.frame.height*0.78{return};app.swipeUp()}}

@@ -75,8 +75,9 @@ def check():
     print('Portable checks passed. Run swift and ios-ui separately on Apple toolchains.')
 
 
-def ios(command, device):
+def ios(command, device, ui_class=None):
     doctor(ios=True)
+    if ui_class: print(f'DIAGNOSTIC UI SELECTION: {ui_class}; not a full merge gate', flush=True)
     if (ROOT / 'apps/ios/Config/Local.private.xcconfig').exists():
         raise ValueError('Use a clean checkout without Local.private.xcconfig for reproducible fixture QA')
     run('bash', 'apps/ios/Scripts/generate-project.sh')
@@ -132,7 +133,8 @@ def ios(command, device):
             for scheme in ['BibleCompanion', 'ReadingInteractionUI']:
                 run(*base, '-scheme', scheme, '-destination', f'platform=iOS Simulator,id={device}',
                     '-destination-timeout', '90', '-parallel-testing-enabled', 'NO',
-                    '-resultBundlePath', result / f'{scheme}.xcresult', 'test',
+                    '-resultBundlePath', result / f'{scheme}.xcresult',
+                    *([f'-only-testing:ReadingInteractionUITests/{ui_class}'] if scheme == 'ReadingInteractionUI' and ui_class else []), 'test',
                     timeout=600 if scheme == 'BibleCompanion' else 3600)
         finally:
             if owned:
@@ -165,6 +167,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('command', choices=['doctor', 'setup', 'check', 'data', 'swift', 'ios-build', 'ios-device', 'ios-ui', 'audit-source'])
     p.add_argument('--ios', action='store_true'); p.add_argument('--device')
+    p.add_argument('--ui-class', choices=['ArtworkCatalogUITests'], help='Diagnostic selection only; never a full UI acceptance run')
     p.add_argument('--ref', default='HEAD')
     a = p.parse_args()
     if a.command == 'doctor': doctor(a.ios)
@@ -173,7 +176,7 @@ def main():
     elif a.command == 'data': data()
     elif a.command == 'swift': swift_test()
     elif a.command == 'audit-source': audit_source(a.ref)
-    else: ios(a.command, a.device)
+    else: ios(a.command, a.device, a.ui_class)
 
 
 if __name__ == '__main__':

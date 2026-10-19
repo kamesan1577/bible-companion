@@ -37,26 +37,28 @@ final class NumbersJoshuaEntityUITests: XCTestCase {
 
     @MainActor func testActualShareNumbersSameVerseBothMeanings() {
         let app=XCUIApplication();app.launchArguments=["--simulator-qa"];app.launch()
-        let share=app.buttons["民数記26章を共有する"];XCTAssertTrue(share.waitForExistence(timeout:10));share.tap()
-        let destination=app.staticTexts.matching(NSPredicate(format:"label == %@","聖書コンパニオン")).firstMatch
+        let share = CurrentUI.menu("民数記26章を共有する", in: app);XCTAssertTrue(share.waitForExistence(timeout:10));share.tap()
+        let destination = app.cells.matching(identifier: "聖書コンパニオン").firstMatch
         XCTAssertTrue(destination.waitForExistence(timeout:10));destination.tap()
         XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout:10));app.buttons["人物"].tap()
-        let detail=app.descendants(matching:.any).matching(identifier:"entity-inline-detail-person:gilead_1317").firstMatch
+        let detail=app.descendants(matching:.any).matching(identifier:"entity-detail-person:gilead_1317").firstMatch
         scrollTo(detail,in:app);XCTAssertTrue(detail.exists)
         let clan=app.staticTexts.containing(NSPredicate(format:"label CONTAINS %@","ギレアド人")).firstMatch
         scrollTo(clan,in:app);XCTAssertTrue(clan.exists);attach(app,"actual-share-num-gilead-both-meanings")
     }
     @MainActor func testActualShareJoshuaSingleAliasAndMap() {
         let app=XCUIApplication();app.launchArguments=["--simulator-qa"];app.launch()
-        let share=app.buttons["ヨシュア記15章を共有する"];XCTAssertTrue(share.waitForExistence(timeout:10));share.tap()
-        let destination=app.staticTexts.matching(NSPredicate(format:"label == %@","聖書コンパニオン")).firstMatch
+        let share = CurrentUI.menu("ヨシュア記15章を共有する", in: app);XCTAssertTrue(share.waitForExistence(timeout:10));share.tap()
+        let destination = app.cells.matching(identifier: "聖書コンパニオン").firstMatch
         XCTAssertTrue(destination.waitForExistence(timeout:10));destination.tap()
-        XCTAssertTrue(app.buttons["地名"].waitForExistence(timeout:10));app.buttons["地名"].tap()
-        let detail=app.descendants(matching:.any).matching(identifier:"entity-inline-detail-place:debir_325").firstMatch
+        XCTAssertTrue(app.buttons["地図"].waitForExistence(timeout:10));app.buttons["地図"].tap()
+        let detail=app.descendants(matching:.any).matching(identifier:"entity-detail-place:debir_325").firstMatch
         scrollTo(detail,in:app);XCTAssertTrue(detail.exists)
-        XCTAssertFalse(app.descendants(matching:.any).matching(identifier:"entity-inline-detail-place:kiriath-sannah_702").firstMatch.exists)
+        XCTAssertFalse(app.descendants(matching:.any).matching(identifier:"entity-detail-place:kiriath-sannah_702").firstMatch.exists)
         let map=app.descendants(matching:.any).matching(identifier:"entity-candidate-map-content-place:debir_325").firstMatch
-        scrollTo(map,in:app);XCTAssertTrue(map.exists);attach(app,"actual-share-jos-debir-single-alias-map")
+        let candidate = app.buttons["entity-candidate-map-place:debir_325"]
+        CurrentUI.reveal(candidate,in:app);candidate.tap()
+        XCTAssertTrue(map.waitForExistence(timeout:5));attach(app,"actual-share-jos-debir-single-alias-map")
     }
 
     @MainActor private func launch(_ screen: String) -> XCUIApplication {

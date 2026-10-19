@@ -8,6 +8,6 @@ build:
 ios-device:
 	$(PYTHON) scripts/harness/run.py ios-device
 ios-ui:
-	$(PYTHON) scripts/harness/run.py ios-ui
+	$(PYTHON) scripts/harness/run.py ios-ui $(if $(UI_CLASS),--ui-class $(UI_CLASS),)
 source-audit:
 	$(PYTHON) scripts/harness/run.py audit-source

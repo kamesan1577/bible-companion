@@ -82,12 +82,12 @@ final class ReadingInteractionUITests: XCTestCase {
     }
     @MainActor func testBundledPeopleAndRepeatedShareDismissal() {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
-        XCTAssertTrue(app.buttons["使徒23:1の人物"].waitForExistence(timeout: 10)); app.buttons["使徒23:1の人物"].tap()
+        CurrentUI.menu("使徒23:1の人物",in:app).tap()
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "パウロ")).firstMatch.waitForExistence(timeout: 5))
         attach(app, "bundled-people")
         app.navigationBars.buttons.firstMatch.tap()
         for _ in 0..<3 {
-            let share = app.buttons["実際の共有拡張を開く"]
+            let share = CurrentUI.menu("実際の共有拡張を開く", in: app)
             XCTAssertTrue(share.waitForExistence(timeout: 3)); share.tap()
             XCTAssertTrue(app.otherElements["PopoverDismissRegion"].waitForExistence(timeout: 3))
             app.otherElements["PopoverDismissRegion"].tap()
@@ -98,7 +98,7 @@ final class ReadingInteractionUITests: XCTestCase {
     @MainActor func testShareExtensionLocalMetadataAndRepeatedReturn() {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
         for _ in 0..<3 {
-            let share = app.buttons["実際の共有拡張を開く"]
+            let share = CurrentUI.menu("実際の共有拡張を開く", in: app)
             XCTAssertTrue(share.waitForExistence(timeout: 10)); share.tap()
             let candidates = app.cells.matching(identifier: "聖書コンパニオン")
             guard candidates.firstMatch.waitForExistence(timeout: 5), candidates.count > 0 else { XCTFail("Share destination did not appear: \(app.debugDescription)"); return }
@@ -195,83 +195,58 @@ final class ReadingInteractionUITests: XCTestCase {
         XCTAssertTrue(consent.waitForExistence(timeout: 5))
         attach(app, "psalm18-separate-consent")
     }
-    @MainActor func testReadingPreparationReturnsWithoutRepeatingConsentOrFalseSuccess() {
-        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa", "--qa-share-enabled"]; app.launch()
-        XCTAssertTrue(app.buttons["読書画面"].waitForExistence(timeout: 10)); app.buttons["読書画面"].tap()
-        let ai = app.buttons["AIで解説・質問"]
-        XCTAssertTrue(ai.waitForExistence(timeout: 5)); ai.tap()
-        let prepare = app.buttons["YouVersionから解説を読む準備"]
-        XCTAssertTrue(prepare.waitForExistence(timeout: 5)); prepare.tap()
-        let save = app.buttons["共有から解説を読めるようにする"]
-        XCTAssertTrue(save.waitForExistence(timeout: 5))
+    @MainActor func testReadingProviderSettingsReturnWithoutObsoleteConsentOrFalseSuccess() {
+        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
+        CurrentUI.menu("読書画面", in: app).tap()
+        XCTAssertTrue(app.staticTexts["「良心に従ってきた」という発言"].waitForExistence(timeout: 10))
+        let field = CurrentUI.input(app); field.tap(); field.typeText(" preparation-not-required")
+        let draft = field.value as? String
+        app.buttons["external-provider-settings"].tap()
+        XCTAssertTrue(app.buttons["external-provider-picker"].waitForExistence(timeout: 5))
         XCTAssertFalse(app.buttons["同意して解説を使う"].exists)
-        save.tap()
-        let storageFailure = app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "同意を繰り返す必要はありません")).firstMatch
-        XCTAssertTrue(storageFailure.waitForExistence(timeout: 5))
-        XCTAssertFalse(app.staticTexts["設定を保存しました"].exists)
-        XCTAssertFalse(app.buttons["同意して解説を使う"].exists)
-        attach(app, "preparation-storage-failure-no-consent-loop")
+        XCTAssertFalse(app.staticTexts["質問する設定を保存しました"].exists)
+        app.buttons["完了"].tap(); XCTAssertEqual(field.value as? String, draft)
+        XCTAssertTrue(app.staticTexts["「良心に従ってきた」という発言"].exists)
+        attach(app,"provider-return-original-reading-no-false-readiness")
+    }
+    @MainActor func testActualShareUnconfiguredBackendRetainsOfflineVerseAndComposer() {
+        let app=XCUIApplication();app.launchArguments=["--simulator-qa"];app.launch()
+        CurrentUI.openShare(app,title:"実際の共有拡張を開く")
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format:"label CONTAINS %@","使徒の働き 23:1")).firstMatch.exists)
+        XCTAssertTrue(app.staticTexts["「良心に従ってきた」という発言"].waitForExistence(timeout:10))
+        XCTAssertFalse(app.staticTexts["この画面で解説を開けません"].exists)
+        XCTAssertFalse(app.buttons["準備の手順を見る"].exists)
+        let field=CurrentUI.input(app);field.tap();field.typeText(" offline-source-retained")
+        CurrentUI.keyboardSend(app);attach(app,"actual-share-offline-reader-keeps-passage")
         app.buttons["閉じる"].tap()
-        XCTAssertTrue(app.staticTexts["「良心に従ってきた」という発言"].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "shared-scripture-header").firstMatch.exists)
-        XCTAssertTrue(app.buttons["AIで解説・質問"].exists)
-        attach(app, "preparation-return-original-reading")
     }
-    @MainActor func testActualShareRecoveryPreservesVerseAndShowsConcreteSteps() {
-        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
-        let share = app.buttons["実際の共有拡張を開く"]
-        XCTAssertTrue(share.waitForExistence(timeout: 10)); share.tap()
-        let candidates = app.cells.matching(identifier: "聖書コンパニオン")
-        guard candidates.firstMatch.waitForExistence(timeout: 5), candidates.count > 0 else { XCTFail("Share destination did not appear: \(app.debugDescription)"); return }
-        candidates.element(boundBy: candidates.count - 1).tap()
-        XCTAssertTrue(app.staticTexts["この画面で解説を開けません"].waitForExistence(timeout: 8), app.debugDescription)
-        XCTAssertTrue(app.staticTexts["使徒の働き 23:1"].exists)
-        XCTAssertFalse(app.staticTexts["初回の設定が必要です。"].exists)
-        let steps = app.buttons["準備の手順を見る"]
-        XCTAssertTrue(steps.exists); steps.tap()
-        let returnStep = app.staticTexts["YouVersionで同じ箇所を選び、もう一度共有する"]
-        for _ in 0..<5 { if returnStep.isHittable { break }; app.swipeUp() }
-        XCTAssertTrue(returnStep.exists)
-        attach(app, "actual-share-storage-recovery-keeps-verse")
-        app.navigationBars.buttons["閉じる"].tap()
-        XCTAssertTrue(share.waitForExistence(timeout: 5))
-    }
-    @MainActor func testExistingExplanationPrecedesSingleAIActionAndExplanationStillWorks() {
-        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
-        XCTAssertTrue(app.buttons["読書画面"].waitForExistence(timeout: 10)); app.buttons["読書画面"].tap()
-        let title = app.staticTexts["「良心に従ってきた」という発言"]
-        XCTAssertTrue(title.waitForExistence(timeout: 5))
-        let ai = app.buttons["AIで解説・質問"]
-        XCTAssertTrue(ai.exists); XCTAssertEqual(app.buttons.matching(identifier: "AIで解説・質問").count, 1)
-        XCTAssertLessThan(title.frame.minY, ai.frame.minY)
-        XCTAssertFalse(app.buttons["AIにこの箇所を説明してもらう"].exists)
-        attach(app, "reading-existing-explanation-first-single-ai")
-        ai.tap(); app.buttons["AIでこの箇所の解説を読む"].tap()
-        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label BEGINSWITH %@", "固定標準解説")).firstMatch.waitForExistence(timeout: 8))
-        XCTAssertTrue(app.buttons["続けて質問する"].exists)
-        attach(app, "single-ai-action-explanation-result")
+    @MainActor func testExistingExplanationAndSourcePrecedeSingleExternalAction() {
+        let app=XCUIApplication(); app.launchArguments=["--simulator-qa"];app.launch()
+        CurrentUI.menu("読書画面",in:app).tap()
+        let title=app.staticTexts["「良心に従ってきた」という発言"]
+        XCTAssertTrue(title.waitForExistence(timeout:10))
+        let send=app.buttons["external-question-send"]
+        XCTAssertTrue(send.exists);XCTAssertEqual(app.buttons.matching(identifier:"external-question-send").count,1)
+        XCTAssertLessThan(title.frame.minY,send.frame.minY)
+        XCTAssertFalse(app.buttons["AIで解説・質問"].exists)
+        let source=app.buttons["解釈と出典を確かめる"].firstMatch
+        CurrentUI.reveal(source,in:app);source.tap()
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format:"label CONTAINS %@","CCEL")).firstMatch.waitForExistence(timeout:5))
+        attach(app,"existing-explanation-and-source-before-external-handoff")
     }
     @MainActor func testActualShareReadsProfilesAndMapWithoutGeneratedAnswer() {
-        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
-        let share = app.buttons["使徒18章を共有する"]
-        XCTAssertTrue(share.waitForExistence(timeout: 10)); share.tap()
-        // iOS 26 exposes share cells as "shareCell"; select the visible
-        // extension label rather than treating its display name as an ID.
-        let destination = app.staticTexts.matching(NSPredicate(format: "label == %@", "聖書コンパニオン")).firstMatch
-        XCTAssertTrue(destination.waitForExistence(timeout: 10))
-        attach(app, "actual-share-extension-destination")
-        destination.tap()
-        XCTAssertTrue(app.staticTexts["使徒の働き 18:24–28"].waitForExistence(timeout: 8))
+        let app=XCUIApplication();app.launchArguments=["--simulator-qa"];app.launch()
+        CurrentUI.openShare(app,title:"使徒18章を共有する")
         app.buttons["人物"].tap()
-        let detail = app.descendants(matching: .any).matching(identifier: "entity-inline-detail-person:apollos_276").firstMatch
-        scrollTo(detail, app: app); XCTAssertTrue(detail.exists)
-        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "正確")).firstMatch.exists)
-        attach(app, "actual-share-apollos-stored-detail")
-        let places = app.buttons["地名"]; scrollToTop(places, app: app); places.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
-        let map = app.descendants(matching: .any).matching(identifier: "entity-inline-map-place:alexandria_46").firstMatch
-        scrollTo(map, app: app); XCTAssertTrue(map.exists)
-        XCTAssertTrue(app.staticTexts["現在の場所"].firstMatch.exists)
-        attach(app, "actual-share-alexandria-map")
+        let detail=app.buttons["entity-detail-person:apollos_276"]
+        CurrentUI.reveal(detail,in:app);XCTAssertTrue(detail.exists);detail.tap()
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format:"label CONTAINS %@","正確")).firstMatch.waitForExistence(timeout:5))
+        attach(app,"actual-share-apollos-stored-profile")
+        app.navigationBars.buttons.firstMatch.tap();app.buttons["地図"].tap()
+        let map=app.buttons["entity-map-place:alexandria_46"]
+        CurrentUI.reveal(map,in:app);XCTAssertTrue(map.exists);map.tap()
+        XCTAssertTrue(app.staticTexts["現在の場所"].waitForExistence(timeout:5))
+        attach(app,"actual-share-alexandria-map-with-provenance")
     }
 
     @MainActor func testActsEarlyAndLateProfilesUseReadingTabs() {
@@ -318,24 +293,19 @@ final class ReadingInteractionUITests: XCTestCase {
         app.terminate()
         app.launchArguments = ["--simulator-qa", "--qa-screen=entity-pilot-reading"]; app.launch()
         XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
-        XCTAssertTrue(originalTitle.waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["アポロ"].firstMatch.waitForExistence(timeout: 5))
         attach(app, "candidate-person-card-preserved")
-        let detail = app.buttons["entity-detail-person-apollos-act18-introduction"]
+        let detail = app.buttons["entity-detail-person:apollos_276"]
         scrollTo(detail, app: app); detail.tap()
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "雄弁")).firstMatch.waitForExistence(timeout: 5))
         attach(app, "candidate-apollos-description-from-card")
         app.navigationBars.buttons.element(boundBy: 0).tap()
         app.buttons["地図"].tap()
-        XCTAssertTrue(mapLink.waitForExistence(timeout: 5))
-        attach(app, "candidate-place-card-preserved")
-        mapLink.tap(); Thread.sleep(forTimeInterval: 3)
-        attach(app, "candidate-mapkit-map-preserved")
-        let mapDetail = app.buttons["map-entity-detail-place-corinth"]
-        scrollTo(mapDetail, app: app); mapDetail.tap()
+        let corinth = app.buttons["entity-detail-place:corinth_306"]
+        scrollTo(corinth, app: app); XCTAssertTrue(corinth.exists); corinth.tap()
         XCTAssertTrue(app.staticTexts["現在の場所"].waitForExistence(timeout: 5))
-        attach(app, "candidate-corinth-description-from-map")
-        app.navigationBars.buttons.element(boundBy: 0).tap()
-        app.navigationBars.buttons.element(boundBy: 0).tap()
+        attach(app, "candidate-corinth-description-and-map")
+        app.navigationBars.buttons.firstMatch.tap()
         let alexDetail = app.buttons["entity-detail-place:alexandria_46"]
         scrollTo(alexDetail, app: app); alexDetail.tap()
         XCTAssertTrue(app.staticTexts["現在の場所"].waitForExistence(timeout: 5))
@@ -344,32 +314,29 @@ final class ReadingInteractionUITests: XCTestCase {
     @MainActor func testWikipediaReadingLinksKeepSourcesAndMaps() {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa", "--qa-screen=entity-pilot-reading"]; app.launch()
         XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
-        let detail = app.buttons["entity-detail-person-apollos-act18-introduction"]
+        let detail = app.buttons["entity-detail-person:apollos_276"]
         scrollTo(detail, app: app); detail.tap()
         let wiki = app.descendants(matching: .any).matching(identifier: "wikipedia-person:apollos_276").firstMatch
-        XCTAssertTrue(wiki.waitForExistence(timeout: 5)); XCTAssertTrue(wiki.label.contains("英語"))
-        XCTAssertTrue(app.buttons["この説明の出典"].exists)
+        scrollTo(wiki,app:app); XCTAssertTrue(wiki.exists); XCTAssertTrue(wiki.label.contains("英語"))
+        scrollTo(app.buttons["この説明の出典"],app:app); XCTAssertTrue(app.buttons["この説明の出典"].exists)
         XCTAssertTrue(app.staticTexts["外部記事には、この箇所より先の内容が含まれることがあります。"].exists)
         attach(app, "wikipedia-apollos-reading-link")
         app.buttons["この説明の出典"].tap()
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "World English Bible")).firstMatch.waitForExistence(timeout: 5))
         attach(app, "wikipedia-primary-sources-preserved")
         app.navigationBars.buttons.element(boundBy: 0).tap(); app.buttons["地図"].tap()
-        let mapLink = app.buttons["地図で概略位置を確認"].firstMatch
-        XCTAssertTrue(mapLink.waitForExistence(timeout: 5)); mapLink.tap()
-        let mapDetail = app.buttons["map-entity-detail-place-corinth"]
-        scrollTo(mapDetail, app: app); mapDetail.tap()
-        let corinthWiki = app.descendants(matching: .any).matching(identifier: "wikipedia-place:corinth_306").firstMatch
-        scrollTo(corinthWiki, app: app)
-        XCTAssertTrue(corinthWiki.exists)
+        let corinth=app.buttons["entity-detail-place:corinth_306"]
+        scrollTo(corinth,app:app);corinth.tap()
+        let corinthWiki=app.descendants(matching:.any).matching(identifier:"wikipedia-place:corinth_306").firstMatch
+        scrollTo(corinthWiki,app:app);XCTAssertTrue(corinthWiki.exists)
         XCTAssertTrue(app.staticTexts["古代コリントス"].exists)
-        attach(app, "wikipedia-ancient-corinth-from-map")
-        app.navigationBars.buttons.element(boundBy: 0).tap(); app.navigationBars.buttons.element(boundBy: 0).tap()
-        let alexDetail = app.buttons["entity-detail-place:alexandria_46"]
-        scrollTo(alexDetail, app: app); alexDetail.tap()
-        let alexWiki = app.descendants(matching: .any).matching(identifier: "wikipedia-place:alexandria_46").firstMatch
-        scrollTo(alexWiki, app: app); XCTAssertTrue(alexWiki.exists)
-        attach(app, "wikipedia-alexandria-reading-link")
+        attach(app,"wikipedia-ancient-corinth-profile")
+        app.navigationBars.buttons.firstMatch.tap()
+        let alex=app.buttons["entity-detail-place:alexandria_46"]
+        scrollTo(alex,app:app);alex.tap()
+        let alexWiki=app.descendants(matching:.any).matching(identifier:"wikipedia-place:alexandria_46").firstMatch
+        scrollTo(alexWiki,app:app);XCTAssertTrue(alexWiki.exists)
+        attach(app,"wikipedia-alexandria-profile")
     }
     @MainActor private func tapScreenFrame(_ element: XCUIElement, app: XCUIApplication) {
         let point = element.frame
@@ -386,10 +353,7 @@ final class ReadingInteractionUITests: XCTestCase {
         }
     }
     @MainActor private func scrollTo(_ element: XCUIElement, app: XCUIApplication) {
-        for _ in 0..<14 {
-            if element.exists && element.frame.minY >= 0 && element.frame.minY < app.frame.height * 0.78 && element.isHittable { return }
-            app.swipeUp()
-        }
+        CurrentUI.reveal(element, in: app)
     }
     @MainActor private func attach(_ app: XCUIApplication, _ name: String) {
         Thread.sleep(forTimeInterval: 1) // Let native navigation and disclosure animations settle before comparison images.

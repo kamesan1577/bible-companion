@@ -33,14 +33,14 @@ final class ChroniclesEntityUITests: XCTestCase {
     }
     @MainActor func testActualShareChroniclesUsesAncestorContext() {
         let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
-        let share = app.buttons["歴代誌上1章を共有する"]
+        let share = CurrentUI.menu("歴代誌上1章を共有する", in: app)
         scrollTo(share, in: app); XCTAssertTrue(share.waitForExistence(timeout: 10)); share.tap()
-        let destination = app.staticTexts.matching(NSPredicate(format: "label == %@", "聖書コンパニオン")).firstMatch
+        let destination = app.cells.matching(identifier: "聖書コンパニオン").firstMatch
         XCTAssertTrue(destination.waitForExistence(timeout: 10)); destination.tap()
         XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 10)); app.buttons["人物"].tap()
-        let detail = app.descendants(matching: .any).matching(identifier: "entity-inline-detail-person:israel_682").firstMatch
+        let detail = app.descendants(matching: .any).matching(identifier: "entity-detail-person:israel_682").firstMatch
         scrollTo(detail, in: app); XCTAssertTrue(detail.exists)
-        attach(app, "actual-share-chronicles-ancestor")
+        detail.tap(); CurrentUI.reveal(app.buttons["この説明の出典"],in:app); XCTAssertTrue(app.buttons["この説明の出典"].exists); attach(app, "actual-share-chronicles-ancestor")
     }
     @MainActor func testJabeshHasOneCanonicalPlaceAndGatedBurial() {
         let app = launch("entity-1ch-jabesh")

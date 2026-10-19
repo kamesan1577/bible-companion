@@ -15,3 +15,7 @@ Recovery: retain ignored `.cache/harness` results and adjacent `harness-pr1-evid
 2026-10-19: common checks and Swift 289/289 passed; unsigned build and all 168 resource pairs passed. Reproduced unsigned account restoration failure; UI-only ad-hoc signing is under native regression verification. Full hosted UI checks remain required before merge.
 
 Final checkpoint: macOS completed all cases (66 passed / 32 failed; 62 assertion failures), not a hang or timeout. Local iPhone Air repeated all three artwork tests successfully and reproduced the obsolete home-title/settings expectations. Tests were not skipped or weakened. See HANDOFF for exact CI links and the remaining merge gate.
+
+## Authorized contract migration continuation
+
+All 32 failures are being reviewed against current main. Preserve all 98 cases and production source/data; replace retired first-party share/AI-setup assertions with current external handoff, full draft retention, provider persistence, and no false streaming/readiness. Main/Core legacy stream coverage stays. Update entity profile navigation/source/map assertions without changing canonical IDs or aliases. Fix lazy-menu/composer visibility mechanics. Pin the screenshot fixture model and log model/runtime; diagnose artwork selection on CI separately before the full gate. No failure exclusions or automatic retry.
