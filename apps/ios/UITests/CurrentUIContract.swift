@@ -3,6 +3,35 @@ import XCTest
 /// Shared interaction mechanics, never an alternative success condition.
 @MainActor enum CurrentUI {
     static func input(_ app: XCUIApplication) -> XCUIElement { app.descendants(matching: .any).matching(identifier: "external-question-input").firstMatch }
+    @discardableResult static func selectSection(_ title: String, in app: XCUIApplication, shared: Bool? = nil) -> Bool {
+        func failed(_ message: String) -> Bool {
+            XCTContext.runActivity(named: "section-selection-failure") { activity in
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.lifetime = .keepAlways; activity.add(shot)
+                let tree = XCTAttachment(string: app.debugDescription); tree.lifetime = .keepAlways; activity.add(tree)
+            }
+            XCTFail(message); return false
+        }
+        let sharedRoot = app.descendants(matching: .any).matching(identifier: "qa-reading-share").firstMatch
+        let isShared = shared ?? sharedRoot.exists
+        let root = isShared ? sharedRoot : app.descendants(matching: .any).matching(identifier: "qa-reading-main").firstMatch
+        guard root.waitForExistence(timeout: 15) else { return failed("Expected reading surface unavailable") }
+        let control = root.segmentedControls["reading-section-tabs"]
+        guard control.waitForExistence(timeout: 5) else { return failed("Native reading segmented control unavailable") }
+        let ready = ["解説", "地図", "人物", "絵画"].map { name in
+            XCTNSPredicateExpectation(predicate: NSPredicate(format: "label MATCHES %@", ".*、([0-9]+件|件数を確認できません)"), object: control.buttons[name])
+        }
+        guard XCTWaiter.wait(for: ready, timeout: 15) == .completed else { return failed("Reading inventory labels have not settled") }
+        let tab = control.buttons[title]
+        guard tab.exists, tab.isHittable else { return failed("Native section target is not hittable: \(title)") }
+        let frame = tab.frame
+        let origin = app.coordinate(withNormalizedOffset: .zero)
+        let anchor = origin.screenPoint
+        origin.withOffset(CGVector(dx: frame.midX - anchor.x, dy: frame.midY - anchor.y)).tap()
+        guard root.scrollViews["reading-page-" + title].waitForExistence(timeout: 5), tab.isSelected else {
+            return failed("Native section selection did not reach its page: \(title)")
+        }
+        return true
+    }
     private static func geometry(_ app: XCUIApplication) -> (ceiling: CGFloat, maps: [CGRect]) {
         var ceiling = app.frame.maxY - 45
         var maps: [CGRect] = []

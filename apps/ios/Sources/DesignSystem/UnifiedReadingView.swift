@@ -214,6 +214,10 @@ struct UnifiedReadingView: View {
             }
         }
         .bibleCanvas().navigationTitle(passage.reference).navigationBarTitleDisplayMode(.inline)
+#if DEBUG && targetEnvironment(simulator)
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier(Bundle.main.bundleURL.pathExtension == "appex" ? "qa-reading-share" : "qa-reading-main")
+#endif
         .task(id: ReadingContextKey(passage: passage, translation: translation, sharedText: sharedText)) { prepareLocalState(); await model.load(passage, translation: translation) }
         .task(id: passage.label + ":" + String(retry)) { await local.loadEdits(passage) }
         .task(id: personKey) { await local.loadEntities(personKey) }

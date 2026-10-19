@@ -14,7 +14,7 @@ final class ArtworkCatalogUITests: XCTestCase {
         let art = app.buttons["絵画"]
         XCTAssertTrue(art.waitForExistence(timeout: 15))
         expectation(for: NSPredicate(format: "label CONTAINS %@", "1件"), evaluatedWith: art); waitForExpectations(timeout: 15)
-        art.tap()
+        guard CurrentUI.selectSection("絵画",in:app) else { return }
         XCTAssertTrue(app.images["artwork-image-main-" + id].waitForExistence(timeout: 30), title)
         capture(app,"catalog-main-" + object.replacingOccurrences(of: "/", with: "-"))
         if share {
@@ -23,11 +23,7 @@ final class ArtworkCatalogUITests: XCTestCase {
             XCTAssertTrue(app.buttons["閉じる"].waitForExistence(timeout: 15))
             capture(app,"catalog-share-before-select")
             let tree = XCTAttachment(string: app.debugDescription); tree.name = "catalog-share-tree"; tree.lifetime = .keepAlways; add(tree)
-            // Remote extension AX snapshots intermittently retain the underlying
-            // reader. Use the native segment's center measured in the actual
-            // default-size share screenshot; the share-only image ID below
-            // prevents an underlying main image from satisfying this test.
-            app.coordinate(withNormalizedOffset: CGVector(dx: 0.85, dy: 0.2765)).tap()
+            guard CurrentUI.selectSection("絵画",in:app,shared:true) else { return }
             XCTAssertTrue(app.images["artwork-image-share-" + id].waitForExistence(timeout: 30), title)
             capture(app,"catalog-real-share-" + object.replacingOccurrences(of: "/", with: "-"))
             app.buttons["閉じる"].tap()

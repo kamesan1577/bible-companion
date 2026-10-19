@@ -22,9 +22,10 @@ final class ReadingBadgeUITests: XCTestCase {
         capture(app, "badges-artwork-image-visible")
     }
     @MainActor func testLoadingAndFailureAreNotZero() {
-        var app = launch(["--qa-public-slow"])
+        var app = launch(["--qa-public-held"])
         waitValue(app.buttons["絵画"], "件数を確認中", timeout: 2)
         capture(app, "badges-loading-not-zero")
+        app.buttons["qa-release-public"].tap()
         waitValue(app.buttons["絵画"], "1件")
         app.terminate(); app = launch(["--qa-public-error"])
         waitValue(app.buttons["絵画"], "件数を確認できません")

@@ -3,7 +3,7 @@ import XCTest
 final class JudgesRuthEntityUITests: XCTestCase {
     @MainActor func testDanBothMeaningsAndSource() {
         let app=launch("entity-jdg-dan")
-        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout:15));app.buttons["人物"].tap()
+        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout:15));guard CurrentUI.selectSection("人物", in: app) else { return }
         let detail=app.buttons["entity-detail-person:dan_973"];scrollTo(detail,in:app);XCTAssertTrue(detail.exists);detail.tap()
         let ancestor=app.staticTexts.containing(NSPredicate(format:"label CONTAINS %@","彼らの父" )).firstMatch
         scrollTo(ancestor,in:app);XCTAssertTrue(ancestor.exists);attach(app,"jdg-dan-collective-and-ancestor")
@@ -13,7 +13,7 @@ final class JudgesRuthEntityUITests: XCTestCase {
     }
     @MainActor func testSecondLuzRemainsASeparatePlace() {
         let app=launch("entity-jdg-luz")
-        XCTAssertTrue(app.buttons["地図"].waitForExistence(timeout:15));app.buttons["地図"].tap()
+        XCTAssertTrue(app.buttons["地図"].waitForExistence(timeout:15));guard CurrentUI.selectSection("地図", in: app) else { return }
         let detail=app.buttons["entity-detail-place:luz_738"];scrollTo(detail,in:app);XCTAssertTrue(detail.exists)
         XCTAssertFalse(app.buttons["entity-detail-place:bethel_202"].exists);detail.tap();attach(app,"jdg-second-luz-distinct-place")
     }
@@ -22,7 +22,7 @@ final class JudgesRuthEntityUITests: XCTestCase {
         let share = CurrentUI.menu("ルツ記1章を共有する", in: app);XCTAssertTrue(share.waitForExistence(timeout:10));share.tap()
         let destination = app.cells.matching(identifier: "聖書コンパニオン").firstMatch
         XCTAssertTrue(destination.waitForExistence(timeout:10));destination.tap()
-        XCTAssertTrue(app.buttons["地図"].waitForExistence(timeout:10));app.buttons["地図"].tap()
+        XCTAssertTrue(app.buttons["地図"].waitForExistence(timeout:10));guard CurrentUI.selectSection("地図", in: app) else { return }
         let detail=app.descendants(matching:.any).matching(identifier:"entity-detail-place:bethlehem_218").firstMatch
         scrollTo(detail,in:app);XCTAssertTrue(detail.exists)
         XCTAssertFalse(app.descendants(matching:.any).matching(identifier:"entity-detail-place:ephrathah_404").firstMatch.exists)

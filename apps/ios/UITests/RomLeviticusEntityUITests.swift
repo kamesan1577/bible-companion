@@ -4,7 +4,7 @@ final class RomLeviticusEntityUITests: XCTestCase {
     @MainActor func testRomansOpeningShowsStoredProfileSourceAndWikipedia() {
         let app = launch("entity-rom-early")
         XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15))
-        app.buttons["人物"].tap()
+        guard CurrentUI.selectSection("人物", in: app) else { return }
 
         let paul = app.buttons["entity-detail-person:paul_2479"]
         scrollTo(paul, in: app)
@@ -22,7 +22,7 @@ final class RomLeviticusEntityUITests: XCTestCase {
     @MainActor func testRomansJacobVariantIsNotDisplayedAsIsraeliteCollective() {
         let app = launch("entity-rom-jacob")
         XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15))
-        app.buttons["人物"].tap()
+        guard CurrentUI.selectSection("人物", in: app) else { return }
 
         let jacob = app.staticTexts["ヤコブ"].firstMatch
         scrollTo(jacob, in: app)
@@ -34,11 +34,11 @@ final class RomLeviticusEntityUITests: XCTestCase {
     @MainActor func testRomansLateShowsCenchreaeCandidateMap() {
         let app = launch("entity-rom-late")
         XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15))
-        app.buttons["人物"].tap()
+        guard CurrentUI.selectSection("人物", in: app) else { return }
         XCTAssertTrue(app.staticTexts["プリスカ"].waitForExistence(timeout: 5))
         attach(app, "rom-late-people")
 
-        app.buttons["地図"].tap()
+        guard CurrentUI.selectSection("地図", in: app) else { return }
         let candidateMap = app.buttons["entity-candidate-map-place:cenchreae_281"]
         scrollTo(candidateMap, in: app)
         XCTAssertTrue(candidateMap.waitForExistence(timeout: 5))
@@ -73,7 +73,7 @@ final class RomLeviticusEntityUITests: XCTestCase {
     @MainActor func testLeviticusSinaiMountainAndWildernessRemainSeparate() {
         let app = launch("entity-lev-sinai")
         XCTAssertTrue(app.buttons["地図"].waitForExistence(timeout: 15))
-        app.buttons["地図"].tap()
+        guard CurrentUI.selectSection("地図", in: app) else { return }
 
         let mountain = app.staticTexts["シナイ山"].firstMatch
         let wilderness = app.staticTexts["シナイの荒野"].firstMatch
@@ -89,7 +89,7 @@ final class RomLeviticusEntityUITests: XCTestCase {
     @MainActor func testLeviticusJacobVariantIsNotDisplayedAsIsraeliteCollective() {
         let app = launch("entity-lev-jacob")
         XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15))
-        app.buttons["人物"].tap()
+        guard CurrentUI.selectSection("人物", in: app) else { return }
 
         let jacob = app.staticTexts["ヤコブ"].firstMatch
         scrollTo(jacob, in: app)
