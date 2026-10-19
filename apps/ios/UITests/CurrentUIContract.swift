@@ -79,16 +79,41 @@ import XCTest
     static func keyboardSend(_ app: XCUIApplication) {
         let send = app.buttons["external-question-send"]
         let keyboard = app.keyboards.firstMatch
-        guard keyboard.waitForExistence(timeout: 5) else {
-            XCTContext.runActivity(named: "missing-keyboard") { activity in
-                let shot = XCTAttachment(screenshot: app.screenshot()); shot.lifetime = .keepAlways; activity.add(shot)
-                let tree = XCTAttachment(string: app.debugDescription); tree.lifetime = .keepAlways; activity.add(tree)
+        let frame: CGRect
+        if keyboard.waitForExistence(timeout: 1) {
+            frame = keyboard.frame
+        } else {
+            // Remote extension keyboards can be visible without a host Keyboard AX node.
+            // UIKit's DEBUG-Simulator probe observes actual notification coordinates.
+            let probe = app.descendants(matching: .any).matching(identifier: "qa-keyboard-frame").firstMatch
+            func observedFrame() -> CGRect? {
+                guard probe.exists, let value = probe.value as? String else { return nil }
+                let values = value.split(separator: ",").compactMap { Double($0) }
+                guard values.count == 4, values.allSatisfy({ $0.isFinite }) else { return nil }
+                let result = CGRect(x: values[0], y: values[1], width: values[2], height: values[3])
+                guard result.width > 0, result.height > 0, result.intersection(app.frame).height > 0,
+                      result.minY > app.frame.minY, result.minY < app.frame.maxY else { return nil }
+                return result
             }
-            XCTFail("Keyboard AX node unavailable; inspect screenshot before diagnosing visibility"); return
+            let observed = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in observedFrame() != nil }, object: probe)
+            let status = XCTWaiter.wait(for: [observed], timeout: 5)
+            guard status == .completed, let measured = observedFrame() else {
+                XCTContext.runActivity(named: "missing-keyboard") { activity in
+                    let shot = XCTAttachment(screenshot: app.screenshot()); shot.lifetime = .keepAlways; activity.add(shot)
+                    let tree = XCTAttachment(string: app.debugDescription); tree.lifetime = .keepAlways; activity.add(tree)
+                }
+                XCTFail("No visible keyboard AX node or UIKit-observed screen frame"); return
+            }
+            frame = measured
+            XCTContext.runActivity(named: "UIKit-observed keyboard geometry") { activity in
+                let value = XCTAttachment(string: "Keyboard notification frame: \(measured); send target: \(send.frame)")
+                value.lifetime = .keepAlways; activity.add(value)
+            }
         }
         XCTAssertTrue(send.isEnabled); XCTAssertTrue(send.isHittable)
         XCTAssertGreaterThanOrEqual(send.frame.height, 44)
-        XCTAssertLessThanOrEqual(send.frame.maxY, keyboard.frame.minY + 2)
+        XCTAssertGreaterThan(frame.height, 0)
+        XCTAssertLessThanOrEqual(send.frame.maxY, frame.minY + 2)
     }
     static func capture(_ app: XCUIApplication, _ name: String, test: XCTestCase) {
         let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = name; shot.lifetime = .keepAlways; test.add(shot)
