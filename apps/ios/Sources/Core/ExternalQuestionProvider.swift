@@ -22,8 +22,17 @@ public struct ExternalQuestionHandoff: Sendable {
         self.provider = provider
         // Explicit absence is never replaced by a guessed translation or an AI summary.
         let original = sharedText.trimmingCharacters(in: .whitespacesAndNewlines)
-        prompt = try ChatGPTCopyPrompt.make(question: question, passage: passage, translation: translation,
-            sharedText: original.isEmpty ? "（共有した原文はこの端末にありません。訳文を推測で引用せず、参照箇所と質問に基づいて答えてください。）" : original)
+        let absent = "（共有した原文はこの端末にありません。訳文を推測で引用せず、参照箇所と質問に基づいて答えてください。）"
+        prompt = try {
+            do {
+                return try ChatGPTCopyPrompt.make(question: question, passage: passage, translation: translation,
+                    sharedText: original.isEmpty ? absent : original)
+            } catch ChatGPTCopyPrompt.Failure.missingBody {
+                // A URL-only share supplies a reference, not a quoted Bible text.
+                // All other validation errors (including limits) still propagate.
+                return try ChatGPTCopyPrompt.make(question: question, passage: passage, translation: translation, sharedText: absent)
+            }
+        }()
         if provider == .chatGPT, let direct = try? ChatGPTQuestionLink.make(prompt: prompt) { url = direct; requiresPaste = false }
         else { url = provider.homeURL; requiresPaste = true }
     }

@@ -238,15 +238,22 @@ final class ReadingInteractionUITests: XCTestCase {
         let app=XCUIApplication();app.launchArguments=["--simulator-qa"];app.launch()
         CurrentUI.openShare(app,title:"使徒18章を共有する")
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format:"label CONTAINS %@","使徒の働き 18:24–28")).firstMatch.exists)
-        app.buttons["人物"].tap()
+        let people=app.buttons["人物"]
+        expectation(for:NSPredicate(format:"label CONTAINS %@","件"),evaluatedWith:people);waitForExpectations(timeout:15)
+        people.tap()
         let detail=app.buttons["entity-detail-person:apollos_276"]
-        CurrentUI.reveal(detail,in:app);XCTAssertTrue(detail.exists);detail.tap()
+        CurrentUI.reveal(detail,in:app);XCTAssertTrue(detail.isHittable);detail.tap()
+        guard app.navigationBars["アポロ"].waitForExistence(timeout:8) else { attach(app,"share-profile-navigation-failed");XCTFail("Apollos profile destination not reached");return }
         let description=app.staticTexts.containing(NSPredicate(format:"label CONTAINS %@","正確")).firstMatch
         CurrentUI.reveal(description,in:app);XCTAssertTrue(description.exists)
         attach(app,"actual-share-apollos-stored-profile")
-        app.navigationBars.buttons.firstMatch.tap();app.buttons["地図"].tap()
+        app.navigationBars["アポロ"].buttons.firstMatch.tap()
+        let maps=app.buttons["地図"]
+        expectation(for:NSPredicate(format:"label CONTAINS %@","件"),evaluatedWith:maps);waitForExpectations(timeout:15)
+        maps.tap()
         let map=app.buttons["entity-map-place:alexandria_46"]
-        CurrentUI.reveal(map,in:app);XCTAssertTrue(map.exists);map.tap()
+        CurrentUI.reveal(map,in:app);XCTAssertTrue(map.isHittable);map.tap()
+        guard app.navigationBars["地図"].waitForExistence(timeout:8) else { attach(app,"share-map-navigation-failed");XCTFail("Alexandria map destination not reached");return }
         assertReviewedMap("アレクサンドリア", app:app)
         attach(app,"actual-share-alexandria-map-with-provenance")
     }

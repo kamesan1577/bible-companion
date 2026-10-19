@@ -1,5 +1,9 @@
 # Harness handoff
 
+## Approved URL-only fix continuation (2026-10-19)
+
+The user explicitly approved the minimal production fix and continuation at 07:15:44 UTC. `ExternalQuestionHandoff` now catches only `ChatGPTCopyPrompt.Failure.missingBody` and uses the existing honest absence notice. Other input errors and provider routes remain unchanged. Host Swift Core passed **290/290**, zero skipped. All API/common and native/UI gates are being rerun; no full acceptance or merge is claimed yet. Shared profile navigation now waits for the real inventory counts and verifies the named destination before returning, so a missing navigation cannot cascade into taps on the underlying host. The earlier blocked checkpoint below is historical evidence.
+
 ## Current checkpoint (2026-10-19, blocked; PR #1 remains open)
 
 Main is still `844005c` (0.1.23/build 24). All 98 UI methods remain; Core now has 290 tests including the newly exposed URL-only defect. No production source, API, bundled data, project/config or artwork tree was changed. The 23 releases / 199 assets were re-read with identical identities, sizes, digests and update times.

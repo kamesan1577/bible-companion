@@ -23,3 +23,7 @@ All 32 failures are being reviewed against current main. Preserve all 98 cases a
 ## Resume checkpoint
 
 The native formal gate has now been run again: build/resource verification passed; Core 289/290 passed with URL-only missingBody as the single failure. All 98 UI methods remain, but the fail-fast formal command correctly never started them. No full-suite success or merge is claimed. Current production trees and releases/assets are unchanged. See HANDOFF for the exact product blocker, verified diagnostics and required scope decision.
+
+## Approved product correction
+
+2026-10-19 07:15:44 UTC: human approval explicitly includes the narrow URL-only absence-notice fix and continuation through verification/conditional merge. Patch applied only to ExternalQuestionHandoff; Core 290/290 now passes. Full common/native/98-case UI and exact-head hosted gates are required before merge, then both hosted workflows on the merge commit through completion. No distribution or UI design changes are authorized.
