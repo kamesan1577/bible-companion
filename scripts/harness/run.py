@@ -131,6 +131,9 @@ def ios(command, device, ui_class=None):
             run(sys.executable, 'scripts/harness/verify-ios-artifact.py', app)
             run('xcrun', 'simctl', 'install', device, app, timeout=120)
             for scheme in ['BibleCompanion', 'ReadingInteractionUI']:
+                if scheme == 'ReadingInteractionUI':
+                    run(sys.executable, 'scripts/harness/seed-artwork-fixtures.py', '--device', device,
+                        '--app', app, '--ownership', result / 'device.json')
                 run(*base, '-scheme', scheme, '-destination', f'platform=iOS Simulator,id={device}',
                     '-destination-timeout', '90', '-parallel-testing-enabled', 'NO',
                     '-resultBundlePath', result / f'{scheme}.xcresult',
