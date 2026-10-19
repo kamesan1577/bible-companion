@@ -22,7 +22,7 @@ final class ArtworkCatalogUITests: XCTestCase {
             let choices = app.cells.matching(identifier: "聖書コンパニオン")
             guard choices.firstMatch.waitForExistence(timeout: 30) else {
                 capture(app, "share-destination-unavailable")
-                print("Missing cold share destination; visible cells: \(app.cells.allElementsBoundByIndex.map(\.label))")
+                print("Missing cold share destination; visible cells: \(app.cells.allElementsBoundByIndex.map(\.label))\n\(app.debugDescription)")
                 XCTFail("The system share sheet did not expose the installed extension"); return
             }
             choices.element(boundBy: choices.count-1).tap()

@@ -9,6 +9,7 @@ import XCTest
                 let shot = XCTAttachment(screenshot: app.screenshot()); shot.lifetime = .keepAlways; activity.add(shot)
                 let tree = XCTAttachment(string: app.debugDescription); tree.lifetime = .keepAlways; activity.add(tree)
             }
+            print("Native section failure: \(message)\n\(app.debugDescription)")
             XCTFail(message); return false
         }
         let sharedRoot = app.descendants(matching: .any).matching(identifier: "qa-reading-share").firstMatch
