@@ -19,7 +19,13 @@ final class ArtworkCatalogUITests: XCTestCase {
         capture(app,"catalog-main-" + object.replacingOccurrences(of: "/", with: "-"))
         if share {
             app.buttons["qa-artwork-share"].tap()
-            let choices = app.cells.matching(identifier: "聖書コンパニオン"); XCTAssertTrue(choices.firstMatch.waitForExistence(timeout: 10)); choices.element(boundBy: choices.count-1).tap()
+            let choices = app.cells.matching(identifier: "聖書コンパニオン")
+            guard choices.firstMatch.waitForExistence(timeout: 30) else {
+                capture(app, "share-destination-unavailable")
+                print("Missing cold share destination; visible cells: \(app.cells.allElementsBoundByIndex.map(\.label))")
+                XCTFail("The system share sheet did not expose the installed extension"); return
+            }
+            choices.element(boundBy: choices.count-1).tap()
             XCTAssertTrue(app.buttons["閉じる"].waitForExistence(timeout: 15))
             capture(app,"catalog-share-before-select")
             let tree = XCTAttachment(string: app.debugDescription); tree.name = "catalog-share-tree"; tree.lifetime = .keepAlways; add(tree)

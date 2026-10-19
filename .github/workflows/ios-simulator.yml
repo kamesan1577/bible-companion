@@ -56,7 +56,7 @@ jobs:
           mkdir -p "$RUNNER_TEMP/ios-results"
           # Own device, boot completion, jobs=2, explicit install, all current core/UI tests.
           # UI uses local ad-hoc Simulator signatures, never a developer identity.
-          # Per-command limits remain boot 5m, build 12m, core 10m and UI 60m (98 UI methods at integration).
+          # Per-command limits remain boot 5m, build 12m, core 10m and UI 70m (98 UI methods at integration).
           if [[ "${{ inputs.ui_suite }}" == "artwork" ]]; then
             make ios-ui UI_CLASS=ArtworkCatalogUITests 2>&1
           else

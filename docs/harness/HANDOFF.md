@@ -1,5 +1,13 @@
 # Harness handoff
 
+## Completed old-head CI follow-up
+
+Uninterrupted macOS run `39227700804` on `7179f11` completed Core 290/290 and all 98 UI methods. Two UI cases failed: the first Cleveland share-destination cell was unavailable within 10 seconds, and ShareCrash keyboard observation encountered a remote AX snapshot error inside the predicate at `app.frame`. UI execution took 3,533.843 seconds; xcodebuild including launch and result processing exceeded its 3,600-second limit. This remains a failed run. The UI command budget is now 4,200 seconds (70 minutes); the 90-minute CI step and 100-minute job remain unchanged. No case, assertion or retry policy is relaxed.
+
+Cold first-share discovery now waits up to 30 seconds for the same installed-extension cell. If absent, it records a named failure, screenshot and visible-cell labels; it never taps a substitute or retries. Keyboard verification queries its owning application process and captures the actual viewport once outside the predicate waiter. Finite, positive UIKit-observed keyboard geometry, the 44-point target, enabled/hittable and above-keyboard assertions are preserved.
+
+The healthy full local run on `f07451f` continues under the stricter original limit and is not restarted. The final changed UI cases will be verified locally afterward, and the final exact commit must pass both hosted workflows with the complete 98-case macOS suite before merge. Do not describe the earlier local full run as having executed later changes.
+
 ## Native element and owning-process correction
 
 Full local execution on 7179f11 finished all 98 cases: 95 passed / three failed / zero skipped; Core 290/290 and all 168 resource pairs passed. The 120ms press trial did not establish a full-suite fix and is superseded. Finalized failure screenshots show that the shared map action reached Alexandria's **place profile**, not its geographic map. The main reader remained on explanation after the cached-coordinate people press. The keyboard case never reached the question screen: its failure was the initial `question-draft` existence check, not answer generation or sending. The finalized hierarchy/recording remained at the QA menu. Do not attribute that case to a response/history bug.

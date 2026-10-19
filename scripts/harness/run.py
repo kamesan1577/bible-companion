@@ -138,7 +138,7 @@ def ios(command, device, ui_class=None):
                     '-destination-timeout', '90', '-parallel-testing-enabled', 'NO',
                     '-resultBundlePath', result / f'{scheme}.xcresult',
                     *([f'-only-testing:ReadingInteractionUITests/{ui_class}'] if scheme == 'ReadingInteractionUI' and ui_class else []), 'test',
-                    timeout=600 if scheme == 'BibleCompanion' else 3600)
+                    timeout=600 if scheme == 'BibleCompanion' else 4200)
         finally:
             if owned:
                 subprocess.run(['xcrun', 'simctl', 'shutdown', device], capture_output=True)

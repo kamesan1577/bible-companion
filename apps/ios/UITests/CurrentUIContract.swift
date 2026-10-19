@@ -105,7 +105,12 @@ import XCTest
         app.buttons[name].tap(); app.buttons["完了"].tap()
         XCTAssertTrue(app.buttons["external-question-send"].label.contains(name))
     }
-    static func keyboardSend(_ app: XCUIApplication) {
+    static func keyboardSend(_ host: XCUIApplication) {
+        let shared = host.descendants(matching: .any).matching(identifier: "qa-reading-share").firstMatch.exists
+        let app = shared ? XCUIApplication(bundleIdentifier: "org.example.BibleCompanion.Share") : host
+        // Read the real viewport once, outside the predicate waiter. Repeated host
+        // snapshots here can traverse a changing remote keyboard AX subtree.
+        let viewport = app.frame
         let send = app.buttons["external-question-send"]
         let keyboard = app.keyboards.firstMatch
         let frame: CGRect
@@ -120,8 +125,8 @@ import XCTest
                 let values = value.split(separator: ",").compactMap { Double($0) }
                 guard values.count == 4, values.allSatisfy({ $0.isFinite }) else { return nil }
                 let result = CGRect(x: values[0], y: values[1], width: values[2], height: values[3])
-                guard result.width > 0, result.height > 0, result.intersection(app.frame).height > 0,
-                      result.minY > app.frame.minY, result.minY < app.frame.maxY else { return nil }
+                guard result.width > 0, result.height > 0, result.intersection(viewport).height > 0,
+                      result.minY > viewport.minY, result.minY < viewport.maxY else { return nil }
                 return result
             }
             let observed = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in observedFrame() != nil }, object: probe)
