@@ -19,3 +19,7 @@ Final checkpoint: macOS completed all cases (66 passed / 32 failed; 62 assertion
 ## Authorized contract migration continuation
 
 All 32 failures are being reviewed against current main. Preserve all 98 cases and production source/data; replace retired first-party share/AI-setup assertions with current external handoff, full draft retention, provider persistence, and no false streaming/readiness. Main/Core legacy stream coverage stays. Update entity profile navigation/source/map assertions without changing canonical IDs or aliases. Fix lazy-menu/composer visibility mechanics. Pin the screenshot fixture model and log model/runtime; diagnose artwork selection on CI separately before the full gate. No failure exclusions or automatic retry.
+
+## Resume checkpoint
+
+The native formal gate has now been run again: build/resource verification passed; Core 289/290 passed with URL-only missingBody as the single failure. All 98 UI methods remain, but the fail-fast formal command correctly never started them. No full-suite success or merge is claimed. Current production trees and releases/assets are unchanged. See HANDOFF for the exact product blocker, verified diagnostics and required scope decision.

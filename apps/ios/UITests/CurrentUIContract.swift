@@ -3,27 +3,37 @@ import XCTest
 /// Shared interaction mechanics, never an alternative success condition.
 @MainActor enum CurrentUI {
     static func input(_ app: XCUIApplication) -> XCUIElement { app.descendants(matching: .any).matching(identifier: "external-question-input").firstMatch }
-    private static func composerCeiling(_ app: XCUIApplication) -> CGFloat {
-        guard let root = try? app.snapshot() else { return app.frame.maxY - 45 }
-        func find(_ node: any XCUIElementSnapshot) -> CGFloat? {
-            if node.identifier == "external-question-input", !node.frame.isEmpty { return node.frame.minY - 14 }
-            for child in node.children { if let value = find(child) { return value } }
-            return nil
+    private static func geometry(_ app: XCUIApplication) -> (ceiling: CGFloat, maps: [CGRect]) {
+        var ceiling = app.frame.maxY - 45
+        var maps: [CGRect] = []
+        guard let root = try? app.snapshot() else { return (ceiling, maps) }
+        func visit(_ node: any XCUIElementSnapshot) {
+            if node.identifier == "external-question-input", !node.frame.isEmpty { ceiling = node.frame.minY - 14 }
+            if node.elementType == .map { maps.append(node.frame) }
+            for child in node.children { visit(child) }
         }
-        return find(root) ?? app.frame.maxY - 45
+        visit(root)
+        return (ceiling, maps)
     }
     static func reveal(_ element: XCUIElement, in app: XCUIApplication, up: Bool = true) {
         for _ in 0..<24 {
             var down = !up
+            let layout = geometry(app)
             if element.exists {
                 let frame=element.frame
-                if element.isHittable && frame.minY > 75 && frame.maxY < composerCeiling(app) { return }
+                if element.isHittable && frame.minY > 75 && frame.maxY < layout.ceiling { return }
                 if frame.maxY < 75 { down = true }
             }
             // A single immutable AX snapshot supplies composer bounds after navigation. A bounded
             // short drag in the page margin also avoids panning an embedded map.
-            let start=app.coordinate(withNormalizedOffset:CGVector(dx:0.95,dy:down ? 0.40 : 0.70))
-            let end=app.coordinate(withNormalizedOffset:CGVector(dx:0.95,dy:down ? 0.70 : 0.40))
+            var x = CGFloat(0.95)
+            let bounds = app.frame
+            let point = CGPoint(x: bounds.minX + bounds.width * x, y: bounds.minY + bounds.height * (down ? 0.40 : 0.70))
+            if let map = layout.maps.first(where: { $0.contains(point) }), map.maxX + 4 < bounds.maxX - 8 {
+                x = (map.maxX + 4 - bounds.minX) / bounds.width
+            }
+            let start=app.coordinate(withNormalizedOffset:CGVector(dx:x,dy:down ? 0.40 : 0.70))
+            let end=app.coordinate(withNormalizedOffset:CGVector(dx:x,dy:down ? 0.70 : 0.40))
             start.press(forDuration:0.05,thenDragTo:end)
         }
     }
@@ -68,9 +78,17 @@ import XCTest
     }
     static func keyboardSend(_ app: XCUIApplication) {
         let send = app.buttons["external-question-send"]
+        let keyboard = app.keyboards.firstMatch
+        guard keyboard.waitForExistence(timeout: 5) else {
+            XCTContext.runActivity(named: "missing-keyboard") { activity in
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.lifetime = .keepAlways; activity.add(shot)
+                let tree = XCTAttachment(string: app.debugDescription); tree.lifetime = .keepAlways; activity.add(tree)
+            }
+            XCTFail("Keyboard AX node unavailable; inspect screenshot before diagnosing visibility"); return
+        }
         XCTAssertTrue(send.isEnabled); XCTAssertTrue(send.isHittable)
         XCTAssertGreaterThanOrEqual(send.frame.height, 44)
-        XCTAssertLessThanOrEqual(send.frame.maxY, app.keyboards.firstMatch.frame.minY + 2)
+        XCTAssertLessThanOrEqual(send.frame.maxY, keyboard.frame.minY + 2)
     }
     static func capture(_ app: XCUIApplication, _ name: String, test: XCTestCase) {
         let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = name; shot.lifetime = .keepAlways; test.add(shot)

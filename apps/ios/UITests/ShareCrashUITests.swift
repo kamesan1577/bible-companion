@@ -8,10 +8,12 @@ final class ShareCrashUITests: XCTestCase {
             let map=app.buttons.matching(NSPredicate(format:"identifier BEGINSWITH %@ OR identifier BEGINSWITH %@","entity-map-","entity-candidate-map-")).firstMatch
             CurrentUI.reveal(map,in:app);XCTAssertTrue(map.exists)
             let candidate=map.identifier.hasPrefix("entity-candidate-map-");map.tap()
-            XCTAssertTrue(app.staticTexts[candidate ? "従来資料の候補位置" : "現在の場所"].waitForExistence(timeout:8))
+            let provenance=app.staticTexts[candidate ? "従来資料の候補位置" : "位置情報の出典と権利"];CurrentUI.reveal(provenance,in:app);XCTAssertTrue(provenance.exists)
             CurrentUI.capture(app,"repeated-share-map-"+id,test:self)
             app.navigationBars.buttons.firstMatch.tap()
-            let field=CurrentUI.input(app);XCTAssertTrue(field.waitForExistence(timeout:5));field.tap();field.typeText(" map question")
+            let field=CurrentUI.input(app);XCTAssertTrue(field.waitForExistence(timeout:5))
+            let dismissKeyboard=app.buttons["キーボードを閉じる"];if dismissKeyboard.exists { dismissKeyboard.tap() }
+            field.tap();field.typeText(" map question")
             CurrentUI.keyboardSend(app)
             XCTAssertTrue((field.value as? String ?? "").contains("map question"))
             app.buttons["キーボードを閉じる"].tap()

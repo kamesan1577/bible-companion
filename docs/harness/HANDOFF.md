@@ -1,6 +1,30 @@
 # Harness handoff
 
-## Current-main integration (2026-10-19, blocked; not merged)
+## Current checkpoint (2026-10-19, blocked; PR #1 remains open)
+
+Main is still `844005c` (0.1.23/build 24). All 98 UI methods remain; Core now has 290 tests including the newly exposed URL-only defect. No production source, API, bundled data, project/config or artwork tree was changed. The 23 releases / 199 assets were re-read with identical identities, sizes, digests and update times.
+
+- `make check source-audit` completed successfully after the menu/provider migration: Vitest 655/655 across 61 files, data/job gates, 18 harness tests, 10 simulator-helper tests, OpenAPI/migrations/config and Worker dry-run. Source audit reads the Git tree rather than untracked local files.
+- `make swift`: 289 passed, 1 failed, zero skipped. The failure is `ExternalQuestionProviderTests.testURLOnlyShareUsesHonestAbsenceNotice`, throwing `ChatGPTCopyPrompt.Failure.missingBody`.
+- Formal `make ios-ui`: build and 168 resource pairs passed, then iOS Core 289 passed / 1 failed / zero skipped on an owned iPhone 17 Pro / iOS 26.0.1. The same URL-only regression failed. Fail-fast correctly stopped before the full 98 UI cases. This is a failed merge gate, not a green partial run.
+- Current-model CI artwork diagnostic [39197330598](https://github.com/kamesan1577/bible-companion/actions/runs/39197330598) passed the three unchanged share-only image assertions on the recorded iPhone 17 Pro / iOS 26.2. The old failing CI did not record its hardware model. This diagnostic is not full-suite acceptance. Linux [39197328306](https://github.com/kamesan1577/bible-companion/actions/runs/39197328306) also passed on `40252b0`.
+- The menu-helper v7 log confirms Chronicles 8/8, Home 9/9, Judges/Ruth 3/3, Kings 3/3 and Numbers/Joshua 6/6. Its process ended before suite completion and left no readable finalized result bundle; do not claim all 61 selected cases passed. Focused v8 completed 8 cases: 2 passed / 6 failed / zero skipped, including successful current source disclosure and cross-process provider/same-context draft/new-context isolation. Screenshots and AX trees were inspected before further corrections.
+- Corrections after v8 preserve the real geographic map/provenance checks, route Wikipedia through the place detail, and diagnose missing keyboard AX nodes after reopening (the system-owner query did not resolve it). The screenshot visibly contains the keyboard despite its absence from the host AX tree. Target height, enabled/hittable and keyboard-frame assertions remain. The pilot selection is 18:24–19:7, not the narrower real-share 18:24–28 fixture.
+
+Latest completed UI diagnostic `verification-v11`: **14 executed / 11 passed / 3 failed / zero skipped**. Both map-preservation/Wikipedia cases, all six Romans/Leviticus cases and all three Samuel cases passed. The three failing cases are:
+
+1. `ConversationStreamingUITests.testShareExternalDraftKeyboardCloseReopenAndEdit`: no Keyboard AX node after reopening, although the failure screenshot visibly contains the keyboard. Do not replace its real-frame assertion with a guessed screen-size frame. The SpringBoard and explicit-refocus attempts did not establish a solution.
+2. `ReadingInteractionUITests.testActualShareReadsProfilesAndMapWithoutGeneratedAnswer`: shared Alexandria map destination was not reached. The final screenshot/AX tree still shows the map list. A system banner interrupted the recorded interaction, but causation is not established; no crash report was found. Do not label this a confirmed product crash.
+3. `ShareCrashUITests.testRepeatedActs2815AndOtherPlaceMapsWithKeyboard`: URL-only send remains disabled; later repetitions also lack the Keyboard AX node.
+
+The screen-coordinate tap trial `verification-v12` re-ran these three cases and remained red. That ineffective trial was reverted; v11 interaction behavior is retained, with a more accurate keyboard-failure diagnostic. The right-edge 0.99 scroll trial was interrupted after reproducing a non-scrolling region; the retained helper uses the known 0.95 path and actual Map AX bounds when the start point overlaps a map. These are diagnostic runs, not automatic test retries or full 98-case acceptance.
+
+All final evidence remains adjacent to the checkout under `harness-pr1-evidence/`, not in the public Git tree: `current-common-v8.log`, `current-swift-v8.log`, `current-ios-gate-v9.log` and its xcresult summary, plus v8/v11/v12 logs, exported screenshots and AX trees. The full formal gate and current private-product regression remain failed. No new hosted workflow is dispatched on a known-red gate; no merge or post-merge run is claimed.
+
+**Exact product blocker:** A nonempty URL-only original reaches `ExternalQuestionHandoff`; `ChatGPTCopyPrompt` then strips URL lines and throws `missingBody`, leaving send disabled. Empty originals already use an honest no-original notice. A minimal proposed patch routes only `missingBody` through that existing absence path; it is not applied because changing this production behavior exceeds this task’s preserve-current-behavior scope. Do not remove the failing regression, accept disabled send as success, or restore the removed internal AI. Review that product fix separately or explicitly authorize the scope expansion, then rerun all 290 Core / 98 UI tests and both exact-head hosted workflows. Merge only after those pass, followed by both workflows on the merge SHA through completion. No merge or post-merge CI has occurred.
+
+## Initial current-main integration evidence (2026-10-19)
+
 
 See [PR #1 integration plan](PR1-INTEGRATION.md). Baseline: main `844005c` (0.1.23/build 24), PR `d52eeee`. Current core has 289 tests; UI inventory has 98 test methods; bundled Core resources have 168 files per app/extension. The results below are historical v0.1.10 evidence and do not establish acceptance of current main.
 

@@ -40,7 +40,7 @@ A small fix needs a reproducer, implementation and relevant tests. A longer task
 
 ## CI and cost
 
-The existing Linux and macOS workflows remain **manual dispatch**: do not silently enable hosted runner or artifact costs. They have read-only repository permissions and pinned action commits. Linux uses `make check` and source audit. macOS runs the same `make ios-ui` command as local: dedicated booted device, two build workers, app/extension resource verification, core and `ReadingInteractionUI` tests. Native commands need no Node/npm installation; those tools are required for backend/setup/check commands. Boot/build/core/UI limits remain 5/12/10/20 minutes. Artifact upload remains opt-in with one-day retention. Dispatch only under an existing allowed Actions quota; local commands are the same verification path. A submitted PR does not imply that hosted CI ran.
+The existing Linux and macOS workflows remain **manual dispatch**: do not silently enable hosted runner or artifact costs. They have read-only repository permissions and pinned action commits. Linux uses `make check` and source audit. macOS runs the same `make ios-ui` command as local: dedicated booted device, two build workers, app/extension resource verification, core and `ReadingInteractionUI` tests. Native commands need no Node/npm installation; those tools are required for backend/setup/check commands. Boot/build/core/UI limits are 5/12/10/60 minutes; the full hosted harness step allows 90 minutes. Artifact upload remains opt-in with one-day retention. Dispatch only under an existing allowed Actions quota; local commands are the same verification path. A submitted PR does not imply that hosted CI ran.
 
 ## Sources and design decisions
 

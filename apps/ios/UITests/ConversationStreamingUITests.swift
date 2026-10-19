@@ -43,6 +43,9 @@ final class ConversationStreamingUITests: XCTestCase {
         let dismiss = app.otherElements["PopoverDismissRegion"]; if dismiss.waitForExistence(timeout: 2) { dismiss.tap() }
         CurrentUI.openShare(app)
         XCTAssertEqual(CurrentUI.input(app).value as? String, draft)
+        // Explicitly dismiss inherited focus, then reopen the keyboard by user action.
+        let dismissKeyboard=app.buttons["キーボードを閉じる"]
+        if dismissKeyboard.exists { dismissKeyboard.tap() }
         CurrentUI.input(app).tap(); CurrentUI.input(app).typeText(" follow-up")
         XCTAssertTrue((CurrentUI.input(app).value as? String ?? "").contains("follow-up"))
         CurrentUI.keyboardSend(app); attach(app,"share-handoff-close-reopen-edit")
