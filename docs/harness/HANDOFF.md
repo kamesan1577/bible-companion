@@ -1,12 +1,20 @@
 # Harness handoff
 
-## Current-main integration (2026-10-19, in progress)
+## Current-main integration (2026-10-19, blocked; not merged)
 
 See [PR #1 integration plan](PR1-INTEGRATION.md). Baseline: main `844005c` (0.1.23/build 24), PR `d52eeee`. Current core has 289 tests; UI inventory has 98 test methods; bundled Core resources have 168 files per app/extension. The results below are historical v0.1.10 evidence and do not establish acceptance of current main.
 
 Reproduced integration defects: artifact validation accepted a missing app/extension resource copy (two new mutation tests failed before the fix); unsigned UI failed `UnifiedReadingUITests.testDifferentAccountCannotReadDraftAndOriginalAccountCanRestore` at the restoration assertion. The artifact gate now checks both copies, and only the UI command uses local ad-hoc Simulator signatures with existing App Group entitlements. Unsigned app/device build gates remain unsigned. The complete current UI suite has a 60-minute command limit (CI step 90/job 100), replacing the obsolete 18-test/20-minute assumption. No assertions are removed or automatically retried.
 
-Local integration so far: Node 24 `make setup check source-audit` passed; Swift 289/289 passed; unsigned Simulator app/embedded extension build passed; all 168 Core resource files match in both app and extension. Python 3.9 harness and Simulator helper tests passed, including the resource regressions. Current UI and exact-head hosted checks are pending.
+Local integration so far: Node 24 `make setup check source-audit` passed; Swift 289/289 passed; unsigned Simulator app/embedded extension build passed; all 168 Core resource files match in both app and extension. Python 3.9 harness and Simulator helper tests passed, including the resource regressions. Local current UI passed 18/18, plus system-dark Glass 2/2, with screenshots inspected. Linux CI [39190467948](https://github.com/kamesan1577/bible-companion/actions/runs/39190467948) passed on `47114f4` (655 Vitest tests / 61 files plus the other common gates). Unsigned device-IPA generation also passed.
+
+Full hosted macOS CI [39190469573](https://github.com/kamesan1577/bible-companion/actions/runs/39190469573) **failed** on `47114f4`: app/extension build, all 168 resource pairs and iOS core 289/289 passed; UI ran all 98 cases with 66 passed, 32 failed and 62 assertion failures. UI execution took 2820.551 seconds; the whole harness step took about 59 minutes. It finished normally with xcodebuild exit 65, not a hang or timeout. No test was automatically retried or excluded; artifact upload remained disabled.
+
+Failures include old Share identifiers (`share-question-draft`, `share-ai-settings`), old commentary-title/exact-label expectations and QA-menu visibility assumptions. A focused local `HomeShareUXUITests.testHomeDiscoveryAndSetup` reproduced failures at lines 19/20/24: the discovery card exists and opens the current Acts 18:24–28 reader, but the expected old title/standalone name and old AI-settings control do not match the current screen. The screenshot shows the current “アポロと夫妻の個別指導” commentary and external-provider composer. Do not restore old app controls or old data just to make these tests green.
+
+All three ArtworkCatalog main images loaded in CI, but the share-only image assertion failed in all three cases after the fixed-coordinate tab tap. The same three tests passed locally on both iPhone 17 Pro and iPhone Air / iOS 26.0. A specific device or runtime cause is **not established**. CI used Xcode 26.3 / iOS 26.2; live job logs returned HTTP 404 until completion, and optional Xcode attachments were not uploaded. Inspect the actual CI remote-extension screenshot/AX hierarchy and profile before changing its selector; do not replace the share-only image assertion with an underlying main-image match.
+
+**Merge gate remains blocked.** Bring the retired/stale UI contracts forward with explicit current-behavior coverage, diagnose the CI share-artwork interaction, then rerun both workflows on the resulting exact head before merging. Post-merge CI has not run because no merge occurred. Production source/data/config trees remain identical to main `844005c`; version 0.1.23/build 24 and all 43 artwork records remain unchanged. The 23 releases / 199 assets were read back with identical IDs, names, sizes, digests and update times. No release, feed or deployment was changed.
 
 ## Historical harness evidence
 
