@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "book": "2CH",
+  "entityID": "place:egypt_259",
+  "profilePath": "drafts/places_1/2CH_place_egypt_259.json",
+  "profileSHA256": null,
+  "draftSHA256": "f6e0dada7c03d6e33f589adee4a6236068a012f510aaddcdcbfc1a7cc682b6a0",
+  "assignment": {
+    "path": "assignments/batch02/places_1.json",
+    "sha256": "acf87fc46f240cb55e2804941a80d9fa99e688d8b2e138a2166e2a676c0b64f3"
+  },
+  "fixedWitness": {
+    "path": "inventory/targets/chronicles2-web-verses.json",
+    "sha256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8",
+    "version": "webp-usfx-2026-10-13-35a6adf626e5"
+  },
+  "primaryChecks": [
+    {
+      "ref": "2CH 7:8",
+      "text": "So Solomon held the feast at that time for seven days, and all Israel with him, a very great assembly, from the entrance of Hamath to the brook of Egypt.",
+      "sourceURL": "https://ebible.org/engwebp/2CH07.htm#V8",
+      "sourceTextSHA256": "0c3000384b67a93856d559a6162fd6d8a3c799add2fb634ec6cae90e1dfbd558",
+      "previousContext": "Moreover Solomon made the middle of the court that was before the LORD’s house holy; for there he offered the burnt offerings and the fat of the peace offerings, because the bronze altar which Solomon had made was not able to receive the burnt offering, the meal offering, and the fat.",
+      "nextContext": "On the eighth day, they held a solemn assembly; for they kept the dedication of the altar seven days, and the feast seven days.",
+      "decisionJa": "固定WEBは「エジプトの川」と記し、国エジプト自体を場所として挙げていない。地名候補IDを河川へ読み替えず除外。"
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "chapter": 7,
+      "verse": 8,
+      "reasonJa": "固定WEBは「エジプトの川」と述べるのみで、エジプト国の用例ではない。このIDを河川と同一視しない。"
+    }
+  ],
+  "wikipediaRead": null,
+  "wikipediaSearches": {
+    "status": "not-applicable-primary-text-candidate-rejected",
+    "queries": [
+      "site:en.wikipedia.org/wiki/ Egypt biblical place Chronicles",
+      "site:en.wikipedia.org/wiki/ \"brook of Egypt\" Bible"
+    ],
+    "readMismatchCandidates": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Brook_of_Egypt",
+        "title": "Brook of Egypt",
+        "mismatchJa": "検索結果に出た記事名は「Brook of Egypt」。これは国名ではなく境界水域の候補なので、2歴代誌7:8の国エジプトIDには結び付けない。記事本文をこの保留判定の根拠には使っていない。",
+        "bodyRead": false
+      }
+    ],
+    "resultSummaryJa": "「エジプトの川」に関連するWikipedia記事としてBrook of Egyptを検索結果で確認したが、対象は国ではなく境界水域である。国エジプトを指す2歴代誌7:8の用例とは一致しないためprofileを保留する。"
+  },
+  "candidateCoordinate": {
+    "status": "not applicable; text candidate absent",
+    "coordinate": "null",
+    "decisionReasonJa": "候補用例は固定本文にないため地図候補を採用しない。"
+  },
+  "sourceRights": [],
+  "checkedAtUTC": "2026-10-16T05:32:33Z"
+}

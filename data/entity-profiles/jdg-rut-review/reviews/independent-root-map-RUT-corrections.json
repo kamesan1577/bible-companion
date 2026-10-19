@@ -1,0 +1,512 @@
+{
+  "book": "RUT",
+  "reviewType": "independent-third-reader-closure-of-root-map-corrections",
+  "reviewerRole": "このレビュアーはRUT全書の元map作者ではなく、rootが追加した12件を独立照合した。",
+  "reviewedAtUTC": "2026-10-16T00:21:43.792484+00:00",
+  "inputs": {
+    "correctionReportPath": "reviews/root-map-RUT-corrections.json",
+    "correctionReportSHA256": "3d1d288630f3682a11a9bac1f3761e5a48390a84c3ce5ce8c30130a22db3ba74",
+    "declaredInputMapSHA256": "edc668d4e52eebe2b1131b5427c57cdd53509ec07e41c449c840d340054a03c2",
+    "declaredOutputMapSHA256": "304660124a16b2b8d9d2227453e845e216e49cf4b462764fe36804a8d239df6e",
+    "currentMapPath": "reviews/verse-map-RUT-01-04.json",
+    "currentMapSHA256": "304660124a16b2b8d9d2227453e845e216e49cf4b462764fe36804a8d239df6e",
+    "fixedWitnessPath": "inventory/targets/ruth-web-verses.json",
+    "fixedWitnessSHA256": "6983f18b0ba2cde288120d82062bf8df72a8e32a911587b35c66480bca231b49",
+    "fixedWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+    "entityIndexPath": "candidate/apps/ios/Sources/Core/Resources/entity-index.json",
+    "entityIndexSHA256": "dfe6fba1109f192548e28645cf085ddafe3baf7820d200e2e28da486dd98f11a"
+  },
+  "methodJa": "12修正行について固定WEBの節本文を現物から照合し、代名詞・呼称は明示名の初出節と必要な前後文脈を併読した。現マップの修正後行とcanonical entity indexのID/kind/nameも確認。候補IDや修正者の説明だけでは承認していない。地理資料・プロフィール・Wikipediaは範囲外。",
+  "counts": {
+    "pass": 8,
+    "qualified": 4,
+    "fail": 0
+  },
+  "result": "all-12-source-and-row-matches; 4 collective-ethnonym ID mappings remain qualified; row-level rationale corruption noted",
+  "items": [
+    {
+      "chapter": 1,
+      "verse": 4,
+      "entityID": "person:mahlon_1897",
+      "status": "pass",
+      "before": null,
+      "proposedAfter": {
+        "entityID": "person:mahlon_1897",
+        "relationship": "context",
+        "reasonJa": "妻を迎えたtheyは1:2–3で名が示された二人の息子。どちらの妻がルツかはまだ明示されない。"
+      },
+      "currentMapRow": {
+        "entityID": "person:mahlon_1897",
+        "relationship": "context",
+        "reasonJa": "妻を迎えたtheyは1:2–3で名が示された二人の息子。どちらの妻がルツかはまだ明示されない。"
+      },
+      "sourceText": "They took for themselves wives of the women of Moab. The name of the one was Orpah, and the name of the other was Ruth. They lived there about ten years.",
+      "sourceTextSHA256": "ed8b471d3e0420a7f6e6e5d6d6e2e12a2535a35adaeb67a5d13e69f55772e7b3",
+      "sourceURL": "https://ebible.org/engwebp/RUT01.htm#V4",
+      "surroundingFixedText": [
+        {
+          "chapter": 1,
+          "verse": 2,
+          "sourceText": "The name of the man was Elimelech, and the name of his wife Naomi. The names of his two sons were Mahlon and Chilion, Ephrathites of Bethlehem Judah. They came into the country of Moab and lived there.",
+          "sourceTextSHA256": "6ed9bec626ad9ffdab8f74a26beaf6c3693fe6d9893df8b90477331c30cbfd31",
+          "sourceURL": "https://ebible.org/engwebp/RUT01.htm#V2"
+        },
+        {
+          "chapter": 1,
+          "verse": 3,
+          "sourceText": "Elimelech, Naomi’s husband, died; and she was left with her two sons.",
+          "sourceTextSHA256": "31bf507012f62a6eb56c1202caae832c34de26d362994ed71e1267d253885e53",
+          "sourceURL": "https://ebible.org/engwebp/RUT01.htm#V3"
+        }
+      ],
+      "canonicalEntity": {
+        "id": "person:mahlon_1897",
+        "kind": "person",
+        "name": "Mahlon"
+      },
+      "basisJa": "1:2でMahlonとChilionが息子として名指され、1:4のtheyはこの二人。Orpah/Ruthとの夫婦対応は4:10のMahlon言及まで限定される。",
+      "issues": []
+    },
+    {
+      "chapter": 1,
+      "verse": 4,
+      "entityID": "person:chilion_940",
+      "status": "pass",
+      "before": null,
+      "proposedAfter": {
+        "entityID": "person:chilion_940",
+        "relationship": "context",
+        "reasonJa": "妻を迎えたtheyは1:2–3で名が示された二人の息子。オルパ/ルツとの個別対応を推定しない。"
+      },
+      "currentMapRow": {
+        "entityID": "person:chilion_940",
+        "relationship": "context",
+        "reasonJa": "妻を迎えたtheyは1:2–3で名が示された二人の息子。オルパ/ルツとの個別対応を推定しない。"
+      },
+      "sourceText": "They took for themselves wives of the women of Moab. The name of the one was Orpah, and the name of the other was Ruth. They lived there about ten years.",
+      "sourceTextSHA256": "ed8b471d3e0420a7f6e6e5d6d6e2e12a2535a35adaeb67a5d13e69f55772e7b3",
+      "sourceURL": "https://ebible.org/engwebp/RUT01.htm#V4",
+      "surroundingFixedText": [
+        {
+          "chapter": 1,
+          "verse": 2,
+          "sourceText": "The name of the man was Elimelech, and the name of his wife Naomi. The names of his two sons were Mahlon and Chilion, Ephrathites of Bethlehem Judah. They came into the country of Moab and lived there.",
+          "sourceTextSHA256": "6ed9bec626ad9ffdab8f74a26beaf6c3693fe6d9893df8b90477331c30cbfd31",
+          "sourceURL": "https://ebible.org/engwebp/RUT01.htm#V2"
+        },
+        {
+          "chapter": 1,
+          "verse": 3,
+          "sourceText": "Elimelech, Naomi’s husband, died; and she was left with her two sons.",
+          "sourceTextSHA256": "31bf507012f62a6eb56c1202caae832c34de26d362994ed71e1267d253885e53",
+          "sourceURL": "https://ebible.org/engwebp/RUT01.htm#V3"
+        }
+      ],
+      "canonicalEntity": {
+        "id": "person:chilion_940",
+        "kind": "person",
+        "name": "Chilion"
+      },
+      "basisJa": "1:2で二人の息子の一人として名指され、1:4のtheyに含まれる。妻との対応を推定しない理由も適切。",
+      "issues": []
+    },
+    {
+      "chapter": 1,
+      "verse": 18,
+      "entityID": "person:naomi_2147",
+      "status": "pass",
+      "before": {
+        "entityID": "person:naomi_2147",
+        "relationship": "context"
+      },
+      "proposedAfter": {
+        "entityID": "person:naomi_2147",
+        "relationship": "direct",
+        "reasonJa": "Naomiの名が決意を見て勧めをやめた人物として明記される。"
+      },
+      "currentMapRow": {
+        "entityID": "person:naomi_2147",
+        "relationship": "direct",
+        "reasonJa": "Naomiの名が決意を見て勧めをやめた人物として明記される。"
+      },
+      "sourceText": "When Naomi saw that she was determined to go with her, she stopped urging her.",
+      "sourceTextSHA256": "554f41b8104cb06cfaf09f3f928ec4dcfdfb22ce8a39a3b2a29841ce3ef219b8",
+      "sourceURL": "https://ebible.org/engwebp/RUT01.htm#V18",
+      "surroundingFixedText": [
+        {
+          "chapter": 1,
+          "verse": 17,
+          "sourceText": "Where you die, I will die, and there I will be buried. May the LORD do so to me, and more also, if anything but death parts you and me.”",
+          "sourceTextSHA256": "9a51d5b36366fdaaf1cbf62e7e212cbf4322050dc1e00c4e0b14054f118bcad2",
+          "sourceURL": "https://ebible.org/engwebp/RUT01.htm#V17"
+        }
+      ],
+      "canonicalEntity": {
+        "id": "person:naomi_2147",
+        "kind": "person",
+        "name": "Naomi"
+      },
+      "basisJa": "固定WEB本文にNaomiが明記されるためdirectは正しい。she/herの先行詞も一貫してNaomi/Ruth。",
+      "issues": []
+    },
+    {
+      "chapter": 2,
+      "verse": 2,
+      "entityID": "person:moab_2103",
+      "status": "qualified",
+      "before": null,
+      "proposedAfter": {
+        "entityID": "person:moab_2103",
+        "relationship": "direct",
+        "reasonJa": "Ruth the Moabitessというモアブの民に関わる呼称を明記。族祖個人の用例ではない。"
+      },
+      "currentMapRow": {
+        "entityID": "person:moab_2103",
+        "relationship": "direct",
+        "reasonJa": "Ruth the Moabitessというモアブの民に関わる呼称を明記。族祖個人の用例ではない。"
+      },
+      "sourceText": "Ruth the Moabitess said to Naomi, “Let me now go to the field, and glean among the ears of grain after him in whose sight I find favor.” She said to her, “Go, my daughter.”",
+      "sourceTextSHA256": "288cb9784f99e807ab51b59b98ca907d516b573de4d1e225c5887ddf9f9807c0",
+      "sourceURL": "https://ebible.org/engwebp/RUT02.htm#V2",
+      "surroundingFixedText": [
+        {
+          "chapter": 1,
+          "verse": 22,
+          "sourceText": "So Naomi returned, and Ruth the Moabitess, her daughter-in-law, with her, who returned out of the country of Moab. They came to Bethlehem in the beginning of barley harvest.",
+          "sourceTextSHA256": "d4017c7c6a2a31d557ce6cbcef7aa4034f7dae1a4b79646a6f998bcea4f5d908",
+          "sourceURL": "https://ebible.org/engwebp/RUT01.htm#V22"
+        },
+        {
+          "chapter": 2,
+          "verse": 1,
+          "sourceText": "Naomi had a relative of her husband’s, a mighty man of wealth, of the family of Elimelech, and his name was Boaz.",
+          "sourceTextSHA256": "e62c0a8049b4ed05234eb8672029467cd544f94cb7c4c696b6335fb5bbaebe3b",
+          "sourceURL": "https://ebible.org/engwebp/RUT02.htm#V1"
+        }
+      ],
+      "canonicalEntity": {
+        "id": "person:moab_2103",
+        "kind": "person",
+        "name": "Moab"
+      },
+      "basisJa": "“Ruth the Moabitess”はRuthの民族的呼称であり、族祖Moab個人ではないというreasonは本文に即す。ただしcanonical indexのentity kindはpersonでIDもperson:moab_2103のため、民族・集合的な参照を個人ノードへ結ぶ意味論は曖昧。対象文言を集団として保持する根拠/方針を別途明示する必要がある。",
+      "issues": []
+    },
+    {
+      "chapter": 2,
+      "verse": 11,
+      "entityID": "person:naomi_2147",
+      "status": "pass",
+      "before": null,
+      "proposedAfter": {
+        "entityID": "person:naomi_2147",
+        "relationship": "context",
+        "reasonJa": "Ruthのmother-in-lawは1:22/2:6で明らかなナオミ。夫の個別名マフロンはここでは推定しない。"
+      },
+      "currentMapRow": {
+        "entityID": "person:naomi_2147",
+        "relationship": "context",
+        "reasonJa": "Ruthのmother-in-lawは1:22/2:6で明らかなナオミ。夫の個別名マフロンはここでは推定しない。"
+      },
+      "sourceText": "Boaz answered her, “I have been told all about what you have done for your mother-in-law since the death of your husband, and how you have left your father, your mother, and the land of your birth, and have come to a people that you didn’t know before.",
+      "sourceTextSHA256": "d3763a3d38f38400df16d0004e34ff6d464bc7445a21c4d25bdb726635363828",
+      "sourceURL": "https://ebible.org/engwebp/RUT02.htm#V11",
+      "surroundingFixedText": [
+        {
+          "chapter": 2,
+          "verse": 6,
+          "sourceText": "The servant who was set over the reapers answered, “It is the Moabite lady who came back with Naomi out of the country of Moab.",
+          "sourceTextSHA256": "369dc86059f2609edb629597797ab32cb4e7a860d6fdf98cfd52923935bb9867",
+          "sourceURL": "https://ebible.org/engwebp/RUT02.htm#V6"
+        },
+        {
+          "chapter": 2,
+          "verse": 10,
+          "sourceText": "Then she fell on her face and bowed herself to the ground, and said to him, “Why have I found favor in your sight, that you should take knowledge of me, since I am a foreigner?”",
+          "sourceTextSHA256": "bbdf9385391d5e7ccd7e9f531640598de76de8c548badc9b47e2ce4195c30aa6",
+          "sourceURL": "https://ebible.org/engwebp/RUT02.htm#V10"
+        }
+      ],
+      "canonicalEntity": {
+        "id": "person:naomi_2147",
+        "kind": "person",
+        "name": "Naomi"
+      },
+      "basisJa": "BoazがRuthに語りかけ、her mother-in-lawは1:1–2で紹介されたNaomi。配偶者名を推測しない理由は適切。",
+      "issues": []
+    },
+    {
+      "chapter": 2,
+      "verse": 20,
+      "entityID": "person:ruth_2450",
+      "status": "pass",
+      "before": null,
+      "proposedAfter": {
+        "entityID": "person:ruth_2450",
+        "relationship": "context",
+        "reasonJa": "ナオミが語るher daughter-in-lawは直前2:19以来のルツ。"
+      },
+      "currentMapRow": {
+        "entityID": "person:ruth_2450",
+        "relationship": "context",
+        "reasonJa": "ナオミが語るher daughter-in-lawは直前2:19以来のルツ。"
+      },
+      "sourceText": "Naomi said to her daughter-in-law, “May he be blessed by the LORD, who has not abandoned his kindness to the living and to the dead.” Naomi said to her, “The man is a close relative to us, one of our near kinsmen.”",
+      "sourceTextSHA256": "e4f7a6623207d22b32b0fbd6378c8c1f5838ed325a71e4cb89e209576564de57",
+      "sourceURL": "https://ebible.org/engwebp/RUT02.htm#V20",
+      "surroundingFixedText": [
+        {
+          "chapter": 2,
+          "verse": 19,
+          "sourceText": "Her mother-in-law said to her, “Where have you gleaned today? Where have you worked? Blessed be he who noticed you.” She told her mother-in-law with whom she had worked, “The man’s name with whom I worked today is Boaz.”",
+          "sourceTextSHA256": "6c73d950c31cb5cb6e122de2e5e52508c29f879ef16a9ef2d4d4991423488dda",
+          "sourceURL": "https://ebible.org/engwebp/RUT02.htm#V19"
+        }
+      ],
+      "canonicalEntity": {
+        "id": "person:ruth_2450",
+        "kind": "person",
+        "name": "Ruth"
+      },
+      "basisJa": "“her daughter-in-law”は2:19以降NaomiがRuthへ話している流れでRuthを指す。",
+      "issues": []
+    },
+    {
+      "chapter": 2,
+      "verse": 21,
+      "entityID": "person:moab_2103",
+      "status": "qualified",
+      "before": null,
+      "proposedAfter": {
+        "entityID": "person:moab_2103",
+        "relationship": "direct",
+        "reasonJa": "Ruth the Moabitessは民に関わる呼称の明記。モアブという男性個人の発話ではない。"
+      },
+      "currentMapRow": {
+        "entityID": "person:moab_2103",
+        "relationship": "direct",
+        "reasonJa": "Ruth the Moabitessは民に関わる呼称の明記。モアブという男性個人の発話ではない。"
+      },
+      "sourceText": "Ruth the Moabitess said, “Yes, he said to me, ‘You shall stay close to my young men until they have finished all my harvest.’”",
+      "sourceTextSHA256": "259d5ac46302947ef8f2eac3b9deec49e0fd0afcdc12e7799e56a9d2eafc120d",
+      "sourceURL": "https://ebible.org/engwebp/RUT02.htm#V21",
+      "surroundingFixedText": [
+        {
+          "chapter": 2,
+          "verse": 20,
+          "sourceText": "Naomi said to her daughter-in-law, “May he be blessed by the LORD, who has not abandoned his kindness to the living and to the dead.” Naomi said to her, “The man is a close relative to us, one of our near kinsmen.”",
+          "sourceTextSHA256": "e4f7a6623207d22b32b0fbd6378c8c1f5838ed325a71e4cb89e209576564de57",
+          "sourceURL": "https://ebible.org/engwebp/RUT02.htm#V20"
+        }
+      ],
+      "canonicalEntity": {
+        "id": "person:moab_2103",
+        "kind": "person",
+        "name": "Moab"
+      },
+      "basisJa": "本文は“Ruth the Moabitess”と明記し、土地/族祖個人ではなく民族的呼称。ただしperson:moab_2103のperson種別へ集合的呼称を接続する同一性の限界は残る。",
+      "issues": []
+    },
+    {
+      "chapter": 3,
+      "verse": 12,
+      "entityID": "person:ruth_2450",
+      "status": "pass",
+      "before": null,
+      "proposedAfter": {
+        "entityID": "person:ruth_2450",
+        "relationship": "context",
+        "reasonJa": "ボアズが近い親族について応答する相手は3:9以来のルツ。無名のより近い親族に名前を作らない。"
+      },
+      "currentMapRow": {
+        "entityID": "person:ruth_2450",
+        "relationship": "context",
+        "reasonJa": "ボアズが近い親族について応答する相手は3:9以来のルツ。無名のより近い親族に名前を作らない。"
+      },
+      "sourceText": "Now it is true that I am a near kinsman. However, there is a kinsman nearer than I.",
+      "sourceTextSHA256": "2e95cb544e1f29a890d74300a0e79990bbac91ee737477965c52259616a7a4d7",
+      "sourceURL": "https://ebible.org/engwebp/RUT03.htm#V12",
+      "surroundingFixedText": [
+        {
+          "chapter": 3,
+          "verse": 9,
+          "sourceText": "He said, “Who are you?” She answered, “I am Ruth your servant. Therefore spread the corner of your garment over your servant; for you are a near kinsman.”",
+          "sourceTextSHA256": "b797ca257a18e21ee4dcd63a6e30faa55d1ff06214449b5d1dfeb59780ed961b",
+          "sourceURL": "https://ebible.org/engwebp/RUT03.htm#V9"
+        },
+        {
+          "chapter": 3,
+          "verse": 11,
+          "sourceText": "Now, my daughter, don’t be afraid. I will do to you all that you say; for all the city of my people knows that you are a worthy woman.",
+          "sourceTextSHA256": "fc2db5e5f8b56667a2835b04bd7835d03816c5ca104cedc41043179c045a1888",
+          "sourceURL": "https://ebible.org/engwebp/RUT03.htm#V11"
+        }
+      ],
+      "canonicalEntity": {
+        "id": "person:ruth_2450",
+        "kind": "person",
+        "name": "Ruth"
+      },
+      "basisJa": "3:9でRuthが名乗り、3:12は同じ対話のBoazの返答。匿名の近親者を同定していない。",
+      "issues": []
+    },
+    {
+      "chapter": 4,
+      "verse": 5,
+      "entityID": "person:moab_2103",
+      "status": "qualified",
+      "before": null,
+      "proposedAfter": {
+        "entityID": "person:moab_2103",
+        "relationship": "direct",
+        "reasonJa": "Ruth the Moabitessが明記される。地理的なモアブ国内を指す文ではない。"
+      },
+      "currentMapRow": {
+        "entityID": "person:moab_2103",
+        "relationship": "direct",
+        "reasonJa": "Ruth the Moabitessが明記される。地理的なモアブ国内を指す文ではない。"
+      },
+      "sourceText": "Then Boaz said, “On the day you buy the field from the hand of Naomi, you must buy it also from Ruth the Moabitess, the wife of the dead, to raise up the name of the dead on his inheritance.”",
+      "sourceTextSHA256": "ad2db2b58f6443a9d11f2498137fa0e37e79ef44245e2d80d14c9ac3527f86cf",
+      "sourceURL": "https://ebible.org/engwebp/RUT04.htm#V5",
+      "surroundingFixedText": [
+        {
+          "chapter": 4,
+          "verse": 4,
+          "sourceText": "I thought I should tell you, saying, ‘Buy it before those who sit here, and before the elders of my people.’ If you will redeem it, redeem it; but if you will not redeem it, then tell me, that I may know. For there is no one to redeem it besides you; and I am after you.” He said, “I will redeem it.”",
+          "sourceTextSHA256": "42ac828f8cf2b01f7ad34ef2b4965579c29d6b6c5f5821221ed6032d215946b8",
+          "sourceURL": "https://ebible.org/engwebp/RUT04.htm#V4"
+        }
+      ],
+      "canonicalEntity": {
+        "id": "person:moab_2103",
+        "kind": "person",
+        "name": "Moab"
+      },
+      "basisJa": "Ruth the Moabitessの明記を民族的呼称として区別した説明は適切。canonical person IDが族祖本人を表す以上、集合的呼称の対応づけは qualified。",
+      "issues": []
+    },
+    {
+      "chapter": 4,
+      "verse": 10,
+      "entityID": "person:moab_2103",
+      "status": "qualified",
+      "before": null,
+      "proposedAfter": {
+        "entityID": "person:moab_2103",
+        "relationship": "direct",
+        "reasonJa": "Ruth the Moabitessが明記される。個人ルツに付された民の呼称として区別する。"
+      },
+      "currentMapRow": {
+        "entityID": "person:moab_2103",
+        "relationship": "direct",
+        "reasonJa": "Ruth the Moabitessが明記される。個人ルツに付された民の呼称として区別する。"
+      },
+      "sourceText": "Moreover, Ruth the Moabitess, the wife of Mahlon, I have purchased to be my wife, to raise up the name of the dead on his inheritance, that the name of the dead may not be cut off from among his brothers and from the gate of his place. You are witnesses today.”",
+      "sourceTextSHA256": "d0a451e44b943d07f5024f7e817627c4f2db4553ce60cc40cf5e24ff31d50fe8",
+      "sourceURL": "https://ebible.org/engwebp/RUT04.htm#V10",
+      "surroundingFixedText": [
+        {
+          "chapter": 4,
+          "verse": 9,
+          "sourceText": "Boaz said to the elders and to all the people, “You are witnesses today, that I have bought all that was Elimelech’s, and all that was Chilion’s and Mahlon’s, from the hand of Naomi.",
+          "sourceTextSHA256": "87879a6dc3675368130d1553fac1b98025eccd6e7a62627518a876aba7697b90",
+          "sourceURL": "https://ebible.org/engwebp/RUT04.htm#V9"
+        }
+      ],
+      "canonicalEntity": {
+        "id": "person:moab_2103",
+        "kind": "person",
+        "name": "Moab"
+      },
+      "basisJa": "Ruth the Moabitessが明記されるが、これはRuth個人の民族称。reasonは族祖本人と区別する一方、canonical IDのperson種別との不整合を解消していない。",
+      "issues": []
+    },
+    {
+      "chapter": 4,
+      "verse": 12,
+      "entityID": "person:boaz_519",
+      "status": "pass",
+      "before": null,
+      "proposedAfter": {
+        "entityID": "person:boaz_519",
+        "relationship": "context",
+        "reasonJa": "your house/youは4:11から続く祝福の受け手ボアズ。"
+      },
+      "currentMapRow": {
+        "entityID": "person:boaz_519",
+        "relationship": "context",
+        "reasonJa": "your house/youは4:11から続く祝福の受け手ボアズ。"
+      },
+      "sourceText": "Let your house be like the house of Perez, whom Tamar bore to Judah, of the offspring which the LORD will give you by this young woman.”",
+      "sourceTextSHA256": "650def254c23ccd27205bdb90cf0e5631076002208a50c75cc607d9529a999b8",
+      "sourceURL": "https://ebible.org/engwebp/RUT04.htm#V12",
+      "surroundingFixedText": [
+        {
+          "chapter": 4,
+          "verse": 11,
+          "sourceText": "All the people who were in the gate, and the elders, said, “We are witnesses. May the LORD make the woman who has come into your house like Rachel and like Leah, which both built the house of Israel; and treat you worthily in Ephrathah, and be famous in Bethlehem.",
+          "sourceTextSHA256": "a502ce026c61c28e05e1d23d52d72fef49b09100f7ef9a7eb64da6c158278792",
+          "sourceURL": "https://ebible.org/engwebp/RUT04.htm#V11"
+        }
+      ],
+      "canonicalEntity": {
+        "id": "person:boaz_519",
+        "kind": "person",
+        "name": "Boaz"
+      },
+      "basisJa": "4:11の祝福対象Boazへ“your/you”が続くため文脈リンクは妥当。",
+      "issues": []
+    },
+    {
+      "chapter": 4,
+      "verse": 12,
+      "entityID": "person:ruth_2450",
+      "status": "pass",
+      "before": null,
+      "proposedAfter": {
+        "entityID": "person:ruth_2450",
+        "relationship": "context",
+        "reasonJa": "this young womanは4:11の家に来る女性、4:10で名が明記されたルツ。"
+      },
+      "currentMapRow": {
+        "entityID": "person:ruth_2450",
+        "relationship": "context",
+        "reasonJa": "this young womanは4:11の家に来る女性、4:10で名が明記されたルツ。"
+      },
+      "sourceText": "Let your house be like the house of Perez, whom Tamar bore to Judah, of the offspring which the LORD will give you by this young woman.”",
+      "sourceTextSHA256": "650def254c23ccd27205bdb90cf0e5631076002208a50c75cc607d9529a999b8",
+      "sourceURL": "https://ebible.org/engwebp/RUT04.htm#V12",
+      "surroundingFixedText": [
+        {
+          "chapter": 4,
+          "verse": 11,
+          "sourceText": "All the people who were in the gate, and the elders, said, “We are witnesses. May the LORD make the woman who has come into your house like Rachel and like Leah, which both built the house of Israel; and treat you worthily in Ephrathah, and be famous in Bethlehem.",
+          "sourceTextSHA256": "a502ce026c61c28e05e1d23d52d72fef49b09100f7ef9a7eb64da6c158278792",
+          "sourceURL": "https://ebible.org/engwebp/RUT04.htm#V11"
+        }
+      ],
+      "canonicalEntity": {
+        "id": "person:ruth_2450",
+        "kind": "person",
+        "name": "Ruth"
+      },
+      "basisJa": "“this young woman”は4:11の女性で、4:10でRuthと明記済み。将来の子をRuthへ遡及していない。",
+      "issues": []
+    }
+  ],
+  "rowLevelObservations": [
+    {
+      "chapter": 1,
+      "verse": 4,
+      "field": "reasonJa",
+      "status": "fail",
+      "currentValue": " /  /  / 妻を迎えたtheyは1:2–3で名が示された二人の息子。どちらの妻がルツかはまだ明示されない。 / 妻を迎えたtheyは1:2–3で名が示された二人の息子。オルパ/ルツとの個別対応を推定しない。",
+      "basisJa": "根拠欄に “ /  /  / ” と重複した各entity reasonが挿入されており、節単位の理由文として読めず、map authorship metadataの品質に問題がある。entity個別のafter reasonは理解可能で、12件の各entities行と出典照合は成立する。修正は原map担当へ依頼し、本レビューでは変更しない。"
+    }
+  ],
+  "limitations": [
+    "person:moab_2103はcanonical indexでkind=personの族祖Moabを指すIDである一方、Ruth記のMoabitessは民族的呼称。本文解釈は正しいが、集合的参照を個人IDへ接続する設計上の不整合を解消できずqualifiedとした。",
+    "この範囲はroot追加12件のみのレビューであり、他の85節map全体の再承認ではない。"
+  ]
+}

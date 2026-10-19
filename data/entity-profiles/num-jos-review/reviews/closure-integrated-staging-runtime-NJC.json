@@ -1,0 +1,167 @@
+{
+  "reportType": "independent-closure-integrated-staging-runtime-NJC",
+  "reviewedAtUTC": "2026-10-15T22:45:26.163706+00:00",
+  "reviewerRole": "Independent integration/runtime review; no builder, Swift, draft, or staging edits.",
+  "scope": "Only current Numbers/Joshua build-integrated-staging.py and candidate Core runtime files. No ROM/LEV sources read.",
+  "files": {
+    "build-integrated-staging.py": {
+      "sha256": "52f9d4d208967589b05569cc3537aeb080ad2aa7d30d94a1824b7838c012a4a6"
+    },
+    "candidate/apps/ios/Sources/Core/EntityProfiles.swift": {
+      "sha256": "df92a2b1dc8e7e822909071feaa2a8f8a4cbdbff34700a757760100d263bd73d"
+    },
+    "candidate/apps/ios/Sources/Core/BundledEntityIndex.swift": {
+      "sha256": "761adaaf57e91f1c6e1a7ec778860166c799f3fc02aef2bb5d05ebdc061fdeed"
+    },
+    "integrated-staging/entity-profiles-JOS.json": {
+      "sha256": "e7b0663a170abf5af7b6ca64bd147ec2f71a34561b897823b0caea2ba712850b"
+    },
+    "integrated-staging/entity-profiles-NUM.json": {
+      "sha256": "1f194295475e955eb5f25f296de900ac56fa179d5b1f4ca755b327dc60a175f5"
+    },
+    "integrated-staging/report.json": {
+      "sha256": "4f5b48fac52b96b6f2962c85813f175a7c75b3d9563e4491b9bdb4d26a8e4b29"
+    },
+    "reviews/root-explicit-place-aliases.json": {
+      "sha256": "89e3ef57987913143ced9b00e10231a556a085b1c2642260c50b5174b69fbb20"
+    },
+    "candidate/apps/ios/Sources/DesignSystem/OfflineEntityPane.swift": {
+      "sha256": "e6c94e0d0936dd30187ccfe360fd9370aa9b2501b5f8e72d25dcbab16f9b5780"
+    },
+    "current-source-coverage": {
+      "maps": {
+        "reviews/verse-map-JOS-01-08.json": "b3858f58df95db4709ff3219239844bf6b0b468ba4384fa9230421a7d17cf114",
+        "reviews/verse-map-JOS-09-16.json": "e8851d7b15312f0fb5088b743a9c84706b4b71ff10b93ac3278521960d51fb8d",
+        "reviews/verse-map-JOS-17-24.json": "51261403e10269ad0f61b648ba6a585936629058a85826d4ba1fd34a5a607bde"
+      },
+      "fixedWEB": "26ae82b805dee523bb852977ccf62ad38cc40ebe442b650cbd7862db833ea854"
+    }
+  },
+  "stagingSnapshot": {
+    "atUTC": "2026-10-15T22:41:42.477614+00:00",
+    "published": false,
+    "semanticApproval": false,
+    "builderErrors": [],
+    "inputHashCount": 31,
+    "builderInputHashMismatches": 0,
+    "mapHashesMatchCurrent": true,
+    "note": "The builder report hash list matches every listed map/context input. It does not list root-explicit-place-aliases.json or canonical entity-index.json, so I independently recorded their current hashes above."
+  },
+  "findings": [
+    {
+      "id": "alias-luz-source-gate-leak",
+      "status": "closed-pass",
+      "severity": "none",
+      "evidence": [
+        "The current 22:41:42 integrated JOS snapshot retains the original JOS-place-luz_737-wikipedia-reading-link source on the separate Luz profile, but the staged source record knownBy is 18:13, not 16:2.",
+        "The Luz Wikipedia object is also gated at JOS18:13. EntityProfileCatalog.resolve filters sources by source.knownBy and Wikipedia by WikipediaReadingLink.knownBy, so neither exposes the alias article at JOS16:2.",
+        "At JOS16:2 only sources whose gate is at or before 16:2 can be resolved. The earlier review had misread the source gate; corrected against the actual staged source object and the exact current resolver."
+      ],
+      "sourceRefs": [
+        "integrated-staging/entity-profiles-JOS.json source JOS-place-luz_737-wikipedia-reading-link",
+        "candidate/apps/ios/Sources/Core/EntityProfiles.swift:118"
+      ],
+      "suggestion": "Gate or remove alias-revelation secondary-reference source IDs from the early alias profile; retain the primary WEB source for the pre-revelation name. Keep the canonical mapped source at the alias gate.",
+      "correctionHistory": {
+        "priorStatus": "fail",
+        "priorFindingBasis": "Previous review incorrectly recorded staged source knownBy as 16:2.",
+        "correctedAtUTC": "2026-10-15T22:45:26.163706+00:00",
+        "actualSourceKnownBy": {
+          "chapter": 18,
+          "verse": 13
+        },
+        "oldSnapshotRetained": true
+      }
+    },
+    {
+      "id": "alias-nine-mapping-and-luz-separation",
+      "status": "pass",
+      "evidence": [
+        "All nine records in root-explicit-place-aliases.json are present in JOS catalog sourceBoundAliases with the intended canonical IDs and gates.",
+        "At JOS16:2, integrated occurrences retain both place:bethel_202 and place:luz_737; the alias resolver does not canonicalize Luz before its JOS18:13 gate.",
+        "At JOS18:13, the alias is canonicalized to Bethel; there is no second Luz result. earlySeparateCoordinates includes Luz16:2, coordinatePromoted is false, and the original Luz profile remains for that earlier use.",
+        "The only pre-gate Luz coordinate is 16:2, and the original Bethel profile independently already contains 16:2; extending canonical passages therefore does not introduce an otherwise absent early Luz-only reference."
+      ],
+      "caveat": "Default includeFuture=false behavior checked by code. includeFuture=true intentionally allows future aliases."
+    },
+    {
+      "id": "jos-israel-jacob-dual-24-32",
+      "status": "pass",
+      "evidence": [
+        "Fixed WEB JOS24:32 names both the children of Israel bringing Joseph’s bones and the parcel Jacob bought from Hamor’s sons.",
+        "The JOS Israel base profile retains 24:32 in its passages, and its Jacob individual-context variant retains 24:32 with a gated Jacob fact/source.",
+        "The dual allowlist includes JOS person:israel_682 at 24:32. Resolver returns the collective base and surfaces Jacob as a context note when both overlap; context facts and source citations remain gated to 24:32."
+      ],
+      "caveat": "This represents the two senses on one base card plus an individual-context note, not two separately rendered cards."
+    },
+    {
+      "id": "unmapped-runtime-profile-removal",
+      "status": "pass-for-listed-current-map-snapshot",
+      "evidence": [
+        "Builder derives active IDs from adopted occurrences after alias normalization, retains supplemental profiles, records inactive IDs in runtimeExcludedUnmappedIDs, and removes those profiles from the runtime catalog while preserving authoring drafts/evidence.",
+        "JOS runtimeExcludedUnmappedIDs are the wrong-kind Moab and Allon person candidates, unresolved Gibeah/Haeleph, generic Negeb, and suppressed Sea-of-Arabah/Jebus aliases; newly mapped candidates are no longer excluded.",
+        "NUM runtimeExcludedUnmappedIDs list Puah, Isui, and Asshur; Gad now has an adopted occurrence."
+      ],
+      "caveat": "Profile counts and the JOS unmapped list are tied to the staged map hashes recorded in the build report. A later map update requires a fresh build."
+    },
+    {
+      "id": "normalized-stage-stale-author-fields",
+      "status": "qualified",
+      "evidence": [
+        "normalized-staging/ledger.json has two current raw-draft SHA mismatches: drafts/places_3/JOS_dan_323.json and drafts/places_3/JOS_gezer_463.json.",
+        "Dan current identityNote differs from normalized/staged text; Gezer current modernLocationJa differs from normalized/staged text. Thus the current staging has stale reader-facing fields even though the listed map/context hashes match."
+      ],
+      "suggestion": "Re-run normalization and integrated staging after the current author edits settle, then repeat the source-gate check and record all input-manifest hashes."
+    },
+    {
+      "id": "test-evidence-snapshot",
+      "status": "qualified",
+      "evidence": [
+        "final-core-20261015T223831Z.log reports 200 tests, 0 failures.",
+        "numbers-joshua-integration-complete-test.log reports 17 tests, 0 failures.",
+        "The current BundledEntityIndex.swift file modification time is later than final-core log completion, so these logs do not prove this exact current source snapshot was compiled."
+      ],
+      "suggestion": "Rerun the core suite after code/source-gating repair and bind the resulting log to final source hashes."
+    }
+  ],
+  "stagingCounts": {
+    "JOS": {
+      "baseProfiles": 501,
+      "contextProfiles": 4,
+      "unmappedAuthoringProfilesExcluded": 7,
+      "occurrences": 1979,
+      "sourceCoordinates": 658,
+      "sources": 2734,
+      "appResourcesWritten": false
+    },
+    "NUM": {
+      "baseProfiles": 344,
+      "contextProfiles": 15,
+      "unmappedAuthoringProfilesExcluded": 3,
+      "occurrences": 3785,
+      "sourceCoordinates": 1288,
+      "sources": 2576,
+      "appResourcesWritten": false
+    },
+    "JOSRuntimeExcludedIDs": [
+      "person:moab_2103",
+      "person:allon_190",
+      "place:gibeah_466",
+      "place:haeleph_505",
+      "place:negeb_885",
+      "place:sea_of_the_plain_1035",
+      "place:jebus_629"
+    ],
+    "NUMRuntimeExcludedIDs": [
+      "person:puah_2355",
+      "person:isui_648",
+      "place:asshur_109"
+    ]
+  },
+  "limitations": [
+    "No publication or candidate resource activation was performed.",
+    "This is an integration/runtime review and does not independently approve every profile’s prose or geography.",
+    "The stage’s listed maps and context-edit hashes currently match, but raw draft ledger checks show two changed source profiles.",
+    "The prior Luz source-gate failure was corrected after direct inspection of the staged source object: its gate is 18:13. This closure is tied to the 22:41:42 snapshot; root will rebuild after current Dan/Gezer source edits and that rebuilt snapshot still requires final closure."
+  ]
+}

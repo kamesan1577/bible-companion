@@ -1,0 +1,3192 @@
+{
+  "reviewType": "independent-current-reclosure",
+  "scope": "Chronicles persons_1 batch07: current reclosure of 60 assigned 1CH person records after author repairs",
+  "capturedAtUTC": "2026-10-16T10:45:02Z",
+  "inputs": {
+    "priorIndependentReview": {
+      "path": "reviews/independent-batch07-persons_1.json",
+      "sha256": "9e8ddf283928798255b4609ced733b662503d08c54ef00ca7f26419348845ebe"
+    },
+    "currentAuthorManifest": {
+      "path": "evidence/persons_1/manifest-batch07-current.json",
+      "sha256": "9cebb9245d0976b9a49346172c52a076a90d2cbcc1a5aa6e34b201e7d7643d14",
+      "recordCount": 60
+    },
+    "authorRepairLog": {
+      "path": "evidence/persons_1/author-repairs-batch07-independent-review.json",
+      "sha256": "93ea250f5931efe8467656b9269127211f276a1cf8d16d22d6a37d78c25d9f2d",
+      "changeEntries": 15,
+      "uniqueChangedEntityIDs": 14,
+      "oldManifestSHA256": "f5fde86dc8f5c4c712d9e57cd5f74901bd6e1fd105d6c407288273a9f186f3c4",
+      "oldManifestPreservedObject": "preservation/objects/f5fde86dc8f5c4c712d9e57cd5f74901bd6e1fd105d6c407288273a9f186f3c4"
+    },
+    "fixedPrimary": {
+      "path": "inventory/targets/chronicles1-web-verses.json",
+      "sha256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+      "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5"
+    },
+    "frozenInput": {
+      "path": "reviews/batch07-persons_1-frozen-input-current.json",
+      "sha256": "8598bcb806b1b583acebe20280008b09f5375cd0ea86fa65a3ff8dc10271a2d2"
+    },
+    "assignment": {
+      "path": "assignments/batch07/persons_1.json",
+      "sha256": "0d1db729a2f0d6b02dcf1ca4dbd9f97e8238b1954e8850da2b47b676c9f93609"
+    }
+  },
+  "bindingSummary": {
+    "rowCount": 60,
+    "currentManifestFilesystemThreeSHAAllMatch": true,
+    "unchangedRows": 46,
+    "unchangedRowsWithExactPriorDraftEvidenceProfileSHA": 46,
+    "changedEntityIDs": [
+      "person:shammah_2700",
+      "person:shammai_2543",
+      "person:shechaniah_2583",
+      "person:shelomith_2609",
+      "person:shema_2614",
+      "person:shillem_2677",
+      "person:shobab_2715",
+      "person:shubael_2580",
+      "person:sibbechai_2737",
+      "person:simeon_2741",
+      "person:ulam_2890",
+      "person:uriel_2900",
+      "person:uzza_2914",
+      "person:uzziel_2932"
+    ],
+    "oldDecisionCounts": {
+      "pass": 24,
+      "qualified": 25,
+      "fail": 11
+    },
+    "currentDecisionCounts": {
+      "pass": 31,
+      "qualified": 28,
+      "fail": 1
+    }
+  },
+  "candidateDispositionClosure": {
+    "previouslyUnrecordedCandidateOnlyCount": 6,
+    "allNowRecorded": true,
+    "items": [
+      {
+        "entityID": "person:shubael_2580",
+        "ref": "1CH 25:4",
+        "pinnedText": "Of Heman, the sons of Heman: Bukkiah, Mattaniah, Uzziel, Shebuel, Jerimoth, Hananiah, Hanani, Eliathah, Giddalti, Romamti-Ezer, Joshbekashah, Mallothi, Hothir, and Mahazioth.",
+        "citationURL": "https://ebible.org/engwebp/1CH25.htm#V4",
+        "expectedDisposition": "unresolved-spelling-variant",
+        "independentAssessmentJa": "WEB 25:4 says Shebuel; the assigned Shubael ID is not linked without spelling evidence.",
+        "currentRecords": [
+          {
+            "container": "excludedOccurrences",
+            "chapter": 25,
+            "verse": 4,
+            "status": "unresolved-spelling-variant",
+            "reasonJa": "固定WEB 1CH25:4は「Shebuel」と綴り、候補IDのShubaelと同一と示す根拠は確認できない。別系譜名の可能性を保留し、個人同定へ結び付けない。"
+          },
+          {
+            "container": "evidence.candidateOccurrenceDispositions",
+            "chapter": 25,
+            "verse": 4,
+            "status": "unresolved-spelling-variant",
+            "reasonJa": "固定WEB 1CH25:4は「Shebuel」と綴り、候補IDのShubaelと同一と示す根拠は確認できない。別系譜名の可能性を保留し、個人同定へ結び付けない。"
+          }
+        ],
+        "recorded": true,
+        "decision": "qualified"
+      },
+      {
+        "entityID": "person:simeon_2741",
+        "ref": "1CH 4:42",
+        "pinnedText": "Some of them, even of the sons of Simeon, five hundred men, went to Mount Seir, having for their captains Pelatiah, Neariah, Rephaiah, and Uzziel, the sons of Ishi.",
+        "citationURL": "https://ebible.org/engwebp/1CH04.htm#V42",
+        "expectedDisposition": "excluded-collective-context",
+        "independentAssessmentJa": "“sons of Simeon” denotes the 500-person descendant group, not the ancestor.",
+        "currentRecords": [
+          {
+            "container": "excludedOccurrences",
+            "chapter": 4,
+            "verse": 42,
+            "status": "excluded-collective-context",
+            "reasonJa": "「シメオンの子ら」は遠征する五百人の集団で、祖先個人ではない。"
+          },
+          {
+            "container": "evidence.candidateOccurrenceDispositions",
+            "chapter": 4,
+            "verse": 42,
+            "status": "excluded-collective-context",
+            "reasonJa": "「sons of Simeon」は遠征する五百人の集団を指し、祖先個人ではない。集団用法の別文脈案として保留。"
+          }
+        ],
+        "recorded": true,
+        "decision": "qualified"
+      },
+      {
+        "entityID": "person:simeon_2741",
+        "ref": "1CH 6:65",
+        "pinnedText": "They gave by lot out of the tribe of the children of Judah, and out of the tribe of the children of Simeon, and out of the tribe of the children of Benjamin, these cities which are mentioned by name.",
+        "citationURL": "https://ebible.org/engwebp/1CH06.htm#V65",
+        "expectedDisposition": "excluded-collective-context",
+        "independentAssessmentJa": "“tribe of the children of Simeon” denotes the tribe, not the individual.",
+        "currentRecords": [
+          {
+            "container": "excludedOccurrences",
+            "chapter": 6,
+            "verse": 65,
+            "status": "excluded-collective-context",
+            "reasonJa": "シメオンの部族の子らは部族集団を指すため、祖先個人のカードへ混ぜない。"
+          },
+          {
+            "container": "evidence.candidateOccurrenceDispositions",
+            "chapter": 6,
+            "verse": 65,
+            "status": "excluded-collective-context",
+            "reasonJa": "「tribe of the children of Simeon」は部族集団を指す。個人シメオンへ結び付けず保留。"
+          }
+        ],
+        "recorded": true,
+        "decision": "qualified"
+      },
+      {
+        "entityID": "person:simeon_2741",
+        "ref": "1CH 12:25",
+        "pinnedText": "Of the children of Simeon, mighty men of valor for the war: seven thousand one hundred.",
+        "citationURL": "https://ebible.org/engwebp/1CH12.htm#V25",
+        "expectedDisposition": "excluded-collective-context",
+        "independentAssessmentJa": "“children of Simeon” denotes 7,100 warriors, not the individual.",
+        "currentRecords": [
+          {
+            "container": "excludedOccurrences",
+            "chapter": 12,
+            "verse": 25,
+            "status": "excluded-collective-context",
+            "reasonJa": "「シメオンの子ら」は戦闘員の集団を指すため、祖先個人のカードへ混ぜない。"
+          },
+          {
+            "container": "evidence.candidateOccurrenceDispositions",
+            "chapter": 12,
+            "verse": 25,
+            "status": "excluded-collective-context",
+            "reasonJa": "「children of Simeon」は戦闘員の集団を指す。個人シメオンへ結び付けず保留。"
+          }
+        ],
+        "recorded": true,
+        "decision": "qualified"
+      },
+      {
+        "entityID": "person:uriel_2900",
+        "ref": "1CH 6:36",
+        "pinnedText": "the son of Elkanah, the son of Joel, the son of Azariah, the son of Zephaniah,",
+        "citationURL": "https://ebible.org/engwebp/1CH06.htm#V36",
+        "expectedDisposition": "unresolved-name-mismatch",
+        "independentAssessmentJa": "WEB 6:36 gives Zephaniah, not Uriel; do not force a spelling/person match.",
+        "currentRecords": [
+          {
+            "container": "excludedOccurrences",
+            "chapter": 6,
+            "verse": 36,
+            "status": "unresolved-name-mismatch",
+            "reasonJa": "固定WEB 1CH6:36は「Zephaniah」と記し、候補ID Urielとは異なる。列挙の系譜だけで同一人物や異綴りとは判断できないため保留。"
+          },
+          {
+            "container": "evidence.candidateOccurrenceDispositions",
+            "chapter": 6,
+            "verse": 36,
+            "status": "unresolved-name-mismatch",
+            "reasonJa": "固定WEB 1CH6:36は「Zephaniah」と記し、候補ID Urielとは異なる。列挙の系譜だけで同一人物や異綴りとは判断できないため保留。"
+          }
+        ],
+        "recorded": true,
+        "decision": "qualified"
+      },
+      {
+        "entityID": "person:uzziel_2932",
+        "ref": "1CH 25:18",
+        "pinnedText": "the eleventh to Azarel, his sons and his brothers, twelve;",
+        "citationURL": "https://ebible.org/engwebp/1CH25.htm#V18",
+        "expectedDisposition": "unresolved-name-mismatch",
+        "independentAssessmentJa": "WEB 25:18 names Azarel, not Uzziel; hold the candidate relation.",
+        "currentRecords": [
+          {
+            "container": "excludedOccurrences",
+            "chapter": 25,
+            "verse": 18,
+            "status": "unresolved-name-mismatch",
+            "reasonJa": "固定WEB 1CH25:18は「Azarel」と記し、候補ID Uzzielとは異なる。綴り対応や同一人物を示す根拠がないため保留。"
+          },
+          {
+            "container": "evidence.candidateOccurrenceDispositions",
+            "chapter": 25,
+            "verse": 18,
+            "status": "unresolved-name-mismatch",
+            "reasonJa": "固定WEB 1CH25:18は「Azarel」と記し、候補ID Uzzielとは異なる。綴り対応や同一人物を示す根拠がないため保留。"
+          }
+        ],
+        "recorded": true,
+        "decision": "qualified"
+      }
+    ],
+    "additionalRelatedDisposition": "1CH 4:24 for Simeon was also corrected from direct individual to excluded collective context; it was not one of the six old candidate-only missing-sidecar entries."
+  },
+  "methodJa": "変更対象は固定WEBの該当節と前後文脈、現profileの全常時表示欄・passages・facts・occurrence/exclusion記録、現Wikipedia noteと既存の実本文locatorを再照合した。未変更は旧独立reviewと現filesystem/manifestのdraft/evidence/profile 3SHAが完全一致した場合に限り旧判定を継承。6件の候補のみ出現について固定WEB本文と現sidecarの明示処理を個別確認。",
+  "limitationsJa": "作者修正ログには旧manifest SHAはあるがoldManifestPreservedObjectはnullであり、中間manifestの実バイト保存を確認できないため、旧独立reviewと現current manifest/repair logの直接差分として結合した。変更14 IDのうち3件（Shubael/Uriel/Uzziel）は旧reportでqualifiedだったが、candidate-sidecarを含むdraft/evidence SHAも変化しているため、49件継承には数えず再読した。Wikipedia記事の新規ライブ取得は行わず、先の独立記事実読locatorを現current note/identityに結び直した。Sibbechaiのreview.occurrenceChecks理由誤記はfailとして残る。pass/qualifiedは専門家承認を意味しない。",
+  "rows": [
+    {
+      "book": "1CH",
+      "entityID": "person:shallum_2518",
+      "draftPath": "drafts/persons_1/1CH_shallum_2518.json",
+      "currentDraftSHA256": "ff323e9d045166ed874ab63b831c2f20beb21ba79f0f483389b5e3f02c18ee4a",
+      "evidencePath": "evidence/persons_1/1CH_shallum_2518-sources.json",
+      "currentEvidenceSHA256": "4ede9dc1b516b22a0d2e27443e7d6aca45f0fc743ec34ee8e21d76d30c3f7e34",
+      "currentProfileSHA256": "04a752bb0741aeded2037c9ed785b7c9ecfb231fa8d218003a74f7c413aa7f6f",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Mishma",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shamer_2533",
+      "draftPath": "drafts/persons_1/1CH_shamer_2533.json",
+      "currentDraftSHA256": "7f4129aa9d3bcce79acb45ddb5bc91a0f91bbcb9b2105c18f2569130b9f01413",
+      "evidencePath": "evidence/persons_1/1CH_shamer_2533-sources.json",
+      "currentEvidenceSHA256": "e717639675f922166c0ea1976d7241ceacec0ad3b7876a0c169be0e4d018bd54",
+      "currentProfileSHA256": "ad9b8e1cf92136ceedaafeb59ec94360beb6b73995f11e0f4c0dd93f70278a94",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shemer",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shamma_2537",
+      "draftPath": "drafts/persons_1/1CH_shamma_2537.json",
+      "currentDraftSHA256": "58c9a3c27d56ea4cbcd3edfbe4708f9fe99365cb62c26a723e1146232d84fc53",
+      "evidencePath": "evidence/persons_1/1CH_shamma_2537-sources.json",
+      "currentEvidenceSHA256": "daedb017997915fc25ec40e127e1cf106f4fe60509c550581535a7b7dcf2a827",
+      "currentProfileSHA256": "211da623feaeae023fa889b8569b55ecc04eb9c0a605c65b0e97facd17eb023d",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Pinned WEB first-use/available occurrences appear consistent with the short profile, but this reviewer did not complete an independent canonical/alias search for a suitable article. The author review says searched-no-fit without query/result details in the evidence; null is not proof that no article exists.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "searched-no-fit",
+        "wikipediaURL": null,
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shammah_2700",
+      "draftPath": "drafts/persons_1/1CH_shammah_2700.json",
+      "currentDraftSHA256": "4acb6026cd48cecf960eb819b780242ac814516947521a516598187d3bde265d",
+      "evidencePath": "evidence/persons_1/1CH_shammah_2700-sources.json",
+      "currentEvidenceSHA256": "9fb0f288e8e69c2da5bec89c4abb887541254d47907afc823e9adae713faa51e",
+      "currentProfileSHA256": "935b4d7ac41fa8d3e06433136c2d6eb8aeb45f7ff34d193a622798ff6241d456",
+      "manifestMatchesFilesystem": true,
+      "previousDecision": "fail",
+      "priorReviewThreeSHA256s": {
+        "draft": "9338603fd6a8fe437d6c94ce4fa5e992857a5f9fb816d95d605106c3d866c2c0",
+        "profile": "236f59610108f1280cbcb10afcbeba9e970461affaa72ce4b2e3e4a81ce0cc89",
+        "evidence": "978a8eba38a3454f384c3bbe2f93c323e182fc53524834bf639b8f9aa6626221"
+      },
+      "currentReview": "qualified",
+      "decision": "qualified",
+      "currentTextAndGateAssessmentJa": "1CH 2:13固定WEBはShimeaをエッサイの三男として記す。2:15はオゼム第六・ダビデ第七でシメア出現ではなく、現行profileから除外され、初出とWikipedia noteは2:13に限定。記事のShimeah/Shammah異綴り対応は前回実読locator(lines 1618–1624)を保持。WEB綴りとID綴りの橋渡しは二次資料に依存するためqualified。",
+      "knownBy": {
+        "chapter": 2,
+        "verse": 13
+      },
+      "readerFields": {
+        "nameJa": "シメア",
+        "subtitleJa": "エッサイの子らを記す系譜に名が挙がります。",
+        "summaryJa": "歴代誌上2:13はエッサイの子らの順に名を挙げ、三番目にシメアを記します。",
+        "identityNoteJa": "歴代誌上2:13のWEB表記は「Shimea」です。英語版人物一覧は同人物の異綴りとしてShimeah／Shammahを掲げています。",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, L–Z",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shimeah",
+          "kind": "shared-section",
+          "noteJa": "英語版の人物一覧は、歴代誌上2:13のシメアをShimeah／Shammahの異綴りとして扱います。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true
+        }
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 2,
+            "verse": 13
+          },
+          "end": {
+            "chapter": 2,
+            "verse": 13
+          }
+        }
+      ],
+      "facts": [],
+      "occurrenceChecks": [
+        {
+          "chapter": 2,
+          "verse": 13,
+          "status": "direct",
+          "reasonJa": "本文の系譜で名を挙げる。"
+        }
+      ],
+      "excludedOccurrences": [
+        {
+          "chapter": 2,
+          "verse": 15,
+          "status": "excluded-wrong-person",
+          "reasonJa": "固定WEB 2:15はオゼムを第六、ダビデを第七の子として記す箇所で、シメアの出現ではない。"
+        }
+      ],
+      "pendingContextVariants": null,
+      "currentEvidenceCandidateDispositions": null,
+      "fixedPrimaryCoordinatesRechecked": [
+        {
+          "ref": "1CH 2:13",
+          "text": "and Jesse became the father of his firstborn Eliab, Abinadab the second, Shimea the third,",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V13",
+          "textSHA256": "112ee33fd2ba8173655aa8c3682e4ccc2f3964a1b24a3f4d8fc3939321d78b37"
+        }
+      ],
+      "wikipediaEvidence": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shimeah",
+        "title": "List of minor Hebrew Bible figures, L–Z",
+        "kind": "shared-section",
+        "noteJa": "英語版の人物一覧は、歴代誌上2:13のシメアをShimeah／Shammahの異綴りとして扱います。",
+        "identityVerified": true,
+        "relationVerified": null,
+        "reusedPriorLiveRead": []
+      },
+      "profileHashSync": {
+        "manifestProfileMatchesCalculatedProfile": true,
+        "evidenceProfileMatchesCalculatedProfile": true,
+        "draftHashMatchesManifest": true,
+        "evidenceDraftHashMatchesFilesystem": true
+      },
+      "nestedWikipediaReadBinding": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shimeah",
+        "title": "List of minor Hebrew Bible figures, L–Z",
+        "section": "Shimeah",
+        "locator": "Shimeah節 lines 1618–1624はShimeah/Shammahをエッサイの三男として扱い、1 Chronicles 2:13を引用。Davidの記述は2:15後なのでsecondary sourceをそこでゲート。",
+        "supportParaphraseJa": "英語版の人物一覧は、歴代誌上2:13に出るシメアをShimeah／Shammahの異綴りと結び付けています。",
+        "checkedAtUTC": "2026-10-16T10:08:00Z",
+        "currentDraftSHA256": "4acb6026cd48cecf960eb819b780242ac814516947521a516598187d3bde265d",
+        "currentProfileSHA256": "935b4d7ac41fa8d3e06433136c2d6eb8aeb45f7ff34d193a622798ff6241d456"
+      },
+      "nestedWikipediaReadBindingMatchesCurrent": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shammai_2543",
+      "draftPath": "drafts/persons_1/1CH_shammai_2543.json",
+      "currentDraftSHA256": "fd24c36a08a7d5b7536d58d99c3f62ba2151c66fb74e56905be6021ee7729c31",
+      "evidencePath": "evidence/persons_1/1CH_shammai_2543-sources.json",
+      "currentEvidenceSHA256": "f6627adfaa9ce96767263b5cab70d3a7ab14a9c20e7b30790fcfabd6f773323d",
+      "currentProfileSHA256": "f05e13bd8f3b96540c7205904bea4917a4e2a0ad7d3321523cd28c9ca25b7fa2",
+      "manifestMatchesFilesystem": true,
+      "previousDecision": "fail",
+      "priorReviewThreeSHA256s": {
+        "draft": "20d2a1ac4f9a04022c13be778651e5218ea8a254cc206dd7558f1e92a2eb10ed",
+        "profile": "066123d07379a2cbae5312b52106e8d2262222417edb2697f19190199a0b5d07",
+        "evidence": "03479c72413b3cdc1d07e299626dc7092953c1378b983b4d9b5d3b559687ec4b"
+      },
+      "currentReview": "pass",
+      "decision": "pass",
+      "currentTextAndGateAssessmentJa": "初出2:44のレケムの子シャマイだけを基底にし、4:17同名者・2:45マオン親子は常時Wikipedia noteから除去済み。2:45事実は同節sourceでゲート。共有一覧の実読1380–1387は複数のShammaiを区別し、現行の一般的な同名者noteは先取りしない。",
+      "knownBy": {
+        "chapter": 2,
+        "verse": 44
+      },
+      "readerFields": {
+        "nameJa": "シャマイ",
+        "subtitleJa": "レケムの子としてユダ系の系譜に記されます。",
+        "summaryJa": "カレブの子孫をたどる系譜に現れ、レケムの子として名が挙がります。",
+        "identityNoteJa": "本文では、レケムの子として記されるシャマイを扱います。",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, L–Z",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shammai",
+          "kind": "shared-section",
+          "noteJa": "英語版の人物一覧は聖書中の同名人物を区別して扱います。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true
+        }
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 2,
+            "verse": 44
+          },
+          "end": {
+            "chapter": 2,
+            "verse": 44
+          }
+        },
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 2,
+            "verse": 45
+          },
+          "end": {
+            "chapter": 2,
+            "verse": 45
+          }
+        }
+      ],
+      "facts": [
+        {
+          "textJa": "続く節はシャマイの子をマオンとし、マオンをベツ・ツルの父と記します。",
+          "knownBy": {
+            "chapter": 2,
+            "verse": 45
+          },
+          "sourceIds": [
+            "webp-1ch-shammai_2543-2-45"
+          ]
+        }
+      ],
+      "occurrenceChecks": [
+        {
+          "chapter": 2,
+          "verse": 44,
+          "status": "direct",
+          "reasonJa": "本文の系譜で名を挙げる。"
+        },
+        {
+          "chapter": 2,
+          "verse": 45,
+          "status": "direct",
+          "reasonJa": "本文の系譜で名を挙げる。"
+        }
+      ],
+      "excludedOccurrences": null,
+      "pendingContextVariants": null,
+      "currentEvidenceCandidateDispositions": null,
+      "fixedPrimaryCoordinatesRechecked": [
+        {
+          "ref": "1CH 2:44",
+          "text": "Shema became the father of Raham, the father of Jorkeam; and Rekem became the father of Shammai.",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V44",
+          "textSHA256": "8d87b5e1c381e132a95e2f157da486e55e7850f94bdc9f0349ed02f38f049830"
+        },
+        {
+          "ref": "1CH 2:45",
+          "text": "The son of Shammai was Maon; and Maon was the father of Beth Zur.",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V45",
+          "textSHA256": "121d194ef207b2e97d08346db81066d5211f04b0a8f5114af58aee3d40680152"
+        }
+      ],
+      "wikipediaEvidence": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shammai",
+        "title": "List of minor Hebrew Bible figures, L–Z",
+        "kind": "shared-section",
+        "noteJa": "英語版の人物一覧は聖書中の同名人物を区別して扱います。",
+        "identityVerified": true,
+        "relationVerified": null,
+        "reusedPriorLiveRead": [
+          {
+            "entityID": "person:shammai_2543",
+            "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z",
+            "title": "List of minor Hebrew Bible figures, L–Z",
+            "locator": "1380–1387",
+            "supportJa": "Shammai entry distinguishes at least three people; the 2:44–45 figure is Rekem’s son and Maon’s father, and 4:17 is a separate later namesake.",
+            "checkedAtUTC": "2026-10-16T10:34:00Z"
+          }
+        ]
+      },
+      "profileHashSync": {
+        "manifestProfileMatchesCalculatedProfile": true,
+        "evidenceProfileMatchesCalculatedProfile": true,
+        "draftHashMatchesManifest": true,
+        "evidenceDraftHashMatchesFilesystem": true
+      },
+      "nestedWikipediaReadBinding": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shammai",
+        "title": "List of minor Hebrew Bible figures, L–Z",
+        "section": "Shammai",
+        "locator": "Shammai節 lines 1380–1387は少なくとも三人を区別し、この人物をレケムの子・マオンの父として1 Chronicles 2:44–45に結び付ける。",
+        "supportParaphraseJa": "英語版の人物一覧は、レケムの子シャマイを記し、続く系譜でマオンの父として挙げています。",
+        "checkedAtUTC": "2026-10-16T10:08:00Z",
+        "currentDraftSHA256": "fd24c36a08a7d5b7536d58d99c3f62ba2151c66fb74e56905be6021ee7729c31",
+        "currentProfileSHA256": "f05e13bd8f3b96540c7205904bea4917a4e2a0ad7d3321523cd28c9ca25b7fa2"
+      },
+      "nestedWikipediaReadBindingMatchesCurrent": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shapham_2549",
+      "draftPath": "drafts/persons_1/1CH_shapham_2549.json",
+      "currentDraftSHA256": "3688d7442db0ccae03724b2e15a94921993e4941362c3e5589032d16184ae650",
+      "evidencePath": "evidence/persons_1/1CH_shapham_2549-sources.json",
+      "currentEvidenceSHA256": "80e25d9792afbad710cc35be7de42ea028101a37683e3bf12dd87d5ff560c476",
+      "currentProfileSHA256": "e3034d6e2a1cb8f1c87ca1630416b24d30b4c2500920561b647b2bc1591d6e6c",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shapham",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shaphat_2556",
+      "draftPath": "drafts/persons_1/1CH_shaphat_2556.json",
+      "currentDraftSHA256": "c9b2e66a6c2b1e8707846f367d9094aed7721ef173c84b331f5f285117174a73",
+      "evidencePath": "evidence/persons_1/1CH_shaphat_2556-sources.json",
+      "currentEvidenceSHA256": "bc3dfabb719b9d332e3b0b7b444b28fe0318a7f33bbf7e8616402749eeff4230",
+      "currentProfileSHA256": "7aef84a42cf9863e06c80b0cae3c381f426fa04a0fab94e41248b2900f200abc",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Adlai",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shaul_2477",
+      "draftPath": "drafts/persons_1/1CH_shaul_2477.json",
+      "currentDraftSHA256": "e06370864295d7fd98a3a149153dc7b95d7bc498129df93f6f1a0feb22f48a17",
+      "evidencePath": "evidence/persons_1/1CH_shaul_2477-sources.json",
+      "currentEvidenceSHA256": "a7a054372f130d5563ec753c3b03ecefae10787572ab72e103f31b5fefc83ddd",
+      "currentProfileSHA256": "856c791f8257d40e9a805225c0eba77f381bfbbec953270ca3c6ce40bb87f535",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/List_of_rulers_of_Edom#Kings_and_governors",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shavsha_2493",
+      "draftPath": "drafts/persons_1/1CH_shavsha_2493.json",
+      "currentDraftSHA256": "a4e3487bff93577d7c559c74066af59c04cdb3bf03e051dfb33a762034cdbe3d",
+      "evidencePath": "evidence/persons_1/1CH_shavsha_2493-sources.json",
+      "currentEvidenceSHA256": "97fcd3dc3d004f58d180876bd95ebdc248aff925bc13892a281cfddcc50bd42e",
+      "currentProfileSHA256": "f32681bce2612a97f6594fd4c837d5fce6726421879ef071a5badaae2aff0270",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Pinned WEB first-use/available occurrences appear consistent with the short profile, but this reviewer did not complete an independent canonical/alias search for a suitable article. The author review says searched-no-fit without query/result details in the evidence; null is not proof that no article exists.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "searched-no-fit",
+        "wikipediaURL": null,
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:sheba_2568",
+      "draftPath": "drafts/persons_1/1CH_sheba_2568.json",
+      "currentDraftSHA256": "eb66e006ee6d1b63886b6fa8616cf00f597b5e1573fc883074bb371e23ce6da6",
+      "evidencePath": "evidence/persons_1/1CH_sheba_2568-sources.json",
+      "currentEvidenceSHA256": "d2c7da912501150df3c7102af1a6de862fa9e94dc55811de290c6c92c4cf0bfc",
+      "currentProfileSHA256": "5d2672af9dafc457c9795d2b219bcc658ac2f7b59a0992a8247d0f3d965f000e",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/Sheba_(king)#Genealogy_and_family",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shebaniah_2572",
+      "draftPath": "drafts/persons_1/1CH_shebaniah_2572.json",
+      "currentDraftSHA256": "dd000bd02a0cf6a0f0e47668cd2cc03c9b8f42ba58eb6b1d2f49fee374bdff4a",
+      "evidencePath": "evidence/persons_1/1CH_shebaniah_2572-sources.json",
+      "currentEvidenceSHA256": "3f2f6c87b13aff035a4f3d027ed678f56ebcdee76861ebc04d8f6fd206f5dd10",
+      "currentProfileSHA256": "d391729d19a7a6eb4caa2bdabdeac34d4ce361c22fe99b4e8aafc52c117b5217",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Pinned WEB first-use/available occurrences appear consistent with the short profile, but this reviewer did not complete an independent canonical/alias search for a suitable article. The author review says searched-no-fit without query/result details in the evidence; null is not proof that no article exists.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "searched-no-fit",
+        "wikipediaURL": null,
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shechaniah_2583",
+      "draftPath": "drafts/persons_1/1CH_shechaniah_2583.json",
+      "currentDraftSHA256": "0ed9148bcc1fc61d8cf25779537c2aa13700e20152dec45ae16dc2a0047f338e",
+      "evidencePath": "evidence/persons_1/1CH_shechaniah_2583-sources.json",
+      "currentEvidenceSHA256": "34e84859da4ca18ba6505ef9570f8e499fab30cf4a2aabb658cd14e6a1cd86e0",
+      "currentProfileSHA256": "2f9f3047957f48c545fbc1c20f43c8cc2755ce56fff90847b7b4c5df906b16b6",
+      "manifestMatchesFilesystem": true,
+      "previousDecision": "fail",
+      "priorReviewThreeSHA256s": {
+        "draft": "bdf049963001e21c0f0bb18bb9f056e65115c68d81506d0ea924f80e523bb9ac",
+        "profile": "9b4710f4b85ce5b9d0aaea32e925bdf02906d98125199af84bae43674dfc321e",
+        "evidence": "eb53adc2e91847b58203db09e3e100ccf185be18275c71decc0708d1c52a9b38"
+      },
+      "currentReview": "pass",
+      "decision": "pass",
+      "currentTextAndGateAssessmentJa": "初出3:21の系譜列挙と曖昧な関係表現に限定。3:22のシェマヤ親子はfactとして3:22にゲート。実記事の該当箇所(lines 104–110)は3:21–22に触れるが「祭司」というWEB未支持説明は現行reader noteから除かれている。",
+      "knownBy": {
+        "chapter": 3,
+        "verse": 21
+      },
+      "readerFields": {
+        "nameJa": "シェカニヤ",
+        "subtitleJa": "エルサレムの王統の系譜に名が続きます。",
+        "summaryJa": "歴代誌上3:21は複数の家系名を並べ、シェカニヤの名を挙げます。節の句読点だけでは、その直前の諸名との正確な親子関係を一つに定めにくいため、本文の範囲で紹介します。",
+        "identityNoteJa": "系譜の列挙に現れるシェカニヤです。句読点だけから列挙中の人物間の全ての親子関係を確定しません。",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": {
+          "title": "Shecaniah",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Shecaniah",
+          "kind": "article",
+          "noteJa": "英語版記事は、歴代誌の系譜に現れるシェカニヤを扱います。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true
+        }
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 3,
+            "verse": 21
+          },
+          "end": {
+            "chapter": 3,
+            "verse": 21
+          }
+        },
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 3,
+            "verse": 22
+          },
+          "end": {
+            "chapter": 3,
+            "verse": 22
+          }
+        }
+      ],
+      "facts": [
+        {
+          "textJa": "次節はシェカニヤの子としてシェマヤを挙げ、その子らの名も列挙します。",
+          "knownBy": {
+            "chapter": 3,
+            "verse": 22
+          },
+          "sourceIds": [
+            "webp-1ch-shechaniah_2583-3-22"
+          ]
+        }
+      ],
+      "occurrenceChecks": [
+        {
+          "chapter": 3,
+          "verse": 21,
+          "status": "direct",
+          "reasonJa": "本文にシェカニヤの名が現れるが、列挙の構造から他の名との直接親子関係は断定しない。"
+        },
+        {
+          "chapter": 3,
+          "verse": 22,
+          "status": "direct",
+          "reasonJa": "次節はシェカニヤの子シェマヤを挙げる。"
+        }
+      ],
+      "excludedOccurrences": null,
+      "pendingContextVariants": null,
+      "currentEvidenceCandidateDispositions": null,
+      "fixedPrimaryCoordinatesRechecked": [
+        {
+          "ref": "1CH 3:21",
+          "text": "The sons of Hananiah: Pelatiah and Jeshaiah; the sons of Rephaiah, the sons of Arnan, the sons of Obadiah, the sons of Shecaniah.",
+          "citationURL": "https://ebible.org/engwebp/1CH03.htm#V21",
+          "textSHA256": "5b99870c36487c21528baa5b78916e4b1926dc7ef922fa1b409da41a0e30dfa2"
+        },
+        {
+          "ref": "1CH 3:22",
+          "text": "The son of Shecaniah: Shemaiah. The sons of Shemaiah: Hattush, Igal, Bariah, Neariah, and Shaphat, six.",
+          "citationURL": "https://ebible.org/engwebp/1CH03.htm#V22",
+          "textSHA256": "9a4fd25b4c67cd60b06b26a0c967f42d69fe12e9c4fefff69f9915c7fdce4634"
+        }
+      ],
+      "wikipediaEvidence": {
+        "url": "https://en.wikipedia.org/wiki/Shecaniah",
+        "title": "Shecaniah",
+        "kind": "article",
+        "noteJa": "英語版記事は、歴代誌の系譜に現れるシェカニヤを扱います。",
+        "identityVerified": true,
+        "relationVerified": null,
+        "reusedPriorLiveRead": [
+          {
+            "entityID": "person:shechaniah_2583",
+            "url": "https://en.wikipedia.org/wiki/Shecaniah",
+            "title": "Shecaniah",
+            "locator": "104–110",
+            "supportJa": "A namesake list includes a Shechani’ah priest whose sons are mentioned in 3:21–22; the pinned passages do not establish the priest label.",
+            "checkedAtUTC": "2026-10-16T10:34:00Z"
+          }
+        ]
+      },
+      "profileHashSync": {
+        "manifestProfileMatchesCalculatedProfile": true,
+        "evidenceProfileMatchesCalculatedProfile": true,
+        "draftHashMatchesManifest": true,
+        "evidenceDraftHashMatchesFilesystem": true
+      },
+      "nestedWikipediaReadBinding": {
+        "url": "https://en.wikipedia.org/wiki/Shecaniah",
+        "title": "Shecaniah",
+        "section": "https://en.wikipedia.org/wiki/Shecaniah",
+        "locator": "Article body lines 103–112, especially 107.",
+        "supportParaphraseJa": "英語版のシェカニヤ記事は同名人物を分け、その一人について歴代誌上3:21–22に子らが記されると述べています。",
+        "checkedAtUTC": "2026-10-16T10:11:50Z",
+        "currentDraftSHA256": "0ed9148bcc1fc61d8cf25779537c2aa13700e20152dec45ae16dc2a0047f338e",
+        "currentProfileSHA256": "2f9f3047957f48c545fbc1c20f43c8cc2755ce56fff90847b7b4c5df906b16b6"
+      },
+      "nestedWikipediaReadBindingMatchesCurrent": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shechem_2590",
+      "draftPath": "drafts/persons_1/1CH_shechem_2590.json",
+      "currentDraftSHA256": "ef670ab901a673db3328c70feb768a651817541dc373aedf0cd0ad7cefc74929",
+      "evidencePath": "evidence/persons_1/1CH_shechem_2590-sources.json",
+      "currentEvidenceSHA256": "5b0df39e178ec7c568c6cafe794c51ac8c6c484e57e0583a525d494569fbee6f",
+      "currentProfileSHA256": "fb769cde104b03ece7418678d22a20d2b2327dd36cc64a2fbece1ec53afaef8d",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shechem",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shelesh_2603",
+      "draftPath": "drafts/persons_1/1CH_shelesh_2603.json",
+      "currentDraftSHA256": "1e0f22fae3083e755f3dc24ecce53263d09d8a7eadc56aae29cdb749986dc786",
+      "evidencePath": "evidence/persons_1/1CH_shelesh_2603-sources.json",
+      "currentEvidenceSHA256": "ecacb0b5cbef99a294723a93953fbe5aa609620db3112f00afe81e0c46a63641",
+      "currentProfileSHA256": "47b7627c6449936debb9b5b7ac50775b36e63542ada88b148a26f1e0b004ddd2",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Pinned WEB first-use/available occurrences appear consistent with the short profile, but this reviewer did not complete an independent canonical/alias search for a suitable article. The author review says searched-no-fit without query/result details in the evidence; null is not proof that no article exists.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "searched-no-fit",
+        "wikipediaURL": null,
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shelomith_2609",
+      "draftPath": "drafts/persons_1/1CH_shelomith_2609.json",
+      "currentDraftSHA256": "7eb0c46fabbadc4dd5d9131b159f2f2aaacf6eac2911bbfa110eb24748daf57d",
+      "evidencePath": "evidence/persons_1/1CH_shelomith_2609-sources.json",
+      "currentEvidenceSHA256": "8ae431c5c809467e7825078054d2d4c93c796381b77e4c7a210afd717429cced",
+      "currentProfileSHA256": "df2b75350107166cb5b223b566bbf0e976b321ae3890d7a6eed7909e82010a5d",
+      "manifestMatchesFilesystem": true,
+      "previousDecision": "fail",
+      "priorReviewThreeSHA256s": {
+        "draft": "e3bc0451319f37aceb670786fdfa7d7d153f3064460cc96172f46e9743d6c884",
+        "profile": "e6f75e134f985fccaf81ff4f5e7212c44cea02bce49ed933a9e7b135bfe964e1",
+        "evidence": "576999c1023035246e56a5355874005f437dd1ddd2b970a3bf7e827fabbf91c3"
+      },
+      "currentReview": "pass",
+      "decision": "pass",
+      "currentTextAndGateAssessmentJa": "初出26:25でEliezer系譜のShelomothを記し、26:26/28の宝物管理は各節のfacts。Wikipedia noteは一般的な同名区別に改められ、26:28内容を先出ししない。共有一覧1505–1513はEliezer系譜のShelomothと別同名を分ける。",
+      "knownBy": {
+        "chapter": 26,
+        "verse": 25
+      },
+      "readerFields": {
+        "nameJa": "シェロモト",
+        "subtitleJa": "モーセの子エリエゼルの家系に連なる人物として名が記されます。",
+        "summaryJa": "歴代誌上26:25は、エリエゼルの子孫の系譜にシェロモトを挙げます。",
+        "identityNoteJa": "本文の初出表記はShelomothです。IDで使われるShelomithとは異綴りですが、同節の献納物管理者として同一の対象を示す表記として扱います。",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, L–Z",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shelomoth",
+          "kind": "shared-section",
+          "noteJa": "英語版の人物一覧は、聖書中の同名者を区別して扱います。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true
+        }
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 26,
+            "verse": 25
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 25
+          }
+        },
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 26,
+            "verse": 26
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 26
+          }
+        },
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 26,
+            "verse": 28
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 28
+          }
+        }
+      ],
+      "facts": [
+        {
+          "textJa": "シェロモトと兄弟たちは、献納された品々の保管を任されます。",
+          "knownBy": {
+            "chapter": 26,
+            "verse": 26
+          },
+          "sourceIds": [
+            "webp-1ch-shelomith_2609-26-26"
+          ]
+        },
+        {
+          "textJa": "本文は、サムエルらが献納した物もシェロモトと兄弟たちの管理下に置かれたと記します。",
+          "knownBy": {
+            "chapter": 26,
+            "verse": 28
+          },
+          "sourceIds": [
+            "webp-1ch-shelomith_2609-26-28"
+          ]
+        }
+      ],
+      "occurrenceChecks": [
+        {
+          "chapter": 26,
+          "verse": 25,
+          "status": "direct",
+          "reasonJa": "本文の系譜はエリエゼルから続く父系の中でシェロモトを挙げる。"
+        },
+        {
+          "chapter": 26,
+          "verse": 26,
+          "status": "direct",
+          "reasonJa": "本文はシェロモトと兄弟たちが献納された宝物全体を管理したと述べる。"
+        },
+        {
+          "chapter": 26,
+          "verse": 28,
+          "status": "direct",
+          "reasonJa": "本文はサムエル、サウル、アブネル、ヨアブの献納物もシェロモトと兄弟たちの管理下にあったと述べる。"
+        }
+      ],
+      "excludedOccurrences": null,
+      "pendingContextVariants": null,
+      "currentEvidenceCandidateDispositions": null,
+      "fixedPrimaryCoordinatesRechecked": [
+        {
+          "ref": "1CH 26:25",
+          "text": "His brothers: of Eliezer, Rehabiah his son, and Jeshaiah his son, and Joram his son, and Zichri his son, and Shelomoth his son.",
+          "citationURL": "https://ebible.org/engwebp/1CH26.htm#V25",
+          "textSHA256": "f9bd15e33d7a737f2e10386d62c5a7f11d587f7f7d12cac946d13e676f955e3e"
+        },
+        {
+          "ref": "1CH 26:26",
+          "text": "This Shelomoth and his brothers were over all the treasuries of the dedicated things, which David the king, and the heads of the fathers’ households, the captains over thousands and hundreds, and the captains of the army, had dedicated.",
+          "citationURL": "https://ebible.org/engwebp/1CH26.htm#V26",
+          "textSHA256": "e14a11ee149baeb56fea985c99711427898babe6ec4d9a517a78798312c891b3"
+        },
+        {
+          "ref": "1CH 26:28",
+          "text": "All that Samuel the seer, Saul the son of Kish, Abner the son of Ner, and Joab the son of Zeruiah had dedicated, whoever had dedicated anything, it was under the hand of Shelomoth and of his brothers.",
+          "citationURL": "https://ebible.org/engwebp/1CH26.htm#V28",
+          "textSHA256": "6b2e10ace1e4e25e34b43bb5a8b23ceb6d1f9c260073a3c199b4d1f8905f4bd6"
+        }
+      ],
+      "wikipediaEvidence": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shelomoth",
+        "title": "List of minor Hebrew Bible figures, L–Z",
+        "kind": "shared-section",
+        "noteJa": "英語版の人物一覧は、聖書中の同名者を区別して扱います。",
+        "identityVerified": true,
+        "relationVerified": null,
+        "reusedPriorLiveRead": [
+          {
+            "entityID": "person:shelomith_2609",
+            "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z",
+            "title": "List of minor Hebrew Bible figures, L–Z",
+            "locator": "1505–1513",
+            "supportJa": "Two Shelomoth individuals are listed; the Eliezer descendant is tied to 26:28, a later verse than profile first use 26:25.",
+            "checkedAtUTC": "2026-10-16T10:34:00Z"
+          }
+        ]
+      },
+      "profileHashSync": {
+        "manifestProfileMatchesCalculatedProfile": true,
+        "evidenceProfileMatchesCalculatedProfile": true,
+        "draftHashMatchesManifest": true,
+        "evidenceDraftHashMatchesFilesystem": true
+      },
+      "nestedWikipediaReadBinding": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shelomoth",
+        "title": "List of minor Hebrew Bible figures, L–Z",
+        "section": "Shelomoth",
+        "locator": "L–Z article body lines 1505–1513, subsection Shelomoth.",
+        "supportParaphraseJa": "英語版の人物一覧は、歴代誌上26:28で献納物の管理を任されたモーセの子エリエゼルの子孫としてシェロモトを記し、別の同名者も区別しています。",
+        "checkedAtUTC": "2026-10-16T10:11:50Z",
+        "currentDraftSHA256": "7eb0c46fabbadc4dd5d9131b159f2f2aaacf6eac2911bbfa110eb24748daf57d",
+        "currentProfileSHA256": "df2b75350107166cb5b223b566bbf0e976b321ae3890d7a6eed7909e82010a5d"
+      },
+      "nestedWikipediaReadBindingMatchesCurrent": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shema_2614",
+      "draftPath": "drafts/persons_1/1CH_shema_2614.json",
+      "currentDraftSHA256": "63637ec9a141e09e250b1609e55394cd8cb2549c7c75b5226d5a678de0dddf9d",
+      "evidencePath": "evidence/persons_1/1CH_shema_2614-sources.json",
+      "currentEvidenceSHA256": "d94ddcb40e0cb41b50d8d2bf17839a1ac08ef59c450529c5e45cb73bb63271d5",
+      "currentProfileSHA256": "c9c669af56dd1b42a0d88f1700de1dc808c2563752951412ae82d0a6acdef536",
+      "manifestMatchesFilesystem": true,
+      "previousDecision": "fail",
+      "priorReviewThreeSHA256s": {
+        "draft": "171d288673db5dbfe5db5a6d9bd993900d6cdcdcadc038839cf2a98126a8844c",
+        "profile": "a4651f9714297a5207de1e51866ec08bea5f78912e6e7c9aa2cb782230532ff4",
+        "evidence": "25682161dd3aa2538a19307959cb46aceeed91a010b52769cf6b344ddee7ada3"
+      },
+      "currentReview": "pass",
+      "decision": "pass",
+      "currentTextAndGateAssessmentJa": "初出2:43のヘブロンの子らの一人として基底説明。ラハムとの親子関係は2:44 factへゲートされ、Raham記事noteは一般的な系譜説明に限定。実記事102行の情報は2:44に対応する。",
+      "knownBy": {
+        "chapter": 2,
+        "verse": 43
+      },
+      "readerFields": {
+        "nameJa": "シェマ",
+        "subtitleJa": "ヘブロンの子らの一人として名が挙がります。",
+        "summaryJa": "歴代誌上2:43はヘブロンの子らとしてコラ、タプア、レケムとシェマを挙げます。",
+        "identityNoteJa": "この人物はヘブロンの子として挙がるシェマです。別の系譜に出る同名者と混同しません。",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": {
+          "title": "Raham",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Raham",
+          "kind": "related-section",
+          "noteJa": "英語版のラハム記事は聖書の系譜に現れる人物を扱います。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "relationVerified": true
+        }
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 2,
+            "verse": 43
+          },
+          "end": {
+            "chapter": 2,
+            "verse": 43
+          }
+        },
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 2,
+            "verse": 44
+          },
+          "end": {
+            "chapter": 2,
+            "verse": 44
+          }
+        }
+      ],
+      "facts": [
+        {
+          "textJa": "シェマはラハムの父として記されます。",
+          "knownBy": {
+            "chapter": 2,
+            "verse": 44
+          },
+          "sourceIds": [
+            "webp-1ch-shema_2614-2-44"
+          ]
+        }
+      ],
+      "occurrenceChecks": [
+        {
+          "chapter": 2,
+          "verse": 43,
+          "status": "direct",
+          "reasonJa": "本文でヘブロンの子らの一人として名が挙がる。"
+        },
+        {
+          "chapter": 2,
+          "verse": 44,
+          "status": "direct",
+          "reasonJa": "次節はシェマがラハムの父になったと記す。"
+        }
+      ],
+      "excludedOccurrences": null,
+      "pendingContextVariants": null,
+      "currentEvidenceCandidateDispositions": null,
+      "fixedPrimaryCoordinatesRechecked": [
+        {
+          "ref": "1CH 2:43",
+          "text": "The sons of Hebron: Korah, Tappuah, Rekem, and Shema.",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V43",
+          "textSHA256": "03059e82341e013fe5c17c6bc7b12315a073f8be7c44cd68811f5650b233e33f"
+        },
+        {
+          "ref": "1CH 2:44",
+          "text": "Shema became the father of Raham, the father of Jorkeam; and Rekem became the father of Shammai.",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V44",
+          "textSHA256": "8d87b5e1c381e132a95e2f157da486e55e7850f94bdc9f0349ed02f38f049830"
+        }
+      ],
+      "wikipediaEvidence": {
+        "url": "https://en.wikipedia.org/wiki/Raham",
+        "title": "Raham",
+        "kind": "related-section",
+        "noteJa": "英語版のラハム記事は聖書の系譜に現れる人物を扱います。",
+        "identityVerified": false,
+        "relationVerified": true,
+        "reusedPriorLiveRead": [
+          {
+            "entityID": "person:shema_2614",
+            "url": "https://en.wikipedia.org/wiki/Raham",
+            "title": "Raham",
+            "locator": "102",
+            "supportJa": "Raham’s lead identifies him as son of Shema in 1 Chronicles 2:44, one verse later than the profile’s first use.",
+            "checkedAtUTC": "2026-10-16T10:34:00Z"
+          }
+        ]
+      },
+      "profileHashSync": {
+        "manifestProfileMatchesCalculatedProfile": true,
+        "evidenceProfileMatchesCalculatedProfile": true,
+        "draftHashMatchesManifest": true,
+        "evidenceDraftHashMatchesFilesystem": true
+      },
+      "nestedWikipediaReadBinding": {
+        "url": "https://en.wikipedia.org/wiki/Raham",
+        "title": "Raham",
+        "section": "Raham",
+        "locator": "Raham記事本文102行。1歴代誌2:44を引用しラハムをシェマの子、ヨルケアムの父と記す。後の名を含むため、この資料は2:44で表示する。",
+        "supportParaphraseJa": "英語版のラハム記事は、歴代誌上2:44の系譜でラハムをシェマの子としています。",
+        "checkedAtUTC": "2026-10-16T10:13:21Z",
+        "currentDraftSHA256": "63637ec9a141e09e250b1609e55394cd8cb2549c7c75b5226d5a678de0dddf9d",
+        "currentProfileSHA256": "c9c669af56dd1b42a0d88f1700de1dc808c2563752951412ae82d0a6acdef536"
+      },
+      "nestedWikipediaReadBindingMatchesCurrent": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shema_2615",
+      "draftPath": "drafts/persons_1/1CH_shema_2615.json",
+      "currentDraftSHA256": "536d2d195ad993acf3859829353d42fee7df9bd63fe34171202c324bc7ce61fd",
+      "evidencePath": "evidence/persons_1/1CH_shema_2615-sources.json",
+      "currentEvidenceSHA256": "6b481b9af0bf30f402674db280ffa65ecd0c3813880c4b2052e147396e4eeae4",
+      "currentProfileSHA256": "c7e5bab4b8f841a3667ca1df50038fdf08824cd09386ede0ce12fad934baeeef",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Azaz",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shemaiah_2620",
+      "draftPath": "drafts/persons_1/1CH_shemaiah_2620.json",
+      "currentDraftSHA256": "d882adc5a77e0b7f459abd4730e5b9d27b7024dcadbb33b2384eb86d2550bf87",
+      "evidencePath": "evidence/persons_1/1CH_shemaiah_2620-sources.json",
+      "currentEvidenceSHA256": "094999b8e430964fb8b09046eb140a5ac78d344bf0bbab87a63943cf3b6b88ac",
+      "currentProfileSHA256": "b0d0e30c52aa18d2c4876d2875abf5d9fd2a5cf006260cca7a132009b903dd06",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Pinned WEB first-use/available occurrences appear consistent with the short profile, but this reviewer did not complete an independent canonical/alias search for a suitable article. The author review says searched-no-fit without query/result details in the evidence; null is not proof that no article exists.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "searched-no-fit",
+        "wikipediaURL": null,
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shemaiah_2623",
+      "draftPath": "drafts/persons_1/1CH_shemaiah_2623.json",
+      "currentDraftSHA256": "80a82c47cd36b7933a81d758407528ab9dbac9988a008a0b19a5dcd3548d848e",
+      "evidencePath": "evidence/persons_1/1CH_shemaiah_2623-sources.json",
+      "currentEvidenceSHA256": "19211865eaf57bf9b581f77e608c5ea877fe624b2d5533f16898fdf0366d0e3d",
+      "currentProfileSHA256": "4de663c954bbd832910401cf2a88d63b02f354f7084381f8f95be63777f850ba",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/List_of_people_in_the_Hebrew_Bible_called_Shemaiah",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shemariah_2645",
+      "draftPath": "drafts/persons_1/1CH_shemariah_2645.json",
+      "currentDraftSHA256": "caa0cf954a979cb7d27b7858582157a257ffeae874099aaeee9c5a95bfcd2e08",
+      "evidencePath": "evidence/persons_1/1CH_shemariah_2645-sources.json",
+      "currentEvidenceSHA256": "b4608957dfe8256fe9e81566e9376d2825f16797e3109bd32cb8b168d275892c",
+      "currentProfileSHA256": "9aa308cd003385c551be821cc33bbd2afcb40d39a9d2f468199723cbfec3f979",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shemariah",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shemiramoth_2651",
+      "draftPath": "drafts/persons_1/1CH_shemiramoth_2651.json",
+      "currentDraftSHA256": "6f89d08ccae3f64ca9feb840bfc8aa5a6ffdf9551df80f035f71f81ebbfcdbfb",
+      "evidencePath": "evidence/persons_1/1CH_shemiramoth_2651-sources.json",
+      "currentEvidenceSHA256": "c4cc63a064aad3a1fb1f0280b86e59b4cc7bf5ac18dd2b0132fda54d970b05e7",
+      "currentProfileSHA256": "cb48663bc404a17fd5b1f3dfaa1aeada6b61f2de7d297c360b334e3e00ab79f7",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Pinned WEB first-use/available occurrences appear consistent with the short profile, but this reviewer did not complete an independent canonical/alias search for a suitable article. The author review says searched-no-fit without query/result details in the evidence; null is not proof that no article exists.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "searched-no-fit",
+        "wikipediaURL": null,
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shenazar_2655",
+      "draftPath": "drafts/persons_1/1CH_shenazar_2655.json",
+      "currentDraftSHA256": "d48345d811b27baf9f32cdb1e998c667daa2e30d4fb092a8ab90b922bc5c6a9c",
+      "evidencePath": "evidence/persons_1/1CH_shenazar_2655-sources.json",
+      "currentEvidenceSHA256": "7e8294bf6c06797ecc949461efdb5d5bb21b2f7de626e4109c26114035568ca5",
+      "currentProfileSHA256": "3dbc02bbb555a8a914c1a7161f3210ba6a75641e83c78461774fa9521c462479",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shenazar",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shephatiah_2658",
+      "draftPath": "drafts/persons_1/1CH_shephatiah_2658.json",
+      "currentDraftSHA256": "65c9e28afbf9b83be759baa906d527ef2a9ae9b17c7652dcb0d40df6f7088484",
+      "evidencePath": "evidence/persons_1/1CH_shephatiah_2658-sources.json",
+      "currentEvidenceSHA256": "91ecf3980b8ffb71db79568bcb82f21228f135d58527a6317a6758b879cf1390",
+      "currentProfileSHA256": "475e4df5883d8553444c13d46e0e761809c898820773c26516984b1c06f74c4a",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Profile transparently reports the L–Z page’s apparent reference typo (1CH2:5 vs 12:5). Pinned 12:5 supports the Halphite epithet but not every page claim; keep the page relationship limited.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shephatiah",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:sherah_2666",
+      "draftPath": "drafts/persons_1/1CH_sherah_2666.json",
+      "currentDraftSHA256": "fd13f15ac18e265a0287fd77b2748df372c417249fc7c6b617fd6f97108697bf",
+      "evidencePath": "evidence/persons_1/1CH_sherah_2666-sources.json",
+      "currentEvidenceSHA256": "dc4b7fb1dc895fad51987bb40eb0a9266f6cc6852d2baaa0751ab51a4081d785",
+      "currentProfileSHA256": "dc722800234a839f98322a9d7580d3ab2eb8bdb79f17efa963ad3230b34f123c",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/Sheerah",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shillem_2677",
+      "draftPath": "drafts/persons_1/1CH_shillem_2677.json",
+      "currentDraftSHA256": "bfe39f442b0f6ad6fb71f19ae7bf0898c8f653da2da5ac5164a592358f3470c5",
+      "evidencePath": "evidence/persons_1/1CH_shillem_2677-sources.json",
+      "currentEvidenceSHA256": "f9be8295da1b75f6698dc8470dec1df2bfea3fc64ad7f2e08e85335d3ad6c088",
+      "currentProfileSHA256": null,
+      "manifestMatchesFilesystem": true,
+      "previousDecision": "fail",
+      "priorReviewThreeSHA256s": {
+        "draft": "7624f40dbe67ff0c9e513b5ebaa9bbd884e8391f4ed48e70ecd784357e4f1e61",
+        "profile": "bd3fa41e41d6942d83fcbdac7596e95a712a96fe786246abc6c794a2b73e964b",
+        "evidence": "d6642f05828eece49a4b5a507555063cdaa3ced75782938dc73bbf019b8344aa"
+      },
+      "currentReview": "qualified",
+      "decision": "qualified",
+      "currentTextAndGateAssessmentJa": "プロフィールをnullにして候補をhold。固定WEB 7:13はShallumと綴り、Shillemとの同一性根拠なし。候補の誤対応を採用していないが、正しい人物リンクは未確定。",
+      "knownBy": null,
+      "readerFields": null,
+      "passages": null,
+      "facts": null,
+      "occurrenceChecks": [
+        {
+          "chapter": 7,
+          "verse": 13,
+          "status": "excluded-index-spelling",
+          "reasonJa": "固定WEB 7:13は「Shallum」と綴る。候補ID Shillemとの同一性を示す根拠がなく、別綴りと推定しない。"
+        }
+      ],
+      "excludedOccurrences": [
+        {
+          "chapter": 7,
+          "verse": 13,
+          "status": "excluded-index-spelling",
+          "reasonJa": "WEBの綴りShallumと候補ID Shillemの同一性は確定できない。"
+        }
+      ],
+      "pendingContextVariants": null,
+      "currentEvidenceCandidateDispositions": null,
+      "fixedPrimaryCoordinatesRechecked": [],
+      "wikipediaEvidence": {
+        "state": "null",
+        "authorSearchEvidence": {
+          "url": null,
+          "status": "candidate-identity-unresolved",
+          "identityBasisJa": "WEBはShallum、候補IDはShillem。両者を結び付ける根拠がなく、記事を当該人物のものとして表示しない。",
+          "fragmentVerified": false,
+          "checkedAtUTC": "2026-10-16T10:17:20Z"
+        }
+      },
+      "profileHashSync": {
+        "manifestProfileMatchesCalculatedProfile": true,
+        "evidenceProfileMatchesCalculatedProfile": true,
+        "draftHashMatchesManifest": true,
+        "evidenceDraftHashMatchesFilesystem": true
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shimea_2681",
+      "draftPath": "drafts/persons_1/1CH_shimea_2681.json",
+      "currentDraftSHA256": "57b54e85291f64931810d922aab7dc3195e47021a289f210c5d08b9c62cd84cf",
+      "evidencePath": "evidence/persons_1/1CH_shimea_2681-sources.json",
+      "currentEvidenceSHA256": "2286eda7bfb733e90924cd3ec37e9ca3b403a48d46e506cb70f92c880c29f9de",
+      "currentProfileSHA256": "5a530efd008832b30e8c5b1cae518caeb7c9fadf6a83cfc6b324b0730d73dd35",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shimea",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shimei_2686",
+      "draftPath": "drafts/persons_1/1CH_shimei_2686.json",
+      "currentDraftSHA256": "0a32112d77bc133661c3b84f5791224f23a9e30a5a4bd58aee3fc7653ba5ffc6",
+      "evidencePath": "evidence/persons_1/1CH_shimei_2686-sources.json",
+      "currentEvidenceSHA256": "95fd40a1fde6dfdf0e8902f462c83fb1224e1e698f03fffb7f1ab4c7795affd3",
+      "currentProfileSHA256": "de634af21195ffafc1369e2e7c5ecc49e00001a512bf79d4273cda9ba524daa7",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/Shimei",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shimei_2690",
+      "draftPath": "drafts/persons_1/1CH_shimei_2690.json",
+      "currentDraftSHA256": "6a04ee4fe61ffb483b11fa8768e63273ad80f6ef3ba451962637e6204e2759b8",
+      "evidencePath": "evidence/persons_1/1CH_shimei_2690-sources.json",
+      "currentEvidenceSHA256": "9530dcfa8205ac6409b9ec33cbce9064568a0095c37188b0c29ff5e853a71f5a",
+      "currentProfileSHA256": "296d17cc9543ab58189ac6303be9b70b2eb06e84ea78524191b3147c62bdc18c",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/Shimei",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shimon_2701",
+      "draftPath": "drafts/persons_1/1CH_shimon_2701.json",
+      "currentDraftSHA256": "09292c13ff77944cbfd955145adbedcfa51ad34c8f1d77b1ff3fcaa1ac6500aa",
+      "evidencePath": "evidence/persons_1/1CH_shimon_2701-sources.json",
+      "currentEvidenceSHA256": "2571dc41cedc1eeaa7836bdbcbb0b57ab9bb4476ded3161eaf4bf465d5c9eb9e",
+      "currentProfileSHA256": "881ad81db079efbaccaae2317b74704bdc4a89a902828c8a3fb62b49dd72272e",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Pinned WEB first-use/available occurrences appear consistent with the short profile, but this reviewer did not complete an independent canonical/alias search for a suitable article. The author review says searched-no-fit without query/result details in the evidence; null is not proof that no article exists.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "searched-no-fit",
+        "wikipediaURL": null,
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shimri_2704",
+      "draftPath": "drafts/persons_1/1CH_shimri_2704.json",
+      "currentDraftSHA256": "65c18413e99cf3b7111bd57b5949d42a55cd64e0b6fe8e42397962d92bb572c6",
+      "evidencePath": "evidence/persons_1/1CH_shimri_2704-sources.json",
+      "currentEvidenceSHA256": "f6c9bd8febbd34621dce0f23a02e7f3f9c8eadd6cc699253ce805952077a3b32",
+      "currentProfileSHA256": "8b58bed53b38b4742e5aa6b7901dfeaaca51bdb72e66bfdcfa56c6467bff64a8",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Pinned WEB first-use/available occurrences appear consistent with the short profile, but this reviewer did not complete an independent canonical/alias search for a suitable article. The author review says searched-no-fit without query/result details in the evidence; null is not proof that no article exists.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "searched-no-fit",
+        "wikipediaURL": null,
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shitrai_2713",
+      "draftPath": "drafts/persons_1/1CH_shitrai_2713.json",
+      "currentDraftSHA256": "8970cebe105d67d8b31693b3833379104b852806fefbb0c1db67407daa3e8f34",
+      "evidencePath": "evidence/persons_1/1CH_shitrai_2713-sources.json",
+      "currentEvidenceSHA256": "bd74f1253324b3d7cd91a000d9e78a5c4a1282a180d8275515b46aa43a5e6194",
+      "currentProfileSHA256": "3be26f3d6006cb1a45e126c6e7d35a3c16f3b65607bf6eced1758888d3cfd31b",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Pinned WEB first-use/available occurrences appear consistent with the short profile, but this reviewer did not complete an independent canonical/alias search for a suitable article. The author review says searched-no-fit without query/result details in the evidence; null is not proof that no article exists.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "searched-no-fit",
+        "wikipediaURL": null,
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shobab_2715",
+      "draftPath": "drafts/persons_1/1CH_shobab_2715.json",
+      "currentDraftSHA256": "f8e964bd349f94229ccd0ded7fdb49df8e106841adf0cdfa1a1fbff6381f16ca",
+      "evidencePath": "evidence/persons_1/1CH_shobab_2715-sources.json",
+      "currentEvidenceSHA256": "7c572c80e437ad140d45563f0b4c0abe01d8aa25620d95dd9638b86b033fbe88",
+      "currentProfileSHA256": "03425a498abe1c4a3c037afc76341ea07bcfa758d7722f896585edb7768c1f27",
+      "manifestMatchesFilesystem": true,
+      "previousDecision": "fail",
+      "priorReviewThreeSHA256s": {
+        "draft": "45e3478a306751b0d99a1c210d9052e7b73c732df8fb024d8892b5558b1d1270",
+        "profile": "01df6aa1404c1fdf447120a151f1f694ef7c424e8ae84bc90939c3962f50868f",
+        "evidence": "7db4e221a908d9b2586840fa7c5cfad456cc8a34c0a6280c02ee813d1ec4d8c1"
+      },
+      "currentReview": "pass",
+      "decision": "pass",
+      "currentTextAndGateAssessmentJa": "初出3:5のダビデの子名簿に基底を限定。14:4再掲はfact/sourceを14:4にゲート。共有一覧1697–1703がダビデの子と2:18の別人を区別し、現行noteは記事内容に沿う。",
+      "knownBy": {
+        "chapter": 3,
+        "verse": 5
+      },
+      "readerFields": {
+        "nameJa": "ショバブ",
+        "subtitleJa": "エルサレムで生まれたダビデの子らの一人として記されます。",
+        "summaryJa": "歴代誌上3:5は、エルサレムでダビデに生まれた四人の子の名簿にショバブを挙げます。",
+        "identityNoteJa": "英語版の人物一覧は、ダビデの子ショバブと、歴代誌上2:18の別のショバブを分けて記します。",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, L–Z",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shobab",
+          "kind": "shared-section",
+          "noteJa": "英語版の人物一覧は、ダビデの子ショバブと、歴代誌上2:18の別人を区別しています。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true
+        }
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 3,
+            "verse": 5
+          },
+          "end": {
+            "chapter": 3,
+            "verse": 5
+          }
+        },
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 14,
+            "verse": 4
+          },
+          "end": {
+            "chapter": 14,
+            "verse": 4
+          }
+        }
+      ],
+      "facts": [
+        {
+          "textJa": "歴代誌上14:4は、エルサレムで生まれたダビデの子らとしてショバブを再び挙げます。",
+          "knownBy": {
+            "chapter": 14,
+            "verse": 4
+          },
+          "sourceIds": [
+            "webp-1ch-shobab_2715-14-4",
+            "wiki-shobab_2715"
+          ]
+        }
+      ],
+      "occurrenceChecks": [
+        {
+          "chapter": 3,
+          "verse": 5,
+          "status": "direct",
+          "reasonJa": "歴代誌上3:5は、エルサレムでダビデに生まれた四人の子の名簿にショバブを挙げます。歴代誌上14:4でも同じ並びの名が記されます。"
+        },
+        {
+          "chapter": 14,
+          "verse": 4,
+          "status": "direct",
+          "reasonJa": "本文の同じ名簿・人物文脈に再登場する。"
+        }
+      ],
+      "excludedOccurrences": [],
+      "pendingContextVariants": null,
+      "currentEvidenceCandidateDispositions": null,
+      "fixedPrimaryCoordinatesRechecked": [
+        {
+          "ref": "1CH 3:5",
+          "text": "and these were born to him in Jerusalem: Shimea, Shobab, Nathan, and Solomon, four, by Bathshua the daughter of Ammiel;",
+          "citationURL": "https://ebible.org/engwebp/1CH03.htm#V5",
+          "textSHA256": "b12ae580ff0ed3756a3370c2e4c75697eefa4f092201b83e7de1c528cad2a5de"
+        },
+        {
+          "ref": "1CH 14:4",
+          "text": "These are the names of the children whom he had in Jerusalem: Shammua, Shobab, Nathan, Solomon,",
+          "citationURL": "https://ebible.org/engwebp/1CH14.htm#V4",
+          "textSHA256": "7785b4653de726afe6f2e502374c00227b598e34796352a14b91b753922e2027"
+        }
+      ],
+      "wikipediaEvidence": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shobab",
+        "title": "List of minor Hebrew Bible figures, L–Z",
+        "kind": "shared-section",
+        "noteJa": "英語版の人物一覧は、ダビデの子ショバブと、歴代誌上2:18の別人を区別しています。",
+        "identityVerified": true,
+        "relationVerified": null,
+        "reusedPriorLiveRead": [
+          {
+            "entityID": "person:shobab_2715",
+            "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z",
+            "title": "List of minor Hebrew Bible figures, L–Z",
+            "locator": "1697–1703",
+            "supportJa": "The entry distinguishes David’s Shobab in 3:5/14:4 from Caleb’s Shobab in 2:18.",
+            "checkedAtUTC": "2026-10-16T10:34:00Z"
+          }
+        ]
+      },
+      "profileHashSync": {
+        "manifestProfileMatchesCalculatedProfile": true,
+        "evidenceProfileMatchesCalculatedProfile": true,
+        "draftHashMatchesManifest": true,
+        "evidenceDraftHashMatchesFilesystem": true
+      },
+      "nestedWikipediaReadBinding": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Shobab",
+        "title": "List of minor Hebrew Bible figures, L–Z",
+        "section": "Shobab",
+        "locator": "L–Z「Shobab」節、行1701–1703。二人の同名者を区別し、王ダビデの子は2 Samuel 5:14および1 Chronicles 3:5, 14:4と記す。",
+        "supportParaphraseJa": "英語版の人物一覧は、ダビデの子ショバブと、歴代誌上2:18の別のショバブを分けて記します。",
+        "checkedAtUTC": "2026-10-16T10:19:49Z",
+        "currentDraftSHA256": "f8e964bd349f94229ccd0ded7fdb49df8e106841adf0cdfa1a1fbff6381f16ca",
+        "currentProfileSHA256": "03425a498abe1c4a3c037afc76341ea07bcfa758d7722f896585edb7768c1f27"
+      },
+      "nestedWikipediaReadBindingMatchesCurrent": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shoham_2723",
+      "draftPath": "drafts/persons_1/1CH_shoham_2723.json",
+      "currentDraftSHA256": "39668854267d522181bb5314a82dc680230996310fad830f746acca72b3a55da",
+      "evidencePath": "evidence/persons_1/1CH_shoham_2723-sources.json",
+      "currentEvidenceSHA256": "7b2e05dcf4fc5e6c6c8485f8b5b9c11ad2e0b533601b31e9375e100510bddf21",
+      "currentProfileSHA256": "df80914553f700c49d9ab5ddb64148af860a34e0039fcda8250f1cca0e0f007d",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Pinned WEB first-use/available occurrences appear consistent with the short profile, but this reviewer did not complete an independent canonical/alias search for a suitable article. The author review says searched-no-fit without query/result details in the evidence; null is not proof that no article exists.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "searched-no-fit",
+        "wikipediaURL": null,
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shuah_2728",
+      "draftPath": "drafts/persons_1/1CH_shuah_2728.json",
+      "currentDraftSHA256": "09d2dbcde83fa1ab317e8148e46f41df9a47f0a61b63c35220ab180b8e9c4613",
+      "evidencePath": "evidence/persons_1/1CH_shuah_2728-sources.json",
+      "currentEvidenceSHA256": "b9c4c9e23ab2244353b612a333e8db6372589967cec8d1450a980f22df5b696f",
+      "currentProfileSHA256": "3a2a05e3802e4f6dcc646b985df8b5d226f56bade29010d0bd2d8a8e1b377c68",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Pinned WEB first-use/available occurrences appear consistent with the short profile, but this reviewer did not complete an independent canonical/alias search for a suitable article. The author review says searched-no-fit without query/result details in the evidence; null is not proof that no article exists.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "searched-no-fit",
+        "wikipediaURL": null,
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shubael_2580",
+      "draftPath": "drafts/persons_1/1CH_shubael_2580.json",
+      "currentDraftSHA256": "95dfb2b1e34a0b5dc1f1da36a5e13ce37d2f8f51cf634eebb1179e340c8e6766",
+      "evidencePath": "evidence/persons_1/1CH_shubael_2580-sources.json",
+      "currentEvidenceSHA256": "d36151c1a14476c9b5750a13a6c3dc8306b9d94b742c8a5409510f28cc76f8db",
+      "currentProfileSHA256": "33a0a3256526e9f5c9131eea9a6ed90bc38b3fc7f2cf38e3e4eeeb01c098e0f1",
+      "manifestMatchesFilesystem": true,
+      "previousDecision": "qualified",
+      "priorReviewThreeSHA256s": {
+        "draft": "1e8da20738eecbb887090d14e6d9e85caefe825ec0179bea2d2a41834f8a00d0",
+        "profile": "33a0a3256526e9f5c9131eea9a6ed90bc38b3fc7f2cf38e3e4eeeb01c098e0f1",
+        "evidence": "726a99eae9289791b59298abc50240538f54868bf61710d821a8395fc46f970d"
+      },
+      "currentReview": "qualified",
+      "decision": "qualified",
+      "currentTextAndGateAssessmentJa": "初出25:20のShubaelは固定WEBで直接名指しされる。候補25:4のShebuelは別綴りで、同一人物かをprofile passageへ強制せず明示的に保留。適合記事の結び付けは未解決なのでqualified。",
+      "knownBy": {
+        "chapter": 25,
+        "verse": 20
+      },
+      "readerFields": {
+        "nameJa": "シュバエル",
+        "subtitleJa": "音楽奉仕の第十三組を率いる者として挙げられます。",
+        "summaryJa": "歴代誌上25:20は、音楽奉仕の第十三組の長としてシュバエルを挙げます。本文は「その子らと兄弟たち十二人」と続けます。",
+        "identityNoteJa": "歴代誌上25:4には綴りの異なる「シェブエル」も現れますが、本文だけではそれが第十三組のシュバエルと同一人物か決められないため、別の用例として統合しません。",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": null
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 25,
+            "verse": 20
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 20
+          }
+        }
+      ],
+      "facts": [],
+      "occurrenceChecks": [
+        {
+          "chapter": 25,
+          "verse": 20,
+          "status": "direct",
+          "reasonJa": "歴代誌上25:20は、音楽奉仕の第十三組の長としてシュバエルを挙げます。本文は「その子らと兄弟たち十二人」と続けます。"
+        }
+      ],
+      "excludedOccurrences": [
+        {
+          "chapter": 25,
+          "verse": 4,
+          "status": "unresolved-spelling-variant",
+          "reasonJa": "固定WEB 1CH25:4は「Shebuel」と綴り、候補IDのShubaelと同一と示す根拠は確認できない。別系譜名の可能性を保留し、個人同定へ結び付けない。"
+        }
+      ],
+      "pendingContextVariants": null,
+      "currentEvidenceCandidateDispositions": [
+        {
+          "chapter": 25,
+          "verse": 4,
+          "status": "unresolved-spelling-variant",
+          "reasonJa": "固定WEB 1CH25:4は「Shebuel」と綴り、候補IDのShubaelと同一と示す根拠は確認できない。別系譜名の可能性を保留し、個人同定へ結び付けない。"
+        }
+      ],
+      "fixedPrimaryCoordinatesRechecked": [
+        {
+          "ref": "1CH 25:20",
+          "text": "for the thirteenth, Shubael, his sons and his brothers, twelve;",
+          "citationURL": "https://ebible.org/engwebp/1CH25.htm#V20",
+          "textSHA256": "05bcb2c4a4aa63dc3e8f7b7375e22253eb32134a6bdd2f03ee578503919a1a09"
+        }
+      ],
+      "wikipediaEvidence": {
+        "state": "null",
+        "authorSearchEvidence": {
+          "url": null,
+          "status": "searched-no-fit",
+          "identityBasisJa": "Wikipediaの Shubael 記事を実読したが、記事はこの名を持つ現代人の一覧で、旧約人物を特定しない（本文検索では該当なし）。本文上の異表記 Shebuel と Shubael の同一性を裏付ける適合記事・共有節も確認できなかった。",
+          "fragmentVerified": false
+        }
+      },
+      "profileHashSync": {
+        "manifestProfileMatchesCalculatedProfile": true,
+        "evidenceProfileMatchesCalculatedProfile": true,
+        "draftHashMatchesManifest": true,
+        "evidenceDraftHashMatchesFilesystem": true
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:shuppim_2733",
+      "draftPath": "drafts/persons_1/1CH_shuppim_2733.json",
+      "currentDraftSHA256": "0482e30a7e9f40c983a98ced685b4cb475ff343344a4886c43ec4c408438eb01",
+      "evidencePath": "evidence/persons_1/1CH_shuppim_2733-sources.json",
+      "currentEvidenceSHA256": "ad1e0a8628b021f55bdb4843206cdcc17dd489b58b5b9355d6258a160e9d84a9",
+      "currentProfileSHA256": "bc9c3a5f9bfc54622060c364f82483f07fc052151f3ea494a08ef032eae9204c",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Pinned WEB first-use/available occurrences appear consistent with the short profile, but this reviewer did not complete an independent canonical/alias search for a suitable article. The author review says searched-no-fit without query/result details in the evidence; null is not proof that no article exists.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "searched-no-fit",
+        "wikipediaURL": null,
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:sibbechai_2737",
+      "draftPath": "drafts/persons_1/1CH_sibbechai_2737.json",
+      "currentDraftSHA256": "6528c4232cbe01280da1f3869d49339703a613f3a577daa8cbc408fe9a440ee3",
+      "evidencePath": "evidence/persons_1/1CH_sibbechai_2737-sources.json",
+      "currentEvidenceSHA256": "cfdd05758c431fe38a4361d1d784d05e5e082f1fb510be61fa2e13e31752efe0",
+      "currentProfileSHA256": "c3976440f3c2656dea62a5cd54f13342a0aa6504af5582aa45414808ab7d27a9",
+      "manifestMatchesFilesystem": true,
+      "previousDecision": "fail",
+      "priorReviewThreeSHA256s": {
+        "draft": "2470d3a619723173dfea93d7cc0339d4a152ea348bb114ef124355105ccbfba4",
+        "profile": "f84f95f563ae1cd5acc0a31594f7b82361b80b339e2bba40369bef9f28c4e122",
+        "evidence": "f7fa2a6958bf13442fb70a8a46964bf1ef4558fb01cee856a730ac6c0a6d7f0c"
+      },
+      "currentReview": "fail",
+      "decision": "fail",
+      "currentTextAndGateAssessmentJa": "基底11:29は勇士名簿で適合、20:4の討伐と27:11の第8月部隊指揮官もfacts/passagesとして本文に適合し、正しい節でゲート済み。しかし両 occurrenceChecks の理由が「父子関係の継続する系譜」と誤記されている。固定WEB 20:4は戦闘、27:11は月別指揮官一覧であるため、意味レビューを閉じるには理由文修正が必要。",
+      "knownBy": {
+        "chapter": 11,
+        "verse": 29
+      },
+      "readerFields": {
+        "nameJa": "シベカイ",
+        "subtitleJa": "ダビデの勇士の名簿に記されます。",
+        "summaryJa": "歴代誌上11:29は、ダビデの勇士の一人としてフシャ人シベカイを挙げます。",
+        "identityNoteJa": "",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": null
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 11,
+            "verse": 29
+          },
+          "end": {
+            "chapter": 11,
+            "verse": 29
+          }
+        },
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 20,
+            "verse": 4
+          },
+          "end": {
+            "chapter": 20,
+            "verse": 4
+          }
+        },
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 27,
+            "verse": 11
+          },
+          "end": {
+            "chapter": 27,
+            "verse": 11
+          }
+        }
+      ],
+      "facts": [
+        {
+          "textJa": "歴代誌上20:4は、ゲゼルでの戦いにおいてシベカイが巨人族の子孫シップパイを討ったと記します。",
+          "knownBy": {
+            "chapter": 20,
+            "verse": 4
+          },
+          "sourceIds": [
+            "webp-1ch-sibbechai_2737-20-4"
+          ]
+        },
+        {
+          "textJa": "歴代誌上27:11は、フシャ人シベカイをダビデの部隊の月ごとの指揮官の一人として挙げます。",
+          "knownBy": {
+            "chapter": 27,
+            "verse": 11
+          },
+          "sourceIds": [
+            "webp-1ch-sibbechai_2737-27-11"
+          ]
+        }
+      ],
+      "occurrenceChecks": [
+        {
+          "chapter": 11,
+          "verse": 29,
+          "status": "direct",
+          "reasonJa": "歴代誌上11:29は、ダビデの勇士の一人として「フシャ人シベカイ」を挙げます。歴代誌上20:4では、シップパイを討った人物をシベカイと記します。"
+        },
+        {
+          "chapter": 20,
+          "verse": 4,
+          "status": "direct",
+          "reasonJa": "父子関係の継続する系譜記述として直接名が記される。"
+        },
+        {
+          "chapter": 27,
+          "verse": 11,
+          "status": "direct",
+          "reasonJa": "父子関係の継続する系譜記述として直接名が記される。"
+        }
+      ],
+      "excludedOccurrences": [],
+      "pendingContextVariants": [],
+      "currentEvidenceCandidateDispositions": null,
+      "fixedPrimaryCoordinatesRechecked": [
+        {
+          "ref": "1CH 11:29",
+          "text": "Sibbecai the Hushathite, Ilai the Ahohite,",
+          "citationURL": "https://ebible.org/engwebp/1CH11.htm#V29",
+          "textSHA256": "aee6156189f2c50945f395ef637cfb98d7a3fcc5ef969cec53c3cf43fef61490"
+        },
+        {
+          "ref": "1CH 20:4",
+          "text": "After this, war arose at Gezer with the Philistines. Then Sibbecai the Hushathite killed Sippai, of the sons of the giant; and they were subdued.",
+          "citationURL": "https://ebible.org/engwebp/1CH20.htm#V4",
+          "textSHA256": "4847f2628d3cbafb49ef49cc838b86b2713d6f6f5b289dc37c740018fade2f23"
+        },
+        {
+          "ref": "1CH 27:11",
+          "text": "The eighth captain for the eighth month was Sibbecai the Hushathite, of the Zerahites. In his division were twenty-four thousand.",
+          "citationURL": "https://ebible.org/engwebp/1CH27.htm#V11",
+          "textSHA256": "3a7b0043089e9ce9fd92d3f9359f7951433be2aae1d86e751e578195605f7cef"
+        }
+      ],
+      "wikipediaEvidence": {
+        "state": "null",
+        "authorSearchEvidence": {
+          "url": null,
+          "status": "searched-no-fit",
+          "identityBasisJa": "Wikipediaで “Sibbecai 1 Chronicles 11:29” と “Sibbecai” を検索し、L–Z人物一覧とDavid’s Mighty Warriors関連記事も確認したが、本人の1CH11:29/20:4/27:11を特定する適合記事・共有節は見つからなかった。",
+          "fragmentVerified": false
+        }
+      },
+      "profileHashSync": {
+        "manifestProfileMatchesCalculatedProfile": true,
+        "evidenceProfileMatchesCalculatedProfile": true,
+        "draftHashMatchesManifest": true,
+        "evidenceDraftHashMatchesFilesystem": true
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:simeon_2741",
+      "draftPath": "drafts/persons_1/1CH_simeon_2741.json",
+      "currentDraftSHA256": "0eda5dbf9733284d0837374e80fea973c42eea80a6f8a9aace4f252e6a649824",
+      "evidencePath": "evidence/persons_1/1CH_simeon_2741-sources.json",
+      "currentEvidenceSHA256": "2838235447810bf2ae9497ffe9c189cf292639bef7116f60793c28e451da8f56",
+      "currentProfileSHA256": "3be72e69f9a82579f7c905309e4d3932d32a351bc31b502fc23a0a8e30e0be8f",
+      "manifestMatchesFilesystem": true,
+      "previousDecision": "fail",
+      "priorReviewThreeSHA256s": {
+        "draft": "23b79980936555c10948ae672240a175b2f18ff4005beed0ca8955d0d5662398",
+        "profile": "b33806e111be473e30d3ac3e719a77a2127fbaece876e9404cf02afca3a072aa",
+        "evidence": "aba1849a2babcc0bef129bb110c258a81acb3811372448fdf1e2c9396276ba0a"
+      },
+      "currentReview": "qualified",
+      "decision": "qualified",
+      "currentTextAndGateAssessmentJa": "個人シメオンのカードを初出2:1だけに限定。4:24/4:42/6:65/12:25は固定WEB上「sons/tribe of children of Simeon」、すなわち子孫・部族・戦闘員集団なので個人passagesへ混ぜず、各候補をexcluded/pending collective contextとして記録。該当4候補をsidecarに追加。Wikipedia記事はヤコブの個人の子であり、集団文脈との差を現行noteで説明。集団variant自体は未構築のためqualified。",
+      "knownBy": {
+        "chapter": 2,
+        "verse": 1
+      },
+      "readerFields": {
+        "nameJa": "シメオン",
+        "subtitleJa": "イスラエルの子らの系譜に記されるヤコブの子です。",
+        "summaryJa": "歴代誌上2:1は、イスラエルの子らの名簿にシメオンを挙げます。",
+        "identityNoteJa": "英語版記事はシメオンをヤコブの子として扱います。記事には他の時期・部族の詳しい記述もあるため、歴代誌上では各節の本文に沿って個人名と集団名を分けて記録します。",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": {
+          "title": "Simeon (son of Jacob)",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Simeon_(son_of_Jacob)",
+          "kind": "article",
+          "noteJa": "英語版記事はシメオンをヤコブの子として扱います。記事には他の時期・部族の詳しい記述もあるため、歴代誌上では各節の本文に沿って個人名と集団名を分けて記録します。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true
+        }
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 2,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 2,
+            "verse": 1
+          }
+        }
+      ],
+      "facts": [],
+      "occurrenceChecks": [
+        {
+          "chapter": 2,
+          "verse": 1,
+          "status": "direct",
+          "reasonJa": "本文はイスラエルの子らの名簿にシメオンを個人名として挙げる。"
+        }
+      ],
+      "excludedOccurrences": [
+        {
+          "chapter": 4,
+          "verse": 24,
+          "status": "excluded-collective-context",
+          "reasonJa": "「シメオンの子ら」は子孫・集団を指すため、祖先個人のカードへ混ぜない。"
+        },
+        {
+          "chapter": 4,
+          "verse": 42,
+          "status": "excluded-collective-context",
+          "reasonJa": "「シメオンの子ら」は遠征する五百人の集団で、祖先個人ではない。"
+        },
+        {
+          "chapter": 6,
+          "verse": 65,
+          "status": "excluded-collective-context",
+          "reasonJa": "シメオンの部族の子らは部族集団を指すため、祖先個人のカードへ混ぜない。"
+        },
+        {
+          "chapter": 12,
+          "verse": 25,
+          "status": "excluded-collective-context",
+          "reasonJa": "「シメオンの子ら」は戦闘員の集団を指すため、祖先個人のカードへ混ぜない。"
+        }
+      ],
+      "pendingContextVariants": [
+        {
+          "chapter": 4,
+          "verse": 42,
+          "entityID": "person:simeon_2741",
+          "variant": "collective",
+          "reasonJa": "「シメオンの子ら」は遠征に出る五百人の集団を指し、祖先シメオン個人ではない。集団用法の同ID文脈案として保持。"
+        },
+        {
+          "chapter": 6,
+          "verse": 65,
+          "entityID": "person:simeon_2741",
+          "variant": "collective",
+          "reasonJa": "「シメオンの部族の子ら」はレビ人に町を与える集団の呼称であり、個人シメオンではない。集団用法の同ID文脈案として保持。"
+        },
+        {
+          "chapter": 12,
+          "verse": 25,
+          "entityID": "person:simeon_2741",
+          "variant": "collective",
+          "reasonJa": "「シメオンの子ら」は戦闘員七千百人の集団を指し、個人シメオンではない。集団用法の同ID文脈案として保持。"
+        }
+      ],
+      "currentEvidenceCandidateDispositions": [
+        {
+          "chapter": 4,
+          "verse": 24,
+          "status": "excluded-collective-context",
+          "reasonJa": "「sons of Simeon」はシメオン個人ではなく子孫・集団を指す。個人シメオンのカードには結び付けず、別の集団文脈案として保留。"
+        },
+        {
+          "chapter": 4,
+          "verse": 42,
+          "status": "excluded-collective-context",
+          "reasonJa": "「sons of Simeon」は遠征する五百人の集団を指し、祖先個人ではない。集団用法の別文脈案として保留。"
+        },
+        {
+          "chapter": 6,
+          "verse": 65,
+          "status": "excluded-collective-context",
+          "reasonJa": "「tribe of the children of Simeon」は部族集団を指す。個人シメオンへ結び付けず保留。"
+        },
+        {
+          "chapter": 12,
+          "verse": 25,
+          "status": "excluded-collective-context",
+          "reasonJa": "「children of Simeon」は戦闘員の集団を指す。個人シメオンへ結び付けず保留。"
+        }
+      ],
+      "fixedPrimaryCoordinatesRechecked": [
+        {
+          "ref": "1CH 2:1",
+          "text": "These are the sons of Israel: Reuben, Simeon, Levi, Judah, Issachar, Zebulun,",
+          "citationURL": "https://ebible.org/engwebp/1CH02.htm#V1",
+          "textSHA256": "ca540a9538ec383bddfdda06d66530873044633a8bfe3c1b20536e19ceb430c2"
+        }
+      ],
+      "wikipediaEvidence": {
+        "url": "https://en.wikipedia.org/wiki/Simeon_(son_of_Jacob)",
+        "title": "Simeon (son of Jacob)",
+        "kind": "article",
+        "noteJa": "英語版記事はシメオンをヤコブの子として扱います。記事には他の時期・部族の詳しい記述もあるため、歴代誌上では各節の本文に沿って個人名と集団名を分けて記録します。",
+        "identityVerified": true,
+        "relationVerified": null,
+        "reusedPriorLiveRead": [
+          {
+            "entityID": "person:simeon_2741",
+            "url": "https://en.wikipedia.org/wiki/Simeon_(son_of_Jacob)",
+            "title": "Simeon (son of Jacob)",
+            "locator": "155–165 (article lead/infobox); profile-specific evidence locator also in sidecar",
+            "supportJa": "The article is about Jacob’s individual son, while Chronicles 4:24 and other candidate verses speak of descendants or the tribe.",
+            "checkedAtUTC": "2026-10-16T10:34:00Z"
+          }
+        ]
+      },
+      "profileHashSync": {
+        "manifestProfileMatchesCalculatedProfile": true,
+        "evidenceProfileMatchesCalculatedProfile": true,
+        "draftHashMatchesManifest": true,
+        "evidenceDraftHashMatchesFilesystem": true
+      },
+      "nestedWikipediaReadBinding": {
+        "url": "https://en.wikipedia.org/wiki/Simeon_(son_of_Jacob)",
+        "title": "Simeon (son of Jacob)",
+        "section": "Simeon (son of Jacob)",
+        "locator": "記事冒頭112行付近にヤコブとレアの子として記載。子らの情報はChildren節、記事本文全体にも後代の事項を含む。",
+        "supportParaphraseJa": "英語版記事はシメオンをヤコブの子として扱います。",
+        "checkedAtUTC": "2026-10-16T10:21:28Z",
+        "currentDraftSHA256": "0eda5dbf9733284d0837374e80fea973c42eea80a6f8a9aace4f252e6a649824",
+        "currentProfileSHA256": "3be72e69f9a82579f7c905309e4d3932d32a351bc31b502fc23a0a8e30e0be8f"
+      },
+      "nestedWikipediaReadBindingMatchesCurrent": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:simri_2754",
+      "draftPath": "drafts/persons_1/1CH_simri_2754.json",
+      "currentDraftSHA256": "2301b1fee078090a2c0d44032f8216038c0623dc2461aed6cc62c8f621e43edf",
+      "evidencePath": "evidence/persons_1/1CH_simri_2754-sources.json",
+      "currentEvidenceSHA256": "e9af8a2c395d34c7fc02781665748eff48834da4de80d0b12fc191cef54170ca",
+      "currentProfileSHA256": "e61d639b41136bf82992fa9972f05c2cb7a54bb47671125488e7b2c77e9b30e9",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Pinned WEB first-use/available occurrences appear consistent with the short profile, but this reviewer did not complete an independent canonical/alias search for a suitable article. The author review says searched-no-fit without query/result details in the evidence; null is not proof that no article exists.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "searched-no-fit",
+        "wikipediaURL": null,
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:sisamai_2756",
+      "draftPath": "drafts/persons_1/1CH_sisamai_2756.json",
+      "currentDraftSHA256": "a0f19cb7707f162cd3f9c975e4a4558ceb0b7c56714c2fc650bedf74c751e9f6",
+      "evidencePath": "evidence/persons_1/1CH_sisamai_2756-sources.json",
+      "currentEvidenceSHA256": "37e8f97a6e3b757a0837084760095d1b615630636b742d5934f3a2734857416a",
+      "currentProfileSHA256": "2fb93b4840e88b8ead5c948d6db90f139b93fe5bba9196c33e13312b02d8a71d",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Pinned WEB first-use/available occurrences appear consistent with the short profile, but this reviewer did not complete an independent canonical/alias search for a suitable article. The author review says searched-no-fit without query/result details in the evidence; null is not proof that no article exists.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "searched-no-fit",
+        "wikipediaURL": null,
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:tahan_2813",
+      "draftPath": "drafts/persons_1/1CH_tahan_2813.json",
+      "currentDraftSHA256": "2cb6ca3ea40589c09bd8dc27faebd4413def2fa51fb79e5eadbcc2c5a214d323",
+      "evidencePath": "evidence/persons_1/1CH_tahan_2813-sources.json",
+      "currentEvidenceSHA256": "748829626466d0f4aa494e7558860dd986a4afb993fe039ac4c83091f361f249",
+      "currentProfileSHA256": "132318b4adc206232aea8514e900ee8c051fc32b68510c6a05927fbd07d5350e",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "The L–Z Tahan entry (live lines 1745–49) calls Tahan a son of Ephraim using Numbers 26:35 and 1CH7:25. Chronicles’ multi-generation 7:20–25 list does not itself make him a direct son of Ephraim. The safe summary avoids that claim, but identityVerified=true overstates the primary witness; keep related/qualified or document the identity basis.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Tahan",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:tahrea_2827",
+      "draftPath": "drafts/persons_1/1CH_tahrea_2827.json",
+      "currentDraftSHA256": "d48b4aef170447d4342da24dbce52723ae7e1e5a173cfc0c3807b78021e8d2d4",
+      "evidencePath": "evidence/persons_1/1CH_tahrea_2827-sources.json",
+      "currentEvidenceSHA256": "a697390fb58dd4cefd6cdd9a9aece60506c16cba74a511fe825f1040d70c62ba",
+      "currentProfileSHA256": "62147e51cb49f4124c4ae92e8d27445941b298774f208ac04689bfca7fb1596f",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Pinned WEB first-use/available occurrences appear consistent with the short profile, but this reviewer did not complete an independent canonical/alias search for a suitable article. The author review says searched-no-fit without query/result details in the evidence; null is not proof that no article exists.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "searched-no-fit",
+        "wikipediaURL": null,
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:talmai_2819",
+      "draftPath": "drafts/persons_1/1CH_talmai_2819.json",
+      "currentDraftSHA256": "e7b694a2e576d060ea63131a1fefbacd9ea59d03cedea14cacc4cf44e66e8725",
+      "evidencePath": "evidence/persons_1/1CH_talmai_2819-sources.json",
+      "currentEvidenceSHA256": "90f5e5e279c1947db4f0d7c606718e55bb2b0055bc828c9aaa426095691513b6",
+      "currentProfileSHA256": "c29233854eea9c3cf957bb8d2e3557fe0effa739da41bf4873abfbf0db7f6dad",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/Talmai#Talmai,_king_of_Geshur",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:tamar_2822",
+      "draftPath": "drafts/persons_1/1CH_tamar_2822.json",
+      "currentDraftSHA256": "de788965d2bdeada373ded22e730668435f4c44b33d18c3d293949ccfa617cf6",
+      "evidencePath": "evidence/persons_1/1CH_tamar_2822-sources.json",
+      "currentEvidenceSHA256": "5ec25ff7816543ac9409dd5d1463dd998e8b3464edc63973d9d13ed187892147",
+      "currentProfileSHA256": "1bc3131a9642c2c02d4ddde382abe4c5128c916ee4e873041becbe1b1d8296fb",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/Tamar_(daughter_of_David)",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:tebaliah_2833",
+      "draftPath": "drafts/persons_1/1CH_tebaliah_2833.json",
+      "currentDraftSHA256": "a50b4e6f6102f06760895b3804009d8a2ce36e967fcf35372d4a86e685f7144c",
+      "evidencePath": "evidence/persons_1/1CH_tebaliah_2833-sources.json",
+      "currentEvidenceSHA256": "0842ae08f9bec2c997c1ac968bf7d5fb9d9278ead8cd159932569dec57eb96e4",
+      "currentProfileSHA256": "ea75faf88160a83bbac234c09f2e8546d1d309b3a083ce7ac58d0c6cb5a76510",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Pinned WEB first-use/available occurrences appear consistent with the short profile, but this reviewer did not complete an independent canonical/alias search for a suitable article. The author review says searched-no-fit without query/result details in the evidence; null is not proof that no article exists.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "searched-no-fit",
+        "wikipediaURL": null,
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:tema_2837",
+      "draftPath": "drafts/persons_1/1CH_tema_2837.json",
+      "currentDraftSHA256": "7f98b39728c812327a4dd08f865869dd2adbcd9379c2d2271e471fb78568fccb",
+      "evidencePath": "evidence/persons_1/1CH_tema_2837-sources.json",
+      "currentEvidenceSHA256": "2356b2de5b1def6e745168909589de93ff49d13259b2d8a97f1c384eee6be395",
+      "currentProfileSHA256": "0d91111e959154a7d50a47e9cc37bc1db640efa0102f257e25161d96e2d74f03",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/Ishmael#Descendants",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:temeni_2840",
+      "draftPath": "drafts/persons_1/1CH_temeni_2840.json",
+      "currentDraftSHA256": "96041301a8b25e6757c584f4605403c8687c2e8b24e42714973d49e2541c5f08",
+      "evidencePath": "evidence/persons_1/1CH_temeni_2840-sources.json",
+      "currentEvidenceSHA256": "6341d41342b0b1f0845090246b9fb69c48328396680b8cfc6afe39d33d436eca",
+      "currentProfileSHA256": "9b21173072096d74950cc0c1da887a1369513e11071e6e7315afc5706ea92906",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Temeni",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:tilon_2857",
+      "draftPath": "drafts/persons_1/1CH_tilon_2857.json",
+      "currentDraftSHA256": "487555d29826f5b107e2a7cfcd8adfccb32088c32e7aa58af34eb99e7dcb249f",
+      "evidencePath": "evidence/persons_1/1CH_tilon_2857-sources.json",
+      "currentEvidenceSHA256": "062400717ab8e949b0b53e84a59bcedcc73467d016e83d2efbb76fd3226dff19",
+      "currentProfileSHA256": "258d93765ab20550af6d492af81f82b663fb363497739cb086a53a389602d869",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Pinned WEB first-use/available occurrences appear consistent with the short profile, but this reviewer did not complete an independent canonical/alias search for a suitable article. The author review says searched-no-fit without query/result details in the evidence; null is not proof that no article exists.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "searched-no-fit",
+        "wikipediaURL": null,
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:tirhanah_2866",
+      "draftPath": "drafts/persons_1/1CH_tirhanah_2866.json",
+      "currentDraftSHA256": "9b4c63bf8dc2e60f3ece0db19e4a76d7c067153db94219306dd77e793c03713a",
+      "evidencePath": "evidence/persons_1/1CH_tirhanah_2866-sources.json",
+      "currentEvidenceSHA256": "7de0c8ae7024ff54344b136d5197ffb0142826855bfe1aad906090547098bf41",
+      "currentProfileSHA256": "771f8f9cff5192bd94f2b4a587d69b2f3d4b31fe7071f09cf9932398fc084c61",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Tirhanah",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:toi_2877",
+      "draftPath": "drafts/persons_1/1CH_toi_2877.json",
+      "currentDraftSHA256": "26cd675b30c7c58a50c8a1b16404e086713e042e5219602eaeeb157d2b75bbb3",
+      "evidencePath": "evidence/persons_1/1CH_toi_2877-sources.json",
+      "currentEvidenceSHA256": "78d6f93b6d3b86bea3ccbdcfa4505a6af9d00ca2836e4d48eb9f2c94714ac3f0",
+      "currentProfileSHA256": "1d3ec1f723651ce612089830a9c22c30f3092abc6d035098e428272d9ccf19c4",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Pinned WEB first-use/available occurrences appear consistent with the short profile, but this reviewer did not complete an independent canonical/alias search for a suitable article. The author review says searched-no-fit without query/result details in the evidence; null is not proof that no article exists.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "searched-no-fit",
+        "wikipediaURL": null,
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:tubal_2883",
+      "draftPath": "drafts/persons_1/1CH_tubal_2883.json",
+      "currentDraftSHA256": "bff3beda960e045d937b7cf1405e741a941c309d532213230500a3d2900ef7a3",
+      "evidencePath": "evidence/persons_1/1CH_tubal_2883-sources.json",
+      "currentEvidenceSHA256": "f8ecc52950b1a48c1ea8ebe92ba3e2f996b60b41f6a9c0a51139fe661dfc5b55",
+      "currentProfileSHA256": "bdb9dd2694f3f2acb49639f28c12ca30485ceafb836f2a152bc7d194ef9f84dd",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/Tubal",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:ulam_2890",
+      "draftPath": "drafts/persons_1/1CH_ulam_2890.json",
+      "currentDraftSHA256": "454178cd4f3e622a9ea56af11d004fbf0e51df047e7546ce6a4b08b7236d93dd",
+      "evidencePath": "evidence/persons_1/1CH_ulam_2890-sources.json",
+      "currentEvidenceSHA256": "64f75525d570782315ed557e4f442cfb4f1be916c6cc050cea7a5fc17d2a1cdb",
+      "currentProfileSHA256": "246f6fb39ed72dfefd234bfb7d7697715d3ac6b1225404e839e7ec3d12111fea",
+      "manifestMatchesFilesystem": true,
+      "previousDecision": "fail",
+      "priorReviewThreeSHA256s": {
+        "draft": "c41104578a4d121e00e03fbd0875abe611f0f5ace7598a2f5de47eca0d9a4964",
+        "profile": "23184ba503ce3d765ab34f097aaa08e7818d242f0bdc631ca2ff237fdaf650f3",
+        "evidence": "7f959cb7d5180f0f8e0c41a29c05e34c96392c4212b30975d466de3d06b8609a"
+      },
+      "currentReview": "pass",
+      "decision": "pass",
+      "currentTextAndGateAssessmentJa": "初出8:39のエシェクの子・長子に限定。8:40の弓手・子孫は8:40 factへゲート。記事1816–1822は8:39の人物と7章の同名人物を区別し、現行noteは8:39時点で安全。",
+      "knownBy": {
+        "chapter": 8,
+        "verse": 39
+      },
+      "readerFields": {
+        "nameJa": "ウラム",
+        "subtitleJa": "エシェクの長子としてベニヤミンの系譜に現れます。",
+        "summaryJa": "歴代誌上8:39は、エシェクの子らのうち長子としてウラムを挙げます。",
+        "identityNoteJa": null,
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, L–Z",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Ulam",
+          "kind": "shared-section",
+          "noteJa": "英語版の人物一覧は、歴代誌上8:39のウラムをエシェクの子として、7章の同名人物と区別しています。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true
+        }
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 8,
+            "verse": 39
+          },
+          "end": {
+            "chapter": 8,
+            "verse": 39
+          }
+        },
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 8,
+            "verse": 40
+          },
+          "end": {
+            "chapter": 8,
+            "verse": 40
+          }
+        }
+      ],
+      "facts": [
+        {
+          "textJa": "歴代誌上8:40はウラムの子らを弓を扱う勇士として記し、息子・孫が150人いたと伝えます。",
+          "knownBy": {
+            "chapter": 8,
+            "verse": 40
+          },
+          "sourceIds": [
+            "webp-1ch-ulam_2890-8-40"
+          ]
+        }
+      ],
+      "occurrenceChecks": [
+        {
+          "chapter": 8,
+          "verse": 39,
+          "status": "direct",
+          "reasonJa": "エシェクの子ウラムを長子として明記する。"
+        },
+        {
+          "chapter": 8,
+          "verse": 40,
+          "status": "direct",
+          "reasonJa": "直前で名を挙げたウラムの子らについて記す。"
+        }
+      ],
+      "excludedOccurrences": [
+        {
+          "chapter": 7,
+          "verse": 16,
+          "status": "excluded-different-person",
+          "reasonJa": "同名のウラムが別の系譜（マナセの子ペレシュの子）に現れる。8:39のエシェクの子とは記事も区別する。"
+        },
+        {
+          "chapter": 7,
+          "verse": 17,
+          "status": "excluded-different-person",
+          "reasonJa": "同名のウラムが別の系譜に現れる。8:39のエシェクの子とは一致根拠なし。"
+        }
+      ],
+      "pendingContextVariants": null,
+      "currentEvidenceCandidateDispositions": null,
+      "fixedPrimaryCoordinatesRechecked": [
+        {
+          "ref": "1CH 8:39",
+          "text": "The sons of Eshek his brother: Ulam his firstborn, Jeush the second, and Eliphelet the third.",
+          "citationURL": "https://ebible.org/engwebp/1CH08.htm#V39",
+          "textSHA256": "892b8fc2491dadd02ce87aeeddbfa79f2f84c4cfbe9c9b70c655d938f0d65637"
+        },
+        {
+          "ref": "1CH 8:40",
+          "text": "The sons of Ulam were mighty men of valor, archers, and had many sons, and grandsons, one hundred fifty. All these were of the sons of Benjamin.",
+          "citationURL": "https://ebible.org/engwebp/1CH08.htm#V40",
+          "textSHA256": "b8a89f2835f617ee13fb06eeb5990cb07d3858f3a4de20624e2a66512446e1db"
+        }
+      ],
+      "wikipediaEvidence": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Ulam",
+        "title": "List of minor Hebrew Bible figures, L–Z",
+        "kind": "shared-section",
+        "noteJa": "英語版の人物一覧は、歴代誌上8:39のウラムをエシェクの子として、7章の同名人物と区別しています。",
+        "identityVerified": true,
+        "relationVerified": null,
+        "reusedPriorLiveRead": [
+          {
+            "entityID": "person:ulam_2890",
+            "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z",
+            "title": "List of minor Hebrew Bible figures, L–Z",
+            "locator": "1816–1822",
+            "supportJa": "The entry distinguishes Ulam in 7:16–17 from 8:39 son of Eshek.",
+            "checkedAtUTC": "2026-10-16T10:34:00Z"
+          }
+        ]
+      },
+      "profileHashSync": {
+        "manifestProfileMatchesCalculatedProfile": true,
+        "evidenceProfileMatchesCalculatedProfile": true,
+        "draftHashMatchesManifest": true,
+        "evidenceDraftHashMatchesFilesystem": true
+      },
+      "nestedWikipediaReadBinding": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Ulam",
+        "title": "List of minor Hebrew Bible figures, L–Z",
+        "section": "Ulam",
+        "locator": "L1820–1822. The entry explicitly distinguishes the Ulam in 1 Chronicles 7:16–17 from the Ulam in 8:39, son of Eshek in Saul’s genealogy.",
+        "supportParaphraseJa": "記事は同名の二人を分け、8:39のウラムをエシェクの子として示す。",
+        "checkedAtUTC": "2026-10-16T10:29:11Z",
+        "currentDraftSHA256": "454178cd4f3e622a9ea56af11d004fbf0e51df047e7546ce6a4b08b7236d93dd",
+        "currentProfileSHA256": "246f6fb39ed72dfefd234bfb7d7697715d3ac6b1225404e839e7ec3d12111fea"
+      },
+      "nestedWikipediaReadBindingMatchesCurrent": true
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:uriah_2898",
+      "draftPath": "drafts/persons_1/1CH_uriah_2898.json",
+      "currentDraftSHA256": "74a5e1bdb6f7cb6b834f5fb92ab87f03905ae5ebcbd1dc4f0144498f4677befc",
+      "evidencePath": "evidence/persons_1/1CH_uriah_2898-sources.json",
+      "currentEvidenceSHA256": "a1b18854c6583ec8b1fa26bc093de0b20ebd4ed933e5fadf760f83088d501ac1",
+      "currentProfileSHA256": "e1365145de05464fd500bef02e22c4491065adb5aaadcb76d9dfe11be63c55f6",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/Uriah_the_Hittite",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:uriel_2900",
+      "draftPath": "drafts/persons_1/1CH_uriel_2900.json",
+      "currentDraftSHA256": "a0f5d603406a54ad55478038753bb6c5d1142da21fb5eb402857f92be63885c1",
+      "evidencePath": "evidence/persons_1/1CH_uriel_2900-sources.json",
+      "currentEvidenceSHA256": "e6f9e31b12a81ff9fe45a836f74eb0d2dfcf88ac2fd8281c71b15b0302cbcb63",
+      "currentProfileSHA256": "b46dd7fe25c0b32e70bea25f252ca68d81494ec659a10640ab683056da93ae59",
+      "manifestMatchesFilesystem": true,
+      "previousDecision": "qualified",
+      "priorReviewThreeSHA256s": {
+        "draft": "d20b8ea65eb6e6bbcfd4494409775d7446850350ca96901523e04aee3f28187e",
+        "profile": "b46dd7fe25c0b32e70bea25f252ca68d81494ec659a10640ab683056da93ae59",
+        "evidence": "87b5604d89f51cde4d07902c767013b66e3efa4893abc633518a4301a0daac69"
+      },
+      "currentReview": "qualified",
+      "decision": "qualified",
+      "currentTextAndGateAssessmentJa": "固定WEB 6:24はタハテの子ウリエル、6:36はZephaniahと記すため後者を採用せず未解決綴り/人物候補として記録。15:5/11の同名ウリエルも同一視しない。現reader noteは6:24に合う。ただし現evidence.wikipediaRead内 currentDraftSHA256/currentProfileSHA256 は現profileのSHAと一致せず、記事read自体は同じURI/sectionの過去版に対する記録としてのみ再利用できる。bind更新が必要。",
+      "knownBy": {
+        "chapter": 6,
+        "verse": 24
+      },
+      "readerFields": {
+        "nameJa": "ウリエル",
+        "subtitleJa": "タハテの子孫として系譜に記されます。",
+        "summaryJa": "歴代誌上6:24は、コラの系譜の中でタハテの子としてウリエルを挙げます。",
+        "identityNoteJa": null,
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, L–Z",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Uriel",
+          "kind": "shared-section",
+          "noteJa": "英語版の人物一覧は、歴代誌上6:24のウリエルをタハテの子として挙げています。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true
+        }
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 6,
+            "verse": 24
+          },
+          "end": {
+            "chapter": 6,
+            "verse": 24
+          }
+        }
+      ],
+      "facts": [],
+      "occurrenceChecks": [
+        {
+          "chapter": 6,
+          "verse": 24,
+          "status": "direct",
+          "reasonJa": "系譜でタハテの子としてウリエルを明記する。"
+        },
+        {
+          "chapter": 15,
+          "verse": 5,
+          "status": "unresolved-homonym",
+          "reasonJa": "コハテ族の長ウリエルという同名が現れるが、6:24の人物と同一か本文だけでは決められないため、この人物のpassagesには含めない。"
+        },
+        {
+          "chapter": 15,
+          "verse": 11,
+          "status": "unresolved-homonym",
+          "reasonJa": "祭司・レビ人の会合にウリエルの名があるが、6:24の人物と同一か本文だけでは決められない。"
+        }
+      ],
+      "excludedOccurrences": [
+        {
+          "chapter": 6,
+          "verse": 36,
+          "status": "unresolved-name-mismatch",
+          "reasonJa": "固定WEB 1CH6:36は「Zephaniah」と記し、候補ID Urielとは異なる。列挙の系譜だけで同一人物や異綴りとは判断できないため保留。"
+        }
+      ],
+      "pendingContextVariants": null,
+      "currentEvidenceCandidateDispositions": [
+        {
+          "chapter": 6,
+          "verse": 36,
+          "status": "unresolved-name-mismatch",
+          "reasonJa": "固定WEB 1CH6:36は「Zephaniah」と記し、候補ID Urielとは異なる。列挙の系譜だけで同一人物や異綴りとは判断できないため保留。"
+        }
+      ],
+      "fixedPrimaryCoordinatesRechecked": [
+        {
+          "ref": "1CH 6:24",
+          "text": "Tahath his son, Uriel his son, Uzziah his son, and Shaul his son.",
+          "citationURL": "https://ebible.org/engwebp/1CH06.htm#V24",
+          "textSHA256": "efab409d7b8506de8d6aa4dcd9b877eca5cee6508eb2bb68846604e537633e1b"
+        }
+      ],
+      "wikipediaEvidence": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Uriel",
+        "title": "List of minor Hebrew Bible figures, L–Z",
+        "kind": "shared-section",
+        "noteJa": "英語版の人物一覧は、歴代誌上6:24のウリエルをタハテの子として挙げています。",
+        "identityVerified": true,
+        "relationVerified": null,
+        "reusedPriorLiveRead": []
+      },
+      "profileHashSync": {
+        "manifestProfileMatchesCalculatedProfile": true,
+        "evidenceProfileMatchesCalculatedProfile": true,
+        "draftHashMatchesManifest": true,
+        "evidenceDraftHashMatchesFilesystem": true
+      },
+      "nestedWikipediaReadBinding": {
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Uriel",
+        "title": "List of minor Hebrew Bible figures, L–Z",
+        "section": "Uriel",
+        "locator": "L1830–1835. The first bullet states “Uriel or Zephaniah the son of Tahath according to 1 Chronicles 6:24”; the next bullet is the distinct archangel topic.",
+        "supportParaphraseJa": "記事は6:24のウリエルをタハテの子として区別して記す。",
+        "checkedAtUTC": "2026-10-16T10:29:11Z",
+        "currentDraftSHA256": "558d872953654651c16b722b3e6b70a84e137760fcc6f0483d68a9a1bd117529",
+        "currentProfileSHA256": "c41da55bfa33b4c5863d7279220128dfaffff9c3b0afe56f19dd207b4f3e3784"
+      },
+      "nestedWikipediaReadBindingMatchesCurrent": false
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:uz_2909",
+      "draftPath": "drafts/persons_1/1CH_uz_2909.json",
+      "currentDraftSHA256": "93898e420354abba987a135cb4f7f56a7b2bd927ec104ac01c6e218fa1889b96",
+      "evidencePath": "evidence/persons_1/1CH_uz_2909-sources.json",
+      "currentEvidenceSHA256": "cf8853eac1fbbea2b0b8e0213e5aa4de917c5c8fde9fc84d3dfef2b738a6aac8",
+      "currentProfileSHA256": "0f24efb0ee6f139ccf2800022b8eec9eaa25761035206e8a9eb7a2c6e84e1e2d",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_L%E2%80%93Z#Uz",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:uzza_2914",
+      "draftPath": "drafts/persons_1/1CH_uzza_2914.json",
+      "currentDraftSHA256": "2d42e5ad4ac81360c39871d958478397b2cc1449c035f30e59774ab2cf17fb95",
+      "evidencePath": "evidence/persons_1/1CH_uzza_2914-sources.json",
+      "currentEvidenceSHA256": "e72e2a61984072b4bce0cb029407f805c212fdf8b43a1c856e0efd40a2eb3005",
+      "currentProfileSHA256": "8adda74e3a0ee92cb380e0924de7f46b61d590b16080311df61088a82eaa22f8",
+      "manifestMatchesFilesystem": true,
+      "previousDecision": "fail",
+      "priorReviewThreeSHA256s": {
+        "draft": "3ca0fbac22ec604271491a8cef279fc52237ebfa9c5f322960a1173eb997f90a",
+        "profile": "3a5614536b3423d60fc5a03285dab302de5fe5e49594a11e631509bf0bca888d",
+        "evidence": "31ce62bb6c149ab4d02607b1563c0492fdf911f775daae0f4f2c9ca3adc3b6ad"
+      },
+      "currentReview": "pass",
+      "decision": "pass",
+      "currentTextAndGateAssessmentJa": "初出8:7はゲラの子らの系譜のウザ。6:29のウザ（メラリ系譜）と13:7の契約の箱を運ぶウザを別人として除外し、後の同名者参照をidentityNoteから除去済み。reader base は8:7安全。",
+      "knownBy": {
+        "chapter": 8,
+        "verse": 7
+      },
+      "readerFields": {
+        "nameJa": "ウザ",
+        "subtitleJa": "ベニヤミンの系譜でゲラの子らとして名が記されます。",
+        "summaryJa": "歴代誌上8:7は、ゲラが捕囚にした者たちの列挙の後に、ウザとアヒフドの父となったと記します。",
+        "identityNoteJa": "ゲラの子として系譜に記されるウザです。",
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": null
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 8,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 8,
+            "verse": 7
+          }
+        }
+      ],
+      "facts": [],
+      "occurrenceChecks": [
+        {
+          "chapter": 8,
+          "verse": 7,
+          "status": "direct",
+          "reasonJa": "ゲラの子としてウザを挙げる。"
+        }
+      ],
+      "excludedOccurrences": [
+        {
+          "chapter": 6,
+          "verse": 29,
+          "status": "excluded-different-person",
+          "reasonJa": "同名に近いウザはシメイの子でメラリ族と記される別系譜。"
+        },
+        {
+          "chapter": 13,
+          "verse": 7,
+          "status": "excluded-different-person",
+          "reasonJa": "契約の箱を運ぶウザは別の人物で、8:7のゲラの子と結ぶ根拠はない。"
+        }
+      ],
+      "pendingContextVariants": null,
+      "currentEvidenceCandidateDispositions": null,
+      "fixedPrimaryCoordinatesRechecked": [
+        {
+          "ref": "1CH 8:7",
+          "text": "Naaman, Ahijah, and Gera, who carried them captive; and he became the father of Uzza and Ahihud.",
+          "citationURL": "https://ebible.org/engwebp/1CH08.htm#V7",
+          "textSHA256": "bef9ac1c57a8944691b77b8d5f686a29c6f38c3bcdaa9c46c0108ae6c1bc9f30"
+        }
+      ],
+      "wikipediaEvidence": {
+        "state": "null",
+        "authorSearchEvidence": {
+          "url": null,
+          "status": "searched-no-fit",
+          "identityBasisJa": "確認できたUzzahの記事は契約の箱を運ぶ別人およびメリラリ族の別人を分けて記載し、8:7のゲラの子ウザを扱わない。A–K/L–Z人物一覧も該当節に合う項目なし。",
+          "fragmentVerified": false,
+          "queries": [
+            "site:en.wikipedia.org/wiki Uzza son of Gera 1 Chronicles 8:7",
+            "Wikipedia Uzza Gera 1 Chronicles 8:7",
+            "site:en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures Uzza"
+          ]
+        }
+      },
+      "profileHashSync": {
+        "manifestProfileMatchesCalculatedProfile": true,
+        "evidenceProfileMatchesCalculatedProfile": true,
+        "draftHashMatchesManifest": true,
+        "evidenceDraftHashMatchesFilesystem": true
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:uzzah_2916",
+      "draftPath": "drafts/persons_1/1CH_uzzah_2916.json",
+      "currentDraftSHA256": "7756c38f7eecdb084fe89a13e11a070a8e01de6c02123ee8b86d0ca352d32b90",
+      "evidencePath": "evidence/persons_1/1CH_uzzah_2916-sources.json",
+      "currentEvidenceSHA256": "b19ca995d62104399ae4ee7b27f53c2b27416dd9d05071d6df221f96e9eff63f",
+      "currentProfileSHA256": "dc47e9f5b4c1ce200222b7afac81c2d114f560b42712dbabcc2696fea0ae3916",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "pass",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "pass",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "First-use introduction matches the pinned WEB; checked occurrence texts and gated facts are consistent. Recorded body locator supports the displayed relation and article/source URLs align. Remaining scholarly or namesake limitations are stated in the notes.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "body-read",
+        "wikipediaURL": "https://en.wikipedia.org/wiki/Uzzah",
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:uzzia_2924",
+      "draftPath": "drafts/persons_1/1CH_uzzia_2924.json",
+      "currentDraftSHA256": "b995cc14229ae1f8a9e16a3bfe3fd522ca25b2d9ceca9479901d657f9dbebaf5",
+      "evidencePath": "evidence/persons_1/1CH_uzzia_2924-sources.json",
+      "currentEvidenceSHA256": "54c18ec4603739058fba405eb4e9b29023ace6b46daa6740c1674577f2aa9674",
+      "currentProfileSHA256": "bf3b389cf6ca3d77943af4b46c84578e10254edc67e475698be98a5b1581031f",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Pinned WEB first-use/available occurrences appear consistent with the short profile, but this reviewer did not complete an independent canonical/alias search for a suitable article. The author review says searched-no-fit without query/result details in the evidence; null is not proof that no article exists.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "searched-no-fit",
+        "wikipediaURL": null,
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:uzziel_2930",
+      "draftPath": "drafts/persons_1/1CH_uzziel_2930.json",
+      "currentDraftSHA256": "8ab07afa3c90a28c680aed6d8e58f5d64963a4c888bb6d6997f56b6c97befbcb",
+      "evidencePath": "evidence/persons_1/1CH_uzziel_2930-sources.json",
+      "currentEvidenceSHA256": "ed6ef8a86bed4997afa5f6d4b4cbc303cf00df31050cac1c72d906fc79917624",
+      "currentProfileSHA256": "4681622f11fdbaefaef20e813da8d3ceda8b60d7a0df29d7b1013d88537fb58c",
+      "manifestMatchesFilesystem": true,
+      "priorReviewDecision": "qualified",
+      "unchangedThreeSHAExactMatch": true,
+      "decision": "qualified",
+      "basis": "prior verdict inherited only because the previous review three hashes and current manifest/filesystem three hashes are exactly equal",
+      "priorFindingsJa": "Pinned WEB first-use/available occurrences appear consistent with the short profile, but this reviewer did not complete an independent canonical/alias search for a suitable article. The author review says searched-no-fit without query/result details in the evidence; null is not proof that no article exists.",
+      "priorReviewerRationaleJa": "固定WEBの初出本文・割当候補・プロフィール全常時表示欄とfactsを照合。各候補座標/初出/ fact gateを固定WEBから引き直し、sidecarの本文・URLを比較した。記事locatorは作者側の実読記録に依存した箇所を明示。null記事の網羅検索・全リンクの新規live-readは未完扱いで、no-fitとは判定しない。",
+      "currentSourceValidation": {
+        "pinnedWEBVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "primaryTextRead": true,
+        "wikipediaStatus": "searched-no-fit",
+        "wikipediaURL": null,
+        "independentReview": "pending"
+      }
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:uzziel_2932",
+      "draftPath": "drafts/persons_1/1CH_uzziel_2932.json",
+      "currentDraftSHA256": "217a3ac0509d736c000f4020493a8daed0ad7022a1bfec2172a7734eefb68d53",
+      "evidencePath": "evidence/persons_1/1CH_uzziel_2932-sources.json",
+      "currentEvidenceSHA256": "e07b704e7f195ea923bb850cc2af0c2a999b5c4ce1201f7d98e65627e6041387",
+      "currentProfileSHA256": "1f64e5417a999bbbb3b8b7ca50c8d6e24009846dc48ed4f3e1bb9c5d856c8da9",
+      "manifestMatchesFilesystem": true,
+      "previousDecision": "qualified",
+      "priorReviewThreeSHA256s": {
+        "draft": "dafc02b695f51eba606dda5cefdeec9f1ecbaf6933e4dc60d327a4373ba00c02",
+        "profile": "1f64e5417a999bbbb3b8b7ca50c8d6e24009846dc48ed4f3e1bb9c5d856c8da9",
+        "evidence": "21d7d14c9d6874a6ce7cc599ed369ad8a448e015033c9b825769ad66f460f0f4"
+      },
+      "currentReview": "qualified",
+      "decision": "qualified",
+      "currentTextAndGateAssessmentJa": "初出25:4のヘマンの子らの名簿にウジエル。25:5–6の音楽奉仕説明は文脈/factにゲートし、25:18のAzarelをウジエルと同一視せず候補不一致で記録。記事の現noteは25:4の名簿への関連だけを述べるが、evidence.wikipediaRead内のcurrentDraftSHA256/currentProfileSHA256が現profile SHAと一致せず、実記事再読根拠のbindは過去版のみなのでqualified。",
+      "knownBy": {
+        "chapter": 25,
+        "verse": 4
+      },
+      "readerFields": {
+        "nameJa": "ウジエル",
+        "subtitleJa": "ヘマンの子らの名簿に記されます。",
+        "summaryJa": "歴代誌上25:4は、ヘマンの子らの列挙にウジエルを含めています。",
+        "identityNoteJa": null,
+        "historicalRoleJa": null,
+        "modernLocationJa": null,
+        "locationNoteJa": null,
+        "wikipedia": {
+          "title": "1 Chronicles 25",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/1_Chronicles_25#List_of_temple_musician_divisions",
+          "kind": "related-section",
+          "noteJa": "英語版記事は、歴代誌上25章の楽人編成を説明し、4節の名簿にヘマンの子ウジエルを挙げています。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": false,
+          "relationVerified": true
+        }
+      },
+      "passages": [
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 25,
+            "verse": 4
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 4
+          }
+        },
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 25,
+            "verse": 5
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 5
+          }
+        },
+        {
+          "book": "1CH",
+          "start": {
+            "chapter": 25,
+            "verse": 6
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 6
+          }
+        }
+      ],
+      "facts": [
+        {
+          "textJa": "25:5–6は、列挙された者たちをヘマンの子とし、神殿音楽の務めに従事したと説明します。",
+          "knownBy": {
+            "chapter": 25,
+            "verse": 6
+          },
+          "sourceIds": [
+            "webp-1ch-uzziel_2932-25-6"
+          ]
+        }
+      ],
+      "occurrenceChecks": [
+        {
+          "chapter": 25,
+          "verse": 4,
+          "status": "direct",
+          "reasonJa": "ヘマンの子らの列挙でウジエルを名指す。"
+        },
+        {
+          "chapter": 25,
+          "verse": 5,
+          "status": "context",
+          "reasonJa": "「これらの者たち」をヘマンの子らと続けて説明する。"
+        },
+        {
+          "chapter": 25,
+          "verse": 6,
+          "status": "context",
+          "reasonJa": "前節で列挙した者たちが父の指揮の下で神殿音楽を担ったと述べる。"
+        }
+      ],
+      "excludedOccurrences": [
+        {
+          "chapter": 4,
+          "verse": 42,
+          "status": "excluded-different-person",
+          "reasonJa": "イシの子ウジエルは25:4のヘマンの子とは別系譜。"
+        },
+        {
+          "chapter": 25,
+          "verse": 18,
+          "status": "unresolved-name-mismatch",
+          "reasonJa": "固定WEB 1CH25:18は「Azarel」と記し、候補ID Uzzielとは異なる。綴り対応や同一人物を示す根拠がないため保留。"
+        }
+      ],
+      "pendingContextVariants": null,
+      "currentEvidenceCandidateDispositions": [
+        {
+          "chapter": 25,
+          "verse": 18,
+          "status": "unresolved-name-mismatch",
+          "reasonJa": "固定WEB 1CH25:18は「Azarel」と記し、候補ID Uzzielとは異なる。綴り対応や同一人物を示す根拠がないため保留。"
+        }
+      ],
+      "fixedPrimaryCoordinatesRechecked": [
+        {
+          "ref": "1CH 25:4",
+          "text": "Of Heman, the sons of Heman: Bukkiah, Mattaniah, Uzziel, Shebuel, Jerimoth, Hananiah, Hanani, Eliathah, Giddalti, Romamti-Ezer, Joshbekashah, Mallothi, Hothir, and Mahazioth.",
+          "citationURL": "https://ebible.org/engwebp/1CH25.htm#V4",
+          "textSHA256": "45f84f57702febd107eaa62b303e6341e542a5cd713452b7fbd01cf02e836199"
+        },
+        {
+          "ref": "1CH 25:5",
+          "text": "All these were the sons of Heman the king’s seer in the words of God, to lift up the horn. God gave to Heman fourteen sons and three daughters.",
+          "citationURL": "https://ebible.org/engwebp/1CH25.htm#V5",
+          "textSHA256": "237e70b1e5c9b514a70c833e09cc374d3d26286b76e572ce2f097d3f2f0b9e63"
+        },
+        {
+          "ref": "1CH 25:6",
+          "text": "All these were under the hands of their father for song in the LORD’s house, with cymbals, stringed instruments, and harps, for the service of God’s house: Asaph, Jeduthun, and Heman being under the order of the king.",
+          "citationURL": "https://ebible.org/engwebp/1CH25.htm#V6",
+          "textSHA256": "aa390d3be608bafe26592e0dbae02e52eee64ef083ab29105def34e55a9bc431"
+        }
+      ],
+      "wikipediaEvidence": {
+        "url": "https://en.wikipedia.org/wiki/1_Chronicles_25#List_of_temple_musician_divisions",
+        "title": "1 Chronicles 25",
+        "kind": "related-section",
+        "noteJa": "英語版記事は、歴代誌上25章の楽人編成を説明し、4節の名簿にヘマンの子ウジエルを挙げています。",
+        "identityVerified": false,
+        "relationVerified": true,
+        "reusedPriorLiveRead": []
+      },
+      "profileHashSync": {
+        "manifestProfileMatchesCalculatedProfile": true,
+        "evidenceProfileMatchesCalculatedProfile": true,
+        "draftHashMatchesManifest": true,
+        "evidenceDraftHashMatchesFilesystem": true
+      },
+      "nestedWikipediaReadBinding": {
+        "url": "https://en.wikipedia.org/wiki/1_Chronicles_25#List_of_temple_musician_divisions",
+        "title": "1 Chronicles 25",
+        "section": "List of temple musician divisions",
+        "locator": "L168–185. Table row at L183 says the 11th division is Azareel and notes “Uzziel in 1 Chronicles 25:4”; chapter introduction L135–140 discusses the chapter’s musician organization. The profile note uses only the 25:4 roster, not the later equation.",
+        "supportParaphraseJa": "記事は25章の楽人名簿を扱い、25:4のウジエルをヘマンの名簿に置く。",
+        "checkedAtUTC": "2026-10-16T10:29:11Z",
+        "currentDraftSHA256": "c510f48f140f27ca49c3e181cefa41f8260545ebe0c4e357606e854f658843c2",
+        "currentProfileSHA256": "059a8dac8a92fea35f1f118bcd0fadb80bf25814a541a1f088e61047972db9b3"
+      },
+      "nestedWikipediaReadBindingMatchesCurrent": false
+    }
+  ]
+}

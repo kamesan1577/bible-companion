@@ -1,0 +1,124 @@
+{
+  "reviewType": "independent-runtime-static-review",
+  "generatedAt": "2026-10-15",
+  "reviewerRole": "Read-only independent implementation review. No code, resource, or test file was changed.",
+  "scope": {
+    "areas": [
+      "EntityProfiles.swift",
+      "BundledEntityIndex.swift",
+      "OfflineEntityPane.swift"
+    ],
+    "comparison": "Published 0.1.10 preview source snapshot at acts-entities-work/candidate/apps/ios/Sources, paired with this workspace release note.",
+    "focus": [
+      "ROM/LEV catalog isolation and cache",
+      "knownBy/future reveal",
+      "context profiles",
+      "candidate map policy and map notes",
+      "related Wikipedia links"
+    ],
+    "method": "Compared current and baseline Swift source, read ROM/LEV runtime JSON resources and tests, then traced gating and UI call paths statically. No app launch or network access."
+  },
+  "baseline": {
+    "releaseNote": "candidate/docs/releases/v0.1.10-preview.1.md",
+    "releaseNoteSHA256": "a1e1e8edb6f04248b38e8fa296be2122334985849a095f935d657081ca39a817",
+    "sourceSnapshot": "<local-user>/Documents/Codex/2026-10-15/task-2/acts-entities-work/candidate/apps/ios/Sources",
+    "sourceSHA256": {
+      "candidate/apps/ios/Sources/Core/EntityProfiles.swift": "9a80b4cd69a545d6f8d3da3d6377572e1dd7de65c08f45b3ec23374c367df461",
+      "candidate/apps/ios/Sources/Core/BundledEntityIndex.swift": "a52f700df30cb59e77b2d97ebf0193280a74f34c94ada2390f4d180fe2176343",
+      "candidate/apps/ios/Sources/DesignSystem/OfflineEntityPane.swift": "5cde8c603c786414026ccc9e85fb6d4e96a8c39f54ebb396877409a5994ccd88"
+    },
+    "qualification": "This workspace has no Git metadata and no signed 0.1.10 binary/source revision link. Comparison is to the published-preview source snapshot and release note; exact binary reproducibility is unverified."
+  },
+  "currentSHA256": {
+    "candidate/apps/ios/Sources/Core/EntityProfiles.swift": "62f09eb306bb2973d98eb82b2c272935669b55c310e4e7890c29239a986bd545",
+    "candidate/apps/ios/Sources/Core/BundledEntityIndex.swift": "29ad52584bb863b4d8211564a20949bb3fdc9a4d059cf1f2b11aa9aef83e1505",
+    "candidate/apps/ios/Sources/DesignSystem/OfflineEntityPane.swift": "6f54e2c5fa2804ef5b5b35ce034442d9698679a5502dca7b12a23e1537e4e0b7",
+    "candidate/apps/ios/Sources/Core/Resources/entity-profiles-ROM.json": "c914d302abb08b2c1f553fe847b91495ddcc65298e73db35bd4b7b0dab022993",
+    "candidate/apps/ios/Sources/Core/Resources/entity-profiles-LEV.json": "d29e0687702d4c297c6e9b9bfed5ce0194f0671ac7e70f9fe09db8c101ee6eeb",
+    "candidate/apps/ios/Sources/Core/Resources/rom-map-policy.json": "bbddef33207cd651cac6057ea68260df1a3f3fd363f60a0eb434f3b618e3650d",
+    "candidate/apps/ios/Sources/Core/Resources/lev-map-policy.json": "c224edb9f34e7c7d23c0225353431407a79709d1819bcc421e2b5dd4e07e3482",
+    "candidate/apps/ios/Tests/RomLeviticusEntityTests.swift": "27679e68a7602816b799c525e42b8ec2b27198193d46765e55aad3a61b89cb6f"
+  },
+  "codeChangeSummary": {
+    "EntityProfiles.swift": "Adds relationVerified and Wikipedia knownBy, contextProfiles, resolved context notes and a gated resolved Wikipedia property. Related-section links require an explicit verified relation and note.",
+    "BundledEntityIndex.swift": "Adds per-book profile and map-policy caches; ACT/ROM/LEV use their bundled occurrence tables. Existing Theographic index remains shared. Candidate coordinates are returned only after a matching policy and allowFrom gate.",
+    "OfflineEntityPane.swift": "Routes ACT/ROM/LEV through the WEB-verified disclosure, passes policy reason to candidate maps, and renders resolved context notes and gated Wikipedia links."
+  },
+  "findings": [
+    {
+      "id": "RUNTIME-NAME-GATE-001",
+      "severity": "qualified",
+      "area": "future reveal / displayed alias",
+      "file": "candidate/apps/ios/Sources/Core/EntityProfiles.swift",
+      "currentSHA256": "62f09eb306bb2973d98eb82b2c272935669b55c310e4e7890c29239a986bd545",
+      "basis": "Resolved nameJa always chooses names with knownBy <= passage.end; this expression ignores includeFuture. In current ROM data person:adam_78 is knownBy ROM 5:12, base label \"one man\", and has a name alias \"Adam\" gated at ROM 5:14. Toggling future material on at ROM 5:12 reveals the 5:14 fact but resolved.nameJa remains \"one man\" in both states. This is a mismatch with the toggle text promising later appearances and supplementary information.",
+      "reproduction": "Compare lookup(ROM 5:12, person, includeFuture:false) and includeFuture:true. The latter adds the 5:14 fact, while nameJa is unchanged.",
+      "recommendation": "When includeFuture is true, allow the later EntityProfileName alias to be selected, or narrow the UI toggle description to references/facts only; add a ROM 5:12/5:14 regression test."
+    },
+    {
+      "id": "RUNTIME-CATALOG-CACHE-001",
+      "severity": "pass",
+      "area": "cache / book isolation",
+      "files": [
+        "candidate/apps/ios/Sources/Core/BundledEntityIndex.swift",
+        "candidate/apps/ios/Tests/RomLeviticusEntityTests.swift"
+      ],
+      "basis": "A single actor owns the shared index plus per-book catalog and map-policy dictionaries. Profile resources are named separately by book. The alternating ACT -> ROM -> LEV -> ACT unit test checks same-ID profiles and source citations stay book-specific."
+    },
+    {
+      "id": "RUNTIME-FUTURE-GATE-002",
+      "severity": "pass",
+      "area": "future facts/sources/wiki",
+      "files": [
+        "candidate/apps/ios/Sources/Core/EntityProfiles.swift",
+        "candidate/apps/ios/Sources/Core/BundledEntityIndex.swift"
+      ],
+      "basis": "Default resolution rejects a profile before knownBy, gates facts and source objects at passage.end, gates WikipediaReadingLink.knownBy, and filters display aliases by knownBy. includeFuture expands facts, source metadata, Wikipedia links and same-book references. The Romans/Leviticus Holy Spirit test checks 5:5 hides later facts and respects source/wiki gates. Exception: the display alias toggle gap is separately reported as RUNTIME-NAME-GATE-001."
+    },
+    {
+      "id": "RUNTIME-CONTEXT-001",
+      "severity": "pass",
+      "area": "context variants",
+      "files": [
+        "candidate/apps/ios/Sources/Core/EntityProfiles.swift",
+        "candidate/apps/ios/Tests/RomLeviticusEntityTests.swift"
+      ],
+      "basis": "Context profiles are selected by knownBy and passage overlap; a passage wholly inside a variant selects it. A wider range keeps the base and renders a context note. Tests cover Romans 9:6, 9:13 and 9:4-13; Leviticus 1:2, 26:42 and 1:2-26:42."
+    },
+    {
+      "id": "RUNTIME-MAP-CANDIDATE-001",
+      "severity": "pass",
+      "area": "map candidate policy",
+      "files": [
+        "candidate/apps/ios/Sources/Core/BundledEntityIndex.swift",
+        "candidate/apps/ios/Sources/DesignSystem/OfflineEntityPane.swift",
+        "candidate/apps/ios/Sources/Core/Resources/rom-map-policy.json",
+        "candidate/apps/ios/Sources/Core/Resources/lev-map-policy.json"
+      ],
+      "basis": "Runtime policy decodes allowFrom as Verse?; packaged ROM/LEV policies use the matching chapter/verse object. A legacy coordinate is taken only from the same stable ID in the original index and only when allowCandidateMap is true and allowFrom <= passage.end. The profile coordinate remains separate. policy.reasonJa is carried to candidateMapNote and displayed by the candidate-map view. Current ROM Cenchreae policy allows the candidate beginning at ROM 16:1 with profile coordinate null."
+    },
+    {
+      "id": "RUNTIME-WIKIPEDIA-RELATION-001",
+      "severity": "pass",
+      "area": "related Wikipedia links",
+      "files": [
+        "candidate/apps/ios/Sources/Core/EntityProfiles.swift",
+        "candidate/apps/ios/Sources/DesignSystem/OfflineEntityPane.swift"
+      ],
+      "basis": "An identity-unverified URL is allowed only when kind is related-section, relationVerified is true, a note is present, and host/scheme/path checks pass. UI labels it as a related section, shows the identity note, and keeps WEB citations in a separate source category. No code-path conflation with identity proof found."
+    }
+  ],
+  "runtimeArtifactsAndKnownBlockers": {
+    "coreTestLog": "core-final-test.log",
+    "coreTestLogSHA256": "e14a0d3803f9853b0c781cf4d05d4fb0dac05379519df0b6696fc91ab68e74a6",
+    "coreResult": "Parent reported 186 Core tests passed; log was read.",
+    "UIResult": "Parent reported UI tests still running; this reviewer did not launch the UI.",
+    "cenchreaeMap": "Current ROM policy JSON enables the Cenchreae candidate at ROM 16:1, and source code routes the policy into the map view. The reported missing map predates the updated resource; current bundle/build should be checked before treating it as a runtime logic defect.",
+    "actsJerusalemMap": "Current ACT policy enables the Jerusalem candidate and supplies a candidate label requirement. Parent-reported UI failure remains unverified by this static review; Core test passes do not resolve it."
+  },
+  "limitations": [
+    "Static inspection only; no UI interaction, clean rebuild with latest resources, or exact comparison against the signed 0.1.10 binary.",
+    "No code or runtime resources were changed. The name-toggle finding is a qualified behavior gap; it can alternatively be resolved by clarifying toggle copy if future aliases are intentionally excluded."
+  ],
+  "filesChanged": []
+}

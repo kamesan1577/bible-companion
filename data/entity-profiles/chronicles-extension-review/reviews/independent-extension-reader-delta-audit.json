@@ -1,0 +1,202 @@
+{
+  "reportType": "independent-extension-reader-delta-audit",
+  "reviewedAtUTC": "2026-10-16T12:16:47Z",
+  "scope": {
+    "currentResources": {
+      "1CH": {
+        "path": "candidate/apps/ios/Sources/Core/Resources/entity-profiles-1CH.json",
+        "sha256": "e395d945890e347cda7759cf6c8544cd3900fe45d2b449a7b3ab666540e467ee",
+        "profiles": 1139,
+        "frozenPath": "candidate-v0.1.16-frozen/apps/ios/Sources/Core/Resources/entity-profiles-1CH.json",
+        "frozenSHA256": "500626f06222c2d7b2c20decec1b4970fd58a279a48a89c83eb9adda052422b7",
+        "frozenProfiles": 1025,
+        "newProfileCount": 114
+      },
+      "2CH": {
+        "path": "candidate/apps/ios/Sources/Core/Resources/entity-profiles-2CH.json",
+        "sha256": "2789af08e0563f9b7d1d0260c4b7767a98fcb96bd5b9bb6cc413447dd3cccd22",
+        "profiles": 127,
+        "frozenPath": "candidate-v0.1.16-frozen/apps/ios/Sources/Core/Resources/entity-profiles-2CH.json",
+        "frozenSHA256": "4547a56d1778042ef35bb1d081d10921eedf2e49c9abcff8d34591c8117ee931",
+        "frozenProfiles": 24,
+        "newProfileCount": 103
+      }
+    },
+    "newBaseProfileCount": 217,
+    "fixedWitness": {
+      "path": "candidate/data/scripture/webp-2026-10-13/verses.ndjson.gz",
+      "sha256": "072fee7d215bc8d2af9ca29c6daf29a0108427508d45ed865d46c054b88f86ba",
+      "version": "webp-usfx-2026-10-13-35a6adf626e5"
+    },
+    "manualReaderFieldAndBaseVerseComparison": {
+      "1CH": [
+        "person:shammah_2538",
+        "person:sheba_2567",
+        "person:sheba_2569",
+        "person:shelah_2593",
+        "person:shem_2613",
+        "person:sheshan_2672",
+        "person:shobal_2719",
+        "person:tappuah_2826",
+        "person:tarshish_2828",
+        "person:teman_2839",
+        "person:timna_2860",
+        "person:timnah_2861",
+        "person:uzal_2911",
+        "person:zabad_2945",
+        "person:zavan_2944",
+        "person:zaza_2987",
+        "person:zebulun_3002",
+        "person:zemarite_3036",
+        "person:zerah_2984",
+        "person:zerah_3043",
+        "person:zerah_3044",
+        "person:zeruiah_3055",
+        "person:zidon_2738",
+        "person:zimran_3086"
+      ],
+      "2CH": [
+        "person:jerimoth_869",
+        "person:mahalath_1888",
+        "person:zaham_2980",
+        "person:abijah_38",
+        "person:absalom_59",
+        "person:attai_365",
+        "person:ziza_3098",
+        "person:uriel_2902",
+        "person:aaron_1",
+        "person:asa_318",
+        "person:zerah_3046",
+        "person:azariah_380",
+        "person:holy_spirit_7400",
+        "person:baasha_589",
+        "person:ben-hadad_452",
+        "person:hanani_1379",
+        "person:benhail_455",
+        "person:michaiah_2070",
+        "person:adonijah_98",
+        "person:asahel_321",
+        "person:elishama_1159",
+        "person:jehoram_805",
+        "person:nethaniah_2200",
+        "person:shemaiah_2628",
+        "person:zedekiah_1950"
+      ],
+      "count": 49
+    },
+    "selfAuthoredExcluded": {
+      "entityID": "person:shamariah_2531",
+      "reason": "Reviewer authored this profile; no self-approval. Separate independent reclosure is recorded at reviews/reclosure-shamariah-persons3-reader-repair-current.json, SHA256 18acebf567e51b89eed0793358c624470b67e953fd69a13b0000c38fe4845e49."
+    }
+  },
+  "method": {
+    "automatedSweep": "All 217 newly added profiles were compared by book/ID against the frozen profile IDs. Visible base fields and Wikipedia notes were scanned for explicit later verse references and common editorial-process vocabulary. This is a lexical aid only, not semantic approval.",
+    "manualSweep": "Compared the listed profiles’ subtitle, summary, identity note, role, Wikipedia note where present, knownBy and relevant fixed-WEB base verse. For potential later claims, opened adjacent fixed-WEB verses locally. Checked whether the visible claim is supported at the profile gate.",
+    "limitations": "Only the listed subset received manual semantic comparison. The rest of the 217-profile delta is pending. A clean automated scan is not a pass and this report does not approve the candidate resource as a whole."
+  },
+  "automatedSweep": {
+    "newProfiles": 217,
+    "explicitFutureCoordinateHits": 0,
+    "editorialLexiconHits": 1,
+    "editorialLexiconHit": {
+      "entityID": "person:zedekiah_1950",
+      "field": "identityNoteJa",
+      "text": "本文の「兄弟」という語以上の親族関係は、この説明では限定しません。"
+    },
+    "resultInterpretation": "The lexicon sweep was not exhaustive and cannot show all reader-language problems."
+  },
+  "individualHolds": [
+    {
+      "book": "1CH",
+      "entityID": "person:zabad_2945",
+      "currentProfileSHA256": "cf3d05d2f5f957c37fb48ff69f7178b3c9071dcd0343a97c4314c89b6b482511",
+      "knownBy": "1CH 2:36",
+      "fields": [
+        "subtitleJa",
+        "summaryJa",
+        "historicalRoleJa",
+        "wikipedia.noteJa"
+      ],
+      "verdict": "hold",
+      "finding": "The fixed WEB 2:36 establishes Attai → Nathan → Zabad. The current always-visible fields also call Zabad the father of Ephlal; the WEB first says this at 2:37. The Wikipedia note similarly names his fatherhood of Ephlal but is gated at 2:36. Keep the initial description to Zabad as Nathan’s son; gate the Ephlal relation and Wikipedia note/source until 2:37.",
+      "sourceTexts": {
+        "1CH 2:36": "Attai became the father of Nathan, and Nathan became the father of Zabad,",
+        "1CH 2:37": "and Zabad became the father of Ephlal, and Ephlal became the father of Obed,"
+      },
+      "currentRelevantSourceIds": [
+        "1CH-person-zabad_2945-chronicles-person-zabad_2945-webp-1ch-2-36",
+        "1CH-person-zabad_2945-chronicles-person-zabad_2945-webp-1ch-2-37",
+        "1CH-person-zabad_2945-chronicles-person-zabad_2945-wikipedia"
+      ]
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:jehoram_805",
+      "currentProfileSHA256": "9463ea30c7fd771999eda732580919f5f6d0c5fe50690f2d433772b769b03d3e",
+      "knownBy": "2CH 17:8",
+      "fields": [
+        "subtitleJa"
+      ],
+      "verdict": "hold",
+      "finding": "At 17:8 the text lists Elishama and Jehoram as priests alongside the Levites; that verse does not say this pair joined the teaching tour. WEB 17:9 says “They taught in Judah…” The subtitle describes Jehoram as part of a teaching group at 17:8, which anticipates the next verse. Replace with the priest/list role supported at 17:8 or gate teaching to 17:9. The summary itself stays with the 17:8 list.",
+      "sourceTexts": {
+        "2CH 17:8": "and with them Levites, even Shemaiah, Nethaniah, Zebadiah, Asahel, Shemiramoth, Jehonathan, Adonijah, Tobijah, and Tobadonijah, the Levites; and with them Elishama and Jehoram, the priests.",
+        "2CH 17:9": "They taught in Judah, having the book of the LORD’s law with them. They went about throughout all the cities of Judah and taught among the people."
+      },
+      "currentRelevantSourceIds": [
+        "2CH-person-jehoram_805-webp-2ch-jehoram_805-17-8"
+      ]
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:ben-hadad_452",
+      "currentProfileSHA256": "026809fff853c1ad82420b9b36ef03796c248a3bbbd3a741c5861f4ae755df30",
+      "knownBy": "2CH 16:2",
+      "fields": [
+        "subtitleJa",
+        "summaryJa"
+      ],
+      "verdict": "hold",
+      "finding": "WEB 16:2 states that Asa sent silver and gold to Ben Hadad and identifies him as the Syrian king living at Damascus. The profile says Ben Hadad received it, a conclusion not stated until 16:4 (“Ben Hadad listened to King Asa”) and not clear as literal receipt even there. At 16:2 describe him as the named addressee/recipient of the message and sent payment, without asserting acceptance/receipt. The profile includes 16:4 as a primary source while knownBy remains 16:2, so audit source/fact gate alignment too.",
+      "sourceTexts": {
+        "2CH 16:2": "Then Asa brought out silver and gold out of the treasures of the LORD’s house and of the king’s house, and sent to Ben Hadad king of Syria, who lived at Damascus, saying,",
+        "2CH 16:4": "Ben Hadad listened to King Asa, and sent the captains of his armies against the cities of Israel; and they struck Ijon, Dan, Abel Maim, and all the storage cities of Naphtali."
+      },
+      "currentRelevantSourceIds": [
+        "2CH-person-ben-hadad_452-ben-hadad_452-webp-2ch-16-2",
+        "2CH-person-ben-hadad_452-ben-hadad_452-webp-2ch-16-4"
+      ]
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:zedekiah_1950",
+      "currentProfileSHA256": "276aa62ca32e45c120fe67e244052243dd9eb929ddf91ddce028df28ac5a1777",
+      "knownBy": "2CH 36:10",
+      "fields": [
+        "identityNoteJa",
+        "wikipedia.noteJa"
+      ],
+      "verdict": "hold",
+      "finding": "The qualifier is substantively useful, but “この説明では限定しません” is editorial-process phrasing. Rewrite as a direct text-based statement that 36:10 calls Zedekiah the prior king’s “brother” and the text does not specify the exact kinship. Apply the same reader-facing wording to Wikipedia note without internal explanation language. The primary verse does call him the brother; the title/family caveat is appropriate."
+    },
+    {
+      "book": "2CH",
+      "entityID": "person:absalom_59",
+      "currentProfileSHA256": "c5edaaa7d523e1cc2c366dbe1deceaeac6c81bc6073458b3b9224c52969aa472",
+      "knownBy": "2CH 11:20",
+      "fields": [
+        "summaryJa"
+      ],
+      "verdict": "qualified",
+      "finding": "The genealogical claim that Maacah is Absalom’s granddaughter is directly stated at 11:20. The summary cites 11:20–21 although its claim is already grounded at 11:20; this is not a content spoiler, but the citation span could be narrowed to the verse supporting the claim."
+    }
+  ],
+  "manualReviewCounts": {
+    "checked": 49,
+    "holds": 4,
+    "qualified": 1,
+    "clearWithinCheckedSubset": 44,
+    "pending": 168
+  },
+  "status": "partial; no global candidate approval; hold rows require author action and all other unreviewed profiles remain open."
+}

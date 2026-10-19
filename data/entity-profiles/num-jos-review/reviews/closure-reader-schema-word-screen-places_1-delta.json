@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "reportType": "independent-reader-word-screen-closure-delta",
+  "reviewerRole": "independent-reviewer",
+  "reviewedAtUTC": "2026-10-15T23:19:34+00:00",
+  "sourceRepairLog": {
+    "path": "evidence/places_1/author-repairs-root-reader-schema-word-screen.json",
+    "sha256": "7e123f1b0b8ab97f414db44d13203ca22992eaae2240972a766d214b2968cdd9"
+  },
+  "scope": {
+    "requested": 3,
+    "independentlyClosed": 1,
+    "deferredDueToNonOverlappingBatch": 2,
+    "deferredIDs": [
+      "place:sebam_1038",
+      "place:hazar-susah_540"
+    ],
+    "reasonJa": "これら2 URL (List_of_minor_biblical_places, Cities_in_the_Book_of_Joshua) は people_one へ割当済みの固定20-URL sliceに含まれるため、新規独立再読を重複させない。people_oneの実読結果へjoinする。"
+  },
+  "closures": [
+    {
+      "book": "NUM",
+      "entityID": "place:nebo_883",
+      "draftPath": "drafts/places_1/NUM_place_nebo_883.json",
+      "evidencePath": "evidence/places_1/NUM_place_nebo_883.json",
+      "currentDraftSHA256": "d3fa088be6f2a97758a3197980d236d5d768faa0b76e1c28309c1c9fcd983795",
+      "currentEvidenceSHA256": "baf5635b55b0ff0a541dc969fd83773817bb247a71429b7efff9527f78622eb1",
+      "currentProfileSHA256": "a19eb6d65e42ab45ea272e621421713722dd00c1de078a93c8b8086ec9e58894",
+      "evidenceDraftSHA256": "d3fa088be6f2a97758a3197980d236d5d768faa0b76e1c28309c1c9fcd983795",
+      "evidenceProfileSHA256": "a19eb6d65e42ab45ea272e621421713722dd00c1de078a93c8b8086ec9e58894",
+      "draftEvidenceHashMatch": true,
+      "result": "closed",
+      "fieldReview": {
+        "profile.summaryJa": {
+          "textJa": "民数記32:3は、ネボをルベンとガドが希望したヨルダン川東側の町名一覧に含める。",
+          "findingJa": "NUM32:3の本文はNeboを依頼された町名一覧に含める。常時欄は本文範囲に限定され、地理同定を未来情報から補わない。"
+        },
+        "profile.wikipedia.noteJa": {
+          "textJa": "記事の主題は山で、冒頭では聖書の町NeboをKhirbet al-Mukhayyatと関連づけ、山から約3.5 km離れた地点と記しています。町と山は別の対象です。",
+          "findingJa": "実記事冒頭がMount Neboを山として定義し、次文で聖書の町NeboをKhirbet al-Mukhayyatと関連づけ山から3.5km離れた場所と明記する。noteJaは記事が山を主題とすること、町と山の区別、記事の記述内容を正しく短く表す。"
+        },
+        "profile.modernLocationJa": {
+          "textJa": "Mount Neboの記事は聖書の町ネボをKh. al-Mukhayyatと関連づけ、山から約3.5 km離している。ただし町と遺跡との同定には異論があり、所在地は確定しない。",
+          "findingJa": "同記事の明示的な町/山の差と後代の遺跡同定の留保を残しており、地点確定には使っていない。"
+        },
+        "profile.locationNoteJa": {
+          "textJa": "町の正確な位置は未確定です。地図上の点は従来資料に基づく参考位置で、Mount Neboとは区別します。",
+          "findingJa": "地理的不確実性と現代山との別対象性を読者向けに説明する。実装語なし。"
+        }
+      },
+      "fixedWEB": {
+        "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "localSource": "inventory/targets/numbers-web-verses.json",
+        "sourceFileSHA256": "f50a3147ff698b614ece92c48f6630890c542218bb80d5568d2759144d4e7bb9",
+        "occurrences": [
+          {
+            "ref": "NUM 32:3",
+            "url": "https://ebible.org/engwebp/NUM32.htm#V3",
+            "text": "“Ataroth, Dibon, Jazer, Nimrah, Heshbon, Elealeh, Sebam, Nebo, and Beon,",
+            "assessmentJa": "町名一覧へのNebo収載を確認。"
+          },
+          {
+            "ref": "NUM 32:38",
+            "url": "https://ebible.org/engwebp/NUM32.htm#V38",
+            "text": "Nebo, and Baal Meon, (their names being changed), and Sibmah. They gave other names to the cities which they built.",
+            "assessmentJa": "後続用例factsはknownBy 32:38にゲートされ、初出summaryへ先取りしていない。"
+          }
+        ]
+      },
+      "wikipediaRead": {
+        "url": "https://en.wikipedia.org/wiki/Mount_Nebo",
+        "retrievalRef": "turn2451view1",
+        "lineRange": "169–170",
+        "observedContentJa": "記事はMount Neboを山・尾根として記し、別文でbiblical town of Nebo/Khirbet al-Mukhayyatを山から3.5 km離れたものとして記す。",
+        "assessmentJa": "山と町を別対象として区別するnoteJaは現在の記事内容に合う。"
+      },
+      "unresolvedJa": null
+    }
+  ]
+}

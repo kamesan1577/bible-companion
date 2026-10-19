@@ -1,0 +1,317 @@
+{
+  "book": "JOS",
+  "reviewType": "independent primary-text/context proposal review with current Wikipedia article reads",
+  "reviewer": "/root/acts_people_one",
+  "reviewedAtUTC": "2026-10-15T21:47:16Z",
+  "workspace": "numbers-joshua-entities-work",
+  "fixedWitnessPath": "inventory/targets/joshua-web-verses.json",
+  "fixedWitnessSHA256": "26ae82b805dee523bb852977ccf62ad38cc40ebe442b650cbd7862db833ea854",
+  "fixedWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+  "mapSHA256": {
+    "reviews/verse-map-JOS-01-08.json": "ecb4620cb7d71b5fb450b3c2f410d03c3c0fc957dd97f4206e3b77fb25015786",
+    "reviews/verse-map-JOS-09-16.json": "12d3991003fbea8276e4799cc536f81021f0437c12c483093fdcb8b980dec7b6",
+    "reviews/verse-map-JOS-17-24.json": "f3458fd0c7a867fdec9a1cde977174014ea4e7d370d44b45cd76d4ceda108c6a"
+  },
+  "scope": "Four author-proposed JOS same-ID context edit files; check fixed WEB against all proposed always-visible fields, knownBy/facts/source IDs, same-verse person/collective usage, and actual current Wikipedia articles. No drafts/context files edited.",
+  "statusCounts": {
+    "pass": 1,
+    "qualified": 0,
+    "fail": 3
+  },
+  "records": [
+    {
+      "path": "context-edits/JOS/person_israel_682.json",
+      "entityID": "person:israel_682",
+      "fileSHA256": "d767faf70b24d149d7ffc8ccfd6c50e57b9d8a824c1349f51574441eeecc2c5f",
+      "baseProfilePath": "drafts/persons_2/JOS_person_israel_682.json",
+      "baseProfileSHA256": "73718785d4d8c335866f286c9a94d146db44b7bdbee4ceb4f03579fc67a66b31",
+      "proposalSHA256": "e32cc0eda03cd26fe4907e5fe04e2eeefa797f65fd3039d1d7332d21292a85a5",
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "pass",
+          "field": "always-visible fields / gates",
+          "reasonJa": "個人context knownBy24:4と本文を照合。JOS24:4は“I gave to Isaac Jacob and Esau”と続けて“Jacob and his children went down into Egypt”と述べる。現稿のsummary/subtitle/identityNote/Wikipedia noteはいずれも24:4の範囲で、後の24:32を予告しない。24:32の個人factはその節をknownByとして正しい。"
+        },
+        {
+          "severity": "pass",
+          "field": "same-verse variant and Wikipedia",
+          "reasonJa": "JOS24:32は“the bones of Joseph, which the children of Israel brought up”と“which Jacob bought”を同一節に併記するため、イスラエル集団baseとヤコブ個人contextの二用法を残す。現行日本語記事「ヤコブ (旧約聖書)」の冒頭は創世記の族長/イスラエル別名を、本文はイサクの子と確認でき、個人名の同一性照合先として適合。",
+          "url": "https://ja.wikipedia.org/wiki/ヤコブ_(旧約聖書)"
+        }
+      ],
+      "findingSummaryJa": "JOS24:4のヤコブ個人をイスラエルの民の集団baseから分ける案は適切。現稿のsummary・subtitle・identityNote・Wikipedia noteはすべて24:4の情報に限られ、24:32の土地購入は後続fact。24:32は同じ節にイスラエルの民がヨセフの骨を運ぶ集団用法とヤコブの土地購入の個人用法があるため、両文脈を共存させる必要がある。",
+      "currentSourceEvidencePath": "evidence/persons_2/JOS_person_israel_682.json",
+      "currentSourceEvidenceSHA256": "13b0a10a619ade6cebc1c47e562f62743b26c61a87fb3e838725d044c978af8b"
+    },
+    {
+      "path": "context-edits/JOS/person_joseph_1710.json",
+      "entityID": "person:joseph_1710",
+      "fileSHA256": "25c73e94fceb5078945bf65f0345c0327bc1bdf4576d6cb86a6278f204baae81",
+      "baseProfilePath": "drafts/persons_2/JOS_person_joseph_1710.json",
+      "baseProfileSHA256": "78fd7b8bbf4226a21e8d8593ab89dd2d2ff8d9f73bc4db8f3d686190c0badca4",
+      "proposalSHA256": "6e88b601b85b52cfd9c03b8ba5aff01b833383db589e317e8e7b367e9991afb7",
+      "status": "fail",
+      "findings": [
+        {
+          "severity": "fail",
+          "field": "collective facts knownBy17:17",
+          "knownBy": {
+            "chapter": 17,
+            "verse": 17
+          },
+          "quotedValue": "ヨシュア記17:14–18では、ヨセフの子らが土地についてヨシュアに申し立て、ヨシュアはエフライムとマナセに語りかけます。",
+          "reasonJa": "このfactは17:14–18を一体として語るが、JOS17:18で初めて出る「カナン人を追い出す」命令も含まれ、17:17 knownByより後の内容を先取りする。17:17までにある「ヨシュアはヨセフの家、すなわちエフライムとマナセへ答えた」に絞るか18:18を別gateへ分ける。現sourceIdsは17:17だけで18節も裏付けない。"
+        },
+        {
+          "severity": "qualified",
+          "field": "collective facts sourceIds",
+          "reasonJa": "16:4 factは16:1,16:4を、18:11 factは18:5,18:11を説明するがsourceIdsはそれぞれ16:4と18:11のみ。knownBy時点に矛盾はないものの、文言が明示する前節 source IDs をそれぞれ追加する必要がある。"
+        },
+        {
+          "severity": "pass",
+          "field": "always-visible fields, person/collective passages, Wikipedia",
+          "reasonJa": "現行author修正後、集団profile knownBy14:4は二部族の説明に限られ、identityNoteは空。個人context knownBy17:1はマナセの父としての系譜に限られ、identityNote/Wikipedia noteも17:1だけ。JOS24:32の個人骨とヨセフの子らの相続は両contextに正しく残る。現行英語Tribe of Joseph記事はエフライム/マナセの二部族、現行日本語ヨセフ記事はヤコブの子個人を扱う。",
+          "urls": [
+            "https://en.wikipedia.org/wiki/Tribe_of_Joseph",
+            "https://ja.wikipedia.org/wiki/ヨセフ_(ヤコブの子)"
+          ]
+        }
+      ],
+      "findingSummaryJa": "直近のauthor修正で常時欄の24:32先取りは解消し、個人/集団の同節区分と記事選択も適合。現在残るfailは17:17 factが17:18の内容をknownBy前に含むこと。16:4・18:11の先行節引用にsourceIds欠落もある。",
+      "currentSourceEvidencePath": "evidence/persons_2/JOS_person_joseph_1710.json",
+      "currentSourceEvidenceSHA256": "7c31daabffad18fa27e5bf57859856ec4767422920ee1d6bac3d3ab287cc6e8a"
+    },
+    {
+      "path": "context-edits/JOS/person_manasseh_1928.json",
+      "entityID": "person:manasseh_1928",
+      "fileSHA256": "ae5ab3a0e1444535eee11295d2c6f0d6dcb47b6d354d18d522f718b608a43c85",
+      "baseProfilePath": "drafts/persons_2/JOS_person_manasseh_1928.json",
+      "baseProfileSHA256": "57d9c32ad053672d6a77fa9b0b15084a3b720557c636e50eea5dbab42207d4e2",
+      "proposalSHA256": "0af9d28fd37bd465019f386b9cc882f9e84e679bbcc4eb9a92dd19d15781b41e",
+      "status": "fail",
+      "findings": [
+        {
+          "severity": "fail",
+          "field": "collective base profile passages JOS17:3",
+          "reasonJa": "固定WEB17:3はゼロフハドをヘフェル、ギレアデ、マキル、マナセへ遡る父系として記し、部族集団/領域への言及はない。current baseProfileSHAを照合すると、集団base passageに17:3が残っている。集団側から除き、個人contextだけに置く必要がある。"
+        },
+        {
+          "severity": "pass",
+          "field": "individual-context always-visible fields and Wikipedia",
+          "reasonJa": "現在の個人context knownBy13:31のsummary/subtitle/identityNote/Wikipedia noteはすべて同節に限る。17:1–3はknownByを分けたfactsとして正しい。現行英語記事Manasseh (tribal patriarch)は冒頭でヨセフの長子と説明し、部族の祖という区別を持つ人物記事であり、同一性確認先に適合。",
+          "url": "https://en.wikipedia.org/wiki/Manasseh_(tribal_patriarch)"
+        },
+        {
+          "severity": "qualified",
+          "field": "same-verse collective/person variants JOS17:1–2",
+          "reasonJa": "JOS17:1は「マナセ族」の相続くじとヨセフの長子であるマナセ個人、マキルを同じ節で扱う。17:2は各氏族の「マナセの子ら」と祖先“Manasseh the son of Joseph”を併記する。個人contextを両節に保持する判断は正しいが、集団baseにも17:1–2を残し、二用法を分ける必要がある。17:3は個人だけ。"
+        }
+      ],
+      "findingSummaryJa": "直近のauthor修正で個人contextの13:31初出時点のidentityNoteは是正済み。個人contextのsummary/Wikipedia noteも13:31に収まり、記事照合は適切。ただし既存集団base profileが個人だけを示す17:3をpassagesに含んだままなので、集団/個人区分は未完。17:1–2では同じ節内で部族集団と個人祖先が併記され、両方を保持する。",
+      "currentSourceEvidencePath": "evidence/persons_2/JOS_person_manasseh_1928.json",
+      "currentSourceEvidenceSHA256": "a0c2c5e66782d9a70b9377756dee80266f0d8c8cb9e47bf36e811900bfd1eada"
+    },
+    {
+      "path": "context-edits/JOS/person_reuben_2429.json",
+      "entityID": "person:reuben_2429",
+      "fileSHA256": "816c2eb3781721740082adbbc353aa883efbcf04a03a9bbb1a7313549227ba24",
+      "baseProfilePath": "drafts/persons_1/JOS_reuben_2429.json",
+      "baseProfileSHA256": "edd1441e4fb46a8466bbf0a24992737398d3ba29b70921957a2303be41919f6d",
+      "proposalSHA256": "a408ac405c82cb52151c6d6f38075e6978f93a887894a9cd84fde59f653acf9b",
+      "status": "fail",
+      "findings": [
+        {
+          "severity": "fail",
+          "field": "collective base profile passages/facts JOS15:6,18:17",
+          "reasonJa": "current baseProfileSHAのルベン族profileには15:6/18:17のpassagesと、ボハンの石を述べるcollective factsが残る。原文はいずれも「ルベンの子ボハンの石」とする由来名で、ルベン族集団への言及ではない。集団baseからこの二つの用例/factsを除き、新提案の個人eponym contextへ移す必要がある。"
+        },
+        {
+          "severity": "pass",
+          "field": "individual context always-visible / Wikipedia / same-verse use",
+          "reasonJa": "現在summary/identityNoteはJOS15:6のみで18:17を先取りしない。父ルベンが族祖と同一かを不明とする慎重さも本文に合う。現行Reuben記事のBiblical references節はJOS15:6のBohan-stoneを明示するため関連先として適切だが、identityVerified=false、relationVerified=trueは維持すべき。15:6と18:17はいずれも同じ式で石を特定し、将来用例はfactsでgate済み。",
+          "url": "https://en.wikipedia.org/wiki/Reuben_(son_of_Jacob)#Biblical_references"
+        }
+      ],
+      "findingSummaryJa": "直近修正で15:6常時欄から18:17の先取りは解消され、個人/eponym contextの同一性留保とWikipedia関連節も適合。だが既存ルベン族の集団base still contains 15:6 and18:17 as collective passages/facts, although both verses name Bohan’s father Reuben, not the tribe; integration must separate those mentions.",
+      "currentSourceEvidenceSHA256": "0081f8c3aa4d17a7f8daf39084aa0c2d25b69481abe8a037a16242bf09e2eb04",
+      "currentSourceEvidencePath": "evidence/persons_1/JOS_reuben_2429.json"
+    }
+  ],
+  "primaryWitnesses": [
+    {
+      "book": "JOS",
+      "chapter": 13,
+      "verse": 31,
+      "url": "https://ebible.org/engwebp/JOS13.htm#V31",
+      "text": "Half Gilead, Ashtaroth, and Edrei, the cities of the kingdom of Og in Bashan, were for the children of Machir the son of Manasseh, even for the half of the children of Machir according to their families.",
+      "textSHA256": "566164b930237b89833813ea53f7e7a215ac51ddc1683b8b6a0d1f4c59aa2d76"
+    },
+    {
+      "book": "JOS",
+      "chapter": 14,
+      "verse": 4,
+      "url": "https://ebible.org/engwebp/JOS14.htm#V4",
+      "text": "For the children of Joseph were two tribes, Manasseh and Ephraim. They gave no portion to the Levites in the land, except cities to dwell in, with their pasture lands for their livestock and for their property.",
+      "textSHA256": "cdd53a69dac8387ab8000383ceca89f5b9f81614b18223af1d82ed960c5fd976"
+    },
+    {
+      "book": "JOS",
+      "chapter": 15,
+      "verse": 6,
+      "url": "https://ebible.org/engwebp/JOS15.htm#V6",
+      "text": "The border went up to Beth Hoglah, and passed along by the north of Beth Arabah; and the border went up to the stone of Bohan the son of Reuben.",
+      "textSHA256": "d729d9da8dcbf2b79d03e86f7d579f85f3022d60a029e5ea9c2c42202cb9cf02"
+    },
+    {
+      "book": "JOS",
+      "chapter": 16,
+      "verse": 1,
+      "url": "https://ebible.org/engwebp/JOS16.htm#V1",
+      "text": "The lot came out for the children of Joseph from the Jordan at Jericho, at the waters of Jericho on the east, even the wilderness, going up from Jericho through the hill country to Bethel.",
+      "textSHA256": "d99d0d9c4b24471731611805b1c02c2fe73b9577202a5aa6219d7af4823cf33b"
+    },
+    {
+      "book": "JOS",
+      "chapter": 16,
+      "verse": 4,
+      "url": "https://ebible.org/engwebp/JOS16.htm#V4",
+      "text": "The children of Joseph, Manasseh and Ephraim, took their inheritance.",
+      "textSHA256": "7f004df4735e6deef6b383db4ad49232d7775cf9b591dc1ad97ed6fd67fdcf49"
+    },
+    {
+      "book": "JOS",
+      "chapter": 17,
+      "verse": 1,
+      "url": "https://ebible.org/engwebp/JOS17.htm#V1",
+      "text": "This was the lot for the tribe of Manasseh, for he was the firstborn of Joseph. As for Machir the firstborn of Manasseh, the father of Gilead, because he was a man of war, therefore he had Gilead and Bashan.",
+      "textSHA256": "b49ff5730450d4133b2c2dcfe552c440ce8000a4b4eff10a3406dc41a6dc8d21"
+    },
+    {
+      "book": "JOS",
+      "chapter": 17,
+      "verse": 2,
+      "url": "https://ebible.org/engwebp/JOS17.htm#V2",
+      "text": "So this was for the rest of the children of Manasseh according to their families: for the children of Abiezer, for the children of Helek, for the children of Asriel, for the children of Shechem, for the children of Hepher, and for the children of Shemida. These were the male children of Manasseh the son of Joseph according to their families.",
+      "textSHA256": "fc8c8e78d9293d3ca2e02fdf8db2d1b8f85e12d76d62c37247eabb9bb3ccfdbb"
+    },
+    {
+      "book": "JOS",
+      "chapter": 17,
+      "verse": 3,
+      "url": "https://ebible.org/engwebp/JOS17.htm#V3",
+      "text": "But Zelophehad, the son of Hepher, the son of Gilead, the son of Machir, the son of Manasseh, had no sons, but daughters. These are the names of his daughters: Mahlah, Noah, Hoglah, Milcah, and Tirzah.",
+      "textSHA256": "41a5fb0cf9355252f8a4975fb421165de6b3d190a756f0585b7432c02bc9cea2"
+    },
+    {
+      "book": "JOS",
+      "chapter": 17,
+      "verse": 14,
+      "url": "https://ebible.org/engwebp/JOS17.htm#V14",
+      "text": "The children of Joseph spoke to Joshua, saying, “Why have you given me just one lot and one part for an inheritance, since we are a numerous people, because the LORD has blessed us so far?”",
+      "textSHA256": "5b57222383e33fd9fcbfadda2b7f0b375f2b8178b5b05aa976a24b3c4dedae10"
+    },
+    {
+      "book": "JOS",
+      "chapter": 17,
+      "verse": 16,
+      "url": "https://ebible.org/engwebp/JOS17.htm#V16",
+      "text": "The children of Joseph said, “The hill country is not enough for us. All the Canaanites who dwell in the land of the valley have chariots of iron, both those who are in Beth Shean and its towns, and those who are in the valley of Jezreel.”",
+      "textSHA256": "9e910082db5d0bebec5581f14172f15f4fe4acbfddaaf3810de5a02726030c18"
+    },
+    {
+      "book": "JOS",
+      "chapter": 17,
+      "verse": 17,
+      "url": "https://ebible.org/engwebp/JOS17.htm#V17",
+      "text": "Joshua spoke to the house of Joseph, that is, to Ephraim and to Manasseh, saying, “You are a numerous people, and have great power. You shall not have one lot only;",
+      "textSHA256": "aa1a43475121ad092a821e9872c680304359aaa126a8c5b239d9aba19268e2ab"
+    },
+    {
+      "book": "JOS",
+      "chapter": 17,
+      "verse": 18,
+      "url": "https://ebible.org/engwebp/JOS17.htm#V18",
+      "text": "but the hill country shall be yours. Although it is a forest, you shall cut it down, and it’s farthest extent shall be yours; for you shall drive out the Canaanites, though they have chariots of iron, and though they are strong.”",
+      "textSHA256": "aab99d07c17f60888e0a81253c9bb0aae9ac7bcb296329ffd216a6f6f6fd614a"
+    },
+    {
+      "book": "JOS",
+      "chapter": 18,
+      "verse": 5,
+      "url": "https://ebible.org/engwebp/JOS18.htm#V5",
+      "text": "They shall divide it into seven portions. Judah shall live in his borders on the south, and the house of Joseph shall live in their borders on the north.",
+      "textSHA256": "5b1fcd45789808b79b1064e6ed4e1d240354e2afd8ff1b0548f35be68d92b25d"
+    },
+    {
+      "book": "JOS",
+      "chapter": 18,
+      "verse": 11,
+      "url": "https://ebible.org/engwebp/JOS18.htm#V11",
+      "text": "The lot of the tribe of the children of Benjamin came up according to their families. The border of their lot went out between the children of Judah and the children of Joseph.",
+      "textSHA256": "09bfc249d75e33c1968e8a92f9ff58a5662bf5e9854f76b0bd37bfcf43487b58"
+    },
+    {
+      "book": "JOS",
+      "chapter": 18,
+      "verse": 17,
+      "url": "https://ebible.org/engwebp/JOS18.htm#V17",
+      "text": "It extended northward, went out at En Shemesh, and went out to Geliloth, which is opposite the ascent of Adummim. It went down to the stone of Bohan the son of Reuben.",
+      "textSHA256": "29aeb5cc0b24fe9c1c2ee06eebe8a229d587d55f53f4633fab33409824fe8d76"
+    },
+    {
+      "book": "JOS",
+      "chapter": 24,
+      "verse": 4,
+      "url": "https://ebible.org/engwebp/JOS24.htm#V4",
+      "text": "I gave to Isaac Jacob and Esau: and I gave to Esau Mount Seir, to possess it. Jacob and his children went down into Egypt.",
+      "textSHA256": "d7946ab8cb1ce4ca86954a209272498e8a1ab3525ed14e854ceef0ba9fbf1948"
+    },
+    {
+      "book": "JOS",
+      "chapter": 24,
+      "verse": 32,
+      "url": "https://ebible.org/engwebp/JOS24.htm#V32",
+      "text": "They buried the bones of Joseph, which the children of Israel brought up out of Egypt, in Shechem, in the parcel of ground which Jacob bought from the sons of Hamor the father of Shechem for a hundred pieces of silver. They became the inheritance of the children of Joseph.",
+      "textSHA256": "060ed7198ecd26b70cc272938e4491a85db889bf136c12a68c00b239229abf2c"
+    }
+  ],
+  "wikipediaReads": [
+    {
+      "title": "ヤコブ (旧約聖書)",
+      "url": "https://ja.wikipedia.org/wiki/ヤコブ_(旧約聖書)",
+      "read": "現行ページ見出し・冒頭で創世記の族長/別名イスラエル、本文でイサクの子と確認。",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "title": "Tribe of Joseph",
+      "url": "https://en.wikipedia.org/wiki/Tribe_of_Joseph",
+      "read": "冒頭でTribe/House of Josephをエフライムとマナセの二部族として説明。",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "title": "ヨセフ (ヤコブの子)",
+      "url": "https://ja.wikipedia.org/wiki/ヨセフ_(ヤコブの子)",
+      "read": "見出し・冒頭でヤコブの子ヨセフ個人と確認。",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "title": "Manasseh (tribal patriarch)",
+      "url": "https://en.wikipedia.org/wiki/Manasseh_(tribal_patriarch)",
+      "read": "冒頭でヨセフの長子、部族の祖としてのManassehと説明。JOS13:31/17系譜人物の同一性照合に適合。",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "title": "Reuben (son of Jacob)",
+      "url": "https://en.wikipedia.org/wiki/Reuben_(son_of_Jacob)#Biblical_references",
+      "read": "現行記事「Biblical references」本文はJoshua 15:6にBohan-stone, son of Reubenを記述。ただしJoshua本文だけでは父と族祖の同一性/世代不明。",
+      "checkedAt": "2026-10-15"
+    }
+  ],
+  "limitations": [
+    "Wikipedia corroborates target article identity/relation only and is not a primary-text fact source.",
+    "The JSON context proposals are not integrated runtime profiles; this review assesses proposed profile fields and source mapping only.",
+    "Fixed WEB source is read from pinned local JSON; full surrounding narrative and individual phrase context were examined at cited coordinates.",
+    "Context proposals changed during this review; final current file and proposal hashes are recorded. The final judgments refer only to those SHA-pinned versions."
+  ]
+}

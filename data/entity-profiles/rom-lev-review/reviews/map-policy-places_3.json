@@ -1,0 +1,110 @@
+{
+  "items": [
+    {
+      "book": "LEV",
+      "id": "place:azazel_127",
+      "category": "uncertain",
+      "allowCandidateMap": false,
+      "allowFrom": [],
+      "reasonJa": "固定WEBは3箇所をscapegoatと訳し地名を明記しない。英語Wikipedia記事は場所・悪霊・贖罪のやぎなどの解釈が併存することを示すが、これだけでレビ記本文の地名同定はできない。",
+      "verificationState": "excluded-no-place-match",
+      "draftSHA256": "d70ec632304d78390634e4d72a08809fc7eeecbf008f1348b973c621b89d5532"
+    },
+    {
+      "book": "LEV",
+      "id": "place:canaan_272",
+      "category": "region",
+      "allowCandidateMap": true,
+      "allowFrom": [
+        {
+          "chapter": 14,
+          "verse": 34
+        }
+      ],
+      "reasonJa": "歴史地域。既存Acts候補座標は同じ地名の概略候補としてだけ維持し、確定位置や現代国境として扱わない。",
+      "verificationState": "legacy-candidate-only; profile.coordinate=null; no independent coordinate promotion",
+      "draftSHA256": "574e87d897e73c1b49865dcb31c241af16f83fc565ae6435809c4699a52d8c2a",
+      "legacyCandidateCoordinate": [
+        31.69352950368834,
+        34.84388288576839
+      ]
+    },
+    {
+      "book": "LEV",
+      "id": "place:sinai_1098",
+      "category": "uncertain",
+      "allowCandidateMap": false,
+      "allowFrom": [],
+      "reasonJa": "一節内に山と荒野の双方が出て、聖書中の山の比定も確定しない。既存Actsの別ID（Mount Sinai）の候補点は転用しない。",
+      "verificationState": "no-compatible-existing-candidate",
+      "draftSHA256": "b3e33bd19ec3a883ed873c31cd52c9faf549f0e46add5b50fbe50991492dea7d"
+    },
+    {
+      "book": "ROM",
+      "id": "place:asia_108",
+      "category": "uncertain",
+      "allowCandidateMap": false,
+      "allowFrom": [],
+      "reasonJa": "ROM16:5の固定本文はfirst fruits of Achaia。Asiaへの結び付けは本文に反し、Achaiaとの混同も許容できない。Actsで同じIDに候補点があるが、このRomans用例に対する地図候補としては不適合。",
+      "verificationState": "excluded-no-place-match",
+      "draftSHA256": "71e7d122cb35188dd6ce4d9638c39af55c927011b1d4ba1d24235bd96f336f51"
+    },
+    {
+      "book": "ROM",
+      "id": "place:illyricum_595",
+      "category": "region",
+      "allowCandidateMap": false,
+      "allowFrom": [],
+      "reasonJa": "広域地域名で、同じIDに確かな既存候補点がない。ローマ属州の記事は関連資料だが節内の語義・境界を確定しない。",
+      "verificationState": "no-compatible-existing-candidate",
+      "draftSHA256": "4f4dcb14d6b75f0b80c08924e3d073b6eb1b81f930d898ca8e5be0d1000df292"
+    },
+    {
+      "book": "ROM",
+      "id": "place:jerusalem_636",
+      "category": "city",
+      "allowCandidateMap": true,
+      "allowFrom": [
+        {
+          "chapter": 15,
+          "verse": 19
+        }
+      ],
+      "reasonJa": "同一IDの既存Acts候補は現代都市と位置が連続する概略候補としてのみ維持。プロフィール座標は未設定で、古代市域・政治的境界を意味しない。",
+      "verificationState": "legacy-candidate-only; profile.coordinate=null; no independent coordinate promotion",
+      "legacyCandidateCoordinate": [
+        31.776667,
+        35.234167
+      ]
+    },
+    {
+      "book": "ROM",
+      "id": "place:rome_1013",
+      "category": "city",
+      "allowCandidateMap": true,
+      "allowFrom": [
+        {
+          "chapter": 1,
+          "verse": 7
+        }
+      ],
+      "reasonJa": "同じ都市IDの既存Acts候補を参考位置として維持。プロフィール座標は未設定。現代ローマ市と古代都市の範囲の差に注意。",
+      "verificationState": "legacy-candidate-only; profile.coordinate=null; no independent coordinate promotion",
+      "legacyCandidateCoordinate": [
+        41.89262,
+        12.4843457
+      ]
+    },
+    {
+      "book": "ROM",
+      "id": "place:sodom_1107",
+      "category": "uncertain",
+      "allowCandidateMap": false,
+      "allowFrom": [],
+      "reasonJa": "聖書の二都市に関する記事の新約節がRomans 9:29の引用を直接挙げる。一方、所在地は複数候補があり確定できないため地図候補は表示しない。",
+      "verificationState": "no-compatible-existing-candidate"
+    }
+  ],
+  "policyNoteJa": "allowCandidateMap=trueは同一IDの既存点を「従来の出典候補」と明示して保持する許可であり、プロフィール座標の独立確認や確定を意味しない。プロフィールcoordinateは全件null。",
+  "group": "places_3"
+}

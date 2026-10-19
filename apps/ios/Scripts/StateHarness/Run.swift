@@ -48,14 +48,17 @@ import CompanionCore
         print("PASS explicit restore recovery retains failure flag until cleanup succeeds")
 
         reset()
+        SessionVault.session = StoredSession(token: "expired-synthetic", expiresAt: Date().addingTimeInterval(-60).timeIntervalSince1970, user: account)
+        ShareInbox.shares = [queued]
         let expired = AppStore(apiBaseURL: URL(string: "https://example.test")!); ShareInbox.failClear = true
         expired.handle(NetworkFailure.unauthenticated)
-        precondition(expired.account == nil && expired.localCleanupRequired && SessionVault.cleanupPending)
-        precondition(PrivateHistoryStore.clears == 1 && PendingQuestionStore.clears == 1 && ComparisonStore.clears == 1)
-        precondition(ExportFiles.clears == 2) // Startup cleanup plus synchronous401 cleanup.
+        precondition(expired.account == nil && !expired.localCleanupRequired && !SessionVault.cleanupPending)
+        precondition(PrivateHistoryStore.clears == 0 && PendingQuestionStore.clears == 0 && ComparisonStore.clears == 0)
+        precondition(ShareInbox.clears == 0 && ShareInbox.shares.count == 1 && SessionVault.session != nil)
         let restarted = AppStore(apiBaseURL: URL(string: "https://example.test")!); await restarted.restore()
-        precondition(restarted.localCleanupRequired && restarted.account == nil)
-        print("PASS401 cleanup failure remains blocked across a new store instance")
+        precondition(!restarted.localCleanupRequired && restarted.account == nil && SessionVault.session != nil)
+        precondition(PrivateHistoryStore.clears == 0 && ShareInbox.shares.count == 1)
+        print("PASS401 and expired-session restore preserve prior records while isolating signed-out UI")
 
         reset()
         ShareInbox.shares = [queued]; ShareInbox.failOwner = true
@@ -203,6 +206,21 @@ import CompanionCore
     precondition(ShareInbox.accessSaveCount == 1 && ShareInbox.capability == nil)
     precondition(grantedThenSaveFails.aiPolicy?.shareAiConsent == false)
     print("PASS successful grounded-consent update does not mask capability save failure")
+
+    // Foreground refresh and a manual save share one issuance instead of cancelling each other.
+    RunStateChecks.reset()
+    ShareIssueProtocol.state.configure(holdShareIssue: true)
+    let concurrent = try await makeStore(); let concurrentEpoch = concurrent.sessionEpoch
+    let firstSave = Task { try await concurrent.enableShareAI(expectedEpoch: concurrentEpoch) }
+    try await RunStateChecks.waitForHarness { ShareIssueProtocol.state.shareIssueCount == 1 }
+    let secondSave = Task { try await concurrent.enableShareAI(expectedEpoch: concurrentEpoch) }
+    for _ in 0..<10 { await Task.yield() }
+    precondition(ShareIssueProtocol.state.shareIssueCount == 1)
+    ShareIssueProtocol.state.releaseShareIssue.signal()
+    try await firstSave.value; try await secondSave.value
+    precondition(ShareIssueProtocol.state.shareIssueCount == 1)
+    _ = try ShareInbox.verifiedAIAccess(expectedOwner: account.id)
+    print("PASS simultaneous share saves coalesce and both read back successfully")
 
     // An expired saved token is replaced when policy still allows sharing.
     RunStateChecks.reset()

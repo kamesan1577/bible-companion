@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "book": "JOS",
+  "entityID": "place:ephron_405",
+  "profilePath": "drafts/places_3/JOS_ephron_405.json",
+  "profileSHA256": "840b491a3fe66c329558a0bfeb270f7f781b756add3030c5a5e6bc1dc425b253",
+  "assignment": {
+    "path": "assignments/places_3.json",
+    "sha256": "ec36241ee733ce0e8c7942b652b68c6540ed225fa01393cc9b7561602da2e08f"
+  },
+  "fixedWitness": {
+    "path": "inventory/targets/joshua-web-verses.json",
+    "sha256": "26ae82b805dee523bb852977ccf62ad38cc40ebe442b650cbd7862db833ea854",
+    "version": "webp-usfx-2026-10-13-35a6adf626e5"
+  },
+  "sourceIndex": {
+    "path": "candidate/apps/ios/Sources/Core/Resources/entity-index.json",
+    "workspace": "../romans-leviticus-entities-work",
+    "sha256": "dfe6fba1109f192548e28645cf085ddafe3baf7820d200e2e28da486dd98f11a",
+    "candidateCoordinate": [
+      31.675746,
+      35.042407
+    ],
+    "coordinateStatus": "unverified-candidate"
+  },
+  "primaryChecks": [
+    {
+      "ref": "JOS 18:15",
+      "sourceURL": "https://ebible.org/engwebp/JOS18.htm#V15",
+      "text": "The south quarter was from the farthest part of Kiriath Jearim. The border went out westward, and went out to the spring of the waters of Nephtoah.",
+      "contextRefs": [
+        "JOS 18:14 — The border extended, and turned around on the west quarter southward, from the mountain that lies before Beth Horon southward; and ended at Kiriath Baal (also called Kiriath Jearim), a city of the children of Judah. This was the west quarter.",
+        "JOS 18:16 — The border went down to the farthest part of the mountain that lies before the valley of the son of Hinnom, which is in the valley of Rephaim northward. It went down to the valley of Hinnom, to the side of the Jebusite southward, and went down to En Rogel."
+      ],
+      "disposition": "excluded-wrong-link"
+    }
+  ],
+  "wikipediaCheck": {
+    "status": "not-applicable-candidate-excluded",
+    "identityBasisJa": "固定WEB本文に該当地名がないため個別記事は割り当てない。"
+  },
+  "geographyAssessment": {
+    "classification": "uncertain",
+    "candidateMapDisposition": "suppress",
+    "reasonJa": "割当はJOS18:15を候補とするが、固定WEB本文にはEphronも山名もなく、Kiriath JearimからNephtoahの泉へ至る境界のみ。前後の16–17節にもEphronはないため、このIDとの用例は誤リンクとして除外し、地名カードのpassagesは空にする。",
+    "profileCoordinate": null,
+    "independentCoordinateSourcesRead": []
+  },
+  "limitationsJa": "固定WEB本文と前後を読んだ結果、割当候補の地名一致を確認できない。",
+  "elapsedSeconds": 180,
+  "authorRepairAudit": [
+    {
+      "review": "reviews/independent-profiles-places_3.json",
+      "reviewedDraftSHA256": null,
+      "previousEvidenceSHA256": "0f689af1f38ff0e08396491c3c9bf8b06d6654175f985d08b60096936a5a393f",
+      "newProfileSHA256": "840b491a3fe66c329558a0bfeb270f7f781b756add3030c5a5e6bc1dc425b253",
+      "changes": [
+        {
+          "field": "profile",
+          "before": {
+            "id": "place:ephron_405",
+            "kind": "place",
+            "nameJa": "エフロン（候補・本文未確認）",
+            "subtitleJa": "固定WEB本文で地名用法を確認できない候補",
+            "summaryJa": "固定WEBのヨシュア記18:15はキルヤテ・エアリムからネフトアの泉へ向かう境界を記しますが、エフロンの名はありません。ヨシュア記18:14–17の前後にもこの地名は確認できません。",
+            "identityNoteJa": "",
+            "knownBy": {
+              "chapter": 18,
+              "verse": 15
+            },
+            "passages": [],
+            "sourceIds": [],
+            "facts": [],
+            "modernLocationJa": "候補節はこの場所の位置を示しません。",
+            "historicalRoleJa": "固定WEB本文では該当する地名用法を確認できません。",
+            "coordinate": null,
+            "locationNoteJa": "誤リンク候補のため位置候補を地図表示しません。",
+            "wikipedia": null,
+            "materialCardIDs": [],
+            "supplemental": false
+          },
+          "after": null,
+          "reasonJa": "割当節JOS18:15と前後18:14–17にEphronの地名用例がなく、場所として同定できないためプロフィール対象外。"
+        }
+      ]
+    }
+  ]
+}

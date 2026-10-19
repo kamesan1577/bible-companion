@@ -1,0 +1,109 @@
+{
+  "createdAtUTC": "2026-10-16T06:40:51.054743+00:00",
+  "scope": "1CH13:5 only; existing map entity mapping correction",
+  "mapPath": "reviews/verse-map-1CH-10-19.json",
+  "beforeMapSHA256": "1c4b6fc29ae68f1f4052963152356f5f05fe06ccf317627acf6e8de5206bf05d",
+  "preservedBeforeBytesPath": "preservation/objects/1c4b6fc29ae68f1f4052963152356f5f05fe06ccf317627acf6e8de5206bf05d",
+  "afterMapSHA256": "075c308253d4ef7c83c06e98bf9423629ee8e6022af29b3cac83e2ca72b5679a",
+  "rootEvidencePath": "reviews/root-shihor-index-scope-correction.json",
+  "rootEvidenceSHA256": "7fe3d9515d4535658fac80ae1fee1f36206fcf36f210edf66e36fe1399a42db5",
+  "fixedWitnessPath": "inventory/targets/chronicles1-web-verses.json",
+  "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+  "coordinatesChanged": [
+    [
+      13,
+      5
+    ]
+  ],
+  "sourceTextAndCitationFieldsUntouched": true,
+  "oldRow": {
+    "book": "1CH",
+    "chapter": 13,
+    "verse": 5,
+    "sourceText": "So David assembled all Israel together, from the Shihor River of Egypt even to the entrance of Hamath, to bring God’s ark from Kiriath Jearim.",
+    "sourceTextSHA256": "e79af9c13b724eafb01aa26a490a4ff749cda0150154ca1da28ab211e7e0b6ad",
+    "citationURL": "https://ebible.org/engwebp/1CH13.htm#V5",
+    "entities": [
+      {
+        "entityID": "person:david_994",
+        "relationship": "direct",
+        "reasonJa": "固定WEBに「David」が明記される。"
+      },
+      {
+        "entityID": "person:god_1324",
+        "relationship": "direct",
+        "reasonJa": "本文に神の名・称号「God/LORD」が明記される。"
+      },
+      {
+        "entityID": "place:egypt_362",
+        "relationship": "direct",
+        "reasonJa": "固定WEBに「Egypt」が明記される。 固定WEBにEgyptが明記され、Shihor川の範囲端を限定する。"
+      },
+      {
+        "entityID": "place:kiriath-jearim_701",
+        "relationship": "direct",
+        "reasonJa": "固定WEBは「Kiriath Jearim」と綴り、候補IDの名称差をこの一覧の当該名として確認できる。"
+      },
+      {
+        "entityID": "place:lebo-hamath_723",
+        "relationship": "direct",
+        "reasonJa": "固定WEBは「entrance of Hamath」と綴り、候補IDの名称差をこの一覧の当該名として確認できる。"
+      }
+    ],
+    "excludedCandidates": [
+      {
+        "entityID": "place:nile_895",
+        "reasonJa": "「Shihor川」はWEB本文が用いる範囲端の名称で、Nileとの同一視はこの節に明記されない。入口Hamathと同様に川の同定を保留する。"
+      }
+    ],
+    "reviewNoteJa": "採用候補と誤同定リスクを分け、固定WEBの当節表記を優先した。除外理由と未解決の集団/別表記は記録した。"
+  },
+  "newRow": {
+    "book": "1CH",
+    "chapter": 13,
+    "verse": 5,
+    "sourceText": "So David assembled all Israel together, from the Shihor River of Egypt even to the entrance of Hamath, to bring God’s ark from Kiriath Jearim.",
+    "sourceTextSHA256": "e79af9c13b724eafb01aa26a490a4ff749cda0150154ca1da28ab211e7e0b6ad",
+    "citationURL": "https://ebible.org/engwebp/1CH13.htm#V5",
+    "entities": [
+      {
+        "entityID": "person:david_994",
+        "relationship": "direct",
+        "reasonJa": "固定WEBに「David」が明記される。"
+      },
+      {
+        "entityID": "person:god_1324",
+        "relationship": "direct",
+        "reasonJa": "本文に神の名・称号「God/LORD」が明記される。"
+      },
+      {
+        "entityID": "place:egypt_362",
+        "relationship": "direct",
+        "reasonJa": "固定WEBに「Egypt」が明記される。 固定WEBにEgyptが明記され、Shihor川の範囲端を限定する。"
+      },
+      {
+        "entityID": "place:kiriath-jearim_701",
+        "relationship": "direct",
+        "reasonJa": "固定WEBは「Kiriath Jearim」と綴り、候補IDの名称差をこの一覧の当該名として確認できる。"
+      },
+      {
+        "entityID": "place:lebo-hamath_723",
+        "relationship": "direct",
+        "reasonJa": "固定WEBは「entrance of Hamath」と綴り、候補IDの名称差をこの一覧の当該名として確認できる。"
+      },
+      {
+        "entityID": "place:shihor_1076",
+        "relationship": "direct",
+        "reasonJa": "固定WEB本文は「Shihor River of Egypt」と明記する。global entity indexに既存のplace:shihor_1076があり、本文のShihorという地名表記に対応させる。Nileとの同一性や現代の正確な地点・座標はこのリンクから確定しない。"
+      }
+    ],
+    "excludedCandidates": [
+      {
+        "entityID": "place:nile_895",
+        "reasonJa": "「Shihor川」はWEB本文が用いる範囲端の名称で、Nileとの同一視はこの節に明記されない。入口Hamathと同様に川の同定を保留する。"
+      }
+    ],
+    "reviewNoteJa": "本文に明記されたShihorは既存のplace:shihor_1076に対応する。Nileとの同一性および現代の正確な位置は未確定で、座標の確定を意味しない。"
+  },
+  "dispositionJa": "固定WEB 1CH13:5の「Shihor River of Egypt」は既存global ID place:shihor_1076へ直接対応。IDが1CH候補inventoryに無いことと、global IDが存在しないことを混同した旧理由を除去。Nile IDは同一性根拠がないため除外維持。Nileとの同定、正確な古代河道、現代地点・座標を承認せず、未解決欄に残す。"
+}

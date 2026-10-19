@@ -1,0 +1,12 @@
+from pathlib import Path
+import json,hashlib,datetime,collections
+n=Path(__file__).resolve().parent;sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();mp=n/'reviews/derived-reader-rights-three-current-manifest.json';m=json.loads(mp.read_text());bindings=json.loads((n/'reviews/root-current-independent-review-bindings.json').read_text());by={r['draftPath']:(g,r)for g,v in bindings['groups'].items()for r in v['currentRecords']};out=collections.defaultdict(list)
+for r in m['rows']:
+ dp=n/r['draft'];ep=n/r['evidence'];assert sha(dp)==r['afterDraftSHA256']and sha(ep)==r['afterEvidenceSHA256'];bp=n/'preservation/objects'/r['beforeDraftSHA256'];assert sha(bp)==r['beforeDraftSHA256'];a=json.loads(bp.read_text());b=json.loads(dp.read_text());ap=a['profile'];p=b['profile'];group,prior=by[r['draft']];assert p['coordinate']is None
+ if r['id']=='person:likhi_1825':
+  assert ap==p;changed=[(x,y)for x,y in zip(a['sources'],b['sources'])if x!=y];assert len(changed)==1;x,y=changed[0];assert y==dict(x,licenseURL='https://creativecommons.org/licenses/by-sa/4.0/');finding='Only the Wikipedia CC BY-SA licenseURL changed from BY to BY-SA; profile prose and all source gates unchanged. Official CC BY-SA4.0 deed independently read.'
+ else:
+  assert {k for k in ap if ap[k]!=p[k]}=={'modernLocationJa'};assert a['sources']==b['sources'];finding='Only modern-location explanatory wording changed. Root independently read article lead and biblical/ancient-place section: Eshtemoa lead116/129 and Lod religious references219 plus modern/biblical naming315. No exact coordinate or ancient extent inferred. Editorial implementation wording removed.'
+ out[group].append({'book':'1CH','entityID':r['id'],'draftPath':r['draft'],'evidencePath':r['evidence'],'currentDraftSHA256':sha(dp),'currentEvidenceSHA256':sha(ep),'currentProfileSHA256':r['afterProfileSHA256'],'decision':prior['decision'],'independentRootFinding':finding,'currentReaderLocation':p.get('modernLocationJa'),'noCoordinatesAdded':True,'unchangedPriorSemanticVerdictRetained':True})
+for group,rows in out.items():
+ q=n/'reviews'/('root-rights-reader-three-reclosure-'+group+'.json');q.write_text(json.dumps({'atUTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Independent exact-delta reclosure, original identity/geography limitations retained; no publication approval','inputManifestSHA256':sha(mp),'rows':rows},ensure_ascii=False,indent=2)+'\n');print(q.name,len(rows))

@@ -1,0 +1,11 @@
+from pathlib import Path
+import json,hashlib,datetime
+n=Path(__file__).resolve().parent;sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();oldp=n/'reviews/investigation-missing-fixed-web-citation-urls.json';newp=n/'reviews/audit-fixed-web-citation-sidecars-extension.json';old=json.loads(oldp.read_text());new=json.loads(newp.read_text());prior={(r['sidecarPath'],r['pointer']):r for r in old['rows']};cit={(s['sidecarPath'],c['pointer']):c for s in new['sidecars']for c in s['citations']};out=[]
+for w in new['warnings']:
+ k=(w['sidecarPath'],w['pointer']);r=prior[k];c=cit[k];assert c['computedQuoteSHA256']==r['quotedPayloadSHA256'];assert c['coordinates']['book']==r['book'] and c['coordinates']['chapter']==r['chapter'] and c['coordinates']['startVerse']==r['verse']==c['coordinates']['endVerse'];assert c['quoteStatus']=='exact-witness-text';assert r['disposition'] in ['uniquely-resolved','uniquely-resolved-by-fixed-ref-and-exact-quote'] and r['resolvedURLMatchesCoordinate'];matches=[]
+ for src in r['uniqueSameCoordinateDraftSources']:
+  p=n/src['draftPath'];d=json.loads(p.read_text());ss=[s for s in d['sources']if s['id']==src['sourceID'] and s['url']==r['resolvedCitationURL']];assert len(ss)==1;matches.append({'draftPath':src['draftPath'],'currentDraftSHA256':sha(p),'sourceID':src['sourceID'],'url':ss[0]['url']})
+ assert matches or r['resolutionMethod']!='same-canonical-ID-draft-source-by-coordinate'
+ out.append({'sidecarPath':k[0],'pointer':k[1],'currentSidecarSHA256':sha(n/k[0]),'literalPayloadUnchanged':True,'literalPayloadSHA256':c['computedQuoteSHA256'],'canonicalCoordinateUnchanged':True,'resolvedURL':r['resolvedCitationURL'],'priorResolutionMethod':r['resolutionMethod'],'currentDraftSourceChecks':matches,'semanticInterpretationApproved':False})
+assert len(out)==245
+p=n/'reviews/extension-missing-citation-url-resolution-delta.json';p.write_text(json.dumps({'atUTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Mechanical current payload/coordinate/source URL recheck of previously independently resolved missing URL fields, not semantic approval. No source text changed.','inputs':{'priorInvestigationSHA256':sha(oldp),'currentAuditSHA256':sha(newp)},'rows':out,'unresolved':0},ensure_ascii=False,indent=2)+'\n');print(json.dumps({'rows':len(out),'sha256':sha(p)}))

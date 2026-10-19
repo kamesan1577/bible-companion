@@ -6,9 +6,10 @@ struct FirstRunGuide: View {
     @EnvironmentObject private var store: AppStore
     @State private var step = 0
     @State private var showPreparation = false
+    @State private var provider = ExternalQuestionProvider.chatGPT
     var onPrepare: (() -> Void)? = nil
-    private let titles = ["① 最初に準備する", "② YouVersionで節を選んで共有", "③ 解説を読んで質問する"]
-    private let instructions = ["共有を始める前に、アプリで解説を使う準備をします。ログインし、送る情報と利用条件を確認してください。", "YouVersionで読みたい節を選び、共有ボタンを押します。共有先から「聖書コンパニオン」を選んでください。", "共有画面に選んだ箇所の解説が表示されます。気になったことは、その画面から質問できます。"]
+    private let titles = ["① 最初に準備する", "② YouVersionで節を選んで共有", "③ 質問を入力して送信する"]
+    private let instructions = ["設定で質問を送る外部サービスを1つ選びます。解説を読むだけならログインは不要です。", "YouVersionで読みたい節を選び、共有ボタンを押します。共有先から「聖書コンパニオン」を選んでください。", "共有画面で解説を読み、そのまま質問を入力できます。選んだ外部サービスを開いて質問を続けます。"]
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -20,10 +21,10 @@ struct FirstRunGuide: View {
                     if step == 0 {
                         Button("初回準備を始める") { if let onPrepare { onPrepare() } else { showPreparation = true } }
                             .buttonStyle(.borderedProminent).frame(maxWidth: .infinity)
-                        Text("ログイン画面では、初めての方もパスキーの案内から登録できます。AIの利用条件を確認して同意し、設定の保存が確認できたら、YouVersionから共有してください。").bibleTextStyle(.caption)
+                        Text("ChatGPTは質問付きリンク、Claude・Geminiは全文をコピーして開き、貼り付けて送信します。").bibleTextStyle(.caption)
                     }
                     if step == 1 { Text("共有先の一覧にない場合は、「その他」や編集メニューから追加してください。共有を始めてもアプリ本体へ移動する必要はありません。").bibleTextStyle(.caption) }
-                    if step == 2 { Text("準備前に共有した場合は、共有画面に手順が表示され、選んだ箇所は保持されます。共有画面を閉じてアプリで準備を済ませた後、YouVersionから同じ箇所をもう一度共有してください。").bibleTextStyle(.caption) }
+                    if step == 2 { Text("原文が共有されていない場合はその旨を伝え、訳文を推測で補いません。外部サービスのログインが必要な場合があります。").bibleTextStyle(.caption) }
                     Button(step == 2 ? "ガイドを閉じる" : "次へ") { if step < 2 { step += 1 } else { dismiss() } }.buttonStyle(.borderedProminent).frame(maxWidth: .infinity)
                     if step == 2 { NavigationLink("まずサンプルを読んでみる") { SampleReadingPreview() } }
                     if step > 0 { Button("戻る") { step -= 1 } }
@@ -31,24 +32,24 @@ struct FirstRunGuide: View {
             }.bibleCanvas().navigationTitle("使い方")
                 .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("閉じる") { dismiss() } } }
         }
-        .sheet(isPresented: $showPreparation) { AISetupView().environmentObject(store) }
+        .sheet(isPresented: $showPreparation) { ExternalQuestionSettings(provider: $provider) }
     }
     private var illustration: some View {
         BibleReadingSurface {
             VStack(alignment: .leading, spacing: BibleTheme.Space.md) {
                 Text(step == 0 ? "聖書コンパニオン · 準備のイメージ" : (step == 2 ? "共有画面" : "YouVersion · 操作のイメージ")).bibleTextStyle(.caption)
                 if step == 0 {
-                    Label("ログイン", systemImage: "person.crop.circle")
+                    Label("送信先を1つ選ぶ", systemImage: "slider.horizontal.3")
                     Label("送る情報と利用条件を確認", systemImage: "checkmark.shield")
-                    Label("同意して解説を使う", systemImage: "checkmark.circle.fill").foregroundStyle(Color.accentColor)
+                    Label("共通の4タブで解説を読む", systemImage: "checkmark.circle.fill").foregroundStyle(Color.accentColor)
                 } else if step == 1 {
                     Text("使徒の働き 18章").bibleTextStyle(.body)
                     Text("24節　…").padding().frame(maxWidth: .infinity, alignment: .leading).background(Color.accentColor.opacity(0.15), in: RoundedRectangle(cornerRadius: BibleTheme.Radius.inset))
                     Label("節を選んで共有", systemImage: "square.and.arrow.up").foregroundStyle(Color.accentColor)
                 } else {
                     Label("聖書コンパニオン", systemImage: "book.closed.fill").padding().frame(maxWidth: .infinity).background(Color.accentColor.opacity(0.15), in: RoundedRectangle(cornerRadius: BibleTheme.Radius.inset))
-                    Label("解説を自動で表示", systemImage: "text.book.closed").foregroundStyle(Color.accentColor)
-                    Text("気になったことを質問").padding().frame(maxWidth: .infinity, alignment: .leading).background(Color.secondary.opacity(0.08), in: RoundedRectangle(cornerRadius: BibleTheme.Radius.inset))
+                    Label("質問を入力", systemImage: "text.bubble").foregroundStyle(Color.accentColor)
+                    Text("選んだ外部サービスで質問を続ける").padding().frame(maxWidth: .infinity, alignment: .leading).background(Color.secondary.opacity(0.08), in: RoundedRectangle(cornerRadius: BibleTheme.Radius.inset))
                 }
             }.padding(BibleTheme.Space.md)
         }

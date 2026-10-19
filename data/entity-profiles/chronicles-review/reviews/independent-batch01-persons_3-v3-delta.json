@@ -1,0 +1,597 @@
+{
+  "title": "Independent current-byte delta reclosure of batch01 persons_3",
+  "reviewedAtUTC": "2026-10-16T06:00:00Z",
+  "reviewer": "independent reviewer (not author of persons_3)",
+  "priorReport": "reviews/independent-batch01-persons_3-v3.json",
+  "authorRepairLog": "evidence/persons_3/author-repairs-batch01-v3-review.json",
+  "scope": "Only Abdon 12 and Asaph 330 changed after the v3 reclosure; both re-read from current saved bytes, fixed WEB, and live article evidence.",
+  "resultCounts": {
+    "pass": 2,
+    "qualified": 0,
+    "fail": 0
+  },
+  "records": [
+    {
+      "book": "1CH",
+      "entityID": "person:abdon_12",
+      "draftPath": "drafts/persons_3/1CH_abdon_12.json",
+      "currentDraftSHA256": "e719dadd9788d844d52aad431ed8ca36cf4ce0c30597958c80cdf74324cd00c5",
+      "frozenDraftSHA256": "e719dadd9788d844d52aad431ed8ca36cf4ce0c30597958c80cdf74324cd00c5",
+      "profileCanonicalSHA256": "0340995929da6467c42a249b266bb6b047f719ca0aa3ef07897ce357a9771401",
+      "evidencePath": "evidence/persons_3/1CH_abdon_12.json",
+      "currentEvidenceSHA256": "7d42c8db2d7fa172e76406faf7938a7df423c2428f62e5ca586768c718ecf21a",
+      "frozenEvidenceSHA256": "7d42c8db2d7fa172e76406faf7938a7df423c2428f62e5ca586768c718ecf21a",
+      "evidenceProfileSHA256": "0340995929da6467c42a249b266bb6b047f719ca0aa3ef07897ce357a9771401",
+      "hashSynchronization": {
+        "draftMatchesFreeze": true,
+        "evidenceMatchesFreeze": true,
+        "evidenceDraftMatchesCurrent": true,
+        "evidenceProfileMatchesCanonical": true,
+        "entityIDMatches": true
+      },
+      "verdict": "pass",
+      "reviewReasonsJa": [],
+      "profileSnapshot": {
+        "nameJa": "アブドン",
+        "subtitleJa": "ギブオンの父の長子として記される人物",
+        "summaryJa": "1歴代誌8:29–30では、ギブオンの父の長子としてアブドンの名が挙がります。系図は続けてほかの子らの名も列挙します。",
+        "historicalRoleJa": null,
+        "identityNoteJa": "同名の別人物を扱う記事がありますが、ここではギブオンの父の長子として記される人物を指します。",
+        "knownBy": {
+          "chapter": 8,
+          "verse": 30
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 8,
+              "verse": 30
+            },
+            "end": {
+              "chapter": 8,
+              "verse": 30
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 9,
+              "verse": 36
+            },
+            "end": {
+              "chapter": 9,
+              "verse": 36
+            }
+          }
+        ],
+        "sourceIds": [
+          "abdon_12-webp-1ch-8-29",
+          "abdon_12-webp-1ch-8-30",
+          "abdon_12-webp-1ch-9-35",
+          "abdon_12-webp-1ch-9-36",
+          "abdon_12-wikipedia-abdon-biblical-figures"
+        ],
+        "facts": [
+          {
+            "textJa": "9:35–36の系図では、イエイエルがギブオンの父として記され、その長子としてアブドンが再び挙げられます。",
+            "knownBy": {
+              "chapter": 9,
+              "verse": 36
+            },
+            "sourceIds": [
+              "abdon_12-webp-1ch-9-35",
+              "abdon_12-webp-1ch-9-36"
+            ]
+          }
+        ],
+        "wikipedia": {
+          "title": "Abdon (biblical figures)",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Abdon_(biblical_figures)",
+          "kind": "article",
+          "noteJa": "一覧記事は1歴代誌8:30のギブオンの系譜に現れるアブドンを扱います。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 8,
+            "verse": 30
+          },
+          "sourceId": "abdon_12-wikipedia-abdon-biblical-figures"
+        }
+      },
+      "primaryReview": {
+        "sourceVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "sourceWitnessPath": "inventory/targets/chronicles1-web-verses.json",
+        "sourceWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "firstUseText": "with his firstborn son Abdon, Zur, Kish, Baal, Nadab,",
+        "assignedCandidateOccurrenceCount": 2,
+        "candidateOccurrenceChecks": [
+          {
+            "chapter": 8,
+            "verse": 30,
+            "fixedWEBText": "with his firstborn son Abdon, Zur, Kish, Baal, Nadab,",
+            "profilePassageCovered": true,
+            "reviewStatusAtFreeze": "re-read against v3"
+          },
+          {
+            "chapter": 9,
+            "verse": 36,
+            "fixedWEBText": "His firstborn son was Abdon, then Zur, Kish, Baal, Ner, Nadab,",
+            "profilePassageCovered": true,
+            "reviewStatusAtFreeze": "re-read against v3"
+          }
+        ],
+        "checkedPrimaryWitnesses": [
+          {
+            "ref": "1CH 8:29",
+            "url": "https://ebible.org/engwebp/1CH08.htm#V29",
+            "text": "The father of Gibeon, whose wife’s name was Maacah, lived in Gibeon",
+            "readingNoteJa": "直前節が父の家族を導入し、次節の子らの列挙を支える。候補名の初出時点は変えていない。"
+          },
+          {
+            "ref": "1CH 8:30",
+            "url": "https://ebible.org/engwebp/1CH08.htm#V30",
+            "text": "with his firstborn son Abdon, Zur, Kish, Baal, Nadab,",
+            "readingNoteJa": "固定WEBの該当節を前後文脈とともに確認し、本文に明記された対象の範囲で採否・事実ゲートを設定。"
+          },
+          {
+            "ref": "1CH 9:35",
+            "url": "https://ebible.org/engwebp/1CH09.htm#V35",
+            "text": "Jeiel the father of Gibeon, whose wife’s name was Maacah, lived in Gibeon.",
+            "readingNoteJa": "固定WEBの該当節を前後文脈とともに確認し、本文に明記された対象の範囲で採否・事実ゲートを設定。"
+          },
+          {
+            "ref": "1CH 9:36",
+            "url": "https://ebible.org/engwebp/1CH09.htm#V36",
+            "text": "His firstborn son was Abdon, then Zur, Kish, Baal, Ner, Nadab,",
+            "readingNoteJa": "固定WEBの該当節を前後文脈とともに確認し、本文に明記された対象の範囲で採否・事実ゲートを設定。"
+          }
+        ],
+        "excludedCandidateChecks": []
+      },
+      "wikipediaReview": {
+        "status": "read-live-article",
+        "url": "https://en.wikipedia.org/wiki/Abdon_(biblical_figures)",
+        "title": "Abdon (biblical figures)",
+        "kind": "article",
+        "locator": "Abdon (biblical figures), lines 101–105: entry 2 identifies the first-born of Gibeon at 1 Chronicles 8:30 and 9:36; entry 4 is a different Abdon at 8:23.",
+        "supportJa": "一覧記事は1歴代誌8:30のギブオンの系譜に現れるアブドンを扱います。",
+        "checkedAtUTC": "2026-10-16T04:33:20Z",
+        "license": "Creative Commons Attribution-ShareAlike 4.0 International",
+        "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Wikipedia contributors.",
+        "identityVerified": true,
+        "relationVerified": false,
+        "knownBy": {
+          "chapter": 8,
+          "verse": 30
+        },
+        "noteJa": "一覧記事は1歴代誌8:30のギブオンの系譜に現れるアブドンを扱います。",
+        "sourceId": "abdon_12-wikipedia-abdon-biblical-figures",
+        "sourceIdLinked": true
+      },
+      "reclosureNoteJa": "Current author-repair bytes independently read after v3: fixed WEB 8:29–30/9:35–36 or 6:39 vs 15:17 role gate; live article locator unchanged and rechecked against the reader-visible gate."
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:asaph_330",
+      "draftPath": "drafts/persons_3/1CH_asaph_330.json",
+      "currentDraftSHA256": "dee23b4dbd5a386c116ed8c84271e7b6e450b85dfed35acbe8290d72b28afd00",
+      "frozenDraftSHA256": "dee23b4dbd5a386c116ed8c84271e7b6e450b85dfed35acbe8290d72b28afd00",
+      "profileCanonicalSHA256": "0840ca7ede9121fd15f81c2dbd0f4cd5568ab9817aecfbdae31c6fcc3d6e144d",
+      "evidencePath": "evidence/persons_3/1CH_asaph_330.json",
+      "currentEvidenceSHA256": "bd909a916b58ca223b888a91960de27010a7ba5af04a6762b5bfc27db9e6ee18",
+      "frozenEvidenceSHA256": "bd909a916b58ca223b888a91960de27010a7ba5af04a6762b5bfc27db9e6ee18",
+      "evidenceProfileSHA256": "0840ca7ede9121fd15f81c2dbd0f4cd5568ab9817aecfbdae31c6fcc3d6e144d",
+      "hashSynchronization": {
+        "draftMatchesFreeze": true,
+        "evidenceMatchesFreeze": true,
+        "evidenceDraftMatchesCurrent": true,
+        "evidenceProfileMatchesCanonical": true,
+        "entityIDMatches": true
+      },
+      "verdict": "pass",
+      "reviewReasonsJa": [],
+      "profileSnapshot": {
+        "nameJa": "アサフ",
+        "subtitleJa": "ベレクヤの子",
+        "summaryJa": "1歴代誌6:39は、ヘマンの兄弟でベレクヤの子としてアサフを挙げます。",
+        "historicalRoleJa": null,
+        "identityNoteJa": "この記事は、アサフという同名者を区別する一覧です。",
+        "knownBy": {
+          "chapter": 6,
+          "verse": 39
+        },
+        "passages": [
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 6,
+              "verse": 39
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 39
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 15,
+              "verse": 17
+            },
+            "end": {
+              "chapter": 15,
+              "verse": 17
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 15,
+              "verse": 19
+            },
+            "end": {
+              "chapter": 15,
+              "verse": 19
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 16,
+              "verse": 5
+            },
+            "end": {
+              "chapter": 16,
+              "verse": 5
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 16,
+              "verse": 7
+            },
+            "end": {
+              "chapter": 16,
+              "verse": 7
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 16,
+              "verse": 37
+            },
+            "end": {
+              "chapter": 16,
+              "verse": 37
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 25,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 25,
+              "verse": 1
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 25,
+              "verse": 2
+            },
+            "end": {
+              "chapter": 25,
+              "verse": 2
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 25,
+              "verse": 6
+            },
+            "end": {
+              "chapter": 25,
+              "verse": 6
+            }
+          },
+          {
+            "book": "1CH",
+            "start": {
+              "chapter": 25,
+              "verse": 9
+            },
+            "end": {
+              "chapter": 25,
+              "verse": 9
+            }
+          }
+        ],
+        "sourceIds": [
+          "asaph_330-webp-1ch-6-39",
+          "asaph_330-wikipedia"
+        ],
+        "facts": [
+          {
+            "textJa": "15:17はアサフをベレクヤの子として挙げ、レビ人の奉仕に加えます。",
+            "knownBy": {
+              "chapter": 15,
+              "verse": 17
+            },
+            "sourceIds": [
+              "asaph_330-webp-1ch-15-17"
+            ]
+          },
+          {
+            "textJa": "15:19はヘマン、アサフ、エタンを青銅のシンバルを鳴らす歌い手として挙げます。",
+            "knownBy": {
+              "chapter": 15,
+              "verse": 19
+            },
+            "sourceIds": [
+              "asaph_330-webp-1ch-15-19"
+            ]
+          },
+          {
+            "textJa": "16:5はアサフを先頭の歌い手として挙げ、シンバルを担当したと記します。",
+            "knownBy": {
+              "chapter": 16,
+              "verse": 5
+            },
+            "sourceIds": [
+              "asaph_330-webp-1ch-16-5"
+            ]
+          },
+          {
+            "textJa": "16:7はダビデがアサフとその兄弟たちを通じて主への感謝を始めたと記します。",
+            "knownBy": {
+              "chapter": 16,
+              "verse": 7
+            },
+            "sourceIds": [
+              "asaph_330-webp-1ch-16-7"
+            ]
+          },
+          {
+            "textJa": "16:37はアサフとその兄弟たちが契約の箱の前で日々奉仕するため残されたと記します。",
+            "knownBy": {
+              "chapter": 16,
+              "verse": 37
+            },
+            "sourceIds": [
+              "asaph_330-webp-1ch-16-37"
+            ]
+          },
+          {
+            "textJa": "25:1は「アサフの子ら」を奉仕のために分けたと記します。行為主体はアサフ本人でなく、ダビデと軍の長たちです。",
+            "knownBy": {
+              "chapter": 25,
+              "verse": 1
+            },
+            "sourceIds": [
+              "asaph_330-webp-1ch-25-1"
+            ]
+          },
+          {
+            "textJa": "25:2はアサフの子ら四人の名を挙げ、彼らがアサフの指揮下にあり、アサフが王の指示のもと預言したと記します。",
+            "knownBy": {
+              "chapter": 25,
+              "verse": 2
+            },
+            "sourceIds": [
+              "asaph_330-webp-1ch-25-2"
+            ]
+          },
+          {
+            "textJa": "25:6は歌の奉仕においてアサフ、エドトン、ヘマンが王の指示下にあったと記します。",
+            "knownBy": {
+              "chapter": 25,
+              "verse": 6
+            },
+            "sourceIds": [
+              "asaph_330-webp-1ch-25-6"
+            ]
+          },
+          {
+            "textJa": "25:9はくじの最初がアサフの子ヨセフに当たったと記します。",
+            "knownBy": {
+              "chapter": 25,
+              "verse": 9
+            },
+            "sourceIds": [
+              "asaph_330-webp-1ch-25-9"
+            ]
+          }
+        ],
+        "wikipedia": {
+          "title": "List of minor Hebrew Bible figures, A–K",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Asaph",
+          "kind": "shared-section",
+          "noteJa": "記事はアサフという同名者を区別する一覧です。",
+          "checkedAt": "2026-10-16",
+          "identityVerified": true,
+          "relationVerified": false,
+          "knownBy": {
+            "chapter": 6,
+            "verse": 39
+          },
+          "sourceId": "asaph_330-wikipedia"
+        }
+      },
+      "primaryReview": {
+        "sourceVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "sourceWitnessPath": "inventory/targets/chronicles1-web-verses.json",
+        "sourceWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "firstUseText": "His brother Asaph, who stood on his right hand, even Asaph the son of Berechiah, the son of Shimea,",
+        "assignedCandidateOccurrenceCount": 10,
+        "candidateOccurrenceChecks": [
+          {
+            "chapter": 6,
+            "verse": 39,
+            "fixedWEBText": "His brother Asaph, who stood on his right hand, even Asaph the son of Berechiah, the son of Shimea,",
+            "profilePassageCovered": true,
+            "reviewStatusAtFreeze": "re-read against v3"
+          },
+          {
+            "chapter": 15,
+            "verse": 17,
+            "fixedWEBText": "So the Levites appointed Heman the son of Joel; and of his brothers, Asaph the son of Berechiah; and of the sons of Merari their brothers, Ethan the son of Kushaiah;",
+            "profilePassageCovered": true,
+            "reviewStatusAtFreeze": "re-read against v3"
+          },
+          {
+            "chapter": 15,
+            "verse": 19,
+            "fixedWEBText": "So the singers, Heman, Asaph, and Ethan, were given cymbals of bronze to sound aloud;",
+            "profilePassageCovered": true,
+            "reviewStatusAtFreeze": "re-read against v3"
+          },
+          {
+            "chapter": 16,
+            "verse": 5,
+            "fixedWEBText": "Asaph the chief, and second to him Zechariah, then Jeiel, Shemiramoth, Jehiel, Mattithiah, Eliab, Benaiah, Obed-Edom, and Jeiel, with stringed instruments and with harps; and Asaph with cymbals, sounding aloud;",
+            "profilePassageCovered": true,
+            "reviewStatusAtFreeze": "re-read against v3"
+          },
+          {
+            "chapter": 16,
+            "verse": 7,
+            "fixedWEBText": "Then on that day David first ordained giving of thanks to the LORD by the hand of Asaph and his brothers.",
+            "profilePassageCovered": true,
+            "reviewStatusAtFreeze": "re-read against v3"
+          },
+          {
+            "chapter": 16,
+            "verse": 37,
+            "fixedWEBText": "So he left Asaph and his brothers there before the ark of the LORD’s covenant, to minister before the ark continually, as every day’s work required;",
+            "profilePassageCovered": true,
+            "reviewStatusAtFreeze": "re-read against v3"
+          },
+          {
+            "chapter": 25,
+            "verse": 1,
+            "fixedWEBText": "Moreover, David and the captains of the army set apart for the service certain of the sons of Asaph, of Heman, and of Jeduthun, who were to prophesy with harps, with stringed instruments, and with cymbals. The number of those who did the work according to their service was:",
+            "profilePassageCovered": true,
+            "reviewStatusAtFreeze": "re-read against v3"
+          },
+          {
+            "chapter": 25,
+            "verse": 2,
+            "fixedWEBText": "of the sons of Asaph: Zaccur, Joseph, Nethaniah, and Asharelah. The sons of Asaph were under the hand of Asaph, who prophesied at the order of the king.",
+            "profilePassageCovered": true,
+            "reviewStatusAtFreeze": "re-read against v3"
+          },
+          {
+            "chapter": 25,
+            "verse": 6,
+            "fixedWEBText": "All these were under the hands of their father for song in the LORD’s house, with cymbals, stringed instruments, and harps, for the service of God’s house: Asaph, Jeduthun, and Heman being under the order of the king.",
+            "profilePassageCovered": true,
+            "reviewStatusAtFreeze": "re-read against v3"
+          },
+          {
+            "chapter": 25,
+            "verse": 9,
+            "fixedWEBText": "Now the first lot came out for Asaph to Joseph; the second to Gedaliah, he and his brothers and sons were twelve;",
+            "profilePassageCovered": true,
+            "reviewStatusAtFreeze": "re-read against v3"
+          }
+        ],
+        "checkedPrimaryWitnesses": [
+          {
+            "ref": "1CH 6:39",
+            "url": "https://ebible.org/engwebp/1CH06.htm#V39",
+            "text": "His brother Asaph, who stood on his right hand, even Asaph the son of Berechiah, the son of Shimea,",
+            "readingNoteJa": "固定WEB本文で対象名（または明記された表記差）を確認。"
+          },
+          {
+            "ref": "1CH 15:17",
+            "url": "https://ebible.org/engwebp/1CH15.htm#V17",
+            "text": "So the Levites appointed Heman the son of Joel; and of his brothers, Asaph the son of Berechiah; and of the sons of Merari their brothers, Ethan the son of Kushaiah;",
+            "readingNoteJa": "固定WEB本文で対象名（または明記された表記差）を確認。"
+          },
+          {
+            "ref": "1CH 15:19",
+            "url": "https://ebible.org/engwebp/1CH15.htm#V19",
+            "text": "So the singers, Heman, Asaph, and Ethan, were given cymbals of bronze to sound aloud;",
+            "readingNoteJa": "固定WEB本文で対象名（または明記された表記差）を確認。"
+          },
+          {
+            "ref": "1CH 16:5",
+            "url": "https://ebible.org/engwebp/1CH16.htm#V5",
+            "text": "Asaph the chief, and second to him Zechariah, then Jeiel, Shemiramoth, Jehiel, Mattithiah, Eliab, Benaiah, Obed-Edom, and Jeiel, with stringed instruments and with harps; and Asaph with cymbals, sounding aloud;",
+            "readingNoteJa": "固定WEB本文で対象名（または明記された表記差）を確認。"
+          },
+          {
+            "ref": "1CH 16:7",
+            "url": "https://ebible.org/engwebp/1CH16.htm#V7",
+            "text": "Then on that day David first ordained giving of thanks to the LORD by the hand of Asaph and his brothers.",
+            "readingNoteJa": "固定WEB本文で対象名（または明記された表記差）を確認。"
+          },
+          {
+            "ref": "1CH 16:37",
+            "url": "https://ebible.org/engwebp/1CH16.htm#V37",
+            "text": "So he left Asaph and his brothers there before the ark of the LORD’s covenant, to minister before the ark continually, as every day’s work required;",
+            "readingNoteJa": "固定WEB本文で対象名（または明記された表記差）を確認。"
+          },
+          {
+            "ref": "1CH 25:1",
+            "url": "https://ebible.org/engwebp/1CH25.htm#V1",
+            "text": "Moreover, David and the captains of the army set apart for the service certain of the sons of Asaph, of Heman, and of Jeduthun, who were to prophesy with harps, with stringed instruments, and with cymbals. The number of those who did the work according to their service was:",
+            "readingNoteJa": "固定WEB本文で対象名（または明記された表記差）を確認。"
+          },
+          {
+            "ref": "1CH 25:2",
+            "url": "https://ebible.org/engwebp/1CH25.htm#V2",
+            "text": "of the sons of Asaph: Zaccur, Joseph, Nethaniah, and Asharelah. The sons of Asaph were under the hand of Asaph, who prophesied at the order of the king.",
+            "readingNoteJa": "固定WEB本文で対象名（または明記された表記差）を確認。"
+          },
+          {
+            "ref": "1CH 25:6",
+            "url": "https://ebible.org/engwebp/1CH25.htm#V6",
+            "text": "All these were under the hands of their father for song in the LORD’s house, with cymbals, stringed instruments, and harps, for the service of God’s house: Asaph, Jeduthun, and Heman being under the order of the king.",
+            "readingNoteJa": "固定WEB本文で対象名（または明記された表記差）を確認。"
+          },
+          {
+            "ref": "1CH 25:9",
+            "url": "https://ebible.org/engwebp/1CH25.htm#V9",
+            "text": "Now the first lot came out for Asaph to Joseph; the second to Gedaliah, he and his brothers and sons were twelve;",
+            "readingNoteJa": "固定WEB本文で対象名（または明記された表記差）を確認。"
+          }
+        ],
+        "excludedCandidateChecks": []
+      },
+      "wikipediaReview": {
+        "status": "read-live-article",
+        "url": "https://en.wikipedia.org/wiki/List_of_minor_Hebrew_Bible_figures,_A%E2%80%93K#Asaph",
+        "title": "List of minor Hebrew Bible figures, A–K",
+        "kind": "shared-section",
+        "locator": "List of minor Hebrew Bible figures, A–K, “Asaph” section, lines 1114–1123: identifies the Levite choir leader at 1 Chronicles 6:39 separately from Hezekiah’s recorder and the Persian-period namesake.",
+        "supportJa": "一覧記事は1歴代誌6:39のレビ人の歌い手を、二人の同名者と区別しています。",
+        "checkedAtUTC": "2026-10-16T04:40:00Z",
+        "license": "Creative Commons Attribution-ShareAlike 4.0 International",
+        "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Wikipedia contributors.",
+        "identityVerified": true,
+        "relationVerified": false,
+        "knownBy": {
+          "chapter": 6,
+          "verse": 39
+        },
+        "noteJa": "記事はアサフという同名者を区別する一覧です。",
+        "sourceId": "asaph_330-wikipedia",
+        "sourceIdLinked": true
+      },
+      "reclosureNoteJa": "Current author-repair bytes independently read after v3: fixed WEB 8:29–30/9:35–36 or 6:39 vs 15:17 role gate; live article locator unchanged and rechecked against the reader-visible gate."
+    }
+  ]
+}

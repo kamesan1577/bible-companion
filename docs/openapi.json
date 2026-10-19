@@ -702,16 +702,108 @@
                         "expiresAt": {
                           "type": "integer",
                           "description": "Unix timestamp in seconds"
+                        },
+                        "scopeId": {
+                          "type": "string"
+                        },
+                        "refreshToken": {
+                          "type": "string"
+                        },
+                        "refreshExpiresAt": {
+                          "type": "integer",
+                          "description": "Unix timestamp in seconds"
                         }
                       },
                       "required": [
                         "token",
                         "ownerId",
-                        "expiresAt"
+                        "expiresAt",
+                        "scopeId",
+                        "refreshToken",
+                        "refreshExpiresAt"
                       ],
                       "additionalProperties": false
                     }
                   ]
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/share/renew": {
+      "post": {
+        "summary": "Renew short-lived access in the same share conversation scope",
+        "description": "No inference or new consent. Refresh credential is bounded by the parent login; live logout, consent, policy and account epoch are checked. Renewal preserves the original share scope. General API sessions and other scopes remain inaccessible.",
+        "security": [
+          {
+            "shareRefreshBearer": []
+          }
+        ],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "token": {
+                      "type": "string"
+                    },
+                    "ownerId": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "expiresAt": {
+                      "type": "integer",
+                      "description": "Unix timestamp in seconds"
+                    },
+                    "scopeId": {
+                      "type": "string"
+                    },
+                    "refreshToken": {
+                      "type": "string"
+                    },
+                    "refreshExpiresAt": {
+                      "type": "integer",
+                      "description": "Unix timestamp in seconds"
+                    }
+                  },
+                  "required": [
+                    "token",
+                    "ownerId",
+                    "expiresAt",
+                    "scopeId",
+                    "refreshToken",
+                    "refreshExpiresAt"
+                  ],
+                  "additionalProperties": false
                 }
               }
             }
@@ -828,7 +920,7 @@
     "/share/conversations/{id}/questions": {
       "post": {
         "summary": "Ask within a conversation created by this share capability",
-        "description": "",
+        "description": " Accept: text/event-stream negotiates progress, provisional citation-checked preview, complete or failure events. No automatic retries; incomplete streams require request status recovery. A preview is not a saved final answer.",
         "security": [
           {
             "shareBearer": []
@@ -863,6 +955,12 @@
                 "schema": {
                   "$ref": "#/components/schemas/RequestResult"
                 }
+              },
+              "text/event-stream": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "event: progress\ndata: {\"stage\":\"generating\"}\n\n"
               }
             }
           },
@@ -882,7 +980,7 @@
     "/share/conversations/{id}/explanation": {
       "post": {
         "summary": "Read a globally cached fixed public explanation within this share capability",
-        "description": "Fixed Japanese prompt and model settings. No private question or chat history enters the global cache. Completed cache hits dispatch no model and consume no AI budget.",
+        "description": "Fixed Japanese prompt and model settings. No private question or chat history enters the global cache. Completed cache hits dispatch no model and consume no AI budget. Accept: text/event-stream negotiates progress, provisional citation-checked preview, complete or failure events. No automatic retries; incomplete streams require request status recovery. A preview is not a saved final answer.",
         "security": [
           {
             "shareBearer": []
@@ -927,6 +1025,12 @@
                 "schema": {
                   "$ref": "#/components/schemas/RequestResult"
                 }
+              },
+              "text/event-stream": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "event: progress\ndata: {\"stage\":\"generating\"}\n\n"
               }
             }
           },
@@ -970,6 +1074,118 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RequestResult"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Cancel only a question owned by this share capability",
+        "description": "",
+        "security": [
+          {
+            "shareBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "const": "cancelled"
+                    },
+                    "usageMayHaveOccurred": {
+                      "const": true
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "usageMayHaveOccurred"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Explicit error; no private request content included",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/public/reading": {
+      "post": {
+        "summary": "Read the same public reference projection in app and Share Extension",
+        "description": "Only canonical passage and translation metadata. Original text, questions, chat history and account fields are rejected. No model invocation or private history writes. Source policy and rights are rechecked for public cache hits.",
+        "security": [],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "passage": {
+                    "$ref": "#/components/schemas/Passage"
+                  },
+                  "translation": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "minLength": 1,
+                    "maxLength": 30
+                  }
+                },
+                "required": [
+                  "passage"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Reading"
                 }
               }
             }
@@ -1993,7 +2209,7 @@
     "/v1/conversations/{id}/questions": {
       "post": {
         "summary": "Ask or explicitly request source-only reading",
-        "description": "No automatic retries. Owner model preferences apply only to future answers. Ordinary clients cannot select arbitrary models, URLs, sources or owners. True AI requires recorded consent, connected allowlisted model and verified budget.",
+        "description": "No automatic retries. Owner model preferences apply only to future answers. Ordinary clients cannot select arbitrary models, URLs, sources or owners. True AI requires recorded consent, connected allowlisted model and verified budget. Accept: text/event-stream negotiates progress, provisional citation-checked preview, complete or failure events. No automatic retries; incomplete streams require request status recovery. A preview is not a saved final answer.",
         "security": [
           {
             "bearerAuth": []
@@ -2028,6 +2244,12 @@
                 "schema": {
                   "$ref": "#/components/schemas/RequestResult"
                 }
+              },
+              "text/event-stream": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "event: progress\ndata: {\"stage\":\"generating\"}\n\n"
               }
             }
           },
@@ -2047,7 +2269,7 @@
     "/v1/conversations/{id}/explanation": {
       "post": {
         "summary": "Read the standard public-scripture explanation",
-        "description": "Durable public result keyed by passage, translation, spoiler boundary, fixed settings and source/prompt versions. First misses use the existing consent and Free budget guards; cache hits cost zero inference. Private questions remain private.",
+        "description": "Durable public result keyed by passage, translation, spoiler boundary, fixed settings and source/prompt versions. First misses use the existing consent and Free budget guards; cache hits cost zero inference. Private questions remain private. Accept: text/event-stream negotiates progress, provisional citation-checked preview, complete or failure events. No automatic retries; incomplete streams require request status recovery. A preview is not a saved final answer.",
         "security": [
           {
             "bearerAuth": []
@@ -2092,6 +2314,12 @@
                 "schema": {
                   "$ref": "#/components/schemas/RequestResult"
                 }
+              },
+              "text/event-stream": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "event: progress\ndata: {\"stage\":\"generating\"}\n\n"
               }
             }
           },
@@ -2754,6 +2982,11 @@
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer"
+      },
+      "shareRefreshBearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Share-only renewal credential, bounded by the parent session. Not a general account session."
       },
       "shareBearer": {
         "type": "http",

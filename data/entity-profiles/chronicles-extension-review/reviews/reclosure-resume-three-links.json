@@ -1,0 +1,286 @@
+{
+  "reportType": "independent-current-reclosure-resume-three-links",
+  "createdAtUTC": "2026-10-16T13:37:34Z",
+  "scope": "2CH person:ahijah_135; 1CH person:zadok_2973; 1CH person:tema_2837 only. Independent byte-bound review of author repair delta; no draft/evidence/profile edits.",
+  "inputs": {
+    "manifestPath": "evidence/manifest-resume-three-links-current.json",
+    "manifestSHA256": "b1b3b97a3bc97564773f38582a15d064bfc93cfcf200f5928d553f93918b38bb",
+    "authorRepairLogPath": "evidence/author-repairs-resume-three-links.json",
+    "authorRepairLogSHA256": "a4aeaaf0ac310a4390767c02074eb9a5333ebdb26d130cc7a1c2e9d82cd3d540",
+    "fixedWitnesses": [
+      {
+        "book": "1CH",
+        "path": "inventory/targets/chronicles1-web-verses.json",
+        "sha256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+        "version": "webp-usfx-2026-10-13-35a6adf626e5"
+      },
+      {
+        "book": "2CH",
+        "path": "inventory/targets/chronicles2-web-verses.json",
+        "sha256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8",
+        "version": "webp-usfx-2026-10-13-35a6adf626e5"
+      }
+    ]
+  },
+  "independentReview": true,
+  "reviewMethodJa": "現行draft/evidence/profileを再読し、manifest after SHAと canonical profile SHA（UTF-8 JSON、ensure_ascii=false、indent=2、末尾改行）を再計算。固定WEB witness上の当該名の全語句出現を検索してprofile passageと照合し、該当本文・前後文脈を確認。Wikipediaの実本文を指定URLで開き、同名範囲、節/locator、内容と knownBy、リンク分類、ライセンス・帰属、読者欄/各factのsource gateを別々に評価した。HTTP成功のみを本文読解の証拠とはしていない。",
+  "counts": {
+    "pass": 1,
+    "qualified": 1,
+    "fail": 0,
+    "hold": 1,
+    "rows": 3
+  },
+  "rows": [
+    {
+      "book": "2CH",
+      "entityID": "person:ahijah_135",
+      "draftPath": "drafts/persons_3/2CH_ahijah_135.json",
+      "evidencePath": "evidence/persons_3/2CH_ahijah_135.json",
+      "currentDraftSHA256": "4725e60f77831c3f7e8792f38d5a9f05081a4b6854d60c62eee2fc5a056b4762",
+      "currentEvidenceSHA256": "37237c33b383067b95bfc617271494332aac5714d623c91c10764d4a696cfcb1",
+      "currentProfileSHA256": "3433914d3c2d9d3e9dedf3beb13c2b74642d4e18598f946755e3cb6291e64342",
+      "manifestBinding": {
+        "draftMatchesManifest": true,
+        "evidenceMatchesManifest": true,
+        "profileMatchesManifest": true,
+        "preservedDraftBytesMatchBeforeSHA256": true,
+        "preservedEvidenceBytesMatchBeforeSHA256": true
+      },
+      "knownBy": {"chapter": 9, "verse": 29},
+      "readerFields": {
+        "nameJa": "アヒヤ",
+        "subtitleJa": "シロ人アヒヤは預言者として、ヤロブアムについての預言がソロモンの事績・預言の記録に結び付けられています。",
+        "summaryJa": "シロ人アヒヤは預言者として、ヤロブアムについての預言がソロモンの事績・預言の記録に結び付けられています。",
+        "identityNoteJa": "同名の別人と混同せず、ここでは「シロ人」と明記された預言者を指します。",
+        "facts": [],
+        "wikipedia": {
+          "url": "https://en.wikipedia.org/wiki/Ahijah",
+          "kind": "shared-section",
+          "knownBy": {"chapter": 9, "verse": 29},
+          "noteJa": "記事は複数の聖書人物を列挙し、シロ人アヒヤを王国分裂を告げた預言者として区別しています。"
+        }
+      },
+      "primaryAndOccurrenceAudit": {
+        "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "lexicalHits": 2,
+        "profilePassages": 2,
+        "allHitsAccountedFor": true,
+        "checks": [
+          {
+            "ref": "2CH 9:29",
+            "citationURL": "https://ebible.org/engwebp/2CH09.htm#V29",
+            "fixedText": "Now the rest of the acts of Solomon, first and last, aren’t they written in the history of Nathan the prophet, and in the prophecy of Ahijah the Shilonite, and in the visions of Iddo the seer concerning Jeroboam the son of Nebat?",
+            "findingJa": "初出節はシロ人アヒヤを預言者とし、ヤロブアムに関する預言をソロモンの記録に結び付ける。現行subtitle/summary/identityNoteの範囲はこの節と合い、別の2歴代誌内出現も同じシロ人アヒヤを名指す。"
+          },
+          {
+            "ref": "2CH 10:15",
+            "citationURL": "https://ebible.org/engwebp/2CH10.htm#V15",
+            "fixedText": "So the king didn’t listen to the people; for it was brought about by God, that the LORD might establish his word, which he spoke by Ahijah the Shilonite to Jeroboam the son of Nebat.",
+            "findingJa": "2つ目のprofile passageも同じくシロ人アヒヤを明記する。"
+          }
+        ]
+      },
+      "sourceGateAudit": {
+        "draftSourceIDsResolve": true,
+        "factsCount": 0,
+        "allSourceIDs": [
+          {"id": "ahijah_135-webp-2ch-9-29", "category": "primary-text", "knownBy": {"chapter": 9, "verse": 29}, "url": "https://ebible.org/engwebp/2CH09.htm#V29"},
+          {"id": "ahijah_135-webp-2ch-10-15", "category": "primary-text", "knownBy": {"chapter": 10, "verse": 15}, "url": "https://ebible.org/engwebp/2CH10.htm#V15"},
+          {"id": "ahijah_135-wikipedia", "category": "secondary-reference", "knownBy": {"chapter": 9, "verse": 29}, "url": "https://en.wikipedia.org/wiki/Ahijah"}
+        ],
+        "primaryRights": "World English Bible, public domain; copyright/rights URL https://ebible.org/web/copyright.htm; fixed local witness version retained in each attribution.",
+        "secondaryRights": "CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/; attribution to Wikipedia contributors retained."
+      },
+      "wikipediaBodyAudit": {
+        "url": "https://en.wikipedia.org/wiki/Ahijah",
+        "liveBodyRead": true,
+        "retrievedAtUTC": "2026-10-16T13:35:38Z",
+        "locator": "Live page lines 107–116: numbered list of multiple biblical individuals; item 1 names Ahijah the Shilonite as the prophet associated with division of Israel and Judah. Lines 124–125 classify the page as a same-name list; categories at lines 136 and 144 identify it as a Hebrew Bible set-index page.",
+        "sameNameAssessmentJa": "現行shared-section分類は正しい。該当項目1はシロ人アヒヤを特定し、他のアヒヤ項目とは区別する。CC BY-SA 4.0とWikipedia contributors帰属も現行sourceに記録される。",
+        "gateAssessmentJa": "ページ自体の項目1は王国分裂を語る。初出2CH 9:29はヤロブアムに関する預言があることを記すが、分裂の具体的帰結はこの節にまだ現れない。現行wikipedia.noteJaはその帰結を初出knownBy=9:29で先出しするため、この注記/リンクを初出から常時表示するのはsource gateに適合しない。"
+      },
+      "findings": [
+        {
+          "severity": "reader-gate",
+          "findingJa": "primary-only欄とprofile occurrenceは固定WEBで支持される。Wikipedia本文とshared-section分類も適切だが、noteJaの『王国分裂を告げた』は2CH 9:29を越える内容を2CH 10章の既知時点より前に見せる。修正またはsecondary linkの表示ゲート調整までWikipediaを現行runtime表示に使わないこと。",
+          "runtimeConsequence": "primary-only-display-supported"
+        }
+      ],
+      "decision": "qualified",
+      "runtimeDisposition": "primary-only-display-supported"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:zadok_2973",
+      "draftPath": "drafts/persons_3/1CH_zadok_2973.json",
+      "evidencePath": "evidence/persons_3/1CH_zadok_2973.json",
+      "currentDraftSHA256": "9ac4deb44d1c74933e998eba04b6f7373ee55e57abaff4be64a60cac4c5bfb02",
+      "currentEvidenceSHA256": "bf1fe00f1a4b519e0f4e9611f33c36dbb29b9d647ce47819f927983900da643e",
+      "currentProfileSHA256": "1b8e4d6138e513acefdb07e993320f6b0d13b5c70f3cee1d37d0a3e12890d8fc",
+      "manifestBinding": {
+        "draftMatchesManifest": true,
+        "evidenceMatchesManifest": true,
+        "profileMatchesManifest": true,
+        "preservedDraftBytesMatchBeforeSHA256": true,
+        "preservedEvidenceBytesMatchBeforeSHA256": true
+      },
+      "knownBy": {"chapter": 6, "verse": 8},
+      "readerFields": {
+        "nameJa": "ツァドク",
+        "subtitleJa": "祭司の系譜に名が現れ、アヒトブの子として記されています。本文では続けてアヒマアツの父とされます。",
+        "summaryJa": "祭司の系譜に名が現れ、アヒトブの子として記されています。本文では続けてアヒマアツの父とされます。",
+        "identityNoteJa": "",
+        "factsCount": 10,
+        "wikipedia": {
+          "url": "https://en.wikipedia.org/wiki/Zadok",
+          "kind": "article",
+          "knownBy": {"chapter": 29, "verse": 22},
+          "noteJa": "記事のヘブライ語聖書節は、祭司ツァドクとエルアザルからの系譜を扱っています。"
+        }
+      },
+      "primaryAndOccurrenceAudit": {
+        "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "lexicalHits": 13,
+        "profilePassages": 11,
+        "allHitsAccountedFor": false,
+        "profilePassageRefs": ["1CH 6:8", "1CH 6:53", "1CH 12:28", "1CH 15:11", "1CH 16:39", "1CH 18:16", "1CH 24:3", "1CH 24:6", "1CH 24:31", "1CH 27:17", "1CH 29:22"],
+        "unaccountedHits": [
+          {
+            "ref": "1CH 6:12",
+            "citationURL": "https://ebible.org/engwebp/1CH06.htm#V12",
+            "fixedText": "Ahitub became the father of Zadok. Zadok became the father of Shallum.",
+            "findingJa": "同じ節がアヒトブの子ツァドクを再度挙げながら、6:8のアヒマアツとは異なる子としてシャルムを挙げる。現行draft/evidenceに用例も除外理由もないため、この重複系譜で同一人物かどうかを勝手に補わず保留。"
+          },
+          {
+            "ref": "1CH 9:11",
+            "citationURL": "https://ebible.org/engwebp/1CH09.htm#V11",
+            "fixedText": "and Azariah the son of Hilkiah, the son of Meshullam, the son of Zadok, the son of Meraioth, the son of Ahitub, the ruler of God’s house;",
+            "findingJa": "帰還後の祭司系譜に、メライヨテの子でアヒトブの子孫である別位置のツァドクが出る。現profileに含まれず、現evidenceにも同名別系譜の除外理由がない。"
+          }
+        ],
+        "representedProfileChecks": [
+          {"ref": "1CH 6:8", "text": "Ahitub became the father of Zadok. Zadok became the father of Ahimaaz."},
+          {"ref": "1CH 6:53", "text": "Zadok his son, and Ahimaaz his son."},
+          {"ref": "1CH 12:28", "text": "and Zadok, a young man mighty of valor, and of his father’s house twenty-two captains."},
+          {"ref": "1CH 15:11", "text": "David called for Zadok and Abiathar the priests, and for the Levites: for Uriel, Asaiah, Joel, Shemaiah, Eliel, and Amminadab,"},
+          {"ref": "1CH 16:39", "text": "and Zadok the priest and his brothers the priests, before the LORD’s tabernacle in the high place that was at Gibeon,"},
+          {"ref": "1CH 18:16", "text": "Zadok the son of Ahitub and Abimelech the son of Abiathar were priests; Shavsha was scribe;"},
+          {"ref": "1CH 24:3", "text": "David, with Zadok of the sons of Eleazar and Ahimelech of the sons of Ithamar, divided them according to their ordering in their service."},
+          {"ref": "1CH 24:6", "text": "Shemaiah the son of Nethanel the scribe, who was of the Levites, wrote them in the presence of the king, the princes, Zadok the priest, Ahimelech the son of Abiathar, and the heads of the fathers’ households of the priests and of the Levites; one fathers’ house being taken for Eleazar, and one taken for Ithamar."},
+          {"ref": "1CH 24:31", "text": "These likewise cast lots even as their brothers the sons of Aaron in the presence of David the king, Zadok, Ahimelech, and the heads of the fathers’ households of the priests and of the Levites, the fathers’ households of the chief even as those of his younger brother."},
+          {"ref": "1CH 27:17", "text": "of Levi, Hashabiah the son of Kemuel; of Aaron, Zadok;"},
+          {"ref": "1CH 29:22", "text": "and ate and drank before the LORD on that day with great gladness. They made Solomon the son of David king the second time, and anointed him before the LORD to be prince, and Zadok to be priest."}
+        ],
+        "findingJa": "表示欄とfactsに使われた11出現は引用本文に一致し、subtitle/summaryは初出6:8で支えられる。profile候補として固定WEB内にある正確なZadok語句は計13箇所であり、二箇所が現行occurrenceChecksとexcludedOccurrencesのいずれにも記録されていない。"
+      },
+      "sourceGateAudit": {
+        "draftSourceIDsResolve": true,
+        "factsSourceIDsResolve": true,
+        "factsCount": 10,
+        "allSourceIDs": [
+          {"id": "zadok_2973-webp-1ch-6-8", "category": "primary-text", "knownBy": {"chapter": 6, "verse": 8}, "url": "https://ebible.org/engwebp/1CH06.htm#V8"},
+          {"id": "zadok_2973-webp-1ch-6-53", "category": "primary-text", "knownBy": {"chapter": 6, "verse": 53}, "url": "https://ebible.org/engwebp/1CH06.htm#V53"},
+          {"id": "zadok_2973-webp-1ch-12-28", "category": "primary-text", "knownBy": {"chapter": 12, "verse": 28}, "url": "https://ebible.org/engwebp/1CH12.htm#V28"},
+          {"id": "zadok_2973-webp-1ch-15-11", "category": "primary-text", "knownBy": {"chapter": 15, "verse": 11}, "url": "https://ebible.org/engwebp/1CH15.htm#V11"},
+          {"id": "zadok_2973-webp-1ch-16-39", "category": "primary-text", "knownBy": {"chapter": 16, "verse": 39}, "url": "https://ebible.org/engwebp/1CH16.htm#V39"},
+          {"id": "zadok_2973-webp-1ch-18-16", "category": "primary-text", "knownBy": {"chapter": 18, "verse": 16}, "url": "https://ebible.org/engwebp/1CH18.htm#V16"},
+          {"id": "zadok_2973-webp-1ch-24-3", "category": "primary-text", "knownBy": {"chapter": 24, "verse": 3}, "url": "https://ebible.org/engwebp/1CH24.htm#V3"},
+          {"id": "zadok_2973-webp-1ch-24-6", "category": "primary-text", "knownBy": {"chapter": 24, "verse": 6}, "url": "https://ebible.org/engwebp/1CH24.htm#V6"},
+          {"id": "zadok_2973-webp-1ch-24-31", "category": "primary-text", "knownBy": {"chapter": 24, "verse": 31}, "url": "https://ebible.org/engwebp/1CH24.htm#V31"},
+          {"id": "zadok_2973-webp-1ch-27-17", "category": "primary-text", "knownBy": {"chapter": 27, "verse": 17}, "url": "https://ebible.org/engwebp/1CH27.htm#V17"},
+          {"id": "zadok_2973-webp-1ch-29-22", "category": "primary-text", "knownBy": {"chapter": 29, "verse": 22}, "url": "https://ebible.org/engwebp/1CH29.htm#V22"},
+          {"id": "zadok_2973-wikipedia", "category": "secondary-reference", "knownBy": {"chapter": 29, "verse": 22}, "url": "https://en.wikipedia.org/wiki/Zadok"}
+        ],
+        "gateResultJa": "全source IDは解決し、全primary/fact出典のknownByは支える節と同じ。factはいずれも出典節時点以降に表示される。Wikiはprofile/sourceで29:22にゲートされ、noteにない後代の出来事を初出時から露出しない。WEBはPublic Domain、ebible.org/web/copyright.htm、WEB固定版の帰属あり。WikipediaはCC BY-SA 4.0とcontributor attributionを保持。"
+      },
+      "wikipediaBodyAudit": {
+        "url": "https://en.wikipedia.org/wiki/Zadok",
+        "liveBodyRead": true,
+        "retrievedAtUTC": "2026-10-16T13:35:38Z",
+        "locator": "Live body lines 141–155. Lead 141–143 calls Zadok a priest and descendant of Eleazar; Hebrew Bible lines 149–150 discuss priestly lineage and separately call the David-era entry 'a certain Zadok', adding that Josephus identifies him with the high priest. Lines 154–155 refer to 1 Chronicles 16:39, 24, and sons.",
+        "sameNameAssessmentJa": "記事は祭司ツァドクと、12:28に該当する「あるツァドク」を同一とするのはJosephusの同定として記述する。固定本文は1CH 6:8の人物をアヒトブの子・アヒマアツの父として明示するが、1CH 6:12の同名系譜と1CH 9:11の帰還後祭司系譜の扱いは別途説明が必要。Wikipediaの節は現行注記の祭司/系譜の範囲を支えるが、未記録の2出現を現profileへ自動的に取り込まない。",
+        "profileNoteSupported": true,
+        "gateAssessmentJa": "現行Wikipedia noteはエルアザルからの系譜と歴代誌の該当節を述べる範囲で適切。profile/source link gate 29:22は1CH後半の情報を初出6:8より前に漏らさない。"
+      },
+      "findings": [
+        {
+          "severity": "identity-and-occurrence-accounting",
+          "findingJa": "固定WEB内に13箇所のZadok出現があるのに、profile/evidenceは11件のみで、6:12と9:11のいずれも明示的に除外していない。6:12は同じアヒトブ名を含む重複系譜、9:11は異なる系譜の祭司名。現profileのidentityNoteJaも空である。作者が両出現の処置と12:28の同一性を明示するまで、profileのoccurrence coverageと一人IDへの結合を承認しない。",
+          "runtimeConsequence": "hold"
+        }
+      ],
+      "decision": "qualified",
+      "runtimeDisposition": "hold"
+    },
+    {
+      "book": "1CH",
+      "entityID": "person:tema_2837",
+      "draftPath": "drafts/persons_1/1CH_tema_2837.json",
+      "evidencePath": "evidence/persons_1/1CH_tema_2837-sources.json",
+      "currentDraftSHA256": "7f0f22ac3ce7a02b19ca8a8cf3fa1b6dd93f7540e6ad7b645bef4d8f05fa6daf",
+      "currentEvidenceSHA256": "3131cbd808fe92d02e0acafccf293b2532ff55bae7753f23f39afe4cdaa187a2",
+      "currentProfileSHA256": "fea895cc8dd81311eead93211430e2e0863d030b5ac5969fab582c376b7b8667",
+      "manifestBinding": {
+        "draftMatchesManifest": true,
+        "evidenceMatchesManifest": true,
+        "profileMatchesManifest": true,
+        "preservedDraftBytesMatchBeforeSHA256": true,
+        "preservedEvidenceBytesMatchBeforeSHA256": true
+      },
+      "knownBy": {"chapter": 1, "verse": 30},
+      "readerFields": {
+        "nameJa": "テマ",
+        "subtitleJa": "イシュマエルの子らの系譜に名が記されます。",
+        "summaryJa": "歴代誌上1:30は、イシュマエルの子らを列挙する中でテマの名を挙げます。前後の節には、同じ一覧のほかの子らの名が続きます。",
+        "identityNoteJa": null,
+        "facts": [],
+        "wikipedia": {
+          "url": "https://en.wikipedia.org/wiki/Ishmael#Descendants",
+          "kind": "related-section",
+          "identityVerified": false,
+          "relationVerified": true,
+          "knownBy": "secondary-reference source gate 1:30",
+          "noteJa": "記事のDescendants節は、テマをイシュマエルの息子の一人として列挙しています。"
+        }
+      },
+      "primaryAndOccurrenceAudit": {
+        "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "lexicalHits": 1,
+        "profilePassages": 1,
+        "allHitsAccountedFor": true,
+        "context": [
+          {"ref": "1CH 1:29", "text": "These are their generations: the firstborn of Ishmael, Nebaioth; then Kedar, Adbeel, Mibsam,"},
+          {"ref": "1CH 1:30", "citationURL": "https://ebible.org/engwebp/1CH01.htm#V30", "text": "Mishma, Dumah, Massa, Hadad, Tema,"},
+          {"ref": "1CH 1:31", "text": "Jetur, Naphish, and Kedemah. These are the sons of Ishmael."}
+        ],
+        "findingJa": "同名地名の主張をしておらず、固定WEBのイシュマエル系譜にある唯一のTema名をprofileに収録。summaryは一覧文脈を説明するだけで人物の未確認経歴を足していない。"
+      },
+      "sourceGateAudit": {
+        "draftSourceIDsResolve": true,
+        "sourceIdsPreserved": true,
+        "occurrenceEdgePreserved": true,
+        "readerFieldsPreserved": true,
+        "metadataDeltaAssessmentJa": "preserved旧draftとcurrent draftの比較では、profileのwikipedia metadata、secondary sourceのbody-read attribution日時、review/evidence metadataのみが変更。name/reader text/knownBy/passages/sourceIds/facts/occurrenceChecksとprimary WEB source objectは同じ。primary sourceはPublic Domain、WEB固定版 attributionあり。wiki secondary sourceはCC BY-SA 4.0、Wikipedia contributors attributionと13:32:20Z本文読解時刻を保持。",
+        "allSourceIDs": [
+          {"id": "webp-1ch-tema_2837-1-30", "category": "primary-text", "knownBy": {"chapter": 1, "verse": 30}, "url": "https://ebible.org/engwebp/1CH01.htm#V30"},
+          {"id": "wiki-tema_2837", "category": "secondary-reference", "knownBy": {"chapter": 1, "verse": 30}, "url": "https://en.wikipedia.org/wiki/Ishmael#Descendants"}
+        ],
+        "factsCount": 0
+      },
+      "wikipediaBodyAudit": {
+        "url": "https://en.wikipedia.org/wiki/Ishmael#Descendants",
+        "liveBodyRead": true,
+        "retrievedAtUTC": "2026-10-16T13:35:38Z",
+        "locator": "Live page lines 246–265, section “Descendants”: text introduces Ishmael's twelve sons at lines 253–254; line 262 lists Tema as item 9.",
+        "identityAssessmentJa": "記事の中心はイシュマエルであり、Descendants節はその息子一覧中にTemaを含める。このページだけで1CH 1:30の人物同一性を独立確定したとは言えない。related-section、identityVerified=false、relationVerified=true、および読者注記の関係限定は正しい。",
+        "profileNoteSupported": true,
+        "rights": {"license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/", "attribution": "Wikipedia contributors"}
+      },
+      "findings": [],
+      "decision": "pass",
+      "runtimeDisposition": "related-link-supported"
+    }
+  ],
+  "notAnApproval": "この独立レビューは指定した3件の現行draft/evidence/profileの本文・出典・表示ゲート評価に限定する。アプリ runtime、候補集合、他のレビュー、公開、専門家承認を許可しない。"
+}

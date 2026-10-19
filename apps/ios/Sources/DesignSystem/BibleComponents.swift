@@ -16,6 +16,7 @@ struct BibleReadingSurface<Content: View>: View {
             .overlay {
                 RoundedRectangle(cornerRadius: BibleTheme.Radius.surface, style: .continuous)
                     .strokeBorder(BibleTheme.color(.border, scheme: scheme, increasedContrast: contrast == .increased), lineWidth: contrast == .increased ? BibleTheme.Layout.emphasizedBorder : BibleTheme.Layout.hairline)
+                    .allowsHitTesting(false)
             }
     }
 }

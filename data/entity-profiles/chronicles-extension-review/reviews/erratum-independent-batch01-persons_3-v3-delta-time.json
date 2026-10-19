@@ -1,0 +1,71 @@
+{
+  "title": "Timestamp erratum for batch01 persons_3 v3 delta review",
+  "createdAtUTC": "2026-10-16T05:41:50Z",
+  "originalReportPath": "reviews/independent-batch01-persons_3-v3-delta.json",
+  "originalReportSHA256": "30fe6cf3ff2bdc8aa4b3beba0b5a8d5d97a8339318ef5e3d19e3c7489a9a48c5",
+  "originalReportedReviewedAtUTC": "2026-10-16T06:00:00Z",
+  "erratum": "The original report remains unchanged. Its top-level reviewedAtUTC value (06:00:00Z) is later than the verified clock time available when this erratum was written (05:41:50Z), so it is invalid as a recorded review time. The actual intended historical review time cannot be recovered from the saved data and is not guessed. The article-body checks preserve their separately recorded timestamps (Abdon 04:33:20Z; Asaph 04:40:00Z). This erratum records only the limited fixed-WEB and current reader-field recheck performed now; it does not claim that the full article review was conducted now.",
+  "records": [
+    {
+      "entityID": "person:abdon_12",
+      "draftPath": "drafts/persons_3/1CH_abdon_12.json",
+      "currentDraftSHA256": "e719dadd9788d844d52aad431ed8ca36cf4ce0c30597958c80cdf74324cd00c5",
+      "profileCanonicalSHA256": "0340995929da6467c42a249b266bb6b047f719ca0aa3ef07897ce357a9771401",
+      "evidencePath": "evidence/persons_3/1CH_abdon_12.json",
+      "currentEvidenceSHA256": "7d42c8db2d7fa172e76406faf7938a7df423c2428f62e5ca586768c718ecf21a",
+      "evidenceProfileSHA256": "0340995929da6467c42a249b266bb6b047f719ca0aa3ef07897ce357a9771401",
+      "authorArticleReadTimestampUTC": "2026-10-16T04:33:20Z",
+      "articleLocatorFromSavedIndependentRecord": "Abdon (biblical figures), lines 101–105: entry 2 identifies the first-born of Gibeon at 1 Chronicles 8:30 and 9:36; entry 4 is a different Abdon at 8:23.",
+      "currentPrimaryAndReaderFieldCheckAtUTC": "2026-10-16T05:41:50Z",
+      "primaryWitnessChecks": [
+        {
+          "ref": "1CH 8:29",
+          "fixedWEBText": "The father of Gibeon, whose wife’s name was Maacah, lived in Gibeon",
+          "sourceTextSHA256": "3cf5bcc37a0d6485c231c45c27a01c549080a89c40402fff73aa8d12d65d0e11"
+        },
+        {
+          "ref": "1CH 8:30",
+          "fixedWEBText": "with his firstborn son Abdon, Zur, Kish, Baal, Nadab,",
+          "sourceTextSHA256": "f611ded5cc88c94aebbbf9607ff8a01eb0a076b807216db3cff0d1c6e823b8ca"
+        },
+        {
+          "ref": "1CH 9:35",
+          "fixedWEBText": "Jeiel the father of Gibeon, whose wife’s name was Maacah, lived in Gibeon.",
+          "sourceTextSHA256": "87bb0197ab195e7bd2d1574abe7e9391de7a8077babe1a99388bb536ba70af9c"
+        },
+        {
+          "ref": "1CH 9:36",
+          "fixedWEBText": "His firstborn son was Abdon, then Zur, Kish, Baal, Ner, Nadab,",
+          "sourceTextSHA256": "89cc3440ca99bd2fcf95d0015fd8d530b4bcc5d9b348ea30a2613aa0c0e52750"
+        }
+      ],
+      "result": "limited current-text recheck confirms reader fields and cited WEB basis remain as described; the full article-body inspection is supported by the saved article check above and was not repeated during this timestamp erratum."
+    },
+    {
+      "entityID": "person:asaph_330",
+      "draftPath": "drafts/persons_3/1CH_asaph_330.json",
+      "currentDraftSHA256": "dee23b4dbd5a386c116ed8c84271e7b6e450b85dfed35acbe8290d72b28afd00",
+      "profileCanonicalSHA256": "0840ca7ede9121fd15f81c2dbd0f4cd5568ab9817aecfbdae31c6fcc3d6e144d",
+      "evidencePath": "evidence/persons_3/1CH_asaph_330.json",
+      "currentEvidenceSHA256": "bd909a916b58ca223b888a91960de27010a7ba5af04a6762b5bfc27db9e6ee18",
+      "evidenceProfileSHA256": "0840ca7ede9121fd15f81c2dbd0f4cd5568ab9817aecfbdae31c6fcc3d6e144d",
+      "authorArticleReadTimestampUTC": "2026-10-16T04:40:00Z",
+      "articleLocatorFromSavedIndependentRecord": "List of minor Hebrew Bible figures, A–K, “Asaph” section, lines 1114–1123: identifies the Levite choir leader at 1 Chronicles 6:39 separately from Hezekiah’s recorder and the Persian-period namesake.",
+      "currentPrimaryAndReaderFieldCheckAtUTC": "2026-10-16T05:41:50Z",
+      "primaryWitnessChecks": [
+        {
+          "ref": "1CH 6:39",
+          "fixedWEBText": "His brother Asaph, who stood on his right hand, even Asaph the son of Berechiah, the son of Shimea,",
+          "sourceTextSHA256": "569f98c65646c2257ab131af0cc45ac8049a21a48172aa0f26051112de0c2079"
+        },
+        {
+          "ref": "1CH 15:17",
+          "fixedWEBText": "So the Levites appointed Heman the son of Joel; and of his brothers, Asaph the son of Berechiah; and of the sons of Merari their brothers, Ethan the son of Kushaiah;",
+          "sourceTextSHA256": "8d0350a1a3af1332fca8d1a2e247604fc883464141161142b37db0ba4d90eac0"
+        }
+      ],
+      "result": "limited current-text recheck confirms reader fields and cited WEB basis remain as described; the full article-body inspection is supported by the saved article check above and was not repeated during this timestamp erratum."
+    }
+  ],
+  "decision": "The original two pass verdicts are not changed by this timing correction. The limited current check found no reason to alter the reported primary-text or visible-field conclusions. Article-body evidence remains bound to its original, separately recorded check times."
+}

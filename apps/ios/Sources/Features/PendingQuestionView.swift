@@ -25,7 +25,6 @@ struct PendingQuestionView: View {
                     Text(pending.createdAt, format: .dateTime.month().day().hour().minute()).bibleTextStyle(.caption)
                     Text("回答がまだ届かなくても、最初の質問が処理中かもしれません。まず状況を確認してください。再確認するときも同じ質問を使い、二重に処理されないようにします。").bibleTextStyle(.body)
                     Button(busy ? "確認しています…" : "処理状況を確認") { check() }.buttonStyle(.bordered).disabled(busy)
-                    Button("同じ質問でもう一度確認") { confirmReplay = true }.buttonStyle(.glass).disabled(busy)
                     Button("この質問の処理を中止", role: .cancel) { cancel() }.disabled(busy)
                 } else if recoveryID != nil {
                     BibleStateView(title: "質問の状態を読み取れません", message: "保存した質問情報は端末に残っています。新しい質問は送らず、元の処理を中止して整理できます。")

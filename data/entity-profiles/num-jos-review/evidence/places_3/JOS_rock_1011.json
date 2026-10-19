@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "book": "JOS",
+  "entityID": "place:rock_1011",
+  "profilePath": "drafts/places_3/JOS_rock_1011.json",
+  "profileSHA256": "a035c494526b935c08103cb65725064da3ac70b9c570bf7ddcbd9aecc7379db8",
+  "assignment": {
+    "path": "assignments/places_3.json",
+    "sha256": "ec36241ee733ce0e8c7942b652b68c6540ed225fa01393cc9b7561602da2e08f"
+  },
+  "fixedWitness": {
+    "path": "inventory/targets/joshua-web-verses.json",
+    "sha256": "26ae82b805dee523bb852977ccf62ad38cc40ebe442b650cbd7862db833ea854",
+    "version": "webp-usfx-2026-10-13-35a6adf626e5"
+  },
+  "sourceIndex": {
+    "path": "candidate/apps/ios/Sources/Core/Resources/entity-index.json",
+    "workspace": "../romans-leviticus-entities-work",
+    "sha256": "dfe6fba1109f192548e28645cf085ddafe3baf7820d200e2e28da486dd98f11a",
+    "candidateCoordinate": [
+      31.41666666666668,
+      35.1166666666667
+    ],
+    "coordinateStatus": "unverified-candidate"
+  },
+  "primaryChecks": [
+    {
+      "ref": "JOS 15:55",
+      "sourceURL": "https://ebible.org/engwebp/JOS15.htm#V55",
+      "text": "Maon, Carmel, Ziph, Jutah,",
+      "contextRefs": [
+        "JOS 15:54 — Humtah, Kiriath Arba (also called Hebron), and Zior; nine cities with their villages.",
+        "JOS 15:56 — Jezreel, Jokdeam, Zanoah,"
+      ],
+      "disposition": "excluded-wrong-link",
+      "reasonJa": "割当候補はヨシュア記15:55だが、固定WEB本文と前後の15:54–56にはRockまたは対応する地名がない。実際の列挙はマオン、カルメル、ジフ、ユタ、エズレル、ヨクデアム、ザノアであり、この節へのIDリンクは確認できないため、用例を除外し地図点を抑制する。"
+    }
+  ],
+  "excludedChecks": [
+    {
+      "ref": "JOS 15:55",
+      "reasonJa": "割当候補はヨシュア記15:55だが、固定WEB本文と前後の15:54–56にはRockまたは対応する地名がない。実際の列挙はマオン、カルメル、ジフ、ユタ、エズレル、ヨクデアム、ザノアであり、この節へのIDリンクは確認できないため、用例を除外し地図点を抑制する。"
+    }
+  ],
+  "wikipediaCheck": {
+    "status": "not-applicable-candidate-excluded",
+    "identityBasisJa": "固定WEB本文で該当地名が確認できないため個別記事は割り当てない。"
+  },
+  "geographyAssessment": {
+    "classification": "uncertain",
+    "candidateMapDisposition": "suppress",
+    "reasonJa": "割当候補はヨシュア記15:55だが、固定WEB本文と前後の15:54–56にはRockまたは対応する地名がない。実際の列挙はマオン、カルメル、ジフ、ユタ、エズレル、ヨクデアム、ザノアであり、この節へのIDリンクは確認できないため、用例を除外し地図点を抑制する。",
+    "profileCoordinate": null,
+    "independentCoordinateSourcesRead": []
+  },
+  "limitationsJa": "固定WEB本文と前後節に候補名の地理用例がなく、誤リンクとして記録。",
+  "sourceReuse": {
+    "priorDraftReuse": false,
+    "existingCandidateIndexReused": true
+  },
+  "elapsedSeconds": 100,
+  "authorRepairAudit": [
+    {
+      "review": "reviews/independent-profiles-places_3.json",
+      "reviewedDraftSHA256": null,
+      "previousEvidenceSHA256": "652bd45a1414be7b0b432205158a98bb4d9a1f9c7977fa5edf023269a0d5ecd5",
+      "newProfileSHA256": "a035c494526b935c08103cb65725064da3ac70b9c570bf7ddcbd9aecc7379db8",
+      "changes": [
+        {
+          "field": "profile",
+          "before": {
+            "id": "place:rock_1011",
+            "kind": "place",
+            "nameJa": "岩（候補・本文未確認）",
+            "subtitleJa": "固定WEB本文で地名用法を確認できない候補",
+            "summaryJa": "固定WEBのヨシュア記15:55と前後には「Rock」に対応する地名が見当たりません。本文はユダ山地の町名を列挙しており、このIDを結び付ける根拠を確認できません。",
+            "identityNoteJa": "",
+            "knownBy": {
+              "chapter": 15,
+              "verse": 55
+            },
+            "passages": [],
+            "sourceIds": [],
+            "facts": [],
+            "modernLocationJa": "候補節はこの場所の位置を示しません。",
+            "historicalRoleJa": "固定WEB本文では該当する地名用法を確認できません。",
+            "coordinate": null,
+            "locationNoteJa": "誤リンク候補のため位置候補を地図表示しません。",
+            "wikipedia": null,
+            "materialCardIDs": [],
+            "supplemental": false
+          },
+          "after": null,
+          "reasonJa": "JOS15:55と前後にRockに対応する地名用例がなく、場所として同定できないためプロフィール対象外。"
+        }
+      ]
+    }
+  ]
+}

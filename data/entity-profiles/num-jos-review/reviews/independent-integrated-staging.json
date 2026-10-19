@@ -1,0 +1,334 @@
+{
+  "review": "Independent review of the current unpublished integrated NUM/JOS staging snapshot. Checks only the requested context splits, source-map relevance, source-bound explicit place aliases, and runtime-resolution implications. This is not semantic approval of all content and does not authorize publication.",
+  "reviewedAtUTC": "2026-10-15T22:02:35Z",
+  "snapshot": {
+    "buildScript": "build-integrated-staging.py",
+    "buildScriptSHA256": "4ae961d51d2674a10f15387c83389f1c5f3b6853545efe0b0a5b728ff99db3ef",
+    "stagingReportPath": "integrated-staging/report.json",
+    "stagingReportSHA256": "af4763426ca27038e3f3db11611eecb3cd1861d96ebe65a3e77c5eeb6a971318",
+    "stagingReportAtUTC": "2026-10-15T22:00:38.609468+00:00",
+    "catalogSHA256": {
+      "NUM": "71ba28796ad75616892d5733c0eb17faed308cea9be70187c1bec59bcbdfc050",
+      "JOS": "eb93b6f9c5e423118de8febe4cb5c6df2e4b7f405aaec1d97544d13b733c52ca"
+    },
+    "semanticApproval": false,
+    "published": false,
+    "inputHashes": [
+      {
+        "path": "reviews/verse-map-NUM-01-12.json",
+        "sha256": "bbb4f366f44058361286d1fe6ab501a0591c57a3a76388ea49ea6026524e9eae"
+      },
+      {
+        "path": "reviews/verse-map-NUM-13-24.json",
+        "sha256": "31259f2925a5a660179423b37818d13e6a02717443a12b2b97c43ff1aaf4ebb2"
+      },
+      {
+        "path": "context-edits/JOS/person_israel_682.json",
+        "sha256": "d767faf70b24d149d7ffc8ccfd6c50e57b9d8a824c1349f51574441eeecc2c5f"
+      },
+      {
+        "path": "context-edits/JOS/person_joseph_1710.json",
+        "sha256": "859a94e0771358dff57381b818fafd3eb54bb54a56b7e354cc7167bfba5ea580"
+      },
+      {
+        "path": "context-edits/JOS/person_manasseh_1928.json",
+        "sha256": "acc051938b90a04333b2e3a92cc5faabd510d20524220241a5c3e0805db5ecab"
+      },
+      {
+        "path": "context-edits/JOS/person_reuben_2429.json",
+        "sha256": "816c2eb3781721740082adbbc353aa883efbcf04a03a9bbb1a7313549227ba24"
+      },
+      {
+        "path": "reviews/verse-map-JOS-01-08.json",
+        "sha256": "ecb4620cb7d71b5fb450b3c2f410d03c3c0fc957dd97f4206e3b77fb25015786"
+      },
+      {
+        "path": "reviews/verse-map-JOS-09-16.json",
+        "sha256": "b518149532c5f08ade9cbeb587165bb7c7cab6e7e5b9f39d062247ff6be48bdc"
+      },
+      {
+        "path": "reviews/verse-map-JOS-17-24.json",
+        "sha256": "6ccaab1ed700008140ed1e767444b2724dd571e06bde197a6ca4ce3575b3d111"
+      }
+    ],
+    "currentManassehProposalSHA256": "acc051938b90a04333b2e3a92cc5faabd510d20524220241a5c3e0805db5ecab",
+    "aliasReviewSourcePath": "reviews/root-explicit-place-aliases.json",
+    "aliasReviewSourceSHA256": "09c17d257be0bcbf90f032858d507cd2c577cf29f6e9543974bb0889de0531a6"
+  },
+  "checks": [
+    {
+      "id": "NUM Gilead/Machir dual usages",
+      "decision": "pass",
+      "basisJa": "Pinned WEB NUM26:29 names Machir as Gilead’s father and immediately names the Gilead family; NUM26:30 names Gilead’s sons and family groups. The integrated catalog keeps both the base individual and collective context at 26:29–30. At NUM27:1 the Gilead personal lineage remains separately in base while the collective profile does not claim that occurrence. This matches the text’s dual usage."
+    },
+    {
+      "id": "JOS Manasseh individual/collective split",
+      "decision": "pass",
+      "basisJa": "WEB JOS13:31,17:1,17:2 each contains an ancestor Manasseh and a descendant/tribal context; the base and individual context both retain those dual coordinates. WEB17:3 is genealogy only, and it appears in the individual context while the base collective passage is removed. The current integrated text carries the repaired 17:2 wording. The independent corrected-source closure is recorded separately."
+    },
+    {
+      "id": "JOS Reuben and Bohan",
+      "decision": "pass",
+      "basisJa": "WEB JOS15:6 and18:17 say “the stone of Bohan the son of Reuben,” not the Reubenite collective. Both coordinates are absent from the collective base and present in the cautious unidentified-eponym context. At those verses runtime selects that context; no second base occurrence is added."
+    },
+    {
+      "id": "JOS Joseph collective/individual",
+      "decision": "pass",
+      "basisJa": "WEB14:4 explicitly says Joseph’s children are two tribes, so the base is collective from 14:4. Individual Joseph is separate at17:1–2 and the two uses coexist at24:32. The staged profile uses one entity occurrence at a given coordinate; the app resolver shows context notes where both base and context overlap, avoiding a duplicate pin."
+    },
+    {
+      "id": "JOS explicit alias deduplication and gate",
+      "decision": "fail",
+      "basisJa": "All four alias relations are explicit in WEB and the occurrence rewrite produces one canonical occurrence at each alias coordinate with no alias-ID occurrence, so double pins are avoided. Alias facts are gated at their revelation verses. However the builder appends alias source IDs to the canonical profile while retaining source objects whose knownBy is null; EntityProfileCatalog.resolve includes sources with null knownBy before the alias gate. The staged source list therefore exposes alias-linked Wikipedia/geographic-reference sources before the corresponding alias is named. In addition, each of four targets already has a fact at the alias coordinate and receives another fact from the alias summary, producing duplicate reader facts."
+    }
+  ],
+  "aliasGateEvidence": {
+    "sourceGateImplementation": "EntityProfileCatalog.resolve filters source knownBy only when non-null; it computes displayed sources from the selected profile sourceIds plus displayed facts/contexts. Alias builder appends old.sourceIds to canonical target without assigning alias knownBy to source objects.",
+    "ungatedImportedAliasSources": [
+      {
+        "aliasID": "place:leshem_727",
+        "canonicalID": "place:dan_323",
+        "knownBy": {
+          "chapter": 19,
+          "verse": 47
+        },
+        "sourceIDsVisibleBeforeAliasGate": [
+          {
+            "id": "JOS-place-leshem_727-theographic-candidate-leshem_727",
+            "category": "geographic-reference",
+            "title": "Theographic Bible Metadata, pinned candidate entity index (source coordinates remain unverified)"
+          },
+          {
+            "id": "JOS-place-leshem_727-wikipedia-leshem_727",
+            "category": "secondary-reference",
+            "title": "Cities in the Book of Joshua — Wikipedia"
+          }
+        ]
+      },
+      {
+        "aliasID": "place:kiriath-sepher_703",
+        "canonicalID": "place:debir_325",
+        "knownBy": {
+          "chapter": 15,
+          "verse": 15
+        },
+        "sourceIDsVisibleBeforeAliasGate": [
+          {
+            "id": "JOS-place-kiriath-sepher_703-theographic-candidate-kiriath-sepher_703",
+            "category": "geographic-reference",
+            "title": "Theographic Bible Metadata, pinned candidate entity index (source coordinates remain unverified)"
+          },
+          {
+            "id": "JOS-place-kiriath-sepher_703-wikipedia-kiriath-sepher_703",
+            "category": "secondary-reference",
+            "title": "Cities in the Book of Joshua — Wikipedia"
+          }
+        ]
+      },
+      {
+        "aliasID": "place:kiriath-sannah_702",
+        "canonicalID": "place:debir_325",
+        "knownBy": {
+          "chapter": 15,
+          "verse": 49
+        },
+        "sourceIDsVisibleBeforeAliasGate": [
+          {
+            "id": "JOS-place-kiriath-sannah_702-wikipedia-place_kiriath-sannah_702",
+            "category": "secondary-reference",
+            "title": "Cities in the Book of Joshua — Wikipedia"
+          }
+        ]
+      }
+    ],
+    "sameGateFactCounts": [
+      {
+        "aliasID": "place:leshem_727",
+        "canonicalID": "place:dan_323",
+        "knownBy": {
+          "chapter": 19,
+          "verse": 47
+        },
+        "factsAtGate": [
+          "レシェムは、ダン族が攻め取って住み、先祖ダンにちなむ名へ改めた町です。ヨシュア記19:47は改名前後の名称を同じ節で明示します。",
+          "ヨシュア記19:47は町名がダンに改められたことを明記します。"
+        ],
+        "count": 2
+      },
+      {
+        "aliasID": "place:kiriath-sepher_703",
+        "canonicalID": "place:debir_325",
+        "knownBy": {
+          "chapter": 15,
+          "verse": 15
+        },
+        "factsAtGate": [
+          "ヨシュア記15:15は、この町が以前キルヤテ・セフェルと呼ばれたと説明します。",
+          "キルヤト・セフェルは、ヨシュア記15:15でデビルの以前の名として明記される地名です。"
+        ],
+        "count": 2
+      },
+      {
+        "aliasID": "place:kiriath-sannah_702",
+        "canonicalID": "place:debir_325",
+        "knownBy": {
+          "chapter": 15,
+          "verse": 49
+        },
+        "factsAtGate": [
+          "ユダ山地の町一覧では「キルヤテ・サンナ（すなわちデビル）」という表記も現れます。",
+          "ヨシュア記15:49はキルヤテ・サンナを地理説明の中で名指します。本文から確認できる範囲と現代の遺跡・集落への比定は区別します。"
+        ],
+        "count": 2
+      },
+      {
+        "aliasID": "place:kiriath-baal_699",
+        "canonicalID": "place:kiriath-jearim_701",
+        "knownBy": {
+          "chapter": 15,
+          "verse": 60
+        },
+        "factsAtGate": [
+          "ヨシュア記15:60はキルヤト・バアルをキルヤト・エアリムとも呼び、ユダの町名として挙げます。",
+          "ヨシュア記15:60はキルヤテ・バアルを地理説明の中で名指します。本文から確認できる範囲と現代の遺跡・集落への比定は区別します。"
+        ],
+        "count": 2
+      }
+    ],
+    "occurrenceCounts": [
+      {
+        "aliasID": "place:leshem_727",
+        "canonicalID": "place:dan_323",
+        "knownBy": {
+          "chapter": 19,
+          "verse": 47
+        },
+        "canonicalOccurrencesAtGate": 1,
+        "aliasOccurrencesAtGate": 0
+      },
+      {
+        "aliasID": "place:kiriath-sepher_703",
+        "canonicalID": "place:debir_325",
+        "knownBy": {
+          "chapter": 15,
+          "verse": 15
+        },
+        "canonicalOccurrencesAtGate": 1,
+        "aliasOccurrencesAtGate": 0
+      },
+      {
+        "aliasID": "place:kiriath-sannah_702",
+        "canonicalID": "place:debir_325",
+        "knownBy": {
+          "chapter": 15,
+          "verse": 49
+        },
+        "canonicalOccurrencesAtGate": 1,
+        "aliasOccurrencesAtGate": 0
+      },
+      {
+        "aliasID": "place:kiriath-baal_699",
+        "canonicalID": "place:kiriath-jearim_701",
+        "knownBy": {
+          "chapter": 15,
+          "verse": 60
+        },
+        "canonicalOccurrencesAtGate": 1,
+        "aliasOccurrencesAtGate": 0
+      }
+    ],
+    "primaryWitnesses": [
+      {
+        "aliasID": "place:leshem_727",
+        "canonicalID": "place:dan_323",
+        "ref": "JOS 19:47",
+        "url": "https://ebible.org/engwebp/JOS19.htm#V47",
+        "text": "The border of the children of Dan went out beyond them; for the children of Dan went up and fought against Leshem, and took it, and struck it with the edge of the sword, and possessed it, and lived therein, and called Leshem, Dan, after the name of Dan their forefather.",
+        "textSHA256": "bc4d89cecc02ad193b91ff6d705b6595e9ca5f17af70ef25186bbb85b475f9cb"
+      },
+      {
+        "aliasID": "place:kiriath-sepher_703",
+        "canonicalID": "place:debir_325",
+        "ref": "JOS 15:15",
+        "url": "https://ebible.org/engwebp/JOS15.htm#V15",
+        "text": "He went up against the inhabitants of Debir: now the name of Debir before was Kiriath Sepher.",
+        "textSHA256": "e956af52fd0c32bb60ff333347445aa733c5b742d3d675498135737b31dd1b9e"
+      },
+      {
+        "aliasID": "place:kiriath-sannah_702",
+        "canonicalID": "place:debir_325",
+        "ref": "JOS 15:49",
+        "url": "https://ebible.org/engwebp/JOS15.htm#V49",
+        "text": "Dannah, Kiriath Sannah (which is Debir),",
+        "textSHA256": "497807b61d9bb1cb9724205cb6629a994e193f743d42e766ee184b557f11730b"
+      },
+      {
+        "aliasID": "place:kiriath-baal_699",
+        "canonicalID": "place:kiriath-jearim_701",
+        "ref": "JOS 15:60",
+        "url": "https://ebible.org/engwebp/JOS15.htm#V60",
+        "text": "Kiriath Baal (also called Kiriath Jearim), and Rabbah; two cities with their villages.",
+        "textSHA256": "29e04af0eb602809d367db773d3374c4e0efb3fe9bf9d5d1e83e7f1826923c1e"
+      }
+    ]
+  },
+  "integrity": {
+    "reportErrors": [],
+    "NUMProfiles": 347,
+    "JOSProfiles": 512,
+    "sourceRefMissingCounts": {
+      "NUM": 0,
+      "JOS": 0
+    },
+    "aliasMappings": [
+      {
+        "aliasID": "place:leshem_727",
+        "canonicalID": "place:dan_323",
+        "knownBy": {
+          "chapter": 19,
+          "verse": 47
+        },
+        "sourceDraftPreserved": true,
+        "coordinatePromoted": false
+      },
+      {
+        "aliasID": "place:kiriath-sepher_703",
+        "canonicalID": "place:debir_325",
+        "knownBy": {
+          "chapter": 15,
+          "verse": 15
+        },
+        "sourceDraftPreserved": true,
+        "coordinatePromoted": false
+      },
+      {
+        "aliasID": "place:kiriath-sannah_702",
+        "canonicalID": "place:debir_325",
+        "knownBy": {
+          "chapter": 15,
+          "verse": 49
+        },
+        "sourceDraftPreserved": true,
+        "coordinatePromoted": false
+      },
+      {
+        "aliasID": "place:kiriath-baal_699",
+        "canonicalID": "place:kiriath-jearim_701",
+        "knownBy": {
+          "chapter": 15,
+          "verse": 60
+        },
+        "sourceDraftPreserved": true,
+        "coordinatePromoted": false
+      }
+    ],
+    "catalogsHaveUnpublishedDisclosure": true
+  },
+  "overallDecision": "qualified-needs-alias-source-gating-and-fact-deduplication-before-considering-release",
+  "limitations": [
+    "No full semantic review of all 4,266 map occurrences or all catalog profiles.",
+    "No public release performed.",
+    "The current staging files match the captured current proposal SHA; concurrent changes after this snapshot require reclosure.",
+    "The staging manifest timestamp was 2026-10-15T22:00:38.609468+00:00; proposal and map input hashes were compared to current file hashes during this review."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "task": "Author repairs after independent persons_3 final review",
+  "createdAtUTC": "2026-10-15T22:59:02.211848+00:00",
+  "repairs": [
+    {
+      "book": "NUM",
+      "entityID": "person:pharez_2338",
+      "draftPath": "drafts/persons_3/NUM_pharez_2338.json",
+      "evidencePath": "evidence/persons_3/NUM_pharez_2338.json",
+      "beforeDraftSHA256": "f2fd8a230c108e5ff4aff4217af08537aef516a52fb96fc4fad490f697aa7954",
+      "afterDraftSHA256": "e5a6471f854eccb79bc267b7a9f7644fc216166d78dd0a778d65da4dfb01f6e6",
+      "beforeProfileSHA256": "43ccaaba65037556500231545954b78cf296063dd8267cf0812f13a3ce39ec47",
+      "afterProfileSHA256": "43dbb29349f29afb06d3ee66a3e8579e3a450ac9a813ca8b38915e1e65220c2d",
+      "beforeEvidenceSHA256": "e1185453df2ac41f600999d85f922a08a261384e4e18590d8c0457bf56759ae8",
+      "afterEvidenceSHA256": "292bbab5098d1a1e3998187b863f893bb58e8220db3fcbc0df930556336c4d98",
+      "fields": [
+        "profile.summaryJa",
+        "profile.sourceIds",
+        "profile.facts",
+        "review.primaryWitnesses[NUM 26:20]",
+        "review.identityCheckJa",
+        "evidence.sourceChecks[NUM 26:20,26:21].readingNoteJa"
+      ],
+      "fixedWitnesses": [
+        {
+          "ref": "NUM 26:20",
+          "text": "The sons of Judah after their families were: of Shelah, the family of the Shelanites; of Perez, the family of the Perezites; of Zerah, the family of the Zerahites.",
+          "use": "profile knownBy 26:20 summary; only the Perez family is stated here."
+        },
+        {
+          "ref": "NUM 26:21",
+          "text": "The sons of Perez were: of Hezron, the family of the Hezronites; of Hamul, the family of the Hamulites.",
+          "use": "separate fact gated at 26:21; primary sourceId moved from base sourceIds into that fact."
+        }
+      ],
+      "reasonJa": "NUM 26:20 names the Perez family but does not name Hezron or Hamul. Those descendants are stated in 26:21, so they are removed from always-visible summary and primary-witness paraphrase and kept as a fact gated at 26:21. The evidence sidecar is synchronized.",
+      "repairedAtUTC": "2026-10-15T22:59:02.211848+00:00"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "projectionType": "format-only-runtime-disposition-q-supplement",
+  "generatedAtUTC": "2026-10-16T12:09:01.578129Z",
+  "sourceReportPath": "reviews/qualified-runtime-disposition-batch08-persons_2-conaniah-current-delta.json",
+  "sourceReportSHA256": "2d99584c7e3f48fbc970b0a976cdcf69371b3200187cd6c090a5e1634648438f",
+  "sourceRowsKey": "items",
+  "sourceDispositionField": "currentDisposition",
+  "sourceRowCount": 1,
+  "sourceCounts": null,
+  "sourceReportDecisionCounts": null,
+  "policy": {
+    "formatOnly": true,
+    "expectedSHAs": "Copied unchanged from the original independent row; not recomputed, refreshed, or rebound to current files.",
+    "disposition": "The explicit source field 'currentDisposition' is copied as the runtimeDisposition value; no semantic promotion or disposition inference is performed.",
+    "errors": "Missing/ambiguous identity, paths, SHA, explicit book, or disposition yields runtimeDisposition=hold with projectionStatus=hold-error."
+  },
+  "summary": {
+    "rowCount": 1,
+    "runtimeDispositionCounts": {
+      "related-link-supported": 1
+    },
+    "errorRowCount": 0
+  },
+  "rowErrors": [],
+  "rows": [
+    {
+      "book": "2CH",
+      "entityID": "person:conaniah_953",
+      "draftPath": "drafts/persons_2/2CH_person_conaniah_953.json",
+      "evidencePath": "evidence/persons_2/2CH_person_conaniah_953-sources.json",
+      "currentDraftSHA256": "5fb81bde6a01e0be03dbfaf23371f1f0c84a8e025d70e12f18ec3dee3135e92c",
+      "currentEvidenceSHA256": "3f004fb119ea7a5102d3dcf807dfd9f0b4e3ccac5c6f946a1a646ab41da0eb22",
+      "runtimeDisposition": "related-link-supported",
+      "projectionStatus": "format-projection-only",
+      "sourceRowIndex": 0,
+      "sourceDispositionField": "currentDisposition",
+      "sourceDispositionValue": "related-link-supported",
+      "dispositionFormatAlias": "currentDisposition->runtimeDisposition",
+      "expectedSourceDraftSHA256": "5fb81bde6a01e0be03dbfaf23371f1f0c84a8e025d70e12f18ec3dee3135e92c",
+      "expectedSourceProfileSHA256": "e16a738d2246a1da7a7fc584bc77a0a29e54da4533d4324a7a09817a98e49e07",
+      "expectedSourceEvidenceSHA256": "3f004fb119ea7a5102d3dcf807dfd9f0b4e3ccac5c6f946a1a646ab41da0eb22",
+      "sourceHashFieldNames": {
+        "draft": "draftSHA256",
+        "profile": "profileSHA256",
+        "evidence": "evidenceSHA256"
+      },
+      "rowErrors": []
+    }
+  ]
+}

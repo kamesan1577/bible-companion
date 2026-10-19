@@ -16,8 +16,8 @@ settings:
     SWIFT_STRICT_CONCURRENCY: complete
     TARGETED_DEVICE_FAMILY: '1,2'
     IPHONEOS_DEPLOYMENT_TARGET: '26.0'
-    MARKETING_VERSION: 0.1.10
-    CURRENT_PROJECT_VERSION: 11
+    MARKETING_VERSION: 0.1.23
+    CURRENT_PROJECT_VERSION: 24
     CODE_SIGN_STYLE: Automatic
     ENABLE_USER_SCRIPT_SANDBOXING: YES
 configFiles:
@@ -53,6 +53,14 @@ targets:
     platform: iOS
     sources:
       - path: ShareExtension
+      - path: Sources/Features/SharedPreviewView.swift
+      - path: Sources/Features/StaticCommentaryView.swift
+      - path: Sources/Features/MaterialCardView.swift
+      - path: Sources/Features/PlaceMapView.swift
+      - path: Sources/DesignSystem/UnifiedReadingView.swift
+      - path: Sources/DesignSystem/CitationList.swift
+      - path: Sources/DesignSystem/BrandAssets.xcassets
+      - path: Sources/DesignSystem/ChatMessagesView.swift
       - path: Sources/DesignSystem/SharedScriptureHeader.swift
       - path: Sources/DesignSystem/OfflineEntityPane.swift
       - path: Sources/DesignSystem/BibleComponents.swift
@@ -61,6 +69,7 @@ targets:
       - path: Config/Share/PrivacyInfo.xcprivacy
         buildPhase: resources
       - path: Sources/Services/LocalStorage.swift
+      - path: Sources/Services/PublicArtworkLoader.swift
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: $(BIBLE_BUNDLE_ID).Share

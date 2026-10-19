@@ -1,0 +1,296 @@
+{
+  "reviewType": "independent-profile-review",
+  "reviewedAt": "2026-10-15",
+  "reviewerRole": "independent reviewer; no draft or evidence edits",
+  "scope": {
+    "groups": [
+      "persons_1",
+      "places_1",
+      "places_3"
+    ],
+    "expectedRecords": 14,
+    "recordsReviewed": 14,
+    "reviewMethodJa": "AUTHOR-CONTRACT、現在の草稿・根拠JSON・地図方針、固定WEB本文および前後節を照合。常時表示欄の初出時点、各factのknownByと引用、同名・古今地理、Wikipedia記事の対象、座標と候補点の区別を確認した。草稿・根拠・方針は編集していない。"
+  },
+  "inputHashes": {
+    "assignments/persons_1.json": "1a093c9eac0a0a386dd8134f37aa9b54495e12373133e986ce340942c7537326",
+    "assignments/places_1.json": "30654bbbba349a2d1f5f2106f8e226a689683d399f75d6f11d70ae2ca13bf9df",
+    "assignments/places_3.json": "aa541cf802aa2a7c91e04ca13f8f98f3c60b33aadb68853fa40891dd3f155835",
+    "inventory/targets/lev-web-verses.json": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190",
+    "inventory/targets/rom-canonical-witness.json": "82615c64ab5d9ceed7d0a2217585f042e570d1cf283e591f89b673bc6b731ae2",
+    "reviews/map-policy-places_1.json": "8640f5049eba0a8f708f7f8d482b7ff3a5b6f250b784b243d683f0e944f4625c",
+    "reviews/map-policy-places_3.json": "3eb802182c4c7c9718f7f52868916ede64f202f650c173e9e78d2c2b0fad1073"
+  },
+  "verdictCounts": {
+    "pass": 3,
+    "qualified": 11,
+    "fail": 0
+  },
+  "records": [
+    {
+      "book": "LEV",
+      "entityID": "person:god_1324",
+      "draftPath": "drafts/persons_1/LEV_person_god_1324.json",
+      "evidencePath": "evidence/persons_1/LEV_person_god_1324.json",
+      "draftSHA256": "cb9f4d0907ecf6fbf6aa7980611787ed8e614627d6731665ad2a97a7bd5dad2a",
+      "evidenceSHA256": "5e395659abace4a54029070372a8646c76ac55f9bee85b22329a22847805e27b",
+      "status": "pass",
+      "anchors": [
+        "LEV 1:1",
+        "LEV 24:11",
+        "LEV 24:16",
+        "LEV 1:1–27:34; evidence candidate list reports 292 candidates, 291 direct and one qualified/excluded"
+      ],
+      "findingsJa": [
+        "summary/subtitle/historicalRole are limited to the opening scene in LEV 1:1; they do not disclose later ritual material. The many facts are chapter-gated and cite sources no later than each fact's knownBy.",
+        "The lone uncertain ‘the Name’ candidate at 24:11 is excluded; 24:16 directly says ‘the LORD’s name’. This is a defensible distinction rather than forced coverage.",
+        "The Japanese Yahweh article is an appropriate identity aid for WEB's LORD wording; profile note describes the article's divine-name and Japanese translation sections, without asserting theology beyond that evidence. Geography and coordinates are inapplicable.",
+        "Source metadata includes the WEB 1:1 citation and the pinned translation note, both knownBy 1:1; no later chapter appears in profile.sourceIds."
+      ],
+      "unresolvedJa": "神名・翻訳の補助説明はWEB訳注の範囲に限られる。内容上の未解決不備は見つからなかった。"
+    },
+    {
+      "book": "LEV",
+      "entityID": "place:egypt_362",
+      "draftPath": "drafts/places_1/LEV_place_egypt_362.json",
+      "evidencePath": "evidence/places_1/LEV_place_egypt_362.json",
+      "draftSHA256": "ed7036fed917afb413bed3b9e4f1ef10af5af9370a63835ed6e8b61dd2a8ff0c",
+      "evidenceSHA256": "b76aaea81386f936519ec63d330e20ceb4d25f9b735e6f4b716e0b307c033171",
+      "status": "qualified",
+      "anchors": [
+        "LEV 11:45",
+        "LEV 18:3",
+        "LEV 19:34,36",
+        "LEV 22:33",
+        "LEV 23:43",
+        "LEV 25:38,42,55",
+        "LEV 26:13,45",
+        "LEV 24:10"
+      ],
+      "findingsJa": [
+        "At the earliest assigned occurrence, 11:45 says the LORD brought Israel out of Egypt. The regional name and broad north-east African orientation are suitable; current-country borders are explicitly not equated with ancient boundaries. LEV 24:10 is correctly excluded as an Egyptian father descriptor, not a place-name use.",
+        "Coordinate remains null. The legacy candidate [26.4902014068366, 29.88079617] lies in Egypt and is explicitly only a broad regional reference. The Pleiades record cited is Aegyptus as a Roman imperial province and separately cross-links Ancient Egypt; it does not independently establish the Exodus-period extent or the candidate point. Keep that temporal limitation visible; do not promote the point.",
+        "The profile.sourceIds aggregates later chapter citations as well as 11:45. Individual WEB sources have knownBy values, but the reader-facing source list must honor those gates; otherwise future chapter mentions are exposed at the 11:45 entry."
+      ],
+      "proposedActionJa": "既存候補のラベル付き保持とcoordinate=nullは妥当。Pleiadesがローマ期の記録である点を地理根拠として過大評価せず、sourceIds参照の表示時に各knownByを適用することを確認する。"
+    },
+    {
+      "book": "ROM",
+      "entityID": "place:achaia_16",
+      "draftPath": "drafts/places_1/ROM_place_achaia_16.json",
+      "evidencePath": "evidence/places_1/ROM_place_achaia_16.json",
+      "draftSHA256": "f11fe998a2d24b2381452b365e211133a10f3ca7db448ab71adf55ac6d78c95f",
+      "evidenceSHA256": "e9527fb3c1911439d32b7eb9731be79bc269cac7b40e77e8c465fb6b7344555a",
+      "status": "qualified",
+      "anchors": [
+        "ROM 15:26",
+        "ROM 16:5"
+      ],
+      "findingsJa": [
+        "15:26 directly names Achaia among the contributors with Macedonia; the profile correctly describes a Roman-period region/province, not the modern Achaia administrative region. Pleiades fixed record 981502 describes the province and its broad extent. The candidate [37.5, 22.5] falls in the Peloponnese and remains labeled as an unverified regional reference; coordinate is null.",
+        "The first-entry source set includes the later ROM 16:5 source, whose title/text identifies Epaenetus as Achaia's first fruits. Because profile.sourceIds exposes that later source ID from knownBy 15:26, ensure citation metadata is gated; the source object itself records knownBy 16:5. The fact at 16:5 is otherwise properly gated."
+      ],
+      "proposedActionJa": "候補点・地域記述は妥当。初出15:26時点で16:5の引用メタデータを表示しないようknownByを適用する。"
+    },
+    {
+      "book": "ROM",
+      "entityID": "place:cenchreae_281",
+      "draftPath": "drafts/places_1/ROM_place_cenchreae_281.json",
+      "evidencePath": "evidence/places_1/ROM_place_cenchreae_281.json",
+      "draftSHA256": "e1d20ccc8fd289a29f1e4e4d602c28d2e556c98ed843bb342ae6f9bb103798f7",
+      "evidenceSHA256": "37ba5dc53ef2c5c9ead4dfa582ac9a2080c54449fe84303c73c781dd52a2356b",
+      "status": "pass",
+      "anchors": [
+        "ROM 16:1"
+      ],
+      "findingsJa": [
+        "16:1 directly locates the assembly served by Phoebe at Cenchreae. Kechries is clearly presented as the current settlement in the same coastal area, not as the ancient city unchanged. Pleiades fixed record 570347 identifies Kenchreai/Cenchreae as a settlement and port; the map point is only a legacy candidate, not a profile coordinate.",
+        "The Kechries article is a relevant identity page and is described as supporting the same-area/current-name relation. All always-visible narrative is anchored to 16:1; no future occurrence is cited."
+      ],
+      "unresolvedJa": "候補点が港湾遺構の境界や集会所を示さない旨が明記されており、未解決点は表示上の注意に留まる。"
+    },
+    {
+      "book": "ROM",
+      "entityID": "place:judea_657",
+      "draftPath": "drafts/places_1/ROM_place_judea_657.json",
+      "evidencePath": "evidence/places_1/ROM_place_judea_657.json",
+      "draftSHA256": "722ad88563a7139875579f55f73561178c98161624a2fc9bf971e784bd85a5c1",
+      "evidenceSHA256": "3341b2eb15d74c92eaa9903bfc4a27d682f410db56c59f361f48b84112d4ebb3",
+      "status": "qualified",
+      "anchors": [
+        "ROM 15:31"
+      ],
+      "findingsJa": [
+        "ROM 15:31 distinguishes Judea (people disobedient in Judea) from Jerusalem (the service going to Jerusalem). The profile treats Judea as a southern-Levant historical region with changing period boundaries. Pleiades fixed record 687934 supports Iudaea as a historical region, but reports rough/undetermined geometry; no verified coordinate is claimed.",
+        "Map policy disables the legacy candidate [31.777444, 35.234935] because it lies near Jerusalem. That proximity alone does not establish that the point is outside Judea: Jerusalem is within the broader Judean region. The point is unsuitable as an unlabeled centroid or city-independent region outline, but it can be retained as a clearly labeled ‘legacy candidate / reference point within the region’ if the map UI supports that distinction. Keep coordinate null and do not claim Pleiades verified this point."
+      ],
+      "proposedActionJa": "候補点を単に『都市に近い』という理由で誤点と断定しない。地図UIが地域内参考点として明示できるなら候補入口を維持し、地域中心・境界・確定座標とは表示しない。明示できない場合に限り非表示を維持する。"
+    },
+    {
+      "book": "ROM",
+      "entityID": "place:spain_1111",
+      "draftPath": "drafts/places_1/ROM_place_spain_1111.json",
+      "evidencePath": "evidence/places_1/ROM_place_spain_1111.json",
+      "draftSHA256": "e6ac05d60a834deec0e8bb8e37a25fae303f8bf890a55a06bb211caea0538f07",
+      "evidenceSHA256": "69ec7c7977947322f7fbaf09418eb01fffa3fc6cc3d2f7a9f6d90caa3bc0c2b2",
+      "status": "qualified",
+      "anchors": [
+        "ROM 15:24",
+        "ROM 15:28"
+      ],
+      "findingsJa": [
+        "15:24 is the earliest mention and presents Spain as Paul's intended western destination and Rome as a hoped-for visit en route; 15:28 later repeats the plan after completing the Jerusalem service. The profile does not claim that the journey was completed. The Hispania article is a related ancient-geography aid, not evidence that ancient Hispania exactly matches the modern Spanish state; the draft says this explicitly.",
+        "The legacy point [40.481391, -3.175332] is within the broad Iberian Peninsula and is explicitly only a reference candidate; profile coordinate is null. The source set includes the later 15:28 citation from the 15:24 entry, so enforce its source knownBy gate."
+      ],
+      "proposedActionJa": "広域候補の説明は適切。15:28の引用はknownBy 15:28までは表示しない。"
+    },
+    {
+      "book": "LEV",
+      "entityID": "place:azazel_127",
+      "draftPath": "drafts/places_3/LEV_place_azazel_127.json",
+      "evidencePath": "evidence/places_3/LEV_place_azazel_127.json",
+      "draftSHA256": "fa4d3e3d129429d95b5a8a689504c4d0b0924627eef6da59fd659edda1f6262e",
+      "evidenceSHA256": "86926033baafa5198f6ef2b7f19857c58fb3c79649ef0a4428a62c7cbb359a00",
+      "status": "qualified",
+      "anchors": [
+        "LEV 16:8",
+        "LEV 16:10",
+        "LEV 16:26"
+      ],
+      "findingsJa": [
+        "The fixed WEB renders all three places in the scapegoat ritual as ‘scapegoat’ and does not identify a location. Excluding the candidate as a place profile and retaining no coordinate/map point is appropriate; the nearby context confirms the lot and goat being sent into the wilderness.",
+        "The evidence says an English Wikipedia article was considered but stores wikipediaRead as null and gives no URL/article title. Therefore its statement that the article contains competing place/demon/goat interpretations is not independently traceable here. This does not undermine the WEB-based exclusion but should be recorded as an unverified secondary-source claim or backed with the exact article actually read."
+      ],
+      "proposedActionJa": "プロフィール除外・地図非表示は妥当。Wikipediaを実読した根拠が残るなら記事名/URL/確認箇所を記録し、そうでなければwikiの解釈併存説明を根拠記録から外す。"
+    },
+    {
+      "book": "LEV",
+      "entityID": "place:canaan_272",
+      "draftPath": "drafts/places_3/LEV_place_canaan_272.json",
+      "evidencePath": "evidence/places_3/LEV_place_canaan_272.json",
+      "draftSHA256": "1d2d66e4282f49d847c3bb88cd199ffefefd97f5cf47edd31e755a146f40bed7",
+      "evidenceSHA256": "1bed85bf97b6dde8f5d57082d754d8cc55085c1723f168875a24f542a3c0a896",
+      "status": "qualified",
+      "anchors": [
+        "LEV 14:34",
+        "LEV 18:3",
+        "LEV 25:38"
+      ],
+      "findingsJa": [
+        "The profile's first occurrence is LEV 14:34 (‘land of Canaan’ as the possession land); its 18:3 and 25:38 facts are appropriately later and distinguish Egypt/Canaan and the land grant. The broad southern-Levant description and non-equivalence to modern borders are careful. The legacy candidate [31.69352950368834, 34.84388288576839] is geographically within the broad region but is not promoted; coordinate remains null.",
+        "profile.sourceIds contains later sources 18:3 and 25:38. They carry their own knownBy values, so data can be gated, but rendering all source links at the 14:34 entry would leak subsequent references."
+      ],
+      "proposedActionJa": "候補の地域内概略表示は妥当。初出では後続節sourceをknownByで非表示にする。"
+    },
+    {
+      "book": "LEV",
+      "entityID": "place:sinai_1098",
+      "draftPath": "drafts/places_3/LEV_place_sinai_1098.json",
+      "evidencePath": "evidence/places_3/LEV_place_sinai_1098.json",
+      "draftSHA256": "baa393f06832bc281c1b3eda6096bb8ea32491f40a8fc64210bc6addde4e1b9a",
+      "evidenceSHA256": "29f6f3ef539635846e6f7ca7868e7285bcac8fcfeead88fb8b4db34098cfb4cf",
+      "status": "qualified",
+      "anchors": [
+        "LEV 7:38"
+      ],
+      "findingsJa": [
+        "The pinned WEB verse names both Mount Sinai and the wilderness of Sinai. The profile explicitly preserves that distinction, avoids a specific peak, and states that Jebel Musa is only a traditional identification. Wikipedia's Mount Sinai article is relevant for the mountain tradition but cannot settle the wider wilderness reference.",
+        "No profile coordinate or candidate map point is assigned. Reusing an unrelated Mount Sinai ID's point would be misleading for this broader Sinai reference; suppressing that incompatible point is justified."
+      ],
+      "proposedActionJa": "現状維持。山頂と荒野の両方を含む節の用例であること、特定比定が確定でないことを常時説明する。"
+    },
+    {
+      "book": "ROM",
+      "entityID": "place:asia_108",
+      "draftPath": "drafts/places_3/ROM_place_asia_108.json",
+      "evidencePath": "evidence/places_3/ROM_place_asia_108.json",
+      "draftSHA256": "fe70b90ff4d6aa77da6b9330e66c1bcd115fc59c81648efa2d1e0862c759925d",
+      "evidenceSHA256": "6af5f849ca4c2a6c1fb578cd4dd03e308a7f00691d5b7a991312fb90fc6425d9",
+      "status": "pass",
+      "anchors": [
+        "ROM 16:5"
+      ],
+      "findingsJa": [
+        "The fixed ROM 16:5 says Epaenetus is the first fruits of Achaia, not Asia. The wrong candidate is explicitly rejected; no biography or coordinate is forced. The existing Asia candidate point is unsuitable for this Romans occurrence, so map exclusion is correct."
+      ],
+      "unresolvedJa": "この書の本文に適合するAsiaの場所用例はこの候補にはない。プロフィールを作らない判断を維持する。"
+    },
+    {
+      "book": "ROM",
+      "entityID": "place:illyricum_595",
+      "draftPath": "drafts/places_3/ROM_place_illyricum_595.json",
+      "evidencePath": "evidence/places_3/ROM_place_illyricum_595.json",
+      "draftSHA256": "60f42e8acf6fd27c04ac933bd682ea0430ca7b9a95712a8ae8877b47efcce13a",
+      "evidenceSHA256": "4717883b65bbe9503b2025c082a78021023fd3835e2e7ab0dd0c7c14d793ccf1",
+      "status": "qualified",
+      "anchors": [
+        "ROM 15:19"
+      ],
+      "findingsJa": [
+        "15:19 directly names Illyricum as the far end of Paul's stated preaching range from Jerusalem. The profile properly labels it a broad region/province term and warns its bounds vary by period/use; the Roman-province Wikipedia page is relevant but does not establish that this verse uses the same administrative boundary.",
+        "Map policy suppresses the legacy candidate, while candidate index contains [43.515484, 16.071538] near Split on the western Balkan/Dalmatian coast. The point is not independently verified and should not be a city or provincial-centre pin. However, that location is not shown to be outside the broad region. If the map supports an explicit ‘unverified regional reference candidate’ label, preserve the existing entry instead of treating lack of independent verification as evidence of a wrong location; keep profile coordinate null."
+      ],
+      "proposedActionJa": "候補点が誤りと判明した証拠はないため、表示UIで地域内参考候補と明示できるか再評価する。確定点・属州中心とは扱わない。"
+    },
+    {
+      "book": "ROM",
+      "entityID": "place:jerusalem_636",
+      "draftPath": "drafts/places_3/ROM_place_jerusalem_636.json",
+      "evidencePath": "evidence/places_3/ROM_place_jerusalem_636.json",
+      "draftSHA256": "0248d494c2910c9348770ffe916715883ffc8bee98818cedbe9a4e4c5de609c9",
+      "evidenceSHA256": "db46a95c3a2dca03588128ef3aeb215ea9af529997d2c52bba74cfd8cbf1ae37",
+      "status": "qualified",
+      "anchors": [
+        "ROM 15:19",
+        "ROM 15:25",
+        "ROM 15:26",
+        "ROM 15:31"
+      ],
+      "findingsJa": [
+        "The verses support Jerusalem as Paul's stated preaching-range origin, destination for his present service, and location of the saints receiving the contribution. Ancient and modern city limits are carefully distinguished; the existing candidate [31.776667, 35.234167] remains a current-city reference only, with profile coordinate null.",
+        "profile.sourceIds aggregates later 15:25, 15:26, and 15:31 citations alongside the first mention in 15:19. Their individual knownBy values are present, but the UI must apply them; otherwise later travel/service details are visible prematurely."
+      ],
+      "proposedActionJa": "地理記述と候補点表示は適切。各citation sourceをknownByまでゲートする。"
+    },
+    {
+      "book": "ROM",
+      "entityID": "place:rome_1013",
+      "draftPath": "drafts/places_3/ROM_place_rome_1013.json",
+      "evidencePath": "evidence/places_3/ROM_place_rome_1013.json",
+      "draftSHA256": "9c3a98d80ea8dad8c7ae73c8f3f7ce1cbe00e2812a6c0a9e0d0450aace67bc4d",
+      "evidenceSHA256": "09d8a15298aafe8eada8d286ed3baa503baf375987632882587a5be00a27afd8",
+      "status": "qualified",
+      "anchors": [
+        "ROM 1:7",
+        "ROM 1:15"
+      ],
+      "findingsJa": [
+        "1:7 names the audience in Rome; the profile describes an ancient city while explicitly separating modern municipal limits. The existing point [41.89262, 12.4843457] is labeled as a current-city reference, not an ancient boundary or event coordinate, and profile coordinate remains null.",
+        "The source list also contains the later ROM 1:15 citation from the 1:7 profile entry. The source object's knownBy is 1:15; ensure source metadata is hidden until then if rendered with the initial profile."
+      ],
+      "proposedActionJa": "現在都市の参考候補としての扱いは適切。1:15 source gateを確認する。"
+    },
+    {
+      "book": "ROM",
+      "entityID": "place:sodom_1107",
+      "draftPath": "drafts/places_3/ROM_place_sodom_1107.json",
+      "evidencePath": "evidence/places_3/ROM_place_sodom_1107.json",
+      "draftSHA256": "c49b44df2f35be28245678fde5d25415a4c3d60982646bc7f3b1ad7408c911f6",
+      "evidenceSHA256": "5aef3ded9154267888314fdd3967bb9466b4966a27684bb6ec88352bf75bb575",
+      "status": "qualified",
+      "anchors": [
+        "ROM 9:29"
+      ],
+      "findingsJa": [
+        "ROM 9:29 quotes Isaiah and names Sodom and Gomorrah as comparison terms; it does not locate either city. The profile says so, avoids a location claim, and keeps coordinate null. The article's New Testament fragment is relevant because it identifies the Romans quotation, but cannot establish location.",
+        "Map suppression is justified here for a stronger reason than proximity to a known city: the location is unresolved and has multiple candidate identifications, and the candidate index point is not tied in the evidence to a particular verified archaeological site. Preserve no single-point map marker unless it can be explicitly presented as one named traditional hypothesis."
+      ],
+      "proposedActionJa": "プロフィール維持。複数候補がある所在地の単一表示を避ける現方針は妥当。"
+    }
+  ],
+  "notesJa": [
+    "ROM citations checked against inventory/targets/rom-canonical-witness.json (version webp-usfx-2026-10-13-35a6adf626e5); LEV citations checked against inventory/targets/lev-web-verses.json with the same version. All URLs cited in current drafts use the fixed /engwebp/ WEBP witness path and verse anchors.",
+    "All 11 extant place profiles reviewed here have coordinate=null. Candidate points are separate from profile coordinates. No Pleiades or Wikipedia reference is treated as independent proof of an unverified candidate point.",
+    "The ten qualified records mainly require an explicit source-knownBy display gate or a decision about preserving an explicitly labeled legacy regional reference. They are not blanket rejections of the underlying profiles."
+  ]
+}

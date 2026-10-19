@@ -1,15 +1,17 @@
 import Foundation
 import CryptoKit
 import ImageIO
+import CompanionCore
 
 /// Public-domain image transport is independent from private API sessions.
 /// This explicit allowlist must grow only with reviewed source provenance.
 enum PublicArtworkLoader {
-    static let allowedHosts: Set<String> = ["api.nga.gov"]
     static let maximumBytes = 8_000_000
     static func load(_ url: URL) async throws -> Data {
-        guard url.scheme == "https", let host = url.host?.lowercased(), allowedHosts.contains(host),
-              url.user == nil, url.password == nil, url.fragment == nil, url.port == nil || url.port == 443 else { throw URLError(.unsupportedURL) }
+#if DEBUG
+        await MainActor.run { ArtworkLoadProbe.shared.started += 1 }
+#endif
+        guard PublicArtworkURLPolicy.allows(url) else { throw URLError(.unsupportedURL) }
         let cacheURL = try? cacheFile(for: url)
         if let cacheURL, let size = try? cacheURL.resourceValues(forKeys: [.fileSizeKey]).fileSize,
            size > 0, size <= maximumBytes, let cached = try? Data(contentsOf: cacheURL), validImage(cached) { return cached }
@@ -48,3 +50,36 @@ enum PublicArtworkLoader {
 private final class RejectArtworkRedirects: NSObject, URLSessionTaskDelegate, @unchecked Sendable {
     func urlSession(_ session: URLSession, task: URLSessionTask, willPerformHTTPRedirection response: HTTPURLResponse, newRequest request: URLRequest, completionHandler: @escaping @Sendable (URLRequest?) -> Void) { completionHandler(nil) }
 }
+
+#if DEBUG
+import Combine
+@MainActor final class ArtworkLoadProbe: ObservableObject {
+    static let shared = ArtworkLoadProbe()
+    @Published var started = 0
+}
+#endif
+
+#if DEBUG && targetEnvironment(simulator)
+enum ArtworkCatalogQA {
+    static var selected: MaterialCard? {
+        guard let raw = ProcessInfo.processInfo.environment["BIBLE_QA_ARTWORK"], let data = Data(base64Encoded: raw) else { return nil }
+        return try? JSONDecoder().decode(MaterialCard.self, from: data)
+    }
+    static var shareURL: URL? {
+        guard let card = selected, let passage = card.passages.last,
+              let raw = ProcessInfo.processInfo.environment["BIBLE_QA_ARTWORK"] else { return nil }
+        var parts = URLComponents(string: "https://www.bible.com/bible/83/\(passage.book).\(passage.end.chapter).\(passage.end.verse).JCB")!
+        parts.queryItems = [URLQueryItem(name: "bible-compose-fixture", value: "1"), URLQueryItem(name: "bible-artwork-data", value: raw)]
+        return parts.url
+    }
+    static func projected(_ input: Any?, encodedCard: String? = nil) -> [[String: Any]] {
+        guard let input, let data = try? JSONSerialization.data(withJSONObject: input),
+              let passage = try? JSONDecoder().decode(Passage.self, from: data) else { return [] }
+        let selectedCard = encodedCard.flatMap { Data(base64Encoded: $0) }.flatMap { try? JSONDecoder().decode(MaterialCard.self, from: $0) } ?? selected
+        let cards = selectedCard.map { [$0] } ?? []
+        let visible = ReadingContentProjection.materials(cards, kind: "artwork", passage: passage)
+        guard let encoded = try? JSONEncoder().encode(visible) else { return [] }
+        return (try? JSONSerialization.jsonObject(with: encoded)) as? [[String: Any]] ?? []
+    }
+}
+#endif

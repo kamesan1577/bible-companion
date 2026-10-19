@@ -10,8 +10,8 @@ struct MaterialCardView: View {
         BibleReadingSurface {
             VStack(alignment: .leading, spacing: BibleTheme.Space.lg) {
                 BibleSectionHeader(title: card.title, subtitle: card.relationship == "direct" ? "本文に直接関係する資料" : "関連する背景資料")
-                if let url = card.publicDomainImageURL { PublicArtworkImage(url: url, title: card.title) }
-                if card.mapLocation(reading: reading) != nil { NavigationLink("地図で概略位置を確認") { PlaceMapView(cardID: card.id, reading: reading) } }
+                if let url = card.publicDomainImageURL { PublicArtworkImage(url: url, title: card.title, id: card.id) }
+                if card.mapLocation(reading: reading) != nil { NavigationLink("地図で概略位置を確認") { PlaceMapView(card: card, reading: reading) } }
                 Text(card.summary).bibleTextStyle(.body).textSelection(.enabled)
                 if let note = card.details["identityNote"].string { Text(note).bibleTextStyle(.caption).bibleForeground(.textSecondary) }
                 if let name = card.details["modernName"].string { Text("現在の地名: \(name)").bibleTextStyle(.caption) }
@@ -41,11 +41,12 @@ struct MaterialCardView: View {
 private struct PublicArtworkImage: View {
     let url: URL
     let title: String
+    let id: String
     @State private var image: UIImage?
     @State private var failed = false
     var body: some View {
         Group {
-            if let image { Image(uiImage: image).resizable().scaledToFit().accessibilityLabel(title) }
+            if let image { Image(uiImage: image).resizable().scaledToFit().accessibilityLabel(title).accessibilityIdentifier("artwork-image-" + (Bundle.main.bundleURL.pathExtension == "appex" ? "share-" : "main-") + id) }
             else if failed { Label("作品画像を表示できません。下の「出典と権利」から作品を確認できます。", systemImage: BibleTheme.Symbol.art).bibleTextStyle(.caption) }
             else { ProgressView("作品画像を読み込んでいます") }
         }

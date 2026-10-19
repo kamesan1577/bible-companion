@@ -208,5 +208,5 @@ export function validateGeneralAnswer(raw: string, sources: readonly GroundingSo
   if (text) assertReferencesWithinBoundary(text, passage, spoilerAllowed);
   const validated = validateGeneratedAnswer(JSON.stringify({status: object.claims.length ? object.status : (text ? 'insufficient' : object.status), claims: object.claims}), sources, passage, spoilerAllowed);
   if (!text) return validated;
-  return {...validated, status:'answered', answer:[validated.claims.length ? validated.answer : '', '一般的な説明（出典未確認）\n'+text].filter(Boolean).join('\n\n')};
+  return {...validated, status:'answered', answer:text};
 }

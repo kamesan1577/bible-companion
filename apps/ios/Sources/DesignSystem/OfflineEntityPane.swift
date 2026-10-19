@@ -1,5 +1,6 @@
 import SwiftUI
 import MapKit
+import os
 import CompanionCore
 
 /// Supplements the reviewed material cards; it does not replace their cards or maps.
@@ -9,22 +10,41 @@ struct OfflineEntityPane: View {
     var ask: ((String) -> Void)? = nil
     var coveredMaterialCardIDs: [String] = []
     var inlineDetails = false
-    @State private var result: EntityIndexResult?
-    @State private var includeFuture = false
+    var usesPreparedResult = false
+    var preparedResult: EntityIndexResult? = nil
+    var preparedFailure: String? = nil
+    var futureSelection: Binding<Bool>? = nil
+    @State private var loadedResult: EntityIndexResult?
+    private var result: EntityIndexResult? { usesPreparedResult ? preparedResult : loadedResult }
+    private var visibleMessage: String? { usesPreparedResult ? preparedFailure : message }
+    @State private var localFuture = false
+    private var includeFuture: Bool { futureSelection?.wrappedValue ?? localFuture }
+    private var futureBinding: Binding<Bool> { futureSelection ?? Binding(get: { localFuture }, set: { localFuture = $0 }) }
     @State private var message: String?
+    @State private var selectedMapID: String?
+    private func toggleMap(_ id: String) {
+        selectedMapID = selectedMapID == id ? nil : id
+#if DEBUG
+        Logger(subsystem: "org.example.BibleCompanion", category: "ShareMap").notice("Map selection changed: \(id, privacy: .public)")
+#endif
+    }
+    private var hasPartialEntityCoverage: Bool { ["1CH", "2CH", "EZR", "NEH"].contains(passage.book) }
     private var additions: [IndexedOccurrence] {
-        result?.occurrences.filter { item in
-            Set(item.profile?.profile.materialCardIDs ?? []).isDisjoint(with: coveredMaterialCardIDs)
-        } ?? []
+        ReadingContentProjection.additions(result, covered: coveredMaterialCardIDs)
     }
     var body: some View {
         VStack(alignment: .leading, spacing: BibleTheme.Space.section) {
+            if let message = visibleMessage, result != nil { Text(message).bibleTextStyle(.caption) }
             if let result {
+                if hasPartialEntityCoverage {
+                    Text(["EZR", "NEH"].contains(passage.book) ? "この書の人物・地名は、原文と照合したものから順に収録を進めています。説明が出ない名前も、未収録の場合があります。" : "この書の人物・地名は、一部を原文と照合して収録しています。説明が出ない名前も、未収録の場合があります。")
+                        .bibleTextStyle(.caption).bibleForeground(.textSecondary)
+                }
                 if !additions.isEmpty {
                     BibleSectionHeader(title: coveredMaterialCardIDs.isEmpty ? (kind == "person" ? "この箇所に関係する人物・名前" : "この箇所に関係する場所") : (kind == "person" ? "ほかの人物・関連する名前" : "ほかの場所"))
                 }
                 if additions.isEmpty && coveredMaterialCardIDs.isEmpty {
-                    Text(kind == "person" ? "この箇所に対応する人物の説明はありません。名前のない人物に、推測で名前を付けてはいません。" : "この箇所に対応する地名の説明はありません。同定できない場所には地図の印を置いていません。").bibleTextStyle(.body)
+                    Text(hasPartialEntityCoverage ? "この箇所の説明は、まだ収録していません。人物や地名が登場しないという意味ではありません。" : kind == "person" ? "この箇所に対応する人物の説明はありません。名前のない人物に、推測で名前を付けてはいません。" : "この箇所に対応する地名の説明はありません。同定できない場所には地図の印を置いていません。").bibleTextStyle(.body)
                 }
                 ForEach(additions) { item in
                     BibleReadingSurface {
@@ -34,7 +54,10 @@ struct OfflineEntityPane: View {
                                 if inlineDetails {
                                     EntityProfileContent(resolved: profile).accessibilityIdentifier("entity-inline-detail-" + item.id)
                                     if profile.profile.coordinate?.count == 2 {
-                                        EntityProfileInlineMap(resolved: profile)
+                                        Button(selectedMapID == item.id ? "地図を閉じる" : "地図で概略位置を確認") { toggleMap(item.id) }
+                                            .buttonStyle(.bordered).frame(minHeight: BibleTheme.Layout.minimumTouchTarget)
+                                        .accessibilityIdentifier("share-place-map-" + item.id)
+                                        if selectedMapID == item.id { EntityProfileInlineMap(resolved: profile) }
                                     }
                                 } else {
                                 Text(profile.profile.summaryJa).bibleTextStyle(.body)
@@ -48,15 +71,18 @@ struct OfflineEntityPane: View {
                             } else {
                                 Text("この人物・場所の日本語の説明は、まだ収録していません。").bibleTextStyle(.body)
                                 if let point = item.entity.coordinate, point.count == 2 {
-                                    NavigationLink("現代の地図で候補地を見る") { UnreviewedIndexedPlaceMap(entity: item.entity, note: item.profile?.profile.locationNoteJa) }
+                                    NavigationLink("現代の地図で候補地を見る") { UnreviewedIndexedPlaceMap(entity: item.entity, note: item.candidateMapNote ?? item.profile?.profile.locationNoteJa) }
                                 }
                             }
                             if item.profile != nil, item.profile?.profile.coordinate == nil,
                                let point = item.entity.coordinate, point.count == 2 {
                                 if inlineDetails {
-                                    UnreviewedIndexedPlaceMap(entity: item.entity, inline: true, note: item.profile?.profile.locationNoteJa)
+                                    Button(selectedMapID == item.id ? "地図を閉じる" : "従来資料の候補位置を地図で見る") { toggleMap(item.id) }
+                                        .buttonStyle(.bordered).frame(minHeight: BibleTheme.Layout.minimumTouchTarget)
+                                        .accessibilityIdentifier("share-place-map-" + item.id)
+                                    if selectedMapID == item.id { UnreviewedIndexedPlaceMap(entity: item.entity, inline: true, note: item.candidateMapNote ?? item.profile?.profile.locationNoteJa) }
                                 } else {
-                                    NavigationLink("従来資料の候補位置を地図で見る") { UnreviewedIndexedPlaceMap(entity: item.entity, note: item.profile?.profile.locationNoteJa) }
+                                    NavigationLink("従来資料の候補位置を地図で見る") { UnreviewedIndexedPlaceMap(entity: item.entity, note: item.candidateMapNote ?? item.profile?.profile.locationNoteJa) }
                                         .accessibilityIdentifier("entity-candidate-map-" + item.id)
                                 }
                             }
@@ -71,17 +97,25 @@ struct OfflineEntityPane: View {
                         }
                     }
                 }
-                Toggle("先の登場箇所も見る", isOn: $includeFuture)
+                Toggle("先の登場箇所も見る", isOn: futureBinding)
                 Text(includeFuture ? "この書の先の登場箇所と補足説明も表示しています。" : "選んだ箇所までの情報を表示しています。").bibleTextStyle(.caption).bibleForeground(.textSecondary)
                 DisclosureGroup("一覧の出典と利用条件") {
-                    Text(passage.book == "ACT" ? "使徒言行録はWEB本文と照合した人物・場所の対応を表示します。名前の明記と、文脈上の指示を区別しています。" : "KJVの節番号をもとにした人物・場所の参考一覧です。関連候補と本文に名前がある場合を区別しています。").bibleTextStyle(.caption)
+                    Text(["ACT", "ROM", "LEV", "NUM", "JOS", "JDG", "RUT", "1SA", "2SA", "1KI", "2KI", "1CH", "2CH", "EZR", "NEH"].contains(passage.book) ? "WEB本文と照合した人物・場所の対応を表示します。名前の明記と、文脈上の指示を区別しています。" : "KJVの節番号をもとにした人物・場所の参考一覧です。関連候補と本文に名前がある場合を区別しています。").bibleTextStyle(.caption)
                     Text(result.attribution).bibleTextStyle(.caption)
                     if let url = result.sourceURL { Link("Theographic Bible Metadata · CC BY-SA 4.0", destination: url) }
                 }
-            } else if let message { Text(message).bibleTextStyle(.body) }
+            } else if let message = visibleMessage { Text(message).bibleTextStyle(.body) }
             else { ProgressView("人物・場所の情報を準備しています") }
-        }.task(id: passage.label + kind + String(includeFuture)) {
-            do { result = try await BundledEntityIndex.shared.lookup(passage, kind: kind, includeFuture: includeFuture) }
+        }
+        // Share extensions have a smaller memory budget than the containing app.
+        // Mount one interactive MapKit map only after an explicit selection, never a map per card.
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didReceiveMemoryWarningNotification)) { _ in
+            if selectedMapID != nil { selectedMapID = nil; message = "端末の空きメモリが少ないため地図を閉じました。場所の説明は引き続き読めます。" }
+        }
+        .task(id: passage.label + kind + String(includeFuture)) {
+            guard !usesPreparedResult else { return }
+            loadedResult = nil; message = nil
+            do { loadedResult = try await BundledEntityIndex.shared.lookup(passage, kind: kind, includeFuture: includeFuture) }
             catch { message = "人物・場所の情報を表示できませんでした。" }
         }
     }
@@ -135,8 +169,8 @@ struct EntityProfileMap: View {
                 Text("地図の背景には通信が必要な場合があります。現在地は取得していません。").bibleTextStyle(.caption).bibleForeground(.textSecondary)
                 BibleSectionHeader(title: "位置情報の出典と権利")
                 ForEach(resolved.sources) { source in
-                    if let url = source.safeURL { Link(source.title, destination: url) }
-                    Text(source.license + " · " + source.attribution).bibleTextStyle(.caption)
+                    if let url = source.safeURL { Link(source.readerTitle, destination: url) }
+                    Text(source.license + " · " + source.readerAttribution).bibleTextStyle(.caption)
                     if let url = URL(string: source.licenseURL), url.scheme == "https" { Link("利用条件", destination: url) }
                 }
             }
@@ -219,7 +253,8 @@ struct EntityProfileContent: View {
                 Text(resolved.profile.identityNoteJa).bibleTextStyle(.caption).bibleForeground(.textSecondary)
             }
             if let note = resolved.profile.locationNoteJa { Text(note).bibleTextStyle(.caption) }
-            if let wikipedia = resolved.profile.wikipedia, let url = wikipedia.safeURL {
+            ForEach(resolved.contextNotes, id: \.self) { note in Text(note).bibleTextStyle(.body) }
+            if let wikipedia = resolved.wikipedia, let url = wikipedia.safeURL {
                 Link(wikipedia.labelJa, destination: url).accessibilityIdentifier("wikipedia-" + resolved.profile.id)
                 Text(wikipedia.title).bibleTextStyle(.caption).bibleForeground(.textSecondary)
                 if !wikipedia.noteJa.isEmpty { Text(wikipedia.noteJa).bibleTextStyle(.caption).bibleForeground(.textSecondary) }
@@ -232,15 +267,27 @@ struct EntityProfileContent: View {
                     if !items.isEmpty {
                         Text(category == "primary-text" ? "聖書本文の出典" : category == "geographic-reference" ? "地理資料" : "補助資料").bibleTextStyle(.heading)
                         ForEach(items) { source in
-                            if let url = source.safeURL { Link(source.title, destination: url) }
-                            Text(source.license + " · " + source.attribution).bibleTextStyle(.caption)
+                            if let url = source.safeURL { Link(source.readerTitle, destination: url) }
+                            Text(source.license + " · " + source.readerAttribution).bibleTextStyle(.caption)
                             if let url = URL(string: source.licenseURL), url.scheme == "https" { Link("利用条件", destination: url) }
                         }
                     }
                 }
                 Text("出典の外部ページには、選んだ箇所より先の内容が含まれる場合があります。").bibleTextStyle(.caption)
-                Text("資料上の識別ID: " + resolved.profile.id).bibleTextStyle(.caption)
             }
         }
+    }
+}
+
+// Snapshot identifiers remain in the bundled provenance; readers see the
+// Bible edition, passage, attribution and license without internal build IDs.
+private extension EntityProfileSource {
+    var readerTitle: String { readerCitationText(title) }
+    var readerAttribution: String { readerCitationText(attribution) }
+    func readerCitationText(_ value: String) -> String {
+        guard url.hasPrefix("https://ebible.org/engwebp/") else { return value }
+        return value.replacingOccurrences(
+            of: #"[,;]?\s*fixed witness\s+webp-usfx-[A-Za-z0-9-]+"#,
+            with: "", options: .regularExpression)
     }
 }

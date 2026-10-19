@@ -1,0 +1,81 @@
+{
+  "recordType": "author repair delta; independent reclosure required",
+  "batch": "batch07/persons_3",
+  "entityID": "person:shobal_2719",
+  "checkedAtUTC": "2026-10-16T12:08:43Z",
+  "reasonJa": "初出1CH 1:38のreader identityNoteに後出1CH 2:50のユダ系同名者を先取りしていたため、常時表示の比較文だけを削除。1:38のセイル系人物の導入は維持し、2:50を新factとして追加しない。",
+  "before": {
+    "draftSHA256": "dec6f7db50c2c19bcc959ff1a338c34ade8473cbcb446fcc96e646c323b47cfb",
+    "profileSHA256": "327b2eacb7a99990cfd3b7747cd352af7f60162f57ccf75131d99264f88f80d0",
+    "evidenceSHA256": "64a965e4e04d1d3388d9db8ddf8186fff162be9dcee4816037e837b423c042f4",
+    "identityNoteJa": "同じ書にはユダ系の別のショバルもいます。ここではセイル系のホリ人です。"
+  },
+  "after": {
+    "draftSHA256": "8f191f6f61be2916e4bbbeccffd1c9ae5ce9cba245500204540727038c39d77a",
+    "profileSHA256": "7091e3eacd0812a5f8956346d11bfc5bde0f1be72671ba1044344a00ccb1805a",
+    "evidenceSHA256": "16f2093776d38d7c525e71036b9d08a482335df5368b8c47ada2698d18d22743",
+    "identityNoteJa": ""
+  },
+  "preservedBeforeObjects": [
+    {
+      "kind": "draft",
+      "sha256": "dec6f7db50c2c19bcc959ff1a338c34ade8473cbcb446fcc96e646c323b47cfb",
+      "path": "preservation/objects/dec6f7db50c2c19bcc959ff1a338c34ade8473cbcb446fcc96e646c323b47cfb",
+      "byteLength": 5502
+    },
+    {
+      "kind": "evidence",
+      "sha256": "64a965e4e04d1d3388d9db8ddf8186fff162be9dcee4816037e837b423c042f4",
+      "path": "preservation/objects/64a965e4e04d1d3388d9db8ddf8186fff162be9dcee4816037e837b423c042f4",
+      "byteLength": 3250
+    },
+    {
+      "kind": "profile",
+      "sha256": "327b2eacb7a99990cfd3b7747cd352af7f60162f57ccf75131d99264f88f80d0",
+      "path": "preservation/objects/327b2eacb7a99990cfd3b7747cd352af7f60162f57ccf75131d99264f88f80d0",
+      "byteLength": 1917
+    },
+    {
+      "kind": "manifest",
+      "sha256": "56954a6ac159bb33acecd4393ad4b5a3072712c318d61df36a6118a8f30c6e9a",
+      "path": "preservation/objects/56954a6ac159bb33acecd4393ad4b5a3072712c318d61df36a6118a8f30c6e9a",
+      "byteLength": 42215
+    }
+  ],
+  "changedFields": [
+    "profile.identityNoteJa",
+    "evidence.draftSHA256",
+    "evidence.profileSHA256"
+  ],
+  "unchangedFields": [
+    "knownBy",
+    "passages",
+    "facts",
+    "sources",
+    "profile.sourceIds",
+    "profile.wikipedia",
+    "review fields other than existing source-bound evidence bindings"
+  ],
+  "fixedPrimary": [
+    {
+      "ref": "1CH 1:38",
+      "text": "The sons of Seir: Lotan, Shobal, Zibeon, Anah, Dishon, Ezer, and Dishan.",
+      "url": "https://ebible.org/engwebp/1CH01.htm#V38",
+      "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "role": "profile first use; no Judah-associated Shobal comparison here"
+    },
+    {
+      "ref": "1CH 2:50",
+      "text": "These were the sons of Caleb, the son of Hur, the firstborn of Ephrathah: Shobal the father of Kiriath Jearim,",
+      "url": "https://ebible.org/engwebp/1CH02.htm#V50",
+      "witnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+      "role": "later separate Shobal in Caleb/Ephrathah genealogy; no new fact added"
+    }
+  ],
+  "priorIndependentAdjudication": {
+    "path": "reviews/independent-source-gate-shobal-2719-adjudication.json",
+    "sha256": "8078d3d3210ad081797ebcc2286106adf78b73f37ffb9ae00b87c43ce18b743d",
+    "decision": "reader-field source-boundary issue; future same-name comparison not supported at 1:38"
+  },
+  "authorDidNotClaimIndependentPass": true
+}

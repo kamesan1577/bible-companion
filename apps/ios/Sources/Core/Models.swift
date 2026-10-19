@@ -100,7 +100,7 @@ public struct MaterialCard: Codable, Identifiable, Sendable {
     }
     public var publicDomainImageURL: URL? {
         guard details["media"]["rights"].string == "public-domain", let raw = details["media"]["url"].string,
-              let value = URL(string: raw), value.scheme == "https", value.user == nil, value.password == nil else { return nil }
+              let value = URL(string: raw), PublicArtworkURLPolicy.allows(value) else { return nil }
         return value
     }
 }

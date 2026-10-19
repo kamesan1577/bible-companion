@@ -1,0 +1,157 @@
+{
+  "reviewType": "independent-final-integration-delta-closure",
+  "reviewedAtUTC": "2026-10-15T20:35:40Z",
+  "readOnly": true,
+  "scope": "前回レビューで指摘したROM/LEV最終差分の再closure。自作LEV Godを対象外とし、コード/草稿/resource/testは変更していない。",
+  "supersedes": "reviews/final-integration-delta-independent.json",
+  "inputs": {
+    "files": [
+      {
+        "path": "candidate/apps/ios/Sources/Core/EntityProfiles.swift",
+        "sha256": "3a2d72cf63dc880bfd4f94be7f4aaf1cfe57212c8f4d32497c29b93c455d3a9d"
+      },
+      {
+        "path": "candidate/apps/ios/Sources/Core/BundledEntityIndex.swift",
+        "sha256": "4e4e0c103da31cbe90dab21e7a361aed2f3630ebc207f7c58ddd90a095ce051b"
+      },
+      {
+        "path": "staged-catalog-ROM.json",
+        "sha256": "0828be66ab5ff9d7fc2d494a1bd7bfe0b2babb0416d00c897bc0db1a792a790e"
+      },
+      {
+        "path": "staged-catalog-LEV.json",
+        "sha256": "5478bc61e5868f0df99445ebd0a6d3e2d8f0fbe54d854fcc28a3a82b18d1cace"
+      },
+      {
+        "path": "candidate/apps/ios/Sources/Core/Resources/entity-profiles-ROM.json",
+        "sha256": "62a9a4891d211cce56298ab21e7ad0d41c0dd15a7b5cff8827d6b423a9752f1d"
+      },
+      {
+        "path": "candidate/apps/ios/Sources/Core/Resources/entity-profiles-LEV.json",
+        "sha256": "09cbb9014339425b17aa71bad63fe33f7dde32516aa57c2eeb72a1ba03acf4c5"
+      },
+      {
+        "path": "candidate/apps/ios/Sources/Core/Resources/rom-map-policy.json",
+        "sha256": "44cd0ff0e1e25c8e91f09fd3c9de6d579611c8ea0708d27a3ead349e21d30091"
+      },
+      {
+        "path": "candidate/apps/ios/Sources/Core/Resources/lev-map-policy.json",
+        "sha256": "07d12058f3e983e3eb425b2408098f8477f834177b316d59b1d145c74e4ffe8a"
+      },
+      {
+        "path": "candidate/apps/ios/Sources/Core/Resources/entity-index.json",
+        "sha256": "dfe6fba1109f192548e28645cf085ddafe3baf7820d200e2e28da486dd98f11a"
+      },
+      {
+        "path": "candidate/apps/ios/Tests/RomLeviticusEntityTests.swift",
+        "sha256": "4dad9e5dda32a605271db9bdd1a71d91e201d3fdc55c6bb104249426a476e7b7"
+      },
+      {
+        "path": "candidate/apps/ios/Sources/DesignSystem/OfflineEntityPane.swift",
+        "sha256": "6f54e2c5fa2804ef5b5b35ce034442d9698679a5502dca7b12a23e1537e4e0b7"
+      },
+      {
+        "path": "inventory/targets/rom-web-verses.json",
+        "sha256": "44ec6ff9d2d29957f88db70c55210e171d3422dbc8e005545d309d665db818ed"
+      },
+      {
+        "path": "inventory/targets/lev-web-verses.json",
+        "sha256": "9dd76938bc6189ac1c3048978a7f6a01dc45f251a40757ff93f1f15e5b034190"
+      },
+      {
+        "path": "reviews/rom-doxology-alignment.json",
+        "sha256": "f430b79813cb9bf27af52947c96b4b453fce5d550f5d3d53b1ef17032a9660e4"
+      },
+      {
+        "path": "reviews/map-policy-independent-closure.json",
+        "sha256": "b225dc699fa1fb8649a2459570c9e93d82cf9e6411303a1055a44ca212ca1c89"
+      },
+      {
+        "path": "reviews/judea-map-candidate-review.json",
+        "sha256": "1431caba372e7c7f2dad0b19fd349bfb14f24834920b9784c061f3445a682b6f"
+      },
+      {
+        "path": "reviews/final-integration-delta-independent.json",
+        "sha256": "03c34397155e64e30a912579430a853fb525f93abe248a9553c754f4ce3203a7"
+      },
+      {
+        "path": "core-final-test-7.log",
+        "sha256": "92d5ff80700964f0755824c0636d1039920647526f62e02c5e12d7c628e74562"
+      }
+    ]
+  },
+  "summary": {
+    "status": "pass",
+    "previousBlockingFindings": 4,
+    "closed": 4,
+    "unresolved": 0,
+    "publicationBlockerFromReviewedDelta": false,
+    "scopeLimitJa": "このclosureは前回レビューで列挙したintegration deltaだけを再確認したもの。catalog independentReview/expertReviewの全体状態やSimulator UIの最終確認を代替しない。"
+  },
+  "closures": [
+    {
+      "id": "LEV-Israel-first-appearance-notes",
+      "status": "closed",
+      "currentSHA256": "5478bc61e5868f0df99445ebd0a6d3e2d8f0fbe54d854fcc28a3a82b18d1cace",
+      "runtimeResourceSHA256": "09cbb9014339425b17aa71bad63fe33f7dde32516aa57c2eeb72a1ba03acf4c5",
+      "beforeSHA256": "9bb08137a283ef52efbe108f00a0708ad2384fc7c8108ceff1227b5041b636d1",
+      "evidenceJa": "現在のknownBy1:2 identityNoteJaはレビ記1:2で言える「イスラエルの子ら」と集団名だけを説明。基礎Wikipedia noteJaも古代イスラエル人集団・レビ記の呼称・現代国家との区別に限られ、Jacob/26:42を含まない。独立確認した固定WEB LEV1:2は“Speak to the children of Israel...”であり、Jacobは26:42にのみ個人context variantとして残る。staged catalogとbundled resourceのparsed JSONは一致。rootSourceCorrection rationale is recorded in integrate.py."
+    },
+    {
+      "id": "same-book-references-follow-context",
+      "status": "closed",
+      "currentSHA256": "4e4e0c103da31cbe90dab21e7a361aed2f3630ebc207f7c58ddd90a095ce051b",
+      "beforeSHA256": "207cae17cd1b481096e85e644c9fc5ea5a7074ce1e9486880dd0a6777f8be7e7",
+      "evidenceJa": "BundledEntityIndex.lookup now requires the resolved.profile.passages to cover each linked verse before adding sameBookVerses. The current test explicitly asserts empty sameBookVerses for ROM9:13 Jacob and LEV26:42 Jacob, and preserves distinct-context behavior in mixed and individual-only ranges. Fixed WEB anchors ROM9:13 (“Jacob I loved...”) and LEV26:42 (“my covenant with Jacob...”) support the separate individual variants; no collective reference remains in those individual cards."
+    },
+    {
+      "id": "Achaia-Egypt-reader-map-notes",
+      "status": "closed",
+      "currentCatalogHashes": {
+        "ROM": "0828be66ab5ff9d7fc2d494a1bd7bfe0b2babb0416d00c897bc0db1a792a790e",
+        "LEV": "5478bc61e5868f0df99445ebd0a6d3e2d8f0fbe54d854fcc28a3a82b18d1cace"
+      },
+      "mapPolicyHashes": {
+        "ROM": "44cd0ff0e1e25c8e91f09fd3c9de6d579611c8ea0708d27a3ead349e21d30091",
+        "LEV": "07d12058f3e983e3eb425b2408098f8477f834177b316d59b1d145c74e4ffe8a"
+      },
+      "evidenceJa": "Achaia and Egypt locationNoteJa/displayNoteJa now state that the point is a broad-region approximate candidate and does not define boundaries, a modern administrative region, city, or event point. The reader-facing copy is synchronized in profile and map-policy values; it no longer tells the editor what to label."
+    },
+    {
+      "id": "Illyricum-Sodom-policy-state",
+      "status": "closed",
+      "mapPolicyHashes": {
+        "ROM": "44cd0ff0e1e25c8e91f09fd3c9de6d579611c8ea0708d27a3ead349e21d30091"
+      },
+      "evidenceJa": "Illyricum and Sodom remain retained as uncertain legacy candidates with allowCandidateMap=true, but verificationState now says unverified-legacy-candidate; retained as approximate reference; no independent coordinate promotion. This matches both the existing upstream points and display notes that deny precise location/identification."
+    }
+  ],
+  "regressionChecks": [
+    {
+      "id": "catalog-resource-parity",
+      "status": "pass",
+      "evidenceJa": "ROM and LEV staged catalog JSON each parse identically to the respective bundled runtime entity-profiles resource."
+    },
+    {
+      "id": "map-policy-count-and-Judea",
+      "status": "pass",
+      "evidenceJa": "ROM retains 11 and LEV retains 3 allowCandidateMap entries (14 total); 4 semantic mismatches stay suppressed. Judea is allowFrom ROM15:31, category region, retains coordinate=null, and display note explicitly says the legacy reference is near Jerusalem and does not establish the region center, boundary, or event position. The previously conflicting independent recommendations remain resolved by the current reader-visible uncertainty/candidate label and map-sheet candidate disclaimers; it is not promoted to a verified point."
+    },
+    {
+      "id": "doxology-alignment-and-source-gates",
+      "status": "pass",
+      "evidenceJa": "The earlier closure remains unchanged: the WEB raw source stays ROM14:24–26 while canonical citation gates are ROM16:25–27, as documented in the publisher-explicit correspondence review. Raw source URLs have not been substituted."
+    }
+  ],
+  "testEvidence": {
+    "path": "core-final-test-7.log",
+    "sha256": "92d5ff80700964f0755824c0636d1039920647526f62e02c5e12d7c628e74562",
+    "result": "188 tests passed, 0 failures; RomLeviticusEntityTests: 8 passed, 0 failures",
+    "newAssertions": [
+      "LEV Israel early identityNote/Wikipedia note contain no Jacob",
+      "Jacob-only ROM9:13 and LEV26:42 have no collective sameBookVerses",
+      "mixed ranges continue to show the collective profile with Jacob context note"
+    ]
+  },
+  "remainingBlockers": []
+}

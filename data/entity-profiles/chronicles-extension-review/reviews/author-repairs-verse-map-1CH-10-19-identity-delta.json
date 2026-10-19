@@ -1,0 +1,41 @@
+{
+  "task": "follow-up correction to 1CH 10–19 map author repair",
+  "createdAtUTC": "2026-10-16T06:25:00.481059+00:00",
+  "mapPath": "reviews/verse-map-1CH-10-19.json",
+  "beforeSHA256": "4e2fa2a7ef0c8a0c940af178a8fa5f0e3faec84b3319cec33435f702a19445b4",
+  "preservedObjectPath": "preservation/objects/4e2fa2a7ef0c8a0c940af178a8fa5f0e3faec84b3319cec33435f702a19445b4",
+  "afterSHA256": "1c4b6fc29ae68f1f4052963152356f5f05fe06ccf317627acf6e8de5206bf05d",
+  "baseRepairLogPath": "reviews/author-repairs-verse-map-1CH-10-19-independent.json",
+  "changes": [
+    {
+      "findingID": "F12-index-correction",
+      "coordinates": [
+        "12:35"
+      ],
+      "action": "person:dan_969 exclusion→person:dan_973 exclusion",
+      "reasonJa": "1CH target index has person:dan_973 as the existing patriarch ID; dan_969 is not a known target. Danites remains unresolved as a collective."
+    },
+    {
+      "findingID": "F24-name-variant",
+      "coordinates": [
+        "15:24"
+      ],
+      "action": "Jehoshaphat ID removed; Joshaphat unresolved with both plausible existing candidates recorded",
+      "reasonJa": "The WEB name is Joshaphat, not Jehoshaphat; no source establishes that either current same/similar-name candidate is this priest."
+    },
+    {
+      "findingID": "F24-list-identity",
+      "coordinates": [
+        "15:24",
+        "16:6"
+      ],
+      "action": "Benaiah at 15:24/16:6 and Zechariah at 15:24 moved from same-name profile IDs to unresolved mentions",
+      "reasonJa": "The fixed WEB names priests; it does not establish that they are identical to same-named musicians in 15:18–21/16:5."
+    }
+  ],
+  "notes": [
+    "No fixed source text, source URL, or source text hash changed.",
+    "Dan exclusion corrected to the actual existing patriarch ID person:dan_973.",
+    "Joshaphat is not silently normalized to Jehoshaphat. The priest names in 15:24/16:6 remain explicit unresolved mentions because identity with same-named music-list candidates is not established."
+  ]
+}

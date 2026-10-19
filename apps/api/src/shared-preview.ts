@@ -1,6 +1,7 @@
 import { Hono } from 'hono';
 import { z } from 'zod';
-import { parseImport } from '@bible/core';
+import { parseImport, passageSchema } from '@bible/core';
+import { publicReading } from './reading';
 import { createSourceOnlyAnswer } from '@bible/ai-harness';
 import { body, fail } from './http';
 import { getSources, sourcePolicyVersion } from './data';
@@ -33,4 +34,11 @@ sharedPreview.post('/reading-preview', async (c) => {
   }
   if (version !== await sourcePolicyVersion(c.env)) fail(409, 'source_policy_changed', '資料が更新されました。再試行してください。');
   return c.json({ items, notice: '確認済みの公開資料です。AIによる生成ではありません。', translation: parsed.translation ?? null });
+});
+
+// Reference metadata only. Original shared text, questions and credentials are not accepted.
+sharedPreview.post('/reading', async (c) => {
+  await rateLimit(c.env, 'public-reading:' + (c.req.header('CF-Connecting-IP') ?? 'local'), 60);
+  const input = await body(c, z.object({ passage: passageSchema, translation: z.string().min(1).max(30).nullable().optional() }).strict());
+  return publicReading(c, input.passage, input.translation ?? null, false);
 });

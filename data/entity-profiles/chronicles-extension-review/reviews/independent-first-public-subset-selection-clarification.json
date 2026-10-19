@@ -1,0 +1,93 @@
+{
+  "reportType": "independent-first-public-subset-selection-clarification",
+  "createdAtUTC": "2026-10-16T11:15:07Z",
+  "supersedes": "補足のみ。旧監査ファイルは変更しない。",
+  "inputSHA256": {
+    "reviews/independent-first-public-subset-selection-audit.json": "da7588459011d95073f5582f21914b8bb10e49df8cc0f03fb9e2ce1c86bfe056",
+    "reviews/root-current-independent-review-bindings.json": "5d8c95ccb1d23f54cbaca721892f119152f2d4af44005b34d4e2b979d4957908",
+    "reviews/root-current-map-independent-bindings.json": "78ab1980fcfa6511ce0be0ef60caf69ba3a52b49a8f129e3405e93461112e6e3",
+    "reviews/root-reviewed-occurrence-edge-preview.json": "ccf001a90f55aa8e2e331d9e4d3eb70374af74317da23c1dc7e9a3cac2ac7393",
+    "reviews/reclosure-shobal-persons3-batch07-delta.json": "c7a3f83243f497d884f554a23a80b0522e17bfda6bde5d61d9aa8413e4d0d57f",
+    "reviews/context-edits/1CH/canonical-alias-runtime-profiles.json": "98c262a7d4fe3134b92e5dc311eb43a73986126223b156d398de018feb701304",
+    "candidate/apps/ios/Sources/Core/Resources/entity-profiles-1CH.json": "500626f06222c2d7b2c20decec1b4970fd58a279a48a89c83eb9adda052422b7",
+    "candidate/apps/ios/Sources/Core/Resources/entity-profiles-2CH.json": "4547a56d1778042ef35bb1d081d10921eedf2e49c9abcff8d34591c8117ee931"
+  },
+  "approvalBoundary": {
+    "publicationApprovedFalse": "レビューおよびselector監査自体が本番公開の承認を付与しないことを示すメタデータ境界。",
+    "completenessFalse": "全聖書・全節・全プロフィールの完全性をこの部分subset監査が証明しないことを示す。",
+    "expertFalse": "専門家レビューを代行していないことを示す。",
+    "publicationImplication": "これらの値だけでは、既にユーザーが承認した範囲限定の部分公開を妨げる実内容blockerとは判定しない。",
+    "independentAuditAuthority": "この補足も選択・source binding・既存独立判定の追跡監査であり、公開自体を承認するものではない。"
+  },
+  "contentBlockerAssessment": {
+    "status": "no-content-blocker-found-in-audited-subset",
+    "actualContentBlockers": [],
+    "basisJa": "前回監査の現候補resource、選択edge、source/license/gate bindingsを再確認した範囲では、選択対象に具体的な誤同定・先取り・壊れたsource bindingは見つからなかった。これは全件意味再審査ではなく、参照したcurrent independent reportsに結び付く範囲の結論。",
+    "nonBlockingWarnings": [
+      {
+        "id": "stale-shobal-binding-row",
+        "detailJa": "旧independent binding一覧のShobal2719 SHAは古い。current deltaはfailからpassへ更新されているが、Shobalは候補subsetへ選択されていない。stale rowは記録上の警告であり、今回resourceへの混入や内容blockerではない。"
+      }
+    ]
+  },
+  "wikipediaRecount": {
+    "baseProfileWikipediaLinks": 765,
+    "nestedContextWikipediaLinks": 1,
+    "totalActiveWikipediaLinks": 766,
+    "secondaryReferenceSourceObjects": 766,
+    "allBaseLinkBindingsAndRightsPassed": true,
+    "allNestedLinkBindingsAndRightsPassed": true,
+    "nestedContextInspection": [
+      {
+        "book": "1CH",
+        "parentProfileID": "place:kiriath-jearim_701",
+        "contextProfileID": "place:kiriath-jearim_701",
+        "contextKnownBy": {
+          "chapter": 13,
+          "verse": 5
+        },
+        "wikiKnownBy": {
+          "chapter": 13,
+          "verse": 5
+        },
+        "wiki": {
+          "title": "Kiriath-Jearim",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Kiriath-Jearim",
+          "kind": "article",
+          "identityVerified": true,
+          "relationVerified": null,
+          "noteJa": "記事は古代町と複数の現代遺跡候補を紹介し、所在地の比定には幅があります。",
+          "sourceId": "canonical-alias-1CH-place-kiriath-jearim_701-wikipedia-kiriath-jearim_701"
+        },
+        "sourcePresent": true,
+        "source": {
+          "id": "canonical-alias-1CH-place-kiriath-jearim_701-wikipedia-kiriath-jearim_701",
+          "title": "Kiriath-Jearim — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Kiriath-Jearim",
+          "license": "CC BY-SA 4.0",
+          "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "attribution": "Wikipedia contributors; identity/geography reference only; no article text copied.",
+          "knownBy": {
+            "chapter": 13,
+            "verse": 5
+          },
+          "category": "secondary-reference"
+        },
+        "profileSourceBound": true,
+        "gateMatches": true,
+        "urlMatches": true,
+        "licenseAttributionComplete": true,
+        "findingJa": "nested contextのWikipedia参照は古代町の記事であり、記事本文は位置の候補幅を説明する。knownBy 1CH 13:5を越える物語情報を常時欄で先取りする内容ではない。"
+      }
+    ],
+    "allNestedContextsCount": 4
+  },
+  "selectionStatus": {
+    "shobal2719Selected": false,
+    "p3b7QualifiedSelectedCount": 0,
+    "elizaphan1189Selected": false,
+    "candidateAndSelectorFilesModified": false
+  },
+  "auditScopeNoteJa": "reader意味判断は既存current独立レポートから正確なSHAで継承し、新たな原典意味レビューを主張しない。部分subsetの候補・選択・source権利とnested source bindingを補足した。"
+}

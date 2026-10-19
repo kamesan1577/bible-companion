@@ -1,0 +1,107 @@
+{
+  "book": "2SA",
+  "entityID": "place:hamath_516",
+  "assignmentTargetKey": "2SA:place:hamath_516",
+  "draftFile": "drafts/places_1/2SA_hamath_516.json",
+  "draftSHA256": "df7d7c434e8bba0b1c17263a6abfa5d9bd4447ea07f3ee0e7ea0f21add38d58d",
+  "profileSHA256": "1daede110d4cfe916e84e7d402ac3b9be71659a32ec9b1408d9cb25f4c7fa969",
+  "pinnedWEB": {
+    "sourceId": "webp",
+    "version": "webp-usfx-2026-10-13-35a6adf626e5",
+    "file": "inventory/targets/samuel2-web-verses.json",
+    "fileSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2"
+  },
+  "candidateSource": {
+    "url": "https://github.com/robertrouse/theographic-bible-metadata/tree/52e049efb3b95e4f1da52d11a3303fbd2d648922",
+    "commit": "52e049efb3b95e4f1da52d11a3303fbd2d648922",
+    "license": "CC-BY-SA-4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": "Derived from Theographic Bible Metadata by Robert Rouse and contributors. Names and occurrence indexes only; prose removed, Japanese labels added, coordinates marked as candidates. Candidate coordinates are not independently verified."
+  },
+  "primaryContext": [
+    {
+      "chapter": 8,
+      "verse": 9,
+      "candidateText": "When Toi king of Hamath heard that David had struck all the army of Hadadezer,",
+      "fixedText": "When Toi king of Hamath heard that David had struck all the army of Hadadezer,",
+      "sourceTextSHA256": "accd4b762fe19996f05fc6b6c229db0265abc9459f7ea0a2ffc770254756fea5",
+      "context": [
+        {
+          "chapter": 7,
+          "verse": 29,
+          "text": "Now therefore, let it please you to bless the house of your servant, that it may continue forever before you; for you, Lord GOD, have spoken it. Let the house of your servant be blessed forever with your blessing.”",
+          "citationURL": "https://ebible.org/engwebp/2SA07.htm#V29",
+          "sourceTextSHA256": "9b5988eec7c36aba7156b94c3350deedc57f20c494699b35f6f8a6cb6a194cea"
+        },
+        {
+          "chapter": 8,
+          "verse": 9,
+          "text": "When Toi king of Hamath heard that David had struck all the army of Hadadezer,",
+          "citationURL": "https://ebible.org/engwebp/2SA08.htm#V9",
+          "sourceTextSHA256": "accd4b762fe19996f05fc6b6c229db0265abc9459f7ea0a2ffc770254756fea5"
+        },
+        {
+          "chapter": 9,
+          "verse": 1,
+          "text": "David said, “Is there yet any who is left of Saul’s house, that I may show him kindness for Jonathan’s sake?”",
+          "citationURL": "https://ebible.org/engwebp/2SA09.htm#V1",
+          "sourceTextSHA256": "fb565fc9ec1028daf23f05ca147ee1a3fe3da145e5c62ea0567098e598fcae45"
+        }
+      ]
+    }
+  ],
+  "occurrenceChecks": [
+    {
+      "chapter": 8,
+      "verse": 9,
+      "status": "direct",
+      "reasonJa": "固定WEB本文で場所名を名指す。"
+    }
+  ],
+  "wikipediaBodyRead": {
+    "url": "https://en.wikipedia.org/wiki/Hama",
+    "status": "verified-related-article-body",
+    "identityBasisJa": "The Bible section identifies Hamath as a kingdom capital and explicitly says its king congratulated David on defeating Hadadezer, citing 2 Samuel 8:9–11; modern Hama and ancient Hamath are presented in historical relation.",
+    "fragmentVerified": false,
+    "readArticle": true,
+    "checkedAtUTC": "2026-10-16T01:45:50Z",
+    "locator": "“Hamath in the Bible”, lines 317–322",
+    "relationVerified": true
+  },
+  "geography": {
+    "identityCheck": "8:9では「ハマトの王」がトイの称号。都市を王国全体と同一視しない。",
+    "uncertainty": "王国の範囲は現代国境と一致させません。",
+    "review": {
+      "category": "ancient-city-site",
+      "coordinatePublished": false,
+      "legacyCandidateStatus": "candidate-unverified",
+      "indexCandidateCoordinate": [
+        35.1359,
+        36.7495
+      ],
+      "indexCoordinateStatus": "source-verified-candidate",
+      "independentOfficialGeographyCheck": "未実施。プロフィール座標はnull。",
+      "reasonJa": "既存候補が古代ハマトの都市候補位置を示すなら参考位置として保持。王国の範囲や確定プロフィール座標として扱わない。"
+    }
+  },
+  "profileTextSHA256Method": "SHA-256 of ensure_ascii=False, indent=2, insertion-order JSON serialization of profile plus trailing newline.",
+  "metadataHistory": [
+    {
+      "atUTC": "2026-10-16T01:10:28Z",
+      "change": "Added pinned assignment/source candidate metadata and exact immediate-verse context blocks for every assigned occurrence; no claims/draft fields changed."
+    },
+    {
+      "field": "wikipediaNegativeSearch",
+      "value": {
+        "checkedAtUTC": "2026-10-16T01:08:03Z",
+        "queries": [
+          "Hamath ancient city Wikipedia Hama",
+          "Hamath king Toi 2 Samuel 8:9 Wikipedia"
+        ],
+        "excludedCandidates": []
+      },
+      "supersededAtUTC": "2026-10-16T01:44:59Z",
+      "reason": "An actual suitable article or section was subsequently read and linked."
+    }
+  ]
+}

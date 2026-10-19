@@ -1,0 +1,61 @@
+{
+  "reportType": "independent-current-delta-closure",
+  "book": "2SA",
+  "entityID": "place:gibeah_466",
+  "reviewedAtUTC": "2026-10-16T02:13:26Z",
+  "draftPath": "drafts/places_2/2SA_gibeah_466.json",
+  "currentDraftSHA256": "6832cd1ef11c63506ae5064516a46d4c45236372e17a34991e2e40f44926e4ce",
+  "currentProfileSHA256": "164e2b7b540e1c7c02c25387077f78003324dcb214b144213c8a2160ce44d971",
+  "currentEvidencePath": "evidence/places_2/2SA_gibeah_466.json",
+  "currentEvidenceSHA256": "58b198ee5764475b6ec9cc4e6cd4afd57ce2ef11de87d7b51d5db726cc2af852",
+  "evidenceBinding": {
+    "draftSHA256Matches": true,
+    "profileSHA256Matches": true,
+    "fixedWitnessSHA256Matches": true,
+    "fixedWitnessPath": "inventory/targets/samuel2-web-verses.json",
+    "fixedWitnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2"
+  },
+  "priorDeltaReport": "reviews/closure-gibeah466-current-delta.json",
+  "priorDeltaReportSHA256": "2443c79a8570f18908da63a1bda26329d0166c552890a46bab37c2a3c58fda55",
+  "priorAuthorRepairLog": "evidence/places_2/author-repairs-reader-field-audit.json",
+  "currentAuthorRepairLogSHA256": "7e21943f48c51302a37900e80d44794d39c199d6dee01b4ecbe6fa3e54489ee1",
+  "sourceVerses": {
+    "2SA 21:6": {
+      "text": "let seven men of his sons be delivered to us, and we will hang them up to the LORD in Gibeah of Saul, the chosen of the LORD.” The king said, “I will give them.”",
+      "url": "https://ebible.org/engwebp/2SA21.htm#V6"
+    },
+    "2SA 23:29": {
+      "text": "Heleb the son of Baanah the Netophathite, Ittai the son of Ribai of Gibeah of the children of Benjamin,",
+      "url": "https://ebible.org/engwebp/2SA23.htm#V29"
+    }
+  },
+  "verdict": "qualified",
+  "findings": [
+    {
+      "field": "profile.summaryJa",
+      "status": "closed",
+      "evidenceJa": "現行summaryは2SA21:6の「サウルのギベア」と処刑要求のみ。23:29の同名地を常時表示から除き、該当情報はknownBy 23:29のfactに移した。"
+    },
+    {
+      "field": "profile.wikipedia.noteJa",
+      "status": "closed",
+      "evidenceJa": "現行noteは記事がGibeah of Saulを主な対象とし現代同定の見解を紹介すると述べるのみで、23:29を先取りしない。実記事を再読: https://en.wikipedia.org/wiki/Gibeah, lead 138–140はGibeah of Benjamin/SaulとTell el-Ful一般比定を示し、Identification section 170–179はTell el-Ful候補と異論を示す。実読時刻2026-10-16T02:13:26Z."
+    },
+    {
+      "field": "profile.facts[knownBy 23:29]",
+      "status": "closed",
+      "evidenceJa": "factは23:29の「Gibeah of the children of Benjamin」と21:6の「Gibeah of Saul」を対照し、本文だけでは同地と確定できないと留保する。引用節の時点で初めて表示される。"
+    },
+    {
+      "field": "profile.modernLocationJa / locationNoteJa / map",
+      "status": "qualified",
+      "evidenceJa": "現代比定は断定せず、coordinate=null。Wikipediaは一般的なTell el-Ful同定を記す一方、現在異論も示すため候補点を未確認の参考位置として扱うのが適切。"
+    },
+    {
+      "field": "profile.subtitleJa / historicalRoleJa",
+      "status": "qualified",
+      "evidenceJa": "「サウルの名を冠する処刑場所として初出」は21:6に沿い未来情報もないが、「初出」は編集・索引語に近い。reader-facing表現の改善余地を残す。"
+    }
+  ],
+  "scopeJa": "以前のfailは今回の現行稿で閉じた。本文/出典の将来情報漏れは残らない。地理の比定留保と初出の読者向け表現のみqualified。独立座標の確認・専門家地理審査ではない。"
+}

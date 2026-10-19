@@ -1,0 +1,173 @@
+{
+  "book": "JOS",
+  "entityID": "person:reuben_2429",
+  "proposalType": "same-ID nested contextProfiles for existing EntityProfile app schema",
+  "proposalStatus": "author-proposed; root integration and independent review pending",
+  "baseProfilePath": "drafts/persons_1/JOS_reuben_2429.json",
+  "baseProfileSHA256": "edd1441e4fb46a8466bbf0a24992737398d3ba29b70921957a2303be41919f6d",
+  "mapSHA256": {
+    "reviews/verse-map-JOS-01-08.json": "ecb4620cb7d71b5fb450b3c2f410d03c3c0fc957dd97f4206e3b77fb25015786",
+    "reviews/verse-map-JOS-09-16.json": "12d3991003fbea8276e4799cc536f81021f0437c12c483093fdcb8b980dec7b6",
+    "reviews/verse-map-JOS-17-24.json": "f3458fd0c7a867fdec9a1cde977174014ea4e7d370d44b45cd76d4ceda108c6a"
+  },
+  "priorContextReviewSHA256": {},
+  "profile": {
+    "id": "person:reuben_2429",
+    "contextProfiles": [
+      {
+        "id": "person:reuben_2429",
+        "kind": "person",
+        "identityType": "unidentified-eponym",
+        "nameJa": "ルベン（ボハンの父）",
+        "subtitleJa": "ボハンの父として名が記されるが族祖との世代関係は不明",
+        "summaryJa": "ヨシュア記15:6はユダの境界標として「ルベンの子ボハンの石」を挙げます。父をルベンと呼びますが、族祖と同一か、世代がどれほど隔たるかは本文から分かりません。",
+        "identityNoteJa": "ヨシュア記15:6は「ルベンの子ボハンの石」と記しますが、父ルベンの世代を示しません。",
+        "knownBy": {
+          "chapter": 15,
+          "verse": 6
+        },
+        "passages": [
+          {
+            "book": "JOS",
+            "start": {
+              "chapter": 15,
+              "verse": 6
+            },
+            "end": {
+              "chapter": 15,
+              "verse": 6
+            }
+          },
+          {
+            "book": "JOS",
+            "start": {
+              "chapter": 18,
+              "verse": 17
+            },
+            "end": {
+              "chapter": 18,
+              "verse": 17
+            }
+          }
+        ],
+        "sourceIds": [
+          "JOS-reuben-bohan-web-jos-15-6",
+          "JOS-reuben-bohan-web-jos-18-17",
+          "JOS-reuben-bohan-wikipedia"
+        ],
+        "facts": [
+          {
+            "textJa": "ヨシュア記18:17も、「ルベンの子ボハンの石」を境界の目印として挙げます。",
+            "knownBy": {
+              "chapter": 18,
+              "verse": 17
+            },
+            "sourceIds": [
+              "JOS-reuben-bohan-web-jos-18-17"
+            ]
+          }
+        ],
+        "modernLocationJa": null,
+        "historicalRoleJa": null,
+        "coordinate": null,
+        "locationNoteJa": null,
+        "wikipedia": {
+          "title": "Reuben (son of Jacob)",
+          "language": "en",
+          "url": "https://en.wikipedia.org/wiki/Reuben_(son_of_Jacob)#Biblical_references",
+          "kind": "related-section",
+          "noteJa": "記事の「Biblical references」節は、ヨシュア記15:6の「ルベンの子ボハンの石」に触れます。父ルベンと族祖ルベンの同一性や世代関係は本文から定まりません。",
+          "checkedAt": "2026-10-15",
+          "identityVerified": false,
+          "relationVerified": true,
+          "knownBy": {
+            "chapter": 15,
+            "verse": 6
+          }
+        },
+        "materialCardIDs": [],
+        "supplemental": false
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "JOS-reuben-bohan-web-jos-15-6",
+      "title": "World English Bible · JOS 15:6",
+      "url": "https://ebible.org/engwebp/JOS15.htm#V6",
+      "license": "Public domain",
+      "licenseURL": "https://ebible.org/web/copyright.htm",
+      "attribution": "World English Bible (WEB), public domain.",
+      "knownBy": {
+        "chapter": 15,
+        "verse": 6
+      },
+      "category": "primary-text"
+    },
+    {
+      "id": "JOS-reuben-bohan-web-jos-18-17",
+      "title": "World English Bible · JOS 18:17",
+      "url": "https://ebible.org/engwebp/JOS18.htm#V17",
+      "license": "Public domain",
+      "licenseURL": "https://ebible.org/web/copyright.htm",
+      "attribution": "World English Bible (WEB), public domain.",
+      "knownBy": {
+        "chapter": 18,
+        "verse": 17
+      },
+      "category": "primary-text"
+    },
+    {
+      "id": "JOS-reuben-bohan-wikipedia",
+      "title": "Wikipedia · Reuben (son of Jacob) (identity/relation check only)",
+      "url": "https://en.wikipedia.org/wiki/Reuben_(son_of_Jacob)#Biblical_references",
+      "license": "CC BY-SA 4.0",
+      "licenseURL": "https://en.wikipedia.org/wiki/Wikipedia:Copyrights",
+      "attribution": "Wikipedia contributors, CC BY-SA 4.0; identity checked, no article prose reproduced.",
+      "knownBy": {
+        "chapter": 15,
+        "verse": 6
+      },
+      "category": "secondary-reference"
+    }
+  ],
+  "evidence": {
+    "scope": "Primary-text context and same-ID usage split; no base draft edits.",
+    "rationaleJa": "JOS15:6・18:17は「ボハンの子ルベン」ではなく「ルベンの子ボハンの石」とする。父が族祖ルベン本人か後代の同名者かは本文が確定しないため、同じ安定IDにunidentified-eponym contextとして慎重に提案。集団baseのfactsへボハンを入れない。",
+    "primaryWitnesses": [
+      {
+        "ref": "JOS 15:6 (WEB)",
+        "url": "https://ebible.org/engwebp/JOS15.htm#V6",
+        "text": "The border went up to Beth Hoglah, and passed along by the north of Beth Arabah; and the border went up to the stone of Bohan the son of Reuben.",
+        "textSHA256": "d729d9da8dcbf2b79d03e86f7d579f85f3022d60a029e5ea9c2c42202cb9cf02",
+        "sourceVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "sourceId": "webp"
+      },
+      {
+        "ref": "JOS 18:17 (WEB)",
+        "url": "https://ebible.org/engwebp/JOS18.htm#V17",
+        "text": "It extended northward, went out at En Shemesh, and went out to Geliloth, which is opposite the ascent of Adummim. It went down to the stone of Bohan the son of Reuben.",
+        "textSHA256": "29aeb5cc0b24fe9c1c2ee06eebe8a229d587d55f53f4633fab33409824fe8d76",
+        "sourceVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+        "sourceId": "webp"
+      }
+    ],
+    "fixedWitnessPath": "inventory/targets/joshua-web-verses.json",
+    "fixedWitnessSHA256": "26ae82b805dee523bb852977ccf62ad38cc40ebe442b650cbd7862db833ea854",
+    "fixedWitnessVersion": "webp-usfx-2026-10-13-35a6adf626e5",
+    "primaryWitnessStatus": "Every listed WEB witness was read from the pinned local JSON; text hashes included per coordinate.",
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Reuben_(son_of_Jacob)#Biblical_references",
+        "title": "Reuben (son of Jacob)",
+        "language": "en",
+        "readArticle": true,
+        "checkedAt": "2026-10-15",
+        "observedJa": "記事の見出し・Biblical references節を読み、JOS15:6でボハンの石と「ルベンの子」を言及すると確認。記事が想定する族祖との同一性・世代関係を本文が保証しないのでidentityVerified:falseの関連節リンクに限定。"
+      }
+    ],
+    "notIncluded": [],
+    "sourceIDRules": "Each WEB source and profile fact is gated at its own cited knownBy; context-profile knownBy is the first occurrence of that specific usage."
+  },
+  "proposalSHA256": "a408ac405c82cb52151c6d6f38075e6978f93a887894a9cd84fde59f653acf9b"
+}

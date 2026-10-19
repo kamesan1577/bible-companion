@@ -1,0 +1,67 @@
+{
+  "books": [
+    "JDG",
+    "RUT"
+  ],
+  "assignmentKinds": [
+    "persons",
+    "places"
+  ],
+  "method": "Greedy load balancing by raw candidate occurrence count within each kind; assignment key is book,id, so same ID in JDG and RUT remains two separate records.",
+  "assignmentSummary": {
+    "persons_1": {
+      "records": 35,
+      "books": {
+        "JDG": 26,
+        "RUT": 9
+      },
+      "candidateOccurrenceCount": 294,
+      "uniqueBookIdKeys": true
+    },
+    "persons_2": {
+      "records": 40,
+      "books": {
+        "JDG": 34,
+        "RUT": 6
+      },
+      "candidateOccurrenceCount": 294,
+      "uniqueBookIdKeys": true
+    },
+    "persons_3": {
+      "records": 39,
+      "books": {
+        "JDG": 32,
+        "RUT": 7
+      },
+      "candidateOccurrenceCount": 293,
+      "uniqueBookIdKeys": true
+    },
+    "places_1": {
+      "records": 48,
+      "books": {
+        "JDG": 48
+      },
+      "candidateOccurrenceCount": 122,
+      "uniqueBookIdKeys": true
+    },
+    "places_2": {
+      "records": 48,
+      "books": {
+        "JDG": 48
+      },
+      "candidateOccurrenceCount": 122,
+      "uniqueBookIdKeys": true
+    },
+    "places_3": {
+      "records": 49,
+      "books": {
+        "JDG": 46,
+        "RUT": 3
+      },
+      "candidateOccurrenceCount": 122,
+      "uniqueBookIdKeys": true
+    }
+  },
+  "allTargetsAssignedExactlyOnce": true,
+  "reviewStatus": "initial assignment only; identity, text links, same-name, collective, title and occurrence semantics are unverified."
+}

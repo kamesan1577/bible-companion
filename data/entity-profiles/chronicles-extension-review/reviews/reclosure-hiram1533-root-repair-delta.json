@@ -1,0 +1,65 @@
+{
+  "reviewType": "independent-author-repair-delta-reclosure",
+  "scope": "2CH person:hiram_1533 only; independent exact-delta recheck after root repair; no draft/evidence edits",
+  "capturedAtUTC": "2026-10-16T11:33:25Z",
+  "inputs": {
+    "previousReclosurePath": "reviews/reclosure-batch08-persons_3-current.json",
+    "previousReclosureSHA256": "abf244117cea5c7a05f34581eb93762ef64df1f86f46ed3b7c2221830976cc73",
+    "authorCurrentManifestPath": "reviews/batch08-persons_3-author-current-after-hiram-root-repair.json",
+    "authorCurrentManifestSHA256": "d87d6bc212323ad18b84f93e971161a4a911f4f46446501c5c61c1d2602f5d9e",
+    "rootRepairLogPath": "evidence/persons_3/root-author-repair-hiram-source-binding.json",
+    "rootRepairLogSHA256": "117c42270162e7e124ceef853c54dad806852f94de921f256332d1ace5b65bfb",
+    "fixedWEBWitnessPath": "inventory/targets/chronicles2-web-verses.json",
+    "fixedWEBWitnessSHA256": "79d5561bdee6389c604a6465d4ac5d32078e463954ac52ebf8488d2adafe53e8"
+  },
+  "row": {
+    "book": "2CH",
+    "entityID": "person:hiram_1533",
+    "draftPath": "drafts/persons_3/2CH_hiram_1533.json",
+    "currentDraftSHA256": "db28f40f6bbf32d13fe32d2d16a7ba8a40cfb79add060e4e118f2617afb91d58",
+    "currentProfileSHA256": "bc24aabbeff7b19d2bbf7e065f1a933aaaab2c7c657ba2949c8249899b519c46",
+    "currentEvidencePath": "evidence/persons_3/2CH_hiram_1533.json",
+    "currentEvidenceSHA256": "60470cfb435b0b358e4cb5e16e66197dd038cb7b80e9c33f5a31ffcaa5b012b4",
+    "manifestMatchesCurrent": true,
+    "priorFinding": "The earlier row failed because the linked Wikipedia item was absent from profile.sourceIds and review.wikipediaCheck did not reflect the already-read linked section; the reader introduction also exposed bronze before its 4:16 occurrence.",
+    "primaryChecks": [
+      {
+        "coordinate": "2CH 4:11",
+        "citationURL": "https://ebible.org/engwebp/2CH04.htm#V11",
+        "fixedText": "Huram made the pots, the shovels, and the basins. So Huram finished doing the work that he did for King Solomon in God’s house:",
+        "finding": "Huram is named as the artisan who completed work for Solomon’s house. The current opening calls him a craftsman making temple utensils; it no longer says bronze."
+      },
+      {
+        "coordinate": "2CH 4:16",
+        "citationURL": "https://ebible.org/engwebp/2CH04.htm#V16",
+        "fixedText": "Huram-abi also made the pots, the shovels, the forks, and all its vessels for King Solomon, for the LORD’s house, of bright bronze.",
+        "finding": "Huram-abi and bronze are stated here, and the profile retains them only in the fact gated at 4:16."
+      }
+    ],
+    "readerFieldsAndGates": {
+      "decision": "qualified",
+      "runtimeDisposition": "related-link-supported",
+      "nameJa": "フラム",
+      "knownBy": {
+        "chapter": 4,
+        "verse": 11
+      },
+      "subtitleSummary": "The current subtitle and summary describe Huram as a craftsman making utensils for Solomon’s temple and finishing the work; these claims are supported by 4:11.",
+      "factGate": "The 4:16 fact is gated at 4:16 and supported by the cited WEB source.",
+      "wikipediaGate": "Wikipedia object and secondary-reference source record both use knownBy 4:11 and the same exact URL; profile.sourceIds includes that source ID. Draft review.wikipediaCheck records the existing author body-read evidence and the prior independent related-section assessment, preserving its original 2026-10-16T11:02:26Z timestamp rather than claiming a new author read.",
+      "identityAndRelation": "identityVerified=false and relationVerified=true are appropriate. The article section discusses the biblical artisan and the Chronicles form “Huram-abi,” but the article as a whole is principally about the later Masonic allegory; the profile therefore supports a related-section link, not identity with the article’s central Hiram Abiff.",
+      "sourceRights": "Wikipedia source retains CC BY-SA 4.0 URL and Wikipedia contributors attribution; WEB citations remain Public Domain with fixed witness attribution.",
+      "coordinates": "null; not relevant to this person."
+    },
+    "wikipediaBodyRead": {
+      "url": "https://en.wikipedia.org/wiki/Hiram_Abiff#Hirams_in_the_Bible",
+      "retrievedAtUTC": "2026-10-16T11:33:25Z",
+      "locator": "Live page, section “Hirams in the Bible,” lines 155–167. Lines 155–157 distinguish three biblical Hirams and describe the artisan (1 Kings 7:13–14); lines 158–167 discuss 2 Chronicles 2:12–13, “Huram-abi,” and the translation issue. Lines 129–150 show the article’s main subject is the Masonic legend.",
+      "assessment": "Section relevance is supported; article identity as the 2CH4 person is not independently established. Keep related-section and identityVerified=false."
+    },
+    "verdict": "qualified",
+    "unresolved": "The related section discusses the biblical artisan in 1 Kings and Chronicles wording, but the page is centered on the Masonic Hiram Abiff and does not establish this entry as the same individual. Do not upgrade to identity-verified article.",
+    "changesToDraftOrEvidenceByReviewer": false,
+    "publicationApproved": false
+  }
+}

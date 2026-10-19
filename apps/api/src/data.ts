@@ -553,6 +553,7 @@ export async function getSources(
   target: Passage = passage,
   snapshotPolicy?: number,
   includeMaterials = false,
+  earlierBackground = false,
 ): Promise<GroundingSource[]> {
   const rows = await env.DB.prepare(
     `WITH candidates AS (
@@ -638,11 +639,14 @@ export async function getSources(
       /* Invalid ingestion metadata fails closed and cannot leak through the direct source API. */
     }
   }
-  const primary = await getScriptureSources(
-    env,
-    questionContextWindow(passage, target),
-    snapshotPolicy,
-  );
+  const window = questionContextWindow(passage, target, earlierBackground);
+  // Fetch the selected verses independently: the older-window storage page is capped at 48.
+  // Preserve selection first, then add earlier evidence for why/intent questions.
+  const [selected, background] = earlierBackground ? await Promise.all([
+    getScriptureSources(env, target, snapshotPolicy),
+    getScriptureSources(env, window, snapshotPolicy),
+  ]) : [[], await getScriptureSources(env, window, snapshotPolicy)];
+  const primary = [...new Map([...selected, ...background].map(source => [source.id, source])).values()];
   return primary.length
     ? [...sources.slice(0, 16 - materialSources.length), ...materialSources, ...primary].slice(
         0,
@@ -703,9 +707,18 @@ export async function sourceSnapshot(
   passage: Passage,
   spoilers = false,
   target: Passage = passage,
+  earlierBackground = false,
 ) {
   const version = await sourcePolicyVersion(env);
-  const sources = await getSources(env, passage, spoilers, target, version, true);
+  const sources = await getSources(
+    env,
+    passage,
+    spoilers,
+    target,
+    version,
+    true,
+    earlierBackground,
+  );
   if (version !== (await sourcePolicyVersion(env)))
     fail(409, 'source_policy_changed', 'Source policy changed while preparing the request. Retry.');
   return { version, sources };

@@ -1,0 +1,57 @@
+{
+  "atUTC": "2026-10-16T05:20:37.447112+00:00",
+  "scope": "Root reads fixed witness and actual current summary to adjudicate three disagreements between two independent reviewers; no raw edits.",
+  "originalReport": {
+    "path": "reviews/independent-batch02-persons_3.json",
+    "sha256": "54921be0dca69976f34d6237a78a34d3c4bd8763e2712e8bc5e450e6576d4595"
+  },
+  "extraReport": {
+    "path": "reviews/independent-extra-batch02-persons_3.json",
+    "sha256": "83527b2ccaa47edb16160461b4a8538c59e7fd0bb167d112974d99d25aabda65"
+  },
+  "rows": [
+    {
+      "entityID": "person:dagon_969",
+      "draftPath": "drafts/persons_3/1CH_dagon_969.json",
+      "draftSHA256": "d8763b7eebaea27116651f95bfd4d88d02abbd72771c6c0f2c885ab60b73972e",
+      "currentSummaryJa": "ペリシテ人がサウルの武具と頭を「自分たちの神々」の家へ置いたとき、そのうち一つとしてダゴンの家が記されます。本文は神殿の名を示します。",
+      "primary": {
+        "ref": "1CH 10:10",
+        "text": "They put his armor in the house of their gods, and fastened his head in the house of Dagon.",
+        "textSHA256": "03e8ecbc5448b444ac9292147ab9301b262d30e7754f09deb0f7e0356e957e4f",
+        "citationURL": "https://ebible.org/engwebp/1CH10.htm#V10"
+      },
+      "rootDecision": "additional-fail-supported",
+      "reason": "The current summary merges Saul armor and head into the house of their gods. Fixed text distinguishes armor in house of their gods and head in house of Dagon."
+    },
+    {
+      "entityID": "person:dodanim_1018",
+      "draftPath": "drafts/persons_3/1CH_dodanim_1018.json",
+      "draftSHA256": "fe1ffb467bd5decf6ff603833184b3198b7e112c2fc22f7d15291654de24d4a5",
+      "currentSummaryJa": "ヨクタンの子らの系譜に名が記されます。固定WEBの表記はロダニムで、ドダニムとの異表記を記事が同一項目で扱っています。",
+      "primary": {
+        "ref": "1CH 1:7",
+        "text": "The sons of Javan: Elishah, Tarshish, Kittim, and Rodanim.",
+        "textSHA256": "8f43718a733a9cc21995595e127f1f884b3c54e21e1988e4a939593ce469f00d",
+        "citationURL": "https://ebible.org/engwebp/1CH01.htm#V7"
+      },
+      "rootDecision": "additional-fail-supported",
+      "reason": "The current summary says Joktan, but the fixed verse says sons of Javan. This is a direct genealogy error, not a spelling variant."
+    },
+    {
+      "entityID": "person:elienai_1112",
+      "draftPath": "drafts/persons_3/1CH_elienai_1112.json",
+      "draftSHA256": "8070905f1a275aed3e8710d26da267033dd48030e2bc8adb9eae85d9150eea3d",
+      "currentSummaryJa": "ベニヤミン族の系譜にシメイの子らの一人として名が記されます。固定WEBは「エリエホエナイ」と表記します。",
+      "primary": {
+        "ref": "1CH 8:20",
+        "text": "Elienai, Zillethai, Eliel,",
+        "textSHA256": "2fc11c4a5987e46ab94e2e4872be13fd619ec90247d19c26813d825f80d04208",
+        "citationURL": "https://ebible.org/engwebp/1CH08.htm#V20"
+      },
+      "rootDecision": "additional-fail-supported",
+      "reason": "The current summary claims fixed WEB spelling Eliehoenai; the actual verse spells Elienai. Distinguish the other name at 26:3."
+    }
+  ],
+  "requiredNext": "Author repair, then independent current-byte reclosure; retain adverse review history."
+}

@@ -1,0 +1,73 @@
+{
+  "title": "Author correction: 2SA 10:2 Nahash adopted/excluded ID conflict",
+  "book": "2SA",
+  "scope": "verse-map-2SA-09-16.json only",
+  "checkedAtUTC": "2026-10-16T02:23:20Z",
+  "beforeMapSHA256": "7824aab01066ea1d47f8a35fd742cdae92a262d66d905c5ad1aef0c8eb9f32f0",
+  "afterMapSHA256": "5a44014fdbc52275679350696803e6e77e000ddee68f41d9c4be523b31cd05f7",
+  "fixedWitness": "webp-usfx-2026-10-13-35a6adf626e5",
+  "fixedWitnessPath": "inventory/targets/samuel2-web-verses.json",
+  "fixedWitnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+  "row": {
+    "chapter": 10,
+    "verse": 2,
+    "sourceText": "David said, “I will show kindness to Hanun the son of Nahash, as his father showed kindness to me.” So David sent by his servants to comfort him concerning his father. David’s servants came into the land of the children of Ammon.",
+    "sourceTextSHA256": "8f9e4311b7b86e79bc1cc6695eee688384cd308fdd2593eab7bb616e2233311e",
+    "citationURL": "https://ebible.org/engwebp/2SA10.htm#V2",
+    "before": {
+      "book": "2SA",
+      "chapter": 10,
+      "verse": 2,
+      "sourceText": "David said, “I will show kindness to Hanun the son of Nahash, as his father showed kindness to me.” So David sent by his servants to comfort him concerning his father. David’s servants came into the land of the children of Ammon.",
+      "sourceTextSHA256": "8f9e4311b7b86e79bc1cc6695eee688384cd308fdd2593eab7bb616e2233311e",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V2",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:hanun_1404",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:nahash_2137",
+          "relationship": "direct"
+        }
+      ],
+      "excludedCandidates": [
+        {
+          "entityID": "person:nahash_2137",
+          "name": "Nahash",
+          "reasonJa": "候補ID 2137の該当書プロフィールを確認できず、本文のHanunの父Nahashを1SAのアンモン王2136や2SA17:25のNahash2138と同一視する独立根拠もこの節にはない。"
+        }
+      ],
+      "reasonJa": "固定WEB 10:2の文面を読み、明記された固有名/集団名/地名をdirectに結び付けた。 direct: person:david_994, person:hanun_1404。 他の索引候補は本文の別人・別種・未確認照応としてexcludedCandidatesに理由を記した。 固定WEBは「Nahash the son of Nahash」と明記。書内同名候補との同一性は断定せず、2SA10:2候補profileの書内IDを採用。"
+    },
+    "after": {
+      "book": "2SA",
+      "chapter": 10,
+      "verse": 2,
+      "sourceText": "David said, “I will show kindness to Hanun the son of Nahash, as his father showed kindness to me.” So David sent by his servants to comfort him concerning his father. David’s servants came into the land of the children of Ammon.",
+      "sourceTextSHA256": "8f9e4311b7b86e79bc1cc6695eee688384cd308fdd2593eab7bb616e2233311e",
+      "citationURL": "https://ebible.org/engwebp/2SA10.htm#V2",
+      "entities": [
+        {
+          "entityID": "person:david_994",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:hanun_1404",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:nahash_2137",
+          "relationship": "direct"
+        }
+      ],
+      "excludedCandidates": [],
+      "reasonJa": "固定WEB 2SA10:2は「Hanun the son of Nahash」と明記するため、書内プロフィール person:nahash_2137 をdirectで採用する。この採用は2SA10:2の父Nahashを指す。1SA11のアンモン王Nahashや2SA17:25のNahashとの人物同一性は本文から確定せず、ここでは結び付けない。"
+    }
+  },
+  "reasonJa": "2SA10:2にナハシュの名前は明記され、既存の書内人物profile person:nahash_2137 はまさにこの用例を対象にする。したがって同じIDのexcludedCandidates記録は採用と矛盾する古い除外理由として削除。注意事項はrow.reasonJaに残し、1SA11または2SA17:25の同名人物との同一視を行わないことを明示。"
+}

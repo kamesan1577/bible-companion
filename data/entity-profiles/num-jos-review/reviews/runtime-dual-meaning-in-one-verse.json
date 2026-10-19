@@ -1,0 +1,27 @@
+{
+  "status": "implemented-in-unpublished-candidate-targeted-tests-passed",
+  "existingPublishedRuntimeChanged": false,
+  "case": "NUM26:29 existing person:gilead_1317 has both ancestor and clan in one verse",
+  "sourceText": "The sons of Manasseh: of Machir, the family of the Machirites; and Machir became the father of Gilead; of Gilead, the family of the Gileadites.",
+  "risk": "Current exactContext selection can hide the base individual when a collective context covers the same verse. Do not remove one genuine meaning merely to force exclusivity.",
+  "proposedBehavior": "If the selected passage overlaps both accepted base and context uses, keep base with visible context note; select context alone only when no base use overlaps. Preserve ROM/LEV Jacob-only behavior.",
+  "neededValidation": [
+    "same-verse individual+clan both visible",
+    "context-only verses select collective",
+    "ROM9:13/LEV26:42 existing personal Jacob retained",
+    "mixed wider ranges retain context note",
+    "references/wikipedia/spoiler gates remain scoped"
+  ],
+  "candidateCode": "candidate/apps/ios/Sources/Core/EntityProfiles.swift",
+  "candidateTests": "candidate/apps/ios/Tests/EntitySameVerseContextTests.swift",
+  "targetedTestLog": "same-verse-runtime-test.log",
+  "targetedRegressionScope": "2 new same-verse/clan-only tests plus existing RomLeviticusEntityTests",
+  "publicCheckoutChanged": false,
+  "contextFactsRegression": {
+    "tests": 11,
+    "failures": 0,
+    "log": "same-verse-runtime-facts-test.log",
+    "xcresult": "SameVerseRuntimeWithFacts.xcresult",
+    "scope": "candidate runtime only; NUM/JOS authoring not approved"
+  }
+}

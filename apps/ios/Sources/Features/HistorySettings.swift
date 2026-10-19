@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 import CompanionCore
 
 struct HistoryView: View {
@@ -18,7 +19,7 @@ struct HistoryView: View {
                 else { picker.pickerStyle(.segmented) }
             }.padding(.horizontal, BibleTheme.Space.page)
             switch section {
-            case .readings: ImportedHistoryList()
+            case .readings: LocalReadingHistoryList()
             case .conversations:
                 if let owner = store.account { ConversationListView(ownerID: owner.id, client: store.client) }
                 else { BibleStateView(title: "ログインしてください", message: "会話は自分のアカウントだけで確認できます。") }
@@ -31,6 +32,32 @@ struct HistoryView: View {
         .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("追加", systemImage: "plus") { store.showImport = true } } }
     }
     private var picker: some View { Picker("履歴の種類", selection: $section) { ForEach(choices) { Text($0.title).tag($0) } } }
+}
+
+private struct LocalReadingHistoryList: View {
+    @EnvironmentObject private var store: AppStore
+    @Environment(\.scenePhase) private var scenePhase
+    @State private var visits: [LocalReadingVisit] = []
+    @State private var message: String?
+    var body: some View {
+        List {
+            Section("この端末で開いた箇所") {
+                ForEach(visits) { value in
+                    NavigationLink { UnifiedReadingView(passage: value.passage, translation: value.translation, sharedText: value.sharedText) } label: {
+                        VStack(alignment: .leading) { Text(value.passage.label); Text(value.openedAt, format: .dateTime.month().day().hour().minute()).bibleTextStyle(.caption) }
+                    }
+                }
+                if visits.isEmpty { Text(message ?? "本体や共有画面で開くと、ここに記録されます。") }
+            }
+            if store.account != nil { Section { NavigationLink("以前のクラウド読書履歴") { ImportedHistoryList() } } }
+        }.scrollContentBackground(.hidden).bibleCanvas().task { refresh() }.refreshable { refresh() }
+        .onChange(of: store.account?.id) { _, _ in refresh() }
+        .onChange(of: scenePhase) { _, phase in if phase == .active { refresh() } }
+    }
+    private func refresh() {
+        do { visits = try ShareInbox.readingVisits(owner: store.account?.id); message = nil }
+        catch { visits = []; message = "端末内の記録を確認できません。記録は削除していません。" }
+    }
 }
 
 private struct ImportedHistoryList: View {
@@ -59,16 +86,15 @@ private struct ImportedHistoryList: View {
 }
 struct SettingsView: View {
     @EnvironmentObject private var store: AppStore
+    @State private var provider = ExternalQuestionProvider.chatGPT
     @State private var showGuide = false
-    @State private var prepareAfterGuide = false
     @State private var showSignOut = false
-    @State private var notice: String?
     var body: some View {
         Form {
-            Section("YouVersionから解説を読む") {
-                Button("YouVersionから解説を読む準備") { store.showAISetup = true }
-                Text("初回のログインとAI利用の確認をここで行えます。読書の途中でも開けます。").bibleTextStyle(.caption)
-                Button("共有の手順を見る", systemImage: "questionmark.circle") { showGuide = true }
+            Section("質問の送信先") { ExternalProviderPicker(provider: $provider) }
+            Section("使い方") {
+                Button("YouVersionから共有する手順") { showGuide = true }
+                Text("解説・地図・人物・絵画は本体と共有画面で共通です。質問は選択した外部サービスで続けます。").bibleTextStyle(.caption)
             }
             Section("アカウント") {
                 if let account = store.account {
@@ -76,74 +102,31 @@ struct SettingsView: View {
                     Button("ログアウトする", role: .destructive) { showSignOut = true }.disabled(store.isTransitioning)
                 } else {
                     Button(store.isAuthenticating ? "ログインしています" : "ログインする") { store.signIn() }.disabled(!store.endpointConfigured || store.isAuthenticating || store.isTransitioning || store.restoreNeedsRetry || store.localCleanupRequired)
-                    Text("初めての方も、このボタンからiPhoneの案内に従って登録できます。").bibleTextStyle(.caption)
+                    Text("外部サービスでの質問に、このアプリへのログインは必要ありません。アカウントは以前のクラウド記録の確認に使います。").bibleTextStyle(.caption)
                     if store.isAuthenticating { Button("ログインをやめる") { store.cancelSignIn() } }
                 }
                 if store.isTransitioning { ProgressView("ログインを確認しています") }
-                if let error = store.errorMessage { Text(error).bibleTextStyle(.body) }
-                if !store.endpointConfigured { Text("アプリの接続設定に問題があります。最新版に更新して、もう一度お試しください。").bibleTextStyle(.caption) }
-                DisclosureGroup("ログイン方法と、ログインできないとき") {
-                    Text("パスキーを使い、Face IDなどiPhoneの画面の案内に従ってログインします。パスキーをすべて失った場合、このアプリからはアカウントを復旧できません。iPhoneで使っているパスワード管理アプリに、パスキーが残っているか確認してください。").bibleTextStyle(.caption)
-                }
+                if let error = store.errorMessage { Text(error) }
+                if store.restoreNeedsRetry { Button("保存したログインを確認し直す") { Task { await store.restore() } }.disabled(store.isTransitioning) }
             }
-            if store.restoreNeedsRetry { Section("保存したログインを開けません") {
-                Text("iPhoneのロックを解除してから、もう一度確認してください。").bibleTextStyle(.body)
-                Button("ログインを確認し直す") { Task { await store.restore() } }.disabled(store.isTransitioning)
-                Button("この端末のログインを消す", role: .destructive) { showSignOut = true }.disabled(store.isTransitioning)
-            } }
-            if store.localCleanupRequired { Section("端末内データ") { Text("前のログインのデータを消し終えるまで、新しいログインはできません。"); Button("端末内データの削除をやり直す", role: .destructive) { store.retryLocalCleanup() } } }
-            if store.exportCleanupRequired { Section("書き出しの一時ファイル") { Button("一時ファイルの削除をやり直す", role: .destructive) { store.retryExportCleanup() } } }
-            Section("AI解説と質問") {
-                Text("AIは間違えることがあります。聖書本文や出典もあわせてお確かめください。").bibleTextStyle(.body)
-                Button("送る情報を確認してAIを使う") { store.showAISetup = true }
-                if let policy = store.aiPolicy {
-                    LabeledContent("AIへの送信", value: policy.workersAiConsent ? "同意しています" : "同意していません")
-                    if policy.workersAiConsent { Button("AIへの送信をやめる") { setConsent(false) }.disabled(store.isConsentUpdating) }
-                }
-                Text("この設定をやめても、アプリに入っている聖書の説明・人物・地名は読めます。").bibleTextStyle(.caption)
-                if let notice { Text(notice).bibleTextStyle(.body) }
-            }
-            Section("今日の無料枠") {
-                if let usage = store.usage {
-                    let used = usage.budgetUnits.consumed + usage.budgetUnits.reserved
-                    ProgressView(value: min(used / max(usage.limit, 1), 1))
-                    LabeledContent("残りの目安", value: "約\(Int(max(0, 1 - used / max(usage.limit, 1)) * 100))％")
-                    LabeledContent("次に使えるようになる日時") { Text(Date(timeIntervalSince1970: usage.resetAt), format: .dateTime.month().day().hour().minute()) }
-                    Text("回答の長さなどで使う量が変わります。作成中の回答の分も含めた目安です。使い切った場合は、回復するまでAI回答を利用できません。").bibleTextStyle(.caption)
-                    if store.account?.canDebug == true {
-                        DisclosureGroup { Text("消費 \(usage.budgetUnits.consumed.formatted()) / 予約 \(usage.budgetUnits.reserved.formatted()) / 上限 \(usage.limit.formatted())") } label: { Label("開発者専用：利用枠の計算", systemImage: "ladybug.fill") }.bibleForeground(.danger)
-                    }
-                } else { Text(store.account == nil ? "ログインすると、残っている無料枠を確認できます。" : "「残りの無料枠を確認する」を押してください。通信できないときは表示できません。").bibleTextStyle(.caption) }
-                Button("残りの無料枠を確認する") { Task { await store.loadUsage() } }.disabled(store.account == nil)
-            }
-            if let notice = store.shareNotice { Section("YouVersionから受け取った箇所") { Text(notice); Button("受け取った箇所を開き直す") { store.refreshInbox() } } }
-            if let owner = store.account { Section("自分の記録") {
-                NavigationLink("返事を待っている質問を確認する") { PendingQuestionView(ownerID: owner.id, client: store.client) }
+            if let owner = store.account { Section("以前の記録") {
+                NavigationLink("保存した会話を読む") { ConversationListView(ownerID: owner.id, client: store.client) }
+                NavigationLink("送信済みの質問の状態を確認") { PendingQuestionView(ownerID: owner.id, client: store.client) }
                 NavigationLink("読書の記録を書き出す") { ExportView(ownerID: owner.id, client: store.client) }
             } }
-            Section { DisclosureGroup("表示・保存・削除について") {
-                Text("文字の大きさ、明るさ、動きはiPhoneの設定に合わせます。").bibleTextStyle(.body)
-                Text("人物と地名はアプリに入っています。絵画の画像は、利用できることを確認してから端末に保存します。読んだ箇所の履歴はアカウントごとに分けます。").bibleTextStyle(.body)
-                Text("取得した参考説明の一部は最長24時間、通信せずに読めるよう保存します。接続時に版と利用条件を確認し直します。共有した聖書本文、参考説明の全文、AIの回答は、端末には永続保存しません。送った質問は二重送信を防ぐため、結果を確認するまで端末内に保護して置きます。").bibleTextStyle(.body)
-                Text("質問と回答はアカウントの履歴としてサービス側に保存されます。開発者用の比較結果も、保存を選んだものは残ります。下の「個人データ」から削除できます。事業者のバックアップから消える時期は決まっていません。").bibleTextStyle(.body)
-            } }
+            Section("保存と外部サービス") {
+                Text("最近開いた箇所・共有した原文・質問の下書きは、端末内の保護された共有領域にアカウントごとに分けて保存します。アプリを再起動しても残ります。外部サービスの回答をこのアプリは取得しません。").bibleTextStyle(.body)
+                Text("送信操作で原文と質問をクリップボードへコピーします。コピーはこの端末だけで使え、10分後に期限切れになります。ChatGPTへの質問付きURLはブラウザ履歴などに残る場合があります。外部サービスの利用条件・料金・保存設定は各サービスで確認してください。").bibleTextStyle(.body)
+                Text("端末内の新しい履歴・下書きは、下のクラウド記録削除とは別に保持します。以前の質問・回答やクラウド記録は、画面の更新だけでは削除しません。外部サービスでの会話は各サービス側で管理してください。").bibleTextStyle(.body)
+            }
             if let owner = store.account { Section("個人データ") {
-                NavigationLink("読書データをすべて削除する") { PrivacyDeleteView(intent: DeletionIntent(ownerID: owner.id, sessionEpoch: store.sessionEpoch, kind: .readingData)) }
+                NavigationLink("以前のクラウド読書データを削除する") { PrivacyDeleteView(intent: DeletionIntent(ownerID: owner.id, sessionEpoch: store.sessionEpoch, kind: .readingData)) }
                 NavigationLink("アカウントを削除する") { PrivacyDeleteView(intent: DeletionIntent(ownerID: owner.id, sessionEpoch: store.sessionEpoch, kind: .account)) }
             } }
-            if let owner = store.account, owner.canDebug == true { Section("開発者専用") { NavigationLink("モデル・接続・比較を確認する") { DeveloperView(ownerID: owner.id, client: store.client) } }.bibleForeground(.danger) }
-        }
-        .bibleCanvas().navigationTitle("設定")
-        .sheet(isPresented: $showGuide, onDismiss: { if prepareAfterGuide { prepareAfterGuide = false; store.showAISetup = true } }) { FirstRunGuide(onPrepare: { prepareAfterGuide = true; showGuide = false }) }
+        }.bibleCanvas().navigationTitle("設定")
+        .sheet(isPresented: $showGuide) { FirstRunGuide() }
         .confirmationDialog("この端末からログアウトしますか？", isPresented: $showSignOut, titleVisibility: .visible) {
             Button("ログアウトする", role: .destructive) { Task { await store.signOut() } }
         } message: { Text("この端末のログインと、待っている共有内容を消します。アカウントに保存した読書履歴は消しません。") }
-    }
-    private func setConsent(_ enabled: Bool) {
-        let epoch = store.sessionEpoch
-        Task {
-            do { try await store.consent(enabled, expectedEpoch: epoch); guard store.sessionEpoch == epoch else { return }; notice = enabled ? "AIを使えるようになりました。" : "AIへの送信をやめました。保存された聖書の説明は引き続き読めます。" }
-            catch { if store.sessionEpoch == epoch { store.handle(error) } }
-        }
     }
 }

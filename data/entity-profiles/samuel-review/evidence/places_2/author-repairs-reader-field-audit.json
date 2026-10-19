@@ -1,0 +1,72 @@
+{
+  "repairs": [
+    {
+      "book": "2SA",
+      "entityID": "place:gibeah_466",
+      "recordedAtUTC": "2026-10-16T02:08:34Z",
+      "reason": "Root audit identified a same-book future reference (23:29) in the always-visible modernLocationJa, although knownBy is 21:6. Removed the later-verse comparison; retained only the uncertainty about the modern identification of Gibeah of Saul.",
+      "sourceBasis": {
+        "fixedWitness": "inventory/targets/samuel2-web-verses.json",
+        "witnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+        "primaryVerse": "2SA 21:6",
+        "citationURL": "https://ebible.org/engwebp/2SA21.htm#V6"
+      },
+      "change": {
+        "field": "profile.modernLocationJa",
+        "before": "サウルのギベアはテル・エル・フルと結び付けられますが、23:29の「ギベア」は別の同名地かもしれません。",
+        "after": "サウルのギベアはテル・エル・フルと結び付けられますが、この比定は確定していません。"
+      },
+      "before": {
+        "draftSHA256": "6a77ba35d4c730eb56ef89a78236937a67a163bfc4a0ba8f564c15671d3ca0d2",
+        "profileSHA256": "284bd5aae12353b556bdde4ae72de670d9f45e88f9977fc8ce337551ce401afb",
+        "evidenceFileSHA256": null,
+        "note": "元のevidenceファイルSHAは修正前に採取していない。profileSHA/draftSHAは元sidecar値。"
+      },
+      "after": {
+        "draftSHA256": "13e6b32d1f25a6b0b0a46b9c6dc04e32574785f638a184f612dac5c6346ed3c6",
+        "profileSHA256": "86b8a623e1b6778fe69db5d966d755a4ccbf09cddc2a40c13bb076689c715faf",
+        "evidenceFileSHA256": "5eaf0cd54ad0dce42131708e19ee18d73541692ed86df41e240398cccaadcb6b"
+      },
+      "scope": "draft/evidence/places_2/2SA_gibeah_466.jsonのみ"
+    },
+    {
+      "book": "2SA",
+      "entityID": "place:gibeah_466",
+      "recordedAtUTC": "2026-10-16T02:12:50Z",
+      "reason": "独立closureでsummaryJaとWikipedia.noteJaにもlater 23:29の同名用法が露出していると判明。初出21:6の常時欄から除き、本文に基づく23:29の留保をknownBy付きfactへ移動した。",
+      "sourceBasis": {
+        "fixedWitness": "inventory/targets/samuel2-web-verses.json",
+        "witnessSHA256": "e384ae8d361e5dfc13aef2bb00845be5c133a2c97a9d16bb0627ef81c9064ec2",
+        "laterVerse": "2SA 23:29",
+        "citationURL": "https://ebible.org/engwebp/2SA23.htm#V29"
+      },
+      "before": {
+        "draftSHA256": "13e6b32d1f25a6b0b0a46b9c6dc04e32574785f638a184f612dac5c6346ed3c6",
+        "profileSHA256": "86b8a623e1b6778fe69db5d966d755a4ccbf09cddc2a40c13bb076689c715faf",
+        "evidenceFileSHA256": "5eaf0cd54ad0dce42131708e19ee18d73541692ed86df41e240398cccaadcb6b"
+      },
+      "after": {
+        "draftSHA256": "6832cd1ef11c63506ae5064516a46d4c45236372e17a34991e2e40f44926e4ce",
+        "profileSHA256": "164e2b7b540e1c7c02c25387077f78003324dcb214b144213c8a2160ce44d971",
+        "evidenceFileSHA256": "58b198ee5764475b6ec9cc4e6cd4afd57ce2ef11de87d7b51d5db726cc2af852"
+      },
+      "changes": [
+        {
+          "field": "profile.summaryJa",
+          "before": "最初の用例は「サウルのギベア」と明記され、処刑場所として言及されます。別の用例ではベニヤミン人の出身地を示すため、同じ町との同定には文脈上の留保があります。",
+          "after": "最初の用例は「サウルのギベア」と明記され、処刑場所として言及されます。"
+        },
+        {
+          "field": "profile.wikipedia.noteJa",
+          "before": "記事はGibeah of Saulを主要な同定対象とする一方、別表現「Gibeah of God」の同定には留保を置く。23:29の出身地は同一と断定しない。",
+          "after": "記事はGibeah of Saulを主な対象とし、その現代同定に関する見解を紹介します。"
+        },
+        {
+          "field": "profile.facts",
+          "after": "Added explicit 2SA23:29 identity/location uncertainty gated at that verse."
+        }
+      ],
+      "scope": "draft/evidence/places_2/2SA_gibeah_466.json"
+    }
+  ]
+}

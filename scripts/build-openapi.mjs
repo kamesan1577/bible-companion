@@ -535,8 +535,12 @@ op('get', '/v1/me/ai-policy', 'Read allowed answer modes and current experimenta
   }),
 });
 op('post', '/v1/me/share-access', 'Enable or disable limited Share Extension AI access', {
-  input: object({enabled:bool}), output:{oneOf:[object({enabled:{const:false}}),object({token:text,ownerId:uuid,expiresAt:time})]},
+  input: object({enabled:bool}), output:{oneOf:[object({enabled:{const:false}}),object({token:text,ownerId:uuid,expiresAt:time,scopeId:text,refreshToken:text,refreshExpiresAt:time})]},
   description:'Requires current AI consent. Issues a share-only capability for at most24hours, bounded by the parent session expiry. It cannot authorize general API calls, developer operations, or existing unrelated conversations. Disabling, logout, consent withdrawal and data-epoch change stop access.',
+});
+op('post', '/share/renew', 'Renew short-lived access in the same share conversation scope', {
+  authScheme:'shareRefreshBearer',input:object({}),output:object({token:text,ownerId:uuid,expiresAt:time,scopeId:text,refreshToken:text,refreshExpiresAt:time}),
+  description:'No inference or new consent. Refresh credential is bounded by the parent login; live logout, consent, policy and account epoch are checked. Renewal preserves the original share scope. General API sessions and other scopes remain inaccessible.',
 });
 op('post', '/share/start', 'Create canonical reading references for this share capability', {
   authScheme:'shareBearer', input:object({requestId:uuid,sharedText:{type:'string',minLength:1,maxLength:20000}}),
@@ -546,6 +550,8 @@ op('post', '/share/start', 'Create canonical reading references for this share c
 op('post', '/share/conversations/{id}/questions', 'Ask within a conversation created by this share capability', {authScheme:'shareBearer',input:ref('QuestionInput'),output:ref('RequestResult')});
 op('post', '/share/conversations/{id}/explanation', 'Read a globally cached fixed public explanation within this share capability', {authScheme:'shareBearer',input:object({requestId:uuid}),output:ref('RequestResult'),description:'Fixed Japanese prompt and model settings. No private question or chat history enters the global cache. Completed cache hits dispatch no model and consume no AI budget.'});
 op('get', '/share/requests/{id}', 'Check only a question owned by this share capability', {authScheme:'shareBearer',output:ref('RequestResult')});
+op('delete', '/share/requests/{id}', 'Cancel only a question owned by this share capability', {authScheme:'shareBearer',output:object({status:{const:'cancelled'},usageMayHaveOccurred:{const:true}})});
+op('post', '/public/reading', 'Read the same public reference projection in app and Share Extension', {auth:false,input:object({passage:ref('Passage'),translation:{type:['string','null'],minLength:1,maxLength:30}},['passage']),output:ref('Reading'),description:'Only canonical passage and translation metadata. Original text, questions, chat history and account fields are rejected. No model invocation or private history writes. Source policy and rights are rechecked for public cache hits.'});
 op('post', '/public/reading-preview', 'Read public reference excerpts without AI or account history', {auth:false,input:object({sharedText:{type:'string',minLength:1,maxLength:20000}}),output:{type:'object',additionalProperties:true}});
 op('post', '/v1/me/consents', 'Confirm or revoke Cloudflare AI data transmission', {
   input: object(
@@ -729,6 +735,11 @@ op('delete', '/v1/developer/comparisons/{id}', 'Cancel own active comparison', {
   description:
     'Persists an owner-scoped cancellation marker even before claim. GET 404 alone is unknown, not proof of no dispatch. Retry only the same frozen request UUID and payload.',
 });
+// Existing JSON clients remain supported; native clients negotiate bounded SSE explicitly.
+for (const path of ['/v1/conversations/{id}/questions','/v1/conversations/{id}/explanation','/share/conversations/{id}/questions','/share/conversations/{id}/explanation']) {
+  paths[path].post.responses['200'].content['text/event-stream'] = {schema:{type:'string'},example:'event: progress\ndata: {"stage":"generating"}\n\n'};
+  paths[path].post.description = (paths[path].post.description ?? '') + ' Accept: text/event-stream negotiates progress, provisional citation-checked preview, complete or failure events. No automatic retries; incomplete streams require request status recovery. A preview is not a saved final answer.';
+}
 const spec = {
   openapi: '3.1.0',
   info: {
@@ -739,7 +750,8 @@ const spec = {
   },
   servers: [{ url: 'http://localhost:8787', description: 'Local development only' }],
   paths,
-  components: { securitySchemes: { bearerAuth: { type: 'http', scheme: 'bearer' }, shareBearer: {type:'http',scheme:'bearer',description:'Expiring Share Extension-only capability; never a general API session'} }, schemas },
+  components: { securitySchemes: { bearerAuth: { type: 'http', scheme: 'bearer' }, shareRefreshBearer: {type:'http',scheme:'bearer',description:'Share-only renewal credential, bounded by the parent session. Not a general account session.'},
+      shareBearer: {type:'http',scheme:'bearer',description:'Expiring Share Extension-only capability; never a general API session'} }, schemas },
 };
 writeFileSync(
   new URL('../docs/openapi.json', import.meta.url),

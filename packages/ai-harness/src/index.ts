@@ -24,6 +24,7 @@ import {
   citationForSource,
 } from './output.ts';
 import { invokeWorkersAi } from './provider.ts';
+import { validatedPreview } from './stream-preview.ts';
 import type {
   AnswerInput,
   AnswerDependencies,
@@ -88,8 +89,19 @@ export function prepareCompanionRequest(
   const model = getModel(input.modelId ?? DEFAULT_MODEL_ID);
   const settings = validateSettings(model.id, input.settings);
   const retrieval = retrieveGrounding(input, dependencies.authorization?.ownerId);
-  const history = scopedHistory(input, retrieval.sources, dependencies.authorization.ownerId);
-  const messages = buildMessages(input, retrieval.sources, mode, history, dependencies.allowGeneralKnowledge === true);
+  const history = scopedHistory(
+    input,
+    retrieval.sources,
+    dependencies.authorization.ownerId,
+    dependencies.allowGeneralKnowledge === true,
+  );
+  const messages = buildMessages(
+    input,
+    retrieval.sources,
+    mode,
+    history,
+    dependencies.allowGeneralKnowledge === true,
+  );
   const usage = estimateUsage(messages, settings.maxOutputTokens);
   validatePreparedInputCapacity(model.id, usage.estimated.inputTokens, settings.maxOutputTokens);
   return { model, settings, retrieval, messages, usage, mode, history };
@@ -166,6 +178,8 @@ export async function createCompanionAnswer(
     };
   }
   if (!dependencies.ai) throw new HarnessError('MODEL_UNCONNECTED');
+  let previousPreview = '';
+  let firstVisibleMs: number | null = null;
   const provider = await invokeWorkersAi({
     ai: dependencies.ai,
     modelId: model.id,
@@ -173,11 +187,31 @@ export async function createCompanionAnswer(
     timeoutMs: settings.timeoutMs,
     signal: dependencies.signal,
     now,
+    onFirstText: dependencies.onProgress ? () => dependencies.onProgress!('receiving') : undefined,
+    onText:
+      dependencies.onPreview && mode === 'grounded-generation'
+        ? async (text) => {
+            const preview = validatedPreview(
+              text,
+              retrieval.sources,
+              snapshot.readingBoundary ?? snapshot.passage,
+              snapshot.spoilerAllowed,
+            );
+            if (preview && preview !== previousPreview) {
+              previousPreview = preview;
+              await dependencies.onPreview!(preview);
+              firstVisibleMs ??= Math.max(0, now() - started);
+            }
+          }
+        : undefined,
   });
+  await dependencies.onProgress?.('validating');
   if (dependencies.signal?.aborted) throw new HarnessError('ABORTED', true);
   const validated =
     mode === 'grounded-generation'
-      ? (dependencies.allowGeneralKnowledge === true ? validateGeneralAnswer : validateGeneratedAnswer)(
+      ? (dependencies.allowGeneralKnowledge === true
+          ? validateGeneralAnswer
+          : validateGeneratedAnswer)(
           provider.text,
           retrieval.sources,
           snapshot.readingBoundary ?? snapshot.passage,
@@ -194,7 +228,7 @@ export async function createCompanionAnswer(
     timing: {
       durationMs,
       providerFirstTextMs: provider.firstTextMs,
-      visibleAnswerMs: durationMs,
+      visibleAnswerMs: firstVisibleMs ?? durationMs,
       validatedReadyMs: durationMs,
       clientVisibleMs: null,
       measurementScope: 'server-harness',

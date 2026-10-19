@@ -1,0 +1,91 @@
+{
+  "reportType": "independent-wikipedia-qualification-delta-closure",
+  "reviewedAtUTC": "2026-10-16T02:22:56Z",
+  "book": "1SA",
+  "entityID": "person:pharaoh_2331",
+  "reviewerRole": "independent checker of author repair; current draft not edited",
+  "currentDraftPath": "drafts/persons_1/1SA_pharaoh_2331.json",
+  "currentDraftSHA256": "21dae7bced6f2c1a434dd7827406aa39b388c1f56b088142597e7db7da26396e",
+  "currentProfileSHA256": "3ae96a8d58af06a5d7979cfc47d3cf8ee63ed95cd664fd080399823b504a0c5d",
+  "currentEvidencePath": "evidence/persons_1/1SA_pharaoh_2331-sources.json",
+  "currentEvidenceSHA256": "63cf3ad33285715b31ed29c2e38934c9db9aaf9fcd60debb48d4bb2def65da7f",
+  "priorAuthorRepairPath": "evidence/persons_1/author-repair-pharaoh-wikipedia-qualification.json",
+  "priorAuthorRepairSHA256": "f3773ca8d1c623fe2c587b109e0ed990ff7dc84270547a0c23a2d123511b4e93",
+  "fixedWitnessPath": "inventory/targets/samuel1-web-verses.json",
+  "fixedWitnessSHA256": "0ede4c3a8fe8c72515214710e7b1b95aebdcfab8b3a92c4b018e5f6895a8faab",
+  "currentProfileFieldReview": {
+    "identityType": "office-title",
+    "nameJa": "ファラオ",
+    "knownBy": {
+      "chapter": 2,
+      "verse": 27
+    },
+    "summaryJa": "サムエル記上2:27では、エジプトで奴隷だったイスラエルの先祖について、ファラオの家の下にいた時代が語られます。",
+    "wikipedia": {
+      "title": "ファラオ",
+      "language": "ja",
+      "url": "https://ja.wikipedia.org/wiki/ファラオ",
+      "kind": "related-section",
+      "noteJa": "記事は「ファラオ」を古代エジプト王の称号として説明しますが、本文の用例に当たる王個人を同定するものではありません。",
+      "checkedAt": "2026-10-16",
+      "identityVerified": false,
+      "relationVerified": true,
+      "knownBy": {
+        "chapter": 2,
+        "verse": 27
+      }
+    },
+    "wikipediaSource": {
+      "id": "wikipedia-1sa-pharaoh-title",
+      "title": "ファラオ — Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/ファラオ",
+      "license": "CC BY-SA 4.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Wikipedia; article body read for the office/title, not for personal identification.",
+      "knownBy": {
+        "chapter": 2,
+        "verse": 27
+      },
+      "category": "secondary-reference"
+    }
+  },
+  "primaryChecks": [
+    {
+      "ref": "1SA 2:27",
+      "text": "A man of God came to Eli and said to him, “The LORD says, ‘Did I reveal myself to the house of your father when they were in Egypt in bondage to Pharaoh’s house?",
+      "citationURL": "https://ebible.org/engwebp/1SA02.htm#V27",
+      "sourceTextSHA256": "4459c3cebb45628850e0846fb3831edbb7159019b2652a35258d842ef2f54afb"
+    },
+    {
+      "ref": "1SA 6:6",
+      "text": "Why then do you harden your hearts as the Egyptians and Pharaoh hardened their hearts? When he had worked wonderfully among them, didn’t they let the people go, and they departed?",
+      "citationURL": "https://ebible.org/engwebp/1SA06.htm#V6",
+      "sourceTextSHA256": "52159589b2ae8bcdecf4a7b7b21477e594fc101b2508ba1b8d8d2dadf566d5bc"
+    }
+  ],
+  "articleRead": {
+    "url": "https://ja.wikipedia.org/wiki/ファラオ",
+    "locator": "導入、line 309",
+    "readAtUTC": "2026-10-16T02:22:56Z",
+    "observedTextJa": "ファラオを古代エジプトの王を指す称号と定義し、聖書での表記にも触れる。この記事は称号を説明するが、1SA 2:27または6:6に該当する特定の王を同定しない。",
+    "supports": "office/title relation only; not a specific monarch identity"
+  },
+  "decision": "qualified",
+  "decisionJa": "WEB 1SA2:27は「Pharaoh’s house」、6:6はエジプト人とPharaohを歴史叙述として挙げ、いずれも具体的な個人王名を提示しない。日本語Wikipedia導入の実読もファラオを王号と定義するのみで、本文用例の王個人を同定しない。したがってidentityType office-title、Wikipedia related-section、identityVerified=false、relationVerified=true、noteJa非空という関係限定が本文と記事に適合し、native safeURL predicateも満たす。source linkとnote gateは初出2:27と同期。6:6で同一王と断定せず、qualifierを維持する。",
+  "schemaPredicate": {
+    "required": "identityVerified OR (kind == related-section AND relationVerified == true AND noteJa is nonempty)",
+    "actual": {
+      "identityVerified": false,
+      "kind": "related-section",
+      "relationVerified": true,
+      "noteJaNonempty": true,
+      "passes": true
+    }
+  },
+  "hashSync": {
+    "draftSHA256MatchesEvidence": true,
+    "profileSHA256MatchesEvidence": true,
+    "profileSHA256InEvidence": "3ae96a8d58af06a5d7979cfc47d3cf8ee63ed95cd664fd080399823b504a0c5d"
+  },
+  "unresolved": "Profile correctly remains about the title, not any specific pharaoh; no individual identity is established."
+}

@@ -8,6 +8,7 @@ public actor APIClient {
     public nonisolated let baseURL: URL
     private let configuration: URLSessionConfiguration
     private var token: String?
+    private var sessionEpoch = UUID()
     public init(baseURL: URL, configuration suppliedConfiguration: URLSessionConfiguration? = nil) throws {
         guard baseURL.scheme == "https", baseURL.host != nil, baseURL.user == nil, baseURL.password == nil,
               baseURL.query == nil, baseURL.fragment == nil, baseURL.path.isEmpty || baseURL.path == "/" else { throw NetworkFailure.insecureEndpoint }
@@ -18,13 +19,37 @@ public actor APIClient {
         configuration.timeoutIntervalForRequest = 45; configuration.timeoutIntervalForResource = 60
         self.configuration = configuration
     }
-    public func setToken(_ value: String?) { token = value }
+    public func setToken(_ value: String?) { token = value; sessionEpoch = UUID() }
     public func get<T: Decodable & Sendable>(_ path: String, query: [URLQueryItem] = []) async throws -> T {
         try await decode(path, method: "GET", body: nil, query: query)
     }
     public func post<B: Encodable & Sendable, T: Decodable & Sendable>(_ path: String, body: B, authenticated: Bool = true) async throws -> T {
         try await decode(path, method: "POST", body: JSONEncoder().encode(body), authenticated: authenticated)
     }
+    public func postAnswer<B: Encodable & Sendable>(_ path: String, body: B, requestID: String, update: @escaping @Sendable (AnswerUpdate) -> Void) async throws -> RequestResult {
+        let epoch = sessionEpoch
+        let receiver = AnswerStreamReceiver(update: update)
+        do {
+        let data = try await request(path, method: "POST", body: JSONEncoder().encode(body), receiver: receiver)
+        guard sessionEpoch == epoch else { throw NetworkFailure.unauthenticated }
+        let result: RequestResult
+        if let fallback = try? JSONDecoder().decode(RequestResult.self, from: data) { result = fallback }
+        else {
+            try receiver.parser.finish()
+            if let failure = receiver.failure { throw failure }
+            guard let value = receiver.result else { throw NetworkFailure.invalidResponse }; result = value
+        }
+        guard result.requestId == requestID else { throw NetworkFailure.invalidResponse }
+        return result
+        } catch {
+            let failure = (error as? NetworkFailure) ?? .invalidResponse
+            if sessionEpoch == epoch, !receiver.latestPreview.isEmpty, PartialAnswerFailure.mayRetain(failure) {
+                throw PartialAnswerFailure(underlying: failure, text: receiver.latestPreview)
+            }
+            throw failure
+        }
+    }
+
     public func put<B: Encodable & Sendable, T: Decodable & Sendable>(_ path: String, body: B) async throws -> T {
         try await decode(path, method: "PUT", body: JSONEncoder().encode(body))
     }
@@ -35,18 +60,20 @@ public actor APIClient {
         let data = try await request(path, method: method, body: body, query: query, authenticated: authenticated)
         do { return try JSONDecoder().decode(T.self, from: data) } catch { throw NetworkFailure.invalidResponse }
     }
-    private func request(_ path: String, method: String, body: Data?, query: [URLQueryItem] = [], authenticated: Bool = true) async throws -> Data {
+    private func request(_ path: String, method: String, body: Data?, query: [URLQueryItem] = [], authenticated: Bool = true, receiver: AnswerStreamReceiver? = nil) async throws -> Data {
         guard baseURL.host?.hasSuffix(".invalid") != true else { throw NetworkFailure.unconfigured }
         guard path.hasPrefix("/"), !path.hasPrefix("//"), !path.contains(".."), !path.contains("?"), !path.contains("#") else { throw NetworkFailure.invalidResponse }
         guard var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: false) else { throw NetworkFailure.invalidResponse }
         components.path = path; components.queryItems = query.isEmpty ? nil : query
         guard let url = components.url else { throw NetworkFailure.invalidResponse }
         var request = URLRequest(url: url); request.httpMethod = method; request.httpBody = body
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue(receiver == nil ? "application/json" : "text/event-stream", forHTTPHeaderField: "Accept")
         if body != nil { request.setValue("application/json", forHTTPHeaderField: "Content-Type") }
         if authenticated { guard let token else { throw NetworkFailure.unauthenticated }; request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization") }
         do {
-            let (data, response) = try await BoundedTransfer(maximumBytes: 4_000_000).run(request, configuration: configuration)
+            let consume: (@Sendable (Data) throws -> Void)?
+            if let receiver { consume = { data in try receiver.receive(data) } } else { consume = nil }
+            let (data, response) = try await BoundedTransfer(maximumBytes: 4_000_000, onData: consume).run(request, configuration: configuration)
             try Task.checkCancellation()
             guard let http = response as? HTTPURLResponse, http.url?.host == baseURL.host, http.url?.scheme == "https", data.count <= 4_000_000 else { throw NetworkFailure.invalidResponse }
             if http.statusCode == 401 { throw NetworkFailure.unauthenticated }

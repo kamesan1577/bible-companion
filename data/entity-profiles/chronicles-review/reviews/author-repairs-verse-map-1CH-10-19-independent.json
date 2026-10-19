@@ -1,0 +1,335 @@
+{
+  "task": "author repair of 1CH 10–19 map after independent semantic review",
+  "createdAtUTC": "2026-10-16T06:24:12.667643+00:00",
+  "mapPath": "reviews/verse-map-1CH-10-19.json",
+  "beforeSHA256": "c2c433ca8f82e0abaf6aa87bd0622e8b7fb86b4e9c0c92ec671552c682781757",
+  "preservedObjectPath": "preservation/objects/c2c433ca8f82e0abaf6aa87bd0622e8b7fb86b4e9c0c92ec671552c682781757",
+  "afterSHA256": "4e2fa2a7ef0c8a0c940af178a8fa5f0e3faec84b3319cec33435f702a19445b4",
+  "sourceInputPath": "verse-review-inputs/1CH-10-19.json",
+  "sourceInputSHA256": "0e11c583964c18c0b3500f1bb11c98574c5c54b3593cc15bf1e3715746a6f50b",
+  "independentReviewPath": "reviews/independent-verse-map-1CH-10-19.json",
+  "independentReviewSHA256": "6b915b98f17f2363da596e1f5c7aee63607be6a1c90ffa32c906932ee3e6379f",
+  "changes": [
+    {
+      "findingID": "F01",
+      "coordinates": [
+        "10:2"
+      ],
+      "rationaleJa": "サウルはこの節で明示名なので直接言及として扱う。",
+      "changes": [
+        "person:saul_2478 context→direct"
+      ]
+    },
+    {
+      "findingID": "F02",
+      "coordinates": [
+        "10:11",
+        "10:12"
+      ],
+      "rationaleJa": "連続する埋葬記事の短縮形として同じ場所を指す文脈を明記し、ID統合は未承認として保留。",
+      "changes": [
+        "10:12 reviewNoteJa追記",
+        "10:12 canonical-ID対応の未解決記録"
+      ]
+    },
+    {
+      "findingID": "F03",
+      "coordinates": [
+        "11:37"
+      ],
+      "rationaleJa": "Carmelite demonymを地名そのものの出現とせず場所との関連として記録。",
+      "changes": [
+        "place:carmel_278 context採用"
+      ]
+    },
+    {
+      "findingID": "F04",
+      "coordinates": [
+        "12:1"
+      ],
+      "rationaleJa": "Saulは逃亡対象として明示される。",
+      "changes": [
+        "person:saul_2478 context追加"
+      ]
+    },
+    {
+      "findingID": "F05",
+      "coordinates": [
+        "12:3"
+      ],
+      "rationaleJa": "同座標の候補だけでは綴り違いの本人性が確定しない。",
+      "changes": [
+        "候補を除外したまま異綴り候補付き未解決記録"
+      ]
+    },
+    {
+      "findingID": "F06-F07",
+      "coordinates": [
+        "12:3",
+        "12:4"
+      ],
+      "rationaleJa": "同節本文にある人名異綴りは同定未確定のまま記録。theophoric demonymsには既存場所IDをcontextとして関連付けるが、人々の集合IDに代用しない。",
+      "changes": [
+        "Gibeah/Anathoth/Gibeon/Gederah place-context追加",
+        "4集団の未解決記録",
+        "Ismaiah異綴り未解決記録"
+      ]
+    },
+    {
+      "findingID": "F08",
+      "coordinates": [
+        "12:8",
+        "12:14",
+        "12:37"
+      ],
+      "rationaleJa": "Gadの祖先個人IDを集団用法から除き、Gadites/Reubenites等を未解決の集団として記録。",
+      "changes": [
+        "person:gad_1262を3節から除外し祖先との区別理由を追加",
+        "Gadites/Sons of Gad/Reubenites/Manasseh half-tribe unresolved records"
+      ]
+    },
+    {
+      "findingID": "F09-F10",
+      "coordinates": [
+        "12:13",
+        "12:20"
+      ],
+      "rationaleJa": "同座標索引の異綴り候補を本人性の証明とせず未解決台帳に明記。",
+      "changes": [
+        "Machbannai/Zillethai candidate IDsを伴う未解決記録"
+      ]
+    },
+    {
+      "findingID": "F11",
+      "coordinates": [
+        "12:23"
+      ],
+      "rationaleJa": "Saulは王国名の由来として明記される。",
+      "changes": [
+        "person:saul_2478 context追加"
+      ]
+    },
+    {
+      "findingID": "F12",
+      "coordinates": [
+        "12:24",
+        "12:25",
+        "12:26",
+        "12:29",
+        "12:30",
+        "12:31",
+        "12:32",
+        "12:33",
+        "12:34",
+        "12:35",
+        "12:36",
+        "12:37",
+        "12:40"
+      ],
+      "rationaleJa": "部族・民の明示用法を祖先個人IDへ結び付けず、全用例を集団未解決として列挙。12:32/40「Israel」も同様。",
+      "changes": [
+        "tribal collective unresolved records for all named groups",
+        "ancestor IDs explicitly excluded for these collective-only uses"
+      ]
+    },
+    {
+      "findingID": "F13",
+      "coordinates": [
+        "13:5"
+      ],
+      "rationaleJa": "Shihorは本文で明示されるが、現行1CH indexに専用IDがない。Nile同定は固定本文から確定しない。",
+      "changes": [
+        "Nile exclusion維持",
+        "Shihor named-location unresolved record"
+      ]
+    },
+    {
+      "findingID": "F14",
+      "coordinates": [
+        "13:6"
+      ],
+      "rationaleJa": "Judahの領域所属を地域IDへcontextで関連付け、1CH profile未確認を明記。",
+      "changes": [
+        "place:judah_1280 context追加",
+        "profile-review-pending gap追加"
+      ]
+    },
+    {
+      "findingID": "F15",
+      "coordinates": [
+        "13:11"
+      ],
+      "rationaleJa": "名付けられたPerez Uzzaの既存地名IDを直接言及として採用。",
+      "changes": [
+        "place:perez-uzza_934 exclusion→direct"
+      ]
+    },
+    {
+      "findingID": "F16",
+      "coordinates": [
+        "13:13",
+        "13:14",
+        "15:18",
+        "15:21",
+        "15:24",
+        "15:25",
+        "16:5",
+        "16:38"
+      ],
+      "rationaleJa": "Obed-Edomは本文で明記されるが、この1CH indexにはIDがなく、全用例をunresolvedへ追加。",
+      "changes": [
+        "8 Obed-Edom occurrence records"
+      ]
+    },
+    {
+      "findingID": "F17",
+      "coordinates": [
+        "14:11"
+      ],
+      "rationaleJa": "既存地名IDのハイフン差をWEB本文の直接地名に対応。",
+      "changes": [
+        "place:baal-perazim_146 exclusion→direct"
+      ]
+    },
+    {
+      "findingID": "F18",
+      "coordinates": [
+        "14:13"
+      ],
+      "rationaleJa": "直前の同じ襲撃文脈にある谷を指す。現行1CH indexの正しいIDはplace:valley_of_rephaim_1214。",
+      "changes": [
+        "place:valley_of_rephaim_1214 context追加"
+      ]
+    },
+    {
+      "findingID": "F19",
+      "coordinates": [
+        "15:1"
+      ],
+      "rationaleJa": "前章で確立したDavid’s cityのJerusalem参照をcontextとして記録。",
+      "changes": [
+        "place:jerusalem_636 context追加"
+      ]
+    },
+    {
+      "findingID": "F20",
+      "coordinates": [
+        "15:4"
+      ],
+      "rationaleJa": "Aaronの関係を直接人物出現から系譜contextへ正規化。",
+      "changes": [
+        "person:aaron_1 direct→context"
+      ]
+    },
+    {
+      "findingID": "F21",
+      "coordinates": [
+        "15:7"
+      ],
+      "rationaleJa": "Gershom/Gershon spelling variant mapped contextually to existing ancestor, not as present actor.",
+      "changes": [
+        "person:gershon_1305 exclusion→context"
+      ]
+    },
+    {
+      "findingID": "F22",
+      "coordinates": [
+        "15:17"
+      ],
+      "rationaleJa": "EthanはJeduthunと同定せず、父Kushaiahの名も独立IDがないため未解決に記録。",
+      "changes": [
+        "Kushaiah unresolved record"
+      ]
+    },
+    {
+      "findingID": "F23",
+      "coordinates": [
+        "15:18",
+        "15:21"
+      ],
+      "rationaleJa": "同座標の異綴り候補を確定同定せず未解決として記録。",
+      "changes": [
+        "Eliphelehu/Elipheleh candidate records"
+      ]
+    },
+    {
+      "findingID": "F24",
+      "coordinates": [
+        "15:24",
+        "16:6"
+      ],
+      "rationaleJa": "両節のBenaiah/Zechariah同定を名だけで拡張しないよう注記し、本人性は未確定のままリンクの役割範囲を節本文に限定。",
+      "changes": [
+        "reviewNoteJa uncertainty added"
+      ]
+    },
+    {
+      "findingID": "F26",
+      "coordinates": [
+        "16:5"
+      ],
+      "rationaleJa": "同一節のJeiel反復を可視化し、二人目の同定は保留。",
+      "changes": [
+        "reviewNoteJa duplicate-name uncertainty added"
+      ]
+    },
+    {
+      "findingID": "F29",
+      "coordinates": [
+        "18:6"
+      ],
+      "rationaleJa": "「Syria of Damascus」は地域/政体を指すため既存Syria地域IDへcontext、Damascusは地域限定の都市名としてcontext。Syriaの1CH profileがない点はavailability gapに記録。",
+      "changes": [
+        "Damascus direct→context",
+        "place:syria_1122 context追加",
+        "profile-review-pending gap追加",
+        "Syrians group unresolved維持/明確化"
+      ]
+    },
+    {
+      "findingID": "F30",
+      "coordinates": [
+        "18:10"
+      ],
+      "rationaleJa": "直前のTou/Toiを明確な主語照応としてcontext追加。",
+      "changes": [
+        "person:toi_2877 excluded→context",
+        "Joram exclusion維持"
+      ]
+    },
+    {
+      "findingID": "F33",
+      "coordinates": [
+        "19:11"
+      ],
+      "rationaleJa": "19:10から続く主語Joabをcontextで追加。",
+      "changes": [
+        "person:joab_1617 context追加"
+      ]
+    },
+    {
+      "findingID": "F34",
+      "coordinates": [
+        "19:16",
+        "19:19"
+      ],
+      "rationaleJa": "同じ対シリア戦役の王として18章で特定済みのHadarezer IDを本文のHadadezer表記へ対応。",
+      "changes": [
+        "person:hadarezer_1340 excluded→direct at 19:16/19:19"
+      ]
+    }
+  ],
+  "noChangeFindings": [
+    "F27",
+    "F28",
+    "F31",
+    "F32"
+  ],
+  "globalNotes": [
+    "The exact fixed WEB sourceText, citationURL, and sourceTextSHA256 fields were preserved for all 267 rows.",
+    "No new canonical ID was invented. Collective groups remain unresolved where there is no matching 1CH collective ID.",
+    "The review finding proposed place:shihor_1076, but that ID is absent from current 1CH and Chronicles-wide target inventory; this discrepancy is preserved and Shihor remains unresolved.",
+    "The review finding proposed place:valley-of-rephaim_1202, but the current 1CH target entry is place:valley_of_rephaim_1214; used actual indexed ID.",
+    "Cross-book existing IDs Judah/Syria were recorded as context with profile-review-pending availability gaps; no runtime profile approval is implied."
+  ]
+}

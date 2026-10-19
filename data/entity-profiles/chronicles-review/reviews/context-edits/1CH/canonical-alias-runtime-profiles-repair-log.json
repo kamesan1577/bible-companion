@@ -1,0 +1,45 @@
+{
+  "logType": "alias-runtime-profile-proposal-reader-gate-repair",
+  "proposalPath": "reviews/context-edits/1CH/canonical-alias-runtime-profiles.json",
+  "beforeSHA256": "50f0ff4072f8fd26c3db266f404901c047adb519af73dcc9fd13c8451f0098da",
+  "preservedBeforeObject": "preservation/objects/50f0ff4072f8fd26c3db266f404901c047adb519af73dcc9fd13c8451f0098da",
+  "afterSHA256": "23c4805803b4d1eec0571b7a48c060edf23bea46c37a08e290f08870eb25d729",
+  "modifiedAtUTC": "2026-10-16T10:19:18Z",
+  "changes": [
+    {
+      "entityID": "place:jabesh-gilead_611",
+      "field": "candidateProfile.wikipedia.noteJa",
+      "before": "記事はギレアデの古代町とし、短縮形Jabeshを示します。現代の遺跡候補は複数です。",
+      "after": "記事はギレアデの古代町として紹介し、現在地について複数の考古学的候補を挙げています。",
+      "reasonJa": "10:11時点の常時欄から、本文短縮形Jabeshが明示される10:12の情報を除いた。短名はdisplayPolicyの10:12 gateに残す。"
+    },
+    {
+      "entityID": "place:kiriath-jearim_701",
+      "field": "candidateProfile.wikipedia.noteJa",
+      "before": "記事は古代町の別名にBa’alahを挙げ、1歴代誌13:6と結び付けます。現代の遺跡候補は複数です。",
+      "after": "記事は古代町と複数の現代遺跡候補を紹介し、所在地の比定には幅があります。",
+      "reasonJa": "13:5の常時欄から、本文が13:6で述べる別名Ba’alahを除いた。別名はfacts/displayPolicyの13:6 gateにだけ残す。"
+    },
+    {
+      "entityID": "place:kiriath-jearim_701",
+      "field": "candidate source knownBy",
+      "before": {
+        "chapter": 2,
+        "verse": 50
+      },
+      "after": {
+        "chapter": 13,
+        "verse": 5
+      },
+      "reasonJa": "これはgenealogy base profileではなく、13:5–6 narrative context variantの補助出典ゲート。"
+    },
+    {
+      "entityID": "place:kiriath-jearim_701",
+      "field": "candidateProfile.summaryJa",
+      "before": "1歴代誌13:5では、ダビデが全イスラエルを集め、契約の箱をキルヤテ・エアリムから運び出そうとする場面で名が挙がります。",
+      "after": "歴代誌上13:5では、ダビデが全イスラエルを集め、契約の箱をキルヤテ・エアリムから運び出そうとする場面で名が挙がります。",
+      "reasonJa": "書名表記を自然な日本語に統一。"
+    }
+  ],
+  "activation": false
+}

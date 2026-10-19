@@ -1,0 +1,40 @@
+{
+  "task": "Clarify fixed WEB quotation vs Japanese summary in 2CH 2:14 evidence",
+  "recordedAtUTC": "2026-10-16T11:53:41Z",
+  "sourceIndependentReport": "reviews/independent-batch08-persons_2.json",
+  "sourceReportSHA256": "dfc184c6643182d1355d1744f406d925789bd4804abbbd61ecd0b2ab6ac8cd20",
+  "before": [
+    {
+      "path": "drafts/persons_2/2CH_person_huram_1575.json",
+      "sha256": "acc288fc191826fcea9c8937971bdaacfea76349bd6814b1147189af1c749b65",
+      "backup": "preservation/objects/acc288fc191826fcea9c8937971bdaacfea76349bd6814b1147189af1c749b65"
+    },
+    {
+      "path": "evidence/persons_2/2CH_person_huram_1575-sources.json",
+      "sha256": "984f51f69623412eeb197f63b20bce66995b3a8e67939f103c85b9deb6c537ea",
+      "backup": "preservation/objects/984f51f69623412eeb197f63b20bce66995b3a8e67939f103c85b9deb6c537ea"
+    }
+  ],
+  "after": {
+    "draftSHA256": "98ac7e7c31007d064fb60dacffc6efec9ab6a1130e73eacbb4e39434a5eff8a8",
+    "profileSHA256": "e5e9196f377eb65a14f03b8c549711fac8a83069e2c2cc58e7fdf7bc6d1ad6fa",
+    "evidenceSHA256": "2f042bb13423e7a80521135c67c45275ec4150d65eeae41ef8f6aa28ece32d43"
+  },
+  "fixedWitness": {
+    "ref": "2CH 2:14",
+    "citationURL": "https://ebible.org/engwebp/2CH02.htm#V14",
+    "text": "the son of a woman of the daughters of Dan; and his father was a man of Tyre. He is skillful to work in gold, in silver, in bronze, in iron, in stone, in timber, in purple, in blue, in fine linen, and in crimson, also to engrave any kind of engraving and to devise any device, that there may be a place appointed to him with your skillful men, and with the skillful men of my lord David your father.",
+    "textSHA256": "9ea1f0e37dabd5b3f972f3fac991aa28385569dfd59b3adcbd02f410c8542def"
+  },
+  "changes": [
+    {
+      "field": "evidence.primaryTextChecks[2CH 2:14]",
+      "reasonJa": "説明文が逐語引用欄に混在していたため、固定WEB全文をtextへ、別途日本語要約をsummaryJaへ分けた。"
+    },
+    {
+      "field": "review.primaryWitnesses[2CH 2:13–14]",
+      "reasonJa": "textualBasisJaを明示的な日本語要約とし、固定WEB英文とSHAを別フィールドに記録した。"
+    }
+  ],
+  "semanticApproval": false
+}

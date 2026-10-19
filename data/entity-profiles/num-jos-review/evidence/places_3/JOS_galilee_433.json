@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "book": "JOS",
+  "entityID": "place:galilee_433",
+  "profilePath": "drafts/places_3/JOS_galilee_433.json",
+  "profileSHA256": "4edab0921057d06a905a7a332a5d700d67a730bbfd1e8b337d378c5125866ded",
+  "assignment": {
+    "path": "assignments/places_3.json",
+    "sha256": "ec36241ee733ce0e8c7942b652b68c6540ed225fa01393cc9b7561602da2e08f"
+  },
+  "fixedWitness": {
+    "path": "inventory/targets/joshua-web-verses.json",
+    "sha256": "26ae82b805dee523bb852977ccf62ad38cc40ebe442b650cbd7862db833ea854",
+    "version": "webp-usfx-2026-10-13-35a6adf626e5"
+  },
+  "sourceIndex": {
+    "path": "candidate/apps/ios/Sources/Core/Resources/entity-index.json",
+    "workspace": "../romans-leviticus-entities-work",
+    "sha256": "dfe6fba1109f192548e28645cf085ddafe3baf7820d200e2e28da486dd98f11a",
+    "candidateCoordinate": [
+      32.70674542474383,
+      35.30152807767973
+    ],
+    "coordinateStatus": "unverified-candidate"
+  },
+  "primaryChecks": [
+    {
+      "ref": "JOS 20:7",
+      "sourceURL": "https://ebible.org/engwebp/JOS20.htm#V7",
+      "text": "They set apart Kedesh in Galilee in the hill country of Naphtali, Shechem in the hill country of Ephraim, and Kiriath Arba (also called Hebron) in the hill country of Judah.",
+      "contextRefs": [
+        "JOS 20:6 — He shall dwell in that city until he stands before the congregation for judgment, until the death of the high priest that shall be in those days. Then the man slayer shall return, and come to his own city, and to his own house, to the city he fled from.’”",
+        "JOS 20:8 — Beyond the Jordan at Jericho eastward, they assigned Bezer in the wilderness in the plain out of the tribe of Reuben, Ramoth in Gilead out of the tribe of Gad, and Golan in Bashan out of the tribe of Manasseh."
+      ],
+      "disposition": "accepted-occurrence"
+    },
+    {
+      "ref": "JOS 21:32",
+      "sourceURL": "https://ebible.org/engwebp/JOS21.htm#V32",
+      "text": "Out of the tribe of Naphtali, Kedesh in Galilee with its pasture lands, the city of refuge for the man slayer, Hammothdor with its pasture lands, and Kartan with its pasture lands: three cities.",
+      "contextRefs": [
+        "JOS 21:31 — Helkath with its pasture lands, and Rehob with its pasture lands: four cities.",
+        "JOS 21:33 — All the cities of the Gershonites according to their families were thirteen cities with their pasture lands."
+      ],
+      "disposition": "accepted-occurrence"
+    },
+    {
+      "ref": "JOS 12:23",
+      "sourceURL": "https://ebible.org/engwebp/JOS12.htm#V23",
+      "text": "the king of Dor in the height of Dor, one; the king of Goiim in Gilgal, one;",
+      "contextRefs": [
+        "JOS 12:22 — the king of Kedesh, one; the king of Jokneam in Carmel, one;",
+        "JOS 12:24 — the king of Tirzah, one: all the kings thirty-one."
+      ],
+      "disposition": "excluded-wrong-link"
+    }
+  ],
+  "wikipediaCheck": {
+    "title": "Galilee",
+    "language": "en",
+    "url": "https://en.wikipedia.org/wiki/Galilee#Borders_and_geography",
+    "status": "related-section-read; historical identity/boundary not equivalent to modern region",
+    "identityBasisJa": "記事の地域節で現代ガリラヤの地理と歴史的政治境界の幅を確認。WEBの JOS20:7/21:32 は Galilee を場所句として使い、12:23 は Goiim in Gilgal なので除外。",
+    "fragmentVerified": true
+  },
+  "geographyAssessment": {
+    "classification": "region",
+    "candidateMapDisposition": "keep-legacy-candidate",
+    "reasonJa": "JOS20:7/21:32でガリラヤは明確な北方地域として直接記される。固定索引点は古代境界を確定する地点ではないが誤位置根拠はなく、地域内の未確認旧候補として表示入口を維持。12:23はWEBがGilgalとするため除外。",
+    "profileCoordinate": null,
+    "independentCoordinateSourcesRead": []
+  },
+  "limitationsJa": "固定WEB本文と前後を確認し、Wikipediaの該当記事/表節を実読。候補座標は独立照合していない。",
+  "sourceReuse": {
+    "priorDraftReuse": false,
+    "existingCandidateIndexReused": true
+  },
+  "elapsedSeconds": 240
+}

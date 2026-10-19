@@ -1,0 +1,78 @@
+{
+  "reportType": "author-map-repair",
+  "book": "1SA",
+  "ref": "12:8",
+  "inputMapPath": "reviews/verse-map-1SA-11-20.json",
+  "beforeMapSHA256": "5d770b4d61f2957872f5304ef5559b2e25096aff2c55761c00b60a98214ee90e",
+  "afterMapSHA256": "0918b2a7f91f8bfb6f74fab59f75243ee9afc0664090dc74c0fa28d456a51597",
+  "sourceTextSHA256": "056bf816ee8a66eac458f98d712a95589cc9eedb2eb1adb4fd62ae773fc8f9e7",
+  "citationURL": "https://ebible.org/engwebp/1SA12.htm#V8",
+  "change": {
+    "before": {
+      "entities": [
+        {
+          "entityID": "person:aaron_1",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:egypt_362",
+          "relationship": "direct"
+        }
+      ],
+      "excludedCandidates": [
+        {
+          "entityID": "person:israel_682",
+          "name": "Jacob/Israel",
+          "reasonJa": "固定WEBは族長Jacobを名指す。集団を表す基部のIsraelプロフィールを個人へ流用せず、別人のMatthew系譜Jacob_683も使わない。個人としての文脈プロフィールが承認されるまでは未リンク。"
+        },
+        {
+          "entityID": "person:jacob_683",
+          "name": "Jacob",
+          "reasonJa": "このIDはMatthew1系譜の別人で、1SA12:8のエジプトへ下った族長Jacobではない。"
+        }
+      ],
+      "reasonJa": "固定WEB 12:8 を前後の会話と照合した修正: person:israel_682をdirectへ変更（The WEB names Jacob explicitly; the existing Israel_682 canonical ID carries the patriarch Jacob/Israel, unlike the separate Matthew genealogy Jacob_683.）；person:israel_682を除去（This ID is directly named as Jacob, not a pronoun antecedent; retained as direct because canonical Israel_682 is the patriarch Jacob/Israel.）；person:israel_682をdirectで追加（WEB explicitly names the patriarch Jacob; canonical person:israel_682 is the Jacob/Israel patriarch. person:jacob_683 is a different Matthew genealogy person.）；person:jacob_683は候補から除外（person:jacob_683 is the separate Matthew genealogy individual, not the patriarch entering Egypt in 1SA12:8.）。 固定WEBの隣接発話・指示語を再確認してリンクを補正した。"
+    },
+    "after": {
+      "entities": [
+        {
+          "entityID": "person:aaron_1",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:moses_2108",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "place:egypt_362",
+          "relationship": "direct"
+        }
+      ],
+      "excludedCandidates": [
+        {
+          "entityID": "person:jacob_683",
+          "name": "Jacob",
+          "reasonJa": "このIDはMatthew1系譜の別人で、1SA12:8のエジプトへ下った族長Jacobではない。"
+        }
+      ],
+      "reasonJa": "固定WEBは族長Jacobを本文で直接名指す。person:israel_682は族長Jacob/Israelを表す既存の個人文脈IDとして承認済みのためdirectで結び、別人のperson:jacob_683は除外する。"
+    },
+    "reasonJa": "Fixed WEB explicitly names Jacob entering Egypt. The approved person:israel_682 Jacob context identity supports a direct literal-name link here; remove it from exclusions. Keep person:jacob_683 excluded because it is a distinct Matthew genealogy person."
+  }
+}

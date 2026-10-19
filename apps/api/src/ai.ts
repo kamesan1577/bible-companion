@@ -1,4 +1,12 @@
-import {STANDARD_QUESTION,standardKey,readStandard,claimStandard,completeStandard,failStandard,cachedStandard} from './standard-cache';
+import {
+  STANDARD_QUESTION,
+  standardKey,
+  readStandard,
+  claimStandard,
+  completeStandard,
+  failStandard,
+  cachedStandard,
+} from './standard-cache';
 import { budgetDispatchGuard } from './budget-dispatch';
 import type { Context } from 'hono';
 import { assertShareAccess } from './share-auth';
@@ -13,6 +21,8 @@ import {
 } from './answer-mode';
 import { historicalSources, historicalWithin } from './history';
 import { Hono } from 'hono';
+import { streamSSE } from 'hono/streaming';
+import { HTTPException } from 'hono/http-exception';
 import { z } from 'zod';
 import { sha256, stableJSON, passageSchema, type Passage } from '@bible/core';
 import {
@@ -162,6 +172,8 @@ aiRoutes.post('/me/consents', async (c) => {
       ['groundedGenerationPolicyVersion', v.groundedGeneration?.policyVersion ?? null],
     );
   }
+  const revoking = v.workersAi === false || v.groundedGeneration?.accepted === false;
+  if (revoking) changes.push(['shareAiConsent', false]);
   const result = await c.env.DB.prepare(
     'UPDATE users SET settings_json=json_set(settings_json,' +
       changes.map(([key]) => "'$." + key + "',json(?)").join(',') +
@@ -170,6 +182,12 @@ aiRoutes.post('/me/consents', async (c) => {
     .bind(...changes.map(([, value]) => JSON.stringify(value)), c.get('user').id)
     .first<{ settings_json: string }>();
   if (!result) fail(404, 'not_found', 'Account not found');
+  if (revoking)
+    await c.env.DB.prepare(
+      'UPDATE share_ai_access SET expires_at=0,refresh_hash=NULL,refresh_expires_at=0 WHERE user_id=?',
+    )
+      .bind(c.get('user').id)
+      .run();
   const settings = JSON.parse(result.settings_json);
   return c.json({ workersAi: settings.workersAiConsent === true });
 });
@@ -279,20 +297,78 @@ aiRoutes.delete('/developer/model-preference', async (c) => {
     .run();
   return c.body(null, 204);
 });
-export async function answerQuestion(c: Context<AppEnv>) { return answerCore(c,false); }
-export async function standardExplanation(c: Context<AppEnv>) { return answerCore(c,true); }
-async function answerCore(c: Context<AppEnv>,standard:boolean) {
-  const v = standard ? {...await body(c,z.object({requestId:z.string().uuid()}).strict()),question:STANDARD_QUESTION,sourceOnly:false,answerMode:'grounded-generation' as const} : await body(
-    c,
-    z
-      .object({
-        requestId: z.string().uuid(),
-        question: z.string().trim().min(1).max(2000),
-        sourceOnly: z.boolean().default(false),
-        answerMode: answerModeSchema.default('reviewed-claim-selection'),
-      })
-      .strict(),
-  );
+type Progress = (stage: string, text?: string) => Promise<void>;
+export async function answerQuestion(c: Context<AppEnv>) {
+  return answerTransport(c, false);
+}
+export async function standardExplanation(c: Context<AppEnv>) {
+  return answerTransport(c, true);
+}
+async function answerTransport(c: Context<AppEnv>, standard: boolean) {
+  if (!c.req.header('Accept')?.includes('text/event-stream')) return answerCore(c, standard);
+  c.header('Cache-Control', 'private, no-store');
+  c.header('X-Accel-Buffering', 'no');
+  const response = streamSSE(c, async (stream) => {
+    const controller = new AbortController();
+    stream.onAbort(() => controller.abort());
+    const progress: Progress = async (stage, text) => {
+      await assertShareAccess(c);
+      await stream.writeSSE({
+        event: text === undefined ? 'progress' : 'preview',
+        data: JSON.stringify({ stage, ...(text === undefined ? {} : { text }) }),
+      });
+    };
+    try {
+      await progress('preparing');
+      const response = await answerCore(
+        c,
+        standard,
+        progress,
+        AbortSignal.any([c.req.raw.signal, controller.signal]),
+      );
+      await assertShareAccess(c);
+      await stream.writeSSE({ event: 'complete', data: await response.text() });
+    } catch (error) {
+      const response = error instanceof HTTPException ? error.getResponse() : null;
+      const envelope = response
+        ? await response.json<{ error?: { code?: string } }>().catch(() => null)
+        : null;
+      await stream.writeSSE({
+        event: 'failure',
+        data: JSON.stringify({
+          status: response?.status ?? 500,
+          code: envelope?.error?.code ?? 'server_error',
+        }),
+      });
+    }
+  });
+  response.headers.set('Cache-Control', 'private, no-store');
+  return response;
+}
+async function answerCore(
+  c: Context<AppEnv>,
+  standard: boolean,
+  progress?: Progress,
+  signal: AbortSignal = c.req.raw.signal,
+) {
+  const v = standard
+    ? {
+        ...(await body(c, z.object({ requestId: z.string().uuid() }).strict())),
+        question: STANDARD_QUESTION,
+        sourceOnly: false,
+        answerMode: 'grounded-generation' as const,
+      }
+    : await body(
+        c,
+        z
+          .object({
+            requestId: z.string().uuid(),
+            question: z.string().trim().min(1).max(2000),
+            sourceOnly: z.boolean().default(false),
+            answerMode: answerModeSchema.default('reviewed-claim-selection'),
+          })
+          .strict(),
+      );
   const user = c.get('user');
   const conversationID = c.req.param('id');
   if (!conversationID) fail(400, 'conversation_required', 'Conversation ID required');
@@ -311,12 +387,12 @@ async function answerCore(c: Context<AppEnv>,standard:boolean) {
         v.answerMode === 'reviewed-claim-selection'
           ? { requestId: v.requestId, question: v.question, sourceOnly: v.sourceOnly }
           : v,
-      ...(standard ? {standardExplanation: true} : {}),
+      ...(standard ? { standardExplanation: true } : {}),
       conversationId: conversation.id,
       passage: conversation.passage_json,
       readingBoundary: readingBoundaryOf(conversation),
       spoilers: conversation.spoiler_allowed,
-      ...(c.env.GENERAL_KNOWLEDGE_ENABLED === 'true' ? {generalKnowledge:true} : {}),
+      ...(c.env.GENERAL_KNOWLEDGE_ENABLED === 'true' ? { generalKnowledge: true } : {}),
     }),
   );
   const existing = await c.env.DB.prepare(
@@ -372,6 +448,7 @@ async function answerCore(c: Context<AppEnv>,standard:boolean) {
     readingBoundaryOf(conversation),
     !!conversation.spoiler_allowed,
     passage,
+    !standard,
   );
   const sources = sourceState.sources;
   const previous = await c.env.DB.prepare(
@@ -401,18 +478,21 @@ async function answerCore(c: Context<AppEnv>,standard:boolean) {
     sources,
     modelId: preference?.model_id ?? c.env.DEFAULT_MODEL_ID,
     settings: preference
-      ? JSON.parse(preference.settings_json)
-      : { maxOutputTokens: 2048, temperature: 0.2, timeoutMs: 30000, stream: false },
+      ? { ...JSON.parse(preference.settings_json), ...(progress ? { stream: true } : {}) }
+      : { maxOutputTokens: 2048, temperature: 0.2, timeoutMs: 30000, stream: !!progress },
   };
-  const publicKey = standard ? await standardKey(input,sourceState.version,c.env.GENERAL_KNOWLEDGE_ENABLED==='true') : null;
-  let sharedResult = publicKey ? await readStandard(c.env,publicKey.key) : null;
-  let cacheToken:string|null=null;
+  const publicKey = standard
+    ? await standardKey(input, sourceState.version, c.env.GENERAL_KNOWLEDGE_ENABLED === 'true')
+    : null;
+  let sharedResult = publicKey ? await readStandard(c.env, publicKey.key) : null;
+  let cacheToken: string | null = null;
   try {
-    if(!sharedResult) prepareCompanionRequest(input, {
-      authorization: authorization(c.env, user.id),
-      answerMode: v.answerMode,
-      allowGeneralKnowledge: c.env.GENERAL_KNOWLEDGE_ENABLED === 'true',
-    });
+    if (!sharedResult)
+      prepareCompanionRequest(input, {
+        authorization: authorization(c.env, user.id),
+        answerMode: v.answerMode,
+        allowGeneralKnowledge: c.env.GENERAL_KNOWLEDGE_ENABLED === 'true',
+      });
     if (!v.sourceOnly && !sharedResult) {
       assertModelAuthorized(input.modelId!, authorization(c.env, user.id));
     }
@@ -423,7 +503,8 @@ async function answerCore(c: Context<AppEnv>,standard:boolean) {
   let verifiedReservation: Awaited<ReturnType<typeof estimateReservation>> | undefined;
   try {
     if (!v.sourceOnly && !sharedResult) {
-      if(c.env.AI_ENABLED!=='true'||!c.env.AI)fail(503,'ai_not_connected','AI is not connected');
+      if (c.env.AI_ENABLED !== 'true' || !c.env.AI)
+        fail(503, 'ai_not_connected', 'AI is not connected');
       verifiedReservation = await estimateReservation(
         c.env,
         input,
@@ -435,14 +516,21 @@ async function answerCore(c: Context<AppEnv>,standard:boolean) {
   } catch (e) {
     aiError(e);
   }
-  if(publicKey && !sharedResult){ const ticket=await claimStandard(c.env,publicKey.key,publicKey.json);cacheToken=ticket.token;sharedResult=ticket.result; }
-  if(sharedResult) verifiedReservation=undefined;
+  if (publicKey && !sharedResult) {
+    const ticket = await claimStandard(c.env, publicKey.key, publicKey.json);
+    cacheToken = ticket.token;
+    sharedResult = ticket.result;
+  }
+  if (sharedResult) verifiedReservation = undefined;
   const claimed = await c.env.DB.prepare(
     "INSERT OR IGNORE INTO generation_requests(id,user_id,conversation_id,request_hash,status,created_at,updated_at) SELECT ?,?,?,?,'reserved',?,? WHERE NOT EXISTS(SELECT 1 FROM request_cancellations WHERE user_id=? AND id=? AND kind='question') RETURNING id",
   )
     .bind(v.requestId, user.id, conversation.id, hash, now(), now(), user.id, v.requestId)
     .first();
-  if (!claimed) { if(publicKey&&cacheToken)await failStandard(c.env,publicKey.key,cacheToken);fail(409, 'request_already_processed', 'Request ID is already in use'); }
+  if (!claimed) {
+    if (publicKey && cacheToken) await failStandard(c.env, publicKey.key, cacheToken);
+    fail(409, 'request_already_processed', 'Request ID is already in use');
+  }
   let budgetReserved = false;
   let dispatched = false;
   let settledUsage: number | null = null;
@@ -457,45 +545,65 @@ async function answerCore(c: Context<AppEnv>,standard:boolean) {
       .bind(now(), v.requestId, user.id, user.id, v.requestId)
       .first();
     if (!started) fail(409, 'request_cancelled', 'Request was cancelled before generation');
-    const result = sharedResult ? cachedStandard(sharedResult) : v.sourceOnly
-      ? createSourceOnlyAnswer(input, user.id)
-      : await createCompanionAnswer(input, {
-          answerMode: v.answerMode,
-      allowGeneralKnowledge: c.env.GENERAL_KNOWLEDGE_ENABLED === 'true',
-          ai: {
-            run: async (model, inputs) => {
-              assertModelAuthorized(model, authorization(c.env, user.id));
-              assertAnswerMode(c.env, v.answerMode);
-              const guard = budgetDispatchGuard(c.env, verifiedReservation!.dispatchIdentity);
-              const dispatchClaim = await c.env.DB.prepare(
-                `UPDATE generation_requests SET updated_at=? WHERE id=? AND user_id=? AND status='running' AND EXISTS(SELECT 1 FROM conversations c JOIN users u ON u.id=c.user_id WHERE c.id=? AND c.user_id=? AND c.spoiler_allowed=? AND json_extract(u.settings_json,'$.workersAiConsent')=1 AND (?='reviewed-claim-selection' OR (json_extract(u.settings_json,'$.groundedGenerationConsent')=1 AND json_extract(u.settings_json,'$.groundedGenerationPolicyVersion')=?))) AND (SELECT version FROM source_policy_state WHERE id=1)=? AND ${guard.sql} RETURNING id`,
-              )
-                .bind(
-                  now(),
-                  v.requestId,
-                  user.id,
-                  conversation.id,
-                  user.id,
-                  conversation.spoiler_allowed,
-                  v.answerMode,
-                  GROUNDED_POLICY_VERSION,
-                  sourceState.version,
-                  ...guard.params,
+    await progress?.(sharedResult ? 'cached' : 'generating');
+    const result = sharedResult
+      ? cachedStandard(sharedResult)
+      : v.sourceOnly
+        ? createSourceOnlyAnswer(input, user.id)
+        : await createCompanionAnswer(input, {
+            answerMode: v.answerMode,
+            allowGeneralKnowledge: c.env.GENERAL_KNOWLEDGE_ENABLED === 'true',
+            ai: {
+              run: async (model, inputs) => {
+                assertModelAuthorized(model, authorization(c.env, user.id));
+                assertAnswerMode(c.env, v.answerMode);
+                const guard = budgetDispatchGuard(c.env, verifiedReservation!.dispatchIdentity);
+                const dispatchClaim = await c.env.DB.prepare(
+                  `UPDATE generation_requests SET updated_at=? WHERE id=? AND user_id=? AND status='running' AND EXISTS(SELECT 1 FROM conversations c JOIN users u ON u.id=c.user_id WHERE c.id=? AND c.user_id=? AND c.spoiler_allowed=? AND json_extract(u.settings_json,'$.workersAiConsent')=1 AND (?='reviewed-claim-selection' OR (json_extract(u.settings_json,'$.groundedGenerationConsent')=1 AND json_extract(u.settings_json,'$.groundedGenerationPolicyVersion')=?))) AND (SELECT version FROM source_policy_state WHERE id=1)=? AND ${guard.sql} RETURNING id`,
                 )
-                .first();
-              if (!dispatchClaim)
-                fail(409, 'dispatch_policy_changed', 'Request stopped before provider dispatch');
-              if (c.req.raw.signal.aborted)
-                fail(409, 'request_aborted', 'Request disconnected before provider invocation');
-              dispatched = true;
-              await assertShareAccess(c);
-              return c.env.AI!.run(model, inputs);
+                  .bind(
+                    now(),
+                    v.requestId,
+                    user.id,
+                    conversation.id,
+                    user.id,
+                    conversation.spoiler_allowed,
+                    v.answerMode,
+                    GROUNDED_POLICY_VERSION,
+                    sourceState.version,
+                    ...guard.params,
+                  )
+                  .first();
+                if (!dispatchClaim)
+                  fail(409, 'dispatch_policy_changed', 'Request stopped before provider dispatch');
+                if (signal.aborted)
+                  fail(409, 'request_aborted', 'Request disconnected before provider invocation');
+                dispatched = true;
+                await assertShareAccess(c);
+                return c.env.AI!.run(model, inputs);
+              },
             },
-          },
-          authorization: authorization(c.env, user.id),
-          signal: c.req.raw.signal,
-        });
-    if (verifiedReservation?.budgetMode === 'free-provider-hard-stop') settledUsage = reportedBudgetConsumption(input.modelId!, result.usage.actual);
+            authorization: authorization(c.env, user.id),
+            signal,
+            onProgress: progress,
+            onPreview: progress
+              ? async (text) => {
+                  if (sourceState.version !== (await sourcePolicyVersion(c.env)))
+                    fail(409, 'source_policy_changed', 'Sources changed while generating');
+                  const active = await c.env.DB.prepare(
+                    'SELECT status FROM generation_requests WHERE id=? AND user_id=?',
+                  )
+                    .bind(v.requestId, user.id)
+                    .first<{ status: string }>();
+                  if (active?.status !== 'running')
+                    fail(409, 'request_cancelled', 'Request stopped');
+                  await progress('receiving', text);
+                }
+              : undefined,
+          });
+    await progress?.('saving');
+    if (verifiedReservation?.budgetMode === 'free-provider-hard-stop')
+      settledUsage = reportedBudgetConsumption(input.modelId!, result.usage.actual);
     const current = await getConversation(c.env, user.id, conversation.id);
     const request = await c.env.DB.prepare(
       'SELECT status FROM generation_requests WHERE id=? AND user_id=?',
@@ -517,18 +625,30 @@ async function answerCore(c: Context<AppEnv>,standard:boolean) {
     };
     const annotated = {
       ...result,
+      standardExplanation: standard,
       cache: standard ? (sharedResult ? 'public-standard-hit' : 'public-standard-miss') : 'private',
-      budgetPolicy: sharedResult ? {mode:'public-standard-cache',actualNeurons:0,reservedBudgetUnits:0,usageAccounting:'cache-hit-no-provider',warnings:[]} : verifiedReservation
+      budgetPolicy: sharedResult
         ? {
-            mode: verifiedReservation.budgetMode,
-            reservationBasis: verifiedReservation.reservationBasis,
-            budgetBoundVerified: verifiedReservation.budgetBoundVerified,
-            reservedBudgetUnits: verifiedReservation.amount,
-            actualNeurons: settledUsage !== null ? result.usage.neurons : null,
-            usageAccounting: settledUsage !== null ? 'provider-reported-usage-rounded-up' : 'conservative-reservation',
-            warnings: verifiedReservation.warnings,
+            mode: 'public-standard-cache',
+            actualNeurons: 0,
+            reservedBudgetUnits: 0,
+            usageAccounting: 'cache-hit-no-provider',
+            warnings: [],
           }
-        : null,
+        : verifiedReservation
+          ? {
+              mode: verifiedReservation.budgetMode,
+              reservationBasis: verifiedReservation.reservationBasis,
+              budgetBoundVerified: verifiedReservation.budgetBoundVerified,
+              reservedBudgetUnits: verifiedReservation.amount,
+              actualNeurons: settledUsage !== null ? result.usage.neurons : null,
+              usageAccounting:
+                settledUsage !== null
+                  ? 'provider-reported-usage-rounded-up'
+                  : 'conservative-reservation',
+              warnings: verifiedReservation.warnings,
+            }
+          : null,
       sourcePolicyVersion: sourceState.version,
       spoilerAllowed: !!conversation.spoiler_allowed,
       scope,
@@ -565,6 +685,7 @@ async function answerCore(c: Context<AppEnv>,standard:boolean) {
         'user',
         JSON.stringify({
           text: v.question,
+          standardExplanation: standard,
           scope: {
             passage,
             readingBoundary: readingBoundaryOf(conversation),
@@ -598,10 +719,10 @@ async function answerCore(c: Context<AppEnv>,standard:boolean) {
     if (saved?.status !== 'complete')
       fail(409, 'request_cancelled', 'The request was cancelled before completion');
     await assertShareAccess(c);
-    if(publicKey&&cacheToken)await completeStandard(c.env,publicKey.key,cacheToken,result);
+    if (publicKey && cacheToken) await completeStandard(c.env, publicKey.key, cacheToken, result);
     return c.json({ requestId: v.requestId, status: 'complete', result: annotated });
   } catch (error) {
-    if(publicKey&&cacheToken)await failStandard(c.env,publicKey.key,cacheToken);
+    if (publicKey && cacheToken) await failStandard(c.env, publicKey.key, cacheToken);
     await c.env.DB.prepare(
       "UPDATE generation_requests SET status='failed',updated_at=? WHERE id=? AND user_id=? AND status!='cancelled'",
     )
@@ -655,7 +776,7 @@ export async function questionStatus(c: Context<AppEnv>) {
   });
 }
 aiRoutes.get('/requests/:id', questionStatus);
-aiRoutes.delete('/requests/:id', async (c) => {
+export async function cancelQuestion(c: Context<AppEnv>) {
   const id = c.req.param('id');
   if (!z.string().uuid().safeParse(id).success)
     fail(400, 'invalid_request_id', 'Expected a request UUID');
@@ -679,4 +800,5 @@ aiRoutes.delete('/requests/:id', async (c) => {
       'The request completed before cancellation; retrieve its existing result',
     );
   return c.json({ status: 'cancelled', usageMayHaveOccurred: true });
-});
+}
+aiRoutes.delete('/requests/:id', cancelQuestion);

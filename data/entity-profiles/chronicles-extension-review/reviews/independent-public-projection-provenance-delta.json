@@ -1,0 +1,34 @@
+{
+  "status": "pass",
+  "scope": "Exact-delta recheck of the projection-manifest projectorProvenance addition. No source or projected evidence files were edited by this review.",
+  "beforeManifest": {
+    "sha256": "bf0d76111986de154ce93c2db37a7c3bc238ba624f287125f7426907f331006b",
+    "preservedObject": "preservation/objects/bf0d76111986de154ce93c2db37a7c3bc238ba624f287125f7426907f331006b",
+    "objectExistsAndHashMatches": true
+  },
+  "afterManifest": {
+    "path": "candidate/data/entity-profiles/chronicles-review/preservation-manifest.json",
+    "sha256": "5091c24c523c6db8d2b302528376e2a306a904b2368c7c13b89504b88f2ef804",
+    "onlyChangedField": "projectorProvenance",
+    "unchangedFieldsIncludingInputsAndTimestamp": true
+  },
+  "projectorProvenance": {
+    "originalLocalSHA256": "38c63fbd4f74e6b4496a60d9f2ca71d79261af37b91932cb2bc36da8b506e986",
+    "preservedObject": "preservation/objects/38c63fbd4f74e6b4496a60d9f2ca71d79261af37b91932cb2bc36da8b506e986",
+    "objectExistsHashAndBytesMatchCurrentSource": true,
+    "projectorIncludedInPublicProjection": false
+  },
+  "projectionIntegrity": {
+    "listedInputFiles": 3998,
+    "actualListedInputPathSetMatches": true,
+    "listedInputOutputHashMismatches": 0,
+    "actualFileCountIncludingManifest": 3999,
+    "extraOrMissingFiles": 0,
+    "statusAndRightsFieldsChanged": false,
+    "releaseInputSnapshotPathAndSHAUnchanged": true
+  },
+  "limitations": [
+    "This exact delta adds the projector hash and preserved-object reference to the public manifest. The Library copy is a separate future check and is not assessed here.",
+    "This report verifies the metadata delta and unchanged projected inputs; it does not provide semantic, runtime, legal, or publication approval."
+  ]
+}

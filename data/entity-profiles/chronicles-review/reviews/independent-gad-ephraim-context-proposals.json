@@ -1,0 +1,198 @@
+{
+  "book": "1CH",
+  "reviewType": "independent-identity-context-proposal-review",
+  "reviewer": "independent-context-proposal-reviewer",
+  "checkedAtUTC": "2026-10-16",
+  "inputBindings": {
+    "fixedWitnessPath": "inventory/targets/chronicles1-web-verses.json",
+    "fixedWitnessSHA256": "04e30515896ff7d50f0fcef3a1bafd1984d232b9bce84644cab641bc4d1d634a",
+    "targetIndexPath": "inventory/targets/chronicles1-targets.json",
+    "targetIndexSHA256": "4de60a18fe609d404dc2ef1f1ea9520a41264ba31ba0630633c45d57b901203e",
+    "identityRisksPath": "inventory/identity-risks.json",
+    "identityRisksSHA256": "7d90d32deefeb7a9d1476a3e192403598b67ea95b77ca8a2219cacb3a8425d45",
+    "map01_09Path": "reviews/verse-map-1CH-01-09.json",
+    "map01_09SHA256": "0f99a4de7ac0eb44fc41a1e797483fe90e89f0170a8ad20f0f35ea613931b0a9",
+    "map10_19Path": "reviews/verse-map-1CH-10-19.json",
+    "map10_19SHA256": "1c4b6fc29ae68f1f4052963152356f5f05fe06ccf317627acf6e8de5206bf05d",
+    "gadProposalPath": "reviews/context-edits/1CH/gad-1262-personal-1ch2-2.json",
+    "gadProposalSHA256": "79994d894322d1eb8aaff36a2c2e273d3f24556de2bf0fd7e9be91fc720485a8",
+    "gadCollectiveDraftPath": "drafts/persons_2/1CH_person_gad_1262.json",
+    "gadCollectiveDraftSHA256": "c9a12d9d505155b541355e48185a0f7027f36be1fe86f27a50dc24b34c2257c9",
+    "gadProphetDraftPath": "drafts/persons_2/1CH_person_gad_1263.json",
+    "gadProphetDraftSHA256": "88121a1f3c79c8d31ce16b5e68a3d593a4b671cd5494038bb24013f29e995222",
+    "gadTerritoryDraftPath": "drafts/places_2/1CH_gad_1286.json",
+    "gadTerritoryDraftSHA256": "16bb4cce7bdd3dbf451802740fa67db1b11dede990daab24ff2a74f888995598",
+    "ephraimProposalPath": "reviews/context-proposals-1CH-ephraim-1206.json",
+    "ephraimProposalSHA256": "f397359df2fe0e6d70c6ebeaa82dde923a68225572f8d2d315af9105d12bb12b",
+    "ephraimCollectiveDraftPath": "drafts/persons_1/1CH_ephraim_1206.json",
+    "ephraimCollectiveDraftSHA256": "fa28ee55e011276a583eaf8fa4b77177dbba36188dde13b93744bff8d4e18c98"
+  },
+  "summaryJa": "固定WEB本文と既存稿・現行source-mapを照合した。両context提案は個人と集団を同じstable IDで無条件に混ぜるのを避ける案として意味上妥当。ただし適用にはcontext variantを用例座標ごとに選ぶ統合ゲートが必要で、runtime/公開承認ではない。",
+  "gad": {
+    "decision": "qualified-proposal-supported-with-gates",
+    "proposalContext": "individual",
+    "proposalAssessmentJa": "1CH 2:2はイスラエルの子らの列挙にGadを含むため、族祖個人のcontext variantとしてknownBy 2:2、passage 2:2だけを置く案は本文に合う。後続の部族記事を2:2の常時表示へ混ぜない点も適切。",
+    "identitySeparationJa": "person:gad_1262には2:2の系譜上の個人と5章以降のsons/Gadites部族集団という複数の用法がある。person:gad_1263は21章のDavid’s seerおよび29:29の先見者であり、2:2・部族用例へ転用できない。place:gad_1286の現稿はplace kindだが、5:11を地名ではなく人々と明記しpassages空で、地理カード同定を裏付けない。ID種別だけを根拠に地域リンクしてはならない。",
+    "verseFindings": [
+      {
+        "coordinate": "1CH 2:2",
+        "textualEvidenceJa": "“Dan, Joseph, Benjamin, Naphtali, Gad, and Asher.” 系譜列挙上のGadは個人祖先として採る。direct-name。提案個人variantの唯一の初出。"
+      },
+      {
+        "coordinate": "1CH 5:11",
+        "textualEvidenceJa": "“The sons of Gad lived ... in the land of Bashan to Salecah:” 「sons of Gad」は集団用法。person:gad_1262のcollective/base文脈ならdirect、2:2個人variantとは結ばない。Bashan/Salecahは別地名。Gadという名だけでplace:gad_1286を付ける根拠はない。"
+      },
+      {
+        "coordinate": "1CH 6:63",
+        "textualEvidenceJa": "「out of the tribe of Gad」はレビ人の町の配分元として部族/領域関係を明示。person:gad_1262の集団variantはdirectな部族名参照が妥当。place:gad_1286は適合性要再確認で、地域範囲を特定する用途ならcontextに留め、同一地点とは扱わない。"
+      },
+      {
+        "coordinate": "1CH 6:80",
+        "textualEvidenceJa": "「out of the tribe of Gad」に続きRamoth in GileadとMahanaimを列挙。Gadは部族/領域文脈で、集団variantへのdirect言及は妥当。place:gad_1286を加える場合も地域帰属のcontextに限る。RamothとMahanaimは別の直接地名。"
+      },
+      {
+        "coordinate": "1CH 12:8",
+        "textualEvidenceJa": "“Some Gadites joined David ...” Gaditesは人々の集団の明示。collective variantへのdirectを推奨。target indexのgad_1262 appearancesには未収録で、現mapでは族祖個人として誤リンクしないよう除外中。本文上の明示用例なので、プロフィール/索引未収録を理由に永続除外せず、map作者が回収を別途検討すべき。"
+      },
+      {
+        "coordinate": "1CH 12:14",
+        "textualEvidenceJa": "“These of the sons of Gad were captains of the army.” 集団を明示。collective variantへのdirect。現在のcollective稿にもknownBy 12:14があり整合。"
+      },
+      {
+        "coordinate": "1CH 12:37",
+        "textualEvidenceJa": "“of the Reubenites, the Gadites, and of the half-tribe of Manasseh” は部族集団を明示。collective variantへのdirect。target index候補appearanceに欠落し、現mapでは誤接続回避のため除外。固定本文で明らかな用例なのでmap側の回収候補として記録する。"
+      }
+    ],
+    "sourceMapRecommendationsJa": [
+      "2:2はindividual-context variantへdirect。",
+      "5:11、12:8、12:14、12:37はcollective/base contextへdirect。12:8/12:37はraw target indexにないが本文上の集団名は明瞭。",
+      "6:63/6:80のtribe of Gadも集団variantにはdirect。place:gad_1286は現在のプロフィール本文と不整合なため採用しないか、territorial associationのcontextとして再確認後に限定。",
+      "個人/集団variantはsame IDだからといって全座標に両方表示しない。個人は2:2、集団は部族・Gadites用例、預言者gad_1263は21章等に限定。"
+    ],
+    "gatingConditionsJa": [
+      "個人variant knownBy 2:2を維持し、集団用例を個人variantのpassages/factsへ入れない。",
+      "collective variant knownBy 5:11を維持。12:8/12:37を含む実用例とsource IDsを別途profile側で審査し、地理/祖先/預言者を混在させない。",
+      "source-mapのvariant指定が用例ごとに明示され、裸のperson:gad_1262が誤ったbase本文を既定表示しないこと。",
+      "place:gad_1286が部族名だけで描画/地図表示されないこと。現稿では地名用法を否定している。"
+    ],
+    "limitationsJa": "本レビューはcontext提案の意味適合性だけを扱う。Wikipedia記事同定、地理の確定、アプリ実装・runtime採用は審査していない。"
+  },
+  "ephraim": {
+    "decision": "qualified-proposal-supported-with-gates",
+    "proposalContext": "individual",
+    "proposalAssessmentJa": "1CH 7:20はsons of Ephraimの系譜を開始し、7:22はEphraim their fatherと明記する。既存person:ephraim_1206のbase稿は1CH 6:66のtribe/region用法でknownBy 6:66のcollective identityTypeであるため、7:20–22の父祖個人を同じbase説明へ混ぜないcontext variant案は意味上支持できる。",
+    "verseFindings": [
+      {
+        "coordinate": "1CH 6:66",
+        "textualEvidenceJa": "“out of the tribe of Ephraim.” コハテ族の町が属する領域で、個人Ephraimではない。現mapはperson:ephraim_1206を除外しplace:ephraim-territory_1292を地域関係に結び付けており、個人提案との分離に合う。"
+      },
+      {
+        "coordinate": "1CH 7:20",
+        "textualEvidenceJa": "“The sons of Ephraim:”と父祖名が系譜見出しに明示される。人物variantへのcontext（系譜上の父祖）で結び、部族集団baseとは区別する。source-map relationship=contextが妥当。"
+      },
+      {
+        "coordinate": "1CH 7:21",
+        "textualEvidenceJa": "父名Ephraimはこの節に再記されないが、sons-of-Ephraimの系譜が継続し、named descendantsの列挙とGathのmenによる殺害を述べる。文脈を同じ系譜に限るcontextは許容可能だが、直接名言及として数えない。individual variant passage 7:20–22に含めるなら、7:21の継続文脈をsource evidenceへ追記する。"
+      },
+      {
+        "coordinate": "1CH 7:22",
+        "textualEvidenceJa": "“Ephraim their father mourned many days”と父祖本人を明記。individual variantへのdirect。proposal factのknownBy 7:22は妥当。"
+      }
+    ],
+    "sourceMapRecommendationsJa": [
+      "6:66は個人Ephraimを除外しplace:ephraim-territory_1292の地理的関係に限定。",
+      "7:20はEphraim個人祖先へのcontext（sonsの父）、7:21は父の再明記なしの系譜継続context、7:22は父祖名が明記されたdirect。",
+      "6:66以降の部族用法（9:3、12:30、27章等）はcollective/baseへ用例に応じて振り分け、個人variantへ混ぜない。"
+    ],
+    "gatingConditionsJa": [
+      "individual variant knownBy 7:20。Summary/subtitleは系譜開始で分かる範囲のみ、7:22のmourningは7:22以降のfactへ。",
+      "collective baseはknownBy 6:66を維持し、領域用法をperson individualへ表示しない。",
+      "7:21 passageは個人の明記ではなく系譜継続としてcontext扱い。"
+    ],
+    "limitationsJa": "Wikipedia/記事の個人同定や統合・runtime採用は審査していない。proposal側では7:21 source IDの不存在も含め、evidence同期が必要。"
+  },
+  "fixedWEBChecks": [
+    {
+      "chapter": 2,
+      "verse": 2,
+      "sourceText": "Dan, Joseph, Benjamin, Naphtali, Gad, and Asher.",
+      "sourceTextSHA256": "3776454b81ad749f7a150dbf7d14ed81c3c023281a3d6e48c12c310105fbf1c2",
+      "citationURL": "https://ebible.org/engwebp/1CH02.htm#V2"
+    },
+    {
+      "chapter": 5,
+      "verse": 11,
+      "sourceText": "The sons of Gad lived beside them in the land of Bashan to Salecah:",
+      "sourceTextSHA256": "4a735934f09f1c4acb6b3a4604dac7eaac549fae2ee63ac9b7e6846e2de3b178",
+      "citationURL": "https://ebible.org/engwebp/1CH05.htm#V11"
+    },
+    {
+      "chapter": 6,
+      "verse": 63,
+      "sourceText": "To the sons of Merari were given by lot, according to their families, out of the tribe of Reuben, and out of the tribe of Gad, and out of the tribe of Zebulun, twelve cities.",
+      "sourceTextSHA256": "a4cf41f31d11909e45bc99723810a76e500a5f5d9d016e992912f10f73f7a204",
+      "citationURL": "https://ebible.org/engwebp/1CH06.htm#V63"
+    },
+    {
+      "chapter": 6,
+      "verse": 80,
+      "sourceText": "and out of the tribe of Gad, Ramoth in Gilead with its pasture lands, Mahanaim with its pasture lands,",
+      "sourceTextSHA256": "f1296a0b795efc2afcf00dfd0d9f9c2f892fccddbe63159992494be149c616e0",
+      "citationURL": "https://ebible.org/engwebp/1CH06.htm#V80"
+    },
+    {
+      "chapter": 12,
+      "verse": 8,
+      "sourceText": "Some Gadites joined David in the stronghold in the wilderness, mighty men of valor, men trained for war, who could handle shield and spear; whose faces were like the faces of lions, and they were as swift as the gazelles on the mountains:",
+      "sourceTextSHA256": "f25e06fec6af1688257b15b42df69b3967f6bd21d4ec91d1e20a9dc575f0d224",
+      "citationURL": "https://ebible.org/engwebp/1CH12.htm#V8"
+    },
+    {
+      "chapter": 12,
+      "verse": 14,
+      "sourceText": "These of the sons of Gad were captains of the army. He who was least was equal to one hundred, and the greatest to one thousand.",
+      "sourceTextSHA256": "1b247f0372728febcff793e2d2454dc0992d40dc8c1ad968a679336030d51d20",
+      "citationURL": "https://ebible.org/engwebp/1CH12.htm#V14"
+    },
+    {
+      "chapter": 12,
+      "verse": 37,
+      "sourceText": "On the other side of the Jordan, of the Reubenites, the Gadites, and of the half-tribe of Manasseh, with all kinds of instruments of war for the battle: one hundred twenty thousand.",
+      "sourceTextSHA256": "6e4cd84c381546c6102227c05bc68fb9c9c777afadab607487488a2aa0aef629",
+      "citationURL": "https://ebible.org/engwebp/1CH12.htm#V37"
+    },
+    {
+      "chapter": 6,
+      "verse": 66,
+      "sourceText": "Some of the families of the sons of Kohath had cities of their borders out of the tribe of Ephraim.",
+      "sourceTextSHA256": "cb4c26fb700b1212f2f425eccfe1de14e830a600fb94d7ccec212316883acb87",
+      "citationURL": "https://ebible.org/engwebp/1CH06.htm#V66"
+    },
+    {
+      "chapter": 7,
+      "verse": 20,
+      "sourceText": "The sons of Ephraim: Shuthelah, Bered his son, Tahath his son, Eleadah his son, Tahath his son,",
+      "sourceTextSHA256": "87bb93fb624593b28456ef877e9b55c108c50572c6eca37c84dcd06976502ef7",
+      "citationURL": "https://ebible.org/engwebp/1CH07.htm#V20"
+    },
+    {
+      "chapter": 7,
+      "verse": 21,
+      "sourceText": "Zabad his son, Shuthelah his son, Ezer, and Elead, whom the men of Gath who were born in the land killed, because they came down to take away their livestock.",
+      "sourceTextSHA256": "27f6c59e3e55488c2c06225df2d0026916020834346c39257536c898a2f7deab",
+      "citationURL": "https://ebible.org/engwebp/1CH07.htm#V21"
+    },
+    {
+      "chapter": 7,
+      "verse": 22,
+      "sourceText": "Ephraim their father mourned many days, and his brothers came to comfort him.",
+      "sourceTextSHA256": "45428b356b278683b8980a3a2fb778dd7ba14e28b02bf4e96d179208e015e38a",
+      "citationURL": "https://ebible.org/engwebp/1CH07.htm#V22"
+    }
+  ],
+  "limitations": [
+    "レビュー対象は二つのsame-ID context proposalと固定WEBであり、原稿やmapコードを編集していない。",
+    "独立した意味評価であってruntime適格性、公開承認、地理検証を意味しない。",
+    "候補索引に現れない固定WEB用例（Gad 12:8/12:37）は原典で確認したが、この報告だけでprofileやmapを変更しない。"
+  ]
+}

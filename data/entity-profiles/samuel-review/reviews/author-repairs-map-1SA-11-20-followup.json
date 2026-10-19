@@ -1,0 +1,122 @@
+{
+  "reportType": "author-map-repairs",
+  "book": "1SA",
+  "scope": [
+    11,
+    20
+  ],
+  "inputMapPath": "reviews/verse-map-1SA-11-20.json",
+  "beforeMapSHA256": "f0d0233fd8e24411f69217fd886bfd35689fa5dbdaad04b3bd4f643309fe2f32",
+  "afterMapSHA256": "5d770b4d61f2957872f5304ef5559b2e25096aff2c55761c00b60a98214ee90e",
+  "repairTimeUTC": "2026-10-16T02:07:01Z",
+  "independentFindingInputs": [
+    {
+      "path": "reviews/independent-source-map-1SA-11-20.json",
+      "sha256": "b30d7af1f129a67ecdaf901975bbbd626a160a3214c57a199fb290d3f3d1195d"
+    }
+  ],
+  "changedRows": [
+    {
+      "ref": "14:25",
+      "beforeEntities": [],
+      "afterEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "why": "14:24でサウルの軍勢と示される民の継続。匿名個人でなくイスラエル集団をcontextで表す。"
+    },
+    {
+      "ref": "14:26",
+      "beforeEntities": [],
+      "afterEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "why": "14:24でサウルの軍勢と示される民の継続。匿名個人でなくイスラエル集団をcontextで表す。"
+    },
+    {
+      "ref": "14:32",
+      "beforeEntities": [],
+      "afterEntities": [
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        }
+      ],
+      "why": "14:24でサウルの軍勢と示される民の継続。匿名個人でなくイスラエル集団をcontextで表す。"
+    },
+    {
+      "ref": "14:34",
+      "beforeEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:saul_2478",
+          "relationship": "direct"
+        }
+      ],
+      "afterEntities": [
+        {
+          "entityID": "person:god_1324",
+          "relationship": "direct"
+        },
+        {
+          "entityID": "person:israel_682",
+          "relationship": "context"
+        },
+        {
+          "entityID": "person:saul_2478",
+          "relationship": "direct"
+        }
+      ],
+      "why": "14:24でサウルの軍勢と示される民の継続。匿名個人でなくイスラエル集団をcontextで表す。"
+    },
+    {
+      "ref": "14:25",
+      "beforeReasonJa": "固定WEB本文に照らしてこの節に対応する既存canonical IDは確認できないを採用した。本文の明示名と一意な文脈照応のみを索引化し、背景にいるだけの人物は付与していない。 「the people / All the people」は14:24以降のイスラエル軍勢を継続して指すため、person:israel_682を集団のcontextとして記録する。",
+      "afterReasonJa": "固定WEBの「the people / All the people」は14:24でサウルの軍勢と示されたイスラエルの民を継続して指すため、person:israel_682をcontextとして採用する。"
+    },
+    {
+      "ref": "14:26",
+      "beforeReasonJa": "固定WEB本文に照らしてこの節に対応する既存canonical IDは確認できないを採用した。本文の明示名と一意な文脈照応のみを索引化し、背景にいるだけの人物は付与していない。 「the people / All the people」は14:24以降のイスラエル軍勢を継続して指すため、person:israel_682を集団のcontextとして記録する。",
+      "afterReasonJa": "固定WEBの「the people」は14:24以降のイスラエルの軍勢を指し、誓いを恐れた人々の集団文脈が続くため、person:israel_682をcontextとして採用する。"
+    },
+    {
+      "ref": "14:32",
+      "beforeReasonJa": "固定WEB本文に照らしてこの節に対応する既存canonical IDは確認できないを採用した。本文の明示名と一意な文脈照応のみを索引化し、背景にいるだけの人物は付与していない。 「the people / All the people」は14:24以降のイスラエル軍勢を継続して指すため、person:israel_682を集団のcontextとして記録する。",
+      "afterReasonJa": "固定WEBの「the people」は戦利品を取ったイスラエル軍勢を指す。14:24以降の集団文脈が続くため、person:israel_682をcontextとして採用する。"
+    },
+    {
+      "ref": "14:34",
+      "beforeReasonJa": "固定WEB本文に照らしてperson:god_1324=本文の名指し/地名表現, person:saul_2478=本文の名指し/地名表現を採用した。本文の明示名と一意な文脈照応のみを索引化し、背景にいるだけの人物は付与していない。 「the people / All the people」は14:24以降のイスラエル軍勢を継続して指すため、person:israel_682を集団のcontextとして記録する。",
+      "afterReasonJa": "固定WEBはサウルとLORDを名指しするため各人名をdirectとし、続く「All the people」はサウルのイスラエル軍勢を指すためperson:israel_682をcontextとして採用する。"
+    }
+  ],
+  "metadataRepairs": [
+    {
+      "topic": "unresolved candidate list",
+      "changes": [
+        "Added person:israel_682 context at 14:25, 14:26, 14:32, 14:34 for the continuing Israelite army/people.",
+        "Removed duplicate Ahijah, Ishvi, and Gai records; removed Malchishua unresolved entry because its existing profile is already mapped at 14:49.",
+        "Corrected Ammonite coverage to 11:1, 11:2, 11:11, 12:12, 14:47.",
+        "Narrowed Hebrew unresolved range to explicit Hebrew group wording; kept already-linked Israelites and geographic land of Israel separate.",
+        "Corrected Philistine group references, excluding unrelated verses and distinguishing Goliath singular from the collective.",
+        "After a text-level exact-term recheck, narrowed Hebrews to actual mentions only (13:3, 13:7, 13:19, 14:11, 14:21) and corrected Philistine group references to explicit collective wording, excluding Goliath-only singular uses and non-mentions.",
+        "Removed the remaining exact duplicate Ahijah unresolved-candidate record after normalization.",
+        "A reclosure found stale generic “no existing canonical ID” rationale at the four repaired Israel-collective rows; replaced with verse-specific name/context explanations consistent with person:israel_682 links."
+      ]
+    }
+  ],
+  "validation": {
+    "verseCount": 327,
+    "uniqueCoordinates": 327,
+    "entityIDsExistingOnly": true,
+    "sourceTextAndCitationPreserved": true
+  }
+}

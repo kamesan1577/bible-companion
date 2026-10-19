@@ -116,6 +116,9 @@ export interface WorkersAiBinding {
   run(modelId: string, inputs: Record<string, unknown>): Promise<unknown>;
 }
 export interface AnswerDependencies {
+  /** Observed provider progress only; never includes raw JSON or reasoning. */
+  onProgress?: (stage: string) => Promise<void>;
+  onPreview?: (text: string) => Promise<void>;
   ai?: WorkersAiBinding;
   signal?: AbortSignal;
   authorization: ModelAuthorization;
@@ -154,7 +157,12 @@ export interface ProviderPromptCacheReport {
 export interface UsageReport {
   /** No verified separate reasoning-token counter is available in the current binding schemas. */
   reasoningTokens: null;
-  actual: { inputTokens: number; outputTokens: number; totalTokens?: number; providerNeurons?: number } | null;
+  actual: {
+    inputTokens: number;
+    outputTokens: number;
+    totalTokens?: number;
+    providerNeurons?: number;
+  } | null;
   estimated: { inputTokens: number; maxOutputTokens: number; method: 'utf8-byte-upper-bound' };
   /** No conversion from tokens to neurons without model-specific verified rates. */
   neurons: number | null;

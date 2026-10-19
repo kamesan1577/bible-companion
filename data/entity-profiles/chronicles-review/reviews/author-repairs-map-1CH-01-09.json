@@ -1,0 +1,100 @@
+{
+  "book": "1CH",
+  "scope": "1:1–9:44",
+  "inputIndependentReview": "reviews/independent-verse-map-1CH-01-09.json",
+  "inputIndependentReviewSHA256": "992f8a769a63d487b390063f43c63c1d491a72534814e100853e5005814305b5",
+  "beforeMapPath": "reviews/verse-map-1CH-01-09.json",
+  "beforeMapSHA256": "baa8623a6f9c2526ff306dc5ab285f1874180a63ac81e78d5f180739b134b0f7",
+  "preservedBytesPath": "preservation/objects/baa8623a6f9c2526ff306dc5ab285f1874180a63ac81e78d5f180739b134b0f7",
+  "afterMapPath": "reviews/verse-map-1CH-01-09.json",
+  "afterMapSHA256": "0f99a4de7ac0eb44fc41a1e797483fe90e89f0170a8ad20f0f35ea613931b0a9",
+  "changes": [
+    {
+      "coordinate": "1:1",
+      "before": [
+        "person:enos_1193 excluded"
+      ],
+      "after": [
+        "person:enos_1193 direct"
+      ],
+      "reason": "WEB Enosh is the same genealogy position as existing Enos candidate."
+    },
+    {
+      "coordinate": "2:49",
+      "before": [
+        "person:achsa_67 excluded"
+      ],
+      "after": [
+        "person:achsa_67 direct"
+      ],
+      "reason": "WEB daughter of Caleb Achsah; existing Achsa ID is this woman."
+    },
+    {
+      "coordinate": "5:11",
+      "before": [
+        "place:gad_1286 direct"
+      ],
+      "after": [
+        "place:gad_1286 removed; person:gad_1262 excluded; collective unresolved record added"
+      ],
+      "reason": "“sons of Gad” is a people group, not place Gad or patriarch Gad."
+    },
+    {
+      "coordinate": "8:33",
+      "before": [
+        "Saul omitted"
+      ],
+      "after": [
+        "person:saul_2478 direct"
+      ],
+      "reason": "WEB states Kish fathered Saul."
+    },
+    {
+      "coordinate": "9:12",
+      "before": [
+        "person:pashur_2283 excluded"
+      ],
+      "after": [
+        "person:pashur_2283 direct"
+      ],
+      "reason": "WEB spells Pashhur in Adaiah genealogy; existing Pashur ID is the spelling variant."
+    },
+    {
+      "coordinate": "9:35",
+      "before": [
+        "Jeiel omitted; stale unresolved ID-absent record"
+      ],
+      "after": [
+        "person:jeiel_827 direct; stale unresolved record removed"
+      ],
+      "reason": "WEB names Jeiel as father of Gibeon."
+    },
+    {
+      "coordinate": "9:39",
+      "before": [
+        "Saul/Malchishua omitted; malchi-shua excluded"
+      ],
+      "after": [
+        "person:saul_2478 and person:malchi-shua_1990 direct"
+      ],
+      "reason": "WEB repeats Ner→Kish→Saul and names Malchishua among Saul’s sons."
+    }
+  ],
+  "qualifiedRowsRetained": [
+    "1:17 Meshech in Shem genealogy is not forced to Japheth’s Meshech ID",
+    "1:36 Timna identity with 1:39 sister not forced",
+    "1:43 Israel refers to people, not patriarch; no collective profile used",
+    "1:46 Midian role as people/place remains qualified",
+    "4:19 Keilah unresolved; demonyms not mapped to people IDs",
+    "5:18 Reuben/Gad/Manasseh groups remain unresolved without collective IDs",
+    "5:19 combatant peoples not substituted with place/ancestor IDs",
+    "9:18 Levites remain unresolved without a collective ID"
+  ],
+  "checks": {
+    "407CoordinatesPreserved": true,
+    "sourceTextAndCitationFieldsUntouched": true,
+    "noSameIDAdoptedAndExcluded": true,
+    "profilePendingRecordedForUnprofiledAddedIDs": true
+  },
+  "createdAtUTC": "2026-10-16"
+}

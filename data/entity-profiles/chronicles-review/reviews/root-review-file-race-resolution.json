@@ -1,0 +1,63 @@
+{
+  "atUTC": "2026-10-16T05:19:30.760317+00:00",
+  "issue": "Two existing reviewers carried overlapping old/new scope and wrote same report path. Drafts and evidence unchanged.",
+  "resolution": "Second reviewer preserved extra report separately; first reviewer restored exact original report from saved generator. Review scopes now distinct.",
+  "resolved": true,
+  "reports": [
+    {
+      "path": "reviews/independent-batch02-persons_3.json",
+      "sha256": "54921be0dca69976f34d6237a78a34d3c4bd8763e2712e8bc5e450e6576d4595",
+      "keys": [
+        "title",
+        "reviewedAtUTC",
+        "reviewer",
+        "inputManifestPath",
+        "inputManifestSHA256",
+        "inputManifestExpectedSHA256",
+        "assignmentPath",
+        "assignmentSHA256",
+        "contractHashRecipe",
+        "witnesses",
+        "manifestHashesMatchedCurrentBytes",
+        "manifestHashMismatches",
+        "methodJa",
+        "counts",
+        "limitationsJa",
+        "records"
+      ],
+      "counts": {
+        "totalRows": 60,
+        "activeProfiles": 58,
+        "excludedNoProfile": 2,
+        "pass": 48,
+        "qualified": 8,
+        "fail": 4,
+        "passActive": 46,
+        "qualifiedActive": 8,
+        "failActive": 4
+      }
+    },
+    {
+      "path": "reviews/independent-extra-batch02-persons_3.json",
+      "sha256": "83527b2ccaa47edb16160461b4a8538c59e7fd0bb167d112974d99d25aabda65",
+      "keys": [
+        "reportType",
+        "scope",
+        "createdAtUTC",
+        "inputManifest",
+        "primaryWitness",
+        "methodJa",
+        "counts",
+        "rows",
+        "reportLevelFindings"
+      ],
+      "counts": {
+        "qualified": 46,
+        "fail": 4,
+        "pass": 10,
+        "sourceBindingExactRows": 60
+      }
+    }
+  ],
+  "semanticApproval": "Each report must still be adjudicated; file preservation is not semantic acceptance."
+}

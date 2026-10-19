@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "auditType": "independent read-only verification of regenerated public authoring projection",
+  "checkedAtUTC": "2026-10-16T04:29:36Z",
+  "projectionPath": "candidate/data/entity-profiles/kings-review",
+  "manifest": {
+    "path": "candidate/data/entity-profiles/kings-review/preservation-manifest.json",
+    "sha256": "eddda20e2bf7522c6aaa7a1c6be14c048ff221f6087d67ccdd5920cb79eb2b45",
+    "preservedAtUTC": "2026-10-16T04:28:00.401224+00:00",
+    "inputRecords": 1259,
+    "physicalFilesIncludingManifest": 1260,
+    "privateStateIncluded": false,
+    "redactedInputs": 5,
+    "pathsAreRelativeAndContained": true,
+    "duplicateInputPaths": 0
+  },
+  "hashVerification": {
+    "publicHashesMatched": 1259,
+    "publicHashMismatches": 0,
+    "originalHashesMatchedCurrentSource": 1259,
+    "sourceHashMismatches": 0,
+    "redactionFlagsMatched": true,
+    "missingInputOrOutputFiles": 0,
+    "unrecordedProjectionFiles": 0
+  },
+  "preservationHelper": {
+    "sourcePath": "preserve-authoring.py",
+    "sourceSHA256": "26350cc05506c03a83eb96397693f1a448548db664271d0ebb7985e6c0ea288b",
+    "projectedPath": "candidate/data/entity-profiles/kings-review/preserve-authoring.py",
+    "projectedSHA256": "e90758a71eed8aecc528285bed7d5ad2089a5a2b065c8a26094715bec61f0166",
+    "guardPresentInSourceAndCopy": true,
+    "guardDescription": "The script exits when run from inside the kings-review projection, preventing nested re-projection. Not executed during this audit.",
+    "helperReferencesInManifest": 15,
+    "includesContractAndAllRootPythonHelpers": true,
+    "finalizeHelperPath": "candidate/data/entity-profiles/kings-review/finalize-candidate-metadata.py",
+    "finalizeHelperSHA256": "51bbf10528cf2e2498dbf7ee337c3dedb8be977994004f35a768c91b7f9e31fd"
+  },
+  "privacyScan": {
+    "userHomePathFindings": 0,
+    "temporaryPathFindings": 0,
+    "privateKeyFindings": 0,
+    "credentialTokenFindings": 0,
+    "credentialAssignmentFindings": 0,
+    "privateStateFilenameFindings": 0,
+    "secretValuesPrinted": false
+  },
+  "findings": [],
+  "notFindings": [
+    "The manifest has 1,259 input records plus the manifest file itself (1,260 physical files).",
+    "The manifest records original and public SHA-256 values, and all 5 flagged redactions match actual byte changes.",
+    "Publication approval remains separate and false; this does not indicate a projection privacy or integrity defect.",
+    "Existing app code outside the authoring projection was outside scope."
+  ],
+  "verdict": "pass",
+  "verdictReasonJa": "再生成後の全1,259入力で原本SHA・公開SHAがmanifestと一致し、全ファイルが記録済み。5件のパス置換フラグも実際の差分と一致した。個人パス、秘密値らしいパターン、秘密ファイル名は検出されず、preserve-authoring.pyの入れ子再実行guardとhelperのmanifest登録も確認した。"
+}

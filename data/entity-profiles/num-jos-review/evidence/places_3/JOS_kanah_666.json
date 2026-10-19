@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "book": "JOS",
+  "entityID": "place:kanah_666",
+  "profilePath": "drafts/places_3/JOS_kanah_666.json",
+  "profileSHA256": "27a59acf18be4898a2611b40fb4dadade0a505d35306391537cc1a7ed0d9819c",
+  "assignment": {
+    "path": "assignments/places_3.json",
+    "sha256": "ec36241ee733ce0e8c7942b652b68c6540ed225fa01393cc9b7561602da2e08f"
+  },
+  "fixedWitness": {
+    "path": "inventory/targets/joshua-web-verses.json",
+    "sha256": "26ae82b805dee523bb852977ccf62ad38cc40ebe442b650cbd7862db833ea854",
+    "version": "webp-usfx-2026-10-13-35a6adf626e5"
+  },
+  "sourceIndex": {
+    "path": "candidate/apps/ios/Sources/Core/Resources/entity-index.json",
+    "workspace": "../romans-leviticus-entities-work",
+    "sha256": "dfe6fba1109f192548e28645cf085ddafe3baf7820d200e2e28da486dd98f11a",
+    "candidateCoordinate": [
+      32.138219,
+      35.038971
+    ],
+    "coordinateStatus": "unverified-candidate"
+  },
+  "primaryChecks": [
+    {
+      "ref": "JOS 16:8",
+      "sourceURL": "https://ebible.org/engwebp/JOS16.htm#V8",
+      "text": "From Tappuah the border went along westward to the brook of Kanah; and ended at the sea. This is the inheritance of the tribe of the children of Ephraim according to their families;",
+      "contextRefs": [
+        "JOS 16:7 — It went down from Janoah to Ataroth, to Naarah, reached to Jericho, and went out at the Jordan.",
+        "JOS 16:9 — together with the cities which were set apart for the children of Ephraim in the middle of the inheritance of the children of Manasseh, all the cities with their villages."
+      ],
+      "disposition": "accepted-occurrence"
+    },
+    {
+      "ref": "JOS 17:9",
+      "sourceURL": "https://ebible.org/engwebp/JOS17.htm#V9",
+      "text": "The border went down to the brook of Kanah, southward of the brook. These cities belonged to Ephraim among the cities of Manasseh. The border of Manasseh was on the north side of the brook, and ended at the sea.",
+      "contextRefs": [
+        "JOS 17:8 — The land of Tappuah belonged to Manasseh; but Tappuah on the border of Manasseh belonged to the children of Ephraim.",
+        "JOS 17:10 — Southward it was Ephraim’s, and northward it was Manasseh’s, and the sea was his border. They reached to Asher on the north, and to Issachar on the east."
+      ],
+      "disposition": "accepted-occurrence"
+    }
+  ],
+  "wikipediaCheck": {
+    "title": "Kanah",
+    "language": "en",
+    "url": "https://en.wikipedia.org/wiki/Kanah#Border_river_between_tribes",
+    "status": "英語版Kanah記事の両節を実読し、水流とアシェルの町が別対象であること、複数の水流同定説を確認。日本語版「カナ (旧約聖書)」も読み、本文がアシェル領の町だけを扱うため不採用とした。",
+    "identityBasisJa": "英語版Kanah記事の両節を実読し、水流とアシェルの町が別対象であること、複数の水流同定説を確認。日本語版「カナ (旧約聖書)」も読み、本文がアシェル領の町だけを扱うため不採用とした。",
+    "fragmentVerified": true
+  },
+  "geographyAssessment": {
+    "classification": "watercourse",
+    "candidateMapDisposition": "keep-legacy-candidate",
+    "reasonJa": "本文で境界水流として直接言及。旧索引の一点は未確認の従来候補位置であり、一本の確定流路・河口・水源を表さない参考点としてのみ残す。プロフィール座標はnull。",
+    "profileCoordinate": null,
+    "independentCoordinateSourcesRead": []
+  },
+  "limitationsJa": "固定WEB本文と前後の節を照合し、Wikipediaの適合記事・共有表の該当箇所を実読。候補位置は独立測地照合していない。",
+  "sourceReuse": {
+    "priorDraftReuse": false,
+    "existingCandidateIndexReused": true
+  },
+  "elapsedSeconds": 57,
+  "authorRepairAudit": [
+    {
+      "review": "reviews/independent-profiles-places_3.json",
+      "reviewedDraftSHA256": "4a29bada0abb8f31749bf18eb005be73a803d9ebf6e40ab0f538ecd8325d3b9d",
+      "previousEvidenceSHA256": "4a29bada0abb8f31749bf18eb005be73a803d9ebf6e40ab0f538ecd8325d3b9d",
+      "newProfileSHA256": "aa5493c24dffd55fbfbe2246d989418dddb6416afcfc2ac1f366cf20d2a9d352",
+      "changes": [
+        {
+          "field": "profile.identityNoteJa",
+          "before": "ヨシュア記19:28のアシェル領には同名の町カナが別にありますが、このプロフィールは16:8・17:9に記される水流を対象とし、町とは区別します。",
+          "after": "このプロフィールはヨシュア記16:8に記される水流を対象とし、他の対象と混同しません。"
+        }
+      ]
+    }
+  ]
+}

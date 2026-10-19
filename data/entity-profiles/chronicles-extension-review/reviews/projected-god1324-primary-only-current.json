@@ -1,0 +1,50 @@
+{
+  "scope": "Explicit format-only projection of an independent local delta; earlier unchanged review scope retained, no new semantic approval.",
+  "sourceIndependentReportPath": "reviews/runtime-disposition-primary-only-persons1-god1324-current.json",
+  "sourceIndependentReportSHA256": "fa0183d801e4b7b05a4bb5b960f8371e3910df16cff08de1555d42bb675a1095",
+  "rows": [
+    {
+      "book": "2CH",
+      "entityID": "person:god_1324",
+      "draftPath": "drafts/persons_1/2CH_god_1324.json",
+      "evidencePath": "evidence/persons_1/2CH_god_1324-sources.json",
+      "currentDraftSHA256": "73b28b495d26e936352213952fff14d8f035ad87823ca1ad032f409ef4a433a4",
+      "currentEvidenceSHA256": "e0e7f96d783a6615c9a9d6d56ebe8a7c1704c0bf5eec768c5bba639b16178ca1",
+      "currentProfileSHA256": "7f29890cdec655670d675c4992feb691d0a95ece10b8a1ed3b55a63936046a01",
+      "decision": "qualified",
+      "runtimeDisposition": "primary-only-display-supported",
+      "scopePreserved": "Current 2CH person:god_1324 profile reader fields, facts, source gates, and source-only display support. This is not a full profile approval or runtime approval.",
+      "mapRelationshipHoldPreserved": {
+        "ref": "2CH 8:14",
+        "currentRow": {
+          "book": "2CH",
+          "chapter": 8,
+          "verse": 14,
+          "sourceText": "He appointed, according to the ordinance of David his father, the divisions of the priests to their service, and the Levites to their offices, to praise and to minister before the priests, as the duty of every day required, the doorkeepers also by their divisions at every gate, for David the man of God had so commanded.",
+          "sourceTextSHA256": "effb35def44089ae7bced06011eeb0dbe8695aeb501dd07c17701cdf4372a8ca",
+          "citationURL": "https://ebible.org/engwebp/2CH08.htm#V14",
+          "entities": [
+            {
+              "entityID": "person:david_994",
+              "relationship": "direct",
+              "reasonJa": "人物「David」が本文に名指しされる（この節での役割・親族関係は本文の表現に限る）。"
+            },
+            {
+              "entityID": "person:god_1324",
+              "relationship": "context",
+              "reasonJa": "「man of God」はDavidを表す称号であり、神をこの節の行為主体として述べない。"
+            },
+            {
+              "entityID": "person:solomon_2762",
+              "relationship": "context",
+              "reasonJa": "「he appointed」は神殿礼拝の職務を定めたソロモン。"
+            }
+          ],
+          "excludedCandidates": [],
+          "reviewNoteJa": "固定WEBの当該節と前後文脈を確認し、固有名・系譜・領域の関係を行単位で対応付けた。地理範囲・集団同定が本文から確定しない場合はunresolvedCanonicalCandidatesに理由を記録する。"
+        },
+        "findingJa": "プロフィールの一次本文監査では「man of God」の称号中にGodが明示されているためprofile source occurrenceとして含む。一方、現行verse mapのrelationshipはcontextであり、direct/context policy差はこの独立表で解決しない。map関係はholdのままとし、runtime/統合承認を意味しない。"
+      }
+    }
+  ]
+}

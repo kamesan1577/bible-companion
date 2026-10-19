@@ -4,7 +4,7 @@ import{offlineFixtureAuthorization}from'../fixtures/authorization';
 const passage={book:'ACT',start:{chapter:23,verse:1},end:{chapter:23,verse:1}};
 it('explicit server opt-in permits clearly labeled general explanations without invented citations',async()=>{
  let calls=0;const result=await createCompanionAnswer({passage,question:'良心とは何ですか？',spoilerAllowed:false,sources:[],modelId:DEFAULT_MODEL_ID},{authorization:offlineFixtureAuthorization('alice',DEFAULT_MODEL_ID),answerMode:'grounded-generation',allowGeneralKnowledge:true,ai:{async run(){calls++;return{response:JSON.stringify({status:'answer',claims:[],generalText:'一般的に、良心は自分の行動を善悪の観点から振り返る働きを指します。'})};}}});
- expect(calls).toBe(1);expect(result.answer).toContain('一般的な説明（出典未確認）');expect(result.citations).toEqual([]);expect(result.status).toBe('answered');expect(result.validation.semanticGrounding).toBe('unverified');
+ expect(calls).toBe(1);expect(result.answer).not.toContain('一般的な説明（出典未確認）');expect(result.citations).toEqual([]);expect(result.status).toBe('answered');expect(result.validation.semanticGrounding).toBe('unverified');
 });
 it('strict mode still stops without sources',async()=>{
  let calls=0;const result=await createCompanionAnswer({passage,question:'良心とは？',spoilerAllowed:false,sources:[],modelId:DEFAULT_MODEL_ID},{authorization:offlineFixtureAuthorization('alice',DEFAULT_MODEL_ID),answerMode:'grounded-generation',ai:{async run(){calls++;throw Error('must not run');}}});expect(calls).toBe(0);expect(result.status).toBe('insufficient-evidence');

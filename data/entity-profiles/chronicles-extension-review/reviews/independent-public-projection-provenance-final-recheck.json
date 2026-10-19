@@ -1,0 +1,47 @@
+{
+  "status": "pass",
+  "reviewedAtUTC": "2026-10-16T11:12:13Z",
+  "scope": "Independent exact-delta recheck of the public projection manifest after adding projectorProvenance. No drafts, evidence inputs, or projected output files were edited.",
+  "manifest": {
+    "before": {
+      "sha256": "bf0d76111986de154ce93c2db37a7c3bc238ba624f287125f7426907f331006b",
+      "preservedObject": "preservation/objects/bf0d76111986de154ce93c2db37a7c3bc238ba624f287125f7426907f331006b",
+      "objectHashVerified": true
+    },
+    "after": {
+      "path": "candidate/data/entity-profiles/chronicles-review/preservation-manifest.json",
+      "sha256": "5091c24c523c6db8d2b302528376e2a306a904b2368c7c13b89504b88f2ef804",
+      "hashVerified": true
+    },
+    "delta": {
+      "onlyAddedKey": "projectorProvenance",
+      "allPriorTopLevelFieldsByteValueEquivalent": true,
+      "inputRowsIdentical": true,
+      "inputCount": 3998
+    }
+  },
+  "projectorProvenance": {
+    "declaredSHA256": "38c63fbd4f74e6b4496a60d9f2ca71d79261af37b91932cb2bc36da8b506e986",
+    "preservedObject": "preservation/objects/38c63fbd4f74e6b4496a60d9f2ca71d79261af37b91932cb2bc36da8b506e986",
+    "preservedObjectExistsAndMatches": true,
+    "currentProjectorSourceSHA256": "38c63fbd4f74e6b4496a60d9f2ca71d79261af37b91932cb2bc36da8b506e986",
+    "currentSourceMatchesPreservedObject": true,
+    "publicProjectionExcludesProjector": true
+  },
+  "projectionByteRecheck": {
+    "listedFiles": 3998,
+    "actualFilesExcludingManifest": 3998,
+    "expectedPublicPathSetMatches": true,
+    "missingFiles": [],
+    "extraFiles": [],
+    "pathSetAbsentFromDisk": [],
+    "outputHashOrSizeMismatches": [],
+    "allListedOutputBytesMatchPriorManifest": true,
+    "inputRightsAndStatusMetadataUnchanged": true,
+    "releaseInputSnapshotPathSHAStillVerifiable": true,
+    "releaseInputSnapshotSHA256": "bbc6045f8df5c9bd314990383c3d67b1822a730a725d4e7890732897c966afdf"
+  },
+  "limitations": [
+    "This is an exact metadata-delta check, not a new semantic, privacy, legal, or publication approval. It does not assess a Library copy; that remains a separate check."
+  ]
+}
