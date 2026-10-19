@@ -26,7 +26,7 @@ import XCTest
         let frame = tab.frame
         let origin = app.coordinate(withNormalizedOffset: .zero)
         let anchor = origin.screenPoint
-        origin.withOffset(CGVector(dx: frame.midX - anchor.x, dy: frame.midY - anchor.y)).tap()
+        origin.withOffset(CGVector(dx: frame.midX - anchor.x, dy: frame.midY - anchor.y)).press(forDuration: 0.12)
         guard root.scrollViews["reading-page-" + title].waitForExistence(timeout: 5), tab.isSelected else {
             return failed("Native section selection did not reach its page: \(title)")
         }

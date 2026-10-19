@@ -1,5 +1,11 @@
 # Harness handoff
 
+## Single native press diagnostic follow-up
+
+The full 1f48ee0 run still reproduced a shared Met section transition failure, and scoped-loading-v20 completed 31 cases with 30 passed / one actual-share map-navigation failure. The failing map screenshot showed the map tab and visible Alexandria link. Its archived touch was at (115.67, 463.5), matching the observed link center, for 50ms. A subsequent ordinary profile tap also failed with the correct recorded center. These records do not establish an image/data defect or a coordinate mismatch; the underlying remote touch/scroll timing cause is unestablished.
+
+Steady section selection and the two actual-share profile/map links now use one 120ms native physical press at the observed screen-frame center, with no second attempt. Existing selected-page, real-image, named destination and geographic/source assertions remain. The three actual main/share artwork cases passed in native-touch-v22; the profile/map case passed after applying the same press to both links in native-links-v23. These are focused diagnostics, not full-suite acceptance. Full current-head native/CI validation is still required. No shipping code changes in this follow-up.
+
 ## Native section selection and controlled loading follow-up
 
 The full 1833ebc run exposed three independent UI interaction/timing failures while retaining all 98 cases. Failure attachments showed the explanation page selected instead of the requested people/art page; this does not establish an image-transport defect. `CurrentUI.selectSection` scopes the actual native segmented control to the main or remote-share reader, waits for all four inventories to settle (including explicit unavailable), performs one physical tap at its observed AX-frame center, then requires the corresponding page and selected state. A Simulator DEBUG-only container ID distinguishes the surfaces; it changes no Release layout. Steady entity and real-share metadata cases use this helper. Loading/fast-switch cases and the frozen 0.1.18 baseline keep their timing semantics. The pre-existing conditional second Hanan tap is removed; failure records the actual screenshot/tree rather than retrying.

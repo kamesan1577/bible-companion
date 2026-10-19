@@ -242,7 +242,7 @@ final class ReadingInteractionUITests: XCTestCase {
         expectation(for:NSPredicate(format:"label CONTAINS %@","件"),evaluatedWith:people);waitForExpectations(timeout:15)
         guard CurrentUI.selectSection("人物", in: app, shared: true) else { return }
         let detail=app.buttons["entity-detail-person:apollos_276"]
-        CurrentUI.reveal(detail,in:app);XCTAssertTrue(detail.isHittable);detail.tap()
+        CurrentUI.reveal(detail,in:app);XCTAssertTrue(detail.isHittable);tapScreenFrame(detail, app: app)
         guard app.navigationBars["アポロ"].waitForExistence(timeout:8) else { attach(app,"share-profile-navigation-failed");XCTFail("Apollos profile destination not reached");return }
         let description=app.staticTexts.containing(NSPredicate(format:"label CONTAINS %@","正確")).firstMatch
         CurrentUI.reveal(description,in:app);XCTAssertTrue(description.exists)
@@ -252,7 +252,7 @@ final class ReadingInteractionUITests: XCTestCase {
         expectation(for:NSPredicate(format:"label CONTAINS %@","件"),evaluatedWith:maps);waitForExpectations(timeout:15)
         guard CurrentUI.selectSection("地図", in: app, shared: true) else { return }
         let map=app.buttons["entity-map-place:alexandria_46"]
-        CurrentUI.reveal(map,in:app);XCTAssertTrue(map.isHittable);map.tap()
+        CurrentUI.reveal(map,in:app);XCTAssertTrue(map.isHittable);tapScreenFrame(map, app: app)
         guard app.navigationBars["地図"].waitForExistence(timeout:8) else { attach(app,"share-map-navigation-failed");XCTFail("Alexandria map destination not reached");return }
         assertReviewedMap("アレクサンドリア", app:app)
         attach(app,"actual-share-alexandria-map-with-provenance")
@@ -364,7 +364,7 @@ final class ReadingInteractionUITests: XCTestCase {
         let anchor = origin.screenPoint
         let target = origin.withOffset(CGVector(dx: point.midX - anchor.x, dy: point.midY - anchor.y))
         print("Remote element frame=\(point), app=\(app.frame), origin=\(anchor), tap=\(target.screenPoint)")
-        target.tap()
+        target.press(forDuration: 0.12)
     }
     @MainActor private func scrollToTop(_ element: XCUIElement, app: XCUIApplication) {
         for _ in 0..<12 {
