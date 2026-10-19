@@ -23,13 +23,28 @@ class ArtifactGateTests(unittest.TestCase):
                       'PlugIns/BibleShare.appex/Share': b'\xcf\xfa\xed\xfeTEST',
                       'PrivacyInfo.xcprivacy': b'', 'PlugIns/BibleShare.appex/PrivacyInfo.xcprivacy': b''}
         self.resources = gate.ROOT / 'apps/ios/Sources/Core/Resources'
-        self.names = list(self.files) + ['Core.bundle/' + p.name for p in self.resources.iterdir() if p.is_file()]
+        self.names = list(self.files) + [prefix + p.name for p in self.resources.iterdir() if p.is_file()
+                                          for prefix in ['Core.bundle/', 'PlugIns/BibleShare.appex/Core.bundle/']]
 
     def read(self, name):
         return self.files[name] if name in self.files else (self.resources / Path(name).name).read_bytes()
 
     def test_matching_resources_and_extension(self):
         self.assertTrue(gate.verify(self.read, self.names)['shareExtension'])
+
+    def test_missing_extension_resource_fails(self):
+        self.names.remove('PlugIns/BibleShare.appex/Core.bundle/entity-profiles.json')
+        with self.assertRaisesRegex(ValueError, 'Missing Share Extension resource'):
+            gate.verify(self.read, self.names)
+
+    def test_missing_main_resource_fails(self):
+        self.names.remove('Core.bundle/entity-profiles.json')
+        with self.assertRaisesRegex(ValueError, 'Missing main app resource'):
+            gate.verify(self.read, self.names)
+
+    def test_corrupt_extension_resource_fails(self):
+        self.files['PlugIns/BibleShare.appex/Core.bundle/entity-profiles.json'] = b'{}'
+        with self.assertRaises(ValueError): gate.verify(self.read, self.names)
 
     def test_corrupt_resource_fails(self):
         self.files['Core.bundle/entity-profiles.json'] = b'{}'

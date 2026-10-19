@@ -17,7 +17,7 @@ concurrency:
 jobs:
   simulator:
     runs-on: macos-15
-    timeout-minutes: 50
+    timeout-minutes: 100
     defaults:
       run:
         shell: bash
@@ -45,12 +45,13 @@ jobs:
       - name: Validate simulator ownership helper
         run: python3 -m unittest discover -s scripts/ci -p 'test_*.py'
       - name: Run the same build, extension verification, core and UI harness as local
-        timeout-minutes: 40
+        timeout-minutes: 90
         run: |
           set -o pipefail
           mkdir -p "$RUNNER_TEMP/ios-results"
-          # Own device, boot completion, jobs=2, explicit install, 180 core + 18 UI.
-          # Per-command limits remain boot 5m, build 12m, core 10m and UI 20m.
+          # Own device, boot completion, jobs=2, explicit install, all current core/UI tests.
+          # UI uses local ad-hoc Simulator signatures, never a developer identity.
+          # Per-command limits remain boot 5m, build 12m, core 10m and UI 60m (98 UI methods at integration).
           make ios-ui 2>&1 | tee "$RUNNER_TEMP/ios-results/harness.log"
       - name: Package simulator app without changing executable modes
         run: |

@@ -1,6 +1,6 @@
 # Data validation and evaluation
 
-`make data` checks the current bundled entity profiles without rewriting them, runs mutation tests that prove invalid identity references/verses/licenses/Wikipedia evidence/coordinates fail, runs existing checkpoint/context/review/primary-alignment tests and simulator-selector tests. `make swift` additionally runs every core test against the actual lookup/filtering code. No network or model is needed.
+`make data` checks the original Acts pilot entity file without rewriting it, runs mutation tests that prove invalid identity references/verses/licenses/Wikipedia evidence/coordinates fail, runs existing checkpoint/context/review/primary-alignment tests and simulator-selector tests. `make swift` additionally runs every core test against the actual lookup/filtering code. The existing `entities:check` gate in `make check` covers the current multi-book datasets with their own schemas; the pilot validator is not a replacement for it. No network or model is needed.
 
 The structural gate adapts to the profile document's book/scope rather than prescribing the next release's item count. It checks unique stable IDs, canonical verse bounds/order, referential integrity, attribution/license URLs, secondary Wikipedia classification, explicit identity verification evidence, finite Earth coordinates with uncertainty disclosure, and distinct direct/context occurrences. A valid URL is not proof that a page exists or identifies the right person. Online URL verification is a separate recorded source-comparison task.
 
@@ -19,7 +19,7 @@ For each changed book, retain the existing review ledger format and compare the 
 | Spoilers | At the earliest occurrence, future names/facts remain hidden until the recorded boundary or explicit reveal |
 | Geography | Candidate vs independently checked point, ancient region vs modern city, ambiguous/no point, known wrong coordinates stay hidden |
 
-Use deterministic checks first, followed by source comparison and actual UI inspection. Model opinion alone is not ground truth. Report counts of checked/passed/revised/unresolved cases; do not claim expert review or complete semantic spoiler safety. The current pinned release reports 225 profiles, 217 Wikipedia links and 4 independently checked points; these are audit facts for v0.1.10, not permanent limits on future data.
+Use deterministic checks first, followed by source comparison and actual UI inspection. Model opinion alone is not ground truth. Report counts of checked/passed/revised/unresolved cases; do not claim expert review or complete semantic spoiler safety. The historical v0.1.10 audit reports 225 profiles, 217 Wikipedia links and 4 independently checked points; these are audit facts for v0.1.10, not permanent limits on future data.
 
 ## Existing resumable generation jobs
 

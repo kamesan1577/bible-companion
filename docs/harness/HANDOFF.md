@@ -1,5 +1,15 @@
 # Harness handoff
 
+## Current-main integration (2026-10-19, in progress)
+
+See [PR #1 integration plan](PR1-INTEGRATION.md). Baseline: main `844005c` (0.1.23/build 24), PR `d52eeee`. Current core has 289 tests; UI inventory has 98 test methods; bundled Core resources have 168 files per app/extension. The results below are historical v0.1.10 evidence and do not establish acceptance of current main.
+
+Reproduced integration defects: artifact validation accepted a missing app/extension resource copy (two new mutation tests failed before the fix); unsigned UI failed `UnifiedReadingUITests.testDifferentAccountCannotReadDraftAndOriginalAccountCanRestore` at the restoration assertion. The artifact gate now checks both copies, and only the UI command uses local ad-hoc Simulator signatures with existing App Group entitlements. Unsigned app/device build gates remain unsigned. The complete current UI suite has a 60-minute command limit (CI step 90/job 100), replacing the obsolete 18-test/20-minute assumption. No assertions are removed or automatically retried.
+
+Local integration so far: Node 24 `make setup check source-audit` passed; Swift 289/289 passed; unsigned Simulator app/embedded extension build passed; all 168 Core resource files match in both app and extension. Python 3.9 harness and Simulator helper tests passed, including the resource regressions. Current UI and exact-head hosted checks are pending.
+
+## Historical harness evidence
+
 ## Restart here
 
 PR: https://github.com/kamesan1577/bible-companion/pull/1

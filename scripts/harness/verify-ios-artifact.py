@@ -35,7 +35,8 @@ def verify(read, names):
     for path in sorted(resources.iterdir()):
         if not path.is_file(): continue
         matches = [n for n in names if n.endswith('/' + path.name)]
-        require(bool(matches), 'Missing bundled resource: ' + path.name)
+        require(any(not n.startswith('PlugIns/') for n in matches), 'Missing main app resource: ' + path.name)
+        require(any(n.startswith('PlugIns/BibleShare.appex/') for n in matches), 'Missing Share Extension resource: ' + path.name)
         expected = hashlib.sha256(path.read_bytes()).hexdigest()
         for name in matches:
             require(hashlib.sha256(read(name)).hexdigest() == expected, 'Resource differs: ' + name)

@@ -78,7 +78,7 @@ def check():
 def ios(command, device):
     doctor(ios=True)
     if (ROOT / 'apps/ios/Config/Local.private.xcconfig').exists():
-        raise ValueError('Use a clean checkout without Local.private.xcconfig for reproducible unsigned QA')
+        raise ValueError('Use a clean checkout without Local.private.xcconfig for reproducible fixture QA')
     run('bash', 'apps/ios/Scripts/generate-project.sh')
     stamp = datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
     result = OUT / f'{command}-{stamp}'
@@ -89,6 +89,11 @@ def ios(command, device):
             '-sdk', 'iphoneos' if device_build else 'iphonesimulator',
             '-derivedDataPath', str(OUT / ('device-derived' if device_build else 'ios-derived')),
             'CODE_SIGNING_ALLOWED=NO']
+    if command == 'ios-ui':
+        # Local ad-hoc signatures retain App Group entitlements for account-scoped
+        # draft/history tests. No developer identity or provisioning profile.
+        base[-1:] = ['CODE_SIGNING_ALLOWED=YES', 'CODE_SIGNING_REQUIRED=YES',
+                     'CODE_SIGN_IDENTITY=-', 'CODE_SIGN_STYLE=Manual']
     if device_build:
         run(*base, '-scheme', 'BibleCompanion', '-destination', 'generic/platform=iOS',
             '-resultBundlePath', result / 'Build.xcresult', 'build')
@@ -128,7 +133,7 @@ def ios(command, device):
                 run(*base, '-scheme', scheme, '-destination', f'platform=iOS Simulator,id={device}',
                     '-destination-timeout', '90', '-parallel-testing-enabled', 'NO',
                     '-resultBundlePath', result / f'{scheme}.xcresult', 'test',
-                    timeout=600 if scheme == 'BibleCompanion' else 1200)
+                    timeout=600 if scheme == 'BibleCompanion' else 3600)
         finally:
             if owned:
                 subprocess.run(['xcrun', 'simctl', 'shutdown', device], capture_output=True)
