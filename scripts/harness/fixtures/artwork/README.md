@@ -1,0 +1,5 @@
+# Actual museum image fixtures
+
+These are the same approved public-domain museum JPEG bytes used by the three artwork UI cases, not generated placeholders. Source URLs, object pages, image rights, attribution and SHA-256 values are pinned in manifest.json and must match the unchanged UI catalog fixture. The Met image was re-fetched from its exact official URL on 2026-10-19 with the same SHA-256. Other bytes were retained from the existing reviewed image verification.
+
+The harness verifies all bytes before seeding only its Simulator App Group’s HarnessPublicArtworkFixtures directory. Simulator DEBUG code can read this public-image fixture cache; physical-device and Release code cannot. Image decoding, actual main/share-only image IDs, native rendering and screenshots are still tested. This makes UI rendering deterministic; it does not claim that a current live museum HTTP request succeeded. Network allowlist/security policy remains separately tested. No app data, artwork catalog entry, release image or license text is replaced.

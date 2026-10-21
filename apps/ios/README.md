@@ -4,6 +4,8 @@ SwiftUI application and Share Extension for the private Bible companion. iOS 26 
 
 Start with the concise [Mac acceptance checklist](MAC-ACCEPTANCE.md): exact unsigned build/test commands, expected results, signing/App Group inspection, and steps that must wait for the user.
 
+Current independent verification results and reproducible commands are in [the harness handoff](../../docs/harness/HANDOFF.md). Earlier implementation-environment statements below are historical; use the handoff for the current status.
+
 ## Build on a Mac
 
 Prerequisites: Xcode 26 with the iOS 26 SDK and an installed iOS simulator; XcodeGen 2.42+ from its official release/Homebrew. No Xcode/signing tools are available in the implementation's Linux environment. The Foundation package was compiled and its 134 XCTest tests passed using an official Swift 6.4.1 Linux toolchain; see `VERIFICATION.md`.

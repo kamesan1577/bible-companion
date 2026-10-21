@@ -10,7 +10,7 @@ Required decisions before deployment: permanent RP domain, intended owner invita
 
 `/auth/authorize` is opened in ASWebAuthenticationSession with a cryptographically random state and PKCE S256 challenge. The app must retain verifier/state in protected storage for the in-flight session, compare returned state exactly, exchange code once, and keep the bearer session in Keychain. Never trust callback parameters before checking state. Never place a bearer token in a URL.
 
-Registration is invitation-only. Owner role comes from a server-created invitation, not a request parameter or first-user shortcut. Local invitations are created by `npm run infra -- invite-local --role owner`. Remote invitations must be created by an authenticated operator only after account authorization. Tokens are shown once, hashed in D1, expire after 24 hours and are transactionally consumed at successful registration.
+Registration is invitation-only. Owner role comes from a server-created invitation, not a request parameter or first-user shortcut. Local invitations are created by `npm run infra -- invite-local --role owner`. Remote invitations must be created by an authenticated operator only after account authorization. CLI invitation tokens are shown once, hashed in D1, expire after one hour (`scripts/infra.mjs`: `seconds + 3600`), and are transactionally consumed at successful registration. Member invitations grant the user role; the recipient registers their own passkey.
 
 Lost all passkeys: no email bypass is implemented. Administrative recovery policy remains a launch blocker. Do not reset ownership based only on an email address. A verified recovery process and multiple passkey registration are required before relying on this as the sole copy of history.
 

@@ -1,5 +1,5 @@
 name: Validate locally reproducible code
-# Manual-only until private repository access and Actions quota are verified.
+# Manual dispatch keeps hosted usage deliberate; local commands run the same gates.
 on:
   workflow_dispatch:
 permissions:
@@ -18,16 +18,9 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
-      - run: npm run validate
+      - run: make check
         env:
           NODE_OPTIONS: --require=${{ github.workspace }}/scripts/diagnostics/no-external-network.cjs
-      - run: npm run openapi && git diff --exit-code -- docs/openapi.json
-      - run: npm run migrate && npm run migrate
-        env:
-          NODE_OPTIONS: --require=${{ github.workspace }}/scripts/diagnostics/no-external-network.cjs
-      - run: npm run infra -- validate-config
-      - run: npm run deploy:dry-run
-        env:
-          NODE_OPTIONS: --require=${{ github.workspace }}/scripts/diagnostics/no-external-network.cjs
+      - run: make source-audit
       - run: npm audit --audit-level=high
 # No deployment, remote migration, credential generation, or provider invocation.

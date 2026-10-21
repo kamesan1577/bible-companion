@@ -3,7 +3,7 @@ import XCTest
 final class EzraNehemiahEntityUITests: XCTestCase {
     @MainActor func testAdaiah75ShowsItsOwnVerseAndPrimarySource() {
         let app = launch("entity-ezr-adaiah")
-        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
+        guard CurrentUI.selectSection("人物",in:app) else { return }
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "原文と照合したものから順に収録")).firstMatch.waitForExistence(timeout: 5))
         let detail = app.buttons["entity-detail-person:adaiah_75"]
         scrollTo(detail, in: app); XCTAssertTrue(detail.exists); detail.tap()
@@ -21,7 +21,7 @@ final class EzraNehemiahEntityUITests: XCTestCase {
 
     @MainActor func testNehemiahAthaiahShowsReviewedDescriptionAndOwnSource() {
         let app = launch("entity-neh-athaiah")
-        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
+        guard CurrentUI.selectSection("人物",in:app) else { return }
         let detail = app.buttons["entity-detail-person:athaiah_358"]
         scrollTo(detail, in: app); XCTAssertTrue(detail.exists); detail.tap()
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "エルサレムに住んだユダ族")).firstMatch.waitForExistence(timeout: 5))
@@ -36,7 +36,7 @@ final class EzraNehemiahEntityUITests: XCTestCase {
 
     @MainActor func testHeldBeerothAndPartialCoverageRemainExplicit() {
         let app = launch("entity-neh-beeroth")
-        XCTAssertTrue(app.buttons["地図"].waitForExistence(timeout: 15)); app.buttons["地図"].tap()
+        guard CurrentUI.selectSection("地図",in:app) else { return }
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "説明が出ない名前も、未収録の場合があります")).firstMatch.waitForExistence(timeout: 5))
         XCTAssertFalse(app.buttons["entity-detail-place:beeroth_168"].exists)
         attach(app, "neh-held-beeroth-partial-coverage")
@@ -44,7 +44,7 @@ final class EzraNehemiahEntityUITests: XCTestCase {
 
     @MainActor func testHeldElnathanIDIsNotRenderedAsAResolvedPerson() {
         let app = launch("entity-ezr-held-elnathan")
-        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
+        guard CurrentUI.selectSection("人物",in:app) else { return }
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "説明が出ない名前も、未収録の場合があります")).firstMatch.waitForExistence(timeout: 5))
         XCTAssertFalse(app.buttons["entity-detail-person:elnathan_1180"].exists)
         attach(app, "ezr-ambiguous-elnathan-held-absent")
@@ -52,7 +52,7 @@ final class EzraNehemiahEntityUITests: XCTestCase {
 
     @MainActor func testAijaShowsScopedLocationAndPrimarySource() {
         let app = launch("entity-neh-aija")
-        XCTAssertTrue(app.buttons["地図"].waitForExistence(timeout: 15)); app.buttons["地図"].tap()
+        guard CurrentUI.selectSection("地図",in:app) else { return }
         let detail = app.buttons["entity-detail-place:aija_39"]
         scrollTo(detail, in: app); XCTAssertTrue(detail.exists); detail.tap()
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "11:31")).firstMatch.waitForExistence(timeout: 5))
@@ -67,7 +67,7 @@ final class EzraNehemiahEntityUITests: XCTestCase {
 
     @MainActor func testHezekiahShowsUnidentifiedNameWithoutKingIdentity() {
         let app = launch("entity-ezr-hezekiah")
-        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
+        guard CurrentUI.selectSection("人物",in:app) else { return }
         let detail = app.buttons["entity-detail-person:hezekiah_1514"]
         scrollTo(detail, in: app); XCTAssertTrue(detail.exists); detail.tap()
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "特定できません")).firstMatch.waitForExistence(timeout: 5))
@@ -82,7 +82,7 @@ final class EzraNehemiahEntityUITests: XCTestCase {
 
     @MainActor func testHanunFirstDescriptionDoesNotRevealLaterNamesake() {
         let app = launch("entity-neh-hanun-early")
-        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
+        guard CurrentUI.selectSection("人物",in:app) else { return }
         let detail = app.buttons["entity-detail-person:hanun_1405"]
         scrollTo(detail, in: app); XCTAssertTrue(detail.exists); detail.tap()
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "谷の門")).firstMatch.waitForExistence(timeout: 5))
@@ -92,20 +92,14 @@ final class EzraNehemiahEntityUITests: XCTestCase {
 
     @MainActor func testHananFirstDescriptionKeepsLaterSourceHidden() {
         let app = launch("entity-neh-hanan-early")
-        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
+        guard CurrentUI.selectSection("人物",in:app) else { return }
         let detail = app.buttons["entity-detail-person:hanan_1374"]
         scrollTo(detail, in: app)
         XCTAssertTrue(detail.waitForExistence(timeout: 5))
         XCTAssertTrue(detail.isHittable)
         attach(app, "neh-hanan-detail-link-before-navigation")
-        detail.coordinate(withNormalizedOffset: CGVector(dx: 0.2, dy: 0.5)).tap()
+        detail.tap()
         let detailTitle = app.navigationBars["ハナン"]
-        if !detailTitle.waitForExistence(timeout: 3) {
-            // Confirm the first tap actually changed navigation state; retry once from a clear hit area.
-            scrollTo(detail, in: app)
-            XCTAssertTrue(detail.isHittable)
-            detail.tap()
-        }
         guard detailTitle.waitForExistence(timeout: 5) else {
             XCTFail("Hanan detail navigation did not open"); return
         }
@@ -125,7 +119,7 @@ final class EzraNehemiahEntityUITests: XCTestCase {
 
     @MainActor func testHarhurFamilyLabelUsesNameDetail() {
         let app = launch("entity-neh-harhur")
-        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
+        guard CurrentUI.selectSection("人物",in:app) else { return }
         let detail = app.buttons["entity-detail-person:harhur_1415"]
         scrollTo(detail, in: app); XCTAssertTrue(detail.exists)
         XCTAssertTrue(detail.label.contains("この名前について")); detail.tap()
@@ -135,7 +129,7 @@ final class EzraNehemiahEntityUITests: XCTestCase {
 
     @MainActor func testHodevahFamilyNameDetailUsesScopedTextAndPrimaryCitation() {
         let app = launch("entity-neh-hodevah")
-        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
+        guard CurrentUI.selectSection("人物",in:app) else { return }
         let detail = app.buttons["entity-detail-person:hodevah_1542"]
         scrollTo(detail, in: app); XCTAssertTrue(detail.exists)
         XCTAssertTrue(detail.label.contains("この名前について")); detail.tap()
@@ -155,7 +149,7 @@ final class EzraNehemiahEntityUITests: XCTestCase {
 
     @MainActor func testJoiada1680EarlyDetailShowsFirstOccurrenceRoleAndSourceOnly() {
         let app = launch("entity-neh-joiada-early")
-        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
+        guard CurrentUI.selectSection("人物",in:app) else { return }
         let detail = app.buttons["entity-detail-person:joiada_1680"]
         scrollTo(detail, in: app); XCTAssertTrue(detail.exists); detail.tap()
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "ヨヤダをエリアシブの子として系譜に記します")).firstMatch.waitForExistence(timeout: 5))
@@ -175,7 +169,7 @@ final class EzraNehemiahEntityUITests: XCTestCase {
 
     @MainActor func testSanballat2470EarlyDetailShowsFirstOccurrenceAndPrimarySourceOnly() {
         let app = launch("entity-neh-sanballat-early")
-        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
+        guard CurrentUI.selectSection("人物",in:app) else { return }
         let detail = app.buttons["entity-detail-person:sanballat_2470"]
         scrollTo(detail, in: app); XCTAssertTrue(detail.exists); detail.tap()
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "ホロナイ人サンバラテは、トビヤとともに")).firstMatch.waitForExistence(timeout: 5))
@@ -198,7 +192,7 @@ final class EzraNehemiahEntityUITests: XCTestCase {
 
     @MainActor func testMeremoth2006EarlyDetailShowsCorrectLineageAndFirstSourceOnly() {
         let app = launch("entity-neh-meremoth-early")
-        XCTAssertTrue(app.buttons["人物"].waitForExistence(timeout: 15)); app.buttons["人物"].tap()
+        guard CurrentUI.selectSection("人物",in:app) else { return }
         let detail = app.buttons["entity-detail-person:meremoth_2006"]
         scrollTo(detail, in: app); XCTAssertTrue(detail.exists); detail.tap()
         XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "ウリヤの子、ハッコツの孫")).firstMatch.waitForExistence(timeout: 5))

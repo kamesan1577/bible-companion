@@ -1,184 +1,100 @@
 import XCTest
 
+/// The extension no longer owns an AI conversation/queue. These contracts test
+/// the replacement external handoff, while Core/main fixtures retain stream tests.
 final class ShareComposeUITests: XCTestCase {
-    @MainActor private func open(_ app: XCUIApplication, fixture: Bool = true) {
-        let share = app.buttons[fixture ? "質問する共有拡張を開く" : "Crash Acts28:15"]
-        XCTAssertTrue(app.navigationBars["描画確認"].waitForExistence(timeout: 15))
-        for _ in 0..<8 { if share.exists && share.isHittable { break }; app.swipeUp() }
-        XCTAssertTrue(share.waitForExistence(timeout: 5)); share.tap()
-        let candidates = app.cells.matching(identifier: "聖書コンパニオン")
-        XCTAssertTrue(candidates.firstMatch.waitForExistence(timeout: 6))
-        candidates.element(boundBy: candidates.count - 1).tap()
-        let field = app.descendants(matching:.any).matching(identifier:"share-question-draft").firstMatch
-        if !field.waitForExistence(timeout:2), candidates.count > 0 {
-            let active = candidates.element(boundBy:candidates.count-1)
-            if active.exists && active.isHittable { active.tap() }
-        }
-        XCTAssertTrue(field.waitForExistence(timeout:15))
+    @MainActor private func open(flags: [String] = [], title: String = "質問する共有拡張を開く") -> XCUIApplication {
+        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa", "--qa-handoff-owner"] + flags; app.launch()
+        CurrentUI.openShare(app, title: title); CurrentUI.replaceDraft("",in:app); return app
     }
-    @MainActor func testQuestionURLFromShareOpensSafari() {
-        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa", "--qa-handoff-owner"]; app.launch(); open(app)
-        let field = app.descendants(matching: .any).matching(identifier: "share-question-draft").firstMatch
-        field.tap(); field.typeText("URL direct? & # + %")
-        app.buttons["chatgpt-open-external"].tap()
-        XCTAssertFalse(app.navigationBars["ChatGPTへ渡す"].exists)
+    @MainActor func testQuestionURLFromShareOpensSafariAndPreservesDraft() {
+        let app = open(); let field = CurrentUI.input(app)
+        field.tap(); field.typeText(" URL direct? & # + %")
+        CurrentUI.provider("ChatGPT", in: app); let draft = field.value as? String
+        app.buttons["external-question-send"].tap()
         let safari = XCUIApplication(bundleIdentifier: "com.apple.mobilesafari")
         XCTAssertTrue(safari.wait(for: .runningForeground, timeout: 15))
-        let wait = expectation(description: "Safari q render"); DispatchQueue.main.asyncAfter(deadline: .now()+5) { wait.fulfill() }; waitForExpectations(timeout: 7)
-        attach(safari, "q-share-safari-result")
-        app.activate()
+        app.activate(); XCTAssertTrue(field.waitForExistence(timeout: 10)); XCTAssertEqual(field.value as? String, draft)
+        XCTAssertTrue(app.staticTexts["external-handoff-status"].exists)
+        CurrentUI.capture(app,"share-url-return-keeps-draft",test:self); app.buttons["閉じる"].tap()
     }
-    @MainActor func testQuestionURLManualMainAppHandoff() {
-        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa", "--qa-handoff-owner", "--qa-chatgpt-long"]; app.launch(); open(app)
-        let field = app.descendants(matching: .any).matching(identifier: "share-question-draft").firstMatch
-        field.tap(); field.typeText("URL main? & # + %")
-        app.buttons["chatgpt-open-external"].tap()
-        let stage = app.buttons["chatgpt-stage-main"]
-        for _ in 0..<8 { if stage.exists && stage.isHittable { break }; app.swipeUp() }
-        stage.tap()
-        let notice = app.staticTexts["chatgpt-handoff-notice"]
-        expectation(for: NSPredicate(format: "label CONTAINS %@", "10分間"), evaluatedWith: notice); waitForExpectations(timeout: 5)
-        attach(app, "q-link-staged-for-main")
-        app.buttons["chatgpt-fallback-close"].tap()
-        XCTAssertEqual(field.value as? String, "URL main? & # + %")
-        app.buttons["閉じる"].tap()
-        app.terminate(); app.launchArguments = ["--simulator-qa", "--qa-screen=settings", "--qa-handoff-owner"]; app.launch()
-        let main = app.buttons["chatgpt-main-copy"]
-        for _ in 0..<8 { if main.exists && main.isHittable { break }; app.swipeUp() }
-        XCTAssertTrue(main.waitForExistence(timeout: 10)); XCTAssertFalse(app.buttons["chatgpt-main-open"].exists)
-        attach(app, "q-link-main-long-body-fallback")
-        main.tap(); XCTAssertTrue(app.staticTexts["コピーしました。"].waitForExistence(timeout: 5))
-
+    @MainActor func testLongSharedTextUsesExplicitCopyHandoff() {
+        let app = open(flags:["--qa-chatgpt-long"]); let field = CurrentUI.input(app)
+        field.tap(); field.typeText(" long-body-full-copy")
+        CurrentUI.provider("ChatGPT", in:app)
+        XCTAssertTrue(app.buttons["external-question-send"].label.contains("全文をコピー"))
+        let draft = field.value as? String; app.buttons["external-question-send"].tap()
+        let safari = XCUIApplication(bundleIdentifier:"com.apple.mobilesafari")
+        XCTAssertTrue(safari.wait(for:.runningForeground,timeout:15)); app.activate()
+        XCTAssertTrue(field.waitForExistence(timeout:10)); XCTAssertEqual(field.value as? String,draft)
+        XCTAssertTrue(app.staticTexts["external-handoff-status"].label.contains("貼り付け"))
+        CurrentUI.capture(app,"share-long-body-copy-not-truncated",test:self); app.buttons["閉じる"].tap()
     }
-    @MainActor func testShareExtensionOfficialOpenAPIProbe() {
-        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch(); open(app)
-        let probe = app.buttons["QA: ChatGPT open probe"]
-        XCTAssertTrue(probe.waitForExistence(timeout: 5)); probe.tap()
-        let result = app.staticTexts["chatgpt-open-probe-result"]
-        let completed = NSPredicate(format: "label == 'open=false' OR label == 'open=true'")
-        expectation(for: completed, evaluatedWith: result); waitForExpectations(timeout: 15)
-        attach(app, "chatgpt-official-extension-open-result")
-        XCTAssertEqual(result.label, "open=false", "Record host result; if true, revisit the supported-route limitation before shipping")
-        app.buttons["QA: browser control probe"].tap()
-        expectation(for: NSPredicate(format: "label == 'browser-open=false'"), evaluatedWith: result); waitForExpectations(timeout: 10)
-        attach(app, "share-browser-control-denied")
-        app.buttons["閉じる"].tap()
-        let dismiss = app.otherElements["PopoverDismissRegion"]; if dismiss.waitForExistence(timeout: 2) { dismiss.tap() }
-        app.buttons["QA: main ChatGPT HTTPS"].tap()
-        let safari = XCUIApplication(bundleIdentifier: "com.apple.mobilesafari")
-        XCTAssertTrue(safari.wait(for: .runningForeground, timeout: 15))
-        app.activate()
-        XCTAssertEqual(app.staticTexts["main-external-open-result"].label, "main-open=true")
-        attach(app, "main-chatgpt-https-opens-without-chatgpt-app")
-    }
-    @MainActor func testChatGPTCopyAndPresentationPreferenceAcrossProcesses() {
-        let app = XCUIApplication()
-        func settings(_ visible: Bool) {
-            app.terminate(); app.launchArguments = ["--simulator-qa", "--qa-screen=settings"]; app.launch()
-            let toggle = app.switches["chatgpt-visibility"]
-            for _ in 0..<8 { if toggle.exists && toggle.isHittable { break }; app.swipeUp() }
-            XCTAssertTrue(toggle.waitForExistence(timeout: 15))
-            if (toggle.value as? String == "1") != visible {
-                toggle.coordinate(withNormalizedOffset: CGVector(dx: 0.94, dy: 0.5)).tap()
-            }
-            attach(app, visible ? "chatgpt-setting-on" : "chatgpt-setting-off")
-            XCTAssertEqual(toggle.value as? String, visible ? "1" : "0")
+    @MainActor func testShareProviderPickerPreservesContextWithoutUnsupportedOpenProbe() {
+        let app = open(); let field = CurrentUI.input(app)
+        field.tap(); field.typeText(" provider-context-preserved")
+        let draft = field.value as? String
+        for provider in ["ChatGPT", "Claude", "Gemini"] {
+            CurrentUI.provider(provider,in:app); XCTAssertEqual(field.value as? String,draft)
         }
-        settings(false)
-        app.terminate(); app.launchArguments = ["--simulator-qa", "--qa-chatgpt-long"]; app.launch(); open(app)
-        XCTAssertFalse(app.buttons["chatgpt-open-external"].exists)
-        app.buttons["閉じる"].tap()
-        settings(true)
-        app.terminate(); app.launchArguments = ["--simulator-qa", "--qa-chatgpt-long"]; app.launch(); open(app)
-        let field = app.descendants(matching: .any).matching(identifier: "share-question-draft").firstMatch
-        field.tap(); field.typeText("ChatGPT draft preserved?")
-        let alternative = app.buttons["chatgpt-open-external"]
-        XCTAssertTrue(alternative.isHittable)
-        XCTAssertLessThanOrEqual(alternative.frame.maxY, app.buttons["質問を送る"].frame.maxY + 2)
-        attach(app, "chatgpt-alternative-keyboard")
-        alternative.tap()
-        for _ in 0..<8 { if app.buttons["chatgpt-copy-confirm"].exists && app.buttons["chatgpt-copy-confirm"].isHittable { break }; app.swipeUp() }
-        XCTAssertTrue(app.buttons["chatgpt-copy-confirm"].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.staticTexts["chatgpt-copy-content"].label.contains("ChatGPT draft preserved?"))
-        attach(app, "chatgpt-explicit-copy-preview")
-        app.buttons["chatgpt-copy-confirm"].tap()
-        XCTAssertTrue(field.waitForExistence(timeout: 5))
-        XCTAssertEqual(field.value as? String, "ChatGPT draft preserved?")
-        XCTAssertTrue(app.staticTexts["AI requests: 0"].exists)
-        app.buttons["閉じる"].tap()
+        XCTAssertFalse(app.buttons["QA: ChatGPT open probe"].exists)
+        XCTAssertFalse(app.buttons["質問を送る"].exists)
+        CurrentUI.capture(app,"share-three-provider-contract",test:self); app.buttons["閉じる"].tap()
     }
-    @MainActor func testActualExtensionImmediateComposerKeyboardQueueAndReopen() {
-        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
-        open(app)
-        XCTAssertTrue(app.staticTexts["AI requests: 0"].exists)
+    @MainActor func testProviderPreferencePersistsAcrossMainAndShareProcesses() {
+        let app = open(); CurrentUI.provider("Claude",in:app)
+        let field=CurrentUI.input(app); field.tap(); field.typeText(" saved-provider-draft")
+        let draft=field.value as? String; app.buttons["閉じる"].tap(); app.terminate()
+        app.launchArguments=["--simulator-qa","--qa-screen=settings","--qa-handoff-owner"];app.launch()
+        XCTAssertTrue(app.buttons["external-provider-picker"].waitForExistence(timeout:15))
+        XCTAssertTrue(app.buttons["external-provider-picker"].label.contains("Claude") || (app.buttons["external-provider-picker"].value as? String ?? "").contains("Claude"))
+        app.terminate();app.launchArguments=["--simulator-qa","--qa-screen=unified-home","--qa-handoff-owner"];app.launch()
+        let recent=app.buttons["recent-reading"];XCTAssertTrue(recent.waitForExistence(timeout:15));recent.tap()
+        let restored=CurrentUI.input(app);XCTAssertTrue(restored.waitForExistence(timeout:10))
+        expectation(for:NSPredicate(format:"value == %@",draft ?? ""),evaluatedWith:restored);waitForExpectations(timeout:5)
+        XCTAssertTrue(app.buttons["external-question-send"].label.contains("Claude"))
+        CurrentUI.capture(app,"same-context-draft-restored-in-main",test:self)
+        app.terminate();app.launchArguments=["--simulator-qa","--qa-handoff-owner"];app.launch();CurrentUI.openShare(app)
+        XCTAssertTrue(app.buttons["external-question-send"].label.contains("Claude"))
+        // A new QA session URL is a different shared-original identity, even
+        // when its passage matches. Do not leak the previous context's draft.
+        let newDraft=CurrentUI.input(app).value as? String
+        XCTAssertTrue(newDraft == nil || newDraft == "" || newDraft == "この箇所について質問")
+        XCTAssertFalse((newDraft ?? "").contains("saved-provider-draft"))
+        CurrentUI.capture(app,"new-original-does-not-inherit-old-draft",test:self);app.buttons["閉じる"].tap()
+    }
+    @MainActor func testActualExtensionImmediateComposerKeyboardDraftAndReopen() {
+        let app=open();let field=CurrentUI.input(app)
         XCTAssertFalse(app.staticTexts["最初の解説"].exists)
-        attach(app, "share-compose-open-zero-ai")
-        app.buttons["人物"].tap(); app.buttons["地名"].tap(); app.buttons["解説"].tap()
-        XCTAssertTrue(app.staticTexts["AI requests: 0"].exists)
-        let field = app.descendants(matching:.any).matching(identifier:"share-question-draft").firstMatch
-        field.tap(); field.typeText("Appeal?")
-        let send = app.buttons["質問を送る"]
-        XCTAssertTrue(send.isEnabled); XCTAssertTrue(send.isHittable)
-        XCTAssertLessThanOrEqual(send.frame.maxY, app.keyboards.firstMatch.frame.minY + 2)
-        attach(app, "share-compose-keyboard-send")
-        send.tap()
-        // Enter and enqueue a follow-up while the first request is in flight.
-        field.tap(); field.typeText("why?")
-        XCTAssertTrue(send.isEnabled); send.tap()
-        field.tap(); field.typeText("draft stays")
-        XCTAssertTrue(app.staticTexts["エルサレムで裁かれる危険を避けるため、上訴したと考えられます。これは状況からの見立てです。"].waitForExistence(timeout: 15))
-        XCTAssertEqual(field.value as? String, "draft stays")
-        XCTAssertTrue(app.staticTexts["AI requests: 2"].exists)
-        app.buttons["キーボードを閉じる"].tap()
-        app.buttons["最新のメッセージへ"].tap()
-        attach(app, "share-compose-two-turns")
+        for tab in ["人物","地図","解説"] {app.buttons[tab].tap()}
+        field.tap();field.typeText(" immediate-composer")
+        CurrentUI.keyboardSend(app);let draft=field.value as? String
+        XCTAssertFalse(app.buttons["回答の準備をやめる"].exists)
+        CurrentUI.capture(app,"share-immediate-local-composer",test:self)
         app.buttons["閉じる"].tap()
-        let dismiss = app.otherElements["PopoverDismissRegion"]
-        if dismiss.waitForExistence(timeout: 2) { dismiss.tap() }
-        open(app)
-        XCTAssertEqual(field.value as? String, "draft stays")
-        XCTAssertTrue(app.staticTexts["AI requests: 0"].exists)
-        XCTAssertTrue(app.staticTexts["why?"].exists)
-        attach(app, "share-compose-reopened-draft")
-        app.buttons["閉じる"].tap()
+        let dismiss=app.otherElements["PopoverDismissRegion"];if dismiss.waitForExistence(timeout:2){dismiss.tap()}
+        CurrentUI.openShare(app);XCTAssertEqual(CurrentUI.input(app).value as? String,draft)
+        XCTAssertFalse(app.staticTexts["最初の解説"].exists);app.buttons["閉じる"].tap()
     }
-    @MainActor func testActualExtensionWithoutSetupKeepsInput() {
-        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch()
-        open(app, fixture:false)
-        let field = app.descendants(matching:.any).matching(identifier:"share-question-draft").firstMatch
-        XCTAssertTrue(app.staticTexts["AI requests: 0"].exists)
-        field.tap(); field.typeText("Question without setup")
-        XCTAssertTrue(app.buttons["質問を送る"].isHittable)
-        app.buttons["質問を送る"].tap()
-        XCTAssertTrue(app.staticTexts["質問を送るには準備が必要です"].waitForExistence(timeout:5))
-        XCTAssertTrue(app.staticTexts["送信待ち: Question without setup"].exists)
-        field.tap(); field.typeText("still editable")
-        XCTAssertEqual(field.value as? String, "still editable")
-        XCTAssertTrue(app.staticTexts["AI requests: 0"].exists)
-        attach(app,"share-compose-no-setup-draft")
-        app.buttons["閉じる"].tap()
+    @MainActor func testActualExtensionNeedsNoFirstPartyAISetup() {
+        let app=open(flags:["--qa-clear-access"],title:"Crash Acts28:15");let field=CurrentUI.input(app)
+        field.tap();field.typeText(" question-without-AI-setup")
+        CurrentUI.keyboardSend(app)
+        XCTAssertFalse(app.staticTexts["質問を送るには準備が必要です"].exists)
+        XCTAssertFalse(app.staticTexts["送信待ち: question-without-AI-setup"].exists)
+        XCTAssertTrue(app.staticTexts["聖句・原文・質問を外部へ"].exists)
+        CurrentUI.capture(app,"share-no-first-party-setup",test:self);app.buttons["閉じる"].tap()
     }
-    @MainActor func testLongDraftAndUncertainFailureKeepKeyboardSendAvailable() {
-        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa"]; app.launch(); open(app)
-        let field = app.descendants(matching:.any).matching(identifier:"share-question-draft").firstMatch
-        field.tap(); field.typeText("fail"); app.buttons["質問を送る"].tap()
-        let draft = String(repeating:"a long question ", count:12)
-        field.tap(); field.typeText(draft)
-        XCTAssertTrue(app.buttons["送信した回答を確認"].waitForExistence(timeout:10))
-        XCTAssertEqual(field.value as? String,draft)
-        XCTAssertTrue(app.staticTexts["主がモーセを通して人々へ語りかけています。"].exists)
-        XCTAssertTrue(app.staticTexts["未完了の部分回答です。全体の確認と保存は完了していません。"].exists)
-        XCTAssertFalse(app.staticTexts["送信待ち: fail"].exists)
-        XCTAssertTrue(app.staticTexts["送信済み・結果確認中: fail"].exists)
-        XCTAssertTrue(app.buttons["質問を送る"].isEnabled)
-        XCTAssertGreaterThanOrEqual(app.buttons["質問を送る"].frame.height,44)
-        XCTAssertLessThanOrEqual(app.buttons["質問を送る"].frame.maxY,app.keyboards.firstMatch.frame.minY)
-        attach(app,"share-long-draft-interrupted")
-        app.buttons["質問を送る"].tap()
-        XCTAssertTrue(app.staticTexts["AI requests: 1"].exists)
-        XCTAssertTrue(app.staticTexts.matching(NSPredicate(format:"label == %@", "送信待ち: " + draft.trimmingCharacters(in:.whitespacesAndNewlines))).firstMatch.exists)
-        app.buttons["キーボードを閉じる"].tap()
-        app.buttons["閉じる"].tap()
+    @MainActor func testLongDraftStaysEditableAndOverLimitDoesNotSend() {
+        let app=open();let field=CurrentUI.input(app)
+        field.tap();field.typeText(" long-editable "+String(repeating:"question ",count:24))
+        CurrentUI.keyboardSend(app);let before=field.value as? String ?? ""
+        field.typeText(String(repeating:"x",count:2100))
+        XCTAssertTrue((field.value as? String ?? "").hasPrefix(before))
+        XCTAssertGreaterThan((field.value as? String ?? "").utf16.count,2000)
+        XCTAssertFalse(app.buttons["external-question-send"].isEnabled)
+        XCTAssertTrue(app.staticTexts["質問は2000文字以内にしてください。入力は切り詰めず残しています。"].exists)
+        XCTAssertFalse(app.staticTexts["送信済み・結果確認中: fail"].exists)
+        CurrentUI.capture(app,"share-over-limit-keeps-complete-draft",test:self);CurrentUI.replaceDraft("",in:app);app.buttons["閉じる"].tap()
     }
-    private func attach(_ app: XCUIApplication, _ name: String) { let item = XCTAttachment(screenshot: app.screenshot()); item.name = name; item.lifetime = .keepAlways; add(item) }
 }

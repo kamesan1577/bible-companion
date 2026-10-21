@@ -29,6 +29,16 @@ final class ExternalQuestionProviderTests: XCTestCase {
         XCTAssertTrue(absent.prompt.contains("原文はこの端末にありません"))
         XCTAssertThrowsError(try ExternalQuestionHandoff(provider: .chatGPT, question: " ", passage: passage, translation: nil, sharedText: ""))
     }
+    func testURLOnlyShareUsesHonestAbsenceNotice() throws {
+        let url = "https://www.bible.com/bible/83/ACT.28.15.JCB"
+        let sharedPassage = Passage(book:"ACT", start:Verse(chapter:28,verse:15), end:Verse(chapter:28,verse:15))
+        for provider in ExternalQuestionProvider.allCases {
+            let handoff = try ExternalQuestionHandoff(provider: provider, question: "この場所はどこ？", passage: sharedPassage, translation: "JCB", sharedText: url)
+            XCTAssertTrue(handoff.prompt.contains("原文はこの端末にありません"))
+            XCTAssertTrue(handoff.prompt.contains("訳文を推測で引用せず"))
+            XCTAssertTrue(handoff.prompt.contains("この場所はどこ？"))
+        }
+    }
     func testVisitValidationAndRoundTripRejectDifferentOwnerWithoutPrivateCredentials() throws {
         let owner = UUID().uuidString
         let visit = LocalReadingVisit(ownerID: owner, passage: passage, translation: "JCB", sharedText: "端末だけの原文")

@@ -31,30 +31,25 @@ final class ConversationStreamingUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["受信中の回答です。全体の確認が終わるまで確定しません。"].exists)
         attach(app,"conversation-interrupted")
     }
-    @MainActor func testShareConversationKeyboardCancelAndRetry() {
-        let app=XCUIApplication(); app.launchArguments=["--simulator-qa","--qa-screen=share-conversation"];app.launch()
-        XCTAssertTrue(app.staticTexts["最初の解説"].waitForExistence(timeout:10))
-        let field=app.descendants(matching:.any).matching(identifier:"share-question-draft").firstMatch
-        field.tap();field.typeText("Who is Felix?")
-        let send=app.buttons["質問を送る"]
-        XCTAssertTrue(app.keyboards.firstMatch.waitForExistence(timeout:3));XCTAssertTrue(send.isEnabled)
-        XCTAssertLessThanOrEqual(send.frame.maxY,app.keyboards.firstMatch.frame.minY+2)
-        attach(app,"share-keyboard-send")
-        send.tap()
-        XCTAssertTrue(app.staticTexts["受信中の回答です。全体の確認が終わるまで確定しません。"].waitForExistence(timeout:3))
-        attach(app,"share-stream-preview")
-        app.buttons["回答の準備をやめる"].tap()
-        XCTAssertTrue(app.buttons["同じ質問をもう一度送る"].waitForExistence(timeout:5))
+    @MainActor func testShareExternalDraftKeyboardCloseReopenAndEdit() {
+        let app = XCUIApplication(); app.launchArguments = ["--simulator-qa", "--qa-handoff-owner"]; app.launch()
+        CurrentUI.openShare(app)
+        let field = CurrentUI.input(app); field.tap(); field.typeText(" share-handoff-draft")
+        CurrentUI.keyboardSend(app)
+        let draft = field.value as? String
         XCTAssertFalse(app.staticTexts["受信中の回答です。全体の確認が終わるまで確定しません。"].exists)
-        app.buttons["同じ質問をもう一度送る"].tap()
-        expectation(for:NSPredicate(format:"exists == false"),evaluatedWith:app.buttons["回答の準備をやめる"]);waitForExpectations(timeout:12)
-        XCTAssertTrue(app.staticTexts["フェリクスはローマの総督で、パウロの訴えを審理した人物です。"].exists)
-        XCTAssertEqual(app.staticTexts.matching(NSPredicate(format: "label == %@", "Who is Felix?")).count, 1)
-        field.tap();field.typeText("His wife?");send.tap()
-        expectation(for:NSPredicate(format:"exists == false"),evaluatedWith:app.buttons["回答の準備をやめる"]);waitForExpectations(timeout:12)
-        XCTAssertTrue(app.staticTexts["ドルシラはフェリクスの妻です。"].exists)
-        app.buttons["キーボードを閉じる"].tap();app.buttons["最新のメッセージへ"].tap();XCTAssertTrue(app.staticTexts["ドルシラはフェリクスの妻です。"].exists)
-        attach(app,"share-conversation-two-turns")
+        XCTAssertFalse(app.buttons["同じ質問をもう一度送る"].exists)
+        app.buttons["閉じる"].tap()
+        let dismiss = app.otherElements["PopoverDismissRegion"]; if dismiss.waitForExistence(timeout: 2) { dismiss.tap() }
+        CurrentUI.openShare(app)
+        XCTAssertEqual(CurrentUI.input(app).value as? String, draft)
+        // Explicitly dismiss inherited focus, then reopen the keyboard by user action.
+        let dismissKeyboard=app.buttons["キーボードを閉じる"]
+        if dismissKeyboard.exists { dismissKeyboard.tap() }
+        CurrentUI.input(app).tap(); CurrentUI.input(app).typeText(" follow-up")
+        XCTAssertTrue((CurrentUI.input(app).value as? String ?? "").contains("follow-up"))
+        CurrentUI.keyboardSend(app); attach(app,"share-handoff-close-reopen-edit")
+        app.buttons["閉じる"].tap()
     }
     private func attach(_ app:XCUIApplication,_ name:String){let item=XCTAttachment(screenshot:app.screenshot());item.name=name;item.lifetime = .keepAlways;add(item)}
 }

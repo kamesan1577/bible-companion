@@ -142,6 +142,22 @@ struct SimulatorQA: View {
             ready = true }
     }
 }
+/// A test-controlled transport barrier: loading assertions never race a wall-clock delay.
+private final class PublicReadingResponseBarrier: @unchecked Sendable {
+    static let shared = PublicReadingResponseBarrier()
+    private let lock = NSLock()
+    private var released = false
+    private var pending: [DispatchWorkItem] = []
+    func hold(_ work: DispatchWorkItem) {
+        lock.lock()
+        if released { lock.unlock(); DispatchQueue.global().async(execute: work) }
+        else { pending.append(work); lock.unlock() }
+    }
+    func release() {
+        lock.lock(); released = true; let work = pending; pending.removeAll(); lock.unlock()
+        for item in work { DispatchQueue.global().async(execute: item) }
+    }
+}
 final class SimulatorQAProtocol: URLProtocol, @unchecked Sendable {
     private let stopLock = NSLock()
     private var stopped = false
@@ -177,6 +193,11 @@ final class SimulatorQAProtocol: URLProtocol, @unchecked Sendable {
         if request.httpMethod == "POST", url.path == "/public/reading" {
             ok = !ProcessInfo.processInfo.arguments.contains("--qa-public-error")
             if ok { data = try! JSONSerialization.data(withJSONObject: ["passage":fields["passage"] ?? passage,"translation":fields["translation"] ?? NSNull(),"spoilerAllowed":false,"sourceVersion":"unified-fixture-v1","overview":["contentKind":"curated-reference","text":"公開資料の固定データ。独自AIは呼び出していません。","citations":[],"mode":"source-only","modelInvoked":false],"materialNotice":"固定された公開資料","cache":"fixture","people":[],"places":[],"artworks": ArtworkCatalogQA.selected != nil ? ArtworkCatalogQA.projected(fields["passage"]) : (((fields["passage"] as? [String: Any])?["book"] as? String == "ACT" && ((fields["passage"] as? [String: Any])?["start"] as? [String: Any])?["chapter"] as? Int == 9) ? Self.artworkFixture : [])]) }
+            if ProcessInfo.processInfo.arguments.contains("--qa-public-held") {
+                let responseData = data, responseOK = ok
+                let work = DispatchWorkItem { [weak self] in self?.complete(data: responseData, url: url, ok: responseOK) }
+                delayedResponse = work; PublicReadingResponseBarrier.shared.hold(work); return
+            }
             if ProcessInfo.processInfo.arguments.contains("--qa-public-slow") {
                 let responseData = data, responseOK = ok
                 let work = DispatchWorkItem { [weak self] in self?.complete(data: responseData, url: url, ok: responseOK) }
@@ -250,6 +271,14 @@ private struct ReadingBadgeQA: View {
     var body: some View {
         UnifiedReadingView(passage: passage, translation: "JCB", sharedText: "")
             .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("QAレビ記へ") { passage = Passage(book: "LEV", start: Verse(chapter: 19, verse: 1), end: Verse(chapter: 19, verse: 2)) } } }
+            .toolbar {
+                if ProcessInfo.processInfo.arguments.contains("--qa-public-held") {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button("QA応答を返す") { PublicReadingResponseBarrier.shared.release() }
+                            .accessibilityIdentifier("qa-release-public")
+                    }
+                }
+            }
             .overlay(alignment: .bottomLeading) { Text("画像取得 \(probe.started)").bibleTextStyle(.caption).accessibilityIdentifier("qa-artwork-load-count").allowsHitTesting(false) }
     }
 }

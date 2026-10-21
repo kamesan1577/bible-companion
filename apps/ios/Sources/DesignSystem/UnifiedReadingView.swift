@@ -214,6 +214,10 @@ struct UnifiedReadingView: View {
             }
         }
         .bibleCanvas().navigationTitle(passage.reference).navigationBarTitleDisplayMode(.inline)
+#if DEBUG && targetEnvironment(simulator)
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier(Bundle.main.bundleURL.pathExtension == "appex" ? "qa-reading-share" : "qa-reading-main")
+#endif
         .task(id: ReadingContextKey(passage: passage, translation: translation, sharedText: sharedText)) { prepareLocalState(); await model.load(passage, translation: translation) }
         .task(id: passage.label + ":" + String(retry)) { await local.loadEdits(passage) }
         .task(id: personKey) { await local.loadEntities(personKey) }
@@ -313,6 +317,9 @@ struct ExternalQuestionComposer: View {
         }
         .padding(.horizontal, BibleTheme.Space.page).padding(.vertical, 6)
         .tint(BibleTheme.color(.accent, scheme: scheme))
+#if DEBUG && targetEnvironment(simulator)
+        .background(SimulatorKeyboardGeometryProbe().frame(width: 1, height: 1))
+#endif
         .task(id: ReadingContextKey(passage: passage, translation: translation, sharedText: sharedText)) { prepareLocalState() }
         .onChange(of: draft) { _, text in
             guard let visit, !revoked else { return }
@@ -381,3 +388,32 @@ struct ExternalQuestionComposer: View {
         } catch { revoked = true; draft = ""; focused = false }
     }
 }
+
+#if DEBUG && targetEnvironment(simulator)
+/// Simulator-only observability for remote extension keyboards absent from host AX trees.
+/// Reports UIKit's actual screen-space keyboard notification frame, never inferred layout.
+private struct SimulatorKeyboardGeometryProbe: UIViewRepresentable {
+    func makeUIView(context: Context) -> KeyboardFrameView { KeyboardFrameView() }
+    func updateUIView(_ uiView: KeyboardFrameView, context: Context) {}
+
+    final class KeyboardFrameView: UIView {
+        init() {
+            super.init(frame: .zero)
+            isAccessibilityElement = true
+            accessibilityIdentifier = "qa-keyboard-frame"
+            accessibilityLabel = "Simulator keyboard geometry"
+            accessibilityValue = "unobserved"
+            for name in [UIResponder.keyboardDidShowNotification, UIResponder.keyboardDidChangeFrameNotification, UIResponder.keyboardDidHideNotification] {
+                NotificationCenter.default.addObserver(self, selector: #selector(frameChanged(_:)), name: name, object: nil)
+            }
+        }
+        required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+        deinit { NotificationCenter.default.removeObserver(self) }
+        @objc private func frameChanged(_ notification: Notification) {
+            guard let value = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+            let frame = value.cgRectValue
+            accessibilityValue = [frame.minX, frame.minY, frame.width, frame.height].map { String(Double($0)) }.joined(separator: ",")
+        }
+    }
+}
+#endif
